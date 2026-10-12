@@ -1,0 +1,470 @@
+{
+  "source": "World Checklist of Vascular Plants (WCVP), Royal Botanic Gardens Kew",
+  "license": "CC BY 4.0",
+  "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
+  "area": "France (TDWG:FRA — whole country; floor check only)",
+  "region": "france-atlantic",
+  "ranAt": "2026-09-21T07:02:12.158Z",
+  "rows": [
+    {
+      "id": "quercus-robur",
+      "latin": "Quercus robur",
+      "asked": "Quercus robur",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "betula-pendula",
+      "latin": "Betula pendula",
+      "asked": "Betula pendula",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "salix-caprea",
+      "latin": "Salix caprea",
+      "asked": "Salix caprea",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "prunus-avium",
+      "latin": "Prunus avium",
+      "asked": "Prunus avium",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sorbus-aucuparia",
+      "latin": "Sorbus aucuparia",
+      "asked": "Sorbus aucuparia",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "carpinus-betulus",
+      "latin": "Carpinus betulus",
+      "asked": "Carpinus betulus",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "alnus-glutinosa",
+      "latin": "Alnus glutinosa",
+      "asked": "Alnus glutinosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "populus-tremula",
+      "latin": "Populus tremula",
+      "asked": "Populus tremula",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "fagus-sylvatica",
+      "latin": "Fagus sylvatica",
+      "asked": "Fagus sylvatica",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "tilia-cordata",
+      "latin": "Tilia cordata",
+      "asked": "Tilia cordata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ulmus-glabra",
+      "latin": "Ulmus glabra",
+      "asked": "Ulmus glabra",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pyrus-pyraster",
+      "latin": "Pyrus pyraster",
+      "asked": "Pyrus pyraster",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": "Pyrus communis subsp. communis"
+    },
+    {
+      "id": "crataegus-monogyna",
+      "latin": "Crataegus monogyna",
+      "asked": "Crataegus monogyna",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "prunus-spinosa",
+      "latin": "Prunus spinosa",
+      "asked": "Prunus spinosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "corylus-avellana",
+      "latin": "Corylus avellana",
+      "asked": "Corylus avellana",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ilex-aquifolium",
+      "latin": "Ilex aquifolium",
+      "asked": "Ilex aquifolium",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cornus-sanguinea",
+      "latin": "Cornus sanguinea",
+      "asked": "Cornus sanguinea",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sambucus-nigra",
+      "latin": "Sambucus nigra",
+      "asked": "Sambucus nigra",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "frangula-alnus",
+      "latin": "Frangula alnus",
+      "asked": "Frangula alnus",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "calluna-vulgaris",
+      "latin": "Calluna vulgaris",
+      "asked": "Calluna vulgaris",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vaccinium-myrtillus",
+      "latin": "Vaccinium myrtillus",
+      "asked": "Vaccinium myrtillus",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rubus-fruticosus",
+      "latin": "Rubus fruticosus agg.",
+      "asked": "Rubus fruticosus",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cytisus-scoparius",
+      "latin": "Cytisus scoparius",
+      "asked": "Cytisus scoparius",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "genista-tinctoria",
+      "latin": "Genista tinctoria",
+      "asked": "Genista tinctoria",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rosa-arvensis",
+      "latin": "Rosa arvensis",
+      "asked": "Rosa arvensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "hyacinthoides-non-scripta",
+      "latin": "Hyacinthoides non-scripta",
+      "asked": "Hyacinthoides non-scripta",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "digitalis-purpurea",
+      "latin": "Digitalis purpurea",
+      "asked": "Digitalis purpurea",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "primula-veris",
+      "latin": "Primula veris",
+      "asked": "Primula veris",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "succisa-pratensis",
+      "latin": "Succisa pratensis",
+      "asked": "Succisa pratensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "centaurea-nigra",
+      "latin": "Centaurea nigra",
+      "asked": "Centaurea nigra",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lotus-corniculatus",
+      "latin": "Lotus corniculatus",
+      "asked": "Lotus corniculatus",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "trifolium-pratense",
+      "latin": "Trifolium pratense",
+      "asked": "Trifolium pratense",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rumex-acetosa",
+      "latin": "Rumex acetosa",
+      "asked": "Rumex acetosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "artemisia-vulgaris",
+      "latin": "Artemisia vulgaris",
+      "asked": "Artemisia vulgaris",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "festuca-rubra",
+      "latin": "Festuca rubra",
+      "asked": "Festuca rubra",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "poa-nemoralis",
+      "latin": "Poa nemoralis",
+      "asked": "Poa nemoralis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "deschampsia-cespitosa",
+      "latin": "Deschampsia cespitosa",
+      "asked": "Deschampsia cespitosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lonicera-periclymenum",
+      "latin": "Lonicera periclymenum",
+      "asked": "Lonicera periclymenum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "hedera-helix",
+      "latin": "Hedera helix",
+      "asked": "Hedera helix",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "humulus-lupulus",
+      "latin": "Humulus lupulus",
+      "asked": "Humulus lupulus",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "galium-verum",
+      "latin": "Galium verum",
+      "asked": "Galium verum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "plantago-lanceolata",
+      "latin": "Plantago lanceolata",
+      "asked": "Plantago lanceolata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "fragaria-vesca",
+      "latin": "Fragaria vesca",
+      "asked": "Fragaria vesca",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "dryopteris-filix-mas",
+      "latin": "Dryopteris filix-mas",
+      "asked": "Dryopteris filix-mas",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "asplenium-scolopendrium",
+      "latin": "Asplenium scolopendrium",
+      "asked": "Asplenium scolopendrium",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "polystichum-setiferum",
+      "latin": "Polystichum setiferum",
+      "asked": "Polystichum setiferum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FRA": "NATIVE"
+      },
+      "viaSynonym": null
+    }
+  ]
+}

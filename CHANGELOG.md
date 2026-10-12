@@ -39,6 +39,25 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [1.0] - 2026-10-12
+
+**Native status, checked against Kew**
+
+[![A plant page where Kew's checklist disagrees](docs/screenshots/pr-196/thumb.png)](docs/screenshots/pr-196/flagged-after-dark.png)
+[Before](docs/screenshots/pr-196/flagged-before-dark.png) · [After](docs/screenshots/pr-196/flagged-after-dark.png)
+
+### Added
+
+- Plants: [every plant page](https://indigene.app/plants/quercus-alba) now says
+  whether Kew's World Checklist agrees it's native where you are, and when we
+  asked. Where Kew disagrees — eight plants so far — the page says that too.
+- Internal: `npm run native:check` covers every region WCVP can answer for, not
+  just Ireland — a region takes several TDWG areas and one native area wins.
+  `npm run native-evidence` reduces those snapshots to the few KB the page
+  reads, storing only the rows that were *not* confirmed. DATA_SOURCES.md now
+  states the native rule in one place. A `-ii`/`-i` epithet is retried in its
+  other spelling, so Kew's *Andropogon gerardi* no longer reads as no-match.
+
 ## [0.41] - 2026-10-12
 
 **Central Texas**
@@ -3382,6 +3401,7 @@ subtitle on the What's new page.
   proxies site data; the PWA works without it.
 
 [Unreleased]: https://github.com/olivierlacan/indigene/compare/46c1436...HEAD
+[1.0]: https://github.com/olivierlacan/indigene/compare/46c1436...HEAD
 [0.41]: https://github.com/olivierlacan/indigene/compare/1cd22cd...46c1436
 [0.40]: https://github.com/olivierlacan/indigene/compare/8c87bba...1cd22cd
 [0.39]: https://github.com/olivierlacan/indigene/compare/5475bdb...8c87bba

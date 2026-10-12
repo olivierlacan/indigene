@@ -1,0 +1,1030 @@
+{
+  "source": "World Checklist of Vascular Plants (WCVP), Royal Botanic Gardens Kew",
+  "license": "CC BY 4.0",
+  "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
+  "area": "Washington, Oregon & British Columbia (TDWG:WAS, ORE, BRC)",
+  "region": "pnw",
+  "ranAt": "2026-09-24T08:31:18.007Z",
+  "rows": [
+    {
+      "id": "quercus-garryana",
+      "latin": "Quercus garryana",
+      "asked": "Quercus garryana",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pseudotsuga-menziesii",
+      "latin": "Pseudotsuga menziesii",
+      "asked": "Pseudotsuga menziesii",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "thuja-plicata",
+      "latin": "Thuja plicata",
+      "asked": "Thuja plicata",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "acer-macrophyllum",
+      "latin": "Acer macrophyllum",
+      "asked": "Acer macrophyllum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "populus-trichocarpa",
+      "latin": "Populus trichocarpa",
+      "asked": "Populus trichocarpa",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": "Populus tristis Fisch."
+    },
+    {
+      "id": "arbutus-menziesii",
+      "latin": "Arbutus menziesii",
+      "asked": "Arbutus menziesii",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "amelanchier-alnifolia",
+      "latin": "Amelanchier alnifolia",
+      "asked": "Amelanchier alnifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "salix-scouleriana",
+      "latin": "Salix scouleriana",
+      "asked": "Salix scouleriana",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "alnus-rubra",
+      "latin": "Alnus rubra",
+      "asked": "Alnus rubra",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "prunus-emarginata",
+      "latin": "Prunus emarginata",
+      "asked": "Prunus emarginata",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "acer-circinatum",
+      "latin": "Acer circinatum",
+      "asked": "Acer circinatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "tsuga-heterophylla",
+      "latin": "Tsuga heterophylla",
+      "asked": "Tsuga heterophylla",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "fraxinus-latifolia",
+      "latin": "Fraxinus latifolia",
+      "asked": "Fraxinus latifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cornus-nuttallii",
+      "latin": "Cornus nuttallii",
+      "asked": "Cornus nuttallii",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "crataegus-douglasii",
+      "latin": "Crataegus douglasii",
+      "asked": "Crataegus douglasii",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "betula-papyrifera",
+      "latin": "Betula papyrifera",
+      "asked": "Betula papyrifera",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "malus-fusca",
+      "latin": "Malus fusca",
+      "asked": "Malus fusca",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pinus-ponderosa",
+      "latin": "Pinus ponderosa",
+      "asked": "Pinus ponderosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "frangula-purshiana",
+      "latin": "Frangula purshiana",
+      "asked": "Frangula purshiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "picea-sitchensis",
+      "latin": "Picea sitchensis",
+      "asked": "Picea sitchensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pinus-contorta",
+      "latin": "Pinus contorta",
+      "asked": "Pinus contorta",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "berberis-aquifolium",
+      "latin": "Berberis aquifolium",
+      "asked": "Berberis aquifolium",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rubus-parviflorus",
+      "latin": "Rubus parviflorus",
+      "asked": "Rubus parviflorus",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "berberis-nervosa",
+      "latin": "Berberis nervosa",
+      "asked": "Berberis nervosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ribes-sanguineum",
+      "latin": "Ribes sanguineum",
+      "asked": "Ribes sanguineum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "holodiscus-discolor",
+      "latin": "Holodiscus discolor",
+      "asked": "Holodiscus discolor",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "symphoricarpos-albus",
+      "latin": "Symphoricarpos albus",
+      "asked": "Symphoricarpos albus",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cornus-sericea",
+      "latin": "Cornus sericea",
+      "asked": "Cornus sericea",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rosa-nutkana",
+      "latin": "Rosa nutkana",
+      "asked": "Rosa nutkana",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "gaultheria-shallon",
+      "latin": "Gaultheria shallon",
+      "asked": "Gaultheria shallon",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rubus-spectabilis",
+      "latin": "Rubus spectabilis",
+      "asked": "Rubus spectabilis",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sambucus-racemosa",
+      "latin": "Sambucus racemosa",
+      "asked": "Sambucus racemosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vaccinium-ovatum",
+      "latin": "Vaccinium ovatum",
+      "asked": "Vaccinium ovatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "physocarpus-capitatus",
+      "latin": "Physocarpus capitatus",
+      "asked": "Physocarpus capitatus",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lonicera-involucrata",
+      "latin": "Lonicera involucrata",
+      "asked": "Lonicera involucrata",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "corylus-cornuta",
+      "latin": "Corylus cornuta",
+      "asked": "Corylus cornuta",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "oemleria-cerasiformis",
+      "latin": "Oemleria cerasiformis",
+      "asked": "Oemleria cerasiformis",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "spiraea-douglasii",
+      "latin": "Spiraea douglasii",
+      "asked": "Spiraea douglasii",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ceanothus-sanguineus",
+      "latin": "Ceanothus sanguineus",
+      "asked": "Ceanothus sanguineus",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vaccinium-parvifolium",
+      "latin": "Vaccinium parvifolium",
+      "asked": "Vaccinium parvifolium",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rhododendron-macrophyllum",
+      "latin": "Rhododendron macrophyllum",
+      "asked": "Rhododendron macrophyllum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "camassia-quamash",
+      "latin": "Camassia quamash",
+      "asked": "Camassia quamash",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "achillea-millefolium",
+      "latin": "Achillea millefolium",
+      "asked": "Achillea millefolium",
+      "verdict": "ABSENT",
+      "areas": {
+        "WAS": "ABSENT",
+        "ORE": "ABSENT",
+        "BRC": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "aquilegia-formosa",
+      "latin": "Aquilegia formosa",
+      "asked": "Aquilegia formosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "penstemon-serrulatus",
+      "latin": "Penstemon serrulatus",
+      "asked": "Penstemon serrulatus",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "eriophyllum-lanatum",
+      "latin": "Eriophyllum lanatum",
+      "asked": "Eriophyllum lanatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "asclepias-speciosa",
+      "latin": "Asclepias speciosa",
+      "asked": "Asclepias speciosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "solidago-lepida",
+      "latin": "Solidago lepida",
+      "asked": "Solidago lepida",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "ABSENT",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "symphyotrichum-subspicatum",
+      "latin": "Symphyotrichum subspicatum",
+      "asked": "Symphyotrichum subspicatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lupinus-polyphyllus",
+      "latin": "Lupinus polyphyllus",
+      "asked": "Lupinus polyphyllus",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "anaphalis-margaritacea",
+      "latin": "Anaphalis margaritacea",
+      "asked": "Anaphalis margaritacea",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "viola-adunca",
+      "latin": "Viola adunca",
+      "asked": "Viola adunca",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "grindelia-integrifolia",
+      "latin": "Grindelia integrifolia",
+      "asked": "Grindelia integrifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "chamaenerion-angustifolium",
+      "latin": "Chamaenerion angustifolium",
+      "asked": "Chamaenerion angustifolium",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": "Epilobium angustifolium L."
+    },
+    {
+      "id": "trillium-ovatum",
+      "latin": "Trillium ovatum",
+      "asked": "Trillium ovatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "aruncus-dioicus",
+      "latin": "Aruncus dioicus",
+      "asked": "Aruncus dioicus",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sidalcea-campestris",
+      "latin": "Sidalcea campestris",
+      "asked": "Sidalcea campestris",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "ABSENT",
+        "ORE": "NATIVE",
+        "BRC": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "dicentra-formosa",
+      "latin": "Dicentra formosa",
+      "asked": "Dicentra formosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "tiarella-trifoliata",
+      "latin": "Tiarella trifoliata",
+      "asked": "Tiarella trifoliata",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "erythronium-oregonum",
+      "latin": "Erythronium oregonum",
+      "asked": "Erythronium oregonum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "heracleum-maximum",
+      "latin": "Heracleum maximum",
+      "asked": "Heracleum maximum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "tellima-grandiflora",
+      "latin": "Tellima grandiflora",
+      "asked": "Tellima grandiflora",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "petasites-frigidus",
+      "latin": "Petasites frigidus",
+      "asked": "Petasites frigidus",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lysichiton-americanus",
+      "latin": "Lysichiton americanus",
+      "asked": "Lysichiton americanus",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "festuca-roemeri",
+      "latin": "Festuca roemeri",
+      "asked": "Festuca roemeri",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "elymus-glaucus",
+      "latin": "Elymus glaucus",
+      "asked": "Elymus glaucus",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "deschampsia-cespitosa",
+      "latin": "Deschampsia cespitosa",
+      "asked": "Deschampsia cespitosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "carex-obnupta",
+      "latin": "Carex obnupta",
+      "asked": "Carex obnupta",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "juncus-patens",
+      "latin": "Juncus patens",
+      "asked": "Juncus patens",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lonicera-ciliosa",
+      "latin": "Lonicera ciliosa",
+      "asked": "Lonicera ciliosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rubus-ursinus",
+      "latin": "Rubus ursinus",
+      "asked": "Rubus ursinus",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "clematis-ligusticifolia",
+      "latin": "Clematis ligusticifolia",
+      "asked": "Clematis ligusticifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "fragaria-chiloensis",
+      "latin": "Fragaria chiloensis",
+      "asked": "Fragaria chiloensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "polystichum-munitum",
+      "latin": "Polystichum munitum",
+      "asked": "Polystichum munitum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "arctostaphylos-uva-ursi",
+      "latin": "Arctostaphylos uva-ursi",
+      "asked": "Arctostaphylos uva-ursi",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "struthiopteris-spicant",
+      "latin": "Struthiopteris spicant",
+      "asked": "Struthiopteris spicant",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": "Blechnum spicant (L.) Roth"
+    },
+    {
+      "id": "sedum-oreganum",
+      "latin": "Sedum oreganum",
+      "asked": "Sedum oreganum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "eriogonum-umbellatum",
+      "latin": "Eriogonum umbellatum",
+      "asked": "Eriogonum umbellatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "adiantum-aleuticum",
+      "latin": "Adiantum aleuticum",
+      "asked": "Adiantum aleuticum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "woodwardia-fimbriata",
+      "latin": "Woodwardia fimbriata",
+      "asked": "Woodwardia fimbriata",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "maianthemum-dilatatum",
+      "latin": "Maianthemum dilatatum",
+      "asked": "Maianthemum dilatatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "linnaea-borealis",
+      "latin": "Linnaea borealis",
+      "asked": "Linnaea borealis",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "polypodium-glycyrrhiza",
+      "latin": "Polypodium glycyrrhiza",
+      "asked": "Polypodium glycyrrhiza",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "achlys-triphylla",
+      "latin": "Achlys triphylla",
+      "asked": "Achlys triphylla",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "viola-glabella",
+      "latin": "Viola glabella",
+      "asked": "Viola glabella",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    }
+  ]
+}

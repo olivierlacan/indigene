@@ -25,6 +25,7 @@ import { techniqueFor, techniqueHref } from "../lib/planting";
 import { citation } from "../components/citation";
 import { silhouetteFor } from "../components/plant-card";
 import { heroPhotoFor } from "../lib/hero-photo";
+import { nativeEvidenceLine } from "../components/native-evidence";
 import { conservationNote } from "../components/conservation-note";
 import { pressureTags } from "../components/pioneer-card";
 import { pioneerFor } from "../lib/pioneers";
@@ -369,6 +370,10 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
             // "Native" is the app's one load-bearing word; its page says what it means.
             el("a", { href: "#/native" }, t("plant.whyBelongs").trimEnd()), " ",
           ]), ...richText(prose(p, "nativeNote", region.meta.id))]),
+          // Who re-checked that claim, and when. Straight under the sentence it
+          // is evidence for — and it says so equally when the checklist
+          // disagrees, which is the only way the line means anything.
+          nativeEvidenceLine(p.id, region.meta.id),
           // What the assessors say, where they say anything — under the name,
           // because it changes how the plant should be treated rather than
           // whether it suits the spot.

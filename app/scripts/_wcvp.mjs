@@ -43,10 +43,29 @@ export const WCVP_DATASET = "f382f0ce-323a-4091-bb9f-add557f3a9a2";
 
 const GBIF_SPECIES = "https://api.gbif.org/v1/species";
 
-async function getJson(url) {
-  const res = await fetch(url, { headers: { accept: "application/json" } });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return res.json();
+/**
+ * One GBIF call, retried on a transient failure.
+ *
+ * A checklist run is hundreds of sequential calls, so a single dropped
+ * connection used to surface as a row that "failed" — `error fetch failed
+ * Quercus alba` in the middle of an otherwise clean Mid-Atlantic run, which
+ * reads like a finding about white oak and is nothing of the kind. Four of
+ * those appeared in one pass over the US regions.
+ */
+async function getJson(url, attempt = 0) {
+  try {
+    const res = await fetch(url, { headers: { accept: "application/json" } });
+    // 5xx and 429 are worth another go; a 404 is an answer.
+    if (!res.ok) {
+      if ((res.status >= 500 || res.status === 429) && attempt < 3) throw new Error(`HTTP ${res.status}`);
+      throw Object.assign(new Error(`HTTP ${res.status}`), { final: true });
+    }
+    return res.json();
+  } catch (err) {
+    if (err.final || attempt >= 3) throw err;
+    await new Promise((r) => setTimeout(r, 500 * 2 ** attempt));
+    return getJson(url, attempt + 1);
+  }
 }
 
 /**
@@ -67,13 +86,35 @@ export async function wcvpAccepted(latin) {
   )).results ?? [];
 
   // 2. Ranked search as a fallback, for a spelling `name=` won't match.
+  //
+  // The rank filter follows the question. Pinning `rank=SPECIES` is right for a
+  // binomial, and wrong for an infraspecific name: WCVP carries `Solidago
+  // velutina subsp. californica` as an accepted SUBSPECIES, and filtering to
+  // SPECIES threw it away and reported no-match — which reads as "Kew has never
+  // heard of this plant" about a plant Kew accepts.
+  const infraspecific = want.split(/\s+/).length > 2;
   if (!rows.length) {
+    const rank = infraspecific ? "" : "&rank=SPECIES";
     const res = await getJson(
-      `${GBIF_SPECIES}/search?datasetKey=${WCVP_DATASET}&q=${encodeURIComponent(latin)}&rank=SPECIES&limit=8`,
+      `${GBIF_SPECIES}/search?datasetKey=${WCVP_DATASET}&q=${encodeURIComponent(latin)}${rank}&limit=8`,
     );
-    rows = (res?.results ?? []).filter(
-      (r) => (r.species ?? r.canonicalName ?? "").toLowerCase() === want,
-    );
+    rows = (res?.results ?? []).filter((r) => {
+      const canon = (r.canonicalName ?? "").toLowerCase();
+      // For a binomial keep the old, stricter test; for an infraspecific name
+      // the canonical form drops the rank marker, so compare without it.
+      return infraspecific
+        ? canon === want.replace(/\s+(subsp|ssp|var|f)\.?\s+/i, " ")
+        : (r.species ?? r.canonicalName ?? "").toLowerCase() === want;
+    });
+  }
+  // 3. The other spelling of a genitive epithet. *gerardii* and *gerardi* are
+  // the same name — the code lets either stand — and Kew keeps only one, so
+  // without this big bluestem reads as a plant Kew has never heard of.
+  const variant = !rows.length && genitiveVariant(latin);
+  if (variant) {
+    rows = (await getJson(
+      `${GBIF_SPECIES}?datasetKey=${WCVP_DATASET}&name=${encodeURIComponent(variant)}&limit=50`,
+    )).results ?? [];
   }
   if (!rows.length) return null;
 
@@ -96,6 +137,17 @@ export async function wcvpAccepted(latin) {
     name: (to.accepted ?? "").split(/\s+/).slice(0, 2).join(" ") || null,
     viaSynonym: to.accepted ?? to.scientificName ?? null,
   };
+}
+
+/**
+ * A binomial's epithet with its genitive ending swapped, `-ii` ↔ `-i`
+ * (*gerardii* ↔ *gerardi*), or `null` where the epithet has no such ending.
+ * Botanical naming treats the two as one name spelled two ways.
+ */
+export function genitiveVariant(latin) {
+  const m = latin.trim().match(/^(\S+\s+\S*?)(ii|i)$/);
+  if (!m || latin.trim().split(/\s+/).length !== 2) return null;
+  return m[1] + (m[2] === "ii" ? "i" : "ii");
 }
 
 /** Every distribution row WCVP holds for an accepted usage. */

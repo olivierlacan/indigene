@@ -59,4 +59,4 @@ source for your people's plants, [tell us](https://github.com/olivierlacan/indig
 [Find what grows where you're standing →](https://indigene.app)
 
 *Why we built it, and what building it with AI cost:
-[on Constant Variable](#).*
+[on Constant Variable](https://constantvariable.net/blog/).*

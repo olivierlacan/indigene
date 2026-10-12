@@ -72,9 +72,9 @@ Indigenous Peoples' Day*.
    "Wilderness" was often a garden whose gardeners were removed. One sentence
    on what replaced them; the genocide named plainly, once. Link `#/native`.
 4. **What Indigene does (bullets, 5 max).** Stand in a spot → plants that thrive
-   there, ranked by the wildlife they feed. 15 regions on four continents. Free,
-   no account, offline. Regions follow land, not borders. Names chosen with
-   care (`#/native`).
+   there, ranked by the wildlife they feed. 17 regions in North America,
+   Europe, Japan and New Zealand. Free, no account, offline. Regions follow
+   land, not borders. Names chosen with care (`#/native`).
 5. **What's next (2 sentences).** The gap above, as a plan or as an ask.
 6. **Way on.** "Find what grows where you're standing" → the app. "Why we built
    it, and what it cost" → post B.

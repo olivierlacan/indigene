@@ -45,7 +45,7 @@ In California, that meant killing.
 
 - **Stand in a spot, get plants that will thrive there**, ranked by the
   wildlife they feed.
-- **15 regions across North America, Europe, Japan and New Zealand**, drawn by
+- **17 regions across North America, Europe, Japan and New Zealand**, drawn by
   climate and soil, not borders.
 - **Free, no account, works offline.**
 - **Names chosen with care.** In Auckland, the everyday name is the Māori one.

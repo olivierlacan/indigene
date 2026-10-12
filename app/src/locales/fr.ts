@@ -58,6 +58,7 @@ export const fr: Dict = {
   "footer.sources": "bâti sur des données publiques",
   "footer.guide": "Guide",
   "footer.reading": "Lectures",
+  "footer.people": "Peuples",
   "footer.releaseNotes": "Nouveautés",
   "footer.privacy": "Vie privée et sécurité",
   // Lu à voix haute à côté du point vert, et intégré au nom accessible de la

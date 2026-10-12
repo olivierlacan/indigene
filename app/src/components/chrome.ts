@@ -61,6 +61,8 @@ function renderFooter(): void {
       sep(),
       el("a", { href: "#/reading" }, t("footer.reading")),
       sep(),
+      el("a", { href: "#/people" }, t("footer.people")),
+      sep(),
       // The dot rides inside the link, so the words it carries become part of
       // the link's own accessible name rather than a separate stop.
       el(

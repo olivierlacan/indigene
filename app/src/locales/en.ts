@@ -63,6 +63,7 @@ export const en = {
   "footer.sources": "built on public data",
   "footer.guide": "Guide",
   "footer.reading": "Reading",
+  "footer.people": "People",
   "footer.releaseNotes": "What's new",
   "footer.privacy": "Privacy & safety",
   // Read out beside the green dot, and folded into the gear's accessible name.

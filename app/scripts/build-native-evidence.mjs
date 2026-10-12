@@ -15,9 +15,9 @@
 //
 // ## Why it stores the disagreements and not the agreements
 //
-// 578 rows, 11 of which WCVP does not confirm. Shipping a verdict per plant
-// would be ~18 KB for a file that is 98% the same value, on an app whose whole
-// download is measured in tens of kilobytes.
+// Nearly every row comes back native. Shipping a verdict per plant would be
+// ~18 KB for a file that is 98% the same value, on an app whose whole download
+// is measured in tens of kilobytes.
 //
 // So a region records the date it was checked, how many rows were checked, and
 // **only the rows that did not come back NATIVE**. A plant in a checked region
@@ -36,11 +36,6 @@ const SRC = fileURLToPath(new URL("../../data/sources/wcvp/", import.meta.url));
 const OUT = fileURLToPath(new URL("../src/data/native-evidence.json", import.meta.url));
 
 // The area each region was checked against, in words a reader can place —
-// `TDWG:PEN` means nothing to anybody outside a herbarium. Where the area is
-// coarser than the region, the words say so, because that is the honest
-// strength of the check and hiding it would make a weak check read as a strong
-// one. These are English; `locales/fr.ts` carries the French.
-// The area each region was checked against, in words a reader can place —
 // `TDWG:PEN` means nothing to anybody outside a herbarium. Both languages live
 // here rather than in `locales/`, because these are a property of the check
 // (which places were asked about), not interface copy.
@@ -50,6 +45,8 @@ const OUT = fileURLToPath(new URL("../src/data/native-evidence.json", import.met
 const AREA_WORDS = {
   "mid-atlantic": { en: "Pennsylvania and the nine states around it", fr: "la Pennsylvanie et les neuf États voisins" },
   "north-michigan": { en: "Michigan", fr: "le Michigan" },
+  chicago: { en: "Illinois", fr: "l'Illinois" },
+  "central-texas": { en: "Texas", fr: "le Texas" },
   pnw: { en: "Washington, Oregon and British Columbia", fr: "Washington, l'Oregon et la Colombie-Britannique" },
   "ca-south-coast": { en: "California", fr: "la Californie" },
   "ca-central-coast": { en: "California", fr: "la Californie" },
@@ -75,6 +72,10 @@ const COARSE = new Set([
   "ca-central-coast",
   "florida-central",
   "florida-south",
+  // Illinois holds the Shawnee Hills and the Mississippi bottoms too, not just
+  // the prairie; Texas runs from the Piney Woods to El Paso.
+  "chicago",
+  "central-texas",
   "france-atlantic",
   "france-continental",
   "france-mediterranean",

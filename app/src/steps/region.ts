@@ -14,22 +14,30 @@ import { filterField, highlight, norm } from "../components/filter-field";
 import type { FilterRow, FilterSection } from "../components/filter-field";
 import { silhouetteFor } from "../components/plant-card";
 import { plantThumb } from "../components/plant-thumb";
+import { readingSection } from "../components/reading-list";
 import { societiesSection } from "../components/societies-section";
 import { sectionHeading } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
 import { regionStatGrid } from "../components/region-stats";
 import { wildlifeRegionGroups } from "../components/wildlife-chips";
 import { wildlifeIndex } from "../lib/wildlife";
+import { pioneerCard } from "../components/pioneer-card";
+import { pioneersForRegion, pioneerCountForRegion } from "../lib/pioneers";
+import { PIONEER_ICON, CONCRETE_BOTANY_URL } from "../data/pioneers";
 import { regionRefLine, zoneChip } from "../components/zone-chip";
 import { regionBoundaryCard } from "../components/region-boundary";
 import type { Plant, PlantForm } from "../types";
-import { t, tn, fmtNumber, getLang } from "../lib/i18n";
+import { t, tn, tx, fmtNumber, getLang } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionNote, regionReference, localNameCoverage } from "../lib/names";
 import { flagRow } from "../components/flags";
 import { prose } from "../lib/prose";
-import { reportRosterUntranslated } from "../components/wip-banner";
+import { reportRosterUntranslated, reportUntranslated } from "../components/wip-banner";
 import { mostWantedSection } from "../components/most-wanted";
 import { mostWanted, wantedRegionHref } from "../lib/invasives";
+import { mappedLookalikeIds } from "../lib/lookalikes";
+import { alternativeCountForRegion } from "../lib/alternatives";
+import { richText } from "../components/rich-text";
+import { pioneersUntranslated } from "../lib/prose";
 
 const FORM_ORDER: PlantForm[] = ["tree", "shrub", "perennial", "annual", "grass", "vine", "groundcover", "fern"];
 /** The category headings. A function, not a record: a record built at import
@@ -50,6 +58,14 @@ const SLUG_TO_FORM = new Map<string, PlantForm>(
   FORM_ORDER.map((f) => [FORM_SLUGS[f], f])
 );
 
+/**
+ * The one sub-page of a roster that isn't a plant form: this region's natives
+ * that take a beating (`data/pioneers.ts`). English in the address like every
+ * other route, and checked before the form slugs so it can't be read as a
+ * mistyped category.
+ */
+const PIONEERS_SLUG = "pioneers";
+
 export async function renderRegion(main: HTMLElement, param?: string): Promise<void> {
   clear(main);
   const [id, catSlug] = (param ?? "").split("/");
@@ -58,13 +74,18 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
     await renderNotFound(main, t("region.noSuchRegion"));
     return;
   }
-  const form = catSlug ? SLUG_TO_FORM.get(catSlug) : undefined;
-  if (catSlug && !form) {
+  const form = catSlug && catSlug !== PIONEERS_SLUG ? SLUG_TO_FORM.get(catSlug) : undefined;
+  if (catSlug && catSlug !== PIONEERS_SLUG && !form) {
     await renderNotFound(main, t("region.noSuchCategory", { slug: catSlug }), region);
     return;
   }
 
   const plants = await loadPlants(region);
+
+  if (catSlug === PIONEERS_SLUG) {
+    renderPioneers(main, region, plants);
+    return;
+  }
 
   if (form) {
     renderCategory(main, region, plants, form);
@@ -134,11 +155,19 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
     // opens the region's own wildlife index, where they get the full cards.
     // Counted from the tie table, so this costs no extra download (see
     // `wildlifeIndex`) — the page still fetches exactly one region's plants.
+    // The short list for bad ground, before the animals: somebody reading a
+    // roster with a particular awful corner in mind is asking a planting
+    // question, and the wildlife below is the reward for solving it.
+    ...pioneersSection(region, plants),
     ...wildlifeSection(region),
     // And who to ask. The roster says what belongs here; this says who else
     // already knows, which is the question a reader asks after their first
     // six plants go in. Last on the page because that is when it comes up.
     ...societiesSection(region.meta.id),
+    // And what to read. The societies are people to meet; these are the
+    // books and channels those people point to. Three rows, and the heading
+    // opens the region's whole list.
+    ...readingSection(region.meta.id),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("regions") }, t("region.featured")),
       el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),
@@ -164,6 +193,80 @@ function wildlifeSection(region: RegionDef): HTMLElement[] {
       wildlifeRegionGroups(rows, `region-wildlife-${region.meta.id}`),
     ]),
   ];
+}
+
+/**
+ * The teaser for this region's pavement pioneers: the plants, and the chips
+ * saying what each one takes. No notes here — the sentence explaining *why* is
+ * what the heading's own page is for, and printing it twice is a paragraph
+ * somebody translates and maintains in two places.
+ *
+ * Absent, not empty, for a region with no rows yet.
+ */
+function pioneersSection(region: RegionDef, plants: Plant[]): HTMLElement[] {
+  const picks = pioneersForRegion(region.meta.id, plants);
+  if (!picks.length) return [];
+  return [
+    el("section", { style: "margin-top:1.5rem" }, [
+      sectionHeading(
+        pioneersHref(region),
+        PIONEER_ICON,
+        t("pioneers.title"),
+        fmtNumber(picks.length)
+      ),
+      el("p", { class: "obs-section-lede" }, t("pioneers.sectionLede")),
+      el("div", { class: "card-grid" }, picks.map((pick) => pioneerCard(pick, region.meta.id))),
+    ]),
+  ];
+}
+
+/** The pioneers page: the same list with the sentence and the source that back
+ *  each row, plus the credit for the nickname. */
+function renderPioneers(main: HTMLElement, region: RegionDef, plants: Plant[]): void {
+  const picks = pioneersForRegion(region.meta.id, plants);
+  document.title = t("pioneers.docTitle", { region: regionName(region.meta) });
+  // Two separate bodies of writing on this page: the plants' own paragraphs and
+  // the sentence each pioneer row carries. The banner is a flag rather than an
+  // inventory (the first report wins), so the more specific one goes first.
+  if (pioneersUntranslated(picks.map((p) => p.plant), region.meta.id)) {
+    reportUntranslated(t("wip.pioneers"));
+  }
+  reportRosterUntranslated(picks.map((p) => p.plant), region.meta.id);
+
+  main.append(
+    el("p", { class: "region-tag", style: "margin:0 0 0.3rem;font-size:0.9rem;color:var(--ink-soft)" }, [
+      "📍 ",
+      el("a", { href: `#/regions/${region.meta.id}` }, regionName(region.meta)),
+    ]),
+    el("h2", { class: "step-title" }, t("pioneers.title")),
+    picks.length
+      ? el("p", { class: "step-lede" }, [
+          tn("pioneers.count", picks.length, {
+            n: fmtNumber(picks.length),
+            reference: regionReference(region.meta),
+          }),
+          " ",
+          zoneChip(region.meta),
+        ])
+      : el("p", { class: "step-lede" }, t("pioneers.empty", { region: regionName(region.meta) })),
+    el("p", { class: "note info" }, t("pioneers.what")),
+    categoryChips(region, plants, PIONEERS_SLUG),
+    el("div", { class: "card-grid" },
+      picks.map((pick) => pioneerCard(pick, region.meta.id, { full: true }))),
+    // The book is a real link, placed by the translator rather than by this
+    // code: `tx` lets French put the title where the sentence wants it.
+    el("p", { class: "pioneers-credit" }, tx("pioneers.credit", {
+      book: el("a", {
+        href: CONCRETE_BOTANY_URL,
+        target: "_blank",
+        rel: "noopener",
+      }, el("cite", {}, t("pioneers.creditBook"))),
+    })),
+    el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
+      el("button", { class: "btn btn-secondary", onClick: () => navigate(`regions/${region.meta.id}`) }, t("region.allOfRegion")),
+      el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),
+    ])
+  );
 }
 
 /**
@@ -245,8 +348,18 @@ function renderCategory(
   );
 }
 
-/** Chip nav across a region's categories; `current` marks the active one. */
-function categoryChips(region: RegionDef, plants: Plant[], current: PlantForm | null): HTMLElement {
+/**
+ * Chip nav across a region's categories; `current` marks the active one.
+ *
+ * `"pioneers"` is a current value as well as a form, because that page is one
+ * of the roster's slices even though it cuts across all seven forms — a reader
+ * on it should be able to jump to "trees" without going back first.
+ */
+function categoryChips(
+  region: RegionDef,
+  plants: Plant[],
+  current: PlantForm | typeof PIONEERS_SLUG | null
+): HTMLElement {
   const chips: HTMLElement[] = [];
   if (current) {
     chips.push(el("a", {
@@ -265,6 +378,17 @@ function categoryChips(region: RegionDef, plants: Plant[], current: PlantForm | 
       "aria-current": f === current ? "page" : undefined,
     }, [formIcon(f), ` ${formLabel(f)} (${fmtNumber(count)})`]));
   }
+  // The natives for bad ground: a slice of this very roster, so it leads the
+  // chips that leave it.
+  const tough = pioneerCountForRegion(region.meta.id);
+  if (tough) {
+    chips.push(el("a", {
+      class: "btn btn-secondary",
+      style: chipStyle,
+      href: pioneersHref(region),
+      "aria-current": current === PIONEERS_SLUG ? "page" : undefined,
+    }, `${PIONEER_ICON} ${t("pioneers.chip")} (${fmtNumber(tough)})`));
+  }
   // The worst invasives sit below the whole roster, so they get a chip here
   // too: the one place a reader scanning the categories will see them.
   const wanted = mostWanted(region.meta.id).length;
@@ -274,6 +398,19 @@ function categoryChips(region: RegionDef, plants: Plant[], current: PlantForm | 
       style: chipStyle,
       href: wantedRegionHref(region.meta.id),
     }, t("region.invasivesChip", { n: fmtNumber(wanted) })));
+  }
+  // The region's own slice of the look-alike and swap pages: they exist for
+  // every region with ties, and nothing else on the page reaches them. No count
+  // — the indexes leave out a tie whose native isn't loaded, so a number read
+  // off the tie table could disagree with the page it opens.
+  const id = region.meta.id;
+  if (mappedLookalikeIds(id).size) {
+    chips.push(el("a", { class: "btn btn-secondary", style: chipStyle, href: `#/lookalikes/in/${id}` },
+      `👀 ${t("plants.door.lookalikes")}`));
+  }
+  if (alternativeCountForRegion(id)) {
+    chips.push(el("a", { class: "btn btn-secondary", style: chipStyle, href: `#/alternatives/in/${id}` },
+      `🌿 ${t("plants.door.alternatives")}`));
   }
   return el("nav", { "aria-label": t("region.categoriesNav"), style: "display:flex;flex-wrap:wrap;gap:0.4rem;margin:0.6rem 0 0.8rem" }, chips);
 }
@@ -294,6 +431,10 @@ function formIcon(f: PlantForm, size = 17): SVGSVGElement {
 
 function categoryHref(region: RegionDef, form: PlantForm): string {
   return `#/regions/${region.meta.id}/${FORM_SLUGS[form]}`;
+}
+
+function pioneersHref(region: RegionDef): string {
+  return `#/regions/${region.meta.id}/${PIONEERS_SLUG}`;
 }
 
 /** Alphabetical by the name the reader actually sees, in their own collation:
@@ -363,7 +504,7 @@ function plantRow(p: Plant, regionId: string): { node: HTMLElement; mark: (nq: s
       sub,
       el("div", {
         style: "font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis",
-      }, prose(p, "givesNote", regionId)),
+      }, richText(prose(p, "givesNote", regionId))),
     ]),
   ]);
   const mark = (nq: string): void => {

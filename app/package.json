@@ -1,6 +1,6 @@
 {
   "name": "indigene",
-  "version": "0.36.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Native Indigene — a mobile-first PWA that recommends locally native plants for the exact spot you're standing in.",
   "license": "MIT",
@@ -27,6 +27,9 @@
     "guide": "node scripts/build-guide.mjs",
     "guide:check": "node scripts/build-guide.mjs --check",
     "coverage": "node scripts/coverage.mjs",
+    "harvest:wildflower": "NODE_USE_ENV_PROXY=1 node scripts/harvest-wildflower.mjs",
+    "harvest:audubon": "NODE_USE_ENV_PROXY=1 node scripts/harvest-audubon.mjs",
+    "societies": "node scripts/societies.mjs",
     "swaps:coverage": "node scripts/alternatives-coverage.mjs",
     "ornamentals": "NODE_USE_ENV_PROXY=1 node scripts/ornamentals.mjs",
     "invasives:count": "NODE_USE_ENV_PROXY=1 node scripts/invasive-counts.mjs",
@@ -50,6 +53,7 @@
     "native:check": "NODE_USE_ENV_PROXY=1 node scripts/check-native.mjs",
     "prose:check": "node scripts/check-prose.mjs",
     "blurbs:check": "node scripts/check-blurbs.mjs",
+    "reading:check": "NODE_USE_ENV_PROXY=1 node scripts/check-reading.mjs",
     "lookalikes:check": "NODE_USE_ENV_PROXY=1 node scripts/check-lookalikes.mjs",
     "listings:check": "NODE_USE_ENV_PROXY=1 node scripts/check-listings.mjs",
     "inat:check": "NODE_USE_ENV_PROXY=1 node scripts/inat-coverage-check.mjs",
@@ -63,6 +67,7 @@
     "wildlife:taxa": "NODE_USE_ENV_PROXY=1 node scripts/wildlife-taxa.mjs"
   },
   "devDependencies": {
+    "fake-indexeddb": "^6.2.5",
     "playwright": "^1.62.0",
     "typescript": "^5.6.3",
     "vite": "^5.4.10",

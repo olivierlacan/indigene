@@ -30,6 +30,26 @@
         "achillea-millefolium": "absent"
       }
     },
+    "central-texas": {
+      "area": {
+        "en": "Texas",
+        "fr": "le Texas"
+      },
+      "coarse": true,
+      "checked": "2026-10-12",
+      "rows": 67,
+      "unconfirmed": {}
+    },
+    "chicago": {
+      "area": {
+        "en": "Illinois",
+        "fr": "l'Illinois"
+      },
+      "coarse": true,
+      "checked": "2026-10-12",
+      "rows": 63,
+      "unconfirmed": {}
+    },
     "florida-central": {
       "area": {
         "en": "Florida",
@@ -120,11 +140,10 @@
         "fr": "la Pennsylvanie et les neuf États voisins"
       },
       "coarse": false,
-      "checked": "2026-09-21",
+      "checked": "2026-10-12",
       "rows": 44,
       "unconfirmed": {
-        "penstemon-digitalis": "introduced",
-        "andropogon-gerardii": "unmatched"
+        "penstemon-digitalis": "introduced"
       }
     },
     "north-michigan": {

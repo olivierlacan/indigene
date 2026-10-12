@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Mid-Atlantic & Northeast (PA NJ DE MD VA NY CT RI MA WV)",
   "region": "mid-atlantic",
-  "ranAt": "2026-09-21T06:58:11.437Z",
+  "ranAt": "2026-10-12T22:35:34.295Z",
   "rows": [
     {
       "id": "quercus-alba",
@@ -713,8 +713,19 @@
       "id": "andropogon-gerardii",
       "latin": "Andropogon gerardii",
       "asked": "Andropogon gerardii",
-      "verdict": "no-match",
-      "areas": {},
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
       "viaSynonym": null
     },
     {

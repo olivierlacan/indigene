@@ -88,8 +88,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Bark-beetle vulnerability of low-altitude spruce: ONF / Département de la santé des forêts. Host count: 68 Lepidoptera recorded on Picea in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Collect cones in autumn as they ripen and dry them somewhere warm until they open, then shake out the winged seed. A few weeks of cold, damp storage in the fridge evens up germination. Sow shallowly and keep the seedlings shaded in their first summer.",
-      basis: "ONF / CNPF French forestry practice.",
+      note: "Collect cones in autumn as they ripen and dry them somewhere warm until they open, then shake out the winged seed. It germinates untreated, but three weeks of cold, damp storage in the fridge speeds it up.",
+      basis: "USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -122,9 +122,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Larch budmoth cycles: long-running Alpine forest-entomology record (WSL/ONF). Host count: 45 Lepidoptera recorded on Larix in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-cold-moist"],
-      note: "Gather the small cones in autumn, dry them until they open and shake out the seed. About a month of cold, damp storage before a spring sowing gives an even stand. Much of the seed in any year is empty, so sow generously.",
-      basis: "ONF / CNPF French forestry practice.",
+      methods: ["seed-direct"],
+      note: "Gather the small cones in autumn, dry them until they open and shake out the seed. It needs no chilling: sow it in autumn or spring, barely covered. Much of the seed in any year is empty, so sow generously.",
+      basis: "USDA Woody Plant Seed Manual; RHS.",
     },
   },
   {
@@ -159,7 +159,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-cold-moist", "seed-double-dormant"],
       note: "Collect the cones before the nutcrackers do, in early autumn, and pry the fat wingless seeds out. They need a long cold, damp spell — three months at least, often two winters — so sow them in a pot left outdoors and protect it from mice, which want them as badly as the birds do.",
-      basis: "ONF / CNPF French forestry practice.",
+      basis: "USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -193,8 +193,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 109 Lepidoptera recorded on native Sorbus in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Squash the ripe berries in autumn, wash the seed clean of pulp — the pulp holds it back — and give it about three months of cold, damp storage before sowing in spring, or simply sow it in a pot outside for the winter.",
-      basis: "ONF / CNPF French forestry practice.",
+      note: "Squash the ripe berries in autumn, wash the seed clean of pulp and give it about three months of cold, damp storage before sowing in spring, or simply sow it in a pot outside for the winter.",
+      basis: "USDA Woody Plant Seed Manual; Seed Information Database; RHS.",
     },
   },
   {
@@ -228,8 +228,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 80 Lepidoptera recorded on native maples in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (118 if introduced ornamental maples are counted too).",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Collect the paired winged keys in autumn as they brown and give them about three months in damp sand in the fridge before sowing — or let a pot stand outside all winter. Honestly, the easiest source is the hundreds of seedlings that appear under any mature tree.",
-      basis: "ONF / CNPF French forestry practice.",
+      note: "Collect the paired winged keys in autumn as they brown, and never let them dry out. Give them six weeks to three months in damp sand in the fridge before sowing — or let a pot stand outside all winter.",
+      basis: "USDA Woody Plant Seed Manual; Seed Information Database; RHS.",
     },
   },
   {
@@ -263,8 +263,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 327 Lepidoptera recorded on native birches in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-surface-light", "seed-direct"],
-      note: "Collect the little cone-like catkins in late summer, just as they start to break up, and crumble them over the surface of damp compost — birch seed is dust-fine and needs light, so do not cover it. It germinates within weeks.",
-      basis: "ONF / CNPF French forestry practice.",
+      note: "Pick the little cone-like catkins in late summer while they still hold together, and dry them until they crumble. Scatter the dust-fine seed on damp compost and barely cover it, if at all — light helps it germinate. It comes up within weeks.",
+      basis: "USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -297,9 +297,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 350 Lepidoptera recorded on native willows in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["cuttings-hardwood", "seed-direct"],
-      note: "Willows are the easiest woody plants there are: cut a pencil-thick leafless stem in winter, push two-thirds of it into damp ground, and it roots. Unusually for a willow, goat willow roots less readily than most, so take several. Its seed is only viable for days, so cuttings are the sane route.",
-      basis: "ONF / CNPF French forestry practice.",
+      methods: ["cuttings-hardwood", "cuttings-softwood"],
+      note: "Cut a pencil-thick leafless stem in winter and push two-thirds of it into damp ground, or take soft shoot tips in early summer. Its seed stays alive only a few weeks, so cuttings are the sane route.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
 
@@ -405,8 +405,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Black grouse dependence on bilberry: Parc national de la Vanoise / Observatoire des galliformes de montagne. Host count: 227 Lepidoptera recorded on native Vaccinium in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "seed-surface-light"],
-      note: "Lift a rooted piece of the running stem in early spring and pot it into an acid, peaty mix — the reliable way. From seed, squash ripe berries, rinse the seed out and press it onto the surface of damp lime-free compost without covering it; it needs light and cold, so leave the pot outside for the winter.",
-      basis: "Conservatoire botanique national alpin; European propagation practice.",
+      note: "Lift a rooted piece of the running stem in early spring and pot it into an acid, peaty mix — the reliable way. From seed, squash ripe berries, rinse the seed out and press it onto damp lime-free compost without covering it: it needs light to germinate.",
+      basis: "USDA Woody Plant Seed Manual; Seed Information Database; RHS.",
     },
   },
   {
@@ -439,9 +439,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 227 Lepidoptera recorded on native Vaccinium in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level; the figure is the genus's, and the bilberry carries the larger share of it.",
     propagation: {
-      methods: ["division", "cuttings-semi-hardwood"],
-      note: "Lift a rooted piece of the creeping stem in spring and pot it into an acid, peaty mix. Firmed-up shoots taken in late summer also root under cover, slowly, in a sand-and-peat mix.",
-      basis: "Conservatoire botanique national alpin; European propagation practice.",
+      methods: ["layering", "division", "cuttings-semi-hardwood"],
+      note: "Peg a creeping stem into the soil in midsummer, or lift a rooted piece and pot it into an acid, peaty mix. Firmed-up shoots taken in mid to late summer also root under cover.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -509,9 +509,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin; accepted name Alnus alnobetula, formerly Alnus viridis. Host count: 163 Lepidoptera recorded on native alders in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-direct", "layering"],
-      note: "Collect the small woody cones in autumn once they begin to open, dry them in a bag and shake the seed out; it comes up in spring with no treatment. Its low bent stems also root where they lie under the snow, so a rooted layer can simply be cut free.",
-      basis: "ONF / CNPF French forestry practice.",
+      methods: ["seed-direct", "seed-cold-moist"],
+      note: "Collect the small woody cones in autumn once they begin to open, dry them in a bag and shake the seed out. Sow it fresh; seed that has dried out comes up better after a month or two of cold, damp storage.",
+      basis: "USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -792,8 +792,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Blue-butterfly and burnet-moth host relationships: INPN; European butterfly foodplant checklist (Dryad). Host count: 106 Lepidoptera recorded on native Lotus in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (115 including introduced relatives).",
     propagation: {
       methods: ["seed-scarify", "seed-direct"],
-      note: "The seed coat is hard: nick it with sandpaper or soak it overnight in warm water, then sow it straight onto scratched bare soil in autumn or spring. It hates being potted and moved, so sow where you want it.",
-      basis: "Conservatoire botanique national alpin; European propagation practice.",
+      note: "The seed coat is hard: nick it with sandpaper or soak it overnight in warm water, then sow it straight onto scratched bare soil in autumn or spring.",
+      basis: "Seed Information Database; RHS; Plantlife.",
     },
   },
   {
@@ -827,8 +827,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Small blue (Cupido minimus) host relationship: INPN; European butterfly foodplant checklist (Dryad). Host count: 35 Lepidoptera recorded on native Anthyllis in mountain-zone Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-scarify", "seed-direct"],
-      note: "Hard-coated like other peas: nick or soak the seed, then sow it into gritty soil in autumn. It has a taproot and does not move well, so sow it in place rather than transplanting.",
-      basis: "Conservatoire botanique national alpin; European propagation practice.",
+      note: "Hard-coated like other peas: nick or soak the seed, then sow it in autumn, in pots in a cold frame or straight into gritty soil.",
+      basis: "Seed Information Database; RHS.",
     },
   },
   {
@@ -1038,8 +1038,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Bumble bee tongue-length and clover: Xerces Society; European pollinator literature. Host count: 97 Lepidoptera recorded on native clovers in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-direct", "seed-scarify"],
-      note: "Scatter seed into a cut, scratched sward in autumn or early spring — it needs to reach soil, so rake or trample it in. Old seed benefits from a rub with sandpaper to break the hard coat.",
-      basis: "Conservatoire botanique national alpin; European meadow restoration practice.",
+      note: "Cut the grass short in autumn, rake until patches of bare soil show, then scatter the seed and trample it in. A rub with sandpaper breaks the hard seed coat.",
+      basis: "Plantlife; Seed Information Database; RHS.",
     },
   },
   {
@@ -1438,8 +1438,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Toxicity: ASPCA. Host count: 5 Lepidoptera recorded on Dryopteris in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0). Ferns genuinely feed very few caterpillars.",
     propagation: {
       methods: ["division", "spores"],
-      note: "Split an old crown in late winter, keeping several fronds and a fist of roots on each piece. Spores sown on damp sterile compost under a lid, kept cool and shaded, take months and work.",
-      basis: "Conservatoire botanique national alpin; European fern propagation practice.",
+      note: "Split an old crown in spring, keeping several fronds and a fist of roots on each piece. Spores sown on damp sterile compost under a lid, kept cool and lightly shaded, take months and work.",
+      basis: "RHS.",
     },
   },
   {
@@ -1473,8 +1473,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range and altitude: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 1 Lepidoptera recorded on Polystichum in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0). Ferns genuinely feed very few caterpillars.",
     propagation: {
       methods: ["spores", "division"],
-      note: "Spores on damp sterile limestone grit under a lid, kept cool — slow, and the reliable route. An old crown can be split in early spring but resents it.",
-      basis: "Conservatoire botanique national alpin; European fern propagation practice.",
+      note: "Sow the spores on damp sterile compost under a lid and keep it cool and lightly shaded; ferns follow months later. An old crown can also be split in spring.",
+      basis: "RHS.",
     },
   },
   {
@@ -1508,8 +1508,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN, Conservatoire botanique national alpin. Host count: 2 Lepidoptera recorded on native spleenworts in mountain Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0). Ferns genuinely feed very few caterpillars.",
     propagation: {
       methods: ["spores", "division"],
-      note: "Sow the spore dust on damp sterile limestone grit under a lid and keep it cool and shaded for months. Established clumps can occasionally be teased apart in spring, with plenty of grit around the roots afterwards.",
-      basis: "Conservatoire botanique national alpin; European fern propagation practice.",
+      note: "Sow the spores as soon as they ripen on damp sterile compost under a lid, and keep it cool and lightly shaded for months. Established clumps can be divided in spring.",
+      basis: "RHS.",
     },
   },
 ];

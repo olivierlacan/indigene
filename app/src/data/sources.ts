@@ -73,6 +73,18 @@ export const SOURCE_LINKS: SourceSite[] = [
   // source of every European host count, so it links to the paper itself.
   { name: "Gaytán et al. 2026 European matrix", url: "https://doi.org/10.1002/ece3.73004" },
   { name: "Tela Botanica", url: "https://www.tela-botanica.org/" },
+  // Kew's seed database, run since 2023 by the Society for Ecological
+  // Restoration with Kew at its own address. Older rows use the old name.
+  { name: "Kew Seed Information Database", url: "https://ser-sid.org/" },
+  { name: "Seed Information Database", url: "https://ser-sid.org/" },
+  // The propagation sources most rows cite, linked under the shortest name
+  // their citations share ("USFS Native Plant Network", "USDA Woody Plant
+  // Seed Manual" both match).
+  { name: "Native Plant Network", url: "https://npn.rngr.net/propagation/protocols" },
+  { name: "Woody Plant Seed Manual", url: "https://rngr.net/publications/wpsm" },
+  { name: "Royal Horticultural Society", url: "https://www.rhs.org.uk/" },
+  { name: "New Zealand Plant Conservation Network", url: "https://www.nzpcn.org.nz/flora/species/" },
+  { name: "California Native Plant Society", url: "https://www.cnps.org/" },
   { name: "INPN", url: "https://inpn.mnhn.fr/" },
   { name: "RHS Plants for Pollinators", url: "https://www.rhs.org.uk/wildlife/plants-for-pollinators" },
   { name: "Butterfly Conservation", url: "https://butterfly-conservation.org/" },
@@ -87,6 +99,31 @@ export const SOURCE_LINKS: SourceSite[] = [
   { name: "EPPO", url: "https://gd.eppo.int/" },
   { name: "ONF", url: "https://www.onf.fr/" },
   { name: "Conservatoire botanique national méditerranéen", url: "https://www.cbnmed.fr/" },
+  // Authorities cited by the pavement-pioneer layer (`data/pioneers.ts`). Most
+  // of its claims come from sources already listed above; these are the ones
+  // whose speciality is exactly this question — what a plant does on raw,
+  // disturbed or urban ground.
+  //
+  // The USFS Fire Effects Information System is the load-bearing one for North
+  // America: its per-species write-ups cover post-disturbance colonisation in
+  // detail nothing else matches. Calscape and Calflora answer it for
+  // California, the Institute for Regional Conservation for South Florida.
+  // "Sauvages de ma rue" is the MNHN's urban-pavement flora survey — the
+  // literal subject of this layer, for France.
+  { name: "USFS Fire Effects Information System", url: "https://www.fs.usda.gov/database/feis/" },
+  { name: "Calscape (California Native Plant Society)", url: "https://calscape.org/" },
+  { name: "Calflora", url: "https://www.calflora.org/" },
+  { name: "UC Agriculture & Natural Resources", url: "https://ucanr.edu/" },
+  { name: "Institute for Regional Conservation", url: "https://regionalconservation.org/" },
+  { name: "Florida Wildflower Foundation", url: "https://www.flawildflowers.org/" },
+  { name: "Rutgers NJAES", url: "https://njaes.rutgers.edu/" },
+  { name: "Sauvages de ma rue (MNHN & Tela Botanica)", url: "https://sauvagesdemarue.mnhn.fr/" },
+  { name: "National Biodiversity Data Centre", url: "https://biodiversityireland.ie/" },
+  { name: "Michigan Flora", url: "https://michiganflora.net/" },
+  { name: "Manaaki Whenua – Landcare Research", url: "https://www.landcareresearch.co.nz/" },
+  { name: "Kew Plants of the World Online", url: "https://powo.science.kew.org/" },
+  { name: "BSBI Plant Atlas", url: "https://plantatlas.brc.ac.uk/" },
+  { name: "Info Flora", url: "https://www.infoflora.ch/" },
   // The interaction aggregator behind the ties found by
   // `app/scripts/wildlife-candidates.mjs`. Only GloBI itself is linked: each
   // tie's basis also names the *contributed dataset* the records came from

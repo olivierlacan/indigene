@@ -5,8 +5,9 @@
 // as an invasive gets a healthy plant pulled out. So each rule gets a case
 // here — a planted native offered at "casual" grade, an invasive held back
 // until others confirm it, a planted invasive held back even when confirmed,
-// an invasive look-alike flagged — and the request itself is checked for what
-// it must never ask for: a location.
+// an invasive look-alike flagged — and the request itself is checked: it sends
+// the spot only rounded and with a wide radius, and asks for no sighting's
+// location back.
 //
 //   npm run import:check
 import { openLoader } from "./_load-ts.mjs";
@@ -33,14 +34,17 @@ try {
   expect(account.parseLogin("a/b") === null, "a path is refused");
 
   // --- the request -------------------------------------------------------------
-  const url = new URL(imp.buildOwnSightingsUrl("kueda", 1, Date.UTC(2026, 8, 24)));
+  const garden = { lat: 39.952347, lon: -75.163791 };
+  const url = new URL(imp.buildOwnSightingsUrl("kueda", garden, 1, Date.UTC(2026, 8, 24)));
   expect(url.origin === "https://api.inaturalist.org", "asks iNaturalist, nowhere else");
   expect(url.searchParams.get("user_login") === "kueda", "names the user");
-  expect(url.searchParams.get("d1") === "2025-09-24", "reaches back a year");
+  expect(url.searchParams.get("d1") === "2021-09-24", "reaches back five years");
+  expect(url.searchParams.get("lat") === "39.95" && url.searchParams.get("lng") === "-75.16", "sends the spot rounded to about a kilometre");
+  expect(Number(url.searchParams.get("radius")) >= 32, "a radius wide enough for an obscured sighting's cell");
   const fields = url.searchParams.get("fields") ?? "";
   expect(!/location|geojson|place|latitude|longitude|geoprivacy/.test(fields), `asks for no location (fields: ${fields})`);
   let threw = false;
-  try { imp.buildOwnSightingsUrl("bad name&x=1", 1); } catch { threw = true; }
+  try { imp.buildOwnSightingsUrl("bad name&x=1", garden, 1); } catch { threw = true; }
   expect(threw, "won't build a request from an invalid username");
 
   // --- pacing: one page at a time, a second apart ------------------------------
@@ -56,7 +60,7 @@ try {
       },
       wait: async (ms) => { log.push(`wait ${ms}`); },
     };
-    const out = await imp.fetchOwnSightings("kueda", undefined, net);
+    const out = await imp.fetchOwnSightings("kueda", garden, undefined, net);
     return { log: log.join(", "), out };
   };
   const one = await pace(120);
@@ -65,7 +69,7 @@ try {
   expect(three.log === "fetch 1, wait 1000, fetch 2, wait 1000, fetch 3", `pages go a second apart (${three.log})`);
   expect(three.out.sightings.length === 450 && !three.out.truncated, "every page is read");
   const many = await pace(5000);
-  expect(many.log.split("fetch").length - 1 === 3 && many.out.truncated, "stops at three pages and says so");
+  expect(many.log.split("fetch").length - 1 === 5 && many.out.truncated, "stops at five pages and says so");
 
   // --- sorting, in the Mid-Atlantic ------------------------------------------------
   const region = REGIONS.find((r) => r.meta.id === "mid-atlantic");

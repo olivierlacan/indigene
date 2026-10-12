@@ -7,14 +7,15 @@
 //   npm run hero:harvest -- --region pnw      # one region
 //   npm run hero:harvest -- --plant acer-circinatum
 //   npm run hero:harvest -- --kind wildlife   # only the animals
+//   npm run hero:harvest -- --queue           # only what needs-review.json lists
 //   npm run hero:harvest -- --limit 5         # a quick sanity run
 //   npm run hero:harvest -- --keep 12         # shortlist size (default 10)
-//   npm run hero:harvest -- --no-angles       # skip the phenology queries
+//   npm run hero:harvest -- --angles          # also the four angles (off by default)
 //   npm run hero:harvest -- --dry-run         # print the plan, ask nothing
 //
-// Needs open internet (iNaturalist), which the build sandbox blocks — run it
-// locally or via .github/workflows/hero-photos.yml, which opens a PR with the
-// refreshed shortlist. Same arrangement as `reconcile.mjs`, for the same reason.
+// Needs iNaturalist. A full run is hours, so it normally runs in
+// .github/workflows/hero-photos.yml, which opens a PR with the refreshed
+// shortlist; a `--region` run works locally or in a Claude session.
 //
 // **What it asks for.** One request per subject per region it belongs to,
 // bounded by that region's coverage box, research grade, photographed, and — the
@@ -23,8 +24,8 @@
 // candidate, so it is never downloaded, never scored, and never shown to a
 // reviewer.
 //
-// **Plus two more asks per plant, for the pictures nobody scrolls far enough to
-// find.** iNaturalist's pool for any given plant is overwhelmingly leaves, so a
+// **With `--angles`, two more asks per plant, for the pictures nobody scrolls
+// far enough to find.** Off by default: the review is heroes only. iNaturalist's pool for any given plant is overwhelmingly leaves, so a
 // flowering shot and a fruiting shot can sit a hundred photographs deep. Those
 // get queries of their own, filtered on the community's own Plant Phenology
 // annotation (`_photo-angle.mjs`) — which is also what files them under "flower"
@@ -40,12 +41,13 @@
 // is a good photograph of the thing". Then `_photo-quality.mjs` re-ranks those
 // candidates on the pixels. Neither signal knows what a plant should look like,
 // which is exactly why the output is a shortlist and not a decision.
-import { writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { openLoader } from "./_load-ts.mjs";
 import { scoreImages } from "./_photo-quality.mjs";
 import { fit, suggest, PHENOLOGY, PHENOLOGY_LABEL } from "./_photo-angle.mjs";
+import { heroFinalists, serialize, slimCandidate } from "./_hero-candidates.mjs";
 import { requireProxyAwareFetch } from "./_net.mjs";
 import { withSeeds } from "./_regions.mjs";
 
@@ -85,8 +87,20 @@ const onlyPlant = flag("--plant");
 const onlyKind = flag("--kind", "both"); // plants | wildlife | both
 const limit = flag("--limit") ? Number(flag("--limit")) : undefined;
 const dryRun = args.includes("--dry-run");
-const withAngles = !args.includes("--no-angles");
+// Angles are opt-in: the review that happens is one hero per plant (see
+// _hero-candidates.mjs).
+const withAngles = args.includes("--angles");
 const keep = Number(flag("--keep", String(DEFAULT_KEEP)));
+// `--queue`: only the subjects `hero:inat` couldn't give a photo anyone chose
+// (docs/hero-photos/needs-review.json) — the ones a reviewer has to look at.
+const QUEUE = resolve(HERE, "../../docs/hero-photos/needs-review.json");
+const queueOnly = args.includes("--queue");
+const queued = queueOnly && existsSync(QUEUE)
+  ? new Set(JSON.parse(readFileSync(QUEUE, "utf8")).subjects.map((q) => `${q.subject}|${q.id}`))
+  : null;
+// A run narrowed by any filter is a top-up, so it merges into the committed
+// shortlists instead of replacing them. Only a full run starts over.
+const partial = Boolean(onlyRegion || onlyPlant || queueOnly || onlyKind !== "both" || limit);
 
 if (!["plants", "wildlife", "both"].includes(onlyKind)) {
   console.error(`--kind must be plants, wildlife or both (got "${onlyKind}").`);
@@ -143,7 +157,8 @@ if (onlyKind !== "plants" && !onlyPlant) {
     }
   }
 }
-const todo = limit ? jobs.slice(0, limit) : jobs;
+const inQueue = (j) => !queued || queued.has(`${j.subject}|${j.id}`);
+const todo = (limit ? jobs.filter(inQueue).slice(0, limit) : jobs.filter(inQueue));
 
 if (!todo.length) {
   console.error("Nothing to harvest — check --region / --plant / --kind.");
@@ -189,7 +204,7 @@ function queryUrl(job, taxonId, annotation) {
 }
 
 /** The queries one job makes: the general ask, plus — for plants, unless
- *  `--no-angles` — one for flowering observations and one for fruiting ones. */
+ *  with `--angles` — one for flowering observations and one for fruiting ones. */
 function asksFor(job) {
   const asks = [{ phenology: null, annotation: null, consider: CONSIDER }];
   if (job.subject !== "plant" || !withAngles) return asks;
@@ -207,8 +222,7 @@ function asksFor(job) {
 const sized = (url, size) => url.replace(/\/(square|small|medium|large|original)\.(\w+)/, `/${size}.$2`);
 
 // A dry run is how you check the plan — and the exact query — without spending
-// a single request. It's also the only part of this script the build sandbox
-// can run, since everything past here needs the network.
+// a single request. Everything past here needs the network.
 if (dryRun) {
   const byRegion = new Map();
   for (const j of todo) byRegion.set(j.regionId, (byRegion.get(j.regionId) ?? 0) + 1);
@@ -355,20 +369,24 @@ for (const [i, job] of todo.entries()) {
     .filter(Boolean)
     .sort((a, b) => b.quality.score - a.quality.score);
 
-  // `keep` is per angle rather than per shortlist, so a plant whose pool is
-  // ninety leaves and four berries doesn't hand the reviewer ten leaves and
-  // nothing else. Every angle gets its own best few, and the general top of the
-  // list is kept whole on top of that.
-  const kept = new Map();
-  for (const c of ranked.slice(0, keep)) kept.set(c.photoId, c);
-  for (const angle of ["habit", "leaf", "flower", "fruit"]) {
-    const forAngle = ranked
-      .filter((c) => c.angle === angle)
-      .sort((a, b) => b.angleFit[angle] - a.angleFit[angle] || b.quality.score - a.quality.score)
-      .slice(0, keep);
-    for (const c of forAngle) kept.set(c.photoId, c);
+  // Hero-only by default: the best `keep` by score. With `--angles`, `keep` is
+  // per angle as well, so a plant whose pool is ninety leaves and four berries
+  // doesn't hand the reviewer ten leaves and nothing else.
+  let finalists;
+  if (!withAngles) {
+    finalists = heroFinalists(ranked, keep);
+  } else {
+    const kept = new Map();
+    for (const c of ranked.slice(0, keep)) kept.set(c.photoId, c);
+    for (const angle of ["habit", "leaf", "flower", "fruit"]) {
+      const forAngle = ranked
+        .filter((c) => c.angle === angle)
+        .sort((a, b) => b.angleFit[angle] - a.angleFit[angle] || b.quality.score - a.quality.score)
+        .slice(0, keep);
+      for (const c of forAngle) kept.set(c.photoId, c);
+    }
+    finalists = ranked.filter((c) => kept.has(c.photoId)).map((c) => slimCandidate(c, true));
   }
-  const finalists = ranked.filter((c) => kept.has(c.photoId));
 
   const tally = finalists.reduce((acc, c) => {
     if (c.angle) acc[c.angle] = (acc[c.angle] ?? 0) + 1;
@@ -398,13 +416,23 @@ mkdirSync(dirname(OUT), { recursive: true });
 // `generatedAt` is deliberately absent: a timestamp would make every run a diff
 // even when the shortlists are identical, which is noise in a PR whose whole
 // job is "did the candidates change?".
+// A top-up keeps every committed shortlist this run didn't redo.
+const shortKey = (sl) => `${sl.subject ?? "plant"}|${sl.id ?? sl.plantId}|${sl.regionId}`;
+// Replaced in place, new ones appended, so a top-up's diff is only what it redid.
+const fresh = new Map(shortlists.map((sl) => [shortKey(sl), sl]));
+const before = partial && existsSync(OUT) ? JSON.parse(readFileSync(OUT, "utf8")).shortlists ?? [] : [];
+const merged = before.map((sl) => fresh.get(shortKey(sl)) ?? sl);
+const had = new Set(before.map(shortKey));
+for (const sl of shortlists) if (!had.has(shortKey(sl))) merged.push(sl);
+// `angles` says whether any shortlist in the file carries them — a hero-only
+// top-up into an angled file leaves the rest of it angled.
+// Same for the problems: a top-up reports its own, and keeps the rest.
+const oldProblems = partial && existsSync(OUT) ? JSON.parse(readFileSync(OUT, "utf8")).problems ?? [] : [];
+const allProblems = [...oldProblems.filter((p) => !fresh.has(shortKey(p)) && !problems.some((q) => shortKey(q) === shortKey(p))), ...problems];
+const anyAngles = merged.some((sl) => sl.candidates?.some((c) => c.angleFit));
 writeFileSync(
   OUT,
-  JSON.stringify(
-    { keep, consider: CONSIDER, considerAngle: CONSIDER_ANGLE, angles: withAngles, licences: LICENCES, shortlists, problems },
-    null,
-    2,
-  ) + "\n",
+  serialize({ keep, consider: CONSIDER, considerAngle: CONSIDER_ANGLE, angles: anyAngles, licences: LICENCES, problems: allProblems, shortlists: merged }),
 );
 
 const withNone = shortlists.filter((s) => !s.candidates.length);

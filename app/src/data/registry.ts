@@ -125,13 +125,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:781435-1",
     "scientificName": "Acer palmatum",
     "family": "Sapindaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "781435-1",
+      "wfo": "wfo-0000514777",
+      "gbif": "3189882",
+      "usda": "ACPA2",
+      "itis": "182136",
+      "inat": "63512",
+      "wikidata": "Q269224",
       "indigene": "acer-palmatum"
     },
     "commonNames": [
@@ -236,6 +243,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -376,16 +384,19 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "adiantum-capillus-veneris"
     },
     "commonNames": [
+      "Southern Maidenhair Fern",
       "Southern Maidenhair",
       "Capillaire de Montpellier"
     ],
     "aliases": [
       "adiantum capillus-veneris",
       "capillaire de montpellier",
-      "southern maidenhair"
+      "southern maidenhair",
+      "southern maidenhair fern"
     ],
     "cultivarOf": null,
     "regions": [
+      "central-texas",
       "france-mediterranean"
     ]
   },
@@ -416,6 +427,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:17012140-1",
+    "scientificName": "Adiantum pedatum",
+    "family": "Pteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17012140-1",
+      "wfo": "wfo-0001107191",
+      "gbif": "2651832",
+      "usda": "ADPE",
+      "itis": "17311",
+      "inat": "48435",
+      "wikidata": "Q1199865",
+      "indigene": "adiantum-pedatum"
+    },
+    "commonNames": [
+      "Maidenhair Fern"
+    ],
+    "aliases": [
+      "adiantum pedatum",
+      "maidenhair fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -478,13 +518,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:106376-1",
     "scientificName": "Akebia quinata",
     "family": "Lardizabalaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "106376-1",
+      "wfo": "wfo-0000524888",
+      "gbif": "3033965",
+      "usda": "AKQU",
+      "itis": "18857",
+      "inat": "126249",
+      "wikidata": "Q1482093",
       "indigene": "akebia-quinata"
     },
     "commonNames": [
@@ -525,6 +572,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:529036-1",
+    "scientificName": "Allium tricoccum",
+    "family": "Amaryllidaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "529036-1",
+      "wfo": "wfo-0000757603",
+      "gbif": "2856301",
+      "usda": "ALTR3",
+      "itis": "42672",
+      "inat": "55634",
+      "wikidata": "Q2714893",
+      "indigene": "allium-tricoccum"
+    },
+    "commonNames": [
+      "Wild Leek"
+    ],
+    "aliases": [
+      "allium tricoccum",
+      "wild leek"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -625,13 +701,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:294936-1",
     "scientificName": "Alnus japonica",
     "family": "Betulaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "294936-1",
+      "wfo": "wfo-0000946310",
+      "gbif": "2876196",
+      "usda": "ALJA8",
+      "itis": "845152",
+      "inat": "367784",
+      "wikidata": "Q1196169",
       "indigene": "alnus-japonica"
     },
     "commonNames": [
@@ -790,6 +873,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -820,6 +904,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:60431313-2",
+    "scientificName": "Amorpha canescens",
+    "family": "Fabaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "60431313-2",
+      "wfo": "wfo-0000178822",
+      "gbif": "5357388",
+      "usda": "AMCA6",
+      "itis": "25371",
+      "inat": "158286",
+      "wikidata": "Q2074094",
+      "indigene": "amorpha-canescens"
+    },
+    "commonNames": [
+      "Leadplant"
+    ],
+    "aliases": [
+      "amorpha canescens",
+      "leadplant"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -875,6 +988,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -905,6 +1019,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:13942-2",
+    "scientificName": "Anisacanthus quadrifidus",
+    "family": "Acanthaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "13942-2",
+      "wfo": "wfo-0000537171",
+      "gbif": "8026687",
+      "usda": "ANQU2",
+      "itis": "182371",
+      "inat": "158386",
+      "wikidata": "Q5696062",
+      "indigene": "anisacanthus-quadrifidus"
+    },
+    "commonNames": [
+      "Flame Acanthus"
+    ],
+    "aliases": [
+      "anisacanthus quadrifidus",
+      "flame acanthus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -1022,6 +1165,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -1237,13 +1381,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:587115-1",
     "scientificName": "Ardisia japonica",
     "family": "Primulaceae",
     "form": "groundcover",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "587115-1",
+      "wfo": "wfo-0000544471",
+      "gbif": "5558066",
+      "usda": "ARJA4",
+      "itis": "836174",
+      "inat": "158589",
+      "wikidata": "Q858326",
       "indigene": "ardisia-japonica"
     },
     "commonNames": [
@@ -1288,13 +1439,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:92883-1",
     "scientificName": "Aristolochia debilis",
     "family": "Aristolochiaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "92883-1",
+      "wfo": "wfo-0000547728",
+      "gbif": "3588727",
+      "inat": "371228",
+      "wikidata": "Q11289074",
       "indigene": "aristolochia-debilis"
     },
     "commonNames": [
@@ -1398,13 +1554,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:179985-1",
     "scientificName": "Artemisia princeps",
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "179985-1",
+      "wfo": "wfo-0000005942",
+      "gbif": "3121258",
+      "inat": "452353",
+      "wikidata": "Q1076280",
       "indigene": "artemisia-princeps"
     },
     "commonNames": [
@@ -1533,6 +1694,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:93467-1",
+    "scientificName": "Asarum canadense",
+    "family": "Aristolochiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "93467-1",
+      "wfo": "wfo-0000550779",
+      "gbif": "2873947",
+      "usda": "ASCA",
+      "itis": "18353",
+      "inat": "56325",
+      "wikidata": "Q2866323",
+      "indigene": "asarum-canadense"
+    },
+    "commonNames": [
+      "Wild Ginger"
+    ],
+    "aliases": [
+      "asarum canadense",
+      "wild ginger"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:93471-1",
     "scientificName": "Asarum caudatum",
     "family": "Aristolochiaceae",
@@ -1559,6 +1749,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:21143-2",
+    "scientificName": "Asclepias asperula",
+    "family": "Apocynaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "21143-2",
+      "wfo": "wfo-0000551126",
+      "gbif": "8683730",
+      "usda": "ASAS",
+      "itis": "30247",
+      "inat": "62298",
+      "wikidata": "Q311134",
+      "indigene": "asclepias-asperula"
+    },
+    "commonNames": [
+      "Antelope-horn Milkweed"
+    ],
+    "aliases": [
+      "antelope-horn milkweed",
+      "asclepias asperula"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -1619,6 +1838,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -1653,6 +1873,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:94683-1",
+    "scientificName": "Asclepias syriaca",
+    "family": "Apocynaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "94683-1",
+      "wfo": "wfo-0000551803",
+      "gbif": "3170247",
+      "usda": "ASSY",
+      "itis": "30310",
+      "inat": "47911",
+      "wikidata": "Q158295",
+      "indigene": "asclepias-syriaca"
+    },
+    "commonNames": [
+      "Common Milkweed"
+    ],
+    "aliases": [
+      "asclepias syriaca",
+      "common milkweed"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:94704-1",
     "scientificName": "Asclepias tuberosa",
     "family": "Apocynaceae",
@@ -1680,6 +1929,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence",
       "florida-central"
     ]
@@ -1863,13 +2113,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:181745-1",
     "scientificName": "Aster microcephalus",
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "181745-1",
+      "wfo": "wfo-0000014412",
+      "gbif": "6063614",
+      "inat": "1433113",
+      "wikidata": "Q21247042",
       "indigene": "aster-microcephalus"
     },
     "commonNames": [
@@ -1885,13 +2140,19 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:17055840-1",
     "scientificName": "Athyrium niponicum",
     "family": "Athyriaceae",
     "form": "fern",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "17055840-1",
+      "wfo": "wfo-0001114565",
+      "gbif": "7125894",
+      "itis": "897585",
+      "inat": "142824",
+      "wikidata": "Q2455938",
       "indigene": "athyrium-niponicum"
     },
     "commonNames": [
@@ -1907,13 +2168,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:271451-1",
     "scientificName": "Aucuba japonica",
     "family": "Garryaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "271451-1",
+      "wfo": "wfo-0000297052",
+      "gbif": "3033077",
+      "usda": "AUJA",
+      "itis": "565023",
+      "inat": "56206",
+      "wikidata": "Q163114",
       "indigene": "aucuba-japonica"
     },
     "commonNames": [
@@ -2016,6 +2284,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:29306-2",
+    "scientificName": "Baptisia lactea",
+    "family": "Fabaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "29306-2",
+      "wfo": "wfo-0000164285",
+      "gbif": "2976073",
+      "itis": "26475",
+      "inat": "1609409",
+      "wikidata": "Q17444972",
+      "indigene": "baptisia-lactea"
+    },
+    "commonNames": [
+      "White Wild Indigo"
+    ],
+    "aliases": [
+      "baptisia lactea",
+      "white wild indigo"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:31334-2",
     "scientificName": "Berberis aquifolium",
     "family": "Berberidaceae",
@@ -2069,6 +2365,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:107152-1",
+    "scientificName": "Berberis trifoliolata",
+    "family": "Berberidaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "107152-1",
+      "wfo": "wfo-0000563960",
+      "gbif": "3033862",
+      "itis": "18836",
+      "inat": "273862",
+      "wikidata": "Q17794769",
+      "indigene": "berberis-trifoliolata"
+    },
+    "commonNames": [
+      "Agarita"
+    ],
+    "aliases": [
+      "agarita",
+      "berberis trifoliolata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -2194,6 +2518,36 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:108626-1",
+    "scientificName": "Bignonia capreolata",
+    "family": "Bignoniaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "108626-1",
+      "wfo": "wfo-0000781348",
+      "gbif": "3172516",
+      "usda": "BICA",
+      "itis": "34307",
+      "inat": "67823",
+      "wikidata": "Q149466",
+      "indigene": "bignonia-capreolata"
+    },
+    "commonNames": [
+      "Crossvine"
+    ],
+    "aliases": [
+      "bignonia capreolata",
+      "crossvine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas",
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:17570940-1",
     "scientificName": "Blechnum novae-zelandiae",
     "family": "Blechnaceae",
@@ -2218,6 +2572,64 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:1198286-2",
+    "scientificName": "Bouteloua curtipendula",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1198286-2",
+      "wfo": "wfo-0000853887",
+      "gbif": "5289861",
+      "usda": "BOCU",
+      "itis": "41500",
+      "inat": "75858",
+      "wikidata": "Q4950436",
+      "indigene": "bouteloua-curtipendula"
+    },
+    "commonNames": [
+      "Sideoats Grama"
+    ],
+    "aliases": [
+      "bouteloua curtipendula",
+      "sideoats grama"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:1008094-1",
+    "scientificName": "Bouteloua dactyloides",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1008094-1",
+      "wfo": "wfo-0000853891",
+      "gbif": "5677204",
+      "usda": "BODA2",
+      "itis": "782573",
+      "inat": "288038",
+      "wikidata": "Q26821449",
+      "indigene": "bouteloua-dactyloides"
+    },
+    "commonNames": [
+      "Buffalograss"
+    ],
+    "aliases": [
+      "bouteloua dactyloides",
+      "buffalograss"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -2336,17 +2748,25 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "central-texas",
       "florida-central"
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:927277-1",
     "scientificName": "Callicarpa japonica",
     "family": "Lamiaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "927277-1",
+      "wfo": "wfo-0000769349",
+      "gbif": "5341134",
+      "usda": "CAJA11",
+      "itis": "506860",
+      "inat": "371978",
+      "wikidata": "Q1152721",
       "indigene": "callicarpa-japonica"
     },
     "commonNames": [
@@ -2359,6 +2779,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:30007339-2",
+    "scientificName": "Callirhoe involucrata",
+    "family": "Malvaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30007339-2",
+      "wfo": "wfo-0000580557",
+      "gbif": "5406702",
+      "usda": "CAIN2",
+      "itis": "21785",
+      "inat": "127941",
+      "wikidata": "Q5741238",
+      "indigene": "callirhoe-involucrata"
+    },
+    "commonNames": [
+      "Winecup"
+    ],
+    "aliases": [
+      "callirhoe involucrata",
+      "winecup"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -2428,6 +2877,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:188166-1",
+    "scientificName": "Calyptocarpus vialis",
+    "family": "Asteraceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "188166-1",
+      "wfo": "wfo-0000127155",
+      "gbif": "3091480",
+      "usda": "CAVI2",
+      "itis": "501164",
+      "inat": "84405",
+      "wikidata": "Q15248859",
+      "indigene": "calyptocarpus-vialis"
+    },
+    "commonNames": [
+      "Horseherb"
+    ],
+    "aliases": [
+      "calyptocarpus vialis",
+      "horseherb"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
     "primaryId": "ipni:30019006-2",
     "scientificName": "Camassia quamash",
     "family": "Asparagaceae",
@@ -2457,13 +2935,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:828524-1",
     "scientificName": "Camellia japonica",
     "family": "Theaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "828524-1",
+      "wfo": "wfo-0000582404",
+      "gbif": "3189636",
+      "usda": "CAJA9",
+      "itis": "506117",
+      "inat": "83056",
+      "wikidata": "Q160121",
       "indigene": "camellia-japonica"
     },
     "commonNames": [
@@ -2540,13 +3025,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:299484-1",
     "scientificName": "Carex dispalata",
     "family": "Cyperaceae",
     "form": "grass",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "299484-1",
+      "wfo": "wfo-0000346100",
+      "gbif": "2727349",
+      "inat": "495745",
+      "wikidata": "Q4338348",
       "indigene": "carex-dispalata"
     },
     "commonNames": [
@@ -2593,13 +3083,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:301072-1",
     "scientificName": "Carex morrowii",
     "family": "Cyperaceae",
     "form": "grass",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "301072-1",
+      "wfo": "wfo-0000349019",
+      "gbif": "2722515",
+      "usda": "CAMO31",
+      "itis": "808431",
+      "inat": "468050",
+      "wikidata": "Q2938601",
       "indigene": "carex-morrowii"
     },
     "commonNames": [
@@ -2671,6 +3168,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -2854,13 +3352,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:295265-1",
     "scientificName": "Carpinus laxiflora",
     "family": "Betulaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "295265-1",
+      "wfo": "wfo-0000805429",
+      "gbif": "2875910",
+      "inat": "438156",
+      "wikidata": "Q4147190",
       "indigene": "carpinus-laxiflora"
     },
     "commonNames": [
@@ -2876,13 +3379,78 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:442167-1",
+    "scientificName": "Carya illinoinensis",
+    "family": "Juglandaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "442167-1",
+      "wfo": "wfo-0000588763",
+      "gbif": "3054289",
+      "usda": "CAIL2",
+      "itis": "19234",
+      "inat": "67593",
+      "wikidata": "Q333877",
+      "indigene": "carya-illinoinensis"
+    },
+    "commonNames": [
+      "Pecan"
+    ],
+    "aliases": [
+      "carya illinoinensis",
+      "pecan"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:30122806-2",
+    "scientificName": "Carya ovata",
+    "family": "Juglandaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "30122806-2",
+      "wfo": "wfo-0000588816",
+      "gbif": "3054296",
+      "usda": "CAOV2",
+      "itis": "19242",
+      "inat": "54791",
+      "wikidata": "Q2601238",
+      "indigene": "carya-ovata"
+    },
+    "commonNames": [
+      "Shagbark Hickory"
+    ],
+    "aliases": [
+      "carya ovata",
+      "shagbark hickory"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
+    "primaryId": "ipni:30319741-2",
     "scientificName": "Castanea crenata",
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "30319741-2",
+      "wfo": "wfo-0000811268",
+      "gbif": "5333249",
+      "usda": "CACR27",
+      "itis": "506540",
+      "inat": "122786",
+      "wikidata": "Q717827",
       "indigene": "castanea-crenata"
     },
     "commonNames": [
@@ -2898,13 +3466,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:50956789-1",
     "scientificName": "Castanopsis sieboldii",
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "50956789-1",
+      "wfo": "wfo-0000815170",
+      "gbif": "5333015",
+      "inat": "358537",
+      "wikidata": "Q846994",
       "indigene": "castanopsis-sieboldii"
     },
     "commonNames": [
@@ -2947,6 +3520,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -3042,13 +3616,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:319139-2",
     "scientificName": "Celastrus scandens",
     "family": "Celastraceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "319139-2",
+      "wfo": "wfo-0000592929",
+      "gbif": "3169171",
+      "usda": "CESC",
+      "itis": "27974",
+      "inat": "64538",
+      "wikidata": "Q469628",
       "indigene": "celastrus-scandens"
     },
     "commonNames": [
@@ -3095,13 +3676,79 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:836997-1",
+    "scientificName": "Celtis laevigata",
+    "family": "Cannabaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "836997-1",
+      "wfo": "wfo-0000593589",
+      "gbif": "2984491",
+      "usda": "CELA",
+      "itis": "19042",
+      "inat": "81792",
+      "wikidata": "Q1529852",
+      "indigene": "celtis-laevigata"
+    },
+    "commonNames": [
+      "Sugarberry"
+    ],
+    "aliases": [
+      "celtis laevigata",
+      "sugarberry"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas",
+      "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:301424-2",
+    "scientificName": "Celtis occidentalis",
+    "family": "Cannabaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "301424-2",
+      "wfo": "wfo-0000593651",
+      "gbif": "2984481",
+      "usda": "CEOC",
+      "itis": "19040",
+      "inat": "54857",
+      "wikidata": "Q470006",
+      "indigene": "celtis-occidentalis"
+    },
+    "commonNames": [
+      "Hackberry"
+    ],
+    "aliases": [
+      "celtis occidentalis",
+      "hackberry"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
+    "primaryId": "ipni:851171-1",
     "scientificName": "Celtis sinensis",
     "family": "Cannabaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "851171-1",
+      "wfo": "wfo-0000593746",
+      "gbif": "4159594",
+      "usda": "CESI8",
+      "itis": "897057",
+      "inat": "76204",
+      "wikidata": "Q706339",
       "indigene": "celtis-sinensis"
     },
     "commonNames": [
@@ -3207,7 +3854,10 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "st-lawrence"
+      "chicago",
+      "st-lawrence",
+      "central-texas",
+      "florida-central"
     ]
   },
   {
@@ -3228,15 +3878,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "cercis-canadensis"
     },
     "commonNames": [
-      "Eastern Redbud"
+      "Eastern Redbud",
+      "Texas Redbud"
     ],
     "aliases": [
       "cercis canadensis",
-      "eastern redbud"
+      "eastern redbud",
+      "texas redbud"
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "central-texas"
     ]
   },
   {
@@ -3266,6 +3919,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:55649-2",
+    "scientificName": "Chasmanthium latifolium",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "55649-2",
+      "wfo": "wfo-0000859191",
+      "gbif": "2703077",
+      "usda": "CHLA5",
+      "itis": "41547",
+      "inat": "84364",
+      "wikidata": "Q5087377",
+      "indigene": "chasmanthium-latifolium"
+    },
+    "commonNames": [
+      "Inland Sea Oats"
+    ],
+    "aliases": [
+      "chasmanthium latifolium",
+      "inland sea oats"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -3327,13 +4009,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:195527-1",
     "scientificName": "Cirsium japonicum",
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "195527-1",
+      "wfo": "wfo-0000062624",
+      "gbif": "3112887",
+      "usda": "CIJA2",
+      "itis": "780258",
+      "inat": "354344",
+      "wikidata": "Q5708539",
       "indigene": "cirsium-japonicum"
     },
     "commonNames": [
@@ -3527,13 +4216,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:710188-1",
     "scientificName": "Clematis virginiana",
     "family": "Ranunculaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "710188-1",
+      "wfo": "wfo-0000610908",
+      "gbif": "3033541",
+      "usda": "CLVI5",
+      "itis": "18716",
+      "inat": "62778",
+      "wikidata": "Q4266308",
       "indigene": "clematis-virginiana"
     },
     "commonNames": [
@@ -3545,6 +4241,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -3728,6 +4425,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:197044-1",
+    "scientificName": "Conoclinium coelestinum",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "197044-1",
+      "wfo": "wfo-0000025867",
+      "gbif": "3090343",
+      "usda": "COCO13",
+      "itis": "511282",
+      "inat": "119095",
+      "wikidata": "Q15548876",
+      "indigene": "conoclinium-coelestinum"
+    },
+    "commonNames": [
+      "Blue Mistflower"
+    ],
+    "aliases": [
+      "blue mistflower",
+      "conoclinium coelestinum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
     "primaryId": "ipni:747491-1",
     "scientificName": "Coprosma repens",
     "family": "Rubiaceae",
@@ -3872,6 +4598,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:271556-1",
+    "scientificName": "Cornus drummondii",
+    "family": "Cornaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "271556-1",
+      "wfo": "wfo-0000924658",
+      "gbif": "3082256",
+      "usda": "CODR",
+      "itis": "27807",
+      "inat": "54776",
+      "wikidata": "Q187040",
+      "indigene": "cornus-drummondii"
+    },
+    "commonNames": [
+      "Roughleaf Dogwood"
+    ],
+    "aliases": [
+      "cornus drummondii",
+      "roughleaf dogwood"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
     "primaryId": "ipni:271574-1",
     "scientificName": "Cornus florida",
     "family": "Cornaceae",
@@ -3901,13 +4656,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:271602-1",
     "scientificName": "Cornus kousa",
     "family": "Cornaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "271602-1",
+      "wfo": "wfo-0000924739",
+      "gbif": "3082274",
+      "usda": "COKO2",
+      "itis": "507498",
+      "inat": "128614",
+      "wikidata": "Q728441",
       "indigene": "cornus-kousa"
     },
     "commonNames": [
@@ -3980,6 +4742,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:271653-1",
+    "scientificName": "Cornus racemosa",
+    "family": "Cornaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "271653-1",
+      "wfo": "wfo-0000924819",
+      "gbif": "3082264",
+      "usda": "CORA6",
+      "itis": "501635",
+      "inat": "320160",
+      "wikidata": "Q1134291",
+      "indigene": "cornus-racemosa"
+    },
+    "commonNames": [
+      "Gray Dogwood"
+    ],
+    "aliases": [
+      "cornus racemosa",
+      "gray dogwood"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -4070,6 +4861,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -4415,6 +5207,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:76326-2",
+    "scientificName": "Dalea purpurea",
+    "family": "Fabaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "76326-2",
+      "wfo": "wfo-0000169115",
+      "gbif": "5353342",
+      "usda": "DAPU5",
+      "itis": "26642",
+      "inat": "63547",
+      "wikidata": "Q5210721",
+      "indigene": "dalea-purpurea"
+    },
+    "commonNames": [
+      "Purple Prairie Clover"
+    ],
+    "aliases": [
+      "dalea purpurea",
+      "purple prairie clover"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:397487-1",
     "scientificName": "Danthonia californica",
     "family": "Poaceae",
@@ -4475,6 +5296,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:77116898-1",
+    "scientificName": "Dermatophyllum secundiflorum",
+    "family": "Fabaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "77116898-1",
+      "wfo": "wfo-0001042783",
+      "gbif": "7594161",
+      "itis": "1085572",
+      "inat": "499559",
+      "wikidata": "Q56628426",
+      "indigene": "dermatophyllum-secundiflorum"
+    },
+    "commonNames": [
+      "Texas Mountain Laurel"
+    ],
+    "aliases": [
+      "dermatophyllum secundiflorum",
+      "texas mountain laurel"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
     "primaryId": "ipni:397953-1",
     "scientificName": "Deschampsia cespitosa",
     "family": "Poaceae",
@@ -4511,13 +5360,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:153941-1",
     "scientificName": "Dianthus superbus",
     "family": "Caryophyllaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "153941-1",
+      "wfo": "wfo-0000644338",
+      "gbif": "6363496",
+      "usda": "DISU12",
+      "itis": "823588",
+      "inat": "447244",
+      "wikidata": "Q161878",
       "indigene": "dianthus-superbus"
     },
     "commonNames": [
@@ -4676,6 +5532,64 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:323100-1",
+    "scientificName": "Diospyros texana",
+    "family": "Ebenaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "323100-1",
+      "wfo": "wfo-0000649848",
+      "gbif": "3032981",
+      "usda": "DITE3",
+      "itis": "23854",
+      "inat": "120505",
+      "wikidata": "Q5279625",
+      "indigene": "diospyros-texana"
+    },
+    "commonNames": [
+      "Texas Persimmon"
+    ],
+    "aliases": [
+      "diospyros texana",
+      "texas persimmon"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:323180-1",
+    "scientificName": "Diospyros virginiana",
+    "family": "Ebenaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "323180-1",
+      "wfo": "wfo-0000649953",
+      "gbif": "3032986",
+      "usda": "DIVI5",
+      "itis": "23855",
+      "inat": "83435",
+      "wikidata": "Q158356",
+      "indigene": "diospyros-virginiana"
+    },
+    "commonNames": [
+      "Common Persimmon"
+    ],
+    "aliases": [
+      "common persimmon",
+      "diospyros virginiana"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -4855,13 +5769,19 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:17094660-1",
     "scientificName": "Dryopteris erythrosora",
     "family": "Dryopteridaceae",
     "form": "fern",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "17094660-1",
+      "wfo": "wfo-0001107300",
+      "gbif": "7157952",
+      "itis": "897583",
+      "inat": "137722",
+      "wikidata": "Q846311",
       "indigene": "dryopteris-erythrosora"
     },
     "commonNames": [
@@ -4969,6 +5889,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:202375-1",
+    "scientificName": "Echinacea pallida",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "202375-1",
+      "wfo": "wfo-0000020152",
+      "gbif": "3150919",
+      "usda": "ECPA",
+      "itis": "37279",
+      "inat": "127689",
+      "wikidata": "Q1813728",
+      "indigene": "echinacea-pallida"
+    },
+    "commonNames": [
+      "Pale Purple Coneflower"
+    ],
+    "aliases": [
+      "echinacea pallida",
+      "pale purple coneflower"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:1174497-2",
     "scientificName": "Echinacea purpurea",
     "family": "Asteraceae",
@@ -4995,6 +5944,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:88877-2",
+    "scientificName": "Ehretia anacua",
+    "family": "Boraginaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "88877-2",
+      "wfo": "wfo-0000663336",
+      "gbif": "2926379",
+      "usda": "EHAN",
+      "itis": "31901",
+      "inat": "162209",
+      "wikidata": "Q3010248",
+      "indigene": "ehretia-anacua"
+    },
+    "commonNames": [
+      "Anacua"
+    ],
+    "aliases": [
+      "anacua",
+      "ehretia anacua"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -5054,6 +6032,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:1160084-2",
+    "scientificName": "Engelmannia peristenia",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1160084-2",
+      "wfo": "wfo-0000025251",
+      "gbif": "5386402",
+      "usda": "ENPE4",
+      "itis": "565159",
+      "inat": "127943",
+      "wikidata": "Q15585895",
+      "indigene": "engelmannia-peristenia"
+    },
+    "commonNames": [
+      "Engelmann Daisy"
+    ],
+    "aliases": [
+      "engelmann daisy",
+      "engelmannia peristenia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -5378,6 +6385,64 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:842103-1",
+    "scientificName": "Eryngium yuccifolium",
+    "family": "Apiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "842103-1",
+      "wfo": "wfo-0000678333",
+      "gbif": "3034408",
+      "usda": "ERYU",
+      "itis": "29506",
+      "inat": "128695",
+      "wikidata": "Q3299859",
+      "indigene": "eryngium-yuccifolium"
+    },
+    "commonNames": [
+      "Rattlesnake Master"
+    ],
+    "aliases": [
+      "eryngium yuccifolium",
+      "rattlesnake master"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
+    "primaryId": "ipni:96601-2",
+    "scientificName": "Erythrina herbacea",
+    "family": "Fabaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "96601-2",
+      "wfo": "wfo-0000165896",
+      "gbif": "5349731",
+      "usda": "ERHE4",
+      "itis": "26678",
+      "inat": "128717",
+      "wikidata": "Q5396418",
+      "indigene": "erythrina-herbacea"
+    },
+    "commonNames": [
+      "Coral Bean"
+    ],
+    "aliases": [
+      "coral bean",
+      "erythrina herbacea"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:96849-2",
     "scientificName": "Erythronium oregonum",
     "family": "Liliaceae",
@@ -5437,13 +6502,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:30148396-2",
     "scientificName": "Euonymus alatus",
     "family": "Celastraceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "30148396-2",
+      "wfo": "wfo-0000681572",
+      "gbif": "3169120",
+      "usda": "EUAL13",
+      "itis": "27946",
+      "inat": "117433",
+      "wikidata": "Q160578",
       "indigene": "euonymus-alatus"
     },
     "commonNames": [
@@ -5551,13 +6623,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:828738-1",
     "scientificName": "Eurya japonica",
     "family": "Pentaphylacaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "828738-1",
+      "wfo": "wfo-0000683065",
+      "gbif": "7152601",
+      "usda": "EUJA5",
+      "itis": "897022",
+      "inat": "429261",
+      "wikidata": "Q1041681",
       "indigene": "eurya-japonica"
     },
     "commonNames": [
@@ -5628,6 +6707,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -5724,13 +6804,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:207632-1",
     "scientificName": "Farfugium japonicum",
     "family": "Asteraceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "207632-1",
+      "wfo": "wfo-0000134933",
+      "gbif": "3101212",
+      "inat": "322755",
+      "wikidata": "Q1072335",
       "indigene": "farfugium-japonicum"
     },
     "commonNames": [
@@ -6046,6 +7131,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -6107,6 +7193,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "ca-south-coast",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:717360-1",
+    "scientificName": "Frangula caroliniana",
+    "family": "Rhamnaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "717360-1",
+      "wfo": "wfo-0000691882",
+      "gbif": "3039468",
+      "usda": "FRCA13",
+      "itis": "506986",
+      "inat": "120151",
+      "wikidata": "Q50841410",
+      "indigene": "frangula-caroliniana"
+    },
+    "commonNames": [
+      "Carolina Buckthorn"
+    ],
+    "aliases": [
+      "carolina buckthorn",
+      "frangula caroliniana"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -6294,6 +7409,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:60448812-2",
+    "scientificName": "Gelsemium sempervirens",
+    "family": "Gelsemiaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "60448812-2",
+      "wfo": "wfo-0000696053",
+      "gbif": "3169513",
+      "usda": "GESE",
+      "itis": "29932",
+      "inat": "83070",
+      "wikidata": "Q978130",
+      "indigene": "gelsemium-sempervirens"
+    },
+    "commonNames": [
+      "Carolina Jessamine"
+    ],
+    "aliases": [
+      "carolina jessamine",
+      "gelsemium sempervirens"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:496342-1",
     "scientificName": "Genista scorpius",
     "family": "Fabaceae",
@@ -6409,6 +7553,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -6468,6 +7613,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:862854-1",
+    "scientificName": "Glandularia bipinnatifida",
+    "family": "Verbenaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "862854-1",
+      "wfo": "wfo-0000972681",
+      "gbif": "5341136",
+      "usda": "GLBI2",
+      "itis": "502783",
+      "inat": "125675",
+      "wikidata": "Q15501351",
+      "indigene": "glandularia-bipinnatifida"
+    },
+    "commonNames": [
+      "Prairie Verbena"
+    ],
+    "aliases": [
+      "glandularia bipinnatifida",
+      "prairie verbena"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -6629,6 +7803,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:315752-2",
+    "scientificName": "Helianthus angustifolius",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "315752-2",
+      "wfo": "wfo-0000066553",
+      "gbif": "3119144",
+      "usda": "HEAN2",
+      "itis": "502919",
+      "inat": "126700",
+      "wikidata": "Q12212025",
+      "indigene": "helianthus-angustifolius"
+    },
+    "commonNames": [
+      "Swamp Sunflower"
+    ],
+    "aliases": [
+      "helianthus angustifolius",
+      "swamp sunflower"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:167393-3",
     "scientificName": "Helianthus debilis",
     "family": "Asteraceae",
@@ -6658,6 +7861,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "florida-central",
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:329260-2",
+    "scientificName": "Helianthus maximiliani",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "329260-2",
+      "wfo": "wfo-0000074910",
+      "gbif": "3119206",
+      "usda": "HEMA2",
+      "itis": "36653",
+      "inat": "130192",
+      "wikidata": "Q5704865",
+      "indigene": "helianthus-maximiliani"
+    },
+    "commonNames": [
+      "Maximilian Sunflower"
+    ],
+    "aliases": [
+      "helianthus maximiliani",
+      "maximilian sunflower"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -6955,13 +8187,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:536636-1",
     "scientificName": "Hosta sieboldii",
     "family": "Asparagaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "536636-1",
+      "wfo": "wfo-0000663448",
+      "gbif": "2771309",
+      "inat": "426065",
+      "wikidata": "Q2557297",
       "indigene": "hosta-sieboldii"
     },
     "commonNames": [
@@ -7040,13 +8277,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:791637-1",
     "scientificName": "Hydrangea macrophylla",
     "family": "Hydrangeaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "791637-1",
+      "wfo": "wfo-0000726228",
+      "gbif": "2985994",
+      "usda": "HYMA7",
+      "itis": "565616",
+      "inat": "122034",
+      "wikidata": "Q159219",
       "indigene": "hydrangea-macrophylla"
     },
     "commonNames": [
@@ -7089,6 +8333,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:30032254-2",
+    "scientificName": "Ilex decidua",
+    "family": "Aquifoliaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30032254-2",
+      "wfo": "wfo-0001078525",
+      "gbif": "5414259",
+      "usda": "ILDE",
+      "itis": "27998",
+      "inat": "120006",
+      "wikidata": "Q5997670",
+      "indigene": "ilex-decidua"
+    },
+    "commonNames": [
+      "Possumhaw"
+    ],
+    "aliases": [
+      "ilex decidua",
+      "possumhaw"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -7148,6 +8421,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "central-texas",
       "florida-central"
     ]
   },
@@ -7181,13 +8455,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:438572-1",
     "scientificName": "Iris ensata",
     "family": "Iridaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "438572-1",
+      "wfo": "wfo-0000783305",
+      "gbif": "5298900",
+      "usda": "IREN",
+      "itis": "503194",
+      "inat": "164125",
+      "wikidata": "Q674136",
       "indigene": "iris-ensata"
     },
     "commonNames": [
@@ -7416,6 +8697,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:132551-2",
+    "scientificName": "Juniperus virginiana",
+    "family": "Cupressaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "132551-2",
+      "wfo": "wfo-0000354923",
+      "gbif": "2684391",
+      "usda": "JUVI",
+      "itis": "18048",
+      "inat": "49399",
+      "wikidata": "Q157522",
+      "indigene": "juniperus-virginiana"
+    },
+    "commonNames": [
+      "Southern Red Cedar"
+    ],
+    "aliases": [
+      "juniperus virginiana",
+      "southern red cedar"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:133347-2",
     "scientificName": "Keckiella cordifolia",
     "family": "Plantaginaceae",
@@ -7529,6 +8839,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:135351-2",
+    "scientificName": "Lantana urticoides",
+    "family": "Verbenaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "135351-2",
+      "wfo": "wfo-0000223460",
+      "gbif": "2925335",
+      "usda": "LAUR2",
+      "itis": "503324",
+      "inat": "877372",
+      "wikidata": "Q15432288",
+      "indigene": "lantana-urticoides"
+    },
+    "commonNames": [
+      "Texas Lantana"
+    ],
+    "aliases": [
+      "lantana urticoides",
+      "texas lantana"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -7652,13 +8991,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:502415-1",
     "scientificName": "Lespedeza bicolor",
     "family": "Fabaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "502415-1",
+      "wfo": "wfo-0000185056",
+      "gbif": "2955759",
+      "usda": "LEBI2",
+      "itis": "25895",
+      "inat": "129677",
+      "wikidata": "Q232652",
       "indigene": "lespedeza-bicolor"
     },
     "commonNames": [
@@ -7671,6 +9017,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:139187-2",
+    "scientificName": "Leucophyllum frutescens",
+    "family": "Scrophulariaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "139187-2",
+      "wfo": "wfo-0001136787",
+      "gbif": "3172138",
+      "usda": "LEFR3",
+      "itis": "33629",
+      "inat": "123118",
+      "wikidata": "Q2355636",
+      "indigene": "leucophyllum-frutescens"
+    },
+    "commonNames": [
+      "Cenizo"
+    ],
+    "aliases": [
+      "cenizo",
+      "leucophyllum frutescens"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -7729,6 +9104,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:230623-1",
+    "scientificName": "Liatris pycnostachya",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "230623-1",
+      "wfo": "wfo-0000030984",
+      "gbif": "3104293",
+      "usda": "LIPY",
+      "itis": "37937",
+      "inat": "48691",
+      "wikidata": "Q12061156",
+      "indigene": "liatris-pycnostachya"
+    },
+    "commonNames": [
+      "Prairie Blazing Star"
+    ],
+    "aliases": [
+      "liatris pycnostachya",
+      "prairie blazing star"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -7821,13 +9225,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:537798-1",
     "scientificName": "Lilium speciosum",
     "family": "Liliaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "537798-1",
+      "wfo": "wfo-0000680746",
+      "gbif": "2753390",
+      "inat": "437708",
+      "wikidata": "Q2107327",
       "indigene": "lilium-speciosum"
     },
     "commonNames": [
@@ -7843,13 +9252,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:465469-1",
     "scientificName": "Lindera umbellata",
     "family": "Lauraceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "465469-1",
+      "wfo": "wfo-0001070371",
+      "gbif": "7304416",
+      "inat": "428425",
+      "wikidata": "Q5793449",
       "indigene": "lindera-umbellata"
     },
     "commonNames": [
@@ -7948,7 +9362,37 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
-      "st-lawrence"
+      "st-lawrence",
+      "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:143920-1",
+    "scientificName": "Lobelia siphilitica",
+    "family": "Campanulaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "143920-1",
+      "wfo": "wfo-0000814885",
+      "gbif": "5409120",
+      "usda": "LOSI",
+      "itis": "34531",
+      "inat": "119806",
+      "wikidata": "Q2720384",
+      "indigene": "lobelia-siphilitica"
+    },
+    "commonNames": [
+      "Great Blue Lobelia"
+    ],
+    "aliases": [
+      "great blue lobelia",
+      "lobelia siphilitica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -8068,13 +9512,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:927299-1",
     "scientificName": "Lonicera japonica",
     "family": "Caprifoliaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "927299-1",
+      "wfo": "wfo-0000359579",
+      "gbif": "5334240",
+      "usda": "LOJA",
+      "itis": "35283",
+      "inat": "77835",
+      "wikidata": "Q161083",
       "indigene": "lonicera-japonica"
     },
     "commonNames": [
@@ -8147,7 +9598,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "florida-central"
     ]
   },
   {
@@ -8278,6 +9730,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:279946-2",
+    "scientificName": "Lupinus texensis",
+    "family": "Fabaceae",
+    "form": "annual",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "279946-2",
+      "wfo": "wfo-0000174773",
+      "gbif": "2963880",
+      "usda": "LUTE",
+      "itis": "26133",
+      "inat": "49564",
+      "wikidata": "Q4115567",
+      "indigene": "lupinus-texensis"
+    },
+    "commonNames": [
+      "Texas Bluebonnet"
+    ],
+    "aliases": [
+      "lupinus texensis",
+      "texas bluebonnet"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
     "primaryId": "ipni:147962-2",
     "scientificName": "Lysichiton americanus",
     "family": "Araceae",
@@ -8336,13 +9817,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:466273-1",
     "scientificName": "Machilus thunbergii",
     "family": "Lauraceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "466273-1",
+      "wfo": "wfo-0000373778",
+      "gbif": "4177874",
+      "inat": "341952",
+      "wikidata": "Q5792073",
       "indigene": "machilus-thunbergii"
     },
     "commonNames": [
@@ -8387,13 +9873,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:332100-2",
     "scientificName": "Magnolia kobus",
     "family": "Magnoliaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "332100-2",
+      "wfo": "wfo-0000233225",
+      "gbif": "3153260",
+      "usda": "MAKO",
+      "itis": "895295",
+      "inat": "143787",
+      "wikidata": "Q942409",
       "indigene": "magnolia-kobus"
     },
     "commonNames": [
@@ -8406,6 +9899,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:30016308-2",
+    "scientificName": "Magnolia virginiana",
+    "family": "Magnoliaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30016308-2",
+      "wfo": "wfo-0000233456",
+      "gbif": "3153639",
+      "usda": "MAVI2",
+      "itis": "18070",
+      "inat": "127906",
+      "wikidata": "Q1859063",
+      "indigene": "magnolia-virginiana"
+    },
+    "commonNames": [
+      "Sweetbay Magnolia"
+    ],
+    "aliases": [
+      "magnolia virginiana",
+      "sweetbay magnolia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -8525,6 +10047,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:150119-2",
+    "scientificName": "Malus ioensis",
+    "family": "Rosaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "150119-2",
+      "wfo": "wfo-0001013576",
+      "gbif": "3001596",
+      "usda": "MAIO",
+      "itis": "25259",
+      "inat": "165107",
+      "wikidata": "Q3332919",
+      "indigene": "malus-ioensis"
+    },
+    "commonNames": [
+      "Prairie Crab Apple"
+    ],
+    "aliases": [
+      "malus ioensis",
+      "prairie crab apple"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:726415-1",
     "scientificName": "Malus sylvestris",
     "family": "Rosaceae",
@@ -8551,6 +10102,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:562237-1",
+    "scientificName": "Malvaviscus arboreus",
+    "family": "Malvaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "562237-1",
+      "wfo": "wfo-0000449492",
+      "gbif": "3152775",
+      "usda": "MAAR14",
+      "itis": "21843",
+      "inat": "120942",
+      "wikidata": "Q2709838",
+      "indigene": "malvaviscus-arboreus"
+    },
+    "commonNames": [
+      "Turk's Cap"
+    ],
+    "aliases": [
+      "malvaviscus arboreus",
+      "turk's cap"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -8581,6 +10161,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "north-michigan",
       "st-lawrence"
+    ]
+  },
+  {
+    "primaryId": "ipni:232106-1",
+    "scientificName": "Melampodium leucanthum",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "232106-1",
+      "wfo": "wfo-0000025541",
+      "gbif": "3139009",
+      "usda": "MELE2",
+      "itis": "38085",
+      "inat": "82469",
+      "wikidata": "Q3304872",
+      "indigene": "melampodium-leucanthum"
+    },
+    "commonNames": [
+      "Blackfoot Daisy"
+    ],
+    "aliases": [
+      "blackfoot daisy",
+      "melampodium leucanthum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -8698,13 +10307,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:408768-1",
     "scientificName": "Miscanthus sinensis",
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "408768-1",
+      "wfo": "wfo-0000880299",
+      "gbif": "2706026",
+      "usda": "MISI",
+      "itis": "41874",
+      "inat": "165474",
+      "wikidata": "Q1073621",
       "indigene": "miscanthus-sinensis"
     },
     "commonNames": [
@@ -8749,6 +10365,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:452023-1",
+    "scientificName": "Monarda citriodora",
+    "family": "Lamiaceae",
+    "form": "annual",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "452023-1",
+      "wfo": "wfo-0000245301",
+      "gbif": "5341423",
+      "usda": "MOCI",
+      "itis": "32280",
+      "inat": "122587",
+      "wikidata": "Q159776",
+      "indigene": "monarda-citriodora"
+    },
+    "commonNames": [
+      "Lemon Beebalm"
+    ],
+    "aliases": [
+      "lemon beebalm",
+      "monarda citriodora"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
     "primaryId": "ipni:452042-1",
     "scientificName": "Monarda fistulosa",
     "family": "Lamiaceae",
@@ -8776,6 +10421,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -8867,6 +10513,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "florida-central",
       "florida-south"
     ]
   },
@@ -8927,6 +10574,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "florida-central",
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:164816-2",
+    "scientificName": "Muhlenbergia lindheimeri",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "164816-2",
+      "wfo": "wfo-0000880801",
+      "gbif": "2703985",
+      "usda": "MULI",
+      "itis": "41922",
+      "inat": "165559",
+      "wikidata": "Q13933855",
+      "indigene": "muhlenbergia-lindheimeri"
+    },
+    "commonNames": [
+      "Lindheimer Muhly"
+    ],
+    "aliases": [
+      "lindheimer muhly",
+      "muhlenbergia lindheimeri"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -9109,13 +10785,49 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:614089-1",
+    "scientificName": "Oenothera speciosa",
+    "family": "Onagraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "614089-1",
+      "wfo": "wfo-0000389747",
+      "gbif": "3188859",
+      "usda": "OESP2",
+      "itis": "27415",
+      "inat": "48625",
+      "wikidata": "Q7078668",
+      "indigene": "oenothera-speciosa"
+    },
+    "commonNames": [
+      "Pink Evening Primrose"
+    ],
+    "aliases": [
+      "oenothera speciosa",
+      "pink evening primrose"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:17166830-1",
     "scientificName": "Onoclea sensibilis",
     "family": "Onocleaceae",
     "form": "fern",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "17166830-1",
+      "wfo": "wfo-0001109206",
+      "gbif": "2650903",
+      "usda": "ONSE",
+      "itis": "17637",
+      "inat": "82576",
+      "wikidata": "Q718312",
       "indigene": "onoclea-sensibilis"
     },
     "commonNames": [
@@ -9127,17 +10839,25 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "chicago",
       "st-lawrence"
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:429781-1",
     "scientificName": "Ophiopogon japonicus",
     "family": "Asparagaceae",
     "form": "groundcover",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "429781-1",
+      "wfo": "wfo-0000673577",
+      "gbif": "2774158",
+      "usda": "OPJA",
+      "itis": "506477",
+      "inat": "200061",
+      "wikidata": "Q537448",
       "indigene": "ophiopogon-japonicus"
     },
     "commonNames": [
@@ -9184,13 +10904,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:77117634-1",
     "scientificName": "Osmunda japonica",
     "family": "Osmundaceae",
     "form": "fern",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "77117634-1",
+      "wfo": "wfo-0000750727",
+      "gbif": "3645928",
+      "inat": "461556",
+      "wikidata": "Q23363",
       "indigene": "osmunda-japonica"
     },
     "commonNames": [
@@ -9265,13 +10990,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:353208-1",
     "scientificName": "Pachysandra terminalis",
     "family": "Buxaceae",
     "form": "groundcover",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "353208-1",
+      "wfo": "wfo-0000733029",
+      "gbif": "2984676",
+      "usda": "PATE11",
+      "itis": "504090",
+      "inat": "142928",
+      "wikidata": "Q159315",
       "indigene": "pachysandra-terminalis"
     },
     "commonNames": [
@@ -9313,6 +11045,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -9343,6 +11076,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -9400,17 +11134,26 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
-      "north-michigan"
+      "north-michigan",
+      "chicago",
+      "central-texas"
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:68407-1",
     "scientificName": "Parthenocissus tricuspidata",
     "family": "Vitaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "68407-1",
+      "wfo": "wfo-0000474320",
+      "gbif": "3039209",
+      "usda": "PATR6",
+      "itis": "28604",
+      "inat": "166162",
+      "wikidata": "Q157979",
       "indigene": "parthenocissus-tricuspidata"
     },
     "commonNames": [
@@ -9443,8 +11186,8 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "passiflora-incarnata"
     },
     "commonNames": [
-      "Purple Passionflower",
-      "Maypop"
+      "Maypop",
+      "Purple Passionflower"
     ],
     "aliases": [
       "maypop",
@@ -9453,6 +11196,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "central-texas",
       "florida-central"
     ]
   },
@@ -9513,13 +11257,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:859466-1",
     "scientificName": "Patrinia scabiosifolia",
     "family": "Caprifoliaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "859466-1",
+      "wfo": "wfo-0001225082",
+      "gbif": "7820439",
+      "inat": "447233",
+      "wikidata": "Q851698",
       "indigene": "patrinia-scabiosifolia"
     },
     "commonNames": [
@@ -9532,6 +11281,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:185932-2",
+    "scientificName": "Pavonia lasiopetala",
+    "family": "Malvaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "185932-2",
+      "wfo": "wfo-0001077098",
+      "gbif": "5406775",
+      "usda": "PALA13",
+      "itis": "21722",
+      "inat": "166219",
+      "wikidata": "Q7156047",
+      "indigene": "pavonia-lasiopetala"
+    },
+    "commonNames": [
+      "Rock Rose"
+    ],
+    "aliases": [
+      "pavonia lasiopetala",
+      "rock rose"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -9564,6 +11342,88 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": null,
+    "scientificName": "Pelazoneuron kunthii",
+    "family": "Thelypteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "gbif": "11842758",
+      "inat": "1413422",
+      "indigene": "pelazoneuron-kunthii"
+    },
+    "commonNames": [
+      "River Fern"
+    ],
+    "aliases": [
+      "pelazoneuron kunthii",
+      "river fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:17170500-1",
+    "scientificName": "Pellaea atropurpurea",
+    "family": "Pteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17170500-1",
+      "wfo": "wfo-0001109208",
+      "gbif": "5275441",
+      "usda": "PEAT2",
+      "itis": "17641",
+      "inat": "82811",
+      "wikidata": "Q2388502",
+      "indigene": "pellaea-atropurpurea"
+    },
+    "commonNames": [
+      "Purple Cliffbrake"
+    ],
+    "aliases": [
+      "pellaea atropurpurea",
+      "purple cliffbrake"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:808044-1",
+    "scientificName": "Penstemon cobaea",
+    "family": "Plantaginaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "808044-1",
+      "wfo": "wfo-0001136586",
+      "gbif": "3171531",
+      "usda": "PECO4",
+      "itis": "33680",
+      "inat": "142655",
+      "wikidata": "Q17739529",
+      "indigene": "penstemon-cobaea"
+    },
+    "commonNames": [
+      "Prairie Penstemon"
+    ],
+    "aliases": [
+      "penstemon cobaea",
+      "prairie penstemon"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
     "primaryId": "ipni:187353-2",
     "scientificName": "Penstemon digitalis",
     "family": "Plantaginaceae",
@@ -9589,7 +11449,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "mid-atlantic"
+      "mid-atlantic",
+      "chicago"
     ]
   },
   {
@@ -9823,6 +11684,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:194567-2",
+    "scientificName": "Phyla nodiflora",
+    "family": "Verbenaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "194567-2",
+      "wfo": "wfo-0000270345",
+      "gbif": "5341112",
+      "usda": "PHNO2",
+      "itis": "32197",
+      "inat": "59040",
+      "wikidata": "Q3273836",
+      "indigene": "phyla-nodiflora"
+    },
+    "commonNames": [
+      "Frogfruit"
+    ],
+    "aliases": [
+      "frogfruit",
+      "phyla nodiflora"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
     "primaryId": "ipni:195615-2",
     "scientificName": "Physocarpus capitatus",
     "family": "Rosaceae",
@@ -9879,6 +11769,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -9943,13 +11834,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:331662-1",
     "scientificName": "Pieris japonica",
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "331662-1",
+      "wfo": "wfo-0001047846",
+      "gbif": "2882631",
+      "usda": "PIJA3",
+      "itis": "565622",
+      "inat": "127181",
+      "wikidata": "Q2333372",
       "indigene": "pieris-japonica"
     },
     "commonNames": [
@@ -10384,6 +12282,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:685871-1",
+    "scientificName": "Platanus occidentalis",
+    "family": "Platanaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "685871-1",
+      "wfo": "wfo-0000487082",
+      "gbif": "3152820",
+      "usda": "PLOC",
+      "itis": "19020",
+      "inat": "49662",
+      "wikidata": "Q157739",
+      "indigene": "platanus-occidentalis"
+    },
+    "commonNames": [
+      "American Sycamore"
+    ],
+    "aliases": [
+      "american sycamore",
+      "platanus occidentalis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
     "primaryId": "ipni:685878-1",
     "scientificName": "Platanus racemosa",
     "family": "Platanaceae",
@@ -10413,13 +12340,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:144523-1",
     "scientificName": "Platycodon grandiflorus",
     "family": "Campanulaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "144523-1",
+      "wfo": "wfo-0000816758",
+      "gbif": "3164340",
+      "usda": "PLGR7",
+      "itis": "845355",
+      "inat": "141623",
+      "wikidata": "Q805322",
       "indigene": "platycodon-grandiflorus"
     },
     "commonNames": [
@@ -10610,6 +12544,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -10913,6 +12848,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:60447606-2",
+    "scientificName": "Primula meadia",
+    "family": "Primulaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "60447606-2",
+      "wfo": "wfo-0001280208",
+      "gbif": "5640540",
+      "itis": "836161",
+      "inat": "549981",
+      "wikidata": "Q22108552",
+      "indigene": "primula-meadia"
+    },
+    "commonNames": [
+      "Shooting Star"
+    ],
+    "aliases": [
+      "primula meadia",
+      "shooting star"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:702751-1",
     "scientificName": "Primula veris",
     "family": "Primulaceae",
@@ -10967,6 +12930,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:210440-2",
+    "scientificName": "Prosopis glandulosa",
+    "family": "Fabaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "210440-2",
+      "wfo": "wfo-0000169068",
+      "gbif": "5358457",
+      "usda": "PRGL2",
+      "itis": "26879",
+      "inat": "1493134",
+      "wikidata": "Q3013277",
+      "indigene": "prosopis-glandulosa"
+    },
+    "commonNames": [
+      "Honey Mesquite"
+    ],
+    "aliases": [
+      "honey mesquite",
+      "prosopis glandulosa"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -11060,13 +13052,17 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:1006782-1",
     "scientificName": "Prunus jamasakura",
     "family": "Rosaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "1006782-1",
+      "gbif": "3020620",
+      "inat": "547458",
+      "wikidata": "Q17234789",
       "indigene": "prunus-jamasakura"
     },
     "commonNames": [
@@ -11110,6 +13106,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-continental"
+    ]
+  },
+  {
+    "primaryId": "ipni:30012498-2",
+    "scientificName": "Prunus mexicana",
+    "family": "Rosaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "30012498-2",
+      "wfo": "wfo-0001013884",
+      "gbif": "3022317",
+      "usda": "PRME",
+      "itis": "24791",
+      "inat": "128755",
+      "wikidata": "Q3011509",
+      "indigene": "prunus-mexicana"
+    },
+    "commonNames": [
+      "Mexican Plum"
+    ],
+    "aliases": [
+      "mexican plum",
+      "prunus mexicana"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -11172,6 +13197,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -11297,6 +13323,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:1128143-2",
+    "scientificName": "Pycnanthemum virginianum",
+    "family": "Lamiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1128143-2",
+      "wfo": "wfo-0000289039",
+      "gbif": "2927376",
+      "usda": "PYVI",
+      "inat": "154473",
+      "wikidata": "Q7262902",
+      "indigene": "pycnanthemum-virginianum"
+    },
+    "commonNames": [
+      "Virginia Mountain Mint"
+    ],
+    "aliases": [
+      "pycnanthemum virginianum",
+      "virginia mountain mint"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:77066454-1",
     "scientificName": "Pyrus pyraster",
     "family": "Rosaceae",
@@ -11354,13 +13408,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:295743-1",
     "scientificName": "Quercus acutissima",
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "295743-1",
+      "wfo": "wfo-0000289386",
+      "gbif": "2877959",
+      "usda": "QUAC80",
+      "itis": "195162",
+      "inat": "167634",
+      "wikidata": "Q1034859",
       "indigene": "quercus-acutissima"
     },
     "commonNames": [
@@ -11432,7 +13493,95 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "chicago",
       "st-lawrence"
+    ]
+  },
+  {
+    "primaryId": "ipni:295855-1",
+    "scientificName": "Quercus bicolor",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "295855-1",
+      "wfo": "wfo-0000289757",
+      "gbif": "2878470",
+      "usda": "QUBI",
+      "itis": "19300",
+      "inat": "54780",
+      "wikidata": "Q142792",
+      "indigene": "quercus-bicolor"
+    },
+    "commonNames": [
+      "Swamp White Oak"
+    ],
+    "aliases": [
+      "quercus bicolor",
+      "swamp white oak"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
+    "primaryId": "ipni:284107-2",
+    "scientificName": "Quercus buckleyi",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "284107-2",
+      "wfo": "wfo-0000289876",
+      "gbif": "2879863",
+      "usda": "QUBU2",
+      "itis": "195168",
+      "inat": "167640",
+      "wikidata": "Q3017139",
+      "indigene": "quercus-buckleyi"
+    },
+    "commonNames": [
+      "Texas Red Oak"
+    ],
+    "aliases": [
+      "quercus buckleyi",
+      "texas red oak"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:359649-1",
+    "scientificName": "Quercus fusiformis",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "359649-1",
+      "wfo": "wfo-0000290856",
+      "gbif": "2880509",
+      "usda": "QUFU",
+      "itis": "195175",
+      "inat": "167647",
+      "wikidata": "Q3009781",
+      "indigene": "quercus-fusiformis"
+    },
+    "commonNames": [
+      "Escarpment Live Oak"
+    ],
+    "aliases": [
+      "escarpment live oak",
+      "quercus fusiformis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -11467,13 +13616,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:927477-1",
     "scientificName": "Quercus glauca",
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "927477-1",
+      "wfo": "wfo-0000290946",
+      "gbif": "2876873",
+      "usda": "QUGL2",
+      "itis": "845168",
+      "inat": "191183",
+      "wikidata": "Q714124",
       "indigene": "quercus-glauca"
     },
     "commonNames": [
@@ -11549,13 +13705,49 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:296423-1",
+    "scientificName": "Quercus macrocarpa",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "296423-1",
+      "wfo": "wfo-0000291873",
+      "gbif": "2878213",
+      "usda": "QUMA2",
+      "itis": "19287",
+      "inat": "54781",
+      "wikidata": "Q1082365",
+      "indigene": "quercus-macrocarpa"
+    },
+    "commonNames": [
+      "Bur Oak"
+    ],
+    "aliases": [
+      "bur oak",
+      "quercus macrocarpa"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago",
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:296481-1",
     "scientificName": "Quercus myrsinifolia",
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "296481-1",
+      "wfo": "wfo-0000292104",
+      "gbif": "2878564",
+      "itis": "845175",
+      "inat": "425335",
+      "wikidata": "Q1075985",
       "indigene": "quercus-myrsinifolia"
     },
     "commonNames": [
@@ -11691,17 +13883,25 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:60444831-2",
     "scientificName": "Quercus serrata",
     "family": "Fagaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "60444831-2",
+      "wfo": "wfo-0000293164",
+      "gbif": "2879649",
+      "usda": "QUSE2",
+      "itis": "845169",
+      "inat": "359972",
+      "wikidata": "Q847209",
       "indigene": "quercus-serrata"
     },
     "commonNames": [
@@ -11714,6 +13914,64 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:284115-2",
+    "scientificName": "Quercus shumardii",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "284115-2",
+      "wfo": "wfo-0000293271",
+      "gbif": "2878289",
+      "usda": "QUSH",
+      "itis": "19417",
+      "inat": "54786",
+      "wikidata": "Q4112184",
+      "indigene": "quercus-shumardii"
+    },
+    "commonNames": [
+      "Shumard Oak"
+    ],
+    "aliases": [
+      "quercus shumardii",
+      "shumard oak"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:216416-2",
+    "scientificName": "Quercus stellata",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "216416-2",
+      "wfo": "wfo-0000293374",
+      "gbif": "8879961",
+      "usda": "QUST",
+      "itis": "19422",
+      "inat": "119269",
+      "wikidata": "Q2600501",
+      "indigene": "quercus-stellata"
+    },
+    "commonNames": [
+      "Post Oak"
+    ],
+    "aliases": [
+      "post oak",
+      "quercus stellata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -11744,6 +14002,64 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "florida-central",
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:217868-2",
+    "scientificName": "Ratibida columnifera",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "217868-2",
+      "wfo": "wfo-0000083837",
+      "gbif": "3087173",
+      "usda": "RACO3",
+      "itis": "38341",
+      "inat": "78836",
+      "wikidata": "Q7295703",
+      "indigene": "ratibida-columnifera"
+    },
+    "commonNames": [
+      "Mexican Hat"
+    ],
+    "aliases": [
+      "mexican hat",
+      "ratibida columnifera"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:217881-2",
+    "scientificName": "Ratibida pinnata",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "217881-2",
+      "wfo": "wfo-0000121004",
+      "gbif": "3087184",
+      "usda": "RAPI",
+      "itis": "38343",
+      "inat": "85331",
+      "wikidata": "Q7295700",
+      "indigene": "ratibida-pinnata"
+    },
+    "commonNames": [
+      "Yellow Coneflower"
+    ],
+    "aliases": [
+      "ratibida pinnata",
+      "yellow coneflower"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -11808,13 +14124,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:1137397-2",
     "scientificName": "Rhododendron indicum",
     "family": "Ericaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "1137397-2",
+      "wfo": "wfo-0000400687",
+      "gbif": "4173541",
+      "inat": "208830",
+      "wikidata": "Q5366359",
       "indigene": "rhododendron-indicum"
     },
     "commonNames": [
@@ -11859,6 +14180,64 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:70474-1",
+    "scientificName": "Rhus copallinum",
+    "family": "Anacardiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "70474-1",
+      "wfo": "wfo-0001049902",
+      "gbif": "3190557",
+      "usda": "RHCO",
+      "itis": "504754",
+      "inat": "126698",
+      "wikidata": "Q7245720",
+      "indigene": "rhus-copallinum"
+    },
+    "commonNames": [
+      "Winged Sumac"
+    ],
+    "aliases": [
+      "rhus copallinum",
+      "winged sumac"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:70565-1",
+    "scientificName": "Rhus glabra",
+    "family": "Anacardiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "70565-1",
+      "wfo": "wfo-0001049359",
+      "gbif": "3190544",
+      "usda": "RHGL",
+      "itis": "28782",
+      "inat": "54764",
+      "wikidata": "Q3177997",
+      "indigene": "rhus-glabra"
+    },
+    "commonNames": [
+      "Smooth Sumac"
+    ],
+    "aliases": [
+      "rhus glabra",
+      "smooth sumac"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:70615-1",
     "scientificName": "Rhus integrifolia",
     "family": "Anacardiaceae",
@@ -11885,6 +14264,64 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:219818-2",
+    "scientificName": "Rhus lanceolata",
+    "family": "Anacardiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "219818-2",
+      "wfo": "wfo-0001049755",
+      "gbif": "3190559",
+      "usda": "RHLA3",
+      "itis": "28785",
+      "inat": "167826",
+      "wikidata": "Q15545721",
+      "indigene": "rhus-lanceolata"
+    },
+    "commonNames": [
+      "Flameleaf Sumac"
+    ],
+    "aliases": [
+      "flameleaf sumac",
+      "rhus lanceolata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:219942-2",
+    "scientificName": "Rhus virens",
+    "family": "Anacardiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "219942-2",
+      "wfo": "wfo-0001049940",
+      "gbif": "3190539",
+      "usda": "RHVI3",
+      "itis": "504757",
+      "inat": "121691",
+      "wikidata": "Q7321561",
+      "indigene": "rhus-virens"
+    },
+    "commonNames": [
+      "Evergreen Sumac"
+    ],
+    "aliases": [
+      "evergreen sumac",
+      "rhus virens"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -12132,13 +14569,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:927374-1",
     "scientificName": "Rosa multiflora",
     "family": "Rosaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "927374-1",
+      "wfo": "wfo-0001001254",
+      "gbif": "3003244",
+      "usda": "ROMU",
+      "itis": "24833",
+      "inat": "78882",
+      "wikidata": "Q133617",
       "indigene": "rosa-multiflora"
     },
     "commonNames": [
@@ -12242,6 +14686,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:734247-1",
+    "scientificName": "Rosa setigera",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "734247-1",
+      "wfo": "wfo-0001017675",
+      "gbif": "3004638",
+      "usda": "ROSE2",
+      "itis": "24839",
+      "inat": "128841",
+      "wikidata": "Q3442147",
+      "indigene": "rosa-setigera"
+    },
+    "commonNames": [
+      "Prairie Rose"
+    ],
+    "aliases": [
+      "prairie rose",
+      "rosa setigera"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -12510,7 +14983,9 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "chicago",
+      "florida-central"
     ]
   },
   {
@@ -12731,17 +15206,25 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:777701-1",
     "scientificName": "Salix gracilistyla",
     "family": "Salicaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "777701-1",
+      "wfo": "wfo-0000928541",
+      "gbif": "7104103",
+      "usda": "SAGR10",
+      "itis": "837753",
+      "inat": "407120",
+      "wikidata": "Q163109",
       "indigene": "salix-gracilistyla"
     },
     "commonNames": [
@@ -12843,6 +15326,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "ca-south-coast",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:778291-1",
+    "scientificName": "Salix nigra",
+    "family": "Salicaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "778291-1",
+      "wfo": "wfo-0000929858",
+      "gbif": "5372854",
+      "usda": "SANI",
+      "itis": "22484",
+      "inat": "54847",
+      "wikidata": "Q469220",
+      "indigene": "salix-nigra"
+    },
+    "commonNames": [
+      "Black Willow"
+    ],
+    "aliases": [
+      "black willow",
+      "salix nigra"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -12994,6 +15506,64 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:456204-1",
+    "scientificName": "Salvia farinacea",
+    "family": "Lamiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "456204-1",
+      "wfo": "wfo-0000300986",
+      "gbif": "2927064",
+      "usda": "SAFA2",
+      "itis": "32713",
+      "inat": "148006",
+      "wikidata": "Q796716",
+      "indigene": "salvia-farinacea"
+    },
+    "commonNames": [
+      "Mealy Blue Sage"
+    ],
+    "aliases": [
+      "mealy blue sage",
+      "salvia farinacea"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:456321-1",
+    "scientificName": "Salvia greggii",
+    "family": "Lamiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "456321-1",
+      "wfo": "wfo-0000301129",
+      "gbif": "2927038",
+      "usda": "SAGR4",
+      "itis": "32689",
+      "inat": "168380",
+      "wikidata": "Q891000",
+      "indigene": "salvia-greggii"
+    },
+    "commonNames": [
+      "Autumn Sage"
+    ],
+    "aliases": [
+      "autumn sage",
+      "salvia greggii"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
     "primaryId": "ipni:289832-2",
     "scientificName": "Salvia mellifera",
     "family": "Lamiaceae",
@@ -13051,6 +15621,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-continental"
+    ]
+  },
+  {
+    "primaryId": "ipni:321576-2",
+    "scientificName": "Salvia roemeriana",
+    "family": "Lamiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "321576-2",
+      "wfo": "wfo-0000302157",
+      "gbif": "2927035",
+      "usda": "SARO3",
+      "itis": "504998",
+      "inat": "168395",
+      "wikidata": "Q7406879",
+      "indigene": "salvia-roemeriana"
+    },
+    "commonNames": [
+      "Cedar Sage"
+    ],
+    "aliases": [
+      "cedar sage",
+      "salvia roemeriana"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -13203,13 +15802,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:741402-1",
     "scientificName": "Sanguisorba officinalis",
     "family": "Rosaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "741402-1",
+      "wfo": "wfo-0000983287",
+      "gbif": "3029627",
+      "usda": "SAOF3",
+      "itis": "25306",
+      "inat": "64549",
+      "wikidata": "Q157347",
       "indigene": "sanguisorba-officinalis"
     },
     "commonNames": [
@@ -13225,13 +15831,48 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:784612-1",
+    "scientificName": "Sapindus drummondii",
+    "family": "Sapindaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "784612-1",
+      "wfo": "wfo-0001135006",
+      "gbif": "5576859",
+      "itis": "520986",
+      "inat": "286324",
+      "wikidata": "Q15528348",
+      "indigene": "sapindus-drummondii"
+    },
+    "commonNames": [
+      "Western Soapberry"
+    ],
+    "aliases": [
+      "sapindus drummondii",
+      "western soapberry"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:420574-1",
     "scientificName": "Sasa veitchii",
     "family": "Poaceae",
     "form": "grass",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "420574-1",
+      "wfo": "wfo-0000897621",
+      "gbif": "4128359",
+      "usda": "SAVE11",
+      "itis": "784871",
+      "inat": "424048",
+      "wikidata": "Q3015670",
       "indigene": "sasa-veitchii"
     },
     "commonNames": [
@@ -13247,13 +15888,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:794584-1",
     "scientificName": "Saxifraga stolonifera",
     "family": "Saxifragaceae",
     "form": "groundcover",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "794584-1",
+      "wfo": "wfo-0000494724",
+      "gbif": "3032762",
+      "usda": "SAST6",
+      "itis": "895013",
+      "inat": "68217",
+      "wikidata": "Q159002",
       "indigene": "saxifraga-stolonifera"
     },
     "commonNames": [
@@ -13327,7 +15975,9 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
-      "st-lawrence"
+      "chicago",
+      "st-lawrence",
+      "central-texas"
     ]
   },
   {
@@ -13593,6 +16243,64 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:315757-2",
+    "scientificName": "Silphium laciniatum",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "315757-2",
+      "wfo": "wfo-0000117950",
+      "gbif": "3092583",
+      "usda": "SILA3",
+      "itis": "38401",
+      "inat": "121976",
+      "wikidata": "Q1780806",
+      "indigene": "silphium-laciniatum"
+    },
+    "commonNames": [
+      "Compass Plant"
+    ],
+    "aliases": [
+      "compass plant",
+      "silphium laciniatum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
+    "primaryId": "ipni:30257140-2",
+    "scientificName": "Silphium terebinthinaceum",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30257140-2",
+      "wfo": "wfo-0000079762",
+      "gbif": "7475866",
+      "usda": "SITE",
+      "itis": "38411",
+      "inat": "121951",
+      "wikidata": "Q15563670",
+      "indigene": "silphium-terebinthinaceum"
+    },
+    "commonNames": [
+      "Prairie Dock"
+    ],
+    "aliases": [
+      "prairie dock",
+      "silphium terebinthinaceum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:1001300-2",
     "scientificName": "Sisyrinchium bellum",
     "family": "Iridaceae",
@@ -13648,6 +16356,63 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:249731-1",
+    "scientificName": "Solidago nemoralis",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "249731-1",
+      "wfo": "wfo-0000013309",
+      "gbif": "5389028",
+      "usda": "SONE",
+      "itis": "36281",
+      "inat": "130377",
+      "wikidata": "Q7557960",
+      "indigene": "solidago-nemoralis"
+    },
+    "commonNames": [
+      "Gray Goldenrod"
+    ],
+    "aliases": [
+      "gray goldenrod",
+      "solidago nemoralis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:249837-1",
+    "scientificName": "Solidago rigida",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "249837-1",
+      "wfo": "wfo-0000129341",
+      "gbif": "5389156",
+      "itis": "36297",
+      "inat": "125721",
+      "wikidata": "Q15568528",
+      "indigene": "solidago-rigida"
+    },
+    "commonNames": [
+      "Stiff Goldenrod"
+    ],
+    "aliases": [
+      "solidago rigida",
+      "stiff goldenrod"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -13891,6 +16656,36 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:240823-2",
+    "scientificName": "Sorghastrum nutans",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "240823-2",
+      "wfo": "wfo-0000900100",
+      "gbif": "2704414",
+      "usda": "SONU2",
+      "itis": "42102",
+      "inat": "122608",
+      "wikidata": "Q3046578",
+      "indigene": "sorghastrum-nutans"
+    },
+    "commonNames": [
+      "Indiangrass"
+    ],
+    "aliases": [
+      "indiangrass",
+      "sorghastrum nutans"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago",
+      "central-texas"
+    ]
+  },
+  {
     "primaryId": "ipni:30135991-2",
     "scientificName": "Spiraea douglasii",
     "family": "Rosaceae",
@@ -13919,6 +16714,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:1026241-2",
+    "scientificName": "Sporobolus heterolepis",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1026241-2",
+      "wfo": "wfo-0000901178",
+      "gbif": "2704766",
+      "usda": "SPHE",
+      "itis": "42119",
+      "inat": "120557",
+      "wikidata": "Q7579245",
+      "indigene": "sporobolus-heterolepis"
+    },
+    "commonNames": [
+      "Prairie Dropseed"
+    ],
+    "aliases": [
+      "prairie dropseed",
+      "sporobolus heterolepis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -14011,13 +16835,49 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:519718-1",
+    "scientificName": "Styphnolobium affine",
+    "family": "Fabaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "519718-1",
+      "wfo": "wfo-0000176767",
+      "gbif": "2958965",
+      "usda": "STAF4",
+      "itis": "820256",
+      "inat": "289854",
+      "wikidata": "Q21318403",
+      "indigene": "styphnolobium-affine"
+    },
+    "commonNames": [
+      "Eve's Necklace"
+    ],
+    "aliases": [
+      "eve's necklace",
+      "styphnolobium affine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:826818-1",
     "scientificName": "Styrax japonicus",
     "family": "Styracaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "826818-1",
+      "wfo": "wfo-0000492190",
+      "gbif": "5371678",
+      "usda": "STJA5",
+      "itis": "505974",
+      "inat": "128570",
+      "wikidata": "Q910419",
       "indigene": "styrax-japonicus"
     },
     "commonNames": [
@@ -14179,7 +17039,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "chicago"
     ]
   },
   {
@@ -14210,7 +17071,37 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
+    ]
+  },
+  {
+    "primaryId": "ipni:981868-1",
+    "scientificName": "Symphyotrichum oblongifolium",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "981868-1",
+      "wfo": "wfo-0000094410",
+      "gbif": "3151638",
+      "usda": "SYOB",
+      "itis": "522228",
+      "inat": "119343",
+      "wikidata": "Q7661734",
+      "indigene": "symphyotrichum-oblongifolium"
+    },
+    "commonNames": [
+      "Aromatic Aster"
+    ],
+    "aliases": [
+      "aromatic aster",
+      "symphyotrichum oblongifolium"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -14297,6 +17188,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "central-texas",
       "florida-central"
     ]
   },
@@ -14622,6 +17514,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -14658,13 +17551,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:82528-1",
     "scientificName": "Trachelospermum asiaticum",
     "family": "Apocynaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "82528-1",
+      "wfo": "wfo-0000326442",
+      "gbif": "7317060",
+      "inat": "349229",
+      "wikidata": "Q11238988",
       "indigene": "trachelospermum-asiaticum"
     },
     "commonNames": [
@@ -14677,6 +17575,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:173408-1",
+    "scientificName": "Tradescantia ohiensis",
+    "family": "Commelinaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "173408-1",
+      "wfo": "wfo-0000589305",
+      "gbif": "2765175",
+      "usda": "TROH",
+      "itis": "39169",
+      "inat": "79383",
+      "wikidata": "Q7832190",
+      "indigene": "tradescantia-ohiensis"
+    },
+    "commonNames": [
+      "Ohio Spiderwort"
+    ],
+    "aliases": [
+      "ohio spiderwort",
+      "tradescantia ohiensis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -14928,6 +17855,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:302278-2",
+    "scientificName": "Ulmus crassifolia",
+    "family": "Ulmaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "302278-2",
+      "wfo": "wfo-0001143152",
+      "gbif": "5361871",
+      "usda": "ULCR",
+      "itis": "19052",
+      "inat": "128823",
+      "wikidata": "Q7879431",
+      "indigene": "ulmus-crassifolia"
+    },
+    "commonNames": [
+      "Cedar Elm"
+    ],
+    "aliases": [
+      "cedar elm",
+      "ulmus crassifolia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
     "primaryId": "ipni:856863-1",
     "scientificName": "Ulmus glabra",
     "family": "Ulmaceae",
@@ -14986,6 +17942,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "ca-south-coast",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:785564-1",
+    "scientificName": "Ungnadia speciosa",
+    "family": "Sapindaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "785564-1",
+      "wfo": "wfo-0001134889",
+      "gbif": "3190006",
+      "usda": "UNSP",
+      "itis": "28710",
+      "inat": "170070",
+      "wikidata": "Q12221127",
+      "indigene": "ungnadia-speciosa"
+    },
+    "commonNames": [
+      "Mexican Buckeye"
+    ],
+    "aliases": [
+      "mexican buckeye",
+      "ungnadia speciosa"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -15073,6 +18058,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "north-michigan",
       "st-lawrence"
+    ]
+  },
+  {
+    "primaryId": "ipni:317271-2",
+    "scientificName": "Vaccinium arboreum",
+    "family": "Ericaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "317271-2",
+      "wfo": "wfo-0001047661",
+      "gbif": "2882828",
+      "usda": "VAAR",
+      "itis": "23580",
+      "inat": "81818",
+      "wikidata": "Q3249733",
+      "indigene": "vaccinium-arboreum"
+    },
+    "commonNames": [
+      "Sparkleberry"
+    ],
+    "aliases": [
+      "sparkleberry",
+      "vaccinium arboreum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -15231,6 +18245,64 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:865207-1",
+    "scientificName": "Verbena hastata",
+    "family": "Verbenaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "865207-1",
+      "wfo": "wfo-0000331939",
+      "gbif": "2925527",
+      "usda": "VEHA2",
+      "itis": "32071",
+      "inat": "60251",
+      "wikidata": "Q384029",
+      "indigene": "verbena-hastata"
+    },
+    "commonNames": [
+      "Blue Vervain"
+    ],
+    "aliases": [
+      "blue vervain",
+      "verbena hastata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
+    "primaryId": "ipni:257707-1",
+    "scientificName": "Verbesina virginica",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "257707-1",
+      "wfo": "wfo-0000042964",
+      "gbif": "3148137",
+      "usda": "VEVI3",
+      "itis": "38613",
+      "inat": "119982",
+      "wikidata": "Q15564201",
+      "indigene": "verbesina-virginica"
+    },
+    "commonNames": [
+      "Frostweed"
+    ],
+    "aliases": [
+      "frostweed",
+      "verbesina virginica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
+    ]
+  },
+  {
     "primaryId": "ipni:812694-1",
     "scientificName": "Veronica stricta",
     "family": "Plantaginaceae",
@@ -15287,13 +18359,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:927323-1",
     "scientificName": "Viburnum dilatatum",
     "family": "Viburnaceae",
     "form": "shrub",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "927323-1",
+      "wfo": "wfo-0001042018",
+      "gbif": "2888584",
+      "usda": "VIDI80",
+      "itis": "505677",
+      "inat": "170200",
+      "wikidata": "Q5965416",
       "indigene": "viburnum-dilatatum"
     },
     "commonNames": [
@@ -15366,6 +18445,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -15425,6 +18505,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:30314446-2",
+    "scientificName": "Viburnum rufidulum",
+    "family": "Adoxaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30314446-2",
+      "wfo": "wfo-0001290686",
+      "gbif": "2888590",
+      "usda": "VIRU",
+      "itis": "35274",
+      "inat": "81801",
+      "wikidata": "Q7924704",
+      "indigene": "viburnum-rufidulum"
+    },
+    "commonNames": [
+      "Rusty Blackhaw"
+    ],
+    "aliases": [
+      "rusty blackhaw",
+      "viburnum rufidulum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "central-texas"
     ]
   },
   {
@@ -15549,13 +18658,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:868269-1",
     "scientificName": "Viola grypoceras",
     "family": "Violaceae",
     "form": "perennial",
     "rank": "species",
     "keystone": true,
     "identifiers": {
+      "ipni": "868269-1",
+      "wfo": "wfo-0001144918",
+      "gbif": "7296559",
+      "inat": "447563",
+      "wikidata": "Q8010145",
       "indigene": "viola-grypoceras"
     },
     "commonNames": [
@@ -15627,13 +18741,18 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:327401-2",
     "scientificName": "Vitis coignetiae",
     "family": "Vitaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "327401-2",
+      "wfo": "wfo-0000421604",
+      "gbif": "5658476",
+      "inat": "559123",
+      "wikidata": "Q1367334",
       "indigene": "vitis-coignetiae"
     },
     "commonNames": [
@@ -15704,17 +18823,25 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:525791-1",
     "scientificName": "Wisteria floribunda",
     "family": "Fabaceae",
     "form": "vine",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "525791-1",
+      "wfo": "wfo-0000214069",
+      "gbif": "2977323",
+      "usda": "WIFL",
+      "itis": "27020",
+      "inat": "170331",
+      "wikidata": "Q1329209",
       "indigene": "wisteria-floribunda"
     },
     "commonNames": [
@@ -15790,13 +18917,20 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
-    "primaryId": null,
+    "primaryId": "ipni:858079-1",
     "scientificName": "Zelkova serrata",
     "family": "Ulmaceae",
     "form": "tree",
     "rank": "species",
     "keystone": false,
     "identifiers": {
+      "ipni": "858079-1",
+      "wfo": "wfo-0001143208",
+      "gbif": "2984532",
+      "usda": "ZESE80",
+      "itis": "505790",
+      "inat": "129055",
+      "wikidata": "Q920344",
       "indigene": "zelkova-serrata"
     },
     "commonNames": [
@@ -15839,6 +18973,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   }

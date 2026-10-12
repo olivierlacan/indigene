@@ -37,13 +37,17 @@
 //
 // The photos load from iNaturalist's CDN, so reviewing needs a connection; the
 // page itself doesn't.
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { sizedUrl } from "./_hero-candidates.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const IN = resolve(HERE, "../../docs/hero-photos/candidates.json");
 const OUT = resolve(HERE, "../dist/hero-review/index.html");
+// Subjects the app shows as a drawing because iNaturalist's own pick can't be
+// republished (written by `hero:inat`). They come first on the page, marked.
+const QUEUE = resolve(HERE, "../../docs/hero-photos/needs-review.json");
 
 /** The committed picks, baked into the page as its starting state. Each is
  *  `subjectId → regionId → pick` (or `→ { angle: pick }` for the plant angles);
@@ -88,6 +92,17 @@ const seedWildlife = readJson(SEED_FILES.wildlife);
 const shortlists = (data.shortlists ?? [])
   .map((s) => ({ ...s, id: s.id ?? s.plantId, subject: s.subject ?? "plant" }))
   .filter((s) => s.candidates?.length);
+const queue = new Map(
+  (existsSync(QUEUE) ? JSON.parse(readFileSync(QUEUE, "utf8")).subjects ?? [] : [])
+    .map((q) => [`${q.subject}|${q.id}`, q]),
+);
+const isQueued = (s) => queue.has(`${s.subject}|${s.id}`);
+// A hero-only harvest (the default) has nothing to fill the four angle slots
+// with, so the page offers the hero alone.
+const anglesOn = data.angles === true || shortlists.some((s) => s.candidates.some((c) => c.angleFit));
+const ACTIVE_SLOTS = anglesOn ? SLOTS : SLOTS.slice(0, 1);
+// Stable: queued first, everything else in the harvest's own order.
+shortlists.sort((a, b) => Number(isQueued(b)) - Number(isQueued(a)));
 if (!shortlists.length) {
   console.error("The candidates file has no shortlists with photos in it.");
   process.exit(1);
@@ -157,7 +172,7 @@ const rows = shortlists
                   photoId: c.photoId, observationId: c.observationId, observer: c.observer,
                   license: c.license, attribution: c.attribution, observedOn: c.observedOn,
                   place: c.place, taxonName: c.taxonName,
-                  thumbUrl: c.thumbUrl, mediumUrl: c.mediumUrl, largeUrl: c.largeUrl,
+                  thumbUrl: sizedUrl(c.mediumUrl, "square"), mediumUrl: c.mediumUrl, largeUrl: sizedUrl(c.mediumUrl, "large"),
                 }))}'>
           <img src="${esc(c.mediumUrl)}" loading="lazy" alt="Candidate ${i + 1} for ${esc(s.name)}">
           <span class="meta">
@@ -171,7 +186,7 @@ const rows = shortlists
         </button>`;
       })
       .join("");
-    const slots = SLOTS.filter((slot) => !slot.plantsOnly || s.subject === "plant")
+    const slots = ACTIVE_SLOTS.filter((slot) => !slot.plantsOnly || s.subject === "plant")
       .map((slot) => `
         <button class="slot" data-base="${esc(base)}" data-slot="${esc(slot.key)}">
           <span aria-hidden="true">${slot.icon}</span> ${esc(slot.label)}
@@ -185,6 +200,7 @@ const rows = shortlists
           <span class="kind" aria-hidden="true">${s.subject === "wildlife" ? "🦋" : "🌿"}</span>
           ${esc(s.name)}
           <small>${esc(s.id)} · ${esc(s.regionName)}</small>
+          ${isQueued(s) ? `<span class="needs">No iNaturalist pick — showing a drawing</span>` : ""}
         </h2>
         <div class="slots">${slots}</div>
         <div class="strip">${tiles}</div>
@@ -192,11 +208,13 @@ const rows = shortlists
   })
   .join("");
 
+const queuedRows = shortlists.filter(isQueued).length;
 const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Photo review — Indigene</title>
 <style>
+  [hidden] { display: none !important; }
   :root { color-scheme: light dark; --line: color-mix(in srgb, currentColor 18%, transparent);
           --picked: #12805c; }
   body { font: 16px/1.5 system-ui, sans-serif; margin: 0; padding: 1rem 1rem 6rem; }
@@ -212,6 +230,8 @@ const html = `<!doctype html>
   .subject h2 { font-size: 1rem; margin: 0 0 .4rem; display: flex; gap: .4rem; align-items: baseline;
                 flex-wrap: wrap; }
   .subject h2 small { font-weight: 400; opacity: .6; }
+  .needs { font-size: .75rem; font-weight: 600; padding: .1rem .5rem; border-radius: 999px;
+    background: color-mix(in srgb, #d97706 22%, transparent); }
   /* The slots, and which one you're filling. The state dot after each label is
      the whole progress display: a section with five filled dots is done. */
   .slots { display: flex; gap: .35rem; flex-wrap: wrap; margin-bottom: .5rem; }
@@ -251,9 +271,10 @@ const html = `<!doctype html>
 
 <header>
   <h1>Photo review</h1>
+  ${queuedRows ? `<p>${queuedRows} need a photo first: iNaturalist's own pick can't be republished, so the app shows a drawing.</p>` : ""}
   <div class="bar">
     <button class="act" id="jump">Next unfilled</button>
-    <label class="opt"><input type="checkbox" id="likely"> Only likely ones</label>
+    <label class="opt"${anglesOn ? "" : " hidden"}><input type="checkbox" id="likely"> Only likely ones</label>
     <button class="act" id="clear">Clear all picks</button>
     <span id="count"></span>
   </div>
@@ -263,14 +284,14 @@ ${rows}
 
 <footer>
   <button class="act" id="dl-hero"><b>Download hero picks</b></button>
-  <button class="act" id="dl-angles"><b>Download plant angles</b></button>
+  <button class="act" id="dl-angles"${anglesOn ? "" : " hidden"}><b>Download plant angles</b></button>
   <button class="act" id="dl-wildlife"><b>Download wildlife picks</b></button>
   <span>→ <code>app/src/data/</code>, then commit</span>
   <span id="count2" style="margin-left:auto"></span>
 </footer>
 
 <script>
-const SLOTS = ${JSON.stringify(SLOTS.map((s) => s.key))};
+const SLOTS = ${JSON.stringify(ACTIVE_SLOTS.map((s) => s.key))};
 const SEED = ${JSON.stringify(seed)};
 const STORE = "indigene-hero-picks";
 

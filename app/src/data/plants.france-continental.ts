@@ -78,8 +78,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 401 Lepidoptera recorded on native oaks in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (405 if introduced oaks are counted too).",
     propagation: {
       methods: ["seed-warm", "seed-direct"],
-      note: "Gather acorns as they drop in autumn and float them in water — throw out any that bob up, and sow the sinkers straight away. Oak acorns sprout the same autumn without chilling and must never dry out. Because of the deep taproot, start it in a tall pot or sow it where it will live.",
-      basis: "ONF / CNPF French forestry practice; European propagation practice.",
+      note: "Gather acorns as they drop in autumn and float them in water — throw out any that bob up, and sow the sinkers straight away. Oak acorns sprout the same autumn without chilling and must never dry out.",
+      basis: "USDA Woody Plant Seed Manual; Seed Information Database; RHS.",
     },
   },
   {
@@ -113,8 +113,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Drought sensitivity and recent dieback: ONF / Département de la santé des forêts. Host count: 115 Lepidoptera recorded on Fagus in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-cold-moist"],
-      note: "Collect the triangular nuts from their prickly husks in autumn — most years many are empty, so gather generously and float-test them. They need about three months of cold, damp storage, which an autumn sowing in a pot left outside supplies for free.",
-      basis: "ONF / CNPF French forestry practice.",
+      note: "Collect the triangular nuts from their prickly husks in autumn — big crops come only every few years, so gather in a good one. They need three to four months of cold, damp storage, which an autumn sowing in a pot left outside supplies for free.",
+      basis: "USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -149,7 +149,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-double-dormant", "layering"],
       note: "Gather the winged nutlets in early autumn while still slightly green and sow them at once — left to dry out fully they usually sit for two winters before coming up. Sow in a pot outdoors and be patient.",
-      basis: "ONF / CNPF French forestry practice.",
+      basis: "USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -183,8 +183,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 100 Lepidoptera recorded on native limes in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-double-dormant", "layering"],
-      note: "Lime seed is notoriously slow — the coat and the embryo both hold it back, so collected nutlets often wait two winters. Sow them fresh and slightly green in a pot outside. Far quicker: layer a low shoot, or dig one of the suckers an old tree throws up at its base.",
-      basis: "ONF / CNPF French forestry practice.",
+      note: "Lime seed is notoriously slow — the coat and the embryo both hold it back, so much of it waits until the second year. Pick the nutlets as they turn from green to grey-brown and sow them at once in a pot outside. Far quicker: layer a low shoot.",
+      basis: "USDA Woody Plant Seed Manual; RHS.",
     },
   },
   {
@@ -217,9 +217,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 77 Lepidoptera recorded on native maples in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (119 if introduced ornamental maples are counted too).",
     propagation: {
-      methods: ["seed-cold-moist"],
-      note: "Collect the paired winged keys in autumn as they brown, and give them about three months in damp sand in the fridge — or sow them outside in a pot and let winter chill them.",
-      basis: "ONF / CNPF French forestry practice.",
+      methods: ["seed-double-dormant", "cuttings-softwood"],
+      note: "Sow the winged keys in autumn in a pot left outside, and be patient: many wait until the second spring. Soft cuttings taken in early summer are quicker.",
+      basis: "Seed Information Database; RHS.",
     },
   },
   {
@@ -252,9 +252,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 109 Lepidoptera recorded on native Sorbus in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-double-dormant", "suckers"],
-      note: "Clean the pulp off the fruit and sow at once in a pot outdoors — it typically needs a warm spell and then a long cold one, so a good share will wait until the second spring. Much easier: lift one of the rooted suckers a mature tree sends up.",
-      basis: "ONF / CNPF French forestry practice.",
+      methods: ["seed-double-dormant", "cuttings-softwood"],
+      note: "Clean the pulp off the fruit and sow at once in a pot outdoors: the seed needs a long winter chill, and some may need a warm spell first. Soft cuttings also root.",
+      basis: "USDA Woody Plant Seed Manual; RHS.",
     },
   },
   {
@@ -288,8 +288,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range (native populations, as distinct from plantations): Tela Botanica (BDTFX), INPN. Host count: 64 Lepidoptera recorded on native pines in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-direct"],
-      note: "Collect closed cones in winter and keep them somewhere warm and dry until they open, then shake out the winged seed. It germinates freely in spring with no chilling — sow into deep pots and keep them in full light.",
-      basis: "ONF / CNPF French forestry practice.",
+      note: "Collect closed cones in winter and keep them somewhere warm and dry until they open, then shake out the winged seed. It germinates freely in spring with no chilling.",
+      basis: "USDA Woody Plant Seed Manual; Seed Information Database; RHS.",
     },
   },
 
@@ -323,9 +323,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 385 Lepidoptera recorded on native willows in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["cuttings-hardwood", "seed-direct"],
-      note: "Goat willow is the one willow whose winter cuttings are unreliable, so take half-ripe shoots in summer instead, or simply move one of the seedlings that appear on their own. Seed is alive for about a week.",
-      basis: "Conservatoire botanique national alpin; European nursery practice.",
+      methods: ["cuttings-hardwood", "cuttings-softwood"],
+      note: "Push pencil-thick leafless cuttings two-thirds of their length into damp ground in winter, or take soft shoot tips in early summer. Seed stays alive only a few weeks.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -359,8 +359,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 326 Lepidoptera recorded on native birches in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["seed-surface-light", "seed-direct"],
-      note: "Collect the catkins as they crumble in autumn, scatter the dust-fine seed on damp bare soil and press it in — it needs light to germinate, so never bury it. It sows itself so freely that moving a seedling is usually easier.",
-      basis: "Conservatoire botanique national alpin; European nursery practice.",
+      note: "Pick the catkins in late summer while they still hold together and dry them until they crumble. Scatter the dust-fine seed on damp bare soil and press it in without burying it — light helps it germinate. It sows itself so freely that moving a seedling is usually easier.",
+      basis: "USDA Woody Plant Seed Manual; Seed Information Database.",
     },
   },
   {
@@ -464,9 +464,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 201 Lepidoptera recorded on native hawthorns in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-double-dormant", "cuttings-hardwood"],
-      note: "Hawthorn seed is slow on purpose: clean the flesh off the haws and sow them outside at once, and expect most to come up in the second spring rather than the first. Dormant hardwood cuttings taken in winter are the shortcut.",
-      basis: "ONF / CNPF French forestry practice.",
+      methods: ["seed-double-dormant"],
+      note: "Hawthorn seed is slow on purpose: clean the flesh off the haws, sow them outside in early autumn, and expect most to come up in the second spring or later. Cuttings rarely root.",
+      basis: "USDA Woody Plant Seed Manual; RHS.",
     },
   },
   {
@@ -499,9 +499,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 319 Lepidoptera recorded on native cherries and plums in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (323 if introduced relatives are counted too).",
     propagation: {
-      methods: ["seed-cold-moist", "suckers"],
-      note: "Clean the flesh off the ripe stones in late summer and give them about three months of cold, damp storage before sowing in spring. Easier still: lift one of the rooted suckers it throws up around itself in late winter.",
-      basis: "ONF / CNPF French forestry practice.",
+      methods: ["seed-cold-moist", "cuttings-softwood"],
+      note: "Clean the flesh off the ripe stones in late summer and give them about three months of cold, damp storage before sowing in spring — or sow them in a pot outdoors in autumn. Soft cuttings root in early summer with bottom heat.",
+      basis: "USDA Woody Plant Seed Manual; Seed Information Database; RHS.",
     },
   },
   {
@@ -534,9 +534,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 42 Lepidoptera recorded on native dogwoods in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-double-dormant", "layering"],
-      note: "Clean the pulp off the ripe fruit and sow at once outdoors — the stones are hard and most will not come up until the second spring. Layering a low branch is faster and certain.",
-      basis: "ONF / CNPF French forestry practice.",
+      methods: ["seed-double-dormant", "cuttings-semi-hardwood"],
+      note: "Clean the pulp off the ripe fruit and sow at once outdoors — the stones are hard and most will not come up until the second spring. Cuttings are faster: semi-ripe in summer or hardwood in winter.",
+      basis: "USDA Woody Plant Seed Manual; RHS.",
     },
   },
   {
@@ -569,9 +569,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 27 Lepidoptera recorded on native Viburnum in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (30 including introduced relatives).",
     propagation: {
-      methods: ["seed-double-dormant", "cuttings-semi-hardwood"],
-      note: "Viburnum seed is famously two-stage — it makes a root the first year and a shoot only after the second winter — so sow it fresh outdoors and leave it alone for two years. Firmed-up summer cuttings are far quicker.",
-      basis: "ONF / CNPF French forestry practice.",
+      methods: ["seed-warm", "cuttings-softwood"],
+      note: "Sow the seed fresh outdoors by mid-autumn: it makes a root in the warmth, then a shoot after the winter. Soft summer cuttings are quicker.",
+      basis: "USDA Woody Plant Seed Manual; RHS.",
     },
   },
   {
@@ -605,8 +605,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Privet hawk-moth (Sphinx ligustri) host relationship: INPN. Host count: 38 Lepidoptera recorded on native privet in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (62 including introduced ornamental privets).",
     propagation: {
       methods: ["cuttings-hardwood", "seed-cold-moist"],
-      note: "Dormant leafless cuttings taken in winter and pushed into damp soil root almost without fail — this is one of the easiest woody plants there is. From seed, clean the pulp off and give it three months of cold, damp storage.",
-      basis: "ONF / CNPF French forestry practice.",
+      note: "Dormant leafless cuttings taken in winter and pushed into damp soil root easily — this is one of the easiest woody plants there is. From seed, clean the pulp off and sow fresh in autumn; stored seed needs a month or two of cold, damp storage first.",
+      basis: "USDA Woody Plant Seed Manual; RHS.",
     },
   },
   {
@@ -641,7 +641,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-double-dormant", "cuttings-semi-hardwood"],
       note: "Clean the orange flesh off the seed — wear gloves — and sow at once outdoors; expect a good share to wait until the second spring. Firmed-up summer cuttings root readily and are much faster.",
-      basis: "ONF / CNPF French forestry practice.",
+      basis: "USDA Woody Plant Seed Manual; Seed Information Database; RHS.",
     },
   },
   {
@@ -676,7 +676,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["seed-double-dormant", "cuttings-hardwood"],
       note: "Rose hips need patience: clean the seed out, sow it outdoors in autumn, and expect much of it in the second spring. Dormant hardwood cuttings taken in winter are the quick way and root well.",
-      basis: "ONF / CNPF French forestry practice.",
+      basis: "USDA Woody Plant Seed Manual; RHS.",
     },
   },
 
@@ -712,7 +712,7 @@ export const SEED_RAW: RawPlant[] = [
     propagation: {
       methods: ["layering", "seed-cold-moist"],
       note: "Peg a low stem under an inch of soil in autumn and cut it free a year later — that is how a hazel stool spreads by itself. From seed, sow the nuts in autumn in a pot buried outdoors under wire mesh, or the mice will empty it.",
-      basis: "Conservatoire botanique national alpin; European woodland practice.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -817,8 +817,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 41 Lepidoptera recorded on native Origanum in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["division", "seed-surface-light"],
-      note: "Split a clump in spring — the simplest method and it always works. The seed is very fine, so press it onto the surface of gritty compost and leave it uncovered in the light.",
-      basis: "Conservatoires botaniques nationaux; European propagation practice.",
+      note: "Split a clump in spring or autumn — the simplest method. The seed is tiny and needs no treatment: press it onto the surface of gritty compost.",
+      basis: "RHS; Seed Information Database.",
     },
   },
   {
@@ -851,9 +851,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 88 Lepidoptera recorded on native knapweeds in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-direct", "seed-cold-moist"],
-      note: "Collect the dry heads in autumn and rub the seed out. It comes up readily from an autumn sowing outdoors; a spring sowing does better after a month of cold, damp storage in the fridge.",
-      basis: "Conservatoires botaniques nationaux; European propagation practice.",
+      methods: ["seed-direct", "division"],
+      note: "Collect the dry heads in autumn and rub the seed out. Sow it in spring; it needs no treatment. Clumps can also be divided in spring or autumn.",
+      basis: "Seed Information Database; RHS.",
     },
   },
   {
@@ -887,8 +887,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Blue-butterfly and burnet-moth host relationships: INPN; European butterfly foodplant checklist (Dryad). Host count: 106 Lepidoptera recorded on native Lotus in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level (115 including introduced relatives).",
     propagation: {
       methods: ["seed-scarify", "seed-direct"],
-      note: "The seed coat is hard, like most peas: nick it with sandpaper or soak it overnight in warm water, then sow it straight onto scratched bare soil in autumn or early spring. It resents being potted and moved, so sow where you want it.",
-      basis: "Conservatoires botaniques nationaux; European propagation practice.",
+      note: "The seed coat is hard, like most peas: nick it with sandpaper or soak it overnight in warm water, then sow it straight onto scratched bare soil in autumn or early spring.",
+      basis: "Seed Information Database; RHS; Plantlife.",
     },
   },
   {
@@ -921,9 +921,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 68 Lepidoptera recorded on native sages in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Sow the seed fresh in autumn in a pot left outside — it germinates easily. Established clumps can be split in early spring, though the taproot means older plants move badly.",
-      basis: "Conservatoires botaniques nationaux; European propagation practice.",
+      methods: ["seed-direct"],
+      note: "Sow the seed in spring in pots outdoors — it germinates readily with no treatment.",
+      basis: "Seed Information Database; RHS.",
     },
   },
   {
@@ -956,9 +956,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Scabious specialist bee (Andrena hattorfiana): Fowler & Droege equivalent European specialist lists; INPN. Host count: 20 Lepidoptera recorded on Knautia in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["seed-direct", "division"],
-      note: "Collect the dry heads in late summer and sow the seed straight away into a pot outside or onto bare soil — it germinates well without any special treatment. Clumps can also be split in early spring.",
-      basis: "Conservatoires botaniques nationaux; European propagation practice.",
+      methods: ["seed-direct", "cuttings-softwood"],
+      note: "Sow the seed in spring in pots outdoors, or take shoots from the base of the clump as cuttings in spring.",
+      basis: "RHS.",
     },
   },
 
@@ -993,9 +993,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Encroachment on calcareous grassland: French chalk-grassland conservation literature; Conservatoires d'espaces naturels. Host count: 72 Lepidoptera recorded on native Brachypodium in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["division", "seed-direct"],
-      note: "Lift a tuft in autumn or early spring and pull it into rooted pieces. Seed sown straight onto raked soil in autumn also takes, though it is slower than dividing.",
-      basis: "Conservatoires botaniques nationaux; European propagation practice.",
+      methods: ["seed-direct"],
+      note: "Sow the seed onto raked soil; it germinates readily with no treatment.",
+      basis: "Seed Information Database; RHS.",
     },
   },
 
@@ -1100,9 +1100,9 @@ export const SEED_RAW: RawPlant[] = [
     hostCountFrom: "counted",
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Comma (Polygonia c-album) host relationship: INPN; European butterfly foodplant checklist (Dryad). Host count: 27 Lepidoptera recorded on native hops in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
-      methods: ["division", "cuttings-softwood"],
-      note: "In early spring, dig at the edge of a clump and cut off a piece of the fleshy running root with a bud on it — that is how hop growers have always done it, and it is near-certain. Soft shoot cuttings in early summer root too.",
-      basis: "Conservatoires botaniques nationaux; European propagation practice.",
+      methods: ["cuttings-softwood", "cuttings-semi-hardwood"],
+      note: "Take soft shoot cuttings in late spring, or firmer ones in summer; both root.",
+      basis: "RHS.",
     },
   },
   {
@@ -1136,8 +1136,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 47 Lepidoptera recorded on native Clematis in continental-temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0), counted at genus level.",
     propagation: {
       methods: ["layering", "cuttings-semi-hardwood"],
-      note: "Peg a long shoot into the soil in spring and cut it free a year later once it has rooted — simple and certain. Firmed-up summer cuttings root under cover. The seed germinates too, over two winters outdoors.",
-      basis: "Conservatoires botaniques nationaux; European propagation practice.",
+      note: "Peg a long shoot into the soil in late winter or early spring and cut it free once it has rooted. Soft cuttings in spring and firmer ones in early summer root under cover. Seed sown outdoors in autumn can take a year to come up.",
+      basis: "RHS; USDA Woody Plant Seed Manual.",
     },
   },
   {
@@ -1324,8 +1324,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Toxicity: ASPCA. Host count: 5 Lepidoptera recorded on Dryopteris in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0). Ferns genuinely feed very few caterpillars.",
     propagation: {
       methods: ["division", "spores"],
-      note: "Split an old crown in late winter, keeping several fronds and a fist of roots on each piece. From spores, scrape the ripe brown dots off a frond onto paper, scatter the dust on damp sterile compost under a lid and leave it cool and shaded for months.",
-      basis: "Conservatoire botanique national alpin; European fern propagation practice.",
+      note: "Split an old crown in spring, keeping several fronds and a fist of roots on each piece. From spores, leave a piece of ripe frond in a paper envelope for a day, scatter the dust that falls on damp sterile compost under a lid and keep it cool and lightly shaded for months.",
+      basis: "RHS.",
     },
   },
   {
@@ -1359,8 +1359,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 2 Lepidoptera recorded on native spleenworts in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0). Ferns genuinely feed very few caterpillars.",
     propagation: {
       methods: ["spores", "division"],
-      note: "Spores are sown on damp sterile compost under a lid, kept cool and shaded — a green film first, ferns months later. Old crowns divide in late winter if you keep plenty of root on each piece.",
-      basis: "Conservatoire botanique national alpin; European fern propagation practice.",
+      note: "Spores are sown on damp sterile compost under a lid, kept cool and lightly shaded — a green film first, ferns months later. Old crowns can be split in spring.",
+      basis: "RHS.",
     },
   },
   {
@@ -1394,8 +1394,8 @@ export const SEED_RAW: RawPlant[] = [
     basis: "Native status/range: Tela Botanica (BDTFX), INPN. Host count: 1 Lepidoptera recorded on Polystichum in continental temperate Europe — Gaytán et al. 2026 European matrix (CC-BY 4.0). Ferns genuinely feed very few caterpillars.",
     propagation: {
       methods: ["spores", "division"],
-      note: "Sow the spore dust on damp sterile compost under a lid in cool shade and be patient. Division of an old crown works in late winter, but this fern is slow to recover from it.",
-      basis: "Conservatoire botanique national alpin; European fern propagation practice.",
+      note: "Sow ripe spores on damp sterile compost under a lid in cool, light shade and be patient. The rhizomes can be divided in spring.",
+      basis: "RHS.",
     },
   },
 ];

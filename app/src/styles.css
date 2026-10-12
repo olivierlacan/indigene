@@ -142,6 +142,34 @@ a {
   color: var(--focus);
 }
 
+/* Links in running text: there to follow, not to read past. They keep the
+   text's color with a quiet underline and take the link color under a pointer
+   or focus, so a paragraph with three links doesn't read as a paragraph of
+   blue. Buttons, chips, heading links and the contents list keep their own
+   looks; a paragraph that is only a way on (`.more-link`) stays bright. */
+.privacy-page > p a,
+.privacy-page > :is(ul, ol) > li a,
+.note a:not(.btn),
+.kv a,
+.step-lede a,
+.pioneers-credit a,
+.region-tag a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, var(--focus) 55%, transparent);
+}
+:is(.privacy-page > p, .privacy-page > :is(ul, ol) > li, .note, .kv, .step-lede, .pioneers-credit, .region-tag) a:is(:hover, :focus-visible) {
+  color: var(--focus);
+  text-decoration-color: currentColor;
+}
+.privacy-page > p.more-link a,
+p.more-link a {
+  color: var(--focus);
+  text-decoration-color: currentColor;
+}
+
 /* --- Section headings that lead somewhere -------------------------------
    A roster's category heading, a wildlife group's heading, a region on an
    animal's page: each labels the cards under it *and* is the way into that
@@ -840,6 +868,39 @@ a {
 }
 
 /* --- Layout --- */
+/* The one-line "read this in French?" offer (components/lang-offer.ts): a
+   full-width strip under the header, its row held to the page's width. */
+.lang-offer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 0.5rem 0 1rem;
+  border-bottom: 1px solid var(--line);
+}
+.lang-offer-take,
+.lang-offer-close {
+  min-height: var(--tap);
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.lang-offer-take {
+  padding: 0;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.lang-offer-close {
+  min-width: var(--tap);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
 .app-main {
   max-width: var(--maxw);
   margin: 0 auto;
@@ -866,14 +927,13 @@ a {
   animation: boot-fade 0.6s ease-out 0.1s both;
 }
 .boot-sprout {
-  font-size: 2.75rem;
-  line-height: 1;
   margin-bottom: 0.5rem;
 }
-.boot-sprout span {
-  display: inline-block;
-  transform-origin: 50% 90%;
-  animation: boot-sway 2.4s ease-in-out infinite;
+/* The router's loader (components/page-loader.ts) waits a beat longer before
+   it shows: most pages draw well inside it, and a flash of seedling between
+   two pages would read as a stutter. */
+.page-loader {
+  animation-delay: 0.35s;
 }
 .boot-line {
   margin: 0;
@@ -903,17 +963,119 @@ a {
     transform: none;
   }
 }
-@keyframes boot-sway {
-  0%,
-  100% {
-    transform: rotate(-6deg) scale(1);
+
+/* The growing seedling, shared by the boot screen and the page loader. One
+   3.6 s cycle, in order: the stem rises out of the soil, the leaves unfurl, the
+   coneflower opens, it sways a moment, then it all folds back down. Every part
+   rests fully grown, so with the motion turned off it's simply a plant. */
+.grow {
+  width: 4.5rem;
+  height: 4.5rem;
+  overflow: visible;
+  --grow-t: 3.6s;
+}
+.grow-soil {
+  fill: var(--accent);
+  opacity: 0.55;
+}
+.grow-stem {
+  fill: none;
+  stroke: var(--brand);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  animation: grow-stem var(--grow-t) ease-in-out infinite;
+}
+.grow-leaf {
+  fill: var(--brand);
+  transform-box: fill-box;
+  animation: grow-leaf var(--grow-t) ease-out infinite;
+}
+.grow-leaf-l {
+  transform-origin: 100% 60%;
+  animation-delay: 0.05s;
+}
+.grow-leaf-r {
+  transform-origin: 0% 70%;
+  animation-delay: 0.25s;
+}
+.grow-bloom {
+  fill: #c86aa0; /* purple coneflower */
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: grow-bloom var(--grow-t) cubic-bezier(0.3, 1.5, 0.6, 1) infinite;
+}
+.grow-heart {
+  fill: #c97c1c;
+}
+.grow-plant {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: grow-sway var(--grow-t) ease-in-out infinite;
+}
+@media (prefers-color-scheme: dark) {
+  .grow-bloom {
+    fill: #e39ac3;
   }
-  50% {
-    transform: rotate(6deg) scale(1.06);
+  .grow-heart {
+    fill: #e8a94a;
+  }
+}
+@keyframes grow-stem {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  30%,
+  86% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 1;
+  }
+}
+@keyframes grow-leaf {
+  0%,
+  18% {
+    transform: scale(0) rotate(-25deg);
+  }
+  40%,
+  84% {
+    transform: none;
+  }
+  96%,
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes grow-bloom {
+  0%,
+  36% {
+    transform: scale(0) rotate(-60deg);
+  }
+  56%,
+  82% {
+    transform: none;
+  }
+  94%,
+  100% {
+    transform: scale(0) rotate(30deg);
+  }
+}
+@keyframes grow-sway {
+  0%,
+  56%,
+  100% {
+    transform: none;
+  }
+  66% {
+    transform: rotate(-4deg);
+  }
+  76% {
+    transform: rotate(3deg);
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .boot-sprout span {
+  .grow * {
     animation: none !important;
   }
 }
@@ -1109,6 +1271,55 @@ a {
 }
 .note strong {
   color: inherit;
+}
+
+/* --- "Native means the plant, never the person" (steps/welcome.ts) --------
+   The one stance the home page states outright, so it is built to be seen: a
+   surface card with a thick brand rule, a title of its own and a full-size
+   button into #/native — distinct from the tinted `.note` above it on the same
+   page. Colours are theme tokens, so dark and light both follow. */
+.native-callout {
+  margin: 1.25rem 0 0;
+  padding: 1.1rem 0.7rem 1.15rem 0.95rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--brand);
+  border-radius: var(--radius);
+}
+.native-callout-title {
+  margin: 0 0 0.35rem;
+  /* One line at 360 px, in both languages. */
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--ink);
+}
+.native-callout-body {
+  margin: 0 0 0.9rem;
+  color: var(--ink-soft);
+}
+/* Full width, like the app's block buttons: the French label ("Plantes
+   indigènes, pas nativisme") needs the card's whole width to stay on one line
+   at 360 px. Below that floor it may wrap rather than push the page sideways. */
+.native-callout-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: var(--tap);
+  padding: 0.35rem 0.5rem;
+  border: 2px solid var(--brand);
+  border-radius: 999px;
+  color: var(--brand);
+  /* The weight of every other button (.btn), a step smaller than its type so
+     the French label holds one line at 360 px (measured: 257 px available for
+     a label that needs 266 at the body size). */
+  font-size: 0.95rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.native-callout-link:hover {
+  background: var(--brand-bg);
 }
 
 /* --- The "still being translated" banner -------------------------------- */
@@ -1681,6 +1892,10 @@ input[type="range"] {
   border: 1px solid var(--line);
   background: var(--surface-2);
   touch-action: none;
+  /* A held finger on iOS otherwise starts selecting the text round the map. */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 .map canvas {
   display: block;
@@ -1695,6 +1910,26 @@ input[type="range"] {
   font-size: 2rem;
   pointer-events: none;
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
+}
+/* The loupe a long press opens over the map (steps/location.ts): a round,
+   enlarged view of the pin's few metres, in the corner away from the finger. */
+.map canvas.map-loupe {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+.map canvas.map-loupe-right {
+  left: auto;
+  right: 10px;
+}
+.map canvas.map-loupe[hidden] {
+  display: none;
 }
 .coords {
   font-variant-numeric: tabular-nums;
@@ -2564,6 +2799,14 @@ details.weights {
   background: var(--surface-2);
   color: var(--ink-soft);
 }
+/* Pavement pioneers wear concrete: a slate pill, same fixed pairing in both
+   themes as the tie chips below use, because the colour IS the meaning here —
+   this is the badge for "it'll grow in the hard grey stuff". #fff on #4f5a63
+   is about 7:1, comfortably past AA at this weight and size. */
+.badge.pioneer {
+  background: #4f5a63;
+  color: #fff;
+}
 /* Tap-to-explain tie chips: a colored pill with a white monochrome glyph and a
    one-word label. A real button — the dotted underline under the label marks it
    as "there's more here", and it opens the term dialog. */
@@ -2739,6 +2982,15 @@ details.weights {
 .tag-sole {
   background: #f2c94c;
   color: #3a2c00;
+}
+/* The abuse chips on a pioneer card. One colour for all seven, unlike the
+   support chips above: those name different *kinds* of relationship worth
+   telling apart at a glance, while these are seven faces of one idea ("this
+   ground is hostile"), and seven colours would imply a distinction the data
+   doesn't make. */
+.tag-pressure {
+  background: #4f5a63;
+  color: #fff;
 }
 /* The term dialog's title glyph sits in the ink color beside the word. */
 .term-dialog-title {
@@ -3272,6 +3524,73 @@ details.weights {
    then the impostor) on a phone and pairs up side by side once there's room. */
 .lookalike-line {
   margin-top: 0.4rem;
+}
+
+/* --- Pavement pioneers --- */
+/* The card is NOT a link (its chips are buttons — see components/pioneer-card.ts),
+   so the name carries the only anchor and has to look like one. */
+.pioneer-card {
+  padding: 0.6rem 0.8rem;
+  margin: 0;
+  height: 100%;
+}
+.pioneer-head {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+.pioneer-name {
+  font-weight: 700;
+}
+.pioneer-name a {
+  color: inherit;
+}
+/* The chips wrap as a block of their own under the name. `margin-top` rather
+   than a gap on the card: on the compact card they're the last thing in it. */
+.pioneer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+}
+.pioneer-note {
+  margin: 0.55rem 0 0;
+}
+.pioneer-basis {
+  margin: 0.4rem 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.pioneer-basis-label {
+  font-weight: 650;
+}
+/* The same thing on a plant's page, under the badge that provoked the question.
+   `.kv` gives it the label-then-text shape of the lines around it; the chips
+   and the sentence each need their own line, so this one is a block. */
+.pioneer-line {
+  margin-top: 0.4rem;
+}
+.pioneer-line .pioneer-tags {
+  margin-top: 0.35rem;
+}
+.pioneer-line .pioneer-note {
+  margin-top: 0.4rem;
+}
+/* The credit for the nickname, at the foot of the pioneers page. Quiet, but not
+   hidden — it's an acknowledgement, so it reads as a note rather than a
+   disclaimer. */
+.pioneers-credit {
+  margin: 1.1rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  border-left: 3px solid #4f5a63;
+  padding-left: 0.7rem;
+}
+/* The book's title sits in running text, so it keeps the text's colour with a
+   soft underline — the quiet-link rule. `cite` is the element for a work's
+   title; browsers italicise it, which is what a title wants anyway. */
+.pioneers-credit cite {
+  font-style: italic;
 }
 .lookalike-card .lookalike-head {
   gap: 0.5rem;
@@ -5243,6 +5562,33 @@ body[data-layout="profile"] .wip-banner-text {
   min-height: 2.4rem;
   padding: 0.3rem 0.5rem;
 }
+/* A season-plan row (components/season-plan.ts): what to do with the plant,
+   and when — the technique is a link, ripe seed is lit because it won't wait. */
+.grow-do {
+  margin: 0.2rem 0 0.15rem;
+  font-size: 0.95rem;
+}
+.grow-ripe {
+  color: var(--brand-ink);
+  font-weight: 700;
+}
+.grow-leave {
+  margin: 0 0 0.15rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+/* A claim and the page that makes it, one per line. */
+.grow-sources {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+.grow-sources li {
+  margin: 0.3rem 0;
+}
+.badge.grow-first {
+  display: table;
+  margin: 0 0 0.25rem;
+}
 /* What it should be by now. Given the brand tint because it's the one line on
    the row that is the app talking rather than the gardener's own record. */
 .log-growth {
@@ -6016,9 +6362,6 @@ body[data-layout="profile"] .wip-banner-text {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
-.film figcaption {
-  margin-top: 0.5rem;
-}
 @media (prefers-reduced-motion: reduce) {
   .film-poster {
     transition: none;
@@ -6394,6 +6737,44 @@ body[data-layout="profile"] .wip-banner-text {
   font-size: 0.92rem;
 }
 
+/* --- Further reading: books, websites and channels ----------------------- */
+/* A list of links off the site, like the societies above it: the title carries
+   the weight, who made it and why it was picked sit quietly underneath. The
+   kind (book, website, channel) is an icon in the gutter so the titles align. */
+.reading-list {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.reading-row {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+  align-items: baseline;
+}
+.reading-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+.reading-title {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+/* What a worldwide pick gives the reader: the one line in the row written in
+   our voice, so it reads as text, not as metadata. */
+.reading-why {
+  font-size: 0.95rem;
+}
+.reading-by,
+.reading-proof {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
 /* A saved spot's wildlife menu: each animal its plants can feed as a tile —
    the animal's picture in a circle, its name, and the plant of yours it eats.
    Three to a row on a phone; the whole tile is the link to its page. */
@@ -6608,3 +6989,28 @@ body[data-layout="profile"] .wip-banner-text {
      apart — the conservation note beside it makes the same bet. */
   border-left: 4px solid var(--warn-ink);
 }
+
+/* Home: the rest of the app, one linked row each. One column on a phone, two
+   on a laptop. Rows are cards, not buttons — the start button stays the only
+   call to action. */
+.welcome-more { margin-top: 1.8rem; }
+.welcome-ways {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(22rem, 100%), 1fr));
+  gap: 0.5rem;
+}
+a.welcome-way {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0;
+  padding: 0.55rem 0.75rem;
+  color: inherit;
+  text-decoration: none;
+}
+a.welcome-way:hover strong { text-decoration: underline; }
+.welcome-way-thumb { flex: 0 0 auto; width: 56px; height: 56px; }
+.welcome-way-map { background: var(--surface-2, transparent); display: grid; place-items: center; overflow: hidden; }
+.welcome-way-map img { width: 100%; height: 100%; object-fit: cover; }
+.welcome-way-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.35; }
+.welcome-way-text span { font-size: 0.88rem; color: var(--ink-soft); }

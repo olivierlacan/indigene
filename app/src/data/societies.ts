@@ -47,6 +47,11 @@ export const SOCIETIES: Record<string, Society[]> = {
     { name: "Virginia Native Plant Society", url: "https://vnps.org/", what: "sales" },
     { name: "Native Plant Trust", url: "https://nativeplanttrust.org/", what: "advice" },
   ],
+  chicago: [
+    { name: "Illinois Native Plant Society", url: "https://www.illinoisplants.org/", what: "chapters" },
+    { name: "Wild Ones (Illinois chapters)", url: "https://wildones.org/chapters/illinois/", what: "chapters" },
+    { name: "The Morton Arboretum", url: "https://mortonarb.org/plant-and-protect/", what: "advice" },
+  ],
   "north-michigan": [
     { name: "Michigan Botanical Society", url: "https://michiganbotanicalsociety.org/", what: "walks" },
     { name: "Wildflower Association of Michigan", url: "https://wildflowersmich.org/", what: "advice" },
@@ -69,6 +74,11 @@ export const SOCIETIES: Record<string, Society[]> = {
   ],
   "ca-central-coast": [
     { name: "California Native Plant Society", url: "https://www.cnps.org/chapters", what: "chapters" },
+  ],
+  "central-texas": [
+    { name: "Native Plant Society of Texas", url: "https://www.npsot.org/", what: "chapters" },
+    { name: "Lady Bird Johnson Wildflower Center", url: "https://www.wildflower.org/", what: "advice" },
+    { name: "Texas Master Naturalist", url: "https://txmn.tamu.edu/chapters/", what: "walks" },
   ],
   "florida-central": [
     { name: "Florida Native Plant Society", url: "https://www.fnps.org/chapters", what: "chapters" },

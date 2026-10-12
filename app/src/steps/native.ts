@@ -15,7 +15,7 @@
 // agrees with both, and says how.
 import { el, clear } from "../ui";
 import { navigate } from "../state";
-import { t } from "../lib/i18n";
+import { t, tx } from "../lib/i18n";
 import type { TKey } from "../locales/en";
 
 /** The evidence, in reading order. Names and URLs are proper nouns and stay
@@ -36,9 +36,17 @@ const SOURCES: { name: string; url: string; what: TKey }[] = [
 
 const p = (key: TKey): HTMLElement => el("p", {}, t(key));
 
-/** A `<li>` whose first words are bold: the word we dropped, then why. */
-const boldLead = (lead: TKey, rest: TKey): HTMLElement =>
-  el("li", {}, [el("strong", {}, t(lead)), " ", t(rest)]);
+/** A paragraph with one phrase linked to another page. */
+const pLink = (key: TKey, slot: string, linkKey: TKey, href: string): HTMLElement =>
+  el("p", {}, tx(key, { [slot]: el("a", { href }, t(linkKey)) }));
+
+/** A `<li>` whose first words are bold: the word we dropped, then why. With an
+ *  `href`, the bold words link the plant they're about. */
+const boldLead = (lead: TKey, rest: TKey, href?: string): HTMLElement =>
+  el("li", {}, [
+    href ? el("a", { href }, el("strong", {}, t(lead))) : el("strong", {}, t(lead)),
+    " ", t(rest),
+  ]);
 
 export function renderNative(main: HTMLElement): void {
   clear(main);
@@ -57,7 +65,7 @@ export function renderNative(main: HTMLElement): void {
 
       el("h3", {}, t("native.speciesTitle")),
       p("native.species1"),
-      p("native.species2"),
+      pLink("native.species2", "ireland", "native.species2Link", "#/regions/ireland"),
 
       el("h3", {}, t("native.historyTitle")),
       p("native.history1"),
@@ -65,7 +73,7 @@ export function renderNative(main: HTMLElement): void {
 
       el("h3", {}, t("native.behaviorTitle")),
       p("native.behavior1"),
-      p("native.behavior2"),
+      pLink("native.behavior2", "invasives", "native.behavior2Link", "#/invasives"),
 
       el("h3", {}, t("native.whyTitle")),
       p("native.why1"),
@@ -78,8 +86,8 @@ export function renderNative(main: HTMLElement): void {
       el("ul", {}, [
         boldLead("native.word1", "native.word1Rest"),
         boldLead("native.word2", "native.word2Rest"),
-        boldLead("native.word3", "native.word3Rest"),
-        boldLead("native.word4", "native.word4Rest"),
+        boldLead("native.word3", "native.word3Rest", "#/invasives/carpobrotus-edulis"),
+        boldLead("native.word4", "native.word4Rest", "#/invasives/celastrus-orbiculatus"),
       ]),
 
       el("h3", {}, t("native.nameTitle")),

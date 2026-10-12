@@ -1,9 +1,10 @@
 # Harvest and rank candidate photographs — for the plants and for the animals —
 # then open a PR with the shortlist.
 #
-# Why here and not in the build: the harvest needs open internet (iNaturalist),
-# which the local build sandbox blocks — GitHub runners don't. Same arrangement
-# as reconcile.yml, and for the same reason. This produces review data only
+# Why a workflow: a full harvest is hours of requests and ~11,500 image
+# downloads — a runner's job, not a session's. (Claude sessions reach
+# iNaturalist fine now; run a small `--region` harvest there.) This produces
+# review data only
 # (docs/hero-photos/candidates.json); a human picks from it and commits the
 # picks separately. See docs/hero-photos.md.
 #
@@ -30,6 +31,10 @@ on:
         description: "How many candidates to shortlist per plant"
         type: string
         default: "10"
+      angles:
+        description: "Also harvest the four angle slots (off: heroes only)"
+        type: boolean
+        default: false
       limit:
         description: "Stop after this many plant×region pairs (blank = no limit)"
         type: string
@@ -51,9 +56,9 @@ jobs:
   harvest:
     name: Harvest, rank & shortlist
     runs-on: ubuntu-latest
-    # A full run is ~790 requests at roughly a second each, plus ~11,500 image
-    # downloads and decoding — three asks per plant×region now that flowering
-    # and fruiting are queried separately, and one per animal×region. Generous,
+    # A full hero-only run is one ask per plant×region and per animal×region,
+    # plus the image downloads to score them; `angles: true` adds two asks per
+    # plant×region (flowering, fruiting) and roughly triples the work. Generous,
     # but bounded; `--region` (or `kind: wildlife`) is how you run it in pieces.
     timeout-minutes: 300
     steps:
@@ -84,6 +89,7 @@ jobs:
           if [ -n "${{ inputs.region }}" ]; then args+=(--region "${{ inputs.region }}"); fi
           if [ -n "${{ inputs.limit }}" ]; then args+=(--limit "${{ inputs.limit }}"); fi
           if [ -n "${{ inputs.keep }}" ]; then args+=(--keep "${{ inputs.keep }}"); fi
+          if [ "${{ inputs.angles }}" = "true" ]; then args+=(--angles); fi
           npm run hero:harvest -- "${args[@]}" | tee "$RUNNER_TEMP/harvest.log"
 
       # The reviewer opens this file to make the picks. It's an artifact rather

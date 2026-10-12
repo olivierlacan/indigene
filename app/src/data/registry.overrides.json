@@ -5210,5 +5210,1658 @@
       "gbif": "5372832",
       "wikidata": "Q4195491"
     }
+  },
+  "Acer palmatum": {
+    "identifiers": {
+      "ipni": "781435-1",
+      "wfo": "wfo-0000514777",
+      "usda": "ACPA2",
+      "itis": "182136",
+      "inat": "63512",
+      "gbif": "3189882",
+      "wikidata": "Q269224"
+    }
+  },
+  "Akebia quinata": {
+    "identifiers": {
+      "ipni": "106376-1",
+      "wfo": "wfo-0000524888",
+      "usda": "AKQU",
+      "itis": "18857",
+      "inat": "126249",
+      "gbif": "3033965",
+      "wikidata": "Q1482093"
+    }
+  },
+  "Alnus japonica": {
+    "identifiers": {
+      "ipni": "294936-1",
+      "wfo": "wfo-0000946310",
+      "usda": "ALJA8",
+      "itis": "845152",
+      "inat": "367784",
+      "gbif": "2876196",
+      "wikidata": "Q1196169"
+    }
+  },
+  "Ardisia japonica": {
+    "identifiers": {
+      "ipni": "587115-1",
+      "wfo": "wfo-0000544471",
+      "usda": "ARJA4",
+      "itis": "836174",
+      "inat": "158589",
+      "gbif": "5558066",
+      "wikidata": "Q858326"
+    }
+  },
+  "Aristolochia debilis": {
+    "identifiers": {
+      "ipni": "92883-1",
+      "wfo": "wfo-0000547728",
+      "inat": "371228",
+      "gbif": "3588727",
+      "wikidata": "Q11289074"
+    }
+  },
+  "Artemisia princeps": {
+    "identifiers": {
+      "ipni": "179985-1",
+      "wfo": "wfo-0000005942",
+      "gbif": "3121258",
+      "wikidata": "Q1076280",
+      "inat": "452353"
+    }
+  },
+  "Aster microcephalus": {
+    "identifiers": {
+      "ipni": "181745-1",
+      "wfo": "wfo-0000014412",
+      "gbif": "6063614",
+      "wikidata": "Q21247042",
+      "inat": "1433113"
+    }
+  },
+  "Athyrium niponicum": {
+    "identifiers": {
+      "ipni": "17055840-1",
+      "wfo": "wfo-0001114565",
+      "itis": "897585",
+      "inat": "142824",
+      "gbif": "7125894",
+      "wikidata": "Q2455938"
+    }
+  },
+  "Aucuba japonica": {
+    "identifiers": {
+      "ipni": "271451-1",
+      "wfo": "wfo-0000297052",
+      "usda": "AUJA",
+      "itis": "565023",
+      "inat": "56206",
+      "gbif": "3033077",
+      "wikidata": "Q163114"
+    }
+  },
+  "Callicarpa japonica": {
+    "identifiers": {
+      "ipni": "927277-1",
+      "wfo": "wfo-0000769349",
+      "usda": "CAJA11",
+      "itis": "506860",
+      "inat": "371978",
+      "gbif": "5341134",
+      "wikidata": "Q1152721"
+    }
+  },
+  "Camellia japonica": {
+    "identifiers": {
+      "ipni": "828524-1",
+      "wfo": "wfo-0000582404",
+      "usda": "CAJA9",
+      "itis": "506117",
+      "inat": "83056",
+      "gbif": "3189636",
+      "wikidata": "Q160121"
+    }
+  },
+  "Carex dispalata": {
+    "identifiers": {
+      "ipni": "299484-1",
+      "wfo": "wfo-0000346100",
+      "inat": "495745",
+      "gbif": "2727349",
+      "wikidata": "Q4338348"
+    }
+  },
+  "Carex morrowii": {
+    "identifiers": {
+      "ipni": "301072-1",
+      "wfo": "wfo-0000349019",
+      "usda": "CAMO31",
+      "itis": "808431",
+      "inat": "468050",
+      "gbif": "2722515",
+      "wikidata": "Q2938601"
+    }
+  },
+  "Carpinus laxiflora": {
+    "identifiers": {
+      "ipni": "295265-1",
+      "wfo": "wfo-0000805429",
+      "inat": "438156",
+      "gbif": "2875910",
+      "wikidata": "Q4147190"
+    }
+  },
+  "Castanea crenata": {
+    "identifiers": {
+      "ipni": "30319741-2",
+      "wfo": "wfo-0000811268",
+      "usda": "CACR27",
+      "itis": "506540",
+      "inat": "122786",
+      "gbif": "5333249",
+      "wikidata": "Q717827"
+    }
+  },
+  "Castanopsis sieboldii": {
+    "identifiers": {
+      "ipni": "50956789-1",
+      "wfo": "wfo-0000815170",
+      "inat": "358537",
+      "gbif": "5333015",
+      "wikidata": "Q846994"
+    }
+  },
+  "Celastrus scandens": {
+    "identifiers": {
+      "ipni": "319139-2",
+      "wfo": "wfo-0000592929",
+      "usda": "CESC",
+      "itis": "27974",
+      "inat": "64538",
+      "gbif": "3169171",
+      "wikidata": "Q469628"
+    }
+  },
+  "Celtis sinensis": {
+    "identifiers": {
+      "ipni": "851171-1",
+      "wfo": "wfo-0000593746",
+      "usda": "CESI8",
+      "itis": "897057",
+      "inat": "76204",
+      "gbif": "4159594",
+      "wikidata": "Q706339"
+    }
+  },
+  "Cirsium japonicum": {
+    "identifiers": {
+      "ipni": "195527-1",
+      "wfo": "wfo-0000062624",
+      "usda": "CIJA2",
+      "itis": "780258",
+      "inat": "354344",
+      "gbif": "3112887",
+      "wikidata": "Q5708539"
+    }
+  },
+  "Clematis virginiana": {
+    "identifiers": {
+      "ipni": "710188-1",
+      "wfo": "wfo-0000610908",
+      "usda": "CLVI5",
+      "itis": "18716",
+      "inat": "62778",
+      "gbif": "3033541",
+      "wikidata": "Q4266308"
+    }
+  },
+  "Cornus kousa": {
+    "identifiers": {
+      "ipni": "271602-1",
+      "wfo": "wfo-0000924739",
+      "usda": "COKO2",
+      "itis": "507498",
+      "inat": "128614",
+      "gbif": "3082274",
+      "wikidata": "Q728441"
+    }
+  },
+  "Dianthus superbus": {
+    "identifiers": {
+      "ipni": "153941-1",
+      "wfo": "wfo-0000644338",
+      "usda": "DISU12",
+      "itis": "823588",
+      "inat": "447244",
+      "gbif": "6363496",
+      "wikidata": "Q161878"
+    }
+  },
+  "Dryopteris erythrosora": {
+    "identifiers": {
+      "ipni": "17094660-1",
+      "wfo": "wfo-0001107300",
+      "itis": "897583",
+      "inat": "137722",
+      "gbif": "7157952",
+      "wikidata": "Q846311"
+    }
+  },
+  "Euonymus alatus": {
+    "identifiers": {
+      "ipni": "30148396-2",
+      "wfo": "wfo-0000681572",
+      "usda": "EUAL13",
+      "itis": "27946",
+      "inat": "117433",
+      "gbif": "3169120",
+      "wikidata": "Q160578"
+    }
+  },
+  "Eurya japonica": {
+    "identifiers": {
+      "ipni": "828738-1",
+      "wfo": "wfo-0000683065",
+      "usda": "EUJA5",
+      "itis": "897022",
+      "inat": "429261",
+      "gbif": "7152601",
+      "wikidata": "Q1041681"
+    }
+  },
+  "Farfugium japonicum": {
+    "identifiers": {
+      "ipni": "207632-1",
+      "wfo": "wfo-0000134933",
+      "inat": "322755",
+      "gbif": "3101212",
+      "wikidata": "Q1072335"
+    }
+  },
+  "Hosta sieboldii": {
+    "identifiers": {
+      "ipni": "536636-1",
+      "wfo": "wfo-0000663448",
+      "inat": "426065",
+      "gbif": "2771309",
+      "wikidata": "Q2557297"
+    }
+  },
+  "Hydrangea macrophylla": {
+    "identifiers": {
+      "ipni": "791637-1",
+      "wfo": "wfo-0000726228",
+      "usda": "HYMA7",
+      "itis": "565616",
+      "inat": "122034",
+      "gbif": "2985994",
+      "wikidata": "Q159219"
+    }
+  },
+  "Iris ensata": {
+    "identifiers": {
+      "ipni": "438572-1",
+      "wfo": "wfo-0000783305",
+      "usda": "IREN",
+      "itis": "503194",
+      "inat": "164125",
+      "gbif": "5298900",
+      "wikidata": "Q674136"
+    }
+  },
+  "Lespedeza bicolor": {
+    "identifiers": {
+      "ipni": "502415-1",
+      "wfo": "wfo-0000185056",
+      "usda": "LEBI2",
+      "itis": "25895",
+      "inat": "129677",
+      "gbif": "2955759",
+      "wikidata": "Q232652"
+    }
+  },
+  "Lilium speciosum": {
+    "identifiers": {
+      "ipni": "537798-1",
+      "wfo": "wfo-0000680746",
+      "gbif": "2753390",
+      "wikidata": "Q2107327",
+      "inat": "437708"
+    }
+  },
+  "Lindera umbellata": {
+    "identifiers": {
+      "ipni": "465469-1",
+      "wfo": "wfo-0001070371",
+      "inat": "428425",
+      "gbif": "7304416",
+      "wikidata": "Q5793449"
+    }
+  },
+  "Lonicera japonica": {
+    "identifiers": {
+      "ipni": "927299-1",
+      "wfo": "wfo-0000359579",
+      "usda": "LOJA",
+      "itis": "35283",
+      "inat": "77835",
+      "gbif": "5334240",
+      "wikidata": "Q161083"
+    }
+  },
+  "Machilus thunbergii": {
+    "identifiers": {
+      "ipni": "466273-1",
+      "wfo": "wfo-0000373778",
+      "inat": "341952",
+      "gbif": "4177874",
+      "wikidata": "Q5792073"
+    }
+  },
+  "Magnolia kobus": {
+    "identifiers": {
+      "ipni": "332100-2",
+      "wfo": "wfo-0000233225",
+      "usda": "MAKO",
+      "itis": "895295",
+      "inat": "143787",
+      "gbif": "3153260",
+      "wikidata": "Q942409"
+    }
+  },
+  "Miscanthus sinensis": {
+    "identifiers": {
+      "ipni": "408768-1",
+      "wfo": "wfo-0000880299",
+      "usda": "MISI",
+      "itis": "41874",
+      "inat": "165474",
+      "gbif": "2706026",
+      "wikidata": "Q1073621"
+    }
+  },
+  "Onoclea sensibilis": {
+    "identifiers": {
+      "ipni": "17166830-1",
+      "wfo": "wfo-0001109206",
+      "usda": "ONSE",
+      "itis": "17637",
+      "inat": "82576",
+      "gbif": "2650903",
+      "wikidata": "Q718312"
+    }
+  },
+  "Ophiopogon japonicus": {
+    "identifiers": {
+      "ipni": "429781-1",
+      "wfo": "wfo-0000673577",
+      "usda": "OPJA",
+      "itis": "506477",
+      "inat": "200061",
+      "gbif": "2774158",
+      "wikidata": "Q537448"
+    }
+  },
+  "Osmunda japonica": {
+    "identifiers": {
+      "ipni": "77117634-1",
+      "wfo": "wfo-0000750727",
+      "gbif": "3645928",
+      "wikidata": "Q23363",
+      "inat": "461556"
+    }
+  },
+  "Pachysandra terminalis": {
+    "identifiers": {
+      "ipni": "353208-1",
+      "wfo": "wfo-0000733029",
+      "usda": "PATE11",
+      "itis": "504090",
+      "inat": "142928",
+      "gbif": "2984676",
+      "wikidata": "Q159315"
+    }
+  },
+  "Parthenocissus tricuspidata": {
+    "identifiers": {
+      "ipni": "68407-1",
+      "wfo": "wfo-0000474320",
+      "usda": "PATR6",
+      "itis": "28604",
+      "inat": "166162",
+      "gbif": "3039209",
+      "wikidata": "Q157979"
+    }
+  },
+  "Patrinia scabiosifolia": {
+    "identifiers": {
+      "ipni": "859466-1",
+      "wfo": "wfo-0001225082",
+      "inat": "447233",
+      "gbif": "7820439",
+      "wikidata": "Q851698"
+    }
+  },
+  "Pieris japonica": {
+    "identifiers": {
+      "ipni": "331662-1",
+      "wfo": "wfo-0001047846",
+      "usda": "PIJA3",
+      "itis": "565622",
+      "inat": "127181",
+      "gbif": "2882631",
+      "wikidata": "Q2333372"
+    }
+  },
+  "Platycodon grandiflorus": {
+    "identifiers": {
+      "ipni": "144523-1",
+      "wfo": "wfo-0000816758",
+      "usda": "PLGR7",
+      "itis": "845355",
+      "inat": "141623",
+      "gbif": "3164340",
+      "wikidata": "Q805322"
+    }
+  },
+  "Prunus jamasakura": {
+    "identifiers": {
+      "ipni": "1006782-1",
+      "inat": "547458",
+      "gbif": "3020620",
+      "wikidata": "Q17234789"
+    }
+  },
+  "Quercus acutissima": {
+    "identifiers": {
+      "ipni": "295743-1",
+      "wfo": "wfo-0000289386",
+      "usda": "QUAC80",
+      "itis": "195162",
+      "inat": "167634",
+      "gbif": "2877959",
+      "wikidata": "Q1034859"
+    }
+  },
+  "Quercus glauca": {
+    "identifiers": {
+      "ipni": "927477-1",
+      "wfo": "wfo-0000290946",
+      "usda": "QUGL2",
+      "itis": "845168",
+      "inat": "191183",
+      "gbif": "2876873",
+      "wikidata": "Q714124"
+    }
+  },
+  "Quercus myrsinifolia": {
+    "identifiers": {
+      "ipni": "296481-1",
+      "wfo": "wfo-0000292104",
+      "itis": "845175",
+      "inat": "425335",
+      "gbif": "2878564",
+      "wikidata": "Q1075985"
+    }
+  },
+  "Quercus serrata": {
+    "identifiers": {
+      "ipni": "60444831-2",
+      "wfo": "wfo-0000293164",
+      "usda": "QUSE2",
+      "itis": "845169",
+      "inat": "359972",
+      "gbif": "2879649",
+      "wikidata": "Q847209"
+    }
+  },
+  "Rhododendron indicum": {
+    "identifiers": {
+      "ipni": "1137397-2",
+      "wfo": "wfo-0000400687",
+      "inat": "208830",
+      "gbif": "4173541",
+      "wikidata": "Q5366359"
+    }
+  },
+  "Rosa multiflora": {
+    "identifiers": {
+      "ipni": "927374-1",
+      "wfo": "wfo-0001001254",
+      "usda": "ROMU",
+      "itis": "24833",
+      "inat": "78882",
+      "gbif": "3003244",
+      "wikidata": "Q133617"
+    }
+  },
+  "Salix gracilistyla": {
+    "identifiers": {
+      "ipni": "777701-1",
+      "wfo": "wfo-0000928541",
+      "usda": "SAGR10",
+      "itis": "837753",
+      "inat": "407120",
+      "gbif": "7104103",
+      "wikidata": "Q163109"
+    }
+  },
+  "Sanguisorba officinalis": {
+    "identifiers": {
+      "ipni": "741402-1",
+      "wfo": "wfo-0000983287",
+      "usda": "SAOF3",
+      "itis": "25306",
+      "inat": "64549",
+      "gbif": "3029627",
+      "wikidata": "Q157347"
+    }
+  },
+  "Sasa veitchii": {
+    "identifiers": {
+      "ipni": "420574-1",
+      "wfo": "wfo-0000897621",
+      "usda": "SAVE11",
+      "itis": "784871",
+      "inat": "424048",
+      "gbif": "4128359",
+      "wikidata": "Q3015670"
+    }
+  },
+  "Saxifraga stolonifera": {
+    "identifiers": {
+      "ipni": "794584-1",
+      "wfo": "wfo-0000494724",
+      "usda": "SAST6",
+      "itis": "895013",
+      "inat": "68217",
+      "gbif": "3032762",
+      "wikidata": "Q159002"
+    }
+  },
+  "Styrax japonicus": {
+    "identifiers": {
+      "ipni": "826818-1",
+      "wfo": "wfo-0000492190",
+      "usda": "STJA5",
+      "itis": "505974",
+      "inat": "128570",
+      "gbif": "5371678",
+      "wikidata": "Q910419"
+    }
+  },
+  "Trachelospermum asiaticum": {
+    "identifiers": {
+      "ipni": "82528-1",
+      "wfo": "wfo-0000326442",
+      "inat": "349229",
+      "gbif": "7317060",
+      "wikidata": "Q11238988"
+    }
+  },
+  "Viburnum dilatatum": {
+    "identifiers": {
+      "ipni": "927323-1",
+      "wfo": "wfo-0001042018",
+      "usda": "VIDI80",
+      "itis": "505677",
+      "inat": "170200",
+      "gbif": "2888584",
+      "wikidata": "Q5965416"
+    }
+  },
+  "Viola grypoceras": {
+    "identifiers": {
+      "ipni": "868269-1",
+      "wfo": "wfo-0001144918",
+      "inat": "447563",
+      "gbif": "7296559",
+      "wikidata": "Q8010145"
+    }
+  },
+  "Vitis coignetiae": {
+    "identifiers": {
+      "ipni": "327401-2",
+      "wfo": "wfo-0000421604",
+      "inat": "559123",
+      "gbif": "5658476",
+      "wikidata": "Q1367334"
+    }
+  },
+  "Wisteria floribunda": {
+    "identifiers": {
+      "ipni": "525791-1",
+      "wfo": "wfo-0000214069",
+      "usda": "WIFL",
+      "itis": "27020",
+      "inat": "170331",
+      "gbif": "2977323",
+      "wikidata": "Q1329209"
+    }
+  },
+  "Zelkova serrata": {
+    "identifiers": {
+      "ipni": "858079-1",
+      "wfo": "wfo-0001143208",
+      "usda": "ZESE80",
+      "itis": "505790",
+      "inat": "129055",
+      "gbif": "2984532",
+      "wikidata": "Q920344"
+    }
+  },
+  "Diospyros virginiana": {
+    "identifiers": {
+      "ipni": "323180-1",
+      "wfo": "wfo-0000649953",
+      "usda": "DIVI5",
+      "itis": "23855",
+      "inat": "83435",
+      "gbif": "3032986",
+      "wikidata": "Q158356"
+    }
+  },
+  "Celtis laevigata": {
+    "identifiers": {
+      "ipni": "836997-1",
+      "wfo": "wfo-0000593589",
+      "usda": "CELA",
+      "itis": "19042",
+      "inat": "81792",
+      "gbif": "2984491",
+      "wikidata": "Q1529852"
+    }
+  },
+  "Magnolia virginiana": {
+    "identifiers": {
+      "ipni": "30016308-2",
+      "wfo": "wfo-0000233456",
+      "usda": "MAVI2",
+      "itis": "18070",
+      "inat": "127906",
+      "gbif": "3153639",
+      "wikidata": "Q1859063"
+    }
+  },
+  "Vaccinium arboreum": {
+    "identifiers": {
+      "ipni": "317271-2",
+      "wfo": "wfo-0001047661",
+      "usda": "VAAR",
+      "itis": "23580",
+      "inat": "81818",
+      "gbif": "2882828",
+      "wikidata": "Q3249733"
+    }
+  },
+  "Juniperus virginiana": {
+    "identifiers": {
+      "ipni": "132551-2",
+      "wfo": "wfo-0000354923",
+      "usda": "JUVI",
+      "itis": "18048",
+      "inat": "49399",
+      "gbif": "2684391",
+      "wikidata": "Q157522"
+    }
+  },
+  "Erythrina herbacea": {
+    "identifiers": {
+      "ipni": "96601-2",
+      "wfo": "wfo-0000165896",
+      "usda": "ERHE4",
+      "itis": "26678",
+      "inat": "128717",
+      "gbif": "5349731",
+      "wikidata": "Q5396418"
+    }
+  },
+  "Rhus copallinum": {
+    "identifiers": {
+      "ipni": "70474-1",
+      "wfo": "wfo-0001049902",
+      "usda": "RHCO",
+      "itis": "504754",
+      "inat": "126698",
+      "gbif": "3190557",
+      "wikidata": "Q7245720"
+    }
+  },
+  "Helianthus angustifolius": {
+    "identifiers": {
+      "ipni": "315752-2",
+      "wfo": "wfo-0000066553",
+      "usda": "HEAN2",
+      "itis": "502919",
+      "inat": "126700",
+      "gbif": "3119144",
+      "wikidata": "Q12212025"
+    }
+  },
+  "Gelsemium sempervirens": {
+    "identifiers": {
+      "ipni": "60448812-2",
+      "wfo": "wfo-0000696053",
+      "usda": "GESE",
+      "itis": "29932",
+      "inat": "83070",
+      "gbif": "3169513",
+      "wikidata": "Q978130"
+    }
+  },
+  "Bignonia capreolata": {
+    "identifiers": {
+      "ipni": "108626-1",
+      "wfo": "wfo-0000781348",
+      "usda": "BICA",
+      "itis": "34307",
+      "inat": "67823",
+      "gbif": "3172516",
+      "wikidata": "Q149466"
+    }
+  },
+  "Adiantum pedatum": {
+    "identifiers": {
+      "ipni": "17012140-1",
+      "wfo": "wfo-0001107191",
+      "usda": "ADPE",
+      "itis": "17311",
+      "inat": "48435",
+      "gbif": "2651832",
+      "wikidata": "Q1199865"
+    }
+  },
+  "Allium tricoccum": {
+    "identifiers": {
+      "ipni": "529036-1",
+      "wfo": "wfo-0000757603",
+      "usda": "ALTR3",
+      "itis": "42672",
+      "inat": "55634",
+      "gbif": "2856301",
+      "wikidata": "Q2714893"
+    }
+  },
+  "Amorpha canescens": {
+    "identifiers": {
+      "ipni": "60431313-2",
+      "wfo": "wfo-0000178822",
+      "usda": "AMCA6",
+      "itis": "25371",
+      "inat": "158286",
+      "gbif": "5357388",
+      "wikidata": "Q2074094"
+    }
+  },
+  "Asarum canadense": {
+    "identifiers": {
+      "ipni": "93467-1",
+      "wfo": "wfo-0000550779",
+      "usda": "ASCA",
+      "itis": "18353",
+      "inat": "56325",
+      "gbif": "2873947",
+      "wikidata": "Q2866323"
+    }
+  },
+  "Asclepias syriaca": {
+    "identifiers": {
+      "ipni": "94683-1",
+      "wfo": "wfo-0000551803",
+      "usda": "ASSY",
+      "itis": "30310",
+      "inat": "47911",
+      "gbif": "3170247",
+      "wikidata": "Q158295"
+    }
+  },
+  "Baptisia lactea": {
+    "identifiers": {
+      "ipni": "29306-2",
+      "wfo": "wfo-0000164285",
+      "itis": "26475",
+      "gbif": "2976073",
+      "wikidata": "Q17444972",
+      "inat": "1609409"
+    }
+  },
+  "Carya ovata": {
+    "identifiers": {
+      "ipni": "30122806-2",
+      "wfo": "wfo-0000588816",
+      "usda": "CAOV2",
+      "itis": "19242",
+      "inat": "54791",
+      "gbif": "3054296",
+      "wikidata": "Q2601238"
+    }
+  },
+  "Celtis occidentalis": {
+    "identifiers": {
+      "ipni": "301424-2",
+      "wfo": "wfo-0000593651",
+      "usda": "CEOC",
+      "itis": "19040",
+      "inat": "54857",
+      "gbif": "2984481",
+      "wikidata": "Q470006"
+    }
+  },
+  "Cornus racemosa": {
+    "identifiers": {
+      "ipni": "271653-1",
+      "wfo": "wfo-0000924819",
+      "usda": "CORA6",
+      "itis": "501635",
+      "inat": "320160",
+      "gbif": "3082264",
+      "wikidata": "Q1134291"
+    }
+  },
+  "Dalea purpurea": {
+    "identifiers": {
+      "ipni": "76326-2",
+      "wfo": "wfo-0000169115",
+      "usda": "DAPU5",
+      "itis": "26642",
+      "inat": "63547",
+      "gbif": "5353342",
+      "wikidata": "Q5210721"
+    }
+  },
+  "Echinacea pallida": {
+    "identifiers": {
+      "ipni": "202375-1",
+      "wfo": "wfo-0000020152",
+      "usda": "ECPA",
+      "itis": "37279",
+      "inat": "127689",
+      "gbif": "3150919",
+      "wikidata": "Q1813728"
+    }
+  },
+  "Eryngium yuccifolium": {
+    "identifiers": {
+      "ipni": "842103-1",
+      "wfo": "wfo-0000678333",
+      "usda": "ERYU",
+      "itis": "29506",
+      "inat": "128695",
+      "gbif": "3034408",
+      "wikidata": "Q3299859"
+    }
+  },
+  "Liatris pycnostachya": {
+    "identifiers": {
+      "ipni": "230623-1",
+      "wfo": "wfo-0000030984",
+      "usda": "LIPY",
+      "itis": "37937",
+      "inat": "48691",
+      "gbif": "3104293",
+      "wikidata": "Q12061156"
+    }
+  },
+  "Lobelia siphilitica": {
+    "identifiers": {
+      "ipni": "143920-1",
+      "wfo": "wfo-0000814885",
+      "usda": "LOSI",
+      "itis": "34531",
+      "inat": "119806",
+      "gbif": "5409120",
+      "wikidata": "Q2720384"
+    }
+  },
+  "Malus ioensis": {
+    "identifiers": {
+      "ipni": "150119-2",
+      "wfo": "wfo-0001013576",
+      "usda": "MAIO",
+      "itis": "25259",
+      "inat": "165107",
+      "gbif": "3001596",
+      "wikidata": "Q3332919"
+    }
+  },
+  "Primula meadia": {
+    "identifiers": {
+      "ipni": "60447606-2",
+      "wfo": "wfo-0001280208",
+      "itis": "836161",
+      "inat": "549981",
+      "gbif": "5640540",
+      "wikidata": "Q22108552"
+    }
+  },
+  "Pycnanthemum virginianum": {
+    "identifiers": {
+      "ipni": "1128143-2",
+      "wfo": "wfo-0000289039",
+      "usda": "PYVI",
+      "inat": "154473",
+      "gbif": "2927376",
+      "wikidata": "Q7262902"
+    }
+  },
+  "Quercus bicolor": {
+    "identifiers": {
+      "ipni": "295855-1",
+      "wfo": "wfo-0000289757",
+      "usda": "QUBI",
+      "itis": "19300",
+      "inat": "54780",
+      "gbif": "2878470",
+      "wikidata": "Q142792"
+    }
+  },
+  "Quercus macrocarpa": {
+    "identifiers": {
+      "ipni": "296423-1",
+      "wfo": "wfo-0000291873",
+      "usda": "QUMA2",
+      "itis": "19287",
+      "inat": "54781",
+      "gbif": "2878213",
+      "wikidata": "Q1082365"
+    }
+  },
+  "Ratibida pinnata": {
+    "identifiers": {
+      "ipni": "217881-2",
+      "wfo": "wfo-0000121004",
+      "usda": "RAPI",
+      "itis": "38343",
+      "inat": "85331",
+      "gbif": "3087184",
+      "wikidata": "Q7295700"
+    }
+  },
+  "Rhus glabra": {
+    "identifiers": {
+      "ipni": "70565-1",
+      "wfo": "wfo-0001049359",
+      "usda": "RHGL",
+      "itis": "28782",
+      "inat": "54764",
+      "gbif": "3190544",
+      "wikidata": "Q3177997"
+    }
+  },
+  "Rosa setigera": {
+    "identifiers": {
+      "ipni": "734247-1",
+      "wfo": "wfo-0001017675",
+      "usda": "ROSE2",
+      "itis": "24839",
+      "inat": "128841",
+      "gbif": "3004638",
+      "wikidata": "Q3442147"
+    }
+  },
+  "Silphium laciniatum": {
+    "identifiers": {
+      "ipni": "315757-2",
+      "wfo": "wfo-0000117950",
+      "usda": "SILA3",
+      "itis": "38401",
+      "inat": "121976",
+      "gbif": "3092583",
+      "wikidata": "Q1780806"
+    }
+  },
+  "Silphium terebinthinaceum": {
+    "identifiers": {
+      "ipni": "30257140-2",
+      "wfo": "wfo-0000079762",
+      "usda": "SITE",
+      "itis": "38411",
+      "inat": "121951",
+      "gbif": "7475866",
+      "wikidata": "Q15563670"
+    }
+  },
+  "Solidago rigida": {
+    "identifiers": {
+      "ipni": "249837-1",
+      "wfo": "wfo-0000129341",
+      "itis": "36297",
+      "inat": "125721",
+      "gbif": "5389156",
+      "wikidata": "Q15568528"
+    }
+  },
+  "Sorghastrum nutans": {
+    "identifiers": {
+      "ipni": "240823-2",
+      "wfo": "wfo-0000900100",
+      "usda": "SONU2",
+      "itis": "42102",
+      "inat": "122608",
+      "gbif": "2704414",
+      "wikidata": "Q3046578"
+    }
+  },
+  "Sporobolus heterolepis": {
+    "identifiers": {
+      "ipni": "1026241-2",
+      "wfo": "wfo-0000901178",
+      "usda": "SPHE",
+      "itis": "42119",
+      "inat": "120557",
+      "gbif": "2704766",
+      "wikidata": "Q7579245"
+    }
+  },
+  "Tradescantia ohiensis": {
+    "identifiers": {
+      "ipni": "173408-1",
+      "wfo": "wfo-0000589305",
+      "usda": "TROH",
+      "itis": "39169",
+      "inat": "79383",
+      "gbif": "2765175",
+      "wikidata": "Q7832190"
+    }
+  },
+  "Verbena hastata": {
+    "identifiers": {
+      "ipni": "865207-1",
+      "wfo": "wfo-0000331939",
+      "usda": "VEHA2",
+      "itis": "32071",
+      "inat": "60251",
+      "gbif": "2925527",
+      "wikidata": "Q384029"
+    }
+  },
+  "Anisacanthus quadrifidus": {
+    "identifiers": {
+      "ipni": "13942-2",
+      "wfo": "wfo-0000537171",
+      "usda": "ANQU2",
+      "itis": "182371",
+      "inat": "158386",
+      "gbif": "8026687",
+      "wikidata": "Q5696062"
+    }
+  },
+  "Asclepias asperula": {
+    "identifiers": {
+      "ipni": "21143-2",
+      "wfo": "wfo-0000551126",
+      "usda": "ASAS",
+      "itis": "30247",
+      "inat": "62298",
+      "gbif": "8683730",
+      "wikidata": "Q311134"
+    }
+  },
+  "Berberis trifoliolata": {
+    "identifiers": {
+      "ipni": "107152-1",
+      "wfo": "wfo-0000563960",
+      "itis": "18836",
+      "inat": "273862",
+      "gbif": "3033862",
+      "wikidata": "Q17794769"
+    }
+  },
+  "Bouteloua curtipendula": {
+    "identifiers": {
+      "ipni": "1198286-2",
+      "wfo": "wfo-0000853887",
+      "usda": "BOCU",
+      "itis": "41500",
+      "inat": "75858",
+      "gbif": "5289861",
+      "wikidata": "Q4950436"
+    }
+  },
+  "Bouteloua dactyloides": {
+    "identifiers": {
+      "ipni": "1008094-1",
+      "wfo": "wfo-0000853891",
+      "usda": "BODA2",
+      "itis": "782573",
+      "inat": "288038",
+      "gbif": "5677204",
+      "wikidata": "Q26821449"
+    }
+  },
+  "Callirhoe involucrata": {
+    "identifiers": {
+      "ipni": "30007339-2",
+      "wfo": "wfo-0000580557",
+      "usda": "CAIN2",
+      "itis": "21785",
+      "inat": "127941",
+      "gbif": "5406702",
+      "wikidata": "Q5741238"
+    }
+  },
+  "Calyptocarpus vialis": {
+    "identifiers": {
+      "ipni": "188166-1",
+      "wfo": "wfo-0000127155",
+      "usda": "CAVI2",
+      "itis": "501164",
+      "inat": "84405",
+      "gbif": "3091480",
+      "wikidata": "Q15248859"
+    }
+  },
+  "Carya illinoinensis": {
+    "identifiers": {
+      "ipni": "442167-1",
+      "wfo": "wfo-0000588763",
+      "usda": "CAIL2",
+      "itis": "19234",
+      "inat": "67593",
+      "gbif": "3054289",
+      "wikidata": "Q333877"
+    }
+  },
+  "Chasmanthium latifolium": {
+    "identifiers": {
+      "ipni": "55649-2",
+      "wfo": "wfo-0000859191",
+      "usda": "CHLA5",
+      "itis": "41547",
+      "inat": "84364",
+      "gbif": "2703077",
+      "wikidata": "Q5087377"
+    }
+  },
+  "Conoclinium coelestinum": {
+    "identifiers": {
+      "ipni": "197044-1",
+      "wfo": "wfo-0000025867",
+      "usda": "COCO13",
+      "itis": "511282",
+      "inat": "119095",
+      "gbif": "3090343",
+      "wikidata": "Q15548876"
+    }
+  },
+  "Cornus drummondii": {
+    "identifiers": {
+      "ipni": "271556-1",
+      "wfo": "wfo-0000924658",
+      "usda": "CODR",
+      "itis": "27807",
+      "inat": "54776",
+      "gbif": "3082256",
+      "wikidata": "Q187040"
+    }
+  },
+  "Dermatophyllum secundiflorum": {
+    "identifiers": {
+      "ipni": "77116898-1",
+      "wfo": "wfo-0001042783",
+      "itis": "1085572",
+      "inat": "499559",
+      "gbif": "7594161",
+      "wikidata": "Q56628426"
+    }
+  },
+  "Diospyros texana": {
+    "identifiers": {
+      "ipni": "323100-1",
+      "wfo": "wfo-0000649848",
+      "usda": "DITE3",
+      "itis": "23854",
+      "inat": "120505",
+      "gbif": "3032981",
+      "wikidata": "Q5279625"
+    }
+  },
+  "Ehretia anacua": {
+    "identifiers": {
+      "ipni": "88877-2",
+      "wfo": "wfo-0000663336",
+      "usda": "EHAN",
+      "itis": "31901",
+      "inat": "162209",
+      "gbif": "2926379",
+      "wikidata": "Q3010248"
+    }
+  },
+  "Engelmannia peristenia": {
+    "identifiers": {
+      "ipni": "1160084-2",
+      "wfo": "wfo-0000025251",
+      "usda": "ENPE4",
+      "itis": "565159",
+      "inat": "127943",
+      "gbif": "5386402",
+      "wikidata": "Q15585895"
+    }
+  },
+  "Frangula caroliniana": {
+    "identifiers": {
+      "ipni": "717360-1",
+      "wfo": "wfo-0000691882",
+      "usda": "FRCA13",
+      "itis": "506986",
+      "inat": "120151",
+      "gbif": "3039468",
+      "wikidata": "Q50841410"
+    }
+  },
+  "Glandularia bipinnatifida": {
+    "identifiers": {
+      "ipni": "862854-1",
+      "wfo": "wfo-0000972681",
+      "usda": "GLBI2",
+      "itis": "502783",
+      "inat": "125675",
+      "gbif": "5341136",
+      "wikidata": "Q15501351"
+    }
+  },
+  "Helianthus maximiliani": {
+    "identifiers": {
+      "ipni": "329260-2",
+      "wfo": "wfo-0000074910",
+      "usda": "HEMA2",
+      "itis": "36653",
+      "inat": "130192",
+      "gbif": "3119206",
+      "wikidata": "Q5704865"
+    }
+  },
+  "Ilex decidua": {
+    "identifiers": {
+      "ipni": "30032254-2",
+      "wfo": "wfo-0001078525",
+      "usda": "ILDE",
+      "itis": "27998",
+      "inat": "120006",
+      "gbif": "5414259",
+      "wikidata": "Q5997670"
+    }
+  },
+  "Lantana urticoides": {
+    "identifiers": {
+      "ipni": "135351-2",
+      "wfo": "wfo-0000223460",
+      "usda": "LAUR2",
+      "itis": "503324",
+      "gbif": "2925335",
+      "wikidata": "Q15432288",
+      "inat": "877372"
+    }
+  },
+  "Leucophyllum frutescens": {
+    "identifiers": {
+      "ipni": "139187-2",
+      "wfo": "wfo-0001136787",
+      "usda": "LEFR3",
+      "itis": "33629",
+      "inat": "123118",
+      "gbif": "3172138",
+      "wikidata": "Q2355636"
+    }
+  },
+  "Lupinus texensis": {
+    "identifiers": {
+      "ipni": "279946-2",
+      "wfo": "wfo-0000174773",
+      "usda": "LUTE",
+      "itis": "26133",
+      "inat": "49564",
+      "gbif": "2963880",
+      "wikidata": "Q4115567"
+    }
+  },
+  "Malvaviscus arboreus": {
+    "identifiers": {
+      "ipni": "562237-1",
+      "wfo": "wfo-0000449492",
+      "usda": "MAAR14",
+      "itis": "21843",
+      "inat": "120942",
+      "gbif": "3152775",
+      "wikidata": "Q2709838"
+    }
+  },
+  "Melampodium leucanthum": {
+    "identifiers": {
+      "ipni": "232106-1",
+      "wfo": "wfo-0000025541",
+      "usda": "MELE2",
+      "itis": "38085",
+      "inat": "82469",
+      "gbif": "3139009",
+      "wikidata": "Q3304872"
+    }
+  },
+  "Monarda citriodora": {
+    "identifiers": {
+      "ipni": "452023-1",
+      "wfo": "wfo-0000245301",
+      "usda": "MOCI",
+      "itis": "32280",
+      "inat": "122587",
+      "gbif": "5341423",
+      "wikidata": "Q159776"
+    }
+  },
+  "Muhlenbergia lindheimeri": {
+    "identifiers": {
+      "ipni": "164816-2",
+      "wfo": "wfo-0000880801",
+      "usda": "MULI",
+      "itis": "41922",
+      "inat": "165559",
+      "gbif": "2703985",
+      "wikidata": "Q13933855"
+    }
+  },
+  "Oenothera speciosa": {
+    "identifiers": {
+      "ipni": "614089-1",
+      "wfo": "wfo-0000389747",
+      "usda": "OESP2",
+      "itis": "27415",
+      "inat": "48625",
+      "gbif": "3188859",
+      "wikidata": "Q7078668"
+    }
+  },
+  "Pavonia lasiopetala": {
+    "identifiers": {
+      "ipni": "185932-2",
+      "wfo": "wfo-0001077098",
+      "usda": "PALA13",
+      "itis": "21722",
+      "inat": "166219",
+      "gbif": "5406775",
+      "wikidata": "Q7156047"
+    }
+  },
+  "Pelazoneuron kunthii": {
+    "identifiers": {
+      "gbif": "11842758",
+      "inat": "1413422"
+    }
+  },
+  "Pellaea atropurpurea": {
+    "identifiers": {
+      "ipni": "17170500-1",
+      "wfo": "wfo-0001109208",
+      "usda": "PEAT2",
+      "itis": "17641",
+      "inat": "82811",
+      "gbif": "5275441",
+      "wikidata": "Q2388502"
+    }
+  },
+  "Penstemon cobaea": {
+    "identifiers": {
+      "ipni": "808044-1",
+      "wfo": "wfo-0001136586",
+      "usda": "PECO4",
+      "itis": "33680",
+      "inat": "142655",
+      "gbif": "3171531",
+      "wikidata": "Q17739529"
+    }
+  },
+  "Phyla nodiflora": {
+    "identifiers": {
+      "ipni": "194567-2",
+      "wfo": "wfo-0000270345",
+      "usda": "PHNO2",
+      "itis": "32197",
+      "inat": "59040",
+      "gbif": "5341112",
+      "wikidata": "Q3273836"
+    }
+  },
+  "Platanus occidentalis": {
+    "identifiers": {
+      "ipni": "685871-1",
+      "wfo": "wfo-0000487082",
+      "usda": "PLOC",
+      "itis": "19020",
+      "inat": "49662",
+      "gbif": "3152820",
+      "wikidata": "Q157739"
+    }
+  },
+  "Prosopis glandulosa": {
+    "identifiers": {
+      "ipni": "210440-2",
+      "wfo": "wfo-0000169068",
+      "usda": "PRGL2",
+      "itis": "26879",
+      "gbif": "5358457",
+      "wikidata": "Q3013277",
+      "inat": "1493134"
+    }
+  },
+  "Prunus mexicana": {
+    "identifiers": {
+      "ipni": "30012498-2",
+      "wfo": "wfo-0001013884",
+      "usda": "PRME",
+      "itis": "24791",
+      "inat": "128755",
+      "gbif": "3022317",
+      "wikidata": "Q3011509"
+    }
+  },
+  "Quercus buckleyi": {
+    "identifiers": {
+      "ipni": "284107-2",
+      "wfo": "wfo-0000289876",
+      "usda": "QUBU2",
+      "itis": "195168",
+      "inat": "167640",
+      "gbif": "2879863",
+      "wikidata": "Q3017139"
+    }
+  },
+  "Quercus fusiformis": {
+    "identifiers": {
+      "ipni": "359649-1",
+      "wfo": "wfo-0000290856",
+      "usda": "QUFU",
+      "itis": "195175",
+      "inat": "167647",
+      "gbif": "2880509",
+      "wikidata": "Q3009781"
+    }
+  },
+  "Quercus shumardii": {
+    "identifiers": {
+      "ipni": "284115-2",
+      "wfo": "wfo-0000293271",
+      "usda": "QUSH",
+      "itis": "19417",
+      "inat": "54786",
+      "gbif": "2878289",
+      "wikidata": "Q4112184"
+    }
+  },
+  "Quercus stellata": {
+    "identifiers": {
+      "ipni": "216416-2",
+      "wfo": "wfo-0000293374",
+      "usda": "QUST",
+      "itis": "19422",
+      "inat": "119269",
+      "gbif": "8879961",
+      "wikidata": "Q2600501"
+    }
+  },
+  "Ratibida columnifera": {
+    "identifiers": {
+      "ipni": "217868-2",
+      "wfo": "wfo-0000083837",
+      "usda": "RACO3",
+      "itis": "38341",
+      "inat": "78836",
+      "gbif": "3087173",
+      "wikidata": "Q7295703"
+    }
+  },
+  "Rhus lanceolata": {
+    "identifiers": {
+      "ipni": "219818-2",
+      "wfo": "wfo-0001049755",
+      "usda": "RHLA3",
+      "itis": "28785",
+      "inat": "167826",
+      "gbif": "3190559",
+      "wikidata": "Q15545721"
+    }
+  },
+  "Rhus virens": {
+    "identifiers": {
+      "ipni": "219942-2",
+      "wfo": "wfo-0001049940",
+      "usda": "RHVI3",
+      "itis": "504757",
+      "inat": "121691",
+      "gbif": "3190539",
+      "wikidata": "Q7321561"
+    }
+  },
+  "Salix nigra": {
+    "identifiers": {
+      "ipni": "778291-1",
+      "wfo": "wfo-0000929858",
+      "usda": "SANI",
+      "itis": "22484",
+      "inat": "54847",
+      "gbif": "5372854",
+      "wikidata": "Q469220"
+    }
+  },
+  "Salvia farinacea": {
+    "identifiers": {
+      "ipni": "456204-1",
+      "wfo": "wfo-0000300986",
+      "usda": "SAFA2",
+      "itis": "32713",
+      "inat": "148006",
+      "gbif": "2927064",
+      "wikidata": "Q796716"
+    }
+  },
+  "Salvia greggii": {
+    "identifiers": {
+      "ipni": "456321-1",
+      "wfo": "wfo-0000301129",
+      "usda": "SAGR4",
+      "itis": "32689",
+      "inat": "168380",
+      "gbif": "2927038",
+      "wikidata": "Q891000"
+    }
+  },
+  "Salvia roemeriana": {
+    "identifiers": {
+      "ipni": "321576-2",
+      "wfo": "wfo-0000302157",
+      "usda": "SARO3",
+      "itis": "504998",
+      "inat": "168395",
+      "gbif": "2927035",
+      "wikidata": "Q7406879"
+    }
+  },
+  "Sapindus drummondii": {
+    "identifiers": {
+      "ipni": "784612-1",
+      "wfo": "wfo-0001135006",
+      "itis": "520986",
+      "inat": "286324",
+      "gbif": "5576859",
+      "wikidata": "Q15528348"
+    }
+  },
+  "Solidago nemoralis": {
+    "identifiers": {
+      "ipni": "249731-1",
+      "wfo": "wfo-0000013309",
+      "usda": "SONE",
+      "itis": "36281",
+      "inat": "130377",
+      "gbif": "5389028",
+      "wikidata": "Q7557960"
+    }
+  },
+  "Styphnolobium affine": {
+    "identifiers": {
+      "ipni": "519718-1",
+      "wfo": "wfo-0000176767",
+      "usda": "STAF4",
+      "itis": "820256",
+      "inat": "289854",
+      "gbif": "2958965",
+      "wikidata": "Q21318403"
+    }
+  },
+  "Symphyotrichum oblongifolium": {
+    "identifiers": {
+      "ipni": "981868-1",
+      "wfo": "wfo-0000094410",
+      "usda": "SYOB",
+      "itis": "522228",
+      "inat": "119343",
+      "gbif": "3151638",
+      "wikidata": "Q7661734"
+    }
+  },
+  "Ulmus crassifolia": {
+    "identifiers": {
+      "ipni": "302278-2",
+      "wfo": "wfo-0001143152",
+      "usda": "ULCR",
+      "itis": "19052",
+      "inat": "128823",
+      "gbif": "5361871",
+      "wikidata": "Q7879431"
+    }
+  },
+  "Ungnadia speciosa": {
+    "identifiers": {
+      "ipni": "785564-1",
+      "wfo": "wfo-0001134889",
+      "usda": "UNSP",
+      "itis": "28710",
+      "inat": "170070",
+      "gbif": "3190006",
+      "wikidata": "Q12221127"
+    }
+  },
+  "Verbesina virginica": {
+    "identifiers": {
+      "ipni": "257707-1",
+      "wfo": "wfo-0000042964",
+      "usda": "VEVI3",
+      "itis": "38613",
+      "inat": "119982",
+      "gbif": "3148137",
+      "wikidata": "Q15564201"
+    }
+  },
+  "Viburnum rufidulum": {
+    "identifiers": {
+      "ipni": "30314446-2",
+      "wfo": "wfo-0001290686",
+      "usda": "VIRU",
+      "itis": "35274",
+      "inat": "81801",
+      "gbif": "2888590",
+      "wikidata": "Q7924704"
+    }
   }
 }

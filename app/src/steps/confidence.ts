@@ -37,7 +37,7 @@ export function renderConfidence(main: HTMLElement): void {
 
       el("h3", {}, t("confidence.notTitle")),
       el("p", {}, t("confidence.not")),
-      el("p", {}, el("a", { href: SOURCES_ROUTE }, t("confidence.sourcesLink"))),
+      el("p", { class: "more-link" }, el("a", { href: SOURCES_ROUTE }, t("confidence.sourcesLink"))),
     ]),
   );
 }

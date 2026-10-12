@@ -14,6 +14,8 @@ export function traitBadge(tr: Trait, link: boolean): HTMLElement {
     : el("span", { class: `badge ${tr.tone}`, title: t(tr.meaning) }, body);
 }
 
-export function traitBadges(p: Plant, link: boolean): HTMLElement {
-  return el("div", { class: "plant-badges" }, traitsFor(p).map((tr) => traitBadge(tr, link)));
+/** `regionId` adds the labels that are a claim about one region's conditions —
+ *  today just "Pavement pioneer". Omitted, they're left off. */
+export function traitBadges(p: Plant, link: boolean, regionId?: string): HTMLElement {
+  return el("div", { class: "plant-badges" }, traitsFor(p, regionId).map((tr) => traitBadge(tr, link)));
 }

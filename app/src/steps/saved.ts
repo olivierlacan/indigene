@@ -18,6 +18,9 @@ import { cardStats } from "../components/card-stats";
 import { spotMap } from "../components/spot-map";
 import { townFor, townsReady } from "../lib/places";
 import { t, tn, fmtNumber } from "../lib/i18n";
+import { findPlant } from "../lib/explore";
+import { acrossSpotsCard, planFor } from "../components/season-plan";
+import type { Plant, SavedSpot } from "../types";
 
 // Saved spots — local-first, no account. Open one to reload its readings and
 // jump back to the plant list, or delete it.
@@ -51,6 +54,14 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
     const { ids, since } = lookupArgs(mine, { wildlife: animals });
     return cachedOwnCount(s.id, ids, since, login).catch(() => undefined);
   }));
+
+  // What to grow more of this season, across every spot. Filled in once the
+  // logged plants are read, so the list below draws first.
+  const season = el("div");
+  main.append(season);
+  void seasonAcross(spots, plantings).then((card) => {
+    if (card) season.replaceWith(card);
+  });
 
   const list = el("ul", { class: "saved-list" });
   for (const [i, s] of spots.entries()) {
@@ -182,4 +193,27 @@ function faces(spotId: string, animals: TieSummary[], regionId?: string): HTMLEl
     ),
     rest > 0 ? el("span", { class: "saved-faces-more", "aria-hidden": "true" }, `+${fmtNumber(rest)}`) : null,
   ]);
+}
+
+/** The across-spots season card, reading only the plants that are logged. */
+async function seasonAcross(spots: SavedSpot[], plantings: Planting[]): Promise<HTMLElement | null> {
+  if (!plantings.length) return null;
+  // Every region's row of each plant: a plant on two lists flowers on each
+  // list's own calendar, so each spot reads the row for its region.
+  const rows = new Map<string, { plant: Plant; regionId: string }[]>();
+  const ids = [...new Set(plantings.map((p) => p.plantId))];
+  for (const [i, found] of (await Promise.all(ids.map((id) => findPlant(id).catch(() => [])))).entries()) {
+    rows.set(ids[i], found.map((e) => ({ plant: e.plant, regionId: e.region.meta.id })));
+  }
+  const rowFor = (regionId?: string) => (id: string): Plant | undefined => {
+    const found = rows.get(id) ?? [];
+    return (found.find((r) => r.regionId === regionId) ?? found[0])?.plant;
+  };
+  const entries = spots.map((spot) => {
+    const region = regionForSpot(spot);
+    const mine = plantings.filter((p) => p.spotId === spot.id);
+    const plantOf = rowFor(region?.meta.id);
+    return { spot, plan: planFor(spot, mine, plantOf, region), regionId: region?.meta.id, plantOf };
+  });
+  return acrossSpotsCard(entries);
 }

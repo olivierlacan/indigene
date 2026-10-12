@@ -19,7 +19,13 @@ import { plantThumb } from "../components/plant-thumb";
 import { lookalikeIcon, alternativeIcon, invasiveIcon, cropsIcon, propagateIcon } from "../components/door-icons";
 import type { PlantForm } from "../types";
 import { t, fmtNumber, getLang } from "../lib/i18n";
-import { regionName, regionShort, searchAliases, localName } from "../lib/names";
+import { INVASIVES } from "../data/invasives";
+import { LOOKALIKES } from "../data/lookalikes";
+import { ORNAMENTALS } from "../data/alternatives";
+import { mappedInvasiveIds } from "../lib/invasives";
+import { mappedLookalikeIds } from "../lib/lookalikes";
+import { mappedOrnamentalIds } from "../lib/alternatives";
+import { regionName, regionShort, searchAliases, localName, commonName } from "../lib/names";
 
 const regionMetaOf = (id: string) => REGIONS.find((x) => x.meta.id === id)?.meta;
 
@@ -169,6 +175,15 @@ export function renderPlants(main: HTMLElement): void {
       : t("plants.idle", { total: fmtNumber(ROWS.length), regions: fmtNumber(REGIONS.length) });
     clear(results);
     if (!matches.length) {
+      const pages = nq ? otherPages(nq) : [];
+      if (pages.length) {
+        results.append(el("div", { class: "note info" }, [
+          el("p", { style: "margin:0 0 0.3rem" }, t("plants.otherPages")),
+          el("ul", { style: "margin:0;padding-left:1.2rem" }, pages.map((pg) =>
+            el("li", {}, [el("a", { href: pg.href }, pg.name), ` · ${pg.kind}`]))),
+        ]));
+        return;
+      }
       results.append(
         el("div", { class: "note warn" }, [
           t("plants.noneLead", { q: q.trim() }),
@@ -227,4 +242,26 @@ export function renderPlants(main: HTMLElement): void {
   if (initial) input.value = initial;
   run(initial);
   queueMicrotask(() => input.focus());
+}
+
+/**
+ * The plants with a page that isn't a native's — an invasive, an impostor, an
+ * ornamental to swap — matching a search the native catalog came up empty on.
+ * "Kudzu" or "butterfly bush" finds no native, but the app has the page that
+ * answers it, and "nothing found" would hide it.
+ */
+function otherPages(nq: string): { name: string; href: string; kind: string }[] {
+  const hit = (x: { common: string; latin: string }): boolean =>
+    [x.common, x.latin, commonName(x)].some((n) => norm(n).includes(nq));
+  const invasives = mappedInvasiveIds();
+  const lookalikes = mappedLookalikeIds();
+  const ornamentals = mappedOrnamentalIds();
+  return [
+    ...INVASIVES.filter((x) => invasives.has(x.id) && hit(x))
+      .map((x) => ({ name: commonName(x), href: `#/invasives/${x.id}`, kind: t("plants.door.invasives") })),
+    ...LOOKALIKES.filter((x) => lookalikes.has(x.id) && hit(x))
+      .map((x) => ({ name: commonName(x), href: `#/lookalikes/${x.id}`, kind: t("plants.door.lookalikes") })),
+    ...ORNAMENTALS.filter((x) => ornamentals.has(x.id) && hit(x))
+      .map((x) => ({ name: commonName(x), href: `#/alternatives/${x.id}`, kind: t("plants.door.alternatives") })),
+  ].slice(0, 6);
 }

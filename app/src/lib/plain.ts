@@ -11,7 +11,8 @@
 // here is a **function**, never a module-level constant. A `Record` built at
 // import time would freeze whatever language happened to be active on the first
 // render and then quietly ignore the switch.
-import type { MoistureBand, PropagationMethod, SizeSnapshot, SupportKind, SupportReliance, WildlifeKind } from "../types";
+import type { MoistureBand, PioneerPressure, PropagationMethod, SizeSnapshot, SupportKind, SupportReliance, WildlifeKind } from "../types";
+import { PRESSURE_ICON } from "../data/pioneers";
 import { monthName, t, tn, tOptional } from "./i18n";
 import { length, temperature } from "./units";
 
@@ -64,13 +65,6 @@ export const CEC_ECOREGION_MAP_URL =
 /** Explainer for the moisture bands ("mesic" and its dry/wet siblings).
  * Same rule: say "evenly moist" first; "mesic" only ever in parentheses. */
 export const MOISTURE_INFO_URL = "https://en.wikipedia.org/wiki/Mesic_habitat";
-
-/** The dependable, species-by-species propagation source we lean on: the USDA
- * Forest Service's Native Plant Network Propagation Protocol Database. It's a
- * government resource written by the people who grow these plants for
- * restoration, so "how to make more of it" stays a checkable fact, not folklore.
- * Linked wherever propagation tips are shown, alongside each row's own `basis`. */
-export const PROPAGATION_SOURCE_URL = "https://npn.rngr.net/propagation/protocols";
 
 /** The common-parlance word for a moisture band. Use this — never the raw
  * band value — anywhere a person reads it; "mesic" means nothing at a garden
@@ -298,6 +292,21 @@ export function relianceLabel(r: SupportReliance): { icon: string; term: string;
     icon: RELIANCE_ICONS[r],
     term: t(`reliance.${r}.term` as const),
     plain: t(`reliance.${r}.plain` as const),
+  };
+}
+
+/**
+ * The abuse a pavement pioneer takes, glossed once. `term` is the one-word
+ * chip; `plain` is what it actually means on the ground, which is the whole
+ * point — "compaction" is engineering jargon, "packed so hard by feet and
+ * tyres that roots can't get air" is a thing a reader can look at and
+ * recognize. The icon comes from the data file, where the vocabulary lives.
+ */
+export function pressureLabel(p: PioneerPressure): { icon: string; term: string; plain: string } {
+  return {
+    icon: PRESSURE_ICON[p],
+    term: t(`pressure.${p}.term` as const),
+    plain: t(`pressure.${p}.plain` as const),
   };
 }
 

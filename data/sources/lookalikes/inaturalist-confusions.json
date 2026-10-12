@@ -1,54 +1,72 @@
 {
-  "checkedAt": "2026-08-07",
-  "ties": 38,
+  "checkedAt": "2026-10-12",
+  "ties": 48,
   "backed": [
     {
       "region": "mid-atlantic",
       "plant": "Cornus florida",
       "lookalike": "Cornus kousa",
-      "misidentifications": 361
+      "misidentifications": 362
     },
     {
       "region": "mid-atlantic",
       "plant": "Acer rubrum",
       "lookalike": "Acer platanoides",
-      "misidentifications": 1116
+      "misidentifications": 1121
     },
     {
       "region": "mid-atlantic",
       "plant": "Lonicera sempervirens",
       "lookalike": "Lonicera japonica",
-      "misidentifications": 62
+      "misidentifications": 63
     },
     {
       "region": "mid-atlantic",
       "plant": "Parthenocissus quinquefolia",
       "lookalike": "Hedera helix",
-      "misidentifications": 30
+      "misidentifications": 31
     },
     {
       "region": "mid-atlantic",
       "plant": "Panicum virgatum",
       "lookalike": "Miscanthus sinensis",
-      "misidentifications": 21
+      "misidentifications": 20
     },
     {
       "region": "mid-atlantic",
       "plant": "Asclepias tuberosa",
       "lookalike": "Asclepias curassavica",
-      "misidentifications": 624
+      "misidentifications": 627
     },
     {
       "region": "mid-atlantic",
       "plant": "Asclepias incarnata",
       "lookalike": "Asclepias curassavica",
-      "misidentifications": 32
+      "misidentifications": 31
+    },
+    {
+      "region": "chicago",
+      "plant": "Cornus racemosa",
+      "lookalike": "Lonicera maackii",
+      "misidentifications": 9
+    },
+    {
+      "region": "chicago",
+      "plant": "Asclepias tuberosa",
+      "lookalike": "Asclepias curassavica",
+      "misidentifications": 627
+    },
+    {
+      "region": "chicago",
+      "plant": "Asclepias incarnata",
+      "lookalike": "Asclepias curassavica",
+      "misidentifications": 31
     },
     {
       "region": "pnw",
       "plant": "Berberis aquifolium",
       "lookalike": "Ilex aquifolium",
-      "misidentifications": 241
+      "misidentifications": 247
     },
     {
       "region": "pnw",
@@ -69,28 +87,22 @@
       "misidentifications": 17
     },
     {
-      "region": "ca-south-coast",
-      "plant": "Muhlenbergia rigens",
-      "lookalike": "Cortaderia selloana",
-      "misidentifications": 6
-    },
-    {
       "region": "florida-central",
       "plant": "Asclepias tuberosa",
       "lookalike": "Asclepias curassavica",
-      "misidentifications": 624
+      "misidentifications": 627
     },
     {
       "region": "florida-central",
       "plant": "Callicarpa americana",
       "lookalike": "Callicarpa dichotoma",
-      "misidentifications": 659
+      "misidentifications": 674
     },
     {
       "region": "florida-central",
       "plant": "Sabal palmetto",
       "lookalike": "Washingtonia robusta",
-      "misidentifications": 146
+      "misidentifications": 147
     },
     {
       "region": "florida-south",
@@ -108,31 +120,31 @@
       "region": "florida-south",
       "plant": "Stachytarpheta jamaicensis",
       "lookalike": "Stachytarpheta cayennensis",
-      "misidentifications": 1025
+      "misidentifications": 1028
     },
     {
       "region": "florida-south",
       "plant": "Sabal palmetto",
       "lookalike": "Washingtonia robusta",
-      "misidentifications": 146
+      "misidentifications": 147
     },
     {
       "region": "france-atlantic",
       "plant": "Sorbus aucuparia",
       "lookalike": "Robinia pseudoacacia",
-      "misidentifications": 21
+      "misidentifications": 22
     },
     {
       "region": "france-atlantic",
       "plant": "Ilex aquifolium",
       "lookalike": "Prunus laurocerasus",
-      "misidentifications": 31
+      "misidentifications": 33
     },
     {
       "region": "france-atlantic",
       "plant": "Lonicera periclymenum",
       "lookalike": "Lonicera japonica",
-      "misidentifications": 925
+      "misidentifications": 927
     },
     {
       "region": "france-continental",
@@ -144,7 +156,7 @@
       "region": "france-mediterranean",
       "plant": "Fraxinus ornus",
       "lookalike": "Ailanthus altissima",
-      "misidentifications": 4
+      "misidentifications": 5
     },
     {
       "region": "france-mediterranean",
@@ -157,6 +169,24 @@
       "plant": "Picea abies",
       "lookalike": "Pseudotsuga menziesii",
       "misidentifications": 181
+    },
+    {
+      "region": "central-texas",
+      "plant": "Asclepias asperula",
+      "lookalike": "Asclepias curassavica",
+      "misidentifications": 5
+    },
+    {
+      "region": "central-texas",
+      "plant": "Callicarpa americana",
+      "lookalike": "Callicarpa dichotoma",
+      "misidentifications": 674
+    },
+    {
+      "region": "central-texas",
+      "plant": "Lantana urticoides",
+      "lookalike": "Lantana camara",
+      "misidentifications": 755
     }
   ],
   "unrecorded": [
@@ -191,6 +221,26 @@
       "lookalike": "Buddleja davidii"
     },
     {
+      "region": "chicago",
+      "plant": "Acer saccharum",
+      "lookalike": "Acer platanoides"
+    },
+    {
+      "region": "chicago",
+      "plant": "Amelanchier laevis",
+      "lookalike": "Pyrus calleryana"
+    },
+    {
+      "region": "chicago",
+      "plant": "Asclepias tuberosa",
+      "lookalike": "Buddleja davidii"
+    },
+    {
+      "region": "chicago",
+      "plant": "Eutrochium maculatum",
+      "lookalike": "Lythrum salicaria"
+    },
+    {
       "region": "pnw",
       "plant": "Heracleum maximum",
       "lookalike": "Heracleum mantegazzianum"
@@ -212,6 +262,11 @@
     }
   ],
   "unresolved": [
+    {
+      "region": "ca-south-coast",
+      "plant": "Muhlenbergia rigens",
+      "lookalike": "Cortaderia selloana"
+    },
     {
       "region": "florida-central",
       "plant": "Hamelia patens",

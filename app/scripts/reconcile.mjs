@@ -22,11 +22,13 @@
 //      single hit, IPNI / WFO / GBIF / USDA / ITIS / iNaturalist ids.
 //   2. The GBIF usageKey is re-fetched from GBIF's own match API (authoritative
 //      for that key, which can drift), overriding whatever Wikidata had.
-//   3. Any taxon Wikidata has no iNaturalist id for (P3151 is contributed by
-//      hand, so its coverage is patchy — a good few of our natives are missing
-//      it) is asked of iNaturalist directly. That id is load-bearing: it's the
-//      join between a plant page and the real nearby sightings on it, so a gap
-//      means "See it growing near you" silently has nothing to show.
+//   3. Every iNaturalist id Wikidata has is checked against iNaturalist, which
+//      retires and splits taxa long before Wikidata notices. Any taxon left
+//      without a live id — Wikidata had none (P3151 is contributed by hand, so
+//      its coverage is patchy), or had a stale one — is asked of iNaturalist
+//      by name. That id is load-bearing: it's the join between a plant page and
+//      the real nearby sightings on it, so a bad one means "See it growing near
+//      you" silently has nothing to show.
 //   4. IPNI is the anchor; POWO links derive from it, so no separate POWO id is
 //      stored.
 import { readFileSync, writeFileSync } from "node:fs";
@@ -68,7 +70,7 @@ const { REGISTRY } = await loader.load("/src/data/registry.ts");
 // The app's own iNaturalist client: one implementation of "scientific name →
 // taxon id", already used at runtime by the wildlife layer, so the ids this
 // script writes are chosen by exactly the rules the app would have applied.
-const { buildTaxaUrl, pickTaxon } = await loader.load("/src/lib/inaturalist.ts");
+const { buildTaxaUrl, pickTaxon, inatIdHolds } = await loader.load("/src/lib/inaturalist.ts");
 await loader.close();
 
 let entries = REGISTRY;
@@ -151,7 +153,7 @@ async function gbifKey(name) {
   }
 }
 
-// --- 3) iNaturalist: ask it directly for the taxon ids Wikidata didn't have ---
+// --- 3) iNaturalist: check Wikidata's ids, ask by name for the rest ---------
 // P3151 is contributed by hand, so Wikidata's coverage of it is patchy while
 // iNaturalist's own taxonomy knows every one of these plants. Same call and
 // same choice-of-match the app makes at runtime (buildTaxaUrl + pickTaxon,
@@ -178,11 +180,48 @@ async function inatTaxon(name) {
   return { id: String(id), matchedName, exact: matchedName.toLowerCase() === name.toLowerCase() };
 }
 
+// Wikidata's ids, fetched back by id (30 to a call). One that is retired, or
+// a variety where we asked for a species, is dropped here so the name search
+// below replaces it. A failed call keeps its batch's ids: no worse than before.
+const INAT_BY_ID = 30;
+const inatStale = []; // Wikidata ids iNaturalist no longer backs
+const fromWikidata = names.filter((n) => (wd.get(n) ?? {}).inat);
+if (fromWikidata.length) {
+  console.log(`\nChecking ${fromWikidata.length} iNaturalist id(s) Wikidata had …`);
+  for (let i = 0; i < fromWikidata.length; i += INAT_BY_ID) {
+    if (i) await sleep(INAT_PAUSE_MS);
+    const batch = fromWikidata.slice(i, i + INAT_BY_ID);
+    const ids = batch.map((n) => wd.get(n).inat);
+    try {
+      const res = await fetch(`https://api.inaturalist.org/v1/taxa/${ids.join(",")}`, {
+        headers: { "User-Agent": UA },
+      });
+      if (!res.ok) throw new Error(`iNaturalist taxa ${res.status}`);
+      const rows = (await res.json())?.results ?? [];
+      const byId = new Map(rows.map((r) => [String(r?.id), r]));
+      for (const name of batch) {
+        const rec = wd.get(name);
+        const row = byId.get(String(rec.inat));
+        if (inatIdHolds(row, name)) continue;
+        const what = row ? `${row.name ?? "?"}, ${row.is_active === false ? "inactive" : row.rank}` : "not found";
+        inatStale.push(`${name}: ${rec.inat} (${what})`);
+        delete rec.inat;
+      }
+    } catch (e) {
+      console.warn(`  iNaturalist id check failed for ${batch.length} id(s): ${e.message}`);
+    }
+  }
+  if (inatStale.length) {
+    console.log(`  ${inatStale.length} stale — asking for these by name instead:`);
+    console.log("    " + inatStale.join("\n    "));
+  }
+}
+
 const inatFallback = new Map(); // scientificName → id, for names Wikidata missed
 const inatSynonyms = []; // matches iNaturalist filed under a different accepted name
 const inatWanted = names.filter((n) => !(wd.get(n) ?? {}).inat);
 if (inatWanted.length) {
-  console.log(`\nAsking iNaturalist for ${inatWanted.length} taxon id(s) Wikidata didn't have …`);
+  console.log(`\nAsking iNaturalist for ${inatWanted.length} taxon id(s) by name …`);
   for (const [i, name] of inatWanted.entries()) {
     if (i) await sleep(INAT_PAUSE_MS);
     try {
@@ -261,9 +300,13 @@ if (summaryPath) {
   const md = [
     `Reconciled **${names.length}** taxa — ${resolved} with an IPNI/WFO anchor.`,
     "",
-    `- iNaturalist taxon ids newly resolved: **${inatFallback.size}** (of ${inatWanted.length} Wikidata had none for)`,
+    `- iNaturalist taxon ids resolved by name: **${inatFallback.size}** (of ${inatWanted.length} Wikidata had none or a stale one for)`,
+    `- Stale iNaturalist ids from Wikidata, replaced: **${inatStale.length}**`,
     `- Identifiers written without an IPNI/WFO anchor: **${noAnchor.length}**`,
     `- Taxa still with no identifiers at all: **${empty.length}**`,
+    ...(inatStale.length
+      ? ["", `<details><summary>Stale ids from Wikidata (${inatStale.length})</summary>`, "", list(inatStale), "", "</details>"]
+      : []),
     ...(inatSynonyms.length
       ? [
           "",

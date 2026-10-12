@@ -3,7 +3,7 @@
 All notable changes to Indigene are recorded here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-with four house rules:
+with these house rules:
 
 - **Versions are feature releases, not schedules.** A version is cut when a
   coherent piece of the product lands, and gets a number, a name and a date
@@ -29,24 +29,319 @@ with four house rules:
   Wildlife: …` for one that touches two. It reads as a sentence and needs no
   prefix when the entry already links to that part. A leading word that isn't a
   section name is just ordinary prose.
+- **Link the words, not the address.** Put a link on the name it's about —
+  `[Ireland](https://indigene.app/regions/ireland) is on the map` — rather than
+  typing out the URL after the sentence. An entry that links nowhere gets its
+  section name linked on the page.
 
 The bold line under each version heading is the release's name; it becomes the
 subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [1.0] - 2026-10-12
+
+**Native status, checked against Kew**
+
+[![A plant page where Kew's checklist disagrees](docs/screenshots/pr-196/thumb.png)](docs/screenshots/pr-196/flagged-after-dark.png)
+[Before](docs/screenshots/pr-196/flagged-before-dark.png) · [After](docs/screenshots/pr-196/flagged-after-dark.png)
+
 ### Added
 
-- Indigene was built with an LLM (a large language model, what most people
-  call AI), and a new page shows the bill: 110 working sessions, about 360 kWh
-  of electricity, and how to use fewer tokens next time.
-  https://indigene.app/llm
-- Internal: `steps/llm.ts` (route `llm`, prerendered with its own share card),
-  linked from a new About stance. Tokens and price are each session's own
-  record (`docs/llm-bill/sessions.csv`); `lib/llm-bill.ts` turns them into
-  electricity with Couch's per-token rates, and `llm-bill.test.ts` re-sums the
-  CSVs so the page can't drift from them. `docs/llm-bill/fewer-tokens.md` maps
-  the findings to the repo rules that already save tokens.
+- Plants: [every plant page](https://indigene.app/plants/quercus-alba) now says
+  whether Kew's World Checklist agrees it's native where you are, and when we
+  asked. Where Kew disagrees — eight plants so far — the page says that too.
+- Internal: `npm run native:check` covers every region WCVP can answer for, not
+  just Ireland — a region takes several TDWG areas and one native area wins.
+  `npm run native-evidence` reduces those snapshots to the few KB the page
+  reads, storing only the rows that were *not* confirmed. DATA_SOURCES.md now
+  states the native rule in one place. A `-ii`/`-i` epithet is retried in its
+  other spelling, so Kew's *Andropogon gerardi* no longer reads as no-match.
+
+## [0.41] - 2026-10-12
+
+**Central Texas**
+
+[![Central Texas on the regions map](docs/screenshots/pr-231/thumb.png)](docs/screenshots/pr-231/region-after-dark.png)
+[Before](docs/screenshots/pr-231/region-before-dark.png) · [After](docs/screenshots/pr-231/region-after-dark.png)
+
+### Added
+
+- [Central Texas](https://indigene.app/regions/central-texas) is on the map —
+  67 native plants for Austin, San Antonio and Dallas–Fort Worth, picked for
+  heat, drought, limestone and black clay, and every one marked for whether
+  deer eat it.
+- Wildlife: three Texas animals join the catalog — the American snout, the
+  phaon crescent and the black-chinned hummingbird, each linked to the native
+  plants that raise or feed it.
+- Invasives: chinaberry, Johnsongrass, bastard cabbage, glossy privet and
+  nandina, with how to tell each one and how to clear it without chemicals.
+- Native swaps: Chinese pistache gets a native stand-in — Texas red oak or
+  flameleaf sumac for the same red autumn.
+- Two books for Central Texas gardeners join [further
+  reading](https://indigene.app/reading), both on the Native Plant Society of
+  Texas's own list: the Wasowskis' *Native Texas Plants* and George Oxford
+  Miller's *Landscaping with Native Plants of Texas*.
+- Internal: the region claims EPA Level III 30, 32 and 29; 33 (post-oak sands),
+  31 and 34 are left for their own lists. All 67 rows are WCVP-native in Texas
+  (TDWG:TEX, snapshot committed); 54 are on the Wildflower Center's own Central
+  and North-Central Texas lists. Host counts are eastern Tallamy/NWF genus
+  figures recorded as estimated. Reconcile, registry, hero photos and colours,
+  record counts (all regions, to 2026-10-12) and share cards generated
+  in-branch.
+- Internal: npsot.org was unreachable from the first session, so further reading
+  landed late. Rowman and Quarto still are, so each book links to the
+  Wildflower Center's or NPSOT's own record of it.
+- Internal: `build-region-maps.mjs` landmarks can now be `kind: "area"` — an
+  italic, dot-less name for part of the shading. Central Texas uses it for the
+  Fayette Prairie, the blackland arm cut off by the post-oak sands.
+
+## [0.40] - 2026-10-11
+
+**Chicago & the Corn Belt Prairie**
+
+[![Chicago & the Corn Belt Prairie on the regions map](docs/screenshots/pr-232/thumb.png)](docs/screenshots/pr-232/region-after-dark.png)
+[Before](docs/screenshots/pr-232/regions-before-dark.png) · [After](docs/screenshots/pr-232/regions-after-dark.png)
+
+### Added
+
+- [Chicago & the Corn Belt Prairie](https://indigene.app/regions/chicago) is on
+  the map: 63 native plants for Chicago, Rockford, Champaign and Springfield,
+  from bur oak to compass plant, rattlesnake master and the wild leek the city
+  is named for.
+- Wildlife: meet the [hackberry emperor](https://indigene.app/wildlife/hackberry-emperor),
+  a butterfly that lands on people for the salt in their sweat, and the rare
+  [rattlesnake-master borer moth](https://indigene.app/wildlife/rattlesnake-master-borer).
+- Invasives: Chicago's most wanted — common buckthorn, Amur honeysuckle, garlic
+  mustard, cut-leaved teasel and purple loosestrife — with how to know each and
+  how to get rid of it for good.
+- Internal: region `chicago` claims EPA Level III 54 only; 55 (Indianapolis,
+  Columbus) is left uncovered because it was beech-maple forest and this is a
+  prairie list — see `region.chicago.ts`. Every row checked native in Illinois
+  against Kew WCVP (TDWG:ILL), snapshot in `data/sources/wcvp/chicago.json`;
+  showy goldenrod was dropped (WCVP: absent) and white wild indigo is filed as
+  Baptisia lactea. Thirteen prairie genera carry no host count (`null`), as no
+  published genus figure was in hand. gispub.epa.gov timed out from the
+  session, so the map was drawn from the EPA's own Level III shapefiles fed to
+  the unchanged builder. Registry ids, iNaturalist photos and colours, share
+  cards, sighting counts and region counts generated in-branch.
+
+## [0.39] - 2026-10-11
+
+**Pavement pioneers, further reading & 15 more Florida natives**
+
+[![A region's pavement pioneers](docs/screenshots/pr-226/thumb.png)](docs/screenshots/pr-226/page-after-dark.png)
+[Before](docs/screenshots/pr-226/page-before-dark.png) · [After](docs/screenshots/pr-226/page-after-dark.png)
+
+### Added
+
+- Regions: **Pavement pioneers** — the natives that grow where the ground is
+  packed hard, rubbly, salted or baking. Eight per region, each with the real
+  place it does that and who documented it, as on
+  [the Mid-Atlantic's list](https://indigene.app/regions/mid-atlantic).
+- A plant that takes that punishment now says so under its name, with a tag per
+  kind — packed ground, cracks, road salt — that explains itself when you tap
+  it. Shown only on the regions where it's documented.
+- Internal: `data/pioneers.ts` is a region → plant id side table beside the
+  wildlife and look-alike ones; 127 rows across all 15 regions. The page closes
+  by recommending Joey Santore's *Concrete Botany*, which is about this exact
+  subject — our name, not his. Nine authorities added to `data/sources.ts`, led
+  by the USFS Fire Effects Information System and the MNHN's Sauvages de ma rue.
+- Internal: `lib/traits.ts`'s `traitsFor()` takes an optional region, because
+  the pioneer label is a claim about one region's conditions; a caller without
+  one never gets it. `check-prose.mjs` counts `pioneerNote`, so a region can no
+  longer report 100% French while its pioneers page is in English.
+- Internal: the bundle figure in the four docs that quote it is re-measured at
+  ~525 KB gzipped (was ~480 KB, which had drifted ~33 KB before this branch;
+  this layer adds ~13 KB).
+- [Further reading](https://indigene.app/reading): books, websites and a TV series for each region, chosen because an expert stands behind each one and a local society, garden or extension service recommends it.
+- [Further reading](https://indigene.app/reading) opens with the ideas Indigene is built on: Tallamy's *Nature's Best Hope*, Kimmerer's *Braiding Sweetgrass*, and a skeptic's book, so both sides of the native debate are there.
+- Internal: `src/data/reading.ts` holds the picks with their evidence; `reading.test.ts` refuses a pick with no recommendation, award, editions or audience. `npm run reading:check` and the Reading links workflow ask every link. Research and rejections: `docs/outreach/further-reading.md`.
+- [North & Central Florida](https://indigene.app/regions/florida-central)
+  grows from 24 plants to 39: persimmon, sweetbay magnolia, sparkleberry, wax
+  myrtle, buttonbush, crossvine and more. Each is one that both Audubon and the
+  Lady Bird Johnson Wildflower Center recommend for Florida gardens.
+- Internal: the 15 rows were picked from `npm run societies` (consensus picks,
+  woody plants and vines first) and each checked native in Florida against Kew
+  WCVP (TDWG:FLA). Firewheel was left out: WCVP calls it introduced there,
+  against the Atlas of Florida Plants. French prose for the region is back to
+  100%. Registry ids, iNaturalist photos and colours, ten share cards and
+  Florida record counts generated in-branch; only the new region-counts entries
+  are kept.
+- The home page now ends with **More to explore**: the wildlife, invasives and
+  their native swaps, look-alikes, planting how-tos and the regions map, one
+  row and one picture each.
+- Internal: `npm run societies` measures each US region's list against two
+  societies' own garden lists — the first outside lists of the same kind as
+  ours, where `npm run candidates` only had occurrence density. Findings in
+  `docs/society-list-comparison.md`; the sourcing standard they argue for is
+  in `docs/source-ledger.md`.
+
+### Changed
+
+- Your saved spots now sit right under the start button on the
+  [home page](https://indigene.app/), instead of at the very bottom.
+- The native-plants promise now fits on one line: "Native means plants, not
+  people."
+- Internal: `welcome.ts` gains `moreToExplore()`; `.native-callout-title` drops
+  to 1.05rem with tighter side padding so `about.stance.native` fits 360 px in
+  both locales (measured with Roboto, ~2 px to spare).
+- A link to [Homegrown National Park](https://indigene.app/homegrown) now
+  previews with its own picture: a street of yards from above, half still
+  lawn and half gone native.
+- The film on the home page no longer carries a line about the video host under it. The [Privacy](https://indigene.app/privacy) page still explains how the film is handled.
+- Internal: `hero:harvest` gathers hero candidates only by default (top 10 by
+  score from the general query); the four angle slots are opt-in with
+  `--angles`. Candidates are stored slim and one per line, and the committed
+  `candidates.json` is trimmed to match: 7.2 MB / 148k lines → 1.6 MB / 7k
+  lines. The review page shows only the hero slot when a file has no angles.
+  A partial harvest keeps the other subjects' problems instead of wiping them.
+
+### Fixed
+
+- Plants: a plant's main photo is now the one iNaturalist itself chose for the
+  species, or none. Before, some plants showed whatever free photo came next,
+  like persimmon seeds that looked like bread. Those plants show their drawing
+  until someone picks a photo.
+- Internal: `inat-heroes.mjs` takes only `default_photo`, and a forced run now
+  deletes picks the rule refuses instead of keeping them. 130 of 588 stored
+  picks cleared across the four `inat-*.json` files; 18 swapped to iNaturalist's
+  current choice. Rule and test in `_inat-hero-pick.mjs` /
+  `inat-hero-pick.test.ts`.
+- Internal: subjects left without a chosen photo are queued in
+  `docs/hero-photos/needs-review.json`. The review page lists them first,
+  `hero:harvest -- --queue` harvests just them (a narrowed harvest now merges
+  instead of overwriting), and `inat-heroes.yml` pins a PR comment and warns
+  whenever a PR adds to the queue.
+- A US ZIP code no longer lands in Spain. Postal codes repeat across countries — 33812 is Lakeland, Florida and a village in Asturias — so search now lists each country once, yours first. Thanks to Rikki Ocampos (@rikkibelle) for reporting it.
+- Internal: postal-code-shaped searches go to Nominatim's `postalcode=` search (one result per country; Open-Meteo's GeoNames index lacks many US ZIPs), falling back to Open-Meteo. `rankPlaces` orders by the browser-language region, then time-zone longitude. Privacy page's OpenStreetMap row updated. Fixes #219.
+- Words a page stresses now show in **bold** or *italic*, not between stray
+  asterisks — on plant pages, look-alikes, native swaps and planting guides.
+  The brimstone line on
+  [alder buckthorn](https://indigene.app/plants/frangula-alnus) is one.
+- Internal: `lib/inline-markdown.ts` reads `**strong**` and `*em*` (nothing
+  else) and `components/rich-text.ts` renders it wherever authored prose is
+  printed; link previews strip the marks. A test fails on any unclosed mark in
+  the data or either locale (#186).
+- Plants: a page that is still fetching no longer sits blank. A seedling grows while you wait — stem, leaves, then a flower — and steps aside the moment the page arrives.
+- Internal: `components/page-loader.ts` holds the seedling in `main` while a step's render promise is pending; the boot screen in `index.html` draws the same plant.
+
+## [0.38] - 2026-10-09
+
+**Season plans & safer backups**
+
+[![A saved spot's season plan](docs/screenshots/pr-209/thumb.png)](docs/screenshots/pr-209/plan-after-dark.png)
+[Before](docs/screenshots/pr-209/spot-before-dark.png) · [After](docs/screenshots/pr-209/spot-after-dark.png)
+
+### Added
+
+- **A season plan for every saved spot.** It picks the plants you've had long
+  enough to share, says what to do now — collect ripe seed, divide a clump —
+  and puts the ones wildlife needs most first, linked to [the how-to](https://indigene.app/planting).
+- Planting: the season plan can also suggest natives to add, for the animals
+  photographed within 5 km of your spot this season. It asks iNaturalist when
+  you tap to look, then remembers the answer for a month.
+- Planting: your Saved spots open with the three most useful things to grow
+  more of this season, across all of them.
+- Internal: `lib/grow-now.ts` holds the readiness, window and ranking rules
+  (tested in `grow-now.test.ts`); `lib/season-sightings.ts` asks iNaturalist
+  for one species-counts call with `month=`, only on a tap; a cached answer (30 days) shows without one.
+- Backups: when a spot you bring in looks like one you already have (same
+  name nearby, or the same patch of ground), you choose whether to combine
+  them or keep both. Nothing comes in until you've chosen.
+- [Keeping your spots safe](https://indigene.app/guide/backup/) explains where
+  your spots live, what can erase them, and how to save and restore a copy.
+- If your browser speaks French but Indigene opened in English, a one-line
+  offer at the top switches it: **🇫🇷 Lire en français**. Close it and it
+  never comes back.
+
+### Changed
+
+- Backups: your spots file now holds everything — spots, plantings, linked
+  sightings with their photos, your iNaturalist username and your settings.
+  Open it in a new browser and it all comes back.
+- Backups: bringing a copy into a browser that already has your spots adds
+  what's new, like sightings linked on another device. Nothing already there
+  is removed or overwritten.
+- Backups: saved spots now ask the browser not to clear them when space runs
+  low, and Settings shows when you last saved a copy. On iPhone, it explains
+  Safari's one-week limit.
+- Internal: spots file format v2 adds `lookups`, `sightings` (the `obs:<ref>`
+  cache records) and `preferences`; v1 files still read. `planImport` is the
+  pure merge and `likelySameSpots` the matcher (same name ≤ 1 km, or ≤ 30 m;
+  suggests combine for same name ≤ 250 m); combined ids persist in kv
+  `spot-aliases`. Settings that redraw the page apply via `Restore.finish()`.
+  New guide section `backup` (prefix `Backups`).
+- Internal: `lib/backup.roundtrip.test.ts` runs save → file text → restore on
+  simulated devices (fake-indexeddb, a fresh module copy each), covering full
+  restore, idempotence, copies of copies, diverged devices merging both ways,
+  stale copies, deleted spots, combine/keep-both across repeat imports, damaged
+  and v1 files. `setUnitPref` now stores an unchanged pick.
+- Planting: the season plan now names its sources — the RHS, the USDA Woody
+  Plant Seed Manual and Audubon — and each technique page links to further
+  reading. Seed tasks on plants birds eat from say to leave some standing.
+- Planting: trees and shrubs get seed reminders only once they reach the age
+  their species first bears seed, from the USDA Woody Plant Seed Manual, and in
+  the months its fruit ripens. White oak waits 20 years.
+- Planting: [every technique page](https://indigene.app/planting) was checked
+  against published guides and corrected where they disagree — cold
+  stratification takes one to six months, and semi-ripe cuttings go in a pot
+  within half a day.
+- Plants: propagation notes for France and Kantō now cite pages we opened
+  and checked, instead of "nursery practice". Where a source disagreed, the
+  note changed — European larch needs no chilling, ivy cuttings come from
+  climbing shoots — and a few with nothing checkable say so.
+- Internal: the old 5-year rule for trees was wrong. `data/seed-bearing.ts`
+  holds 30 species' printed ages and ripening months; `GUIDE_REFS` keeps each
+  page's checked quote beside its link. The reading list adds the New Zealand
+  Plant Conservation Network and the Seed Information Database.
+- Matches: importing from iNaturalist now reaches back five years instead of
+  one, and only brings in your sightings within 35 km of the spot. iNaturalist
+  is sent the spot rounded to about 1 km, so blurred sightings still turn up.
+- Internal: `lib/inat-import.ts` asks with `lat`/`lng`/`radius` (35 km covers
+  an obscured sighting's 0.2° cell plus the 1 km rounding) and `d1` five years
+  back; page cap raised from 3 to 5 (1,000 sightings). The fetch is cached per
+  username and rounded spot. Privacy copy updated in both languages.
+- Links in [What's new](https://indigene.app/release-notes/) are words you can tap, like a region's name or "a new page", instead of a web address printed after the sentence.
+- Pages now point to each other where it helps. A region opens its [look-alikes](https://indigene.app/lookalikes) and native swaps, a list of invasives ends with what to grow instead, and About links the settings it mentions.
+- A plant search that finds no native now offers the invasive, look-alike or swap page for that name, so "butterfly bush" lands on the page that answers it.
+- The [guide](https://indigene.app/guide/) has a page on the worst invasives: what makes a plant one, and how to use the lists to remove it.
+- Links inside sentences are quieter: they keep the text's color with a soft underline, so a paragraph with links stays easy to read.
+- Internal: every typed-out URL in CHANGELOG.md became a linked phrase, and both compilers now autolink a bare or `<…>` URL (`autolink()` in `scripts/_changelog.mjs`, `autolink.test.ts`), so one can't render dead again.
+- Internal: an entry's section prefix (`Regions:`, `Plants & Wildlife:`) links that part of the app on What's new when the entry carries no link of its own (`linkPrefix()` and a section's optional `home` in `guide-catalog.mjs`, `changelog-prefix.test.ts`).
+- Internal: `npm run release-notes` warns when a published bullet types out a URL instead of linking a word; CLAUDE.md and CHANGELOG.md's house rules now say to link the name.
+- Internal: the "Among the worst in" line on swap and look-alike pages linked each region's native roster; it now links that region's invasives list, plus the plant's own removal page. Figure dialogs' "How every number is sourced" opens `#/sources` instead of DATA_SOURCES.md on GitHub.
+- Internal: body-copy links in `.privacy-page`, `.note`, `.kv`, `.step-lede` and `.region-tag` take the quiet `.src-link`-style look; `.more-link` keeps a paragraph that is only a way on bright.
+- Internal: results link the filter labels' meanings and the region's wildlife and invasives; Homegrown links essential plants, Sources and its three regions; Regions asks for a missing region on GitHub. Look-alike, swap, planting and animal pages drop the bottom button that repeated their back-trail.
+
+### Fixed
+
+- Choosing metric units in Settings is now remembered even when metric was
+  already showing, so restoring a copy from an imperial device won't switch it.
+- In French, some plants showed paragraphs written for another region's
+  list: Ireland's oak was called the main tree of Atlantic France's forests.
+  Each paragraph now shows only on its own region's list; elsewhere you'll
+  see the English, marked as such.
+- Every plant on the [Kantō Plain](https://indigene.app/regions/kanto) now
+  shows a real photograph from iNaturalist instead of the placeholder drawing.
+- Internal: `npm run hero:inat` had never been run after Kantō landed, so
+  `inat-heroes.json` held none of its 59 plants. Re-ran it (plus
+  `hero:colors`); three non-Kantō gaps filled on the way.
+- Internal: new `inat-heroes.yml` workflow runs `hero:inat` and `hero:colors`
+  on any PR that changes the plant, wildlife, look-alike, ornamental or
+  invasive lists, and commits the photos to that PR. Weekly, it opens a PR for
+  any gaps left on `main`.
+- Internal: the registry reconcile now checks every iNaturalist taxon id Wikidata supplies against iNaturalist, and looks up by name any that are retired or point at a variety. Four stale ids slipped into the October gap-fill run (#210) this way.
+
+## [0.37] - 2026-10-08
+
+**Wildlife at your saved spots & 21 more Pacific Northwest natives**
+
+[![A saved spot and the wildlife it can feed](docs/screenshots/pr-207/thumb.png)](docs/screenshots/pr-207/spot-after-dark.png)
+[Before](docs/screenshots/pr-207/spot-before-dark.png) · [After](docs/screenshots/pr-207/spot-after-dark.png)
+
+### Added
+
 - A saved spot now shows the wildlife in its neighborhood: each animal your
   plants can feed, with its picture and the plant of yours it eats. Tap one to
   meet it.
@@ -75,39 +370,65 @@ subtitle on the What's new page.
 - Internal: `nativeSightings()` and `sortSightings()`'s new `linkedElsewhere` /
   `planting` fields carry this, with `inat-import.test.ts` against the real
   Pacific Northwest list.
-- Regions: three more native shrubs for the Pacific Northwest — Pacific wax
+- Matches: on the location map, press and hold to open a magnifier and nudge
+  the pin a few metres at a time. The line under the map now says which way it
+  moved, like "nudged 40 m northeast".
+- Regions: three more native shrubs for the [Pacific Northwest](https://indigene.app/regions/pnw) — Pacific wax
   myrtle for a coastal hedge, Oregon boxleaf as a native stand-in for boxwood,
-  and western wahoo for a shady corner. https://indigene.app/regions/pnw
+  and western wahoo for a shady corner.
 - Internal: all three checked native in British Columbia against VASCAN and in
   Oregon against WCVP. WCVP misses western wahoo in Washington, so its row
   cites the GBIF herbarium and iNaturalist records there instead.
-- Regions: fifteen more Pacific Northwest natives, chosen to fill gaps — late
+- Regions: fifteen more [Pacific Northwest natives](https://indigene.app/regions/pnw), chosen to fill gaps — late
   flowers like western goldentop and Pacific aster, Pacific yew and wild ginger
   for dry shade, and stinging nettle for red admirals.
-  https://indigene.app/regions/pnw
 - Internal: picked from the GBIF-ranked candidate shortlist and the coverage
   report's thin cells (September–December bloom, dry shade). Four rows reuse
   their California figures with notes rewritten for here. VASCAN files blue
   elderberry as `Sambucus cerulea`, now a reviewed entry in `check-vascan.mjs`.
-- Regions: three more Pacific Northwest willows — Pacific willow for a stream
+- Regions: three more [Pacific Northwest willows](https://indigene.app/regions/pnw) — Pacific willow for a stream
   bank, coastal willow for dunes and salt wind, and Sitka willow for wet shade.
   Willows feed more caterpillars than almost anything else here.
-  https://indigene.app/regions/pnw
 - Internal: all three are native in BC, Oregon and Washington per WCVP and
   VASCAN. Pacific willow is filed as `Salix lasiandra`: WCVP keeps
   `Salix lucida` for the eastern shining willow.
-- Plants: nettles now carry a "Stings" label, and the "No thorns or stings"
-  filter leaves them out. https://indigene.app/traits
-- Regions: annuals have their own category, starting with sea blush. Instead
+- Plants: nettles now carry a ["Stings" label](https://indigene.app/traits), and the "No thorns or stings"
+  filter leaves them out.
+- Regions: annuals have their own category, starting with [sea blush](https://indigene.app/plants/plectritis-congesta). Instead
   of a growth rate, their pages say they last one season and come back from
-  seed. https://indigene.app/plants/plectritis-congesta
+  seed.
 - Internal: `filters.stinging` is optional (missing means no), so only the two
   nettle rows set it. The `annual` form carries a single year-1 size snapshot,
   and `coverage.mjs` counts annuals without flooring them.
+- [A new page](https://indigene.app/homegrown) on Homegrown National Park, Doug Tallamy's idea that half of
+  America's lawns, given back to native plants, would make a park. It shows
+  where Indigene follows that idea, and why its maker built it.
+- Internal: `steps/homegrown.ts` (route `homegrown`, prerendered with its own
+  share card), linked from About's "Why this exists"; English and French.
+- Indigene was built with an LLM (a large language model, what most people
+  call AI), and [a new page](https://indigene.app/llm) shows the bill: 110 working sessions, about 360 kWh
+  of electricity, and how to use fewer tokens next time.
+- Internal: `steps/llm.ts` (route `llm`, prerendered with its own share card),
+  linked from a new About stance. Tokens and price are each session's own
+  record (`docs/llm-bill/sessions.csv`); `lib/llm-bill.ts` turns them into
+  electricity with Couch's per-token rates, and `llm-bill.test.ts` re-sums the
+  CSVs so the page can't drift from them. `docs/llm-bill/fewer-tokens.md` maps
+  the findings to the repo rules that already save tokens.
 - Internal: every PR now shows what its Claude sessions cost, under
   `## Session cost`. The new `Session cost` check fails without it and warns
   above $30 (about three typical sessions) or $100. Rules in CLAUDE.md;
   thresholds in `lib/session-cost.ts`.
+
+### Changed
+
+- The welcome page's "Why native plants?" now ends by saying what native
+  never means — borders or people — and links to [the page that explains it](https://indigene.app/native).
+- Internal: a pull request's changelog entry is now its own file in
+  `changelog.d/`, so two branches never append to the same lines — merging one
+  used to leave every other pull request conflicting on CHANGELOG.md, which was
+  in all of the last twenty merges. `npm run changelog:fold` folds them in when
+  a version is cut; the compiler reads them on every build, so the rules still
+  bite in review.
 
 ### Fixed
 
@@ -117,11 +438,16 @@ subtitle on the What's new page.
 - Internal: `renderSpot` falls back to `findPlant` for an `?add=` slug not on
   the spot's roster, and the date row's year input and selects share one height
   so their labels line up on iOS.
-- Regions: the Kantō Plain now shows the Japanese flag beside its name, like
-  every other region. https://indigene.app/regions/kanto
+- Regions: the [Kantō Plain](https://indigene.app/regions/kanto) now shows the Japanese flag beside its name, like
+  every other region.
 - Internal: `flags.ts` had no JP drawing, and an unknown country code draws
   nothing and says nothing — so the region shipped a row plainer than its
   neighbours. A test now holds every region's countries to the flags.
+- Matches: on iPhone, holding a finger on the location map no longer starts
+  selecting the text around it, so the map moves the way you'd expect.
+- Internal: the map cancels `touchstart` (all but the attribution link) and
+  sets `user-select: none`; the direction comes from `lib/compass.ts`, which
+  has its own test.
 
 ## [0.36] - 2026-10-02
 
@@ -132,15 +458,14 @@ subtitle on the What's new page.
 
 ### Added
 
-- The Kantō Plain is on the map — 59 native plants for Tokyo, Yokohama,
+- [The Kantō Plain](https://indigene.app/regions/kanto) is on the map — 59 native plants for Tokyo, Yokohama,
   Saitama, Chiba and the country out to Utsunomiya and Chōshi.
-  https://indigene.app/regions/kanto
-- Regions: Indigene reaches Asia. Konara oak, the tree the plain's old coppiced
+- Regions: Indigene reaches Asia. [Konara oak](https://indigene.app/plants/quercus-serrata), the tree the plain's old coppiced
   woods were built on, feeds 531 kinds of caterpillar here — more than any other
-  plant in the app. https://indigene.app/regions/kanto
+  plant in the app.
 - Planting: the satoyama flora joins the catalogue — wild cherry, keyaki, bush
-  clover, susuki grass. Enoki hackberry is the one tree Japan's national
-  butterfly can raise its young on. https://indigene.app/regions/kanto
+  clover, susuki grass. [Enoki hackberry](https://indigene.app/plants/celtis-sinensis) is the one tree Japan's national
+  butterfly can raise its young on.
 - Internal: the region is the plain, not the country. RESOLVE's ecoregion 682
   runs the whole Pacific side of Japan to Kagoshima, so the code says what kind
   of ground and the box says how far — Nagoya and Osaka share the code and are
@@ -152,16 +477,14 @@ subtitle on the What's new page.
   The claim is national — the coarsest any region here stands on — so each row's
   note says where on the plain the plant actually grows.
 
-- The St Lawrence Lowlands are on the map — 55 native plants for Montréal,
+- [The St Lawrence Lowlands](https://indigene.app/regions/st-lawrence) are on the map — 55 native plants for Montréal,
   Québec City, Ottawa and the Champlain valley down to Burlington.
-  https://indigene.app/regions/st-lawrence
 - Regions: a gardener in Sherbrooke, Granby or Ottawa used to be handed the
   Mid-Atlantic list, full of redbud and flowering dogwood that don't grow there.
   They now get the list for the valley they live in.
-- Planting: American bittersweet, virgin's bower and sensitive fern join the
+- Planting: [American bittersweet](https://indigene.app/plants/celastrus-scandens), virgin's bower and sensitive fern join the
   catalogue. Bittersweet's orange capsules split to scarlet seed in October and
   feed waxwings through February, when nothing else is left.
-  https://indigene.app/regions/st-lawrence
 - Internal: the region is drawn from the ecoregion, not the province. The CEC
   puts Montréal, Ottawa, Plattsburgh and Burlington in one unit (8.1.1) with the
   river down its middle, so the region crosses two borders and is named for the
@@ -173,9 +496,9 @@ subtitle on the What's new page.
   a claimed Ottawa, on the Shield rather than the plain, and is correctly
   refused — the ecoregion gate at its sharpest.
 
-- Wildlife: share a group page, like all the butterflies, and the link now
+- Wildlife: share a group page, like [all the butterflies](https://indigene.app/wildlife/butterflies), and the link now
   previews with its own picture and counts instead of the plain Indigene
-  card. https://indigene.app/wildlife/butterflies
+  card.
 - Internal: `gen-wildlife-cards.mjs` draws one card per group page (kind glyph,
   mapped count, regions, distinct native and host plants) and `prerender.mjs`
   points the five group pages at them; the `/native` page card gains a source
@@ -193,10 +516,9 @@ subtitle on the What's new page.
   row's new `hostCountFrom` (and optional `confidenceLowered`), generated once
   from the `basis` wording; `confidence.test.ts` pins the rule and checks every
   shipped row. Result: 286 high, 261 medium, 92 low (was 548/91/0).
-- A new page explains what "native" means here, and what it never means:
+- [A new page](https://indigene.app/native) explains what "native" means here, and what it never means:
   where a plant evolved, not borders or people. It lists the words we stopped
   using and why, and what our own name meant in colonial France.
-  https://indigene.app/native
 - Internal: `steps/native.ts` (route `native`, prerendered with its own share
   card), linked from a new stance on the About page; `CLAUDE.md` points to it.
 - Matches: "Add sighting" on a plant in your saved spot now shows your own
@@ -206,33 +528,32 @@ subtitle on the What's new page.
   plant in your saved spot to fix it, and keep the sightings linked to it.
 - Sightings of a plant show its drawing while their photos load, the way plant
   pictures already do, instead of an empty gray square.
-- Matches: a saved spot's page can now rename the spot, or move its pin on the
-  map when it landed next door. https://indigene.app/#/saved
+- Matches: [a saved spot's page](https://indigene.app/#/saved) can now rename the spot, or move its pin on the
+  map when it landed next door.
 - Internal: the import's per-visit sightings cache moved to
   `ownSightings()` in `lib/inat-import.ts`, shared with the planting picker
   (`sightingsOfPlant()`, covered by `import:check`); unlinking the account now
   clears it via `forgetImport()`, which the comments already promised.
-- The home page has a one-minute, hand-drawn film about what Indigene does
+- [The home page](https://indigene.app/) has a one-minute, hand-drawn film about what Indigene does
   and who it's for, in English or French to match your language. Nothing loads from the
-  video host until you press play. https://indigene.app/
+  video host until you press play.
 - Internal: `film/` holds the code that draws, voices and scores the film —
   a pure-JavaScript canvas renderer in the app's palette, Gemini TTS
   narration, a Lyria score, synthesized foley — with rebuild and translation
   steps in `film/README.md`. Rendered cuts are gitignored and hosted on Bunny
   Stream; `components/film.ts` is click-to-play, and `lib/csp.ts` gains
   `frame-src player.mediadelivery.net` with a matching Privacy section.
-- The film has a page of its own, made for sharing: send the link and the
-  film shows up in the preview, playing right there in many chat apps.
-  https://indigene.app/film, and in French https://indigene.app/film/fr
+- The film has [a page of its own](https://indigene.app/film), [in French too](https://indigene.app/film/fr), made for sharing: send the
+  link and the film shows up in the preview, playing right there in many chat apps.
 - Internal: `/film` is prerendered with `og:video` (MP4 when
   `FILM_MP4_HOST` is set, then the Bunny player as `text/html`) and a
   `twitter:player` card; `/film/fr` is the same in French (its own
   hreflang pair and `og:locale`). The ids moved to `lib/film.ts` so the
   prerenderer can read them. `scripts/gen-film-card.mjs` crops each poster to
   a 1200×630 card.
-- Regions: each region now shows a small flag beside its name, two where a
+- Regions: [each region](https://indigene.app/regions) now shows a small flag beside its name, two where a
   region crosses a border, like the Pacific Northwest, so you can find your
-  country at a glance. https://indigene.app/regions
+  country at a glance.
 - Internal: `RegionMeta.countries` (ISO codes) and `components/flags.ts`,
   five flags drawn as inline SVG (~2 KB) because Windows has no flag emoji;
   shown on the Regions cards, the region page title and the region picker.
@@ -245,7 +566,7 @@ subtitle on the What's new page.
   removes it after the first render.
 - Plants: the labels under a plant's name are a word or two now, like
   "No watering" or "Thorny", and each one opens its full meaning on the new
-  plant traits page. https://indigene.app/traits
+  [plant traits page](https://indigene.app/traits).
 - Internal: `lib/traits.ts` lists the labels once for the plant page, the
   ranked list's cards and `#/traits`; `#/traits/<id>` opens the page at one
   definition.
@@ -265,10 +586,9 @@ subtitle on the What's new page.
   national flora gives status per state, finer than WCVP; South Africa's gives
   none at all, listing invasive black wattle exactly like a Cape endemic, so
   Africa stands on WCVP instead.
-- Regions: every region page now ends with the native plant groups whose ground
+- Regions: [every region page](https://indigene.app/regions/mid-atlantic) now ends with the native plant groups whose ground
   it is — plant sales, walks and advice from people who garden it. Three to five
   per region, chosen for the region rather than the country.
-  https://indigene.app/regions/mid-atlantic
 
 ### Changed
 
@@ -288,35 +608,33 @@ subtitle on the What's new page.
 - Internal: the plant page moves its growth drawing and its "See it growing
   near you" card between columns only past the laptop breakpoint (`onLaptop`
   in `steps/plant.ts`), so the phone stack is untouched.
-- The welcome page's other way in fits on one line on a phone: "Or browse
-  without sharing your location." https://indigene.app/
+- [The welcome page's](https://indigene.app/) other way in fits on one line on a phone: "Or browse
+  without sharing your location."
 - The English now spells one way, the American one: color, gray, neighbor.
   Words most Americans don't use went too — "fortnight" is "two weeks", a
   "verge" is a roadside, a ladybird is a ladybug.
 - Plants & Wildlife: notes no longer crown "the most valuable" or "the
   biggest" plant where two notes disagreed, and no longer talk about "this
   list" — they describe your garden, not our spreadsheet.
-- The welcome page says what's true, more plainly: plants didn't evolve *to*
+- [The welcome page](https://indigene.app/) says what's true, more plainly: plants didn't evolve *to*
   feed birds, but local insects evolved alongside native plants, and many can
-  eat nothing else. https://indigene.app/
+  eat nothing else.
 - Sightings from iNaturalist now say what makes them trustworthy: at least two
   people agreed on what the photo shows. "Research-grade" and "verified" are
   gone.
-- Regions: on a wider screen, a region's map sits beside its name and
+- Regions: on a wider screen, [a region's map](https://indigene.app/regions/mid-atlantic) sits beside its name and
   figures instead of alone under them, and the worst invasives sit three
-  abreast. https://indigene.app/regions/mid-atlantic
+  abreast.
 - On a laptop, the home page puts the film beside the pitch, and Settings shows
-  its cards two abreast. About, Privacy & safety and Where our numbers come
-  from list their sections beside the text. https://indigene.app/privacy
-- The guide and What's new use a laptop's width too: guide topics two abreast,
+  its cards two abreast. [About](https://indigene.app/about), [Privacy & safety](https://indigene.app/privacy) and [Where our numbers come
+  from](https://indigene.app/sources) list their sections beside the text.
+- [The guide](https://indigene.app/guide/) and [What's new](https://indigene.app/release-notes/) use a laptop's width too: guide topics two abreast,
   and each release's notes beside its name and picture.
-  https://indigene.app/release-notes/
 - Internal: `main.ts` adds `home` and `doc` layouts (62rem past 64rem);
   `components/doc-contents.ts` builds the contents list. Phone captures at
   390px are pixel-identical before and after on all nine pages.
-- Matches: the buttons on a saved spot say what they do. "Open" is now "Plant
+- Matches: the buttons on [a saved spot](https://indigene.app/#/saved) say what they do. "Open" is now "Plant
   more", and the link to what's in the ground reads "Already planted".
-  https://indigene.app/#/saved
 - Internal: re-saving an open saved spot from the plant list now keeps its
   name as the default, its invasives list and its first-saved date, instead of
   overwriting them.
@@ -329,18 +647,17 @@ subtitle on the What's new page.
 - The French text reads more like French: dozens of phrases translated too
   literally from English now say what a French gardener would, such as
   « laissez-la sur pied » instead of « laissez-la debout ».
-- Regions: a region page's worst invasives are one tap away, from a chip
-  beside the plant categories at the top. https://indigene.app/invasives
-- Plants: the plants index opens with five short links — look-alikes, swaps,
+- Regions: a region page's [worst invasives](https://indigene.app/invasives) are one tap away, from a chip
+  beside the plant categories at the top.
+- Plants: [the plants index](https://indigene.app/plants) opens with five short links — look-alikes, swaps,
   worst invasives, crops, growing more — instead of four paragraphs, so the
-  search is on the first screen. https://indigene.app/plants
+  search is on the first screen.
 - Internal: French strings now carry a narrow no-break space (U+202F) before
   : ; ! ? and inside « », as `fr.ts`'s header always promised, so a colon can
   no longer wrap onto its own line.
 - Internal: share-card titles use `text-wrap: balance`, so a long name no
   longer leaves one word alone on its last line. 24 cards regenerated; Beech's
   plant card was skipped because it already overflows its fact row on `main`.
-  https://indigene.app/invasives
 - Plants: a plant's page puts its "Figures for" region switch right above the
   figures, the photo link beside the photo, and a title on the growth drawing.
   Care and wildlife writing moved into two cards: Growing needs and Ecosystem
@@ -392,12 +709,11 @@ subtitle on the What's new page.
 - Internal: cow parsnip's swallowtail tie moved to the anise swallowtail, the
   aspen–jay tie was deleted (jays don't nest in holes), and wrinkleleaf
   goldenrod is flagged as spreading.
-- About: the page said Indigene runs no analytics, but a visit counter does. It
+- About: [the page](https://indigene.app/about) said Indigene runs no analytics, but a visit counter does. It
   now says so, and that you can switch it off in Settings.
-  https://indigene.app/about
 - A few facts were wrong: chickadees need yards that are at least about 70%
   native plants (we had it backwards), butterflies do sip rotting fruit, and
-  peppers come from Mexico, not the Andes. https://indigene.app/crops
+  [peppers come from Mexico](https://indigene.app/crops), not the Andes.
 - Keyboard focus now shows on the green header, the plant search no longer
   reads the whole list aloud as you type, and the date boxes on a saved spot
   have names a screen reader can say.
@@ -407,9 +723,9 @@ subtitle on the What's new page.
   grids and dialogs, silhouettes `aria-hidden`, reduced motion covers
   pseudo-elements, the fake ARIA menu roles are gone, and the anonymous
   observer name is a locale key.
-- Plant photos show up on the full plants list again, and while scrolling
+- Plant photos show up on [the full plants list](https://indigene.app/plants) again, and while scrolling
   they now load where you've stopped first, instead of for rows you've
-  already passed. https://indigene.app/plants
+  already passed.
 - Internal: `lib/photo.ts` swept every not-yet-attached thumbnail once a page
   observed over 300 (the plants index has ~460), so none loaded; the sweep
   now waits a task. The queue also starts the job nearest the viewport and
@@ -432,14 +748,12 @@ subtitle on the What's new page.
 
 ### Added
 
-- Regions: Auckland & Northland is on the map — 47 native plants from Cape
+- Regions: [Auckland & Northland](https://indigene.app/regions/nz-auckland) is on the map — 47 native plants from Cape
   Reinga to the Coromandel, from pōhutukawa to kawakawa, named the way New
   Zealanders say them, with real caterpillar counts. Our first region south of
   the equator.
-  https://indigene.app/regions/nz-auckland
-- Eight New Zealand animals join the wildlife pages, from tūī and kererū to the
+- [Eight New Zealand animals](https://indigene.app/#/wildlife/in/nz-auckland) join the wildlife pages, from tūī and kererū to the
   pūriri moth, each with the plants that feed it.
-  https://indigene.app/wildlife/in/nz-auckland
 - Internal: `region.nz-auckland.ts` and `plants.nz-auckland.ts` (47 rows, all
   WCVP-native in `TDWG:NZN`; `native:check` now covers the region), eight
   catalog animals and their ties, map, cards, iNaturalist photos and record
@@ -473,13 +787,13 @@ subtitle on the What's new page.
 
 ### Added
 
-- The Pacific Northwest now reaches into British Columbia — Vancouver, Victoria,
+- [The Pacific Northwest](https://indigene.app/regions/pnw) now reaches into British Columbia — Vancouver, Victoria,
   the Fraser Valley and Vancouver Island up to Campbell River. The lowland from
   Tacoma north is one ecoregion, and the plants have never stopped at the
-  border. https://indigene.app/regions/pnw
-- Planting: the yarrow you buy as seed is often the European kind, naturalized
+  border.
+- Planting: the [yarrow](https://indigene.app/plants/achillea-millefolium) you buy as seed is often the European kind, naturalized
   here rather than native. The plant's page now says so, and says to ask for the
-  western one instead. https://indigene.app/regions/pnw
+  western one instead.
 - Internal: a region may now claim more than one ecoregion classification. Every
   authority stops at some border — the EPA's at the edge of the US — so a region
   that crosses one needs the map that can see both halves, and selection matches
@@ -511,16 +825,14 @@ subtitle on the What's new page.
 - Link your iNaturalist username in [Settings](https://indigene.app/#/settings/inat) to bring the past year's plant sightings into a spot. Tick the natives you planted; invasives others have confirmed go on a to-deal-with list.
 - Privacy: your iNaturalist username stays on your device, goes only to iNaturalist, and never with a location. Remove it in Settings anytime.
 - Internal: `lib/inat-account.ts` (username in localStorage, never in backups or addresses), `lib/inat-import.ts` (v2 `fields=` request with no location fields; sorting against the spot region's roster and most-wanted list), `#/import` step, `SavedSpot.invasives` (round-trips through backups), `npm run import:check` plus an `iNaturalist import` workflow. Pages are fetched a second apart and one request is shared per visit. Bundle ~453 KB gzipped (+7 KB).
-- Each region's five most-wanted invasives now have a page of their own, with
+- Each region's five most-wanted invasives now have [a page of their own](https://indigene.app/invasives/in/pnw), with
   a preview picture listing all five, so you can send a neighbour one link.
-  https://indigene.app/invasives/in/pnw
 
 ### Changed
 
 - Internal: `app/package-lock.json` now says 0.33.0, matching `package.json`.
-- The "what to do this season" card now knows which side of the equator your
+- The ["what to do this season" card](https://indigene.app/planting) now knows which side of the equator your
   garden is on, so a spot in Sydney or Cape Town sees spring now, not autumn.
-  https://indigene.app/planting
 - Internal: groundwork for the first southern regions (plan in
   `docs/southern-hemisphere-plan.md`). `lib/hemisphere.ts` flips seasons, the
   sun-hours sampling window and the sun picker's "south side"; technique copy
@@ -546,16 +858,15 @@ subtitle on the What's new page.
 
 ### Added
 
-- Regions: every region page now lists its five most-wanted invasive plants,
+- Regions: every region page now lists its [five most-wanted invasive plants](https://indigene.app/invasives),
   ranked by the local experts' rating, then by how often each has been seen
   wild. Each has its own page: three ways to recognise it, and real photos.
-  https://indigene.app/invasives
-- Each most-wanted plant's page now says how to get rid of it for good, by
+- Each most-wanted plant's page now says [how to get rid of it for good](https://indigene.app/invasives/reynoutria-japonica), by
   hand: the root piece that resprouts, the stump that suckers, and what to do
-  with what you pulled. https://indigene.app/invasives/reynoutria-japonica
-- Each tip on those pages now leads with a small picture — a leaf, a berry, a
+  with what you pulled.
+- Each tip on those pages now leads with [a small picture](https://indigene.app/invasives/hedera-helix) — a leaf, a berry, a
   hand pulling, a spade digging — so you can find the one you need at a
-  glance. https://indigene.app/invasives/hedera-helix
+  glance.
 - Internal: `npm run invasives:count` counts each most-wanted plant's wild
   iNaturalist records in its region's box, and `lib/invasives.ts` ranks by the
   authority's rating, then that count. `listings:check` now verifies all 40 new
@@ -565,24 +876,22 @@ subtitle on the What's new page.
 
 - Plants & Vegetables: the plant list has a fourth card at the top, for the
   question that stops people between choosing a native and digging the hole —
-  will it bring pests? https://indigene.app/crops
+  [will it bring pests?](https://indigene.app/crops)
 
-- Ireland is on the map — 67 native plants for the whole island, north and
+- [Ireland](https://indigene.app/regions/ireland) is on the map — 67 native plants for the whole island, north and
   south, from the oaks of Killarney to the gorse on a headland and the wild
-  thyme in a Burren gryke. https://indigene.app/regions/ireland
+  thyme in a Burren gryke.
 - Wildlife: the marsh fritillary, the cryptic wood white and the peacock
-  butterfly have joined the roster. The first is Ireland's only protected
+  butterfly have joined [the roster](https://indigene.app/wildlife). The first is Ireland's only protected
   insect, and it lays on one plant — devil's-bit scabious — and nothing else.
-  https://indigene.app/wildlife
 - Internal: every Irish row's "native here" is checked against Kew's World
   Checklist of Vascular Plants with `npm run native:check`, which re-asks the
   source per plant and writes a committed snapshot. All 67 pass. It caught that
   beech is introduced in Ireland and that lime and hornbeam never arrived.
-- Mediterranean France has thirteen more natives, chosen for the caterpillars
+- [Mediterranean France](https://indigene.app/regions/france-mediterranean) has thirteen more natives, chosen for the caterpillars
   they feed: hawthorn, sheep's sorrel, sheep's fescue, white wormwood, scorpion
   broom, hazel, almond-leaved pear, heather, hairy broom, bird's-foot trefoil,
   the evergreen rose, the service tree and red clover.
-  https://indigene.app/regions/france-mediterranean
 - Planting: heather flowers from July into October, the emptiest stretch of the
   southern year for nectar — everything else has shut down for the drought.
   That is why it is on the Mediterranean list.
@@ -594,11 +903,10 @@ subtitle on the What's new page.
   Botanica. Its query used a parameter the service ignores, so every plant got
   the first row of the whole database, and the French name it wanted was never
   asked for. Fixed — the first eight names sourced from it are on these rows.
-- Planting: eight more Pacific Northwest natives — Sitka spruce, shore pine,
+- Planting: eight more [Pacific Northwest natives](https://indigene.app/regions/pnw) — Sitka spruce, shore pine,
   wild rhododendron, fringecup, sweet coltsfoot, western skunk cabbage, vanilla
   leaf and stream violet. Sweet coltsfoot flowers in February, on bare stalks,
   when a bumblebee queen has almost nothing else to feed on.
-  https://indigene.app/regions/pnw
 - Internal: the candidate finder asks Kew's World Checklist first and
   iNaturalist only for the names Kew has no row for, and every shortlisted row
   says which answered. It also stops losing plants: asking iNaturalist *for a
@@ -638,9 +946,9 @@ subtitle on the What's new page.
 
 ### Added
 
-- Will the bees and birds you invite eat your fruit and vegetables? A new page
-  answers it with what farms measured when they planted wildflower borders —
-  https://indigene.app/crops. Every plant's page links to it.
+- Will the bees and birds you invite eat your fruit and vegetables? [A new page](https://indigene.app/crops)
+  answers it with what farms measured when they planted wildflower borders.
+  Every plant's page links to it.
 - Vegetables: the same page shows how some natives take a pest *away*. The
   spotted lanternfly leans on tree-of-heaven, the soybean aphid winters on
   buckthorn, the ticks shelter under barberry — swap the plant, cut the chain.
@@ -3092,7 +3400,13 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/18daaf2...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/46c1436...HEAD
+[1.0]: https://github.com/olivierlacan/indigene/compare/46c1436...HEAD
+[0.41]: https://github.com/olivierlacan/indigene/compare/1cd22cd...46c1436
+[0.40]: https://github.com/olivierlacan/indigene/compare/8c87bba...1cd22cd
+[0.39]: https://github.com/olivierlacan/indigene/compare/5475bdb...8c87bba
+[0.38]: https://github.com/olivierlacan/indigene/compare/5f735fd...5475bdb
+[0.37]: https://github.com/olivierlacan/indigene/compare/18daaf2...5f735fd
 [0.36]: https://github.com/olivierlacan/indigene/compare/a50be1c...18daaf2
 [0.35]: https://github.com/olivierlacan/indigene/compare/39c9b05...a50be1c
 [0.34]: https://github.com/olivierlacan/indigene/compare/c4e7c44...39c9b05

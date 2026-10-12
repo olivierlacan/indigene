@@ -1,0 +1,38 @@
+{
+  "source": "National Audubon Society — Plants for Birds",
+  "url": "https://www.audubon.org/native-plants",
+  "note": "curated = Audubon's own picks for the ZIP; full = every species BONAP records as native to that ZIP's county. The two are different kinds of list and must not be pooled.",
+  "hasFloraTier": true,
+  "region": "florida-south",
+  "scope": [
+    "33133",
+    "33040"
+  ],
+  "harvested": "2026-10-10",
+  "counts": {
+    "ours": 21,
+    "theirPicks": 26,
+    "theirFlora": 241,
+    "oursAmongTheirPicks": 8,
+    "theirPicksWeLack": 18,
+    "generaNewToUs": 16
+  },
+  "generaNewToUs": [
+    "asclepias",
+    "bourreria",
+    "callicarpa",
+    "calyptranthes",
+    "chrysophyllum",
+    "citharexylum",
+    "colubrina",
+    "erythrina",
+    "forestiera",
+    "gaillardia",
+    "hyptis",
+    "ilex",
+    "liatris",
+    "phytolacca",
+    "rumex",
+    "solidago"
+  ]
+}

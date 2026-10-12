@@ -41,12 +41,17 @@ changes.
 
 Three details worth knowing:
 
-- **The licence check is ours.** iNaturalist happily shows an all-rights-reserved
-  photo on a taxon page and we can't republish one, so the candidates are walked
-  in their own order — the chosen photo, then the gallery behind it — and the
-  first one we may republish with its credit wins. 36 of 179 subjects needed that
-  step; one (red elderberry) has nothing republishable at all and keeps its
-  drawing.
+- **Only the photo iNaturalist chose.** If the taxon page's own photo is
+  all-rights-reserved, we can't republish it, and the subject keeps its drawing.
+  We used to take the next republishable photo in the gallery instead, which put
+  a close-up of persimmon seeds at the top of its page. A better picture from the
+  gallery is for a person to pick, through the review above. In October 2026 this
+  cleared 130 of 588 subjects.
+  Every one of them is listed, with the reason and a link to its gallery, in
+  `docs/hero-photos/needs-review.json`. The review page puts them first, and
+  `npm run hero:harvest -- --queue` harvests candidates for just those. A PR that
+  adds to the list gets a pinned comment naming each one, and a warning on its
+  `Fill gaps` check.
 - **A taxon photo has no sighting behind it.** No place, no date, no observer
   account — iNaturalist names the photographer, who may never have had one. So
   the lightbox prints the name as plain text and links "View original photo"
@@ -94,6 +99,13 @@ Two of the thirty took a fix to reach at all, both in `pickTaxon`
 | **hero** (animal) | the animal's page, the wildlife index | `app/src/data/wildlife-photos.json` |
 | **hero**, unreviewed | anywhere the two above are empty | `app/src/data/inat-heroes.json` |
 | **hero** (impostor) | the look-alikes index, its page, beside the native | `app/src/data/inat-lookalikes.json` |
+
+**Heroes are the default.** The review that actually happens is one photo per
+plant, the one that shows it best in a single shot, so `hero:harvest` keeps the
+top 10 hero candidates and nothing else. The angles below are opt-in
+(`--angles`, or `angles: true` on the workflow), and the review page offers
+their slots only when the candidates file has them. The picks already in
+`plant-photos.json` keep working.
 
 The four angles exist because one photograph answers one question. "Roughly,
 what is this?" is what a hero is for. Standing in front of a shrub with a leaf in
@@ -143,8 +155,8 @@ plant is asked for three times over:
 Term 12 is iNaturalist's **Plant Phenology** annotation — a person, usually
 several, saying what an observation shows. That is a far better signal than
 anything we could measure, and it is what files a candidate under "flower" or
-"fruit" on human authority rather than on our guessing. (`--no-angles` skips
-both asks; the caveat is that an annotation describes the *observation*, and a
+"fruit" on human authority rather than on our guessing. (Both asks run only
+with `--angles`; the caveat is that an annotation describes the *observation*, and a
 fruiting observation often carries a habit shot alongside the berries.)
 
 ### Animals
@@ -352,16 +364,16 @@ than a prerequisite, and it never has to be undone: the moment a pick lands in
 
 ## Running it
 
-The harvest needs open internet, which the build sandbox blocks. Two ways:
+The harvest needs iNaturalist, and a full one takes hours. Two ways:
 
 - **CI** — `.github/workflows/hero-photos.yml`, from the Actions tab or on its
   quarterly schedule. It harvests, scores, and opens a PR with the refreshed
   `docs/hero-photos/candidates.json`. This is the normal path.
-- **Locally** — `npm run hero:harvest`, with `--region` / `--plant` / `--limit`
-  to keep a trial small.
+- **Locally or in a Claude session** — `npm run hero:harvest`, with `--region`
+  / `--plant` / `--limit` to keep a trial small. Sessions reach iNaturalist and
+  its photo bucket.
 
-`npm run hero:colors` needs network too, for the same reason and on the same
-terms — but it only fetches the 75 px renditions of picks already committed, so
+`npm run hero:colors` needs network too — but it only fetches the 75 px renditions of picks already committed, so
 it is a much smaller errand than a harvest.
 
 `npm run hero:inat` is smaller still: 180 subjects is 76 requests and no images

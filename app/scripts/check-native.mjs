@@ -109,6 +109,14 @@ const TDWG_AREA = {
   // Added on main while this branch was open. The North Island is its own
   // TDWG area, so this one is as fine as the region.
   "nz-auckland": { codes: ["NZN"], label: "New Zealand North (TDWG:NZN — the North Island)" },
+  // Illinois is a TDWG level-3 area of its own, so this claim is state-wide:
+  // finer than any other region's, and the box and code narrow it further.
+  chicago: { codes: ["ILL"], label: "Illinois (TDWG:ILL — the whole state)" },
+  // Texas is one TDWG level-3 area, from the Piney Woods to El Paso, so a "native"
+  // here is coarser than the region. USDA PLANTS and the Wildflower Center's
+  // range notes carry the local detail in each row; this is the national
+  // authority standing behind them.
+  "central-texas": { codes: ["TEX"], label: "Texas (TDWG:TEX — the whole state)" },
 };
 
 const args = process.argv.slice(2);

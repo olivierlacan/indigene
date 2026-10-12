@@ -30,6 +30,7 @@ import { nameLines } from "../lib/names";
 import { highlight } from "./filter-field";
 import { prose } from "../lib/prose";
 import { FORM_GLYPHS, stemWidth } from "./plant-glyphs";
+import { richText } from "./rich-text";
 
 /** A component has to be worth something on its own before we call the plant
  *  "strongest for" it — a weighted 12 out of 100 is not a selling point. */
@@ -47,7 +48,7 @@ const STRENGTH_FLOOR = 45;
 export function plantCard(r: Ranked, weights: Weights, nq = "", regionId?: string): HTMLElement {
   const p = r.plant;
 
-  const badges = traitBadges(p, false);
+  const badges = traitBadges(p, false, regionId);
 
   const names = nameLines(p);
   // The name is the link, and CSS stretches it over the whole card (see
@@ -106,7 +107,7 @@ export function plantCard(r: Ranked, weights: Weights, nq = "", regionId?: strin
     head,
     match,
     meta,
-    el("p", { class: "pick-gives" }, prose(p, "givesNote", regionId)),
+    el("p", { class: "pick-gives" }, richText(prose(p, "givesNote", regionId))),
     value,
   ]);
 }

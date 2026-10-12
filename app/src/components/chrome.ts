@@ -59,6 +59,8 @@ function renderFooter(): void {
     nav.replaceChildren(
       el("a", { href: hrefOf("guide/", "guide/") }, t("footer.guide")),
       sep(),
+      el("a", { href: "#/reading" }, t("footer.reading")),
+      sep(),
       // The dot rides inside the link, so the words it carries become part of
       // the link's own accessible name rather than a separate stop.
       el(

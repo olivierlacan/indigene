@@ -107,6 +107,15 @@ export async function wcvpAccepted(latin) {
         : (r.species ?? r.canonicalName ?? "").toLowerCase() === want;
     });
   }
+  // 3. The other spelling of a genitive epithet. *gerardii* and *gerardi* are
+  // the same name — the code lets either stand — and Kew keeps only one, so
+  // without this big bluestem reads as a plant Kew has never heard of.
+  const variant = !rows.length && genitiveVariant(latin);
+  if (variant) {
+    rows = (await getJson(
+      `${GBIF_SPECIES}?datasetKey=${WCVP_DATASET}&name=${encodeURIComponent(variant)}&limit=50`,
+    )).results ?? [];
+  }
   if (!rows.length) return null;
 
   const accepted = rows.find((r) => r.taxonomicStatus === "ACCEPTED");
@@ -128,6 +137,17 @@ export async function wcvpAccepted(latin) {
     name: (to.accepted ?? "").split(/\s+/).slice(0, 2).join(" ") || null,
     viaSynonym: to.accepted ?? to.scientificName ?? null,
   };
+}
+
+/**
+ * A binomial's epithet with its genitive ending swapped, `-ii` ↔ `-i`
+ * (*gerardii* ↔ *gerardi*), or `null` where the epithet has no such ending.
+ * Botanical naming treats the two as one name spelled two ways.
+ */
+export function genitiveVariant(latin) {
+  const m = latin.trim().match(/^(\S+\s+\S*?)(ii|i)$/);
+  if (!m || latin.trim().split(/\s+/).length !== 2) return null;
+  return m[1] + (m[2] === "ii" ? "i" : "ii");
 }
 
 /** Every distribution row WCVP holds for an accepted usage. */

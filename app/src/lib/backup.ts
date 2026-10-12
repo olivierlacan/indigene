@@ -12,10 +12,17 @@
 //  1. **Plain, readable JSON.** Someone who opens the file in a text editor
 //     should recognise their own garden in it. No compression, no wrapping,
 //     nothing that needs this app to make sense of.
-//  2. **Reading never destroys.** An import adds what's missing and leaves what
-//     is already here exactly as it is — a spot whose id we already have is
-//     kept, not overwritten. The worst a wrong file can do is nothing.
-//  3. **A spot's log travels with it.** Deleting a spot deletes its plantings
+//  2. **Reading never destroys.** An import adds what's missing and never
+//     removes or overwrites what's here — a spot both copies have only gains
+//     the sightings linked elsewhere (`planImport`). The worst a wrong file
+//     can do is nothing.
+//  3. **Everything the person made travels.** Spots, plantings, invasives, the
+//     per-spot "yes, look up sightings", what each linked sighting looked like
+//     (so its photo shows offline), the linked iNaturalist account, and the
+//     settings they chose. A backup that left any of it behind couldn't put a
+//     garden back. Only things fetched again for free — nearby sightings,
+//     town names — stay out.
+//  4. **A spot's log travels with it.** Deleting a spot deletes its plantings
 //     (`db.ts`), so the two belong to each other; a file of spots with no
 //     plantings would be a garden with its history quietly dropped.
 //
@@ -23,11 +30,21 @@
 // as-is. A file that has been hand-edited, half-saved, or written by something
 // else entirely is an ordinary thing to meet, and the answer to it is a row
 // left out and counted — never a broken screen.
-import { listPlantings, listSpots, savePlanting, saveSpot } from "../db";
+import {
+  getCachedObservations,
+  kvGet,
+  kvSet,
+  listPlantings,
+  listSpots,
+  putCachedObservations,
+  savePlanting,
+  saveSpot,
+} from "../db";
 import { ECOREGION_PROVIDERS } from "../types";
 import type {
   EcoregionInfo,
   HorizonMask,
+  MoistureBand,
   PlantedDate,
   Planting,
   SavedSpot,
@@ -36,7 +53,20 @@ import type {
   SunEstimate,
   Weights,
 } from "../types";
-import { DEFAULT_WEIGHTS } from "./ranking";
+import { DEFAULT_WEIGHTS, NO_FILTERS } from "./ranking";
+import type { ActiveFilters } from "./ranking";
+import { haversineKm } from "./inaturalist";
+import type { ObservationPhoto, ObservationSummary } from "./inaturalist";
+import { isValidLogin, linkedLogin, setLinkedLogin } from "./inat-account";
+import { allowLookup, allowOwnLookup, lookupAllowed, ownLookupAllowed } from "./spot-sightings";
+import { loadSticky } from "./sticky";
+import type { Sticky, StickySpot } from "./sticky";
+import { loadPrefs } from "../state";
+import { STORAGE_KEY as UNITS_KEY, setUnitPref } from "./units";
+import type { UnitPref } from "./units";
+import { isLang, langChosen, setLang } from "./i18n";
+import type { Lang } from "./i18n";
+import { STORAGE_KEY as COUNTING_KEY, setAnalyticsEnabled } from "./analytics";
 
 /** What the file says it is. Checked on read so an unrelated JSON file gets a
  *  plain "that isn't one of ours" rather than a puzzling empty import. */
@@ -44,7 +74,41 @@ export const SPOTS_FORMAT = "indigene.spots";
 
 /** The shape's version. Bumped only if a future field can't be read by the
  *  rules below; a file from the future is refused rather than half-read. */
-export const SPOTS_VERSION = 1;
+//  Version 2 added `lookups`, `sightings` and `preferences`. A version-1 file
+//  still reads (those come back empty); a version-1 app refuses a version-2
+//  file rather than restoring half of it.
+export const SPOTS_VERSION = 2;
+
+/** The yeses a spot's page asked for before looking anything up. */
+export interface SpotLookups {
+  spotId: string;
+  /** Neighbourhood sightings of the spot's wildlife. */
+  nearby: boolean;
+  /** The linked account's own sightings at the spot. */
+  own: boolean;
+}
+
+/** What a linked sighting looked like when last fetched — so a restored log
+ *  shows its photos before (or without) asking iNaturalist again. */
+export interface SavedSighting {
+  /** The reference as kept on the planting or invasive. */
+  ref: string;
+  capturedAt: number;
+  /** Null when iNaturalist had nothing to show for it. */
+  observation: ObservationSummary | null;
+}
+
+/** The person's own choices. Each is absent when it was never made. */
+export interface Preferences {
+  inatLogin?: string;
+  weights?: Weights;
+  filters?: ActiveFilters;
+  sticky?: Sticky;
+  units?: UnitPref;
+  lang?: Lang;
+  /** Present only as `false`: they asked not to be counted. */
+  counting?: false;
+}
 
 export interface SpotsFile {
   format: string;
@@ -53,18 +117,73 @@ export interface SpotsFile {
   exportedAt: string;
   spots: SavedSpot[];
   plantings: Planting[];
+  lookups: SpotLookups[];
+  sightings: SavedSighting[];
+  preferences: Preferences;
+}
+
+/** Every sighting reference a spot or planting holds, once each. */
+function linkedRefs(spots: readonly SavedSpot[], plantings: readonly Planting[]): Set<string> {
+  const refs = new Set<string>();
+  for (const p of plantings) for (const r of p.observations) refs.add(r);
+  for (const s of spots) for (const i of s.invasives ?? []) for (const r of i.observations) refs.add(r);
+  return refs;
+}
+
+function readLocal(key: string): string | null {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
 }
 
 /** Everything on this device, ready to be written out. */
 export async function collectSpots(now: number = Date.now()): Promise<SpotsFile> {
   const [spots, plantings] = await Promise.all([listSpots(), listPlantings()]);
+
+  const lookups: SpotLookups[] = [];
+  for (const s of spots) {
+    const [nearby, own] = await Promise.all([lookupAllowed(s.id), ownLookupAllowed(s.id)]);
+    if (nearby || own) lookups.push({ spotId: s.id, nearby, own });
+  }
+
+  const sightings: SavedSighting[] = [];
+  for (const ref of linkedRefs(spots, plantings)) {
+    const hit = await getCachedObservations(`obs:${ref}`).catch(() => undefined);
+    if (hit) sightings.push({ ref, capturedAt: hit.capturedAt, observation: hit.observations[0] ?? null });
+  }
+
   return {
     format: SPOTS_FORMAT,
     version: SPOTS_VERSION,
     exportedAt: new Date(now).toISOString(),
     spots,
     plantings,
+    lookups,
+    sightings,
+    preferences: await collectPreferences(),
   };
+}
+
+async function collectPreferences(): Promise<Preferences> {
+  const [weights, filters, sticky] = await Promise.all([
+    kvGet<Weights>("weights").catch(() => undefined),
+    kvGet<ActiveFilters>("filters").catch(() => undefined),
+    kvGet<Sticky>("sticky").catch(() => undefined),
+  ]);
+  const prefs: Preferences = {};
+  const login = linkedLogin();
+  if (login) prefs.inatLogin = login;
+  if (weights) prefs.weights = weights;
+  if (filters) prefs.filters = filters;
+  if (sticky && (sticky.spot || sticky.defaultRegion)) prefs.sticky = sticky;
+  const units = toUnitPref(readLocal(UNITS_KEY));
+  if (units) prefs.units = units;
+  const lang = readLocal("indigene:lang");
+  if (isLang(lang)) prefs.lang = lang;
+  if (readLocal(COUNTING_KEY) === "off") prefs.counting = false;
+  return prefs;
 }
 
 /** `indigene-spots-2026-08-09.json` — dated, so a folder of them sorts itself,
@@ -92,6 +211,19 @@ export function downloadSpotsFile(file: SpotsFile, now: number = Date.now()): vo
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+/** Where the date of the last copy written from this browser is kept. */
+const LAST_COPY_KEY = "backup-saved-at";
+
+/** When this browser last wrote a copy out, or undefined if it never has. */
+export async function lastCopyAt(): Promise<number | undefined> {
+  const v = await kvGet<number>(LAST_COPY_KEY).catch(() => undefined);
+  return typeof v === "number" ? v : undefined;
+}
+
+export async function rememberCopy(now: number = Date.now()): Promise<void> {
+  await kvSet(LAST_COPY_KEY, now).catch(() => {});
 }
 
 // --- Reading one back ------------------------------------------------------
@@ -130,6 +262,19 @@ export function parseSpotsFile(text: string): ReadResult {
     else skipped++;
   }
 
+  const lookups: SpotLookups[] = [];
+  for (const row of asArray(r.lookups)) {
+    const l = toLookups(row);
+    if (l) lookups.push(l);
+    else skipped++;
+  }
+  const sightings: SavedSighting[] = [];
+  for (const row of asArray(r.sightings)) {
+    const sg = toSavedSighting(row);
+    if (sg) sightings.push(sg);
+    else skipped++;
+  }
+
   return {
     ok: true,
     skipped,
@@ -139,6 +284,9 @@ export function parseSpotsFile(text: string): ReadResult {
       exportedAt: typeof r.exportedAt === "string" ? r.exportedAt : "",
       spots,
       plantings,
+      lookups,
+      sightings,
+      preferences: toPreferences(r.preferences),
     },
   };
 }
@@ -146,66 +294,371 @@ export function parseSpotsFile(text: string): ReadResult {
 /** What one import did, in the numbers the card reports back. */
 export interface ImportTally {
   spotsAdded: number;
-  /** Spots in the file this device already had — kept as they were. */
+  /** Spots in the file this device already had, with nothing new to add. */
   spotsKnown: number;
+  /** Spots already here that the file added to — an invasive found, or a
+   *  sighting linked to one, on the other device. */
+  spotsUpdated: number;
+  /** Spots in the file folded into a spot here, as the person chose. */
+  spotsCombined: number;
   plantingsAdded: number;
   plantingsKnown: number;
+  /** Plantings already here that gained a linked sighting or a note. */
+  plantingsUpdated: number;
+  /** Per-spot "look up sightings" yeses brought back. */
+  lookupsAdded: number;
+  /** Linked sightings whose saved details came in. */
+  sightingsAdded: number;
+  /** Settings brought back — each one only where this browser had none. */
+  settingsRestored: number;
   /** Rows left out: unreadable ones, plus any planting whose spot is neither
    *  in the file nor already here — a log entry with no garden to belong to. */
   skipped: number;
 }
 
+/** The rows an import would write, and what they add up to. */
+export interface ImportPlan {
+  spots: SavedSpot[];
+  plantings: Planting[];
+  tally: ImportTally;
+}
+
 /**
- * Add everything in the file that this device is missing.
- *
- * Nothing is replaced and nothing is deleted, so importing the same file twice
- * is a no-op and importing an older copy can't undo newer work. The cost is
- * that an edit made elsewhere — a spot renamed on the laptop — doesn't travel;
- * that's a trade this first step accepts, because the alternative is a file
- * silently overwriting the copy you were actually using.
+ * A spot in the file that looks like one already here under a different id —
+ * the same garden saved separately on two devices.
  */
-export async function applySpotsFile(
+export interface LikelySame {
+  there: SavedSpot;
+  here: SavedSpot;
+  /** How far apart the two pins are, in metres. */
+  metres: number;
+  sameName: boolean;
+  /** What the choice starts on: combine only when the name agrees and the pins
+   *  are close enough to be the same garden. */
+  suggest: "combine" | "keep";
+}
+
+/** Close enough to be one garden: two phones' fixes from the same yard. */
+const SAME_GARDEN_M = 250;
+/** So close that a different name is probably a rename. */
+const SAME_PLACE_M = 30;
+/** Past this, a shared name is a coincidence ("Front yard" at two houses). */
+const NAME_REACH_M = 1000;
+
+function sameLabel(a: string, b: string): boolean {
+  const norm = (x: string): string => x.normalize("NFKC").trim().replace(/\s+/g, " ").toLocaleLowerCase();
+  return norm(a) === norm(b);
+}
+
+/**
+ * Pair each new spot in the file with the closest one here that's probably the
+ * same garden: a shared name within a kilometre, or any name within 30 m.
+ * Spots already matched by id, or combined on an earlier import (`aliases`),
+ * aren't asked about again.
+ */
+export function likelySameSpots(
+  hereSpots: readonly SavedSpot[],
   file: SpotsFile,
-  skippedOnRead = 0
-): Promise<ImportTally> {
-  const [here, hereLog] = await Promise.all([listSpots(), listPlantings()]);
-  const knownSpots = new Set(here.map((s) => s.id));
-  const knownPlantings = new Set(hereLog.map((p) => p.id));
-  const tally: ImportTally = {
-    spotsAdded: 0,
-    spotsKnown: 0,
-    plantingsAdded: 0,
-    plantingsKnown: 0,
-    skipped: skippedOnRead,
+  aliases: Readonly<Record<string, string>> = {}
+): LikelySame[] {
+  const known = new Set(hereSpots.map((s) => s.id));
+  const out: LikelySame[] = [];
+  for (const there of file.spots) {
+    if (known.has(there.id) || known.has(aliases[there.id] ?? "")) continue;
+    let best: LikelySame | null = null;
+    for (const here of hereSpots) {
+      const metres = haversineKm(there.lat, there.lon, here.lat, here.lon) * 1000;
+      const sameName = sameLabel(there.label, here.label);
+      if (!(metres <= SAME_PLACE_M || (sameName && metres <= NAME_REACH_M))) continue;
+      if (best && best.metres <= metres) continue;
+      best = { there, here, metres, sameName, suggest: sameName && metres <= SAME_GARDEN_M ? "combine" : "keep" };
+    }
+    if (best) out.push(best);
+  }
+  return out;
+}
+
+/** Same plant, same planting date (to the precision given): one row twice. */
+function samePlanting(a: Planting, b: Planting): boolean {
+  return (
+    a.plantId === b.plantId &&
+    a.planted?.year === b.planted?.year &&
+    a.planted?.month === b.planted?.month &&
+    a.planted?.day === b.planted?.day
+  );
+}
+
+/**
+ * Work out what a file adds to what's here — without touching the database, so
+ * the rules can be tested on plain arrays.
+ *
+ * **Nothing is removed and nothing is overwritten.** A row only this device
+ * has stays. A row only the file has comes in. A row both have keeps this
+ * device's version of every field, and gains only what is plainly additive:
+ * linked sightings and invasives it doesn't have yet, and a note where this
+ * copy has none. So importing the same file twice is a no-op, an older copy
+ * can't undo newer work, and the sightings linked on a phone survive being
+ * brought to a laptop that already had the spot. A rename made elsewhere still
+ * doesn't travel — two labels can't be merged, and the one here is the one
+ * the gardener was looking at.
+ *
+ * `combine` maps a file spot's id to a spot here that the person said is the
+ * same garden (`likelySameSpots`). That spot is folded in by the same rules:
+ * its plantings move across, and one that matches a planting already there —
+ * same plant, same date — joins it instead of doubling it.
+ */
+export function planImport(
+  hereSpots: readonly SavedSpot[],
+  herePlantings: readonly Planting[],
+  file: SpotsFile,
+  skippedOnRead = 0,
+  combine: Readonly<Record<string, string>> = {}
+): ImportPlan {
+  const spotsById = new Map(hereSpots.map((s) => [s.id, s]));
+  const plantingsById = new Map(herePlantings.map((p) => [p.id, p]));
+  const plan: ImportPlan = {
+    spots: [],
+    plantings: [],
+    tally: {
+      spotsAdded: 0,
+      spotsKnown: 0,
+      spotsUpdated: 0,
+      spotsCombined: 0,
+      plantingsAdded: 0,
+      plantingsKnown: 0,
+      plantingsUpdated: 0,
+      lookupsAdded: 0,
+      sightingsAdded: 0,
+      settingsRestored: 0,
+      skipped: skippedOnRead,
+    },
+  };
+  const { tally } = plan;
+  /** Where a file spot's rows land: itself, or the spot it was combined into. */
+  const target = (id: string): string => (spotsById.has(combine[id] ?? "") ? combine[id] : id);
+  const write = <T extends { id: string }>(list: T[], row: T): void => {
+    const i = list.findIndex((r) => r.id === row.id);
+    if (i >= 0) list[i] = row;
+    else list.push(row);
   };
 
   for (const spot of file.spots) {
-    if (knownSpots.has(spot.id)) {
-      tally.spotsKnown++;
+    const into = target(spot.id);
+    const here = spotsById.get(into);
+    if (!here) {
+      plan.spots.push(spot);
+      spotsById.set(spot.id, spot);
+      tally.spotsAdded++;
       continue;
     }
-    await saveSpot(spot);
-    knownSpots.add(spot.id);
-    tally.spotsAdded++;
+    const merged = mergeInvasives(here.invasives, spot.invasives);
+    if (into !== spot.id) tally.spotsCombined++;
+    else if (merged) tally.spotsUpdated++;
+    else tally.spotsKnown++;
+    if (!merged) continue;
+    const next = { ...here, invasives: merged };
+    write(plan.spots, next);
+    spotsById.set(into, next);
   }
 
-  for (const planting of file.plantings) {
-    if (knownPlantings.has(planting.id)) {
-      tally.plantingsKnown++;
+  for (const incoming of file.plantings) {
+    const spotId = target(incoming.spotId);
+    const combined = spotId !== incoming.spotId;
+    const planting = combined ? { ...incoming, spotId } : incoming;
+    const here =
+      plantingsById.get(planting.id) ??
+      (combined
+        ? [...plantingsById.values()].find((p) => p.spotId === spotId && samePlanting(p, planting))
+        : undefined);
+    if (here) {
+      const observations = union(here.observations, planting.observations);
+      const note = here.note ?? planting.note;
+      if (!observations && note === here.note) {
+        tally.plantingsKnown++;
+        continue;
+      }
+      const next: Planting = { ...here, observations: observations ?? here.observations };
+      if (note) next.note = note;
+      write(plan.plantings, next);
+      plantingsById.set(next.id, next);
+      tally.plantingsUpdated++;
       continue;
     }
     // Its spot has to exist, here or in this same file — the store is keyed by
     // the planting's own id, so an orphan would be invisible and undeletable.
-    if (!knownSpots.has(planting.spotId)) {
+    if (!spotsById.has(planting.spotId)) {
       tally.skipped++;
       continue;
     }
-    await savePlanting(planting);
-    knownPlantings.add(planting.id);
+    plan.plantings.push(planting);
+    plantingsById.set(planting.id, planting);
     tally.plantingsAdded++;
   }
 
-  return tally;
+  return plan;
+}
+
+/** `here` plus whatever `there` has that it doesn't, in order — or null when
+ *  `there` adds nothing, so the caller can tell "unchanged" without comparing. */
+function union(here: readonly string[], there: readonly string[]): string[] | null {
+  const seen = new Set(here);
+  const added = there.filter((x) => !seen.has(x) && (seen.add(x), true));
+  return added.length ? [...here, ...added] : null;
+}
+
+/** A spot's invasives with the file's folded in: new invasives appended, and
+ *  new sightings added to the ones both copies have. Null when nothing changes. */
+function mergeInvasives(
+  here: readonly SpotInvasive[] | undefined,
+  there: readonly SpotInvasive[] | undefined
+): SpotInvasive[] | null {
+  if (!there?.length) return null;
+  const out = (here ?? []).map((i) => ({ ...i }));
+  const byId = new Map(out.map((i) => [i.invasiveId, i]));
+  let changed = false;
+  for (const inv of there) {
+    const mine = byId.get(inv.invasiveId);
+    if (!mine) {
+      const copy = { ...inv, observations: [...inv.observations] };
+      out.push(copy);
+      byId.set(inv.invasiveId, copy);
+      changed = true;
+      continue;
+    }
+    const observations = union(mine.observations, inv.observations);
+    if (observations) {
+      mine.observations = observations;
+      changed = true;
+    }
+  }
+  return changed ? out : null;
+}
+
+/** File spot id → the spot here it was combined into, across imports. */
+const ALIASES_KEY = "spot-aliases";
+
+export async function spotAliases(): Promise<Record<string, string>> {
+  return (await kvGet<Record<string, string>>(ALIASES_KEY).catch(() => undefined)) ?? {};
+}
+
+/** What an import did, and the settings it left for last. */
+export interface Restore {
+  tally: ImportTally;
+  /**
+   * Apply the restored units, language and counting choice. Each of these
+   * redraws the page, so the caller runs it once it has kept the figures
+   * somewhere a redraw won't wipe. True when anything changed.
+   */
+  finish: () => boolean;
+}
+
+/** Add what the file brings (see `planImport`) to this device's database. */
+export async function applySpotsFile(
+  file: SpotsFile,
+  skippedOnRead = 0,
+  combine: Readonly<Record<string, string>> = {}
+): Promise<Restore> {
+  const [here, hereLog, aliases] = await Promise.all([listSpots(), listPlantings(), spotAliases()]);
+  // Combined once, combined every time: the same file brought in again folds
+  // into the same spot without asking twice.
+  const into = { ...aliases, ...combine };
+  const plan = planImport(here, hereLog, file, skippedOnRead, into);
+  if (Object.keys(combine).length) await kvSet(ALIASES_KEY, into).catch(() => {});
+  // Spots first: a planting written before its spot would, for a moment, be
+  // exactly the orphan `planImport` refuses to create.
+  for (const spot of plan.spots) await saveSpot(spot);
+  for (const planting of plan.plantings) await savePlanting(planting);
+  const { tally } = plan;
+
+  const spotIds = new Set([...here, ...file.spots].map((s) => s.id));
+  for (const row of file.lookups) {
+    const l = { ...row, spotId: spotIds.has(into[row.spotId] ?? "") ? into[row.spotId] : row.spotId };
+    if (!spotIds.has(l.spotId)) continue;
+    if (l.nearby && !(await lookupAllowed(l.spotId))) {
+      await allowLookup(l.spotId);
+      tally.lookupsAdded++;
+    }
+    if (l.own && !(await ownLookupAllowed(l.spotId))) {
+      await allowOwnLookup(l.spotId);
+      tally.lookupsAdded++;
+    }
+  }
+
+  // Only sightings something in the file points at; a newer copy here stays.
+  const refs = linkedRefs(file.spots, file.plantings);
+  for (const sg of file.sightings) {
+    if (!refs.has(sg.ref)) continue;
+    const key = `obs:${sg.ref}`;
+    const mine = await getCachedObservations(key).catch(() => undefined);
+    if (mine && mine.capturedAt >= sg.capturedAt) continue;
+    await putCachedObservations({
+      key,
+      capturedAt: sg.capturedAt,
+      observations: sg.observation ? [sg.observation] : [],
+    });
+    tally.sightingsAdded++;
+  }
+
+  const later = displayPreferences(file.preferences);
+  tally.settingsRestored = (await restorePreferences(file.preferences)) + later.length;
+  return {
+    tally,
+    finish: () => {
+      later.forEach((apply) => apply());
+      return later.length > 0;
+    },
+  };
+}
+
+/** The restored settings that redraw the page, each only where this browser
+ *  hasn't chosen yet — returned unapplied (see `Restore.finish`). */
+function displayPreferences(p: Preferences): (() => void)[] {
+  const out: (() => void)[] = [];
+  const units = p.units;
+  if (units && readLocal(UNITS_KEY) == null) out.push(() => setUnitPref(units));
+  if (p.counting === false && readLocal(COUNTING_KEY) == null) {
+    out.push(() => setAnalyticsEnabled(false));
+  }
+  const lang = p.lang;
+  if (lang && !langChosen()) out.push(() => setLang(lang));
+  return out;
+}
+
+/**
+ * Bring back each stored setting this browser hasn't been given yet. One
+ * already chosen here stays: it's the one the person was just using.
+ */
+async function restorePreferences(p: Preferences): Promise<number> {
+  let n = 0;
+  if (p.inatLogin && !linkedLogin()) {
+    setLinkedLogin(p.inatLogin);
+    n++;
+  }
+  let prefs = false;
+  if (p.weights && (await kvGet("weights").catch(() => undefined)) === undefined) {
+    await kvSet("weights", p.weights);
+    prefs = true;
+    n++;
+  }
+  if (p.filters && (await kvGet("filters").catch(() => undefined)) === undefined) {
+    await kvSet("filters", p.filters);
+    prefs = true;
+    n++;
+  }
+  if (prefs) await loadPrefs();
+  if (p.sticky) {
+    const mine = (await kvGet<Sticky>("sticky").catch(() => undefined)) ?? {};
+    const next: Sticky = { ...mine };
+    if (p.sticky.spot && !mine.spot) next.spot = p.sticky.spot;
+    if (p.sticky.defaultRegion && !mine.defaultRegion) next.defaultRegion = p.sticky.defaultRegion;
+    const added = Number(next.spot !== mine.spot) + Number(next.defaultRegion !== mine.defaultRegion);
+    if (added) {
+      await kvSet("sticky", next);
+      await loadSticky();
+      n += added;
+    }
+  }
+  return n;
 }
 
 // --- Rebuilding a row from whatever the file actually held -----------------
@@ -434,4 +887,131 @@ function toPlantedDate(v: unknown): PlantedDate | null {
   const date: PlantedDate = { year: Math.round(year), month: Math.round(month) };
   if (day != null && day >= 1 && day <= 31) date.day = Math.round(day);
   return date;
+}
+
+// --- The rest of what a backup carries -------------------------------------
+
+function toLookups(row: unknown): SpotLookups | null {
+  const r = asRecord(row);
+  const spotId = r && str(r.spotId);
+  if (!r || !spotId) return null;
+  return { spotId, nearby: r.nearby === true, own: r.own === true };
+}
+
+function toSavedSighting(row: unknown): SavedSighting | null {
+  const r = asRecord(row);
+  const ref = r && str(r.ref);
+  const capturedAt = r && num(r.capturedAt);
+  if (!r || !ref || capturedAt == null) return null;
+  if (r.observation === null) return { ref, capturedAt, observation: null };
+  const observation = toObservation(r.observation);
+  return observation ? { ref, capturedAt, observation } : null;
+}
+
+function toObservation(v: unknown): ObservationSummary | null {
+  const r = asRecord(v);
+  if (!r) return null;
+  const id = num(r.id);
+  const taxonId = num(r.taxonId);
+  const observer = str(r.observer);
+  if (id == null || taxonId == null || observer == null) return null;
+  const out: ObservationSummary = {
+    id,
+    taxonId,
+    taxonName: str(r.taxonName),
+    observer,
+    place: str(r.place),
+    lat: num(r.lat),
+    lon: num(r.lon),
+    distanceKm: num(r.distanceKm),
+    observedOn: str(r.observedOn),
+    photos: asArray(r.photos).map(toPhoto).filter((p): p is ObservationPhoto => p != null),
+  };
+  if (r.taxonPhoto === true) out.taxonPhoto = true;
+  return out;
+}
+
+/** Only https addresses: a picture from a hand-edited file is still loaded by
+ *  the page, and the page's own rules decide which hosts may answer. */
+function toPhoto(v: unknown): ObservationPhoto | null {
+  const r = asRecord(v);
+  if (!r) return null;
+  const id = num(r.id);
+  const urls = [r.thumbUrl, r.mediumUrl, r.largeUrl].map(str);
+  if (id == null || urls.some((u) => !u || !u.startsWith("https://"))) return null;
+  const [thumbUrl, mediumUrl, largeUrl] = urls as string[];
+  return {
+    id,
+    thumbUrl,
+    mediumUrl,
+    largeUrl,
+    license: str(r.license) ?? "",
+    attribution: str(r.attribution) ?? "",
+  };
+}
+
+function toUnitPref(v: unknown): UnitPref | null {
+  return v === "imperial" || v === "metric" || v === "auto" ? v : null;
+}
+
+function toMoisture(v: unknown): MoistureBand | null {
+  return v === "dry" || v === "mesic" || v === "wet" ? v : null;
+}
+
+function toFilters(v: unknown): ActiveFilters | undefined {
+  const r = asRecord(v);
+  if (!r) return undefined;
+  const out = { ...NO_FILTERS };
+  for (const k of Object.keys(NO_FILTERS) as (keyof ActiveFilters)[]) {
+    const val = r[k];
+    if (k === "maxHeightFt" || k === "maxSpreadFt") out[k] = num(val);
+    else if (typeof val === "boolean") out[k] = val;
+  }
+  return out;
+}
+
+function toStickySpot(v: unknown): StickySpot | undefined {
+  const r = asRecord(v);
+  if (!r) return undefined;
+  const lat = num(r.lat);
+  const lon = num(r.lon);
+  const regionId = str(r.regionId);
+  if ((lat == null || lon == null) && !regionId) return undefined;
+  return {
+    lat,
+    lon,
+    regionId,
+    sun: toSun(r.sun),
+    horizon: toHorizon(r.horizon),
+    deciduousOverhead: r.deciduousOverhead === true,
+    moisture: toMoisture(r.moisture),
+    savedAt: num(r.savedAt) ?? Date.now(),
+  };
+}
+
+function toPreferences(v: unknown): Preferences {
+  const r = asRecord(v);
+  const out: Preferences = {};
+  if (!r) return out;
+  const login = str(r.inatLogin);
+  if (login && isValidLogin(login)) out.inatLogin = login;
+  if (asRecord(r.weights)) out.weights = toWeights(r.weights);
+  const filters = toFilters(r.filters);
+  if (filters) out.filters = filters;
+  const sticky = asRecord(r.sticky);
+  if (sticky) {
+    const spot = toStickySpot(sticky.spot);
+    const defaultRegion = str(sticky.defaultRegion);
+    if (spot || defaultRegion) {
+      out.sticky = {};
+      if (spot) out.sticky.spot = spot;
+      if (defaultRegion) out.sticky.defaultRegion = defaultRegion;
+    }
+  }
+  const units = toUnitPref(r.units);
+  if (units) out.units = units;
+  const lang = str(r.lang);
+  if (isLang(lang)) out.lang = lang;
+  if (r.counting === false) out.counting = false;
+  return out;
 }

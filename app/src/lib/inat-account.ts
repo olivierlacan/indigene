@@ -10,8 +10,9 @@
 // Three rules, and the Privacy page says each in plain words (`privacy.inat*`):
 //
 //   - **It stays on this device.** Kept in this browser like the other small
-//     settings, and never in a backup file — a file gets passed around, and a
-//     username in it would name the garden's owner.
+//     settings — and in the backup file (`lib/backup.ts`), because a restore
+//     that lost the link would lose the gardener's own sightings with it. The
+//     Privacy page says so, and to mind who gets the file.
 //   - **It goes only to iNaturalist, only when asked.** Once when linking, to
 //     check the account exists, and once per import. Never in an address, so
 //     never in the page count (`lib/analytics.ts` counts addresses).

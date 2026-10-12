@@ -27,6 +27,7 @@ import {
 } from "../lib/garden";
 import { spotValue, type SpotValue } from "../lib/spot-value";
 import { menuCard, sightingsCard, ownCard, fullMenu } from "../components/spot-wildlife";
+import { planFor, renderSeasonPlan, seasonCard } from "../components/season-plan";
 import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
 import { observationList, photoTile } from "../components/observation-ui";
 import { nativeSightings, ownSightings, plantedBy, sightingsOfPlant, type OwnSighting } from "../lib/inat-import";
@@ -87,6 +88,12 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
     fullMenu(main, spot, plantings, value, plantName, region?.meta.id);
     return;
   }
+  // `<id>/season` is the whole season plan: what to propagate now, and what
+  // to add for the wildlife seen nearby.
+  if (sub === "season") {
+    renderSeasonPlan(main, spot, plantings, plantOf, region, roster);
+    return;
+  }
 
   const redraw = (): void => void renderSpot(main, param);
 
@@ -95,6 +102,7 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
   const spotted = menu && value ? sightingsCard(spot, plantings, value, menu.showSeen) : null;
   // The gardener's own sightings come first: they're the ones that are theirs.
   const own = value?.wildlife.length ? ownCard(spot, plantings, value, plantName, region?.meta.id) : null;
+  const season = seasonCard(spot, planFor(spot, plantings, plantOf, region), plantOf, plantings, region?.meta.id);
 
   // The plant handed over by "I planted one" (`?add=<slug>`). Usually on this
   // spot's own list; when it isn't — a plant page from the next region over —
@@ -110,7 +118,7 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
     el("h2", { class: "step-title" }, spot.label),
     el("p", { class: "step-lede" }, [
       spot.sun ? sunPlain(spot.sun.hours) : t("saved.sunUnknown"),
-      region ? ` · ${regionName(region.meta)}` : "",
+      ...(region ? [" · ", el("a", { href: `#/regions/${region.meta.id}` }, regionName(region.meta))] : []),
     ]),
     // Fixing the spot itself: a better name, or a pin that landed next door.
     el("p", { class: "spot-edit" }, [
@@ -128,10 +136,12 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
       el("a", { href: `#/location?move=${encodeURIComponent(spot.id)}` }, t("spot.move")),
     ]),
     countsCard(plantings, value),
+    // What this season is for, from the plants already here.
+    ...(season ? [season] : []),
     ...(own ? [own] : []),
     ...(menu ? [menu.card] : []),
     ...(spotted ? [spotted] : []),
-    logCard(plantings, plantOf, redraw, region?.meta.id),
+    logCard(spot, plantings, plantOf, redraw, region?.meta.id),
     ...(spot.invasives?.length ? [invasivesCard(spot, redraw)] : []),
     addCard(spot, roster, linked, preset, redraw),
     // Only once an account is linked: without one the page it opens can only
@@ -203,6 +213,7 @@ function countsCard(plantings: Planting[], value: SpotValue | null): HTMLElement
 // --- the log ---------------------------------------------------------------
 
 function logCard(
+  spot: SavedSpot,
   plantings: Planting[],
   plantOf: (id: string) => Plant | undefined,
   redraw: () => void,
@@ -212,12 +223,13 @@ function logCard(
   if (!plantings.length) {
     body.push(el("p", { class: "note" }, t("spot.logEmpty")));
   } else {
-    body.push(el("ul", { class: "log-list" }, plantings.map((p) => logRow(p, plantOf(p.plantId), redraw, regionId))));
+    body.push(el("ul", { class: "log-list" }, plantings.map((p) => logRow(spot, p, plantOf(p.plantId), redraw, regionId))));
   }
   return el("section", { class: "card" }, body);
 }
 
 function logRow(
+  spot: SavedSpot,
   planting: Planting,
   plant: Plant | undefined,
   redraw: () => void,
@@ -294,7 +306,7 @@ function logRow(
   ]) as HTMLFormElement;
 
   const row = el("li", { class: "log-item" }, [head, edit]);
-  row.append(sightingsBlock(planting, name, plant?.form, redraw));
+  row.append(sightingsBlock(spot, planting, name, plant?.form, redraw));
   return row;
 }
 
@@ -351,7 +363,7 @@ function invasivesCard(spot: SavedSpot, redraw: () => void): HTMLElement {
  * and credit every other iNaturalist photo in the app gets — the gardener's own
  * sighting is somebody's licensed work too, even when that somebody is them.
  */
-function sightingsBlock(planting: Planting, name: string, plantForm: string | undefined, redraw: () => void): HTMLElement {
+function sightingsBlock(spot: SavedSpot, planting: Planting, name: string, plantForm: string | undefined, redraw: () => void): HTMLElement {
   const block = el("div", { class: "log-sightings" });
   const gallery = el("div", { "aria-live": "polite" });
   block.append(gallery);
@@ -469,7 +481,7 @@ function sightingsBlock(planting: Planting, name: string, plantForm: string | un
       if (form.hidden) return;
       if (!asked) {
         asked = true;
-        void fillPicker(picker, planting, name, plantForm, link);
+        void fillPicker(picker, spot, planting, name, plantForm, link);
       }
       // With a linked account the picker is the way in; the field is the
       // fallback, and a keyboard popping up over the photos would hide them.
@@ -489,6 +501,7 @@ const MAX_PICKS = 12;
  *  links it on tap — or, with no account linked, the way to link one. */
 async function fillPicker(
   picker: HTMLElement,
+  spot: SavedSpot,
   planting: Planting,
   name: string,
   form: string | undefined,
@@ -505,7 +518,7 @@ async function fillPicker(
   picker.append(status);
   let picks: OwnSighting[];
   try {
-    const { sightings } = await ownSightings(login);
+    const { sightings } = await ownSightings(login, spot);
     picks = sightingsOfPlant(sightings, planting.plantId, planting.observations);
   } catch (err) {
     status.textContent = t(isBusy(err) ? "nearby.busy" : "nearby.unreachable");
@@ -665,7 +678,7 @@ function addCard(
   const starters = el("div", { class: "field log-add-sighting", hidden: true });
   const login = linkedLogin();
   if (login && !preset) {
-    void ownSightings(login).then(({ sightings }) => {
+    void ownSightings(login, spot).then(({ sightings }) => {
       const picks = nativeSightings(sightings, roster, linked).slice(0, MAX_PICKS);
       if (!picks.length) return; // an offer, not a message: nothing to offer, nothing said
       starters.append(
@@ -710,7 +723,7 @@ function addCard(
     } else {
       const status = el("p", { class: "hint" }, t("import.asking", { login }));
       tiles.append(status);
-      void ownSightings(login).then(({ sightings }) => {
+      void ownSightings(login, spot).then(({ sightings }) => {
         if (chosen !== p) return; // the plant changed while we were asking
         const picks = sightingsOfPlant(sightings, p.id, linked).slice(0, MAX_PICKS);
         clear(tiles);

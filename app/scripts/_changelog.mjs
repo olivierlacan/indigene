@@ -209,3 +209,20 @@ export function reportFragmentError(err, script) {
   console.error(`${script}: ${err.message}`);
   process.exit(1);
 }
+
+/**
+ * Turn the URLs a bullet types out into links, for both compilers' `inline()`.
+ * Runs on escaped HTML after `[text](url)` links are drawn, so it handles
+ * Markdown's `<https://…>` autolink (escaped to `&lt;…&gt;`) and a bare
+ * address, and leaves alone a URL already sitting in an `href="…"` or as a
+ * link's own text (`>https://…`). Trailing sentence punctuation stays outside
+ * the link: "see https://indigene.app/crops." links the address, not the dot.
+ * Better still is a linked word — CLAUDE.md asks for that — but a raw URL
+ * should never reach the page dead.
+ */
+export function autolink(html) {
+  const a = (url) => `<a href="${url}">${url}</a>`;
+  return html
+    .replace(/&lt;(https?:\/\/[^\s<>]+?)&gt;/g, (_, url) => a(url))
+    .replace(/(?<![">\w/])https?:\/\/[^\s<]*[^\s<.,;:!?)'"]/g, a);
+}

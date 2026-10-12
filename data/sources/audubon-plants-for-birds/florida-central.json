@@ -1,0 +1,45 @@
+{
+  "source": "National Audubon Society — Plants for Birds",
+  "url": "https://www.audubon.org/native-plants",
+  "note": "curated = Audubon's own picks for the ZIP; full = every species BONAP records as native to that ZIP's county. The two are different kinds of list and must not be pooled.",
+  "hasFloraTier": true,
+  "region": "florida-central",
+  "scope": [
+    "32801",
+    "32216"
+  ],
+  "harvested": "2026-10-10",
+  "counts": {
+    "ours": 39,
+    "theirPicks": 65,
+    "theirFlora": 404,
+    "oursAmongTheirPicks": 28,
+    "theirPicksWeLack": 37,
+    "generaNewToUs": 23
+  },
+  "generaNewToUs": [
+    "aesculus",
+    "aralia",
+    "arisaema",
+    "campsis",
+    "carpinus",
+    "forestiera",
+    "gaillardia",
+    "hyptis",
+    "ipomopsis",
+    "liquidambar",
+    "liriodendron",
+    "nyssa",
+    "ostrya",
+    "panicum",
+    "parthenocissus",
+    "phytolacca",
+    "platanus",
+    "psychotria",
+    "rumex",
+    "sassafras",
+    "schizachyrium",
+    "solidago",
+    "ulmus"
+  ]
+}

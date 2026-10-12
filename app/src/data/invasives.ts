@@ -25,11 +25,15 @@
 //   - Pacific Northwest Washington's weed board — a regulation, so no rank
 //
 // Where no body has rated the ground in a form we can check — northern
-// Michigan, Atlantic and Alpine France, Ireland — the five are plants the local
-// authorities name as invasive, again taken by sightings, and the page says the
-// order is sightings alone. Beech and sycamore turn up high in the French and
+// Michigan, Central Texas, Atlantic and Alpine France, Ireland — the five are
+// plants the local authorities name as invasive, again taken by sightings, and
+// the page says the order is sightings alone. Beech and sycamore turn up high in the French and
 // Irish counts and are left out: native in France, and nobody's target in
 // Ireland.
+//
+// Chicago's five come from Illinois' Exotic Weed Act list. That is a law about
+// sale and planting, not a ranking of harm, so they carry no listing and are
+// ordered by sightings like the others.
 //
 // The counts live in `invasive-counts.json` (`npm run invasives:count`), and
 // `lib/invasives.ts` does the ranking at runtime, so a refreshed count can
@@ -91,6 +95,46 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "The wood makes good firewood; root pieces go in the bin.",
       basis: "OFB Centre de ressources EEE; CBN Méditerranéen.",
+    },
+  },
+  {
+    id: "melia-azedarach",
+    common: "Chinaberry",
+    latin: "Melia azedarach",
+    form: "tree",
+    marks: [
+      { part: "fruit", feature: "Berries", text: "Round, marble-sized yellow berries that hang in bunches on the bare tree all winter." },
+      { part: "leaf", feature: "Leaves", text: "Very large and lacy, cut twice into many toothed leaflets." },
+      { part: "flower", feature: "Flowers", text: "Lilac, star-shaped and sweetly scented, in loose sprays in spring." },
+    ],
+    removal: {
+      steps: [
+        { method: "pull", text: "Pull seedlings when the ground is wet, with the whole root." },
+        { method: "girdle", text: "Felling a big tree sets off suckers. Cut a ring through the bark all round instead, and let it die standing over a year." },
+        { method: "repeat", text: "Pull the suckers and seedlings that follow for several years; the berries are poisonous, so wear gloves and keep children away." },
+      ],
+      dispose: "Bag the berries; the wood is fine to burn or chip.",
+      basis: "Texas Invasive Species Institute; Texas A&M Forest Service.",
+    },
+  },
+  {
+    id: "ligustrum-lucidum",
+    common: "Glossy privet",
+    latin: "Ligustrum lucidum",
+    form: "tree",
+    marks: [
+      { part: "leaf", feature: "Leaves", text: "Evergreen, thick and shiny, in opposite pairs, three to six inches long." },
+      { part: "fruit", feature: "Berries", text: "Dense bunches of small blue-black berries all winter." },
+      { part: "smell", feature: "Smell", text: "Creamy flower sprays in early summer with a heavy, sickly-sweet scent." },
+    ],
+    removal: {
+      steps: [
+        { method: "pull", text: "Pull seedlings by hand, or with a weed wrench up to wrist thickness, roots and all." },
+        { method: "girdle", text: "A cut stump resprouts. Girdle bigger trunks — a ring through the bark all round — and leave them to die." },
+        { method: "replant", text: "Plant a native evergreen in the gap, like yaupon, or birds will drop privet seed straight back in." },
+      ],
+      dispose: "Cut it before it fruits; bag any berries.",
+      basis: "Texas Invasive Species Institute; Lady Bird Johnson Wildflower Center.",
     },
   },
   {
@@ -172,6 +216,86 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Berried branches go in the bin.",
       basis: "Michigan Natural Features Inventory; Penn State Extension.",
+    },
+  },
+  {
+    id: "nandina-domestica",
+    common: "Nandina (heavenly bamboo)",
+    latin: "Nandina domestica",
+    form: "shrub",
+    marks: [
+      { part: "leaf", feature: "Leaves", text: "Lacy, bamboo-like, cut into many small pointed leaflets, flushing red in cold weather." },
+      { part: "fruit", feature: "Berries", text: "Heavy bunches of bright red berries all winter." },
+      { part: "stem", feature: "Stems", text: "Unbranched cane-like stems rising from the base." },
+    ],
+    removal: {
+      steps: [
+        { method: "cut", text: "Cut off every berry cluster before it ripens: the berries can poison cedar waxwings, and birds carry the seed into creek woods." },
+        { method: "dig", text: "Dig the clump out with its yellow roots; small pieces left in the ground resprout." },
+        { method: "repeat", text: "Dig out seedlings as they appear for a couple of years." },
+      ],
+      dispose: "Bag the berries; don't compost them.",
+      basis: "Texas Invasive Species Institute; Lady Bird Johnson Wildflower Center.",
+    },
+  },
+  {
+    id: "rhamnus-cathartica",
+    common: "Common buckthorn",
+    latin: "Rhamnus cathartica",
+    form: "shrub",
+    marks: [
+      { part: "stem", feature: "Inner bark", text: "Scrape a twig: the layer under the bark is orange." },
+      { part: "thorn", feature: "Twig tips", text: "Many end in a short sharp spine, between a pair of buds." },
+      { part: "fruit", feature: "Berries", text: "Black, pea-sized, in clusters along the stems, hanging into winter." },
+    ],
+    removal: {
+      steps: [
+        { method: "pull", text: "Pull seedlings and lever out stems up to thumb-thick with a weed wrench, roots and all." },
+        { method: "cover", text: "Cut bigger stems low and tie a black plastic bag over each stump for a year, so it can't resprout." },
+        { method: "repeat", text: "Seedlings come up for about five years: pull them every spring." },
+      ],
+      dispose: "Berried branches go in the bin; bare wood can be chipped.",
+      basis: "Morton Arboretum; Illinois Natural History Survey; Midwest Invasive Plant Network.",
+    },
+  },
+  {
+    id: "lonicera-maackii",
+    common: "Amur honeysuckle",
+    latin: "Lonicera maackii",
+    form: "shrub",
+    marks: [
+      { part: "stem", feature: "Twigs", text: "Snap one: the middle is hollow. A native honeysuckle's is solid." },
+      { part: "leaf", feature: "Leaves", text: "Pointed tips, in pairs — green before anything else in spring, and after everything else in fall." },
+      { part: "fruit", feature: "Berries", text: "Translucent red, in pairs along the stem, lasting into winter." },
+    ],
+    removal: {
+      steps: [
+        { method: "pull", text: "Pull small shrubs and lever out bigger ones: the roots are shallow." },
+        { method: "timing", text: "Go in early spring or late fall, when it's the only green in the woods." },
+        { method: "repeat", text: "Pull the seedlings that follow for a few years." },
+      ],
+      dispose: "Berried branches go in the bin.",
+      basis: "Morton Arboretum; Ohio State Extension; Midwest Invasive Plant Network.",
+    },
+  },
+  {
+    id: "dipsacus-laciniatus",
+    common: "Cut-leaved teasel",
+    latin: "Dipsacus laciniatus",
+    form: "perennial",
+    marks: [
+      { part: "flower", feature: "Flower heads", text: "Spiny egg-shaped heads with a ring of white flowers, on stalks taller than a person." },
+      { part: "leaf", feature: "Leaves", text: "Deeply cut, in pairs fused around the stem into a cup that holds rainwater." },
+      { part: "stem", feature: "Stems", text: "Ridged with rows of downward prickles." },
+    ],
+    removal: {
+      steps: [
+        { method: "dig", text: "Dig out first-year rosettes with a spade, taking the top of the long taproot." },
+        { method: "cut", text: "Cut flowering stalks at the base before the heads turn brown — later, they ripen seed on the ground." },
+        { method: "repeat", text: "Its seed lasts a few years: keep at it every summer." },
+      ],
+      dispose: "Bag cut flower heads; don't leave them lying.",
+      basis: "Illinois Natural History Survey; Morton Arboretum; Midwest Invasive Plant Network.",
     },
   },
   {
@@ -436,6 +560,26 @@ export const INVASIVES: Invasive[] = [
     },
   },
   {
+    id: "rapistrum-rugosum",
+    common: "Bastard cabbage",
+    latin: "Rapistrum rugosum",
+    form: "annual",
+    marks: [
+      { part: "flower", feature: "Flowers", text: "Small four-petalled yellow flowers on tall branching stems, in late winter and spring." },
+      { part: "leaf", feature: "Leaves", text: "A flat rosette of rough, deeply lobed leaves in winter." },
+      { part: "fruit", feature: "Seed pods", text: "Short pods pressed against the stem, each ending in a little beak." },
+    ],
+    removal: {
+      steps: [
+        { method: "pull", text: "Pull the winter rosettes before they bolt; the taproot comes out easily from moist soil." },
+        { method: "timing", text: "Pull or mow before the first pods form in spring, or each plant leaves thousands of seeds." },
+        { method: "replant", text: "Sow native wildflowers like bluebonnet and Engelmann daisy in autumn, so the bare ground isn't left for its seedlings." },
+      ],
+      dispose: "Bag plants that have started to set pods.",
+      basis: "Lady Bird Johnson Wildflower Center; Texas Invasive Species Institute.",
+    },
+  },
+  {
     id: "reynoutria-japonica",
     common: "Japanese knotweed",
     latin: "Reynoutria japonica",
@@ -656,6 +800,26 @@ export const INVASIVES: Invasive[] = [
     },
   },
   // ---------------- Grasses ----------------
+  {
+    id: "sorghum-halepense",
+    common: "Johnsongrass",
+    latin: "Sorghum halepense",
+    form: "grass",
+    marks: [
+      { part: "leaf", feature: "Leaves", text: "Broad blades, up to an inch wide, with a bold white midrib." },
+      { part: "flower", feature: "Seed heads", text: "Loose, open, reddish-purple plumes on stems up to head height." },
+      { part: "root", feature: "Roots", text: "Thick white runners underground, that snap and regrow from every piece." },
+    ],
+    removal: {
+      steps: [
+        { method: "dig", text: "Fork out young clumps with all the white runners; every piece left resprouts." },
+        { method: "cut", text: "Mow or cut big stands to the ground before they seed, again and again: it weakens the runners." },
+        { method: "cover", text: "Smother a patch under thick cardboard and mulch for a full growing season." },
+      ],
+      dispose: "Bag seed heads and runners; don't compost them.",
+      basis: "Texas A&M AgriLife Extension; Texas Invasive Species Institute.",
+    },
+  },
   {
     id: "arundo-donax",
     common: "Giant reed",
@@ -913,12 +1077,14 @@ const waClass = (klass: "B" | "C", slug: string): LookalikeListing => ({
 const VA = "Virginia Natural Heritage, Invasive Plant Species of Virginia (2024).";
 const CAL = "California Invasive Plant Council, Cal-IPC Inventory.";
 const FL = "Florida Invasive Species Council, 2023 plant list (zones C and S).";
+const IL = "Illinois Exotic Weed Act and its official list (Illinois DNR); Morton Arboretum; Midwest Invasive Plant Network.";
 const MI = "Michigan Natural Features Inventory, Invasive Species Best Control Practices; Midwest Invasive Species Information Network.";
 const WA = "Washington State Noxious Weed Control Board.";
 const PACA = "INVMED — CBN Méditerranéen & CBN Alpin, liste des EVEE de Provence-Alpes-Côte d'Azur.";
 const GE = "CBN Nord-Est, CBA & CBN Bassin parisien, liste catégorisée des EEE du Grand Est (2020).";
 const FR_ATL = "CBN de Brest, liste des plantes vasculaires invasives de Bretagne; OFB Centre de ressources EEE.";
 const FR_ALP = "CBN Alpin, espèces végétales exotiques envahissantes des Alpes; OFB Centre de ressources EEE.";
+const TX = "Texas Invasive Species Institute, Invaders of Texas (texasinvasives.org).";
 const IE = "National Biodiversity Data Centre, invasive species of Ireland; Invasive Species Ireland.";
 
 // ---- The ties: each region's list, in any order — `lib/invasives.ts` ranks it ----
@@ -930,12 +1096,26 @@ export const MOST_WANTED: Record<string, WantedLink[]> = {
     { invasiveId: "reynoutria-japonica", listing: VIRGINIA_HIGH, basis: VA },
     { invasiveId: "lythrum-salicaria", listing: VIRGINIA_HIGH, basis: VA },
   ],
+  chicago: [
+    { invasiveId: "rhamnus-cathartica", basis: IL },
+    { invasiveId: "lonicera-maackii", basis: IL },
+    { invasiveId: "alliaria-petiolata", basis: IL },
+    { invasiveId: "dipsacus-laciniatus", basis: IL },
+    { invasiveId: "lythrum-salicaria", basis: IL },
+  ],
   "north-michigan": [
     { invasiveId: "centaurea-stoebe", basis: MI },
     { invasiveId: "elaeagnus-umbellata", basis: MI },
     { invasiveId: "securigera-varia", basis: MI },
     { invasiveId: "lythrum-salicaria", basis: MI },
     { invasiveId: "lonicera-morrowii", basis: MI },
+  ],
+  "central-texas": [
+    { invasiveId: "melia-azedarach", basis: TX },
+    { invasiveId: "sorghum-halepense", basis: TX },
+    { invasiveId: "rapistrum-rugosum", basis: TX },
+    { invasiveId: "ligustrum-lucidum", basis: TX },
+    { invasiveId: "nandina-domestica", basis: TX },
   ],
   pnw: [
     { invasiveId: "cytisus-scoparius", listing: waClass("B", "scotch-broom"), basis: WA },

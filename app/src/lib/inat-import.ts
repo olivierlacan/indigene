@@ -22,24 +22,39 @@
 // wants (the v2 API takes a list), and none of them is a location: not the
 // point, not the obscured box, not the place name. Indigene doesn't need to
 // know where a sighting was to file it — the gardener picks the spot.
+//
+// **Where it asks.** The sightings within `NEAR_KM` of the spot, so five years
+// of posting fits in a few pages and a holiday's photos don't crowd the list.
+// This is the one request where a username and a place travel together: the
+// spot rounded to about a kilometre (`roundedPoint`), and the radius is wide
+// enough that it can't pin the garden down. A sighting set to *private* on
+// iNaturalist has no public location, so it never matches.
 import { InatError, licensedPhotos, type ObservationPhoto } from "./inaturalist";
 import { isValidLogin } from "./inat-account";
 import { entryByInatId, normalizeName, registryIndex } from "./registry";
 import { mostWanted } from "./invasives";
 import { inatTaxonIdFor } from "./hero-photo";
+import { roundedPoint } from "./spot-sightings";
 import { lookalikesForPlant, type LookalikeForPlant } from "./lookalikes";
 import type { RegionDef } from "./plants";
 import type { Invasive, Plant, PlantedDate, Planting, SavedSpot } from "../types";
 
 const API = "https://api.inaturalist.org/v2/observations";
 
-/** How far back "recent" reaches: a year, so a whole season's planting fits. */
-export const LOOKBACK_DAYS = 365;
+/** How far back "recent" reaches: five years, so a garden planted a while ago
+ *  can still be brought in from its first photos. */
+export const LOOKBACK_YEARS = 5;
 
-/** Up to 200 a page, and at most this many pages. A gardener posting more than
- *  600 plants a year is rare, and the page says when the list was cut short. */
+/** How far from the spot a sighting may be. An obscured sighting's public
+ *  point is anywhere in a 0.2° × 0.2° cell around the real one — up to ~31 km
+ *  away at the cell's corners — and the spot itself is rounded by ~1 km. */
+export const NEAR_KM = 35;
+
+/** Up to 200 a page, and at most this many pages. Over 1,000 plants posted
+ *  around one spot in five years is rare, and the page says when the list was
+ *  cut short. */
 const PER_PAGE = 200;
-const MAX_PAGES = 3;
+const MAX_PAGES = 5;
 
 /** The pause between pages. iNaturalist asks API clients to stay around one
  *  request a second; a free service run by a nonprofit is owed that much. */
@@ -84,14 +99,26 @@ export interface OwnSightings {
   truncated: boolean;
 }
 
+/** Where to look: a saved spot, or anything with its coordinates. */
+export interface Near {
+  lat: number;
+  lon: number;
+}
+
 /** The request for one page. Exported so the one thing sent can be read. */
-export function buildOwnSightingsUrl(login: string, page: number, now: number = Date.now()): string {
+export function buildOwnSightingsUrl(login: string, near: Near, page: number, now: number = Date.now()): string {
   if (!isValidLogin(login)) throw new Error("not an iNaturalist username");
-  const since = new Date(now - LOOKBACK_DAYS * 86_400_000).toISOString().slice(0, 10);
+  const from = new Date(now);
+  from.setUTCFullYear(from.getUTCFullYear() - LOOKBACK_YEARS);
+  const since = from.toISOString().slice(0, 10);
+  const p = roundedPoint(near.lat, near.lon);
   const params = new URLSearchParams({
     user_login: login,
     iconic_taxa: "Plantae",
     d1: since,
+    lat: String(p.lat),
+    lng: String(p.lon),
+    radius: String(NEAR_KM),
     order_by: "observed_on",
     order: "desc",
     per_page: String(PER_PAGE),
@@ -111,10 +138,12 @@ export async function loginExists(login: string, signal?: AbortSignal): Promise<
   return true;
 }
 
-/** Fetch the gardener's recent plant sightings, newest first — one page at a
- *  time, `PAGE_GAP_MS` apart. `net` stands in for the network in the checks. */
+/** Fetch the gardener's recent plant sightings near a spot, newest first — one
+ *  page at a time, `PAGE_GAP_MS` apart. `net` stands in for the network in the
+ *  checks. */
 export async function fetchOwnSightings(
   login: string,
+  near: Near,
   signal?: AbortSignal,
   net: { fetch: typeof fetch; wait: (ms: number) => Promise<void> } = {
     fetch: (...args) => fetch(...args),
@@ -124,7 +153,7 @@ export async function fetchOwnSightings(
   const sightings: OwnSighting[] = [];
   for (let page = 1; page <= MAX_PAGES; page++) {
     if (page > 1) await net.wait(PAGE_GAP_MS);
-    const res = await net.fetch(buildOwnSightingsUrl(login, page), { signal });
+    const res = await net.fetch(buildOwnSightingsUrl(login, near, page), { signal });
     if (!res.ok) throw new InatError(res.status, "observations");
     const data = await res.json();
     const results: unknown[] = Array.isArray(data?.results) ? data.results : [];
@@ -135,20 +164,22 @@ export async function fetchOwnSightings(
   return { sightings, truncated: true };
 }
 
-/** This visit's answer, per username, so the import page and every planting's
- *  sighting picker share one request instead of asking again. Kept as the
- *  request itself, not its result, so two quick taps share one. Gone on
- *  reload; never written anywhere. */
+/** This visit's answer, per username and rounded spot, so the import page and
+ *  every planting's sighting picker share one request instead of asking again.
+ *  Kept as the request itself, not its result, so two quick taps share one.
+ *  Gone on reload; never written anywhere. */
 const fetched = new Map<string, Promise<OwnSightings>>();
 
-/** `fetchOwnSightings`, at most once per username per visit. */
-export function ownSightings(login: string): Promise<OwnSightings> {
-  let pending = fetched.get(login);
+/** `fetchOwnSightings`, at most once per username and spot per visit. */
+export function ownSightings(login: string, near: Near): Promise<OwnSightings> {
+  const p = roundedPoint(near.lat, near.lon);
+  const key = `${login}@${p.lat},${p.lon}`;
+  let pending = fetched.get(key);
   if (!pending) {
-    pending = fetchOwnSightings(login);
+    pending = fetchOwnSightings(login, near);
     // A failure isn't an answer: forget it, so trying again really asks again.
-    pending.catch(() => fetched.delete(login));
-    fetched.set(login, pending);
+    pending.catch(() => fetched.delete(key));
+    fetched.set(key, pending);
   }
   return pending;
 }

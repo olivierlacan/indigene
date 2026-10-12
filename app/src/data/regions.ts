@@ -22,6 +22,7 @@
 import type { RegionDef } from "./region";
 import { REGION as MID_ATLANTIC } from "./region.mid-atlantic";
 import { REGION as NORTH_MICHIGAN } from "./region.north-michigan";
+import { REGION as CHICAGO } from "./region.chicago";
 import { REGION as ST_LAWRENCE } from "./region.st-lawrence";
 import { REGION as PNW } from "./region.pnw";
 import { REGION as CA_SOUTH_COAST } from "./region.ca-south-coast";
@@ -35,6 +36,7 @@ import { REGION as FRANCE_ALPINE } from "./region.france-alpine";
 import { REGION as IRELAND } from "./region.ireland";
 import { REGION as NZ_AUCKLAND } from "./region.nz-auckland";
 import { REGION as KANTO } from "./region.kanto";
+import { REGION as CENTRAL_TEXAS } from "./region.central-texas";
 
 export const REGIONS: RegionDef[] = [
   { meta: MID_ATLANTIC, load: () => import("./plants.mid-atlantic").then((m) => m.SEED_RAW) },
@@ -42,6 +44,10 @@ export const REGIONS: RegionDef[] = [
   // tip of the Lower Peninsula (Petoskey / Little Traverse Bay). The temperate
   // south of the state and the boreal Upper Peninsula each want their own list.
   { meta: NORTH_MICHIGAN, load: () => import("./plants.north-michigan").then((m) => m.SEED_RAW) },
+  // Chicago and the tallgrass prairie of northern Illinois — the first list
+  // between the Appalachians and the West Coast. One ecoregion (54); the
+  // forested Corn Belt east of it (55) is left for a list of its own.
+  { meta: CHICAGO, load: () => import("./plants.chicago").then((m) => m.SEED_RAW) },
   { meta: ST_LAWRENCE, load: () => import("./plants.st-lawrence").then((m) => m.SEED_RAW) },
   { meta: PNW, load: () => import("./plants.pnw").then((m) => m.SEED_RAW) },
   // The West Coast, continued southward — see docs/west-coast-plan.md for the
@@ -53,6 +59,11 @@ export const REGIONS: RegionDef[] = [
   // once that exists; the live ecoregion code decides between them, and the
   // tighter box wins offline.
   { meta: CA_CENTRAL_COAST, load: () => import("./plants.ca-central-coast").then((m) => m.SEED_RAW) },
+  // Central Texas — the first list between the Appalachians and the West
+  // Coast: the limestone Hill Country and the blackland prairies, Austin to
+  // Dallas–Fort Worth. The post-oak sands east of it, the brush country south of
+  // San Antonio and the Houston coast are later regions.
+  { meta: CENTRAL_TEXAS, load: () => import("./plants.central-texas").then((m) => m.SEED_RAW) },
   { meta: FLORIDA_CENTRAL, load: () => import("./plants.florida").then((m) => m.SEED_RAW) },
   { meta: FLORIDA_SOUTH, load: () => import("./plants.florida-south").then((m) => m.SEED_RAW) },
   // Metropolitan France, complete: all four of its EEA biogeographical regions.

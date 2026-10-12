@@ -10,7 +10,6 @@
 // one frame host and no other.
 import { el } from "../ui";
 import { t, getLang } from "../lib/i18n";
-import { privacyRoute } from "./privacy-link";
 import { filmEmbedUrl, type FilmLang } from "../lib/film";
 
 /** The cut for the reader's language. */
@@ -54,14 +53,6 @@ export function filmEmbed(cut?: FilmLang): HTMLElement {
     ]),
   ]);
 
-  box.append(
-    play,
-    el("figcaption", { class: "privacy-note" }, [
-      el("span", { "aria-hidden": "true" }, "🔒 "),
-      `${t("film.note")} `,
-      el("a", { href: privacyRoute("film") }, t("privacy.howHandled")),
-      ".",
-    ]),
-  );
+  box.append(play);
   return box;
 }

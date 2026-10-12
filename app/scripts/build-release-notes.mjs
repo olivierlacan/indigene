@@ -18,7 +18,8 @@
 import { copyFileSync, existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { foldFragments, readFragments, reportFragmentError } from "./_changelog.mjs";
+import { autolink, foldFragments, readFragments, reportFragmentError } from "./_changelog.mjs";
+import { linkPrefix } from "./guide-catalog.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = resolve(HERE, "../..");
@@ -558,6 +559,20 @@ function parseChangelog(text) {
     );
   }
 
+  // A typed-out address still works — `autolink()` makes it a link — but it
+  // spends a line on a URL nobody reads. Link the words it's about instead:
+  // "[Ireland](https://indigene.app/regions/ireland) is on the map". A nudge,
+  // not a wall: the page is right either way.
+  for (const r of [unreleased, ...releases]) {
+    for (const s of r.sections) {
+      for (const item of s.items) {
+        if (INTERNAL.test(item) || !/(?<!\]\()https?:\/\//.test(item)) continue;
+        const opening = item.replace(/\s+/g, " ").slice(0, 72);
+        console.warn(`release notes: ${r.version} types out a URL — link a word instead: "${opening}…"`);
+      }
+    }
+  }
+
   for (const r of releases) {
     // Clean developer housekeeping out of the public page. Filtering happens
     // after parsing so a marked bullet's wrapped continuation lines stay
@@ -576,10 +591,10 @@ const escapeHtml = (s) =>
   s.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
 
-/** Minimal inline markdown: links, bold, italic, code. Applied post-escape. */
+/** Minimal inline markdown: links (typed-out URLs too), bold, italic, code. Applied post-escape. */
 function inline(md) {
-  return escapeHtml(md)
-    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, text, url) => `<a href="${resolveUrl(url)}">${text}</a>`)
+  return autolink(escapeHtml(md)
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, text, url) => `<a href="${resolveUrl(url)}">${text}</a>`))
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
     .replace(/\*([^*]+)\*/g, "<em>$1</em>")
     .replace(/`([^`]+)`/g, "<code>$1</code>");
@@ -670,7 +685,7 @@ function renderRelease(r, { standalone = false, assets = "" } = {}) {
     if (s.items.length === 0) continue;
     parts.push(`<h3>${escapeHtml(s.title)}</h3>`);
     parts.push(`<ul>`);
-    for (const item of s.items) parts.push(`<li>${inline(item)}</li>`);
+    for (const item of s.items) parts.push(`<li>${inline(linkPrefix(item))}</li>`);
     parts.push(`</ul>`);
   }
   parts.push(`</div>`, `</article>`);
@@ -739,6 +754,14 @@ a:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .release h2 .permalink:hover, .release h2 .permalink:focus-visible {
   text-decoration: underline;
 }
+/* Links inside a note's words are there to follow, not to read past: they
+   keep the text's color with a quiet underline, and take the link color only
+   under a pointer or focus. The page's real ways on stay bright. */
+.release-body li a {
+  color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--focus) 50%, transparent);
+}
+.release-body li a:hover, .release-body li a:focus-visible { color: var(--focus); text-decoration-color: currentColor; }
 /* Older/newer release links at the foot of a single release's page. */
 .pager {
   display: flex; flex-wrap: wrap; gap: 0.5rem 1rem;

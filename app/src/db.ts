@@ -102,6 +102,32 @@ function tx<T>(
 
 export async function saveSpot(spot: SavedSpot): Promise<void> {
   await tx(SPOTS, "readwrite", (s) => s.put(spot));
+  askToKeep();
+}
+
+// --- Keeping it through a clean-up ----------------------------------------
+// By default a browser treats this database as disposable: it may clear it
+// when the disk runs low, and Safari clears a site's storage after a week or
+// so without a visit unless it's on the home screen. A saved garden isn't
+// a cache, so the first save of each visit asks for "persistent" storage —
+// Chrome and Safari decide quietly, Firefox may ask the person once. A no is
+// fine; the Settings card says so and points at the file copy instead.
+
+let asked = false;
+
+function askToKeep(): void {
+  if (asked) return;
+  asked = true;
+  void navigator.storage?.persist?.().catch(() => false);
+}
+
+/** Has the browser agreed to keep saved spots? Null when it can't say. */
+export async function storageKept(): Promise<boolean | null> {
+  try {
+    return (await navigator.storage?.persisted?.()) ?? null;
+  } catch {
+    return null;
+  }
 }
 
 /**

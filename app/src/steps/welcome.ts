@@ -4,6 +4,9 @@ import { listSpots } from "../db";
 import { t, tn, tx } from "../lib/i18n";
 import { filmEmbed, filmLang } from "../components/film";
 import { filmRoute } from "../lib/film";
+import { REGIONS } from "../lib/plants";
+import { wildlifeThumb } from "../components/wildlife-thumb";
+import { plantThumb, invasiveThumb, lookalikeThumb } from "../components/plant-thumb";
 
 export function renderWelcome(main: HTMLElement): void {
   clear(main);
@@ -19,7 +22,8 @@ export function renderWelcome(main: HTMLElement): void {
     el("p", { class: "step-lede" }, t("welcome.lede1")),
     el("p", { class: "step-lede" }, t("welcome.lede2")),
     el("div", { class: "note info" }, [
-      el("strong", {}, t("welcome.noAccount")),
+      // The claim links the page that backs it up.
+      el("a", { href: "#/privacy" }, el("strong", {}, t("welcome.noAccount").trimEnd())), " ",
       t("welcome.noAccountRest"),
     ]),
     el("button", {
@@ -38,6 +42,9 @@ export function renderWelcome(main: HTMLElement): void {
         link: el("a", { href: "#/browse" }, t("welcome.ratherNotLink")),
       })
     ),
+    // A returning visitor's real starting point, so it sits under the start
+    // button rather than below the whole pitch.
+    savedSection,
   ]);
 
   main.append(
@@ -66,21 +73,72 @@ export function renderWelcome(main: HTMLElement): void {
       el("h3", { style: "margin-top:1.8rem" }, t("welcome.whyTitle")),
       el("p", {}, t("welcome.why1")),
       el("p", {}, t("welcome.why2")),
+      // The word this whole app leans on sits next door to nativism, so the
+      // pitch for native plants ends by saying what "native" never means — the
+      // same stance the About page carries, in the same words, linking to the
+      // page that makes the case (#/native).
+      // Its own look rather than a `.note`: the welcome page already has one
+      // tinted note (no account, no tracking), and this is a stance, not a
+      // footnote — so it gets a card with a brand rule, a title of its own and
+      // a real button into the page.
+      el("aside", { class: "native-callout", "aria-labelledby": "native-callout-title" }, [
+        el("p", { class: "native-callout-title", id: "native-callout-title" }, t("about.stance.native")),
+        // The stance's body sentence, minus its inline link: here the link is
+        // the button below, not a word in the sentence.
+        el("p", { class: "native-callout-body" }, tx("about.stance.nativeBody", { link: "" })),
+        // No arrow: the outline already says "button", and the French label
+        // ("Plantes indigènes, pas nativisme") needs the room at 360 px.
+        el("a", { class: "native-callout-link", href: "#/native" }, t("about.stance.nativeLink")),
+      ]),
     ]),
 
-    savedSection
+    moreToExplore()
   );
 
   listSpots()
     .then((spots) => {
       if (!spots.length || !savedSection.isConnected) return;
       savedSection.style.display = "";
-      savedSection.style.marginTop = "1.5rem";
+      savedSection.style.marginTop = "1rem";
       savedSection.append(
-        el("h3", {}, t("welcome.savedTitle")),
         el("button", { class: "btn btn-secondary btn-block", onClick: () => navigate("saved") },
           tn("welcome.openSaved", spots.length))
       );
     })
     .catch(() => {});
+}
+
+/**
+ * The rest of the app, one row each: a picture, a name, one line. Below the
+ * pitch so the start button stays the only call to action above the fold; each
+ * row is a link to the page that has the depth.
+ */
+function moreToExplore(): HTMLElement {
+  const way = (href: string, thumb: HTMLElement, title: string, line: string) =>
+    el("a", { class: "card welcome-way", href }, [
+      thumb,
+      el("span", { class: "welcome-way-text" }, [
+        el("strong", {}, title),
+        el("span", {}, line),
+      ]),
+    ]);
+  const thumbAttrs = { attrs: { class: "plant-photo welcome-way-thumb" } };
+  const map = el("span", { class: "plant-photo welcome-way-thumb welcome-way-map", "aria-hidden": "true" }, [
+    el("img", { src: `${import.meta.env.BASE_URL}maps/pnw.svg`, alt: "", loading: "lazy" }),
+  ]);
+  return el("section", { class: "welcome-more" }, [
+    el("h3", {}, t("welcome.moreTitle")),
+    el("div", { class: "welcome-ways" }, [
+      way("#/wildlife", wildlifeThumb("monarch", "butterfly", { px: 56, attrs: { class: "wildlife-photo welcome-way-thumb" } }),
+        t("welcome.way.wildlife"), t("welcome.way.wildlifeLine")),
+      way("#/invasives", invasiveThumb("buddleja-davidii", "shrub", thumbAttrs),
+        t("welcome.way.invasives"), t("welcome.way.invasivesLine")),
+      way("#/lookalikes", lookalikeThumb("pyrus-calleryana", "tree", thumbAttrs),
+        t("welcome.way.lookalikes"), t("welcome.way.lookalikesLine")),
+      way("#/planting", plantThumb("quercus-alba", "tree", thumbAttrs),
+        t("welcome.way.planting"), t("welcome.way.plantingLine")),
+      way("#/regions", map,
+        tn("welcome.way.regions", REGIONS.length), t("welcome.way.regionsLine")),
+    ]),
+  ]);
 }

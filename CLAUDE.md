@@ -96,6 +96,18 @@ or two figures), link the rest. If something has no page yet and deserves more
 than its row, give it one. This is a baseline expectation for every new piece
 of UI, not a preference to weigh.
 
+## Cross-link what a page names
+
+When a page names another part of the app — a region, a plant, the invasives,
+Settings, the Native page — link the name. A reader who didn't know the part
+existed finds it, and no page is a dead end: each ends with a way on. Two
+limits keep it from turning into a page of blue:
+
+- **One link per target per page.** The first mention links; later ones don't.
+- **Links in running text stay quiet.** They keep the text's color with a soft
+  underline (`styles.css`, "Links in running text"). Buttons and chips are the
+  calls to action; a paragraph that is only a way on gets `.more-link`.
+
 ## Mobile-first UI: buttons stay on one line
 
 This is a mobile-first PWA — assume a narrow phone (≈360 px wide) is the common
@@ -229,6 +241,20 @@ is a page bug (`overflow-x: clip` on `body` should make it impossible) — if a
 capture comes out wide, find and fix the overflowing element; don't publish
 the shot.
 
+## A photo nobody chose is never silent
+
+A plant or animal's photo is either one a person picked (`hero-photos.json`,
+`wildlife-photos.json`) or the one iNaturalist's own taxon page opens with
+(`inat-heroes.json` and its siblings). Nothing else: `hero:inat` never reaches
+further down a gallery, because the third photo of persimmon is its seeds.
+
+When iNaturalist's pick can't be republished, the subject shows its drawing and
+lands in `docs/hero-photos/needs-review.json`. **A PR that adds to that file
+says so in its description**: name each subject, and either pick its photo
+(`npm run hero:harvest -- --queue`, then `npm run hero:review`) or say it's
+left for review. The `Fill gaps` check pins the same list as a PR comment and
+warns; the description is where a reviewer reads it first.
+
 ## Every PR carries its changelog entry
 
 `CHANGELOG.md` (Keep a Changelog format) is the single source of the public
@@ -306,14 +332,18 @@ Three more conventions the compiler understands:
   section name — the same shape as this file's `Internal:` and Keep a
   Changelog 2.0's `**Breaking:**`. A leading word that *isn't* a section name
   is just prose ("Note: …"), so a prefix can never break the build. The names
-  are the `label`s in `app/scripts/guide-catalog.mjs` (currently Finder,
-  Wildlife, Regions, Plants, Planting, Look-alikes, Privacy, Sources); most
+  are the `label`s in `app/scripts/guide-catalog.mjs` (currently Matches, Backups,
+  Wildlife, Regions, Conservation, Plants, Planting, Look-alikes, Invasives,
+  Native swaps, Vegetables, Privacy, Sources); most
   entries need no prefix at all. Don't force one — a change that isn't really
   about a section stays plain.
-- **Link what you describe.** When an entry mentions something with an
-  address — a page, a section — link it with the full live URL
-  (`https://indigene.app/wildlife`), so a reader who
-  didn't know the feature existed can go straight to it. Use the **path** form,
+- **Link what you describe, on the words that describe it.** When an entry
+  mentions something with an address — a page, a section, a plant — put the
+  link on its name: `[Ireland](https://indigene.app/regions/ireland) is on the
+  map`, not `Ireland is on the map. https://indigene.app/regions/ireland`. A
+  typed-out URL is a line nobody reads; the compiler still links one, but warns.
+  An entry with no link of its own gets its section prefix linked instead, so
+  one link per entry is plenty. Use the full live URL and the **path** form,
   not the `#/` one: every shareable page has a real file behind it
   (`scripts/prerender.mjs`), and only that address previews as the page when
   someone passes the link on. Keep `#/` only for a sub-route that has no file

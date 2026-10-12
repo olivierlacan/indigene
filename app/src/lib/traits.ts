@@ -11,13 +11,14 @@
 // by side is what makes either one mean anything.
 import type { Plant } from "../types";
 import type { TKey } from "../locales/en";
+import { isPioneer } from "./pioneers";
 
-export type TraitId = "essential" | "no-water" | "water-first" | "inedible" | "thorny" | "stinging" | "spreads" | "deer";
+export type TraitId = "essential" | "pioneer" | "no-water" | "water-first" | "inedible" | "thorny" | "stinging" | "spreads" | "deer";
 
 export interface Trait {
   id: TraitId;
-  /** The `.badge` colour: brand green, amber, red, or quiet grey. */
-  tone: "keystone" | "nowater" | "caution" | "neutral";
+  /** The `.badge` colour: brand green, concrete slate, amber, red, or quiet grey. */
+  tone: "keystone" | "pioneer" | "nowater" | "caution" | "neutral";
   label: TKey;
   meaning: TKey;
 }
@@ -38,6 +39,15 @@ export const TRAIT_GROUPS: { title: TKey; traits: Trait[] }[] = [
     ],
   },
   {
+    // One label, but its own group: the others answer "what will this plant do
+    // to me and to the wildlife", and this one answers "will it live in the bad
+    // patch at all" — the question a reader with a kerb gap actually has.
+    title: "traits.group.ground",
+    traits: [
+      { id: "pioneer", tone: "pioneer", label: "badge.pioneer", meaning: "traits.pioneer" },
+    ],
+  },
+  {
     title: "traits.group.handling",
     traits: [
       { id: "inedible", tone: "neutral", label: "badge.petToxic", meaning: "traits.toxic" },
@@ -54,10 +64,20 @@ export function traitById(id: string): Trait | undefined {
   return BY_ID.get(id as TraitId);
 }
 
-/** The labels this plant wears, in the order they're shown under its name. */
-export function traitsFor(p: Plant): Trait[] {
+/**
+ * The labels this plant wears, in the order they're shown under its name.
+ *
+ * `regionId` is the one argument that changes the answer by *where you are
+ * reading*: the pavement-pioneer list is a claim about one region's conditions
+ * (`data/pioneers.ts`), so a plant can carry the label on one roster and not on
+ * another. Callers that don't know their region simply don't get that label,
+ * which is the safe direction — a card never promises toughness we only
+ * documented somewhere else.
+ */
+export function traitsFor(p: Plant, regionId?: string): Trait[] {
   const ids: TraitId[] = [];
   if (p.keystone) ids.push("essential");
+  if (regionId && isPioneer(regionId, p.id)) ids.push("pioneer");
   ids.push(p.noWaterEstablish ? "no-water" : "water-first");
   if (p.filters.petToxic) ids.push("inedible");
   if (p.filters.thorny) ids.push("thorny");

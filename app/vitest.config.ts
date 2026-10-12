@@ -17,6 +17,11 @@ import { defineConfig } from "vitest/config";
 // only standing in Vancouver revealed it. The tests here pin the rules that
 // decision rests on, so the next edit to them fails loudly and offline.
 //
+// The one stand-in is for the browser, never for our code: the backup round
+// trip (`lib/backup.roundtrip.test.ts`) runs the app's own stores against
+// fake-indexeddb, a complete in-memory IndexedDB, because what it guards — a
+// garden surviving the trip between devices — only exists in those stores.
+//
 // So: no network, no snapshots, no mocking of our own modules. A test here
 // either feeds a pure function a literal and checks the answer, or it feeds the
 // real bundled region data a coordinate and checks which list comes back.

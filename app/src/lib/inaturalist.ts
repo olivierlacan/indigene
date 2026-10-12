@@ -493,6 +493,21 @@ export function pickTaxon(results: unknown, name: string): number | null {
 }
 
 /**
+ * Whether a taxon record fetched by id (`/v1/taxa/{id}`) is still a fit for
+ * `name`: active, and of the rank the name implies. A taxon iNaturalist has
+ * retired, or a variety where we asked for a species, fails — Wikidata keeps
+ * such ids long after iNaturalist moves on. A different *name* on an active
+ * taxon of the right rank passes: that is iNaturalist's synonymy at work, the
+ * same thing `pickTaxon` accepts.
+ */
+export function inatIdHolds(row: unknown, name: string): boolean {
+  const r: any = row;
+  if (!r || r.is_active === false || num(r.id) == null) return false;
+  const expectedRank = searchName(name).includes(" ") ? "species" : "genus";
+  return str(r.rank) === expectedRank;
+}
+
+/**
  * Resolve a scientific name to an iNaturalist taxon id, or null if it can't be
  * matched. One network call to the taxa endpoint; rejects only on network/HTTP
  * failure, so a caller can tell "no signal" from "no such taxon" (null).

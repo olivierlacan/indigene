@@ -40,15 +40,18 @@
 //     "Carpinus betulus"                    → the Atlantic paragraphs
 //     "Carpinus betulus@france-continental" → the Continental ones
 //
-// The qualified key wins when the caller says which region it is showing;
-// everything else falls through to the plain key, which is why 207 of the 229
-// taxa need only one entry. A qualified entry is **complete for its region** —
-// its own four paragraphs and its own wildlife and look-alike ties — rather than
-// a patch over the plain one, so there is never a half-and-half row to reason
-// about.
+// Every plant paragraph is qualified with its region in the end: a locale file
+// is written from one region's English, and `locales/prose.fr/index.ts` files
+// its plain keys under that region. A plain key used to answer for every
+// region's row of the taxon, which handed a French reader in Ireland or
+// Michigan another list's paragraphs — about 145 rows per field. Now a row
+// with no paragraph for its own region shows its English, and the page says
+// so. A qualified entry is **complete for its region** — its own four
+// paragraphs and its own wildlife and look-alike ties — so there is never a
+// half-and-half row to reason about.
 //
-// Callers that don't know their region (there are none today) simply get the
-// plain key, which is a real translation of a real row — not a blank.
+// Look-alikes, invasives, wildlife and swaps aren't region rows: their keys
+// stay plain and answer everywhere.
 import type { AlternativeLink, Invasive, InvasiveMark, InvasiveRemoval, Lookalike, LookalikeLink, Ornamental, Plant, SupportLink, SwapEdge, TellApart, Wildlife } from "../types";
 import { getLang } from "./i18n";
 
@@ -63,6 +66,11 @@ export interface TaxonProse {
   propagationNote?: string;
   /** Wildlife only: the "what it is and why it matters" paragraph. */
   blurb?: string;
+  /** Pavement pioneers: the harsh place this plant shrugs off, here
+   *  (`PioneerEntry.note`). Region-qualified like the rest — coyote brush on a
+   *  Los Angeles freeway bank and on a Monterey building site are two
+   *  sentences, and the qualified key is what keeps them apart. */
+  pioneerNote?: string;
   /** Wildlife ties, keyed by the *other* end of the tie — a plant's entry keys
    *  its notes by `wildlifeId`, so one plant's ties live together. */
   supportNotes?: Record<string, string>;
@@ -237,6 +245,26 @@ export function wildlifeLead(w: Wildlife): string {
 /** The plant-specific "why this animal cares about this plant" line. */
 export function supportNote(plantLatin: string, link: SupportLink, regionId?: string): string {
   return entry(plantLatin, regionId)?.supportNotes?.[link.wildlifeId] ?? link.note;
+}
+
+// ---- Pavement pioneers ----
+// One sentence per row, keyed under the plant's own scientific name and
+// qualified by region, because the row *is* regional: the same birch is a
+// building-site tree in Brittany and a moraine tree in the Alps.
+
+/** The "harsh place it does this in" line, in the reader's language. */
+export function pioneerNote(plantLatin: string, note: string, regionId?: string): string {
+  return entry(plantLatin, regionId)?.pioneerNote ?? note;
+}
+
+/** Is any of the pioneer writing on this page still in the English it was
+ *  authored in? Asked of the whole section at once, like its neighbours. */
+export function pioneersUntranslated(
+  items: { latin: string }[],
+  regionId?: string,
+): boolean {
+  if (getLang() === "en" || !items.length) return false;
+  return items.some((p) => entry(p.latin, regionId)?.pioneerNote === undefined);
 }
 
 // ---- Look-alikes ----

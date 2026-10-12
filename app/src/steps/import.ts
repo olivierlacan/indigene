@@ -113,7 +113,7 @@ export async function renderImport(main: HTMLElement): Promise<void> {
     body.append(status);
     let result: OwnSightings;
     try {
-      result = await ownSightings(login!);
+      result = await ownSightings(login!, spot);
     } catch (err) {
       if (mine !== showing) return;
       status.className = "note warn";

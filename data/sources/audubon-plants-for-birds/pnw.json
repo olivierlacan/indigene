@@ -1,0 +1,31 @@
+{
+  "source": "National Audubon Society — Plants for Birds",
+  "url": "https://www.audubon.org/native-plants",
+  "note": "curated = Audubon's own picks for the ZIP; full = every species BONAP records as native to that ZIP's county. The two are different kinds of list and must not be pooled.",
+  "hasFloraTier": true,
+  "region": "pnw",
+  "scope": [
+    "97212",
+    "98103"
+  ],
+  "harvested": "2026-10-10",
+  "counts": {
+    "ours": 106,
+    "theirPicks": 47,
+    "theirFlora": 361,
+    "oursAmongTheirPicks": 30,
+    "theirPicksWeLack": 17,
+    "generaNewToUs": 9
+  },
+  "generaNewToUs": [
+    "allium",
+    "artemisia",
+    "balsamorhiza",
+    "campanula",
+    "ericameria",
+    "helianthus",
+    "impatiens",
+    "scrophularia",
+    "trifolium"
+  ]
+}

@@ -39,6 +39,7 @@ import { renderAbout } from "./steps/about";
 import { renderCrops } from "./steps/crops";
 import { renderNative } from "./steps/native";
 import { renderPostsIndex, renderPost } from "./steps/posts";
+import { renderPeople } from "./steps/people";
 import { renderLlm } from "./steps/llm";
 import { renderHomegrown } from "./steps/homegrown";
 import { renderTraits } from "./steps/traits";
@@ -131,6 +132,8 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   film: { fn: renderFilm, labelKey: "steps.film", inFlow: false },
   // Writing tied to a date: `#/posts` lists them, `#/posts/<slug>` is one.
   posts: { fn: renderPostsIndex, labelKey: "steps.posts", inFlow: false },
+  // The peoples who named and tended these plants, and their own sources.
+  people: { fn: renderPeople, labelKey: "steps.people", inFlow: false },
 };
 
 /**

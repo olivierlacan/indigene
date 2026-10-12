@@ -62,6 +62,7 @@ function ipd2026Body(key: string): HTMLElement[] {
     el("p", {}, tx(pk(key, "next"), {
       tell: el("a", { href: "https://github.com/olivierlacan/indigene/issues", target: "_blank", rel: "noopener" }, t(pk(key, "tell"))),
     })),
+    el("p", { class: "more-link" }, el("a", { href: "#/people" }, t(pk(key, "peopleLink")))),
   ];
 }
 

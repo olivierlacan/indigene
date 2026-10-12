@@ -189,6 +189,8 @@ try {
     // Counted from SOURCES in steps/native.ts — like the crops card, the figure
     // says the page brings its evidence, including the side that disagrees.
     { slug: "native", title: "Native plants, not nativism", subtitle: "where a plant evolved \u2014 never borders, never people", stat: `<b>${nativeSources}</b> sources \u00b7 both sides of the argument` },
+    // The peoples page leads with what it does, and what it doesn't.
+    { slug: "people", title: "Peoples and plants", subtitle: "who named and tended these plants, in their own words" },
     // Dated writing. While there is one post the card names it, because the post
     // is what gets shared; with a second, posts get cards of their own and this
     // one says how many there are.

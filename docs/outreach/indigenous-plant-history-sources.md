@@ -75,7 +75,7 @@ framing), Sturtevant, Herrick, Tantaquidgeon (medicinal by design).
 
 ## USDA guide coverage
 
-Of our 291 North American plants, **128 have a USDA plant guide and 109 of
+Of our 375 North American plants, **156 have a USDA plant guide and 130 of
 those say something about Indigenous use**. Each plant's best guide is in
 [`usda-plant-guides.tsv`](usda-plant-guides.tsv), with rough counts of food,
 fibre and medicinal words in that passage and the peoples it names. The counts
@@ -87,11 +87,13 @@ passage before anything is written from it.
 | Mid-Atlantic | 44 | 30 | 25 |
 | North Michigan | 46 | 28 | 21 |
 | St Lawrence | 55 | 32 | 26 |
-| Pacific Northwest | 106 | 45 | 39 |
-| Central Coast | 64 | 27 | 25 |
-| Southern California | 64 | 21 | 20 |
+| Pacific Northwest | 106 | 46 | 40 |
+| Central Coast | 64 | 29 | 26 |
+| Southern California | 64 | 23 | 21 |
 | Florida, north & central | 39 | 25 | 22 |
 | Florida, south | 21 | 6 | 6 |
+| Central Texas | 67 | 23 | 16 |
+| Chicago & the Corn Belt Prairie | 63 | 36 | 29 |
 
 What the scan shows:
 
@@ -110,6 +112,8 @@ What the scan shows:
   *cerulea*.
 - **South Florida is thin**: 6 of 21. Austin's *Florida Ethnobotany* is the
   fallback.
+- **Central Texas is thinner than it looks**: 16 guides mention Indigenous
+  use, but pecan's and mesquite's notes are medicinal only.
 
 ## Per region
 

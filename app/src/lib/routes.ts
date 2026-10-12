@@ -69,6 +69,7 @@ export const APP_STEPS = [
   "import",
   "film",
   "posts",
+  "people",
 ] as const;
 
 export type AppStep = (typeof APP_STEPS)[number];
@@ -131,6 +132,7 @@ export const SHAREABLE_INDEXES: readonly string[] = [
   "film",
   "traits",
   "posts",
+  "people",
 ];
 
 const STEP_SET = new Set<string>(APP_STEPS);

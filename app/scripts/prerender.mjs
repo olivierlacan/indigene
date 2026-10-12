@@ -430,6 +430,12 @@ async function collectPages(load) {
     image: pageCard("native"),
     imageAlt: "Native plants, not nativism — native is about where a plant evolved, never about borders or people",
   });
+  // The peoples who named and tended these plants, and where to read their
+  // own accounts. The lede is the description: it says what the page won't do.
+  add("people", en["people.docTitle"], en["people.lede"], {
+    image: pageCard("people"),
+    imageAlt: "Peoples and plants — the peoples who named, ate and tended these plants, and their own sources",
+  });
   // Writing tied to a date. Each post is its own file, so a shared link
   // previews as the post, with its own lede as the description.
   const { POSTS } = await load("/src/data/posts.ts");

@@ -583,7 +583,8 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     : "gps";
 
   const mapBlock = el("div", {}, [
-    el("div", { style: "margin:0.9rem 0" }, [mapWrap]),
+    el("div", { style: "margin:0.9rem 0 0.5rem" }, [mapWrap]),
+    el("p", {}, t("location.mapHint")),
     status,
     spotNote,
     coverageOut,
@@ -677,7 +678,7 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     el("p", { class: "step-lede" }, t("location.lede")),
     whyThis(t("location.whyTitle"), t("location.why")),
     locateBtn,
-    privacyNote(t("location.privacy")),
+    privacyNote(t("location.privacy"), undefined, "location"),
     searchCard,
     mapBlock,
     regionCard,

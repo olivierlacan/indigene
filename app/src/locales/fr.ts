@@ -610,20 +610,20 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // Localisation (étape 1).
   // ---------------------------------------------------------------------
-  "location.title": "Où êtes-vous ?",
-  "location.lede":
-    "Localisez-vous, puis vérifiez la carte : si le repère n'est pas là où vous êtes vraiment, faites-le glisser ou touchez le bon endroit. Restez appuyé pour l'ajuster finement.",
-  "location.whyTitle": "Pourquoi l'endroit exact compte-t-il ?",
+  "location.title": "Où allez-vous planter ?",
+  "location.lede": "Votre lieu décide des plantes indigènes que nous proposons.",
+  "location.whyTitle": "Pourquoi votre lieu compte",
   "location.why":
-    "« Indigène » veut toujours dire indigène de quelque part. Vos coordonnées déterminent la liste régionale qui s'applique et vont chercher le sol, le climat et l'écorégion (une zone qui a son propre climat, son sol et ses plantes sauvages) de cet endroit précis — la même espèce peut être essentielle dans une région et une étrangère dans la suivante.",
+    "« Indigène » veut toujours dire indigène de quelque part. Nous consultons le sol, le climat et l'écorégion de ce lieu : une zone qui a son propre climat, son sol et ses plantes sauvages.",
   "location.use": "📍 Utiliser ma position",
   "location.update": "📍 Actualiser ma position",
   "location.locating": "Localisation…",
   "location.none": "Pas encore de position.",
-  "location.privacy":
-    "Votre position ne sert qu'à trouver ce qui pousse ici, uniquement quand vous le demandez, et ne quitte jamais votre appareil autrement que sous forme de requêtes anonymes",
+  "location.privacy": "Envoyée anonymement, seulement quand vous touchez le bouton.",
+  "location.mapHint":
+    "Faites glisser ou touchez la carte pour placer le repère sur votre lieu. Restez appuyé pour l'ajuster finement.",
   "location.mapLabel":
-    "Carte. Le repère reste au centre. Faites glisser ou touchez pour amener votre lieu dessous, ou utilisez les flèches du clavier pour l'ajuster — maintenez Maj pour de plus grands pas.",
+    "Carte. Le repère reste au centre. Faites glisser ou touchez pour amener votre lieu dessous, ou utilisez les flèches du clavier pour l'ajuster. Maintenez Maj pour de plus grands pas.",
   "location.osmAttribution": "© les contributeurs d'OpenStreetMap",
   "location.gpsFix": "point GPS",
   "location.savedHere": "Enregistré ici",
@@ -651,47 +651,47 @@ export const fr: Dict = {
   "location.dir.sw": "vers le sud-ouest",
   "location.dir.w": "vers l'ouest",
   "location.dir.nw": "vers le nord-ouest",
-  "location.noGeolocation": "Cet appareil ne peut pas partager sa position — essayez la recherche par commune.",
-  "location.denied": "Position refusée — essayez la recherche par commune.",
-  "location.noFix": "Impossible d'obtenir un point — réessayez, ou passez à la recherche par commune.",
+  "location.noGeolocation":
+    "Cet appareil ne peut pas partager sa position. Essayez la recherche par commune.",
+  "location.denied": "Position refusée. Essayez la recherche par commune.",
+  "location.noFix": "Impossible d'obtenir un point. Réessayez, ou passez à la recherche par commune.",
   "location.searchTitle": "Pas de GPS ? Cherchez votre commune",
   "location.searchLabel": "Votre commune, ville ou code postal",
   "location.searchPlaceholder": "ex. Nantes, ou 44000",
   "location.search": "Rechercher",
   "location.searching": "Recherche…",
   "location.searchNoResults":
-    "Nom introuvable. Essayez la commune et la région ensemble — « Saint-Denis Réunion » par exemple — ou le code postal qui figure sur votre courrier.",
+    "Introuvable. Essayez la commune avec sa région, par exemple « Saint-Denis Réunion », ou un code postal.",
   "location.searchOffline":
-    "La recherche de lieux a besoin d'une connexion et nous n'avons pas pu l'atteindre. Si le GPS fonctionne, revenez à votre position — ou choisissez votre région à la main.",
+    "La recherche de communes a besoin d'une connexion. Utilisez votre position, ou choisissez votre région.",
   "location.pinSet": "Repère placé au centre de {place}. ",
   "location.pinSetRest":
-    "C'est suffisant pour choisir votre région, votre climat et votre liste de plantes — et l'estimation du soleil viendra de vous à l'étape suivante, pas de la carte. Seules les lectures de sol et de pente tiennent à l'endroit exact : si vous êtes loin du centre, faites glisser le repère à peu près sur votre terrain.",
+    "C'est suffisant pour votre région et votre liste. Pour le sol et la pente, faites glisser le repère à peu près sur votre terrain.",
   "location.pinSetUncovered":
-    "Repère placé au centre de {place} — mais nous n'avons pas encore de liste de plantes pour cette zone.",
+    "Repère placé au centre de {place}, mais nous n'avons pas encore de liste de plantes pour cette zone.",
   "location.noListHere": "Nous n'avons pas encore de liste de plantes pour cette zone.",
   "location.coverage":
-    "Les listes d'Indigene sont établies région par région, et ce lieu est en dehors de toutes — nous n'aurions donc rien d'honnête à vous recommander ici. Les mesures de soleil et de sol fonctionnent toujours. En attendant, vous pouvez :",
+    "Les listes d'Indigene vont région par région, et ce lieu est en dehors de toutes. Les mesures de soleil et de sol fonctionnent toujours. En attendant :",
   "location.coverageBrowse": "Parcourir les plantes indigènes des régions couvertes",
-  "location.coverageBrowseRest": " pour voir le genre de recommandations qu'Indigene donne.",
+  "location.coverageBrowseRest": " pour voir ce qu'Indigene propose.",
   "location.coverageAsk": "Demander votre région sur GitHub",
-  "location.coverageAskRest":
-    " — ouvrez un ticket avec votre code postal ou votre commune. Ou ajoutez la région vous-même ; les contributions sont les bienvenues.",
+  "location.coverageAskRest": " avec votre commune ou votre code postal, ou ajoutez la région vous-même.",
   "location.regionTitle": "🗺️ Choisissez votre région",
   "location.regionLede":
-    "Si vous savez déjà dans laquelle de nos régions — ou dans quelle écorégion — vous vous trouvez, vous pouvez sauter la carte. À savoir : sans point sur la carte, nous ne pouvons pas consulter votre sol, votre pluviométrie ni le froid de vos hivers. Vous répondrez donc vous-même aux questions de soleil et d'humidité, et la liste s'appuiera sur ce que vous nous direz.",
+    "Vous connaissez votre région ? Sautez la carte. Sans point sur la carte, nous ne pouvons pas consulter votre sol, votre pluie ni le froid de vos hivers : la liste s'appuie alors sur vos réponses.",
   "location.regionShowAll": "Ce n'est pas celle-ci ? Afficher toutes les régions",
-  "location.spotRemembered": "Le repère est là où vous l'aviez laissé — {link}.",
+  "location.spotRemembered": "Le repère est là où vous l'aviez laissé ({link}).",
   "location.rememberedLink": "gérer ce qui est retenu",
-  "location.regionDefault": "Votre région de départ — {link}.",
+  "location.regionDefault": "Votre région de départ ({link}).",
   "location.regionDefaultLink": "la changer dans les Réglages",
-  "location.regionRemembered": "La région choisie la dernière fois — {link}.",
+  "location.regionRemembered": "La région choisie la dernière fois ({link}).",
   "location.switchFromGps": "Vous ne voulez pas utiliser votre position ? {a} ou {b}.",
   "location.switchFromOther": "Vous avez changé d'avis ? {a} ou {b}.",
   "location.switchZip": "cherchez votre commune",
   "location.switchGps": "utilisez le GPS",
   "location.switchRegion": "choisissez une région",
   "location.pickFirst": "Choisissez d'abord une région.",
-  "location.usingList": "Liste {region} retenue — votre choix.",
+  "location.usingList": "Liste {region} retenue, selon votre choix.",
   "location.back": "Retour",
   "location.next": "Suite : mesurer le soleil →",
   "location.moveTitle": "Déplacer {label}",

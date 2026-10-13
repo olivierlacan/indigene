@@ -31,6 +31,7 @@ import type { TKey } from "../locales/en";
 import { NAME_SOURCE_INFO } from "../lib/names";
 import { CONFIDENCE_ROUTE } from "../components/confidence-meter";
 import type { ReferenceList } from "../lib/names";
+import { pageArt } from "../components/page-art";
 
 const REPO_URL = "https://github.com/olivierlacan/indigene";
 const MATRIX_DOI = "https://doi.org/10.1002/ece3.73004";
@@ -86,6 +87,7 @@ export function renderSources(main: HTMLElement): void {
 
   main.append(
     withContents(el("article", { class: "privacy-page sources-page" }, [
+      pageArt("sources"),
       el("h2", { class: "step-title" }, t("sources.title")),
       el("p", { class: "step-lede" }, t("sources.lede")),
 

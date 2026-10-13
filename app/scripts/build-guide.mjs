@@ -31,6 +31,7 @@ import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { SECTIONS, SEGMENT_TO_ID, matchLabels, SECTION_LABELS, APP, PREFIX } from "./guide-catalog.mjs";
+import { pageArtSvg, PAGE_ART_CSS } from "../src/components/page-art-svg.mjs";
 import { autolink } from "./_changelog.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -250,6 +251,8 @@ function shell({ title, description, canonical, body, root = "../" }) {
   }
 }
 * { box-sizing: border-box; }
+/* The drawing over the title (src/components/page-art-svg.mjs). */
+${PAGE_ART_CSS}
 body {
   margin: 0; background: var(--bg); color: var(--ink);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -462,7 +465,8 @@ function renderIndex(published, historyById) {
       "A plain-words guide to Indigene, the free native-plant finder: what each " +
       "part is for and how to use it.",
     canonical: SITE,
-    body: `<h1>How Indigene works</h1>
+    body: `${pageArtSvg("guide")}
+<h1>How Indigene works</h1>
 <p class="lede">Indigene finds the plants that naturally belong where you live.
 This guide walks through each part of the app in plain words — what it’s for,
 how to use it, and where to learn more. Start anywhere.</p>

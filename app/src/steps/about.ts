@@ -27,6 +27,7 @@ import { navigate } from "../state";
 import { ISSUES_URL } from "../lib/plain";
 import { t, tx } from "../lib/i18n";
 import type { TKey } from "../locales/en";
+import { pageArt } from "../components/page-art";
 
 const REPO_URL = "https://github.com/olivierlacan/indigene";
 const MIT_URL = "https://github.com/olivierlacan/indigene/blob/main/LICENSE";
@@ -59,6 +60,7 @@ export function renderAbout(main: HTMLElement): void {
 
   main.append(
     withContents(el("article", { class: "privacy-page" }, [
+      pageArt("about"),
       el("h2", { class: "step-title" }, t("about.title")),
       el("p", { class: "step-lede" }, t("about.lede")),
 

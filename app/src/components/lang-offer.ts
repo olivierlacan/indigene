@@ -1,14 +1,17 @@
-// A one-line offer to read the app in French, for a browser that lists French
-// but landed on English — French second in the browser's list, say.
+// A one-line offer to read the app in the other language, in two cases:
 //
-// Only for a reader who has never chosen a language. Someone who picked English
-// in Settings said what they want; someone who picked French doesn't need it.
+//  - A `?lang=` link opened the app in a language that isn't the reader's own
+//    (`homeLang`: their Settings pick, else their browser). It offers theirs
+//    back. Kept, it's remembered as their pick.
+//  - A browser that lists French but landed on English — French second in the
+//    browser's list, say — and a reader who has never chosen. Dismissed once,
+//    this one stays gone for good on this device.
 //
-// It speaks French because that's who it's for. Dismissed once, it stays gone
-// for good on this device; taken, the language switch removes it, and the
-// stored pick (`setLang`) means it never has a reason to come back.
+// It speaks the language it offers, because that's who it's for. Taken, the
+// language switch removes it, and the stored pick (`setLang`) means it never
+// has a reason to come back.
 import { el } from "../ui";
-import { getLang, langChosen, onLangChange, setLang } from "../lib/i18n";
+import { LOCALE, getLang, homeLang, langChosen, onLangChange, setLang, type Lang } from "../lib/i18n";
 import { flagRow } from "./flags";
 
 const STORAGE_KEY = "indigene:lang-offer";
@@ -28,31 +31,45 @@ function browserSpeaksFrench(): boolean {
   return tags.some((tag) => String(tag ?? "").toLowerCase().split("-")[0] === "fr");
 }
 
+/** The offer's words, in the language it offers. */
+const WORDS: Record<Lang, { take: string; close: string; label: string }> = {
+  en: { take: "Read in English", close: "No thanks", label: "Language" },
+  fr: { take: "Lire en français", close: "Non merci", label: "Langue" },
+};
+
 /** Puts the offer just above `main`, once, if this reader is one it's for. */
 export function mountLangOffer(main: HTMLElement): void {
-  if (getLang() !== "en" || langChosen() || !browserSpeaksFrench() || dismissed()) return;
+  const shown = getLang();
+  const home = homeLang();
+  const fromLink = shown !== home;
+  const frenchHint = shown === "en" && !langChosen() && browserSpeaksFrench() && !dismissed();
+  if (!fromLink && !frenchHint) return;
 
-  const flag = flagRow(["FR"]);
+  const offer: Lang = fromLink ? home : "fr";
+  const words = WORDS[offer];
+  const flag = offer === "fr" ? flagRow(["FR"]) : null;
   flag?.setAttribute("aria-hidden", "true");
   flag?.removeAttribute("role");
 
-  const bar = el("aside", { class: "lang-offer", lang: "fr-FR", "aria-label": "Langue" }, [
-    el("button", { type: "button", class: "lang-offer-take", onclick: () => setLang("fr") }, [
-      flag,
-      "Lire en français",
-    ]),
+  const bar = el("aside", { class: "lang-offer", lang: LOCALE[offer], "aria-label": words.label }, [
+    el("button", { type: "button", class: "lang-offer-take", onclick: () => setLang(offer) }, [flag, words.take]),
     el(
       "button",
       {
         type: "button",
         class: "lang-offer-close",
-        "aria-label": "Non merci",
-        title: "Non merci",
+        "aria-label": words.close,
+        title: words.close,
         onclick: () => {
-          try {
-            localStorage.setItem(STORAGE_KEY, "dismissed");
-          } catch {
-            // Gone for this visit, at least.
+          if (fromLink) {
+            // Staying in the link's language is a choice too.
+            setLang(shown);
+          } else {
+            try {
+              localStorage.setItem(STORAGE_KEY, "dismissed");
+            } catch {
+              // Gone for this visit, at least.
+            }
           }
           bar.remove();
         },

@@ -2988,7 +2988,7 @@ export const en = {
   "posts.allPosts": "All posts",
   "posts.ipd2026.docTitle": "Plants that fed people first — Indigene",
   "posts.ipd2026.title": "Plants that fed people first",
-  "posts.ipd2026.when": "Indigenous Peoples' Day, 12 October 2026",
+  "posts.ipd2026.occasion": "Indigenous Peoples' Day",
   "posts.ipd2026.lede": "Before they were “native plants”, these were food, cord and cloth for the peoples who tended them. Those peoples are still here. So are the plants, and you can grow them.",
   "posts.ipd2026.plantsTitle": "Five to plant",
   "posts.ipd2026.camas.where": "Pacific Northwest",

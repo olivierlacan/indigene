@@ -7073,9 +7073,9 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .post-plant p { margin: 0.35rem 0 0; }
 
 /* --- Page drawings ---------------------------------------------------------- */
-/* The drawings over the titles of Reading, Privacy, Sources, About and Native
-   (components/page-art-svg.mjs). What's new and the Guide carry the same rules
-   in their own <style>; page-art.test.ts keeps the two copies alike. */
+/* The drawings over the titles of Reading, Privacy, Sources, About, Native and
+   Homegrown (components/page-art-svg.mjs). What's new and the Guide carry the
+   same rules in their own <style>; page-art.test.ts keeps the two copies alike. */
 .page-art {
   display: block;
   width: 100%;
@@ -7110,6 +7110,7 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .page-art .pa-dark, .page-art .pa-stripe { fill: none; stroke: var(--pa-dark); stroke-width: 1.2; opacity: 1; }
 .page-art .pa-stripe { stroke-width: 1.8; }
 .page-art .pa-body { fill: var(--pa-dark); }
+.page-art .pa-grey { fill: var(--pa-edge); }
 .page-art .pa-wing { fill: var(--pa-paper); opacity: 0.75; }
 .page-art .pa-ray { fill: none; stroke: var(--pa-gold); stroke-width: 3; stroke-linecap: round; }
 .page-art .pa-gold { fill: var(--pa-gold); }

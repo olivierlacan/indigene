@@ -1,5 +1,5 @@
 // The drawings at the head of the pages off the main path — Reading, What's
-// new, the Guide, Privacy, Sources, About, the Native page — in the manner of
+// new, the Guide, Privacy, Sources, About, the Native page, Homegrown — in the manner of
 // the basket on "Peoples and plants" (`people-art.ts`): flat shapes on a soft
 // green card, coloured by classes so they follow the theme.
 //
@@ -387,7 +387,51 @@ function native() {
   return s;
 }
 
-const SCENES = { reading, whatsNew, guide, privacy, sources, about, native };
+/** Homegrown National Park: a house whose lawn gives way to meadow, and an
+ *  oak where a chickadee has a caterpillar for its young. */
+function homegrown() {
+  let s = "";
+  // The house.
+  s += rect("paper", 22, 84, 52, 40, 1);
+  s += path("wood", "M14 87L48 60L82 87Z");
+  s += rect("wood", 52, 102, 11, 22, 1);
+  s += rect("egg", 30, 94, 13, 11, 1);
+  // What's left of the lawn: a short, flat strip.
+  s += rect("grass", 74, 118, 54, 6, 1);
+  // The meadow that replaced the rest.
+  s += grass(136, 6, 30, 26);
+  s += coneflower(150, 144, 64, -4);
+  s += coneflower(170, 178, 78, 4);
+  s += stem(198, BASE, 204, 80, 192, 58);
+  for (let i = 0; i < 6; i++) {
+    const q = along(198, BASE, 204, 80, 192, 58, 0.55 + i * 0.09);
+    s += circle("gold", q.x - 3, q.y - 2, 3 - i * 0.2);
+    s += circle("gold", q.x + 3, q.y - 3, 2.8 - i * 0.2);
+  }
+  s += grass(212, 5, 24, 20);
+  // The oak: a broad crown faded as one, the trunk and limbs over it.
+  s += `<g class="pa-soft">`;
+  for (const [cx, cy, r] of [
+    [262, 44, 30],
+    [236, 52, 20],
+    [290, 50, 22],
+    [248, 30, 18],
+    [278, 28, 18],
+  ]) s += circle("leaf", cx, cy, r);
+  s += `</g>`;
+  s += path("wood", "M256 124Q260 96 258 70L266 70Q264 96 270 124Z");
+  s += path("branch", "M261 92Q246 84 230 82M262 80Q280 70 290 64");
+  // The chickadee on the low limb, a caterpillar in its beak.
+  s += ellipse("paper", 234, 74, 8, 6.5, -10);
+  s += ellipse("grey", 238, 73, 6, 3.6, -20);
+  s += circle("body", 227, 67, 4.6);
+  s += circle("paper", 226, 68.5, 2.4);
+  s += path("grey", "M242 75L252 79L243 78Z");
+  for (let i = 0; i < 4; i++) s += circle("leaf", 220 - i * 2.6, 69 + i * 1.6, 1.7);
+  return s;
+}
+
+const SCENES = { reading, whatsNew, guide, privacy, sources, about, native, homegrown };
 
 /** The names a page can ask for. */
 export const PAGE_ART_NAMES = Object.keys(SCENES);
@@ -432,6 +476,7 @@ export const PAGE_ART_RULES = `
 .page-art .pa-dark, .page-art .pa-stripe { fill: none; stroke: var(--pa-dark); stroke-width: 1.2; opacity: 1; }
 .page-art .pa-stripe { stroke-width: 1.8; }
 .page-art .pa-body { fill: var(--pa-dark); }
+.page-art .pa-grey { fill: var(--pa-edge); }
 .page-art .pa-wing { fill: var(--pa-paper); opacity: 0.75; }
 .page-art .pa-ray { fill: none; stroke: var(--pa-gold); stroke-width: 3; stroke-linecap: round; }
 .page-art .pa-gold { fill: var(--pa-gold); }

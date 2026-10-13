@@ -14,6 +14,7 @@ import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { t, tx } from "../lib/i18n";
 import type { TKey } from "../locales/en";
+import { pageArt } from "../components/page-art";
 
 const HNP_URL = "https://homegrownnationalpark.org/";
 
@@ -35,6 +36,7 @@ export function renderHomegrown(main: HTMLElement): void {
 
   main.append(
     el("article", { class: "privacy-page" }, [
+      pageArt("homegrown"),
       el("h2", { class: "step-title" }, t("homegrown.title")),
       el("p", { class: "step-lede" }, t("homegrown.lede")),
 

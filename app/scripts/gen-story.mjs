@@ -2,14 +2,16 @@
 // (dark ground, green wash, the mark), the post's occasion, date and title, a
 // drawing, and a line of text.
 //
-//   node scripts/gen-story.mjs                 # the newest post
-//   node scripts/gen-story.mjs <post-slug>     # → docs/outreach/story-<slug>.png
+//   node scripts/gen-story.mjs                       # the newest post, in English
+//   node scripts/gen-story.mjs <post-slug>           # → docs/outreach/story-<slug>.png
+//   node scripts/gen-story.mjs <post-slug> --lang fr # → docs/outreach/story-<slug>-fr.png
 //
 // Everything comes from the app: the post from data/posts.ts, its words from
 // the locales, the tagline from data/brand.json, and the drawing from the
 // app's own components (bundled with esbuild, coloured with the dark theme's
 // tokens), so a story can't drift from the page it links to. The date is
-// written the way the English pages write it ("October 12, 2026").
+// written the way the pages write it in that language ("October 12, 2026",
+// "12 octobre 2026").
 //
 // STORIES says, per post, which drawing to use and which line to set under it.
 // A post with no entry gets its own lede and no drawing.
@@ -39,10 +41,12 @@ const H = 1920;
 const ENTRY = `
   import { peopleArt } from "./src/components/people-art.ts";
   import { en } from "./src/locales/en.ts";
+  import { fr } from "./src/locales/fr.ts";
   import { POSTS } from "./src/data/posts.ts";
   import BRAND from "./src/data/brand.json";
   export const art = { people: peopleArt };
-  export { en, POSTS, BRAND };
+  export const dicts = { en, fr };
+  export { POSTS, BRAND };
 `;
 const bundle = (format) =>
   build({
@@ -53,7 +57,16 @@ const bundle = (format) =>
 const [pageScript, esm] = await Promise.all([bundle("iife"), bundle("esm")]);
 const { POSTS } = await import("data:text/javascript;base64," + Buffer.from(esm).toString("base64"));
 
-const slug = process.argv[2] ?? POSTS[0].slug;
+/** Locale per language: the dictionary key and how dates are written. */
+const LANGS = { en: "en-US", fr: "fr-FR" };
+const args = process.argv.slice(2);
+const langAt = args.indexOf("--lang");
+const lang = langAt >= 0 ? args.splice(langAt, 2)[1] : "en";
+if (!LANGS[lang]) {
+  console.error(`No language "${lang}". Languages: ${Object.keys(LANGS).join(", ")}`);
+  process.exit(1);
+}
+const slug = args[0] ?? POSTS[0].slug;
 const post = POSTS.find((p) => p.slug === slug);
 if (!post) {
   console.error(`No post "${slug}". Posts: ${POSTS.map((p) => p.slug).join(", ")}`);
@@ -61,11 +74,11 @@ if (!post) {
 }
 const story = STORIES[post.key] ?? { line: `posts.${post.key}.lede` };
 const [y, m, d] = post.date.split("-").map(Number);
-const date = new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-US", {
+const date = new Date(Date.UTC(y, m - 1, d)).toLocaleDateString(LANGS[lang], {
   year: "numeric", month: "long", day: "numeric", timeZone: "UTC",
-});
+}).replace(/(\d) (\p{L})/u, "$1\u00a0$2");
 
-const out = join(root, "..", "docs", "outreach", `story-${post.slug}.png`);
+const out = join(root, "..", "docs", "outreach", `story-${post.slug}${lang === "en" ? "" : `-${lang}`}.png`);
 mkdirSync(dirname(out), { recursive: true });
 
 const mark = readFileSync(join(root, "public", "favicon.svg"), "utf8")
@@ -134,7 +147,10 @@ const html = `<!doctype html>
 <div class="foot"><span class="tagline" id="tagline"></span><span class="url">indigene.app</span></div>
 <script>${pageScript}</script>
 <script>
-  const { art, en, BRAND } = STORY;
+  const { art, dicts, BRAND } = STORY;
+  const lang = ${JSON.stringify(lang)};
+  const en = dicts[lang];
+  document.documentElement.lang = lang;
   const key = ${JSON.stringify(post.key)};
   const story = ${JSON.stringify(story)};
   document.getElementById("name").textContent = BRAND.name;
@@ -146,7 +162,7 @@ const html = `<!doctype html>
   document.getElementById("title").textContent = en["posts." + key + ".title"];
   if (story.art) document.getElementById("art").append(art[story.art]());
   document.getElementById("lede").textContent = en[story.line];
-  const t = BRAND.tagline.en;
+  const t = BRAND.tagline[lang];
   document.getElementById("tagline").textContent = t.charAt(0).toUpperCase() + t.slice(1);
 </script>
 `;

@@ -7015,3 +7015,59 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .welcome-way-map img { width: 100%; height: 100%; object-fit: cover; }
 .welcome-way-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.35; }
 .welcome-way-text span { font-size: 0.88rem; color: var(--ink-soft); }
+
+/* --- Peoples and plants ---------------------------------------------------- */
+/* The drawing over the title: a basket of camas and wild leek, harakeke and a
+   fawn lily (components/people-art.ts), in the theme's own colours. */
+.people-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 26rem;
+  margin: 0 auto 0.9rem;
+}
+.people-art .pa-ground { fill: var(--brand-bg); }
+.people-art .pa-soil { fill: var(--line); opacity: 0.6; }
+.people-art .pa-leaf { fill: var(--brand); }
+.people-art .pa-leaf-soft { opacity: 0.7; }
+.people-art .pa-stalk { fill: none; stroke: var(--brand); stroke-width: 2.2; stroke-linecap: round; }
+.people-art .pa-flax-flower { fill: #b8322a; }
+.people-art .pa-camas { fill: #5866c9; }
+.people-art .pa-basket { fill: var(--accent); }
+.people-art .pa-rim { fill: var(--accent); stroke: var(--bg); stroke-width: 1.5; }
+.people-art .pa-weave { fill: none; stroke: var(--bg); stroke-width: 1.4; opacity: 0.55; }
+.people-art .pa-lily { fill: #fffdf4; stroke: var(--line-strong); stroke-width: 1; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .people-art .pa-camas { fill: #9aa6f2; }
+  :root:not([data-theme="light"]) .people-art .pa-flax-flower { fill: #e46a5e; }
+}
+:root[data-theme="dark"] .people-art .pa-camas { fill: #9aa6f2; }
+:root[data-theme="dark"] .people-art .pa-flax-flower { fill: #e46a5e; }
+
+/* A plant with a history: the roster's card — photo, name, binomial. */
+.people-plant {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  margin: 0;
+  padding: 0.6rem 0.8rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* A post's plant: the plant page's head — the photo floated beside the name,
+   the text running on under it. */
+.privacy-page .post-plants,
+.privacy-page .reading-list {
+  padding: 0;
+}
+.post-plants {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0;
+  display: grid;
+  gap: 1.1rem;
+}
+.post-plant { display: flow-root; }
+.post-plant .plant-hero { width: min(30vw, 8rem); }
+.post-plant p { margin: 0.35rem 0 0; }

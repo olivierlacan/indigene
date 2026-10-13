@@ -16,6 +16,9 @@ import { t, tx } from "../lib/i18n";
 import { commonName } from "../lib/names";
 import { entryForPlant } from "../lib/registry";
 import { POSTS } from "../data/posts";
+import { plantThumb } from "../components/plant-thumb";
+import { sectionTitle } from "../components/section-link";
+import { peopleArt } from "../components/people-art";
 import { CONTACT } from "./posts";
 import type { TKey } from "../locales/en";
 
@@ -44,10 +47,27 @@ const SOURCES: { name: string; url: string; what: TKey }[] = [
   { name: "Te Haumanu Taiao", url: "https://tiakitamakimakaurau.nz/protect-and-restore-our-environment/te-haumanu-taiao-restoring-natural-environment", what: "people.src.haumanu" },
 ];
 
-function plantRow(id: string): HTMLElement {
+/** A plant as a card, the way a region's roster shows one: its photograph (or
+ *  its drawing, until someone picks one), its name, its binomial. */
+function plantCard(id: string): HTMLElement | null {
   const entry = entryForPlant(id);
-  const name = entry ? commonName({ common: entry.commonNames[0], latin: entry.scientificName }) : id;
-  return el("li", {}, el("a", { href: `#/plants/${id}` }, el("strong", {}, name)));
+  if (!entry) return null;
+  return el("a", { href: `#/plants/${id}`, class: "card people-plant" }, [
+    plantThumb(id, entry.form, { attrs: { style: "flex:0 0 auto" } }),
+    el("div", { style: "min-width:0" }, [
+      el("div", { style: "font-weight:700" }, commonName({ common: entry.commonNames[0], latin: entry.scientificName })),
+      el("div", { class: "plant-latin", style: "font-size:0.85rem" }, entry.scientificName),
+    ]),
+  ]);
+}
+
+/** A link off the site, as a reading row: a mark in the gutter, the name, and
+ *  one line on what it is. */
+function linkRow(icon: string, link: HTMLElement, what: string | null): HTMLElement {
+  return el("li", { class: "reading-row" }, [
+    el("span", { class: "reading-kind", "aria-hidden": "true" }, icon),
+    el("div", { class: "reading-body" }, [link, what ? el("span", { class: "reading-by" }, what) : null]),
+  ]);
 }
 
 const out = (url: string, label: Node | string): HTMLElement =>
@@ -59,33 +79,38 @@ export function renderPeople(main: HTMLElement): void {
 
   main.append(
     el("article", { class: "privacy-page" }, [
+      peopleArt(),
       el("h2", { class: "step-title" }, t("people.title")),
       el("p", { class: "step-lede" }, t("people.lede")),
 
-      el("h3", {}, t("people.plantsTitle")),
-      el("p", {}, t("people.plantsLede")),
-      el("ul", { class: "who-list" }, PLANTS_WITH_HISTORY.map(plantRow)),
+      el("section", { style: "margin-top:1.25rem" }, [
+        sectionTitle("🌱", t("people.plantsTitle")),
+        el("p", {}, t("people.plantsLede")),
+        el("div", { class: "card-grid" }, PLANTS_WITH_HISTORY.map(plantCard)),
+      ]),
 
-      el("h3", {}, t("people.postsTitle")),
-      el("ul", { class: "who-list" }, POSTS.map((p) =>
-        el("li", {}, el("a", { href: `#/posts/${p.slug}` }, el("strong", {}, t(`posts.${p.key}.title` as TKey))))
-      )),
+      el("section", { style: "margin-top:1.5rem" }, [
+        sectionTitle("📅", t("people.postsTitle")),
+        el("ul", { class: "reading-list" }, POSTS.map((p) =>
+          linkRow("📅", el("a", { href: `#/posts/${p.slug}`, class: "reading-title" }, t(`posts.${p.key}.title` as TKey)),
+            t(`posts.${p.key}.when` as TKey))
+        )),
+      ]),
 
-      el("h3", {}, t("people.sourcesTitle")),
-      el("p", {}, t("people.sourcesLede")),
-      el("ul", { class: "who-list" }, SOURCES.map(({ name, url, what }) =>
-        el("li", {}, [
-          out(url, el("strong", {}, name)),
-          el("span", { class: "sureness-from" }, ` — ${t(what)}`),
-        ])
-      )),
+      el("section", { style: "margin-top:1.5rem" }, [
+        sectionTitle("📚", t("people.sourcesTitle")),
+        el("p", {}, t("people.sourcesLede")),
+        el("ul", { class: "reading-list" }, SOURCES.map(({ name, url, what }) =>
+          linkRow("🌐", el("a", { href: url, target: "_blank", rel: "noopener", class: "reading-title" }, name), t(what))
+        )),
+      ]),
 
       el("p", {}, tx("people.contact", { email: el("a", { href: `mailto:${CONTACT}` }, CONTACT) })),
 
-      el("h3", {}, t("people.landTitle")),
+      sectionTitle("🗺️", t("people.landTitle")),
       el("p", {}, tx("people.land", { nativeLand: out("https://native-land.ca/", "Native Land Digital") })),
 
-      el("h3", {}, t("people.howTitle")),
+      sectionTitle("✍️", t("people.howTitle")),
       el("ul", {}, (["people.how1", "people.how2", "people.how3", "people.how4"] as TKey[])
         .map((k) => el("li", {}, t(k)))),
       el("p", { class: "more-link" }, el("a", { href: "#/native" }, t("people.nativeLink"))),

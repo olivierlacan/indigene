@@ -225,39 +225,39 @@ function guide() {
   return s;
 }
 
-/** Privacy: a nest of eggs tucked into a shrub, under its leaves. */
+/** Privacy: a garden gate in a low hedge, latched, with the garden behind it. */
 function privacy() {
   let s = "";
-  // The shrub, a mass of rounded leaf. Faded as one group, so the circles
-  // don't show where they overlap.
-  s += `<g class="pa-soft">`;
-  for (const [cx, cy, r] of [
-    [118, 82, 30],
-    [202, 82, 30],
-    [138, 54, 28],
-    [182, 52, 28],
-    [160, 40, 26],
-    [160, 74, 36],
-  ]) s += circle("leaf", cx, cy, r);
-  s += `</g>`;
-  s += circle("red", 124, 60, 3.4);
-  s += circle("red", 130, 66, 3);
-  s += circle("red", 200, 64, 3.4);
-  s += circle("red", 194, 70, 3);
-  // The branch fork that holds it.
-  s += path("branch", "M160 124L160 108M160 112L140 100M160 112L180 100");
-  // The nest, and three eggs in it.
-  s += ellipse("egg", 148, 92, 7, 9, -14);
-  s += ellipse("egg", 160, 90, 7, 9.5);
-  s += ellipse("egg", 172, 92, 7, 9, 14);
-  s += path("wood", "M128 94Q160 100 192 94Q190 112 160 113Q130 112 128 94Z");
-  for (const y of [100, 106]) s += path("band", `M${132 + (y - 94) / 2} ${y}Q160 ${y + 5} ${188 - (y - 94) / 2} ${y}`);
-  // Leaves leaning over it.
-  s += path("leaf", leaf(208, 78, 178, 88, 6));
-  s += path("leaf", leaf(110, 76, 140, 86, 6));
-  // Grass at its foot.
-  s += grass(92, 5, 22, 22);
-  s += grass(232, 5, 24, 22);
+  // The garden inside, showing over the hedge and between the pickets.
+  s += coneflower(60, 52, 50, -4);
+  s += coneflower(92, 100, 60, 4);
+  s += stem(222, BASE, 228, 80, 216, 48);
+  for (let i = 0; i < 6; i++) {
+    const q = along(222, BASE, 228, 80, 216, 48, 0.55 + i * 0.09);
+    s += circle("gold", q.x - 3, q.y - 2, 3.2 - i * 0.2);
+    s += circle("gold", q.x + 3, q.y - 3, 3 - i * 0.2);
+  }
+  s += coneflower(258, 266, 56, 4);
+  s += coneflower(160, 164, 62, 2);
+  // The hedge, either side of the gate: solid, so the garden stands behind it.
+  for (const [x0, x1] of [
+    [16, 134],
+    [186, 304],
+  ]) {
+    s += rect("leaf", x0, 94, x1 - x0, 33, 4);
+    for (let x = x0 + 9; x < x1 - 4; x += 17) s += circle("leaf", x, 95, 10);
+  }
+  // The gate: two posts with caps, rails, pointed pickets, and its latch.
+  for (const x of [134, 178]) {
+    s += rect("wood", x, 74, 8, 50, 1);
+    s += path("wood", `M${x - 1} 75L${x + 4} 69L${x + 9} 75Z`);
+  }
+  s += rect("wood", 142, 86, 36, 4, 1);
+  s += rect("wood", 142, 110, 36, 4, 1);
+  for (let x = 145; x < 176; x += 8) s += path("wood", `M${x} 122V84L${x + 2.5} 80L${x + 5} 84V122Z`);
+  s += circle("gold", 174, 99, 2.6);
+  // The path up to it.
+  s += path("soil", "M144 124H176Q196 128 204 132H116Q124 128 144 124Z");
   return s;
 }
 

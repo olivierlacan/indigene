@@ -2,11 +2,10 @@
 // publishes for Google into one taxon-keyed record — in stock or not, at what
 // price, from which page.
 //
-// A prototype, not wired into the app. Retail Plant Catalog (Plant Agents
-// Collective) already aggregates US native-nursery inventories, but its crawler
-// only asks whether a plant's name appears on a nursery's site. These readers
-// answer the question it can't: is it in stock? `docs/nursery-availability.md`
-// says why this is offered upstream rather than built into a parallel service.
+// A prototype, not wired into the app. PlantAgents Collective already tracks
+// which US nurseries list which plant, but not whether it's in stock or what it
+// costs. These readers answer that. `docs/nursery-availability.md` says why
+// they're offered upstream rather than built into a parallel service.
 //
 // Dependency-free and DOM-free. Every adapter is a pure function `source ->
 // CanonicalOffer[]` and degrades to `[]` on any failure, like `lib/site.ts`.

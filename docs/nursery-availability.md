@@ -4,11 +4,11 @@
 
 The question: once Indigene says *plant this*, who near the reader has it?
 
-**Short answer: don't build a new system for it.** Mature efforts already
-answer "who sells this plant" in California, Florida, Pennsylvania and
-Alabama, and one of them publishes open JSON keyed by scientific name. Indigene should link and read those, and
-offer the one thing they lack — reading whether a plant is **in stock** — to
-the open-source one, rather than run a parallel service.
+**Short answer: don't build a new system for it.** PlantAgents Collective
+already tracks which of 528 US nurseries list which plant, and is actively
+rebuilding it. Indigene should read that, link the regional finders, and offer
+PlantAgents the one thing it lacks: whether a plant is **in stock**, and at
+what price.
 
 This replaces an earlier draft that proposed an open protocol ("Grove") with
 its own discovery file and a demand loop. The survey below is why it was
@@ -18,7 +18,7 @@ dropped.
 
 | Effort | Where | Per-plant sellers | In stock? | Open to other apps |
 |---|---|---|---|---|
-| **Retail Plant Catalog** (Plant Agents Collective; runs Choose Native Plants) | PA, AL, and online stores | ✓ | ✗ name on site only | ✓ open JSON, and a keyed API |
+| **PlantAgents Collective** (feeds Choose Native Plants) | 528 nurseries, ~45 states | ✓ | ✗ listed or not | ✓ open endpoints, no CORS |
 | **Calscape** (California Native Plant Society) | CA | ✓ | as each nursery posts it | ✗ behind a Cloudflare challenge |
 | **PlantRealFlorida** (FANN) | FL | ✓ name, phone, city, pot size | ✗ "call for availability" | ✗ pages by numeric id |
 | **Garden for Wildlife** (NWF, beside Tallamy's Native Plant Finder) | US, ships by ZIP | sells its own | ✓ its own | ✗ |
@@ -29,33 +29,35 @@ dropped.
 Joey Santore's work (his channel, *Kill Your Lawn*, Thornscrub Sanctuary) has
 no sourcing tool; he's an audience for this, not prior art.
 
-Two findings change the plan:
+Three findings change the plan:
 
-- **Choose Native Plants already has the read Indigene wants, keyed the way
-  we key.** `choosenativeplants.com/api/v1/plants/<scientific name>` is open
-  JSON with the USDA symbol, the local nurseries carrying the plant, and
-  online stores with links to the product page (*Asclepias tuberosa*: 23
-  local, 5 online). The plant page is `/plants/<scientific name>`. It sends no
-  CORS header, so the browser can't call it; a build-time snapshot or
-  `server/` can. Behind it, Retail Plant Catalog's keyed API answers "vendors
-  near this ZIP" (`FindVendorsForPlantName`).
+- **PlantAgents is active and was rebuilt in 2026.** The public
+  `retail-plant-catalog` repo is the old system. Since July 2026 Choose
+  Native Plants syncs weekly from a newer PlantAgents database (not public):
+  dated, human-approved inventory snapshots per nursery, a product link per
+  offering, local vs. mail-order vendors. Zach Leahan made 33 commits to
+  Choose Native Plants in July alone.
+- **Its data is reachable, keyed the way we key.** `POST /get-vendors` with a
+  ZIP and a scientific name returns nearby nurseries listing the plant;
+  `/plants/<scientific name>` is the plant page; `/api/v1/plantagents-sync-status`
+  reports freshness. None send a CORS header, so a browser can't call them.
 - **Garden for Wildlife already runs the demand loop.** Fall pre-orders tell
-  its regional growers what to grow, so they aren't left with unsold plants.
-  It's closed and one retailer's, but it shows the idea works without us.
+  its regional growers what to grow. It's closed and one retailer's, but it
+  shows the idea works without us.
 
 ## The gap that's left
 
-1. **Stock, not mentions.** Retail Plant Catalog's crawler regex-counts plant
-   names in a nursery's pages, PDFs and spreadsheets (`SavvyCrawler/`,
-   `TermCounter.cs`). A sold-out plant, or one named in a blog post, counts
-   the same as one on the bench. It also can't tell a cultivar from the
-   species.
-2. **Most of Indigene's regions.** Nothing above covers the Pacific Northwest,
-   North Michigan, the St. Lawrence, Ireland, France, Auckland or Kantō. We
-   haven't surveyed those countries' own tools yet; do that before building
-   anything for them.
-3. **An open demand signal.** Only closed ones exist. Not worth building until
-   1 and 2 are settled; it needs a server and growers who want it.
+1. **Stock and price.** An offering records that a nursery listed a plant,
+   not whether it's on the bench or what it costs. The old crawler
+   regex-counted names in pages, PDFs and spreadsheets; the new schema still
+   has no stock or price field.
+2. **Coverage and freshness.** See the GoNatives trial below. And the sync
+   status read 2026-07-14 on 2026-10-13: three months without a successful
+   weekly sync.
+3. **Outside the US.** Nothing above covers Ireland, France, Auckland or
+   Kantō. We haven't surveyed those countries' own tools yet.
+4. **An open demand signal.** Only closed ones exist. Not worth building until
+   the rest are settled; it needs a server and growers who want it.
 
 ## What Indigene should do
 
@@ -64,14 +66,12 @@ Two findings change the plan:
    regions, PlantRealFlorida for Florida, Choose Native Plants for the
    Mid-Atlantic. Choose Native Plants deep-links per plant by scientific name;
    PlantRealFlorida needs a name → id table; Calscape couldn't be checked.
-2. **Read Choose Native Plants for US plants.** Ask Plant Agents Collective
-   first — it's their data and their server. Then snapshot the per-plant
-   record at build time, or call it (or their keyed ZIP API) from `server/`.
-3. **Offer the stock readers upstream.** The prototype below reads stock from
-   the structured data storefronts already publish for Google. Ported into
-   Retail Plant Catalog's crawler, it would give every app using it "in stock",
-   not just "mentioned". The repo has no license file yet; ask about that
-   before sharing code.
+2. **Read PlantAgents for US plants.** Ask first; it's their data and their
+   server. Then call it from a server or snapshot it at build time.
+3. **Offer stock and price upstream.** The readers below get both from the
+   structured data storefronts already publish for Google. Added to
+   PlantAgents' snapshots, every app using it would get them. The old repo is
+   GPL-3.0; ask how the new one is licensed.
 
 **Not doing:** a `/.well-known` discovery file (no nursery would publish it
 for one app), a crawler or availability service of our own, or the demand
@@ -112,3 +112,24 @@ cultivars and reported 8 species the registry lacks. Two misses are ours:
 *Mahonia aquifolium* isn't matched to the registry's *Berberis aquifolium*
 (no synonyms yet), and a lowercase genus ("sisyrinchium idahoense") is
 reported as "Idaho blue-eyed".
+
+## The GoNatives trial (2026-10-13)
+
+The full catalog, 397 products, read through the readers and compared with
+what PlantAgents returns for GoNatives (`/get-vendors`, ZIP 98177, 5 miles):
+
+| | Count |
+|---|---|
+| Resolved to a registry species, with stock and price | 116 (74 in stock, 42 out) |
+| Refused as cultivars | 42 |
+| Real binomials the registry lacks | 211 |
+| No binomial in the name | 13 |
+| Pages that didn't render | 15 |
+| Of the 116, PlantAgents lists GoNatives for | 14 |
+| …of which the store says are out of stock | 2 (*Ribes sanguineum*, *Morella californica*) |
+| In stock at GoNatives, not listed by PlantAgents | 62 |
+
+PlantAgents links GoNatives' home page, not the product (`isDirectPlantLink:
+false`). Some of the 62 may be species PlantAgents' plant list lacks; its own
+sync reports 79 unmatched names.
+

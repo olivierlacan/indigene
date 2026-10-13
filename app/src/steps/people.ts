@@ -19,7 +19,7 @@ import { POSTS } from "../data/posts";
 import { plantThumb } from "../components/plant-thumb";
 import { sectionTitle } from "../components/section-link";
 import { peopleArt } from "../components/people-art";
-import { CONTACT } from "./posts";
+import { CONTACT, postWhen } from "./posts";
 import type { TKey } from "../locales/en";
 
 /** Plant pages whose own text says who ate, wove or tended the plant. Grow
@@ -93,7 +93,7 @@ export function renderPeople(main: HTMLElement): void {
         sectionTitle("📅", t("people.postsTitle")),
         el("ul", { class: "reading-list" }, POSTS.map((p) =>
           linkRow("📅", el("a", { href: `#/posts/${p.slug}`, class: "reading-title" }, t(`posts.${p.key}.title` as TKey)),
-            t(`posts.${p.key}.when` as TKey))
+            postWhen(p))
         )),
       ]),
 

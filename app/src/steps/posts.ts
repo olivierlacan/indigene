@@ -28,9 +28,18 @@ const pk = (key: string, field: string): TKey => `posts.${key}.${field}` as TKey
 
 function formatDate(iso: string): string {
   const [y, m, d] = iso.split("-").map(Number);
+  // A no-break space between the day and the month, so "12 octobre" never
+  // splits across lines.
   return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString(getLang(), {
     year: "numeric", month: "long", day: "numeric", timeZone: "UTC",
-  });
+  }).replace(/(\d) (\p{L})/u, "$1\u00a0$2");
+}
+
+/** The line under a post's title: its occasion and its date, the date written
+ *  from `data/posts.ts` in the reader's language ("October 12, 2026",
+ *  "12 octobre 2026"), so a post's date is typed in one place. */
+export function postWhen(post: { key: string; date: string }): string {
+  return `${t(pk(post.key, "occasion"))}, ${formatDate(post.date)}`;
 }
 
 /** A plant's name as its own page shows it, linked to that page. */
@@ -148,7 +157,7 @@ export function renderPost(main: HTMLElement, slug?: string): void {
   main.append(
     el("article", { class: "privacy-page" }, [
       el("h2", { class: "step-title" }, t(pk(post.key, "title"))),
-      el("p", { class: "region-tag" }, el("time", { datetime: post.date }, t(pk(post.key, "when")))),
+      el("p", { class: "region-tag" }, el("time", { datetime: post.date }, postWhen(post))),
       el("p", { class: "step-lede" }, t(pk(post.key, "lede"))),
       ...(BODIES[post.key]?.(post.key) ?? []),
       el("div", { class: "btn-row", style: "margin-top:1.5rem" }, [

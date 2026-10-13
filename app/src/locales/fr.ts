@@ -2951,7 +2951,7 @@ export const fr: Dict = {
   "posts.allPosts": "Tous les articles",
   "posts.ipd2026.docTitle": "Ces plantes qui ont d'abord nourri des peuples — Indigene",
   "posts.ipd2026.title": "Ces plantes qui ont d'abord nourri des peuples",
-  "posts.ipd2026.when": "Journée des peuples autochtones, 12 octobre 2026",
+  "posts.ipd2026.occasion": "Journée des peuples autochtones",
   "posts.ipd2026.lede": "Avant d'être des « plantes indigènes », elles ont nourri, lié et vêtu les peuples qui en prenaient soin. Ces peuples sont toujours là. Les plantes aussi, et vous pouvez les cultiver.",
   "posts.ipd2026.plantsTitle": "Cinq à planter",
   "posts.ipd2026.camas.where": "Nord-Ouest Pacifique",

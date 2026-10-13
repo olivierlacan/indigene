@@ -23,6 +23,7 @@ import { navigate } from "../state";
 import { DATA_SOURCES_URL, ISSUES_URL } from "../lib/plain";
 import { t, tx } from "../lib/i18n";
 import type { TKey } from "../locales/en";
+import { pageArt } from "../components/page-art";
 
 const REPO_URL = "https://github.com/olivierlacan/indigene";
 
@@ -75,6 +76,7 @@ export function renderPrivacy(main: HTMLElement, param?: string): void {
 
   main.append(
     withContents(el("article", { class: "privacy-page" }, [
+      pageArt("privacy"),
       el("h2", { class: "step-title" }, t("privacy.title")),
       el("p", { class: "step-lede" }, t("privacy.lede")),
 

@@ -34,5 +34,8 @@ export default defineConfig({
     // `types: []` in tsconfig means no ambient globals, which suits us: every
     // test imports `describe`/`it`/`expect` from vitest explicitly.
     globals: false,
+    // The stylesheet only, so a test can read it as text (`?raw`); every
+    // other CSS import stays blank.
+    css: { include: [/styles\.css/] },
   },
 });

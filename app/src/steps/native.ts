@@ -17,6 +17,7 @@ import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { t, tx } from "../lib/i18n";
 import type { TKey } from "../locales/en";
+import { pageArt } from "../components/page-art";
 
 /** The evidence, in reading order. Names and URLs are proper nouns and stay
  *  untranslated, as on `#/crops`; `what` is the dictionary key. A paper whose
@@ -54,6 +55,7 @@ export function renderNative(main: HTMLElement): void {
 
   main.append(
     el("article", { class: "privacy-page" }, [
+      pageArt("native"),
       el("h2", { class: "step-title" }, t("native.title")),
       el("p", { class: "step-lede" }, t("native.lede")),
 

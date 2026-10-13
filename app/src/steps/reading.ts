@@ -15,6 +15,7 @@ import { readingList } from "../components/reading-list";
 import { sectionHeading, sectionTitle } from "../components/section-link";
 import { regionName, regionShort } from "../lib/names";
 import { t, tx, fmtNumber } from "../lib/i18n";
+import { pageArt } from "../components/page-art";
 
 /** The line every list ends on: how the picks were chosen, so a count of
  *  followers reads as evidence rather than as an advertisement. */
@@ -31,6 +32,7 @@ export function renderReadingIndex(main: HTMLElement): void {
   clear(main);
   document.title = t("reading.docTitle");
   main.append(
+    pageArt("reading"),
     el("h2", { class: "step-title" }, t("reading.title")),
     el("p", { class: "step-lede" }, t("reading.lede")),
     ...(WORLD_READING.length ? [el("section", { style: "margin-top:1.25rem" }, [

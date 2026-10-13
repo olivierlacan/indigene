@@ -18,6 +18,7 @@
 import { copyFileSync, existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { pageArtSvg, PAGE_ART_CSS } from "../src/components/page-art-svg.mjs";
 import { autolink, foldFragments, readFragments, reportFragmentError } from "./_changelog.mjs";
 import { linkPrefix } from "./guide-catalog.mjs";
 
@@ -734,6 +735,8 @@ function shell({ title, description, canonical, body, root = "../" }) {
   }
 }
 * { box-sizing: border-box; }
+/* The drawing over the title (src/components/page-art-svg.mjs). */
+${PAGE_ART_CSS}
 body {
   margin: 0; background: var(--bg); color: var(--ink);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -941,7 +944,8 @@ function renderIndex(releases) {
     description:
       "Everything new in Indigene, the free native-plant finder, described in plain words.",
     canonical: SITE,
-    body: `<h1>What&rsquo;s new in Indigene</h1>
+    body: `${pageArtSvg("whatsNew")}
+<h1>What&rsquo;s new in Indigene</h1>
 <p class="lede">Indigene is a free app that finds the plants that naturally
 belong where you live. This page lists everything new in the app, newest
 first, in plain words. The app updates itself, so whatever you read here is

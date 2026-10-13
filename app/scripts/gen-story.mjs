@@ -101,6 +101,8 @@ const html = `<!doctype html>
   .row { display: flex; align-items: center; gap: 26px; }
   .wordmark { font-size: 54px; font-weight: 800; letter-spacing: -0.02em; }
   .when { font-size: 34px; font-weight: 650; color: var(--brand); margin-bottom: 18px; }
+  /* The date sits back from the occasion: lighter, smaller, even numerals. */
+  .when .date { font-weight: 400; font-size: 31px; color: #cdcdbd; font-variant-numeric: tabular-nums; }
   h1 { font-size: 86px; line-height: 1.04; font-weight: 800; letter-spacing: -0.03em; text-wrap: balance; }
   .art { margin: 44px 0 0; }
   .art:empty { display: none; }
@@ -136,7 +138,11 @@ const html = `<!doctype html>
   const key = ${JSON.stringify(post.key)};
   const story = ${JSON.stringify(story)};
   document.getElementById("name").textContent = BRAND.name;
-  document.getElementById("when").textContent = en["posts." + key + ".occasion"] + ", " + ${JSON.stringify(date)};
+  const when = document.getElementById("when");
+  const d = document.createElement("span");
+  d.className = "date";
+  d.textContent = ${JSON.stringify(date)};
+  when.append(en["posts." + key + ".occasion"] + " · ", d);
   document.getElementById("title").textContent = en["posts." + key + ".title"];
   if (story.art) document.getElementById("art").append(art[story.art]());
   document.getElementById("lede").textContent = en[story.line];

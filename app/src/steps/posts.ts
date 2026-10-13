@@ -39,7 +39,17 @@ function formatDate(iso: string): string {
  *  from `data/posts.ts` in the reader's language ("October 12, 2026",
  *  "12 octobre 2026"), so a post's date is typed in one place. */
 export function postWhen(post: { key: string; date: string }): string {
-  return `${t(pk(post.key, "occasion"))}, ${formatDate(post.date)}`;
+  return `${t(pk(post.key, "occasion"))} · ${formatDate(post.date)}`;
+}
+
+/** The same line for the post's own page: the occasion and the date styled
+ *  apart (`.post-when` in styles.css), the date in a `<time>`. */
+function postWhenLine(post: { key: string; date: string }): HTMLElement {
+  return el("p", { class: "region-tag post-when" }, [
+    el("span", { class: "post-occasion" }, t(pk(post.key, "occasion"))),
+    el("span", { "aria-hidden": "true" }, " · "),
+    el("time", { class: "post-date", datetime: post.date }, formatDate(post.date)),
+  ]);
 }
 
 /** A plant's name as its own page shows it, linked to that page. */
@@ -157,7 +167,7 @@ export function renderPost(main: HTMLElement, slug?: string): void {
   main.append(
     el("article", { class: "privacy-page" }, [
       el("h2", { class: "step-title" }, t(pk(post.key, "title"))),
-      el("p", { class: "region-tag" }, el("time", { datetime: post.date }, postWhen(post))),
+      postWhenLine(post),
       el("p", { class: "step-lede" }, t(pk(post.key, "lede"))),
       ...(BODIES[post.key]?.(post.key) ?? []),
       el("div", { class: "btn-row", style: "margin-top:1.5rem" }, [

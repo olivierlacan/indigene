@@ -278,7 +278,17 @@ function renderStepRail(active: AppStep): void {
     dot.className = "dot";
     if (state === "done") dot.append(emojiSpan("✓", "emoji.done"));
     else dot.textContent = String(i + 1);
-    li.append(dot, document.createTextNode(t(STEPS[key].labelKey)));
+    const label = document.createTextNode(t(STEPS[key].labelKey));
+    if (state === "done") {
+      // A step already answered is a way back to it: tap "Sun" to change the sun.
+      const a = document.createElement("a");
+      a.href = `#/${key}`;
+      a.className = "step-link";
+      a.append(dot, label);
+      li.append(a);
+    } else {
+      li.append(dot, label);
+    }
     stepsList.append(li);
   });
   // Moving a saved spot's pin (`#/location?move=<id>`) uses the map and stops

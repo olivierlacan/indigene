@@ -2,15 +2,16 @@ import { el, clear } from "../ui";
 import { navigate, store, getSitePromise, rememberDraftSpot } from "../state";
 import type { MoistureBand } from "../types";
 import {
-  zonePlain,
   phPlain,
   texturePlain,
   slopePlain,
-  moisturePlain,
   sunPlain,
-  ZONE_INFO_URL,
 } from "../lib/plain";
 import { whyThis } from "../components/learn";
+import { moistureIcon } from "../components/moisture-icon";
+import { scaleChip, ecoregionChip } from "../components/zone-chip";
+import { guideHref, quietLink } from "../components/guide-link";
+import { temperature } from "../lib/units";
 import { t, fmtNumber } from "../lib/i18n";
 import { elevation, rainfall } from "../lib/units";
 
@@ -56,44 +57,48 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
       t(hasCoords ? "confirm.noSiteOnline" : "confirm.noSiteManual")));
   }
 
-  // What we looked up, in plain words.
+  // What we looked up, as icon rows: the icon is the answer at a glance (the
+  // same ❄️ and 🌧️ the plant pages' figures use), the words the detail.
   const rows: (HTMLElement | null)[] = [];
   if (site) {
-    rows.push(kv(t("confirm.winterCold"), [
-      zonePlain(site.zone, site.zoneMinTempF),
-      ...(site.zone ? [" ", el("a", { href: ZONE_INFO_URL, target: "_blank", rel: "noopener" }, t("confirm.zoneMapLink"))] : []),
-    ]));
+    const zoneChip = site.zone
+      ? scaleChip("USDA", site.zone, t("zoneChip.zone", { zone: site.zone }), guideHref("regions", "zones"))
+      : null;
+    rows.push(fact("❄️", t("confirm.winterCold"),
+      !zoneChip ? [t("zone.unknown")]
+        : site.zoneMinTempF != null ? [t("confirm.winterValue", { temp: temperature(site.zoneMinTempF) }), " ", zoneChip]
+        : [zoneChip]));
     rows.push(site.annualRainIn != null
-      ? kv(t("confirm.rainfall"), t("confirm.rainfallValue", { amount: rainfall(site.annualRainIn) }))
+      ? fact("🌧️", t("confirm.rainfall"), t("confirm.rainfallValue", { amount: rainfall(site.annualRainIn) }))
       : null);
     rows.push(site.elevationFt != null
-      ? kv(t("confirm.elevation"), t("confirm.elevationValue", {
+      ? fact("⛰️", t("confirm.elevation"), t("confirm.elevationValue", {
           height: elevation(site.elevationFt),
           slope: site.slopeDeg != null ? t("confirm.elevationSlope", { slope: slopePlain(site.slopeDeg) }) : "",
         }))
       : null);
-    rows.push(site.ecoregion ? kv(t("confirm.region"), `${site.ecoregion}.`) : null);
+    rows.push(site.ecoregion ? fact("🗺️", t("confirm.region"), site.ecoregionInfo
+      ? [site.ecoregionInfo.name, " ", ecoregionChip(site.ecoregionInfo, guideHref("regions", "zones"))]
+      : site.ecoregion) : null);
     // Only some providers have a finer local subdivision (EPA Level IV); the EEA
     // biogeographical regions are a single flat level, so this row is skipped.
     const detail = site.ecoregionInfo?.detail;
-    rows.push(detail ? kv(t("confirm.localArea"), t("confirm.localAreaValue", { name: detail.name })) : null);
+    rows.push(detail ? fact("📍", t("confirm.localArea"), t("confirm.localAreaValue", { name: detail.name })) : null);
   }
   if (rows.some(Boolean)) {
     main.append(el("div", { class: "card" }, [el("h3", {}, t("confirm.climateTitle")), ...rows.filter(Boolean) as HTMLElement[]]));
   }
 
-  // Soil — always framed as coarse, with the ribbon test to override.
+  // Soil: what the map says, and one line on why your hands know better. The
+  // 60-second check itself lives in the guide, a tap away for whoever wants it.
   const soilCard = el("div", { class: "card" }, [
     el("h3", {}, t("confirm.soilTitle")),
     site && site.soil.texture
-      ? kv(t("confirm.soilSays"), `${texturePlain(site.soil.texture)}. ${site.soil.drainage ?? ""}`)
+      ? fact("🤲", t("confirm.texture"), texturePlain(site.soil.texture))
       : el("p", {}, t("confirm.soilNone")),
-    site && site.soil.phEstimate != null ? kv(t("confirm.acidity"), phPlain(site.soil.phEstimate)) : null,
-    el("div", { class: "note warn" }, [
-      el("strong", {}, t("confirm.soilCoarse")),
-      t("confirm.soilCoarseRest"),
-    ]),
-    ribbonTest(),
+    site && site.soil.phEstimate != null ? fact("🧪", t("confirm.acidity"), phPlain(site.soil.phEstimate)) : null,
+    el("p", { class: "fact-note" }, t("confirm.soilCoarse")),
+    quietLink("info", guideHref("find", "soil"), t("confirm.soilCheckLink")),
   ].filter(Boolean) as (HTMLElement)[]);
   main.append(soilCard);
 
@@ -120,7 +125,7 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
     moistureNote,
     ...bands.map((b) => {
       const btn = el("button", {
-        class: "choice",
+        class: "choice choice-with-glyph",
         "aria-pressed": b === current ? "true" : "false",
         onClick: () => {
           store.draft.moistureOverride = b;
@@ -130,8 +135,11 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
           rememberDraftSpot();
         },
       }, [
-        el("span", { class: "choice-title" }, t(`confirm.${b}` as const)),
-        el("span", { class: "choice-sub" }, moisturePlain(b)),
+        el("span", { class: "choice-glyph", "aria-hidden": "true" }, [moistureIcon(b)]),
+        el("span", {}, [
+          el("span", { class: "choice-title" }, t(`confirm.${b}` as const)),
+          el("span", { class: "choice-sub" }, t(`moisture.short.${b}` as const)),
+        ]),
       ]) as HTMLButtonElement;
       moistureButtons.push(btn);
       return btn;
@@ -146,9 +154,13 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
     rememberDraftSpot();
   } }) as HTMLInputElement;
   main.append(el("div", { class: "card" }, [
-    el("label", { for: "decid2", style: "display:flex;gap:0.6rem;align-items:flex-start;font-weight:600" }, [
+    // Same words as the sun step's own checkbox: it's the same question.
+    el("label", { for: "decid2", class: "check-row" }, [
       decid,
-      el("span", {}, t("confirm.deciduous")),
+      el("span", {}, [
+        el("span", { class: "check-title" }, t("sun.deciduous")),
+        el("span", { class: "check-sub" }, t("sun.deciduousSub")),
+      ]),
     ]),
   ]));
 
@@ -158,27 +170,16 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   ]));
 }
 
-function kv(k: string, v: string | (string | Node)[]): HTMLElement {
-    // The colon is part of the label rather than the template, because French
-  // sets a narrow no-break space before it and English sets none.
-  return el("p", { class: "kv" }, [el("span", { class: "k" }, t("confirm.kvLabel", { k })), ...(Array.isArray(v) ? v : [v])]);
+/** One looked-up fact: its icon, a small label, and the value in words. */
+function fact(icon: string, label: string, value: string | (string | Node)[]): HTMLElement {
+  return el("div", { class: "fact" }, [
+    el("span", { class: "fact-icon", "aria-hidden": "true" }, icon),
+    el("p", {}, [el("span", { class: "fact-label" }, label), el("span", { class: "fact-value" }, Array.isArray(value) ? value : [value])]),
+  ]);
 }
 
 function guessMoisture(drainage: string): MoistureBand {
   if (/fast|well/.test(drainage)) return "dry";
   if (/slow|wet/.test(drainage)) return "wet";
   return "mesic";
-}
-
-function ribbonTest(): HTMLElement {
-  return el("div", {}, [
-    el("p", { style: "font-weight:700;margin:0.8rem 0 0.3rem" }, t("confirm.ribbonTitle")),
-    el("ol", { style: "padding-left:1.2rem;line-height:1.6" }, [
-      el("li", {}, t("confirm.ribbon1")),
-      el("li", {}, t("confirm.ribbon2")),
-      el("li", {}, t("confirm.ribbon3")),
-      el("li", {}, t("confirm.ribbon4")),
-    ]),
-    el("p", { style: "font-size:0.9rem;color:var(--ink-soft)" }, t("confirm.ribbonNote")),
-  ]);
 }

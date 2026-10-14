@@ -4,6 +4,7 @@
 import { el } from "../ui";
 import { t } from "../lib/i18n";
 import { keystoneIcon } from "./keystone-icon";
+import { withTip } from "./badge-tip";
 import { traitHref, traitsFor, type Trait } from "../lib/traits";
 import type { Plant } from "../types";
 
@@ -11,7 +12,10 @@ export function traitBadge(tr: Trait, link: boolean): HTMLElement {
   const body = tr.id === "essential" ? [keystoneIcon(), " " + t(tr.label)] : [t(tr.label)];
   return link
     ? el("a", { class: `badge badge-link ${tr.tone}`, href: traitHref(tr.id) }, body)
-    : el("span", { class: `badge ${tr.tone}`, title: t(tr.meaning) }, body);
+    // On a card the whole card is a link, so the label explains itself in a
+    // small note instead (hover, or a tap), with the full meaning one tap on.
+    : withTip(el("button", { type: "button", class: `badge badge-tip-btn ${tr.tone}` }, body),
+        t(tr.meaning), { href: traitHref(tr.id), label: t("traits.moreLink") });
 }
 
 /** `regionId` adds the labels that are a claim about one region's conditions —

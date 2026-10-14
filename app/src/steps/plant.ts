@@ -1,3 +1,4 @@
+import { clockIcon } from "../components/control-icons";
 // A plant's own page, at a stable, shareable URL (#/plants/<id>, canonically
 // …/plants/<id>). This is the reverse of the main flow: the plant is fixed and
 // the question is whether a spot deserves it. The verdict has exactly three
@@ -366,10 +367,10 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
               traitBadges(p, true, region.meta.id),
             ]),
           ]),
-          el("p", { class: "kv plant-why" }, [el("span", { class: "k" }, [
-            // "Native" is the app's one load-bearing word; its page says what it means.
-            el("a", { href: "#/native" }, t("plant.whyBelongs").trimEnd()), " ",
-          ]), ...richText(prose(p, "nativeNote", region.meta.id))]),
+          // Where it grows wild, in words: its habitat. ("Native to" above
+          // already names the region, so this line says what kind of ground.)
+          el("p", { class: "kv plant-why" }, [el("span", { class: "k" }, t("plant.whyBelongs")),
+            ...richText(prose(p, "nativeNote", region.meta.id))]),
           // Who re-checked that claim, and when. Straight under the sentence it
           // is evidence for — and it says so equally when the checklist
           // disagrees, which is the only way the line means anything.
@@ -1028,7 +1029,7 @@ function propagationSection(p: Plant, regionId: string): HTMLElement {
   const methodItems = methods.map((m) => {
     const g = propagationMethod(m);
     const tech = techniqueFor(m);
-    return el("li", { class: "score-item" }, [
+    return el("li", { class: "prop-method" }, [
       el("div", { class: "score-head" }, [
         el("a", { class: "prop-method-link", href: techniqueHref(tech) }, [
           el("span", { class: "technique-icon", "aria-hidden": "true" }, tech.icon),
@@ -1039,11 +1040,13 @@ function propagationSection(p: Plant, regionId: string): HTMLElement {
           el("span", { class: "prop-method-label" }, g.name),
         ]),
       ]),
+      // When to do it: a clock and the window, on a band across the block.
       el("p", { class: "prop-when" }, [
-        el("span", { class: "k" }, t("planting.whenLabel")),
+        clockIcon(),
+        el("span", { class: "sr-only" }, t("planting.whenLabel")),
         g.when,
       ]),
-      el("p", { class: "score-why" }, g.plain),
+      el("p", { class: "prop-plain" }, g.plain),
     ]);
   });
   return sectionCard("propagation", t("plant.propagationTitle"), [
@@ -1051,9 +1054,9 @@ function propagationSection(p: Plant, regionId: string): HTMLElement {
       el("span", { class: "k" }, t("plant.forThisPlant")),
       ...richText(propagationNote(p, regionId)),
     ]),
-    el("ul", { class: "score-list" }, methodItems),
-    el("p", { class: "prop-all" }, [
-      el("a", { href: "#/planting" }, t("planting.allTechniques")),
+    el("ul", { class: "prop-methods" }, methodItems),
+    el("p", { class: "more-link prop-all" }, [
+      el("a", { href: "#/planting" }, `${t("planting.allTechniques")} →`),
     ]),
     el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
       el("span", {}, [
@@ -1097,7 +1100,7 @@ function referencesSection(p: Plant): HTMLElement {
     ]),
   );
   const body: HTMLElement[] = [
-    el("p", { style: "margin:0.5rem 0 0.3rem" }, t("ref.lede", { name: commonName(p) })),
+    el("p", { style: "margin:0.5rem 0 0.3rem" }, t("ref.lede")),
     el("ul", { class: "score-list" }, items),
   ];
   if (entry?.primaryId) {
@@ -1105,7 +1108,13 @@ function referencesSection(p: Plant): HTMLElement {
       el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
         el("strong", {}, t("ref.identity")),
         el("code", {}, entry.primaryId),
-        t("ref.identityRest"),
+        // One tap to take the code to a database search.
+        el("button", {
+          type: "button", class: "copy-btn", "aria-label": t("ref.copy"), title: t("ref.copy"),
+          onClick: () => {
+            navigator.clipboard?.writeText(entry.primaryId!).then(() => toast(t("ref.copied")), () => {});
+          },
+        }, [copyIcon()]),
       ]),
     );
   }
@@ -1166,4 +1175,18 @@ function renderNotFound(main: HTMLElement, slug: string): void {
       el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
     ])
   );
+}
+
+/** Two overlapping pages: copy. Drawn in `currentColor`. */
+function copyIcon(): SVGSVGElement {
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg");
+  for (const [k, v] of Object.entries({ viewBox: "0 0 20 20", width: "16", height: "16", "aria-hidden": "true",
+    fill: "none", stroke: "currentColor", "stroke-width": "1.6", "stroke-linejoin": "round" })) svg.setAttribute(k, v);
+  for (const [x, y] of [[7, 7], [3.5, 3.5]]) {
+    const r = document.createElementNS(ns, "rect");
+    for (const [k, v] of Object.entries({ x: String(x), y: String(y), width: "9.5", height: "9.5", rx: "1.8" })) r.setAttribute(k, v);
+    svg.append(r);
+  }
+  return svg;
 }

@@ -13,7 +13,7 @@ const CODE = import.meta.glob(["../**/*.ts", "../../scripts/*.mjs", "!./brand.te
 
 describe("brand", () => {
   it("builds the title from the tagline", () => {
-    expect(appTitle("en")).toBe(`${BRAND.name} — ${BRAND.tagline.en}`);
+    expect(appTitle("en")).toBe(`${BRAND.name} · ${BRAND.tagline.en}`);
     expect(taglineSentence("en").toLowerCase()).toBe(BRAND.tagline.en);
     expect(en["app.title"]).toBe(appTitle("en"));
     expect(fr["app.title"]).toBe(appTitle("fr"));

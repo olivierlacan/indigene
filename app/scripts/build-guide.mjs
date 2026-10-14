@@ -447,7 +447,7 @@ ${more}
 function renderHistoryPage(section, items) {
   return shell({
     root: "../../../",
-    title: `${section.title}: every change — Indigene guide`,
+    title: `${section.title}: every change · Indigene guide`,
     description: `Every change to ${section.title.toLowerCase()} in Indigene, newest first.`,
     canonical: `${SITE}${section.id}/history/`,
     body: `<a class="back" href="../">&larr; ${escapeHtml(section.title)}</a>
@@ -518,7 +518,7 @@ function renderSectionPage(section, items) {
 
   return shell({
     root: "../../",
-    title: `${section.title} — Indigene guide`,
+    title: `${section.title} · Indigene guide`,
     description: section.tagline,
     canonical: `${SITE}${section.id}/`,
     body: `<a class="back" href="../">&larr; The guide</a>
@@ -547,7 +547,7 @@ function renderIndex(published, historyById) {
     .join("\n");
 
   return shell({
-    title: "Guide — Indigene",
+    title: "Guide · Indigene",
     description:
       "A plain-words guide to Indigene, the free native-plant finder: what each " +
       "part is for and how to use it.",

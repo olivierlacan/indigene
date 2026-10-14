@@ -24,11 +24,11 @@ import { el } from "../ui";
 import { SCORE_KEYS, scoreLabel, bloomSentence } from "../lib/plain";
 import { traitBadges } from "./trait-badges";
 import { plantThumb } from "./plant-thumb";
-import { t, fmtNumber, fmtList } from "../lib/i18n";
+import { t, fmtNumber, monthName } from "../lib/i18n";
 import { length } from "../lib/units";
 import { nameLines } from "../lib/names";
 import { highlight } from "./filter-field";
-import { prose } from "../lib/prose";
+import { prose, lead } from "../lib/prose";
 import { FORM_GLYPHS, stemWidth } from "./plant-glyphs";
 import { richText } from "./rich-text";
 
@@ -86,28 +86,36 @@ export function plantCard(r: Ranked, weights: Weights, nq = "", regionId?: strin
     el("ul", { style: "margin:0.4rem 0 0; padding-left:1.1rem;" }, r.reasons.map((why) => el("li", {}, why))),
   ]);
 
-  // Grown-up size and bloom in one line, in place of the stat grid, the
-  // to-scale drawing and the bloom paragraph. All three are on the plant page.
-  const meta = el("p", { class: "pick-meta" }, [
-    t("card.sizeShort", { height: length(p.matureHeightFt), spread: length(p.matureSpreadFt) }),
-    " ",
-    bloomSentence(p.bloom),
+  // The figures a scan needs, as icon chips: full size, flowering months, and
+  // wildlife value. Everything else is on the plant's own page.
+  const chip = (icon: string, text: string, title?: string): HTMLElement =>
+    el("li", { title }, [el("span", { "aria-hidden": "true" }, icon), text]);
+  const facts = el("ul", { class: "pick-facts" }, [
+    chip("📏", t("card.factSize", { height: length(p.matureHeightFt), spread: length(p.matureSpreadFt) })),
+    p.bloom
+      ? chip("🌸", t("card.factBloom", { from: monthName(p.bloom.startMonth, "short"), to: monthName(p.bloom.endMonth, "short") }),
+          bloomSentence(p.bloom))
+      : chip("🍃", t("card.factFoliage")),
+    chip("🦋", t("card.factWildlife", { score: fmtNumber(r.ecoScore) })),
   ]);
 
-  // Wildlife value, and what earned it *under this reader's goals*. Weighting
-  // butterflies heavily and then being shown a bar chart of all seven scores
-  // never said which of them put this plant here; naming the top two does.
+  // What earned that score *under this reader's goals*: the top two.
   const strengths = strongestFor(p, weights);
-  const value = el("p", { class: "pick-value" }, [
-    el("strong", {}, t("card.ecoValue", { score: fmtNumber(r.ecoScore) })),
-    ...(strengths.length ? [" ", t("card.strongFor", { list: fmtList(strengths) })] : []),
-  ]);
+  // A footer band, set apart from the prose: a small label, then the two
+  // reasons as chips you can take in at a glance.
+  const value = strengths.length
+    ? el("div", { class: "pick-value" }, [
+        el("span", { class: "pick-value-k" }, t("card.strongFor")),
+        ...strengths.map((s) => el("span", { class: "pick-value-chip" }, s)),
+      ])
+    : null;
 
   return el("article", { class: "plant plant-pick" }, [
     head,
     match,
-    meta,
-    el("p", { class: "pick-gives" }, richText(prose(p, "givesNote", regionId))),
+    facts,
+    // The opening of the plant's note, not a second copy of it (`lead()`).
+    el("p", { class: "pick-gives" }, richText(lead(prose(p, "givesNote", regionId)))),
     value,
   ]);
 }

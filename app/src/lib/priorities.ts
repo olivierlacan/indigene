@@ -18,6 +18,8 @@ export interface Preset {
   key: TKey;
   /** One line on what this goal favours — shown under the name, always. */
   subKey: TKey;
+  /** Drawn from the sliders' own icons, so a goal reads as what it weighs. */
+  icon: string;
   weights: Weights;
 }
 
@@ -25,13 +27,13 @@ export interface Preset {
  *  default ranking (see `DEFAULT_WEIGHTS`) — named and explained rather than
  *  left as an unlabelled starting position nobody chose. */
 export const PRESETS: Preset[] = [
-  { key: "preset.default", subKey: "preset.default.sub", weights: { ...DEFAULT_WEIGHTS } },
-  { key: "preset.balanced", subKey: "preset.balanced.sub", weights: { host: 3, pollinator: 3, bird: 3, stormwater: 2, erosion: 2, carbon: 1, establishment: 3 } },
-  { key: "preset.butterflies", subKey: "preset.butterflies.sub", weights: { host: 5, pollinator: 5, bird: 3, stormwater: 1, erosion: 1, carbon: 1, establishment: 2 } },
-  { key: "preset.birds", subKey: "preset.birds.sub", weights: { host: 4, pollinator: 2, bird: 5, stormwater: 1, erosion: 1, carbon: 1, establishment: 2 } },
-  { key: "preset.erosion", subKey: "preset.erosion.sub", weights: { host: 1, pollinator: 1, bird: 1, stormwater: 4, erosion: 5, carbon: 2, establishment: 4 } },
-  { key: "preset.rain", subKey: "preset.rain.sub", weights: { host: 1, pollinator: 2, bird: 1, stormwater: 5, erosion: 3, carbon: 2, establishment: 3 } },
-  { key: "preset.easiest", subKey: "preset.easiest.sub", weights: { host: 2, pollinator: 2, bird: 2, stormwater: 1, erosion: 1, carbon: 1, establishment: 5 } },
+  { key: "preset.default", subKey: "preset.default.sub", icon: "🐛", weights: { ...DEFAULT_WEIGHTS } },
+  { key: "preset.balanced", subKey: "preset.balanced.sub", icon: "⚖️", weights: { host: 3, pollinator: 3, bird: 3, stormwater: 2, erosion: 2, carbon: 1, establishment: 3 } },
+  { key: "preset.butterflies", subKey: "preset.butterflies.sub", icon: "🦋", weights: { host: 5, pollinator: 5, bird: 3, stormwater: 1, erosion: 1, carbon: 1, establishment: 2 } },
+  { key: "preset.birds", subKey: "preset.birds.sub", icon: "🐦", weights: { host: 4, pollinator: 2, bird: 5, stormwater: 1, erosion: 1, carbon: 1, establishment: 2 } },
+  { key: "preset.erosion", subKey: "preset.erosion.sub", icon: "⛰️", weights: { host: 1, pollinator: 1, bird: 1, stormwater: 4, erosion: 5, carbon: 2, establishment: 4 } },
+  { key: "preset.rain", subKey: "preset.rain.sub", icon: "🌧️", weights: { host: 1, pollinator: 2, bird: 1, stormwater: 5, erosion: 3, carbon: 2, establishment: 3 } },
+  { key: "preset.easiest", subKey: "preset.easiest.sub", icon: "🌵", weights: { host: 2, pollinator: 2, bird: 2, stormwater: 1, erosion: 1, carbon: 1, establishment: 5 } },
 ];
 
 /** The preset these weights *are*, if any — so a goal stays visibly chosen and

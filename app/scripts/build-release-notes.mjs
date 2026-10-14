@@ -940,7 +940,7 @@ account, no visit counter, nothing sent anywhere &mdash;
 
 function renderIndex(releases) {
   return shell({
-    title: "What's new — Indigene",
+    title: "What's new · Indigene",
     description:
       "Everything new in Indigene, the free native-plant finder, described in plain words.",
     canonical: SITE,

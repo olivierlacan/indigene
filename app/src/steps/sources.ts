@@ -46,7 +46,9 @@ type Sureness = "counted" | "calculated" | "estimated";
  */
 function figure(name: string, ...from: (string | Node)[]): HTMLElement {
   return el("li", {}, [
-    el("strong", {}, name),
+    // "Your soil: From SoilGrids…". The colon comes from the locale, since
+    // French sets a narrow space before it.
+    el("strong", {}, t("confirm.kvLabel", { k: name }).trimEnd()),
     el("span", { class: "sureness-from" }, [" ", ...from]),
   ]);
 }

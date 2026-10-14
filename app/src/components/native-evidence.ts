@@ -13,6 +13,7 @@ import { el } from "../ui";
 import { nativeEvidence, NATIVE_EVIDENCE_URL } from "../lib/native-evidence";
 import { t } from "../lib/i18n";
 import { langTag } from "../lib/i18n";
+import { guideHref } from "./guide-link";
 
 const monthYear = (iso: string): string =>
   new Intl.DateTimeFormat(langTag(), { month: "long", year: "numeric", timeZone: "UTC" }).format(
@@ -34,22 +35,59 @@ export function nativeEvidenceLine(plantId: string, regionId?: string): HTMLElem
     t("evidence.checklist"),
   );
 
+  // A check when Kew agrees, a caution mark when it doesn't: the verdict at a
+  // glance, the sentence for the detail, and the guide for what the check is.
+  const guide = el("a", { href: guideHref("sources", "kew") }, t("evidence.guide"));
+  const meta = el("span", { class: "native-evidence-meta" }, [
+    t("evidence.checked", { when: monthYear(ev.checked) }), " · ", guide,
+  ]);
+
   if (!ev.unconfirmed) {
-    return el("p", { class: "note native-evidence" }, [
-      // "Native in Michigan — Kew's World Checklist agrees, checked September 2026."
-      t("evidence.confirmedBefore", { area: ev.area }),
-      kew,
-      t("evidence.confirmedAfter", { when: monthYear(ev.checked) }),
-      // Said only where the area checked is wider than the region, because then
-      // the check is a floor and not a verdict about this ground.
-      ...(ev.coarse ? [" ", t("evidence.coarse", { area: ev.area })] : []),
+    return el("div", { class: "native-evidence" }, [
+      mark("ok"),
+      el("p", {}, [
+        kew,
+        t("evidence.confirmedAfter", { area: ev.area }),
+        // Said only where the area checked is wider than the region, because then
+        // the check is a floor and not a verdict about this ground.
+        ...(ev.coarse ? [" ", t("evidence.coarse", { area: ev.area })] : []),
+        " ", meta,
+      ]),
     ]);
   }
 
-  return el("p", { class: "note native-evidence native-evidence-open" }, [
-    kew,
-    t(`evidence.unconfirmed.${ev.unconfirmed}` as const, { area: ev.area }),
-    " ",
-    t("evidence.stands"),
+  return el("div", { class: "native-evidence native-evidence-open" }, [
+    mark("warn"),
+    el("p", {}, [
+      kew,
+      t(`evidence.unconfirmed.${ev.unconfirmed}` as const, { area: ev.area }),
+      " ",
+      t("evidence.stands"),
+      " ", meta,
+    ]),
   ]);
+}
+
+const NS = "http://www.w3.org/2000/svg";
+/** A circled check (Kew agrees) or a caution triangle (it doesn't). */
+function mark(kind: "ok" | "warn"): SVGSVGElement {
+  const svg = document.createElementNS(NS, "svg");
+  for (const [k, v] of Object.entries({
+    viewBox: "0 0 20 20", "aria-hidden": "true", class: `evidence-mark evidence-${kind}`,
+    fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round", "stroke-linejoin": "round",
+  })) svg.setAttribute(k, v);
+  const add = (tag: string, a: Record<string, string>): void => {
+    const n = document.createElementNS(NS, tag);
+    for (const [k, v] of Object.entries(a)) n.setAttribute(k, v);
+    svg.append(n);
+  };
+  if (kind === "ok") {
+    add("circle", { cx: "10", cy: "10", r: "8.2" });
+    add("path", { d: "M6.3 10.3l2.5 2.5 5-5.3" });
+  } else {
+    add("path", { d: "M10 2.8 18 16.6H2z" });
+    add("line", { x1: "10", y1: "8", x2: "10", y2: "11.6" });
+    add("circle", { cx: "10", cy: "14.1", r: "0.9", fill: "currentColor", stroke: "none" });
+  }
+  return svg;
 }

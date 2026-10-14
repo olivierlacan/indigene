@@ -16,7 +16,7 @@ export const APP_NAME = BRAND.name;
 
 /** The app's name, a dash, and the tagline. */
 export function appTitle(lang: BrandLang = "en"): string {
-  return `${BRAND.name} — ${BRAND.tagline[lang]}`;
+  return `${BRAND.name} · ${BRAND.tagline[lang]}`;
 }
 
 /** The tagline as the start of a sentence, capitalized. */

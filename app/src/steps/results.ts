@@ -1,8 +1,10 @@
+import { scaleChip, ecoregionChip } from "../components/zone-chip";
+import { moistureIcon } from "../components/moisture-icon";
 import { sunIcon } from "../components/sun-icon";
 import { statTiles } from "../components/stat-card";
 import { goalIcon, filterIcon, chevronIcon } from "../components/control-icons";
 import { soilAnswer } from "../lib/soil-answer";
-import { guideLink } from "../components/guide-link";
+import { guideLink, guideHref, quietLink } from "../components/guide-link";
 import { el, clear, toast } from "../ui";
 import { mostWanted, wantedRegionHref } from "../lib/invasives";
 import { navigate, store, persistPrefs, resultsTrail, leaveResults } from "../state";
@@ -14,11 +16,10 @@ import { priorityName, matchingPreset } from "../lib/priorities";
 import { plantCard } from "../components/plant-card";
 import { reportRosterUntranslated } from "../components/wip-banner";
 import { recompute } from "../components/recompute";
-import { privacyNote } from "../components/privacy-link";
+import { privacyRoute } from "../components/privacy-link";
 import {
   sunLabel,
   ISSUES_URL,
-  ZONE_INFO_URL,
   moistureWord,
 } from "../lib/plain";
 import { getSpot, saveSpot } from "../db";
@@ -92,21 +93,30 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
   // the name filter moved would read as a glitch rather than as an honest caveat.
   reportRosterUntranslated(plants, regionId);
 
+  // Cards drawn so far: 25 at a time, the next 25 on request, ranked the same.
+  const PAGE = 25;
+  let limit = PAGE;
+
   function rerender(): void {
     const ranked = rankDraft(plants);
     // The typed name narrows the *ranked* list, not just the cards on screen:
     // only the top 25 are ever drawn, so hiding drawn cards would quietly lose
     // the oak sitting at rank 30. The names searched are the same three a
     // region roster matches on — displayed, English, and botanical.
+    // Without a name typed, the list ends at the last plant that suits the
+    // spot: paging on into poor matches is how a list fills up with plants
+    // nobody should buy. Typing a name still finds any of them, on purpose.
+    const suits = ranked.filter((r) => r.match !== "poor");
     const hits = nameQuery
       ? ranked.filter((r) => nameHay(r.plant).includes(nameQuery))
-      : ranked;
+      : suits;
+    const leftOut = nameQuery ? 0 : ranked.length - suits.length;
     // Said here rather than on the keystroke, because a slider or a filter can
     // change what a standing query matches without anyone typing a thing.
     nameFilter.say(matchLine(hits.length, ranked.length));
 
     clear(listEl);
-    const shown = hits.slice(0, 25);
+    const shown = hits.slice(0, limit);
     const goodCount = ranked.filter((r) => r.match !== "poor").length;
     // Only claim a climate check when a looked-up zone actually filtered the
     // list; on the hand-picked-region path nothing was checked against winter.
@@ -133,8 +143,18 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     }
     shown.forEach((r) => listEl.append(plantCard(r, store.weights, nameQuery, regionId)));
     if (hits.length > shown.length) {
-      listEl.append(el("p", { style: "text-align:center;color:var(--ink-soft)" },
-        t("results.showingTop", { n: fmtNumber(shown.length) })));
+      const next = Math.min(PAGE, hits.length - shown.length);
+      listEl.append(el("div", { class: "show-more" }, [
+        el("p", {}, t("results.showingTop", { n: fmtNumber(shown.length), total: fmtNumber(hits.length) })),
+        el("button", {
+          class: "btn btn-secondary",
+          type: "button",
+          onClick: () => { limit += PAGE; rerender(); },
+        }, t("results.showMore", { n: fmtNumber(next) })),
+      ]));
+    }
+    if (hits.length <= shown.length && leftOut > 0) {
+      listEl.append(el("p", { class: "list-end" }, t("results.poorLeftOut", { n: fmtNumber(leftOut) })));
     }
     // What the recompute changed — measured on the ranking itself, never on the
     // typing, so a name filter doesn't get reported as a re-rank. Compared
@@ -242,7 +262,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     }, s.choices.map((c) =>
       el("option", { value: String(c.ft), selected: c.ft === selectedFt }, c.label)
     )) as HTMLSelectElement;
-    return el("label", { style: "display:flex;gap:0.6rem;align-items:center;min-height:3rem;font-weight:500" }, [
+    return el("label", { class: "filter-check" }, [
       el("input", { type: "checkbox", checked: stored != null, onChange: (e) => {
         store.filters[s.key] = (e.target as HTMLInputElement).checked ? Number(select.value) : null;
         select.disabled = store.filters[s.key] == null;
@@ -254,7 +274,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
       s.tail,
     ]);
   });
-  const filters = el("details", { class: "weights", style: "margin-top:0.5rem" }, [
+  const filters = el("details", { class: "weights" }, [
     el("summary", { class: "control-row" }, [
       filterIcon(),
       el("span", { class: "control-text" }, [
@@ -267,17 +287,16 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
       ]),
       chevronIcon("down"),
     ]),
-    el("div", {}, [
+    el("div", { class: "filter-grid" }, [
       ...filterDefs.map((f) =>
-        el("label", { style: "display:flex;gap:0.6rem;align-items:center;min-height:3rem;font-weight:500" }, [
+        el("label", { class: "filter-check" }, [
           el("input", { type: "checkbox", checked: store.filters[f.key], onChange: (e) => { store.filters[f.key] = (e.target as HTMLInputElement).checked; persistPrefs(); rerender(); } }),
           f.label,
         ])
       ),
       ...sizeRows,
-      el("p", { class: "more-link", style: "margin:0.5rem 0 0" },
-        el("a", { href: "#/traits" }, t("results.filtersMeaning"))),
     ]),
+    quietLink("info", "#/traits", t("results.filtersMeaning"), "margin:0.4rem 0 0.2rem"),
   ]);
 
   const conditions = summarize();
@@ -286,8 +305,11 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     el("h2", { class: "step-title" }, t("results.title")),
     el("p", { class: "region-tag", style: "margin:0 0 0.5rem;font-size:0.9rem;color:var(--ink-soft)" },
       // The region links its whole roster: the list below is only its best fits.
-      tx(chosen ? "results.regionTagPick" : "results.regionTag",
-        { region: el("a", { href: `#/regions/${region.meta.id}` }, name) })),
+      [...tx(chosen ? "results.regionTagPick" : "results.regionTag",
+        { region: el("a", { href: `#/regions/${region.meta.id}` }, name) }),
+       // The ecoregion that chose this list, as a quiet code beside its name.
+       ...(store.draft.site?.ecoregionInfo
+        ? [" ", ecoregionChip(store.draft.site.ecoregionInfo, guideHref("regions", "zones"))] : [])]),
     conditions,
     el("div", { class: "result-controls" }, [rankedFor, filters]),
     guideLink("ranking", t("guide.ranking"), undefined, "margin:0.5rem 0 0"),
@@ -306,7 +328,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
       // spot to save, so the button honestly isn't there.
       ...(hasCoords ? [el("button", { class: "btn btn-primary", onClick: doSave }, t("results.save"))] : []),
     ]),
-    ...(hasCoords ? [privacyNote(t("results.privacy"))] : []),
+    ...(hasCoords ? [quietLink("lock", privacyRoute("saved"), t("results.privacyLink"), "margin:0.6rem 0 0")] : []),
     // The rest of the region, for a reader who has their list: what it feeds,
     // and what to pull.
     el("p", { class: "more-link", style: "margin-top:1rem" }, tx(
@@ -328,7 +350,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
   // Common parlance first, the technical term in parentheses with a link —
   // "zone 8b" and "mesic" are never shown bare (see the plain-language rule).
   // The spot's conditions as a row of icon + words — the sun step's own sun
-  // drawing, and the 💧 / ❄️ the plant pages' figure tiles use — so each reads
+  // drawing, the soil step's drop, and the ❄️ the plant pages' figure tiles use — so each reads
   // back as the answer the reader gave. Plain text, not buttons: the controls
   // below are what you tap.
   function summarize(): HTMLElement {
@@ -348,12 +370,12 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
       items.push(item(sunIcon(level), [t("results.condSun", { label: cap(sunLabel(sun.hours)), hours: fmtNumber(sun.hours) })]));
     }
     const m = siteMoisture(site, store.draft.moistureOverride);
-    items.push(item("💧", [cap(t("results.soilBand", { word: moistureWord(m) }))]));
+    items.push(item(moistureIcon(m), [cap(t("results.soilBand", { word: moistureWord(m) }))]));
     if (zone) {
-      const zoneLink = el("a", { href: ZONE_INFO_URL, target: "_blank", rel: "noopener" }, t("results.zoneLink", { zone }));
+      const chip = scaleChip("USDA", zone, t("zoneChip.zone", { zone }), guideHref("regions", "zones"));
       items.push(item("❄️", site?.zoneMinTempF != null
-        ? tx("results.condWinter", { link: zoneLink }, { temp: temperature(site.zoneMinTempF) })
-        : [zoneLink]));
+        ? [t("results.condWinter", { temp: temperature(site.zoneMinTempF) }), " ", chip]
+        : [chip]));
     }
     return el("div", { class: "conditions" }, [
       el("ul", { class: "condition-list", "aria-label": t("results.condLabel") }, items),

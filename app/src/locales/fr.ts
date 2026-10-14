@@ -36,7 +36,7 @@ export const fr: Dict = {
   "app.title": appTitle("fr"),
   "app.name": "Indigene",
   "app.skipToContent": "Aller au contenu principal",
-  "app.offline": "Hors ligne — données enregistrées",
+  "app.offline": "Hors ligne : données enregistrées",
   "nav.sections": "Rubriques",
   "nav.regions": "Régions",
   "nav.plants": "Plantes",
@@ -97,8 +97,7 @@ export const fr: Dict = {
   // Réglages.
   // ---------------------------------------------------------------------
   "settings.title": "Réglages",
-  "settings.lede":
-    "La façon dont l'application se lit, et ce qu'elle retient de vous — le tout gardé sur cet appareil.",
+  "settings.lede": "La façon dont l'application se lit, et ce qu'elle retient de vous. Tout reste sur cet appareil.",
   "settings.readingTitle": "Langue et unités",
   "settings.memoryTitle": "Ce que cet appareil retient",
   "settings.memoryLede":
@@ -107,16 +106,14 @@ export const fr: Dict = {
   "settings.languageHelp":
     "Change tous les mots de l'application. Les noms de plantes et d'animaux suivent aussi, chaque fois qu'une liste nationale nous donne le nom dans votre langue.",
   "settings.units": "Unités",
-  "settings.unitsHelp":
-    "Les hauteurs, la pluie et le froid de l'hiver. Indépendant de la langue : vous pouvez lire en français et mesurer en pieds si c'est ce qu'utilise votre pépiniériste.",
+  "settings.unitsHelp": "Les hauteurs, la pluie et le froid de l'hiver. Indépendant de la langue : lisez en français et mesurez en pieds si votre pépiniériste le fait.",
   "settings.units.auto": "Comme mon appareil",
   "settings.units.metric": "Métrique",
   "settings.units.imperial": "Impérial",
-  "settings.units.autoSub": "Ce qu'utilise la région de votre téléphone — {resolved} en ce moment.",
+  "settings.units.autoSub": "Ce qu'utilise la région de votre téléphone : {resolved} en ce moment.",
   "settings.units.metricSub": "Mètres, centimètres, millimètres de pluie, °C.",
   "settings.units.imperialSub": "Pieds, pouces, pouces de pluie, °F.",
-  "settings.namesNote":
-    "Les noms de plantes et d'animaux viennent de la liste nationale de référence de chaque pays, pas d'une traduction automatique — {link}.",
+  "settings.namesNote": "Les noms de plantes et d'animaux viennent de la liste nationale de référence de chaque pays, pas d'une traduction automatique ({link}).",
   "settings.namesNoteLink": "voir d'où vient chaque nom",
   "settings.spotsTitle": "Vos lieux enregistrés",
   "settings.spotsLede":
@@ -140,13 +137,11 @@ export const fr: Dict = {
   "backup.kept": "Ce navigateur a accepté de ne pas effacer vos lieux quand la place manque.",
   "backup.notKept":
     "Ce navigateur peut effacer vos lieux pour libérer de la place. Une copie les met à l'abri.",
-  "backup.empty":
-    "Rien d'enregistré pour l'instant — il n'y a donc rien à copier. Un fichier venu d'un autre navigateur peut tout de même entrer.",
+  "backup.empty": "Rien d'enregistré pour l'instant, donc rien à copier. Un fichier venu d'un autre navigateur peut tout de même entrer.",
   "backup.save": "Enregistrer une copie",
   "backup.open": "Faire entrer une copie",
   "backup.saved": "Enregistré, là où votre navigateur met ses téléchargements.",
-  "backup.privacy":
-    "Votre navigateur écrit le fichier directement sur cet appareil — il ne passe jamais par nous",
+  "backup.privacy": "Votre navigateur écrit le fichier directement sur cet appareil. Il ne passe jamais par nous",
   "backup.readTitle": "Copie lue.",
   "backup.rowSpots": "Lieux ajoutés",
   "backup.rowPlantings": "Plantations ajoutées",
@@ -190,16 +185,13 @@ export const fr: Dict = {
   // Les trois choses retenues, en fiches de réglages.
   // ---------------------------------------------------------------------
   "memory.spotTitle": "Votre dernier endroit",
-  "memory.spotLede":
-    "Là où vous étiez la dernière fois, pour ne pas tout recommencer. Les réponses sur le soleil et le sol n'appartiennent qu'à cet endroit-là : ailleurs, la question est reposée, parce que la réponse y est vraiment différente.",
-  "memory.spotEmpty":
-    "Rien pour l'instant. Dès que vous aurez trouvé un endroit, il vous attendra ici — et la prochaine visite commencera par lui plutôt que par une carte vierge.",
+  "memory.spotLede": "Là où vous étiez la dernière fois, pour ne pas tout recommencer. Les réponses sur le soleil et le sol ne valent que pour cet endroit. Ailleurs, la question revient, parce que les réponses y sont vraiment différentes.",
+  "memory.spotEmpty": "Rien pour l'instant. Dès que vous aurez trouvé un endroit, il vous attendra ici, et la prochaine visite commencera par lui plutôt que par une carte vierge.",
   "memory.spotWhere": "Endroit",
   "memory.spotWhereRegion": "{region} (choisie à la main, sans point sur la carte)",
   "memory.spotSun": "Soleil",
   "memory.spotSoil": "Humidité du sol",
-  "memory.spotPrivacy":
-    "Cet endroit ne vit que sur cet appareil — il n'en sort jamais, et nous ne pouvons pas le voir",
+  "memory.spotPrivacy": "Cet endroit ne vit que sur cet appareil. Il n'en sort jamais, et nous ne pouvons pas le voir",
   "memory.spotUse": "Repartir d'ici",
   "memory.unanswered": "Pas encore répondu",
   "memory.forget": "Oublier",
@@ -210,7 +202,7 @@ export const fr: Dict = {
   "memory.regionAuto": "La déduire de l'endroit où je suis",
   "memory.regionAutoSub": "La façon habituelle : votre endroit décide de la liste de plantes.",
   "memory.regionShowAll": "Afficher toutes les régions",
-  "memory.regionSet": "Enregistré — vous partirez d'ici.",
+  "memory.regionSet": "Enregistré. Vous partirez d'ici.",
   "memory.regionCleared": "De nouveau déduite de votre endroit.",
   "memory.goalTitle": "Objectif du classement",
   "memory.goalLede":
@@ -218,15 +210,13 @@ export const fr: Dict = {
   "memory.goalResetBtn": "Revenir à l'objectif habituel",
   "memory.goalReset": "Retour à l'objectif habituel.",
   "memory.visitTitle": "Ce qui est nouveau pour vous",
-  "memory.visitLede":
-    "De quoi afficher un point vert à côté des nouveautés — dans le menu ⚙️ et en bas de chaque page — quand quelque chose a été ajouté depuis votre dernier passage, et le laisser éteint quand rien n'a bougé.",
+  "memory.visitLede": "De quoi afficher un point vert à côté des nouveautés (dans le menu ⚙️ et en bas de chaque page) quand quelque chose a été ajouté depuis votre dernier passage.",
   "memory.visitEmpty":
     "Rien pour l'instant. Dès votre prochaine visite, vous verrez ici quand vous êtes passé la dernière fois et jusqu'où vous aviez lu la page des nouveautés.",
   "memory.visitSeen": "Vous avez lu jusqu'à",
   "memory.visitSeenValue": "Version {version}",
   "memory.visitWhen": "Dernier passage",
-  "memory.visitPrivacy":
-    "Un numéro de version et une date, dans ce navigateur — pas de compte, rien sur qui vous êtes, et rien qui quitte l'appareil",
+  "memory.visitPrivacy": "Un numéro de version et une date, dans ce navigateur. Pas de compte, rien sur qui vous êtes, et rien ne quitte l'appareil",
   "memory.countTitle": "Compter mes visites",
   "memory.countLede": "Nous comptons les pages ouvertes. Jamais qui les ouvre, d'où, ni ce qui y est saisi.",
   "memory.countBrowserOff":
@@ -234,10 +224,9 @@ export const fr: Dict = {
   "memory.countOn": "Compter mes visites",
   "memory.countOnSub": "Une page a été ouverte, et laquelle. Rien qui dise que c'était vous.",
   "memory.countOff": "Ne pas compter mes visites",
-  "memory.countOffSub":
-    "Rien n'est chargé et aucune connexion n'est établie — ils n'apprennent jamais que votre navigateur existe.",
+  "memory.countOffSub": "Rien n'est chargé et aucune connexion n'est établie. Ils n'apprennent jamais que votre navigateur existe.",
   "memory.countPrivacy": "Un décompte de pages, jamais un fichier sur les gens",
-  "memory.countNowOn": "Compté — merci.",
+  "memory.countNowOn": "Compté. Merci.",
   "memory.countNowOff": "Plus compté, dès votre prochaine visite.",
 
   // ---------------------------------------------------------------------
@@ -281,15 +270,13 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // Parcourir.
   // ---------------------------------------------------------------------
-  "browse.docTitle": "Parcourir les régions et les plantes indigènes — Indigene",
+  "browse.docTitle": "Parcourir les régions et les plantes indigènes · Indigene",
   "browse.title": "Parcourir les régions et les plantes indigènes",
-  "browse.lede": "Pas besoin de position : partez plutôt d'une région ou d'une plante remarquable.",
+  "browse.lede": "Pas besoin de position. Partez plutôt d'une région ou d'une plante remarquable.",
   "browse.regionsTitle.one": "Pour l'instant, une seule région est couverte",
   "browse.regionsTitle.other": "Les régions couvertes jusqu'ici",
-  "browse.regionsLede":
-    "Les recommandations sont établies région par région — choisissez celle qui correspond à l'endroit où vous planterez :",
-  "browse.outside":
-    "Ailleurs, les mesures de soleil et de sol fonctionnent toujours — il manque seulement la liste de plantes. Vous voulez la vôtre ? {link}.",
+  "browse.regionsLede": "Les recommandations sont établies région par région. Choisissez celle où vous planterez :",
+  "browse.outside": "Ailleurs, les mesures de soleil et de sol fonctionnent toujours, mais sans liste de plantes pour l'instant. Vous voulez la vôtre ? {link}.",
   "browse.outsideLink": "Proposez votre région sur GitHub",
   "browse.plantTitle": "Ou partez d'une plante",
   "browse.plantLede":
@@ -310,8 +297,7 @@ export const fr: Dict = {
   "saved.deleteLabel": "Supprimer {label}",
   "saved.confirmDelete": "Supprimer « {label} » ? C'est définitif.",
   "saved.deleted": "Supprimé.",
-  "saved.privacy":
-    "Ces lieux ne vivent que sur cet appareil — ils n'en sortent jamais, et nous ne pouvons pas les voir",
+  "saved.privacy": "Ces lieux ne vivent que sur cet appareil. Ils n'en sortent jamais, et nous ne pouvons pas les voir",
   "saved.findAnother": "Trouver un autre lieu",
   "saved.statPlants.one": "{count} plante en terre ici",
   "saved.statPlants.other": "{count} plantes en terre ici",
@@ -329,7 +315,7 @@ export const fr: Dict = {
   // La page d'un lieu : le journal des plantations. Ce qui a été planté,
   // quand, et où ça devrait en être aujourd'hui.
   // ---------------------------------------------------------------------
-  "spot.docTitle": "{label} — Indigene",
+  "spot.docTitle": "{label} · Indigene",
   "spot.notFound": "Ce lieu n'est pas sur cet appareil.",
   "spot.backToSaved": "Vos lieux enregistrés",
   "spot.seePlants": "Planter plus",
@@ -337,19 +323,17 @@ export const fr: Dict = {
   "spot.renamePrompt": "Nommer ce lieu",
   "spot.renamed": "Renommé.",
   "spot.move": "Déplacer",
-  "spot.privacy": "Votre journal reste sur cet appareil — les plantes, les dates, tout",
+  "spot.privacy": "Votre journal reste sur cet appareil : les plantes, les dates, tout",
   "spot.tilesLabel": "Ce qui pousse ici",
   "spot.tilePlants": "Plantes",
   "spot.tilePlantsExplain": "Chaque plante inscrite ici : six asclépiades comptent pour six.",
   "spot.tileKinds": "Espèces",
-  "spot.tileKindsExplain":
-    "Combien de plantes différentes vous avez mises. Un mélange fait tenir un jardin toute l'année — une floraison au printemps, des baies à l'automne.",
+  "spot.tileKindsExplain": "Combien de plantes différentes vous avez mises. Un mélange fait tenir un jardin toute l'année : une floraison au printemps, des baies à l'automne.",
   "spot.tileHosts": "Chenilles",
   "spot.tileHostsExplain":
     "Combien de vos espèces élèvent des chenilles. Les chenilles sont ce que les oiseaux donnent à leurs petits : c'est le chiffre qui transforme un jardin en garde-manger.",
   "spot.tileWildlife": "Faune",
-  "spot.tileWildlifeExplain":
-    "Les insectes et animaux que vos plantes peuvent nourrir ici, d'après les sources. Cela dit qu'ils peuvent profiter de ce que vous avez planté — pas qu'ils l'ont déjà trouvé.",
+  "spot.tileWildlifeExplain": "Les insectes et animaux que vos plantes peuvent nourrir ici, d'après les sources. Ils peuvent profiter de ce que vous avez planté, sans forcément l'avoir déjà trouvé.",
   "spot.neighborsTitle": "La faune du quartier",
   "spot.menuNote": "Ces animaux mangent ce que vous avez planté, même s'ils ne l'ont peut-être pas encore trouvé. ⭐ = aucune autre plante ne convient.",
   "spot.menuMore": "Tout voir",
@@ -378,8 +362,7 @@ export const fr: Dict = {
   "spot.ownHelp.seeds": "Mange les graines de votre {plant}",
   "spot.ownHelp.shelter": "S'abrite dans votre {plant}",
   "spot.logTitle": "Ce que vous avez planté",
-  "spot.logEmpty":
-    "Rien d'inscrit ici pour l'instant. Ajoutez la première plante mise en terre — la date peut rester vague, « 2024 » suffit.",
+  "spot.logEmpty": "Rien d'inscrit ici pour l'instant. Ajoutez la première plante mise en terre. La date peut rester vague : « 2024 » suffit.",
   "spot.whenUnknown": "Date non renseignée",
   "spot.removeLabel": "Retirer {name} de ce journal",
   "spot.confirmRemove": "Retirer {name} de ce journal ?",
@@ -438,7 +421,7 @@ export const fr: Dict = {
   "inat.remove": "Retirer",
   "inat.removed": "Retiré de cet appareil.",
   "inat.privacyLink": "Comment votre nom d'utilisateur est traité",
-  "import.docTitle": "Importer depuis iNaturalist — Indigene",
+  "import.docTitle": "Importer depuis iNaturalist · Indigene",
   "import.title": "Importer depuis iNaturalist",
   "import.lede": "Vos observations de plantes des cinq dernières années près de ce lieu, triées selon sa région. Cochez ce qui y pousse.",
   "import.notLinked": "Reliez d'abord votre nom d'utilisateur iNaturalist dans les Réglages.",
@@ -525,7 +508,7 @@ export const fr: Dict = {
   "grow.src.rank": "L'ordre est le nôtre : d'abord les plantes dont un animal ne peut se passer, puis les plantes essentielles et les plantes hôtes des chenilles.",
   "grow.src.plant": "Les méthodes propres à chaque plante, et leur source, sont sur sa page.",
   "grow.more": "Voir tout le plan de saison",
-  "grow.docTitle": "{label} — plan de saison",
+  "grow.docTitle": "{label} : plan de saison",
   "grow.page.spring": "Plan de printemps",
   "grow.page.summer": "Plan d'été",
   "grow.page.fall": "Plan d'automne",
@@ -541,7 +524,7 @@ export const fr: Dict = {
   "grow.addHonest": "Vus près d'ici : un bon pari, pas une promesse.",
   "grow.addNoRegion": "Cet endroit est hors des régions couvertes par Indigene ; il n'y a pas de liste où choisir.",
   "privacy.inatTitle": "Si vous reliez votre compte iNaturalist",
-  "privacy.inat1": "Votre nom d'utilisateur est gardé dans ce navigateur et nulle part ailleurs — sauf dans le fichier où les Réglages enregistrent vos lieux, pour qu'une restauration le ramène. Choisissez à qui vous donnez ce fichier.",
+  "privacy.inat1": "Votre nom d'utilisateur reste dans ce navigateur. Il figure aussi dans le fichier où les Réglages enregistrent vos lieux, pour qu'une restauration le ramène. Choisissez à qui vous donnez ce fichier.",
   "privacy.inat2": "Il n'est envoyé à iNaturalist que lorsque vous le reliez, importez, ou cherchez la faune autour d'un endroit enregistré, pour demander vos observations, déjà publiques sur iNaturalist. L'import l'envoie avec le lieu, arrondi à environ 1 km, pour ne recevoir que vos observations à moins de 35 km. Rien d'autre n'envoie de lieu avec.",
   "privacy.inat3": "Il n'apparaît jamais dans l'adresse d'une page : le compteur de visites ne le voit donc jamais. Ni mot de passe ni connexion : Indigene ne peut rien publier ni modifier sur iNaturalist.",
   "privacy.inat4": "Seul ce que vous cochez est gardé : le numéro de l'observation, sur la ligne qu'elle a créée. {link} et il disparaît.",
@@ -569,40 +552,35 @@ export const fr: Dict = {
   "rarity.counted": "Relevés de {date}",
   "rarity.region.none":
     "Personne n'a encore relevé cette plante nulle part en {region}. Si votre terrain lui convient, la vôtre sera peut-être la seule pendant un moment.",
-  "rarity.region.scarce":
-    "Rarement relevée en {region} — {count} relevés. Peu de gens ici en ont vu une.",
-  "rarity.region.occasional": "Relevée de temps en temps en {region} — {count} relevés.",
-  "rarity.region.common":
-    "L'une des plantes les plus relevées en {region} — {count} relevés.",
+  "rarity.region.scarce": "Rarement relevée en {region} : {count} relevés. Peu de gens ici en ont vu une.",
+  "rarity.region.occasional": "Relevée de temps en temps en {region} : {count} relevés.",
+  "rarity.region.common": "L'une des plantes les plus relevées en {region} : {count} relevés.",
   "rarity.aroundSpot": "Autour de votre emplacement",
   "rarity.none":
     "Personne n'a relevé cette plante à moins de {radius} d'ici. Si votre terrain lui convient, la vôtre sera peut-être la seule pendant un moment.",
-  "rarity.scarce":
-    "Rarement relevée par ici — {count} relevés à moins de {radius}. Peu de gens alentour en ont vu une.",
-  "rarity.occasional": "Relevée de temps en temps — {count} relevés à moins de {radius}.",
-  "rarity.common":
-    "L'une des plantes les plus relevées par ici — {count} relevés à moins de {radius}.",
+  "rarity.scarce": "Rarement relevée par ici : {count} relevés à moins de {radius}. Peu de gens alentour en ont vu une.",
+  "rarity.occasional": "Relevée de temps en temps : {count} relevés à moins de {radius}.",
+  "rarity.common": "L'une des plantes les plus relevées par ici : {count} relevés à moins de {radius}.",
   "rarity.caveat":
     "Un relevé compte quelqu'un qui a remarqué une plante, pas la quantité qui pousse ici.",
 
   // ---------------------------------------------------------------------
   // Explorer.
   // ---------------------------------------------------------------------
-  "explore.docTitle": "À la rencontre des indigènes — Indigene",
+  "explore.docTitle": "À la rencontre des indigènes · Indigene",
   "explore.title": "À la rencontre des indigènes",
-  "explore.lede":
-    "{plants} plantes indigènes réparties sur les {regions} régions couvertes jusqu'ici. Ouvrez celle où vous vivez pour voir toute sa liste — ou touchez la plante en couverture d'une carte pour faire sa connaissance.",
+  "explore.lede": "{plants} plantes indigènes réparties sur les {regions} régions couvertes jusqu'ici. Ouvrez la vôtre pour voir toute sa liste, ou touchez la plante d'une carte pour faire sa connaissance.",
   "explore.missing": "Votre région n'y est pas ? {link}.",
   "explore.byWildlife": "Ou parcourir par animal → ",
   "explore.byWildlifeSub":
     "partez du monarque, du colibri ou de la tortue que vous espérez voir, et trouvez les plantes qui le font vivre.",
   "explore.starring": "En vedette",
-  "explore.keystoneTitle": "Plante essentielle — elle fait vivre bien plus d'animaux que la moyenne",
+  "explore.keystoneTitle": "Plante essentielle : elle fait vivre bien plus d'animaux que la moyenne",
   "explore.keystoneLabel": "Plante essentielle",
   "explore.caterpillarSpecies": "{n} espèces de chenilles",
   "explore.statPlants": "{n} plantes indigènes sur la liste d'Indigene pour {region}",
-  "explore.statKeystone.one": "{n} plante essentielle — celle sur laquelle tout le réseau alimentaire s'appuie",
-  "explore.statKeystone.other": "{n} plantes essentielles — celles sur lesquelles tout le réseau alimentaire s'appuie",
+  "explore.statKeystone.one": "{n} plante essentielle, celle sur laquelle tout le réseau alimentaire s'appuie",
+  "explore.statKeystone.other": "{n} plantes essentielles, celles sur lesquelles tout le réseau alimentaire s'appuie",
   "explore.statWildlife": "{n} espèces animales dont le lien avec ces plantes est documenté",
 
   // ---------------------------------------------------------------------
@@ -701,24 +679,22 @@ export const fr: Dict = {
   // Soleil (étape 2).
   // ---------------------------------------------------------------------
   "sun.title": "Combien de soleil ce lieu reçoit-il ?",
-  "sun.ledeWithScan": "Choisissez ce qui s'en rapproche le plus — le balayage du ciel, plus bas, peut l'affiner.",
+  "sun.ledeWithScan": "Choisissez ce qui s'en rapproche le plus. Le balayage du ciel, plus bas, peut l'affiner.",
   "sun.lede": "Choisissez ce qui s'en rapproche le plus.",
   "sun.whyTitle": "Pourquoi commencer par le soleil ?",
-  "sun.why":
-    "Le nombre d'heures de soleil direct décide de ce qui poussera mieux que tout ce que vous pourriez mesurer d'autre. Et l'ombre n'est pas un défaut : il existe une indigène pour chaque niveau de lumière, des fleurs de prairie aux fougères de sous-bois. La lumière décide seulement lesquelles.",
+  "sun.why": "Le nombre d'heures de soleil direct décide de ce qui poussera mieux que tout ce que vous pourriez mesurer d'autre. L'ombre n'est pas un défaut : il existe une indigène pour chaque niveau de lumière, des fleurs de prairie aux fougères de sous-bois.",
   "sun.full": "Ensoleillé la plus grande partie du jour",
-  "sun.fullSub": "Six heures de soleil direct ou plus — pelouse dégagée, côté sud, pas de grand arbre à proximité.",
-  "sun.fullSubSouth": "Six heures de soleil direct ou plus — pelouse dégagée, côté nord, pas de grand arbre à proximité.",
+  "sun.fullSub": "Six heures de soleil direct ou plus : pelouse dégagée, côté sud, pas de grand arbre à proximité.",
+  "sun.fullSubSouth": "Six heures de soleil direct ou plus : pelouse dégagée, côté nord, pas de grand arbre à proximité.",
   "sun.half": "Du soleil environ la moitié du jour",
-  "sun.halfSub":
-    "Quelques heures de soleil direct, de l'ombre le reste du temps — près d'un bâtiment ou sous des arbres épars.",
+  "sun.halfSub": "Quelques heures de soleil direct, de l'ombre le reste du temps. Près d'un bâtiment ou sous des arbres épars.",
   "sun.shade": "Plutôt ombragé",
-  "sun.shadeSub": "Peu de soleil direct — sous les arbres, au nord, ou encadré par des murs.",
-  "sun.shadeSubSouth": "Peu de soleil direct — sous les arbres, au sud, ou encadré par des murs.",
+  "sun.shadeSub": "Peu de soleil direct : sous les arbres, au nord, ou encadré par des murs.",
+  "sun.shadeSubSouth": "Peu de soleil direct : sous les arbres, au sud, ou encadré par des murs.",
   "sun.thisSpotGets": "Ce lieu reçoit ",
   "sun.bestGuess": "Estimation : {hours} heures, sans doute entre {low} et {high}.",
   "sun.fromScan": "Mesuré à partir de votre balayage du ciel.",
-  "sun.fromPickWithScan": "D'après votre choix rapide — balayez le ciel ci-dessous pour une estimation plus fine.",
+  "sun.fromPickWithScan": "D'après votre choix rapide. Balayez le ciel ci-dessous pour une estimation plus fine.",
   "sun.fromPick": "D'après votre choix rapide.",
   "sun.remembered":
     "Votre réponse pour cet endroit la dernière fois. Touchez-en une autre pour la changer.",
@@ -726,8 +702,7 @@ export const fr: Dict = {
   "sun.deciduous": "🍂 Des arbres au-dessus qui perdent leurs feuilles ?",
   "sun.deciduousSub": "Les branches nues laissent passer plus de soleil au printemps et à l'automne.",
   "sun.scanTitle": "📷 Balayer le ciel pour affiner l'estimation",
-  "sun.scanLede":
-    "Pointez votre téléphone vers l'horizon et tournez lentement sur vous-même, un tour complet. Nous relèverons la hauteur des arbres et des toits, et calculerons les vraies heures de soleil de cet endroit précis. Il faut l'accès à la caméra et aux capteurs de mouvement — vous pouvez tout à fait passer cette étape.",
+  "sun.scanLede": "Pointez votre téléphone vers l'horizon et tournez lentement sur vous-même, un tour complet. Nous relèverons la hauteur des arbres et des toits, et calculerons les vraies heures de soleil de cet endroit précis. Il faut l'accès à la caméra et aux capteurs de mouvement, et vous pouvez passer cette étape.",
   "sun.scanStart": "Démarrer le balayage",
   "sun.back": "Retour",
 
@@ -737,10 +712,9 @@ export const fr: Dict = {
   "scan.title": "Balayez votre ciel",
   "scan.lede":
     "Levez votre téléphone et visez, avec la croix, le sommet des arbres, des toits ou des clôtures autour de vous. Tournez lentement sur un tour complet en gardant la croix sur l'horizon. Nous en déduirons le soleil que ce lieu reçoit vraiment.",
-  "scan.permissionNote":
-    "Nécessite la caméra et les capteurs de mouvement. Tout reste sur votre téléphone — aucune vidéo n'est enregistrée ni envoyée nulle part.",
+  "scan.permissionNote": "Nécessite la caméra et les capteurs de mouvement. Tout reste sur votre téléphone : aucune vidéo n'est enregistrée ni envoyée.",
   "scan.enable": "Autoriser caméra et mouvement",
-  "scan.skip": "Passer — je prends le choix rapide",
+  "scan.skip": "Passer au choix rapide",
   "scan.hud": "Visez l'horizon et tournez lentement…",
   "scan.turnFirst": "Faites d'abord un tour complet…",
   "scan.keepTurning": "Continuez à tourner… {pct} %",
@@ -751,11 +725,9 @@ export const fr: Dict = {
     "À savoir : la boussole de ce téléphone est déduite des capteurs de mouvement et peut dériver. Si l'estimation vous paraît fausse, prenez plutôt le choix rapide.",
   "scan.updated": "Estimation du soleil mise à jour d'après votre balayage.",
   "scan.noCameraTitle": "La caméra n'est pas disponible",
-  "scan.noCamera":
-    "Nous n'avons pas pu ouvrir la caméra — elle est peut-être bloquée, ou ce navigateur ne l'autorise pas. Ce n'est pas grave du tout : le choix rapide fait tout aussi bien l'affaire pour la plupart des lieux.",
+  "scan.noCamera": "Nous n'avons pas pu ouvrir la caméra. Elle est peut-être bloquée, ou ce navigateur ne l'autorise pas. Ce n'est pas grave : le choix rapide fait aussi bien l'affaire pour la plupart des lieux.",
   "scan.noMotionTitle": "Les capteurs de mouvement ne sont pas disponibles",
-  "scan.noMotion":
-    "Votre caméra fonctionne, mais ce téléphone ne partage pas sa boussole, donc nous ne pouvons pas mesurer les angles du soleil de façon fiable. Plutôt que de deviner, prenez le choix rapide — vous connaissez ce lieu mieux qu'un capteur hésitant.",
+  "scan.noMotion": "Votre caméra fonctionne, mais ce téléphone ne partage pas sa boussole, donc nous ne pouvons pas mesurer les angles du soleil de façon fiable. Prenez plutôt le choix rapide : vous connaissez ce lieu mieux qu'un capteur hésitant.",
   "scan.useQuickPick": "Prendre plutôt le choix rapide",
   "compass.N": "N",
   "compass.NE": "NE",
@@ -776,10 +748,8 @@ export const fr: Dict = {
   "confirm.sunFromScan": "mesuré par balayage",
   "confirm.sunFromPick": "votre choix rapide",
   "confirm.changeSun": "Modifier l'estimation du soleil",
-  "confirm.noSiteOnline":
-    "Nous n'avons pas pu joindre les services de sol et de climat (pas de réseau, ou ils sont en panne). Vous pouvez quand même obtenir des recommandations : indiquez simplement l'humidité ci-dessous d'après ce que vous voyez, et nous laisserons de côté ce que nous n'avons pas pu consulter.",
-  "confirm.noSiteManual":
-    "Vous avez choisi votre région vous-même : il n'y a donc pas de point sur la carte d'où tirer le sol, la pluie ou le froid de l'hiver. Ce n'est pas grave — indiquez l'humidité ci-dessous d'après ce que vous voyez, et le classement s'appuiera sur vos réponses de soleil et d'humidité.",
+  "confirm.noSiteOnline": "Nous n'avons pas pu joindre les services de sol et de climat (pas de réseau, ou ils sont en panne). Vous pouvez quand même obtenir des recommandations : indiquez l'humidité ci-dessous d'après ce que vous voyez, et nous laisserons de côté ce que nous n'avons pas pu consulter.",
+  "confirm.noSiteManual": "Vous avez choisi votre région vous-même : il n'y a donc pas de point sur la carte d'où tirer le sol, la pluie ou le froid de l'hiver. Ce n'est pas grave. Indiquez l'humidité ci-dessous d'après ce que vous voyez, et le classement s'appuiera sur vos réponses de soleil et d'humidité.",
   "confirm.climateTitle": "Climat et terrain",
   "confirm.winterCold": "Froid hivernal",
   "confirm.rainfall": "Pluie",
@@ -796,7 +766,7 @@ export const fr: Dict = {
   "confirm.soilCoarse": "Les cartes des sols sont grossières : fiez-vous plutôt à vos mains.",
   "confirm.soilCheckLink": "Tester votre sol en une minute (en anglais)",
   "confirm.texture": "Texture",
-  "confirm.winterValue": "Jusqu'à environ {temp} ({link})",
+  "confirm.winterValue": "Jusqu'à environ {temp}",
   "moisture.short.dry": "L'eau file vite, comme sur un talus sableux",
   "moisture.short.mesic": "Humide après la pluie, jamais détrempé. Le cas le plus courant",
   "moisture.short.wet": "Reste mouillé, ou fait des flaques",
@@ -827,8 +797,8 @@ export const fr: Dict = {
   "sun.gloss.partSun": "du soleil une bonne partie de la journée, de l'ombre le reste",
   "sun.gloss.partShade": "quelques heures de soleil direct, de l'ombre le reste",
   "sun.gloss.fullShade": "peu ou pas de soleil direct",
-  "sun.plain.one": "environ {n} heure de soleil direct par jour — c'est {label} ({gloss})",
-  "sun.plain.other": "environ {n} heures de soleil direct par jour — c'est {label} ({gloss})",
+  "sun.plain.one": "environ {n} heure de soleil direct par jour, soit {label} ({gloss})",
+  "sun.plain.other": "environ {n} heures de soleil direct par jour, soit {label} ({gloss})",
   "moisture.plain.dry": "sec : l'eau file vite, comme sur un talus sableux",
   "moisture.plain.mesic": "frais : humide après la pluie, jamais détrempé",
   "moisture.plain.wet": "humide : reste mouillé ou fait des flaques",
@@ -854,14 +824,13 @@ export const fr: Dict = {
   "score.pollinator.plain":
     "Le nectar et le pollen pour les abeilles et les papillons adultes, et la durée de la floraison.",
   "score.bird.name": "Nourrit et abrite les oiseaux",
-  "score.bird.plain": "Des baies, des graines et des endroits où nicher — plus les chenilles qu'elle élève.",
+  "score.bird.plain": "Des baies, des graines et des endroits où nicher, plus les chenilles qu'elle élève.",
   "score.stormwater.name": "Absorbe la pluie",
   "score.stormwater.plain": "Des racines profondes qui font pénétrer l'eau de pluie au lieu de la laisser ruisseler.",
   "score.erosion.name": "Retient la terre",
   "score.erosion.plain": "Des racines qui agrippent le talus et l'empêchent de partir avec l'eau.",
   "score.carbon.name": "Stocke du carbone",
-  "score.carbon.plain":
-    "Du carbone tiré de l'air et rangé dans le bois et les racines. Modeste, à vrai dire, à l'échelle d'un jardin — nous le comptons, sans promettre de miracle.",
+  "score.carbon.plain": "Du carbone tiré de l'air et rangé dans le bois et les racines. Nous le comptons, mais à l'échelle d'un jardin, c'est modeste.",
   "score.establishment.name": "Se débrouille seule",
   "score.establishment.plain": "Ses chances de s'en sortir sans arrosage ni soins une fois plantée.",
 
@@ -871,8 +840,7 @@ export const fr: Dict = {
     "Choisissez un papillon pour voir quelles indigènes élèvent ses chenilles ou nourrissent les adultes.",
   "wildlifeKind.moth.title": "Papillons de nuit",
   "wildlifeKind.moth.short": "Nocturnes",
-  "wildlifeKind.moth.blurb":
-    "L'équipe de nuit — y compris les grands paons et sphinx, dont les chenilles sont la nourriture de choix des oisillons.",
+  "wildlifeKind.moth.blurb": "L'équipe de nuit, y compris les grands paons et sphinx, dont les chenilles sont la nourriture de choix des oisillons.",
   "wildlifeKind.bee.title": "Abeilles et autres pollinisateurs",
   "wildlifeKind.bee.short": "Abeilles",
   "wildlifeKind.bee.blurb":
@@ -883,20 +851,17 @@ export const fr: Dict = {
     "Les baies, les graines, le nectar et les chenilles qui expliquent la présence des oiseaux que vous aimeriez voir.",
   "wildlifeKind.mammal.title": "Mammifères et autres",
   "wildlifeKind.mammal.short": "Mammifères",
-  "wildlifeKind.mammal.blurb": "Glands et fruits pour les voisins à quatre pattes — et un reptile ou deux.",
+  "wildlifeKind.mammal.blurb": "Glands et fruits pour les voisins à quatre pattes, et un reptile ou deux.",
 
   "support.host.term": "Nourricière",
-  "support.host.plain":
-    "Une plante nourricière (dite aussi « plante-hôte ») : les chenilles mangent ses feuilles et y grandissent. C'est le lien le plus fort — c'est de là que vient la génération suivante de papillons, et la plupart des passereaux nourrissent leurs petits de chenilles.",
+  "support.host.plain": "Une plante nourricière (dite aussi « plante-hôte ») : les chenilles mangent ses feuilles et y grandissent. C'est le lien le plus fort. C'est de là que viennent les prochains papillons, et la plupart des passereaux nourrissent leurs petits de chenilles.",
   "support.nectar.term": "Nectar",
-  "support.nectar.plain":
-    "Du nectar et du pollen pour les insectes adultes — de la nourriture pour les grands, pas une nurserie pour leurs petits.",
+  "support.nectar.plain": "Du nectar et du pollen pour les insectes adultes : de quoi nourrir les grands, pas une nurserie pour leurs petits.",
   "support.berries.term": "Baies",
   "support.berries.plain":
     "Des baies ou des fruits que mangent oiseaux et mammifères, surtout à l'automne et en hiver.",
   "support.seeds.term": "Graines",
-  "support.seeds.plain":
-    "Des graines ou des fruits secs que mangent oiseaux et mammifères — souvent ce qui reste debout une fois les fleurs fanées.",
+  "support.seeds.plain": "Des graines ou des fruits secs que mangent oiseaux et mammifères, souvent ce qui reste debout une fois les fleurs fanées.",
   "support.shelter.term": "Abri",
   "support.shelter.plain": "Un couvert où nicher, brouter, se percher ou passer la mauvaise saison.",
 
@@ -907,33 +872,27 @@ export const fr: Dict = {
   "reliance.narrow.plain":
     "Une relation de spécialiste : l'animal ne peut utiliser qu'un petit groupe de plantes, et celle-ci en fait partie. Important, avec seulement quelques solutions de repli.",
   "reliance.broad.term": "Parmi d'autres",
-  "reliance.broad.plain":
-    "Utile, mais l'animal se sert de beaucoup de plantes — un coup de pouce, sans être vital à lui seul. Ces liens-là ne portent pas d'étiquette : une plante sans étiquette signifie donc que l'animal a d'autres ressources.",
+  "reliance.broad.plain": "Utile, mais l'animal se sert de beaucoup de plantes : un coup de pouce, pas une nécessité. Ces liens-là ne portent pas d'étiquette, donc une plante sans étiquette signifie que l'animal a d'autres ressources.",
 
   "prop.seed-direct.name": "Semer la graine telle quelle (semis direct)",
   "prop.seed-direct.plain":
     "Le cas facile : nettoyez la graine, puis semez-la à une profondeur de deux à trois fois sa largeur, en pot ou sur une planche de terre nette, et gardez humide. Aucune astuce nécessaire.",
   "prop.seed-cold-moist.name": "Faire passer un hiver froid et humide à la graine (stratification à froid)",
-  "prop.seed-cold-moist.plain":
-    "Beaucoup de graines indigènes ne se réveillent qu'après avoir senti un vrai hiver : on leur en fabrique donc un. Mélangez la graine à une poignée de sable humide ou à un essuie-tout mouillé, fermez le tout dans un sachet étiqueté et laissez au réfrigérateur le nombre de semaines indiqué — puis semez. Ou oubliez le réfrigérateur : semez en pot dehors à l'automne et laissez le vrai hiver faire le travail.",
+  "prop.seed-cold-moist.plain": "Beaucoup de graines indigènes ne se réveillent qu'après avoir senti un vrai hiver, alors on leur en fabrique un. Mélangez la graine à une poignée de sable humide ou à un essuie-tout mouillé, fermez le tout dans un sachet étiqueté et laissez au réfrigérateur le nombre de semaines indiqué, puis semez. Ou oubliez le réfrigérateur : semez en pot dehors à l'automne et laissez le vrai hiver faire le travail.",
   "prop.seed-double-dormant.name": "Prévoir deux hivers d'attente (double dormance)",
-  "prop.seed-double-dormant.plain":
-    "Les têtues : la racine pousse pendant une période chaude, et la tige feuillée attend l'hiver suivant. Semez en pot dehors à l'automne, gardez-le à l'ombre et à l'abri, ne renoncez pas si rien ne sort le premier printemps, et prenez patience — le vert apparaît en général au deuxième printemps.",
+  "prop.seed-double-dormant.plain": "Les têtues : la racine pousse pendant une période chaude, et la tige feuillée attend l'hiver suivant. Semez en pot dehors à l'automne, gardez-le à l'ombre et à l'abri, et ne renoncez pas si rien ne sort le premier printemps. Le vert apparaît en général au deuxième printemps.",
   "prop.seed-scarify.name": "Entailler ou râper le tégument dur (scarification)",
-  "prop.seed-scarify.plain":
-    "Certaines graines (celles de la famille des pois surtout) sont enfermées dans une coque imperméable qu'il faut entamer avant que l'eau puisse entrer. Frottez chaque graine quelques coups sur du papier de verre fin, ou entaillez la coque au couteau, jusqu'à apercevoir la couleur plus claire de l'intérieur — puis trempez une nuit et semez. On râpe avec soin, on n'écrase pas.",
-  "prop.seed-surface-light.name": "Presser les graines fines en surface — il leur faut la lumière (semis en surface)",
+  "prop.seed-scarify.plain": "Certaines graines (celles de la famille des pois surtout) sont enfermées dans une coque imperméable qu'il faut entamer avant que l'eau puisse entrer. Frottez chaque graine quelques coups sur du papier de verre fin, ou entaillez la coque au couteau, jusqu'à apercevoir la couleur plus claire de l'intérieur. Puis trempez une nuit et semez. On râpe avec soin, on n'écrase pas.",
+  "prop.seed-surface-light.name": "Presser les graines fines en surface : il leur faut la lumière (semis en surface)",
   "prop.seed-surface-light.plain":
     "Des graines fines comme de la poussière, qui doivent voir le jour pour germer : ne les enterrez pas. Répandez-les sur une terre humide, tassez-les pour qu'elles adhèrent, et ne les recouvrez pas. Empêchez la surface de sécher en brumisant ou en couvrant d'un plastique transparent jusqu'à la levée.",
   "prop.seed-warm.name": "Semer frais et tenir au chaud (aucun froid nécessaire)",
-  "prop.seed-warm.plain":
-    "Pas besoin de froid hivernal. Semez la graine fraîche et nettoyée, tenez-la au chaud et à l'humide — elle lève en général en quelques semaines. La fraîcheur compte : beaucoup de ces graines perdent leur pouvoir germinatif si elles sèchent et attendent.",
+  "prop.seed-warm.plain": "Pas besoin de froid hivernal. Semez la graine fraîche et nettoyée, tenez-la au chaud et à l'humide. Elle lève en général en quelques semaines. La fraîcheur compte : beaucoup de ces graines perdent leur pouvoir germinatif si elles sèchent et attendent.",
   "prop.cuttings-softwood.name": "Bouturer une pousse tendre (bouture herbacée)",
   "prop.cuttings-softwood.plain":
     "Au printemps ou au début de l'été, coupez un morceau long comme un doigt de pousse tendre et souple, ôtez les feuilles du bas et enfoncez l'extrémité coupée dans un terreau humide ou de la perlite. Gardez humide et à l'abri du soleil dur (un sac ou une bouteille transparente sur le pot aide bien) jusqu'à l'enracinement, en quelques semaines.",
   "prop.cuttings-semi-hardwood.name": "Bouturer une pousse qui durcit (bouture semi-aoûtée)",
-  "prop.cuttings-semi-hardwood.plain":
-    "Au milieu ou à la fin de l'été, prélevez un morceau long comme la main sur une pousse de l'année qui commence à raidir et à devenir ligneuse à la base. Ôtez les feuilles du bas, plantez l'extrémité coupée dans un mélange humide et gardez une ambiance humide. Plus lente à raciner que la bouture tendre, mais plus solide — parfaite pour beaucoup d'arbustes et de persistants à grandes feuilles.",
+  "prop.cuttings-semi-hardwood.plain": "Au milieu ou à la fin de l'été, prélevez un morceau long comme la main sur une pousse de l'année qui commence à raidir et à devenir ligneuse à la base. Ôtez les feuilles du bas, plantez l'extrémité coupée dans un mélange humide et gardez une ambiance humide. Plus lente à raciner que la bouture tendre, mais plus solide, et parfaite pour beaucoup d'arbustes et de persistants à grandes feuilles.",
   "prop.cuttings-hardwood.name": "Bouturer un rameau nu d'hiver (bouture ligneuse)",
   "prop.cuttings-hardwood.plain":
     "La bouture la plus simple qui soit pour les saules, les peupliers et leurs semblables : pendant que la plante est nue et au repos, coupez des morceaux gros comme un crayon et longs comme l'avant-bras, enfoncez-en les deux tiers inférieurs en pleine terre humide ou en pot, et attendez. Beaucoup s'enracinent d'ici au printemps sans le moindre soin.",
@@ -950,11 +909,9 @@ export const fr: Dict = {
   "prop.suckers.plain":
     "Les plantes qui forment des fourrés émettent de nouvelles pousses enracinées à quelque distance du tronc. Au début du printemps, tranchez à la bêche entre le rejet et la plante mère, soulevez le rejet avec ses racines et replantez-le. Des plantes gratuites, et la touffe s'en trouve nettoyée.",
   "prop.runners.name": "Mettre en pot les jeunes plants des stolons (stolons)",
-  "prop.runners.plain":
-    "Les fraisiers et autres rampantes émettent des tiges horizontales qui enracinent de petits plants le long du chemin. Dès qu'un plant a ses propres racines, coupez le stolon qui le relie à la mère, déterrez-le et déplacez-le — ou fixez-le d'abord dans un petit pot, puis coupez.",
+  "prop.runners.plain": "Les fraisiers et autres rampantes émettent des tiges horizontales qui enracinent de petits plants le long du chemin. Dès qu'un plant a ses propres racines, coupez le stolon qui le relie à la mère, déterrez-le et déplacez-le. Ou fixez-le d'abord dans un petit pot, puis coupez.",
   "prop.spores.name": "Semer la poussière du dos des frondes (spores)",
-  "prop.spores.plain":
-    "Les fougères ne font pas de graines — elles répandent des spores fines comme de la poussière depuis les taches brunes sous les frondes mûres. Plus lent et plus délicat, mais faisable : posez une fronde mûre sur du papier quelques jours pour recueillir la poussière brune, répandez-la à la surface d'un mélange stérile humide, couvrez d'un plastique transparent et gardez clair et humide. Un film vert apparaît d'abord, puis de minuscules fougères au fil des mois. La plupart des jardiniers trouvent bien plus facile de diviser une touffe existante.",
+  "prop.spores.plain": "Les fougères ne font pas de graines. Elles répandent des spores fines comme de la poussière depuis les taches brunes sous les frondes mûres. Plus lent et plus délicat, mais faisable : posez une fronde mûre sur du papier quelques jours pour recueillir la poussière brune, répandez-la à la surface d'un mélange stérile humide, couvrez d'un plastique transparent et gardez clair et humide. Un film vert apparaît d'abord, puis de minuscules fougères au fil des mois. La plupart des jardiniers trouvent bien plus facile de diviser une touffe existante.",
 
   // -------------------------------------------------------------------------
   // Quand le faire — la couche « calendrier » derrière la page de chaque
@@ -967,44 +924,33 @@ export const fr: Dict = {
   // -------------------------------------------------------------------------
   "prop.seed-direct.when": "L'automne ou le printemps.",
   "prop.seed-direct.wait": "Lève au printemps, après son hiver dehors.",
-  "prop.seed-direct.timing":
-    "L'automne, c'est ce que fait la plante elle-même : la graine mûrit, tombe, passe l'hiver sous les feuilles et la pluie, et lève quand le sol se réchauffe. Semer à ce moment-là ne vous demande rien — ni réfrigérateur, ni semaines à compter. Le printemps marche tout aussi bien, et c'est le moment habituel pour une graine arrivée tard ou conservée au sec.",
-  "prop.seed-direct.mistake":
-    "L'enterrer. La règle : deux à trois fois sa propre largeur de profondeur — une graine fine à peine recouverte, un gland à la longueur d'un pouce sous la surface. Plus profond, elle risque de ne jamais lever.",
-  "prop.seed-warm.when": "La semaine où elle mûrit — souvent de l'été au début de l'automne.",
+  "prop.seed-direct.timing": "L'automne, c'est ce que fait la plante elle-même : la graine mûrit, tombe, passe l'hiver sous les feuilles et la pluie, et lève quand le sol se réchauffe. Semer à ce moment-là ne demande ni réfrigérateur ni semaines à compter. Le printemps marche tout aussi bien, et c'est le moment habituel pour une graine arrivée tard ou conservée au sec.",
+  "prop.seed-direct.mistake": "L'enterrer. Semez à deux ou trois fois la largeur de la graine en profondeur : une graine fine à peine recouverte, un gland à une longueur de pouce sous la surface. Plus profond, elle risque de ne jamais lever.",
+  "prop.seed-warm.when": "La semaine où elle mûrit, souvent de l'été au début de l'automne.",
   "prop.seed-warm.wait": "Quelques semaines, souvent moins.",
-  "prop.seed-warm.timing":
-    "C'est la seule technique dont vous ne choisissez pas le moment : la plante le fixe, et votre rôle est d'être prêt. Surveillez le fruit plutôt que le calendrier — les glands d'un chêne blanc qui tombent — et semez dans les jours qui suivent la récolte. Ces graines ne supportent pas de sécher : tout le danger est dans « je le ferai ce week-end ». Si vous ne pouvez vraiment pas semer tout de suite, gardez-les à peine humides et au frais dans un sac plastique fermé sans serrer, jamais au sec sur un rebord de fenêtre.",
-  "prop.seed-warm.mistake":
-    "Les traiter comme un sachet du commerce. Une graine fraîche ne se conserve pas — celles qui sèchent le plus dur sont souvent celles qui ne repartent jamais.",
+  "prop.seed-warm.timing": "C'est la seule technique dont vous ne choisissez pas le moment : la plante le fixe, et votre rôle est d'être prêt. Surveillez le fruit plutôt que le calendrier (les glands d'un chêne blanc qui tombent) et semez dans les jours qui suivent la récolte. Ces graines ne supportent pas de sécher : tout le danger est dans « je le ferai ce week-end ». Si vous ne pouvez vraiment pas semer tout de suite, gardez-les à peine humides et au frais dans un sac plastique fermé sans serrer, jamais au sec sur un rebord de fenêtre.",
+  "prop.seed-warm.mistake": "Les traiter comme un sachet du commerce. Une graine fraîche ne se conserve pas : celles qui sèchent le plus dur sont souvent celles qui ne repartent jamais.",
   "prop.seed-cold-moist.when": "Semer dehors à l'automne, ou passer au réfrigérateur en plein hiver.",
   "prop.seed-cold-moist.wait": "D'un à six mois de froid, selon la plante.",
-  "prop.seed-cold-moist.timing":
-    "Il y a deux chemins, et la question du calendrier est surtout de savoir lequel vous prenez. Dehors : semez le pot en plein automne, posez-le là où il recevra la pluie et la neige, et le vrai hiver compte les semaines à votre place. Au réfrigérateur : comptez à rebours depuis la date où vous voulez des plantules — dix semaines de froid avant un semis de printemps, c'est un sachet mis au frais vers le cœur de l'hiver. Dans les deux cas, la graine doit rester *humide* tout du long. Un froid sec ne fait strictement rien, et c'est pourquoi un sachet glissé au réfrigérateur à l'automne est encore là, inchangé, au printemps.",
-  "prop.seed-cold-moist.mistake":
-    "Ne pas regarder. Certaines graines germent dans le sachet avant la fin des semaines prévues, et la petite racine blanche casse si vous les découvrez trop tard — ouvrez le sachet tous les deux ou trois jours à partir de la moitié.",
+  "prop.seed-cold-moist.timing": "Il y a deux chemins, et la question du calendrier est surtout de savoir lequel vous prenez. Dehors : semez le pot en plein automne, posez-le là où il recevra la pluie et la neige, et le vrai hiver compte les semaines à votre place. Au réfrigérateur : comptez à rebours depuis la date où vous voulez des plantules. Dix semaines de froid avant un semis de printemps, c'est un sachet mis au frais vers le cœur de l'hiver. Dans les deux cas, la graine doit rester *humide* tout du long. Un froid sec ne fait strictement rien, et c'est pourquoi un sachet glissé au réfrigérateur à l'automne est encore là, inchangé, au printemps.",
+  "prop.seed-cold-moist.mistake": "Ne pas regarder. Certaines graines germent dans le sachet avant la fin des semaines prévues, et la petite racine blanche casse si vous les découvrez trop tard. Ouvrez le sachet tous les deux ou trois jours à partir de la moitié.",
   "prop.seed-scarify.when": "Juste avant de semer, quel que soit le moment.",
   "prop.seed-scarify.wait": "Peu après le semis, dès que l'eau entre.",
-  "prop.seed-scarify.timing":
-    "La scarification n'est pas une saison, c'est la dernière étape avant le semis — la vraie question est donc : quand semez-vous ? Faites-le la veille au soir : entaillez ou râpez le tégument, laissez tremper la nuit, semez au matin. Ce qu'il ne faut surtout pas faire, c'est scarifier un lot en hiver pour semer au printemps. Ouvrir le tégument, c'est retirer son imperméable à la graine : elle peut désormais absorber l'eau, et une graine scarifiée humide au fond d'un bocal va soit pourrir, soit germer dans le noir. Le trempage sert aussi de contrôle — une graine qui a bu gonfle visiblement et paraît plus grosse que ses voisines ; celles qui restent petites et dures méritent un nouveau passage sur le papier de verre.",
+  "prop.seed-scarify.timing": "La scarification n'est pas une saison mais la dernière étape avant le semis. Elle suit donc la date où vous semez. Faites-le la veille au soir : entaillez ou râpez le tégument, laissez tremper la nuit, semez au matin. Ce qu'il ne faut surtout pas faire, c'est scarifier un lot en hiver pour semer au printemps. Ouvrir le tégument, c'est retirer son imperméable à la graine : elle peut désormais absorber l'eau, et une graine scarifiée humide au fond d'un bocal va soit pourrir, soit germer dans le noir. Le trempage sert aussi de contrôle : une graine qui a bu gonfle visiblement et paraît plus grosse que ses voisines ; celles qui restent petites et dures méritent un nouveau passage sur le papier de verre.",
   "prop.seed-scarify.mistake":
     "Aller trop loin. Arrêtez dès que la couche plus claire apparaît : on veut le tégument ouvert, pas la graine blessée.",
   "prop.seed-surface-light.when": "De la fin de l'hiver au printemps à l'abri ; à l'automne dehors.",
   "prop.seed-surface-light.wait": "Quelques semaines, tant que la surface ne sèche jamais.",
-  "prop.seed-surface-light.timing":
-    "Une graine fine comme de la poussière reste posée sur la terre, ce qui en fait la chose la plus fragile que vous sèmerez : la surface qui la porte peut sécher en un après-midi de soleil, et une graine aussi petite n'a aucune réserve pour y survivre. Semez-la donc là où vous pouvez la surveiller — une terrine à l'intérieur ou sous châssis dès la fin de l'hiver, prête à sortir aux beaux jours. Dehors, l'automne convient à celles qui veulent aussi un passage au froid : à la volée sur une planche nette, et on les laisse faire. Couvrez la terrine d'un plastique transparent ou d'une vitre, à la lumière mais hors du soleil de midi.",
-  "prop.seed-surface-light.mistake":
-    "Arroser par le dessus. L'arrosoir enfonce la graine dans le terreau, où elle ne voit plus la lumière dont elle a besoin — brumisez, ou posez la terrine dans un fond d'eau et laissez-la boire par en dessous.",
+  "prop.seed-surface-light.timing": "Une graine fine comme de la poussière reste posée sur la terre, ce qui en fait la chose la plus fragile que vous sèmerez : la surface qui la porte peut sécher en un après-midi de soleil, et une graine aussi petite n'a aucune réserve pour y survivre. Semez-la donc là où vous pouvez la surveiller, en terrine à l'intérieur ou sous châssis dès la fin de l'hiver, prête à sortir aux beaux jours. Dehors, l'automne convient à celles qui veulent aussi un passage au froid : à la volée sur une planche nette, et on les laisse faire. Couvrez la terrine d'un plastique transparent ou d'une vitre, à la lumière mais hors du soleil de midi.",
+  "prop.seed-surface-light.mistake": "Arroser par le dessus. L'arrosoir enfonce la graine dans le terreau, où elle ne voit plus la lumière dont elle a besoin. Brumisez, ou posez la terrine dans un fond d'eau et laissez-la boire par en dessous.",
   "prop.seed-double-dormant.when": "Semer à l'automne, et n'attendre rien avant le deuxième printemps.",
   "prop.seed-double-dormant.wait": "Dix-huit mois, à peu de chose près.",
-  "prop.seed-double-dormant.timing":
-    "Semez le pot à l'automne, posez-le à l'ombre, à l'abri et franchement hors du passage — derrière la cabane, pas sur la table de la terrasse — et laissez-le un an et demi. Ce qui se passe entre-temps est invisible : pendant le premier été, la racine pousse sous la terre, et la tige feuillée attend le second hiver avant de se montrer. Un pot qui semble vide à son premier printemps est presque certainement en train de travailler. Étiquetez-le sérieusement et arrosez-le en cas de sécheresse : ces semis-là se perdent bien plus souvent parce que quelqu'un a fait du rangement que parce que la technique a échoué.",
+  "prop.seed-double-dormant.timing": "Semez le pot à l'automne, posez-le à l'ombre, à l'abri et franchement hors du passage (derrière la cabane, pas sur la table de la terrasse), et laissez-le un an et demi. Ce qui se passe entre-temps est invisible : pendant le premier été, la racine pousse sous la terre, et la tige feuillée attend le second hiver avant de se montrer. Un pot qui semble vide à son premier printemps est presque certainement en train de travailler. Étiquetez-le sérieusement et arrosez-le en cas de sécheresse. Ces semis-là se perdent bien plus souvent parce que quelqu'un a fait du rangement que parce que la technique a échoué.",
   "prop.seed-double-dormant.mistake":
     "Vider le pot après le premier printemps sans rien. C'est justement l'année où il ne devait rien se passer.",
-  "prop.division.when": "Début de printemps ou automne — jamais en pleine floraison.",
+  "prop.division.when": "Début de printemps ou automne, jamais en pleine floraison.",
   "prop.division.wait": "Arrosez-la le temps qu'elle s'installe.",
-  "prop.division.timing":
-    "Divisez quand la plante peut tout mettre dans de nouvelles racines plutôt que dans ses fleurs : au tout début du printemps, quand les pousses percent à peine, ou à l'automne une fois la chaleur passée mais avec encore des semaines de sol tiède pour s'enraciner. Les plantes qui fleurissent l'été se divisent au printemps ou à l'automne ; celles qui fleurissent au printemps, plutôt en été, après la floraison — de sorte que vous ne découpez jamais une plante au milieu de sa grande année. Travaillez quand le sol est assez sec pour être bêché, et si l'automne est pluvieux, attendez le printemps.",
+  "prop.division.timing": "Divisez quand la plante peut tout mettre dans de nouvelles racines plutôt que dans ses fleurs : au tout début du printemps, quand les pousses percent à peine, ou à l'automne une fois la chaleur passée mais avec encore des semaines de sol tiède pour s'enraciner. Les plantes qui fleurissent l'été se divisent au printemps ou à l'automne. Celles qui fleurissent au printemps se divisent plutôt en été, après la floraison, pour ne jamais découper une plante au milieu de sa grande année. Travaillez quand le sol est assez sec pour être bêché, et si l'automne est pluvieux, attendez le printemps.",
   "prop.division.mistake": "Laisser les éclats à l'air pendant qu'on creuse. Préparez les trous d'abord, replantez aussitôt et arrosez.",
   "prop.cuttings-softwood.when": "Du printemps au début de l'été, sur les pousses de l'année.",
   "prop.cuttings-softwood.wait": "Racines en deux à quatre semaines.",
@@ -1014,31 +960,24 @@ export const fr: Dict = {
     "Couper à midi en plein soleil et les promener dans une poche tiède. Un sac plastique propre, gardé au frais, ne coûte rien.",
   "prop.cuttings-semi-hardwood.when": "Du milieu de l'été au début de l'automne, quand la pousse durcit.",
   "prop.cuttings-semi-hardwood.wait": "Jusqu'au printemps suivant sous châssis froid.",
-  "prop.cuttings-semi-hardwood.timing":
-    "Plus tard dans la même pousse de l'année, quand la base s'est raffermie tandis que la pointe est encore tendre — pour la plupart des arbustes, du plein été au début de l'automne. Plus lente à s'enraciner qu'une bouture tendre, mais plus robuste. Mettez-les en sac au fur et à mesure et en pot dans la demi-journée. Enracinez-les sous châssis ou dans un coin abrité et laissez-les y passer l'hiver : sous châssis, elles peuvent ne bien s'enraciner qu'à la fin du printemps suivant.",
-  "prop.cuttings-semi-hardwood.mistake":
-    "Laisser toutes les feuilles. Une bouture encore sans racines ne peut pas alimenter un feuillage entier — ôtez les feuilles du bas et coupez en deux les grandes qui restent.",
+  "prop.cuttings-semi-hardwood.timing": "Plus tard dans la même pousse de l'année, quand la base s'est raffermie tandis que la pointe est encore tendre. Pour la plupart des arbustes, c'est du plein été au début de l'automne. Plus lente à s'enraciner qu'une bouture tendre, mais plus robuste. Mettez-les en sac au fur et à mesure et en pot dans la demi-journée. Enracinez-les sous châssis ou dans un coin abrité et laissez-les y passer l'hiver : sous châssis, elles peuvent ne bien s'enraciner qu'à la fin du printemps suivant.",
+  "prop.cuttings-semi-hardwood.mistake": "Laisser toutes les feuilles. Une bouture sans racines ne peut pas nourrir tout un feuillage. Ôtez les feuilles du bas et coupez en deux les grandes qui restent.",
   "prop.cuttings-hardwood.when": "Du milieu de l'automne à la fin de l'hiver, plante nue.",
   "prop.cuttings-hardwood.wait": "Enracinée au printemps, plantée l'automne d'après.",
-  "prop.cuttings-hardwood.timing":
-    "Après la chute des feuilles et avant que les bourgeons ne gonflent — du milieu de l'automne à la fin de l'hiver, quels que soient ces mois-là chez vous. Le mieux : juste après la chute des feuilles, ou juste avant le débourrement. La plante dort, donc la bouture n'a pas à maintenir un feuillage en vie pendant qu'elle s'enracine : c'est ce qui en fait la bouture la moins exigeante qui soit. Des morceaux gros comme un crayon, longs comme un avant-bras, enfoncés aux deux tiers en terre humide, et on n'y touche plus jusqu'au printemps.",
-  "prop.cuttings-hardwood.mistake":
-    "Les planter à l'envers. Un rameau nu se ressemble des deux bouts : marquez le haut en coupant, car les bourgeons pointent vers le haut et c'est ce bout-là qui doit rester en l'air.",
+  "prop.cuttings-hardwood.timing": "Après la chute des feuilles et avant que les bourgeons ne gonflent : du milieu de l'automne à la fin de l'hiver, quels que soient ces mois-là chez vous. Le mieux : juste après la chute des feuilles, ou juste avant le débourrement. La plante dort, donc la bouture n'a pas de feuillage à nourrir pendant qu'elle s'enracine. C'est la bouture la plus facile qui soit : des morceaux gros comme un crayon, longs comme un avant-bras, enfoncés aux deux tiers en terre humide, et laissés tranquilles jusqu'au printemps.",
+  "prop.cuttings-hardwood.mistake": "Les planter à l'envers. Un rameau nu se ressemble des deux bouts : marquez le haut en coupant. Les bourgeons pointent vers le haut, et c'est ce bout-là qui doit rester en l'air.",
   "prop.layering.when": "Coucher la branche au printemps ; la sevrer un an plus tard.",
   "prop.layering.wait": "Un à deux ans.",
-  "prop.layering.timing":
-    "Le printemps est le moment de coucher la branche : elle est souple, la plante s'apprête à pousser, et elle a toute la belle saison pour faire des racines au point enterré. Ensuite, on attend. À l'automne suivant, dégagez la terre et regardez — une belle poignée de racines et vous pouvez la séparer du pied mère et la lever ; pas grand-chose et vous la laissez une année de plus, ce qui ne vous coûte rien du tout, puisque la mère continue de la nourrir. Plus lent qu'une bouture, et très difficile à rater, car la nouvelle plante n'est jamais seule un seul instant.",
+  "prop.layering.timing": "Le printemps est le moment de coucher la branche : elle est souple, la plante s'apprête à pousser, et elle a toute la belle saison pour s'enraciner au point enterré. Ensuite, on attend. À l'automne suivant, dégagez la terre et regardez. Une belle poignée de racines ? Séparez-la du pied mère et levez-la. Pas grand-chose ? Laissez-la un an de plus : cela ne coûte rien, puisque la mère continue de la nourrir. Plus lent qu'une bouture, et très difficile à rater, car la nouvelle plante n'est jamais seule.",
   "prop.layering.mistake": "Le détacher dès la première racine. Attendez qu'un bon système racinaire se soit formé.",
   "prop.suckers.when": "Au printemps, à la reprise.",
   "prop.suckers.wait": "Demande un arrosage attentif toute sa première saison.",
-  "prop.suckers.timing":
-    "Prélevez les rejets au printemps, quand la plante repart : c'est là qu'un rejet détaché s'installe le plus vite. Dégagez d'abord la terre et vérifiez qu'il a ses propres radicelles — une tige qui part d'une grosse racine sans radicelles ne reprendra pas. Tranchez à la bêche entre lui et le pied mère, levez le rejet avec ses racines, et raccourcissez de moitié environ les longues pousses feuillées pour qu'il ne se dessèche pas. Le pied mère ne le regrettera pas : une plante drageonnante en refait chaque année.",
+  "prop.suckers.timing": "Prélevez les rejets au printemps, quand la plante repart : c'est là qu'un rejet détaché s'installe le plus vite. Dégagez d'abord la terre et vérifiez qu'il a ses propres radicelles. Une tige qui part d'une grosse racine sans radicelles ne reprendra pas. Tranchez à la bêche entre lui et le pied mère, levez le rejet avec ses racines, et raccourcissez de moitié environ les longues pousses feuillées pour qu'il ne se dessèche pas. Le pied mère ne le regrettera pas : une plante drageonnante en refait chaque année.",
   "prop.suckers.mistake":
     "Tirer au lieu de creuser. Un rejet sans radicelles à lui ne reprendra pas.",
   "prop.runners.when": "De la fin de l'été à l'automne, quand la plantule est enracinée.",
   "prop.runners.wait": "Détachez-le une fois enraciné.",
-  "prop.runners.timing":
-    "Attendez que le jeune plant s'enracine tout seul, ce qu'il fait partout où il touche la terre pendant l'été ; tirez très doucement dessus, une plantule enracinée résiste. La fin de l'été et l'automne, c'est le moment où la plupart sont prêts, et c'est aussi le plus doux pour les déplacer : sol tiède, air qui fraîchit, et des mois avant qu'on leur demande quoi que ce soit. La version soignée : en plein été, épinglez chaque plantule dans un petit pot de terreau enterré près du pied mère ; au début de l'automne, coupez le stolon et levez un pot déjà plein de racines.",
+  "prop.runners.timing": "Attendez que le jeune plant s'enracine tout seul, ce qu'il fait partout où il touche la terre pendant l'été ; tirez très doucement dessus, une plantule enracinée résiste. La fin de l'été et l'automne, c'est le moment où la plupart sont prêts, et le plus doux pour les déplacer : sol tiède, air qui fraîchit, et des mois avant qu'on leur demande quoi que ce soit. La version soignée : en plein été, épinglez chaque plantule dans un petit pot de terreau enterré près du pied mère ; au début de l'automne, coupez le stolon et levez un pot déjà plein de racines.",
   "prop.runners.mistake":
     "Couper le stolon d'abord, en espérant. Tant que la plantule n'a pas ses propres racines, c'est le pied mère qui le maintient en vie.",
   "prop.root-cuttings.when": "Du milieu de l'automne au début de l'hiver, en dormance.",
@@ -1048,24 +987,22 @@ export const fr: Dict = {
   "prop.root-cuttings.mistake":
     "Ne plus savoir quel bout était le plus proche du collet. Couchez les tronçons à plat plutôt qu'à la verticale et la question ne se pose plus.",
   "prop.spores.when": "De l'été à l'automne, quand le dos des frondes brunit.",
-  "prop.spores.wait": "Des mois — un voile vert en quelques semaines, de petites fougères quelques mois plus tard.",
-  "prop.spores.timing":
-    "Les fougères n'ont ni fleur ni graine : il n'y a donc rien à guetter que le dessous des frondes. Les petits amas y sont d'abord verts, mûrissent vers un brun profond, puis se libèrent. Le brun mûr, c'est le moment. Coupez une fronde, posez-la face contre une feuille de papier blanc dans un endroit sans courant d'air pendant quelques jours, et vous aurez une poussière fine : ce sont les spores, et la balle plus claire à côté n'est que l'emballage. Semez aussitôt sur un terreau stérile humide, couvrez d'un plastique transparent, et installez-vous dans la patience : rien ne ressemble à une fougère pendant les premiers mois.",
+  "prop.spores.wait": "Des mois : un voile vert en quelques semaines, de petites fougères quelques mois plus tard.",
+  "prop.spores.timing": "Les fougères n'ont ni fleur ni graine : il n'y a donc rien à guetter que le dessous des frondes. Les petits amas y sont d'abord verts, mûrissent vers un brun profond, puis se libèrent. Le brun mûr, c'est le moment. Coupez une fronde, posez-la face contre une feuille de papier blanc dans un endroit sans courant d'air pendant quelques jours, et vous aurez une poussière fine. Ce sont les spores ; la balle plus claire à côté n'est que l'emballage. Semez aussitôt sur un terreau stérile humide, couvrez d'un plastique transparent, et armez-vous de patience : rien ne ressemble à une fougère pendant les premiers mois.",
   "prop.spores.mistake": "Attendre trop longtemps. Cueillez la fronde quand les replis qui couvrent les amas de spores commencent à se soulever et que les spores foncent ; plus tard, elles sont déjà parties.",
 
   "growth.quick": "Vite installée : comptez à peu près sa taille définitive en trois ans.",
   "growth.steady": "Une croissance régulière : proche de sa taille adulte à {year} ans.",
   "growth.slowish":
     "Elle prend son temps : environ {frac} de sa hauteur définitive à {year} ans, et elle s'étoffe encore des années après.",
-  "growth.slow":
-    "Lente et de longue vie : environ {now} à {year} ans, en route vers {mature} — on la plante autant pour la génération suivante que pour soi.",
+  "growth.slow": "Lente et de longue vie : environ {now} à {year} ans, en route vers {mature}. On la plante autant pour la génération suivante que pour soi.",
   "frac.threeQuarters": "les trois quarts",
   "frac.twoThirds": "les deux tiers",
   "frac.half": "la moitié",
   "confidence.high": "Son nombre de chenilles a été compté à partir d'une base de données pour sa région, et une source citée dit où elle pousse à l'état sauvage.",
   "confidence.medium": "Son nombre de chenilles est un chiffre publié pour son genre, ou notre estimation d'après une espèce proche ou une autre région.",
   "confidence.low": "Son nombre de chenilles est approximatif ou sans source, ou rien n'est cité pour l'endroit où elle pousse à l'état sauvage.",
-  "confidence.docTitle": "Fiabilité des chiffres — Indigene",
+  "confidence.docTitle": "Fiabilité des chiffres · Indigene",
   "confidence.title": "Fiabilité des chiffres",
   "confidence.lede": "Chaque fiche de plante indique à quel point ses chiffres sont sourcés. Une seule règle fixe ce niveau, la même pour toutes les plantes.",
   "confidence.lowered": "Une plante peut être notée plus bas, quand sa ligne de sources dit pourquoi. Jamais plus haut.",
@@ -1090,14 +1027,14 @@ export const fr: Dict = {
   // encore tous traduits.
   // ---------------------------------------------------------------------
   "wip.title": "Traduction en cours",
-  "wip.plant": "Une partie de cette description est encore en anglais — nous traduisons région par région.",
-  "wip.roster": "{n} de ces {total} descriptions sont encore en anglais — nous traduisons région par région.",
-  "wip.rosterAll.one": "Cette description est encore en anglais — nous traduisons région par région.",
-  "wip.rosterAll.other": "Ces {n} descriptions sont encore en anglais — nous traduisons région par région.",
-  "wip.wildlife": "Les descriptions d'animaux sont encore en anglais — nous traduisons région par région.",
-  "wip.alternatives": "Les descriptions des plantes de remplacement sont encore en anglais — nous les traduisons.",
-  "wip.invasives": "Les signes pour reconnaître cette plante sont encore en anglais — nous les traduisons.",
-  "wip.pioneers": "Les notes sur ces indigènes coriaces sont encore en anglais — nous traduisons région par région.",
+  "wip.plant": "Une partie de cette description est encore en anglais. Nous traduisons région par région.",
+  "wip.roster": "{n} de ces {total} descriptions sont encore en anglais. Nous traduisons région par région.",
+  "wip.rosterAll.one": "Cette description est encore en anglais. Nous traduisons région par région.",
+  "wip.rosterAll.other": "Ces {n} descriptions sont encore en anglais. Nous traduisons région par région.",
+  "wip.wildlife": "Les descriptions d'animaux sont encore en anglais. Nous traduisons région par région.",
+  "wip.alternatives": "Les descriptions des plantes de remplacement sont encore en anglais. Nous les traduisons.",
+  "wip.invasives": "Les signes pour reconnaître cette plante sont encore en anglais. Nous les traduisons.",
+  "wip.pioneers": "Les notes sur ces indigènes coriaces sont encore en anglais. Nous traduisons région par région.",
 
   // Le dessin des tailles.
   "sizeViz.you": "Vous",
@@ -1115,7 +1052,7 @@ export const fr: Dict = {
   "badge.aggressive": "S'étale",
   "badge.deerResistant": "Peu broutée",
   "badge.pioneer": "Pionnière du bitume",
-  "traits.docTitle": "Caractéristiques des plantes — Indigene",
+  "traits.docTitle": "Caractéristiques des plantes · Indigene",
   "traits.title": "Caractéristiques des plantes",
   "traits.lede": "Ce que veut dire chaque étiquette et chaque chiffre de la page d'une plante.",
   "traits.confidenceLink": "À quel point nous sommes sûrs des chiffres de chaque plante",
@@ -1124,23 +1061,27 @@ export const fr: Dict = {
   "traits.group.ground": "🧱 Sol ingrat",
   "traits.group.handling": "✋ Précautions",
   "traits.group.figures": "📊 Chiffres",
+  "traits.moreLink": "Ce que veut dire chaque étiquette",
   "traits.noWater": "Devrait s'installer et survivre à la seule pluie après la plantation, lors d'une année normale.",
   "traits.needsWater": "À arroser après la plantation, le temps que ses racines prennent.",
   "traits.keystone": "Nourrit bien plus d'espèces de chenilles que la plupart des plantes. Les écologues parlent de plante « clé de voûte », d'après la pierre qui tient une arche.",
   "traits.deer": "Les chevreuils la broutent peu en général. Pas une promesse : un hiver de disette change leurs goûts.",
-  "traits.toxic": "À ne pas manger, ni pour les humains ni pour les animaux — une partie de la plante peut rendre malade. Plantez-la là où un chien curieux ou un tout-petit ne la goûtera pas.",
+  "traits.toxic": "À ne pas manger, ni par les humains ni par les animaux. Une partie de la plante peut rendre malade. Plantez-la là où un chien curieux ou un tout-petit ne la goûtera pas.",
   "traits.thorny": "Porte des épines ou des aiguillons. Tenez-la à l'écart des allées et des jeux.",
   "traits.stinging": "Les poils de ses feuilles et de ses tiges piquent la peau nue. Portez des gants, et tenez-la à l'écart des allées et des jeux.",
   "traits.spreads": "S'étend par ses racines ou ses graines plus vite que la moyenne. Laissez-lui de la place, ou une bordure qu'elle ne franchira pas.",
-  "traits.pioneer":
-    "Elle pousse là où le sol est tassé, plein de gravats, salé l'hiver ou brûlant contre un mur — un bord de trottoir, un mur, un îlot de parking. Affichée seulement dans les régions où c'est documenté.",
+  "traits.pioneer": "Elle pousse là où le sol est tassé, plein de gravats, salé l'hiver ou brûlant contre un mur : un bord de trottoir, un îlot de parking. Affichée seulement dans les régions où c'est documenté.",
   "match.good": "Bon choix pour ce lieu",
   "match.ok": "Envisageable ici",
-  "match.poor": "Mauvais choix — voici pourquoi",
+  "match.poor": "Mauvais choix : voici pourquoi",
   "card.hostSpecies": "{n} espèces",
   "card.sizeShort": "Atteint à terme environ {height} de haut et {spread} de large.",
   "card.ecoValue": "🦋 Valeur écologique {score}/100.",
-  "card.strongFor": "Ce qui compte le plus ici : {list}.",
+  "card.factSize": "{height} × {spread}",
+  "card.factBloom": "{from}–{to}",
+  "card.factFoliage": "Feuillage",
+  "card.factWildlife": "{score}/100 faune",
+  "card.strongFor": "Compte le plus ici",
   "card.bloomRange": "Fleurit de {from} à {to} ({color}).",
   "card.bloomRangeVowel": "Fleurit d'{from} à {to} ({color}).",
   "card.foliage": "Cultivée pour son feuillage, pas pour ses fleurs.",
@@ -1154,41 +1095,36 @@ export const fr: Dict = {
   // Pourquoi une plante obtient cette note pour ce coin de jardin.
   // ---------------------------------------------------------------------
   "fit.sun.tooLittle": "Veut plus de soleil que ce coin n'en reçoit (il lui en faut ~{needs} h, ce coin en donne ~{has}).",
-  "fit.sun.near": "Un peu moins de soleil qu'elle n'aime — elle poussera peut-être moins bien.",
-  "fit.sun.tooMuch": "Préfère plus d'ombre que ce coin n'en offre — elle risque de griller en plein soleil.",
+  "fit.sun.near": "Un peu moins de soleil qu'elle n'aime : elle poussera peut-être moins bien.",
+  "fit.sun.tooMuch": "Préfère plus d'ombre que ce coin n'en offre. Elle risque de griller en plein soleil.",
   "fit.sun.good": "Le soleil lui convient bien ({sun}).",
   "fit.moisture.good": "Elle s'accommode de l'humidité d'ici (sol {band}).",
-  "fit.moisture.near": "L'humidité n'est pas tout à fait la bonne — ici le sol est {band}, et elle le préfère {wants}.",
-  "fit.moisture.far": "L'humidité est loin du compte — ici le sol est {band}, et elle le préfère {wants}.",
+  "fit.moisture.near": "L'humidité n'est pas tout à fait la bonne : ici le sol est {band}, et elle le préfère {wants}.",
+  "fit.moisture.far": "L'humidité est loin du compte : ici le sol est {band}, et elle le préfère {wants}.",
   "fit.ph.off": "L'acidité du sol sort de sa zone de confort (estimation cartographique).",
 
   // ---------------------------------------------------------------------
   // Le verdict « est-ce que ça pousserait chez moi ? ».
   // ---------------------------------------------------------------------
   "verdict.ideal": "Coin idéal pour la planter",
-  "verdict.decent": "Coin correct — elle poussera, avec des réserves",
+  "verdict.decent": "Coin correct : elle poussera, avec des réserves",
   "verdict.unsuitable": "Ce coin lui mènerait la vie dure",
   "verdict.notNative": "Pas connue comme indigène à cet endroit",
-  "verdict.notNativeHere": "Cette plante n'est pas sur la liste {region} — nos données la donnent indigène de {where}.",
+  "verdict.notNativeHere": "Cette plante n'est pas sur la liste {region}. Nos données la donnent indigène de {where}.",
   "verdict.notCovered":
     "Cet endroit est en dehors des régions qu'Indigene couvre pour l'instant (les données de cette plante portent sur {where}), nous ne pouvons donc pas honnêtement nous porter garants d'elle ici.",
   "verdict.notNativeWhy":
     "La planter quand même ne nourrirait pas la faune locale comme le ferait une vraie indigène d'ici.",
   "verdict.tooCold": "Les hivers sont trop froids ici pour elle",
-  "verdict.tooColdWhy":
-    "{name} ne survivrait pas à {winter} — elle ne tient que jusqu'à la zone {zone}. Un hiver normal la tuerait.",
+  "verdict.tooColdWhy": "{name} ne survivrait pas à {winter} : elle ne tient que jusqu'à la zone {zone}. Un hiver normal la tuerait.",
   "verdict.tooWarm": "Les hivers ne sont pas assez froids ici pour elle",
-  "verdict.tooWarmWhy":
-    "{name} a besoin d'un repos hivernal plus froid que {winter} — il lui faut la zone {zone} ou plus froide.",
+  "verdict.tooWarmWhy": "{name} a besoin d'un repos hivernal plus froid que {winter} : la zone {zone} ou plus froide.",
   "verdict.winterNights": "des nuits d'hiver autour de {temp} (zone USDA {zone})",
   "verdict.winterCold": "le froid hivernal de cet endroit (zone USDA {zone})",
   "verdict.hardyEnough": "Assez rustique pour {winter}.",
-  "verdict.winterUnknown":
-    "Nous n'avons pas pu vérifier le froid qu'il fait ici en hiver — le reste du verdict suppose que ça passe.",
-  "verdict.sunMissingCapped":
-    "Nous ne connaissons pas encore le soleil de ce coin — indiquez-le ci-dessus et le verdict deviendra complet.",
-  "verdict.sunMissing":
-    "Pas encore de relevé de soleil pour ce coin — dites-nous ci-dessus ce qu'il en est et le verdict s'affinera.",
+  "verdict.winterUnknown": "Nous n'avons pas pu vérifier le froid qu'il fait ici en hiver, donc le reste du verdict suppose que ça passe.",
+  "verdict.sunMissingCapped": "Nous ne connaissons pas encore le soleil de ce coin. Indiquez-le ci-dessus pour un verdict complet.",
+  "verdict.sunMissing": "Pas encore de relevé de soleil pour ce coin. Indiquez-le ci-dessus pour affiner le verdict.",
 
   // ---------------------------------------------------------------------
   // Couleurs de floraison.
@@ -1233,21 +1169,18 @@ export const fr: Dict = {
   // explique au lieu de simplement nommer.
   // ---------------------------------------------------------------------
   "priorities.title": "Qu'est-ce qui compte le plus ici ?",
-  "priorities.lede":
-    "La liste de plantes est classée, pas tirée au hasard — et c'est vous qui décidez selon quoi. Choisissez un objectif ci-dessous et regardez les premières changer ; vous pourrez y revenir quand vous voudrez.",
+  "priorities.lede": "La liste de plantes est classée, pas tirée au hasard, et c'est vous qui décidez selon quoi. Choisissez un objectif ci-dessous et regardez les premières changer. Vous pourrez le modifier quand vous voudrez.",
   "priorities.whyTitle": "Comment ce classement fonctionne-t-il ?",
-  "priorities.why":
-    "La valeur de chaque plante pour la faune — chenilles hébergées, pollinisateurs et oiseaux nourris, pluie absorbée — est pondérée par l'importance que vous donnez à chacun de ces points, puis mise en balance avec sa capacité à s'accommoder du soleil, de l'humidité et du froid hivernal de ce lieu. Une plante magnifique au mauvais endroit reste mal classée, et chaque fiche dit pourquoi.",
+  "priorities.why": "La valeur de chaque plante pour la faune (chenilles hébergées, pollinisateurs et oiseaux nourris, pluie absorbée) est pondérée selon l'importance que vous donnez à chaque point, puis mise en balance avec son accord au soleil, à l'humidité et au froid hivernal de ce lieu. Une plante magnifique au mauvais endroit reste mal classée, et chaque fiche dit pourquoi.",
   "priorities.pickTitle": "Choisissez un objectif",
   "priorities.custom": "votre propre mélange",
-  "priorities.tuneSummary": "⚖️ Régler chaque point",
-  "priorities.tuneLede":
-    "Sept choses qu'une plante peut faire, et le poids que chacune doit avoir. Descendez un curseur à zéro et il cesse complètement d'influer sur l'ordre ; montez-le au maximum et les plantes douées pour ça remontent. Les premières, au-dessus, se mettent à jour au fur et à mesure.",
+  "priorities.tuneSummary": "⚖️ Régler vous-même",
+  "priorities.tuneLede": "Un curseur par chose qu'une plante sait faire. Regardez le podium bouger.",
   "priorities.sliderAria": "Importance accordée à : {name}",
   "priorities.previewTitle": "En tête en ce moment",
-  "priorities.previewCount": "{good} plantes sur {n} conviennent bien ou passablement à ce lieu.",
-  "priorities.allZero":
-    "Tout est à zéro : plus rien n'est pondéré, la liste ci-dessous n'est donc dans aucun ordre particulier. Remontez au moins un curseur.",
+  "priorities.previewAll": "Les {n} conviennent à ce lieu",
+  "priorities.previewCount": "{good} sur {n} conviennent à ce lieu",
+  "priorities.allZero": "Tout est à zéro : plus rien n'est pondéré, la liste ci-dessous n'est donc dans aucun ordre particulier. Remontez au moins un curseur.",
   "priorities.back": "Retour",
   "priorities.backToList": "← Vos plantes",
   "priorities.next": "Voir les plantes →",
@@ -1256,12 +1189,12 @@ export const fr: Dict = {
   // « Oui, ça a bien fait quelque chose » — ce que dit la liste après chaque
   // recalcul.
   // ---------------------------------------------------------------------
-  "rerank.same": "Recalculé — l'ordre n'a pas changé.",
-  "rerank.lead": "Recalculé — {name} passe en tête.",
-  "rerank.moved.one": "Recalculé — 1 plante a changé de place.",
-  "rerank.moved.other": "Recalculé — {n} plantes ont changé de place.",
-  "rerank.set.one": "Recalculé — {n} plante correspond désormais.",
-  "rerank.set.other": "Recalculé — {n} plantes correspondent désormais.",
+  "rerank.same": "Recalculé : l'ordre n'a pas changé.",
+  "rerank.lead": "Recalculé : {name} passe en tête.",
+  "rerank.moved.one": "Recalculé : 1 plante a changé de place.",
+  "rerank.moved.other": "Recalculé : {n} plantes ont changé de place.",
+  "rerank.set.one": "Recalculé : {n} plante correspond désormais.",
+  "rerank.set.other": "Recalculé : {n} plantes correspondent désormais.",
 
   // ---------------------------------------------------------------------
   // Résultats.
@@ -1278,17 +1211,17 @@ export const fr: Dict = {
   "results.tallyNativesList": "Toutes les plantes indigènes de la liste de cette région.",
   "results.tallyGood": "Bien adaptées",
   "results.tallyGoodExplain": "Les plantes dont les besoins en soleil, en eau et en sol conviennent bien, ou assez bien, à ce lieu. Les meilleures viennent en premier.",
-  "results.noneFiltered":
-    "Aucune plante de la liste {region} ne passe tous vos filtres. Essayez d'en assouplir un — les limites de taille en sont souvent la cause.",
+  "results.noneFiltered": "Aucune plante de la liste {region} ne passe tous vos filtres. Essayez d'en assouplir un : les limites de taille sont souvent en cause.",
   "results.noneHardy":
     "Aucune plante de la liste {region} n'est rustique à la température hivernale de ce lieu.",
-  "results.showingTop":
-    "Nous en montrons {n}. Tapez un nom pour en trouver une plus bas, ou changez le critère de classement.",
+  "results.showMore": "Afficher les {n} suivantes",
+  "results.showingTop": "Les {n} premières sur {total} bien adaptées",
+  "results.poorLeftOut": "{n} autres ne conviennent pas à ce lieu et ne sont pas affichées. Tapez un nom pour en trouver une quand même.",
   "results.filterAria": "Filtrer ces suggestions par nom de plante",
   "results.filterPlaceholder": "Filtrer par nom…",
   "results.filterCount.one": "{shown} plante sur {total} correspond à « {q} ».",
   "results.filterCount.other": "{shown} plantes sur {total} correspondent à « {q} ».",
-  "results.filterNone": "Rien ici ne correspond — ",
+  "results.filterNone": "Rien ici ne correspond : ",
   "results.filterSearchAll": "chercher dans toutes les régions",
   "results.filterNoneRest": ".",
   "results.goalLabel": "Objectif",
@@ -1297,7 +1230,7 @@ export const fr: Dict = {
   "results.condLabel": "Ce lieu",
   "results.condSun": "{label} · ~{hours} h",
   "results.soilBand": "sol {word}",
-  "results.condWinter": "Hivers jusqu'à {temp} ({link})",
+  "results.condWinter": "Hivers jusqu'à {temp}",
   "results.zoneLink": "zone USDA {zone}",
   "results.nativeAll": "Tout ce qui suit est indigène de cette région{hardy}.",
   "results.andHardy": " et résiste à vos hivers",
@@ -1306,11 +1239,9 @@ export const fr: Dict = {
   "results.savePrompt": "Donnez un nom à ce lieu (par exemple « la bande le long de l'allée »)",
   "results.defaultLabel": "Lieu à {lat}, {lon}",
   "results.saved": "Enregistré sur cet appareil.",
-  "results.privacy":
-    "Un lieu enregistré ne quitte pas cet appareil — il n'atteint aucun serveur, parce qu'il n'y en a pas",
+  "results.privacyLink": "Les lieux enregistrés restent sur cet appareil",
   "preset.default": "Nourrir le plus de vie",
-  "preset.default.sub":
-    "Les chenilles d'abord, puis les abeilles et les oiseaux — les plantes dont le plus d'animaux dépendent. C'est le réglage de départ si vous ne choisissez rien.",
+  "preset.default.sub": "Les chenilles d'abord, puis les abeilles et les oiseaux : les plantes dont le plus d'animaux dépendent. C'est le réglage de départ si vous ne choisissez rien.",
   "preset.balanced": "Un peu de tout",
   "preset.balanced.sub":
     "Aucun atout ne domine : faune, pluie et facilité de culture comptent à peu près autant.",
@@ -1318,14 +1249,12 @@ export const fr: Dict = {
   "preset.butterflies.sub":
     "Des feuilles que leurs chenilles peuvent vraiment manger, et des fleurs pour les adultes.",
   "preset.birds": "Oiseaux",
-  "preset.birds.sub":
-    "Des baies, des graines et des abris — plus les chenilles qui nourrissent les petits.",
+  "preset.birds.sub": "Des baies, des graines et des abris, plus les chenilles qui nourrissent les petits.",
   "preset.erosion": "Retenir la terre",
   "preset.erosion.sub":
     "Des racines profondes et agrippantes pour un talus, une berge ou un sol nu qui part avec l'eau.",
   "preset.rain": "Absorber la pluie",
-  "preset.rain.sub":
-    "Des plantes qui boivent l'eau stagnante et le ruissellement — un coin humide, une descente de gouttière, un jardin de pluie.",
+  "preset.rain.sub": "Des plantes qui boivent l'eau stagnante et le ruissellement, pour un coin humide, une descente de gouttière ou un jardin de pluie.",
   "preset.easiest": "Les plus faciles",
   "preset.easiest.sub":
     "Résistantes et indulgentes : les meilleures chances de s'en sortir sans arrosage ni soins.",
@@ -1351,18 +1280,14 @@ export const fr: Dict = {
   "filter.height.aria": "Hauteur maximale acceptée",
   "filter.spread.aria": "Largeur maximale acceptée",
   "noRegion.title": "Pas encore de liste de plantes pour cette zone",
-  "noRegion.lede":
-    "Indigene a mesuré le soleil, le sol et le climat de ce lieu, mais ses recommandations restent établies région par région — et ce lieu est en dehors des zones couvertes jusqu'ici. Vous montrer les plantes d'une autre région serait malhonnête, donc nous ne le faisons pas.",
+  "noRegion.lede": "Indigene a mesuré le soleil, le sol et le climat de ce lieu, mais ses recommandations sont établies région par région, et ce lieu est hors des zones couvertes pour l'instant. Vous montrer les plantes d'une autre région serait malhonnête, alors nous ne le faisons pas.",
   "noRegion.whatTitle": "Ce que vous pouvez faire malgré tout",
   "noRegion.browse": "Parcourir le catalogue complet",
-  "noRegion.browseRest":
-    " des régions couvertes — comme exemples du genre de recommandations qu'Indigene donne, et non comme des plantes pour ce lieu.",
+  "noRegion.browseRest": " des régions couvertes, comme exemples de ce qu'Indigene recommande, et non comme plantes pour ce lieu.",
   "noRegion.ask": "Demander votre région sur GitHub",
-  "noRegion.askRest":
-    " — ouvrez un ticket avec votre code postal ou votre commune, pour que nous sachions où nous étendre ensuite. Ou ajoutez la région vous-même ; les contributions sont les bienvenues.",
+  "noRegion.askRest": " avec votre code postal ou votre commune, pour que nous sachions où nous étendre ensuite. Ou ajoutez la région vous-même ; les contributions sont les bienvenues.",
   "noRegion.regionsTitle": "Les régions couvertes jusqu'ici",
-  "noRegion.regionsLede":
-    "Si vous savez que votre zone correspond en réalité à l'une d'elles — vous êtes juste de l'autre côté d'une limite, par exemple — vous pouvez utiliser sa liste. Nous la marquerons comme votre choix, et ses plantes seront à considérer comme non vérifiées pour votre zone exacte.",
+  "noRegion.regionsLede": "Si vous savez que votre zone correspond en réalité à l'une d'elles (vous êtes juste de l'autre côté d'une limite, par exemple), vous pouvez utiliser sa liste. Nous la marquerons comme votre choix, et ses plantes seront à considérer comme non vérifiées pour votre zone exacte.",
   "noRegion.pickDifferent": "Choisir un autre lieu",
 
   // ---------------------------------------------------------------------
@@ -1376,36 +1301,30 @@ export const fr: Dict = {
   "stat.sun.label": "Soleil",
   "stat.sun.value": "{min} à {max} h/jour",
   "stat.sun.range": "de {lo} à {hi}",
-  "stat.sun.explain":
-    "La plage d'heures de soleil direct par jour que cette plante accepte. Le soleil est le premier facteur de réussite — et comme il existe une indigène pour chaque niveau de lumière, le but est de coller aux heures que votre lieu reçoit vraiment, pas de lutter contre elles.",
+  "stat.sun.explain": "La plage d'heures de soleil direct par jour que cette plante accepte. Le soleil est le premier facteur de réussite. Il existe une indigène pour chaque niveau de lumière : collez aux heures que votre lieu reçoit vraiment, au lieu de lutter contre elles.",
   "stat.moisture.label": "Humidité",
   "stat.moisture.sub": "sols acceptés",
-  "stat.moisture.explain":
-    "À quel point le sol reste humide après la pluie — pas la fréquence de vos arrosages. Les indigènes se spécialisent : une plante de talus sec pourrit dans un creux humide, et une plante de bord de marais grille sur du sable. Collez à l'humidité que votre lieu a déjà et, passé la première année, vous n'aurez presque plus à arroser. (Les guides appellent « mésique » un sol frais et jamais détrempé.)",
+  "stat.moisture.explain": "À quel point le sol reste humide après la pluie, et non la fréquence de vos arrosages. Les indigènes se spécialisent : une plante de talus sec pourrit dans un creux humide, et une plante de bord de marais grille sur du sable. Collez à l'humidité que votre lieu a déjà et, passé la première année, vous n'aurez presque plus à arroser. (Les guides appellent « mésique » un sol frais et jamais détrempé.)",
   "stat.moisture.more": "En savoir plus sur les types d'humidité →",
   "stat.moistureWord.dry": "Sec",
   "stat.moistureWord.mesic": "Frais",
   "stat.moistureWord.wet": "Humide",
   "stat.zones.label": "Rusticité",
   "stat.zones.sub": "froid hivernal USDA",
-  "stat.zones.explain":
-    "Les zones USDA découpent la nuit la plus froide de l'hiver par pas de {step}. Si votre zone tombe dans la plage de cette plante, un hiver normal ne la tuera pas — et une plante indigène de chez vous se situe presque toujours confortablement dans sa zone d'origine. Ni voile, ni paillage d'urgence.",
+  "stat.zones.explain": "Les zones USDA découpent la nuit la plus froide de l'hiver par pas de {step}. Si votre zone tombe dans la plage de cette plante, un hiver normal ne la tuera pas. Une plante indigène de chez vous est presque toujours bien à l'aise dans sa zone : ni voile, ni paillage d'urgence.",
   "stat.zones.more": "Trouver votre zone sur la carte USDA →",
   "stat.ph.label": "pH du sol",
-  "stat.ph.explain":
-    "L'acidité ou l'alcalinité du sol — 7 est neutre, en dessous c'est acide, au-dessus c'est calcaire. Les indigènes ont évolué avec la roche et la litière du coin : une plante indigène d'à côté se querelle rarement avec le pH de votre sol. Choisissez ce qui convient et vous n'achèterez jamais d'amendement.",
+  "stat.ph.explain": "L'acidité ou l'alcalinité du sol : 7 est neutre, en dessous c'est acide, au-dessus c'est calcaire. Les indigènes ont évolué avec la roche et la litière du coin : une plante indigène d'à côté se querelle rarement avec le pH de votre sol. Choisissez ce qui convient et vous n'achèterez jamais d'amendement.",
   "ph.word.acidic": "acide",
   "ph.word.alkaline": "calcaire",
   "ph.word.acidicToAlkaline": "d'acide à calcaire",
   "ph.word.neutral": "proche du neutre",
   "stat.size.label": "Taille",
   "stat.size.sub": "hauteur × largeur",
-  "stat.size.explain":
-    "La taille adulte réelle, d'après nos sources citées — souvent bien plus grande que ne l'avoue une étiquette de pépinière. Donnez à une indigène la place de son gabarit adulte dès le premier jour et vous n'aurez jamais à la tailler pour la mater ; le dessin ci-dessous montre le rythme, année par année.",
+  "stat.size.explain": "La taille adulte réelle, d'après nos sources citées, souvent bien plus grande que ne l'avoue une étiquette de pépinière. Donnez à une indigène la place de son gabarit adulte dès le premier jour et vous n'aurez jamais à la tailler pour la mater. Le dessin ci-dessous montre le rythme, année par année.",
   "stat.growth.label": "Croissance",
   "stat.growth.sub": "{height} à {n} ans",
-  "stat.growth.explain":
-    "Le rythme vient de la croissance observée sur le terrain aux années 1, 3, 5 et 10 dans les sources citées pour cette plante — pas de l'optimisme des étiquettes. Le lieu, l'eau et la chance le font varier.",
+  "stat.growth.explain": "Le rythme vient de la croissance observée sur le terrain aux années 1, 3, 5 et 10 dans les sources citées pour cette plante, pas de l'optimisme des étiquettes. Le lieu, l'eau et la chance le font varier.",
   "pace.quick": "Rapide",
   "pace.steady": "Régulière",
   "pace.slow": "Lente",
@@ -1416,25 +1335,22 @@ export const fr: Dict = {
   "stat.host.value": "{n} espèces",
   "stat.host.subKeystone": "plante essentielle",
   "stat.host.subValue": "valeur nourricière",
-  "stat.host.explain":
-    "Combien d'espèces de papillons peuvent élever leurs chenilles sur cette plante. La plupart des passereaux nourrissent leurs petits de chenilles : c'est donc une bonne mesure de la vie qu'une plante fait vivre — et la plupart des plantes exotiques obtiennent bien moins.",
+  "stat.host.explain": "Combien d'espèces de papillons peuvent élever leurs chenilles sur cette plante. La plupart des passereaux nourrissent leurs petits de chenilles : c'est donc une bonne mesure de la vie qu'une plante fait vivre. La plupart des plantes exotiques obtiennent bien moins.",
   "stat.host.explainKeystone": "Celle-ci est essentielle : elle héberge bien plus d'espèces que la moyenne, et les réseaux alimentaires locaux s'appuient sur elle. Les écologues parlent de plante « clé de voûte ».",
   "stat.host.uncounted": "Non compté",
   "stat.host.uncountedSub": "pas encore de source",
   "stat.host.explainUncounted":
     "Pour cette région, nous n'avons pas encore de décompte publié à citer : cette plante est classée sur ses autres atouts en attendant.",
   "stat.bloom.label": "Floraison",
-  "stat.bloom.explain":
-    "Le moment où elle fleurit. Les périodes de floraison des indigènes sont calées sur les pollinisateurs du coin — certaines abeilles n'émergent que pour ces semaines-là. Plantez quelques indigènes aux floraisons décalées et il y a du nectar du début du printemps aux gelées.",
+  "stat.bloom.explain": "Le moment où elle fleurit. Les périodes de floraison des indigènes sont calées sur les pollinisateurs du coin. Certaines abeilles n'émergent que pour ces semaines-là. Plantez quelques indigènes aux floraisons décalées et il y a du nectar du début du printemps aux gelées.",
   "stat.foliage.value": "Feuillage",
   "stat.foliage.sub": "pour ses feuilles",
-  "stat.foliage.explain":
-    "Celle-ci se cultive pour son feuillage et sa silhouette plutôt que pour ses fleurs — et cela vaut tout autant pour la faune. Les feuilles nourrissent les chenilles, les tiges abritent les insectes qui passent l'hiver, et le couvert compte toute l'année d'une façon que le nectar seul ne peut pas offrir.",
+  "stat.foliage.explain": "Celle-ci se cultive pour son feuillage et sa silhouette plutôt que pour ses fleurs, et cela compte aussi pour la faune. Les feuilles nourrissent les chenilles, les tiges abritent les insectes qui passent l'hiver, et le couvert compte toute l'année.",
 
   // ---------------------------------------------------------------------
   // Fiche détaillée d'une plante.
   // ---------------------------------------------------------------------
-  "plant.docTitle": "{name} ({latin}) — Indigene",
+  "plant.docTitle": "{name} ({latin}) · Indigene",
   "plant.more": "← D'autres indigènes",
   "plant.backToList": "← Retour à votre liste de plantes",
   "plant.backToListShort": "← Vos plantes",
@@ -1455,7 +1371,7 @@ export const fr: Dict = {
   "guide.goals": "Ce que fait chaque objectif (en anglais)",
   "guide.spots": "Ce qu'un lieu enregistré permet (en anglais)",
   "guide.inat": "Ce qu'apporte le lien iNaturalist (en anglais)",
-  "conservation.buyNursery": "À acheter en pépinière — n'en prélevez jamais dans la nature.",
+  "conservation.buyNursery": "À acheter en pépinière. N'en prélevez jamais dans la nature.",
   "conservation.plantForIt": "Planter ce dont il a besoin, voilà l'aide utile.",
   "conservation.span": "{from} à {to}",
   "conservation.words.1": "gravement en péril",
@@ -1472,13 +1388,12 @@ export const fr: Dict = {
   // de nos régions peuvent apparaître ici, d'où la brièveté de la liste.
   "conservation.place.florida-us": "Floride",
   "conservation.place.pennsylvania-us": "Pennsylvanie",
-  "plant.whyBelongs": "Où elle est indigène : ",
+  "plant.whyBelongs": "Milieu : ",
   "plant.share": "Partager cette plante",
   "plant.shareShort": "Partager",
-  "plant.shareTitle": "{name} — Indigene",
-  "plant.shareText":
-    "{name} ({latin}) — une plante indigène qui mérite d'être connue. Voyez si votre coin lui convient :",
-  "plant.linkCopied": "Lien copié — collez-le où vous voulez.",
+  "plant.shareTitle": "{name} · Indigene",
+  "plant.shareText": "{name} ({latin}), une plante indigène qui mérite d'être connue. Voyez si votre coin lui convient :",
+  "plant.linkCopied": "Lien copié. Collez-le où vous voulez.",
   "plant.sectionLink": "Copier un lien vers cette rubrique",
   "plant.ecosystemTitle": "🦋 Services écosystémiques",
   "plant.needsTitle": "🪴 Besoins de culture",
@@ -1486,7 +1401,7 @@ export const fr: Dict = {
   "plant.growthAria": "Hauteur par année, à côté d'une personne de {human} : {points}.",
   "plant.growthPoint": "an {year}, {height}",
   "plant.wildlifeItBrings": "La faune qu'elle attire : ",
-  "plant.soleTie": "Cette plante est le seul recours de {name} — un lien vital.",
+  "plant.soleTie": "Cette plante est le seul recours de {name} : un lien vital.",
   // Les sosies. Le mot d'ordre est le même qu'en anglais : on décrit la
   // confusion, pas le caractère de la plante. Certaines sont de vraies
   // envahissantes, d'autres de simples plantes de jardin qui ne sont pas d'ici,
@@ -1500,8 +1415,7 @@ export const fr: Dict = {
   "lookalike.status.native": "Indigène aussi",
   "lookalike.statusPlain.invasive":
     "Introduite ici, et elle gagne seule les milieux naturels, aux dépens de ce qui y était déjà.",
-  "lookalike.statusPlain.introduced":
-    "Introduite et plantée ici. On ne la connaît pas comme envahissante — elle n'est simplement pas la plante avec laquelle la faune d'ici a grandi.",
+  "lookalike.statusPlain.introduced": "Introduite et plantée ici. On ne la connaît pas comme envahissante. Elle n'est simplement pas la plante avec laquelle la faune d'ici a grandi.",
   "lookalike.statusPlain.native":
     "Elle pousse ici à l'état sauvage, tout comme la plante avec laquelle on la confond. La confusion compte quand même.",
   // Deux-points plutôt qu'une préposition : « en Californie du Sud » mais
@@ -1516,48 +1430,42 @@ export const fr: Dict = {
     "Installé dans la nature et gagnant du terrain, avec de vrais dégâts, mais sans refaire le paysage.",
   "lookalike.pressurePlain.patchy":
     "Échappé des jardins ici, et pour l'instant cantonné à quelques stations.",
-  "lookalike.scaleNote":
-    "Trois degrés, du pire au moindre : prend la place, gagne du terrain, par taches. Ils traduisent une échelle publiée par ceux qui étudient chaque région — pas la nôtre.",
+  "lookalike.scaleNote": "Trois degrés, du pire au moindre : prend la place, gagne du terrain, par taches. Ils traduisent une échelle publiée par ceux qui étudient chaque région, pas la nôtre.",
   "lookalike.listedImpact": "Classé {as} ici par {by}.",
   "lookalike.listedRegulation": "{by} l'inscrit comme {as}. {means}",
   "lookalike.means.waClassA":
     "Encore assez rare ici pour que l'État impose la destruction de chaque pied trouvé et en interdise la vente.",
   "lookalike.means.waClassB":
     "Cette classe signifie qu'elle est courante dans une partie de l'État : la lutte est obligatoire là où elle est encore rare, et laissée à chaque comté ailleurs.",
-  "lookalike.means.waClassC":
-    "Cette classe ne dit rien de sa nocivité : elle signifie que la plante est déjà partout, et que l'État laisse la lutte à chaque comté au lieu de l'imposer.",
+  "lookalike.means.waClassC": "Cette classe ne dit rien de sa nocivité. Elle signifie que la plante est déjà partout, et que l'État laisse la lutte à chaque comté au lieu de l'imposer.",
   "lookalike.unassessed":
     "Personne n'a encore évalué son caractère envahissant ici.",
   "lookalike.where.invasive": "Envahissante :",
   "lookalike.where.introduced": "Pas indigène :",
   "lookalike.where.native": "Indigène :",
-  "lookalike.nativeElsewhere": "Elle est bel et bien indigène quelque part — {link}.",
+  "lookalike.nativeElsewhere": "Elle est bel et bien indigène quelque part : {link}.",
   "lookalike.nativeElsewhereLink": "nous la recommandons dans notre liste {region}",
   "lookalike.growInstead": "Envie de la planter ? {link}.",
   "lookalike.growInsteadLink": "voyez l'indigène à planter à la place",
-  "lookalike.coverageNote":
-    "Ce sont les confusions que nous avons documentées, pas toutes celles qui sont possibles. Dans le doute, photographiez la plante et demandez à iNaturalist — ce sont de vraies personnes qui identifient.",
+  "lookalike.coverageNote": "Ce sont les confusions que nous avons documentées, pas toutes celles qui sont possibles. Dans le doute, photographiez la plante et demandez à iNaturalist, où de vraies personnes l'identifient.",
   // ---------------------------------------------------------------------
   // Les sosies : l'index et la page de chaque imposteur.
   // ---------------------------------------------------------------------
   "steps.invasives": "Les pires plantes envahissantes",
   "steps.lookalikes": "Sosies",
   "lookalikes.indexTitle": "Les plantes qu'on prend pour des indigènes",
-  "lookalikes.indexDocTitle": "Sosies — les plantes qu'on prend pour des indigènes — Indigene",
-  "lookalikes.regionDocTitle": "Sosies en {region} — Indigene",
-  "lookalikes.docTitle": "{name} — avec quoi on la confond — Indigene",
+  "lookalikes.indexDocTitle": "Sosies : les plantes qu'on prend pour des indigènes · Indigene",
+  "lookalikes.regionDocTitle": "Sosies en {region} · Indigene",
+  "lookalikes.docTitle": "{name} : avec quoi on la confond · Indigene",
   "lookalikes.indexLede":
     "{n} plantes qu'on achète, plante et photographie à la place d'une indigène. Ouvrez-en une pour voir, côte à côte, ce qui la distingue de la vraie.",
   "lookalikes.indexLedeRegion":
     "{n} d'entre elles se rencontrent en {region}. Ouvrez-en une pour voir, côte à côte, ce qui la distingue de l'indigène dont elle tient la place.",
   "lookalikes.scaleTitle": "Ce que veulent dire \u00ab prend la place \u00bb et \u00ab gagne du terrain \u00bb",
-  "lookalikes.scaleSource":
-    "Les mots sont de nous ; le jugement, non. Chacun traduit l\u2019\u00e9chelle publi\u00e9e par ceux qui \u00e9tudient la r\u00e9gion \u2014 le conseil des plantes envahissantes de Californie, le patrimoine naturel de Virginie, celui de Floride, les conservatoires botaniques nationaux.",
-  "lookalikes.scaleGaps":
-    "Une fiche sans ce badge ne d\u00e9signe pas une plante inoffensive. Personne n\u2019a encore \u00e9valu\u00e9 ce terrain-l\u00e0, ou bien tout ce qui y est publi\u00e9 est une loi sur les mauvaises herbes \u2014 qui dit ce qu\u2019il faut faire d\u2019une plante, pas la place qu\u2019elle prend.",
+  "lookalikes.scaleSource": "Les mots sont de nous ; le jugement, non. Chacun traduit l’échelle publiée par ceux qui étudient la région : le conseil des plantes envahissantes de Californie, le patrimoine naturel de Virginie, celui de Floride, les conservatoires botaniques nationaux.",
+  "lookalikes.scaleGaps": "Une fiche sans ce badge ne désigne pas une plante inoffensive. Personne n’a encore évalué ce terrain-là, ou bien tout ce qui y est publié est une loi sur les mauvaises herbes, qui dit ce qu’il faut faire d’une plante, pas la place qu’elle prend.",
   "lookalikes.notAllVillains": "Toutes ne sont pas envahissantes. ",
-  "lookalikes.notAllVillainsRest":
-    "Certaines gagnent les milieux naturels et nous coûtent quelque chose. D'autres sont de simples plantes de jardin qui ne sont pas d'ici. Une ou deux poussent ici à l'état sauvage, comme la plante avec laquelle on les confond — et la confusion compte quand même, car l'une d'elles peut vous tuer. L'étiquette de chacune le dit.",
+  "lookalikes.notAllVillainsRest": "Certaines gagnent les milieux naturels et nous coûtent quelque chose. D'autres sont de simples plantes de jardin qui ne sont pas d'ici. Une ou deux poussent ici à l'état sauvage, comme la plante avec laquelle on les confond. La confusion compte quand même : l'une d'elles peut vous tuer. L'étiquette de chacune le dit.",
   "lookalikes.mistakenFor": "On la confond avec : ",
   "lookalikes.mistakenForHere": "Ici, on la confond avec : ",
   "lookalikes.mistakenForHeading": "Confondue avec {name}",
@@ -1574,7 +1482,7 @@ export const fr: Dict = {
   "lookalikes.filterCount.other": "{shown} sur {total} correspondent à «\u202f{q}\u202f».",
   "lookalikes.filterNone": "Aucun sosie ici ne correspond à «\u202f{q}\u202f». ",
   "lookalikes.filterSearchPlants": "Chercher plutôt dans les plantes",
-  "lookalikes.filterNoneRest": " — c'est peut-être l'une des indigènes.",
+  "lookalikes.filterNoneRest": " (c'est peut-être l'une des indigènes).",
   "lookalikes.notFoundTitle": "Nous ne connaissons pas celui-là",
   "lookalikes.notFoundLede": "Aucun sosie ici n'a l'adresse «\u202f{slug}\u202f».",
   "plant.lookalikesTitle": "À ne pas confondre avec : ",
@@ -1588,13 +1496,11 @@ export const fr: Dict = {
   "plant.cropsLink": "ce que les fermes ont mesuré",
   "steps.alternatives": "Alternatives",
   "alternatives.indexTitle": "Des indigènes à planter plutôt que les ornementaux courants",
-  "alternatives.indexDocTitle": "Alternatives indigènes — à planter à la place — Indigene",
-  "alternatives.regionDocTitle": "Alternatives indigènes en {region} — Indigene",
-  "alternatives.docTitle": "{name} — quoi planter à la place — Indigene",
-  "alternatives.indexLede":
-    "{n} plantes que l'on achète et installe partout, et qui ne sont pas d'ici. Ouvrez-en une pour voir l'indigène qui occupe le même coin et fait davantage — aussi robuste ou plus, et nourrissant la faune que l'ornementale laisse de côté. Les deux sont comparées sur l'eau, les maladies et ce qu'elles nourrissent.",
-  "alternatives.indexLedeRegion":
-    "{n} d'entre elles valent la peine d'être remplacées en {region}. Ouvrez-en une pour voir l'indigène qui occupe le même coin et rend davantage — présentée à côté de l'ornementale, critère par critère.",
+  "alternatives.indexDocTitle": "Alternatives indigènes : à planter à la place · Indigene",
+  "alternatives.regionDocTitle": "Alternatives indigènes en {region} · Indigene",
+  "alternatives.docTitle": "{name} : quoi planter à la place · Indigene",
+  "alternatives.indexLede": "{n} plantes que l'on achète et installe partout, et qui ne sont pas d'ici. Ouvrez-en une pour voir l'indigène qui occupe le même coin et fait davantage : aussi robuste ou plus, et nourrissant la faune que l'ornementale laisse de côté. Les deux sont comparées sur l'eau, les maladies et ce qu'elles nourrissent.",
+  "alternatives.indexLedeRegion": "{n} d'entre elles valent la peine d'être remplacées en {region}. Ouvrez-en une pour voir l'indigène qui occupe le même coin et rend davantage, présentée à côté de l'ornementale, critère par critère.",
   "alternatives.role": "Plantée pour : ",
   "alternatives.growInstead": "À la place : ",
   "alternatives.growInsteadHere": "À la place, ici : ",
@@ -1614,7 +1520,7 @@ export const fr: Dict = {
   "alternatives.filterCount.other": "{shown} sur {total} correspondent à « {q} ».",
   "alternatives.filterNone": "Aucun ornemental ici ne correspond à « {q} ». ",
   "alternatives.filterSearchPlants": "Chercher plutôt parmi les indigènes",
-  "alternatives.filterNoneRest": " — c'est peut-être l'une des indigènes.",
+  "alternatives.filterNoneRest": " (c'est peut-être l'une des indigènes).",
   "alternatives.coverageNote":
     "Ce sont les alternatives que nous avons rédigées, pas toutes les plantes à remplacer. L'eau, les maladies et la faune sont les critères comparés ; là où une alternative perd sur l'un, nous l'omettons plutôt que de faire semblant. En cas de doute sur ce que vous avez, photographiez-le et demandez à iNaturalist.",
   "alternatives.notFoundTitle": "Nous ne connaissons pas celle-là",
@@ -1624,10 +1530,10 @@ export const fr: Dict = {
   "alternative.axis.wildlife": "Faune",
   "alternative.axis.care": "Entretien",
   "alternative.seeOnInat": "Photos sur iNaturalist ↗",
-  "alternative.nativeElsewhere": "C'est une véritable indigène quelque part — {link}.",
+  "alternative.nativeElsewhere": "C'est une véritable indigène quelque part : {link}.",
   "alternative.nativeElsewhereLink": "nous la recommandons sur notre liste {region}",
-  "alternative.alsoLookalike": "C'est aussi l'un de nos sosies — {link}.",
-  "alternative.alsoLookalikeInvasive": "Envahissante en {regions}, et l'un de nos sosies — {link}.",
+  "alternative.alsoLookalike": "C'est aussi l'un de nos sosies : {link}.",
+  "alternative.alsoLookalikeInvasive": "Envahissante en {regions}, et l'un de nos sosies : {link}.",
   "alternative.tellApartLink": "voyez comment la distinguer de l'indigène",
   "plant.propagationTitle": "🪴 Comment la multiplier",
   "plant.forThisPlant": "Pour cette plante : ",
@@ -1637,13 +1543,11 @@ export const fr: Dict = {
   "plant.savedFit.other":
     "Vous avez enregistré {n} coins qui lui conviendraient. Ouvrez-en un pour voir tout ce qui y prospère.",
   "plant.checkSpotTitle": "Envie de la planter ? Vérifiez votre coin",
-  "plant.checkSpotLede":
-    "Placez-vous là où vous la planteriez (ou cherchez votre commune ci-dessous) et Indigene confronte le sol, le climat et la région à ce dont cette plante a besoin — indigène de {region} et au-delà, il faut encore qu'elle se plaise à votre endroit exact.",
-  "plant.checkPrivacy":
-    "Utilisée uniquement pour vérifier ce lieu, uniquement quand vous le demandez — votre position ne quitte jamais votre appareil autrement que sous forme de requêtes anonymes",
+  "plant.checkSpotLede": "Placez-vous là où vous la planteriez, ou cherchez votre commune ci-dessous, et Indigene compare le sol, le climat et la région à ce dont cette plante a besoin. Indigène de {region} et au-delà, elle doit encore se plaire à votre endroit exact.",
+  "plant.checkPrivacy": "Utilisée uniquement pour vérifier ce lieu, et seulement quand vous le demandez. Votre position ne quitte jamais votre appareil, sauf sous forme de requêtes anonymes",
   "plant.checkLocation": "📍 Vérifier ma position",
   "plant.noSpot": "Aucun lieu choisi pour l'instant.",
-  "plant.checkingSpot": "{where} — vérification du sol et du climat…",
+  "plant.checkingSpot": "{where} : vérification du sol et du climat…",
   "plant.near": "Près de {place}",
   "plant.sunQuestion": "Combien de soleil ce coin reçoit-il ?",
   "plant.sunUnsure": "Je ne sais pas",
@@ -1651,19 +1555,17 @@ export const fr: Dict = {
   "plant.sunHalf": "⛅ Du soleil la moitié du jour",
   "plant.sunShade": "🌳 Surtout à l'ombre",
   "plant.noGpsSearch": "🔎 Pas de GPS ? Cherchez votre commune",
-  "plant.noGeolocation": "Cet appareil ne peut pas partager sa position — cherchez votre commune ci-dessous.",
-  "plant.denied": "Position refusée — cherchez plutôt votre commune ci-dessous.",
-  "plant.noFix": "Impossible de vous localiser — réessayez, ou cherchez votre commune ci-dessous.",
+  "plant.noGeolocation": "Cet appareil ne peut pas partager sa position. Cherchez votre commune ci-dessous.",
+  "plant.denied": "Position refusée. Cherchez plutôt votre commune ci-dessous.",
+  "plant.noFix": "Impossible de vous localiser. Réessayez, ou cherchez votre commune ci-dessous.",
   "plant.searchOffline":
     "La recherche de lieux a besoin d'une connexion et nous n'avons pas pu l'atteindre. Si le GPS fonctionne, utilisez le bouton de position ci-dessus.",
   "plant.seeEverything": "Voir toutes les plantes de ce lieu →",
   "plant.notFoundTitle": "Nous ne connaissons pas encore cette plante",
-  "plant.notFoundLede":
-    "Rien dans les listes régionales d'Indigene ne correspond à « {slug} ». Ces listes sont délibérément constituées à la main — chaque entrée est vérifiée pour son statut d'indigène et pour l'honnêteté de ses chiffres — elles grandissent donc avec prudence.",
+  "plant.notFoundLede": "Rien dans les listes régionales d'Indigene ne correspond à « {slug} ». Chaque entrée est vérifiée (statut d'indigène, honnêteté des chiffres), alors les listes grandissent prudemment.",
   "plant.notFoundBrowse": "Parcourir les indigènes que nous connaissons",
   "ref.title": "🔎 La chercher ailleurs",
-  "ref.lede":
-    "Retrouvez {name} dans les bases botaniques et naturalistes — la même plante, reliée par un identifiant commun pour tomber sur la bonne fiche.",
+  "ref.lede": "La même plante dans les bases botaniques et naturalistes, retrouvée par un code commun pour tomber sur la bonne fiche.",
   "ref.powo": "nom accepté et aire d'indigénat",
   "ref.ipni": "qui l'a nommée, et quand",
   "ref.wfo": "son nom accepté dans le monde",
@@ -1672,21 +1574,20 @@ export const fr: Dict = {
   "ref.itis": "taxonomie nord-américaine",
   "ref.inaturalist": "photos et observations à proximité",
   "ref.wikidata": "renvois croisés et Wikipédia",
+  "ref.copy": "Copier le code",
+  "ref.copied": "Code copié.",
   "ref.identity": "Identité : ",
-  "ref.identityRest": " — un code qui reste attaché à cette plante même quand son nom change.",
+  "ref.identityRest": " (un code qui reste attaché à cette plante même quand son nom change).",
 
   // ---------------------------------------------------------------------
   // Faune.
   // ---------------------------------------------------------------------
-  "wildlife.coverageNote":
-    "Les liens que nous avons vérifiés et sourcés — pas tous les insectes qu'une plante fait vivre. Un seul chêne héberge des centaines d'espèces de papillons de nuit ; voici celles pour lesquelles il vaut la peine de choisir une plante.",
-  "wildlife.indexDocTitle": "Parcourir les plantes indigènes par la faune qu'elles font vivre — Indigene",
+  "wildlife.coverageNote": "Les liens que nous avons vérifiés et sourcés, pas tous les insectes qu'une plante fait vivre. Un seul chêne héberge des centaines d'espèces de papillons de nuit ; voici celles pour lesquelles il vaut la peine de choisir une plante.",
+  "wildlife.indexDocTitle": "Plantes indigènes par la faune qu'elles font vivre · Indigene",
   "wildlife.indexTitle": "Parcourir par animal",
-  "wildlife.indexLede":
-    "Choisissez l'insecte ou l'animal que vous aimeriez voir chez vous, et découvrez quelles plantes indigènes le font vivre — et comment. {n} espèces cartographiées jusqu'ici.",
+  "wildlife.indexLede": "Choisissez l'insecte ou l'animal que vous aimeriez voir chez vous, et découvrez quelles plantes indigènes le font vivre, et comment. {n} espèces cartographiées jusqu'ici.",
   "wildlife.allNative": "🌿 Chaque animal listé ici est lui-même indigène. ",
-  "wildlife.allNativeRest":
-    "C'est tout l'intérêt — des plantes indigènes qui nourrissent une faune indigène — et l'abeille domestique, élevée en ruche, est donc écartée. Le chiffre 📍 compte les régions où nous avons cartographié l'espèce ; ouvrez-le pour les voir.",
+  "wildlife.allNativeRest": "C'est tout l'intérêt : des plantes indigènes qui nourrissent une faune indigène. L'abeille domestique, élevée en ruche, est donc écartée. Le chiffre 📍 compte les régions où nous avons cartographié l'espèce ; ouvrez-le pour les voir.",
   "wildlife.browsePlants": "← Parcourir plutôt les plantes",
   "wildlife.browsePlantsShort": "Parcourir les plantes",
   "wildlife.startFromSpot": "Partir d'un lieu",
@@ -1699,12 +1600,12 @@ export const fr: Dict = {
   "wildlife.inRegionsBody":
     "Indigene cartographie des plantes indigènes qui font vivre {animal} dans {n} de ses listes régionales. Ouvrez-en une pour voir toutes les espèces que ces plantes font vivre. L'aire de répartition de l'animal va souvent bien au-delà.",
   "wildlife.nativeTo": "📍 Indigène dans",
-  "wildlife.regionPillTitle": "{region} — toute la faune que ses plantes indigènes font vivre",
-  "wildlife.docTitle": "Les plantes indigènes qui font vivre {animal} — Indigene",
+  "wildlife.regionPillTitle": "{region} : toute la faune que ses plantes indigènes font vivre",
+  "wildlife.docTitle": "Les plantes indigènes qui font vivre {animal} · Indigene",
   "wildlife.allWildlife": "← Toute la faune",
   "wildlife.plantsHeading": "Les plantes qui font vivre cet animal",
-  "wildlife.ofThemHosts.one": ", dont {n} comme plante nourricière de ses chenilles — le lien le plus fort.",
-  "wildlife.ofThemHosts.other": ", dont {n} comme plantes nourricières de ses chenilles — le lien le plus fort.",
+  "wildlife.ofThemHosts.one": ", dont {n} comme plante nourricière de ses chenilles (le lien le plus fort).",
+  "wildlife.ofThemHosts.other": ", dont {n} comme plantes nourricières de ses chenilles (le lien le plus fort).",
   "wildlife.cantLiveWithout.one": "⭐ Il ne peut pas vivre sans cette plante. ",
   "wildlife.cantLiveWithout.other": "⭐ Il ne peut pas vivre sans ces plantes. ",
   "wildlife.onlyOption.one": "{animal} ne peut pas se passer de ce genre de plante, et celle-ci en fait partie.",
@@ -1725,35 +1626,32 @@ export const fr: Dict = {
   "wlStat.sole.explain.other":
     "{animal} ne peut pas se passer de ces genres de plantes. Retirez-les toutes d'un quartier et l'animal s'en va avec elles.",
   "wildlife.speciesRecord": "Voir la fiche de l'espèce : ",
-  "wildlife.fullProfile": "{name} — fiche complète",
+  "wildlife.fullProfile": "{name} : fiche complète",
   "wildlife.allSources": "Toutes les sources et licences →",
   "wildlife.rankForSpot": "Les classer pour mon lieu",
   "wildlife.notFoundTitle": "Nous ne suivons pas encore cette espèce",
-  "wildlife.notFoundLede":
-    "Rien dans la liste faunistique d'Indigene ne correspond à « {id} ». La liste est constituée à la main — chaque lien est vérifié et sourcé — elle grandit donc avec prudence.",
+  "wildlife.notFoundLede": "Rien dans la liste faunistique d'Indigene ne correspond à « {id} ». Chaque lien est vérifié et sourcé, alors la liste grandit prudemment.",
   "wildlife.notFoundBrowse": "Parcourir les espèces que nous suivons",
-  "wildlife.groupDocTitle": "Plantes indigènes pour les {group} — Indigene",
+  "wildlife.groupDocTitle": "Plantes indigènes pour les {group} · Indigene",
   "wildlife.groupLede": "{n} recensés à ce jour. {blurb}",
   // Pas de {group} ici : l'accord en genre change d'un groupe à l'autre, et
   // « aucun animal dans ce groupe » se lit aussi bien pour tous.
-  "wildlife.emptyGroup":
-    "Nous n'avons encore recensé aucun animal dans ce groupe — chaque lien est vérifié et sourcé avant d'être publié, la liste grandit donc prudemment.",
+  "wildlife.emptyGroup": "Nous n'avons encore recensé aucun animal dans ce groupe. Chaque lien est vérifié et sourcé avant d'être publié, alors la liste grandit prudemment.",
   "wildlife.allChip": "Tout ({n})",
   "wildlife.groupsNav": "Groupes d'animaux",
   "wildlife.filterAria": "Filtrer cette liste par nom d'animal",
   "wildlife.filterPlaceholder": "Filtrer par nom…",
   "wildlife.filterCount.one": "{shown} animal sur {total} correspond à « {q} ».",
   "wildlife.filterCount.other": "{shown} animaux sur {total} correspondent à « {q} ».",
-  "wildlife.filterNoneGroup": "Aucun résultat parmi les {group} pour « {q} » — ",
+  "wildlife.filterNoneGroup": "Aucun résultat parmi les {group} pour « {q} » : ",
   "wildlife.filterSeeAll": "voir toute la faune",
-  "wildlife.filterNoneIndex": "Aucun animal recensé ne correspond à « {q} » — ",
+  "wildlife.filterNoneIndex": "Aucun animal recensé ne correspond à « {q} » : ",
   "wildlife.filterSearchPlants": "chercher parmi les plantes",
   "wildlife.filterNoneRest": ".",
   // La coupe par région — l'autre axe, à côté des chips de groupe.
-  "wildlife.regionDocTitle": "La faune que font vivre les plantes indigènes de {region} — Indigene",
-  "wildlife.groupInRegionDocTitle": "{group} de {region} — Indigene",
-  "wildlife.indexLedeRegion":
-    "{n} espèces que font vivre les plantes indigènes de la liste {region} d'Indigene. Choisissez-en une pour voir lesquelles de ces plantes élèvent ses petits ou la nourrissent — et comment.",
+  "wildlife.regionDocTitle": "La faune que font vivre les plantes indigènes de {region} · Indigene",
+  "wildlife.groupInRegionDocTitle": "{group} de {region} · Indigene",
+  "wildlife.indexLedeRegion": "{n} espèces que font vivre les plantes indigènes de la liste {region} d'Indigene. Choisissez-en une pour voir lesquelles de ces plantes élèvent ses petits ou la nourrissent, et comment.",
   "wildlife.groupInRegionLede": "{n} sur la liste {region} d'Indigene. {blurb}",
   "wildlife.regionFilterLabel": "Afficher la faune de",
   "wildlife.regionFilterAll": "Toutes les régions ({n})",
@@ -1773,23 +1671,20 @@ export const fr: Dict = {
   "form.vine": "Grimpantes",
   "form.groundcover": "Couvre-sols",
   "form.fern": "Fougères",
-  "region.docTitle": "Les indigènes de {region} — Indigene",
-  "region.categoryDocTitle": "{label} indigènes de {region} — Indigene",
-  "region.lede":
-    "Toutes les indigènes que nous connaissons pour {reference} — touchez une plante pour voir sa fiche complète.",
+  "region.docTitle": "Les indigènes de {region} · Indigene",
+  "region.categoryDocTitle": "{label} indigènes de {region} · Indigene",
+  "region.lede": "Toutes les indigènes que nous connaissons pour {reference}. Touchez une plante pour voir sa fiche complète.",
   "region.wildlifeTitle": "La faune que ces plantes nourrissent",
   "region.wildlifeLede": "Touchez un groupe pour voir qui vient. Le nombre après chaque nom, c'est combien de plantes d'ici lui servent.",
   "region.wildlifePlants": "{n} plantes d'ici font vivre {name}",
   "region.noSuchRegion": "Ce lien ne correspond à aucune région couverte par Indigene.",
-  "region.noSuchCategory":
-    "« {slug} » n'est pas une catégorie de plantes que nous connaissons — essayez l'un des groupes ci-dessous.",
+  "region.noSuchCategory": "« {slug} » n'est pas une catégorie de plantes que nous connaissons. Essayez l'un des groupes ci-dessous.",
   "region.featured": "← Les indigènes en vedette",
   "region.elsewhere": "{label} dans une autre région :",
   "region.categoryCount.one": "{n} plante indigène pour {reference}",
   "region.categoryCount.other": "{n} plantes indigènes pour {reference}",
-  "region.tapAny": " — touchez-en une pour voir sa fiche complète.",
-  "region.emptyCategory":
-    "Notre liste {region} ne comporte pas encore de {label} — les listes sont constituées à la main et grandissent prudemment. Essayez une autre catégorie, ou la même catégorie dans une région ci-dessous.",
+  "region.tapAny": ". Touchez-en une pour voir sa fiche complète.",
+  "region.emptyCategory": "Notre liste {region} ne comporte pas encore de {label}. Essayez une autre catégorie, ou la même dans une région ci-dessous.",
   "region.allOfRegion": "← Toutes les indigènes de cette région",
 
   // ---------------------------------------------------------------------
@@ -1801,12 +1696,10 @@ export const fr: Dict = {
   "pioneers.title": "Pionnières du bitume",
   "pioneers.chip": "Pionnières",
   "pioneers.docTitle": "Les pionnières du bitume de {region}",
-  "pioneers.sectionLede":
-    "Des indigènes pour les endroits ingrats — un bord de trottoir, un mur, un îlot de parking. Touchez une étiquette pour savoir ce qu'elle désigne.",
+  "pioneers.sectionLede": "Des indigènes pour les endroits ingrats : un bord de trottoir, un mur, un îlot de parking. Touchez une étiquette pour savoir ce qu'elle désigne.",
   "pioneers.count.one": "{n} indigène qui encaisse les mauvais traitements, pour {reference}.",
   "pioneers.count.other": "{n} indigènes qui encaissent les mauvais traitements, pour {reference}.",
-  "pioneers.what":
-    "La plupart des indigènes de cette région demandent une terre correcte. Celles-ci poussent là où le sol est tassé, plein de gravats, salé l'hiver ou brûlant contre un mur — autrement dit dans les conditions qu'offre vraiment un trottoir, une cour ou un chantier.",
+  "pioneers.what": "La plupart des indigènes de cette région demandent une terre correcte. Celles-ci poussent là où le sol est tassé, plein de gravats, salé l'hiver ou brûlant contre un mur : ce qu'offre vraiment un trottoir, une cour ou un chantier.",
   "pioneers.empty":
     "Nous n'avons pas encore déterminé lesquelles de nos indigènes de {region} supportent ce genre de traitement.",
   "pioneers.basis": "Source :",
@@ -1821,8 +1714,7 @@ export const fr: Dict = {
   "pressure.compaction.plain":
     "Une terre piétinée, roulée ou damée au point que les racines y trouvent difficilement l'air et l'eau. La bande le long d'un trottoir est presque toujours ainsi.",
   "pressure.poor-soil.term": "Gravats",
-  "pressure.poor-soil.plain":
-    "Remblai de chantier, béton concassé, déblais de carrière, gravier calcaire — un sol presque sans valeur nourricière, souvent laissé là où l'on a démoli quelque chose.",
+  "pressure.poor-soil.plain": "Remblai de chantier, béton concassé, déblais de carrière, gravier calcaire : un sol presque sans valeur nourricière, souvent laissé là où l'on a démoli quelque chose.",
   "pressure.crevice.term": "Fissures",
   "pressure.crevice.plain":
     "Un joint de mur, une fente de pavage, la roche nue. Il n'y a pour ainsi dire pas de terre, et la pluie qui tombe s'en va aussitôt.",
@@ -1830,8 +1722,7 @@ export const fr: Dict = {
   "pressure.salt.plain":
     "Le sel répandu l'hiver sur les routes et les trottoirs, ou porté par le vent marin. Il tue la plupart des plantes en asséchant leurs racines.",
   "pressure.reflected-heat.term": "Chaleur réfléchie",
-  "pressure.reflected-heat.plain":
-    "Le surplus de chaleur d'été renvoyé par le bitume, les murs et les voitures — un bord de trottoir exposé au sud monte bien plus haut que la terre ouverte à côté.",
+  "pressure.reflected-heat.plain": "Le surplus de chaleur d'été renvoyé par le bitume, les murs et les voitures. Un bord de trottoir exposé au sud chauffe bien plus que la terre ouverte à côté.",
   "pressure.drought.term": "Aucun arrosage",
   "pressure.drought.plain":
     "Un volume de terre gros comme un seau que personne n'arrosera, quoi que fasse l'été.",
@@ -1845,7 +1736,7 @@ export const fr: Dict = {
   "region.filterPlaceholder": "Filtrer par nom…",
   "region.filterCount.one": "{shown} plante sur {total} correspond à « {q} ».",
   "region.filterCount.other": "{shown} plantes sur {total} correspondent à « {q} ».",
-  "region.filterNone": "Rien ici ne correspond — ",
+  "region.filterNone": "Rien ici ne correspond : ",
   "region.filterSearchAll": "chercher dans toutes les régions",
   "region.filterNoneRest": ".",
   "region.nothingHere": "Il n'y a rien à cette adresse",
@@ -1859,17 +1750,14 @@ export const fr: Dict = {
   "regionWhere.linkResolve": "Voir la carte mondiale des écorégions",
   "regionStat.plants.label": "Plantes indigènes",
   "regionStat.plants.sub": "choisies pour cette région",
-  "regionStat.plants.explain":
-    "Les plantes de la liste constituée à la main pour cette région, chacune vérifiée comme indigène d'ici d'après les sources citées sur sa fiche. C'est une sélection de départ qui grandit prudemment — pas un inventaire de tout ce qui pousse ici.",
+  "regionStat.plants.explain": "Les plantes de la liste constituée à la main pour cette région, chacune vérifiée comme indigène d'ici d'après les sources citées sur sa fiche. C'est une sélection de départ qui grandit prudemment, pas un inventaire de tout ce qui pousse ici.",
   "regionStat.hosts.label": "Chenilles hébergées",
   "regionStat.hosts.value": "jusqu'à {n}",
   "regionStat.hosts.sub": "espèces sur {plant} à elle seule",
-  "regionStat.hosts.explain":
-    "Combien d'espèces de papillons peuvent élever leurs chenilles sur une seule plante — {plant} arrive en tête de cette liste avec {n}. La plupart des passereaux nourrissent leurs petits de chenilles : c'est donc une bonne mesure de la vie qu'une plantation fait vivre. (Les comptes se recoupent d'une plante à l'autre : nous ne les additionnons pas.)",
+  "regionStat.hosts.explain": "Combien d'espèces de papillons peuvent élever leurs chenilles sur une seule plante. {plant} arrive en tête de cette liste avec {n}. La plupart des passereaux nourrissent leurs petits de chenilles : c'est donc une bonne mesure de la vie qu'une plantation fait vivre. (Les comptes se recoupent d'une plante à l'autre : nous ne les additionnons pas.)",
   "regionStat.wildlife.label": "Liens avec la faune",
   "regionStat.wildlife.sub": "espèces documentées",
-  "regionStat.wildlife.explain":
-    "{n} sortes de papillons, d'abeilles, d'oiseaux et de mammifères dont le lien avec au moins une plante de cette liste est documenté et citable — chacune comptée une fois, qu'il s'agisse d'une seule espèce comme le monarque ou d'un groupe familier comme les geais amateurs de glands. Ce sont les relations remarquables et nommables : le total réel est bien plus grand, un seul chêne nourrit plus d'espèces que personne ne saurait énumérer.",
+  "regionStat.wildlife.explain": "{n} sortes de papillons, d'abeilles, d'oiseaux et de mammifères dont le lien avec au moins une plante de cette liste est documenté et citable. Chacune compte une fois, qu'il s'agisse d'une seule espèce comme le monarque ou d'un groupe familier comme les geais amateurs de glands. Le total réel est bien plus grand : un seul chêne nourrit plus d'espèces que personne ne saurait énumérer.",
   "regionStat.wildlife.more": "Parcourir par la faune →",
   "regionStat.keystone.label": "Plantes essentielles",
   "regionStat.keystone.sub": "les réseaux alimentaires s'appuient dessus",
@@ -1878,7 +1766,7 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // L'index des plantes (#/plants) — toutes les indigènes, avec recherche.
   // ---------------------------------------------------------------------
-  "plants.docTitle": "Plantes indigènes — Indigene",
+  "plants.docTitle": "Plantes indigènes · Indigene",
   // The plants index's ways in: a name and what it answers.
   "plants.door.lookalikes": "Sosies",
   "plants.door.lookalikesHint": "Indigène ou imitation ?",
@@ -1899,8 +1787,7 @@ export const fr: Dict = {
   "plants.idle": "{total} plantes indigènes réparties sur {regions} régions.",
   "plants.alsoCalled": "Aussi appelée « ",
   "plants.alsoCalledEnd": " »",
-  "plants.noneLead":
-    "Aucune plante des listes d'Indigene ne correspond à « {q} ». Les listes sont constituées région par région, elles grandissent donc prudemment — ",
+  "plants.noneLead": "Aucune plante des listes d'Indigene ne correspond à « {q} ». Les listes sont constituées région par région et grandissent prudemment. En attendant, ",
   "plants.noneLink": "parcourez les indigènes que nous connaissons",
   "plants.noneEnd": ".",
   "plants.otherPages": "Pas une indigène de nos listes, mais elle a sa page :",
@@ -1911,34 +1798,31 @@ export const fr: Dict = {
   // technique. L'index fait deux choses — l'année mise en regard des quinze
   // techniques, et la liste des ressources d'où vient le mode d'emploi.
   // ---------------------------------------------------------------------
-  "planting.docTitle": "Multiplier ses plantes, et à quel moment — Indigene",
+  "planting.docTitle": "Multiplier ses plantes, et à quel moment · Indigene",
   "planting.title": "🪴 Multiplier ses plantes",
-  "planting.lede":
-    "Quinze façons de faire plusieurs plantes d'une seule — à partir des graines que vous récoltez, ou du pied déjà en terre. Chacune a sa saison, et choisir la bonne semaine compte plus que tout le reste.",
+  "planting.lede": "Quinze façons de faire plusieurs plantes d'une seule : à partir des graines que vous récoltez, ou du pied déjà en terre. Chacune a sa saison, et choisir la bonne semaine compte plus que tout le reste.",
   "planting.nowTitle": "Que faire en {season}",
   "planting.nowLede":
     "Saison en cours dans l'hémisphère nord : {season}. Voici les techniques de saison.",
   "planting.nowLedeSouth":
     "Saison en cours dans l'hémisphère sud, où se trouve votre coin : {season}. Voici les techniques de saison.",
-  "planting.nowEmpty": "Rien ne vous réclame cette saison — le bon moment pour lire en avance.",
+  "planting.nowEmpty": "Rien ne vous réclame cette saison. C'est le bon moment pour lire en avance.",
   "planting.seasonNoteTitle": "Des saisons, pas des dates. ",
-  "planting.seasonNote":
-    "Une date serait fausse quelque part : février aux Keys, en Floride, c'est avril en Pennsylvanie. Chaque fenêtre est donc une saison et un signe à guetter — des gousses qui brunissent, une pousse qui casse net au lieu de plier — et ceux-là sont vrais où que vous soyez.",
+  "planting.seasonNote": "Une date serait fausse quelque part : février aux Keys, en Floride, c'est avril en Pennsylvanie. Chaque fenêtre est donc une saison et un signe à guetter, comme des gousses qui brunissent ou une pousse qui casse net au lieu de plier. Ces signes valent où que vous soyez.",
   "planting.frostFreeTitle": "Là où il ne gèle pas. ",
   "planting.frostFree":
     "Dans le sud de la Floride et aux Keys, il n'y a aucun hiver froid sur lequel s'appuyer : le réfrigérateur n'y est pas un raccourci, c'est la seule version de la technique qui fonctionne. Les mois frais et secs, de novembre à février, y sont la saison de plantation et y jouent le rôle que le printemps joue plus au nord.",
   "planting.fromSeedTitle": "À partir des graines que vous récoltez",
-  "planting.fromSeedLede":
-    "Le moins cher, le plus lent, et le seul chemin qui donne toute une génération de plantes légèrement différentes — c'est-à-dire une population sauvage.",
+  "planting.fromSeedLede": "Le moins cher, le plus lent, et le seul chemin qui donne toute une génération de plantes légèrement différentes : c'est cela, une population sauvage.",
   "planting.fromPlantTitle": "À partir du pied que vous avez déjà",
   "planting.fromPlantLede":
     "Plus rapide, et chaque nouvelle plante est une copie exacte de la mère. De quoi remplir un massif à partir d'un seul arbuste en deux ans.",
   "planting.whenLabel": "Quand",
   "planting.waitLabel": "Combien de temps",
-  "planting.anySeason": "Pas de saison propre — elle suit le semis auquel elle appartient.",
+  "planting.anySeason": "Pas de saison propre : elle suit le semis auquel elle appartient.",
   "planting.usedByTitle": "Des plantes d'ici qui s'y prêtent",
   "planting.usedByLede.one": "Une plante des listes d'Indigene se multiplie de cette façon.",
-  "planting.usedByLede.other": "{n} plantes des listes d'Indigene se multiplient de cette façon — et chaque fiche ajoute ses propres particularités à la technique.",
+  "planting.usedByLede.other": "{n} plantes des listes d'Indigene se multiplient de cette façon. Chaque fiche ajoute ses propres particularités à la technique.",
   "planting.usedByMore": "et {n} autres",
   "planting.timingTitle": "Reconnaître le moment",
   "planting.howTitle": "Ce que vous faites concrètement",
@@ -1959,7 +1843,7 @@ export const fr: Dict = {
   "planting.seasonIn.summer": "été",
   "planting.seasonIn.fall": "automne",
   "planting.seasonIn.winter": "hiver",
-  "planting.techniqueDocTitle": "{name} — quand et comment — Indigene",
+  "planting.techniqueDocTitle": "{name} : quand et comment · Indigene",
 
   "planting.sourcesTitle": "D'où vient le mode d'emploi",
   "planting.sourcesLede":
@@ -1972,20 +1856,17 @@ export const fr: Dict = {
   "planting.scope.both": "Les deux",
   "planting.scope.nz": "Nouvelle-Zélande",
   "planting.scope.world": "Monde entier",
-  "planting.src.npn":
-    "Celle à ouvrir en premier. Les pépiniéristes de la restauration écologique y consignent exactement comment ils ont élevé une espèce — traitement des graines, semaines de froid, ce qui a échoué — espèce par espèce, en public. Des milliers de protocoles pour les indigènes d'Amérique du Nord.",
+  "planting.src.npn": "Celle à ouvrir en premier. Les pépiniéristes de la restauration écologique y consignent exactement comment ils ont élevé une espèce (traitement des graines, semaines de froid, ce qui a échoué), espèce par espèce, en public. Des milliers de protocoles pour les indigènes d'Amérique du Nord.",
   "planting.src.wpsm":
     "La référence pour les graines d'arbres et d'arbustes : comment les récolter, les nettoyer, les conserver et lever leur dormance, genre par genre. Un manuel fédéral dans le domaine public, téléchargeable en entier.",
   "planting.src.wildflower":
     "Une base de données de plantes indigènes qui donne, sur la plupart des fiches, un paragraphe de multiplication écrit pour des jardiniers plutôt que pour des pépinières. Le point de départ le plus doux des quatre.",
-  "planting.src.mobot":
-    "Une grande base horticole, sérieuse et pratique : ce que fait vraiment une plante au jardin et ce qui tourne mal, là où les sources de restauration se concentrent sur la façon de l'élever.",
+  "planting.src.mobot": "Une grande base horticole, sérieuse et pratique  : ce que fait vraiment une plante au jardin et ce qui tourne mal, là où les sources de restauration se concentrent sur la façon de l'élever.",
   "planting.src.xerces":
     "Des spécialistes de la conservation des invertébrés, et la raison pour laquelle tant de ces notes précisent qui la plante nourrit. Leurs guides régionaux de semences et d'habitats sont gratuits, et remarquablement honnêtes sur ce qui ne s'installe pas.",
   "planting.src.tela":
     "Le réseau botanique francophone : une flore collaborative avec observations, clés et notes de culture, nourrie par des botanistes comme par des amateurs. Les fiches françaises s'y appuient pour les noms et l'aire où la plante pousse à l'état sauvage, pas pour sa multiplication.",
-  "planting.src.inpn":
-    "L'inventaire national, porté par le Muséum national d'Histoire naturelle. Moins un mode d'emploi que l'autorité sur ce qui est réellement indigène et où — le garde-fou qui empêche de prendre pour « indigène » une plante qui pousse simplement bien.",
+  "planting.src.inpn": "L'inventaire national, porté par le Muséum national d'Histoire naturelle. Moins un mode d'emploi que l'autorité sur ce qui est réellement indigène, et où. C'est le garde-fou qui empêche de prendre pour « indigène » une plante qui pousse simplement bien.",
   "planting.src.nzpcn":
     "Le réseau néo-zélandais des botanistes et des pépiniéristes. Chaque fiche d'espèce a une courte note de multiplication ; c'est la source de toutes les plantes d'Auckland ici.",
   "planting.src.sid":
@@ -1996,38 +1877,30 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // Vie privée et sécurité.
   // ---------------------------------------------------------------------
-  "privacy.docTitle": "Vie privée et sécurité — Indigene",
+  "privacy.docTitle": "Vie privée et sécurité · Indigene",
   "privacy.title": "Vie privée et sécurité",
-  "privacy.lede":
-    "Indigene est conçu pour être sûr et respectueux envers toutes les personnes qui l'utilisent — les enfants compris. Voici tout, en mots simples : ce que nous demandons, ce que nous ne faisons jamais, et où va vraiment ce que vous partagez.",
+  "privacy.lede": "Indigene est conçu pour être sûr et respectueux envers toutes les personnes qui l'utilisent, enfants compris. Voici tout, en mots simples : ce que nous demandons, ce que nous ne faisons jamais, et où va vraiment ce que vous partagez.",
   "privacy.shortVersion": "En bref. ",
   "doc.contents": "Sur cette page",
-  "privacy.short1": "Pas de compte, pas d'inscription, pas de mot de passe — rien qui vous identifie.",
-  "privacy.short2":
-    "Pas de publicité, et rien vous concernant n'est vendu ni partagé. Nous comptons combien de fois chaque page est ouverte — c'est tout, et cela ne permet pas de vous distinguer de quelqu'un d'autre.",
-  "privacy.short3":
-    "Vos lieux enregistrés restent sur votre appareil — et vous pouvez les emporter dans un fichier, quand vous voulez. Il n'y a aucun serveur Indigene où ils pourraient aller.",
-  "privacy.short4":
-    "Vous n'êtes jamais obligé de partager votre position exacte — un code postal ou une commune suffit partout.",
+  "privacy.short1": "Pas de compte, pas d'inscription, pas de mot de passe : rien qui vous identifie.",
+  "privacy.short2": "Pas de publicité, et rien vous concernant n'est vendu ni partagé. Nous comptons combien de fois chaque page est ouverte. C'est tout, et cela ne permet pas de vous distinguer de quelqu'un d'autre.",
+  "privacy.short3": "Vos lieux enregistrés restent sur votre appareil, et vous pouvez les emporter dans un fichier quand vous voulez. Il n'y a aucun serveur Indigene où ils pourraient aller.",
+  "privacy.short4": "Vous n'êtes jamais obligé de partager votre position exacte. Un code postal ou une commune suffit partout.",
   "privacy.short5": "C'est un logiciel libre : n'importe qui peut lire exactement ce qu'il fait.",
   "privacy.locationTitle": "Votre position : seulement quand vous le demandez",
-  "privacy.location1":
-    "Indigene ne demande votre position que lorsque vous touchez un bouton pour cela — afin de déterminer votre région, de consulter votre sol, votre climat et votre ensoleillement, et de trouver de vraies observations de plantes et d'animaux à proximité. Il ne lit jamais votre position en arrière-plan, ni quand l'application est fermée.",
+  "privacy.location1": "Indigene ne demande votre position que lorsque vous touchez un bouton pour cela. Il s'en sert pour déterminer votre région, consulter votre sol, votre climat et votre ensoleillement, et trouver de vraies observations de plantes et d'animaux à proximité. Il ne lit jamais votre position en arrière-plan, ni quand l'application est fermée.",
   "privacy.location2":
     "Et vous n'êtes jamais tenu de la partager. Partout où l'application peut utiliser une position, vous pouvez à la place saisir un {zip}, ou simplement choisir votre région dans une liste. Partager sa position précise est toujours un choix, jamais le prix à payer pour utiliser Indigene.",
   "privacy.zipOrTown": "code postal ou une commune",
-  "privacy.location3":
-    "Quand vous partagez un lieu, votre appareil envoie ces coordonnées directement aux services scientifiques publics qui répondent à chaque question — et nulle part ailleurs. Il n'y a pas de serveur Indigene au milieu qui tiendrait le journal de vos déplacements, parce qu'il n'y a pas de serveur Indigene du tout. Toute l'application tourne dans votre navigateur.",
+  "privacy.location3": "Quand vous partagez un lieu, votre appareil envoie ces coordonnées directement aux services scientifiques publics qui répondent à chaque question, et nulle part ailleurs. Aucun serveur Indigene ne tient au milieu le journal de vos déplacements, parce qu'il n'y a pas de serveur Indigene du tout. Toute l'application tourne dans votre navigateur.",
   "privacy.whereTitle": "Où va votre position, et pour quoi faire",
   "privacy.whereLede":
     "Pour que vous voyiez exactement ce qui se passe : quand une recherche a besoin de votre lieu, votre navigateur s'adresse directement à ces services publics. Chacun ne voit que cette recherche-là, n'obtient ni nom ni compte (il n'y en a pas), et applique sa propre politique de confidentialité à cette requête.",
   "privacy.svc.sentWrap": "(on lui envoie {sent}).",
   "privacy.svc.inat.for":
     "des photos de plantes et d'animaux observés à proximité, la fréquence à laquelle une espèce y a été relevée, quels animaux ont été vus autour d'un endroit enregistré, et en quelle saison, toute observation que vous reliez à votre journal de plantation, et vos propres observations si vous les importez",
-  "privacy.svc.inat.sent":
-    "des coordonnées ou une zone de carte, plus l'espèce recherchée et, pour un plan de saison, les mois — ou, pour une observation reliée, seulement la référence d'observation que vous avez collée, et pour un import, seulement votre nom d'utilisateur",
-  "privacy.svc.meteo.for":
-    "votre climat — la pluie et la rigueur des hivers ; et la conversion d'un code postal ou d'une commune en un point sur la carte",
+  "privacy.svc.inat.sent": "des coordonnées ou une zone de carte, plus l'espèce recherchée et, pour un plan de saison, les mois ; pour une observation reliée, seulement la référence d'observation que vous avez collée ; pour un import, seulement votre nom d'utilisateur",
+  "privacy.svc.meteo.for": "votre climat (la pluie et la rigueur des hivers), et la conversion d'un code postal ou d'une commune en un point sur la carte",
   "privacy.svc.meteo.sent": "des coordonnées, ou le nom de lieu que vous avez saisi",
   "privacy.svc.osm.for": "le nom de la commune la plus proche (affiché à la place des chiffres bruts), la recherche d'un code postal, et l'image de la carte",
   "privacy.svc.osm.sent": "des coordonnées, ou le code postal que vous avez saisi",
@@ -2043,48 +1916,36 @@ export const fr: Dict = {
   "privacy.svc.resolve.sent": "des coordonnées",
   "privacy.whereEnforced":
     "Cette liste n'est pas qu'une promesse : Indigene demande à votre navigateur de refuser toute recherche vers une adresse qui n'y figure pas.",
-  "privacy.whereFooter":
-    "Ce sont des institutions publiques reconnues — universités, agences gouvernementales et une communauté naturaliste à but non lucratif — pas des publicitaires. À dessein, aucune de ces recherches n'a besoin de votre adresse : une commune, un code postal ou une grille grossière suffisent à la science. La liste technique complète, avec liens et licences, est dans {link}.",
+  "privacy.whereFooter": "Ce sont des institutions publiques reconnues (universités, agences gouvernementales et une communauté naturaliste à but non lucratif), pas des publicitaires. À dessein, aucune de ces recherches n'a besoin de votre adresse : une commune, un code postal ou une grille grossière suffisent à la science. La liste technique complète, avec liens et licences, est dans {link}.",
   "privacy.dataSourcesLink": "notre document public sur les sources de données",
   "privacy.savedTitle": "Les lieux enregistrés restent sur votre appareil",
   "privacy.saveButton": "Enregistrer ce lieu",
   "privacy.saved":
     "Quand vous touchez {save}, il est conservé dans le stockage propre à votre navigateur, sur cet appareil uniquement. Il ne quitte jamais votre appareil, n'atteint aucun serveur (il n'y en a pas), et nous ne pouvons jamais le voir. Il est à vous : ouvrez ou supprimez un lieu enregistré quand vous voulez depuis le menu ⚙️, et effacer les données de ce site dans votre navigateur les efface définitivement.",
-  "privacy.savedPortable":
-    "Et ce qui est à vous s'emporte. {settings} écrit chaque lieu et son journal de plantation dans un fichier simple qui vous appartient — lisible dans n'importe quel éditeur de texte, sans compte ni autorisation — et en relit un dans un autre navigateur. C'est ainsi que vous avez les mêmes lieux sur votre téléphone et sur votre ordinateur : c'est vous qui les portez, pas nous.",
+  "privacy.savedPortable": "Et ce qui est à vous s'emporte. {settings} écrit chaque lieu et son journal de plantation dans un fichier simple qui vous appartient, et en relit un dans un autre navigateur. N'importe quel éditeur de texte peut l'ouvrir, sans compte ni autorisation. C'est ainsi que vous avez les mêmes lieux sur votre téléphone et sur votre ordinateur : c'est vous qui les portez, pas nous.",
   "privacy.savedPortableLink": "Les réglages",
   "privacy.logTitle": "Votre journal de plantation, et pourquoi il ne contient pas de photos",
-  "privacy.log1":
-    "Ce que vous avez planté dans un lieu — les plantes, les dates, les quantités — est conservé avec ce lieu, sur cet appareil, et ne va nulle part ailleurs. Supprimer le lieu supprime son journal avec lui.",
-  "privacy.log2":
-    "Les photos de suivi ne sont pas stockées ici du tout. Un navigateur peut reprendre son espace de stockage sans prévenir, et perdre ainsi des années de journal serait terrible — vous pouvez donc relier une observation iNaturalist que vous avez déjà publiée — en collant son lien, ou l'UUID que le site copie pour vous — et nous n'en gardons que cette référence. Votre observation reste exactement comme vous l'avez réglée : si vous en floutez la position là-bas, elle reste floutée. Cet appareil connaît le lieu précis ; personne d'autre, et iNaturalist n'apprend jamais que les deux sont liés.",
+  "privacy.log1": "Ce que vous avez planté dans un lieu (les plantes, les dates, les quantités) est conservé avec ce lieu, sur cet appareil, et ne va nulle part ailleurs. Supprimer le lieu supprime son journal avec lui.",
+  "privacy.log2": "Les photos de suivi ne sont pas stockées ici du tout. Un navigateur peut reprendre son espace de stockage sans prévenir, et perdre ainsi des années de journal serait terrible. Vous pouvez plutôt relier une observation iNaturalist déjà publiée (collez son lien, ou l'UUID que le site copie pour vous), et nous n'en gardons que cette référence. Votre observation reste exactement comme vous l'avez réglée : si vous en floutez la position là-bas, elle reste floutée. Cet appareil connaît le lieu précis ; personne d'autre, et iNaturalist n'apprend jamais que les deux sont liés.",
   "privacy.whatsNewTitle": "Comment nous savons ce qui est nouveau pour vous",
-  "privacy.whatsNew1":
-    "Indigene affiche un petit point vert à côté des nouveautés — dans le menu ⚙️ et en bas de chaque page — quand quelque chose a été ajouté depuis votre dernier passage, et signale ces nouveautés sur la page des nouveautés. Pour cela, il doit retenir un peu de choses — les voici, exactement :",
+  "privacy.whatsNew1": "Indigene affiche un petit point vert à côté des nouveautés (dans le menu ⚙️ et en bas de chaque page) quand quelque chose a été ajouté depuis votre dernier passage, et signale ces nouveautés sur leur page. Pour cela, il doit retenir un peu de choses. Les voici, exactement :",
   "privacy.whatsNew2":
     "Le numéro de version jusqu'où vous aviez lu, par exemple « 0.19 ». Lire la page des nouveautés le remplace par celui du jour ; c'est ce qui éteint le point.",
-  "privacy.whatsNew3":
-    "La date de votre visite précédente et celle du début de cette visite — deux dates, rien de plus fin.",
-  "privacy.whatsNew4":
-    "C'est toute la liste. Aucune trace du temps passé, et rien qui permette de vous distinguer de quelqu'un d'autre. Tout reste dans ce navigateur, comme le reste, et rien n'en sort jamais — pas même vers le comptage de pages décrit juste après, qui n'a aucun moyen de le lire.",
-  "privacy.whatsNew5":
-    "Vous pouvez lire ces deux valeurs et les jeter quand vous voulez, dans {settings}. Les oublier vous remet au niveau de la version du jour plutôt que de marquer toutes les versions passées comme non lues : appuyer sur un bouton « Oublier » ne devrait pas vous valoir un mur de points.",
+  "privacy.whatsNew3": "La date de votre visite précédente et celle du début de cette visite. Deux dates, rien de plus fin.",
+  "privacy.whatsNew4": "C'est toute la liste. Aucune trace du temps passé, et rien qui permette de vous distinguer de quelqu'un d'autre. Tout reste dans ce navigateur, comme le reste, et rien n'en sort jamais, pas même vers le comptage de pages décrit juste après, qui n'a aucun moyen de le lire.",
+  "privacy.whatsNew5": "Vous pouvez lire ces deux valeurs et les jeter quand vous voulez, dans {settings}. Les oublier vous remet au niveau de la version du jour plutôt que de marquer toutes les versions passées comme non lues  : appuyer sur un bouton « Oublier » ne devrait pas vous valoir un mur de points.",
   "privacy.whatsNewSettingsLink": "Ce qui est nouveau pour vous, dans les Réglages",
   "privacy.countTitle": "Compter les visites, pas les visiteurs",
-  "privacy.count1":
-    "Nous aimerions savoir si quelqu'un se sert vraiment de tout ceci — si le travail atteint un jardin. Alors quand vous ouvrez une page, un service extérieur apprend qu'une page a été ouverte, et laquelle. C'est tout le message, et voici tout ce qu'il ne contient pas :",
-  "privacy.count2":
-    "Aucun cookie, et rien de conservé pour vous reconnaître. Revenir demain ressemble exactement à l'arrivée de quelqu'un d'autre — pour eux comme pour nous.",
+  "privacy.count1": "Nous aimerions savoir si quelqu'un se sert vraiment de tout ceci, et si le travail atteint un jardin. Alors quand vous ouvrez une page, un service extérieur apprend qu'une page a été ouverte, et laquelle. C'est tout le message, et voici tout ce qu'il ne contient pas :",
+  "privacy.count2": "Aucun cookie, et rien de conservé pour vous reconnaître. Revenir demain ressemble exactement à l'arrivée de quelqu'un d'autre, pour eux comme pour nous.",
   "privacy.count3":
     "Jamais votre position, jamais un lieu que vous avez enregistré, et jamais ce que vous saisissez. Si vous cherchez dans la liste des plantes, les mots que vous avez tapés sont retirés de l'adresse avant l'envoi.",
   "privacy.count4":
     "Pas de nom, pas de compte, aucune régie publicitaire, et rien de vendu ni partagé. Cela ne peut vous suivre sur aucun autre site, faute d'avoir de quoi vous suivre.",
-  "privacy.count5":
-    "C'est un décompte, pas un journal. Personne — nous compris — ne peut lui demander ce que vous avez regardé, parce que rien ne relie une page à la suivante.",
+  "privacy.count5": "C'est un décompte, pas un journal. Personne, nous compris, ne peut lui demander ce que vous avez regardé, parce que rien ne relie une page à la suivante.",
   "privacy.count6":
     "Le service est {service}, une petite entreprise que nous payons précisément pour cela. Payer, c'est tout l'enjeu : quand les statistiques sont gratuites, ce sont en général les gens comptés qui sont vendus.",
-  "privacy.count7":
-    "Si vous préférez ne pas être compté du tout, désactivez-le dans {settings} — et c'est un vrai interrupteur, pas une demande polie. Rien n'est chargé et aucune connexion n'est établie : ils n'apprennent même pas que votre navigateur existe. Si votre navigateur demande déjà aux sites de ne pas vous pister (Do Not Track, ou Global Privacy Control), Indigene le prend pour votre réponse sans que vous ayez à la donner deux fois.",
+  "privacy.count7": "Si vous préférez ne pas être compté du tout, désactivez-le dans {settings}. C'est un vrai interrupteur, pas une demande polie : rien n'est chargé et aucune connexion n'est établie, ils n'apprennent donc même pas que votre navigateur existe. Si votre navigateur demande déjà aux sites de ne pas vous pister (Do Not Track, ou Global Privacy Control), Indigene le prend pour votre réponse sans que vous ayez à la donner deux fois.",
   "privacy.countSettingsLink": "Compter les visites, dans les Réglages",
   "privacy.filmTitle": "Le film",
   "privacy.film1":
@@ -2092,27 +1953,22 @@ export const fr: Dict = {
   "privacy.film2":
     "Quand vous lancez la lecture, votre navigateur charge le lecteur de Bunny. Il télécharge le film et envoie à Bunny des mesures sur la qualité de lecture et la rapidité de leurs serveurs. Comme tout site web, Bunny voit votre adresse internet ; il ne dépose aucun cookie, ne stocke rien sur votre appareil, et n'apprend jamais votre position, vos lieux enregistrés ni ce que vous tapez.",
   "privacy.noAccountTitle": "Pas de compte, pas de publicité, aucun profil sur vous",
-  "privacy.noAccount1": "Pas d'inscription, pas d'adresse e-mail, pas de mot de passe — nous ne demandons jamais qui vous êtes.",
+  "privacy.noAccount1": "Pas d'inscription, pas d'adresse e-mail, pas de mot de passe. Nous ne demandons jamais qui vous êtes.",
   "privacy.noAccount2":
     "Pas de publicité, et rien de vendu ni partagé. Nous ne détenons de toute façon aucune donnée sur vous à vendre.",
-  "privacy.noAccount3":
-    "Pas de cookies de pistage, et rien qui vous suive d'une visite à l'autre ni vers d'autres sites. Les seules choses stockées sont vos lieux enregistrés et quelques réglages — sur votre appareil, pour vous. La seule chose que nous comptons est la section juste au-dessus, et c'est un décompte de pages, pas de personnes.",
+  "privacy.noAccount3": "Pas de cookies de pistage, et rien qui vous suive d'une visite à l'autre ni vers d'autres sites. Les seules choses stockées sont vos lieux enregistrés et quelques réglages, sur votre appareil, pour vous. La seule chose que nous comptons est la section juste au-dessus, et c'est un décompte de pages, pas de personnes.",
   "privacy.childrenTitle": "Fait pour tout le monde, enfants compris",
-  "privacy.children1":
-    "Des mots simples du début à la fin — chaque terme de jardinage ou de science est expliqué avec des mots concrets.",
+  "privacy.children1": "Des mots simples du début à la fin : chaque terme de jardinage ou de science est expliqué avec des mots concrets.",
   "privacy.children2": "Rien à acheter. Aucun achat ni paiement d'aucune sorte dans l'application.",
-  "privacy.children3":
-    "Pas de messagerie, de commentaires ni de fonctions sociales — personne ne peut donc contacter qui que ce soit via Indigene.",
+  "privacy.children3": "Pas de messagerie, de commentaires ni de fonctions sociales : aucun inconnu ne peut donc contacter qui que ce soit via Indigene.",
   "privacy.children4": "Nous ne recueillons aucune information personnelle, de personne, à aucun âge.",
   "privacy.children5":
     "Les photos viennent d'iNaturalist, où la communauté vérifie ce que chacune montre, et sont toujours créditées à la personne qui les a prises. Les liens sortants mènent à des organismes scientifiques et naturalistes de confiance.",
   "privacy.openTitle": "Vous n'êtes pas obligé de nous croire sur parole",
-  "privacy.open":
-    "Indigene est un logiciel libre sous licence MIT. Toute l'application — chaque ligne, et chaque requête réseau qu'elle peut faire — est publique. Si vous voulez vérifier quoi que ce soit sur cette page, vous pouvez lire le code vous-même : {link}.",
+  "privacy.open": "Indigene est un logiciel libre sous licence MIT. Toute l'application est publique : chaque ligne, et chaque requête réseau qu'elle peut faire. Pour vérifier quoi que ce soit sur cette page, vous pouvez lire le code vous-même : {link}.",
   "privacy.repoLink": "Indigene sur GitHub",
   "privacy.questionsTitle": "Des questions, des inquiétudes",
-  "privacy.questions":
-    "Si quelque chose ici n'est pas clair, ou si vous pensez que nous pouvons mieux faire en matière de sécurité ou de vie privée, dites-le-nous — {link}. Comme l'application est libre, le code a toujours le dernier mot sur ce qu'elle fait.",
+  "privacy.questions": "Si quelque chose ici n'est pas clair, ou si vous pensez que nous pouvons mieux faire en matière de sécurité ou de vie privée, dites-le-nous : {link}. Comme l'application est libre, le code a toujours le dernier mot sur ce qu'elle fait.",
   "privacy.issueLink": "ouvrez un ticket sur GitHub",
   "privacy.home": "← Accueil",
   "privacy.findPlants": "Trouver des plantes pour mon lieu",
@@ -2120,14 +1976,12 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // D'où viennent nos chiffres.
   // ---------------------------------------------------------------------
-  "sources.docTitle": "D'où viennent nos chiffres — Indigene",
+  "sources.docTitle": "D'où viennent nos chiffres · Indigene",
   "sources.title": "D'où viennent nos chiffres",
-  "sources.lede":
-    "Indigene vous montre des chiffres — combien de chenilles un arbre nourrit, quelle taille il atteint, à quel point il retient un talus. Certains sont comptés dans des données scientifiques ouvertes. D'autres relèvent de notre meilleur jugement. Cette page vous dit ce qui relève de quoi, et où nous parierions nous être trompés.",
+  "sources.lede": "Indigene vous montre des chiffres : combien de chenilles un arbre nourrit, quelle taille il atteint, à quel point il retient un talus. Certains sont comptés dans des données scientifiques ouvertes. D'autres relèvent de notre meilleur jugement. Cette page vous dit ce qui relève de quoi, et où nous parierions nous être trompés.",
   "sources.short1":
     "Rien ici n'est inventé. Chaque chiffre a une source, et chaque plante affiche les siennes sur sa fiche.",
-  "sources.short2":
-    "Certains chiffres sont comptés dans de vraies bases de données. D'autres sont des estimations prudentes — nous le disons honnêtement.",
+  "sources.short2": "Certains chiffres sont comptés dans de vraies bases de données. D'autres sont des estimations prudentes, et nous le disons honnêtement.",
   "sources.short3": "Nos listes de plantes sont des listes de départ, pas la flore complète d'un territoire.",
   "sources.short4":
     "Nous préférons sincèrement être corrigés que crus. Si un chiffre vous paraît faux, il l'est peut-être.",
@@ -2140,45 +1994,34 @@ export const fr: Dict = {
   "sources.countedMeaning":
     "Quelqu'un l'a dénombré dans un jeu de données publié, et nous l'avons relevé. Le type de chiffre le plus solide ici.",
   "sources.calculated": "Calculé",
-  "sources.calculatedMeaning":
-    "Personne n'a publié ce chiffre pour votre lieu : l'application le déduit de mesures, avec une méthode publiée par quelqu'un d'autre. Le même calcul à chaque fois — vous pourriez le refaire sur papier et retrouver le nôtre.",
+  "sources.calculatedMeaning": "Personne n'a publié ce chiffre pour votre lieu : l'application le déduit de mesures, avec une méthode publiée par quelqu'un d'autre. Le même calcul à chaque fois : vous pourriez le refaire sur papier et retrouver le nôtre.",
   "sources.estimated": "Estimé",
-  "sources.estimatedMeaning":
-    "Quelqu'un chez nous a pesé les indices et choisi un chiffre. Utile, et le plus fragile de tous — ce sont ceux à mettre en doute en premier.",
+  "sources.estimatedMeaning": "Quelqu'un chez nous a pesé les indices et choisi un chiffre. Utile, mais le plus fragile de tous : ce sont ceux à mettre en doute en premier.",
   "sources.fig.host": "Nombre de chenilles hébergées",
-  "sources.fig.hostFrom":
-    "— en Europe, d'après une étude de 2026 qui associe les papillons européens aux plantes qu'ils mangent (Gaytán et coll.) ; aux États-Unis, d'après les chiffres Tallamy / National Wildlife Federation.",
+  "sources.fig.hostFrom": "En Europe, d'après une étude de 2026 qui associe les papillons européens aux plantes qu'ils mangent (Gaytán et coll.). Aux États-Unis, d'après les chiffres Tallamy / National Wildlife Federation.",
   "sources.fig.native": "Indigène ou non",
-  "sources.fig.nativeFrom":
-    "— d'après les référentiels botaniques nationaux : USDA PLANTS aux États-Unis, Tela Botanica et l'INPN en France, plus les flores régionales.",
+  "sources.fig.nativeFrom": "D'après les référentiels botaniques nationaux : USDA PLANTS aux États-Unis, Tela Botanica et l'INPN en France, plus les flores régionales.",
   "sources.fig.ecoregion": "Votre écorégion",
-  "sources.fig.ecoregionFrom":
-    "— la carte des écorégions qui couvre l'endroit où vous êtes, interrogée sur votre point exact : celle de l'EPA américaine, celle de l'Agence européenne pour l'environnement, celle de la CCE pour l'Amérique du Nord, ou celle de RESOLVE au sud de l'équateur.",
+  "sources.fig.ecoregionFrom": "La carte des écorégions qui couvre votre point exact : celle de l'EPA américaine, de l'Agence européenne pour l'environnement, de la CCE pour l'Amérique du Nord, ou de RESOLVE au sud de l'équateur.",
   "sources.fig.soil": "Votre sol et son acidité",
-  "sources.fig.soilFrom":
-    "— d'après SoilGrids, une carte mondiale des sols. Grossière : elle décrit un carré de 250 mètres, pas votre massif.",
+  "sources.fig.soilFrom": "D'après SoilGrids, une carte mondiale des sols. Grossière : elle décrit un carré de 250 mètres, pas votre massif.",
   "sources.fig.climate": "Pluie et froid hivernal",
-  "sources.fig.climateFrom": "— d'après les relevés météo d'Open-Meteo pour votre secteur.",
+  "sources.fig.climateFrom": "D'après les relevés météo d'Open-Meteo pour votre secteur.",
   "sources.fig.elevation": "Altitude et pente",
-  "sources.fig.elevationFrom": "— d'après les données d'altitude nationales pour votre point.",
+  "sources.fig.elevationFrom": "D'après les données d'altitude nationales pour votre point.",
   "sources.fig.ties": "Quelle faune une plante nourrit",
-  "sources.fig.tiesFrom1":
-    "— chaque association plante-animal cite une source, et l'application refuse d'en afficher une qui n'en a pas. À quel point l'animal ",
+  "sources.fig.tiesFrom1": "Chaque association plante-animal cite une source, sinon l'application ne l'affiche pas. À quel point l'animal ",
   "sources.fig.tiesEm": "dépend",
   "sources.fig.tiesFrom2":
     " de cette plante, en revanche, relève de notre lecture de ces sources. Beaucoup de ces associations ont été trouvées en interrogeant une base ouverte d'observations publiées entre plantes et animaux, et chacune garde le nom de l'étude dont elle provient.",
   "sources.fig.sun": "Heures de soleil",
-  "sources.fig.sunFrom":
-    "— votre appareil calcule la course du soleil au-dessus de votre lieu tout au long de l'année, avec la méthode standard de la NOAA. Aucune requête, aucun réseau.",
+  "sources.fig.sunFrom": "Votre appareil calcule la course du soleil au-dessus de votre lieu au fil de l'année, avec la méthode standard de la NOAA. Aucune requête, aucun réseau.",
   "sources.fig.zone": "Zone de rusticité",
-  "sources.fig.zoneFrom":
-    "— d'après les minimales hivernales relevées chez vous, avec la définition publiée des zones USDA, plutôt qu'en lisant une carte officielle.",
+  "sources.fig.zoneFrom": "Calculée d'après les minimales hivernales relevées chez vous, avec la définition publiée des zones USDA, et non lue sur une carte officielle.",
   "sources.fig.size": "La taille qu'elle atteint, et à quelle vitesse",
-  "sources.fig.sizeFrom":
-    "— la croissance typique sur un terrain moyen, d'après les flores et les références forestières. Les vraies plantes varient énormément.",
+  "sources.fig.sizeFrom": "La croissance typique sur un terrain moyen, d'après les flores et les références forestières. Les vraies plantes varient énormément.",
   "sources.fig.scores": "Les six notes sur 100",
-  "sources.fig.scoresFrom":
-    "— pollinisateurs, oiseaux, absorption de la pluie, maintien du sol, stockage du carbone, facilité d'installation. Éclairées par les sources citées sur chaque fiche, mais ce sont des jugements que nous avons portés, sur une échelle que nous avons inventée.",
+  "sources.fig.scoresFrom": "Pollinisateurs, oiseaux, absorption de la pluie, maintien du sol, stockage du carbone, facilité d'installation. Éclairées par les sources de chaque fiche, mais ce sont nos jugements, sur une échelle que nous avons inventée.",
   // Pourquoi nous avons cru une source. La section précédente dit d'où vient
   // chaque chiffre ; celle-ci répond à la question suivante — et dit franchement
   // que c'est une personne, et non un jeu de données, qui écrit ce que vous lisez.
@@ -2186,11 +2029,9 @@ export const fr: Dict = {
   "sources.trustLede":
     "Nous ne croyons pas une source sur parole, et nous n'avons pas de laboratoire non plus. Chaque source doit répondre à quatre questions avant qu'un de ses chiffres ne vous parvienne :",
   "sources.trust1": "Enregistre-t-elle bien ce que nous affirmons ? ",
-  "sources.trust1Rest":
-    "Un insecte aperçu sur une fleur ne dit pas combien de chenilles cette plante élève. Une grande base ouverte d'observations plantes-animaux note la différence sur environ un enregistrement sur douze — nous la laissons donc nommer l'animal, jamais le compter.",
+  "sources.trust1Rest": "Un insecte aperçu sur une fleur ne dit pas combien de chenilles cette plante élève. Une grande base ouverte d'observations plantes-animaux note la différence sur environ un enregistrement sur douze. Nous la laissons donc nommer l'animal, jamais le compter.",
   "sources.trust2": "Pourriez-vous la vérifier sans nous ? ",
-  "sources.trust2Rest":
-    "Nous préférons les sources que vous pourriez télécharger et recompter vous-même. Quand la meilleure disponible n'est pas ouverte — les comptes de chenilles américains — nous le disons, plutôt que de présenter les deux continents comme également vérifiables.",
+  "sources.trust2Rest": "Nous préférons les sources que vous pourriez télécharger et recompter vous-même. Quand la meilleure n'est pas ouverte (les comptes de chenilles américains), nous le disons, au lieu de présenter les deux continents comme également vérifiables.",
   "sources.trust3": "Fait-elle autorité là où vous vivez ? ",
   "sources.trust3Rest":
     "Qu'une plante soit indigène, c'est le référentiel botanique du pays qui le dit, jamais une moyenne mondiale. C'est aussi pourquoi un excellent référentiel canadien de noms français est la mauvaise source pour le français de France, et que nous l'avons écarté.",
@@ -2199,14 +2040,12 @@ export const fr: Dict = {
     "Une source qui cesse de répondre ne doit pas passer pour une réponse. Nous revérifions chaque nom auprès des référentiels nationaux, et un référentiel muet compte comme un échec, pas comme un oui.",
   "sources.trustCall":
     "Ensuite, c'est une personne qui tranche. Aucun jeu de données n'écrit la fiche d'une plante. Une recherche fait remonter les animaux observés sur un arbuste ; quelqu'un lit l'étude derrière chaque observation, écarte ce qui ne tient pas, et écrit la ligne que vous lisez. Chaque fait cite donc sa source, et chaque plante dit à quel point nous jugeons ses indices solides.",
-  "sources.trustRefused":
-    "Certaines sources sont écartées. La carte la plus fine des plantes américaines, comté par comté, nous est interdite : ses conditions d'utilisation l'excluent. La traduction automatique aurait comblé tous les noms français manquants en une après-midi — et les aurait tous inventés.",
+  "sources.trustRefused": "Certaines sources sont écartées. La carte la plus fine des plantes américaines, comté par comté, nous est interdite : ses conditions d'utilisation l'excluent. La traduction automatique aurait comblé tous les noms français manquants en une après-midi, et les aurait tous inventés.",
   "sources.assumptionsTitle": "Les hypothèses derrière ces chiffres",
   "sources.assumptionsLede":
     "Chacun des chiffres ci-dessus repose sur une décision que nous avons prise. Voici celles qui pèseraient le plus lourd si nous nous étions trompés :",
   "sources.assume1": "Nous comptons les chenilles par groupe de plantes apparentées, pas par espèce exacte. ",
-  "sources.assume1Rest":
-    "Le compte affiché pour le chêne pédonculé est en réalité celui des chênes en général. Nous procédons ainsi parce que les jeux de données américain et européen ne sont comparables qu'à ce niveau — mais cela signifie qu'une espèce qui héberge moins d'insectes que ses proches paraît meilleure qu'elle ne l'est.",
+  "sources.assume1Rest": "Le compte affiché pour le chêne pédonculé est en réalité celui des chênes en général. Nous procédons ainsi parce que les jeux de données américain et européen ne sont comparables qu'à ce niveau. Mais une espèce qui héberge moins d'insectes que ses proches paraît alors meilleure qu'elle ne l'est.",
   "sources.assume2": "Pour les comptes européens, nous ne retenons que les espèces proches qui poussent spontanément dans votre zone. ",
   "sources.assume2Rest":
     "Le chèvrefeuille indigène est ainsi crédité de 57 espèces de papillons, et non des 111 qu'on obtiendrait en incluant les chèvrefeuilles de jardin introduits. La fiche de chaque plante le signale quand les deux chiffres diffèrent.",
@@ -2214,44 +2053,35 @@ export const fr: Dict = {
   "sources.assume3Rest":
     "Le jeu de données enregistre quels insectes utilisent une plante quelque part en Europe. Un insecte compté pour votre jardin ne vit peut-être pas près de chez vous.",
   "sources.assume4": "Votre région est plus grande que votre jardin. ",
-  "sources.assume4Rest":
-    "Une région peut ici couvrir un tiers d'un pays. C'est la bonne échelle pour choisir une liste de plantes, et beaucoup trop grossière pour décrire votre pente, votre ombre et votre drainage — c'est pourquoi l'application vous les demande directement.",
+  "sources.assume4Rest": "Une région peut ici couvrir un tiers d'un pays. C'est la bonne échelle pour choisir une liste de plantes, et bien trop grossière pour votre pente, votre ombre et votre drainage. C'est pourquoi l'application vous les demande directement.",
   "sources.assume5": "Nos listes de plantes sont des listes de départ. ",
-  "sources.assume5Rest":
-    "Quelques dizaines de plantes par région, choisies pour être fiables, faciles à trouver et réellement utiles à la faune — jamais toutes les plantes indigènes d'une région. Une plante absente d'une liste n'est pas une plante que nous déconseillons.",
+  "sources.assume5Rest": "Quelques dizaines de plantes par région, choisies pour être fiables, faciles à trouver et vraiment utiles à la faune. Pas toutes les plantes indigènes de la région. Une plante absente d'une liste n'est pas une plante que nous déconseillons.",
   "sources.challengeTitle": "Ce que nous contesterions en premier",
-  "sources.challengeLede":
-    "Si vous vouliez trouver une erreur ici, voici où nous vous dirions de regarder — à peu près par ordre de probabilité que nous ayons tort :",
+  "sources.challengeLede": "Pour trouver une erreur ici, voici où chercher, à peu près par ordre de probabilité que nous ayons tort :",
   "sources.chal1": "Les six notes sur 100. ",
   "sources.chal1Rest":
     "Les chiffres les plus fragiles de l'application, et de loin. Aucun jeu de données ne dit qu'un arbuste vaut 78 pour la lutte contre l'érosion ; cela vient de nous, de notre lecture des sources et de notre jugement. Si vous connaissez bien une plante et qu'une note vous paraît fausse, vous avez sans doute raison.",
   "sources.chal2": "Compter par groupe apparenté plutôt que par espèce. ",
-  "sources.chal2Rest":
-    "C'est défendable, et nous le défendrions — mais c'est bel et bien une approximation, et elle flatte les membres les plus faibles d'un groupe fort.",
+  "sources.chal2Rest": "C'est défendable, et nous le défendrions. Mais c'est bel et bien une approximation, et elle flatte les membres les plus faibles d'un groupe fort.",
   "sources.chal3": "Les régions ne sont pas également bien sourcées. ",
   "sources.chal3Rest":
     "Certaines listes reposent sur des décennies de travail botanique régional ; les plus récentes sont plus minces. L'{link} de chaque plante le montre, plante par plante, selon une seule règle.",
   "sources.chal3Link": "indicateur de fiabilité",
   "sources.chal4": "Les comptes de chenilles américains reposent sur un terrain moins sûr que les européens. ",
-  "sources.chal4Rest":
-    "Les chiffres européens viennent d'un jeu de données sous licence ouverte que nous pouvons vous indiquer et recalculer entièrement. Les chiffres américains viennent de travaux publiés dont la base n'a pas de licence ouverte — ils sont donc plus difficiles à vérifier que nous ne le voudrions.",
+  "sources.chal4Rest": "Les chiffres européens viennent d'un jeu de données sous licence ouverte que nous pouvons vous indiquer et recalculer entièrement. Les chiffres américains viennent de travaux publiés dont la base n'a pas de licence ouverte, ils sont donc plus difficiles à vérifier que nous ne le voudrions.",
   "sources.chal5": "Les données du lieu sont plus grossières qu'elles n'en ont l'air. ",
   "sources.chal5Rest":
     "Un sol issu d'un carré de 250 mètres, et une zone de rusticité que nous calculons plutôt que de la lire, paraissent tous deux précis à l'écran. Faites davantage confiance à vos yeux et à vos mains.",
   "sources.tellUsTitle": "Comment nous dire que nous avons tort",
-  "sources.tellUs":
-    "Faites-le, s'il vous plaît. Toute l'application est libre : rien ici ne doit être pris sur parole — vous pouvez lire les fichiers de données, le script de comptage et chaque ligne qui transforme un chiffre en recommandation : {repo}. Si quelque chose vous paraît faux, {issue} — une correction accompagnée d'une source est la chose la plus utile qu'on puisse nous envoyer.",
+  "sources.tellUs": "Faites-le, s'il vous plaît. Toute l'application est libre : rien ici n'est à prendre sur parole. Vous pouvez lire les fichiers de données, le script de comptage et chaque ligne qui transforme un chiffre en recommandation : {repo}. Si quelque chose vous paraît faux, {issue}. Une correction accompagnée d'une source est ce qu'on peut nous envoyer de plus utile.",
   "sources.openIssue": "ouvrez un ticket",
-  "sources.fullList":
-    "Pour la liste technique complète de chaque jeu de données, de qui le publie et de ce que sa licence permet, voyez {doc}. Les comptes de chenilles européens viennent de {matrix}, publié en accès libre sous licence CC-BY 4.0 — vous pouvez télécharger les mêmes données que nous et vérifier nos calculs.",
+  "sources.fullList": "Pour la liste technique complète de chaque jeu de données, de qui le publie et de ce que sa licence permet, voyez {doc}. Les comptes de chenilles européens viennent de {matrix}, publié en accès libre sous licence CC-BY 4.0. Vous pouvez télécharger les mêmes données que nous et vérifier nos calculs.",
   "sources.dataDoc": "notre document sur les sources de données",
 
   // D'où viennent les *noms* des plantes et des animaux.
   "names.sourcesTitle": "D'où viennent les noms de plantes et d'animaux",
-  "names.sourcesLede":
-    "Le nom d'une plante dans votre langue n'est pas la traduction de son nom anglais : c'est le nom que lui ont donné les gens qui vivent avec elle, consigné dans un référentiel national. Nous allons donc le chercher, au lieu de le traduire :",
-  "names.sourcesLocale":
-    "Quel français ? Celui de France. Une même plante peut porter un nom à Paris et un autre au Québec — un bleuet est une myrtille à Montréal et une fleur bleue des champs en France — alors nous suivons les référentiels d'un seul pays, plutôt que d'en mélanger deux en un français que personne ne parle.",
+  "names.sourcesLede": "Le nom d'une plante dans votre langue n'est pas la traduction de son nom anglais. C'est le nom que lui ont donné les gens qui vivent avec elle, consigné dans un référentiel national. Nous allons donc le chercher, au lieu de le traduire :",
+  "names.sourcesLocale": "Quel français ? Celui de France. Une même plante peut porter un nom à Paris et un autre au Québec (un bleuet est une myrtille à Montréal et une fleur bleue des champs en France), alors nous suivons les référentiels d'un seul pays, plutôt que d'en mélanger deux en un français que personne ne parle.",
   "names.src.taxref":
     "le référentiel national français de la flore et de la faune de France. L'autorité pour tout ce qui pousse ou vole ici.",
   "names.src.bdtfx":
@@ -2259,32 +2089,31 @@ export const fr: Dict = {
   "names.src.wikidata": "le recoupement de dernier recours, pour les espèces qu'aucun référentiel national ne couvre.",
   "names.sourcesGap":
     "Quand aucun référentiel n'a de nom, nous affichons le nom scientifique. Beaucoup d'indigènes nord-américaines n'ont tout simplement jamais reçu de nom français, et en inventer un serait exactement l'invention présentée avec aplomb que nous refusons de commettre avec un nombre de chenilles.",
-  "names.sourcesPending":
-    "Et quelques dizaines de plantes nord-américaines portent ici un nom français dont nous cherchons encore la source française. Ils venaient du référentiel canadien, que nous ne prenons plus pour le nôtre. Les noms restent pour l'instant — presque tous sont ceux qu'emploierait un jardinier français — et chacun de ceux que nous ne pourrons pas confirmer laissera place au nom scientifique.",
+  "names.sourcesPending": "Et quelques dizaines de plantes nord-américaines portent ici un nom français dont nous cherchons encore la source française. Ils venaient du référentiel canadien, que nous ne prenons plus pour le nôtre. Les noms restent pour l'instant, car presque tous sont ceux qu'emploierait un jardinier français. Ceux que nous ne pourrons pas confirmer reviendront au nom scientifique.",
 
   // ---------------------------------------------------------------------
   // Composants partagés.
   // ---------------------------------------------------------------------
   "privacy.howHandled": "Comment vos données sont traitées",
   "term.tapToLearn": "{term}. Touchez pour savoir ce que cela veut dire.",
-  "zoneChip.approx":
-    "En gros, zones de rusticité USDA {range} — l'échelle américaine est ici une traduction, pas la convention locale : prenez-la comme un repère du froid hivernal.",
-  "zoneChip.exact": "Zones de rusticité USDA {range} — le froid hivernal sur lequel la liste de cette région est réglée.",
-  "prompt.noGeolocation": "Cet appareil ne peut pas partager de position — saisissez plutôt un code postal ou une commune ci-dessous.",
+  "zoneChip.approx": "En gros, zones de rusticité USDA {range}. L'échelle américaine est ici une traduction, pas la convention locale : prenez-la comme un repère du froid hivernal.",
+  "zoneChip.exact": "Zones de rusticité USDA {range} : le froid hivernal sur lequel la liste de cette région est réglée.",
+  "zoneChip.ecoregion": "Écorégion {scale} {code} : {name}",
+  "zoneChip.zone": "Zone de rusticité USDA {zone}",
+  "prompt.noGeolocation": "Cet appareil ne peut pas partager de position. Saisissez plutôt un code postal ou une commune ci-dessous.",
   "prompt.getting": "Récupération de votre position…",
-  "prompt.denied": "Position refusée — ce n'est pas grave ; saisissez un code postal ou une commune ci-dessous.",
+  "prompt.denied": "Position refusée, ce n'est pas grave. Saisissez un code postal ou une commune ci-dessous.",
   "prompt.noFix": "Impossible d'obtenir votre position. Réessayez, ou saisissez un code postal ou une commune ci-dessous.",
   "prompt.placeholder": "Code postal ou commune",
-  "prompt.notFound":
-    "Ce code postal ou ce lieu est introuvable. Essayez une commune proche avec sa région — « Saint-Denis Réunion » par exemple — ou un code postal complet.",
+  "prompt.notFound": "Ce code postal ou ce lieu est introuvable. Essayez une commune proche avec sa région (« Saint-Denis Réunion », par exemple) ou un code postal complet.",
   "prompt.offline":
     "La recherche de lieux a besoin d'une connexion et nous n'avons pas pu l'atteindre. Si votre appareil a un GPS, utilisez le bouton de position ci-dessus.",
   "prompt.label": "Saisissez un code postal ou une commune",
   "prompt.privacyLink": "Ce que devient votre position",
   "obs.creditLead": "Observations et photos issues d'",
-  "obs.creditMid": ", chacune © son observateur — ouvrez une photo pour voir son nom, sa licence et un lien vers l'observation d'origine. ",
-  "obs.fromCache": "Chargées depuis le cache de cet appareil — ",
-  "obs.fetchedNow": "Récupérées à l'instant par votre navigateur — ",
+  "obs.creditMid": ", chacune © son observateur. Ouvrez une photo pour voir son nom, sa licence et un lien vers l'observation d'origine. ",
+  "obs.fromCache": "Chargées depuis le cache de cet appareil ; ",
+  "obs.fetchedNow": "Récupérées à l'instant par votre navigateur ; ",
   "obs.creditEnd": "c'est votre navigateur qui appelle iNaturalist directement : ils voient votre requête, pas la nôtre.",
   "obs.away": "à ~{distance}",
   "obs.veryClose": "à moins de {distance}",
@@ -2292,7 +2121,7 @@ export const fr: Dict = {
   "obs.seenIn": "vue en {year}",
   "obs.enlarge": "Agrandir la photo {i} de {name} par {observer}",
   "obs.enlargeMore": ", et en voir {n} de plus",
-  "obs.tapToEnlarge": "{attribution} — touchez pour agrandir",
+  "obs.tapToEnlarge": "{attribution}. Touchez pour agrandir",
   "hero.enlarge": "Voir cette photo de {name} en grand",
   "obs.photoAlt": "{name} photographié par {observer}",
   "obs.someObserver": "un contributeur d'iNaturalist",
@@ -2301,17 +2130,15 @@ export const fr: Dict = {
   // Les photos d'une plante (#/plants/<slug>/photos).
   // ---------------------------------------------------------------------
   "photos.more": "Plus de photos",
-  "photos.docTitle": "Photos de {name} — Indigene",
-  "photos.shareLede":
-    "Des photos choisies de {name} ({latin}) — la plante entière, ses feuilles, ses fleurs et ses fruits — et de vraies observations près de chez vous.",
+  "photos.docTitle": "Photos de {name} · Indigene",
+  "photos.shareLede": "Des photos choisies de {name} ({latin}) montrant la plante entière, ses feuilles, ses fleurs et ses fruits, et de vraies observations près de chez vous.",
   "photos.title": "Photos de {name}",
   "photos.lede":
     "Une photo dit à peu près ce qu'est une plante. Celles-ci disent ce que vous tenez : la silhouette vue de quelques pas, puis la feuille, la fleur et le fruit de près.",
   "photos.backToPlant": "← Retour à la plante",
   "photos.backToPlantShort": "← Retour à la plante",
   "photos.chosenTitle": "Photos choisies",
-  "photos.chosenLede":
-    "Choisies par une personne parmi les photos les plus appréciées d'iNaturalist, librement réutilisables — c'est donc toujours la même image, à laquelle vous pouvez vous fier pour comparer.",
+  "photos.chosenLede": "Choisies par une personne parmi les photos d'iNaturalist les plus appréciées et librement réutilisables. C'est toujours la même image, pour que vous puissiez comparer.",
   "photos.angle.portrait": "Portrait",
   "photos.angle.habit": "La plante entière",
   "photos.angle.leaf": "Feuilles",
@@ -2323,7 +2150,7 @@ export const fr: Dict = {
   "photos.angleGap.flower": "les fleurs",
   "photos.angleGap.fruit": "les fruits",
   "photos.enlarge": "Voir en grand la photo « {angle} » de {name}",
-  "photos.shotAlt": "{name} — {angle}",
+  "photos.shotAlt": "{name}, {angle}",
   "photos.noneYet":
     "Personne n'a encore choisi de gros plans. La recherche ci-dessous trouve de vraies observations près d'un lieu que vous choisissez.",
   "photos.someMissing":
@@ -2339,36 +2166,30 @@ export const fr: Dict = {
   "lightbox.credit": "Photo © {observer} · {licence} · via {site}",
   "nearby.useMyLocation": "Ma position",
   "nearby.asking": "Interrogation d'iNaturalist…",
-  "nearby.unreachable":
-    "Nous n'avons pas pu joindre iNaturalist à l'instant. L'appel part directement de votre navigateur : une connexion capricieuse ou une requête bloquée suffit à l'interrompre — réessayez plus tard.",
+  "nearby.unreachable": "Nous n'avons pas pu joindre iNaturalist à l'instant. Votre navigateur l'appelle directement : une connexion capricieuse ou une requête bloquée suffit à l'interrompre. Réessayez plus tard.",
   "nearby.nearPlace": "près de {place}",
   "nearby.closeToYou": "près de chez vous",
   "nearby.found": "Nous en avons trouvé {n} : ",
   "nearby.foundNear": "Nous en avons trouvé {n} à proximité : ",
   "nearby.seeItGrowing": "La voir pousser près de chez vous",
   "nearby.seeItGrowingLede": "Photos iNaturalist confirmées.",
-  "nearby.outsideYou":
-    "Vous êtes en dehors des régions pour lesquelles Indigene a des données sur les plantes indigènes : nous ne pouvons donc pas garantir ce qui y est vraiment indigène — et nous ne ferons pas passer des observations voisines pour des indigènes locales. Les mesures de soleil, de sol et de climat fonctionnent partout.",
-  "nearby.outsidePlace":
-    "{place} est en dehors des régions pour lesquelles Indigene a des données sur les plantes indigènes : nous ne pouvons donc pas garantir ce qui y est vraiment indigène — et nous ne ferons pas passer des observations voisines pour des indigènes locales. Les mesures de soleil, de sol et de climat fonctionnent partout.",
+  "nearby.outsideYou": "Vous êtes en dehors des régions pour lesquelles Indigene a des données sur les plantes indigènes. Nous ne pouvons donc pas garantir ce qui y est indigène, ni faire passer des observations voisines pour des indigènes locales. Les mesures de soleil, de sol et de climat fonctionnent partout.",
+  "nearby.outsidePlace": "{place} est en dehors des régions pour lesquelles Indigene a des données sur les plantes indigènes. Nous ne pouvons donc pas garantir ce qui y est indigène, ni faire passer des observations voisines pour des indigènes locales. Les mesures de soleil, de sol et de climat fonctionnent partout.",
   "nearby.noTaxonId":
     "Nous ne savons pas encore relier {name} à iNaturalist : aucune observation à montrer.",
   "nearby.noneNear":
     "{name} est indigène de {region}, mais personne n'en a encore publié de photo confirmée {where} sur iNaturalist. Elle vaut quand même la peine d'être plantée.",
   "nearby.noneInRegion":
     "Personne n'a encore publié de photo confirmée de {name} en {region} sur iNaturalist. Elle y est bien indigène.",
-  "nearby.foundNearRest.one":
-    "observation confirmée de {name} {where} — photographiée, et identifiée par au moins deux personnes sur iNaturalist :",
-  "nearby.foundNearRest.other":
-    "observations confirmées de {name} {where} — chacune photographiée, et identifiée par au moins deux personnes sur iNaturalist :",
+  "nearby.foundNearRest.one": "observation confirmée de {name} {where}, photographiée et identifiée par au moins deux personnes sur iNaturalist :",
+  "nearby.foundNearRest.other": "observations confirmées de {name} {where}, chacune photographiée et identifiée par au moins deux personnes sur iNaturalist :",
   "nearby.foundRest.one":
     "observation confirmée de {name} en {region}, identifiée par au moins deux personnes sur iNaturalist (vous n'avez pas besoin d'y être) :",
   "nearby.foundRest.other":
     "observations confirmées de {name} en {region}, chacune identifiée par au moins deux personnes sur iNaturalist (vous n'avez pas besoin d'y être) :",
   "nearby.aRegion": "une région",
   "nearby.orIn": "ou",
-  "nearby.busy":
-    "iNaturalist nous demande de ralentir : le service est très sollicité. Patientez une minute et réessayez.",
+  "nearby.busy": "iNaturalist est très sollicité et nous demande de ralentir. Patientez une minute et réessayez.",
   "nearby.nativeToList": "indigène de {list}",
   "nearby.nativeToOther": "indigène d'une autre région",
   "nearby.nativeElsewhere":
@@ -2386,8 +2207,8 @@ export const fr: Dict = {
   "wanted.countsNote":
     "Les observations sont celles d'iNaturalist à l'état sauvage, dans la zone que couvre cette région, comptées le {date}. Elles mesurent où les gens ont regardé autant que là où la plante pousse.",
   "wanted.growInstead": "Que planter à la place",
-  "wanted.indexDocTitle": "Les pires plantes envahissantes — Indigene",
-  "wanted.docTitle": "{name} — plante envahissante — Indigene",
+  "wanted.indexDocTitle": "Les pires plantes envahissantes · Indigene",
+  "wanted.docTitle": "{name} · plante envahissante · Indigene",
   "wanted.indexLede": "Les cinq plantes envahissantes à arracher en premier dans chaque région. Ouvrez-en une pour apprendre à la reconnaître.",
   "wanted.unratedShort": "Personne ne les a évaluées ici : elles sont classées selon les observations seules.",
   "wanted.backToIndex": "← Toutes les plantes envahissantes",
@@ -2407,14 +2228,14 @@ export const fr: Dict = {
   "wanted.method.pro": "Se faire aider",
   "wanted.method.replant": "Replanter",
   "wanted.method.water": "Près de l'eau",
-  "wanted.regionDocTitle": "Les pires plantes envahissantes — {region} — Indigene",
+  "wanted.regionDocTitle": "Les pires plantes envahissantes · {region} · Indigene",
   "wanted.otherRegions": "Les listes des autres régions",
   "wanted.whereWanted": "Où elle compte parmi les pires",
   "wanted.photosTitle": "Photos dans la nature",
   "wanted.photosLede": "Des photos confirmées sur iNaturalist, prises dans une région où elle figure sur la liste.",
   "wanted.tellApart": "Souvent confondue avec",
   "wanted.noPhotos": "Aucune photo confirmée de cette région sur iNaturalist pour l'instant.",
-  "wanted.onLists": "Parmi les pires : {places} — {remove}.",
+  "wanted.onLists": "Parmi les pires : {places}. Voici {remove}.",
   "wanted.removeLink": "comment l'arracher",
   "wanted.placeLink": "{region} (n° {n})",
 
@@ -2428,10 +2249,8 @@ export const fr: Dict = {
     "Personne n'a encore publié de photo confirmée d'un {name} {where} sur iNaturalist. Cela veut dire que personne n'en a saisi, pas qu'il est absent.",
   "wlNearby.noneInRegion":
     "Personne n'a encore publié de photo confirmée de {name} en {region} sur iNaturalist.",
-  "wlNearby.foundNearRest.one":
-    "observation confirmée de {name} {where} — photographiée, et identifiée par au moins deux personnes sur iNaturalist :",
-  "wlNearby.foundNearRest.other":
-    "observations confirmées de {name} {where} — chacune photographiée, et identifiée par au moins deux personnes sur iNaturalist :",
+  "wlNearby.foundNearRest.one": "observation confirmée de {name} {where}, photographiée et identifiée par au moins deux personnes sur iNaturalist :",
+  "wlNearby.foundNearRest.other": "observations confirmées de {name} {where}, chacune photographiée et identifiée par au moins deux personnes sur iNaturalist :",
   "wlNearby.foundRest.one":
     "observation confirmée de {name} en {region}, identifiée par au moins deux personnes sur iNaturalist (vous n'avez pas besoin d'y être) :",
   "wlNearby.foundRest.other":
@@ -2467,12 +2286,10 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "about.docTitle": "À propos d'Indigene",
   "about.title": "À propos d'Indigene",
-  "about.lede":
-    "Un indigène est natif d'un lieu. Cette application mesure le soleil là où vous vous tenez, consulte le sol et le climat de ces coordonnées précises, et vous rend les plantes indigènes à cet endroit — avec des mots simples d'un bout à l'autre.",
+  "about.lede": "Un indigène est natif d'un lieu. Cette application mesure le soleil là où vous vous tenez, consulte le sol et le climat de ces coordonnées précises, et vous rend les plantes indigènes à cet endroit, avec des mots simples.",
   "about.hereEm": "ici",
   "about.whyTitle": "Pourquoi cela existe",
-  "about.why1":
-    "La plupart des jardins, ce sont des pelouses, plus des arbustes et des fleurs venus d'autres continents. Ils ont belle allure mais nourrissent bien moins de chenilles, et la plupart des passereaux élèvent leurs petits avec des chenilles — qui, pour la plupart, ne mangent que les plantes avec lesquelles elles ont évolué. Moins d'indigènes, moins de chenilles, moins d'oisillons.",
+  "about.why1": "La plupart des jardins, ce sont des pelouses, plus des arbustes et des fleurs venus d'autres continents. Ils ont belle allure mais nourrissent bien moins de chenilles. La plupart des chenilles ne mangent que les plantes avec lesquelles elles ont évolué, et la plupart des passereaux élèvent leurs petits avec des chenilles. Moins d'indigènes, moins de chenilles, moins d'oisillons.",
   "about.why2":
     "Le remède ne coûte pas cher : planter des indigènes. Ce qui manquait, c'était une réponse claire à « qu'est-ce que je plante {here}, dans ce coin de mon jardin ? », sans devoir parler la langue des catalogues de pépinière. Indigene essaie de la donner.",
   "about.forTitle": "Pour qui c'est fait",
@@ -2483,28 +2300,23 @@ export const fr: Dict = {
     "Les jardiniers de guérilla, qui n'ont qu'une seule occasion et aucun suivi, et à qui il faut dire franchement ce qui survivra tout seul.",
   "about.for3":
     "Les jardiniers plus âgés qui découvrent les indigènes, et qui méritent qu'on leur dise « voici ce que cette plante vous apporte » plutôt qu'on leur fasse la leçon.",
-  "about.forEnd":
-    "C'est pourquoi elle s'utilise d'une seule main, dehors, les mains sales et avec une mauvaise connexion — et pourquoi chaque terme de jardinage est expliqué sur place, à chaque fois, au lieu d'être supposé connu.",
+  "about.forEnd": "C'est pourquoi elle s'utilise d'une seule main, dehors, les mains sales et avec une mauvaise connexion. Et pourquoi chaque terme de jardinage est expliqué sur place, à chaque fois.",
   "about.stancesTitle": "Ce qu'elle refuse de faire",
   "about.stancesLede":
     "Ce ne sont pas des valeurs affichées au mur : chacune est une décision que vous pouvez voir l'application appliquer, et la raison pour laquelle elle se comporte ainsi.",
   "about.stance.plain": "Indigene n'emploie jamais un terme sans l'expliquer.",
-  "about.stance.plainBody":
-    "Les mots courants passent devant, le terme technique suit entre parenthèses — « des hivers descendant jusqu'à −12 °C environ (zone USDA 8a) », jamais l'inverse. Si un mot vous envoie chercher ailleurs, c'est un échec.",
+  "about.stance.plainBody": "Les mots courants passent devant, le terme technique suit entre parenthèses : « des hivers descendant jusqu'à −12 °C environ (zone USDA 8a) », jamais l'inverse. Si un mot vous envoie chercher ailleurs, c'est un échec.",
   "about.stance.uncertain": "Indigene montre ses marges d'erreur.",
-  "about.stance.uncertainBody":
-    "L'estimation du soleil est une fourchette, pas une décimale, parce que les capteurs mentent et que la réponse honnête est une plage. Le relevé de sol est toujours présenté comme « la carte dit ceci — voici un test de soixante secondes pour vérifier si c'est vrai là où vous êtes », parce qu'un carré de carte des sols est plus grand que votre jardin entier. Sur place, vous en savez plus que la carte, et l'application est faite pour vous laisser la contredire.",
+  "about.stance.uncertainBody": "L'estimation du soleil est une fourchette, pas une décimale, parce que les capteurs mentent et que la réponse honnête est une plage. Le relevé de sol est toujours présenté comme « la carte dit ceci, et voici un test de soixante secondes pour vérifier si c'est vrai là où vous êtes », parce qu'un carré de carte des sols est plus grand que votre jardin entier. Sur place, vous en savez plus que la carte, et l'application est faite pour vous laisser la contredire.",
   "about.stance.sourced": "Chaque chiffre doit pouvoir être rattaché à quelqu'un d'autre.",
-  "about.stance.sourcedBody":
-    "Chaque plante porte ses sources et une note de confiance en mots simples, et quand un chiffre relève de notre jugement plutôt que d'un comptage, {link} le dit et nomme ceux que nous contesterions en premier. Rien n'est inventé pour combler un trou — une plante sans nom français affiche son nom scientifique plutôt qu'une invention plausible.",
+  "about.stance.sourcedBody": "Chaque plante porte ses sources et une note de confiance en mots simples, et quand un chiffre relève de notre jugement plutôt que d'un comptage, {link} le dit et nomme ceux que nous contesterions en premier. Rien n'est inventé pour combler un trou : une plante sans nom français affiche son nom scientifique, pas une invention plausible.",
   "about.stance.sourcedLink": "la page des sources",
   "about.stance.yours": "Indigene n'attend rien de vous.",
   "about.stance.yoursBody":
     "Pas de compte, pas d'inscription, pas de publicité, rien de vendu. Un compteur de visites note quelle page a été ouverte, et rien sur qui l'a ouverte ; vous pouvez {link}. Les lieux enregistrés restent dans votre navigateur, sur votre appareil, parce qu'il n'existe aucun serveur où les envoyer. Aucun inconnu ne peut vous contacter par ce biais.",
   "about.stance.yoursLink": "le couper dans les Réglages",
   "about.stance.portable": "Vos données partent avec vous.",
-  "about.stance.portableBody":
-    "{link} écrivent chaque lieu enregistré et son journal de plantation dans un fichier simple qui vous appartient, et en relisent un dans un autre navigateur. Passer d'un téléphone à un ordinateur demande un fichier, pas un compte — et ce fichier est à vous : à ouvrir, à garder, ou à confier à tout autre outil.",
+  "about.stance.portableBody": "{link} écrivent chaque lieu enregistré et son journal de plantation dans un fichier simple qui vous appartient, et en relisent un dans un autre navigateur. Passer d'un téléphone à un ordinateur demande un fichier, pas un compte. Ce fichier est à vous : à ouvrir, à garder, ou à confier à tout autre outil.",
   "about.stance.portableLink": "Les réglages",
   "about.stance.offline": "Indigene fonctionne là où sont les jardins.",
   "about.stance.offlineBody":
@@ -2516,8 +2328,7 @@ export const fr: Dict = {
   "about.freeMoney":
     "Il n'y a pas d'entreprise derrière et rien n'est monétisé. C'est aussi pour cela que l'application est un petit téléchargement qui tourne dans votre navigateur, plutôt qu'un service que quelqu'un devrait continuer de payer.",
   "about.helpTitle": "Aidez à l'améliorer",
-  "about.help":
-    "La chose la plus utile que vous puissiez envoyer, c'est une correction accompagnée d'une source. Tout — les données sur les plantes, les scripts, chaque ligne qui transforme un chiffre en recommandation — est public sur {repo}, et si quelque chose vous paraît faux, vous pouvez {issue}. Demander que votre région soit couverte est tout aussi bienvenu : c'est ainsi que la carte s'agrandit.",
+  "about.help": "La chose la plus utile que vous puissiez envoyer, c'est une correction accompagnée d'une source. Les données sur les plantes, les scripts et chaque ligne qui transforme un chiffre en recommandation sont publics sur {repo}. Si quelque chose vous paraît faux, vous pouvez {issue}. Demander que votre région soit couverte est aussi bienvenu : c'est ainsi que la carte s'agrandit.",
 
   // ---------------------------------------------------------------------
   // « Les plantes indigènes attirent-elles les ravageurs ? » (steps/crops.ts)
@@ -2528,7 +2339,7 @@ export const fr: Dict = {
   // sont des noms propres, et l'article est en anglais quelle que soit la
   // langue du lecteur.
   // ---------------------------------------------------------------------
-  "crops.docTitle": "Les plantes indigènes attirent-elles les ravageurs ? — Indigene",
+  "crops.docTitle": "Les plantes indigènes attirent-elles les ravageurs ? · Indigene",
   "crops.title": "Les plantes indigènes attirent-elles les ravageurs ?",
   "crops.lede":
     "Des exploitations agricoles l'ont mesuré en vraie grandeur : non. Certaines indigènes éloignent même discrètement des ravageurs, et quelques-unes font un mauvais voisin pour telle ou telle culture. Tout est sur cette page.",
@@ -2540,16 +2351,14 @@ export const fr: Dict = {
     "Les fermes qui ont semé des bandes fleuries ont eu plus de pollinisateurs et plus de mangeurs de ravageurs dans la culture d'à côté, et pas plus de ravageurs.",
   "crops.short4":
     "Dans la plupart des jardins, le réservoir à ravageurs est une plante que quelqu'un a achetée. L'ailante nourrit la fulgore tachetée, le nerprun abrite l'hiver le puceron du soja, l'épine-vinette héberge les tiques.",
-  "crops.short5":
-    "Les oiseaux prennent bien plus de ravageurs que de fruits. Là où les fruits rouges sont vraiment menacés, la solution est le filet — pas moins de plantes.",
+  "crops.short5": "Les oiseaux prennent bien plus de ravageurs que de fruits. Là où les fruits rouges sont vraiment menacés, la solution est le filet, pas moins de plantes.",
 
   // Les quatre chiffres à parcourir d'un coup d'œil. Chaque tuile ouvre l'étude.
   "crops.tilesLabel": "Quatre chiffres tirés des études agricoles, en un coup d'œil",
   "crops.tile.set.label": "Abeilles sauvages",
   "crops.tile.set.value": "toutes",
   "crops.tile.set.sub": "les 41 cultures testées",
-  "crops.tile.set.explain":
-    "Sur 41 systèmes de culture dans le monde, plus de visites d'insectes sauvages s'est traduit par plus de fleurs devenues fruits, dans chacun d'eux — et, à visite égale, deux fois plus qu'une abeille domestique. Les abeilles domestiques s'ajoutaient à cela plutôt qu'elles ne le remplaçaient.",
+  "crops.tile.set.explain": "Sur 41 systèmes de culture dans le monde, plus de visites d'insectes sauvages s'est traduit par plus de fleurs devenues fruits, dans chacun d'eux. À visite égale, deux fois plus qu'une abeille domestique. Les abeilles domestiques s'ajoutaient à cela plutôt qu'elles ne le remplaçaient.",
   "crops.tile.control.label": "Lutte naturelle",
   "crops.tile.control.value": "+16 %",
   "crops.tile.control.sub": "à côté d'une bande fleurie",
@@ -2563,16 +2372,13 @@ export const fr: Dict = {
   "crops.tile.ticks.label": "Tiques infectées",
   "crops.tile.ticks.value": "280 contre 30",
   "crops.tile.ticks.sub": "par hectare, avec ou sans épine-vinette",
-  "crops.tile.ticks.explain":
-    "Dans des bois du Connecticut, sous une épine-vinette du Japon intacte — un arbuste vendu pour les haies — on comptait environ 280 tiques porteuses de la maladie de Lyme par hectare. Là où l'arbuste avait été coupé : 121. Là où il n'y en avait jamais eu : 30.",
+  "crops.tile.ticks.explain": "Dans des bois du Connecticut, sous une épine-vinette du Japon intacte (un arbuste vendu pour les haies), on comptait environ 280 tiques porteuses de la maladie de Lyme par hectare. Là où l'arbuste avait été coupé : 121. Là où il n'y en avait jamais eu : 30.",
 
   // --- ce qu'une bande fleurie nourrit vraiment --------------------------
   "crops.feedsTitle": "Trois populations, et ce que chacune fait",
-  "crops.feeds1":
-    "L'inquiétude traite « la faune » comme un seul animal. Une plantation indigène en fait venir trois bien différentes, et une seule mange des plantes — celle-là est liée aux plantes avec lesquelles elle a évolué, qui ne sont pas celles de votre potager.",
+  "crops.feeds1": "L'inquiétude traite « la faune » comme un seul animal. Une plantation indigène en fait venir trois bien différentes, et une seule mange des plantes. Celle-là est liée aux plantes avec lesquelles elle a évolué, qui ne sont pas celles de votre potager.",
   "crops.fig.feeds.pollWho": "Pollinisateurs",
-  "crops.fig.feeds.pollEats":
-    "Abeilles, papillons, syrphes. Nectar et pollen — aucun ne mange de feuilles.",
+  "crops.fig.feeds.pollEats": "Abeilles, papillons, syrphes. Nectar et pollen, jamais de feuilles.",
   "crops.fig.feeds.pollOut": "Plus de fruits noués",
   "crops.fig.feeds.enemyWho": "Mangeurs de ravageurs",
   "crops.fig.feeds.enemyEats":
@@ -2586,8 +2392,7 @@ export const fr: Dict = {
     "Ce qu'une bordure de fleurs et d'arbustes indigènes nourrit réellement, et ce que chaque population fait quand elle arrive à votre potager.",
 
   "crops.fussyTitle": "Les insectes qu'une indigène nourrit ne peuvent pas manger vos légumes",
-  "crops.fussy1":
-    "Les insectes qui mangent des plantes sont bien plus difficiles qu'on ne le croit. Un relevé portant sur 7 500 d'entre eux et 2 000 plantes montre que la plupart ne digèrent que la poignée d'espèces avec lesquelles ils ont évolué. Une chenille élevée sur un chêne ou un saule ne préfère pas le chêne à votre laitue — elle mourrait de faim sur la laitue.",
+  "crops.fussy1": "Les insectes qui mangent des plantes sont bien plus difficiles qu'on ne le croit. Un relevé portant sur 7 500 d'entre eux et 2 000 plantes montre que la plupart ne digèrent que la poignée d'espèces avec lesquelles ils ont évolué. Une chenille élevée sur un chêne ou un saule ne préfère pas le chêne à votre laitue. Elle mourrait de faim sur la laitue.",
   "crops.fussy2":
     "L'inverse est vrai aussi. La pomme de terre et la tomate viennent des Andes, le poivron et la courge du Mexique, le chou et le chou kale de Méditerranée. La plupart des insectes d'ici n'ont aucune histoire commune avec eux. Beaucoup des ravageurs qui les mangent sont arrivés avec eux : environ 40 % des insectes et acariens ravageurs des cultures américaines sont des espèces introduites, et aucune haie que vous plantez ne les fait apparaître.",
 
@@ -2605,14 +2410,12 @@ export const fr: Dict = {
   "crops.moreFruitTitle": "Plus de fruits, pas moins",
   "crops.moreFruit1":
     "Presque tout ce que vous voudriez cueillir passe d'abord par un insecte : 87 des 115 grandes cultures alimentaires mondiales produisent mieux grâce à la pollinisation animale. Dans les 41 systèmes de culture déjà cités, les insectes sauvages ont augmenté le nombre de fleurs devenues fruits dans chacun d'eux.",
-  "crops.moreFruit2":
-    "La tomate et la myrtille ont besoin d'une pollinisation par vibration : une abeille s'agrippe à la fleur et fait tomber le pollen en faisant vibrer ses muscles de vol. L'abeille domestique n'en est pas capable. Le bourdon, si.",
+  "crops.moreFruit2": "La tomate et la myrtille ont besoin d'une pollinisation par vibration : une abeille s'agrippe à la fleur et fait tomber le pollen en faisant vibrer ses muscles de vol. L'abeille domestique n'en est pas capable. Le bourdon, si.",
 
   "crops.birdsTitle": "Les oiseaux mangent plus de ravageurs que de fruits",
   "crops.birds1":
     "Deux grandes synthèses ont cherché ce que les oiseaux font réellement à une culture. Sur 104 études, l'effet d'ensemble est positif : environ la moitié des mesures montrent les oiseaux faisant baisser le nombre de ravageurs, la plupart des autres ne montrent aucune différence, et 5 % vont dans l'autre sens. Là où les oiseaux étaient tenus à l'écart, les dégâts et les ravageurs ont augmenté et le rendement a baissé.",
-  "crops.birds2":
-    "L'un des pires voleurs de fruits d'Amérique du Nord est l'étourneau sansonnet, un oiseau venu d'Europe qui prospère sur la pelouse tondue et les terrains dégagés. Une pelouse fabrique des étourneaux. Une haie, non. Et ce qu'une haie fabrique — des chenilles sur des feuilles indigènes — est précisément ce qu'il faut à une mésange pour élever une nichée : une étude a montré que les mésanges ne se maintiennent plus dans les jardins où les indigènes font moins d'environ 70 % des plantes.",
+  "crops.birds2": "L'un des pires voleurs de fruits d'Amérique du Nord est l'étourneau sansonnet, un oiseau venu d'Europe qui prospère sur la pelouse tondue et les terrains dégagés. Une pelouse fabrique des étourneaux. Une haie, non. Et une haie fabrique des chenilles sur des feuilles indigènes, ce qu'il faut à une mésange pour élever une nichée. Une étude a montré que les mésanges ne se maintiennent plus dans les jardins où les indigènes font moins d'environ 70 % des plantes.",
 
   // --- la moitié de l'argument que personne ne fait ----------------------
   "crops.takeAwayTitle": "Certaines indigènes éloignent les ravageurs",
@@ -2633,20 +2436,17 @@ export const fr: Dict = {
     "Trois chaînes qui commencent par une plante vendue en jardinerie. Le puceron du soja passe l'hiver sous forme d'œuf sur le nerprun et nulle part ailleurs ; l'hôte préféré de la fulgore est l'ailante. Le premier maillon est celui que vous pouvez couper.",
   "crops.takeAway2":
     "Le cas de l'épine-vinette a été compté. Dans des bois du Connecticut, sous une épine-vinette du Japon intacte, on trouvait environ 280 tiques porteuses de la maladie de Lyme par hectare ; là où l'arbuste avait été coupé, 121 ; là où il n'y en avait jamais eu, 30. Un seul dégagement a tenu six ans avant que l'arbuste ne revienne.",
-  "crops.takeAway3":
-    "N'exagérons rien, cependant. Arracher {link} ne fera pas disparaître la fulgore tachetée — elle se nourrit sur une soixantaine d'autres arbres et lianes. Couper la chaîne réduit un ravageur. Cela ne l'efface pas.",
+  "crops.takeAway3": "N'exagérons rien, cependant. Arracher {link} ne fera pas disparaître la fulgore tachetée : elle se nourrit sur une soixantaine d'autres arbres et lianes. Couper la chaîne réduit un ravageur. Cela ne l'efface pas.",
   "crops.takeAway3Link": "un ailante",
 
   // --- l'affirmation la plus facile à surinterpréter --------------------------
   "crops.redirectTitle": "Iront-ils manger la haie plutôt que mes cerises ?",
-  "crops.redirect1":
-    "En partie, et ce n'est pas une affaire de goût : c'est une affaire de gras. Dans une étude, les fruits d'arbustes indigènes titraient de 6 à 48 % de matière grasse ; les arbustes envahissants plantés pour le même effet restaient sous 1 %. Mis en présence des deux, des passereaux en migration ont vidé les indigènes plus vite.",
+  "crops.redirect1": "En partie, et ce n'est pas une affaire de goût : c'est une affaire de gras. Dans une étude, les fruits d'arbustes indigènes titraient de 6 à 48 % de matière grasse ; les arbustes envahissants plantés pour le même effet restaient sous 1 %. Mis en présence des deux, des passereaux en migration ont vidé les indigènes plus vite.",
   "crops.fig.fat.native": "Fruits d'arbustes indigènes",
   "crops.fig.fat.nativeValue": "6 à 48 %",
   "crops.fig.fat.invasive": "Fruits d'arbustes envahissants",
   "crops.fig.fat.invasiveValue": "moins de 1 %",
-  "crops.fig.fat.caption":
-    "Matière grasse dans le fruit, en pourcentage du poids. Un oiseau qui fait le plein pour migrer cherche le gras : c'est pour cela que, s'il a le choix, il vide l'arbuste indigène en premier.",
+  "crops.fig.fat.caption": "Matière grasse dans le fruit, en pourcentage du poids. Un oiseau qui fait le plein pour migrer cherche le gras : s'il a le choix, il vide l'arbuste indigène en premier.",
   "crops.redirect2":
     "Et les dégâts sont les pires là où le fruit est rare. Sur trois États et trois saisons, la part d'une récolte de cerises perdue à cause des oiseaux était la plus forte l'année de faible rendement, et dans les parcelles ayant le moins de fruits autour d'elles. Les oiseaux mangent à peu près ce qu'ils mangent ; quand il y a moins à se partager, vos fruits en représentent une plus grosse part.",
   "crops.fig.ledger.yesHead": "Ce que les données montrent",
@@ -2662,25 +2462,19 @@ export const fr: Dict = {
     "Quoi que ce soit sur votre jardin en particulier. Ce sont des vergers commerciaux, mesurés sur des hectares et sur des années.",
   "crops.fig.ledger.caption":
     "L'affirmation de cette page la plus facile à surinterpréter, coupée en deux. Emmenez la première moitié dans une discussion et c'est la seconde qui vous revient : apprenez les deux.",
-  "crops.redirect3":
-    "Plantez donc les indigènes pour la pollinisation et pour les mangeurs de ravageurs, qui sont mesurés et importants. Prenez une baisse des dégâts d'oiseaux pour une prime que vous n'avez pas payée — et posez un filet sur les cerises.",
+  "crops.redirect3": "Plantez donc les indigènes pour la pollinisation et pour les mangeurs de ravageurs, qui sont mesurés et importants. Prenez une baisse des dégâts d'oiseaux pour une prime que vous n'avez pas payée. Et posez un filet sur les cerises.",
 
   // --- et l'autre côté ---------------------------------------------------
   "crops.counterTitle": "Les données contraires, et ce que nous en faisons",
-  "crops.counterLede":
-    "Tout ce qui précède est une moyenne, et l'un de ces points est un vrai coût. Qui ne lit que la bonne moitié se fera prendre en défaut par le premier voisin qui en connaît un — les voici donc, sans les adoucir.",
+  "crops.counterLede": "Tout ce qui précède est une moyenne, et l'un de ces points est un vrai coût. Qui ne lit que la bonne moitié se fera prendre en défaut par le premier voisin qui en connaît un. Les voici donc, sans les adoucir.",
   "crops.counter1": "Ce n'est pas une loi de la nature. ",
-  "crops.counter1Rest":
-    "La plus grande synthèse sur le sujet — 132 études, près de 7 000 sites — montre que les ravageurs et leurs prédateurs réagissent très différemment à la végétation sauvage voisine, d'un endroit à l'autre. Les bandes fleuries aident en moyenne. Elles n'aident pas partout, et personne ne peut vous dire d'avance de quel côté vous tomberez.",
+  "crops.counter1Rest": "La plus grande synthèse sur le sujet (132 études, près de 7 000 sites) montre que les ravageurs et leurs prédateurs réagissent très différemment à la végétation sauvage voisine, d'un endroit à l'autre. Les bandes fleuries aident en moyenne. Elles n'aident pas partout, et personne ne peut vous dire d'avance de quel côté vous tomberez.",
   "crops.counter2": "Une bordure abrite les ravageurs autant que les prédateurs. ",
-  "crops.counter2Rest":
-    "Les bandes fleuries ont amélioré la régulation de 16 % ; les haies, dans la même synthèse, n'ont montré aucun gain significatif. Et une étude de 2024 sur les bordures de champs de melons a observé des haies et des bandes fleuries abritant plus de prédateurs qu'une bordure ordinaire — et plus de ravageurs avec eux.",
+  "crops.counter2Rest": "Les bandes fleuries ont amélioré la régulation de 16 % ; les haies, dans la même synthèse, n'ont montré aucun gain significatif. Et une étude de 2024 sur les bordures de champs de melons a observé des haies et des bandes fleuries abritant plus de prédateurs qu'une bordure ordinaire, et plus de ravageurs avec eux.",
   "crops.counter3": "Quelques indigènes font un mauvais voisin pour telle culture précise. ",
-  "crops.counter3Rest":
-    "La rouille du pommier et du genévrier a besoin des deux hôtes à la fois, en général à {distance} près : un verger et un genévrier de Virginie font donc mauvais ménage. Les punaises ternes passent l'hiver dans les bordures enherbées et broussailleuses et gagnent les fraisiers et le coton quand la bordure se dessèche. Ce sont des couples plante-culture précis, pas un argument contre les indigènes — mais si vous cultivez des pommes, ce couple-là est le vôtre.",
+  "crops.counter3Rest": "La rouille du pommier et du genévrier a besoin des deux hôtes à la fois, en général à {distance} près : un verger et un genévrier de Virginie font donc mauvais ménage. Les punaises ternes passent l'hiver dans les bordures enherbées et broussailleuses et gagnent les fraisiers et le coton quand la bordure se dessèche. Ce sont des couples plante-culture précis, pas un argument contre les indigènes. Mais si vous cultivez des pommes, ce couple-là est le vôtre.",
   "crops.counter4": "Exotique ne veut pas automatiquement dire pire. ",
-  "crops.counter4Rest":
-    "Une étude sur des érables et des chênes de ville a montré que les espèces exotiques conservaient des communautés d'auxiliaires très proches de celles de leurs parentes indigènes — et portaient moins de ravageurs. Être indigène prédit ce qu'un insecte peut manger. Cela ne prédit pas tout.",
+  "crops.counter4Rest": "Une étude sur des érables et des chênes de ville a montré que les espèces exotiques conservaient des communautés d'auxiliaires très proches de celles de leurs parentes indigènes, et portaient moins de ravageurs. Être indigène prédit ce qu'un insecte peut manger. Cela ne prédit pas tout.",
   "crops.counter5": "Dix-neuf écologues ont contesté le cadre lui-même. ",
   "crops.counter5Rest":
     "Dans Nature, Mark Davis et dix-huit co-auteurs ont défendu l'idée qu'une espèce doit être jugée sur ce qu'elle fait plutôt que sur son origine. Nous pensons que l'origine reste le meilleur raccourci disponible pour un jardinier qui veut nourrir le réseau alimentaire local. C'est un raccourci, et nous préférons le dire.",
@@ -2715,7 +2509,7 @@ export const fr: Dict = {
   "crops.src.karp": "là où le schéma ne tient pas, sur 132 études",
   "crops.src.frank": "arbres exotiques en ville : les mêmes auxiliaires, moins de ravageurs",
   "crops.src.davis": "plaidoyer pour juger une espèce sur ce qu'elle fait, non sur son origine",
-  "crops.src.margins": "des bordures de culture abritant plus de prédateurs — et plus de ravageurs",
+  "crops.src.margins": "des bordures de culture abritant plus de prédateurs, et plus de ravageurs",
   "crops.src.rust": "la rouille du pommier et du genévrier, et ses deux hôtes",
   "crops.src.lygus": "la punaise qui quitte une bordure desséchée pour les fraisiers",
 
@@ -2733,24 +2527,24 @@ export const fr: Dict = {
   "society.what.woodland": "plantation de forêts indigènes",
   "society.what.provenance": "pépinières d'origine locale",
   "society.what.pollinators": "guides de plantation pour pollinisateurs",
-  "evidence.checklist": "la Liste mondiale de Kew",
-  "evidence.confirmedBefore": "Indigène en {area} — ",
-  "evidence.confirmedAfter": " le confirme, vérifié en {when}.",
-  "evidence.coarse": "Cette liste décrit l'aire à l'échelle de {area}, pas plus finement.",
+  "evidence.checked": "Vérifié en {when}",
+  "evidence.guide": "Ce que veut dire cette vérification (en anglais)",
+  "evidence.checklist": "La Liste mondiale de Kew",
+  "evidence.confirmedAfter": " confirme qu'elle est indigène en {area}.",
+  "evidence.coarse": "Kew décrit {area} dans son ensemble, pas plus finement.",
   "evidence.unconfirmed.introduced": " la dit introduite en {area}, et non indigène.",
   "evidence.unconfirmed.absent": " ne la recense pas en {area}.",
   "evidence.unconfirmed.unmatched": " n'a aucune entrée sous ce nom.",
   "evidence.unconfirmed.inconclusive": " n'a pas d'entrée pour cette sous-espèce : la vérification n'a pas pu aboutir.",
-  "evidence.stands": "Nous la maintenons sur la flore régionale citée plus bas.",
+  "evidence.stands": "Nous la gardons sur la liste régionale citée plus bas.",
 
   "steps.reading": "Pour aller plus loin",
   "reading.title": "Pour aller plus loin",
-  "reading.docTitle": "Pour aller plus loin — Indigene",
-  "reading.regionDocTitle": "Pour aller plus loin : {region} — Indigene",
+  "reading.docTitle": "Pour aller plus loin · Indigene",
+  "reading.regionDocTitle": "Pour aller plus loin : {region} · Indigene",
   "reading.lede": "Les livres, sites et conférences vers qui se tourner ensuite : les idées qui fondent Indigene, puis les lectures de chaque région.",
   "reading.regionLede": "Les livres, sites et chaînes vers qui se tourner ensuite.",
-  "reading.howChosen":
-    "Derrière chaque choix, un expert — botaniste, association, pépiniériste — et la preuve qu'on s'y fie : la recommandation d'une association, un prix, des rééditions ou un public.",
+  "reading.howChosen": "Derrière chaque choix, un expert (botaniste, association, pépiniériste) et la preuve qu'on s'y fie : la recommandation d'une association, un prix, des rééditions ou un public.",
   "reading.backToIndex": "Toutes les lectures",
   "reading.worldTitle": "Les idées derrière Indigene",
   "reading.byRegion": "Par région",
@@ -2907,7 +2701,7 @@ export const fr: Dict = {
 
   // « Plantes indigènes, pas nativisme » (steps/native.ts).
   "steps.people": "Peuples",
-  "people.docTitle": "Peuples et plantes — Indigene",
+  "people.docTitle": "Peuples et plantes · Indigene",
   "people.title": "Peuples et plantes",
   "people.lede": "Ces plantes ont été nommées, mangées, tissées et entretenues par des peuples qui sont toujours là. Indigene renvoie à leurs savoirs. Il ne parle pas à leur place.",
   "people.plantsTitle": "Des plantes et leur histoire",
@@ -2933,11 +2727,11 @@ export const fr: Dict = {
   "people.nativeLink": "Ce que veut dire « indigène » ici, et ce qu'il ne veut jamais dire",
   "posts.ipd2026.peopleLink": "Peuples et plantes",
   "steps.posts": "Articles",
-  "posts.docTitle": "Articles — Indigene",
+  "posts.docTitle": "Articles · Indigene",
   "posts.title": "Articles",
   "posts.lede": "Des textes sur les plantes, les lieux et les peuples derrière Indigene.",
   "posts.allPosts": "Tous les articles",
-  "posts.ipd2026.docTitle": "Ces plantes qui ont d'abord nourri des peuples — Indigene",
+  "posts.ipd2026.docTitle": "Ces plantes qui ont d'abord nourri des peuples · Indigene",
   "posts.ipd2026.title": "Ces plantes qui ont d'abord nourri des peuples",
   "posts.ipd2026.occasion": "Journée des peuples autochtones",
   "posts.ipd2026.lede": "Avant d'être des « plantes indigènes », elles ont nourri, lié et vêtu les peuples qui en prenaient soin. Ces peuples sont toujours là. Les plantes aussi, et vous pouvez les cultiver.",
@@ -2959,7 +2753,7 @@ export const fr: Dict = {
   "posts.ipd2026.next": "Pour l'instant, seule une poignée de pages de plantes racontent cette histoire. Nous l'écrivons pour chaque plante dont les sources sont solides, en nommant la nation et en citant d'où vient chaque fait, en commençant par l'Amérique du Nord. Si vous connaissez la bonne source pour les plantes de votre peuple, écrivez à {email} ou {tell} sur GitHub.",
   "posts.ipd2026.tell": "dites-le-nous",
   "steps.native": "Indigène",
-  "native.docTitle": "Plantes indigènes, pas nativisme — Indigene",
+  "native.docTitle": "Plantes indigènes, pas nativisme · Indigene",
   "native.title": "Plantes indigènes, pas nativisme",
   "native.lede": "« Indigène », dans Indigene, veut dire là où une plante a évolué, et ce qui a évolué avec elle. Cela ne dit rien des gens, et rien des frontières.",
   "native.short1": "Une plante est indigène là où elle a évolué avec les insectes, les champignons et les oiseaux d'ici. C'est cette histoire commune qui leur permet de s'en servir.",
@@ -3011,9 +2805,9 @@ export const fr: Dict = {
   // « Ce qu'Indigene a coûté en LLM » (steps/llm.ts).
   // ---------------------------------------------------------------------
   "steps.llm": "Coût du LLM",
-  "llm.docTitle": "Ce qu'Indigene a coûté en LLM — Indigene",
+  "llm.docTitle": "Ce qu'Indigene a coûté en LLM · Indigene",
   "llm.title": "Ce qu'Indigene a coûté en LLM",
-  "llm.lede": "Indigene a été écrit avec Claude, un grand modèle de langage (LLM) conçu par Anthropic — le genre de programme que l'on appelle souvent IA. Voici ce que cela a consommé, et comment l'application est conçue pour le rembourser.",
+  "llm.lede": "Indigene a été écrit avec Claude, un grand modèle de langage (LLM) conçu par Anthropic. On appelle souvent ce genre de programme une IA. Voici ce que cela a consommé, et comment l'application est conçue pour le rembourser.",
   "llm.tilesLabel": "La facture, en un coup d'œil",
   "llm.tile.range": "sans doute {low}–{high}",
   "llm.tile.sessions.label": "Sessions",
@@ -3092,7 +2886,7 @@ export const fr: Dict = {
   // « Homegrown National Park » (steps/homegrown.ts) — l'idée sur laquelle Indigene repose.
   // ---------------------------------------------------------------------
   "steps.homegrown": "Homegrown",
-  "homegrown.docTitle": "Homegrown National Park — Indigene",
+  "homegrown.docTitle": "Homegrown National Park · Indigene",
   "homegrown.title": "Homegrown National Park",
   "homegrown.lede": "L'idée de l'écologue Doug Tallamy : rendre aux plantes indigènes la moitié des pelouses américaines, et les jardins, ensemble, deviennent un parc national. Indigene est fait pour vous aider à planter votre parcelle.",
   "homegrown.ideaTitle": "Un parc fait de jardins",

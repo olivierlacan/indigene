@@ -55,7 +55,8 @@ export async function renderPriorities(main: HTMLElement): Promise<(() => void) 
   const rc = recompute("goals");
 
   // --- The live preview -----------------------------------------------------
-  const leaders = el("ol", { class: "preview-list" });
+  const leaders = el("ol", { class: "podium" });
+  let leaderId: string | null = null;
   const previewCount = el("p", { class: "preview-count" });
   const zeroNote = el("p", { class: "note warn", style: "display:none;margin:0.5rem 0 0" }, t("priorities.allZero"));
 
@@ -67,16 +68,23 @@ export async function renderPriorities(main: HTMLElement): Promise<(() => void) 
     const window_ = ranked.slice(0, PREVIEW_DEPTH);
     const good = ranked.filter((r) => r.match !== "poor").length;
 
-    leaders.replaceChildren(...window_.slice(0, 3).map((r) =>
-      el("li", {}, [
-        el("span", { class: "preview-glyph", "aria-hidden": "true" }, [silhouetteFor(r.plant.form, 20)]),
-        commonName(r.plant),
+    // A podium: gold, silver, bronze. When a slider puts a new plant first,
+    // it pops in, so the change is something you see, not something you read.
+    const top = window_.slice(0, 3);
+    const newLeader = !firstPaint && top[0] && top[0].plant.id !== leaderId;
+    leaderId = top[0]?.plant.id ?? null;
+    leaders.replaceChildren(...top.map((r, i) =>
+      el("li", { class: i === 0 && newLeader ? "is-new" : undefined }, [
+        el("span", { class: "podium-rank", "aria-hidden": "true" }, String(i + 1)),
+        el("span", { class: "podium-glyph", "aria-hidden": "true" }, [silhouetteFor(r.plant.form, 22)]),
+        el("span", { class: "podium-name" }, commonName(r.plant)),
       ])
     ));
-    previewCount.textContent = t("priorities.previewCount", {
-      good: fmtNumber(good),
-      n: fmtNumber(ranked.length),
-    });
+    // "106 of 106" said nothing the first number didn't; when every plant fits,
+    // say so once.
+    previewCount.textContent = good === ranked.length
+      ? t("priorities.previewAll", { n: fmtNumber(ranked.length) })
+      : t("priorities.previewCount", { good: fmtNumber(good), n: fmtNumber(ranked.length) });
     zeroNote.style.display = SCORE_KEYS.every((k) => store.weights[k] === 0) ? "" : "none";
     rc.report(context, window_.map((r) => ({ id: r.plant.id, name: commonName(r.plant) })),
       ranked.length, firstPaint);
@@ -139,7 +147,7 @@ export async function renderPriorities(main: HTMLElement): Promise<(() => void) 
       word,
       row: el("div", { class: "weight-row" }, [
         el("div", { class: "weight-head" }, [
-          el("span", {}, [el("span", { "aria-hidden": "true" }, `${label.icon} `), label.name]),
+          el("span", { class: "weight-name" }, [el("span", { class: "weight-icon", "aria-hidden": "true" }, label.icon), label.name]),
           word,
         ]),
         input,

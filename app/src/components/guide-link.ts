@@ -11,7 +11,7 @@ import { el } from "../ui";
 
 /** The guide pages the app links to. `guide-link.test.ts` holds each one to a
  *  published section of the catalog, so a renamed guide can't leave a dead link. */
-export const LINKED_GUIDES = ["ranking", "spots", "inaturalist", "find"] as const;
+export const LINKED_GUIDES = ["ranking", "spots", "inaturalist", "find", "regions", "sources"] as const;
 export type GuideId = (typeof LINKED_GUIDES)[number];
 
 /** A real path (like the footer's Guide link), so the base Vite resolved is honoured. */

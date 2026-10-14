@@ -128,8 +128,15 @@ export const SECTIONS = [
           "Indigene looks up your winter cold, rainfall, slope and soil from public " +
           "maps. Soil maps are coarse, so it asks you one thing: **how wet does the " +
           "spot stay?** Dry, evenly moist, or wet. The map’s guess is already " +
-          "picked; change it if you know better. A 60-second soil check on the " +
-          "page tells you how to find out with your hands.",
+          "picked; change it if you know better. Not sure? Your hands can tell you " +
+          "in a minute:",
+        steps: [
+          "Wet a small handful of soil until it’s damp, not dripping.",
+          "Squeeze it into a ball. Won’t hold together and feels gritty? It’s sandy: pick **Dry**.",
+          "Press it between thumb and finger into a flat ribbon.",
+          "A short ribbon that breaks and feels smooth is loam or silt: **Evenly moist**. A long, sticky ribbon is clay, which often stays **Wet**.",
+        ],
+        after: "What you find in your hand beats the map.",
       },
       {
         id: "goals",
@@ -210,19 +217,19 @@ export const SECTIONS = [
         id: "goals",
         heading: "Pick a goal",
         body:
-          "On the **What matters most here?** step, or with **Change** beside " +
-          "“Ranked for” at the top of your list:",
+          "On the **What matters most here?** step, or by tapping **Goal** at the " +
+          "top of your list:",
         list: [
-          "**Feed the most wildlife**: the usual goal. Caterpillars first, then bees and birds.",
-          "**A bit of everything**: wildlife, rain and easy care count about the same.",
-          "**Butterflies & moths**: leaves their caterpillars can eat, flowers for the adults.",
-          "**Birds**: berries, seeds, cover, and caterpillars to feed their chicks.",
-          "**Stop erosion**: deep roots for a slope or bank that washes away.",
-          "**Soak up rain**: for a wet corner, a downspout or a rain garden.",
-          "**Easiest to grow**: the best odds of surviving with no watering and little fuss.",
+          "🐛 **Feed the most wildlife**: the usual goal. Caterpillars first, then bees and birds.",
+          "⚖️ **A bit of everything**: wildlife, rain and easy care count about the same.",
+          "🦋 **Butterflies & moths**: leaves their caterpillars can eat, flowers for the adults.",
+          "🐦 **Birds**: berries, seeds, cover, and caterpillars to feed their chicks.",
+          "⛰️ **Stop erosion**: deep roots for a slope or bank that washes away.",
+          "🌧️ **Soak up rain**: for a wet corner, a downspout or a rain garden.",
+          "🌵 **Easiest to grow**: the best odds of surviving with no watering and little fuss.",
         ],
         after:
-          "Under **⚖️ Fine-tune each one**, seven sliders set how much each thing " +
+          "Under **⚖️ Fine-tune it yourself**, seven sliders set how much each thing " +
           "counts, from “ignore it” to “counts most of all”. Move one and the goal " +
           "becomes “your own mix”. A preview shows the top three change as you go.",
       },
@@ -240,7 +247,7 @@ export const SECTIONS = [
         id: "filters",
         heading: "Filters",
         body:
-          "Open **🔍 Filters** on your list to keep only plants that pass:",
+          "Tap **Filters** at the top of your list to keep only plants that pass:",
         list: [
           "🌾 **Survives with no watering** once it has settled in.",
           "🦌 **Deer tend to leave it alone.**",
@@ -460,8 +467,8 @@ export const SECTIONS = [
         body:
           "Tiles give its sun, moisture, winter hardiness, soil acidity (pH), full " +
           "size, growth, caterpillar count and flowering months. A chart shows its " +
-          "height year by year. Beside them, a **Confidence** meter says how sure " +
-          `we are of these figures. [Where the numbers come from](${guide("sources")}).`,
+          "height year by year. Beside them, a **Confidence** meter says [how sure " +
+          `we are](${APP}/confidence) of these figures. [Where the numbers come from](${guide("sources")}).`,
       },
       {
         id: "below",
@@ -756,6 +763,21 @@ export const SECTIONS = [
           `Its [worst invasives](${guide("invasives")}), [look-alikes](${guide("lookalikes")}) and [native swaps](${guide("alternatives")}).`,
           "The wildlife its plants feed, and further reading local experts recommend.",
         ],
+      },
+      {
+        id: "zones",
+        heading: "Ecoregions and hardiness zones",
+        body: [
+          "Two numbers describe where you are, and you’ll see both as small " +
+            "capsules beside your spot.",
+        ],
+        list: [
+          "**Ecoregion**, like **EPA 2**: an area with the same climate, soils and wild plants. Scientists draw them, and Indigene uses them to pick your plant list. In the US they come from the EPA; across the US–Canada border from the CEC, a three-country commission; in Europe from the European Environment Agency (EEA); south of the equator from RESOLVE, a conservation group.",
+          "**Hardiness zone**, like **USDA 8b**: how cold your coldest winter nights get, in steps of 10 °F (about 5.5 °C). Plant tags use it. Indigene works it out for your exact spot from weather records (Open-Meteo), using the USDA’s steps, so no map is needed.",
+        ],
+        after:
+          "A plant is “hardy” in your zone if it survives that cold. Plants that " +
+          "aren’t are left off your list.",
       },
       {
         id: "no-location",
@@ -1171,8 +1193,8 @@ export const SECTIONS = [
         id: "confidence",
         heading: "The Confidence meter",
         body:
-          "Each plant’s page carries a meter of one to three bars, for how sure we " +
-          "are of its figures. It rests mostly on how many kinds of caterpillar " +
+          `Each plant’s page carries a meter of one to three bars, for [how sure we are](${APP}/confidence) ` +
+          "of its figures. It rests mostly on how many kinds of caterpillar " +
           "the plant feeds, because that number drives the wildlife ranking:",
         list: [
           "**High**: counted from a dataset for its region, with a cited source for where it grows wild.",
@@ -1189,8 +1211,10 @@ export const SECTIONS = [
         body:
           "Kew’s World Checklist, kept by the Royal Botanic Gardens in London, " +
           "records where every plant grows wild. Each plant’s page says whether it " +
-          "agrees the plant is native where you are, and when we checked. Where it " +
-          "disagrees, the page says that too.",
+          "agrees the plant is native where you are, and when we checked: a green " +
+          "check when it agrees, a caution mark when it doesn’t. Disagreement isn’t " +
+          "a mistake on its own: Kew records whole states and provinces, and a " +
+          `regional flora can know better. [What “native” means here](${APP}/native).`,
       },
     ],
     visit: [

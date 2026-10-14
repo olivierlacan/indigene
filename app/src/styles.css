@@ -2087,12 +2087,12 @@ input[type="range"] {
 }
 
 /* --- Result cards --- */
+/* The goal and filter rows. Not pinned: two full rows held under the header
+   covered the figures and the plants scrolling beneath them. */
 .result-controls {
-  position: sticky;
-  top: 3.5rem; /* just below the sticky header (title/nav row ≈ 3.4rem tall) */
-  z-index: 5;
-  background: var(--bg);
-  padding: 0.5rem 0;
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.5rem 0 0;
 }
 .weights details,
 details.weights {
@@ -2116,22 +2116,6 @@ details.weights > summary {
   height: 1.25rem;
   color: var(--brand);
 }
-/* The plant list's controls block is sticky, so a panel taller than the screen
-   could never show its bottom. Open panels *there* scroll internally instead,
-   with the summary pinned so the way out never scrolls away. Only there: the
-   same panel on an ordinary page (the goals step's sliders) should let the page
-   scroll, not open a second scrolling region inside it. */
-.result-controls details[open] {
-  max-height: calc(100vh - 6rem);
-  max-height: calc(100dvh - 6rem);
-  overflow-y: auto;
-}
-.result-controls details[open] > summary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  background: var(--surface);
-}
 .weight-row {
   display: grid;
   grid-template-columns: 1fr;
@@ -2142,6 +2126,8 @@ details.weights > summary {
    seven of them don't fill the whole screen. */
 .weights input[type="range"] {
   height: 2.5rem;
+  accent-color: var(--brand);
+  width: 100%;
 }
 .weight-row .weight-head {
   display: flex;
@@ -2153,9 +2139,15 @@ details.weights > summary {
    Same text the slider reports as its `aria-valuetext`. */
 .weight-word {
   flex: 0 0 auto;
-  font-weight: 650;
+  font-size: 0.82rem;
+  font-weight: 700;
   color: var(--brand-ink);
+  background: var(--brand-bg);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
 }
+.weight-name { display: inline-flex; align-items: center; gap: 0.45rem; font-weight: 650; }
+.weight-icon { font-size: 1.2rem; line-height: 1; }
 /* What the thing being weighed actually means — the sentence that used to live
    only on a plant's own page, now beside the slider that acts on it. */
 .weight-why {
@@ -2167,6 +2159,15 @@ details.weights > summary {
 
 /* The plant list's two figures (natives, good fits), under its controls. */
 .result-tally { margin: 0.75rem 0 1rem; }
+
+/* The filters panel: tight rows (still a 44px tap target each), two columns
+   once there's room for them. */
+.filter-grid { display: grid; grid-template-columns: 1fr; column-gap: 1.5rem; }
+@media (min-width: 40rem) { .filter-grid { grid-template-columns: 1fr 1fr; } }
+.filter-check {
+  display: flex; gap: 0.6rem; align-items: center;
+  min-height: 2.75rem; font-weight: 500; line-height: 1.25;
+}
 
 /* A looked-up fact on the soil & climate step: icon, small label, value. */
 .fact { display: flex; gap: 0.75rem; align-items: flex-start; margin: 0.65rem 0 0; }
@@ -2298,35 +2299,48 @@ details.weights:has(> summary.control-row):hover { border-color: var(--brand); }
   letter-spacing: 0.03em;
   color: var(--ink-soft);
 }
-/* The leaders read across, not down: this panel is pinned under the header
-   while the sliders are being moved, and a stacked list of three would spend a
-   third of a phone screen holding still. Numbered, because which one is *first*
-   is the thing a slider changes. */
-.preview-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.15rem 0.7rem;
+/* The leaders, as a podium: three columns, gold, silver and bronze, each with
+   the plant's silhouette and name. Across, not down: this panel is pinned
+   under the header while the sliders move, and three stacked rows would hold
+   a third of a phone screen still. */
+.podium {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
   margin: 0;
   padding: 0;
   list-style: none;
-  counter-reset: pick;
-  font-weight: 650;
-  font-size: 0.95rem;
 }
-.preview-list li {
-  counter-increment: pick;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.2rem;
+.podium li {
+  display: grid;
+  justify-items: center;
+  gap: 0.15rem;
+  padding: 0.45rem 0.3rem 0.4rem;
+  border-radius: 12px;
+  background: var(--brand-bg);
+  text-align: center;
 }
-.preview-list li::before {
-  content: counter(pick) ".";
-  color: var(--ink-soft);
-  font-weight: 700;
+.podium-rank {
+  display: grid; place-items: center;
+  width: 1.45rem; height: 1.45rem; border-radius: 50%;
+  font-size: 0.8rem; font-weight: 800; color: #2a2108;
+  background: #e2b33c; box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.18);
 }
-.preview-glyph {
-  display: inline-flex;
-  vertical-align: -0.3em;
+.podium li:nth-child(2) .podium-rank { background: #c9ced6; color: #23262b; }
+.podium li:nth-child(3) .podium-rank { background: #d29a63; color: #2b1a0b; }
+.podium-glyph { display: inline-flex; color: var(--brand); }
+.podium-name {
+  font-size: 0.82rem; font-weight: 650; line-height: 1.2; color: var(--brand-ink);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.podium li.is-new { animation: podium-pop 380ms cubic-bezier(0.2, 0.9, 0.3, 1.4); }
+@keyframes podium-pop {
+  0% { transform: scale(0.85); }
+  60% { transform: scale(1.06); }
+  100% { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .podium li.is-new { animation: none; }
 }
 .preview-count {
   margin: 0.4rem 0 0.4rem;
@@ -2439,6 +2453,60 @@ details.weights:has(> summary.control-row):hover { border-color: var(--brand); }
 .plant-pick-link:focus-visible {
   outline: none;
 }
+/* The match verdict runs edge to edge as a band: the card is already the
+   rounded box, so the band needs no corners of its own. Same 1rem gutter as
+   the text, and the same space above it as below. */
+.plant-pick > .note {
+  border-radius: 0;
+  margin: 0.9rem 0;
+  padding: 0.75rem 1rem;
+}
+/* "Top 25 of 106" and the button for the next 25. */
+.show-more { display: grid; justify-items: center; gap: 0.5rem; margin: 0.5rem 0 1rem; }
+.show-more p { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+.list-end { margin: 0.5rem 0 1rem; text-align: center; color: var(--ink-soft); font-size: 0.9rem; }
+
+/* The card's figures, as small icon chips. */
+.pick-facts {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  margin: 0 0 0.6rem; padding: 0 1rem; list-style: none;
+}
+.pick-facts li {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.2rem 0.6rem; border-radius: 999px;
+  background: var(--bg); border: 1px solid var(--line);
+  font-size: 0.85rem; font-weight: 650; color: var(--ink);
+}
+/* "Counts most here": a footer band in the page's own tone, apart from the prose. */
+.plant-pick > .pick-value {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 0.5rem;
+  margin: 0.75rem 0 0; padding: 0.65rem 1rem 0.75rem;
+  background: var(--bg); border-top: 1px solid var(--line);
+}
+.pick-value-k {
+  width: 100%; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.pick-value-chip {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  padding: 0.2rem 0.6rem; border-radius: 999px;
+  background: var(--brand-bg); color: var(--brand-ink);
+  font-size: 0.85rem; font-weight: 650;
+}
+/* Labels on a card sit above the card's stretched link, so a tap explains
+   them instead of opening the plant. */
+.plant-pick .plant-badges { position: relative; z-index: 1; }
+.badge-tip-btn { font: inherit; cursor: help; border: 0; }
+.badge-tip {
+  position: absolute; z-index: 60; max-width: min(20rem, calc(100vw - 1rem));
+  padding: 0.6rem 0.8rem; border-radius: 10px;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  font-size: 0.88rem; line-height: 1.4;
+}
+.badge-tip p { margin: 0 0 0.35rem; }
+.badge-tip a { color: var(--focus); font-size: 0.82rem; }
 .pick-meta,
 .pick-gives,
 .pick-value {
@@ -3604,19 +3672,33 @@ details.weights:has(> summary.control-row):hover { border-color: var(--brand); }
 .prop-method-link:focus-visible {
   text-decoration: underline;
 }
+/* Each method is its own block with room around it: this card gets read with
+   a trowel in the other hand, so it should be easy to find your place in. */
+.prop-methods { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: 0.9rem; }
+.prop-method {
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--brand);
+  background: var(--bg);
+  border-radius: 0 10px 10px 0;
+}
+.prop-method .prop-method-link { font-weight: 650; font-size: 1.02rem; line-height: 1.35; }
+.prop-plain { margin: 0.5rem 0 0; line-height: 1.6; color: var(--ink-soft); }
 .prop-when {
-  margin: 0.1rem 0 0;
+  display: inline-block;
+  margin: 0.45rem 0 0;
+  padding: 0.2rem 0.6rem;
+  border-radius: 8px; /* it wraps on a phone, so not a pill */
+  background: var(--brand-bg);
+  color: var(--brand-ink);
   font-size: 0.85rem;
-  color: var(--ink-soft);
 }
 .prop-when .k {
   font-weight: 700;
-  color: var(--ink);
   margin-right: 0.3rem;
 }
 .prop-all {
-  margin: 0.7rem 0 0;
-  font-size: 0.9rem;
+  margin: 1rem 0 0;
+  font-size: 0.95rem;
 }
 
 /* --- Look-alikes ---------------------------------------------------------
@@ -5192,6 +5274,9 @@ body[data-layout="profile"] .wip-banner-text {
 }
 /* "USDA" is the scale's name, not part of the number — quieter, and the
    letter-spacing keeps four capitals from reading as a shout. */
+a.zone-chip-link { text-decoration: none; cursor: pointer; }
+a.zone-chip-link:hover, a.zone-chip-link:focus-visible { color: var(--focus); border-color: currentColor; }
+.condition-list .zone-chip, .fact .zone-chip { margin-left: 0.15rem; }
 .zone-chip-k {
   font-weight: 700;
   font-size: 0.82em;
@@ -7261,3 +7346,30 @@ a.welcome-way:hover strong { text-decoration: underline; }
    brand colour; the date sits back, a touch smaller, with even numerals. */
 .post-when .post-occasion { font-weight: 600; color: var(--brand); }
 .post-when .post-date { font-size: 0.92em; font-variant-numeric: tabular-nums; }
+
+/* A done step is a link back to it (main.ts): same look, plus the pointer and
+   a hover underline on the word. */
+.steps-list .step-link {
+  display: inherit; align-items: inherit; gap: inherit;
+  color: inherit; text-decoration: none;
+}
+.steps-list .step-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Kew's check on a plant's native status: the mark is the verdict at a glance
+   (components/native-evidence.ts). */
+.native-evidence { display: flex; gap: 0.6rem; align-items: flex-start; }
+.native-evidence p { margin: 0; min-width: 0; }
+.evidence-mark { flex: none; width: 1.25rem; height: 1.25rem; margin-top: 0.1rem; }
+.evidence-ok { color: var(--brand); }
+.evidence-warn { color: #c98a1b; }
+.native-evidence-meta { display: block; margin-top: 0.15rem; color: var(--ink-soft); font-size: 0.85rem; }
+.native-evidence-meta a { color: inherit; }
+
+/* Copy an identifier (a plant's IPNI code) in one tap. */
+.copy-btn {
+  display: inline-grid; place-items: center; vertical-align: -0.3em;
+  width: 2rem; height: 2rem; margin: 0 0.15rem;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: transparent; color: var(--ink-soft); cursor: pointer;
+}
+.copy-btn:hover, .copy-btn:focus-visible { color: var(--focus); border-color: currentColor; }

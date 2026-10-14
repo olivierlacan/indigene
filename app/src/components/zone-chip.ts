@@ -17,6 +17,7 @@ import type { RegionMeta } from "../data/region";
 import { el } from "../ui";
 import { t } from "../lib/i18n";
 import { regionReference } from "../lib/names";
+import type { EcoregionInfo } from "../types";
 
 export function zoneChip(meta: RegionMeta): HTMLElement {
   const approx = meta.zones.startsWith("≈");
@@ -38,4 +39,31 @@ export function regionRefLine(meta: RegionMeta, className: string): HTMLElement 
     el("span", { class: "zone-place" }, regionReference(meta)),
     zoneChip(meta),
   ]);
+}
+
+/**
+ * The same capsule for one spot's own figures — its hardiness zone ("USDA 8b")
+ * or its ecoregion ("EPA 2") — linking to the guide that explains both scales
+ * and where each number comes from. Quiet on purpose: the plain words around
+ * it carry the meaning; the code is for whoever wants to look it up.
+ */
+export function scaleChip(scale: string, value: string, label: string, href: string): HTMLElement {
+  return el("a", { class: "zone-chip zone-chip-link", href, title: label, "aria-label": label }, [
+    el("span", { class: "zone-chip-k" }, scale),
+    value,
+  ]);
+}
+
+const SCALE_NAME: Record<EcoregionInfo["provider"], string> = {
+  "epa-omernik": "EPA",
+  "cec-na": "CEC",
+  "eea-biogeo": "EEA",
+  "resolve-2017": "RESOLVE",
+};
+
+/** "EPA 2", or for Europe's named (not numbered) regions, "EEA Atlantic". */
+export function ecoregionChip(info: EcoregionInfo, href: string): HTMLElement {
+  const scale = SCALE_NAME[info.provider];
+  const value = info.provider === "eea-biogeo" ? info.name : info.code;
+  return scaleChip(scale, value, t("zoneChip.ecoregion", { scale, code: info.code, name: info.name }), href);
 }

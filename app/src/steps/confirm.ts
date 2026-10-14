@@ -6,13 +6,13 @@ import {
   texturePlain,
   slopePlain,
   sunPlain,
-  ZONE_INFO_URL,
 } from "../lib/plain";
 import { whyThis } from "../components/learn";
 import { moistureIcon } from "../components/moisture-icon";
+import { scaleChip, ecoregionChip } from "../components/zone-chip";
 import { guideHref, quietLink } from "../components/guide-link";
 import { temperature } from "../lib/units";
-import { t, tx, fmtNumber } from "../lib/i18n";
+import { t, fmtNumber } from "../lib/i18n";
 import { elevation, rainfall } from "../lib/units";
 
 // Step 3+4+5: confirm the site. Site data is coarse — soil map units cover
@@ -61,13 +61,13 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   // same ❄️ and 🌧️ the plant pages' figures use), the words the detail.
   const rows: (HTMLElement | null)[] = [];
   if (site) {
-    const zoneLink = site.zone
-      ? el("a", { href: ZONE_INFO_URL, target: "_blank", rel: "noopener" }, t("results.zoneLink", { zone: site.zone }))
+    const zoneChip = site.zone
+      ? scaleChip("USDA", site.zone, t("zoneChip.zone", { zone: site.zone }), guideHref("regions", "zones"))
       : null;
     rows.push(fact("❄️", t("confirm.winterCold"),
-      !zoneLink ? [t("zone.unknown")]
-        : site.zoneMinTempF != null ? tx("confirm.winterValue", { link: zoneLink }, { temp: temperature(site.zoneMinTempF) })
-        : [zoneLink]));
+      !zoneChip ? [t("zone.unknown")]
+        : site.zoneMinTempF != null ? [t("confirm.winterValue", { temp: temperature(site.zoneMinTempF) }), " ", zoneChip]
+        : [zoneChip]));
     rows.push(site.annualRainIn != null
       ? fact("🌧️", t("confirm.rainfall"), t("confirm.rainfallValue", { amount: rainfall(site.annualRainIn) }))
       : null);
@@ -77,7 +77,9 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
           slope: site.slopeDeg != null ? t("confirm.elevationSlope", { slope: slopePlain(site.slopeDeg) }) : "",
         }))
       : null);
-    rows.push(site.ecoregion ? fact("🗺️", t("confirm.region"), site.ecoregion) : null);
+    rows.push(site.ecoregion ? fact("🗺️", t("confirm.region"), site.ecoregionInfo
+      ? [site.ecoregionInfo.name, " ", ecoregionChip(site.ecoregionInfo, guideHref("regions", "zones"))]
+      : site.ecoregion) : null);
     // Only some providers have a finer local subdivision (EPA Level IV); the EEA
     // biogeographical regions are a single flat level, so this row is skipped.
     const detail = site.ecoregionInfo?.detail;

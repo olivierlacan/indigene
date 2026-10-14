@@ -170,6 +170,27 @@ p.more-link a {
   text-decoration-color: currentColor;
 }
 
+/* A link to the guide page that explains this part of the app
+   (components/guide-link.ts). A side note, not a way on: smaller and in the
+   soft ink with a faint underline, the info mark in the brand green. It takes
+   the link colour only under a pointer or focus. */
+.guide-link { margin: 0.75rem 0 0; font-size: 0.85rem; line-height: 1.3; }
+.guide-link a {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  min-height: 2rem; /* a comfortable tap target without looking like a button */
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, var(--ink-soft) 35%, transparent);
+}
+.guide-link-icon { flex: none; color: var(--brand); }
+.guide-link a:is(:hover, :focus-visible) {
+  color: var(--focus);
+  text-decoration-color: currentColor;
+}
+.guide-link a:is(:hover, :focus-visible) .guide-link-icon { color: currentColor; }
+
 /* --- Section headings that lead somewhere -------------------------------
    A roster's category heading, a wildlife group's heading, a region on an
    animal's page: each labels the cards under it *and* is the way into that

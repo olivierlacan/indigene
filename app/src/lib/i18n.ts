@@ -10,9 +10,9 @@
 //     "key not found" path to discover in production.
 //  2. **The choice is the user's, the guess is only a default.** We read
 //     `navigator.language` once, and from the moment someone picks a language
-//     by hand that pick wins forever — over the browser's guess and over a
-//     `?lang=` in a link someone sent them (see `langFromUrl()`). Same instinct
-//     as the sun picker: the sensor is a suggestion, the human is the answer.
+//     by hand that pick wins over the browser's guess. A `?lang=` link wins
+//     for one visit, then offers the reader's own language back (see
+//     `langFromUrl()`). Same instinct as the sun picker: the sensor is a suggestion, the human is the answer.
 //  3. **Language and units are separate settings.** A French speaker in Ohio
 //     wants French and feet; an American in Paris wants English and metres.
 //     Nothing here reaches into `units.ts`, and `units.ts` only reads the
@@ -81,12 +81,12 @@ function toLang(tag: string | null | undefined): Lang | undefined {
  * routes on the hash but the canonical plant URLs are real paths, so a link can
  * arrive with its query on either side of the `#` and neither reading is wrong.
  *
- * It does *not* beat a choice the reader has already made. A link is a guess
- * about someone by whoever sent it; a pick in the settings screen is that
- * person speaking for themselves, and a stranger's link doesn't get to talk
- * over it. So the parameter sits exactly where the browser's own preference
- * used to: it decides for a first-time visitor — which is the whole point of
- * sending one — and is ignored by anyone who has set their language by hand.
+ * It beats everything else, for this visit: someone who opens a `?lang=fr`
+ * link — or types one to preview a page — gets French, whatever their browser
+ * or their Settings say. It doesn't overwrite those, though. The link is a
+ * guess about them by whoever sent it, so where it disagrees with the reader's
+ * own language, the language offer (`components/lang-offer.ts`) asks whether
+ * to switch back.
  */
 function langFromUrl(): Lang | undefined {
   try {
@@ -109,42 +109,49 @@ function remember(lang: Lang): void {
     // Private-mode Safari throws on localStorage. A language pick that doesn't
     // persist is a small loss; a blank app is a total one.
   }
+  forgetVisit();
+}
+
+/** Where a `?lang=` link's language lives once the parameter has left the
+ *  address bar: for this tab only, so a reload keeps it and a new visit
+ *  doesn't. */
+const VISIT_KEY = "indigene:lang-visit";
+
+function visitLang(): Lang | undefined {
+  try {
+    const v = sessionStorage.getItem(VISIT_KEY);
+    return isLang(v) ? v : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+function forgetVisit(): void {
+  try {
+    sessionStorage.removeItem(VISIT_KEY);
+  } catch {
+    // Nothing stored, then.
+  }
 }
 
 /**
- * The starting language, in order of who is doing the asking:
+ * The reader's own language, leaving links aside:
  *
- *  1. **What this reader chose**, in the settings screen, at any point in the
- *     past. Nothing outranks it.
- *  2. **A `?lang=` in the link they followed** — someone else's guess about
- *     them, which is worth acting on only because nobody better has spoken.
- *  3. **The browser's own preference list**, the device's guess.
- *  4. English.
+ *  1. **What they chose**, in Settings or on the language offer.
+ *  2. **The browser's own preference list**, the device's guess.
+ *  3. English.
  *
  * `navigator.languages` is ordered by how much the person wants each one, so we
  * walk it in order and take the first we actually speak — "fr-CA" and "fr" both
  * mean French to us.
  */
-function detect(): Lang {
+export function homeLang(): Lang {
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (isLang(saved)) return saved;
   } catch {
-    // See remember(): storage can throw. Fall through to the guesses — and note
-    // this is also the browser where a `?lang=` link *does* win every time,
-    // because there is no stored choice for it to talk over.
+    // See remember(): storage can throw. Fall through to the browser's guess.
   }
-
-  const pinned = langFromUrl();
-  if (pinned) {
-    // Persist it, because the parameter is stripped from the address bar a
-    // moment later (see `consumeLangParam`) and the choice has to outlive it —
-    // through the next tap, the next page, and the next visit. From here on
-    // it's this reader's choice, and the next link can't overrule it either.
-    remember(pinned);
-    return pinned;
-  }
-
   const wanted = navigator.languages?.length ? navigator.languages : [navigator.language];
   for (const tag of wanted) {
     const base = toLang(tag);
@@ -153,11 +160,32 @@ function detect(): Lang {
   return "en";
 }
 
+/**
+ * The starting language: a `?lang=` in the link, then one a link set earlier
+ * in this tab, then the reader's own (`homeLang`). A link's language is kept
+ * for the tab only, because the parameter is stripped from the address bar a
+ * moment later (see `consumeLangParam`) and has to outlive it through the next
+ * reload.
+ */
+function detect(): Lang {
+  const home = homeLang();
+  const pinned = langFromUrl() ?? visitLang();
+  if (!pinned || pinned === home) {
+    forgetVisit();
+    return home;
+  }
+  try {
+    sessionStorage.setItem(VISIT_KEY, pinned);
+  } catch {
+    // Then a reload falls back to the reader's own language. Fine.
+  }
+  return pinned;
+}
+
 let current: Lang = detect();
 
 /** Whether this reader has ever chosen a language on this device — in
- *  Settings, or by following a `?lang=` link, which `detect()` stores as
- *  theirs. The French offer (`components/lang-offer.ts`) stays away from a
+ *  Settings or on the language offer. A `?lang=` link doesn't count. The offer (`components/lang-offer.ts`) stays away from a
  *  reader who has said what they want. */
 export function langChosen(): boolean {
   try {

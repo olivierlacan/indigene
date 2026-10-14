@@ -1,5 +1,6 @@
+import { sunIcon } from "../components/sun-icon";
 import { statTiles } from "../components/stat-card";
-import { goalIcon, filterIcon } from "../components/control-icons";
+import { goalIcon, filterIcon, chevronIcon } from "../components/control-icons";
 import { soilAnswer } from "../lib/soil-answer";
 import { guideLink } from "../components/guide-link";
 import { el, clear, toast } from "../ui";
@@ -18,7 +19,6 @@ import {
   sunLabel,
   ISSUES_URL,
   ZONE_INFO_URL,
-  MOISTURE_INFO_URL,
   moistureWord,
 } from "../lib/plain";
 import { getSpot, saveSpot } from "../db";
@@ -175,17 +175,19 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
   // of the list was decided by settings nobody had been shown. They're a step
   // of their own now (steps/priorities.ts); what stays behind is the answer to
   // "why this order?" — named, and one tap from being changed.
-  const rankedFor = el("div", { class: "ranked-for" }, [
+  // The whole row is the control: no "Change" word to wrap the goal's name.
+  const rankedFor = el("button", {
+    class: "control-row",
+    type: "button",
+    "aria-label": `${t("results.goalLabel")}: ${priorityName(store.weights)}. ${t("results.changeGoalAria")}`,
+    onClick: () => navigate("priorities"),
+  }, [
     goalIcon(),
-    el("p", {}, [
-      t("results.rankedFor"),
-      el("strong", {}, priorityName(store.weights)),
+    el("span", { class: "control-text" }, [
+      el("span", { class: "control-label" }, t("results.goalLabel")),
+      el("span", { class: "control-value" }, priorityName(store.weights)),
     ]),
-    el("button", {
-      class: "btn btn-secondary",
-      "aria-label": t("results.changeGoalAria"),
-      onClick: () => navigate("priorities"),
-    }, t("results.changeGoal")),
+    chevronIcon("right"),
   ]);
 
   // --- Filters (incl. guerrilla mode) ---
@@ -249,14 +251,17 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     ]);
   });
   const filters = el("details", { class: "weights", style: "margin-top:0.5rem" }, [
-    el("summary", { "data-open": t("disclosure.open"), "data-close": t("disclosure.close") }, [
+    el("summary", { class: "control-row" }, [
       filterIcon(),
-      el("span", {}, t("filter.summary")),
-      // How many are on, so a closed panel still says the list is narrowed.
-      activeFilters(store.filters)
-        ? el("span", { class: "filter-count", "aria-label": t("filter.activeAria", { n: activeFilters(store.filters) }) },
-            String(activeFilters(store.filters)))
-        : null,
+      el("span", { class: "control-text" }, [
+        el("span", { class: "control-label" }, t("filter.summary")),
+        // What they're for while none is on; once some are, how many — so a
+        // closed panel still says the list is narrowed.
+        el("span", { class: "control-value" }, activeFilters(store.filters)
+          ? t("filter.activeCount", { n: activeFilters(store.filters) })
+          : t("filter.hint")),
+      ]),
+      chevronIcon("down"),
     ]),
     el("div", {}, [
       ...filterDefs.map((f) =>
@@ -279,7 +284,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
       // The region links its whole roster: the list below is only its best fits.
       tx(chosen ? "results.regionTagPick" : "results.regionTag",
         { region: el("a", { href: `#/regions/${region.meta.id}` }, name) })),
-    el("p", { class: "step-lede" }, conditions),
+    conditions,
     el("div", { class: "result-controls" }, [rankedFor, filters]),
     guideLink("ranking", t("guide.ranking"), undefined, "margin:0.5rem 0 0"),
     summaryEl,
@@ -318,39 +323,40 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
 
   // Common parlance first, the technical term in parentheses with a link —
   // "zone 8b" and "mesic" are never shown bare (see the plain-language rule).
-  function summarize(): (string | Node)[] {
-    const link = (href: string, text: string): HTMLElement =>
-      el("a", { href, target: "_blank", rel: "noopener" }, text);
-    const sun = store.draft.sun;
-    const m = siteMoisture(store.draft.site, store.draft.moistureOverride);
+  // The spot's conditions as a row of icon + words — the sun step's own sun
+  // drawing, and the 💧 / ❄️ the plant pages' figure tiles use — so each reads
+  // back as the answer the reader gave. Plain text, not buttons: the controls
+  // below are what you tap.
+  function summarize(): HTMLElement {
     const site = store.draft.site;
+    const sun = store.draft.sun;
     const zone = site?.zone;
+    const cap = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1);
+    const item = (icon: Node | string, words: (string | Node)[]): HTMLElement =>
+      el("li", {}, [el("span", { class: "condition-icon", "aria-hidden": "true" }, [icon]), el("span", {}, words)]);
 
-    const parts: (string | Node)[][] = [];
+    const items: HTMLElement[] = [];
     // Recomputed from the hours rather than read off `sun.label`: that label
     // was written when the estimate was made, possibly in another language and
     // possibly several sessions ago (it rides along in saved spots).
-    if (sun) parts.push([t("results.sunSummary", { label: sunLabel(sun.hours), hours: fmtNumber(sun.hours) })]);
-    parts.push(
-      m === "mesic"
-        ? tx("results.mesicSoil", { link: link(MOISTURE_INFO_URL, t("results.mesicTerm")) })
-        : [t("results.soilBand", { word: moistureWord(m) })]
-    );
-    if (zone) {
-      const zoneLink = link(ZONE_INFO_URL, t("results.zoneLink", { zone }));
-      parts.push(
-        site?.zoneMinTempF != null
-          ? tx("results.wintersTo", { link: zoneLink }, { temp: temperature(site.zoneMinTempF) })
-          : [zoneLink]
-      );
+    if (sun) {
+      const level = sun.hours >= 6 ? "full" : sun.hours >= 2 ? "half" : "shade";
+      items.push(item(sunIcon(level), [t("results.condSun", { label: cap(sunLabel(sun.hours)), hours: fmtNumber(sun.hours) })]));
     }
-
-    const out: (string | Node)[] = [t("results.matchedTo")];
-    parts.forEach((p, i) => { if (i) out.push(" · "); out.push(...p); });
-    // Only claim winter-hardiness when we actually know the winter — with no
-    // looked-up zone (hand-picked region, or the lookup failed) we don't.
-    out.push(t("results.nativeAll", { hardy: zone ? t("results.andHardy") : "" }));
-    return out;
+    const m = siteMoisture(site, store.draft.moistureOverride);
+    items.push(item("💧", [cap(t("results.soilBand", { word: moistureWord(m) }))]));
+    if (zone) {
+      const zoneLink = el("a", { href: ZONE_INFO_URL, target: "_blank", rel: "noopener" }, t("results.zoneLink", { zone }));
+      items.push(item("❄️", site?.zoneMinTempF != null
+        ? tx("results.condWinter", { link: zoneLink }, { temp: temperature(site.zoneMinTempF) })
+        : [zoneLink]));
+    }
+    return el("div", { class: "conditions" }, [
+      el("ul", { class: "condition-list", "aria-label": t("results.condLabel") }, items),
+      // Only claim winter-hardiness when we actually know the winter — with no
+      // looked-up zone (hand-picked region, or the lookup failed) we don't.
+      el("p", { class: "condition-note" }, t("results.nativeAll", { hardy: zone ? t("results.andHardy") : "" })),
+    ]);
   }
 
   async function doSave(): Promise<void> {

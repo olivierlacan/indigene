@@ -7,8 +7,8 @@
 
 ### Changed
 
-- Ranking: your plant list now opens with "Goal: Feed the most wildlife" and Filters as two matching rows, with how many filters are on. The totals show as two figures, Natives and Good fits, instead of a sentence.
-- Shorter words in a few places: "📍 Pacific Northwest · your pick", one link for how your iNaturalist username is handled, and a one-line note on counting visits.
+- Ranking: your plant list opens with your spot's sun, soil and winter, using the same icons as before, then two rows you tap anywhere: your goal, and filters that say what they cover. The totals show as two figures.
+- Shorter words in a few places: "📍 Pacific Northwest · your pick", one quiet link for how your iNaturalist username is handled, and a one-line note on counting visits.
 - Each guide shows only its latest changes. The full history has its own page, so the explanation comes first.
 
 ### Fixed

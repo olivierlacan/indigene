@@ -20,28 +20,47 @@ export const guideHref = (id: GuideId, anchor?: string): string =>
 
 const NS = "http://www.w3.org/2000/svg";
 
-/** The info mark — a circled "i", drawn in `currentColor` so it follows the
- *  link's quiet-then-bright colour. Decorative: the words carry the meaning. */
-function infoIcon(): SVGSVGElement {
+function mark(draw: (add: (tag: string, a: Record<string, string>) => void) => void): SVGSVGElement {
   const svg = document.createElementNS(NS, "svg");
   for (const [k, v] of Object.entries({
     viewBox: "0 0 20 20", width: "16", height: "16", "aria-hidden": "true",
     class: "guide-link-icon", fill: "none", stroke: "currentColor", "stroke-width": "1.6",
+    "stroke-linecap": "round", "stroke-linejoin": "round",
   })) svg.setAttribute(k, v);
-  const add = (tag: string, attrs: Record<string, string>): void => {
+  draw((tag, attrs) => {
     const n = document.createElementNS(NS, tag);
     for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
     svg.append(n);
-  };
-  add("circle", { cx: "10", cy: "10", r: "8.2" });
-  add("line", { x1: "10", y1: "9", x2: "10", y2: "14.2", "stroke-linecap": "round" });
-  add("circle", { cx: "10", cy: "6.1", r: "1.05", fill: "currentColor", stroke: "none" });
+  });
   return svg;
 }
 
-/** A side note, not a call to action: small, in the soft ink, with the info
- *  mark in front. It takes the link colour only under a pointer or focus. */
-export function guideLink(id: GuideId, label: string, anchor?: string, style?: string): HTMLElement {
+/** A circled "i": how this part works (the guide). */
+const infoIcon = (): SVGSVGElement =>
+  mark((add) => {
+    add("circle", { cx: "10", cy: "10", r: "8.2" });
+    add("line", { x1: "10", y1: "9", x2: "10", y2: "14.2" });
+    add("circle", { cx: "10", cy: "6.1", r: "1.05", fill: "currentColor", stroke: "none" });
+  });
+
+/** A padlock: where your data goes (the Privacy page). */
+const lockIcon = (): SVGSVGElement =>
+  mark((add) => {
+    add("rect", { x: "4", y: "9", width: "12", height: "8.5", rx: "1.8" });
+    add("path", { d: "M6.8 9V6.6a3.2 3.2 0 0 1 6.4 0V9" });
+  });
+
+/**
+ * A side note, not a call to action: small, in the soft ink, with its mark in
+ * front. It takes the link colour only under a pointer or focus. `info` opens
+ * the guide; `lock` opens the Privacy page — same look, so a card that carries
+ * both shows them as one quiet pair.
+ */
+export function quietLink(kind: "info" | "lock", href: string, label: string, style?: string): HTMLElement {
   return el("p", { class: "guide-link", style },
-    el("a", { href: guideHref(id, anchor) }, [infoIcon(), el("span", {}, label)]));
+    el("a", { href }, [kind === "info" ? infoIcon() : lockIcon(), el("span", {}, label)]));
+}
+
+export function guideLink(id: GuideId, label: string, anchor?: string, style?: string): HTMLElement {
+  return quietLink("info", guideHref(id, anchor), label, style);
 }

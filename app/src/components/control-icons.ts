@@ -32,3 +32,12 @@ export const filterIcon = (): SVGSVGElement =>
   icon((add) => {
     add("path", { d: "M3 4.2h14l-5.4 6.4v4.9l-3.2 1.7v-6.6z" });
   });
+
+/** The row's affordance: › goes somewhere, ⌄ opens in place (and flips). */
+export const chevronIcon = (dir: "right" | "down"): SVGSVGElement => {
+  const svg = icon((add) => {
+    add("path", { d: dir === "right" ? "M7.5 4.5 13 10l-5.5 5.5" : "M4.5 7.5 10 13l5.5-5.5" });
+  });
+  svg.setAttribute("class", "control-chevron");
+  return svg;
+};

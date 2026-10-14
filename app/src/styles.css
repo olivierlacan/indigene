@@ -184,7 +184,14 @@ p.more-link a {
   text-underline-offset: 2px;
   text-decoration-color: color-mix(in srgb, var(--ink-soft) 35%, transparent);
 }
-.guide-link-icon { flex: none; color: var(--brand); }
+.guide-link-icon {
+  flex: none; color: var(--brand);
+  /* Sized with the text, and centred on its capitals rather than on the line
+     box: flex centring put the mark ~1.4px low (measured at 15.3px), since the
+     line box sits lower than the letters a reader lines it up with. */
+  width: 1.05em; height: 1.05em;
+  transform: translateY(-0.09em);
+}
 .guide-link a:is(:hover, :focus-visible) {
   color: var(--focus);
   text-decoration-color: currentColor;

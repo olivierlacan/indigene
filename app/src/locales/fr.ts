@@ -1232,8 +1232,6 @@ export const fr: Dict = {
   "results.soilBand": "sol {word}",
   "results.condWinter": "Hivers jusqu'à {temp}",
   "results.zoneLink": "zone USDA {zone}",
-  "results.nativeAll": "Tout ce qui suit est indigène de cette région{hardy}.",
-  "results.andHardy": " et résiste à vos hivers",
   "results.back": "Retour",
   "results.save": "💾 Enregistrer ce lieu",
   "results.savePrompt": "Donnez un nom à ce lieu (par exemple « la bande le long de l'allée »)",
@@ -1577,7 +1575,6 @@ export const fr: Dict = {
   "ref.copy": "Copier le code",
   "ref.copied": "Code copié.",
   "ref.identity": "Identité : ",
-  "ref.identityRest": " (un code qui reste attaché à cette plante même quand son nom change).",
 
   // ---------------------------------------------------------------------
   // Faune.
@@ -2527,8 +2524,7 @@ export const fr: Dict = {
   "society.what.woodland": "plantation de forêts indigènes",
   "society.what.provenance": "pépinières d'origine locale",
   "society.what.pollinators": "guides de plantation pour pollinisateurs",
-  "evidence.checked": "Vérifié en {when}",
-  "evidence.guide": "Ce que veut dire cette vérification (en anglais)",
+  "evidence.checkedAria": "Vérifié en {when}. Ce que veut dire cette vérification (en anglais)",
   "evidence.checklist": "La Liste mondiale de Kew",
   "evidence.confirmedAfter": " confirme qu'elle est indigène en {area}.",
   "evidence.coarse": "Kew décrit {area} dans son ensemble, pas plus finement.",

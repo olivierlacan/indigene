@@ -1256,8 +1256,6 @@ export const en = {
   "results.soilBand": "{word} soil",
   "results.condWinter": "Winters to {temp}",
   "results.zoneLink": "USDA zone {zone}",
-  "results.nativeAll": "Everything below is native to this region{hardy}.",
-  "results.andHardy": " and hardy through your winters",
   "results.back": "Back",
   "results.save": "💾 Save this spot",
   "results.savePrompt": "Name this spot (e.g. “front strip by driveway”)",
@@ -1620,7 +1618,6 @@ export const en = {
   "ref.identity": "Identity: ",
   "ref.copy": "Copy the code",
   "ref.copied": "Code copied.",
-  "ref.identityRest": " (a code that stays with this plant even when its name changes).",
 
   // ---------------------------------------------------------------------
   // Wildlife.
@@ -2599,8 +2596,7 @@ export const en = {
   // The line under "where it's native": who re-checked the claim, and when.
   // Split around the linked checklist name, which is why it is three fragments
   // rather than one sentence with a placeholder.
-  "evidence.checked": "Checked {when}",
-  "evidence.guide": "What this check means",
+  "evidence.checkedAria": "Checked {when}. What this check means",
   "evidence.checklist": "Kew's World Checklist",
   "evidence.confirmedAfter": " agrees it's native in {area}.",
   // Only where the place checked is wider than the region, so the check is a

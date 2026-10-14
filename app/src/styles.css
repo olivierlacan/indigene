@@ -2089,11 +2089,25 @@ input[type="range"] {
 /* --- Result cards --- */
 /* The goal and filter rows. Not pinned: two full rows held under the header
    covered the figures and the plants scrolling beneath them. */
+/* Goal and filters as one quiet outlined group: no fill (the plant cards own
+   the solid surface), a hairline between the two rows. */
 .result-controls {
   display: grid;
-  gap: 0.5rem;
-  padding: 0.5rem 0 0;
+  margin: 0.75rem 0 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
+.result-controls > .control-row {
+  border: 0; border-radius: 0; background: transparent;
+}
+.result-controls > details.weights {
+  border: 0; border-top: 1px solid var(--line); border-radius: 0; background: transparent;
+}
+.result-controls .control-row { min-height: 3rem; padding-top: 0.4rem; padding-bottom: 0.4rem; }
+.result-controls .control-value { font-size: 0.95rem; }
+.result-controls .control-label { font-size: 0.68rem; }
+.result-controls .control-row:hover { background: color-mix(in srgb, var(--surface) 60%, transparent); }
 .weights details,
 details.weights {
   border: 1px solid var(--line);
@@ -2158,7 +2172,10 @@ details.weights > summary {
 }
 
 /* The plant list's two figures (natives, good fits), under its controls. */
-.result-tally { margin: 0.75rem 0 1rem; }
+/* The two counts read as figures on the page itself, not as more cards. */
+.result-tally { margin: 0.9rem 0 0.75rem; }
+.result-tally .stat-grid { margin: 0; gap: 1.5rem; grid-template-columns: repeat(2, max-content); }
+.result-tally .stat-tile { background: none; padding: 0; }
 
 /* The filters panel: tight rows (still a 44px tap target each), two columns
    once there's room for them. */
@@ -2196,7 +2213,6 @@ details.weights > summary {
 .condition-icon { display: inline-flex; font-size: 1.05rem; line-height: 1; }
 .condition-icon svg { width: 1.35rem; height: 1.35rem; }
 .condition-list a { color: inherit; text-decoration-color: color-mix(in srgb, var(--focus) 50%, transparent); text-underline-offset: 2px; }
-.condition-note { margin: 0.4rem 0 0; font-size: 0.88rem; color: var(--ink-soft); }
 
 /* --- The plant list's two controls: its goal, and its filters --- */
 /* Each is one row you tap anywhere: icon, a small label over its value, and a
@@ -2235,14 +2251,14 @@ details.weights > summary {
 /* Inside the filters panel the row borrows the panel's border, and the global
    summary pill gives way to the chevron, which flips when the panel is open. */
 details.weights > summary.control-row {
-  gap: 0.75rem; min-height: 3.6rem; font-size: inherit;
+  gap: 0.75rem; min-height: 3rem; font-size: inherit;
   border: 0; border-radius: 0; background: transparent;
   margin: 0 -0.3rem 0 0; padding: 0.5rem 0;
 }
 details.weights > summary.control-row::after { content: none; display: none; }
 details[open] > summary.control-row .control-chevron { transform: rotate(180deg); }
 details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right: 0.9rem; }
-details.weights:has(> summary.control-row):hover { border-color: var(--brand); }
+
 /* The answer to "why this order?", named rather than buried in a panel, with
    the way to change it beside it. */
 /* --- "Yes, that did something" --- */
@@ -3684,18 +3700,16 @@ details.weights:has(> summary.control-row):hover { border-color: var(--brand); }
 .prop-method .prop-method-link { font-weight: 650; font-size: 1.02rem; line-height: 1.35; }
 .prop-plain { margin: 0.5rem 0 0; line-height: 1.6; color: var(--ink-soft); }
 .prop-when {
-  display: inline-block;
-  margin: 0.45rem 0 0;
-  padding: 0.2rem 0.6rem;
-  border-radius: 8px; /* it wraps on a phone, so not a pill */
+  display: flex; align-items: flex-start; gap: 0.45rem;
+  /* Across the whole block, edge to edge, under the method's name. */
+  margin: 0.6rem -1rem 0;
+  padding: 0.45rem 1rem;
   background: var(--brand-bg);
   color: var(--brand-ink);
-  font-size: 0.85rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
 }
-.prop-when .k {
-  font-weight: 700;
-  margin-right: 0.3rem;
-}
+.prop-when .clock-icon { flex: none; width: 1rem; height: 1rem; margin-top: 0.1rem; }
 .prop-all {
   margin: 1rem 0 0;
   font-size: 0.95rem;
@@ -7359,17 +7373,28 @@ a.welcome-way:hover strong { text-decoration: underline; }
    (components/native-evidence.ts). */
 .native-evidence { display: flex; gap: 0.6rem; align-items: flex-start; }
 .native-evidence p { margin: 0; min-width: 0; }
-.evidence-mark { flex: none; width: 1.25rem; height: 1.25rem; margin-top: 0.1rem; }
+/* Centred on the first line's capitals, measured in the browser (flex start
+   put it about 1px low). */
+.evidence-mark { flex: none; width: 1.25rem; height: 1.25rem; margin-top: calc(0.1rem - 1.1px); }
 .evidence-ok { color: var(--brand); }
 .evidence-warn { color: #c98a1b; }
-.native-evidence-meta { display: block; margin-top: 0.15rem; color: var(--ink-soft); font-size: 0.85rem; }
-.native-evidence-meta a { color: inherit; }
-
-/* Copy an identifier (a plant's IPNI code) in one tap. */
-.copy-btn {
-  display: inline-grid; place-items: center; vertical-align: -0.3em;
-  width: 2rem; height: 2rem; margin: 0 0.15rem;
-  border: 1px solid var(--line); border-radius: 8px;
-  background: transparent; color: var(--ink-soft); cursor: pointer;
+/* The check's date: a quiet clock tag ending the sentence, linking the guide. */
+.native-evidence-meta {
+  /* `middle`, not a length: it centres the tag on the line's capitals (measured). */
+  display: inline-flex; align-items: center; gap: 0.25rem; vertical-align: middle;
+  padding: 0 0.45rem; border: 1px solid var(--line); border-radius: 999px;
+  color: var(--ink-soft); font-size: 0.8rem; line-height: 1.5; text-decoration: none; white-space: nowrap;
 }
-.copy-btn:hover, .copy-btn:focus-visible { color: var(--focus); border-color: currentColor; }
+.native-evidence-meta:hover, .native-evidence-meta:focus-visible { color: var(--focus); border-color: currentColor; }
+.evidence-clock { width: 0.9rem; height: 0.9rem; position: relative; top: -0.13em; }
+
+/* Copy an identifier (a plant's IPNI code): a text-sized icon beside it, no
+   box. The tap area reaches past the drawing so a thumb still finds it. */
+.copy-btn {
+  position: relative; display: inline-grid; place-items: center; vertical-align: -0.23em;
+  width: 1em; height: 1em; margin: 0 0.3rem; padding: 0;
+  border: 0; background: none; color: var(--ink-soft); cursor: pointer;
+}
+.copy-btn::before { content: ""; position: absolute; inset: -0.6rem; }
+.copy-btn svg { width: 0.95em; height: 0.95em; }
+.copy-btn:hover, .copy-btn:focus-visible { color: var(--focus); }

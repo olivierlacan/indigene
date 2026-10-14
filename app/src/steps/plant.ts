@@ -1,3 +1,4 @@
+import { clockIcon } from "../components/control-icons";
 // A plant's own page, at a stable, shareable URL (#/plants/<id>, canonically
 // …/plants/<id>). This is the reverse of the main flow: the plant is fixed and
 // the question is whether a spot deserves it. The verdict has exactly three
@@ -1039,8 +1040,10 @@ function propagationSection(p: Plant, regionId: string): HTMLElement {
           el("span", { class: "prop-method-label" }, g.name),
         ]),
       ]),
+      // When to do it: a clock and the window, on a band across the block.
       el("p", { class: "prop-when" }, [
-        el("span", { class: "k" }, t("planting.whenLabel")),
+        clockIcon(),
+        el("span", { class: "sr-only" }, t("planting.whenLabel")),
         g.when,
       ]),
       el("p", { class: "prop-plain" }, g.plain),
@@ -1112,7 +1115,6 @@ function referencesSection(p: Plant): HTMLElement {
             navigator.clipboard?.writeText(entry.primaryId!).then(() => toast(t("ref.copied")), () => {});
           },
         }, [copyIcon()]),
-        t("ref.identityRest"),
       ]),
     );
   }

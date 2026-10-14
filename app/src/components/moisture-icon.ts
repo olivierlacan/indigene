@@ -1,6 +1,6 @@
 // Small hand-drawn SVG glyphs for the three moisture bands, in the same flat
-// 48×48 idiom as the sun glyphs (sun-icon.ts): an empty drop over cracked
-// ground for dry, a half-full drop for evenly moist, a full drop over a puddle
+// 48×48 idiom as the sun glyphs (sun-icon.ts): a drop filled to how wet the
+// ground stays, a sliver for dry, half for evenly moist, full over a puddle
 // for wet. Decorative only — the buttons carry the words.
 import type { MoistureBand } from "../types";
 
@@ -17,7 +17,6 @@ export function moistureIcon(band: MoistureBand): SVGSVGElement {
   svg.setAttribute("height", "40");
   svg.setAttribute("aria-hidden", "true");
 
-  const soft = getComputedStyle(document.documentElement).getPropertyValue("--ink-soft").trim() || "#3d3d34";
   const add = (tag: string, attrs: Record<string, string>, parent: Element = svg): Element => {
     const n = document.createElementNS(NS, tag);
     for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
@@ -25,22 +24,19 @@ export function moistureIcon(band: MoistureBand): SVGSVGElement {
     return n;
   };
 
-  if (band === "mesic") {
-    // The lower half of the drop filled, clipped to the drop's own outline.
-    const id = "moisture-half-clip";
+  // The fill level is the answer: a sliver of water for dry, half for evenly
+  // moist, full (and a puddle under it) for wet. Read at text size, a level
+  // carries better than a cracked-ground line, which looked like a stand.
+  const level = band === "dry" ? 29 : band === "mesic" ? 21 : 0;
+  if (band === "wet") {
+    add("path", { d: DROP, fill: BLUE });
+    add("ellipse", { cx: "24", cy: "44", rx: "15", ry: "2.5", fill: BLUE, opacity: "0.55" });
+  } else {
+    const id = `moisture-clip-${band}`;
     const clip = add("clipPath", { id }, add("defs", {}));
     add("path", { d: DROP }, clip);
-    add("rect", { x: "10", y: "26", width: "28", height: "14", fill: BLUE, "clip-path": `url(#${id})` });
-  } else if (band === "wet") {
-    add("path", { d: DROP, fill: BLUE });
-    add("ellipse", { cx: "24", cy: "43.5", rx: "15", ry: "2.5", fill: BLUE, opacity: "0.55" });
-  } else {
-    // Dry: the ground below cracks.
-    add("path", {
-      d: "M8 43.5h11l2.5-3 2.5 3h16", fill: "none", stroke: soft,
-      "stroke-width": "2.5", "stroke-linecap": "round", "stroke-linejoin": "round",
-    });
+    add("rect", { x: "10", y: String(level), width: "28", height: String(40 - level), fill: BLUE, "clip-path": `url(#${id})` });
   }
-  add("path", { d: DROP, fill: "none", stroke: BLUE, "stroke-width": "3", "stroke-linejoin": "round" });
+  add("path", { d: DROP, fill: "none", stroke: BLUE, "stroke-width": "3.5", "stroke-linejoin": "round" });
   return svg;
 }

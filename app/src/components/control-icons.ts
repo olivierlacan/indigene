@@ -41,3 +41,13 @@ export const chevronIcon = (dir: "right" | "down"): SVGSVGElement => {
   svg.setAttribute("class", "control-chevron");
   return svg;
 };
+
+/** A small clock: "when". */
+export const clockIcon = (): SVGSVGElement => {
+  const svg = icon((add) => {
+    add("circle", { cx: "10", cy: "10", r: "7.6" });
+    add("path", { d: "M10 5.8V10l2.8 1.8" });
+  });
+  svg.setAttribute("class", "clock-icon");
+  return svg;
+};

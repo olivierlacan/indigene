@@ -378,10 +378,9 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
         : [chip]));
     }
     return el("div", { class: "conditions" }, [
+      // No "everything below is native" line: the app lists nothing else, and
+      // the zone tag already says the winter was checked.
       el("ul", { class: "condition-list", "aria-label": t("results.condLabel") }, items),
-      // Only claim winter-hardiness when we actually know the winter — with no
-      // looked-up zone (hand-picked region, or the lookup failed) we don't.
-      el("p", { class: "condition-note" }, t("results.nativeAll", { hardy: zone ? t("results.andHardy") : "" })),
     ]);
   }
 

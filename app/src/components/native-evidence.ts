@@ -15,6 +15,12 @@ import { t } from "../lib/i18n";
 import { langTag } from "../lib/i18n";
 import { guideHref } from "./guide-link";
 
+/** "Sep 26", "sept. 26": the check's date, small. */
+const shortMonthYear = (iso: string): string =>
+  new Intl.DateTimeFormat(langTag(), { month: "short", year: "2-digit", timeZone: "UTC" }).format(
+    new Date(`${iso}T00:00:00Z`),
+  );
+
 const monthYear = (iso: string): string =>
   new Intl.DateTimeFormat(langTag(), { month: "long", year: "numeric", timeZone: "UTC" }).format(
     new Date(`${iso}T00:00:00Z`),
@@ -37,10 +43,14 @@ export function nativeEvidenceLine(plantId: string, regionId?: string): HTMLElem
 
   // A check when Kew agrees, a caution mark when it doesn't: the verdict at a
   // glance, the sentence for the detail, and the guide for what the check is.
-  const guide = el("a", { href: guideHref("sources", "kew") }, t("evidence.guide"));
-  const meta = el("span", { class: "native-evidence-meta" }, [
-    t("evidence.checked", { when: monthYear(ev.checked) }), " · ", guide,
-  ]);
+  // When it was checked, as a small clock tag at the end of the sentence. It
+  // opens the guide's explanation of the check; the words say both in full.
+  const meta = el("a", {
+    class: "native-evidence-meta",
+    href: guideHref("sources", "kew"),
+    "aria-label": t("evidence.checkedAria", { when: monthYear(ev.checked) }),
+    title: t("evidence.checkedAria", { when: monthYear(ev.checked) }),
+  }, [clockIcon(), shortMonthYear(ev.checked)]);
 
   if (!ev.unconfirmed) {
     return el("div", { class: "native-evidence" }, [
@@ -88,6 +98,21 @@ function mark(kind: "ok" | "warn"): SVGSVGElement {
     add("path", { d: "M10 2.8 18 16.6H2z" });
     add("line", { x1: "10", y1: "8", x2: "10", y2: "11.6" });
     add("circle", { cx: "10", cy: "14.1", r: "0.9", fill: "currentColor", stroke: "none" });
+  }
+  return svg;
+}
+
+/** A small clock: "when this was checked". */
+function clockIcon(): SVGSVGElement {
+  const svg = document.createElementNS(NS, "svg");
+  for (const [k, v] of Object.entries({
+    viewBox: "0 0 20 20", "aria-hidden": "true", class: "evidence-clock",
+    fill: "none", stroke: "currentColor", "stroke-width": "1.8", "stroke-linecap": "round",
+  })) svg.setAttribute(k, v);
+  for (const [tag, a] of [["circle", { cx: "10", cy: "10", r: "7.6" }], ["path", { d: "M10 5.8V10l2.8 1.8" }]] as const) {
+    const n = document.createElementNS(NS, tag);
+    for (const [k, v] of Object.entries(a)) n.setAttribute(k, v);
+    svg.append(n);
   }
   return svg;
 }

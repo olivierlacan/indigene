@@ -32,6 +32,16 @@
 //   lede      2–4 short sentences: what it is, and who it's for.
 //   steps     How you actually use it, as a short numbered list. Optional.
 //   note      One extra thing worth knowing. Optional.
+//   parts     [{id, heading, body, steps, list, after}] the guide's depth, for a
+//             part of the app with more to it than a lede can carry. `body` and
+//             `after` are a paragraph or a list of them, around optional
+//             numbered `steps` and a bulleted `list`. Optional. Three or more
+//             get a row of jump links at the top. Link another guide in the
+//             words with `guide(id)`; `guideProblems()` refuses one that
+//             doesn't exist.
+//   related   [{id, why}] the guides this one meshes with, shown under "Goes
+//             well with": `why` is the one line that tells a reader whether to
+//             go — what that guide adds to this one, not what it is.
 //   home      Where a changelog prefix naming this section links. Optional;
 //             defaults to the first `visit` link.
 //   visit     [{label, href}] deep links into the live app, so the guide is a
@@ -55,6 +65,9 @@
 // The live app lives at this address; the guide's in-app links are absolute so
 // the compiled page works wherever it's opened from.
 export const APP = "https://indigene.app";
+
+/** The address of another guide, for linking one guide from another's words. */
+export const guide = (id, anchor) => `${APP}/guide/${id}/${anchor ? `#${anchor}` : ""}`;
 
 export const SECTIONS = [
   {
@@ -588,3 +601,33 @@ export function linkPrefix(md) {
 
 /** The canonical prefix labels, for humans writing entries and for docs. */
 export const SECTION_LABELS = SECTIONS.map((s) => s.label);
+
+/**
+ * Everything wrong with the catalog as a reader would meet it, as sentences:
+ * a published guide with no lede, a "Goes well with" pointing at a guide that
+ * doesn't exist (or isn't published, or is itself), and a link in a guide's
+ * words to a guide page nobody can open. Empty means the guides mesh.
+ */
+export function guideProblems(sections = SECTIONS) {
+  const byId = new Map(sections.map((s) => [s.id, s]));
+  const live = (id) => byId.get(id)?.published === true;
+  const problems = [];
+  for (const s of sections.filter((x) => x.published)) {
+    if (!s.lede?.trim()) {
+      problems.push(`section "${s.id}" is published but has no lede — write it or set published:false`);
+    }
+    for (const r of s.related ?? []) {
+      if (r.id === s.id) problems.push(`section "${s.id}" lists itself under "Goes well with"`);
+      else if (!live(r.id)) problems.push(`section "${s.id}" relates to "${r.id}", which isn't a published guide`);
+      if (!r.why?.trim()) problems.push(`section "${s.id}" relates to "${r.id}" without saying why`);
+    }
+    for (const part of s.parts ?? []) {
+      if (!part.heading?.trim()) problems.push(`section "${s.id}" has a part with no heading`);
+    }
+    const words = JSON.stringify([s.lede, s.steps, s.note, s.parts]);
+    for (const m of words.matchAll(/indigene\.app\/guide\/([a-z0-9-]+)/g)) {
+      if (!live(m[1])) problems.push(`section "${s.id}" links to /guide/${m[1]}/, which isn't a published guide`);
+    }
+  }
+  return problems;
+}

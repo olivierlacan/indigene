@@ -12,4 +12,7 @@
 ### Fixed
 
 - The guide no longer says your location never leaves your phone. It goes straight to the public map, soil and weather services, and never to us.
+- Spots: a saved spot now remembers how wet you said it stays. Before, reopening it went back to the soil map's guess, so a spot you called wet was ranked as evenly moist.
+- Short messages like "Saved to this device." now slide in from the top of the screen, like your phone's own notifications, instead of a narrow bubble at the bottom. Tap one to dismiss it.
+- Internal: `results.ts` saved `soilOverride: null` unconditionally; `lib/soil-answer.ts` now writes the reader's moisture (tested). The toast was `left: 50%` + `translateX(-50%)`, which caps its shrink-to-fit width at half the viewport; it's now inset on both sides with `width: fit-content`, top-anchored on phones (bottom on ≥64rem), and slides via `.is-in` in `toast()` with a reduced-motion fallback.
 - Internal: `guide-catalog.mjs` gains `parts`, `related`, `guide()` and `guideProblems()`; the builder renders them, caps history at two releases and writes `/guide/<id>/history/`. New sections `ranking` (prefix `Ranking`), `spots` (`Spots`, takes the `saved` segment and the `spot` alias from `find`) and `inaturalist` (`iNaturalist`); `plants`, `planting`, `privacy` and `sources` published. `components/guide-link.ts` links them from the app; `guide-link.test.ts` holds those links and the catalog's cross-links to published guides.

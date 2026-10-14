@@ -1,3 +1,4 @@
+import { soilAnswer } from "../lib/soil-answer";
 import { guideLink } from "../components/guide-link";
 import { el, clear, toast } from "../ui";
 import { mostWanted, wantedRegionHref } from "../lib/invasives";
@@ -353,7 +354,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
       site: store.draft.site,
       sun: store.draft.sun,
       horizon: store.draft.horizon,
-      soilOverride: null,
+      soilOverride: soilAnswer(store.draft.moistureOverride, store.draft.site),
       deciduousOverhead: store.draft.deciduousOverhead,
       regionOverride: store.draft.regionOverride,
       weights: { ...store.weights },

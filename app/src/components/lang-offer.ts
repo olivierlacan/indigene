@@ -47,7 +47,8 @@ export function mountLangOffer(main: HTMLElement): void {
 
   const offer: Lang = fromLink ? home : "fr";
   const words = WORDS[offer];
-  const flag = offer === "fr" ? flagRow(["FR"]) : null;
+  // The flag of the locale each language is (`LOCALE`): US English, France's French.
+  const flag = flagRow([LOCALE[offer].split("-")[1]]);
   flag?.setAttribute("aria-hidden", "true");
   flag?.removeAttribute("role");
 

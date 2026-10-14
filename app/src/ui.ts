@@ -39,11 +39,32 @@ export function clear(node: HTMLElement): void {
 }
 
 let toastTimer: number | undefined;
+/**
+ * A passing message, shown for `ms` then slid away. It enters by toggling
+ * `.is-in` a frame after it's unhidden (so the slide runs), and leaves the same
+ * way before going back to `hidden`, so the screen reader's live region and the
+ * page's layout both see it come and go. Tapping it dismisses it early.
+ */
 export function toast(msg: string, ms = 3200): void {
   const t = document.getElementById("toast");
   if (!t) return;
+  if (!t.dataset.wired) {
+    t.dataset.wired = "1";
+    t.addEventListener("click", () => hideToast(t));
+  }
   t.textContent = msg;
   t.hidden = false;
   window.clearTimeout(toastTimer);
-  toastTimer = window.setTimeout(() => (t.hidden = true), ms);
+  requestAnimationFrame(() => requestAnimationFrame(() => t.classList.add("is-in")));
+  toastTimer = window.setTimeout(() => hideToast(t), ms);
+}
+
+function hideToast(t: HTMLElement): void {
+  window.clearTimeout(toastTimer);
+  t.classList.remove("is-in");
+  // Hide once the slide-out has run; the timer covers a transition that never
+  // fires (reduced motion, a background tab).
+  toastTimer = window.setTimeout(() => {
+    if (!t.classList.contains("is-in")) t.hidden = true;
+  }, 300);
 }

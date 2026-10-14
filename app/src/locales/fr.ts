@@ -122,8 +122,7 @@ export const fr: Dict = {
   "settings.spotsLede":
     "Ils vivent dans ce navigateur seulement, et c'est pourquoi un téléphone et un ordinateur ne savent rien l'un de l'autre. Voici comment faire le pont vous-même.",
   "settings.countingTitle": "Compter les visites",
-  "settings.countingLede":
-    "La seule chose qu'Indigene dise au monde extérieur de votre passage — et l'interrupteur qui l'arrête.",
+  "settings.countingLede": "La seule chose qu'Indigene dit de votre visite, et comment la désactiver.",
   "settings.done": "Terminé",
 
   // ---------------------------------------------------------------------
@@ -229,8 +228,7 @@ export const fr: Dict = {
   "memory.visitPrivacy":
     "Un numéro de version et une date, dans ce navigateur — pas de compte, rien sur qui vous êtes, et rien qui quitte l'appareil",
   "memory.countTitle": "Compter mes visites",
-  "memory.countLede":
-    "Ouvrir une page apprend à un service extérieur qu'une page a été ouverte, et laquelle — jamais qui vous êtes, ni où vous êtes, ni ce que vous saisissez. C'est ainsi que nous savons si quelqu'un se sert de tout ceci.",
+  "memory.countLede": "Nous comptons les pages ouvertes. Jamais qui les ouvre, d'où, ni ce qui y est saisi.",
   "memory.countBrowserOff":
     "Votre navigateur demande déjà aux sites de ne pas vous pister : Indigene ne compte donc pas vos visites, quoi qu'il arrive. Votre choix ci-dessous est conservé pour le jour où vous désactiveriez ce réglage.",
   "memory.countOn": "Compter mes visites",
@@ -439,7 +437,7 @@ export const fr: Dict = {
   "inat.importButton": "Importer",
   "inat.remove": "Retirer",
   "inat.removed": "Retiré de cet appareil.",
-  "inat.privacy": "Votre nom d'utilisateur reste sur cet appareil et n'est jamais envoyé qu'à iNaturalist",
+  "inat.privacyLink": "Comment votre nom d'utilisateur est traité",
   "import.docTitle": "Importer depuis iNaturalist — Indigene",
   "import.title": "Importer depuis iNaturalist",
   "import.lede": "Vos observations de plantes des cinq dernières années près de ce lieu, triées selon sa région. Cochez ce qui y pousse.",
@@ -1289,14 +1287,16 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "results.title": "Les plantes pour ce lieu",
   "results.regionTag": "📍 {region}",
-  "results.regionTagPick": "📍 {region} — votre choix, pas une mesure faite depuis une position",
+  "results.regionTagPick": "📍 {region} · votre choix",
   "results.filtersMeaning": "Ce que veulent dire ces étiquettes",
   "results.alsoHere": "Aussi dans cette région : {wildlife} · {invasives}",
   "results.alsoHereWildlife": "Aussi dans cette région : {wildlife}",
-  "results.count":
-    "{n} plantes indigènes {fit} — dont {good} conviennent bien ou passablement. Les meilleures d'abord.",
-  "results.fitClimate": "s'accommodent du climat de ce lieu",
-  "results.fitList": "figurent sur la liste de cette région",
+  "results.tallyLabel": "Cette liste en chiffres",
+  "results.tallyNatives": "Indigènes",
+  "results.tallyNativesClimate": "Toutes les plantes indigènes de la liste de cette région qui supportent les hivers de ce lieu.",
+  "results.tallyNativesList": "Toutes les plantes indigènes de la liste de cette région.",
+  "results.tallyGood": "Bien adaptées",
+  "results.tallyGoodExplain": "Les plantes dont les besoins en soleil, en eau et en sol conviennent bien, ou assez bien, à ce lieu. Les meilleures viennent en premier.",
   "results.noneFiltered":
     "Aucune plante de la liste {region} ne passe tous vos filtres. Essayez d'en assouplir un — les limites de taille en sont souvent la cause.",
   "results.noneHardy":
@@ -1310,17 +1310,15 @@ export const fr: Dict = {
   "results.filterNone": "Rien ici ne correspond — ",
   "results.filterSearchAll": "chercher dans toutes les régions",
   "results.filterNoneRest": ".",
-  "results.rankedFor": "Classé selon : ",
-  "results.changeGoal": "Changer",
+  "results.goalLabel": "Objectif",
   "results.changeGoalAria": "Changer le critère de classement",
-  "results.matchedTo": "Établi pour : ",
   "results.sunSummary": "{label} (~{hours} h de soleil)",
-  "results.mesicSoil": "sol frais et jamais détrempé ({link} dans les guides)",
-  "results.mesicTerm": "« mésique »",
+  "results.condLabel": "Ce lieu",
+  "results.condSun": "{label} · ~{hours} h",
   "results.soilBand": "sol {word}",
-  "results.wintersTo": "hivers descendant jusqu'à environ {temp} ({link})",
+  "results.condWinter": "Hivers jusqu'à {temp} ({link})",
   "results.zoneLink": "zone USDA {zone}",
-  "results.nativeAll": ". Tout ce qui suit est indigène de cette région{hardy}.",
+  "results.nativeAll": "Tout ce qui suit est indigène de cette région{hardy}.",
   "results.andHardy": " et résiste à vos hivers",
   "results.back": "Retour",
   "results.save": "💾 Enregistrer ce lieu",
@@ -1356,7 +1354,11 @@ export const fr: Dict = {
   "weight.word.3": "compte normalement",
   "weight.word.4": "compte beaucoup",
   "weight.word.5": "compte avant tout",
-  "filter.summary": "🔍 Filtres",
+  "filter.summary": "Filtres",
+  "filter.activeCount": "{n} actif(s)",
+  "filter.hint": "Arrosage, cerfs, épines, animaux, taille",
+  "disclosure.open": "Ouvrir",
+  "disclosure.close": "Fermer",
   "filter.noWater": "🌾 Survit sans arrosage",
   "filter.deer": "🦌 Les chevreuils l'évitent en général",
   "filter.thorns": "🚫 Rien qui pique",
@@ -1467,6 +1469,11 @@ export const fr: Dict = {
   "conservation.globally": "{status} dans le monde.",
   "conservation.here": "En {place}, {status}.",
   "conservation.learnMore": "Ce que signifient ces statuts",
+  // Le guide (components/guide-link.ts) n'existe qu'en anglais : on le dit.
+  "guide.ranking": "Classement et filtres, expliqués (en anglais)",
+  "guide.goals": "Ce que fait chaque objectif (en anglais)",
+  "guide.spots": "Ce qu'un lieu enregistré permet (en anglais)",
+  "guide.inat": "Ce qu'apporte le lien iNaturalist (en anglais)",
   "conservation.buyNursery": "À acheter en pépinière — n'en prélevez jamais dans la nature.",
   "conservation.plantForIt": "Planter ce dont il a besoin, voilà l'aide utile.",
   "conservation.span": "{from} à {to}",

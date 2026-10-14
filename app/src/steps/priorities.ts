@@ -24,6 +24,7 @@
 // Filters stay where they were, on the list itself: they *narrow* results
 // rather than rank them, and that's a question you ask once you've seen what
 // came back.
+import { guideLink } from "../components/guide-link";
 import { el, clear } from "../ui";
 import { navigate, store, persistPrefs, resultsTrail, keepTrail } from "../state";
 import { draftRegion, draftPlants, rankDraft, draftContext } from "../lib/draft";
@@ -162,7 +163,7 @@ export async function renderPriorities(main: HTMLElement): Promise<(() => void) 
   }
 
   const tuning = el("details", { class: "weights", style: "margin-top:0.75rem" }, [
-    el("summary", {}, t("priorities.tuneSummary")),
+    el("summary", { "data-open": t("disclosure.open"), "data-close": t("disclosure.close") }, t("priorities.tuneSummary")),
     el("p", { class: "step-lede", style: "margin:0.5rem 0 0.25rem" }, t("priorities.tuneLede")),
     ...sliderRows.map((s) => s.row),
   ]);
@@ -178,6 +179,7 @@ export async function renderPriorities(main: HTMLElement): Promise<(() => void) 
     el("h2", { class: "step-title" }, t("priorities.title")),
     el("p", { class: "step-lede" }, t("priorities.lede")),
     whyThis(t("priorities.whyTitle"), t("priorities.why")),
+    guideLink("ranking", t("guide.goals"), "goals", "margin:0.5rem 0 0"),
     el("h3", { style: "margin:1rem 0 0.4rem" }, t("priorities.pickTitle")),
     ...goalButtons.map((g) => g.btn),
     zeroNote,

@@ -1,3 +1,4 @@
+import { guideLink } from "../components/guide-link";
 import { el, clear, toast } from "../ui";
 import { navigate, openSavedSpot } from "../state";
 import { listSpots, deleteSpot, listPlantings } from "../db";
@@ -171,6 +172,7 @@ export async function renderSaved(main: HTMLElement): Promise<void> {
 
   main.append(
     list,
+    guideLink("spots", t("guide.spots"), undefined, "margin:1rem 0 0"),
     privacyNote(t("saved.privacy")),
     el("button", { class: "btn btn-primary btn-block", style: "margin-top:1rem", onClick: () => navigate("location") }, t("saved.findAnother"))
   );

@@ -170,6 +170,38 @@ p.more-link a {
   text-decoration-color: currentColor;
 }
 
+/* A link to the guide page that explains this part of the app
+   (components/guide-link.ts). A side note, not a way on: smaller and in the
+   soft ink with a faint underline, the info mark in the brand green. It takes
+   the link colour only under a pointer or focus. */
+.guide-link { margin: 0.75rem 0 0; font-size: 0.85rem; line-height: 1.3; }
+/* Several quiet links under a card's control, stacked and inset to line up
+   with the text inside the field above them. */
+.card-links { margin: 0.6rem 0 0; padding-left: 0.85rem; display: grid; gap: 0.1rem; }
+.card-links .guide-link { margin: 0; }
+.guide-link a {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  min-height: 2rem; /* a comfortable tap target without looking like a button */
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, var(--ink-soft) 35%, transparent);
+}
+.guide-link-icon {
+  flex: none; color: var(--brand);
+  /* Sized with the text, and centred on its capitals rather than on the line
+     box: flex centring put the mark ~1.4px low (measured at 15.3px), since the
+     line box sits lower than the letters a reader lines it up with. */
+  width: 1.05em; height: 1.05em;
+  transform: translateY(-0.09em);
+}
+.guide-link a:is(:hover, :focus-visible) {
+  color: var(--focus);
+  text-decoration-color: currentColor;
+}
+.guide-link a:is(:hover, :focus-visible) .guide-link-icon { color: currentColor; }
+
 /* --- Section headings that lead somewhere -------------------------------
    A roster's category heading, a wildlife group's heading, a region on an
    animal's page: each labels the cards under it *and* is the way into that
@@ -1389,22 +1421,29 @@ summary {
 summary::-webkit-details-marker {
   display: none;
 }
+/* The pill's words come from the summary's own data-open / data-close, so they
+   follow the reader's language (the two call sites set them from the locale). */
 summary::after {
-  content: "Open ▾";
+  content: attr(data-open) " ▾";
   margin-left: auto;
   flex: 0 0 auto;
-  font-size: 0.85rem;
+  /* A secondary button at the small size, the same as the app's other
+     in-card buttons. */
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box; /* the global reset doesn't reach ::after */
+  min-height: 2.4rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
   font-weight: 650;
   line-height: 1;
-  color: var(--brand);
-  border: 1.5px solid var(--brand);
-  border-radius: 999px;
-  padding: 0.35rem 0.7rem;
+  color: var(--ink);
+  background: var(--surface);
+  border: 2px solid var(--line-strong);
+  border-radius: var(--radius);
 }
 details[open] > summary::after {
-  content: "Close ▴";
-  color: var(--surface);
-  background: var(--brand);
+  content: attr(data-close) " ▴";
 }
 
 /* Every card below a plant's profile: same heading, so they read as siblings,
@@ -2060,7 +2099,22 @@ details.weights {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
-  padding: 0.5rem 0.9rem;
+  padding: 0 0.6rem 0.5rem 0.9rem;
+}
+details.weights:not([open]) { padding-bottom: 0; }
+/* A panel's summary row (the goals step's "Fine-tune each one"): one row,
+   its control on the right. */
+details.weights > summary {
+  gap: 0.6rem;
+  min-height: 3.3rem;
+  padding: 0.45rem 0;
+  font-size: 0.95rem;
+}
+.control-icon {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--brand);
 }
 /* The plant list's controls block is sticky, so a panel taller than the screen
    could never show its bottom. Open panels *there* scroll internally instead,
@@ -2111,36 +2165,69 @@ details.weights {
   color: var(--ink-soft);
 }
 
-/* --- What the list is ranked for (plant list) --- */
-/* The answer to "why this order?", named rather than buried in a panel, with
-   the way to change it beside it. */
-.ranked-for {
+/* The plant list's two figures (natives, good fits), under its controls. */
+.result-tally { margin: 0.75rem 0 1rem; }
+
+/* The spot's conditions above the plant list: icon + words, plain text. */
+.conditions { margin: 0.25rem 0 0.75rem; }
+.condition-list {
+  margin: 0; padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem;
+  font-size: 0.95rem; color: var(--ink);
+}
+.condition-list li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.condition-icon { display: inline-flex; font-size: 1.05rem; line-height: 1; }
+.condition-icon svg { width: 1.35rem; height: 1.35rem; }
+.condition-list a { color: inherit; text-decoration-color: color-mix(in srgb, var(--focus) 50%, transparent); text-underline-offset: 2px; }
+.condition-note { margin: 0.4rem 0 0; font-size: 0.88rem; color: var(--ink-soft); }
+
+/* --- The plant list's two controls: its goal, and its filters --- */
+/* Each is one row you tap anywhere: icon, a small label over its value, and a
+   chevron saying where the tap goes (› to the goals step, ⌄ opens in place).
+   No "Change" or "Open" word, so the goal's name has the width to stay on one
+   line. The goal row is a <button>; the filters row is the panel's <summary>. */
+.control-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 3.6rem;
+  margin: 0;
+  padding: 0.5rem 0.9rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
-  padding: 0.45rem 0.6rem 0.45rem 0.9rem;
-}
-.ranked-for p {
-  flex: 1 1 8rem;
-  margin: 0;
-  min-width: 0;
-  font-size: 0.95rem;
-  color: var(--ink-soft);
-}
-.ranked-for strong {
   color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
-.ranked-for .btn {
-  flex: 0 0 auto;
-  min-height: 2.4rem;
-  padding: 0.4rem 0.8rem;
-  font-size: 0.9rem;
+.control-row:hover { border-color: var(--brand); }
+.control-row:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.control-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 0.05rem; }
+.control-label {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--ink-soft);
 }
-
+.control-value {
+  font-size: 1rem; font-weight: 650; line-height: 1.3;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.control-chevron { flex: none; width: 1.2rem; height: 1.2rem; color: var(--ink-soft); transition: transform 150ms ease-out; }
+.control-row:hover .control-chevron { color: var(--brand); }
+/* Inside the filters panel the row borrows the panel's border, and the global
+   summary pill gives way to the chevron, which flips when the panel is open. */
+details.weights > summary.control-row {
+  gap: 0.75rem; min-height: 3.6rem; font-size: inherit;
+  border: 0; border-radius: 0; background: transparent;
+  margin: 0 -0.3rem 0 0; padding: 0.5rem 0;
+}
+details.weights > summary.control-row::after { content: none; display: none; }
+details[open] > summary.control-row .control-chevron { transform: rotate(180deg); }
+details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right: 0.9rem; }
+details.weights:has(> summary.control-row):hover { border-color: var(--brand); }
+/* The answer to "why this order?", named rather than buried in a panel, with
+   the way to change it beside it. */
 /* --- "Yes, that did something" --- */
 /* Every recompute reports, even when the answer is "nothing moved" — and
    flashes as it does, so a repeated sentence still reads as a fresh reply.
@@ -4000,20 +4087,54 @@ details.weights {
   margin-bottom: 0.6rem;
 }
 
-/* Toast */
+/* Toast — a passing confirmation ("Saved to this device.").
+   On a phone it drops in from the top, over the header, the way the phone's own
+   notifications do: that's where a glance already goes, and nothing the reader
+   is tapping at the bottom gets covered. On a laptop it rises from the bottom
+   centre instead. A compact rounded card, inset on both sides so it can use the
+   full width — the old `left: 50%` pill only had half the screen to size into,
+   and wrapped ten words into a three-line blob. Tap it to dismiss; it slides
+   back out (`toast()` in ui.ts toggles `.is-in`). */
 .toast {
   position: fixed;
-  left: 50%;
-  bottom: calc(1rem + env(safe-area-inset-bottom));
-  transform: translateX(-50%);
-  background: var(--ink);
-  color: var(--bg);
+  left: 0.75rem;
+  right: 0.75rem;
+  top: calc(0.5rem + env(safe-area-inset-top));
+  width: fit-content;
+  max-width: 28rem;
+  margin-inline: auto;
   padding: 0.7rem 1.1rem;
-  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  backdrop-filter: blur(12px) saturate(1.4);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22), 0 2px 6px rgba(0, 0, 0, 0.12);
   font-size: 0.95rem;
-  max-width: 90vw;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
   z-index: 50;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(calc(-100% - 1rem));
+  transition: transform 260ms cubic-bezier(0.2, 0.9, 0.3, 1.2), opacity 200ms ease-out;
+}
+.toast.is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (min-width: 64rem) {
+  .toast {
+    top: auto;
+    bottom: calc(1.25rem + env(safe-area-inset-bottom));
+    transform: translateY(calc(100% + 1.25rem));
+  }
+  .toast.is-in { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .toast { transition: opacity 150ms linear; transform: none; }
 }
 
 /* Pull down to reload.

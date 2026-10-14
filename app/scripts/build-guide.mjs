@@ -30,7 +30,7 @@
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { SECTIONS, SEGMENT_TO_ID, matchLabels, SECTION_LABELS, APP, PREFIX } from "./guide-catalog.mjs";
+import { SECTIONS, SECTION_BY_ID, SEGMENT_TO_ID, matchLabels, SECTION_LABELS, APP, PREFIX, guideProblems } from "./guide-catalog.mjs";
 import { pageArtSvg, PAGE_ART_CSS } from "../src/components/page-art-svg.mjs";
 import { autolink } from "./_changelog.mjs";
 
@@ -350,6 +350,34 @@ footer { color: var(--ink-soft); margin-top: 2rem; font-size: 0.9rem; }
   .section-cols > .history { margin-top: 1.25rem; }
 }
 .privacy-line { margin-top: 0.6rem; }
+
+/* A guide's own explanation: parts with headings, then the guides it meshes with. */
+.doc p { margin: 0.5rem 0; }
+.doc a, .doc li a {
+  color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--focus) 50%, transparent);
+}
+.doc a:hover, .doc a:focus-visible { color: var(--focus); text-decoration-color: currentColor; }
+.doc .chip, .doc .chip:hover { color: var(--on-brand); text-decoration: none; }
+.doc .chip.ghost { color: var(--focus); }
+.doc ul.plain { margin: 0.35rem 0 0.5rem; padding-left: 1.2rem; }
+.doc ul.plain li { margin: 0.4rem 0; color: var(--ink-soft); }
+/* "On this page": a quiet list down the left rule, one heading per line. */
+.toc-wrap { margin: 1rem 0 0.25rem; padding: 0.1rem 0 0.1rem 0.9rem; border-left: 3px solid var(--brand-bg); }
+.toc-title { margin: 0 0 0.3rem !important; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+.toc { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.15rem; font-size: 0.95rem; }
+.doc .toc a { display: block; padding: 0.2rem 0; color: var(--ink); text-decoration: none; }
+.doc .toc a:hover, .doc .toc a:focus-visible { color: var(--focus); }
+.part { scroll-margin-top: 1rem; }
+.related { margin: 0.35rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.5rem; }
+.related a.rel-link {
+  display: block; padding: 0.6rem 0.8rem; border: 1px solid var(--line);
+  border-radius: 10px; text-decoration: none; color: inherit;
+}
+.related a.rel-link:hover { border-color: var(--brand); color: inherit; }
+.related .rel-title { display: block; font-weight: 600; color: var(--brand-ink); }
+.related .rel-why { display: block; font-size: 0.92rem; color: var(--ink-soft); }
+.more-link { display: inline-block; margin-top: 0.5rem; color: var(--focus); }
 </style>
 </head>
 <body>
@@ -368,16 +396,13 @@ visit counter, nothing sent anywhere.
 `;
 }
 
-function renderHistory(items) {
-  if (items.length === 0) {
-    return `<div class="history">
-<h2>How this grew</h2>
-<p class="empty">Nothing filed here yet. As changes to this part of the app are
-written up, they’ll appear here on their own.</p>
-</div>`;
-  }
-  // Group the section's items by the release they landed in, keeping the
-  // changelog's newest-first order.
+// How many releases of a section's history its guide page shows. The rest is
+// one tap away on the section's own history page: the guide explains how a
+// part works today, and a long list of past changes would bury that.
+const RECENT_RELEASES = 2;
+
+/** Group a section's items by the release they landed in, newest first. */
+function byRelease(items) {
   const groups = [];
   for (const it of items) {
     let g = groups[groups.length - 1];
@@ -387,27 +412,70 @@ written up, they’ll appear here on their own.</p>
     }
     g.items.push(it);
   }
-  const rels = groups
-    .map(
-      (g) => `<div class="rel">
+  return groups;
+}
+
+const renderRelease = (g) => `<div class="rel">
 <h3>Version ${escapeHtml(g.version)}</h3><span class="when">${escapeHtml(g.date)}</span>
 <ul>
 ${g.items.map((it) => `<li>${inline(it.text)}</li>`).join("\n")}
 </ul>
-</div>`,
-    )
-    .join("\n");
-  return `<div class="history">
-<h2>How this grew</h2>
-<p>Every change to this part of the app, newest first — the same plain notes
-that go out with each update.</p>
-${rels}
 </div>`;
+
+function renderHistory(section, items) {
+  if (items.length === 0) {
+    return `<div class="history">
+<h2>Recent changes</h2>
+<p class="empty">Nothing filed here yet. As changes to this part of the app are
+written up, they’ll appear here on their own.</p>
+</div>`;
+  }
+  const groups = byRelease(items);
+  const shown = groups.slice(0, RECENT_RELEASES);
+  const more = groups.length > shown.length
+    ? `<a class="more-link" href="history/">Every change to this part, since the start &rarr;</a>`
+    : "";
+  return `<div class="history">
+<h2>Recent changes</h2>
+<p>The latest updates to this part of the app, in the same plain notes that go
+out with each update.</p>
+${shown.map(renderRelease).join("\n")}
+${more}
+</div>`;
+}
+
+function renderHistoryPage(section, items) {
+  return shell({
+    root: "../../../",
+    title: `${section.title}: every change — Indigene guide`,
+    description: `Every change to ${section.title.toLowerCase()} in Indigene, newest first.`,
+    canonical: `${SITE}${section.id}/history/`,
+    body: `<a class="back" href="../">&larr; ${escapeHtml(section.title)}</a>
+<h1>Every change</h1>
+<p class="lede">How ${escapeHtml(section.title.charAt(0).toLowerCase() + section.title.slice(1))} grew,
+newest first — the same plain notes that go out with each update.</p>
+<div class="history">
+${byRelease(items).map(renderRelease).join("\n")}
+</div>`,
+  });
+}
+
+/** A part's body: paragraphs (a string or a list of them), then optional
+ *  numbered steps and a bulleted list. All inline markdown. */
+function renderPart(part, i) {
+  const out = [`<section class="part" id="${escapeHtml(part.id ?? `part-${i + 1}`)}">`];
+  out.push(`<h2>${escapeHtml(part.heading)}</h2>`);
+  for (const p of [part.body ?? []].flat()) out.push(`<p>${inline(p)}</p>`);
+  if (part.steps?.length) out.push(`<ol>${part.steps.map((x) => `<li>${inline(x)}</li>`).join("\n")}</ol>`);
+  if (part.list?.length) out.push(`<ul class="plain">${part.list.map((x) => `<li>${inline(x)}</li>`).join("\n")}</ul>`);
+  for (const p of [part.after ?? []].flat()) out.push(`<p>${inline(p)}</p>`);
+  out.push(`</section>`);
+  return out.join("\n");
 }
 
 function renderSectionPage(section, items) {
   const visit = (section.visit ?? [])
-    .map((v) => `<a class="chip" href="${escapeHtml(v.href)}">${escapeHtml(v.label)}</a>`)
+    .map((v, i) => `<a class="chip${i ? " ghost" : ""}" href="${escapeHtml(v.href)}">${escapeHtml(v.label)}</a>`)
     .join("\n");
   const learn = (section.learn ?? [])
     .map(
@@ -419,11 +487,30 @@ function renderSectionPage(section, items) {
   const steps = (section.steps ?? [])
     .map((s) => `<li>${inline(s)}</li>`)
     .join("\n");
+  const parts = section.parts ?? [];
+  const related = (section.related ?? [])
+    .map(({ id, why }) => {
+      const r = SECTION_BY_ID.get(id);
+      return `<li><a class="rel-link" href="../${r.id}/"><span class="rel-title">${r.emoji} ${escapeHtml(r.title)}</span>` +
+        `<span class="rel-why">${escapeHtml(why)}</span></a></li>`;
+    })
+    .join("\n");
 
   const doc = [`<div class="doc">`, `<p class="lede">${inline(section.lede)}</p>`];
   if (visit) doc.push(`<div class="chips">${visit}</div>`);
+  // Long guides get a row of their own headings, so a reader can jump to the
+  // part they came for. Plain links, always open — nothing folds.
+  if (parts.length >= 3) {
+    doc.push(
+      `<nav class="toc-wrap" aria-labelledby="toc-title"><p class="toc-title" id="toc-title">On this page</p><ul class="toc">` +
+        parts.map((p, i) => `<li><a href="#${escapeHtml(p.id ?? `part-${i + 1}`)}">${escapeHtml(p.heading)}</a></li>`).join("") +
+        `</ul></nav>`,
+    );
+  }
   if (steps) doc.push(`<h2>How you use it</h2>`, `<ol>${steps}</ol>`);
+  doc.push(...parts.map(renderPart));
   if (section.note) doc.push(`<p class="note">${inline(section.note)}</p>`);
+  if (related) doc.push(`<h2>Goes well with</h2>`, `<ul class="related">${related}</ul>`);
   if (learn) {
     doc.push(`<h2>Learn more</h2>`, `<ul class="learn">${learn}</ul>`);
   }
@@ -440,7 +527,7 @@ function renderSectionPage(section, items) {
 ${items.length ? `<p class="updated">Last updated ${escapeHtml(monthYear(items[0].date))}</p>` : ""}
 <div class="section-cols">
 ${doc.join("\n")}
-${renderHistory(items)}
+${renderHistory(section, items)}
 </div>`,
   });
 }
@@ -467,9 +554,9 @@ function renderIndex(published, historyById) {
     canonical: SITE,
     body: `${pageArtSvg("guide")}
 <h1>How Indigene works</h1>
-<p class="lede">Indigene finds the plants that naturally belong where you live.
-This guide walks through each part of the app in plain words — what it’s for,
-how to use it, and where to learn more. Start anywhere.</p>
+<p class="lede">Indigene finds the plants that grow wild where you live. Each
+page here explains one part of the app: what it’s for, how to use it, and where
+to learn more. Start anywhere.</p>
 <a class="back" href="../">&larr; Open Indigene</a>
 <div class="cards">
 ${cards}
@@ -486,11 +573,7 @@ const historyById = fileHistory(releases);
 const published = SECTIONS.filter((s) => s.published);
 
 if (published.length === 0) fail("no published sections in the guide catalog");
-for (const s of published) {
-  if (!s.lede || !s.lede.trim()) {
-    fail(`section "${s.id}" is published but has no lede — write it or set published:false`);
-  }
-}
+for (const problem of guideProblems()) fail(problem);
 
 if (CHECK) {
   const filed = [...historyById.values()].reduce((n, arr) => n + arr.length, 0);
@@ -508,6 +591,11 @@ for (const s of published) {
   const dir = resolve(OUT, s.id);
   mkdirSync(dir, { recursive: true });
   writeFileSync(resolve(dir, "index.html"), renderSectionPage(s, historyById.get(s.id)));
+  const items = historyById.get(s.id);
+  if (byRelease(items).length > RECENT_RELEASES) {
+    mkdirSync(resolve(dir, "history"), { recursive: true });
+    writeFileSync(resolve(dir, "history", "index.html"), renderHistoryPage(s, items));
+  }
 }
 
 console.log(

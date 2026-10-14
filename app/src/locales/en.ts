@@ -1457,6 +1457,11 @@ export const en = {
   "conservation.globally": "{status} worldwide.",
   "conservation.here": "In {place}, {status}.",
   "conservation.learnMore": "What these ranks mean",
+  // Links to the guide (components/guide-link.ts), which is in English only.
+  "guide.ranking": "How the ranking and filters work",
+  "guide.goals": "What each goal does",
+  "guide.spots": "What a saved spot can do",
+  "guide.inat": "What linking iNaturalist adds",
   "conservation.buyNursery": "Buy it from a nursery — never dig one from the wild.",
   "conservation.plantForIt": "Planting what it needs is the help it can use.",
   // The ranks in words. NatureServe's five and the IUCN's five, which overlap

@@ -1,6 +1,7 @@
 // The Settings card for a linked iNaturalist account: link one, see which one,
 // remove it. What linking means for privacy is on the Privacy page
 // (`#/privacy/inat`), and the card's lock line goes straight there.
+import { guideLink } from "./guide-link";
 import { el, clear, toast } from "../ui";
 import { privacyNote } from "./privacy-link";
 import { linkedLogin, parseLogin, setLinkedLogin, unlinkLogin } from "../lib/inat-account";
@@ -36,6 +37,7 @@ export function inatCard(): HTMLElement {
     } else {
       card.append(el("p", {}, t("inat.lede")), linkForm(message));
     }
+    card.append(guideLink("inaturalist", t("guide.inat"), undefined, "margin:0.8rem 0 0"));
     card.append(privacyNote(t("inat.privacy"), undefined, "inat"));
   }
 

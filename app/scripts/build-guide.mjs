@@ -363,7 +363,7 @@ footer { color: var(--ink-soft); margin-top: 2rem; font-size: 0.9rem; }
 .doc ul.plain { margin: 0.35rem 0 0.5rem; padding-left: 1.2rem; }
 .doc ul.plain li { margin: 0.4rem 0; color: var(--ink-soft); }
 .toc { margin: 0.6rem 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; font-size: 0.95rem; }
-.toc a { color: var(--focus); }
+.doc .toc a { color: var(--focus); text-decoration-color: currentColor; }
 .part { scroll-margin-top: 1rem; }
 .related { margin: 0.35rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.5rem; }
 .related a.rel-link {

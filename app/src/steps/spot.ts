@@ -9,6 +9,7 @@
 // where somebody's garden is and what's in it should not have a link that works
 // for a stranger. It lives behind the Saved list, on this device, like the spot
 // it belongs to.
+import { guideLink } from "../components/guide-link";
 import { el, clear, toast } from "../ui";
 import { navigate, openSavedSpot } from "../state";
 import { getSpot, listPlantings, plantingsForSpot, savePlanting, saveSpot, deletePlanting } from "../db";
@@ -159,6 +160,7 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
       style: "margin-top:1rem",
       onClick: () => openSavedSpot(spot),
     }, t("spot.seePlants")),
+    guideLink("spots", t("guide.spots"), undefined, "margin:1rem 0 0"),
     privacyNote(t("spot.privacy"), undefined, "log")
   );
 }

@@ -24,6 +24,7 @@
 // Filters stay where they were, on the list itself: they *narrow* results
 // rather than rank them, and that's a question you ask once you've seen what
 // came back.
+import { guideLink } from "../components/guide-link";
 import { el, clear } from "../ui";
 import { navigate, store, persistPrefs, resultsTrail, keepTrail } from "../state";
 import { draftRegion, draftPlants, rankDraft, draftContext } from "../lib/draft";
@@ -178,6 +179,7 @@ export async function renderPriorities(main: HTMLElement): Promise<(() => void) 
     el("h2", { class: "step-title" }, t("priorities.title")),
     el("p", { class: "step-lede" }, t("priorities.lede")),
     whyThis(t("priorities.whyTitle"), t("priorities.why")),
+    guideLink("ranking", t("guide.goals"), "goals", "margin:0.5rem 0 0"),
     el("h3", { style: "margin:1rem 0 0.4rem" }, t("priorities.pickTitle")),
     ...goalButtons.map((g) => g.btn),
     zeroNote,

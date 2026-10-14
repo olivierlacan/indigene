@@ -1467,6 +1467,11 @@ export const fr: Dict = {
   "conservation.globally": "{status} dans le monde.",
   "conservation.here": "En {place}, {status}.",
   "conservation.learnMore": "Ce que signifient ces statuts",
+  // Le guide (components/guide-link.ts) n'existe qu'en anglais : on le dit.
+  "guide.ranking": "Classement et filtres, expliqués (en anglais)",
+  "guide.goals": "Ce que fait chaque objectif (en anglais)",
+  "guide.spots": "Ce qu'un lieu enregistré permet (en anglais)",
+  "guide.inat": "Ce qu'apporte le lien iNaturalist (en anglais)",
   "conservation.buyNursery": "À acheter en pépinière — n'en prélevez jamais dans la nature.",
   "conservation.plantForIt": "Planter ce dont il a besoin, voilà l'aide utile.",
   "conservation.span": "{from} à {to}",

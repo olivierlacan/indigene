@@ -1,3 +1,4 @@
+import { guideLink } from "../components/guide-link";
 import { el, clear, toast } from "../ui";
 import { mostWanted, wantedRegionHref } from "../lib/invasives";
 import { navigate, store, persistPrefs, resultsTrail, leaveResults } from "../state";
@@ -263,6 +264,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
         { region: el("a", { href: `#/regions/${region.meta.id}` }, name) })),
     el("p", { class: "step-lede" }, conditions),
     el("div", { class: "result-controls" }, [rankedFor, filters]),
+    guideLink("ranking", t("guide.ranking"), undefined, "margin:0.5rem 0 0"),
     summaryEl,
     rc.node,
     nameFilter.node,

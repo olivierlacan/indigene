@@ -362,8 +362,12 @@ footer { color: var(--ink-soft); margin-top: 2rem; font-size: 0.9rem; }
 .doc .chip.ghost { color: var(--focus); }
 .doc ul.plain { margin: 0.35rem 0 0.5rem; padding-left: 1.2rem; }
 .doc ul.plain li { margin: 0.4rem 0; color: var(--ink-soft); }
-.toc { margin: 0.6rem 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; font-size: 0.95rem; }
-.doc .toc a { color: var(--focus); text-decoration-color: currentColor; }
+/* "On this page": a quiet list down the left rule, one heading per line. */
+.toc-wrap { margin: 1rem 0 0.25rem; padding: 0.1rem 0 0.1rem 0.9rem; border-left: 3px solid var(--brand-bg); }
+.toc-title { margin: 0 0 0.3rem !important; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+.toc { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.15rem; font-size: 0.95rem; }
+.doc .toc a { display: block; padding: 0.2rem 0; color: var(--ink); text-decoration: none; }
+.doc .toc a:hover, .doc .toc a:focus-visible { color: var(--focus); }
 .part { scroll-margin-top: 1rem; }
 .related { margin: 0.35rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.5rem; }
 .related a.rel-link {
@@ -498,9 +502,9 @@ function renderSectionPage(section, items) {
   // part they came for. Plain links, always open — nothing folds.
   if (parts.length >= 3) {
     doc.push(
-      `<ul class="toc" aria-label="On this page">` +
+      `<nav class="toc-wrap" aria-labelledby="toc-title"><p class="toc-title" id="toc-title">On this page</p><ul class="toc">` +
         parts.map((p, i) => `<li><a href="#${escapeHtml(p.id ?? `part-${i + 1}`)}">${escapeHtml(p.heading)}</a></li>`).join("") +
-        `</ul>`,
+        `</ul></nav>`,
     );
   }
   if (steps) doc.push(`<h2>How you use it</h2>`, `<ol>${steps}</ol>`);
@@ -550,9 +554,9 @@ function renderIndex(published, historyById) {
     canonical: SITE,
     body: `${pageArtSvg("guide")}
 <h1>How Indigene works</h1>
-<p class="lede">Indigene finds the plants that naturally belong where you live.
-This guide walks through each part of the app in plain words — what it’s for,
-how to use it, and where to learn more. Start anywhere.</p>
+<p class="lede">Indigene finds the plants that grow wild where you live. Each
+page here explains one part of the app: what it’s for, how to use it, and where
+to learn more. Start anywhere.</p>
 <a class="back" href="../">&larr; Open Indigene</a>
 <div class="cards">
 ${cards}

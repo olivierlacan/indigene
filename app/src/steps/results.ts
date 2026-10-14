@@ -1,3 +1,5 @@
+import { statTiles } from "../components/stat-card";
+import { goalIcon, filterIcon } from "../components/control-icons";
 import { soilAnswer } from "../lib/soil-answer";
 import { guideLink } from "../components/guide-link";
 import { el, clear, toast } from "../ui";
@@ -63,7 +65,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
   resultsTrail.scrollY = null;
   // The site summary sits outside the list so the filter field can live between
   // the two — and so typing doesn't rebuild the field the reader is typing in.
-  const summaryEl = el("p", { "aria-live": "polite", style: "margin:0.5rem 0 1rem;font-weight:650" });
+  const summaryEl = el("div", { "aria-live": "polite", class: "result-tally" });
   const listEl = el("div", { "aria-live": "polite" });
 
   // Where the list was when a card was tapped — read at the tap, not at
@@ -108,13 +110,19 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     const goodCount = ranked.filter((r) => r.match !== "poor").length;
     // Only claim a climate check when a looked-up zone actually filtered the
     // list; on the hand-picked-region path nothing was checked against winter.
-    const fitClause = store.draft.site?.zone ? t("results.fitClimate") : t("results.fitList");
     // Always the whole roster's tally: it describes the spot, not the typing.
-    summaryEl.replaceChildren(t("results.count", {
-      n: fmtNumber(ranked.length),
-      fit: fitClause,
-      good: fmtNumber(goodCount),
-    }));
+    // Two figures, not a sentence: how many natives are in play, and how many
+    // suit the spot. The order of the list says "best first" on its own.
+    summaryEl.replaceChildren(statTiles([
+      {
+        icon: "🌿", label: t("results.tallyNatives"), value: fmtNumber(ranked.length),
+        explain: store.draft.site?.zone ? t("results.tallyNativesClimate") : t("results.tallyNativesList"),
+      },
+      {
+        icon: "🌱", label: t("results.tallyGood"), value: fmtNumber(goodCount),
+        explain: t("results.tallyGoodExplain"),
+      },
+    ], t("results.tallyLabel"), { figures: true }));
     if (!ranked.length) {
       // Blame the right culprit: with any filter set, it's almost certainly the
       // filters that emptied the list, not the climate.
@@ -168,8 +176,8 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
   // of their own now (steps/priorities.ts); what stays behind is the answer to
   // "why this order?" — named, and one tap from being changed.
   const rankedFor = el("div", { class: "ranked-for" }, [
+    goalIcon(),
     el("p", {}, [
-      el("span", { "aria-hidden": "true" }, "⚖️ "),
       t("results.rankedFor"),
       el("strong", {}, priorityName(store.weights)),
     ]),
@@ -241,8 +249,16 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     ]);
   });
   const filters = el("details", { class: "weights", style: "margin-top:0.5rem" }, [
-    el("summary", {}, t("filter.summary")),
-    el("div", { style: "margin-top:0.5rem" }, [
+    el("summary", { "data-open": t("disclosure.open"), "data-close": t("disclosure.close") }, [
+      filterIcon(),
+      el("span", {}, t("filter.summary")),
+      // How many are on, so a closed panel still says the list is narrowed.
+      activeFilters(store.filters)
+        ? el("span", { class: "filter-count", "aria-label": t("filter.activeAria", { n: activeFilters(store.filters) }) },
+            String(activeFilters(store.filters)))
+        : null,
+    ]),
+    el("div", {}, [
       ...filterDefs.map((f) =>
         el("label", { style: "display:flex;gap:0.6rem;align-items:center;min-height:3rem;font-weight:500" }, [
           el("input", { type: "checkbox", checked: store.filters[f.key], onChange: (e) => { store.filters[f.key] = (e.target as HTMLInputElement).checked; persistPrefs(); rerender(); } }),
@@ -442,4 +458,10 @@ function renderNoRegion(main: HTMLElement): void {
       el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
     ])
   );
+}
+
+/** How many filters are switched on — each checkbox, and each size limit. */
+function activeFilters(f: typeof store.filters): number {
+  return [f.requireNoWater, f.requireDeerResistant, f.excludeThorny, f.excludePetToxic, f.excludeAggressive]
+    .filter(Boolean).length + (f.maxHeightFt != null ? 1 : 0) + (f.maxSpreadFt != null ? 1 : 0);
 }

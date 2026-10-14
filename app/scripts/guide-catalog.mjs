@@ -82,12 +82,12 @@ export const SECTIONS = [
     lede:
       "This is the heart of the app. You tell it where a patch of ground is and " +
       "how much sun it gets, and it ranks the plants that grew wild there before " +
-      "the houses did — the ones the local insects, birds and soil already know. " +
+      "the houses did: the ones the local insects, birds and soil already know. " +
       `[“Native”](${APP}/native) means just that: it evolved here.`,
     steps: [
       "On the home page, tap **Start where you’re standing**.",
       "Put the pin on your spot, say how much sun it gets, and check the soil.",
-      "Pick what the spot is for — or keep the usual goal, feeding wildlife.",
+      "Pick what the spot is for, or keep the usual goal: feeding wildlife.",
       "Read your list. Best matches come first.",
     ],
     parts: [
@@ -97,14 +97,14 @@ export const SECTIONS = [
         body:
           "There are three ways in, and you only need one:",
         list: [
-          "**📍 Use my location** — if you’re standing on the spot. Your phone asks first.",
-          "**Search by town** — type a town, city or postal code, then drag the pin roughly onto your garden.",
-          "**🗺️ Pick your region** — skip the map entirely. The list still works, but without a point on the map Indigene can’t look up your soil, rain or winter cold, so it leans on your answers.",
+          "**📍 Use my location**, if you’re standing on the spot. Your phone asks first.",
+          "**Search by town**: type a town, city or postal code, then drag the pin roughly onto your garden.",
+          "**🗺️ Pick your region**: skip the map entirely. The list still works, but without a point on the map Indigene can’t look up your soil, rain or winter cold, so it leans on your answers.",
         ],
         after: [
           "The map moves under a pin that stays in the middle. Press and hold the " +
-            "map to open a magnifier and nudge the pin a few metres at a time — " +
-            "useful when the front and back of a house get different sun.",
+            "map to open a magnifier and nudge the pin a few metres at a time. " +
+            "Useful when the front and back of a house get different sun.",
           `Your location goes only to the public map, soil and weather services that ` +
             `look it up, never to us: there is no Indigene server. [Your privacy](${guide("privacy")}) has the full list.`,
         ],
@@ -145,8 +145,8 @@ export const SECTIONS = [
         heading: "5. Your list",
         body: [
           "The best 25 matches are shown, best first. Each card says how well the " +
-            "plant suits the spot — **Good match**, **Workable here**, or **Poor " +
-            "match** with the reason why — and how much it does for wildlife.",
+            "plant suits the spot (**Good match**, **Workable here**, or **Poor " +
+            "match** with the reason why) and how much it does for wildlife.",
           "Plants that can’t survive your winters are left off entirely. Tap any " +
             `plant for [its own page](${guide("plants")}). Tap **💾 Save this spot** ` +
             `to keep the list and start a [plant log](${guide("spots")}).`,
@@ -213,13 +213,13 @@ export const SECTIONS = [
           "On the **What matters most here?** step, or with **Change** beside " +
           "“Ranked for” at the top of your list:",
         list: [
-          "**Feed the most wildlife** — the usual goal. Caterpillars first, then bees and birds.",
-          "**A bit of everything** — wildlife, rain and easy care count about the same.",
-          "**Butterflies & moths** — leaves their caterpillars can eat, flowers for the adults.",
-          "**Birds** — berries, seeds, cover, and caterpillars to feed their chicks.",
-          "**Stop erosion** — deep roots for a slope or bank that washes away.",
-          "**Soak up rain** — for a wet corner, a downspout or a rain garden.",
-          "**Easiest to grow** — the best odds of surviving with no watering and little fuss.",
+          "**Feed the most wildlife**: the usual goal. Caterpillars first, then bees and birds.",
+          "**A bit of everything**: wildlife, rain and easy care count about the same.",
+          "**Butterflies & moths**: leaves their caterpillars can eat, flowers for the adults.",
+          "**Birds**: berries, seeds, cover, and caterpillars to feed their chicks.",
+          "**Stop erosion**: deep roots for a slope or bank that washes away.",
+          "**Soak up rain**: for a wet corner, a downspout or a rain garden.",
+          "**Easiest to grow**: the best odds of surviving with no watering and little fuss.",
         ],
         after:
           "Under **⚖️ Fine-tune each one**, seven sliders set how much each thing " +
@@ -230,7 +230,7 @@ export const SECTIONS = [
         id: "cards",
         heading: "Reading a plant card",
         list: [
-          "**Good match for this spot**, **Workable here** or **Poor match — here’s why**, with the reasons: “Wants more sun than this spot gets”, say.",
+          "**Good match for this spot**, **Workable here** or **Poor match**, with reasons like “Wants more sun than this spot gets”.",
           "Its full-grown size and when it flowers.",
           "**Wildlife value**, out of 100, and **Counts most here**: the two things that lifted it highest for your goal.",
           `Labels such as **Essential** or **No watering**. [What each label means](${APP}/traits).`,
@@ -244,8 +244,8 @@ export const SECTIONS = [
         list: [
           "🌾 **Survives with no watering** once it has settled in.",
           "🦌 **Deer tend to leave it alone.**",
-          "🚫 **No thorns or stings** — nettles count as stings.",
-          "🐕 **Safe around pets** — leaves out anything that can upset a stomach.",
+          "🚫 **No thorns or stings**: nettles count as stings.",
+          "🐕 **Safe around pets**: leaves out anything that can upset a stomach.",
           "✋ **No aggressive spreaders.**",
           "📏 **Stays under** a height, and ↔️ a width, when full-grown.",
         ],
@@ -253,25 +253,25 @@ export const SECTIONS = [
           "Filters stay set on this device and apply to every new list, saved " +
             "spots included, until you untick them. If a list comes up empty, a " +
             "size limit is the usual cause.",
-          "The name box above the list searches all of it, not just the 25 shown " +
-            "— type “oak” to find an oak ranked 40th.",
+          "The name box above the list searches all of it, not just the 25 shown. " +
+            "Type “oak” to find an oak ranked 40th.",
         ],
       },
       {
         id: "labels",
         heading: "Filters and labels are the same facts",
         body:
-          "Filters work on your ranked list only. Elsewhere — the list of every " +
-          "plant, or a region’s plants — you can search by name and browse by " +
+          "Filters work on your ranked list only. On the list of every " +
+          "plant, or a region’s plants, you can search by name and browse by " +
           "kind (trees, shrubs, grasses), but not filter. What you can do there is " +
-          "read the labels on each plant’s page. They come from the same facts:",
+          "read the labels on each plant’s page. Each one matches a filter:",
         list: [
-          "**No watering** label ↔ “Survives with no watering” filter",
-          "**Deer-resistant** ↔ “Deer tend to leave it alone”",
-          "**Thorny** or **Stings** ↔ “No thorns or stings”",
-          "**Inedible** ↔ “Safe around pets”",
-          "**Spreads** ↔ “No aggressive spreaders”",
-          "**Full size** figure ↔ “Stays under … tall / wide”",
+          "🌾 **No watering** → Survives with no watering",
+          "🦌 **Deer-resistant** → Deer tend to leave it alone",
+          "🚫 **Thorny** or **Stings** → No thorns or stings",
+          "🐕 **Inedible** → Safe around pets",
+          "✋ **Spreads** → No aggressive spreaders",
+          "📏 **Full size** → Stays under a height or width",
         ],
         after:
           "Found a plant you like while browsing? **Rank these for my spot**, at " +
@@ -281,7 +281,7 @@ export const SECTIONS = [
     ],
     note:
       "A low wildlife score isn’t a bad plant. A grass that holds a slope may " +
-      "feed few caterpillars and still be exactly right — that’s what the goals " +
+      "feed few caterpillars and still be exactly right. That’s what the goals " +
       "are for.",
     visit: [
       { label: "Find plants for a spot", href: `${APP}/` },
@@ -328,7 +328,7 @@ export const SECTIONS = [
         body: [
           "Save from the bottom of your plant list. The name is yours to choose; " +
             "the town is suggested. A spot needs a point on the map, so a list " +
-            "started by picking a region can’t be saved — put the pin down first.",
+            "started by picking a region can’t be saved. Put the pin down first.",
           "Saved spots live in this browser, on this device, and nowhere else. " +
             `That keeps them private, and it means you should [keep a copy](${guide("backup")}).`,
         ],
@@ -338,10 +338,10 @@ export const SECTIONS = [
         heading: "A spot’s page",
         body: "Tap a spot on **Saved spots** to open it. From the top:",
         list: [
-          "**What’s growing here** — how many plants and kinds you’ve logged, and how many raise caterpillars.",
-          "**Rename** or **Move** — move the pin if you saved it in the wrong place.",
+          "**What’s growing here**: how many plants and kinds you’ve logged, and how many raise caterpillars.",
+          "**Rename** or **Move**: move the pin if you saved it in the wrong place.",
           "The season plan, the wildlife, and your plant log, each explained below.",
-          "**Plant more** — opens the spot’s ranked list again, with the goal you saved it with.",
+          "**Plant more**: opens the spot’s ranked list again, with the goal you saved it with.",
         ],
         after:
           "To delete a spot, use 🗑 beside it on the Saved spots list. It removes " +
@@ -355,13 +355,13 @@ export const SECTIONS = [
           "and opens that spot with the plant already chosen. You can also add " +
           "one from the spot page, under **Add a plant you’ve planted**. Then say:",
         list: [
-          "**When it went in.** A year alone is fine — “2024” is enough.",
+          "**When it went in.** A year alone is fine: “2024” is enough.",
           "**How many.** Six milkweeds count as six.",
         ],
         after: [
           "Each row then shows how long it’s been in the ground and how big it " +
             "should be by now if it’s thriving, from the plant’s measured growth. " +
-            "In the first year it says “First year is roots, not shoots” — most " +
+            "In the first year it says “First year is roots, not shoots”: most " +
             "natives grow down before they grow up.",
           `Photographed it on iNaturalist? You can link the photo to the row. [Linking iNaturalist](${guide("inaturalist")}) explains how.`,
         ],
@@ -370,8 +370,8 @@ export const SECTIONS = [
         id: "wildlife",
         heading: "The wildlife at your spot",
         list: [
-          "**Wildlife in the neighborhood** — the animals known to eat or shelter in what you’ve planted, and which of your plants each one uses. ⭐ means no other plant will do. It says they *can* use it, not that they’ve found it yet.",
-          "**Spotted around here** — tap **Look on iNaturalist** to see photos of those animals taken within 5 km. A 👀 badge on an animal counts its sightings. iNaturalist gets a point rounded to about 1 km, never the spot itself.",
+          "**Wildlife in the neighborhood**: the animals known to eat or shelter in what you’ve planted, and which of your plants each one uses. ⭐ means no other plant will do. It says they *can* use it, not that they’ve found it yet.",
+          "**Spotted around here**: tap **Look on iNaturalist** to see photos of those animals taken within 5 km. A 👀 badge on an animal counts its sightings. iNaturalist gets a point rounded to about 1 km, never the spot itself.",
         ],
         after: `[The creatures your plants feed](${guide("wildlife")}) explains what “host” and “essential” mean.`,
       },
@@ -389,7 +389,7 @@ export const SECTIONS = [
           "The **Saved spots** page shows the three most useful tasks across all your spots.",
         ],
         after:
-          "Trees and shrubs wait until their kind is old enough to bear seed — a " +
+          "Trees and shrubs wait until their kind is old enough to bear seed: a " +
           `white oak, about 20 years. [Growing more](${guide("planting")}) covers every technique.`,
       },
     ],
@@ -436,7 +436,7 @@ export const SECTIONS = [
           "**Native plants** lists every plant Indigene knows. Type a common " +
             "name, in English or French, or the Latin one: “milkweed”, “oak”, " +
             "“Asclepias”.",
-          "Search for a plant that isn’t native — “butterfly bush”, say — and " +
+          "Search for a plant that isn’t native, like “butterfly bush”, and " +
             "if Indigene has a page about it, it offers that instead: an " +
             "[invasive](" + guide("invasives") + ") to remove, a " +
             "[look-alike](" + guide("lookalikes") + "), or a " +
@@ -447,11 +447,11 @@ export const SECTIONS = [
         id: "top",
         heading: "At the top",
         list: [
-          "**Native to** — the regions it’s on. If it’s on several, its figures can be read for each.",
-          "**Labels** — Essential, No watering, Deer-resistant, Thorny and so on. Tap one for what it means.",
-          "**Where it’s native** — and whether Kew’s World Checklist, a worldwide record of where plants grow wild, agrees. Where it doesn’t, the page says so.",
+          "**Native to**: the regions it’s on. If it’s on several, its figures can be read for each.",
+          "**Labels**: Essential, No watering, Deer-resistant, Thorny and so on. Tap one for what it means.",
+          "**Where it’s native**: and whether Kew’s World Checklist, a worldwide record of where plants grow wild, agrees. Where it doesn’t, the page says so.",
           `A [conservation note](${guide("conservation")}), on the few plants that are themselves at risk.`,
-          "**Don’t confuse it with** and **Grow it instead of** — its look-alikes and the ornamentals it can replace.",
+          "**Don’t confuse it with** and **Grow it instead of**: its look-alikes and the ornamentals it can replace.",
         ],
       },
       {
@@ -461,18 +461,18 @@ export const SECTIONS = [
           "Tiles give its sun, moisture, winter hardiness, soil acidity (pH), full " +
           "size, growth, caterpillar count and flowering months. A chart shows its " +
           "height year by year. Beside them, a **Confidence** meter says how sure " +
-          `we are of these figures — [where the numbers come from](${guide("sources")}).`,
+          `we are of these figures. [Where the numbers come from](${guide("sources")}).`,
       },
       {
         id: "below",
         heading: "Further down",
         list: [
-          "**Growing needs** — how to look after it.",
-          "**Ecosystem services** — the wildlife it brings in, each with its own page, and its seven scores in plain words.",
-          "**See it growing near you** — real photos of it in the wild near you, from iNaturalist.",
-          `**How to grow more** — the ways to propagate it, each linked to a [how-to](${guide("planting")}).`,
-          "**Want to plant it? Check your spot** — see if it suits where you are.",
-          "**Look it up elsewhere** — the same plant in Kew, GBIF, USDA PLANTS and other references.",
+          "**Growing needs**: how to look after it.",
+          "**Ecosystem services**: the wildlife it brings in, each with its own page, and its seven scores in plain words.",
+          "**See it growing near you**: real photos of it in the wild near you, from iNaturalist.",
+          `**How to grow more**: the ways to propagate it, each linked to a [how-to](${guide("planting")}).`,
+          "**Want to plant it? Check your spot**: see if it suits where you are.",
+          "**Look it up elsewhere**: the same plant in Kew, GBIF, USDA PLANTS and other references.",
         ],
       },
       {
@@ -520,8 +520,8 @@ export const SECTIONS = [
         id: "two-ways",
         heading: "Two ways to start",
         list: [
-          "**From seed you collect** — sow it as it is, give it a cold damp winter first (gardeners call that “stratification”), nick a hard seed coat, or press tiny seed onto the surface.",
-          "**From the plant you already have** — split a clump, root a cutting, bend a branch down to root, or pot up the babies on its runners.",
+          "**From seed you collect**: sow it as it is, give it a cold damp winter first (gardeners call that “stratification”), nick a hard seed coat, or press tiny seed onto the surface.",
+          "**From the plant you already have**: split a clump, root a cutting, bend a branch down to root, or pot up the babies on its runners.",
         ],
       },
       {
@@ -537,7 +537,7 @@ export const SECTIONS = [
         heading: "A technique’s page",
         list: [
           "**What you actually do**, step by step.",
-          "**Knowing the moment** — the sign that it’s time.",
+          "**Knowing the moment**: the sign that it’s time.",
           "**Where it usually goes wrong.**",
           "**Plants here that use it**, and the published guides it was checked against.",
         ],
@@ -549,7 +549,7 @@ export const SECTIONS = [
           `Every [plant’s page](${guide("plants")}) has **How to grow more**: the ` +
           "methods that work for that plant, and when. And a saved spot’s season " +
           "plan picks the plants you’ve logged that are old enough to share, and " +
-          `tells you which technique to use this season — see [Saved spots](${guide("spots", "season")}).`,
+          `tells you which technique to use this season. See [Saved spots](${guide("spots", "season")}).`,
       },
     ],
     note:
@@ -587,7 +587,7 @@ export const SECTIONS = [
     title: "The creatures your plants feed",
     tagline: "Every plant here is somebody’s food, home, or nursery.",
     lede:
-      "A native plant isn’t decoration — it’s the bottom of a food web. " +
+      "A native plant isn’t decoration. It’s the bottom of a food web. " +
       "Indigene names the butterflies, moths, bees, birds and small mammals " +
       "each plant supports, and gives many of them a page and a photograph. " +
       "Some are picky: a caterpillar that eats only one kind of leaf is a " +
@@ -618,7 +618,7 @@ export const SECTIONS = [
     ],
     note:
       `An [essential plant](${APP}/traits) (ecologists say “keystone”) feeds far more ` +
-      "creatures than its neighbors — plant one and you’ve done the work of ten.",
+      "creatures than its neighbors. Plant one and you’ve done the work of ten.",
     visit: [
       { label: "Meet the wildlife", href: `${APP}/wildlife` },
       { label: "Butterflies and moths", href: `${APP}/wildlife/butterflies` },
@@ -655,7 +655,7 @@ export const SECTIONS = [
     aliases: ["inat", "sightings"],
     emoji: "📷",
     title: "Linking iNaturalist",
-    tagline: "Real photos from people near you — and, if you like, your own.",
+    tagline: "Real photos from people near you, and your own if you like.",
     lede:
       "iNaturalist is a free nonprofit website and app where people photograph " +
       "plants and animals and help each other name them. Indigene uses it in " +
@@ -667,9 +667,9 @@ export const SECTIONS = [
         id: "no-account",
         heading: "Without an account",
         list: [
-          "**See it growing near you**, on a plant’s page — confirmed wild photos of it nearby.",
+          "**See it growing near you**, on a plant’s page: confirmed wild photos of it nearby.",
           "**See it near you**, on an animal’s page.",
-          "**Spotted around here**, on a saved spot — photos of the animals your plants can feed, within 5 km.",
+          "**Spotted around here**, on a saved spot: photos of the animals your plants can feed, within 5 km.",
           "**Plant next, for the wildlife**, in a spot’s season plan.",
         ],
         after:
@@ -681,7 +681,7 @@ export const SECTIONS = [
         heading: "Linking your username",
         steps: [
           "In **Settings**, find **Your iNaturalist account**.",
-          "Type your username — the name after /people/ in your profile’s address — and tap **Link**.",
+          "Type your username (the name after /people/ in your profile’s address) and tap **Link**.",
         ],
         after:
           "There’s no password and no sign-in, so Indigene can only read what’s " +
@@ -693,7 +693,7 @@ export const SECTIONS = [
         list: [
           "**Import from iNaturalist**, on a saved spot: your plant photos from the past five years within 35 km of it. Tick the natives you planted and they join the log, dated by the photo. Invasives that others have confirmed can join the spot’s list of things to deal with.",
           "**Pick from your photos** when you log a plant: tap one and its date fills itself in.",
-          "**Your wildlife sightings here**: your own animal photos within 1 km of the spot, and which of your plants might have drawn each one in — “Feeds on your Oregon grape’s nectar”.",
+          "**Your wildlife sightings here**: your own animal photos within 1 km of the spot, and which of your plants might have drawn each one in, like “Feeds on your Oregon grape’s nectar”.",
         ],
       },
       {
@@ -736,14 +736,14 @@ export const SECTIONS = [
     title: "Your region",
     tagline: "The app covers real places, one at a time.",
     lede:
-      "Plants don’t follow state lines — they follow climate, soil and " +
+      "Plants don’t follow state lines. They follow climate, soil and " +
       "rainfall. So Indigene is built region by region: a stretch of country " +
       "where the same plants grow wild, from the Pacific Northwest to the " +
       "Mediterranean coast of France. Each region has its own plant list and its " +
       "own map, so you can see whether it includes you.",
     steps: [
       "Open **Regions** to see the places the app covers so far.",
-      "Pick the one you live in, or the nearest — the map shows its edges.",
+      "Pick the one you live in, or the nearest. The map shows its edges.",
       "Browse its plants, or tap **Rank these for my spot** to sort them for your garden.",
     ],
     parts: [
@@ -751,8 +751,8 @@ export const SECTIONS = [
         id: "page",
         heading: "On a region’s page",
         list: [
-          "Its plants, grouped by kind — trees, shrubs, wildflowers, grasses, vines, groundcovers, ferns. Tap a kind to see only those, or type a name to narrow the list.",
-          "**Pavement pioneers** — the natives that grow where the ground is packed, salted or baking: a gap in the kerb, a car-park island.",
+          "Its plants, grouped by kind: trees, shrubs, wildflowers, grasses, vines, groundcovers, ferns. Tap a kind to see only those, or type a name to narrow the list.",
+          "**Pavement pioneers**: the natives that grow where the ground is packed, salted or baking: a gap in the kerb, a car-park island.",
           `Its [worst invasives](${guide("invasives")}), [look-alikes](${guide("lookalikes")}) and [native swaps](${guide("alternatives")}).`,
           "The wildlife its plants feed, and further reading local experts recommend.",
         ],
@@ -769,7 +769,7 @@ export const SECTIONS = [
     ],
     note:
       "Don’t see your region yet? The app grows one at a time, and what’s " +
-      "here is chosen for depth over breadth — a region is added when its " +
+      "here is chosen for depth over breadth. A region is added when its " +
       "plants and their wildlife can be named properly, not just listed.",
     visit: [
       { label: "See the regions", href: `${APP}/regions` },
@@ -811,7 +811,7 @@ export const SECTIONS = [
     steps: [
       "Open your region's list from its page, or from Worst invasives.",
       "Tap a plant for the three surest ways to recognize it.",
-      "Follow the removal steps — the root piece that resprouts, the stump that suckers.",
+      "Follow the removal steps: the root piece that resprouts, the stump that suckers.",
       "Plant a native in the gap, so the bare ground doesn't invite the next seedling.",
     ],
     parts: [
@@ -822,9 +822,9 @@ export const SECTIONS = [
           "Where the people who survey a region have rated a plant, the page shows " +
           "their rating in three steps:",
         list: [
-          "**Takes over** — it changes the place itself; the natives go.",
-          "**Gaining ground** — doing real damage, but not remaking the place.",
-          "**In patches** — loose in the wild, and so far staying local.",
+          "**Takes over**: it changes the place itself; the natives go.",
+          "**Gaining ground**: doing real damage, but not remaking the place.",
+          "**In patches**: loose in the wild, and so far staying local.",
         ],
       },
       {
@@ -871,12 +871,12 @@ export const SECTIONS = [
     title: "Telling look-alikes apart",
     tagline: "The native, and the impostor next to it.",
     lede:
-      "You look a plant up because you're not sure what you're holding — and " +
+      "You look a plant up because you're not sure what you're holding, and " +
       "often the plant on the nursery bench isn't quite the one on the label. " +
       "A garden center sells the invasive Callery pear beside the native " +
       "serviceberry. So for many natives we recommend, Indigene names the " +
       "plants it gets mistaken for, and how to tell them apart standing in " +
-      "front of it: a smell, a thorn, a leaf stalk that bleeds white — not a " +
+      "front of it: a smell, a thorn, a leaf stalk that bleeds white, not a " +
       "botanical key you'd need a magnifying lens for.",
     parts: [
       {
@@ -884,12 +884,12 @@ export const SECTIONS = [
         heading: "Not every look-alike is a problem",
         body: "Each one is labelled:",
         list: [
-          `**Invasive here** — one to [remove](${guide("invasives")}).`,
-          "**Not from here** — harmless, but not the native you wanted.",
-          "**Native here too** — a wild native, where the mix-up still matters.",
+          `**Invasive here**: one to [remove](${guide("invasives")}).`,
+          "**Not from here**: harmless, but not the native you wanted.",
+          "**Native here too**: a wild native, where the mix-up still matters.",
         ],
         after:
-          "When you’re truly unsure, photograph it and post it to iNaturalist — " +
+          "When you’re truly unsure, photograph it and post it to iNaturalist, where " +
           "real people will help name what you’ve found.",
       },
     ],
@@ -926,8 +926,8 @@ export const SECTIONS = [
     tagline: "The native that does the ornamental's job, and gives more back.",
     lede:
       "The usual answer at a nursery is a plant from somewhere else. Native " +
-      "swaps start from the job you want done — a lawn, a hedge, a shade tree, " +
-      "a plant “for butterflies” — and name the native that does it at least as " +
+      "swaps start from the job you want done (a lawn, a hedge, a shade tree, " +
+      "a plant “for butterflies”) and name the native that does it at least as " +
       "well, and usually better for wildlife and water.",
     parts: [
       {
@@ -936,9 +936,9 @@ export const SECTIONS = [
         body:
           "Each swap compares the two on what actually decides it: **water** (will " +
           "it want the hose all summer?), **disease**, **wildlife** and **upkeep**. " +
-          "Where the native only ties, we say so. Where it wins — little bluestem " +
+          "Where the native only ties, we say so. Where it wins (little bluestem " +
           "against a Bermuda-grass lawn, milkweed against the butterfly bush a " +
-          "monarch can’t raise its young on — the page shows why.",
+          "monarch can’t raise its young on), the page shows why.",
         after: "It's a better choice, freely made, not a scold.",
       },
     ],
@@ -948,7 +948,7 @@ export const SECTIONS = [
     ],
     related: [
       { id: "invasives", why: "Some ornamentals escape. Here are the worst, and how to clear them." },
-      { id: "ranking", why: "Have a job in mind? Rank your list for it — rain, erosion, birds." },
+      { id: "ranking", why: "Have a job in mind? Rank your list for it: rain, erosion, birds." },
     ],
     learn: [
       {
@@ -976,11 +976,11 @@ export const SECTIONS = [
     lede:
       "Won’t all those bees and birds eat the fruit and vegetables? It’s the " +
       "commonest reason somebody likes the idea of native planting and doesn’t " +
-      "do it — and it is one of the few garden arguments that has actually been " +
+      "do it. It is also one of the few garden arguments that has actually been " +
       "measured. Farms sowed wildflower strips along commercial fields, then " +
       "weighed the crop: more pollinators, more of the insects that eat pests, " +
       "and no more pests. Some natives go further and take a pest away, because " +
-      "the worst ones lean on a plant that isn’t from here either — the " +
+      "the worst ones lean on a plant that isn’t from here either: the " +
       `spotted lanternfly on [tree-of-heaven](${APP}/invasives/ailanthus-altissima), the soybean aphid wintering on ` +
       "buckthorn. The page carries the study behind every figure, and the ones " +
       "that argue the other way as well.",
@@ -1024,16 +1024,16 @@ export const SECTIONS = [
     title: "When something's in trouble",
     tagline: "A few natives we recommend are themselves at risk. Here's what that means.",
     lede:
-      "Some plants and animals here carry a conservation rank — an expert's read " +
+      "Some plants and animals here carry a conservation rank: an expert's read " +
       "on how close it is to disappearing. A rank belongs to a place: a plant " +
       "can be everywhere in one state and nearly gone in the next, so Indigene " +
-      "shows one only where it means something to you — worldwide, or in your " +
+      "shows one only where it means something to you: worldwide, or in your " +
       "own region's state. The code is worth a glance: a letter for the scale " +
       "(G is the whole world, S a single state) and a number from 1 (most at " +
       "risk) to 5 (secure); the IUCN uses words like Endangered instead. A span " +
       "such as G3G4 means the assessor placed it between the two.",
     note:
-      "Most of what you'll plant is doing fine — the note shows only on the few " +
+      "Most of what you'll plant is doing fine. The note shows only on the few " +
       "pages where it isn't. Where it does: buy from a nursery, never dig one " +
       "from the wild; for an animal, planting what it needs is the help it can use.",
     // No page of its own in the app: a rank shows on the plant or animal it's
@@ -1070,7 +1070,7 @@ export const SECTIONS = [
     lede:
       "Indigene has no accounts and no server. Your saved spots, plantings, " +
       "linked sightings and settings live in one place: the browser you saved " +
-      "them in. Nobody else can see them — so nobody else can bring them back " +
+      "them in. Nobody else can see them, so nobody else can bring them back " +
       "if that browser forgets them.",
     steps: [
       "In Settings, tap “Save a copy”. You get one small file holding all of it.",
@@ -1081,7 +1081,7 @@ export const SECTIONS = [
     note:
       "A browser forgets when you clear its data. On iPhone and iPad, Safari " +
       "also clears a site you haven’t opened in about a week of using Safari. " +
-      "Added to your Home Screen, Indigene doesn’t have that limit — but it " +
+      "Added to your Home Screen, Indigene doesn’t have that limit, but it " +
       "starts empty there, so bring your copy in once.",
     visit: [
       { label: "Save or bring in a copy", href: `${APP}/#/settings/spots` },
@@ -1112,7 +1112,7 @@ export const SECTIONS = [
     lede:
       "Indigene has no accounts and no server of its own. What you save stays " +
       "in your browser. To answer your questions, your device asks a few public " +
-      "services directly — and only the ones on a fixed list.",
+      "services directly, and only the ones on a fixed list.",
     parts: [
       {
         id: "location",
@@ -1120,7 +1120,7 @@ export const SECTIONS = [
         list: [
           "It’s used only when you tap for it, never in the background.",
           "You never have to share it: a town, a postal code or picking your region works everywhere.",
-          "When you do, it goes straight from your device to public services — weather, soil, maps — to look up your spot.",
+          "When you do, it goes straight from your device to public weather, soil and map services to look up your spot.",
         ],
       },
       {
@@ -1128,7 +1128,7 @@ export const SECTIONS = [
         heading: "What stays on your device",
         body:
           "Your saved spots, plant logs, settings and iNaturalist username. That " +
-          `also means only you can keep a copy — see [Keeping your spots safe](${guide("backup")}).`,
+          `also means only you can keep a copy. See [Keeping your spots safe](${guide("backup")}).`,
       },
       {
         id: "counting",
@@ -1171,13 +1171,13 @@ export const SECTIONS = [
         id: "confidence",
         heading: "The Confidence meter",
         body:
-          "Each plant’s page carries a meter of one to three bars — how sure we " +
+          "Each plant’s page carries a meter of one to three bars, for how sure we " +
           "are of its figures. It rests mostly on how many kinds of caterpillar " +
           "the plant feeds, because that number drives the wildlife ranking:",
         list: [
-          "**High** — counted from a dataset for its region, with a cited source for where it grows wild.",
-          "**Medium** — a published figure for its genus (its closest group of related plants), or our estimate from a relative.",
-          "**Low** — rough, or with nothing cited for where it grows wild.",
+          "**High**: counted from a dataset for its region, with a cited source for where it grows wild.",
+          "**Medium**: a published figure for its genus (its closest group of related plants), or our estimate from a relative.",
+          "**Low**: rough, or with nothing cited for where it grows wild.",
         ],
         after:
           "It rates our figures, not the plant. A plant rated low can be just as " +

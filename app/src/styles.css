@@ -1417,22 +1417,29 @@ summary {
 summary::-webkit-details-marker {
   display: none;
 }
+/* The pill's words come from the summary's own data-open / data-close, so they
+   follow the reader's language (the two call sites set them from the locale). */
 summary::after {
-  content: "Open ▾";
+  content: attr(data-open) " ▾";
   margin-left: auto;
   flex: 0 0 auto;
-  font-size: 0.85rem;
+  /* The same control as the Change button beside "Goal:" (.ranked-for .btn):
+     a secondary button, at its size, so the two rows read as one set. */
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box; /* the global reset doesn't reach ::after */
+  min-height: 2.4rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
   font-weight: 650;
   line-height: 1;
-  color: var(--brand);
-  border: 1.5px solid var(--brand);
-  border-radius: 999px;
-  padding: 0.35rem 0.7rem;
+  color: var(--ink);
+  background: var(--surface);
+  border: 2px solid var(--line-strong);
+  border-radius: var(--radius);
 }
 details[open] > summary::after {
-  content: "Close ▴";
-  color: var(--surface);
-  background: var(--brand);
+  content: attr(data-close) " ▴";
 }
 
 /* Every card below a plant's profile: same heading, so they read as siblings,
@@ -2088,7 +2095,33 @@ details.weights {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
-  padding: 0.5rem 0.9rem;
+  padding: 0 0.6rem 0.5rem 0.9rem;
+}
+details.weights:not([open]) { padding-bottom: 0; }
+/* The summary row matches the goal row above it (.ranked-for): same height,
+   same inset, icon in the same slot, control on the right. */
+details.weights > summary {
+  gap: 0.6rem;
+  min-height: 3.3rem;
+  padding: 0.45rem 0;
+  font-size: 0.95rem;
+}
+.control-icon {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--brand);
+}
+.filter-count {
+  min-width: 1.35rem;
+  height: 1.35rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--on-brand);
+  font-size: 0.78rem;
+  line-height: 1.35rem;
+  text-align: center;
 }
 /* The plant list's controls block is sticky, so a panel taller than the screen
    could never show its bottom. Open panels *there* scroll internally instead,
@@ -2139,21 +2172,25 @@ details.weights {
   color: var(--ink-soft);
 }
 
+/* The plant list's two figures (natives, good fits), under its controls. */
+.result-tally { margin: 0.75rem 0 1rem; }
+
 /* --- What the list is ranked for (plant list) --- */
 /* The answer to "why this order?", named rather than buried in a panel, with
    the way to change it beside it. */
 .ranked-for {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  gap: 0.6rem;
+  min-height: 3.3rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
   padding: 0.45rem 0.6rem 0.45rem 0.9rem;
 }
 .ranked-for p {
-  flex: 1 1 8rem;
+  flex: 1 1 auto;
+  line-height: 1.3;
   margin: 0;
   min-width: 0;
   font-size: 0.95rem;

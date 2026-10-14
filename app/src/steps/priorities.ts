@@ -163,7 +163,7 @@ export async function renderPriorities(main: HTMLElement): Promise<(() => void) 
   }
 
   const tuning = el("details", { class: "weights", style: "margin-top:0.75rem" }, [
-    el("summary", {}, t("priorities.tuneSummary")),
+    el("summary", { "data-open": t("disclosure.open"), "data-close": t("disclosure.close") }, t("priorities.tuneSummary")),
     el("p", { class: "step-lede", style: "margin:0.5rem 0 0.25rem" }, t("priorities.tuneLede")),
     ...sliderRows.map((s) => s.row),
   ]);

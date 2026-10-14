@@ -42,8 +42,9 @@ export function privacyNote(
 ): HTMLElement {
   return el("p", { class: "privacy-note" }, [
     el("span", { "aria-hidden": "true" }, "🔒 "),
-    `${lead} `,
-    el("a", { href: privacyRoute(section) }, linkText),
-    ".",
+    // No lead: the link is the whole note, where the page has nothing to
+    // promise that the link's own words don't already say.
+    ...(lead ? [`${lead} `, el("a", { href: privacyRoute(section) }, linkText), "."]
+             : [el("a", { href: privacyRoute(section) }, linkText)]),
   ]);
 }

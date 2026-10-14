@@ -38,7 +38,7 @@ export function inatCard(): HTMLElement {
       card.append(el("p", {}, t("inat.lede")), linkForm(message));
     }
     card.append(guideLink("inaturalist", t("guide.inat"), undefined, "margin:0.8rem 0 0"));
-    card.append(privacyNote(t("inat.privacy"), undefined, "inat"));
+    card.append(privacyNote("", t("inat.privacyLink"), "inat"));
   }
 
   function linkForm(message?: HTMLElement): HTMLElement {

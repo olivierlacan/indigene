@@ -10,7 +10,7 @@ import { REGIONS } from "../lib/plants";
 import { zoneChip } from "../components/zone-chip";
 import { siteMoisture } from "../lib/ranking";
 import { draftRegion, draftPlants, rankDraft, draftContext } from "../lib/draft";
-import { priorityName } from "../lib/priorities";
+import { priorityName, matchingPreset } from "../lib/priorities";
 import { plantCard } from "../components/plant-card";
 import { reportRosterUntranslated } from "../components/wip-banner";
 import { recompute } from "../components/recompute";
@@ -182,7 +182,11 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     "aria-label": `${t("results.goalLabel")}: ${priorityName(store.weights)}. ${t("results.changeGoalAria")}`,
     onClick: () => navigate("priorities"),
   }, [
-    goalIcon(),
+    // The chosen goal's own icon, as on the goals step; a mix of your own has
+    // none, so it gets the plain target.
+    matchingPreset(store.weights)
+      ? el("span", { class: "control-icon control-icon-emoji", "aria-hidden": "true" }, matchingPreset(store.weights)!.icon)
+      : goalIcon(),
     el("span", { class: "control-text" }, [
       el("span", { class: "control-label" }, t("results.goalLabel")),
       el("span", { class: "control-value" }, priorityName(store.weights)),

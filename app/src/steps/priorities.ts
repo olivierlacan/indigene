@@ -95,12 +95,15 @@ export async function renderPriorities(main: HTMLElement): Promise<(() => void) 
   // guess between six nouns.
   const goalButtons = PRESETS.map((p) => {
     const btn = el("button", {
-      class: "choice",
+      class: "choice choice-with-glyph",
       "aria-pressed": "false",
       onClick: () => applyWeights(p.weights),
     }, [
-      el("span", { class: "choice-title" }, t(p.key)),
-      el("span", { class: "choice-sub" }, t(p.subKey)),
+      el("span", { class: "choice-glyph choice-glyph-emoji", "aria-hidden": "true" }, p.icon),
+      el("span", {}, [
+        el("span", { class: "choice-title" }, t(p.key)),
+        el("span", { class: "choice-sub" }, t(p.subKey)),
+      ]),
     ]) as HTMLButtonElement;
     return { btn, weights: p.weights };
   });

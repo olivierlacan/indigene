@@ -14,7 +14,7 @@
 import type { MoistureBand, PioneerPressure, PropagationMethod, SizeSnapshot, SupportKind, SupportReliance, WildlifeKind } from "../types";
 import { PRESSURE_ICON } from "../data/pioneers";
 import { monthName, t, tn, tOptional } from "./i18n";
-import { length, temperature } from "./units";
+import { length } from "./units";
 
 /** The full audit of every dataset behind the numbers — linked wherever we
  * cite a figure (host counts especially) so claims stay checkable. */
@@ -98,19 +98,6 @@ export function sunPlain(hours: number): string {
 
 export function moisturePlain(band: MoistureBand): string {
   return t(`moisture.plain.${band}` as const);
-}
-
-// Common parlance leads; the zone label sits in parentheses as the term
-// plant tags use — never the other way around. The temperature goes through
-// `units`, so a French gardener reads −12 °C and an American reads 10°F from
-// the one stored number.
-export function zonePlain(zone: string | null, minTempF: number | null): string {
-  if (!zone) return t("zone.unknown");
-  const cold =
-    minTempF != null
-      ? t("zone.coldWithTemp", { temp: temperature(minTempF) })
-      : t("zone.coldNoTemp");
-  return t("zone.plain", { cold, zone });
 }
 
 export function phPlain(ph: number | null): string {

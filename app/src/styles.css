@@ -4478,6 +4478,27 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
 /* --- Privacy reassurance line (under a location/save control) --- */
 /* Quiet by design: it's a standing promise, not a warning, so it sits in muted
    text and doesn't compete with the control above it. */
+/* The town search on the location page: a label and one row under the GPS
+   button, not a card of its own. */
+.place-search {
+  margin: 0.9rem 0 0;
+}
+.place-search label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.place-search-row {
+  display: flex;
+  gap: 0.5rem;
+}
+.place-search-row input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.place-search-row .btn {
+  flex: none;
+}
 .privacy-note {
   margin: 0.4rem 0 0;
   font-size: 0.82rem;

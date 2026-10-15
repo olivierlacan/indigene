@@ -67,6 +67,7 @@ export function renderInvasiveIndex(main: HTMLElement): void {
     ...sections,
     el("p", { class: "confidence", style: "margin-top:1rem" },
       t("wanted.countsNote", { date: fmtDate(Date.parse(sightingsAsOf)) })),
+    el("p", { class: "more-link" }, el("a", { href: "#/removing" }, t("wanted.beforeYouPull"))),
     nextSteps(null),
   );
 }
@@ -220,6 +221,10 @@ function removalSection(inv: Invasive): HTMLElement {
   const { steps, dispose } = invasiveRemoval(inv);
   return el("div", {}, [
     el("h3", { style: "margin:1rem 0 0.3rem" }, t("wanted.howToRemove")),
+    // The decision that comes before any of these steps — is it really this
+    // plant, is it yours to pull, is now the time — lives on a page of its own.
+    el("p", { class: "more-link", style: "margin:0 0 0.3rem" },
+      el("a", { href: "#/removing" }, t("wanted.beforeYouPull"))),
     // Each step leads with its method's icon, the way a propagation technique
     // does: a scan down the list reads "pull, ring the bark, again" before a
     // word of it. The icon is the method's name ("Ring the bark"), which the

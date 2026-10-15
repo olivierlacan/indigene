@@ -863,6 +863,7 @@ export const SECTIONS = [
       `moved to a new place never spread. [Why we say it that way](${APP}/native).`,
     visit: [
       { label: "See the worst invasives", href: `${APP}/invasives` },
+      { label: "Before you pull a plant", href: `${APP}/removing` },
       { label: "What to grow instead", href: `${APP}/alternatives` },
     ],
     related: [
@@ -881,7 +882,7 @@ export const SECTIONS = [
         href: "https://www.eddmaps.org/",
       },
     ],
-    match: { segments: ["invasives"] },
+    match: { segments: ["invasives", "removing"] },
     published: true,
   },
 

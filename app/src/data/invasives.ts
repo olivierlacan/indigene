@@ -75,6 +75,13 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Seed clusters and root pieces go in the bin, not the compost.",
       basis: "Penn State Extension; OFB Centre de ressources EEE.",
+      // "Larger plants should be cut; two cuttings a year may be necessary, once
+      // in the early growing season and once in the late growing season."
+      window: {
+        seasons: ["spring",  "summer"],
+        cue: "Cut early in the season, and again late",
+        source: { name: "Virginia DCR — Invasive Alien Plant Species of Virginia: Tree-of-Heaven", url: "https://www.dcr.virginia.gov/natural-heritage/document/fsaial.pdf" },
+      },
     },
   },
   {
@@ -175,6 +182,14 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Bag the berries; don't compost them.",
       basis: "UF/IFAS Extension; Florida Invasive Species Council.",
+      // "On 2 sites in Florida, cutting from June to October resulted in the
+      // highest mortality rates for Brazilian pepper compared to cutting at
+      // other times of the year."
+      window: {
+        seasons: ["summer",  "fall"],
+        cue: "Cut in the warm months, when fewest survive",
+        source: { name: "USDA Forest Service FEIS — Schinus terebinthifolius", url: "https://www.fs.usda.gov/database/feis/plants/shrub/schter/all.html" },
+      },
     },
   },
   // ---------------- Shrubs ----------------
@@ -196,6 +211,13 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Berried branches go in the bin.",
       basis: "Penn State Extension; Michigan Natural Features Inventory.",
+      // "Seedlings are easiest to identify in early spring because autumn-olive
+      // produces leaves earlier than most native shrubs"
+      window: {
+        seasons: ["spring"],
+        cue: "Pull seedlings as it leafs out, before natives",
+        source: { name: "USDA Forest Service FEIS — Elaeagnus umbellata", url: "https://www.fs.usda.gov/database/feis/plants/shrub/elaumb/all.html" },
+      },
     },
   },
   {
@@ -216,6 +238,15 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Berried branches go in the bin.",
       basis: "Michigan Natural Features Inventory; Penn State Extension.",
+      // "Generally two cuts per year are recommended, one in early spring
+      // followed by one in the late summer or early autumn. Cuts made in the
+      // winter while the plant is dormant will only encourage vigorous
+      // resprouting."
+      window: {
+        seasons: ["spring",  "summer",  "fall"],
+        cue: "Cut in early spring and late summer, never dormant",
+        source: { name: "Virginia DCR — Invasive Alien Plant Species of Virginia: Bush Honeysuckles", url: "https://www.dcr.virginia.gov/natural-heritage/document/fslobe.pdf" },
+      },
     },
   },
   {
@@ -256,6 +287,14 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Berried branches go in the bin; bare wood can be chipped.",
       basis: "Morton Arboretum; Illinois Natural History Survey; Midwest Invasive Plant Network.",
+      // "spring and summer treatments resulted in 4 to 8 times more common
+      // buckthorn sprouts in July than when treatments were applied in either
+      // fall or winter"
+      window: {
+        seasons: ["fall",  "winter"],
+        cue: "Cut late in the year for fewer sprouts",
+        source: { name: "USDA Forest Service FEIS — Rhamnus cathartica, R. davurica", url: "https://www.fs.usda.gov/database/feis/plants/shrub/rhaspp/all.html" },
+      },
     },
   },
   {
@@ -276,6 +315,15 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Berried branches go in the bin.",
       basis: "Morton Arboretum; Ohio State Extension; Midwest Invasive Plant Network.",
+      // "Generally two cuts per year are recommended, one in early spring
+      // followed by one in the late summer or early autumn. Cuts made in the
+      // winter while the plant is dormant will only encourage vigorous
+      // resprouting."
+      window: {
+        seasons: ["spring",  "summer",  "fall"],
+        cue: "Cut in early spring and late summer, never dormant",
+        source: { name: "Virginia DCR — Invasive Alien Plant Species of Virginia: Bush Honeysuckles", url: "https://www.dcr.virginia.gov/natural-heritage/document/fslobe.pdf" },
+      },
     },
   },
   {

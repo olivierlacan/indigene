@@ -7412,3 +7412,11 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .removal-cue {
   margin: 0 0 0.2rem;
 }
+/* The invasives' "worth pulling this season" list has no technique icon, so
+   the name and its cue stack in one column. */
+.season-now-list.no-icon li {
+  grid-template-columns: 1fr;
+}
+.season-now-list.no-icon .season-now-when {
+  grid-column: 1;
+}

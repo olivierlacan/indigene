@@ -105,6 +105,7 @@ export const LOOKALIKES_FR: ProseTable = {
         "Arrachez chaque rejet dès qu'il paraît, plusieurs années durant.",
       ],
       dispose: "Les grappes de graines et les morceaux de racine vont à la poubelle, pas au compost.",
+      cue: "Coupez en début de saison, puis en fin",
     },
     origin:
       "Indigène de Chine ; planté à travers l'Europe et l'Amérique du Nord depuis le XVIIIe siècle.",

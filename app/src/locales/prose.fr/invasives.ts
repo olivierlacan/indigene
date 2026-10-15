@@ -21,6 +21,7 @@ export const INVASIVES_FR: ProseTable = {
         "Portez des gants — la sève irrite la peau, comme celle du sumac vénéneux, son cousin — et ne la brûlez jamais.",
       ],
       dispose: "Mettez les baies en sac ; ne les compostez pas.",
+      cue: "Coupez à la saison chaude : moins de souches survivent",
     },
   },
   "Elaeagnus umbellata": {
@@ -36,6 +37,7 @@ export const INVASIVES_FR: ProseTable = {
         "Agissez avant l'automne, avant que les oiseaux prennent les baies.",
       ],
       dispose: "Les branches à baies vont à la poubelle.",
+      cue: "Arrachez les semis à la feuillaison, avant les indigènes",
     },
   },
   "Lonicera morrowii": {
@@ -51,6 +53,7 @@ export const INVASIVES_FR: ProseTable = {
         "Arrachez les semis qui suivent pendant quelques années.",
       ],
       dispose: "Les branches à baies vont à la poubelle.",
+      cue: "Coupez au printemps et fin d'été, jamais en dormance",
     },
   },
   "Spartium junceum": {

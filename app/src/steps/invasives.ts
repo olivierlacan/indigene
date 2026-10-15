@@ -279,7 +279,7 @@ function thisSeasonCard(regionId: string): HTMLElement | null {
   if (!rows.length) return null;
   return el("section", { class: "card season-now", style: "margin-top:1rem" }, [
     el("h3", {}, t("wanted.nowTitle")),
-    el("ul", { class: "season-now-list" }, rows.map((row) => el("li", {}, [
+    el("ul", { class: "season-now-list no-icon" }, rows.map((row) => el("li", {}, [
       el("a", { href: `#/invasives/${row.invasive.id}` }, commonName(row.invasive)),
       el("span", { class: "season-now-when" }, invasiveRemovalCue(row.invasive) ?? ""),
     ]))),

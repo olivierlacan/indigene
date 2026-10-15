@@ -2,6 +2,7 @@ import { el, clear, toast } from "../ui";
 import { navigate, store, setSitePromise, rememberDraftSpot } from "../state";
 import { fetchSite } from "../lib/site";
 import { searchPlaces, placeLabel } from "../lib/geocode";
+import type { GeoPlace } from "../lib/geocode";
 import { REGIONS } from "../lib/plants";
 import { regionForCoords } from "../data/regions";
 import { zoneChip } from "../components/zone-chip";
@@ -136,6 +137,12 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
   let accuracy: number | null = null;
   // The marker stands on a saved spot's old point until a fix or a search moves it.
   let markerIsSaved = Boolean(movingPoint);
+  // Whether the pin stands somewhere the reader chose. The Pittsburgh fallback
+  // is nobody's spot: Next used to walk on from it, so a reader who searched
+  // "95814" and never tapped Sacramento got Pittsburgh's plants, unwarned.
+  let pinPlaced = movingPoint != null || store.draft.lat != null || remembered?.lat != null;
+  // A search listed several places and none has been tapped yet.
+  let searchUnpicked = false;
   // Offset (metres) applied by nudging the pin, relative to the fix.
   let offN = 0;
   let offE = 0;
@@ -192,7 +199,9 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     // Each number said as what it is: a reader who has never met a coordinate
     // can't tell which figure is which, and the minus sign in front of one of
     // them is the least readable part of the pair.
-    status.textContent = `${latPlain(effLat())}, ${lonPlain(effLon())}${acc}${moved}`;
+    status.textContent = pinPlaced
+      ? `${latPlain(effLat())}, ${lonPlain(effLon())}${acc}${moved}`
+      : t("location.none");
     drawMap();
   }
 
@@ -344,6 +353,7 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     // west, drag down → further north.
     offE -= (e.clientX - lastX) * scale;
     offN += (e.clientY - lastY) * scale;
+    pinPlaced = true;
     lastX = e.clientX; lastY = e.clientY;
     movedPx = Math.max(movedPx, Math.hypot(e.clientX - downX, e.clientY - downY));
     // A real drag before the hold completes is an ordinary drag.
@@ -357,6 +367,7 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
       const scale = metersPerCssPx();
       offE += (e.clientX - rect.left - rect.width / 2) * scale;
       offN -= (e.clientY - rect.top - rect.height / 2) * scale;
+      pinPlaced = true;
       updateStatus();
     }
     dragging = false;
@@ -386,6 +397,7 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
       default: return;
     }
     e.preventDefault();
+    pinPlaced = true;
     updateStatus();
   });
 
@@ -405,6 +417,8 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
         lon = pos.coords.longitude;
         accuracy = pos.coords.accuracy;
         markerIsSaved = false;
+        pinPlaced = true;
+        searchUnpicked = false;
         offN = 0; offE = 0;
         locateBtn.textContent = t("location.update");
         (locateBtn as HTMLButtonElement).disabled = false;
@@ -436,6 +450,33 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
   const searchBtn = el("button", { class: "btn btn-secondary", style: "flex:none" }, t("location.search")) as HTMLButtonElement;
   const searchOut = el("div", { "aria-live": "polite" });
 
+  function pickPlace(p: GeoPlace): void {
+    lat = p.lat; lon = p.lon;
+    offN = 0; offE = 0; accuracy = null; markerIsSaved = false;
+    pinPlaced = true;
+    searchUnpicked = false;
+    // Somebody who searched for their town has just told us its name.
+    // Keeping it here is the one path to a named spot that costs
+    // nothing at all — no second lookup, ever.
+    noteTown(p.lat, p.lon, placeLabel(p));
+    clear(searchOut);
+    clear(coverageOut); // a search pick supersedes any GPS-fix warning
+    clear(spotNote); // …and moves the pin off the remembered spot
+    searchOut.append(
+      regionForCoords(p.lat, p.lon)
+        ? el("div", { class: "note info" }, [
+            el("strong", {}, t("location.pinSet", { place: p.name })),
+            // Say only what the pin's precision actually buys: the
+            // soil/slope lookups (a ~250 m grid). Sun never comes
+            // from the map, and climate/region are far coarser.
+            t("location.pinSetRest"),
+          ])
+        : coverageWarning(t("location.pinSetUncovered", { place: p.name }))
+    );
+    updateStatus();
+    mapWrap.scrollIntoView({ block: "nearest" });
+  }
+
   async function doSearch(): Promise<void> {
     const q = searchInput.value.trim();
     if (!q) return;
@@ -449,35 +490,16 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
         searchOut.append(el("div", { class: "note warn" }, t("location.searchNoResults")));
         return;
       }
+      // One answer is the answer: a list of one is a tap that asks nothing,
+      // and skipping it is how Next went ahead without it.
+      if (places.length === 1) {
+        pickPlace(places[0]);
+        return;
+      }
+      searchUnpicked = true;
       searchOut.append(
         ...places.map((p) =>
-          el("button", {
-            class: "choice",
-            onClick: () => {
-              lat = p.lat; lon = p.lon;
-              offN = 0; offE = 0; accuracy = null; markerIsSaved = false;
-              // Somebody who searched for their town has just told us its name.
-              // Keeping it here is the one path to a named spot that costs
-              // nothing at all — no second lookup, ever.
-              noteTown(p.lat, p.lon, placeLabel(p));
-              clear(searchOut);
-              clear(coverageOut); // a search pick supersedes any GPS-fix warning
-              clear(spotNote); // …and moves the pin off the remembered spot
-              searchOut.append(
-                regionForCoords(p.lat, p.lon)
-                  ? el("div", { class: "note info" }, [
-                      el("strong", {}, t("location.pinSet", { place: p.name })),
-                      // Say only what the pin's precision actually buys: the
-                      // soil/slope lookups (a ~250 m grid). Sun never comes
-                      // from the map, and climate/region are far coarser.
-                      t("location.pinSetRest"),
-                    ])
-                  : coverageWarning(t("location.pinSetUncovered", { place: p.name }))
-              );
-              updateStatus();
-              mapWrap.scrollIntoView({ block: "nearest" });
-            },
-          }, [
+          el("button", { class: "choice", onClick: () => pickPlace(p) }, [
             el("span", { class: "choice-title" }, placeLabel(p)),
             el("span", { class: "choice-sub" }, `${p.lat.toFixed(3)}, ${p.lon.toFixed(3)}`),
           ])
@@ -703,6 +725,15 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
             rememberDraftSpot();
             toast(t("location.usingList", { region: regionName(r.meta) }));
             navigate("sun");
+            return;
+          }
+          if (searchUnpicked) {
+            toast(t("location.pickTown"));
+            (searchOut.querySelector("button.choice") as HTMLButtonElement | null)?.focus();
+            return;
+          }
+          if (!pinPlaced) {
+            toast(t("location.placeFirst"));
             return;
           }
           const fLat = effLat(), fLon = effLon();

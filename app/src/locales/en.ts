@@ -673,6 +673,8 @@ export const en = {
   "location.switchGps": "Use GPS location",
   "location.switchRegion": "pick a region",
   "location.pickFirst": "Pick a region first.",
+  "location.pickTown": "Tap your town in the list first.",
+  "location.placeFirst": "Use your location, search your town, or tap the map first.",
   "location.usingList": "Using the {region} list, as you picked.",
   "location.back": "Back",
   "location.next": "Next: measure the sun →",

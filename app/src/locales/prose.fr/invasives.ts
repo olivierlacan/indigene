@@ -131,6 +131,7 @@ export const INVASIVES_FR: ProseTable = {
         "Revenez pour les repousses : chaque morceau de tige peut s'enraciner.",
       ],
       dispose: "Mettez chaque fragment en sac ; n'en laissez aucun près de l'eau.",
+      cue: "Arrachez les jeunes pieds, du printemps à l'automne",
     },
   },
   "Agave americana": {
@@ -146,6 +147,7 @@ export const INVASIVES_FR: ProseTable = {
         "Portez des gants épais et des lunettes : les épines piquent et la sève brûle.",
       ],
       dispose: "Laissez sécher les morceaux hors du sol, puis jetez-les à la poubelle.",
+      cue: "Avant que la hampe florale monte",
     },
   },
   "Alliaria petiolata": {
@@ -225,6 +227,7 @@ export const INVASIVES_FR: ProseTable = {
         "Recommencez pendant la saison, et chaque année ensuite.",
       ],
       dispose: "Mettez en sac les pieds portant des fruits.",
+      cue: "Avant les premières fleurs roses",
     },
   },
   "Jacobaea vulgaris": {
@@ -288,6 +291,7 @@ export const INVASIVES_FR: ProseTable = {
         "Revenez toute l'année : il fleurit du printemps aux gelées.",
       ],
       dispose: "En sac ; ne compostez pas les pieds en fleur.",
+      cue: "Arrachez à la main deux ou trois fois par an",
     },
   },
   "Phytolacca americana": {
@@ -319,6 +323,7 @@ export const INVASIVES_FR: ProseTable = {
         "Une grosse touffe est une affaire de professionnels.",
       ],
       dispose: "Ne jetez pas les morceaux dans la nature : ils s'enracinent.",
+      cue: "Coupez les fleurs avant les graines",
     },
   },
   "Arundo donax": {

@@ -35,6 +35,7 @@ export const LOOKALIKES_FR: ProseTable = {
         "Arrachez les rejets qui viennent encore, plusieurs années durant.",
       ],
       dispose: "Le bois fait un bon bois de chauffage ; les morceaux de racine vont à la poubelle.",
+      cue: "Coupez chaque tige, encore et encore, en feuilles",
     },
     origin:
       "Indigène des Appalaches, en Amérique du Nord ; planté en Europe depuis le XVIIe siècle.",
@@ -55,6 +56,7 @@ export const LOOKALIKES_FR: ProseTable = {
         "Portez des gants, et ne le broyez pas en lieu clos — les feuilles écrasées dégagent du cyanure.",
       ],
       dispose: "Les branches à baies vont à la poubelle.",
+      cue: "Avant que les cerises mûrissent",
     },
     origin: "Indigène des Balkans, de Turquie et des rivages de la mer Noire.",
     blurb:
@@ -187,6 +189,7 @@ export const LOOKALIKES_FR: ProseTable = {
         "Si vous en gardez un, coupez chaque épi fané avant qu'il fasse ses graines.",
       ],
       dispose: "Les épis en graines vont à la poubelle.",
+      cue: "À la première floraison, avant les graines",
     },
     origin: "Indigène du centre de la Chine.",
     blurb:
@@ -287,6 +290,7 @@ export const LOOKALIKES_FR: ProseTable = {
         "Revenez chaque année : les graines continuent de germer.",
       ],
       dispose: "Mettez les baies en sac ; ne les compostez pas.",
+      cue: "Quand la plante n'a pas de baies rouges",
     },
     origin: "Indigène d'Asie de l'Est.",
     blurb:

@@ -102,6 +102,13 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "The wood makes good firewood; root pieces go in the bin.",
       basis: "OFB Centre de ressources EEE; CBN Méditerranéen.",
+      // "Spread of black locust can be hindered by repeated cutting during the
+      // growing season"
+      window: {
+        seasons: ["spring",  "summer"],
+        cue: "Cut every stem, again and again, while in leaf",
+        source: { name: "Missouri Department of Conservation — Black Locust Control", url: "https://mdc.mo.gov/trees-plants/nuisance-native-plants/black-locust-control" },
+      },
     },
   },
   {
@@ -122,6 +129,12 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Bag the berries; the wood is fine to burn or chip.",
       basis: "Texas Invasive Species Institute; Texas A&M Forest Service.",
+      // "prior to seed onset (spring)"
+      window: {
+        seasons: ["spring"],
+        cue: "Before the seeds start to form",
+        source: { name: "U.S. Army Corps of Engineers — Invasive Plant Species Best Management Practices: Chinaberry Tree", url: "https://corpslakes.erdc.dren.mil/employees/invasive/pdfs/M_azedarach.pdf" },
+      },
     },
   },
   {
@@ -142,6 +155,13 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Cut it before it fruits; bag any berries.",
       basis: "Texas Invasive Species Institute; Lady Bird Johnson Wildflower Center.",
+      // "cream-colored flowers in early summer … Plants should be pulled as soon
+      // as they are large enough to grasp but before they produce seeds"
+      window: {
+        seasons: ["spring",  "summer"],
+        cue: "After rain, before it sets seed",
+        source: { name: "UC Weed Research & Information Center — A Weed Report: Glossy privet", url: "https://ccfruitandnuts.ucanr.edu/sites/default/files/2020-05/326222.pdf" },
+      },
     },
   },
   {
@@ -162,6 +182,13 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Berried branches go in the bin, so birds can't carry the seeds on.",
       basis: "King County Noxious Weeds; WSU Extension.",
+      // "prior to berry maturation … The berries are borne on female trees
+      // during the fall and winter"
+      window: {
+        seasons: ["spring",  "summer"],
+        cue: "Before the berries ripen",
+        source: { name: "Metro Vancouver — Best Management Practices for English Holly", url: "https://metrovancouver.org/services/regional-planning/Documents/english-holly-best-management-practices.pdf" },
+      },
     },
   },
   {
@@ -267,6 +294,13 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Bag the berries; don't compost them.",
       basis: "Texas Invasive Species Institute; Lady Bird Johnson Wildflower Center.",
+      // "develops clusters of red, two-seeded berries in late fall and winter …
+      // it's best to do it before berries form"
+      window: {
+        seasons: ["spring",  "summer"],
+        cue: "Before the berries form",
+        source: { name: "Lewis Ginter Botanical Garden — Nandina: A “Dirty Dozen” Plant", url: "https://www.lewisginter.org/nandina/" },
+      },
     },
   },
   {
@@ -344,6 +378,12 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Bag cut flower heads; don't leave them lying.",
       basis: "Illinois Natural History Survey; Morton Arboretum; Midwest Invasive Plant Network.",
+      // "Mature plants can be cut in complete bud stage … July"
+      window: {
+        seasons: ["summer"],
+        cue: "Cut stalks in full bud, before bloom",
+        source: { name: "Wisconsin DNR — Cut-leaved teasel (Dipsacus laciniatus)", url: "https://dnr.wisconsin.gov/topic/Invasives/fact/CutLeavedTeasel" },
+      },
     },
   },
   {
@@ -495,6 +535,13 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Bag the berries; don't compost them.",
       basis: "UF/IFAS Extension; Florida Invasive Species Council.",
+      // "bright red berries fall and through winter … when fruit are not
+      // present"
+      window: {
+        seasons: ["spring",  "summer"],
+        cue: "When no red berries are on the plant",
+        source: { name: "Bugwood Wiki (UGA Center for Invasive Species and Ecosystem Health) — Hen's Eyes, Coral Ardisia", url: "https://wiki.bugwood.org/Archive:MGIPSF/Hen%E2%80%99s_Eyes,_Coral_Ardisia" },
+      },
     },
   },
   {
@@ -535,6 +582,12 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Bag every fragment; don't leave any near water.",
       basis: "UF/IFAS Center for Aquatic and Invasive Plants.",
+      // "Hand removal can occur from spring to autumn when plants are young"
+      window: {
+        seasons: ["spring",  "summer",  "fall"],
+        cue: "Pull young plants, spring to autumn",
+        source: { name: "Central West Local Land Services (NSW) — Peruvian primrose weed management guide", url: "https://www.narromine.nsw.gov.au/__media_downloads/weed-guides/12575849%20_PWCW_NSC_Peruvian%20Primrose_230427.pdf" },
+      },
     },
   },
   {
@@ -555,6 +608,13 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Let the pieces dry out off the soil, then bin them.",
       basis: "CBN Méditerranéen; INVMED.",
+      // "The flowering season is normally between May and June … Pulling should
+      // be done before flowering"
+      window: {
+        seasons: ["spring"],
+        cue: "Before the flower stalk rises",
+        source: { name: "Invasoras.pt — Agave americana", url: "https://invasoras.pt/en/invasive-plant/agave-americana" },
+      },
     },
   },
   {
@@ -575,6 +635,14 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Seed heads go in the bin.",
       basis: "OFB Centre de ressources EEE; RHS.",
+      // "Flowers bloom between mid-summer and the first frost in Washington
+      // State … Removal of butterfly bush is best when it first comes into
+      // flower but has not yet produced seeds"
+      window: {
+        seasons: ["summer"],
+        cue: "When it first flowers, before seeds",
+        source: { name: "WSU Hortsense — Weeds: Butterfly bush (Buddleja davidii)", url: "https://hortsense.cahnrs.wsu.edu/fact-sheet/weeds-butterfly-bush-buddleja-davidii/" },
+      },
     },
   },
   {
@@ -595,6 +663,13 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Berried branches go in the bin.",
       basis: "OFB Centre de ressources EEE; National Biodiversity Data Centre.",
+      // "undertaking manual control methods prior to fruit maturation is ideal …
+      // form in clusters in mid-summer"
+      window: {
+        seasons: ["spring",  "summer"],
+        cue: "Before the cherries ripen",
+        source: { name: "Metro Vancouver — Best Management Practices for Cherry Laurel", url: "https://metrovancouver.org/services/regional-planning/Documents/cherry-laurel-best-management-practices.pdf" },
+      },
     },
   },
   {
@@ -615,6 +690,13 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Pile cut branches off the ground to dry out.",
       basis: "National Biodiversity Data Centre; NatureScot.",
+      // "This method should be avoided during the bird nesting season (March to
+      // August in UK)"
+      window: {
+        seasons: ["fall",  "winter"],
+        cue: "Cut outside the bird nesting season",
+        source: { name: "GB Non-Native Species Secretariat — Rhododendron Toolkit: Methods of Control", url: "https://www.nonnativespecies.org/assets/Rhododendron-Toolkit_English_Methods-of-Control.pdf" },
+      },
     },
   },
   // ---------------- Perennials ----------------
@@ -663,6 +745,12 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Bag plants that have started to set pods.",
       basis: "Lady Bird Johnson Wildflower Center; Texas Invasive Species Institute.",
+      // "prior to early May … is flowering now and it will soon set seed"
+      window: {
+        seasons: ["spring"],
+        cue: "While flowering, before the pods set",
+        source: { name: "Lady Bird Johnson Wildflower Center — Is Early May OK for Roguing Bastard Cabbage?", url: "https://www.wildflower.org/expert/show.php?id=9136" },
+      },
     },
   },
   {
@@ -791,6 +879,13 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Bag plants carrying pods.",
       basis: "King County Noxious Weeds.",
+      // "appear from early spring to late fall … hand-pulling should be done
+      // before flowering occurs"
+      window: {
+        seasons: ["winter",  "spring"],
+        cue: "Before the first pink flowers open",
+        source: { name: "Whatcom County Noxious Weed Control — Control Options for Herb Robert", url: "https://www.nwcb.wa.gov/images/weeds/HerbRobertControl_Whatcom.pdf" },
+      },
     },
   },
   {
@@ -894,6 +989,12 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Bag it; don't compost plants in flower.",
       basis: "OFB Centre de ressources EEE; CBN de Brest.",
+      // "Période d’intervention : mai à novembre"
+      window: {
+        seasons: ["spring",  "summer",  "fall"],
+        cue: "Pull by hand two or three times a year",
+        source: { name: "Canton de Vaud — Fiche F4-10 Séneçon du Cap", url: "https://www.vd.ch/fileadmin/user_upload/themes/environnement/faune_nature/fichiers_pdf/Bo%C3%AEte_%C3%A0_outils_pour_les_communes/FIche_F4-10.pdf" },
+      },
     },
   },
   {
@@ -941,6 +1042,12 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Don't dump pieces: they root.",
       basis: "National Biodiversity Data Centre; Invasive Species Ireland.",
+      // "cutting off the flower heads each summer before they set seed"
+      window: {
+        seasons: ["summer"],
+        cue: "Cut flower heads before they set seed",
+        source: { name: "NatureScot — Public can help prevent spread of invasive aliens as ban comes into force", url: "https://presscentre.nature.scot/news/public-can-help-spread-of-invasive-aliens-as-ban-comes-into-force" },
+      },
     },
   },
   // ---------------- Grasses ----------------

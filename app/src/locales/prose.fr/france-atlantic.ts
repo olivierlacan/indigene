@@ -304,6 +304,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
         "Surveillez quelques années les semis apportés par les oiseaux sous les arbres voisins.",
       ],
       dispose: "Les branches à baies vont à la poubelle, pour que les oiseaux n'emportent pas les graines.",
+      cue: "Avant que les baies mûrissent",
     },
     // Native here, impostor in the Pacific Northwest — so this one key carries
     // both kinds of writing, as `lib/prose.ts` expects. The plant fields serve

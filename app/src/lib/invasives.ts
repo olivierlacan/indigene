@@ -175,7 +175,10 @@ export function wantedInSeason(regionId: string, season: Season): WantedRow[] {
 
 /** The filter itself, apart from the data, so a test can hand it rows. */
 export function rowsInSeason(rows: WantedRow[], season: Season): WantedRow[] {
-  return rows.filter((row) => row.invasive.removal.window?.seasons.includes(season) ?? false);
+  return rows.filter((row) => {
+    const w = row.invasive.removal.window;
+    return !!w && (w.anyTime || w.seasons.includes(season));
+  });
 }
 
 /**
@@ -197,7 +200,9 @@ export function auditInvasives(): string[] {
     if (!dispose.trim() || !basis.trim()) problems.push(`${inv.id}: removal needs a disposal line and a source`);
     const w = inv.removal.window;
     if (w) {
-      if (!w.seasons.length || w.seasons.length > 3) problems.push(`${inv.id}: removal window has ${w.seasons.length} seasons, want 1–3`);
+      if (w.anyTime ? w.seasons.length > 0 : !w.seasons.length || w.seasons.length > 3) {
+        problems.push(`${inv.id}: removal window has ${w.seasons.length} seasons, want 1–3 (or none with anyTime)`);
+      }
       if (!w.cue.trim()) problems.push(`${inv.id}: removal window needs a cue`);
       if (!/^https:\/\//.test(w.source.url) || !w.source.name.trim()) problems.push(`${inv.id}: removal window needs a source page`);
     }

@@ -539,7 +539,11 @@ export interface RemovalStep {
  * the scan. One cited page per window, with the quote beside the row.
  */
 export interface RemovalWindow {
+  /** Empty when the source says any time of year — see `anyTime`. */
   seasons: Season[];
+  /** The source's own answer is "any time of year": the strip lights every
+   *  season, as scarification's does on the planting pages. */
+  anyTime?: boolean;
   /** What to watch for, in a few words. Shown beside the strip. */
   cue: string;
   /** The page that says so — a title and its address, checked by opening it. */

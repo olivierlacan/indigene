@@ -261,7 +261,7 @@ function removalWindow(inv: Invasive): HTMLElement | null {
   const cue = invasiveRemovalCue(inv);
   if (!w || !cue) return null;
   return el("div", { class: "removal-window" }, [
-    seasonStrip(w.seasons),
+    seasonStrip(w.seasons, w.anyTime),
     el("p", { class: "removal-cue" }, [el("strong", {}, t("wanted.bestTime")), cue]),
     el("p", { class: "confidence", style: "margin:0" }, [
       t("alternatives.originSource"), " ",

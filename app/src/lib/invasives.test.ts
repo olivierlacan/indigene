@@ -28,6 +28,11 @@ describe("rowsInSeason", () => {
     expect(rowsInSeason(rows, "winter")).toEqual([]);
   });
 
+  it("lists an any-time plant in every season", () => {
+    const rows = [row("ivy", { seasons: [], anyTime: true, cue: "any time", source })];
+    expect(rowsInSeason(rows, "winter").map((r) => r.invasive.id)).toEqual(["ivy"]);
+  });
+
   it("never guesses a window for a plant with none", () => {
     expect(rowsInSeason([row("unsourced")], "spring")).toEqual([]);
   });

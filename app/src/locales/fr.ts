@@ -666,6 +666,8 @@ export const fr: Dict = {
   "location.switchMap": "Trouvez votre coin sur la carte",
   "location.switchRegion": "choisissez une région",
   "location.pickFirst": "Choisissez d'abord une région.",
+  "location.pickTown": "Touchez d'abord votre commune dans la liste.",
+  "location.placeFirst": "Utilisez votre position, cherchez votre commune ou touchez la carte d'abord.",
   "location.usingList": "Liste {region} retenue, selon votre choix.",
   "location.back": "Retour",
   "location.next": "Suite : mesurer le soleil →",

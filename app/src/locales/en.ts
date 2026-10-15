@@ -594,7 +594,9 @@ export const en = {
   "location.update": "📍 Update my location",
   "location.locating": "Locating…",
   "location.none": "No location yet.",
-  "location.privacy": "Sent anonymously, only when you tap.",
+  "location.privacy": "Sent anonymously, when you tap.",
+  "location.privacyLink": "Privacy",
+  "location.searchInline": "No GPS? Search by town or postal code",
   "location.mapHint":
     "Drag or tap the map to put the pin on your spot. Press and hold to fine-tune.",
   "location.mapLabel":
@@ -635,7 +637,6 @@ export const en = {
   "location.noGeolocation": "This device can't share location. Try the town search instead.",
   "location.denied": "Location denied. Try the town search instead.",
   "location.noFix": "Couldn't get a fix. Try again, or switch to the town search.",
-  "location.searchTitle": "No GPS? Search by town",
   "location.searchLabel": "Your town, city, or postal code",
   "location.searchPlaceholder": "Tampa or 33602",
   "location.search": "Search",

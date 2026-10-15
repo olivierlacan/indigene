@@ -444,10 +444,8 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     id: "place-q",
     autocomplete: "off",
     placeholder: t("location.searchPlaceholder"),
-    // Shares a row with the button: shrinkable, takes the leftover width.
-    style: "flex:1 1 auto;min-width:0",
   }) as HTMLInputElement;
-  const searchBtn = el("button", { class: "btn btn-secondary", style: "flex:none" }, t("location.search")) as HTMLButtonElement;
+  const searchBtn = el("button", { class: "btn btn-secondary" }, t("location.search")) as HTMLButtonElement;
   const searchOut = el("div", { "aria-live": "polite" });
 
   function pickPlace(p: GeoPlace): void {
@@ -514,15 +512,15 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     }
   }
 
-  const searchCard = el("div", { class: "card" }, [
-    el("h3", {}, t("location.searchTitle")),
+  // A label and one row, not a card: it sits right under the GPS button as
+  // the other half of the same question, and a card of its own made it look
+  // like a second step.
+  const searchCard = el("div", { class: "place-search" }, [
     el("form", {
       onSubmit: (e: Event) => { e.preventDefault(); void doSearch(); },
     }, [
-      el("div", { class: "field", style: "margin-bottom:0.6rem" }, [
-        el("label", { for: "place-q" }, t("location.searchLabel")),
-        el("div", { style: "display:flex;gap:0.5rem" }, [searchInput, searchBtn]),
-      ]),
+      el("label", { for: "place-q" }, t("location.searchInline")),
+      el("div", { class: "place-search-row" }, [searchInput, searchBtn]),
     ]),
     searchOut,
   ]);
@@ -688,7 +686,7 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     el("p", { class: "step-lede" }, t("location.lede")),
     whyThis(t("location.whyTitle"), t("location.why")),
     locateBtn,
-    privacyNote(t("location.privacy"), undefined, "location"),
+    privacyNote(t("location.privacy"), t("location.privacyLink"), "location"),
     searchCard,
     mapBlock,
     regionCard,

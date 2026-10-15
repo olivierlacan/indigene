@@ -595,7 +595,9 @@ export const fr: Dict = {
   "location.update": "📍 Actualiser ma position",
   "location.locating": "Localisation…",
   "location.none": "Pas encore de position.",
-  "location.privacy": "Envoyée anonymement, seulement quand vous touchez le bouton.",
+  "location.privacy": "Envoi anonyme, au toucher.",
+  "location.privacyLink": "Vie privée",
+  "location.searchInline": "Pas de GPS ? Cherchez votre commune",
   "location.mapHint":
     "Faites glisser ou touchez la carte pour placer le repère sur votre lieu. Restez appuyé pour l'ajuster finement.",
   "location.mapLabel":
@@ -631,7 +633,6 @@ export const fr: Dict = {
     "Cet appareil ne peut pas partager sa position. Essayez la recherche par commune.",
   "location.denied": "Position refusée. Essayez la recherche par commune.",
   "location.noFix": "Impossible d'obtenir un point. Réessayez, ou passez à la recherche par commune.",
-  "location.searchTitle": "Pas de GPS ? Cherchez votre commune",
   "location.searchLabel": "Votre commune, ville ou code postal",
   "location.searchPlaceholder": "ex. Nantes, ou 44000",
   "location.search": "Rechercher",

@@ -41,6 +41,11 @@ export function entryByPrimaryId(curie: string): import("../types").RegistryEntr
   return core.entryByPrimaryId(registryIndex, curie);
 }
 
+/** The registry check the nursery-stock readers use (`lib/availability.ts`). */
+export function taxonRefFor(candidate: string): import("./availability").TaxonRef | null {
+  return core.taxonRefFrom(registryIndex, candidate);
+}
+
 // Dev-time integrity net, mirroring the wildlife audit: verify the registry
 // still covers every catalog plant and stays self-consistent. Prod builds strip
 // this branch.

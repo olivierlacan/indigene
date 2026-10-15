@@ -122,4 +122,4 @@ resolve("ironwood");         // → { kind: "ambiguous", entries: [...] }  when 
 
 Ambiguity is surfaced, never silently resolved — the property that makes
 plant-first lookups trustworthy. The registry is the foundation the availability
-and discoverability work (see `docs/nursery-availability-protocol.md`) builds on.
+and discoverability work (see `docs/nursery-availability.md`) builds on.

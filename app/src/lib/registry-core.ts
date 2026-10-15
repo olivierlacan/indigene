@@ -6,6 +6,7 @@
 // ambiguity surfaced rather than guessed.
 
 import type { RegistryEntry } from "../types";
+import type { TaxonRef } from "./availability";
 
 /** Lowercase, trim, collapse whitespace — the one normalization every name
  *  (query or stored alias) passes through, so matching is consistent. */
@@ -103,6 +104,22 @@ export function resolveName(index: RegistryIndex, name: string): ResolveResult {
   if (!hits || hits.length === 0) return { kind: "none" };
   if (hits.length === 1) return { kind: "match", entry: hits[0] };
   return { kind: "ambiguous", entries: hits };
+}
+
+/** The registry's answer for a binomial parsed out of a nursery listing: the
+ *  canonical taxon with its USDA and GBIF ids when the registry vouches for that
+ *  straight species, else null. A bad parse ("Arctostaphylos uva") resolves to
+ *  nothing instead of a guess. Pass as `AdapterContext.resolveKnown`. */
+export function taxonRefFrom(index: RegistryIndex, candidate: string): TaxonRef | null {
+  const result = resolveName(index, candidate);
+  if (result.kind !== "match") return null;
+  const { scientificName, identifiers } = result.entry;
+  const gbif = Number(identifiers.gbif);
+  return {
+    scientificName,
+    ...(identifiers.usda ? { usdaSymbol: identifiers.usda } : {}),
+    ...(identifiers.gbif && Number.isFinite(gbif) ? { gbifKey: gbif } : {}),
+  };
 }
 
 /** Authoritative external links for an entry, from its identifier bag. A record

@@ -203,7 +203,6 @@ async function byGps(page, gotWhatItCameFor) {
 
 function byTown(town) {
   return async (page) => {
-    await page.locator("button.linklike[data-mode='zip']").first().click();
     await page.locator("#place-q").pressSequentially(town);
     await page.keyboard.press("Enter");
     await page.waitForLoadState("networkidle");

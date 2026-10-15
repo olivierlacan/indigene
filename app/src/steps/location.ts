@@ -98,10 +98,10 @@ function fitToSpot(at: { lat: number; lon: number } | { regionId: string }): voi
   }
 }
 
-// Step 1: "Where are you standing?" High-accuracy geolocation leads; the
-// fallbacks — a town/ZIP search (no permissions needed) and, for people who
-// already know their region, picking the plant list directly — sit behind a
-// plain-words switch link so only one picker shows at a time. Nothing here
+// Step 1: "Where are you standing?" High-accuracy geolocation leads, with the
+// town/ZIP search (no permissions needed) right under it. For people who
+// already know their region, picking the plant list directly sits behind a
+// plain-words switch link. Nothing here
 // asks anyone to know coordinates. The pin is adjusted by dragging, tapping,
 // or arrow keys — three ways to the same nudge.
 //
@@ -394,7 +394,7 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
   function locate(): void {
     if (!("geolocation" in navigator)) {
       toast(t("location.noGeolocation"));
-      setMode("zip");
+      searchInput.focus();
       return;
     }
     locateBtn.textContent = t("location.locating");
@@ -566,21 +566,22 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
     regionList,
   ]);
 
-  // --- One way in at a time. GPS leads; the town search and the region list
-  // stay tucked behind a plain-words link so the screen holds a single task
-  // and the Next button stays close. The link always offers the way back.
+  // --- Two ways in: the map (GPS or town search, side by side) and the region
+  // list. The town search used to hide behind a link too, and a reader who
+  // missed the link took the map for the only way in: "No zip code input, no
+  // zoom out" (Show HN). The link always offers the way back.
   //
   // Which picker opens: the draft's own way in, if there is one; otherwise a
   // region — either the one set as the starting point in Settings, or the one
   // picked last visit — because reopening the map for someone who has twice
   // told us they work by region is asking a question they've answered.
-  type Mode = "gps" | "zip" | "region";
+  type Mode = "map" | "region";
   let mode: Mode =
-    moving ? "gps"
+    moving ? "map"
     : store.draft.regionOverride ? "region"
-    : store.draft.lat != null ? "gps"
+    : store.draft.lat != null ? "map"
     : startingRegion || remembered?.regionId ? "region"
-    : "gps";
+    : "map";
 
   const mapBlock = el("div", {}, [
     el("div", { style: "margin:0.9rem 0 0.5rem" }, [mapWrap]),
@@ -599,28 +600,15 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
       el("button", { class: "linklike", "data-mode": m, onClick: () => setMode(m) }, label);
     // `tx` rather than three concatenated fragments: the two links have to be
     // able to move inside the sentence, and English word order is not French's.
-    if (mode === "gps") {
-      switcher.append(...tx("location.switchFromGps", {
-        a: link(t("location.switchZip"), "zip"),
-        b: link(t("location.switchRegion"), "region"),
-      }));
-    } else if (mode === "zip") {
-      switcher.append(...tx("location.switchFromOther", {
-        a: link(t("location.switchGps"), "gps"),
-        b: link(t("location.switchRegion"), "region"),
-      }));
-    } else {
-      switcher.append(...tx("location.switchFromOther", {
-        a: link(t("location.switchGps"), "gps"),
-        b: link(t("location.switchZip"), "zip"),
-      }));
-    }
+    switcher.append(...(mode === "map"
+      ? tx("location.switchFromMap", { a: link(t("location.switchRegion"), "region") })
+      : tx("location.switchFromRegion", { a: link(t("location.switchMap"), "map") })));
   }
 
   function setMode(m: Mode): void {
     mode = m;
-    locateBtn.hidden = m !== "gps";
-    searchCard.hidden = m !== "zip";
+    locateBtn.hidden = m !== "map";
+    searchCard.hidden = m !== "map";
     mapBlock.hidden = m === "region";
     regionCard.hidden = m !== "region";
     renderSwitcher();

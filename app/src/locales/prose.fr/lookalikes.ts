@@ -130,6 +130,7 @@ export const LOOKALIKES_FR: ProseTable = {
         "Un grand massif en zone humide est l'affaire du service local de lutte contre les espèces envahissantes.",
       ],
       dispose: "Mettez les épis en sac.",
+      cue: "Quand les épis violets apparaissent",
     },
     origin: "Indigène d'Europe et d'Asie.",
     blurb:
@@ -249,6 +250,7 @@ export const LOOKALIKES_FR: ProseTable = {
         "Coupez les pousses qui reviennent, et plantez de quoi faire de l'ombre : elle déteste l'ombre.",
       ],
       dispose: "Les tiges s'enracinent là où elles touchent le sol : entassez-les sur une bâche pour qu'elles sèchent.",
+      cue: "Rabattez souvent, des années durant",
     },
     origin:
       "Indigène d'Arménie et du nord de l'Iran, malgré le nom qu'on lui a donné.",

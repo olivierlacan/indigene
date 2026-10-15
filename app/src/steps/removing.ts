@@ -28,98 +28,95 @@ import { pioneerCountForRegion } from "../lib/pioneers";
 /** The evidence, in the order the page leans on it. Names are the pages' own
  *  titles and stay untranslated; `what` is the dictionary key. */
 //
-// Checked October 2026. Four pages were opened and read for the quote beside
-// them (EPA, NISIC, USFWS, Penn State). The rest of the hosts were unreachable
-// from the container this was written in, so their quotes come from search
-// excerpts of the page and are marked "(excerpt)": re-open one before leaning
-// harder on it.
+// Checked 15 October 2026: every page below was fetched and the quote beside
+// its row found in the page's own text. Claims we couldn't open a source for
+// (city tree permits, French hedge dates, Irish hedge law, Japan's rules) are
+// left off the page rather than cited from a search snippet.
 const SOURCES: { name: string; url: string; what: TKey }[] = [
-  // (excerpt) "proper plant identification is the first step to invasive plant
-  // control … consult Ask Extension or contact your local county Extension office."
-  { name: "University of Maryland Extension — Removing Invasive Plants and Planting Natives in Maryland", url: "https://extension.umd.edu/resource/removing-invasive-plants-and-planting-natives-maryland", what: "removing.src.umd" },
-  // (excerpt) "most exotic species do not become invasive in either natural
-  // ecosystems or agricultural settings".
+  // "Accurately identifying the tree so as not to confuse it with several
+  // native look-alikes is imperative prior to any control measures being
+  // implemented."
+  { name: "Penn State Extension — Tree of Heaven: Native Look-alikes", url: "https://extension.psu.edu/tree-of-heaven-native-look-alikes", what: "removing.src.psuid" },
+  // "When in doubt, take photos and share them with us or report them on
+  // iNaturalist." Also: "hand pull or dig up the roots when the soil is
+  // moist"; "Disturbed areas should be mulched and/or re-planted to prevent
+  // spread".
+  { name: "King County — Rough chervil", url: "https://kingcounty.gov/en/dept/dnrp/nature-recreation/environment-ecology-conservation/noxious-weeds/identification-control/rough-chervil", what: "removing.src.chervil" },
+  // "Most non-native or exotic species do not become invasive."
   { name: "Maryland DNR — What is an invasive species?", url: "https://dnr.maryland.gov/Invasives/pages/Invasive-Description.aspx", what: "removing.src.mddnr" },
-  // (excerpt) yards below the threshold had "lower reproductive success and
-  // unsustainable population growth" than those with ">70% native plant biomass".
-  { name: "Narango, Tallamy & Marra 2018 — Nonnative plants reduce population growth of an insectivorous bird (PNAS)", url: "https://doi.org/10.1073/pnas.1809259115", what: "removing.src.narango" },
-  // (excerpt) "Please do not remove buffelgrass or other invasive plants in the
-  // park if you are not an official volunteer".
-  { name: "Saguaro National Park (NPS) — How You Can Help", url: "https://www.nps.gov/sagu/learn/nature/how-you-can-help.htm", what: "removing.src.nps" },
-  // (excerpt) "Do not remove plants from parks without prior approval from NYC
-  // Parks staff."
-  { name: "City Parks Foundation & NYC Parks — Weeds and Invasive Plants", url: "https://cityparksfoundation.org/wp-content/uploads/2024/01/Weeds-Invasive-Plants_11.9.23.pdf", what: "removing.src.nycparks" },
-  // (read) "Early interventions are more likely to be successful, while
-  // long-term management typically have higher association costs."
+  // Narango's yards were in "the outskirts of Washington, D.C."; chickadees
+  // "could only sustain their population when at least 70 percent of plants
+  // in a nesting area were native." (The paper itself, PNAS 2018, measured
+  // plant biomass; doi.org was unreachable, so the article stands in.)
+  { name: "Audubon — Yards With Non-Native Plants Create ‘Food Deserts’ for Bugs and Birds", url: "https://www.audubon.org/news/yards-non-native-plants-create-food-deserts-bugs-and-birds", what: "removing.src.audubon" },
+  // "it is important to gain approval from the land owner or manager prior to
+  // implementation".
+  { name: "Cal-IPC — Weed Workers’ Handbook", url: "https://www.cal-ipc.org/docs/ip/management/wwh/pdf/19626.pdf", what: "removing.src.calipc" },
+  // "Early interventions are more likely to be successful, while long-term
+  // management typically have higher association costs."
   { name: "USDA National Invasive Species Information Center — Early Detection and Rapid Response", url: "https://www.invasivespeciesinfo.gov/subject/early-detection-and-rapid-response", what: "removing.src.nisic" },
-  // (read) "plants should be pulled before siliques are developed, as studies
-  // have found that plants bearing siliques when pulled, even unripe ones, can
+  // "Early detection and control of an invasive species is a much more
+  // efficient and effective management strategy than is waiting until an
+  // infestation becomes a crisis."
+  { name: "Virginia DCR — Invasive Alien Plant Species of Virginia: management", url: "https://www.dcr.virginia.gov/natural-heritage/document/mnginv.pdf", what: "removing.src.vadcr" },
+  // "plants should be pulled before siliques are developed, as studies have
+  // found that plants bearing siliques when pulled, even unripe ones, can
   // still develop viable seed."
   { name: "Penn State Extension — Garlic Mustard", url: "https://extension.psu.edu/garlic-mustard", what: "removing.src.psu" },
-  // (excerpt) pull when the soil is damp, not soggy.
-  { name: "UC Marin Master Gardeners — Weeds & Invasive Plants", url: "https://ucanr.edu/sites/marinmg/PROBLEMS/WEEDS_-_INVASIVE_PLANTS/", what: "removing.src.marin" },
-  // (excerpt) "repeated cutting is required to prevent replenishment of
-  // reserves." About a native shrub; the root physiology is the general point.
-  { name: "NDSU Extension — Mechanical Management of Western Snowberry", url: "https://ndsu.edu/agriculture/sites/default/files/2022-10/Mechanical_Mgmt_of_Western_Snowberry.pdf", what: "removing.src.ndsu" },
-  // (excerpt) "three to five years of active management and monitoring are
-  // typical to ensure effective control and depletion of seed reserves";
-  // "It is fairly easy to snuff out a small population of invasive plants".
-  { name: "UNH Extension — Mechanical Control of Terrestrial Invasive Plants", url: "https://extension.unh.edu/resource/mechanical-control-terrestrial-invasives-plants", what: "removing.src.unh" },
-  // (read) "Under the MBTA it is illegal to destroy a nest that has eggs or
-  // chicks in it".
+  // "When done repeatedly and often, cutting can deplete stored root reserves
+  // of some perennial plants, eventually starving the plant, but this is
+  // usually impractical."
+  { name: "Penn State Extension — Integrated Forest Vegetation Management", url: "https://extension.psu.edu/integrated-forest-vegetation-management", what: "removing.src.psuifvm" },
+  // "annual monitoring for the first 3-5 years, decreasing in frequency …
+  // until the seed source has been exhausted".
+  { name: "USDA Forest Service — Fremont-Winema Invasive Plant Treatment, Record of Decision", url: "https://www.fs.usda.gov/sites/nfs/files/legacy-media/fremont-winema/fre26win16.pdf", what: "removing.src.usfs" },
+  // "Under the MBTA it is illegal to destroy a nest that has eggs or chicks in
+  // it"; "destruction of their nests during or near the nesting season could
+  // result in a significant level of take."
   { name: "U.S. Fish & Wildlife Service — Bird nests", url: "https://www.fws.gov/story/bird-nests", what: "removing.src.fws" },
-  // (excerpt) "the duty of every owner of land to control and prevent the
-  // spread of noxious weeds within and from the owner's property".
-  { name: "RCW 17.10.140 — Washington State Legislature", url: "https://app.leg.wa.gov/rcw/default.aspx?cite=17.10.140", what: "removing.src.rcw" },
-  // (excerpt) permits "may be required to remove trees on private property."
-  { name: "City of Portland — Do I need a permit to remove trees on private property?", url: "https://www.portland.gov/ppd/tree-permits/removal-and-replanting-permits/do-i-need-permit-remove-trees-private-property", what: "removing.src.portland" },
-  // (excerpt) "interdit depuis le 1er Janvier 2019 aux particuliers d'acheter,
-  // d'utiliser et de stocker des produits phytopharmaceutiques de synthèse".
-  { name: "DRAAF Occitanie — Extension de la loi Labbé", url: "https://draaf.occitanie.agriculture.gouv.fr/extension-de-la-loi-labbe-a6470.html", what: "removing.src.labbe" },
-  // (excerpt) OFB asks communities, professionals and individuals not to trim
-  // hedges from 15 March to 31 July. A recommendation; the binding rule binds
-  // farmers only, which is why the page says "asks".
-  { name: "Office français de la biodiversité — Période de nidification : préconisations pour la taille des haies (2022)", url: "https://pays-de-la-loire.chambres-agriculture.fr/fileadmin/user_upload/Pays_de_la_Loire/022_Inst-Pays-de-la-loire/Actus-agendas/2022/Fichiers/20220414_periode_nidification_oiseaux_OFB_preconisation_taille_haies.pdf", what: "removing.src.ofb" },
-  // (excerpt) Regulation 49(2) of S.I. 477/2011; doing nothing "could be
-  // considered an offence by 'allowing' the plant to be dispersed or spread."
-  { name: "National Biodiversity Data Centre (invasives.ie) — Japanese Knotweed FAQ", url: "https://invasives.ie/app/uploads/2024/04/JapaneseKnotweed_FAQ_Apr2024_V1.5.pdf", what: "removing.src.knotweed" },
-  // (excerpt) "the cutting, grubbing, burning or other destruction of
-  // 'vegetation growing in any hedge or ditch' between 1st March and 31st
-  // August is prohibited."
-  { name: "NPWS — Restrictions on Cutting Hedgerows and Burning", url: "https://www.npws.ie/node/5568", what: "removing.src.npws" },
-  // (excerpt) "Nor may they be kept, bred, transported to, from or within the
-  // EU, sold, grown or released into the environment."
-  { name: "EUR-Lex — Protecting biodiversity from invasive alien species (Regulation 1143/2014)", url: "https://eur-lex.europa.eu/legal-content/EN/LSU/?uri=CELEX:32014R1143", what: "removing.src.eu" },
-  // (excerpt) Accord plants are unwanted organisms under the Biosecurity Act
-  // 1993 and may not be sold, propagated or distributed.
-  { name: "Ministry for Primary Industries (NZ) — Overview of the pest plant accord", url: "https://www.biosecurity.govt.nz/NPPA", what: "removing.src.nppa" },
-  // (excerpt) specified invasive alien species may not be kept or transported
-  // alive ("生きた個体の…保管・運搬…原則禁止").
-  { name: "Ministry of the Environment, Japan — Invasive Alien Species Act", url: "https://www.env.go.jp/en/nature/as.html", what: "removing.src.japan" },
-  // (excerpt) "袋などに入れ、枯死させたのちに処分する" — bag it, let it die,
-  // then dispose of it.
-  { name: "大阪府 — オオキンケイギク (Osaka Prefecture)", url: "https://www.pref.osaka.lg.jp/documents/1337/ookinkeigiku-seiiku.pdf", what: "removing.src.osaka" },
-  // (excerpt) salt "destroys the soil structure and is mobile"; borax "does
-  // not break down."
-  { name: "University of Illinois Extension — Homemade herbicide considerations", url: "https://extension.illinois.edu/blogs/ilriverhort/2018-04-08-homemade-herbicide-considerations-michelle-wiesbrook", what: "removing.src.illinois" },
-  // (excerpt) "Désherbant fait maison : ne jamais mélanger javel et vinaigre";
-  // use only products marked « Emploi autorisé au jardin ».
-  { name: "ANSES — Désherbant fait maison : ne jamais mélanger javel et vinaigre", url: "https://www.anses.fr/fr/content/desherbant-fait-maison-ne-jamais-melanger-javel-et-vinaigre", what: "removing.src.anses" },
-  // (read) "It is a violation of Federal law to use this product in a manner
-  // inconsistent with its labeling." In other words, the label is the law.
+  // "Landowners are required to completely eradicate Class A weeds"; "A County
+  // Weed Board may require landowners to control a Class C weed".
+  { name: "Washington State Noxious Weed Control Board — Washington's noxious weed laws", url: "https://www.nwcb.wa.gov/washingtons-noxious-weed-laws", what: "removing.src.nwcblaw" },
+  // "Depuis le 1er janvier 2019, vous ne pouvez plus acheter, utiliser et
+  // stocker des pesticides chimiques pour jardiner ou désherber. Issue de la
+  // loi Labbé".
+  { name: "Tela Botanica — Maison et jardin sans pesticides : interdiction et conseils", url: "https://www.tela-botanica.org/2019/01/maison-et-jardin-sans-pesticides-interdiction-et-conseils/", what: "removing.src.tela" },
+  // Gunnera is "listed in the Third Schedule … making it an offence under
+  // Regulation 49 … to plant, disperse, allow or cause to grow this plant".
+  { name: "National Biodiversity Data Centre — Irish Vegetation Classification: IN1b", url: "https://biodiversityireland.ie/ivc-classification-explorer/in1/in1b/", what: "removing.src.nbdc" },
+  // EU-listed species: "une série d'interdictions … (introduction, mise en
+  // situation de se reproduire, de transport, de commercialisation,
+  // d'utilisation, d'échange, de détention et de libération dans
+  // l'environnement)".
+  { name: "Centre de ressources EEE (OFB & UICN France) — Réglementation", url: "https://especes-exotiques-envahissantes.fr/base-documentaire/reglementation/", what: "removing.src.eee" },
+  // "All plants on the NPPA are unwanted organisms under the Biosecurity Act
+  // 1993. These plants cannot be sold, propagated or distributed in New
+  // Zealand."
+  { name: "New Zealand Plant Conservation Network — National Pest Plant Accord", url: "https://www.nzpcn.org.nz/threats/exotic-plants/pest-plant-accord/", what: "removing.src.nzpcn" },
+  // "Using things like salt or diesel may kill some weeds, but then nothing
+  // else will grow there!"
+  { name: "Penn State Extension — Using Herbicides on Horse Farms", url: "https://extension.psu.edu/using-herbicides-on-horse-farms", what: "removing.src.psusalt" },
+  // "Boron can permanently damage other plants, including turfgrasses, and it
+  // persists in the soil."
+  { name: "Penn State Extension — Dead Nettle, Henbit, and Ground Ivy", url: "https://extension.psu.edu/dead-nettle-henbit-and-ground-ivy-three-look-alike-weeds", what: "removing.src.psuborax" },
+  // "It is a violation of Federal law to use this product in a manner
+  // inconsistent with its labeling. In other words, the label is the law."
   { name: "U.S. EPA — Introduction to Pesticide Labels", url: "https://www.epa.gov/pesticide-labels/introduction-pesticide-labels", what: "removing.src.epa" },
-  // (excerpt) sap plus sunlight causes "severe burns, blistering, painful
-  // sores"; "seek advice from professional plant control specialists."
-  { name: "New York State Department of Health — Giant Hogweed", url: "https://www.health.ny.gov/environmental/outdoors/hogweed/giant_hogweed.htm", what: "removing.src.hogweed" },
-  // (excerpt) most home compost "cannot kill the seeds or plant parts."
-  { name: "UNH Extension — Methods for Disposing Non-Native Invasive Plants", url: "https://extension.unh.edu/resource/methods-disposing-non-native-invasive-plants", what: "removing.src.compost" },
-  // (excerpt) "Careless disposal of garden waste… into lay-bys, ditches,
-  // streams and ponds, increases the chances of these plants spreading".
-  { name: "Environment Agency — Managing invasive non-native plants", url: "https://www.nonnativespecies.org/assets/Managing_invasive_non-native_plants_-_Environment_Agency_2010-2.PDF", what: "removing.src.dumping" },
-  // (excerpt) "Plant native plants or seeds, or put down a layer of mulch …
-  // Otherwise, invasive plants will find their way back into the bare spaces."
-  { name: "University of Arizona — Best Practices for Controlling Invasive Plants in the Home Landscape", url: "https://azinvasiveplants.arizona.edu/resources/best-practices", what: "removing.src.arizona" },
-  { name: "EDDMapS (University of Georgia)", url: "https://www.eddmaps.org/", what: "removing.src.eddmaps" },
+  // "furanocoumarins – chemicals which make the skin very sensitive to
+  // sunlight"; "The easiest and safest way to remove giant hogweed is to hire
+  // a professional".
+  { name: "RHS — Giant hogweed", url: "https://www.rhs.org.uk/weeds/giant-hogweed", what: "removing.src.rhshog" },
+  // "Most home compost piles do not get hot enough to kill seeds or plants".
+  { name: "Washington State Noxious Weed Control Board — Noxious weed disposal", url: "https://www.nwcb.wa.gov/pdfs/Noxious_weed_disposal_2012-1.pdf", what: "removing.src.nwcbdisp" },
+  // "avoid tossing unwanted plants, soil, or clippings over fences, into
+  // vacant lots, or into nearby woods. Invasive plants can easily take root
+  // and spread".
+  { name: "Penn State Extension — Small Actions, Big Impact: Five Ways to Help Stop Invasive Species", url: "https://extension.psu.edu/small-actions-big-impact-five-ways-to-help-stop-invasive-species", what: "removing.src.psudump" },
+  // "All data is reviewed by verifiers prior to appearing on maps"; the
+  // program covers "the entire US and Canada".
+  { name: "EDDMapS (University of Georgia) — About", url: "https://www.eddmaps.org/about/", what: "removing.src.eddmaps" },
+  // The NBDC's own "Submit A Sighting" link, from its home page.
+  { name: "National Biodiversity Data Centre — Submit a sighting", url: "https://records.biodiversityireland.ie/", what: "removing.src.nbdcrecords" },
 ];
 
 const p = (key: TKey): HTMLElement => el("p", {}, t(key));
@@ -174,7 +171,7 @@ export function renderRemoving(main: HTMLElement): void {
       p("removing.whose1"),
       p("removing.whose2"),
       el("h4", {}, t("removing.rulesTitle")),
-      el("ul", {}, (["us", "wa", "fr", "ie", "eu", "nz", "jp"] as const).map((k) =>
+      el("ul", {}, (["us", "wa", "fr", "ie", "eu", "nz"] as const).map((k) =>
         boldLead(`removing.rule.${k}` as TKey, t(`removing.rule.${k}Rest` as TKey)))),
       el("p", { class: "confidence" }, t("removing.rulesNote")),
 

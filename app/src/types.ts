@@ -1,6 +1,8 @@
 // Shared domain types. Kept in one place so the data schema and the code that
 // consumes it can't drift apart.
 
+import type { Season } from "./lib/planting";
+
 export type PlantForm =
   | "tree"
   | "shrub"
@@ -527,6 +529,23 @@ export interface RemovalStep {
   text: string;
 }
 
+/**
+ * The part of the year when removing it does the most good, and the cue that
+ * says the moment has come.
+ *
+ * Seasons, not dates, for the reason the planting pages give: the app spans
+ * both hemispheres and the Keys to the Alps. The cue is what makes it true
+ * everywhere — "before the flower stalks open" — and the season strip is only
+ * the scan. One cited page per window, with the quote beside the row.
+ */
+export interface RemovalWindow {
+  seasons: Season[];
+  /** What to watch for, in a few words. Shown beside the strip. */
+  cue: string;
+  /** The page that says so — a title and its address, checked by opening it. */
+  source: { name: string; url: string };
+}
+
 /** How to get rid of it for good, without chemicals. */
 export interface InvasiveRemoval {
   /** What to do, in order — each aimed at what makes it come back. Three at most. */
@@ -535,6 +554,9 @@ export interface InvasiveRemoval {
   dispose: string;
   /** A dependable, citable source for the method. */
   basis: string;
+  /** When to do it. Absent until a source for this plant's timing has been
+   *  opened and checked — never filled in from general advice. */
+  window?: RemovalWindow;
 }
 
 /** The part of a plant a recognition mark is about. */

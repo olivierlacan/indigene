@@ -2236,6 +2236,8 @@ export const fr: Dict = {
   "wanted.removeLink": "comment l'arracher",
   "wanted.placeLink": "{region} (n° {n})",
   "wanted.beforeYouPull": "Avant d'arracher une plante →",
+  "wanted.bestTime": "Le bon moment : ",
+  "wanted.nowTitle": "À arracher cette saison",
   // -------------------------------------------------------------------
   // Avant d'arracher une plante (#/removing)
   // -------------------------------------------------------------------

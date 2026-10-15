@@ -22,6 +22,7 @@ import {
   wantedRegionParam,
   wantedRegionHref,
   wantedRegionIds,
+  wantedInSeason,
   REMOVAL_ICONS,
   MARK_ICONS,
   DISPOSE_ICON,
@@ -31,7 +32,10 @@ import { getLookalikeByLatin, mappedLookalikeIds, inatTaxonUrl } from "../lib/lo
 import { invasivePhotoFor, inatTaxonIdFor } from "../lib/hero-photo";
 import { fetchRegionObservations, isBusy, resolveTaxon, boundsCenter, type Bounds } from "../lib/inaturalist";
 import { loadSightings, regionCacheKey } from "../lib/nearby";
-import { invasiveMarks, invasiveRemoval, invasivesUntranslated } from "../lib/prose";
+import { invasiveMarks, invasiveRemoval, invasiveRemovalCue, invasivesUntranslated } from "../lib/prose";
+import { seasonStrip } from "../components/season-strip";
+import { currentSeason } from "../lib/planting";
+import { readerHemisphere } from "../state";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { nameChoiceNote } from "../lib/name-choice";
 import { t, fmtNumber, fmtDate } from "../lib/i18n";
@@ -104,6 +108,7 @@ function renderInvasiveRegion(main: HTMLElement, region: RegionDef): void {
     el("p", { class: "step-lede" },
       t(regionIsRated(region.meta.id) ? "wanted.lede" : "wanted.ledeUnrated")),
     wantedList(rows),
+    ...[thisSeasonCard(region.meta.id)].filter((n): n is HTMLElement => n !== null),
     el("p", { class: "confidence", style: "margin:0.6rem 0 0" },
       t("wanted.countsNote", { date: fmtDate(Date.parse(sightingsAsOf)) })),
     // The same list for the other regions — a row of places, as the region
@@ -225,6 +230,7 @@ function removalSection(inv: Invasive): HTMLElement {
     // plant, is it yours to pull, is now the time — lives on a page of its own.
     el("p", { class: "more-link", style: "margin:0 0 0.3rem" },
       el("a", { href: "#/removing" }, t("wanted.beforeYouPull"))),
+    removalWindow(inv),
     // Each step leads with its method's icon, the way a propagation technique
     // does: a scan down the list reads "pull, ring the bark, again" before a
     // word of it. The icon is the method's name ("Ring the bark"), which the
@@ -244,6 +250,39 @@ function removalSection(inv: Invasive): HTMLElement {
     ]),
     el("p", { class: "confidence", style: "margin:0.4rem 0 0.6rem" },
       [t("alternatives.originSource"), ...citation(inv.removal.basis)]),
+  ]);
+}
+
+/** When to do it: the year with the window lit, the cue that says the moment
+ *  has come, and the page that says so. Nothing at all for a plant whose timing
+ *  hasn't been sourced — a guessed window is worse than none. */
+function removalWindow(inv: Invasive): HTMLElement | null {
+  const w = inv.removal.window;
+  const cue = invasiveRemovalCue(inv);
+  if (!w || !cue) return null;
+  return el("div", { class: "removal-window" }, [
+    seasonStrip(w.seasons),
+    el("p", { class: "removal-cue" }, [el("strong", {}, t("wanted.bestTime")), cue]),
+    el("p", { class: "confidence", style: "margin:0" }, [
+      t("alternatives.originSource"), " ",
+      el("a", { href: w.source.url, target: "_blank", rel: "noopener" }, `${w.source.name} ↗`),
+    ]),
+  ]);
+}
+
+/** The plants on this region's list worth tackling this season — the same
+ *  "right now" card the planting index leads with. Absent when none of them
+ *  has a sourced window open now. */
+function thisSeasonCard(regionId: string): HTMLElement | null {
+  const season = currentSeason(readerHemisphere());
+  const rows = wantedInSeason(regionId, season);
+  if (!rows.length) return null;
+  return el("section", { class: "card season-now", style: "margin-top:1rem" }, [
+    el("h3", {}, t("wanted.nowTitle")),
+    el("ul", { class: "season-now-list" }, rows.map((row) => el("li", {}, [
+      el("a", { href: `#/invasives/${row.invasive.id}` }, commonName(row.invasive)),
+      el("span", { class: "season-now-when" }, invasiveRemovalCue(row.invasive) ?? ""),
+    ]))),
   ]);
 }
 

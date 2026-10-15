@@ -7400,3 +7400,15 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .copy-btn::before { content: ""; position: absolute; inset: -0.6rem; }
 .copy-btn svg { width: 0.95em; height: 0.95em; }
 .copy-btn:hover, .copy-btn:focus-visible { color: var(--focus); }
+
+/* An invasive's removal window: the shared year strip, then the cue and its
+   source — the same strip a propagation technique wears. */
+.removal-window {
+  margin: 0.2rem 0 0.6rem;
+}
+.removal-window .season-strip {
+  margin-bottom: 0.35rem;
+}
+.removal-cue {
+  margin: 0 0 0.2rem;
+}

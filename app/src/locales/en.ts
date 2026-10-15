@@ -2289,6 +2289,8 @@ export const en = {
   "wanted.removeLink": "how to remove it",
   "wanted.placeLink": "{region} (#{n})",
   "wanted.beforeYouPull": "Before you pull a plant →",
+  "wanted.bestTime": "Best time: ",
+  "wanted.nowTitle": "Worth pulling this season",
   // -------------------------------------------------------------------
   // Before you pull a plant (#/removing)
   // -------------------------------------------------------------------

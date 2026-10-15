@@ -37,7 +37,6 @@ import { navigate, readerHemisphere } from "../state";
 import { stickyReady } from "../lib/sticky";
 import {
   PLANTING_SOURCES,
-  SEASONS,
   TECHNIQUES,
   currentSeason,
   plantsUsing,
@@ -51,6 +50,7 @@ import { propagationMethod, SOURCES_ROUTE } from "../lib/plain";
 import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { commonName } from "../lib/names";
 import { richText } from "../components/rich-text";
+import { seasonStrip } from "../components/season-strip";
 
 /** The index's address. One place knows the URL shape. */
 const INDEX_HREF = "#/planting";
@@ -65,26 +65,8 @@ const seasonName = (s: Season): string => t(`planting.season.${s}` as const);
  *  differently from a heading and English doesn't capitalize at all. */
 const seasonInline = (s: Season): string => t(`planting.seasonIn.${s}` as const);
 
-/**
- * The year as four cells, with this technique's window lit up and today's
- * season ringed.
- *
- * Decorative on purpose: `aria-hidden`, because the `when` line right beside it
- * says the same thing in words, and a screen reader that read out
- * "Spring Summer Autumn Winter" with no way to convey which are shaded would be
- * giving out noise rather than the answer.
- */
-function seasonStrip(tech: Technique): HTMLElement {
-  const now = currentSeason(readerHemisphere());
-  return el("ol", { class: "season-strip", "aria-hidden": "true" },
-    SEASONS.map((s) => {
-      const on = tech.anyTime || tech.seasons.includes(s);
-      return el("li", {
-        class: `season-cell${on ? " is-on" : ""}${s === now ? " is-now" : ""}`,
-      }, seasonName(s));
-    })
-  );
-}
+/** A technique's window as the shared year strip. */
+const techniqueStrip = (tech: Technique): HTMLElement => seasonStrip(tech.seasons, tech.anyTime);
 
 /** The window and the wait, as two labelled chips — the two facts someone
  *  scanning for "can I do this today, and what am I signing up for" wants. */
@@ -112,7 +94,7 @@ function techniqueCard(tech: Technique): HTMLElement {
       el("a", { href: techniqueHref(tech) }, g.name),
     ]),
     el("p", { class: "technique-when" }, g.when),
-    seasonStrip(tech),
+    techniqueStrip(tech),
   ]);
 }
 
@@ -288,7 +270,7 @@ async function renderTechnique(main: HTMLElement, tech: Technique): Promise<void
       // is `display: contents` below that width, so on a phone this is exactly
       // the stack it always was.
       el("div", { class: "technique-season" }, [
-        seasonStrip(tech),
+        techniqueStrip(tech),
         tech.anyTime ? el("p", { class: "technique-anyseason" }, t("planting.anySeason")) : null,
       ]),
       timingChips(tech),

@@ -18,6 +18,7 @@ import type { Invasive, MarkPart, PressureLevel, RemovalMethod, WantedLink } fro
 import { INVASIVES, MOST_WANTED } from "../data/invasives";
 import COUNTS from "../data/invasive-counts.json";
 import { PRESSURE_RANK, pressureOf } from "./lookalikes";
+import type { Season } from "./planting";
 
 const invasiveById = new Map(INVASIVES.map((i) => [i.id, i]));
 const counts = COUNTS.counts as Record<string, Record<string, number>>;
@@ -163,10 +164,26 @@ export function wantedPlacesFor(latin: string): { regionId: string; rank: number
 }
 
 /**
+ * The plants on a region's list whose removal window is open this season, in
+ * the list's own order — the "what's worth doing now" the planting index leads
+ * with, for pulling. A plant whose timing nobody has sourced yet is left out
+ * rather than guessed into every season.
+ */
+export function wantedInSeason(regionId: string, season: Season): WantedRow[] {
+  return rowsInSeason(mostWanted(regionId), season);
+}
+
+/** The filter itself, apart from the data, so a test can hand it rows. */
+export function rowsInSeason(rows: WantedRow[], season: Season): WantedRow[] {
+  return rows.filter((row) => row.invasive.removal.window?.seasons.includes(season) ?? false);
+}
+
+/**
  * Dev-only integrity check, like `auditLookalikes`: every tie names a catalog
  * plant and cites a source, every plant has three marks with both halves
- * filled in, and every tie has a sighting count — a missing count would drop a
- * plant to the bottom of its list without anybody deciding it should go there.
+ * filled in, every removal window cites a page, and every tie has a sighting
+ * count — a missing count would drop a plant to the bottom of its list without
+ * anybody deciding it should go there.
  */
 export function auditInvasives(): string[] {
   const problems: string[] = [];
@@ -178,6 +195,12 @@ export function auditInvasives(): string[] {
     const { steps, dispose, basis } = inv.removal;
     if (!steps.length || steps.length > 3) problems.push(`${inv.id}: ${steps.length} removal steps, want 1–3`);
     if (!dispose.trim() || !basis.trim()) problems.push(`${inv.id}: removal needs a disposal line and a source`);
+    const w = inv.removal.window;
+    if (w) {
+      if (!w.seasons.length || w.seasons.length > 3) problems.push(`${inv.id}: removal window has ${w.seasons.length} seasons, want 1–3`);
+      if (!w.cue.trim()) problems.push(`${inv.id}: removal window needs a cue`);
+      if (!/^https:\/\//.test(w.source.url) || !w.source.name.trim()) problems.push(`${inv.id}: removal window needs a source page`);
+    }
     for (const m of inv.marks) {
       if (!m.feature.trim() || !m.text.trim()) problems.push(`${inv.id}: a mark with an empty half`);
     }

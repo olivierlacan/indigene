@@ -304,6 +304,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
         "Surveillez quelques années les semis apportés par les oiseaux sous les arbres voisins.",
       ],
       dispose: "Les branches à baies vont à la poubelle, pour que les oiseaux n'emportent pas les graines.",
+      cue: "Avant que les baies mûrissent",
     },
     // Native here, impostor in the Pacific Northwest — so this one key carries
     // both kinds of writing, as `lib/prose.ts` expects. The plant fields serve
@@ -458,6 +459,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
         "Ses graines vivent des décennies dans le sol : arrachez les semis chaque année et couvrez le sol nu de plantes ou de paillis.",
       ],
       dispose: "Mettez en sac les pieds portant des gousses ; les autres peuvent pourrir sur place.",
+      cue: "Coupez seulement au plus sec de l'été",
     },
     nativeNote:
       "L'arbuste d'or des landes atlantiques, des talus sableux et des tranchées de voie ferrée — un mois de mai breton, c'est en grande partie lui et l'ajonc.",
@@ -741,6 +743,7 @@ export const FRANCE_ATLANTIC: ProseTable = {
         "Arrachez les repousses pendant un an ou deux.",
       ],
       dispose: "Laissez-le sécher hors du sol avant de le jeter : les tiges s'enracinent là où elles traînent.",
+      cue: "Quand la terre est meuble",
     },
     // Native here, impostor in the Mid-Atlantic — one key, both kinds of
     // writing (see `lib/prose.ts`). `origin`/`blurb` serve the look-alike page.

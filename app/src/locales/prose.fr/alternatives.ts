@@ -70,6 +70,7 @@ export const ALTERNATIVES_FR: ProseTable = {
         "Ne laissez pas de branches sur le sol : elles s'enracinent.",
       ],
       dispose: "Entassez les branches coupées hors du sol pour qu'elles sèchent.",
+      cue: "Coupez hors de la nidification",
     },
     altRole: "Écran persistant à fleurs",
     altOrigin: "Indigène de la péninsule Ibérique et des rivages de la mer Noire.",

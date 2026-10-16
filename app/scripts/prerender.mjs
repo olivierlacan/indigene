@@ -433,6 +433,12 @@ async function collectPages(load) {
     image: pageCard("native"),
     imageAlt: "Native plants, not nativism — native is about where a plant evolved, never about borders or people",
   });
+  // Before pulling a plant: whether, when, how, and whose permission. The
+  // lede is the description — it says the page is about deciding, not pulling.
+  add("removing", en["removing.docTitle"], en["removing.lede"], {
+    image: pageCard("removing"),
+    imageAlt: "Before you pull a plant — whether it should go, when, how, and whose permission you need",
+  });
   // The peoples who named and tended these plants, and where to read their
   // own accounts. The lede is the description: it says what the page won't do.
   add("people", en["people.docTitle"], en["people.lede"], {

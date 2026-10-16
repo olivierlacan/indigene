@@ -21,6 +21,7 @@ export const INVASIVES_FR: ProseTable = {
         "Portez des gants — la sève irrite la peau, comme celle du sumac vénéneux, son cousin — et ne la brûlez jamais.",
       ],
       dispose: "Mettez les baies en sac ; ne les compostez pas.",
+      cue: "Coupez à la saison chaude : moins de souches survivent",
     },
   },
   "Elaeagnus umbellata": {
@@ -36,6 +37,7 @@ export const INVASIVES_FR: ProseTable = {
         "Agissez avant l'automne, avant que les oiseaux prennent les baies.",
       ],
       dispose: "Les branches à baies vont à la poubelle.",
+      cue: "Arrachez les semis à la feuillaison, avant les indigènes",
     },
   },
   "Lonicera morrowii": {
@@ -51,6 +53,7 @@ export const INVASIVES_FR: ProseTable = {
         "Arrachez les semis qui suivent pendant quelques années.",
       ],
       dispose: "Les branches à baies vont à la poubelle.",
+      cue: "Coupez au printemps et fin d'été, jamais en dormance",
     },
   },
   "Spartium junceum": {
@@ -66,6 +69,7 @@ export const INVASIVES_FR: ProseTable = {
         "Arrachez les semis chaque année : les graines vivent longtemps dans le sol.",
       ],
       dispose: "Mettez en sac les pieds portant des gousses.",
+      cue: "Arrachez les jeunes pieds en terre sèche",
     },
   },
   "Genista monspessulana": {
@@ -81,6 +85,7 @@ export const INVASIVES_FR: ProseTable = {
         "Arrachez les semis chaque année et couvrez le sol nu : les graines durent des décennies.",
       ],
       dispose: "Mettez en sac les pieds portant des gousses.",
+      cue: "Coupez seulement au plus sec de l'été",
     },
   },
   "Urena lobata": {
@@ -126,6 +131,7 @@ export const INVASIVES_FR: ProseTable = {
         "Revenez pour les repousses : chaque morceau de tige peut s'enraciner.",
       ],
       dispose: "Mettez chaque fragment en sac ; n'en laissez aucun près de l'eau.",
+      cue: "Arrachez les jeunes pieds, du printemps à l'automne",
     },
   },
   "Agave americana": {
@@ -141,6 +147,7 @@ export const INVASIVES_FR: ProseTable = {
         "Portez des gants épais et des lunettes : les épines piquent et la sève brûle.",
       ],
       dispose: "Laissez sécher les morceaux hors du sol, puis jetez-les à la poubelle.",
+      cue: "Avant que la hampe florale monte",
     },
   },
   "Alliaria petiolata": {
@@ -156,6 +163,7 @@ export const INVASIVES_FR: ProseTable = {
         "Recommencez chaque printemps : les graines durent environ cinq ans.",
       ],
       dispose: "En sac ; ne compostez pas les pieds en fleur ou en graines.",
+      cue: "Quand les tiges florales montent",
     },
   },
   "Reynoutria japonica": {
@@ -171,6 +179,7 @@ export const INVASIVES_FR: ProseTable = {
         "Un grand massif est une affaire de professionnels.",
       ],
       dispose: "Ne la compostez jamais, ne la jetez jamais dans la nature : faites sécher les tiges sur une bâche jusqu'à ce qu'elles meurent, puis jetez-les.",
+      cue: "Coupez au ras du sol deux fois par mois",
     },
   },
   "Centaurea stoebe": {
@@ -186,6 +195,7 @@ export const INVASIVES_FR: ProseTable = {
         "Recommencez chaque année : les graines durent plusieurs années.",
       ],
       dispose: "Mettez en sac les pieds portant des capitules.",
+      cue: "Après la montée, avant la floraison",
     },
   },
   "Centaurea solstitialis": {
@@ -201,6 +211,7 @@ export const INVASIVES_FR: ProseTable = {
         "Tenez trois ans : la plupart des graines sont alors épuisées.",
       ],
       dispose: "Mettez en sac les pieds portant des capitules.",
+      cue: "Quand les tiges florales s'élancent",
     },
   },
   "Geranium robertianum": {
@@ -216,6 +227,7 @@ export const INVASIVES_FR: ProseTable = {
         "Recommencez pendant la saison, et chaque année ensuite.",
       ],
       dispose: "Mettez en sac les pieds portant des fruits.",
+      cue: "Avant les premières fleurs roses",
     },
   },
   "Jacobaea vulgaris": {
@@ -231,6 +243,7 @@ export const INVASIVES_FR: ProseTable = {
         "Tenez-le loin du foin et des pâtures : il empoisonne chevaux et bovins, même sec.",
       ],
       dispose: "En sac ; jamais là où des animaux pâturent.",
+      cue: "Déterrez les rosettes en terre meuble",
     },
   },
   "Oncosiphon pilulifer": {
@@ -246,6 +259,7 @@ export const INVASIVES_FR: ProseTable = {
         "Recommencez l'hiver et le printemps suivants.",
       ],
       dispose: "En sac ; ne la compostez pas.",
+      cue: "Quand les nouveaux semis lèvent",
     },
   },
   "Impatiens glandulifera": {
@@ -261,6 +275,7 @@ export const INVASIVES_FR: ProseTable = {
         "Recommencez deux ou trois ans, jusqu'à épuisement des graines.",
       ],
       dispose: "Laissez les pieds arrachés en tas hors du sol humide, ou mettez en sac ceux en fleur.",
+      cue: "Avant que les capsules se forment",
     },
   },
   "Senecio inaequidens": {
@@ -276,6 +291,7 @@ export const INVASIVES_FR: ProseTable = {
         "Revenez toute l'année : il fleurit du printemps aux gelées.",
       ],
       dispose: "En sac ; ne compostez pas les pieds en fleur.",
+      cue: "Arrachez à la main deux ou trois fois par an",
     },
   },
   "Phytolacca americana": {
@@ -291,6 +307,7 @@ export const INVASIVES_FR: ProseTable = {
         "Portez des gants : toute la plante est toxique.",
       ],
       dispose: "Les baies en sac ; le reste à la poubelle.",
+      cue: "Les jeunes pieds, en début de saison",
     },
   },
   "Gunnera tinctoria": {
@@ -306,6 +323,7 @@ export const INVASIVES_FR: ProseTable = {
         "Une grosse touffe est une affaire de professionnels.",
       ],
       dispose: "Ne jetez pas les morceaux dans la nature : ils s'enracinent.",
+      cue: "Coupez les fleurs avant les graines",
     },
   },
   "Arundo donax": {
@@ -336,6 +354,7 @@ export const INVASIVES_FR: ProseTable = {
         "Portez des gants et des manches longues : les feuilles coupent.",
       ],
       dispose: "Les plumets en sac ; les feuilles à la poubelle.",
+      cue: "Coupez les plumets avant que les graines mûrissent",
     },
   },
   "Celastrus orbiculatus": {
@@ -351,6 +370,7 @@ export const INVASIVES_FR: ProseTable = {
         "Arrachez chaque année les semis que rapportent les oiseaux.",
       ],
       dispose: "Les lianes à baies vont à la poubelle.",
+      cue: "Coupez en toute saison",
     },
   },
   "Abrus precatorius": {
@@ -381,6 +401,7 @@ export const INVASIVES_FR: ProseTable = {
         "Recommencez chaque année ; la Floride a aussi lâché des coléoptères qui s'en nourrissent.",
       ],
       dispose: "Les bulbilles en sac ; ne les compostez jamais.",
+      cue: "Quand les tiges sèchent : ramassez les bulbilles",
     },
   },
   "Carpobrotus edulis": {
@@ -396,6 +417,7 @@ export const INVASIVES_FR: ProseTable = {
         "Replantez le sol nu en indigènes, sinon elle revient.",
       ],
       dispose: "En sac ; ne laissez aucun morceau sur le sable ou le sol.",
+      cue: "Arrachez en toute saison",
     },
   },
   "Securigera varia": {
@@ -411,6 +433,7 @@ export const INVASIVES_FR: ProseTable = {
         "Ou étouffez une plaque sous un carton épais ou une bâche pendant une saison.",
       ],
       dispose: "Mettez en sac les pieds portant des gousses.",
+      cue: "Fauchez au stade bouton",
     },
   },
   "Oxalis pes-caprae": {
@@ -426,6 +449,7 @@ export const INVASIVES_FR: ProseTable = {
         "Couvrez les zones travaillées d'un épais paillis.",
       ],
       dispose: "Les bulbes en sac ; ne les compostez pas.",
+      cue: "Avant la floraison et les nouveaux bulbes",
     },
   },
   "Nephrolepis cordifolia": {

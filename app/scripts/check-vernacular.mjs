@@ -45,8 +45,6 @@ const OUT_DIR = join(REPO_ROOT, "data", "sources", "vernacular-names");
 const UA =
   "IndigeneVernacularCheck/0.2 (https://github.com/olivierlacan/indigene; hi@olivierlacan.com)";
 
-const TAXREF_SEARCH = "https://taxref.mnhn.fr/api/taxa/search";
-const TAXREF_TAXON = "https://taxref.mnhn.fr/api/taxa";
 const TELA_EFLORE = "https://api.tela-botanica.org/service:eflore:0.1";
 const WIKIDATA_SPARQL = "https://query.wikidata.org/sparql";
 
@@ -116,7 +114,25 @@ function noteStatus(src, status) {
 /** Fetch JSON, reporting the status rather than swallowing it. Retries once on
  *  the two failures that are about *us* rather than the data: a rate limit and
  *  a server hiccup. */
+/** A list that has failed this many times in a row is not going to answer the
+ *  next taxon either. Asking it 790 more times, with a retry and a pause each,
+ *  turned a 25-minute run into one that outlived its hour; the breaker stops
+ *  asking, and the health block still records it as dark. */
+const BREAKER_AFTER = 12;
+const consecutiveFailures = {};
+
+/** The breaker is per *endpoint* (origin + path), not per source: Tela's name
+ *  lookup answers happily while its vernacular hop resets every connection, and
+ *  a per-source count reset to zero on every good answer in between. */
+const endpointOf = (url) => { const u = new URL(url); return u.origin + u.pathname.replace(/\/\d+\//, "/:id/"); };
+
 async function getJson(src, url, headers = {}, attempt = 0) {
+  const endpoint = endpointOf(url);
+  if ((consecutiveFailures[endpoint] ?? 0) >= BREAKER_AFTER) {
+    (health[src] ??= { requests: 0, answered: 0, empty: 0, statuses: {} }).skipped =
+      (health[src].skipped ?? 0) + 1;
+    return null;
+  }
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), 20_000);
   try {
@@ -125,6 +141,7 @@ async function getJson(src, url, headers = {}, attempt = 0) {
       signal: ctrl.signal,
     });
     noteStatus(src, res.status);
+    consecutiveFailures[endpoint] = res.ok || res.status === 404 ? 0 : (consecutiveFailures[endpoint] ?? 0) + 1;
     if (res.status === 429 || res.status >= 500) {
       if (attempt < 2) {
         clearTimeout(timer);
@@ -135,7 +152,16 @@ async function getJson(src, url, headers = {}, attempt = 0) {
     if (!res.ok) return null;
     return await res.json();
   } catch {
+    // A reset connection is about the wire, not the taxon — and read as "no
+    // name" it turns one dropped packet into a row that looks unbacked. One
+    // more try, after a breath, before it counts.
     noteStatus(src, 0);
+    consecutiveFailures[endpoint] = (consecutiveFailures[endpoint] ?? 0) + 1;
+    if (attempt < 1) {
+      clearTimeout(timer);
+      await sleep(1000);
+      return getJson(src, url, headers, attempt + 1);
+    }
     return null;
   } finally {
     clearTimeout(timer);
@@ -146,28 +172,64 @@ async function getJson(src, url, headers = {}, attempt = 0) {
  * TAXREF: the French national reference, and the authority for anything that
  * grows or flies in France or its overseas territories.
  *
- * It is a Spring HATEOAS service and answers in `application/hal+json` — asking
- * for plain `application/json` is how you get a wall of 406s that look exactly
- * like "no name for this taxon" (which is what happened: one whole quarterly
- * run, 258 lookups, not a single answer). Ask for what it serves.
+ * **Read through GBIF's copy, not the MNHN's own API.** `taxref.mnhn.fr/api`
+ * is a Spring HATEOAS service that answered in `application/hal+json` — and
+ * since autumn 2026 it sits behind a Cloudflare browser challenge that answers
+ * every script, whatever its headers, with a 403 "Just a moment…" page. The
+ * quarterly run of 2026-10-15 made 797 requests to it and got 797 of those.
+ * That is the national reference going dark, which is the one failure this
+ * check is built to notice; it cannot be fixed with a different `Accept`.
+ *
+ * The MNHN publishes TAXREF to GBIF as a checklist dataset, French vernacular
+ * names included, under the same open licence, and GBIF's species API answers
+ * scripts. So the *authority* is unchanged — every name here is still TAXREF's
+ * — and only the road to it is different, which is why the source is still
+ * recorded as `taxref` in every row and in the snapshot's health block. Same
+ * arrangement as Kew's WCVP in `_wcvp.mjs`.
+ *
+ * Two shapes to know. An exact `name=` filter returns the TAXREF record for
+ * that canonical name, accepted or synonym; a synonym carries `acceptedKey`,
+ * and the vernacular names hang off the accepted taxon. And TAXREF writes the
+ * article *after* a name — "Citron (Le), Limon (Le)" — so the first name is
+ * taken and its trailing article dropped, which is how a field guide prints it.
  */
-async function fromTaxref(latin) {
-  const accept = { Accept: "application/hal+json, application/json;q=0.9, */*;q=0.8" };
-  const url = `${TAXREF_SEARCH}?scientificNames=${encodeURIComponent(latin)}&page=1&size=1`;
-  const data = await getJson("taxref", url, accept);
-  const hit = data?._embedded?.taxa?.[0];
-  if (!hit) return null;
+const TAXREF_ON_GBIF = "0e61f8fe-7d25-4f81-ada7-d970bbb2c6d6";
+const GBIF_SPECIES = "https://api.gbif.org/v1/species";
 
-  // The search projection doesn't always carry the vernacular names; the taxon
-  // record does. One extra request, only for the taxa that need it.
-  let name = hit.frenchVernacularName;
-  if (!name && hit.id != null) {
-    const full = await getJson("taxref", `${TAXREF_TAXON}/${encodeURIComponent(hit.id)}`, accept);
-    name = full?.frenchVernacularName;
-  }
-  // TAXREF returns several names separated by commas; the first is the one the
-  // référentiel leads with, which is what a field guide prints.
-  return name ? String(name).split(",")[0].trim() : null;
+async function fromTaxref(latin) {
+  const accept = { Accept: "application/json" };
+  const url = `${GBIF_SPECIES}?datasetKey=${TAXREF_ON_GBIF}&name=${encodeURIComponent(latin)}&limit=5`;
+  const data = await getJson("taxref", url, accept);
+  const results = data?.results ?? [];
+  if (!results.length) return null;
+  // Prefer the accepted record; a synonym points at the accepted taxon, whose
+  // names are the ones TAXREF leads with.
+  const hit = results.find((r) => r.taxonomicStatus === "ACCEPTED") ?? results[0];
+  const key = hit.taxonomicStatus === "ACCEPTED" ? hit.key : (hit.acceptedKey ?? hit.key);
+
+  const verns = await getJson("taxref", `${GBIF_SPECIES}/${key}/vernacularNames?limit=100`, accept);
+  // Several names per string, the référentiel's own first; the article TAXREF
+  // appends for sorting — "(Le)", "(La)", "(L')", "(Les)" — comes off each.
+  const names = (verns?.results ?? [])
+    .filter((v) => v.language === "fra" && v.vernacularName)
+    .flatMap((v) => String(v.vernacularName).split(","))
+    .map((n) => n.replace(/\s*\((?:le|la|les|l')\)\s*$/i, "").trim())
+    .filter(Boolean);
+  if (!names.length) return null;
+  // Every name TAXREF lists is a TAXREF name. "Houx" and "Houx commun" are
+  // both the référentiel's for Ilex aquifolium; a table that may print either
+  // is checked against the whole list, and the lead name is what a gap is
+  // filled with.
+  alsoKnownAs.set(`taxref:${latin}`, names);
+  return names[0];
+}
+
+/** The other names an authority lists for a taxon, beside the one it leads
+ *  with — keyed `source:latin`. A row matching any of them is backed. */
+const alsoKnownAs = new Map();
+function backedBy(src, latin, upstream, ours) {
+  if (same(upstream, ours)) return true;
+  return (alsoKnownAs.get(`${src}:${latin}`) ?? []).some((n) => same(n, ours));
 }
 
 /**
@@ -314,7 +376,7 @@ for (const taxon of allTaxa()) {
   // A row that cites no list yet: displayed while we find it one. What it needs
   // is not a verdict but an answer — which of this locale's lists will have it.
   if (row.src === "pending") {
-    const backs = Object.entries(found).find(([, name]) => same(name, row.name));
+    const backs = Object.entries(found).find(([src, name]) => backedBy(src, taxon.latin, name, row.name));
     report.pending.push({
       latin: taxon.latin,
       ours: row.name,
@@ -328,14 +390,19 @@ for (const taxon of allTaxa()) {
   if (row.src === "catalog") continue;
 
   const upstream = found[row.src];
-  if (upstream && same(upstream, row.name)) {
-    report.confirmed.push({ latin: taxon.latin, name: row.name, src: row.src });
+  // Which lists back our name, by their whole list — so a reviewer can see at a
+  // glance whether a disagreement is a wrong source tag or a name nobody gives.
+  const backedByOthers = Object.entries(found)
+    .filter(([src, name]) => src !== row.src && backedBy(src, taxon.latin, name, row.name))
+    .map(([src]) => src);
+  if (upstream && backedBy(row.src, taxon.latin, upstream, row.name)) {
+    report.confirmed.push({ latin: taxon.latin, name: row.name, src: row.src, leads: same(upstream, row.name) ? undefined : upstream });
   } else if (upstream) {
-    report.mismatched.push({ latin: taxon.latin, ours: row.name, theirs: upstream, src: row.src });
+    report.mismatched.push({ latin: taxon.latin, ours: row.name, theirs: upstream, src: row.src, elsewhere: found, backedBy: backedByOthers });
   } else {
     // The claimed source has nothing. Say whether anyone else does — that's the
     // difference between "wrong source tag" and "we may have made this up".
-    report.unconfirmed.push({ latin: taxon.latin, ours: row.name, src: row.src, elsewhere: found });
+    report.unconfirmed.push({ latin: taxon.latin, ours: row.name, src: row.src, elsewhere: found, backedBy: backedByOthers });
   }
 }
 
@@ -362,13 +429,18 @@ if (report.checked > 0 && totalAnswers === 0) {
 const dark = report.authorities.filter((s) => (health[s]?.requests ?? 0) > 0 && health[s].answered === 0);
 for (const src of dark) {
   report.warnings.push(
-    `${src} answered none of its ${health[src].requests} lookups (HTTP ${JSON.stringify(health[src].statuses)}).`
+    `${src} answered none of its ${health[src].requests} lookups (HTTP ${JSON.stringify(health[src].statuses)})` +
+      (health[src].skipped ? `; ${health[src].skipped} more were not sent once it had failed ${BREAKER_AFTER} times running.` : ".")
   );
 }
 
-mkdirSync(OUT_DIR, { recursive: true });
+// A `--name` run is a question about one taxon, not a snapshot of the table:
+// writing it would replace the committed 797-row record with a one-row one.
 const outFile = join(OUT_DIR, `${lang}.json`);
-writeFileSync(outFile, JSON.stringify(report, null, 2) + "\n");
+if (!onlyName) {
+  mkdirSync(OUT_DIR, { recursive: true });
+  writeFileSync(outFile, JSON.stringify(report, null, 2) + "\n");
+}
 
 if (asJson) {
   console.log(JSON.stringify(report, null, 2));
@@ -381,11 +453,13 @@ if (asJson) {
   console.log(`  … shown, awaiting an fr-FR source: ${report.pending.length}`);
   console.log(`  + upstream has a name we lack:   ${report.missing.length}`);
   for (const m of report.mismatched) {
-    console.log(`    ≠ ${m.latin}: ours "${m.ours}" vs ${m.src} "${m.theirs}"`);
+    const backed = m.backedBy.length ? `; ours is ${m.backedBy.join(", ")}'s` : "";
+    console.log(`    ≠ ${m.latin}: ours "${m.ours}" vs ${m.src} "${m.theirs}"${backed}`);
   }
   for (const u of report.unconfirmed) {
     const other = Object.keys(u.elsewhere).join(", ") || "nobody";
-    console.log(`    ? ${u.latin}: "${u.ours}" tagged ${u.src}; found by: ${other}`);
+    const backed = u.backedBy.length ? ` — ours is ${u.backedBy.join(", ")}'s` : "";
+    console.log(`    ? ${u.latin}: "${u.ours}" tagged ${u.src}; found by: ${other}${backed}`);
   }
 
   // The pending rows, sorted by what to *do* with each: promote it, reconsider
@@ -405,7 +479,7 @@ if (asJson) {
     console.log(`    + ${g.latin} (${g.english}) → ${JSON.stringify(g.suggested)}`);
   }
   for (const w of report.warnings) console.log(`\n  !! ${w}`);
-  console.log(`\nSnapshot written to ${outFile}`);
+  console.log(onlyName ? "\n(one-taxon run: snapshot not written)" : `\nSnapshot written to ${outFile}`);
 }
 
 await loader.close();

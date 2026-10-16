@@ -47,6 +47,10 @@ const AREA_WORDS = {
   "north-michigan": { en: "Michigan", fr: "le Michigan" },
   chicago: { en: "Illinois", fr: "l'Illinois" },
   "central-texas": { en: "Texas", fr: "le Texas" },
+  "st-lawrence": {
+    en: "Québec, Ontario, New York and Vermont",
+    fr: "le Québec, l'Ontario, l'État de New York et le Vermont",
+  },
   pnw: { en: "Washington, Oregon and British Columbia", fr: "Washington, l'Oregon et la Colombie-Britannique" },
   "ca-south-coast": { en: "California", fr: "la Californie" },
   "ca-central-coast": { en: "California", fr: "la Californie" },

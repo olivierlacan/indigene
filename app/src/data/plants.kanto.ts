@@ -1480,7 +1480,7 @@ export const SEED_RAW: RawPlant[] = [
     matureHeightFt: 6,
     matureSpreadFt: 4,
     scores: { pollinator: 30, bird: 14, stormwater: 44, erosion: 54, carbon: 18, establishment: 72 },
-    hostLepCount: 4,
+    hostLepCount: 3,
     keystone: true,
     bloom: { startMonth: 6, endMonth: 8, color: "brown-green" },
     filters: { deerResistant: true, thorny: false, allergenic: false, petToxic: true, aggressive: false },
@@ -1488,7 +1488,7 @@ export const SEED_RAW: RawPlant[] = [
     careNote: "Give it a few twigs or a low fence to scramble up and a spot that doesn't dry out. It dies back to the root each winter and comes up late — mark it so you don't dig it out in April. The plant is toxic.",
     givesNote: "Plant this and you may get jakōageha, the Chinese windmill — the females hunt for it specifically, and their caterpillars eat nothing else, taking the plant's own poison into their bodies as a defence.",
     hostCountFrom: "counted",
-    basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 4 Lepidoptera recorded on Aristolochia in Japan — HOSTS, Natural History Museum (CC0), field records only. A low number that is the whole point: Byasa alcinous has no alternative host.",
+    basis: "Native status: Kew WCVP (TDWG:JAP, native). Host count: 3 Lepidoptera recorded on Aristolochia in Japan — HOSTS, Natural History Museum (CC0), field records only (4 if a laboratory rearing counts). A low number that is the whole point: Byasa alcinous has no alternative host.",
     propagation: {
       methods: ["seed-direct"],
       note: "Sow the seed from ripe capsules in autumn.",

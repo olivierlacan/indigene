@@ -56,8 +56,8 @@
         "fr": "la Floride"
       },
       "coarse": true,
-      "checked": "2026-09-21",
-      "rows": 24,
+      "checked": "2026-10-16",
+      "rows": 39,
       "unconfirmed": {}
     },
     "florida-south": {
@@ -176,10 +176,25 @@
         "fr": "Washington, l'Oregon et la Colombie-Britannique"
       },
       "coarse": false,
-      "checked": "2026-09-24",
-      "rows": 85,
+      "checked": "2026-10-16",
+      "rows": 106,
       "unconfirmed": {
+        "sambucus-nigra-caerulea": "inconclusive",
         "achillea-millefolium": "absent"
+      }
+    },
+    "st-lawrence": {
+      "area": {
+        "en": "Québec, Ontario, New York and Vermont",
+        "fr": "le Québec, l'Ontario, l'État de New York et le Vermont"
+      },
+      "coarse": false,
+      "checked": "2026-10-16",
+      "rows": 55,
+      "unconfirmed": {
+        "viburnum-dentatum": "absent",
+        "campanula-rotundifolia": "absent",
+        "matteuccia-struthiopteris": "absent"
       }
     }
   }

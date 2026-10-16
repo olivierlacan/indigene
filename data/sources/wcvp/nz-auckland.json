@@ -4,13 +4,16 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "New Zealand North (TDWG:NZN — the North Island)",
   "region": "nz-auckland",
-  "ranAt": "2026-09-24T07:17:27.247Z",
+  "ranAt": "2026-10-16T19:42:55.120Z",
   "rows": [
     {
       "id": "metrosideros-excelsa",
       "latin": "Metrosideros excelsa",
       "asked": "Metrosideros excelsa",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -18,6 +21,9 @@
       "latin": "Agathis australis",
       "asked": "Agathis australis",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -25,6 +31,9 @@
       "latin": "Vitex lucens",
       "asked": "Vitex lucens",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -32,6 +41,9 @@
       "latin": "Sophora chathamica",
       "asked": "Sophora chathamica",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -39,6 +51,9 @@
       "latin": "Corynocarpus laevigatus",
       "asked": "Corynocarpus laevigatus",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -46,6 +61,9 @@
       "latin": "Knightia excelsa",
       "asked": "Knightia excelsa",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -53,6 +71,9 @@
       "latin": "Dysoxylum spectabile",
       "asked": "Dysoxylum spectabile",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": "Didymocheton spectabilis (G.Forst.) Mabb. & Holzmeyer"
     },
     {
@@ -60,6 +81,9 @@
       "latin": "Alectryon excelsus",
       "asked": "Alectryon excelsus",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -67,6 +91,9 @@
       "latin": "Podocarpus totara",
       "asked": "Podocarpus totara",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -74,6 +101,9 @@
       "latin": "Dacrycarpus dacrydioides",
       "asked": "Dacrycarpus dacrydioides",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -81,6 +111,9 @@
       "latin": "Cordyline australis",
       "asked": "Cordyline australis",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -88,6 +121,9 @@
       "latin": "Kunzea robusta",
       "asked": "Kunzea robusta",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -95,6 +131,9 @@
       "latin": "Hoheria populnea",
       "asked": "Hoheria populnea",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -102,6 +141,9 @@
       "latin": "Melicytus ramiflorus",
       "asked": "Melicytus ramiflorus",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -109,6 +151,9 @@
       "latin": "Leptospermum scoparium",
       "asked": "Leptospermum scoparium",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -116,6 +161,9 @@
       "latin": "Pittosporum tenuifolium",
       "asked": "Pittosporum tenuifolium",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -123,6 +171,9 @@
       "latin": "Pittosporum crassifolium",
       "asked": "Pittosporum crassifolium",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -130,6 +181,9 @@
       "latin": "Coprosma repens",
       "asked": "Coprosma repens",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -137,6 +191,9 @@
       "latin": "Coprosma robusta",
       "asked": "Coprosma robusta",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -144,6 +201,9 @@
       "latin": "Veronica stricta",
       "asked": "Veronica stricta",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -151,6 +211,9 @@
       "latin": "Piper excelsum",
       "asked": "Piper excelsum",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -158,6 +221,9 @@
       "latin": "Pseudopanax lessonii",
       "asked": "Pseudopanax lessonii",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -165,6 +231,9 @@
       "latin": "Myoporum laetum",
       "asked": "Myoporum laetum",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -172,6 +241,9 @@
       "latin": "Pomaderris kumeraho",
       "asked": "Pomaderris kumeraho",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -179,6 +251,9 @@
       "latin": "Phormium tenax",
       "asked": "Phormium tenax",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -186,6 +261,9 @@
       "latin": "Phormium cookianum",
       "asked": "Phormium cookianum",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": "Phormium colensoi Hérincq"
     },
     {
@@ -193,6 +271,9 @@
       "latin": "Astelia banksii",
       "asked": "Astelia banksii",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -200,6 +281,9 @@
       "latin": "Arthropodium cirratum",
       "asked": "Arthropodium cirratum",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -207,6 +291,9 @@
       "latin": "Libertia grandiflora",
       "asked": "Libertia grandiflora",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -214,6 +301,9 @@
       "latin": "Austroderia fulvida",
       "asked": "Austroderia fulvida",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -221,6 +311,9 @@
       "latin": "Apodasmia similis",
       "asked": "Apodasmia similis",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -228,6 +321,9 @@
       "latin": "Ficinia nodosa",
       "asked": "Ficinia nodosa",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -235,6 +331,9 @@
       "latin": "Carex secta",
       "asked": "Carex secta",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -242,6 +341,9 @@
       "latin": "Microlaena stipoides",
       "asked": "Microlaena stipoides",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -249,6 +351,9 @@
       "latin": "Dichondra repens",
       "asked": "Dichondra repens",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -256,6 +361,9 @@
       "latin": "Lobelia angulata",
       "asked": "Lobelia angulata",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -263,6 +371,9 @@
       "latin": "Selliera radicans",
       "asked": "Selliera radicans",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": "Goodenia radicans (Cav.) Pers."
     },
     {
@@ -270,6 +381,9 @@
       "latin": "Disphyma australe",
       "asked": "Disphyma australe",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -277,6 +391,9 @@
       "latin": "Clematis paniculata",
       "asked": "Clematis paniculata",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -284,6 +401,9 @@
       "latin": "Passiflora tetrandra",
       "asked": "Passiflora tetrandra",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -291,6 +411,9 @@
       "latin": "Muehlenbeckia complexa",
       "asked": "Muehlenbeckia complexa",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -298,6 +421,9 @@
       "latin": "Parsonsia heterophylla",
       "asked": "Parsonsia heterophylla",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -305,6 +431,9 @@
       "latin": "Cyathea dealbata",
       "asked": "Cyathea dealbata",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": "Alsophila dealbata (G.Forst.) Corda"
     },
     {
@@ -312,6 +441,9 @@
       "latin": "Cyathea medullaris",
       "asked": "Cyathea medullaris",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": "Sphaeropteris medullaris (G.Forst.) Bernh."
     },
     {
@@ -319,6 +451,9 @@
       "latin": "Dicksonia squarrosa",
       "asked": "Dicksonia squarrosa",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -326,6 +461,9 @@
       "latin": "Asplenium bulbiferum",
       "asked": "Asplenium bulbiferum",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     },
     {
@@ -333,6 +471,9 @@
       "latin": "Blechnum novae-zelandiae",
       "asked": "Blechnum novae-zelandiae",
       "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
       "viaSynonym": null
     }
   ]

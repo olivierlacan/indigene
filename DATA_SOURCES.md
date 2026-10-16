@@ -158,8 +158,8 @@ merge. "Gate" means a pull request fails; "report" means a person reads it.
 
 | Claim | Re-asked of | How | When | On a wrong answer |
 |---|---|---|---|---|
-| **This plant is native here** | Kew WCVP (every region) | `npm run native:check` → `data/sources/wcvp/`; `native-check.test.ts` refuses a row with no verdict on record | the test on every PR; the check by hand, after any roster change (a quarterly re-ask is the next step) | gate — a row nobody has checked, or a snapshot out of step with the roster |
-| — and in Canada | VASCAN (Pacific Northwest, St Lawrence) | `npm run vascan:check`, offline against the fetched archive | by hand | report; the script exits non-zero on an introduced row, but no job runs it yet |
+| **This plant is native here** | Kew WCVP (every region) | `npm run native:check` → `data/sources/wcvp/`; `native-check.test.ts` refuses a row with no verdict on record | the test on every PR; the check by hand after any roster change, and `--all` quarterly (`native.yml`) | gate — a row nobody has checked, a snapshot out of step with the roster, or a verdict that is new or has changed since the one on record |
+| — and in Canada | VASCAN (Pacific Northwest, St Lawrence) | `npm run vascan:check`, offline against the fetched archive | quarterly (`native.yml`), and by hand | gate — an introduced row fails the job |
 | **Caterpillar host count**, `counted` | Gaytán 2026 · Plant-SyNZ · HOSTS | `host-counts.test.ts` compares every counted row to its committed table | every PR | gate |
 | — `published` / `estimated` (the US regions) | nobody — Tallamy / NWF cannot be re-read under its terms | `confidence.ts` rates the row medium at best and the page says so | — | not re-askable; the rating is the honest answer |
 | **Which animal a plant feeds**, and that the animal is native | the study named in `basis` / `nativeBasis` | `auditSupport` (`audits.test.ts`): a source is named, the plant and animal exist | every PR | gate on a missing source; **the claim itself is not re-asked** — GloBI proposed many of the ties and could corroborate them, which is the open follow-up |

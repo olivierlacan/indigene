@@ -117,6 +117,16 @@ const TDWG_AREA = {
   // range notes carry the local detail in each row; this is the national
   // authority standing behind them.
   "central-texas": { codes: ["TEX"], label: "Texas (TDWG:TEX — the whole state)" },
+  // The St Lawrence plain is one lowland in two countries. Québec carries the
+  // claim (the list was filtered to what VASCAN records native there), and the
+  // box reaches Ottawa and Kingston in Ontario, Plattsburgh in New York and
+  // Burlington in Vermont, so those areas are asked too; one native area is
+  // enough, as in the Mid-Atlantic. Like VASCAN's provinces, TDWG's units here
+  // are as fine as the region's own claim.
+  "st-lawrence": {
+    codes: ["QUE", "ONT", "NWY", "VER"],
+    label: "Québec, Ontario, New York & Vermont (TDWG:QUE, ONT, NWY, VER)",
+  },
 };
 
 const args = process.argv.slice(2);

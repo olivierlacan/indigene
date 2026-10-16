@@ -60,6 +60,7 @@ jobs:
       - name: Audit the registry
         id: audit
         working-directory: app
+        shell: bash # explicit, so pipefail is on and tee can't hide a failure
         run: |
           npm run registry:check | tee "$RUNNER_TEMP/registry-check.txt"
 

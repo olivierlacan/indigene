@@ -300,7 +300,8 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     quietLink("info", "#/traits", t("results.filtersMeaning"), "margin:0.4rem 0 0.2rem"),
   ]);
 
-  // --- Plant types, on or off. Out in the open rather than in the panel
+  // --- Plant types, on or off, right under the name search: both narrow the
+  // list below them. Out in the open rather than in the panel
   // above: "no trees, I have no room" is the first thing many readers want
   // and the panel is easy to miss (Show HN, #255). On means shown; the list
   // keeps at least one type on, because an empty list answers nothing.
@@ -348,11 +349,11 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
         ? [" ", ecoregionChip(store.draft.site.ecoregionInfo, guideHref("regions", "zones"))] : [])]),
     conditions,
     el("div", { class: "result-controls" }, [rankedFor, filters]),
-    ...(typeChips ? [typeChips] : []),
     guideLink("ranking", t("guide.ranking"), undefined, "margin:0.5rem 0 0"),
     summaryEl,
     rc.node,
     nameFilter.node,
+    ...(typeChips ? [typeChips] : []),
     listEl,
     // After the plants, like every other step in the flow puts its buttons
     // after the thing the step is for. These used to sit above the list, which

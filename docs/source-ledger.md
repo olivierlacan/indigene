@@ -50,10 +50,17 @@ cited it in a row's `basis` — real, but not re-askable.
 | Mediterranean France | **Kew WCVP** ✓ · BDTFX | INPN · CBN Porquerolles, Corse · EEA | — | **Gaytán 2026** ✓ | — |
 | The French Alps | **Kew WCVP** ✓ · BDTFX | INPN · CBN alpin · EEA | — | **Gaytán 2026** ✓ | — |
 | Ireland | **Kew WCVP** ✓ | National Biodiversity Data Centre · EEA | BSBI | **Gaytán 2026** ✓ | All-Ireland Pollinator Plan |
+| Chicago & the Corn Belt | **Kew WCVP** ✓ | USDA PLANTS · EPA · Illinois Exotic Weed Act | Illinois Wildflowers · Morton Arboretum · Wildflower Center ✓ | Tallamy/NWF | Wild Ones |
+| Central Texas | **Kew WCVP** ✓ | USDA PLANTS · EPA | Wildflower Center ✓ · Texas A&M AgriLife | Tallamy/NWF · Xerces | Native Plant Society of Texas |
+| St Lawrence Lowlands | **Kew WCVP** ✓ · **VASCAN** ✓ | USDA PLANTS · EPA · CEC | Michigan Flora · Wildflower Center | Tallamy/NWF | — |
+| Auckland & Northland | **Kew WCVP** ✓ | RESOLVE | NZ Plant Conservation Network | **Plant-SyNZ** ✓ | — |
+| The Kantō Plain | **Kew WCVP** ✓ | GreenList · RESOLVE | — | **HOSTS** ✓ | — |
 
 Every region now clears three kinds. The machine-checked count went from one
-region (Ireland) to all twelve, because WCVP turned out to answer everywhere at
-the same grain — it just had never been asked outside Ireland.
+region (Ireland) to all seventeen, because WCVP turned out to answer everywhere
+at the same grain — it just had never been asked outside Ireland. Since
+2026-10-16 a pull request cannot ship a row the checklist has not been asked
+about (`app/src/data/native-check.test.ts`).
 
 ## What each region is still short of
 
@@ -75,7 +82,7 @@ the same grain — it just had never been asked outside Ireland.
 
 ## What the third source actually caught
 
-Eleven flags over 578 rows in twelve regions — and the interesting part is that
+Fifteen flags over 919 rows in seventeen regions — and the interesting part is that
 the society lists agreed with us on several of them, which is exactly the
 blind spot a third kind of source exists to find.
 
@@ -84,6 +91,7 @@ blind spot a third kind of source exists to find.
 | ***Penstemon digitalis*** | Mid-Atlantic | **INTRODUCED in all ten states.** Kew puts its native range in the central US and treats the east as adventive. Both societies recommend it. The strongest finding here. |
 | ***Achillea millefolium*** | PNW, both Californias | **ABSENT.** The old yarrow question: *A. millefolium* proper is Eurasian and the American plants are usually treated as var. *occidentalis*. Both societies recommend it in all three regions. |
 | *Solidago speciosa*, *Campanula rotundifolia*, *Matteuccia struthiopteris* | Michigan | ABSENT. The ostrich fern is now flagged by **two** independent sources, which promotes it from "their gap" to "worth a human". |
+| *Campanula rotundifolia*, *Matteuccia struthiopteris*, *Viburnum dentatum* | St Lawrence | ABSENT in all four of Québec, Ontario, New York and Vermont — while VASCAN records all three native in Québec (the fern as *M. pensylvanica*). Kew keeps the arrowwood of the north-east as *V. recognitum*; the same name question as the fern. |
 | *Passiflora suberosa* | South Florida | ABSENT, against Florida sources that call it native. |
 | *Sesleria caerulea* | French Alps | ABSENT; Kew may be treating the French plant as *S. albicans*. |
 | *Andropogon gerardii* | Mid-Atlantic | Not a range finding — Kew's accepted spelling is ***gerardi***, one `i`. A name to reconcile. |

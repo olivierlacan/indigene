@@ -51,6 +51,7 @@ jobs:
       # so it runs anywhere a human might want to run it by hand.
       - name: Probe
         id: probe
+        shell: bash # explicit, so pipefail is on and tee can't hide a failure
         run: |
           node app/scripts/probe-globi.mjs ${{ inputs.quick && '--quick' || '' }} \
             | tee "$RUNNER_TEMP/globi-probe.txt"

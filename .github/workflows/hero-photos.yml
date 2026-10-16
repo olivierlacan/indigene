@@ -83,6 +83,7 @@ jobs:
 
       - name: Harvest and rank candidates
         working-directory: app
+        shell: bash # explicit, so pipefail is on and tee can't hide a failure
         run: |
           args=()
           if [ -n "${{ inputs.kind }}" ]; then args+=(--kind "${{ inputs.kind }}"); fi

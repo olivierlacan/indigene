@@ -21,7 +21,8 @@
 //               judgement about nativeness.
 //
 // This runs offline: the archive is already in data/sources/vascan/dwca/ (the
-// probe fetches it). No network, so it can be part of an ordinary check run.
+// probe fetches it, and `.github/workflows/native.yml` fetches it fresh each
+// quarter). No network, so it can be part of an ordinary check run.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

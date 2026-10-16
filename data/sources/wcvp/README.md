@@ -42,7 +42,10 @@ the country or state at all, which is the error that matters most.
 - Licence: **CC BY 4.0**. Attribution: "Native range from the World Checklist of
   Vascular Plants (WCVP), Royal Botanic Gardens Kew."
 - Refresh: `cd app && npm run native:check -- --region <id>` → `<id>.json`, for any
-  region in the script's `TDWG_AREA` table (every region)
+  region in the script's `TDWG_AREA` table (every region); `--all` does them
+  in turn, and `.github/workflows/native.yml` runs that quarterly and opens a
+  PR. A flag already in the committed file is "on record" and fails nothing; a
+  new or changed verdict fails the run
 
 ## What it is admitted for
 

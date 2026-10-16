@@ -1,5 +1,6 @@
 // `npm run native:check -- --region ireland` — re-ask the source whether every
-// plant a region ships is actually native there.
+// plant a region ships is actually native there. `--all` does every region in
+// turn, which is what the quarterly job runs (`.github/workflows/native.yml`).
 //
 // Every region asserts "native *here*" on every row, and until now that claim
 // was checkable only by hand, against whichever national flora the region's
@@ -21,6 +22,10 @@
 //   no-match     WCVP has no accepted taxon under this name → check the spelling
 //                against the accepted name, or the row's `basis`
 //
+// The exit code is about *change*, not about agreement: a flag the committed
+// snapshot already carries is printed and does not fail, a new or changed
+// verdict does. `checkRegion` below says why.
+//
 // How to ask WCVP without the question quietly failing — and it has a real trap
 // in it — lives in `_wcvp.mjs`, which `candidates.mjs` shares.
 //
@@ -32,7 +37,7 @@
 // relics. This script reports what WCVP says. The decision about what to do with
 // a disagreement is editorial and belongs in the region file, not here; see
 // `data/sources/wcvp/README.md`.
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { requireProxyAwareFetch } from "./_net.mjs";
@@ -131,13 +136,13 @@ const TDWG_AREA = {
 
 const args = process.argv.slice(2);
 const regionArg = args[args.indexOf("--region") + 1];
-if (!args.includes("--region") || !regionArg) {
-  console.error("usage: npm run native:check -- --region <id>");
+const all = args.includes("--all");
+if (!all && (!args.includes("--region") || !regionArg)) {
+  console.error("usage: npm run native:check -- --region <id>   (or --all)");
   console.error(`WCVP-backed regions: ${Object.keys(TDWG_AREA).join(", ")}`);
   process.exit(2);
 }
-const area = TDWG_AREA[regionArg];
-if (!area) {
+if (!all && !TDWG_AREA[regionArg]) {
   console.error(`${regionArg}: this region's native status doesn't come from WCVP.`);
   console.error("Its rows cite a national flora instead — see their `basis` lines.");
   console.error(`WCVP-backed regions: ${Object.keys(TDWG_AREA).join(", ")}`);
@@ -172,114 +177,213 @@ async function statusFor(latin, codes) {
 // The file a region's rows live in. `florida-central` is the odd one: its list
 // predates the south-Florida split and still sits in `plants.florida.ts`.
 const PLANTS_FILE = { "florida-central": "plants.florida.ts" };
-const src = readFileSync(
-  join(DATA_DIR, PLANTS_FILE[regionArg] ?? `plants.${regionArg}.ts`),
-  "utf8",
-);
-const rows = [...src.matchAll(/^\s+id: "([^"]+)",\n\s+common: "([^"]+)",\n\s+latin: "([^"]+)"/gm)]
-  .map((m) => ({ id: m[1], common: m[2], latin: m[3] }));
 
-console.log(`${regionArg}: re-asking Kew's WCVP about ${rows.length} rows.`);
-console.log(`Area: ${area.label}\n`);
+/**
+ * Re-ask Kew about one region, write its snapshot, and say what *moved*.
+ *
+ * ## What fails, and what doesn't
+ *
+ * A disagreement between Kew and a regional flora is editorial, recorded in
+ * the committed snapshot and shown on the plant page — Michigan's harebell has
+ * read ABSENT since the first run and will go on doing so. Failing on it every
+ * time would make this job red forever and teach everyone to ignore it. So
+ * the exit code answers a narrower question: **did anything change since the
+ * snapshot we already reviewed?**
+ *
+ *   recorded   a flag the committed snapshot already carries, unchanged — printed, not a failure
+ *   NEW        a row with no previous verdict that is not NATIVE — a plant added
+ *              since the last check and not confirmed: fails
+ *   CHANGED    a verdict that differs from the committed one, in either
+ *              direction — Kew revised, or a name drifted: fails
+ *   error      the service didn't answer for a row: fails, because an answer we
+ *              didn't get is not a verdict
+ *
+ * A first run for a region has no previous snapshot, so every flag is NEW,
+ * which is the right reading of "nobody has reviewed these yet".
+ */
+async function checkRegion(regionId) {
+  const area = TDWG_AREA[regionId];
+  const outFile = join(OUT_DIR, `${regionId}.json`);
+  const previous = new Map();
+  if (existsSync(outFile)) {
+    for (const r of JSON.parse(readFileSync(outFile, "utf8")).rows ?? []) previous.set(r.id, r.verdict);
+  }
 
-const problems = [];
-const unchecked = [];
-const snapshot = [];
-for (const row of rows) {
-  // Ask about the binomial.
-  //
-  // An aggregate ("Rubus fruticosus agg.") has no single accepted taxon. An
-  // infraspecific name is a subtler version of the same problem: WCVP has
-  // `Sambucus nigra` but our row says `Sambucus nigra subsp. caerulea`, and
-  // asking for the whole string returns no-match — which reads as "Kew has
-  // never heard of this plant" when Kew simply answers at species rank here.
-  // Four of our rows hit this. The trailing rank is dropped and the report says
-  // what was actually asked.
-  const query = row.latin.replace(/\s+agg\.$/, "").trim();
-  const binomial = query.replace(/\s+(subsp|ssp|var|f)\.?\s+\S+.*$/i, "").trim();
-  let out;
-  try {
-    out = await statusFor(query, area.codes);
-    // Falling back to the binomial asks about a *different taxon*, and it can
-    // be a different plant: our `Sambucus nigra subsp. caerulea` is the blue
-    // elder of the American west, while `Sambucus nigra` is the European elder,
-    // which is not native to California at all. WCVP's accepted name for ours
-    // is `Sambucus cerulea`. So a species-rank answer that isn't NATIVE is
-    // reported as inconclusive rather than as a verdict on the row.
-    if (out.verdict === "no-match" && binomial !== query) {
-      const fallback = await statusFor(binomial, area.codes);
-      out =
-        fallback.verdict === "NATIVE"
-          ? { ...fallback, askedAt: "species" }
-          : { verdict: "INCONCLUSIVE", areas: fallback.areas, askedAt: "species" };
-    }
-  } catch (e) {
-    // One more go before calling it. A checklist run is hundreds of sequential
-    // calls and the odd connection dies mid-exchange; an `error` line in the
-    // middle of a clean region reads like a finding about that plant and is
-    // nothing of the kind.
-    await sleep(2000);
+  const src = readFileSync(join(DATA_DIR, PLANTS_FILE[regionId] ?? `plants.${regionId}.ts`), "utf8");
+  const rows = [...src.matchAll(/^\s+id: "([^"]+)",\n\s+common: "([^"]+)",\n\s+latin: "([^"]+)"/gm)]
+    .map((m) => ({ id: m[1], common: m[2], latin: m[3] }));
+
+  console.log(`${regionId}: re-asking Kew's WCVP about ${rows.length} rows.`);
+  console.log(`Area: ${area.label}\n`);
+
+  const recorded = [];
+  const fresh = [];
+  const changed = [];
+  const errors = [];
+  const unchecked = [];
+  const snapshot = [];
+  for (const row of rows) {
+    // Ask about the binomial.
+    //
+    // An aggregate ("Rubus fruticosus agg.") has no single accepted taxon. An
+    // infraspecific name is a subtler version of the same problem: WCVP has
+    // `Sambucus nigra` but our row says `Sambucus nigra subsp. caerulea`, and
+    // asking for the whole string returns no-match — which reads as "Kew has
+    // never heard of this plant" when Kew simply answers at species rank here.
+    // Four of our rows hit this. The trailing rank is dropped and the report says
+    // what was actually asked.
+    const query = row.latin.replace(/\s+agg\.$/, "").trim();
+    const binomial = query.replace(/\s+(subsp|ssp|var|f)\.?\s+\S+.*$/i, "").trim();
+    let out;
     try {
       out = await statusFor(query, area.codes);
-    } catch (again) {
-      out = { verdict: `error ${again.message}` };
+      // Falling back to the binomial asks about a *different taxon*, and it can
+      // be a different plant: our `Sambucus nigra subsp. caerulea` is the blue
+      // elder of the American west, while `Sambucus nigra` is the European elder,
+      // which is not native to California at all. WCVP's accepted name for ours
+      // is `Sambucus cerulea`. So a species-rank answer that isn't NATIVE is
+      // reported as inconclusive rather than as a verdict on the row.
+      if (out.verdict === "no-match" && binomial !== query) {
+        const fallback = await statusFor(binomial, area.codes);
+        out =
+          fallback.verdict === "NATIVE"
+            ? { ...fallback, askedAt: "species" }
+            : { verdict: "INCONCLUSIVE", areas: fallback.areas, askedAt: "species" };
+      }
+    } catch (e) {
+      // One more go before calling it. A checklist run is hundreds of sequential
+      // calls and the odd connection dies mid-exchange; an `error` line in the
+      // middle of a clean region reads like a finding about that plant and is
+      // nothing of the kind.
+      await sleep(2000);
+      try {
+        out = await statusFor(query, area.codes);
+      } catch (again) {
+        out = { verdict: `error ${again.message}` };
+      }
     }
-  }
-  const flag = out.verdict === "NATIVE" ? "ok  " : "FAIL";
-  if (out.verdict !== "NATIVE") {
-    (out.verdict === "no-match" ? unchecked : problems).push({ ...row, ...out });
-  }
-  snapshot.push({ id: row.id, latin: row.latin, asked: out.askedAt === "species" ? binomial : query, verdict: out.verdict, areas: out.areas ?? {}, viaSynonym: out.via ?? null });
-  const via = out.via ? `  (via synonym → ${out.via})` : "";
-  const agg =
-    out.askedAt === "species"
-      ? `  (Kew has no ${row.latin}; asked about ${binomial})`
-      : query !== row.latin
-        ? `  (asked about ${query})`
+
+    const prev = previous.get(row.id);
+    let mark;
+    if (out.verdict.startsWith("error")) {
+      mark = "ERR ";
+      errors.push({ ...row, ...out });
+    } else if (prev !== undefined && prev !== out.verdict) {
+      mark = "CHG ";
+      changed.push({ ...row, ...out, was: prev });
+    } else if (out.verdict === "NATIVE") {
+      mark = "ok  ";
+    } else if (prev === undefined) {
+      mark = "NEW ";
+      fresh.push({ ...row, ...out });
+    } else {
+      mark = "rec ";
+      recorded.push({ ...row, ...out });
+    }
+    if (out.verdict === "no-match") unchecked.push(row);
+
+    snapshot.push({
+      id: row.id,
+      latin: row.latin,
+      asked: out.askedAt === "species" ? binomial : query,
+      verdict: out.verdict,
+      areas: out.areas ?? {},
+      viaSynonym: out.via ?? null,
+    });
+    const via = out.via ? `  (via synonym → ${out.via})` : "";
+    const agg =
+      out.askedAt === "species"
+        ? `  (Kew has no ${row.latin}; asked about ${binomial})`
+        : query !== row.latin
+          ? `  (asked about ${query})`
+          : "";
+    // Which states carried it, when the region has more than one and they differ.
+    const mixed =
+      area.codes.length > 1 && out.areas
+        ? `  [${Object.entries(out.areas)
+            .filter(([, v]) => v !== "ABSENT")
+            .map(([c, v]) => (v === "NATIVE" ? c : `${c}:${v.toLowerCase()}`))
+            .join(" ") || "nowhere"}]`
         : "";
-  // Which states carried it, when the region has more than one and they differ.
-  const mixed =
-    area.codes.length > 1 && out.areas
-      ? `  [${Object.entries(out.areas)
-          .filter(([, v]) => v !== "ABSENT")
-          .map(([c, v]) => (v === "NATIVE" ? c : `${c}:${v.toLowerCase()}`))
-          .join(" ") || "nowhere"}]`
-      : "";
-  console.log(`  ${flag}  ${out.verdict.padEnd(11)} ${row.latin}${agg}${via}${mixed}`);
-  await sleep(150);
+    const was = mark === "CHG " ? `  (was ${prev})` : "";
+    console.log(`  ${mark}  ${out.verdict.padEnd(11)} ${row.latin}${agg}${via}${mixed}${was}`);
+    await sleep(150);
+  }
+
+  // A committed snapshot, the same arrangement `names:check` uses for the French
+  // names: upstream drift then shows up in a diff rather than in a surprise.
+  // Not written when a row errored: a snapshot with `error …` in it would
+  // overwrite a real verdict with a network hiccup, and the evidence table
+  // would print it as "inconclusive".
+  if (!errors.length) {
+    mkdirSync(OUT_DIR, { recursive: true });
+    writeFileSync(
+      outFile,
+      JSON.stringify(
+        {
+          source: "World Checklist of Vascular Plants (WCVP), Royal Botanic Gardens Kew",
+          license: "CC BY 4.0",
+          via: `GBIF checklist dataset ${WCVP_DATASET}`,
+          area: area.label,
+          region: regionId,
+          ranAt: new Date().toISOString(),
+          rows: snapshot,
+        },
+        null,
+        2,
+      ) + "\n",
+    );
+  }
+
+  console.log("");
+  if (recorded.length) {
+    console.log(`${recorded.length} row(s) WCVP does not record as native here — already on record, unchanged:`);
+    for (const p of recorded) console.log(`  ${p.verdict.padEnd(11)} ${p.latin} — ${p.common}`);
+  }
+  if (fresh.length) {
+    console.log(`\n${fresh.length} NEW row(s) WCVP does not record as native here — not yet reviewed:`);
+    for (const p of fresh) console.log(`  ${p.verdict.padEnd(11)} ${p.latin} — ${p.common}`);
+  }
+  if (changed.length) {
+    console.log(`\n${changed.length} CHANGED verdict(s) since the committed snapshot:`);
+    for (const p of changed) console.log(`  ${p.was} → ${p.verdict}  ${p.latin} — ${p.common}`);
+  }
+  if (errors.length) {
+    console.log(`\n${errors.length} row(s) the service did not answer for — snapshot NOT written:`);
+    for (const p of errors) console.log(`  ${p.latin} — ${p.verdict}`);
+  }
+  if (unchecked.length) {
+    console.log(`\n${unchecked.length} row(s) WCVP has no accepted taxon for (check the name, not the claim):`);
+    for (const u of unchecked) console.log(`  ${u.latin} — ${u.common}`);
+  }
+  if (!recorded.length && !fresh.length && !changed.length && !errors.length) {
+    console.log(`All ${rows.length} rows: WCVP records them as native in ${area.label}.`);
+  }
+  if (!errors.length) console.log(`\nWrote ${outFile} — commit it.`);
+  return { regionId, rows: rows.length, recorded, fresh, changed, errors };
 }
 
-// A committed snapshot, the same arrangement `names:check` uses for the French
-// names: upstream drift then shows up in a diff rather than in a surprise.
-mkdirSync(OUT_DIR, { recursive: true });
-writeFileSync(
-  join(OUT_DIR, `${regionArg}.json`),
-  JSON.stringify(
-    {
-      source: "World Checklist of Vascular Plants (WCVP), Royal Botanic Gardens Kew",
-      license: "CC BY 4.0",
-      via: `GBIF checklist dataset ${WCVP_DATASET}`,
-      area: area.label,
-      region: regionArg,
-      ranAt: new Date().toISOString(),
-      rows: snapshot,
-    },
-    null,
-    2,
-  ) + "\n",
-);
+const regions = all ? Object.keys(TDWG_AREA) : [regionArg];
+const results = [];
+for (const id of regions) {
+  results.push(await checkRegion(id));
+  if (all) console.log("\n" + "─".repeat(72) + "\n");
+}
 
-console.log("");
-if (problems.length) {
-  console.log(`${problems.length} row(s) WCVP does NOT record as native here:`);
-  for (const p of problems) console.log(`  ${p.verdict.padEnd(11)} ${p.latin} — ${p.common}`);
+if (all) {
+  console.log("Summary:");
+  for (const r of results) {
+    const bits = [
+      `${r.rows} rows`,
+      r.recorded.length ? `${r.recorded.length} on record` : null,
+      r.fresh.length ? `${r.fresh.length} NEW` : null,
+      r.changed.length ? `${r.changed.length} CHANGED` : null,
+      r.errors.length ? `${r.errors.length} errors` : null,
+    ].filter(Boolean);
+    console.log(`  ${r.regionId.padEnd(22)} ${bits.join(", ")}`);
+  }
+  console.log("\nNext: `npm run native-evidence` to refresh what the plant pages show.");
 }
-if (unchecked.length) {
-  console.log(`\n${unchecked.length} row(s) WCVP has no accepted taxon for (check the name, not the claim):`);
-  for (const u of unchecked) console.log(`  ${u.latin} — ${u.common}`);
-}
-if (!problems.length && !unchecked.length) {
-  console.log(`All ${rows.length} rows: WCVP records them as native in ${area.label}.`);
-}
-console.log(`\nWrote ${join(OUT_DIR, `${regionArg}.json`)} — commit it.`);
-process.exit(problems.length ? 1 : 0);
+
+const failing = results.some((r) => r.fresh.length || r.changed.length || r.errors.length);
+process.exit(failing ? 1 : 0);

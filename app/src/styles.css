@@ -4499,6 +4499,32 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
 .place-search-row .btn {
   flex: none;
 }
+/* The plant list's type chips: on means shown. One row that scrolls sideways
+   on a phone, so eight types cost one line of the page, not four. */
+.type-chips {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.4rem;
+  margin: 0.6rem 0 0.2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+.type-chips::-webkit-scrollbar {
+  display: none;
+}
+.type-chips .btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  min-height: 2.4rem;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.9rem;
+  gap: 0.3rem;
+}
+.type-chips .btn[aria-pressed="false"] {
+  color: var(--ink-soft);
+  text-decoration: line-through;
+}
 .privacy-note {
   margin: 0.4rem 0 0;
   font-size: 0.82rem;

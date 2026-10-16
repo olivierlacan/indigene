@@ -13,7 +13,8 @@ import { zoneChip } from "../components/zone-chip";
 import { siteMoisture } from "../lib/ranking";
 import { draftRegion, draftPlants, rankDraft, draftContext } from "../lib/draft";
 import { priorityName, matchingPreset } from "../lib/priorities";
-import { plantCard } from "../components/plant-card";
+import { plantCard, silhouetteFor } from "../components/plant-card";
+import { FORM_ORDER } from "../lib/forms";
 import { reportRosterUntranslated } from "../components/wip-banner";
 import { recompute } from "../components/recompute";
 import { privacyRoute } from "../components/privacy-link";
@@ -299,6 +300,41 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     quietLink("info", "#/traits", t("results.filtersMeaning"), "margin:0.4rem 0 0.2rem"),
   ]);
 
+  // --- Plant types, on or off. Out in the open rather than in the panel
+  // above: "no trees, I have no room" is the first thing many readers want
+  // and the panel is easy to miss (Show HN, #255). On means shown; the list
+  // keeps at least one type on, because an empty list answers nothing.
+  const formsHere = FORM_ORDER.filter((f) => plants.some((p) => p.form === f));
+  const typeButtons: HTMLButtonElement[] = [];
+  const pressTypes = () => typeButtons.forEach((b, i) =>
+    b.setAttribute("aria-pressed", store.filters.hiddenForms.includes(formsHere[i]) ? "false" : "true"));
+  const typeChips = formsHere.length > 1
+    ? el("div", { class: "type-chips", role: "group", "aria-label": t("filter.typesLabel") },
+        formsHere.map((f) => {
+          const icon = silhouetteFor(f, 17);
+          icon.setAttribute("aria-hidden", "true");
+          const btn = el("button", {
+            class: "btn btn-secondary",
+            type: "button",
+            onClick: () => {
+              const hidden = store.filters.hiddenForms;
+              const next = hidden.includes(f) ? hidden.filter((x) => x !== f) : [...hidden, f];
+              if (formsHere.every((x) => next.includes(x))) {
+                toast(t("filter.typesKeepOne"));
+                return;
+              }
+              store.filters.hiddenForms = next;
+              pressTypes();
+              persistPrefs();
+              rerender();
+            },
+          }, [icon, t(`form.chip.${f}` as const)]) as HTMLButtonElement;
+          typeButtons.push(btn);
+          return btn;
+        }))
+    : null;
+  pressTypes();
+
   const conditions = summarize();
 
   main.append(
@@ -312,6 +348,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
         ? [" ", ecoregionChip(store.draft.site.ecoregionInfo, guideHref("regions", "zones"))] : [])]),
     conditions,
     el("div", { class: "result-controls" }, [rankedFor, filters]),
+    ...(typeChips ? [typeChips] : []),
     guideLink("ranking", t("guide.ranking"), undefined, "margin:0.5rem 0 0"),
     summaryEl,
     rc.node,

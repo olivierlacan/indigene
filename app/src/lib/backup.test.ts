@@ -93,6 +93,7 @@ const preferences: Required<Preferences> = {
     requireNoWater: false,
     maxHeightFt: 6,
     maxSpreadFt: null,
+    hiddenForms: ["tree"],
   },
   sticky: {
     spot: {

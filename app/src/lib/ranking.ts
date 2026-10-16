@@ -8,6 +8,7 @@
 import type {
   MoistureBand,
   Plant,
+  PlantForm,
   SiteData,
   SunEstimate,
   Weights,
@@ -36,6 +37,10 @@ export interface ActiveFilters {
    *  plant's honest eventual size, not a young nursery specimen. */
   maxHeightFt: number | null;
   maxSpreadFt: number | null;
+  /** Plant types switched off with the list's type chips ("no trees"). Kept
+   *  as the ones hidden, not shown, so a form added later starts visible and
+   *  prefs saved before this existed mean "show everything". */
+  hiddenForms: PlantForm[];
 }
 
 export const NO_FILTERS: ActiveFilters = {
@@ -46,6 +51,7 @@ export const NO_FILTERS: ActiveFilters = {
   requireNoWater: false,
   maxHeightFt: null,
   maxSpreadFt: null,
+  hiddenForms: [],
 };
 
 export interface Ranked {
@@ -195,6 +201,7 @@ export function rankPlants(
     if (ctx.filters.requireNoWater && !plant.noWaterEstablish) continue;
     if (ctx.filters.maxHeightFt != null && plant.matureHeightFt > ctx.filters.maxHeightFt) continue;
     if (ctx.filters.maxSpreadFt != null && plant.matureSpreadFt > ctx.filters.maxSpreadFt) continue;
+    if (ctx.filters.hiddenForms?.includes(plant.form)) continue;
 
     const eco = ecoScore(plant, ctx.weights);
     const { fit, reasons } = computeFit(plant, ctx.site, ctx.sun, moisture);

@@ -1,6 +1,8 @@
 import { el, clear } from "../ui";
 import { navigate, store, getSitePromise, rememberDraftSpot } from "../state";
 import type { MoistureBand } from "../types";
+import { SOIL_FEELS, feelOf } from "../lib/soil-answer";
+import type { SoilFeel } from "../lib/soil-answer";
 import {
   phPlain,
   texturePlain,
@@ -91,6 +93,29 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
 
   // Soil: what the map says, and one line on why your hands know better. The
   // 60-second check itself lives in the guide, a tap away for whoever wants it.
+  //
+  // Then the reader's own answer, because a map that guessed wrong used to be
+  // the last word (Show HN, #251). Three feels a pinch of damp soil can tell
+  // apart, preselected from the map when its class is close to one. Only a tap
+  // records an answer: the map's guess is never saved as if someone had said it.
+  const mapFeel = feelOf(site?.soil.texture);
+  const feelButtons: HTMLButtonElement[] = [];
+  const pressFeel = (current: SoilFeel | null) =>
+    feelButtons.forEach((b, i) => b.setAttribute("aria-pressed", SOIL_FEELS[i] === current ? "true" : "false"));
+  const feelRow = el("div", { class: "soil-feel", role: "group", "aria-label": t("confirm.feelLabel") },
+    SOIL_FEELS.map((f) => {
+      const btn = el("button", {
+        class: "btn btn-secondary",
+        onClick: () => {
+          store.draft.textureOverride = f;
+          pressFeel(f);
+          rememberDraftSpot();
+        },
+      }, t(`confirm.feel.${f}` as const)) as HTMLButtonElement;
+      feelButtons.push(btn);
+      return btn;
+    }));
+  pressFeel(store.draft.textureOverride ?? mapFeel);
   const soilCard = el("div", { class: "card" }, [
     el("h3", {}, t("confirm.soilTitle")),
     site && site.soil.texture
@@ -98,6 +123,8 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
       : el("p", {}, t("confirm.soilNone")),
     site && site.soil.phEstimate != null ? fact("🧪", t("confirm.acidity"), phPlain(site.soil.phEstimate)) : null,
     el("p", { class: "fact-note" }, t("confirm.soilCoarse")),
+    el("p", {}, t("confirm.feelLede")),
+    feelRow,
     quietLink("info", guideHref("find", "soil"), t("confirm.soilCheckLink")),
   ].filter(Boolean) as (HTMLElement)[]);
   main.append(soilCard);

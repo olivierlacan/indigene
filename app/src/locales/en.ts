@@ -775,6 +775,7 @@ export const en = {
   "confirm.texture": "Texture",
   "confirm.feelLede": "Rub a pinch of damp soil: gritty is sandy, sticky is clay, in between is loamy.",
   "confirm.feelLabel": "Your soil",
+  "confirm.moistureFromFeel": "Set from your soil type. Change it if this spot stays wetter or drier.",
   "confirm.feel.sand": "Sandy",
   "confirm.feel.loam": "Loamy",
   "confirm.feel.clay": "Clay",

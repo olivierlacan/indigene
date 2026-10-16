@@ -29,6 +29,10 @@ export interface Draft {
   moistureOverride: MoistureBand | null;
   /** What the reader's soil feels like, when they said; the map's texture otherwise. */
   textureOverride: SoilFeel | null;
+  /** The wetness in `moistureOverride` is a guess (from the map, or from the
+   *  soil type), not something the reader answered, so a soil answer may
+   *  still move it. */
+  moistureGuessed: boolean;
   /**
    * Region id the user picked by hand ("I know my ecoregion") instead of
    * letting coordinates decide. When set with no coordinates, the flow runs
@@ -60,6 +64,7 @@ function emptyDraft(): Draft {
     deciduousOverhead: false,
     moistureOverride: null,
     textureOverride: null,
+    moistureGuessed: false,
     regionOverride: null,
     editingId: null,
     recalled: { sun: false, moisture: false },
@@ -250,6 +255,7 @@ export function openSavedSpot(s: SavedSpot): void {
     // Only a reader's own answer comes back as one; a map class stored for
     // want of an answer ("silt loam") is not.
     textureOverride: isSoilFeel(s.soilOverride?.texture) ? s.soilOverride.texture : null,
+    moistureGuessed: false,
     regionOverride: s.regionOverride ?? null,
     editingId: s.id,
     // A saved spot's readings are its own, given by name and on purpose —

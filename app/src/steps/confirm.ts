@@ -1,7 +1,7 @@
 import { el, clear } from "../ui";
 import { navigate, store, getSitePromise, rememberDraftSpot } from "../state";
 import type { MoistureBand } from "../types";
-import { SOIL_FEELS, feelOf } from "../lib/soil-answer";
+import { SOIL_FEELS, feelOf, moistureForFeel } from "../lib/soil-answer";
 import type { SoilFeel } from "../lib/soil-answer";
 import {
   phPlain,
@@ -99,6 +99,8 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   // apart, preselected from the map when its class is close to one. Only a tap
   // records an answer: the map's guess is never saved as if someone had said it.
   const mapFeel = feelOf(site?.soil.texture);
+  // Wired to the wetness card below once it exists.
+  let onFeel: (f: SoilFeel) => void = () => {};
   const feelButtons: HTMLButtonElement[] = [];
   const pressFeel = (current: SoilFeel | null) =>
     feelButtons.forEach((b, i) => b.setAttribute("aria-pressed", SOIL_FEELS[i] === current ? "true" : "false"));
@@ -109,6 +111,7 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
         onClick: () => {
           store.draft.textureOverride = f;
           pressFeel(f);
+          onFeel(f);
           rememberDraftSpot();
         },
       }, t(`confirm.feel.${f}` as const)) as HTMLButtonElement;
@@ -130,8 +133,16 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
   main.append(soilCard);
 
   // Moisture override — the most important correction for plant fit.
+  //
+  // Until the reader answers it, the wetness follows their soil type when they
+  // gave one (sand drains fast, clay holds water), and the map otherwise. That
+  // is what makes the soil answer move the ranking: wetness is scored for every
+  // plant, soil type on its own is not.
   const mapGuess = guessMoisture(site?.soil.drainage ?? "");
-  const current: MoistureBand = store.draft.moistureOverride ?? mapGuess;
+  const guess = (): MoistureBand =>
+    store.draft.textureOverride ? moistureForFeel(store.draft.textureOverride) : mapGuess;
+  const answered = store.draft.moistureOverride != null && !store.draft.moistureGuessed;
+  const current: MoistureBand = answered ? store.draft.moistureOverride! : guess();
   // Only worth saying when the memory is actually what's on screen. A
   // remembered answer that agrees with the map changed nothing — claiming
   // credit for it would be noise, and (since the guess gets locked into the
@@ -156,6 +167,7 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
         "aria-pressed": b === current ? "true" : "false",
         onClick: () => {
           store.draft.moistureOverride = b;
+          store.draft.moistureGuessed = false;
           store.draft.recalled.moisture = false;
           clear(moistureNote);
           moistureButtons.forEach((mb, i) => mb.setAttribute("aria-pressed", bands[i] === b ? "true" : "false"));
@@ -173,6 +185,18 @@ export async function renderConfirm(main: HTMLElement): Promise<void> {
     }),
   ]);
   store.draft.moistureOverride = current; // lock in the default so ranking uses it
+  if (!answered) store.draft.moistureGuessed = true;
+  const pressMoisture = (b: MoistureBand) =>
+    moistureButtons.forEach((mb, i) => mb.setAttribute("aria-pressed", bands[i] === b ? "true" : "false"));
+  if (!answered && store.draft.textureOverride) moistureNote.append(t("confirm.moistureFromFeel"));
+  onFeel = (f) => {
+    if (!store.draft.moistureGuessed) return; // the reader's own answer stands
+    const b = moistureForFeel(f);
+    store.draft.moistureOverride = b;
+    pressMoisture(b);
+    clear(moistureNote);
+    moistureNote.append(t("confirm.moistureFromFeel"));
+  };
   main.append(moistureCard);
 
   // Deciduous overhead (affects sun seasonally) — repeated here for correction.

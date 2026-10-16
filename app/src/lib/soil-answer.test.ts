@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { feelOf, isSoilFeel, soilAnswer } from "./soil-answer";
+import { feelOf, isSoilFeel, moistureForFeel, soilAnswer } from "./soil-answer";
+import { rankPlants, DEFAULT_WEIGHTS, NO_FILTERS } from "./ranking";
+import { loadPlants } from "./plants";
+import { REGIONS } from "../data/regions";
 import type { SiteData } from "../types";
 
 const mapSays = (texture: string) => ({ soil: { texture } }) as unknown as SiteData;
@@ -39,5 +42,22 @@ describe("isSoilFeel", () => {
   it("tells a reader's answer from a map class", () => {
     expect(isSoilFeel("clay")).toBe(true);
     expect(isSoilFeel("silty clay")).toBe(false);
+  });
+});
+
+describe("moistureForFeel", () => {
+  it("reads sand as dry, loam as evenly moist, clay as wet", () => {
+    expect(moistureForFeel("sand")).toBe("dry");
+    expect(moistureForFeel("loam")).toBe("mesic");
+    expect(moistureForFeel("clay")).toBe("wet");
+  });
+
+  it("moves the ranked list: clay and sand put different plants first", async () => {
+    const pnw = REGIONS.find((r) => r.meta.id === "pnw")!;
+    const plants = await loadPlants(pnw);
+    const top = (feel: "sand" | "clay") =>
+      rankPlants(plants, { site: null, sun: null, weights: DEFAULT_WEIGHTS, filters: NO_FILTERS, moistureOverride: moistureForFeel(feel) })
+        .slice(0, 10).map((r) => r.plant.id);
+    expect(top("clay")).not.toEqual(top("sand"));
   });
 });

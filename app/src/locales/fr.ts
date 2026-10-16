@@ -770,7 +770,6 @@ export const fr: Dict = {
   "confirm.texture": "Texture",
   "confirm.feelLede": "Frottez une pincée de terre humide : granuleuse, elle est sableuse ; collante, argileuse ; entre les deux, franche.",
   "confirm.feelLabel": "Votre sol",
-  "confirm.moistureFromFeel": "Déduit de votre type de sol. Changez-le si ce coin reste plus humide ou plus sec.",
   "confirm.feel.sand": "Sableux",
   "confirm.feel.loam": "Franc",
   "confirm.feel.clay": "Argileux",

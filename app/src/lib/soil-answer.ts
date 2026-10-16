@@ -33,16 +33,6 @@ export function feelOf(texture: string | null | undefined): SoilFeel | null {
   return null;
 }
 
-/**
- * The wetness a soil type stands for when nobody has said how wet the spot
- * stays: sand drains fast, clay holds water. It feeds the moisture fit every
- * plant is ranked on, so a soil answer moves the list instead of sitting
- * beside it. A reader's own wetness answer always wins over it.
- */
-export function moistureForFeel(feel: SoilFeel): MoistureBand {
-  return feel === "sand" ? "dry" : feel === "clay" ? "wet" : "mesic";
-}
-
 export function soilAnswer(
   moisture: MoistureBand | null,
   site: SiteData | null,

@@ -510,23 +510,58 @@ function offForeignLand(rings, meta, features) {
     const pts = ringsOf(f.geometry).flat();
     return pts.some(([lon, lat]) => lon >= b.minLon - 1 && lon <= b.maxLon + 1 && lat >= b.minLat - 1 && lat <= b.maxLat + 1);
   };
-  const foreign = features
-    .filter((f) => !codes.includes(f.properties.ISO_A2_EH) && near(f))
-    .flatMap((f) => (f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates));
+  const polys = (f) => (f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates);
+  const nearby = features.filter(near);
+  const own = nearby.filter((f) => codes.includes(f.properties.ISO_A2_EH)).flatMap(polys);
+  const foreign = nearby.filter((f) => !codes.includes(f.properties.ISO_A2_EH)).flatMap(polys);
   if (!foreign.length) return rings;
   const closed = (r) => {
     const [p, q] = [r[0], r[r.length - 1]];
     return p[0] === q[0] && p[1] === q[1] ? r : [...r, p];
   };
+  // **Whose shore is a piece on?** The ecoregion's coastline and Natural
+  // Earth's never quite agree, so subtracting England's land still left a thin
+  // green line along its south coast — the part of the ecoregion that Natural
+  // Earth calls sea. Every piece left over therefore goes to the nearest
+  // country, measured from its middle: a piece nearer a neighbour than any of
+  // the region's own countries is that neighbour's shore, and goes. (A French
+  // islet Natural Earth leaves out is still nearest France, and stays.)
+  const inside = ([x, y], ring) => {
+    let hit = false;
+    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      const [xi, yi] = ring[i];
+      const [xj, yj] = ring[j];
+      if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) hit = !hit;
+    }
+    return hit;
+  };
+  const distance = (pt, set) => {
+    let best = Infinity;
+    const k = Math.cos((pt[1] * Math.PI) / 180);
+    for (const poly of set) {
+      if (inside(pt, poly[0]) && !poly.slice(1).some((h) => inside(pt, h))) return 0;
+      for (const [lon, lat] of poly[0]) {
+        best = Math.min(best, Math.hypot((lon - pt[0]) * k, lat - pt[1]));
+      }
+    }
+    return best;
+  };
+  const middle = (ring) => {
+    let x = 0, y = 0;
+    for (const [lon, lat] of ring) { x += lon; y += lat; }
+    return [x / ring.length, y / ring.length];
+  };
+  const ours = (ring) => distance(middle(ring), own) <= distance(middle(ring), foreign);
   const out = [];
   let trimmed = 0;
   for (const ring of rings) {
     const poly = [[closed(ring)]];
     if (!polygonClipping.intersection(poly, foreign).length) {
-      out.push(ring);
+      if (ours(ring)) out.push(ring);
+      else trimmed++;
       continue;
     }
-    for (const p of polygonClipping.difference(poly, foreign)) out.push(...p);
+    for (const p of polygonClipping.difference(poly, foreign)) out.push(...p.filter(ours));
     trimmed++;
   }
   if (trimmed) console.log(`  ${meta.id}: ${trimmed} ring(s) kept off a neighbour's land`);

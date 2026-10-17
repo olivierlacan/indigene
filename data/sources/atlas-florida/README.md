@@ -90,6 +90,20 @@ rank, and all but one are native. **_Salvia coccinea_ (tropical sage) is
 Florida, so the two disagree. Our rule is that the Atlas must agree, so it
 can't stay on either list.
 
+## References
+
+The Atlas lists the literature behind its calls on its
+[References](https://florida.plantatlas.usf.edu/references) page, about 1,200
+works. We link that page rather than copy it. The ones our rows lean on:
+
+- Wunderlin, R.P. & B.F. Hansen. 2011. *Guide to the Vascular Plants of
+  Florida*, 3rd ed. University Press of Florida. The flora behind the Atlas's
+  native status.
+- Wunderlin, R.P. & B.F. Hansen. 2000–2016. *Flora of Florida*, Vols. I–III.
+  University Press of Florida.
+- Chapman, A.W. 1897. *Flora of the Southern United States*, 3rd ed. Cited by
+  the Atlas for *Salvia coccinea* as escaped from cultivation.
+
 ## Terms
 
 Individual distribution facts are not copyrightable. The CSV keeps those and

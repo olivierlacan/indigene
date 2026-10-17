@@ -25,7 +25,8 @@ in the git-ignored `raw/`.
 
 | File | Retrieved | Taxa | Search |
 |---|---|---|---|
-| `florida-central.csv` | 2026-10-17 | 3,010 | the 56 counties below, native only |
+| `florida-central.csv` | 2026-10-17 | 3,010 | the 56 North & Central counties below, native only |
+| `florida-south.csv` | 2026-10-17 | 1,759 | the 11 South Florida counties below, native only |
 
 ## The search
 
@@ -57,6 +58,12 @@ Query URL for `florida-central.csv`:
 https://florida.plantatlas.usf.edu/plant/results?KeywordSearch=&SearchType=any&KeywordCategory=sci_name&IncludeAccepted=true&ResultPageSize=all&IncludeAllCounties=false&ExcludeAllCounties=false&CountiesInclude=Alachua&CountiesInclude=Baker&CountiesInclude=Bay&CountiesInclude=Bradford&CountiesInclude=Brevard&CountiesInclude=Calhoun&CountiesInclude=Citrus&CountiesInclude=Clay&CountiesInclude=Columbia&CountiesInclude=Dixie&CountiesInclude=Duval&CountiesInclude=Escambia&CountiesInclude=Flagler&CountiesInclude=Franklin&CountiesInclude=Gadsden&CountiesInclude=Gilchrist&CountiesInclude=Gulf&CountiesInclude=Hamilton&CountiesInclude=Hardee&CountiesInclude=Hernando&CountiesInclude=Highlands&CountiesInclude=Hillsborough&CountiesInclude=Holmes&CountiesInclude=Indian+River&CountiesInclude=Jackson&CountiesInclude=Jefferson&CountiesInclude=Lafayette&CountiesInclude=Lake&CountiesInclude=Leon&CountiesInclude=Levy&CountiesInclude=Liberty&CountiesInclude=Madison&CountiesInclude=Manatee&CountiesInclude=Marion&CountiesInclude=Nassau&CountiesInclude=Okaloosa&CountiesInclude=Okeechobee&CountiesInclude=Orange&CountiesInclude=Osceola&CountiesInclude=Pasco&CountiesInclude=Pinellas&CountiesInclude=Polk&CountiesInclude=Putnam&CountiesInclude=Santa+Rosa&CountiesInclude=Sarasota&CountiesInclude=Seminole&CountiesInclude=St.+Johns&CountiesInclude=St.+Lucie&CountiesInclude=Sumter&CountiesInclude=Suwannee&CountiesInclude=Taylor&CountiesInclude=Union&CountiesInclude=Volusia&CountiesInclude=Wakulla&CountiesInclude=Walton&CountiesInclude=Washington&IncludeSynonyms=false&IncludeExcluded=false&StatusOptions=Nativity%7CY
 ```
 
+Query URL for `florida-south.csv`:
+
+```
+https://florida.plantatlas.usf.edu/plant/results?KeywordSearch=&SearchType=any&KeywordCategory=sci_name&IncludeAccepted=true&ResultPageSize=all&IncludeAllCounties=false&ExcludeAllCounties=false&CountiesInclude=Broward&CountiesInclude=Charlotte&CountiesInclude=Collier&CountiesInclude=DeSoto&CountiesInclude=Glades&CountiesInclude=Hendry&CountiesInclude=Lee&CountiesInclude=Martin&CountiesInclude=Miami-Dade&CountiesInclude=Monroe+Keys&CountiesInclude=Monroe+Mainland&CountiesInclude=Palm+Beach&IncludeSynonyms=false&IncludeExcluded=false&StatusOptions=Nativity%7CY
+```
+
 ## What it says about our rows (2026-10-17)
 
 36 of the 39 North & Central Florida rows are on it. Two more are there at a
@@ -64,6 +71,9 @@ finer rank: *Muhlenbergia capillaris* and *Helianthus debilis* appear only as
 their varieties and subspecies. **_Salvia coccinea_ (tropical sage) is not on
 it** — a question for a person: the Atlas may not call it native, or may file
 it under another name.
+
+South Florida: 20 of 21 rows are on it, two of them at a finer rank. The one
+missing is again **_Salvia coccinea_**, which both lists carry.
 
 ## Terms
 

@@ -1,0 +1,1760 @@
+plant_id,scientific_name,author,infraspecies_author,common_name,family,native,endemic,status_state,status_us,wetland_dep,wetland_nwi,eppc_1,specimens
+2752,Abildgaardia ovata,(Burm.f.)Kral,,FLATSPIKE SEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+648,Abutilon hulseanum,(Torr. & A.Gray)Torr. ex A.Gray,,MAUVE,MALVACEAE,Y,N,,,,,N,Y
+617,Abutilon permolle,(Willd.)Sweet,,COASTAL INDIAN MALLOW,MALVACEAE,Y,N,,,,,N,Y
+728,Acalypha chamaedrifolia,(Lam.)Müll.Arg.,,BASTARD COPPERLEAF,EUPHORBIACEAE,Y,N,,,,,N,Y
+3571,Acalypha gracilens,A.Gray,,SLENDER THREESEED MERCURY,EUPHORBIACEAE,Y,N,,,,FAC,N,Y
+2843,Acalypha ostryifolia,Riddell ex J.M.Coult.,,PINELAND THREESEED MERCURY,EUPHORBIACEAE,Y,N,,,,,N,Y
+622,Acanthocereus tetragonus,(L.) Hummelinck,,TRIANGLE CACTUS; DILDOE CACTUS; BARBED-WIRE CACTUS,CACTACEAE,Y,N,Threatened-State,,,FAC,N,Y
+4610,Acaulon muticum,(Hedw.) Müll. Hal.,,,POTTIACEAE,Y,,,,,,,N
+2120,Acer rubrum,L.,,RED MAPLE,SAPINDACEAE,Y,N,,,FACW,FAC,N,Y
+3354,Acmella repens,(Walter)Pers.,,OPPOSITELEAF SPOTFLOWER,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+613,Acoelorraphe wrightii,(Griseb. & H.Wendl.)H.Wendl. ex Becc.,,EVERGLADES PALM,ARECACEAE,Y,N,Threatened-State,,OBL,OBL,N,Y
+4729,Acrolejeunea heterophylla,(A. Evans) Grolle & Gradst.,,,LEJEUNEACEAE,Y,,,,,,,N
+4639,Acroporium smallii,(R. S. Williams) H. A. Crum & L. E. Anderson,,,SEMATOPHYLLACEAE,Y,N,,,,,,N
+3611,Acrostichum aureum,L.,,GOLDEN LEATHER FERN,PTERIDACEAE,Y,N,Threatened-State,,OBL,OBL,N,Y
+2191,Acrostichum danaeifolium,Langsd. & Fisch.,,GIANT LEATHER FERN,PTERIDACEAE,Y,N,,,OBL,OBL,N,Y
+3924,Actinostachys pennula,(Sw.)Hook.,,RAY FERN,SCHIZAEACEAE,Y,N,Endangered-State,,,FAC,N,Y
+2591,Adiantum capillus-veneris,L.,,VENUS'-HAIR FERN; SOUTHERN MAIDENHAIR; COMMON MAIDENHAIR,PTERIDACEAE,Y,N,,,,FACU,N,Y
+2714,Adiantum melanoleucum,Willd.,,FRAGRANT MAIDENHAIR,PTERIDACEAE,Y,N,Endangered-State,,,UPL,N,Y
+2812,Adiantum tenerum,Sw.,,BRITTLE MAIDENHAIR,PTERIDACEAE,Y,N,Endangered-State,,,FAC,N,Y
+1552,Adiantum villosum,L.,,WOOLLY MAIDENHAIR,PTERIDACEAE,Y,N,,,,,N,Y
+2805,Aeschynomene americana,L.,,SHYLEAF,FABACEAE,Y,N,,,,FAC,N,Y
+1127,Aeschynomene pratensis var. pratensis,Small,,MEADOW JOINTVETCH,FABACEAE,Y,Y,Endangered-State,,OBL,OBL,N,Y
+3224,Agalinis fasciculata,(Elliott)Raf.,,BEACH FALSE FOXGLOVE,OROBANCHACEAE,Y,N,,,FACW,FAC,N,Y
+2560,Agalinis filifolia,(Nutt.)Raf.,,SEMINOLE FALSE FOXGLOVE,OROBANCHACEAE,Y,N,,,,FACU,N,Y
+4209,Agalinis harperi,Pennell,,HARPER'S FALSE FOXGLOVE,OROBANCHACEAE,Y,N,,,,FAC,N,Y
+3008,Agalinis linifolia,(Nutt.)Britton,,FLAXLEAF FALSE FOXGLOVE,OROBANCHACEAE,Y,N,,,OBL,FACW,N,Y
+2948,Agalinis maritima var. grandiflora,(Raf.)Raf.,(Benth.)Pennell,SALTMARSH FALSE FOXGLOVE,OROBANCHACEAE,Y,N,,,OBL,OBL,N,Y
+2121,Agalinis obtusifolia,Raf.,,TENLOBE FALSE FOXGLOVE,OROBANCHACEAE,Y,N,,,,OBL,N,Y
+3488,Agalinis purpurea,(L.)Pennell,,PURPLE FALSE FOXGLOVE,OROBANCHACEAE,Y,N,,,FACW,FACW,N,Y
+1136,Agave decipiens,Baker,,FALSE SISAL,AGAVACEAE,Y,Y,,,,,N,Y
+2516,Ageratina jucunda,(Greene)Clewell & Wooten,,HAMMOCK SNAKEROOT,ASTERACEAE,Y,N,,,,FACU,N,Y
+2524,Ageratum maritimum,Kunth,,CAPE SABLE WHITEWEED,ASTERACEAE,Y,N,Endangered-State,,,,N,Y
+572,Aletris bracteata,Northr.,,BRACTED COLICROOT,NARTHECIACEAE,Y,N,Endangered-State,,FAC,FACU,N,Y
+3986,Aletris lutea,Small,,YELLOW COLICROOT,NARTHECIACEAE,Y,N,,,FAC,FACW,N,Y
+1403,Alternanthera flavescens,Kunth,,YELLOW JOYWEED,AMARANTHACEAE,Y,N,,,,UPL,N,Y
+2193,Alternanthera maritima,(Mart.)A.St.-Hil.,,SEASIDE JOYWEED,AMARANTHACEAE,Y,N,,,FACW,,N,Y
+757,Alvaradoa amorphoides,Liebm.,,MEXICAN ALVARADOA,PICRAMNIACEAE,Y,N,Endangered-State,,,,N,Y
+2443,Amaranthus australis,(A.Gray)J.D.Sauer,,SOUTHERN AMARANTH,AMARANTHACEAE,Y,N,,,OBL,OBL,N,Y
+1235,Amaranthus floridanus,(S.Watson)J.D.Sauer,,FLORIDA AMARANTH,AMARANTHACEAE,Y,Y,,,OBL,OBL,N,Y
+3025,Ambrosia artemisiifolia,L.,,COMMON RAGWEED,ASTERACEAE,Y,N,,,,FACU,N,Y
+2167,Ambrosia hispida,Pursh,,COASTAL RAGWEED,ASTERACEAE,Y,N,,,,,N,Y
+3608,Ambrosia trifida,L.,,GIANT RAGWEED,ASTERACEAE,Y,N,,,,FAC,N,Y
+720,Ammannia coccinea,Rottb.,,VALLEY REDSTEM; SCARLET AMMANNIA,LYTHRACEAE,Y,N,,,OBL,OBL,N,Y
+3617,Ammannia latifolia,L.,,PINK REDSTEM; TOOTHCUPS,LYTHRACEAE,Y,N,,,OBL,OBL,N,Y
+2056,Amorpha fruticosa,L.,,BASTARD FALSE INDIGO,FABACEAE,Y,N,,,FACW,FACW,N,Y
+1105,Amorpha herbacea var. crenulata,Walter,(Rydb.)Isely,MIAMI LEAD PLANT,FABACEAE,Y,Y,Endangered-State,Endangered-US,,,N,Y
+3173,Amorpha herbacea var. herbacea,Walter,,CLUSTERSPIKE FALSE INDIGO,FABACEAE,Y,N,,,,FAC,N,Y
+3772,Amphicarpum muehlenbergianum,(Schult.)Hitchc.,,BLUE MAIDENCANE,POACEAE,Y,N,,,FACW,FACW,N,Y
+3655,Amphitecna latifolia,(Mill.)A.H.Gentry,,BLACK CALABASH,BIGNONIACEAE,Y,N,,,,FACU,N,Y
+3834,Amyris balsamifera,L.,,BALSAM TORCHWOOD,RUTACEAE,Y,N,,,,,N,Y
+3593,Amyris elemifera,L.,,SEA TORCHWOOD,RUTACEAE,Y,N,,,,FAC,N,Y
+2415,Andropogon brachystachyus,Chapm.,,SHORTSPIKE BLUESTEM,POACEAE,Y,N,,,FAC,FAC,N,Y
+4937,Andropogon cumulicola,E.L.Bridges & Orzell,,,POACEAE,Y,Y,,,,,N,Y
+2493,Andropogon floridanus,Scribn.,,FLORIDA BLUESTEM,POACEAE,Y,N,,,,FACU,N,Y
+3281,Andropogon glomeratus var. glaucopsis,(Walter)Britton et al.,(Elliott)C.Mohr,PURPLE BLUESTEM,POACEAE,Y,N,,,FACW,FACW,N,Y
+2149,Andropogon glomeratus var. hirsutior,(Walter)Britton et al.,(Hack.)C.Mohr,BUSHY BLUESTEM,POACEAE,Y,N,,,FACW,FACW,N,Y
+3364,Andropogon glomeratus var. pumilus,(Walter)Britton et al.,(Vasey)Vasey ex L.H.Dewey,BUSHY BLUESTEM,POACEAE,Y,N,,,FACW,,N,Y
+784,Andropogon gyrans,Ashe,,ELLIOTT'S BLUESTEM,POACEAE,Y,N,,,FAC,FACU,N,Y
+2397,Andropogon longiberbis,Hack.,,HAIRY BLUESTEM,POACEAE,Y,N,,,,FAC,N,Y
+2581,Andropogon perangustatus,Nash,,ELLIOTT'S BLUESTEM,POACEAE,Y,N,,,FAC,OBL,N,Y
+2073,Andropogon ternarius,Michx.,,SPLITBEARD BLUESTEM,POACEAE,Y,N,,,,FACU,N,Y
+2894,Andropogon tracyi,Nash,,TRACY'S BLUESTEM,POACEAE,Y,N,,,,,N,Y
+2518,Andropogon virginicus var. decipiens,L.,C.S.Campb.,BROOMSEDGE BLUESTEM,POACEAE,Y,N,,,FAC,FAC,N,Y
+2414,Andropogon virginicus var. glaucus,L.,Hack.,CHALKY BLUESTEM,POACEAE,Y,N,,,FAC,FAC,N,Y
+3456,Andropogon virginicus var. virginicus,L.,,BROOMSEDGE BLUESTEM,POACEAE,Y,N,,,FAC,FAC,N,Y
+2718,Anemia adiantifolia,(L.)Sw.,,MAIDENHAIR PINELAND FERN,SCHIZAEACEAE,Y,N,,,,,N,Y
+2266,Anemia wrightii,Baker,,WRIGHT'S PINELAND FERN; PARSLEY FERN,SCHIZAEACEAE,Y,N,Endangered-State,,,,N,Y
+4679,Aneura pinguis,(L.) Dumort.,,,ANEURACEAE,Y,,,,,,,N
+2721,Angadenia berteroi,(A.DC.) Miers,,PINELAND GOLDEN TRUMPET,APOCYNACEAE,Y,N,Threatened-State,,,FACW,N,Y
+2172,Annona glabra,L.,,POND APPLE,ANNONACEAE,Y,N,,,OBL,OBL,N,Y
+4450,Anomodon rostratus,(Hedw.) Schimp.,,,ANOMODONTACEAE,Y,,,,,,,N
+2074,Anthenantia villosa,(Michx.) P.Beauv.,,GREEN SILKYSCALE,POACEAE,Y,N,,,,UPL,N,Y
+4559,Aphanorrhegma serratum,(Wilson & Hook.) Sull.,,,FUNARIACEAE,Y,,,,,,,N
+892,Apios americana,Medik.,,GROUNDNUT,FABACEAE,Y,N,,,,FACW,N,Y
+3896,Apocynum cannabinum,L.,,INDIANHEMP,APOCYNACEAE,Y,N,,,,FACU,N,Y
+2340,Apteria aphylla,(Nutt.)Barnhart ex Small,,NODDING NIXIE,BURMANNIACEAE,Y,N,,,FACW,FACW,N,Y
+4456,Archidium alternifolium,(Dicks. ex Hedw.) Mitt.,,,ARCHIDIACEAE,Y,,,,,,,N
+4453,Archidium hallii,Austin,,,ARCHIDIACEAE,Y,,,,,,,N
+4454,Archidium minus,Renauld & Cardot) Snider,,,ARCHIDIACEAE,Y,,,,,,,N
+4455,Archidium ohioense,Müll. Hal.,,,ARCHIDIACEAE,Y,,,,,,,N
+4457,Archidium tenerrimum,Mitt.,,,ARCHIDIACEAE,Y,,,,,,,N
+760,Ardisia escallonioides,Schltdl. & Cham.,,MARLBERRY,PRIMULACEAE,Y,N,,,FAC,,N,Y
+2278,Argemone albiflora,Hornem.,,BLUESTEM PRICKLYPOPPY,PAPAVERACEAE,Y,N,,,,,N,Y
+3632,Argemone mexicana,L.,,MEXICAN PRICKLYPOPPY,PAPAVERACEAE,Y,N,,,,,N,Y
+1234,Argythamnia argothamnoides,(Bertero ex Spreng.)J.W.Ingram,,BLODGETT'S SILVERBUSH; BLODGETT'S WILD MERCURY,EUPHORBIACEAE,Y,N,Endangered-State,Threatened-US,,,N,Y
+594,Arisaema triphyllum,(L.)Schott,,JACK-IN-THE-PULPIT,ARACEAE,Y,N,,,FACW,FACW,N,Y
+2425,Aristida condensata,Chapm.,,BIG THREEAWN; PIEDMONT THREEAWN,POACEAE,Y,N,,,,,N,Y
+2528,Aristida floridana,(Chapm.)Vasey,,KEY WEST THREEAWN,POACEAE,Y,N,,,,,N,Y
+2373,Aristida gyrans,Chapm.,,CORKSCREW THREEAWN,POACEAE,Y,N,,,,,N,Y
+2442,Aristida palustris,(Chapm.)Vasey,,LONGLEAF THREEAWN,POACEAE,Y,N,,,OBL,OBL,N,Y
+2441,Aristida patula,Chapm. ex Nash,,TALL THREEAWN,POACEAE,Y,Y,,,,FAC,N,Y
+832,Aristida purpurascens var. purpurascens,Poir.,,ARROWFEATHER THREEAWN,POACEAE,Y,N,,,FACW,UPL,N,Y
+2473,Aristida purpurascens var. tenuispica,Poir.,(Hitchc.)Allred,HILLSBORO THREEAWN,POACEAE,Y,N,,,FAC,FAC,N,Y
+3052,Aristida purpurascens var. virgata,Poir.,(Trin.)Allred,ARROWFEATHER THREEAWN,POACEAE,Y,N,,,FAC,FACW,N,Y
+1242,Aristida rhizomophora,Swallen,,FLORIDA THREEAWN,POACEAE,Y,Y,,,FAC,FACW,N,Y
+3257,Aristida spiciformis,Elliott,,BOTTLEBRUSH THREEAWN,POACEAE,Y,N,,,FAC,FAC,N,Y
+698,Aristida stricta,Michx.,,WIREGRASS,POACEAE,Y,N,,,FAC,FAC,N,Y
+3908,Aristolochia pentandra,Jacq.,,MARSH'S DUTCHMAN'S-PIPE,ARISTOLOCHIACEAE,Y,N,Endangered-State,,,,N,Y
+3644,Aristolochia serpentaria,L.,,VIRGINIA SNAKEROOT,ARISTOLOCHIACEAE,Y,N,,,,FACU,N,Y
+2312,Arnoglossum floridanum,(A.Gray) H.Rob.,,FLORIDA INDIAN PLANTAIN,ASTERACEAE,Y,Y,,,,,N,Y
+3089,Arnoglossum ovatum,(Walter)H.Rob.,,OVATELEAF INDIAN PLANTAIN,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+2634,Asclepias connivens,Baldwin,,LARGEFLOWER MILKWEED,APOCYNACEAE,Y,N,,,FACW,OBL,N,Y
+1193,Asclepias curtissii,A.Gray,,CURTISS' MILKWEED,APOCYNACEAE,Y,Y,Endangered-State,,,,N,Y
+11,Asclepias feayi,Chapm. ex A.Gray,,FLORIDA MILKWEED,APOCYNACEAE,Y,Y,,,,,N,Y
+3177,Asclepias humistrata,Walter,,PINEWOODS MILKWEED,APOCYNACEAE,Y,N,,,,,N,Y
+3626,Asclepias incarnata,L.,,SWAMP MILKWEED,APOCYNACEAE,Y,N,,,OBL,OBL,N,Y
+3161,Asclepias lanceolata,Walter,,FEWFLOWER MILKWEED,APOCYNACEAE,Y,N,,,OBL,OBL,N,Y
+2611,Asclepias longifolia,Michx.,,LONGLEAF MILKWEED,APOCYNACEAE,Y,N,,,FACW,FAC,N,Y
+3188,Asclepias pedicellata,Walter,,SAVANNAH MILKWEED,APOCYNACEAE,Y,N,,,FACW,FACW,N,Y
+3198,Asclepias perennis,Walter,,SWAMP MILKWEED,APOCYNACEAE,Y,N,,,OBL,OBL,N,Y
+2635,Asclepias tomentosa,Elliott,,VELVETLEAF MILKWEED,APOCYNACEAE,Y,N,,,,,N,Y
+3627,Asclepias tuberosa,L.,,BUTTERFLYWEED; BUTTERFLY MILKWEED,APOCYNACEAE,Y,N,,,,,N,Y
+3470,Asclepias verticillata,L.,,WHORLED MILKWEED,APOCYNACEAE,Y,N,,,,FACU,N,Y
+3167,Asclepias viridis,Walter,,GREEN ANTELOPEHORN,APOCYNACEAE,Y,N,,,,,N,Y
+3191,Asemeia violacea,(Aubl.) J.F.B.Pastore & J.R.Abbott,,SHOWY MILKWORT,POLYGALACEAE,Y,N,,,FACW,UPL,N,Y
+1270,Asimina obovata,(Willd.)Nash,,BIGFLOWER PAWPAW,ANNONACEAE,Y,Y,,,,,N,Y
+529,Asimina parviflora,(Michx.)Dunal,,SMALLFLOWER PAWPAW,ANNONACEAE,Y,N,,,,FACU,N,Y
+1090,Asimina pulchella,(Small)Rehder & Dayton,,PRETTY FALSE PAWPAW; ROYAL FALSE PAWPAW; WHITE SQUIRREL-BANANA,ANNONACEAE,Y,Y,Endangered-State,Endangered-US,,FAC,N,Y
+1258,Asimina reticulata,Shuttlew. ex Chapm.,,NETTED PAWPAW,ANNONACEAE,Y,N,,,,FACU,N,Y
+1229,Asimina tetramera,Small,,FOURPETAL PAWPAW,ANNONACEAE,Y,Y,Endangered-State,Endangered-US,,,N,Y
+3381,Asplenium abscissum,Willd.,,CUTLEAF SPLEENWORT,ASPLENIACEAE,Y,N,,,,FACW,N,Y
+2799,Asplenium auritum,Sw.,,EARED SPLEENWORT; AURICLED SPLEENWORT,ASPLENIACEAE,Y,N,Endangered-State,,,,N,Y
+2716,Asplenium dentatum,L.,,TOOTHED SPLEENWORT; SLENDER SPLEENWORT,ASPLENIACEAE,Y,N,Endangered-State,,,FACU,N,Y
+3599,Asplenium platyneuron,(L.)Britton et al.,,EBONY SPLEENWORT,ASPLENIACEAE,Y,N,,,,FACU,N,Y
+3650,Asplenium serratum,L.,,WILD BIRDNEST FERN; BIRD'S-NEST SPLEENWORT,ASPLENIACEAE,Y,N,Endangered-State,,,,N,Y
+2482,Asplenium verecundum,Chapm. ex Underw.,,MODEST SPLEENWORT; DELICATE SPLEENWORT,ASPLENIACEAE,Y,N,Endangered-State,,,,N,Y
+1111,Asplenium x biscaynianum,(D.C.Eaton)A.A.Eaton,,BISCAYNE SPLEENWORT,ASPLENIACEAE,Y,Y,,,,,N,Y
+2909,Astraea lobata,(L.)Klotzsch,,LOBED CROTON,EUPHORBIACEAE,Y,N,,,,UPL,N,Y
+3712,Atriplex pentandra,(Jacq.)Standl.,,CRESTED SALTBUSH,AMARANTHACEAE,Y,N,,,,FAC,N,Y
+842,Aureolaria pectinata,(Nutt.)Pennell,,FERNLEAF YELLOW FALSE FOXGLOVE,OROBANCHACEAE,Y,N,,,,,N,Y
+736,Avicennia germinans,(L.)L.,,BLACK MANGROVE,ACANTHACEAE,Y,N,,,OBL,OBL,N,Y
+2847,Axonopus compressus,(Sw.)P.Beauv.,,TROPICAL CARPETGRASS; BROADLEAF CARPETGRASS,POACEAE,Y,N,,,FAC,FAC,N,Y
+2188,Axonopus fissifolius,(Raddi)Kuhlm.,,COMMON CARPETGRASS,POACEAE,Y,N,,,FAC,FACW,N,Y
+2068,Axonopus furcatus,(Flüggé)Hitchc.,,BIG CARPETGRASS,POACEAE,Y,N,,,FAC,OBL,N,Y
+2236,Ayenia euphrasiifolia,Griseb.,,EYEBRIGHT AYENIA,MALVACEAE,Y,N,,,,,N,Y
+2220,Azolla filiculoides,Lam.,,AMERICAN WATERFERN; PACIFIC MOSQUITOFERN,AZOLLACEAE,Y,N,,,,OBL,N,Y
+2031,Baccharis angustifolia,Michx.,,SALTWATER FALSEWILLOW,ASTERACEAE,Y,N,,,OBL,FACW,N,Y
+2945,Baccharis dioica,Vahl,,BROOMBUSH FALSEWILLOW,ASTERACEAE,Y,N,Endangered-State,,FAC,FAC,N,Y
+1033,Baccharis glomeruliflora,Pers.,,SILVERLING,ASTERACEAE,Y,N,,,FAC,FACW,N,Y
+3484,Baccharis halimifolia,L.,,GROUNDSEL TREE; SEA MYRTLE,ASTERACEAE,Y,N,,,FAC,FAC,N,Y
+3118,Bacopa caroliniana,(Walter)B.L.Rob.,,LEMON BACOPA; BLUE WATERHYSSOP,PLANTAGINACEAE,Y,N,,,OBL,OBL,N,Y
+599,Bacopa innominata,(M.Gómez)Alain,,TROPICAL WATERHYSSOP,PLANTAGINACEAE,Y,N,,,OBL,OBL,N,Y
+3764,Bacopa monnieri,(L.)Pennell,,HERB-OF-GRACE,PLANTAGINACEAE,Y,N,,,OBL,OBL,N,Y
+2093,Balduina angustifolia,(Pursh)B.L.Rob.,,COASTALPLAIN HONEYCOMBHEAD,ASTERACEAE,Y,N,,,,,N,Y
+2668,Baptisia lecontei,Torr. & A.Gray,,PINELAND WILD INDIGO,FABACEAE,Y,N,,,,,N,Y
+4612,Barbula indica var. indica,(Hook.) Spreng.,,,POTTIACEAE,Y,,,,,,,N
+840,Bartonia verna,(Michx.)Raf. ex Barton,,WHITE SCREWSTEM,GENTIANACEAE,Y,N,,,FACW,OBL,N,Y
+3541,Bartonia virginica,(L.)Britton et al.,,YELLOW SCREWSTEM,GENTIANACEAE,Y,N,,,FACW,FACW,N,Y
+2387,Basiphyllaea corallicola,(Small)Ames,,CARTER'S ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+2771,Batis maritima,L.,,SALTWORT; TURTLEWEED,BATACEAE,Y,N,,,OBL,OBL,N,Y
+2335,Bejaria racemosa,Vent.,,TARFLOWER,ERICACEAE,Y,N,,,,FAC,N,Y
+1370,Beloglottis costaricensis,(Rchb.f.) Schltr.,,COSTA RICAN LADIESTRESSES,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+3800,Berchemia scandens,(Hill)K.Koch,,ALABAMA SUPPLEJACK; RATTAN VINE,RHAMNACEAE,Y,N,,,,FAC,N,Y
+17,Berlandiera subacaulis,(Nutt.)Nutt.,,FLORIDA GREENEYES,ASTERACEAE,Y,Y,,,,,N,Y
+3425,Bidens bipinnata,L.,,SPANISH NEEDLES,ASTERACEAE,Y,N,,,,FAC,N,Y
+4084,Bidens laevis,(L.)Britton et al.,,BURMARIGOLD; SMOOTH BEGGARTICKS,ASTERACEAE,Y,N,,,OBL,OBL,N,Y
+3097,Bidens mitis,(Michx.)Sherff,,SMALLFRUIT BEGGARTICKS,ASTERACEAE,Y,N,,,OBL,OBL,N,Y
+1207,Bigelowia nudata subsp. australis,(Michx.)DC.,L.C.Anderson,PINELAND RAYLESS GOLDENROD,ASTERACEAE,Y,Y,,,,,N,Y
+1011,Blechnum occidentale var. minor,L.,Hook.,HAMMOCK FERN; SINKHOLE FERN,BLECHNACEAE,Y,N,Endangered-State,,,FAC,N,Y
+2709,Bletia patula,Graham,,FLOR DE PASMO,ORCHIDACEAE,Y,N,,,,,N,Y
+951,Bletia purpurea,(Lam.)DC.,,PINEPINK,ORCHIDACEAE,Y,N,Threatened-State,,,FAC,N,Y
+3820,Boehmeria cylindrica,(L.)Sw.,,FALSE NETTLE; BOG HEMP,URTICACEAE,Y,N,,,OBL,FACW,N,Y
+3927,Boerhavia diffusa,L.,,RED SPIDERLING; WINEFLOWER,NYCTAGINACEAE,Y,N,,,,,N,Y
+2922,Boerhavia erecta,L.,,ERECT SPIDERLING,NYCTAGINACEAE,Y,N,,,,UPL,N,Y
+2111,Bolboschoenus robustus,(Pursh)Soják,,SALTMARSH BULRUSH,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2616,Boltonia diffusa,Elliott,,SMALLHEAD DOLL'S DAISY,ASTERACEAE,Y,N,,,FACW,FAC,N,Y
+3078,Borreria remota,(Lam.)Bacigalupo & E.L.Cabral,,WOODLAND FALSE BUTTONWEED,RUBIACEAE,Y,N,,,,UPL,N,Y
+5020,Borreria terminalis,Small,,EVERGLADES KEY FALSE BUTTONWEED,RUBIACEAE,Y,Y,,,,,N,Y
+895,Borrichia arborescens,(L.)DC.,,TREE SEASIDE OXEYE,ASTERACEAE,Y,N,,,OBL,FACW,N,Y
+926,Borrichia frutescens,(L.)DC.,,BUSHY SEASIDE OXEYE,ASTERACEAE,Y,N,,,OBL,OBL,N,Y
+605,Borrichia x cubana,Britton & S.F.Blake,,,ASTERACEAE,Y,N,,,OBL,FACW,N,Y
+3305,Botrychium biternatum,(Savigny)Underw.,,SOUTHERN GRAPE-FERN,OPHIOGLOSSACEAE,Y,N,,,,FAC,N,Y
+607,Bourreria cassinifolia,(A.Rich.)Griseb.,,SMOOTH STRONGBARK; LITTLE STRONGBARK,BORAGINACEAE,Y,N,Endangered-State,,,,N,Y
+934,Bourreria radula,(Poir.)G.Don,,ROUGH STRONGBARK,BORAGINACEAE,Y,N,Endangered-State,,,,N,Y
+3567,Bourreria succulenta,Jacq.,,BAHAMA STRONGBARK; BODYWOOD,BORAGINACEAE,Y,N,Endangered-State,,,,N,Y
+768,Bouteloua hirsuta,Lag.,,HAIRY GRAMMA,POACEAE,Y,N,,,,,N,Y
+4482,Brachymenium macrocarpum,Cardot,,,BRYACEAE,Y,,,,,,,N
+3970,Brasenia schreberi,J.F.Gmel.,,WATERSHIELD,CABOMBACEAE,Y,N,,,,OBL,N,Y
+3728,Brassia caudata,(L.)Lindl.,,SPIDER ORCHID; CRICKET ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+1135,Brickellia mosieri,(Small)Shinners,,MOSIER'S FALSE BONESET; BRICKELLBUSH,ASTERACEAE,Y,Y,Endangered-State,Endangered-US,,,N,Y
+4483,Bryum argenteum,Hedw.,,,BRYACEAE,Y,,,,,,,N
+3498,Buchnera americana,L.,,AMERICAN BLUEHEARTS,OROBANCHACEAE,Y,N,,,,FAC,N,Y
+2232,Bulbophyllum pinelianum,(A.Rich.)Ormerod,,RATTAIL ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,N
+3219,Bulbostylis ciliatifolia,(Elliott)Fernald,,CAPILLARY HAIRSEDGE,CYPERACEAE,Y,N,,,,FAC,N,Y
+823,Bulbostylis stenophylla,(Elliott)C.B.Clarke,,SANDYFIELD HAIRSEDGE,CYPERACEAE,Y,N,,,,FACU,N,Y
+649,Bulbostylis warei,(Torr.)C.B.Clarke,,WARE'S HAIRSEDGE,CYPERACEAE,Y,N,,,,FACU,N,Y
+3509,Burmannia biflora,L.,,BLUETHREAD,BURMANNIACEAE,Y,N,,,OBL,OBL,N,Y
+820,Burmannia capitata,(J.F.Gmel.)Mart.,,SOUTHERN BLUETHREAD,BURMANNIACEAE,Y,N,,,OBL,OBL,N,Y
+587,Burmannia flava,Mart.,,FAKAHATCHEE BLUETHREAD; FAKAHATCHEE BURMANNNIA,BURMANNIACEAE,Y,N,Endangered-State,,OBL,OBL,N,Y
+727,Bursera simaruba,(L.) Sarg.,,GUMBO LIMBO,BURSERACEAE,Y,N,,,,,N,Y
+2263,Byrsonima lucida,(Mill.) DC.,,LONG KEY LOCUSTBERRY,MALPIGHIACEAE,Y,N,Threatened-State,,FAC,,N,Y
+3849,Cabomba caroliniana,A.Gray,,CAROLINA FANWORT,CABOMBACEAE,Y,N,,,,OBL,N,Y
+2036,Cakile lanceolata,(Willd.)O.E.Schulz,,COASTAL SEAROCKET,BRASSICACEAE,Y,N,,,,FACU,N,Y
+2517,Calamintha ashei,(Weath.)Shinners,,ASHE'S CALAMINT; ASHE'S CALAMINTHA,LAMIACEAE,Y,N,Threatened-State,,,,N,Y
+3546,Callicarpa americana,L.,,AMERICAN BEAUTYBERRY,LAMIACEAE,Y,N,,,,FACU,N,Y
+4602,Callicostella pallida,(Hornsch.) Ångstr.,,,PILOTRICHACEAE,Y,,,,,,,N
+4568,Calliergonella lindbergii,(Mitt.)Hedenäs,,,HYPNACEAE,Y,,,,,,,N
+2837,Callisia cordifolia,(Sw.)E.S.Anderson & Woodson,,FLORIDA ROSELING,COMMELINACEAE,Y,N,,,,,N,Y
+1171,Callisia ornata,(Small)G.C.Tucker,,FLORIDA SCRUB ROSELING,COMMELINACEAE,Y,Y,,,,,N,Y
+564,Callitriche peploides,Nutt.,,MATTED WATERSTARWORT,PLANTAGINACEAE,Y,N,,,OBL,OBL,N,Y
+3120,Calopogon barbatus,(Walter)Ames,,BEARDED GRASSPINK,ORCHIDACEAE,Y,N,,,FACW,FACW,N,Y
+2580,Calopogon multiflorus,Lindl.,,MANYFLOWERED GRASSPINK,ORCHIDACEAE,Y,N,Threatened-State,,FACW,FACW,N,Y
+2350,Calopogon pallidus,Chapm.,,PALE GRASSPINK,ORCHIDACEAE,Y,N,,,FACW,OBL,N,Y
+4106,Calopogon tuberosus var. simpsonii,(L.)Britton et al.,(Small)Magrath,SIMPSON'S GRASSPINK,ORCHIDACEAE,Y,N,,,FACW,OBL,N,Y
+3545,Calopogon tuberosus var. tuberosus,(L.)Britton et al.,,TUBEROUS GRASSPINK,ORCHIDACEAE,Y,N,,,FACW,OBL,N,Y
+4493,Calymperes  tenerum,Müll. Hal.,,,CALYMPERACEAE,Y,,,,,,,N
+4489,Calymperes afzelii,Sw.,,,CALYMPERACEAE,Y,,,,,,,N
+4490,Calymperes erosum,Müll. Hal.,,,CALYMPERACEAE,Y,,,,,,,N
+4491,Calymperes palisotii,Schwaegr.,,,CALYMPERACEAE,Y,,,,,,,N
+4492,Calymperes pallidum,Mitt.,,,CALYMPERACEAE,Y,,,,,,,N
+2195,Calystegia sepium subsp. limnophila,(L.)R.Br.,(Greene)Brummitt,HEDGE FALSE BINDWEED,CONVOLVULACEAE,Y,N,,,,FAC,N,Y
+1068,Campanula floridana,S.Watson ex A.Gray,,FLORIDA BELLFLOWER,CAMPANULACEAE,Y,Y,,,OBL,OBL,N,Y
+925,Campsis radicans,(L.)Seem.,,TRUMPET CREEPER,BIGNONIACEAE,Y,N,,,,FAC,N,Y
+2268,Campylocentrum pachyrrhizum,(Rchb.f.)Rolfe,,LEAFLESS BENTSPUR ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+2846,Campyloneurum angustifolium,(Sw.)Fée,,NARROW STRAP FERN; NARROW SWAMP FERN,POLYPODIACEAE,Y,N,Endangered-State,,,UPL,N,Y
+2246,Campyloneurum costatum,(Kunze)C.Presl,,TAILED STRAP FERN,POLYPODIACEAE,Y,N,Endangered-State,,,FAC,N,Y
+3649,Campyloneurum phyllitidis,(L.)C.Presl,,LONG STRAP FERN,POLYPODIACEAE,Y,N,,,,UPL,N,Y
+4505,Campylopus angustiretis,(Austin) Lesq. & James,,,DICRANACEAE,Y,,,,,,,N
+4509,Campylopus surinamensis,Müll. Hal.,,,DICRANACEAE,Y,,,,,,,N
+2757,Canavalia rosea,(Sw.)DC.,,BAYBEAN; SEASIDE JACKBEAN,FABACEAE,Y,N,,,,FAC,N,Y
+945,Canella winterana,(L.)Gaertn.,,PEPPER CINNAMON; CINNAMON BARK; WILD CINNAMON,CANELLACEAE,Y,N,Endangered-State,,,,N,Y
+987,Canna flaccida,Salisb.,,BANDANNA-OF-THE-EVERGLADES,CANNACEAE,Y,N,,,OBL,OBL,N,Y
+931,Caperonia castaneifolia,(L.)A.St.-Hil.,,CHESTNUTLEAF FALSECROTON,EUPHORBIACEAE,Y,N,,,FACW,FACW,N,Y
+2292,Capraria biflora,L.,,GOATWEED,SCROPHULARIACEAE,Y,N,,,,FACW,N,Y
+2927,Capsicum annuum var. glabriusculum,L.,(Dunal)Heiser & Pickersgill,BIRD PEPPER,SOLANACEAE,Y,N,,,,,N,Y
+3958,Capsicum frutescens,L.,,TABASCO PEPPER,SOLANACEAE,Y,N,,,,,N,Y
+3038,Cardamine pensylvanica,Muhl. ex Willd.,,PENNSYLVANIA BITTERCRESS,BRASSICACEAE,Y,N,,,OBL,FACW,N,Y
+2183,Cardiospermum corindum,L.,,FAUX PERSIL,SAPINDACEAE,Y,N,,,,,N,Y
+3374,Cardiospermum microcarpum,Kunth,,HEARTSEED,SAPINDACEAE,Y,N,,,,FAC,N,Y
+797,Carex comosa,Boott,,LONGHAIR SEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+526,Carex gigantea,Rudge,,GIANT SEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+4077,Carex godfreyi,Naczi,,GODFREY'S SEDGE,CYPERACEAE,Y,N,,,,,N,Y
+2951,Carex longii,Mack.,,LONG'S SEDGE,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+2966,Carex lupuliformis,Sartw. ex Dewey,,FALSE HOP SEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+3037,Carex stipata,Muhl. ex Willd.,,AWLFRUIT SEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2084,Carex verrucosa,Muhl.,,WARTY SEDGE,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+1153,Carex vexans,F.J.Herm.,,FLORIDA HAMMOCK SEDGE,CYPERACEAE,Y,Y,,,FACW,,N,Y
+1699,Carica papaya,L.,,PAPAYA,CARICACEAE,Y,N,,,,UPL,N,Y
+1169,Carphephorus carnosus,(Small)C.W.James,,PINELAND CHAFFHEAD,ASTERACEAE,Y,Y,,,FACW,FACW+,N,Y
+2091,Carphephorus corymbosus,(Nutt.)Torr. & A.Gray,,COASTALPLAIN CHAFFHEAD; FLORIDA PAINTBRUSH,ASTERACEAE,Y,N,,,,FACU,N,Y
+4081,Carphephorus odoratissimus var. subtropicanus,(J.F.Gmel.)H.Hebert,(DeLaney et al.)Wunderlin & B.F.Hansen,PINELAND PURPLE; FALSE VANILLALEAF,ASTERACEAE,Y,Y,,,,FACW,N,Y
+3093,Carphephorus paniculatus,(J.F.Gmel.)H.Hebert,,HAIRY CHAFFHEAD,ASTERACEAE,Y,N,,,FAC,FACW,N,Y
+5,Cartrema floridanum,(Chapm.) G.L.Nesom,,SCRUB WILD OLIVE,OLEACEAE,Y,Y,,,,,N,Y
+3755,Carya aquatica,(F.Michx.)Nutt.,,WATER HICKORY,JUGLANDACEAE,Y,N,,,OBL,OBL,N,Y
+1263,Carya floridana,Sarg.,,SCRUB HICKORY,JUGLANDACEAE,Y,Y,,,,,N,Y
+944,Carya glabra,(Mill.)Sweet,,PIGNUT HICKORY,JUGLANDACEAE,Y,N,,,,FACU,N,Y
+3735,Casasia clusiifolia,(Jacq.)Urb.,,SEVENYEAR APPLE,RUBIACEAE,Y,N,,,,FAC,N,Y
+2746,Cassytha filiformis,L.,,LOVE VINE; DEVIL'S GUT,LAURACEAE,Y,N,,,,FAC,N,Y
+2773,Catesbaea parviflora,Sw.,,SMALLFLOWER LILYTHORN; DUNE LILYTHORN,RUBIACEAE,Y,N,Endangered-State,,,,N,Y
+2299,Catopsis berteroana,(Schult. & Schult.f.)Mez,,POWDERY STRAP AIRPLANT,BROMELIACEAE,Y,N,Endangered-State,,,,N,N
+2898,Catopsis floribunda,L.B.Sm.,,FLORIDA STRAP AIRPLANT; MANY-FLOWERED AIRPLANT,BROMELIACEAE,Y,N,Endangered-State,,,,N,Y
+2850,Catopsis nutans,(Sw.)Griseb.,,NODDING STRAP AIRPLANT; NODDING CATOPSIS,BROMELIACEAE,Y,N,Endangered-State,,,,N,Y
+4730,Caudalejeunea lehmanniana,(Gottsche) A. Evans,,,LEJEUNEACEAE,Y,,,,,,,N
+3586,Cayaponia americana,(Lam.)Cogn.,,AMERICAN MELONLEAF,CUCURBITACEAE,Y,N,,,,FAC,N,Y
+2114,Celosia nitida,Vahl,,WEST INDIAN COCK'S COMB,AMARANTHACEAE,Y,N,Endangered-State,,,,N,Y
+3661,Celtis iguanaea,(Jacq.) Sarg.,,IGUANA HACKBERRY,CANNABACEAE,Y,N,Endangered-State,,,,N,Y
+2866,Celtis laevigata,Willd.,,SUGARBERRY; HACKBERRY,CANNABACEAE,Y,N,,,FACW,FACW,N,Y
+3947,Celtis pallida,Torr.,,SPINY HACKBERRY; DESERT HACKBERRY,CANNABACEAE,Y,N,Endangered-State,,,,N,Y
+570,Cenchrus brownii,Roem. & Schult.,,SLIMBRISTLE SANDBUR,POACEAE,Y,N,,,,FACU,N,Y
+3678,Cenchrus echinatus,L.,,SOUTHERN SANDBUR,POACEAE,Y,N,,,,UPL,N,Y
+2501,Cenchrus gracillimus,Nash,,SLENDER SANDBUR,POACEAE,Y,N,,,,,N,Y
+2244,Cenchrus myosuroides,Kunth,,BIG SANDBUR,POACEAE,Y,N,,,,FACU,N,Y
+782,Cenchrus spinifex,Cav.,,COASTAL SANDBUR,POACEAE,Y,N,,,,FACU,N,Y
+3523,Cenchrus tribuloides,L.,,SANDDUNE SANDBUR,POACEAE,Y,N,,,,FACU,N,Y
+709,Centella asiatica,(L.)Urb.,,SPADELEAF,APIACEAE,Y,N,,,FACW,FACW,N,Y
+889,Centrosema virginianum,(L.)Benth.,,SPURRED BUTTERFLY PEA,FABACEAE,Y,N,,,,,N,Y
+3610,Cephalanthus occidentalis,L.,,COMMON BUTTONBUSH,RUBIACEAE,Y,N,,,OBL,OBL,N,Y
+4690,Cephalozia connivens var. connivens,(Dicks.) Lindb.,,,CEPHALOZIACEAE,Y,,,,,,,N
+2095,Ceratiola ericoides,Michx.,,FLORIDA ROSEMARY; SAND HEATH,ERICACEAE,Y,N,,,,,N,Y
+4734,Ceratolejeunea ceratantha,(Nees & Mont.)Schiffner,,,LEJEUNEACEAE,Y,,,,,,,N
+4731,Ceratolejeunea cubensis,(Mont.) Schiffn.,,,LEJEUNEACEAE,Y,,,,,,,N
+4733,Ceratolejeunea laetefusca,(Austin) R.M. Schust.,,,LEJEUNEACEAE,Y,,,,,,,N
+1303,Ceratophyllum australe,Griseb.,,PRICKLY HORNWORT,CERATOPHYLLACEAE,Y,N,,,,OBL,N,Y
+2281,Ceratophyllum demersum,L.,,COONTAIL,CERATOPHYLLACEAE,Y,N,,,,OBL,N,Y
+775,Ceratophyllum echinatum,A.Gray,,SPINY HORNWORT,CERATOPHYLLACEAE,Y,N,,,,OBL,N,Y
+2712,Ceratopteris pteridoides,(Hook.)Hieron.,,WATER HORN FERN,PTERIDACEAE,Y,N,,,,OBL,N,Y
+847,Chaerophyllum tainturieri,Hook.,,HAIRYFRUIT CHERVIL,APIACEAE,Y,N,,,,FAC,N,Y
+4887,Chamaecrista deeringiana,Small & Pennell,,,FABACEAE,Y,N,,,,,,Y
+3026,Chamaecrista fasciculata,(Michx.)Greene,,PARTRIDGE PEA,FABACEAE,Y,N,,,,FACU,N,Y
+1231,Chamaecrista lineata var. keyensis,(Sw.)Greene,(Pennell)H.S.Irwin & Barneby,NARROWPOD SENSITIVE PEA; KEY CASSIA,FABACEAE,Y,Y,Endangered-State,Endangered-US,,,N,Y
+3223,Chamaecrista nictitans var. aspera,(L.)Moench,(Muhl. ex Elliott)H.S.Irwin & Barneby,SENSITIVE PEA,FABACEAE,Y,N,,,,FACU,N,Y
+3485,Chamaecrista nictitans var. nictitans,(L.)Moench,,SENSITIVE PEA,FABACEAE,Y,N,,,,FACU,N,Y
+1071,Chapmannia floridana,Torr. & A.Gray,,FLORIDA ALICIA,FABACEAE,Y,Y,,,,,N,Y
+738,Chaptalia albicans,(Sw.)Vent. ex B.D.Jacks.,,WHITE SUNBONNETS,ASTERACEAE,Y,N,Threatened-State,,,,N,Y
+825,Chaptalia tomentosa,Vent.,,WOOLLY SUNBONNETS; PINELAND DAISY,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+3533,Chasmanthium laxum,(L.)H.O.Yates,,SLENDER WOODOATS,POACEAE,Y,N,,,FACW,FACW,N,Y
+2625,Chasmanthium nitidum,(Baldwin)H.O.Yates,,SHINY WOODOATS,POACEAE,Y,N,,,FACW,FACW,N,Y
+4735,Cheilolejeunea adnata,(Kunze ex Lehm.) Grolle,,,LEJEUNEACEAE,Y,,,,,,,N
+4736,Cheilolejeunea clausa,(Nees & Mont.) R.M. Schust.,,,LEJEUNEACEAE,Y,,,,,,,N
+4739,Cheilolejeunea polyantha var. caduciloba,A. Evans,R.M. Schust.,,LEJEUNEACEAE,Y,,,,,,,N
+4738,Cheilolejeunea polyantha var. polyantha,A. Evans,,,LEJEUNEACEAE,Y,Y,,,,,,N
+4740,Cheilolejeunea rigidula,(Nees & Mont.) R.M. Schust.,,,LEJEUNEACEAE,Y,,,,,,,N
+4741,Cheilolejeunea trifaria,(Reinw. et al.) Mizut.,,,LEJEUNEACEAE,Y,,,,,,,N
+2910,Chenopodium berlandieri,Moq.,,PITSEED GOOSEFOOT,AMARANTHACEAE,Y,N,,,,,N,Y
+4723,Chiloscyphus martianus,(Nees) J.J. Engel & R.M. Schust.,,,GEOCALYCACEAE,Y,,,,,,,N
+948,Chiococca alba,(L.)Hitchc.,,SNOWBERRY; MILKBERRY,RUBIACEAE,Y,N,,,FAC,,N,Y
+4992,Chiococca parvifolia,Wullschl. ex Griseb.,,SMALL-LEAF MILKBERRY,RUBIACEAE,Y,N,,,,,N,Y
+4993,Chiococca pinetorum,Britton ex Millsp.,,PINELAND MILKBERRY,RUBIACEAE,Y,N,,,,,N,Y
+1159,Chionanthus pygmaeus,Small,,PIGMY FRINGETREE,OLEACEAE,Y,Y,Endangered-State,Endangered-US,,,N,Y
+1236,Chromolaena frustrata,(B.L.Rob.)R.M.King & H.Rob.,,CAPE SABLE THOROUGHWORT,ASTERACEAE,Y,Y,Endangered-State,Endangered-US,,,N,Y
+2785,Chromolaena odorata,(L.)R.M.King & H.Rob.,,JACK-IN-THE-BUSH,ASTERACEAE,Y,N,,,,FAC,N,Y
+4577,Chryso-hypnum diminutivum,(Hampe) W. R. Buck,,,HYPNACEAE,Y,,,,,,,N
+2765,Chrysobalanus icaco,L.,,COCO PLUM,CHRYSOBALANACEAE,Y,N,,,FACW,FACW,N,Y
+3582,Chrysophyllum oliviforme,L.,,SATINLEAF,SAPOTACEAE,Y,N,Threatened-State,,,,N,Y
+2416,Chrysopogon pauciflorus,(Chapm.)Benth. ex Vasey,,FLORIDA FALSE BEARDGRASS,POACEAE,Y,N,,,,FACU,N,Y
+4186,Chrysopsis delaneyi,Wunderlin & Semple,,DELANEY'S GOLDENASTER,ASTERACEAE,Y,Y,,,,,N,Y
+4161,Chrysopsis highlandsensis,DeLaney & Wunderlin,,HIGHLANDS GOLDENASTER,ASTERACEAE,Y,Y,Endangered-State,,,,N,Y
+1082,Chrysopsis linearifolia subsp. dressii,Semple,Semple,DRESS' GOLDENASTER,ASTERACEAE,Y,Y,,,,,N,Y
+3697,Chrysopsis mariana,(L.)Elliott,,MARYLAND GOLDENASTER,ASTERACEAE,Y,N,,,,UPL,N,Y
+2582,Chrysopsis scabrella,Torr. & A.Gray,,COASTALPLAIN GOLDENASTER,ASTERACEAE,Y,N,,,,,N,Y
+1165,Chrysopsis subulata,Small,,SCRUBLAND GOLDENASTER,ASTERACEAE,Y,Y,,,,,N,Y
+3687,Cicuta maculata,L.,,SPOTTED WATER HEMLOCK,APIACEAE,Y,N,,,OBL,OBL,N,Y
+770,Cienfuegosia yucatanensis,Millsp.,,YUCATAN FLYMALLOW; YELLOW HIBISCUS,MALVACEAE,Y,N,Endangered-State,,,,N,Y
+3210,Cirsium horridulum,Michx.,,PURPLE THISTLE; HORRID THISTLE,ASTERACEAE,Y,N,,,,FAC,N,Y
+1018,Cirsium nuttallii,DC.,,NUTTALL'S THISTLE,ASTERACEAE,Y,N,,,FACW,FAC,N,Y
+3652,Cissampelos pareira,L.,,PEREIRA BRAVA,MENISPERMACEAE,Y,N,Endangered-State,,,,N,Y
+2798,Cissus trifoliata,(L.)L.,,SORRELVINE; MARINEVINE,VITACEAE,Y,N,,,,UPL,N,Y
+2791,Cissus verticillata,(L.)Nicolson & C.E.Jarvis,,SEASONVINE; POSSUM GRAPE,VITACEAE,Y,N,,,,FAC,N,Y
+2182,Citharexylum spinosum,L.,,FLORIDA FIDDLEWOOD,VERBENACEAE,Y,N,,,,FACU,N,Y
+2796,Cladium jamaicense,Crantz,,JAMAICA SWAMP SAWGRASS,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+4471,Clasmatodon parvulus,(Hampe) Sull.,,,BRACHYTHECIACEAE,Y,,,,,,,N
+1179,Clematis baldwinii,Torr. & A.Gray,,PINE-HYACINTH,RANUNCULACEAE,Y,Y,,,,FACW,N,Y
+3953,Clematis crispa,L.,,SWAMP LEATHER-FLOWER,RANUNCULACEAE,Y,N,,,,FACW,N,Y
+3174,Clematis reticulata,Walter,,NETLEAF LEATHER-FLOWER,RANUNCULACEAE,Y,N,,,,,N,Y
+4500,Climacium americanum,Brid.,,,CLIMACIACEAE,Y,,,,,,,N
+3353,Clinopodium brownei,(Sw.)Kuntze,,BROWNE'S SAVORY,LAMIACEAE,Y,N,,,OBL,OBL,N,Y
+3832,Clitoria mariana,L.,,ATLANTIC PIGEONWINGS,FABACEAE,Y,N,,,,FACU,N,Y
+2180,Clusia rosea,Jacq.,,PITCHAPPLE; SCOTCH ATTORNEY,CLUSIACEAE,Y,N,,,,FAC,N,Y
+4043,Cnidoscolus stimulosus,(Michx.)Engelm. & A.Gray,,TREAD-SOFTLY; FINGER-ROT,EUPHORBIACEAE,Y,N,,,,,N,Y
+3579,Coccoloba diversifolia,Jacq.,,TIETONGUE; PIGEON PLUM,POLYGONACEAE,Y,N,,,,,N,Y
+3791,Coccoloba uvifera,(L.)L.,,SEAGRAPE,POLYGONACEAE,Y,N,,,,FACU,N,Y
+4957,Coccoloba x hybrida,Castañeda-Noa,,,POLYGONACEAE,Y,N,,,,,N,Y
+2170,Coccothrinax argentata,(Jacq.)L.H.Bailey,,FLORIDA SILVER PALM,ARECACEAE,Y,N,Threatened-State,,,,N,Y
+2585,Coelorachis cylindrica,(Michx.)Nash,,CAROLINA JOINTTAILGRASS,POACEAE,Y,N,,,FAC,FAC,N,Y
+2598,Coelorachis rugosa,(Nutt.)Nash,,WRINKLED JOINTTAILGRASS,POACEAE,Y,N,,,FACW,OBL,N,Y
+2498,Coelorachis tuberculosa,(Nash)Nash,,FLORIDA JOINTTAILGRASS; PIEDMONT JOINTGRASS,POACEAE,Y,N,Threatened-State,,FACW,OBL,N,Y
+1172,Coleataenia abscissa,(Swallen)LeBlond,,CUTTHROATGRASS,POACEAE,Y,Y,Endangered-State,,FACW,FACW,N,Y
+3683,Coleataenia anceps,(Michx.)Soreng,,BEAKED PANICUM,POACEAE,Y,N,,,FAC,FAC,N,Y
+2955,Coleataenia longifolia,(Torr.)Soreng,,CILIATE REDTOP PANICUM,POACEAE,Y,N,,,OBL,OBL,N,Y
+915,Coleataenia rigidula,(Bosc ex Nees)LeBlond,,REDTOP PANICUM,POACEAE,Y,N,,,FACW,FACW,N,Y
+697,Coleataenia tenera,(Beyrich ex Trin.)Soreng,,BLUEJOINT PANICUM,POACEAE,Y,N,,,OBL,FACW,N,Y
+4742,Cololejeunea cardiocarpa,(Mont.) Steph.,,,LEJEUNEACEAE,Y,,,,,,,N
+4743,Cololejeunea clavatopapillata,Steph.,,,LEJEUNEACEAE,Y,,,,,,,N
+4744,Cololejeunea contractiloba,A. Evans,,,LEJEUNEACEAE,Y,,,,,,,N
+4745,Cololejeunea cornutissima,(R.M. Schust.) Stotler & Crand.-Stotl.,,,LEJEUNEACEAE,Y,Y,,,,,,N
+4746,Cololejeunea diaphana,A. Evans,,,LEJEUNEACEAE,Y,,,,,,,N
+4748,Cololejeunea minutissima subsp. minutissima,(Sm.) Schiffn.,,,LEJEUNEACEAE,Y,,,,,,,N
+4749,Cololejeunea minutissima subsp. myriocarpa,(Sm.) Schiffn.,(Nees & Mont.) R.M. Schust.,,LEJEUNEACEAE,Y,,,,,,,N
+4753,Cololejeunea sintenisii,(Steph.) Pócs,,,LEJEUNEACEAE,Y,,,,,,,N
+4754,Cololejeunea subcristata,A. Evans,,,LEJEUNEACEAE,Y,N,,,,,,N
+580,Colubrina arborescens,(Mill.)Sarg.,,GREENHEART,RHAMNACEAE,Y,N,Endangered-State,,,UPL,N,Y
+2394,Colubrina cubensis var. floridana,(Jacq.)Brongn.,M.C.Johnst.,CUBAN NAKEDWOOD,RHAMNACEAE,Y,N,Endangered-State,,,,N,Y
+2839,Colubrina elliptica,(Sw.)Brizicky & W.L.Stern,,SOLDIERWOOD,RHAMNACEAE,Y,N,Endangered-State,,,,N,Y
+1246,Commelina diffusa var. gigas,Burm.f.,(Small)Faden,CLIMBING DAYFLOWER,COMMELINACEAE,Y,Y,,,FACW,FACW,N,Y
+3460,Commelina erecta,L.,,WHITEMOUTH DAYFLOWER,COMMELINACEAE,Y,N,,,,FACU,N,Y
+2807,Conocarpus erectus,L.,,BUTTONWOOD,COMBRETACEAE,Y,N,,,FACW,FACW,N,Y
+935,Conoclinium coelestinum,(L.)DC.,,BLUE MISTFLOWER,ASTERACEAE,Y,N,,,FAC,FAC,N,Y
+1186,Conradina grandiflora,Small,,LARGEFLOWER FALSE ROSEMARY,LAMIACEAE,Y,Y,Threatened-State,,,,N,Y
+8,Consolea corallicola,Small,,SEMAPHORE PRICKLYPEAR; SEMAPHORE CACTUS,CACTACEAE,Y,Y,Endangered-State,Endangered-US,,,N,Y
+2029,Corchorus hirtus,L.,,RED JUTE,MALVACEAE,Y,N,,,,,N,Y
+2772,Corchorus siliquosus,L.,,SLIPPERY BURR,MALVACEAE,Y,N,,,,FAC,N,Y
+1137,Coreopsis floridana,E.B.Smith,,FLORIDA TICKSEED,ASTERACEAE,Y,Y,,,FACW,OBL,N,Y
+1180,Coreopsis leavenworthii,Torr. & A.Gray,,LEAVENWORTH'S TICKSEED,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+1039,Cornus foemina,Mill.,,SWAMP DOGWOOD; STIFF DOGWOOD,CORNACEAE,Y,N,,,FACW,FACW,N,Y
+4004,Cranichis muscosa,Sw.,,CYPRESSKNEE HELMET ORCHID; MOSS ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,UPL,N,Y
+2976,Crataegus michauxii,Pers.,,MICHAUX'S HAWTHORN,ROSACEAE,Y,N,,,,,N,Y
+2282,Crinum americanum,L.,,SEVEN-SISTERS; STRING-LILY,AMARYLLIDACEAE,Y,N,,,OBL,OBL,N,Y
+2072,Crocanthemum corymbosum,(Michx.)Britton,,PINEBARREN FROSTWEED,CISTACEAE,Y,N,,,,,N,Y
+1202,Crocanthemum nashii,(Britton)Barnhart,,FLORIDA SCRUB FROSTWEED,CISTACEAE,Y,N,,,,,N,Y
+3773,Crossopetalum ilicifolium,(Poir.)Kuntze,,CHRISTMASBERRY,CELASTRACEAE,Y,N,Threatened-State,,,FACW,N,Y
+2783,Crossopetalum rhacoma,Crantz,,MAIDENBERRY; RHACOMA,CELASTRACEAE,Y,N,Threatened-State,,,FACU,N,Y
+2238,Crotalaria pumila,Ortega,,LOW RATTLEBOX,FABACEAE,Y,N,,,,,N,Y
+3328,Crotalaria rotundifolia,J.F.Gmel.,,RABBITBELLS,FABACEAE,Y,N,,,,FACU,N,Y
+1064,Croton glandulosus var. floridanus,L.,(A.M.Ferguson) R.W.Long,VENTE CONMIGO,EUPHORBIACEAE,Y,Y,,,,,N,Y
+2818,Croton glandulosus var. septentrionalis,L.,Müll.Arg.,VENTE CONMIGO,EUPHORBIACEAE,Y,N,,,,,N,Y
+2795,Croton humilis,L.,,PEPPERBUSH,EUPHORBIACEAE,Y,N,Endangered-State,,,,N,Y
+3919,Croton linearis,Jacq.,,PINELAND CROTON; GRANNYBUSH,EUPHORBIACEAE,Y,N,,,,,N,Y
+3217,Croton michauxii,G.L.Webster,,RUSHFOIL; MICHAUX'S CROTON,EUPHORBIACEAE,Y,N,,,,,N,Y
+1010,Croton punctatus,Jacq.,,GULF CROTON; BEACH TEA,EUPHORBIACEAE,Y,N,,,,,N,Y
+4501,Cryphaea filiformis,(Hedw.) Brid.,,,CRYPHAEACEAE,Y,,,,,,,N
+4502,Cryphaea glomerata,Schimp. ex Sull.,,,CRYPHAEACEAE,Y,,,,,,,N
+2248,Ctenitis sloanei,(Poepp. ex Spreng.)C.V.Morton,,FLORIDA TREE FERN; RED-HAIR COMB FERN,DRYOPTERIDACEAE,Y,N,Endangered-State,,,,N,Y
+2190,Ctenitis submarginalis,(Langsd. & Fisch.)Ching,,BROWN-HAIR COMB FERN,DRYOPTERIDACEAE,Y,N,Endangered-State,,FACW,FACW,N,Y
+844,Ctenium aromaticum,(Walter)A.W.Wood,,TOOTHACHEGRASS,POACEAE,Y,N,,,FACW,FACW,N,Y
+2304,Ctenodon viscidulus,(Michx.)D.B.O.S.Cardoso et al.,,STICKY JOINTVETCH,FABACEAE,Y,N,,,,,N,Y
+1247,Cucurbita okeechobeensis,(Small) L.H.Bailey,,OKEECHOBEE GOURD,CUCURBITACEAE,Y,N,Endangered-State,Endangered-US,,OBL,N,Y
+2763,Cupania glabra,Sw.,,AMERICAN TOADWOOD,SAPINDACEAE,Y,N,Endangered-State,,,,N,Y
+3825,Cuscuta americana,L.,,AMERICAN DODDER,CONVOLVULACEAE,Y,N,,,,,N,Y
+4415,Cuscuta boldinghii,Urb.,,BOLDINGH'S DODDER,CONVOLVULACEAE,Y,N,,,,,N,Y
+1003,Cuscuta compacta,Juss. ex Choisy,,COMPACT DODDER,CONVOLVULACEAE,Y,N,,,,,N,Y
+3357,Cuscuta exaltata,Engelm.,,TALL DODDER,CONVOLVULACEAE,Y,N,,,,,N,Y
+867,Cuscuta gronovii,Willd. ex Schult.,,SCALDWEED,CONVOLVULACEAE,Y,N,,,,,N,Y
+759,Cuscuta indecora,Choisy,,BIGSEED ALFALFA DODDER,CONVOLVULACEAE,Y,N,,,,,N,Y
+2690,Cuscuta obtusiflora var. glandulosa,Kunth,Engelm.,PERUVIAN DODDER,CONVOLVULACEAE,Y,N,,,,,N,Y
+3446,Cuscuta pentagona,Engelm.,,FIVEANGLED DODDER,CONVOLVULACEAE,Y,N,,,,,N,Y
+2223,Cuscuta umbellata,Kunth,,FLATGLOBE DODDER,CONVOLVULACEAE,Y,N,,,,,N,Y
+2247,Cyclopogon cranichoides,(Griseb.)Schltr.,,CRANICHIS LADIESTRESSES,ORCHIDACEAE,Y,N,,,,FACW,N,Y
+2833,Cyclopogon elatus,(Sw.)Schltr.,,TALL NEOTTIA; TALL LADIESTRESSES,ORCHIDACEAE,Y,N,Endangered-State,,FACW,UPL,N,Y
+4698,Cylindrocolea rhizantha,(Mont.) R.M. Schust.,,,CEPHALOZIELLACEAE,Y,,,,,,,N
+2819,Cynophalla flexuosa,(L.)J.Presl,,LIMBER CAPER; FALSETEETH; BAYLEAF CAPERTREE,CAPPARACEAE,Y,N,,,FACW,UPL,N,Y
+2802,Cyperus articulatus,L.,,JOINTED FLATSEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+3536,Cyperus compressus,L.,,POORLAND FLATSEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+829,Cyperus croceus,Vahl,,BALDWIN'S FLATSEDGE,CYPERACEAE,Y,N,,,FAC,FAC,N,Y
+3378,Cyperus cuspidatus,Kunth,,COASTALPLAIN FLATSEDGE,CYPERACEAE,Y,N,,,FAC,FACW,N,Y
+1040,Cyperus distinctus,Steud.,,SWAMP FLATSEDGE,CYPERACEAE,Y,N,,,OBL,FACW,N,Y
+2801,Cyperus elegans,L.,,ROYAL FLATSEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+2124,Cyperus erythrorhizos,Muhl.,,REDROOT FLATSEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+527,Cyperus filiculmis,Vahl,,WIRY FLATSEDGE,CYPERACEAE,Y,N,,,,FACU+,N,Y
+2527,Cyperus filiformis,Sw.,,WIRY FLATSEDGE; FLORIDA FLATSEDGE,CYPERACEAE,Y,N,Endangered-State,,FACW,,N,Y
+3987,Cyperus flavescens,L.,,YELLOW FLATSEDGE,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+2467,Cyperus fuligineus,Chapm.,,LIMESTONE FLATSEDGE,CYPERACEAE,Y,N,Endangered-State,,FACW,,N,Y
+2747,Cyperus haspan,L.,,HASPAN FLATSEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2739,Cyperus hortensis,(Salzm. ex Steud.)Dorr,,LOW SPIKESEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+664,Cyperus lecontei,Torr. ex Steud.,,LECONTE'S FLATSEDGE,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+734,Cyperus ligularis,L.,,SWAMP FLATSEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+2051,Cyperus neotropicalis,Alain,,AMERICAN HALFCHAFF SEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+2790,Cyperus odoratus,L.,,FRAGRANT FLATSEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+2372,Cyperus ovatus,Baldwin,,PINEBARREN FLATSEDGE,CYPERACEAE,Y,N,,,FAC,FACU,N,Y
+967,Cyperus pedunculatus,(R.Br.)J.Kern,,BEACHSTAR,CYPERACEAE,Y,N,Endangered-State,,FACW,FACU,N,Y
+859,Cyperus planifolius,Rich.,,FLATLEAF FLATSEDGE,CYPERACEAE,Y,N,,,FACW,FAC,N,Y
+711,Cyperus polystachyos,Rottb.,,MANYSPIKE FLATSEDGE,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+520,Cyperus sesquiflorus,(Torr.)Mattf. & Kük.,,FRAGRANT SPIKESEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+2744,Cyperus squarrosus,L.,,BEARDED FLATSEDGE,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+3698,Cyperus strigosus,L.,,STRAWCOLORED FLATSEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+3808,Cyperus subsquarrosus,(Muhl.)Bauters,,SMALLFLOWER HALFCHAFF SEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+1042,Cyperus surinamensis,Rottb.,,TROPICAL FLATSEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+2610,Cyperus tetragonus,Elliott,,FOURANGLE FLATSEDGE,CYPERACEAE,Y,N,,,,FAC,N,Y
+2067,Cyperus virens,Michx.,,GREEN FLATSEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+4672,Cyrto-hypnum involvens,(Hedw.) W. R. Buck,,,THUIDIACEAE,Y,,,,,,,N
+4673,Cyrto-hypnum minutulum,(Hedw.) W. R. Buck & H. A. Crum,,,THUIDIACEAE,Y,,,,,,,N
+4675,Cyrto-hypnum schistocalyx,(Müll. Hal.) W. R. Buck,,,THUIDIACEAE,Y,,,,,,,N
+3730,Cyrtopodium punctatum,(L.)Lindl.,,COWHORN ORCHID; CIGAR ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+713,Dalbergia brownei,(Jacq.)Schinz,,BROWNE'S INDIAN ROSEWOOD,FABACEAE,Y,N,Endangered-State,,,FACW,N,Y
+721,Dalbergia ecastaphyllum,(L.)Taub.,,COINVINE,FABACEAE,Y,N,,,,FACW,N,Y
+1183,Dalea adenopoda,(Rydb.)Isely,,SUMMER FAREWELL,FABACEAE,Y,Y,,,,,N,Y
+635,Dalea carnea var. carnea,(Michx.)Poir.,,WHITETASSELS,FABACEAE,Y,N,,,,FACW,N,Y
+2534,Dalea feayi,(Chapm.)Barneby,,FEAY'S PRAIRIECLOVER,FABACEAE,Y,N,,,,,N,Y
+1124,Dalea floridana,(Rydb.)J.T.Diggs & Weakley,,FLORIDA PRAIRIECLOVER,FABACEAE,Y,Y,Endangered-State,Endangered-US,,,N,Y
+3325,Dalea pinnata var. pinnata,(J.F.Gmel.)Barneby,,SUMMER FAREWELL,FABACEAE,Y,N,,,,,N,Y
+2836,Damburneya coriacea,(Sw.)Trofimov & Rohwer,,LANCEWOOD,LAURACEAE,Y,N,,,,,N,Y
+2285,Datura stramonium,L.,,JIMSONWEED,SOLANACEAE,Y,N,,,,,N,Y
+3400,Decodon verticillatus,(L.)Elliott,,WILLOW-HERB; SWAMP LOOSESTRIFE,LYTHRACEAE,Y,N,,,OBL,OBL,N,Y
+2229,Dendrophylax lindenii,(Lindl.)Benth. ex Rolfe,,GHOST ORCHID; PALMPOLLY,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+3729,Dendrophylax porrectus,(Rchb.f.)Carlsward & Whitten,,NEEDLEROOT AIRPLANT ORCHID; THREADROOT ORCHID,ORCHIDACEAE,Y,N,Threatened-State,,,,N,Y
+2230,Denisophytum pauciflorum,(Griseb.)Gagnon & G.P.Lewis,,FEWFLOWER HOLDBACK,FABACEAE,Y,N,Endangered-State,,,,N,Y
+801,Dennstaedtia bipinnata,(Cav.)Maxon,,BIPINNATE CUPLET FERN; CUPLET FERN,DENNSTAEDTIACEAE,Y,N,Endangered-State,,,OBL,N,Y
+3106,Descurainia pinnata,(Walter)Britton,,WESTERN TANSYMUSTARD,BRASSICACEAE,Y,N,,,,,N,Y
+3743,Desmodium ciliare,(Muhl. ex Willd.)DC.,,HAIRY SMALL-LEAF TICKTREFOIL,FABACEAE,Y,N,,,,,N,Y
+2448,Desmodium floridanum,Chapm.,,FLORIDA TICKTREFOIL,FABACEAE,Y,N,,,,,N,Y
+2047,Desmodium lineatum,DC.,,SAND TICKTREFOIL,FABACEAE,Y,N,,,,,N,Y
+3745,Desmodium marilandicum,(L.)DC.,,SMOOTH TICKTREFOIL,FABACEAE,Y,N,,,,,N,Y
+3396,Desmodium paniculatum,(L.)DC.,,PANICLED TICKTREFOIL,FABACEAE,Y,N,,,,FACU,N,Y
+2938,Desmodium strictum,(Pursh)DC.,,PINEBARREN TICKTREFOIL,FABACEAE,Y,N,,,,,N,Y
+2100,Dichanthelium aciculare,(Desv. ex Poir.)Gould & C.A.Clark,,NEEDLELEAF WITCHGRASS,POACEAE,Y,N,,,FACW,FACU,N,Y
+3701,Dichanthelium commutatum,(Schult.)Gould,,VARIABLE WITCHGRASS,POACEAE,Y,N,,,FAC,FAC,N,Y
+3433,Dichanthelium dichotomum,(L.) Gould,,CYPRESS WITCHGRASS,POACEAE,Y,N,,,FACW,FAC,N,Y
+1227,Dichanthelium ensifolium var. breve,(Baldwin ex Elliott)Gould,(Hitchc. & Chase)B.F.Hansen & Wunderlin,DWARF CYPRESS WITCHGRASS,POACEAE,Y,Y,,,,,N,Y
+2685,Dichanthelium ensifolium var. ensifolium,(Baldwin ex Elliott)Gould,,CYPRESS WITCHGRASS,POACEAE,Y,N,,,OBL,,N,Y
+3601,Dichanthelium ensifolium var. unciphyllum,(Baldwin ex Elliott)Gould,(Trin.)B.F.Hansen & Wunderlin,CYPRESS WITCHGRASS,POACEAE,Y,N,,,FAC,,N,Y
+2354,Dichanthelium erectifolium,(Nash)Gould & C.A.Clark,,ERECTLEAF WITCHGRASS,POACEAE,Y,N,,,OBL,OBL,N,Y
+3576,Dichanthelium laxiflorum,(Lam.)Gould,,OPENFLOWER WITCHGRASS,POACEAE,Y,N,,,,FAC,N,Y
+2491,Dichanthelium leucothrix,(Nash)Freckmann,,ROUGH WITCHGRASS,POACEAE,Y,N,,,,,N,Y
+2633,Dichanthelium ovale,(Elliott)Gould & C.A.Clark,,EGGLEAF WITCHGRASS,POACEAE,Y,N,,,,FACU,N,Y
+3080,Dichanthelium portoricense,(Desv. ex Ham.)B.F.Hansen & Wunderlin,,HEMLOCK WITCHGRASS,POACEAE,Y,N,,,,FACU,N,Y
+2644,Dichanthelium scabriusculum,(Elliott)Gould & C.A.Clark,,WOOLLY WITCHGRASS,POACEAE,Y,N,,,OBL,OBL,N,Y
+2824,Dichanthelium strigosum var. glabrescens,(Muhl. ex Elliott)Freckmann,(Griseb.)Freckmann,ROUGHHAIR WITCHGRASS,POACEAE,Y,N,,,,,N,Y
+2099,Dichanthelium strigosum var. strigosum,(Muhl. ex Elliott)Freckmann,,ROUGHHAIR WITCHGRASS,POACEAE,Y,N,,,FAC,,N,Y
+3101,Dichondra carolinensis,Michx.,,CAROLINA PONYSFOOT,CONVOLVULACEAE,Y,N,,,FAC,FAC,N,Y
+712,Dicliptera sexangularis,(L.)Juss.,,SIXANGLE FOLDWING,ACANTHACEAE,Y,N,,,,FAC,N,Y
+1345,Dicranopteris flexuosa,(Schrad.)Underw.,,DROOPING FORKED FERN,GLEICHENIACEAE,Y,N,,,,FAC,N,Y
+4514,Dicranum condensatum,Hedw.,,,DICRANACEAE,Y,,,,,,,N
+2222,Digitaria ciliaris,(Retz.)Koeler,,SOUTHERN CRABGRASS,POACEAE,Y,N,,,,FACU,N,Y
+2386,Digitaria filiformis var. dolichophylla,(L.)Koeler,(Henrard)Wipff,CARIBBEAN CRABGRASS,POACEAE,Y,N,Threatened-State,,,,N,Y
+3785,Digitaria filiformis var. filiformis,(L.)Koeler,,SLENDER CRABGRASS; SHAGGY CRABGRASS,POACEAE,Y,N,,,,,N,Y
+1203,Digitaria gracillima,(Scribn.)Fernald,,LONGLEAF CRABGRASS,POACEAE,Y,Y,,,,,N,Y
+2288,Digitaria horizontalis,Willd.,,JAMAICAN CRABGRASS,POACEAE,Y,N,,,,FACU,N,Y
+735,Digitaria insularis,(L.)Fedde,,SOURGRASS,POACEAE,Y,N,,,,FAC,N,Y
+1108,Digitaria pauciflora,Hitchc.,,TWOSPIKE CRABGRASS; FLORIDA PINELAND CRABGRASS,POACEAE,Y,Y,Endangered-State,Threatened-US,FACW,FACW,N,Y
+3815,Digitaria serotina,(Walter)Michx.,,BLANKET CRABGRASS; DWARF CRABGRASS,POACEAE,Y,N,,,FAC,FAC,N,Y
+3727,Dinebra panicea subsp. mucronata,(Retz.)P.M.Peterson & N.Snow,(Michx.)P.M.Peterson & N.Snow,RED SPRANGLETOP,POACEAE,Y,N,,,FACW,FACW,N,Y
+3511,Diodia virginiana,L.,,VIRGINIA BUTTONWEED,RUBIACEAE,Y,N,,,FACW,FACW,N,Y
+3858,Diospyros virginiana,L.,,COMMON PERSIMMON,EBENACEAE,Y,N,,,FAC,FAC,N,Y
+3703,Diplachne fusca subsp. fascicularis,(L.)P.Beauv. ex Roem. & Schult.,(Lam.)P.M.Peterson & N.Snow,BEARDED SPRANGLETOP,POACEAE,Y,N,,,FACW,FACW,N,Y
+2928,Diplachne fusca subsp. uninervia,(L.)P.Beauv. ex Roem. & Schult.,(J.Presl)P.M.Peterson & N.Snow,MEXICAN SPRANGLETOP,POACEAE,Y,N,,,FACW,FACW,N,Y
+4755,Diplasiolejeunea rudolphiana,Steph.,,,LEJEUNEACEAE,Y,,,,,,,N
+754,Disakisperma dubium,(Kunth)P.M.Peterson & N.Snow,,GREEN SPRANGLETOP,POACEAE,Y,N,,,FACW,,N,Y
+856,Distichlis littoralis,(Engelm.)H.L.Bell & Columbus,,SHOREGRASS; KEYGRASS,POACEAE,Y,N,,,OBL,OBL,N,Y
+3693,Distichlis spicata,(L.)Greene,,SALTGRASS,POACEAE,Y,N,,,OBL,OBL,N,Y
+117,Distimake dissectus,(Jacq.) A.R.Simões & Staples,,NOYAU VINE,CONVOLVULACEAE,Y,N,,,,FACU,N,Y
+629,Dodonaea elaeagnoides,Rudolphi ex Ledeb. & Alderst.,,SMALLFRUIT VARNISHLEAF; KEYS HOPBUSH,SAPINDACEAE,Y,N,Endangered-State,,,,N,Y
+2789,Dodonaea viscosa,Jacq.,,VARNISHLEAF; FLORIDA HOPBUSH,SAPINDACEAE,Y,N,,,,UPL,N,Y
+2694,Drosera brevifolia,Pursh,,DWARF SUNDEW,DROSERACEAE,Y,N,,,FACW,OBL,N,Y
+831,Drosera capillaris,Poir.,,PINK SUNDEW,DROSERACEAE,Y,N,,,FACW,OBL,N,Y
+2856,Dryopteris ludoviciana,(Kunze)Small,,SOUTHERN WOOD FERN,DRYOPTERIDACEAE,Y,N,,,FACW,FACW,N,Y
+574,Drypetes diversifolia,Krug & Urb.,,WHITEWOOD; MILKBARK,PUTRANJIVACEAE,Y,N,Endangered-State,,,,N,Y
+627,Drypetes lateriflora,(Sw.)Krug & Urb.,,GUIANA PLUM,PUTRANJIVACEAE,Y,N,Threatened-State,,,,N,Y
+2313,Dyschoriste angusta,(A.Gray)Small,,PINELAND TWINFLOWER; PINELAND SNAKEHERB,ACANTHACEAE,Y,N,,,,FAC,N,Y
+2094,Dyschoriste humistrata,(Michx.)Kuntze,,SWAMP TWINFLOWER; SWAMP SNAKEHERB,ACANTHACEAE,Y,N,,,FACW,FACW,N,Y
+2603,Dyschoriste oblongifolia,(Michx.)Kuntze,,OBLONGLEAF TWINFLOWER; OBLONGLEAF SNAKEHERB,ACANTHACEAE,Y,N,,,,,N,Y
+2209,Echinochloa muricata,(P.Beauv.)Fernald,,ROUGH BARNYARDGRASS,POACEAE,Y,N,,,FACW,FACW,N,Y
+1185,Echinochloa paludigena,Wiegand,,FLORIDA COCKSPUR,POACEAE,Y,Y,,,FACW,OBL,N,Y
+3786,Echinochloa walteri,(Pursh)A.Heller,,COAST COCKSPUR,POACEAE,Y,N,,,FACW,OBL,N,Y
+2707,Echinodorus berteroi,(Spreng.)Fassett,,UPRIGHT BURRHEAD,ALISMATACEAE,Y,N,,,OBL,OBL,N,Y
+897,Echinodorus cordifolius,(L.) Griseb.,,CREEPING BURRHEAD,ALISMATACEAE,Y,N,,,OBL,OBL,N,Y
+3816,Echites umbellatus,Jacq.,,DEVIL'S POTATO; RUBBERVINE,APOCYNACEAE,Y,N,,,,,N,Y
+3677,Eclipta prostrata,(L.)L.,,FALSE DAISY,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+957,Edrastima uniflora,(L.)Raf.,,CLUSTERED MILLE GRAINES,RUBIACEAE,Y,N,,,FACW,FACW,N,Y
+2676,Eleocharis albida,Torr.,,WHITE SPIKERUSH,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2749,Eleocharis atropurpurea,(Retz.)J.Presl & C.Presl,,PURPLE SPIKERUSH,CYPERACEAE,Y,N,,,OBL,FACW,N,Y
+2629,Eleocharis baldwinii,(Torr.)Chapm.,,BALDWIN'S SPIKERUSH; ROADGRASS,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2931,Eleocharis cellulosa,Torr.,,GULF COAST SPIKERUSH,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2375,Eleocharis elongata,Chapm.,,SLIM SPIKERUSH,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+3082,Eleocharis flavescens,(Poir.)Urb.,,YELLOW SPIKERUSH; PALE SPIKERUSH,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+916,Eleocharis geniculata,(L.)Roem. & Schult.,,CANADA SPIKERUSH,CYPERACEAE,Y,N,,,OBL,FACW,N,Y
+523,Eleocharis interstincta,(Vahl)Roem. & Schult.,,KNOTTED SPIKERUSH,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2874,Eleocharis microcarpa,Torr.,,SMALLFRUIT SPIKERUSH,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+858,Eleocharis montevidensis,Kunth,,SAND SPIKERUSH,CYPERACEAE,Y,N,,,OBL,FACW,N,Y
+4013,Eleocharis rostellata,(Torr.)Torr.,,BEAKED SPIKERUSH,CYPERACEAE,Y,N,Endangered-State,,OBL,OBL,N,Y
+2274,Eleocharis vivipara,Link,,VIVIPAROUS SPIKERUSH,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+3141,Elephantopus carolinianus,Raeusch.,,CAROLINA ELEPHANTSFOOT,ASTERACEAE,Y,N,,,,FACW-,N,Y
+550,Elephantopus elatus,Bertol.,,TALL ELEPHANTSFOOT,ASTERACEAE,Y,N,,,,FACU,N,Y
+1710,Elionurus tripsacoides,Humb. & Bonpl. ex Willd.,,PAN-AMERICAN BALSAMSCALE,POACEAE,Y,N,,,FACW,FAC,N,Y
+2300,Eltroplectris calcarata,(Sw.)Garay & H.R.Sweet,,LONGCLAW ORCHID; SPURRED NEOTTIA,ORCHIDACEAE,Y,N,Endangered-State,,,FAC,N,Y
+3133,Elytraria caroliniensis,(J.F.Gmel.)Pers.,,CAROLINA SCALYSTEM,ACANTHACEAE,Y,N,,,FAC,FACW,N,Y
+2477,Encyclia tampensis,(Lindl.)Small,,FLORIDA BUTTERFLY ORCHID,ORCHIDACEAE,Y,N,,,,,N,Y
+4526,Entodon macropodus,(Hedw.)  Müll. Hal.,,,ENTODONTACEAE,Y,,,,,,,N
+4527,Entodon seductrix,(Hedw.)  Müll. Hal.,,,ENTODONTACEAE,Y,,,,,,,N
+4667,Entodontopsis leucostega,(Brid.) W. R. Buck,,,STEREOPHYLLACEAE,Y,,,,,,,N
+4528,Ephemerum cohaerens,(Hedw.) Hampe,,,EPHEMERACEAE,Y,,,,,,,N
+4530,Ephemerum crassinervium,(Schwaegr.) Hampe,,,EPHEMERACEAE,Y,,,,,,,N
+4529,Ephemerum spinulosum,Bruch & Schimp.,,,EPHEMERACEAE,Y,,,,,,,N
+2897,Epidendrum anceps,Jacq.,,DINGY-FLOWERED STAR ORCHID; DINGY-FLOWERED EPIDENDRUM,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+4001,Epidendrum blancheanum,Urb.,,ACUNA'S STAR ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+2370,Epidendrum floridense,Hágsater,,UMBRELLA STAR ORCHID; UMBELLED EPIDENDRUM,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+2889,Epidendrum nocturnum,Jacq.,,NIGHT-SCENTED ORCHID; NIGHT-SCENTED EPIDENDRUM,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+2879,Epidendrum rigidum,Jacq.,,STIFF-FLOWER STAR ORCHID; RIGID EPIDENDRUM,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+3342,Epidendrum strobiliferum,Rchb.f.,,BIG CYPRESS STAR ORCHID; MATTED EPIDENDRUM,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+2943,Equisetum hyemale var. affine,L.,(Engelm.)A.A.Eaton,SCOURING-RUSH,EQUISETACEAE,Y,N,,,FACW,FACW,N,Y
+962,Eragrostis elliottii,S.Watson,,ELLIOTT'S LOVEGRASS,POACEAE,Y,N,,,FAC,FACW,N,Y
+3704,Eragrostis hypnoides,(Lam.)Britton et al.,,TEAL LOVEGRASS,POACEAE,Y,N,,,FAC,OBL,N,Y
+1205,Eragrostis pectinacea var. tracyi,(Michx.)Nees,(Hitchc.)P.M.Peterson,SANIBEL ISLAND LOVEGRASS,POACEAE,Y,Y,Endangered-State,,FAC,,N,Y
+963,Eragrostis refracta,(Muhl.)Scribn.,,COASTAL LOVEGRASS,POACEAE,Y,N,,,FAC,FACW,N,Y
+2161,Eragrostis secundiflora subsp. oxylepis,J.Presl,(Torr.)S.D.Koch,RED LOVEGRASS,POACEAE,Y,N,,,FAC,UPL,N,Y
+3788,Eragrostis spectabilis,(Pursh)Steud.,,PURPLE LOVEGRASS,POACEAE,Y,N,,,FAC,FACU,N,Y
+907,Erechtites hieraciifolius,(L.)Raf. ex DC.,,AMERICAN BURNWEED; FIREWEED,ASTERACEAE,Y,N,,,FAC,FAC,N,Y
+2946,Erigeron canadensis,L.,,CANADIAN HORSEWEED,ASTERACEAE,Y,N,,,,FACU,N,Y
+1019,Erigeron quercifolius,Poir.,,OAKLEAF FLEABANE,ASTERACEAE,Y,N,,,FAC,FAC,N,Y
+3041,Erigeron strigosus,Muhl. ex Willd.,,PRAIRIE FLEABANE,ASTERACEAE,Y,N,,,,FAC,N,Y
+3517,Erigeron vernus,(L.)Torr. & A.Gray,,EARLY WHITETOP FLEABANE,ASTERACEAE,Y,N,,,FACW,OBL,N,Y
+834,Eriocaulon compressum,Lam.,,FLATTENED PIPEWORT,ERIOCAULACEAE,Y,N,,,OBL,OBL,N,Y
+3553,Eriocaulon decangulare,L.,,TENANGLE PIPEWORT,ERIOCAULACEAE,Y,N,,,OBL,OBL,N,Y
+3236,Eriocaulon ravenelii,Chapm.,,RAVENEL'S PIPEWORT,ERIOCAULACEAE,Y,N,,,OBL,OBL,N,Y
+2546,Eriochloa michauxii var. michauxii,(Poir.)Hitchc.,,MICHAUX'S CUPGRASS,POACEAE,Y,N,,,FACW,FACW,N,Y
+1095,Eriochloa michauxii var. simpsonii,(Poir.)Hitchc.,Hitchc.,SIMPSON'S CUPGRASS,POACEAE,Y,Y,,,FACW,,N,Y
+2788,Erithalis fruticosa,L.,,BLACKTORCH,RUBIACEAE,Y,N,Threatened-State,,FAC,,N,Y
+2174,Ernodea cokeri,Britton ex Coker,,COKER'S BEACH CREEPER; ONE-NERVED ERNODEA,RUBIACEAE,Y,N,Endangered-State,,,,N,Y
+2764,Ernodea littoralis,Sw.,,BEACH CREEPER; COUGHBUSH,RUBIACEAE,Y,N,,,FAC,FAC,N,Y
+3419,Eryngium aquaticum,L.,,RATTLESNAKEMASTER,APIACEAE,Y,N,,,OBL,OBL,N,Y
+2329,Eryngium aromaticum,Baldwin,,FRAGRANT ERYNGO,APIACEAE,Y,N,,,,FACW,N,Y
+2628,Eryngium baldwinii,Spreng.,,BALDWIN'S ERYNGO,APIACEAE,Y,N,,,FAC,FACW,N,Y
+3565,Eryngium yuccifolium,Michx.,,BUTTON RATTLESNAKEMASTER; BUTTON ERYNGO,APIACEAE,Y,N,,,FACW,FAC,N,Y
+3264,Erythrina herbacea,L.,,CORALBEAN; CHEROKEE BEAN,FABACEAE,Y,N,,,,,N,Y
+2831,Eugenia axillaris,(Sw.)Willd.,,WHITE STOPPER,MYRTACEAE,Y,N,,,,,N,Y
+701,Eugenia confusa,DC.,,REDBERRY STOPPER; REDBERRY EUGENIA,MYRTACEAE,Y,N,Endangered-State,,,,N,Y
+860,Eugenia foetida,Pers.,,SPANISH STOPPER; BOXLEAF STOPPER,MYRTACEAE,Y,N,,,,,N,Y
+518,Eugenia rhombea,(O.Berg)Krug & Urb.,,RED STOPPER,MYRTACEAE,Y,N,Endangered-State,,,,N,Y
+2891,Eulophia alta,(L.)Fawc. & Rendle,,WILD COCO,ORCHIDACEAE,Y,N,,,FACW,FACW,N,Y
+3716,Eupatorium capillifolium,(Lam.)Small ex Porter & Britton,,DOGFENNEL,ASTERACEAE,Y,N,,,FAC,FACU,N,Y
+3208,Eupatorium compositifolium,Walter,,YANKEEWEED,ASTERACEAE,Y,N,,,FAC,FAC,N,Y
+1007,Eupatorium leptophyllum,DC.,,FALSEFENNEL,ASTERACEAE,Y,N,,,OBL,FACW,N,Y
+1099,Eupatorium mikanioides,Chapm.,,SEMAPHORE THOROUGHWORT,ASTERACEAE,Y,Y,,,FACW,FACW,N,Y
+2135,Eupatorium mohrii,Greene,,MOHR'S THOROUGHWORT,ASTERACEAE,Y,N,,,FAC,FACW,N,Y
+3696,Eupatorium rotundifolium,L.,,ROUNDLEAF THOROUGHWORT; FALSE HOREHOUND,ASTERACEAE,Y,N,,,FAC,FAC,N,Y
+3171,Eupatorium serotinum,Michx.,,LATEFLOWERING THOROUGHWORT,ASTERACEAE,Y,N,,,FAC,FAC,N,Y
+2526,Euphorbia blodgettii,Engelm. ex Hitchc.,,LIMESTONE SANDMAT,EUPHORBIACEAE,Y,N,,,,,N,Y
+936,Euphorbia bombensis,Jacq.,,DIXIE SANDMAT,EUPHORBIACEAE,Y,N,,,,,N,Y
+1117,Euphorbia conferta,(Small)Oudejans,,EVERGLADE KEY SANDMAT,EUPHORBIACEAE,Y,Y,,,,,N,Y
+1096,Euphorbia cumulicola,(Small)Oudejans,,COASTAL DUNE SANDMAT; SAND DUNE SPURGE,EUPHORBIACEAE,Y,Y,Endangered-State,,,,N,Y
+616,Euphorbia cyathophora,Murray,,PAINTEDLEAF; FIRE-ON-THE-MOUNTAIN,EUPHORBIACEAE,Y,N,,,,FACU,N,Y
+1134,Euphorbia deltoidea subsp. deltoidea,Engelm. ex Chapm.,,WEDGE SANDMAT; ROCKLAND SPURGE,EUPHORBIACEAE,Y,Y,Endangered-State,Endangered-US,,,N,Y
+1121,Euphorbia deltoidea subsp. pinetorum,Engelm. ex Chapm.,(Small)Oudejans,PINELAND SANDMAT,EUPHORBIACEAE,Y,Y,Endangered-State,Threatened-US,,,N,Y
+1230,Euphorbia deltoidea subsp. serpyllum,Engelm. ex Chapm.,(Small)Y. Yang,WEDGE SANDMAT,EUPHORBIACEAE,Y,Y,Endangered-State,Endangered-US,,,N,Y
+1233,Euphorbia garberi,Engelm. ex Chapm.,,GARBER'S SANDMAT; GARBER'S SPURGE,EUPHORBIACEAE,Y,Y,Endangered-State,Threatened-US,,,N,Y
+5009,Euphorbia hammeri,K.Bradley & Sadle,,EVERGLADES SPURGE,EUPHORBIACEAE,Y,Y,,,,,N,N
+908,Euphorbia heterophylla,L.,,FIDDLER'S SPURGE; MEXICAN FIREPLANT,EUPHORBIACEAE,Y,N,,,,FAC,N,Y
+710,Euphorbia hirta,L.,,PILLPOD SANDMAT,EUPHORBIACEAE,Y,N,,,,UPL,N,Y
+2803,Euphorbia hypericifolia,L.,,GRACEFUL SANDMAT,EUPHORBIACEAE,Y,N,,,,FACU,N,Y
+3580,Euphorbia hyssopifolia,L.,,HYSSOPLEAF SANDMAT,EUPHORBIACEAE,Y,N,,,,FAC,N,Y
+4173,Euphorbia inundata var. garrettii,Torr. ex Chapm.,E.L.Bridges & Orzell,,EUPHORBIACEAE,Y,Y,,,,,N,Y
+3634,Euphorbia maculata,L.,,SPOTTED SANDMAT,EUPHORBIACEAE,Y,N,,,,FACU,N,Y
+2226,Euphorbia mesembrianthemifolia,Jacq.,,COASTAL BEACH SANDMAT,EUPHORBIACEAE,Y,N,,,,FAC,N,Y
+2189,Euphorbia ophthalmica,Pers.,,FLORIDA HAMMOCK SANDMAT,EUPHORBIACEAE,Y,N,,,,,N,Y
+2380,Euphorbia pergamena,Small,,SOUTHERN FLORIDA SANDMAT; ROCKLANDS SPURGE,EUPHORBIACEAE,Y,N,Threatened-State,,,,N,Y
+1083,Euphorbia pinetorum,(Small)G.L.Webster,,PINELAND SPURGE; EVERGLADES POINSETTIA,EUPHORBIACEAE,Y,Y,Endangered-State,,,,N,Y
+2,Euphorbia polyphylla,Engelm. ex Chapm.,,LESSER FLORIDA SPURGE,EUPHORBIACEAE,Y,Y,,,FACW,FACU,N,Y
+1114,Euphorbia porteriana,(Small)Oudejans,,PORTER'S SANDMAT; PORTER'S SPURGE,EUPHORBIACEAE,Y,Y,Endangered-State,,,FACW,N,Y
+3575,Euphorbia prostrata,Aiton,,PROSTRATE SANDMAT,EUPHORBIACEAE,Y,N,,,,FACU,N,Y
+2778,Euphorbia thymifolia,L.,,GULF SANDMAT,EUPHORBIACEAE,Y,N,,,,FAC,N,Y
+2395,Euphorbia tithymaloides subsp. smallii,L.,(Millsp.)V.W.Steinm.,JACOB'S LADDER; DEVIL'S BACKBONE; REDBIRD FLOWER,EUPHORBIACEAE,Y,N,,,,,N,Y
+2239,Euphorbia trichotoma,Kunth,,SANDDUNE SPURGE,EUPHORBIACEAE,Y,N,,,,,N,Y
+2786,Euploca fruticosa,(L.)J.I.M.Melo & Semir,,KEY WEST HELIOTROPE,BORAGINACEAE,Y,N,Endangered-State,,,,N,Y
+1024,Euploca polyphylla,(Lehm.)J.I.M.Melo & Semir,,PINELAND HELIOTROPE,BORAGINACEAE,Y,N,,,FAC,FAC,N,Y
+2631,Eustachys floridana,Chapm.,,TWOSPIKE FINGERGRASS,POACEAE,Y,N,,,,,N,Y
+2455,Eustachys glauca,Chapm.,,SALTMARSH FINGERGRASS,POACEAE,Y,N,,,FACW,FACW,N,Y
+740,Eustachys petraea,(Sw.)Desv.,,PINEWOODS FINGERGRASS,POACEAE,Y,N,,,FAC,FACU,N,Y
+896,Eustoma exaltatum,(L.)Salisb. ex G.Don,,MARSH GENTIAN; CATCHFLY PRAIRIE-GENTIAN,GENTIANACEAE,Y,N,,,FACW,FACW,N,Y
+3268,Euthamia caroliniana,(L.)Greene ex Porter & Britton,,SLENDER FLATTOP GOLDENROD,ASTERACEAE,Y,N,,,FAC,FAC,N,Y
+3450,Euthamia graminifolia,(L.)Nutt.,,FLATTOP GOLDENROD,ASTERACEAE,Y,N,,,FAC,FAC,N,Y
+3341,Evolvulus alsinoides,(L.)L.,,SLENDER DWARF MORNING-GLORY,CONVOLVULACEAE,Y,N,,,,,N,Y
+1717,Evolvulus convolvuloides,(Willd. ex Schult.)Stearn,,BINDWEED DWARF MORNING-GLORY; DWARF BINDWEED,CONVOLVULACEAE,Y,N,Endangered-State,,FACW,,N,Y
+600,Evolvulus grisebachii,Peter,,GRISEBACH'S DWARF MORNING-GLORY; GRISEBACH'S BINDWEED,CONVOLVULACEAE,Y,N,Endangered-State,,,FAC,N,Y
+2827,Evolvulus sericeus,Sw.,,SILVER DWARF MORNING-GLORY,CONVOLVULACEAE,Y,N,,,FACW,FACU,N,Y
+928,Exostema caribaeum,(Jacq.)Roem. & Schult.,,CARIBBEAN PRINCEWOOD,RUBIACEAE,Y,N,Endangered-State,,,,N,Y
+3084,Exothea paniculata,(Juss.)Radlk.,,INKWOOD; BUTTERBOUGH,SAPINDACEAE,Y,N,,,,FACU,N,Y
+2466,Ficus aurea,Nutt.,,STRANGLER FIG; GOLDEN FIG,MORACEAE,Y,N,,,FAC,FAC,N,Y
+3642,Ficus citrifolia,Mill.,,WILD BANYAN TREE,MORACEAE,Y,N,,,,FACU,N,Y
+864,Fimbristylis autumnalis,(L.)Roem. & Schult.,,SLENDER FIMBRY,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2081,Fimbristylis caroliniana,(Lam.)Fernald,,CAROLINA FIMBRY,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+1307,Fimbristylis cymosa,R.Br.,,HURRICANEGRASS,CYPERACEAE,Y,N,,,FAC,FAC,N,Y
+849,Fimbristylis dichotoma,(L.)Vahl,,FORKED FIMBRY,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+525,Fimbristylis puberula,(Michx.)Vahl,,HAIRY FIMBRY,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+2762,Fimbristylis spadicea,(L.)Vahl,,MARSH FIMBRY,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+4535,Fissidens adianthoides,Hedw.,,,FISSIDENTACEAE,Y,,,,,,,N
+4536,Fissidens amoenus,Müll. Hal.,,,FISSIDENTACEAE,Y,,,,,,,N
+4537,Fissidens bryoides,Hedw.,,,FISSIDENTACEAE,Y,,,,,,,N
+4539,Fissidens dubius,P. Beauv.,,,FISSIDENTACEAE,Y,,,,,,,N
+4540,Fissidens elegans,Brid.,,,FISSIDENTACEAE,Y,,,,,,,N
+4541,Fissidens fontanus,(Bach. Pyl.) Steudl.,,,FISSIDENTACEAE,Y,,,,,,,N
+4542,Fissidens hallianus,(Sull. & Lesq.) Mitt.,,,FISSIDENTACEAE,Y,,,,,,,N
+4543,Fissidens leptophyllus,Mont.,,,FISSIDENTACEAE,Y,,,,,,,N
+4544,Fissidens minutulus,Sull.,,,FISSIDENTACEAE,Y,,,,,,,N
+4546,Fissidens pallidinervis,Mitt.,,,FISSIDENTACEAE,Y,,,,,,,N
+4547,Fissidens pellucidus,Hornsch.,,,FISSIDENTACEAE,Y,,,,,,,N
+4550,Fissidens serratus,Müll. Hal.,,,FISSIDENTACEAE,Y,,,,,,,N
+4551,Fissidens subbasilaris,Hedw.,,,FISSIDENTACEAE,Y,,,,,,,N
+4552,Fissidens taxifolius,Hedw.,,,FISSIDENTACEAE,Y,,,,,,,N
+4553,Fissidens zollingeri,Mont.,,,FISSIDENTACEAE,Y,,,,,,,N
+1206,Flaveria floridana,J.R.Johnst.,,FLORIDA YELLOWTOPS,ASTERACEAE,Y,Y,,,FACW,FACW,N,Y
+2245,Flaveria linearis,Lag.,,NARROWLEAF YELLOWTOPS,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+3075,Flaveria trinervia,(Spreng.)C.Mohr,,CLUSTERED YELLOWTOPS,ASTERACEAE,Y,N,,,FAC,FAC,N,Y
+954,Forestiera segregata,(Jacq.)Krug & Urb.,,FLORIDA SWAMPPRIVET,OLEACEAE,Y,N,,,FAC,,N,Y
+4579,Forsstroemia trichomitria,(Hedw.) Lindb.,,,LEPTODONTACEAE,Y,,,,,,,N
+4703,Fossombronia foveolata,Lindb.,,,FOSSOMBRONIACEAE,Y,,,,,,,N
+997,Fraxinus caroliniana,Mill.,,CAROLINA ASH; WATER ASH; POP ASH,OLEACEAE,Y,N,,,OBL,OBL,N,Y
+2596,Froelichia floridana,(Nutt.)Moq.,,COTTONWEED; PLAINS SNAKECOTTON,AMARANTHACEAE,Y,N,,,,,N,Y
+4707,Frullania brittoniae,A. Evans,,,FRULLANIACEAE,Y,,,,,,,N
+4708,Frullania caulisequa,(Nees) Nees,,,FRULLANIACEAE,Y,,,,,,,N
+4709,Frullania cobrensis,Gottsche ex Steph.,,,FRULLANIACEAE,Y,,,,,,,N
+4710,Frullania compacta,Gottsche ex Steph.,,,FRULLANIACEAE,Y,,,,,,,N
+4711,Frullania donellii,Austin,,,FRULLANIACEAE,Y,,,,,,,N
+4712,Frullania eboracensis subsp. virginica,,(Gottsche) R.M. Schust.,,FRULLANIACEAE,Y,,,,,,,N
+4713,Frullania ericoides,(Nees) Mont.,,,FRULLANIACEAE,Y,,,,,,,N
+4714,Frullania gibbosa,Nees,,,FRULLANIACEAE,Y,,,,,,,N
+4715,Frullania inflata,Gottsche,,,FRULLANIACEAE,Y,,,,,,,N
+4716,Frullania inflata var. communis,Gottsche,R.M. Schust.,,FRULLANIACEAE,Y,,,,,,,N
+4717,Frullania intumescens,(Lehm. & Lindenb.) Lehm. & Lindenb.,,,FRULLANIACEAE,Y,,,,,,,N
+4718,Frullania kunzei,(Lehm. & Lindenb.) Lehm. & Lindenb.,,,FRULLANIACEAE,Y,,,,,,,N
+4719,Frullania riojaneirensis,(Raddi) Spruce,,,FRULLANIACEAE,Y,,,,,,,N
+4721,Frullania taxodiocola,R.M. Schust.,,,FRULLANIACEAE,Y,Y,,,,,,N
+4757,Frullanoides bahamensis,(A. Evans) Slageren,,,LEJEUNEACEAE,Y,,,,,,,N
+4758,Frullanoides corticalis,(Lehm. & Lindenb.) Slageren,,,LEJEUNEACEAE,Y,,,,,,,N
+2419,Fuirena breviseta,(Coville)Coville,,SALTMARSH UMBRELLASEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2969,Fuirena pumila,(Torr.)Spreng.,,DWARF UMBRELLASEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2451,Fuirena scirpoidea,Michx.,,SOUTHERN UMBRELLASEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+4561,Funaria flavicans,Michx.,,,FUNARIACEAE,Y,,,,,,,N
+4562,Funaria hygrometrica,Hedw.,,,FUNARIACEAE,Y,,,,,,,N
+913,Funastrum clausum,(Jacq.)Schltr.,,WHITE TWINEVINE,APOCYNACEAE,Y,N,,,,FACW,N,Y
+4864,Galactia austrofloridensis,A.R.Franck,,SOUTH FLORIDA MILKPEA,FABACEAE,Y,N,,,,,,Y
+3222,Galactia elliottii,Nutt.,,ELLIOTT'S MILKPEA,FABACEAE,Y,N,,,,FACU,N,Y
+4861,Galactia floridana,Torr. & A. Gray,,FLORIDA MILKPEA,FABACEAE,Y,N,,,,,,Y
+4865,Galactia pinetorum,Small,,PINE ROCKLAND MILKPEA,FABACEAE,Y,Y,,,,,N,Y
+4879,Galactia purshii,Desv.,,PURSH'S MILKPEA,FABACEAE,Y,N,,,,,,Y
+4860,Galactia smallii,H.J.Rogers ex Herndon,,SMALL'S MILKPEA,FABACEAE,Y,Y,Endangered-State,Endangered-US,,,,Y
+3738,Galactia striata,(Jacq.)Urb.,,FLORIDA HAMMOCK MILKPEA,FABACEAE,Y,N,,,,,N,Y
+3751,Galactia volubilis,(L.)Britton,,EASTERN MILKPEA,FABACEAE,Y,N,,,,FACU,N,Y
+4089,Galeandra bicarinata,G.A.Romero & P.M.Br.,,TWO-KEELED HOODED ORCHID; HELMET ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,N
+3857,Galium bermudense,L.,,COASTAL BEDSTRAW,RUBIACEAE,Y,N,,,,,N,Y
+3643,Galium tinctorium,L.,,STIFF MARSH BEDSTRAW,RUBIACEAE,Y,N,,,FACW,FACW,N,Y
+1016,Gamochaeta antillana,(Urb.)Anderb.,,CARIBBEAN PURPLE EVERLASTING; DELICATE EVERLASTING,ASTERACEAE,Y,N,,,,,N,Y
+3948,Gamochaeta purpurea,(L.)Cabrera,,SPOONLEAF PURPLE EVERLASTING; SPOONLEAF CUDWEED,ASTERACEAE,Y,N,,,,UPL,N,Y
+977,Gaylussacia dumosa,(Andrews)A.Gray,,DWARF HUCKLEBERRY,ERICACEAE,Y,N,,,FAC,FAC,N,Y
+874,Gelsemium sempervirens,(L.)J.St.-Hil.,,YELLOW JESSAMINE; CAROLINA JESSAMINE; EVENING TRUMPETFLOWER,GELSEMIACEAE,Y,N,,,,FAC,N,Y
+4484,Gemmabryum apiculatum,(Schwägr.) J. R. Spence & H. P. Ramsay,,,BRYACEAE,Y,,,,,,,N
+4485,Gemmabryum coronatum,(Schwägr.) J. R. Spence & H. P. Ramsay,,,BRYACEAE,Y,,,,,,,N
+4486,Gemmabryum exile,(Dozy & Molk.) J. R. Spence & H. P. Ramsay,,,BRYACEAE,Y,,,,,,,N
+2698,Geobalanus oblongifolius,(Michx.)Small,,GOPHER APPLE,CHRYSOBALANACEAE,Y,N,,,,,N,Y
+3848,Geranium carolinianum,L.,,CAROLINA CRANESBILL,GERANIACEAE,Y,N,,,,,N,Y
+1107,Glandularia maritima,(Small)Small,,COASTAL MOCK VERVAIN,VERBENACEAE,Y,Y,Endangered-State,,,,N,Y
+1181,Glandularia tampensis,(Nash)Small,,TAMPA MOCK VERVAIN,VERBENACEAE,Y,Y,Endangered-State,,,FACW,N,Y
+3968,Gleditsia aquatica,Marshall,,WATER LOCUST,FABACEAE,Y,N,,,OBL,OBL,N,Y
+3680,Gomphrena vermicularis,L.,,SAMPHIRE; SILVERHEAD,AMARANTHACEAE,Y,N,,,FACW,FACW,N,Y
+3135,Gonolobus suberosus,(L.)R.Br.,,ANGULARFRUIT MILKVINE; ANGLE POD,APOCYNACEAE,Y,N,,,,FACW,N,Y
+943,Gordonia lasianthus,(L.)J.Ellis,,LOBLOLLY BAY,THEACEAE,Y,N,,,FACW,FACW,N,Y
+1379,Gossypium hirsutum,L.,,UPLAND COTTON; WILD COTTON,MALVACEAE,Y,N,Threatened-State,,,FACU,N,Y
+3713,Gouania lupuloides,(L.)Urb.,,CHEWSTICK; WHITEROOT,RHAMNACEAE,Y,N,,,,FAC,N,Y
+4031,Govenia floridana,P.M.Br.,,FLORIDA GOVENIA; GOWEN'S ORCHID,ORCHIDACEAE,Y,Y,Endangered-State,,,,N,Y
+3317,Gratiola ramosa,Walter,,BRANCHED HEDGEHYSSOP,PLANTAGINACEAE,Y,N,,,FACW,FACW,N,Y
+3507,Gratiola virginiana,L.,,ROUNDFRUIT HEDGEHYSSOP,PLANTAGINACEAE,Y,N,,,FACW,OBL,N,Y
+4566,Grimmia laevigata,(Brid.) Brid.,,,GRIMMIACEAE,Y,,,,,,,N
+4599,Groutiella tumidula,(Mitt.) Vitt.,,,ORTHOTRICHACEAE,Y,,,,,,,N
+3892,Guaiacum sanctum,L.,,HOLYWOOD LIGNUMVITAE,ZYGOPHYLLACEAE,Y,N,Endangered-State,,,,N,Y
+2815,Guapira discolor,(Spreng.)Little,,BEEFTREE; BLOLLY,NYCTAGINACEAE,Y,N,,,FAC,,N,Y
+562,Guapira obtusata,(Jacq.)Little,,BROADLEAF BLOLLY,NYCTAGINACEAE,Y,N,,,,,N,Y
+2769,Guettarda elliptica,Sw.,,HAMMOCK VELVETSEED,RUBIACEAE,Y,N,,,,FACU,N,Y
+953,Guettarda scabra,(L.)Vent.,,ROUGH VELVETSEED,RUBIACEAE,Y,N,,,,FAC,N,Y
+3340,Guilandina bonduc,L.,,GRAY NICKER,FABACEAE,Y,N,,,,FAC,N,Y
+2754,Guilandina major,(Medik.)Small,,HAWAII PEARLS; YELLOW NICKER,FABACEAE,Y,N,Endangered-State,,,UPL,N,N
+2295,Guzmania monostachia,(L.)Rusby ex Mez,,WEST INDIAN TUFTED AIRPLANT; FUCHS' BROMELIAD,BROMELIACEAE,Y,N,Endangered-State,,,,N,Y
+3774,Gyminda latifolia,(Sw.)Urb.,,WEST INDIAN FALSE BOX,CELASTRACEAE,Y,N,Endangered-State,,,,N,Y
+2101,Gymnanthes lucida,Sw.,,CRABWOOD; OYSTERWOOD,EUPHORBIACEAE,Y,N,,,,,N,Y
+2075,Gymnopogon ambiguus,(Michx.)Britton et al.,,BEARDED SKELETONGRASS,POACEAE,Y,N,,,,,N,Y
+623,Gymnopogon brevifolius,Trin.,,SHORTLEAF SKELETONGRASS,POACEAE,Y,N,,,,FACU,N,Y
+2542,Gymnopogon chapmanianus,Hitchc.,,CHAPMAN'S SKELETONGRASS,POACEAE,Y,N,,,,FACU,N,Y
+2254,Habenaria distans,Griseb.,,HAMMOCK FALSE REINORCHID; DISTANS HABENARIA,ORCHIDACEAE,Y,N,Endangered-State,,FACW,FACW,N,Y
+799,Habenaria floribunda,Lindl.,,TOOTHPETAL FALSE REINORCHID; MIGNONETTE ORCHID,ORCHIDACEAE,Y,N,,,FACW,FACW,N,Y
+958,Habenaria quinqueseta,(Michx.)Eaton,,LONGHORN FALSE REINORCHID; MICHAUX'S ORCHID,ORCHIDACEAE,Y,N,,,FACW,FACW,N,Y
+3971,Habenaria repens,Nutt.,,WATERSPIDER FALSE REINORCHID,ORCHIDACEAE,Y,N,,,FACW,OBL,N,Y
+612,Halodule wrightii,Asch.,,SHOALWEED,CYMODOCEACEAE,Y,N,,,,OBL,N,Y
+857,Halophila decipiens,Ostenf.,,CARIBBEAN SEAGRASS,HYDROCHARITACEAE,Y,N,,,,OBL,N,Y
+2323,Halophila engelmannii,Asch.,,ENGELMANN'S SEAGRASS,HYDROCHARITACEAE,Y,N,,,,OBL,N,Y
+2723,Hamelia patens,Jacq.,,FIREBUSH,RUBIACEAE,Y,N,,,,FACU,N,Y
+4581,Haplocladiium virginianum,(Brid.) Broth.,,,LESKEACEAE,Y,,,,,,,N
+4580,Haplocladium microphyllum,(Hedw.) Broth.,,,LESKEACEAE,Y,,,,,,,N
+4760,Harpalejeunea stricta,(Lindenb. & Gottsche) Steph.,,,LEJEUNEACEAE,Y,,,,,,,N
+1215,Harrisia aboriginum,Small ex Britton & Rose,,PRICKLY APPLECACTUS; WEST COAST PRICKLY-APPLE,CACTACEAE,Y,Y,Endangered-State,Endangered-US,,,N,Y
+1262,Harrisia fragrans,Small ex Britton & Rose,,CARIBBEAN APPLECACTUS; INDIAN RIVER PRICKLY-APPLE; SIMPSON'S APPLECACTUS,CACTACEAE,Y,Y,Endangered-State,,,FACU,N,Y
+585,Helanthium tenellum,(Mart. ex Schult. & Schult.f.)Britton ex J.G.Sm.,,DWARF BURRHEAD; MUDBABIES,ALISMATACEAE,Y,N,,,OBL,OBL,N,Y
+2883,Helenium amarum,(Raf.)H.Rock,,SPANISH DAISY; BITTERWEED,ASTERACEAE,Y,N,,,FAC,FACU,N,Y
+2751,Helenium flexuosum,Raf.,,PURPLEHEAD SNEEZEWEED,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+2563,Helenium pinnatifidum,(Schwein. ex Nutt.)Rydb.,,SOUTHEASTERN SNEEZEWEED,ASTERACEAE,Y,N,,,FACW,OBL,N,Y
+2550,Helianthus agrestis,Pollard,,SOUTHEASTERN SUNFLOWER,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+3497,Helianthus angustifolius,L.,,NARROWLEAF SUNFLOWER; SWAMP SUNFLOWER,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+660,Helianthus debilis subsp. debilis,Nutt.,,EAST COAST DUNE SUNFLOWER,ASTERACEAE,Y,Y,,,,FAC,N,Y
+1249,Helianthus debilis subsp. vestitus,Nutt.,(E.Watson)Heiser,WEST COAST DUNE SUNFLOWER,ASTERACEAE,Y,Y,,,,,N,Y
+2689,Helianthus radula,(Pursh)Torr. & A.Gray,,STIFF SUNFLOWER,ASTERACEAE,Y,N,,,,FAC,N,Y
+2273,Heliotropium angiospermum,Murray,,SCORPIONSTAIL,BORAGINACEAE,Y,N,,,,FACU,N,Y
+2291,Heliotropium curassavicum,L.,,SEASIDE HELIOTROPE; SALT HELIOTROPE,BORAGINACEAE,Y,N,,,FAC,OBL,N,Y
+582,Heliotropium gnaphalodes,L.,,SEA ROSEMARY; SEA LAVENDER,BORAGINACEAE,Y,N,Endangered-State,,,FACU,N,Y
+2717,Heliotropium verdcourtii,Craven,,CHIGGERY GRAPES,BORAGINACEAE,Y,N,Endangered-State,,,,N,Y
+4630,Henicodium geniculatum,(Mitt.) W. R. Buck,,,PTEROBRYACEAE,Y,,,,,,,N
+3596,Herissantia crispa,(L.)Brizicky,,BLADDERMALLOW,MALVACEAE,Y,N,,,,,N,Y
+2176,Heterosavia bahamensis,(Britton)Petra Hoffm.,,BAHAMA MAIDENBUSH,PHYLLANTHACEAE,Y,N,Endangered-State,,,,N,Y
+3339,Heterotheca subaxillaris,(Lam.)Britton & Rusby,,CAMPHORWEED,ASTERACEAE,Y,N,,,,FACU-,N,Y
+3087,Hexalectris spicata,(Walter)Barnhart,,SPIKED CRESTED CORALROOT,ORCHIDACEAE,Y,N,Endangered-State,,,FACU,N,Y
+3178,Hexasepalum teres,(Walter)J.H.Kirkbr.,,POOR JOE; ROUGH BUTTONWEED,RUBIACEAE,Y,N,,,,FACU,N,Y
+615,Hibiscus poeppigii,(Spreng.)Garcke,,POEPPIG'S ROSEMALLOW,MALVACEAE,Y,N,Endangered-State,,,,N,Y
+2492,Hieracium megacephalon,Nash,,COASTALPLAIN HAWKWEED,ASTERACEAE,Y,N,,,,,N,Y
+3653,Hippocratea volubilis,L.,,MEDICINE VINE,CELASTRACEAE,Y,N,,,,FACW,N,Y
+2806,Hippomane mancinella,L.,,MANCHINEEL,EUPHORBIACEAE,Y,N,Endangered-State,,,FAC,N,Y
+1118,Houstonia nigricans var. floridana,(Lam.)Fernald,(Standl.)Terrell,FLORIDA DIAMONDFLOWERS,RUBIACEAE,Y,N,,,,,N,Y
+881,Houstonia nigricans var. nigricans,(Lam.)Fernald,,DIAMONDFLOWERS,RUBIACEAE,Y,N,,,,,N,Y
+3244,Houstonia procumbens,(J.F.Gmel.)Standl.,,INNOCENCE; ROUNDLEAF BLUET,RUBIACEAE,Y,N,,,,,N,Y
+2907,Hydrocotyle ranunculoides,L.f.,,FLOATING MARSHPENNYWORT,ARALIACEAE,Y,N,,,OBL,OBL,N,Y
+3906,Hydrocotyle umbellata,L.,,MANYFLOWER MARSHPENNYWORT,ARALIACEAE,Y,N,,,FACW,OBL,N,Y
+3074,Hydrocotyle verticillata var. triradiata,Thunb.,(A.Rich.)Fernald,WHORLED MARSHPENNYWORT,ARALIACEAE,Y,N,,,FACW,OBL,N,Y
+1048,Hydrocotyle verticillata var. verticillata,Thunb.,,WHORLED MARSHPENNYWORT,ARALIACEAE,Y,N,,,FACW,OBL,N,Y
+3238,Hydrolea corymbosa,J.Macbr. ex Elliott,,SKYFLOWER,HYDROLEACEAE,Y,N,,,OBL,OBL,N,Y
+4444,Hygroamblystegium varium,(Hedw.) Mönk.,,,AMBLYSTEGIACEAE,Y,,,,,,,N
+577,Hygrophila costata,Nees et al.,,GULF SWAMPWEED,ACANTHACEAE,Y,N,,,OBL,OBL,N,Y
+682,Hymenachne hemitomon,(Schult.)C.C.Hsu,,MAIDENCANE,POACEAE,Y,N,,,OBL,OBL,N,Y
+3784,Hymenocallis latifolia,(Mill.)M.Roem.,,MANGROVE SPIDERLILY; PERFUMED SPIDERLILY,AMARYLLIDACEAE,Y,N,,,OBL,FACW,N,Y
+1110,Hymenocallis palmeri,S.Watson,,ALLIGATORLILY,AMARYLLIDACEAE,Y,Y,,,OBL,OBL,N,Y
+1089,Hymenocallis puntagordensis,Traub,,SMALLCUP SPIDERLILY,AMARYLLIDACEAE,Y,Y,,,OBL,OBL,N,N
+4100,Hymenocallis tridentata,Small,,FLORIDA SPIDERLILY,AMARYLLIDACEAE,Y,Y,,,,,N,Y
+4617,Hyophila involuta,(Hook.) A. Jaeger,,,POTTIACEAE,Y,,,,,,,N
+4618,Hyophiladelphus agrarius,(Hedw.) R.H. Zander,,,POTTIACEAE,Y,,,,,,,N
+2770,Hypelate trifoliata,Sw.,,WHITE IRONWOOD,SAPINDACEAE,Y,N,Endangered-State,,,,N,Y
+647,Hypericum brachyphyllum,(Spach)Steud.,,COASTALPLAIN ST.JOHN'S-WORT,CLUSIACEAE,Y,N,,,FACW,FACW,N,Y
+1028,Hypericum cistifolium,Lam.,,ROUNDPOD ST.JOHN'S-WORT,CLUSIACEAE,Y,N,,,FACW,FACW,N,Y
+3376,Hypericum crux-andreae,(L.)Crantz,,ST.PETER'S-WORT,CLUSIACEAE,Y,N,,,FACW,FACW,N,Y
+1162,Hypericum edisonianum,(Small)W.P.Adams & N.Robson,,ARCADIAN ST.JOHN'S-WORT; EDISON'S ST.JOHN'S-WORT; EDISON ASCYRUM,CLUSIACEAE,Y,Y,Endangered-State,,OBL,OBL,N,Y
+539,Hypericum fasciculatum,Lam.,,SANDWEED; PEELBARK ST.JOHN'S-WORT,CLUSIACEAE,Y,N,,,OBL,FACW,N,Y
+3061,Hypericum gentianoides,(L.)Britton et al.,,PINEWEEDS; ORANGEGRASS,CLUSIACEAE,Y,N,,,,FACU,N,Y
+2821,Hypericum hypericoides,(L.)Crantz,,ST.ANDREW'S-CROSS,CLUSIACEAE,Y,N,,,FAC,FAC,N,Y
+3508,Hypericum mutilum,L.,,DWARF ST.JOHN'S-WORT,CLUSIACEAE,Y,N,,,FACW,FACW,N,Y
+1014,Hypericum myrtifolium,Lam.,,MYRTLELEAF ST.JOHN'S-WORT,CLUSIACEAE,Y,N,,,FACW,FACW,N,Y
+1038,Hypericum punctatum,Lam.,,SPOTTED ST.JOHN'S-WORT,CLUSIACEAE,Y,N,,,,FAC,N,Y
+3004,Hypericum tenuifolium,Pursh,,ATLANTIC ST.JOHN'S-WORT,CLUSIACEAE,Y,N,,,,FACU,N,Y
+654,Hypericum tetrapetalum,Lam.,,FOURPETAL ST.JOHN'S-WORT,CLUSIACEAE,Y,N,,,FAC,OBL,N,Y
+3397,Hypericum virginicum,L.,,VIRGINIA MARSH ST.JOHN'S-WORT,CLUSIACEAE,Y,N,,,OBL,OBL,N,Y
+2896,Hypolepis barringtonii,Schwartsb.,,CREEPING BRAMBLE FERN; BARRINGTON'S BRAMBLE FERN,DENNSTAEDTIACEAE,Y,Y,,,FACW,FACW,N,Y
+2412,Hypoxis curtissii,Rose,,COMMON YELLOW STARGRASS,HYPOXIDACEAE,Y,N,,,FACW,FACW,N,Y
+3312,Hypoxis juncea,Sm.,,FRINGED YELLOW STARGRASS,HYPOXIDACEAE,Y,N,,,FACW,FACW,N,Y
+2058,Hypoxis sessilis,L.,,GLOSSYSEED YELLOW STARGRASS,HYPOXIDACEAE,Y,N,,,FACW,FAC,N,Y
+2267,Hypoxis wrightii,(Baker)Brackett,,BRISTLESEED YELLOW STARGRASS,HYPOXIDACEAE,Y,N,,,FACW,FACW,N,Y
+2859,Hyptis alata,(Raf.)Shinners,,CLUSTERED BUSHMINT; MUSKY MINT,LAMIACEAE,Y,N,,,FACW,OBL,N,Y
+2048,Ilex ambigua,Torr.,,CAROLINA HOLLY; SAND HOLLY,AQUIFOLIACEAE,Y,N,,,,,N,Y
+3866,Ilex cassine var. cassine,L.,,DAHOON,AQUIFOLIACEAE,Y,N,,,OBL,FACW,N,Y
+3179,Ilex decidua,Walter,,POSSUMHAW,AQUIFOLIACEAE,Y,N,,,FACW,FACW,N,Y
+3793,Ilex glabra,(L.)A.Gray,,INKBERRY; GALLBERRY,AQUIFOLIACEAE,Y,N,,,,FACW,N,Y
+3959,Ilex krugiana,Loes.,,TAWNYBERRY HOLLY; KRUG'S HOLLY,AQUIFOLIACEAE,Y,N,Threatened-State,,,,N,Y
+1194,Ilex opaca var. arenicola,Aiton,(Ashe)Ashe,SCRUB HOLLY,AQUIFOLIACEAE,Y,Y,,,,,N,Y
+3826,Ilex opaca var. opaca,Aiton,,AMERICAN HOLLY,AQUIFOLIACEAE,Y,N,,,FAC,FAC,N,Y
+998,Indigofera caroliniana,Mill.,,CAROLINA INDIGO,FABACEAE,Y,N,,,,,N,Y
+559,Indigofera miniata,Ortega,,COASTAL INDIGO,FABACEAE,Y,N,,,,,N,Y
+1237,Indigofera trita subsp. scabra,L.f.,(Roth)de Kort & Thijsse,FLORIDA KEYS INDIGO,FABACEAE,Y,N,Endangered-State,,,,N,Y
+1054,Ionopsis utricularioides,(Sw.)Lindl.,,DELICATE VIOLET ORCHID; DELICATE IONOPSIS ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+2745,Ipomoea alba,L.,,MOONFLOWERS; TROPICAL WHITE MORNING-GLORY,CONVOLVULACEAE,Y,N,,,,FAC,N,Y
+836,Ipomoea cordatotriloba,Dennst.,,TIEVINE,CONVOLVULACEAE,Y,N,,,,FACU,N,Y
+3583,Ipomoea hederifolia,L.,,SCARLETCREEPER,CONVOLVULACEAE,Y,N,,,,FACU,N,Y
+2755,Ipomoea imperati,(Vahl)Griseb.,,BEACH MORNING-GLORY,CONVOLVULACEAE,Y,N,,,,FACU,N,Y
+3387,Ipomoea indica,(Burm.)Merr.,,OCEANBLUE MORNING-GLORY,CONVOLVULACEAE,Y,N,,,,FAC,N,Y
+3294,Ipomoea lacunosa,L.,,WHITESTAR,CONVOLVULACEAE,Y,N,,,,FAC,N,Y
+903,Ipomoea leucantha,Jacq.,,,CONVOLVULACEAE,Y,N,,,,,N,Y
+1277,Ipomoea macrorhiza,Michx.,,LARGEROOT MORNING-GLORY,CONVOLVULACEAE,Y,N,,,,,N,Y
+2233,Ipomoea microdactyla,Griseb.,,BEJUCO COLORADO; WILD-POTATO MORNING-GLORY; MAN-IN-THE-GROUND,CONVOLVULACEAE,Y,N,Endangered-State,,,,N,Y
+3540,Ipomoea pandurata,(L.)G.Mey.,,MAN-OF-THE-EARTH,CONVOLVULACEAE,Y,N,,,,FACU,N,Y
+590,Ipomoea pes-caprae subsp. brasiliensis,(L.)R.Br.,(L.)Ooststr.,RAILROAD VINE; BAYHOPS,CONVOLVULACEAE,Y,N,,,,FAC,N,Y
+553,Ipomoea sagittata,Poir.,,SALTMARSH MORNING-GLORY,CONVOLVULACEAE,Y,N,,,,FACW,N,Y
+2729,Ipomoea tenuissima,Choisy,,ROCKLAND MORNING-GLORY,CONVOLVULACEAE,Y,N,Endangered-State,,,,N,Y
+3702,Ipomoea violacea,L.,,BEACH MOONFLOWER,CONVOLVULACEAE,Y,N,,,,FACW,N,Y
+3079,Iresine diffusa,Humb. & Bonpl. ex Willd.,,JUBA'S BUSH,AMARANTHACEAE,Y,N,,,,FAC,N,Y
+3156,Iris savannarum,Small,,SAVANNA IRIS; PRAIRIE IRIS,IRIDACEAE,Y,N,,,OBL,OBL,N,Y
+2508,Isoetes flaccida,Shuttlew. ex A.Braun,,FLORIDA QUILLWORT,ISOETACEAE,Y,N,,,OBL,OBL,N,Y
+4570,Isopterygium tenerum,(Sw.) Mitt.,,,HYPNACEAE,Y,,,,,,,N
+3531,Itea virginica,L.,,VIRGINIA WILLOW; VIRGINIA SWEETSPIRE,ITEACEAE,Y,N,,,OBL,FACW,N,Y
+3836,Iva frutescens,L.,,BIGLEAF SUMPWEED,ASTERACEAE,Y,N,,,OBL,FACW,N,Y
+3190,Iva imbricata,Walter,,SEACOAST MARSHELDER,ASTERACEAE,Y,N,,,,FACW,N,Y
+1021,Iva microcephala,Nutt.,,PIEDMONT MARSHELDER,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+1133,Jacquemontia curtissii,Peter ex Hallier f.,,PINELAND CLUSTERVINE; PINELAND JACQUEMONTIA,CONVOLVULACEAE,Y,Y,Threatened-State,,,,N,Y
+2250,Jacquemontia havanensis,(Jacq.)Urb.,,HAVANA CLUSTERVINE,CONVOLVULACEAE,Y,N,Endangered-State,,,,N,Y
+919,Jacquemontia pentanthos,(Jacq.)G.Don,,SKYBLUE CLUSTERVINE,CONVOLVULACEAE,Y,N,Endangered-State,,,FAC,N,Y
+1113,Jacquemontia reclinata,House ex Small,,BEACH CLUSTERVINE; BEACH JACQUEMONTIA,CONVOLVULACEAE,Y,Y,Endangered-State,Endangered-US,,,N,Y
+3269,Jacquemontia tamnifolia,(L.)Griseb.,,HAIRY CLUSTERVINE,CONVOLVULACEAE,Y,N,,,,FACU,N,Y
+2521,Jacquinia keyensis,Mez,,JOEWOOD,PRIMULACEAE,Y,N,Threatened-State,,FAC,,N,Y
+3880,Juncus dichotomus,Elliott,,FORKED RUSH,JUNCACEAE,Y,N,,,OBL,FACW,N,Y
+2205,Juncus effusus subsp. solutus,L.,(Fernald & Wiegand)Hämet-Ahti,SOFT RUSH,JUNCACEAE,Y,N,,,OBL,OBL,N,Y
+2539,Juncus elliottii,Chapm.,,BOG RUSH; ELLIOTT'S RUSH,JUNCACEAE,Y,N,,,OBL,OBL,N,Y
+3068,Juncus marginatus,Rostk.,,SHORE RUSH; GRASSLEAF RUSH,JUNCACEAE,Y,N,,,FACW,FACW,N,Y
+785,Juncus megacephalus,M.A.Curtis,,BIGHEAD RUSH,JUNCACEAE,Y,N,,,OBL,OBL,N,Y
+4277,Juncus paludosus,E.L.Bridges & Orzell,,,JUNCACEAE,Y,N,,,,,N,Y
+2045,Juncus repens,Michx.,,LESSER CREEPING RUSH,JUNCACEAE,Y,N,,,OBL,OBL,N,Y
+854,Juncus roemerianus,Scheele,,NEEDLE RUSH; NEEDLEGRASS RUSH; BLACK RUSH,JUNCACEAE,Y,N,,,OBL,OBL,N,Y
+1017,Juncus scirpoides,Lam.,,NEEDLEPOD RUSH,JUNCACEAE,Y,N,,,OBL,FACW,N,Y
+3925,Juniperus virginiana,L.,,RED CEDAR,CUPRESSACEAE,Y,N,,,,FACU,N,Y
+1065,Justicia angusta,(Chapm.)Small,,PINELAND WATERWILLOW,ACANTHACEAE,Y,N,,,OBL,OBL,N,Y
+2284,Kallstroemia maxima,(L.)Hook. & Arn.,,BIG CALTROP,ZYGOPHYLLACEAE,Y,N,,,,,N,Y
+2104,Kellochloa verrucosa,(Muhl.)Lizarazu et al.,,WARTY PANICGRASS,POACEAE,Y,N,,,FACW,FACW,N,Y
+2760,Koanophyllon villosum,(Sw.)R.M.King & H.Rob.,,FLORIDA SHRUB THOROUGHWORT,ASTERACEAE,Y,N,Endangered-State,,,,N,Y
+2776,Kosteletzkya depressa,(L.)O.J.Blanchard et al.,,WHITE FENROSE; WHITE FEN,MALVACEAE,Y,N,Endangered-State,,FAC,FAC,N,Y
+862,Kosteletzkya pentacarpos,(L.)Ledeb.,,VIRGINIA SALTMARSH MALLOW,MALVACEAE,Y,N,,,OBL,OBL,N,Y
+3386,Krugiodendron ferreum,(Vahl)Urb.,,BLACK IRONWOOD; LEADWOOD,RHAMNACEAE,Y,N,,,,,N,Y
+828,Lachnanthes caroliana,(Lam.)Dandy,,CAROLINA REDROOT,HAEMODORACEAE,Y,N,,,FAC,OBL,N,Y
+3104,Lachnocaulon anceps,(Walter)Morong,,WHITEHEAD BOGBUTTON,ERIOCAULACEAE,Y,N,,,FACW,FACW,N,Y
+691,Lachnocaulon beyrichianum,Sporl. ex Körn.,,SOUTHERN BOGBUTTON,ERIOCAULACEAE,Y,N,,,FACW,OBL,N,Y
+2495,Lachnocaulon engleri,Ruhland,,ENGLER'S BOGBUTTON,ERIOCAULACEAE,Y,N,,,OBL,FACW,N,Y
+2510,Lachnocaulon minus,(Chapm.)Small,,SMALL'S BOGBUTTON,ERIOCAULACEAE,Y,N,,,OBL,OBL,N,Y
+975,Lactuca floridana,(L.)Gaertn.,,WOODLAND LETTUCE,ASTERACEAE,Y,N,,,,FACU,N,Y
+3166,Lactuca graminifolia,Michx.,,GRASSLEAF LETTUCE,ASTERACEAE,Y,N,,,,UPL,N,Y
+3621,Laguncularia racemosa,(L.)C.F.Gaertn.,,WHITE MANGROVE,COMBRETACEAE,Y,N,,,OBL,OBL,N,Y
+3362,Lantana canescens,Kunth,,HAMMOCK SHRUBVERBENA,VERBENACEAE,Y,N,Endangered-State,,,,N,Y
+1103,Lantana depressa var. depressa,Small,,ROCKLAND SHRUBVERBENA; PINELAND LANTANA,VERBENACEAE,Y,Y,Endangered-State,,,,N,Y
+3639,Lantana involucrata,L.,,BUTTONSAGE,VERBENACEAE,Y,N,,,,,N,Y
+4881,Lantana sandersii var. sandersii,A.R.Franck & Gann,,,VERBENACEAE,Y,N,Endangered-State,,,,,Y
+4880,Lantana sandersii var. sanibelensis,A.R.Franck & Gann,(R.W. Sanders)A.R.Franck & Gann,,VERBENACEAE,Y,Y,Endangered-State,,,,,Y
+4883,Lantana x floridana,Raf.,,,VERBENACEAE,Y,Y,,,,,,Y
+5056,Lantana x strigodepressa,A.R.Franck,,,VERBENACEAE,Y,Y,,,,,,N
+2816,Lasiacis divaricata,(L.)Hitchc.,,SMALLCANE; FLORIDA TIBISEE,POACEAE,Y,N,,,,,N,Y
+1187,Lechea cernua,Small,,NODDING PINWEED; SCRUB PINWEED,CISTACEAE,Y,Y,Threatened-State,,,,N,Y
+2393,Lechea deckertii,Small,,DECKERT'S PINWEED,CISTACEAE,Y,N,,,,,N,Y
+1222,Lechea divaricata,Shuttlew. ex Britton,,DRYSAND PINWEED; SPREADING PINWEED,CISTACEAE,Y,Y,Endangered-State,,,,N,Y
+1101,Lechea lakelae,Wilbur,,LAKELA'S PINWEED,CISTACEAE,Y,Y,Endangered-State,,,,N,Y
+2940,Lechea mucronata,Raf.,,HAIRY PINWEED,CISTACEAE,Y,N,,,,,N,Y
+2083,Lechea sessiliflora,Raf.,,PINELAND PINWEED,CISTACEAE,Y,N,,,,,N,Y
+2547,Lechea torreyi,(Chapm.)Legg. ex Britton,,PIEDMONT PINWEED,CISTACEAE,Y,N,,,,FACU,N,Y
+2828,Leersia hexandra,Sw.,,SOUTHERN CUTGRASS,POACEAE,Y,N,,,OBL,OBL,N,Y
+2826,Leersia monandra,Sw.,,BUNCH CUTGRASS,POACEAE,Y,N,,,OBL,UPL,N,Y
+4765,Lejeunea cancellata,Nees & Mont.,,,LEJEUNEACEAE,Y,,,,,,,N
+4766,Lejeunea cladogyna,A. Evans,,,LEJEUNEACEAE,Y,,,,,,,N
+4768,Lejeunea flava,(Sw.) Nees,,,LEJEUNEACEAE,Y,,,,,,,N
+4769,Lejeunea floridana,A. Evans,,,LEJEUNEACEAE,Y,,,,,,,N
+4770,Lejeunea glaucescens,Gottsche,,,LEJEUNEACEAE,Y,,,,,,,N
+4771,Lejeunea laetevirens,Nees & Mont.,,,LEJEUNEACEAE,Y,,,,,,,N
+4773,Lejeunea minutiloba var. heterogyna,A. Evans,R.M. Schust.,,LEJEUNEACEAE,Y,Y,,,,,,N
+4772,Lejeunea minutiloba var. minutiloba,A. Evans,,,LEJEUNEACEAE,Y,,,,,,,N
+4774,Lejeunea obtusangula,Spruce,,,LEJEUNEACEAE,Y,,,,,,,N
+4775,Lejeunea phyllobola,Nees & Mont.,,,LEJEUNEACEAE,Y,,,,,,,N
+4776,Lejeunea spiniloba,Lindenb. & Gottsche,,,LEJEUNEACEAE,Y,,,,,,,N
+4777,Lejeunea trinitensis,Lindenb.,,,LEJEUNEACEAE,Y,,,,,,,N
+554,Lemna aequinoctialis,Welw.,,LESSER DUCKWEED,ARACEAE,Y,N,,,,OBL,N,Y
+946,Lemna obscura,(Austin)Daubs,,LITTLE DUCKWEED,ARACEAE,Y,N,,,,OBL,N,Y
+593,Lemna valdiviana,Phil.,,VALDIVIA DUCKWEED,ARACEAE,Y,N,,,,OBL,N,Y
+2269,Lepanthopsis melanantha,(Rchb.f.)Ames,,TINY ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,N
+2129,Lepidium virginicum,L.,,VIRGINIA PEPPERWEED,BRASSICACEAE,Y,N,,,,UPL,N,Y
+4589,Leptobryum pyriforme,(Hedw.) Wilson,,,MEESIACEAE,Y,,,,,,,N
+2820,Leptochloa virgata,(L.)P.Beauv.,,TROPICAL SPRANGLETOP,POACEAE,Y,N,,,FAC,FAC,N,Y
+4445,Leptodictyum riparium,(Hedw.) Warnst.,,,AMBLYSTEGIACEAE,Y,,,,,,,N
+4778,Leptolejeunea elliptica,(Lehm. & Lindenb.) Schiffn.,,,LEJEUNEACEAE,Y,,,,,,,N
+4582,Leskea australis,Sharp,,,LESKEACEAE,Y,,,,,,,N
+3528,Lespedeza hirta,(L.)Hornem.,,HAIRY LESPEDEZA,FABACEAE,Y,N,,,,,N,Y
+4585,Leucobryum albidum,(P. Beauv.) Lindb.,,,LEUCOBRYACEAE,Y,,,,,,,N
+4586,Leucobryum glaucum,(Hedw.) Ångström,,,LEUCOBRYACEAE,Y,,,,,,,N
+4780,Leucolejeunea conchifolia,(A. Evans) A. Evans,,,LEJEUNEACEAE,Y,,,,,,,N
+4781,Leucolejeunea unciloba,(Lindenb.) A. Evans,,,LEJEUNEACEAE,Y,,,,,,,N
+4782,Leucolejeunea xanthocarpa,(Lehm. & Lindenb.) A. Evans,,,LEJEUNEACEAE,Y,,,,,,,N
+555,Leucothrinax morrisii,(H.Wendl.)C.Lewis & Zona,,BRITTLE THATCH PALM; KEY THATCH PALM,ARECACEAE,Y,N,Threatened-State,,,,N,Y
+2540,Liatris chapmanii,Torr. & A.Gray,,CHAPMAN'S GAYFEATHER,ASTERACEAE,Y,N,,,,,N,Y
+1184,Liatris garberi,A.Gray,,GARBER'S GAYFEATHER,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+2648,Liatris gracilis,Pursh,,SLENDER GAYFEATHER,ASTERACEAE,Y,N,,,FAC,FACU,N,Y
+4187,Liatris savannensis,Kral & G.L.Nesom,,SAVANNA GAYFEATHER,ASTERACEAE,Y,Y,,,,,N,Y
+3691,Liatris spicata,(L.)Willd.,,DENSE GAYFEATHER,ASTERACEAE,Y,N,,,FAC,FACU,N,Y
+3310,Liatris tenuifolia,Nutt.,,SHORTLEAF GAYFEATHER,ASTERACEAE,Y,N,,,,,N,Y
+1204,Liatris tenuifolia var. quadriflora,Nutt.,Chapm.,SHORTLEAF GAYFEATHER,ASTERACEAE,Y,N,,,,,N,Y
+741,Licaria triandra,(Sw.)Kosterm.,,PEPPERLEAF SWEETWOOD,LAURACEAE,Y,N,Endangered-State,,,,N,Y
+3148,Lilium catesbaei,Walter,,CATESBY'S LILY; PINE LILY,LILIACEAE,Y,N,Threatened-State,,FAC,FACW,N,Y
+3214,Limnobium spongia,(Bosc)Rich. ex Steud.,,AMERICAN SPONGEPLANT; FROG'S-BIT,HYDROCHARITACEAE,Y,N,,,OBL,OBL,N,Y
+3131,Limonium carolinianum,(Walter)Britton,,CAROLINA SEALAVENDER,PLUMBAGINACEAE,Y,N,,,OBL,OBL,N,Y
+774,Linaria canadensis,(L.)Chaz.,,CANADIAN TOADFLAX,PLANTAGINACEAE,Y,N,,,,,N,Y
+2429,Linaria floridana,Chapm.,,APALACHICOLA TOADFLAX,PLANTAGINACEAE,Y,N,,,,,N,Y
+3499,Lindernia dubia,(L.)Pennell,,MOISTBANK PIMPERNEL; YELLOWSEED FALSE PIMPERNEL,LINDERNIACEAE,Y,N,,,FACW,OBL,N,Y
+2618,Lindernia grandiflora,Nutt.,,SAVANNAH FALSE PIMPERNEL,LINDERNIACEAE,Y,N,,,FACW,OBL,N,Y
+3,Linum arenicola,(Small)H.J.P.Winkler,,SAND FLAX,LINACEAE,Y,Y,Endangered-State,Endangered-US,,OBL,N,Y
+1104,Linum carteri var. carteri,Small,,CARTER'S FLAX; EVERGLADES FLAX,LINACEAE,Y,Y,Endangered-State,Endangered-US,FACW,FACW,N,Y
+2566,Linum floridanum,(Planch.)Trel.,,FLORIDA YELLOW FLAX,LINACEAE,Y,N,,,FAC,FAC,N,Y
+3352,Linum medium var. texanum,(Planch.)Britton,(Planch.)Fernald,STIFF YELLOW FLAX,LINACEAE,Y,N,,,FAC,FAC,N,Y
+1094,Linum smallii,(C.M.Rogers)K.Bradley & Weakley,,SMALL'S FLAX,LINACEAE,Y,Y,Endangered-State,,,,N,Y
+2852,Liparis nervosa,(Thunb.)Lindl.,,PANTROPICAL WIDELIP ORCHID; TALL TWAYBLADE,ORCHIDACEAE,Y,N,Endangered-State,,OBL,OBL,N,Y
+3823,Lippia stoechadifolia,(L.)Kunth,,SOUTHERN FOGFRUIT; SOUTHERN MATCHSTICKS,VERBENACEAE,Y,N,Endangered-State,,FAC,FACW,N,Y
+3559,Liquidambar styraciflua,L.,,SWEETGUM,ALTINGIACEAE,Y,N,,,FACW,FAC,N,Y
+1273,Lobelia feayana,A.Gray,,BAY LOBELIA,CAMPANULACEAE,Y,N,,,FACW,FACW,N,Y
+3164,Lobelia glandulosa,Walter,,GLADE LOBELIA,CAMPANULACEAE,Y,N,,,FACW,OBL,N,Y
+1261,Lobelia homophylla,E.Wimm.,,PINELAND LOBELIA,CAMPANULACEAE,Y,Y,,,FACW,FAC,N,Y
+2079,Lobelia paludosa,Nutt.,,WHITE LOBELIA,CAMPANULACEAE,Y,N,,,FACW,OBL,N,Y
+2271,Lomariopsis kunzeana,(Underw.)Holttum,,HOLLY VINE FERN; CLIMBING HOLLY-FERN,LOMARIOPSIDACEAE,Y,N,Endangered-State,,,FAC,N,Y
+4783,Lopholejeunea nigricans,(Lindenb.) Schiffn.,,,LEJEUNEACEAE,Y,,,,,,,N
+4784,Lopholejeunea subfusca,(Nees) Schiffn.,,,LEJEUNEACEAE,Y,,,,,,,N
+3249,Ludwigia alata,Elliott,,WINGED PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+3176,Ludwigia arcuata,Walter,,PIEDMONT PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+636,Ludwigia curtissii,Chapm.,,CURTISS' PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+3228,Ludwigia decurrens,Walter,,WINGLEAF PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+2280,Ludwigia erecta,(L.)H.Hara,,YERBA DE JICOTEA,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+2697,Ludwigia lanceolata,Elliott,,LANCELEAF PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+2937,Ludwigia leptocarpa,(Nutt.)H.Hara,,ANGLESTEM PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+3315,Ludwigia linearis,Walter,,NARROWLEAF PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+521,Ludwigia linifolia,Poir.,,SOUTHEASTERN PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+2626,Ludwigia maritima,R.M.Harper,,SEASIDE PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,FACW,FACW,N,Y
+3235,Ludwigia microcarpa,Michx.,,SMALLFRUIT PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+956,Ludwigia octovalvis,(Jacq.)P.H.Raven,,MEXICAN PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+3618,Ludwigia palustris,(L.)Elliott,,MARSH SEEDBOX,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+2730,Ludwigia peploides subsp. glabrescens,(Kunth)P.H.Raven,(Kuntze)P.H.Raven,FLOATING PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+3314,Ludwigia pilosa,Walter,,HAIRY PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+3412,Ludwigia repens,J.R.Forst.,,CREEPING PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,OBL,OBL,N,Y
+3192,Ludwigia suffruticosa,Walter,,SHRUBBY PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,FACW,OBL,N,Y
+3301,Ludwigia virgata,Michx.,,SAVANNAH PRIMROSEWILLOW,ONAGRACEAE,Y,N,,,FACW,OBL,N,Y
+4619,Luisierella barbula,(Schwägr.) Steere,,,POTTIACEAE,Y,,,,,,,N
+2988,Lupinus diffusus,Nutt.,,SKYBLUE LUPINE,FABACEAE,Y,N,,,,,N,Y
+3246,Luziola fluitans,(Michx.)Terrell & H.Rob.,,SOUTHERN WATERGRASS,POACEAE,Y,N,,,OBL,OBL,N,Y
+3149,Lycium carolinianum,Walter,,CHRISTMASBERRY; CAROLINA DESERT-THORN,SOLANACEAE,Y,N,,,OBL,FACW,N,Y
+2318,Lycopodiella appressa,(Chapm.)Cranfill,,SOUTHERN CLUB-MOSS; SOUTHERN BOG CLUB-MOSS,LYCOPODIACEAE,Y,N,,,FACW,OBL,N,Y
+2060,Lycopodiella caroliniana,(L.)Pic.Serm.,,SLENDER CLUB-MOSS,LYCOPODIACEAE,Y,N,,,FACW,OBL,N,Y
+3614,Lycopodiella cernua,(L.)Pic.Serm.,,NODDING CLUB-MOSS; STAGHORN CLUB-MOSS,LYCOPODIACEAE,Y,N,,,FACW,FACW,N,Y
+3500,Lycopus rubellus,Moench,,TAPERLEAF WATERHOREHOUND,LAMIACEAE,Y,N,,,OBL,OBL,N,Y
+681,Lygodesmia aphylla,(Nutt.)DC.,,ROSE-RUSH,ASTERACEAE,Y,N,,,,,N,Y
+2695,Lyonia ferruginea,(Walter)Nutt.,,RUSTY STAGGERBUSH,ERICACEAE,Y,N,,,,FACU,N,Y
+679,Lyonia fruticosa,(Michx.)G.S.Torr.,,COASTALPLAIN STAGGERBUSH,ERICACEAE,Y,N,,,,FACW,N,Y
+3307,Lyonia ligustrina var. foliosiflora,(L.)DC.,(Michx.)Fernald,MALEBERRY,ERICACEAE,Y,N,,,FAC,FACW,N,Y
+3646,Lyonia lucida,(Lam.)K.Koch,,FETTERBUSH,ERICACEAE,Y,N,,,FACW,FACW,N,Y
+909,Lysiloma latisiliquum,(L.)Benth.,,FALSE TAMARIND,FABACEAE,Y,N,,,,,N,Y
+927,Lysimachia minima,(L.)U.Manns & Anderb.,,CHAFFWEED,PRIMULACEAE,Y,N,,,,,N,Y
+2768,Lysimachia ovalis,(Ruiz & Pav.)U.Manns & Anderb.,,FLORIDA PIMPERNEL,PRIMULACEAE,Y,N,,,FAC,,N,Y
+3282,Lythrum alatum var. lanceolatum,Pursh,(Elliott)Torr. & A.Gray ex Rothr.,WINGED LOOSESTRIFE,LYTHRACEAE,Y,N,,,OBL,OBL,N,Y
+1257,Lythrum flagellare,Shuttlew. ex Chapm.,,FLORIDA LOOSESTRIFE; LOWLAND LOOSESTRIFE,LYTHRACEAE,Y,Y,Endangered-State,,OBL,OBL,N,Y
+3430,Lythrum lineare,L.,,WAND LOOSESTRIFE,LYTHRACEAE,Y,N,,,OBL,OBL,N,Y
+3361,Macradenia lutescens,R.Br.,,LONG-GLAND ORCHID; TRINIDAD MACRADENIA,ORCHIDACEAE,Y,N,Endangered-State,,,,N,N
+3766,Magnolia grandiflora,L.,,SOUTHERN MAGNOLIA,MAGNOLIACEAE,Y,N,,,,FAC,N,Y
+3669,Magnolia virginiana,L.,,SWEETBAY,MAGNOLIACEAE,Y,N,,,OBL,FACW,N,Y
+2767,Malaxis spicata,Sw.,,FLORIDA ADDERSMOUTH ORCHID,ORCHIDACEAE,Y,N,,,OBL,OBL,N,Y
+3662,Malvastrum americanum,(L.)Torr.,,INDIAN VALLEY FALSE MALLOW,MALVACEAE,Y,N,,,,,N,Y
+2722,Malvastrum corchorifolium,(Desr.)Britton ex Small,,FALSE MALLOW,MALVACEAE,Y,N,,,,,N,Y
+2178,Manilkara jaimiqui subsp. emarginata,(C.Wright ex Griseb.)Dubard,(L.)Cronquist,WILD DILLY,SAPOTACEAE,Y,N,Threatened-State,,FAC,FAC,N,Y
+4796,Marchantia inflexa,Nees & Mont.,,,MARCHANTIACEAE,Y,,,,,,,N
+2089,Marshallia graminifolia,(Walter)Small,,GRASSLEAF BARBARA'S BUTTONS,ASTERACEAE,Y,N,,,FACW,OBL,N,Y
+4785,Mastigolejeunea auriculata,(Wilson & Hook.) Schiffn.,,,LEJEUNEACEAE,Y,,,,,,,N
+2758,Maxillaria crassifolia,(Lindl.)Rchb.f.,,HIDDEN ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,OBL,OBL,N,Y
+1057,Maxillaria parviflora,(Poepp. & Endl.)Garay,,PURPLE TIGER ORCHID; MINNIE-MAX,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+1112,Mecardonia acuminata subsp. peninsularis,(Walter)Small,(Pennell)Rossow,AXILFLOWER,PLANTAGINACEAE,Y,Y,,,FACW,FACW,N,Y
+2923,Mecardonia procumbens,(Mill.)Small,,BABY JUMPUP,PLANTAGINACEAE,Y,N,,,FACW,OBL,N,Y
+4991,Melanthera angustifolia,A.Rich.,,EVERGLADES SQUARESTEM,ASTERACEAE,Y,N,,,,,N,Y
+3274,Melanthera nivea,(L.)Small,,SNOW SQUARESTEM,ASTERACEAE,Y,N,,,FACW,FACU,N,Y
+4990,Melanthera parvifolia,Small,,SMALL-LEAF SQUARESTEM,ASTERACEAE,Y,Y,Threatened-State,,,,,Y
+2184,Melochia pyramidata,L.,,PYRAMIDFLOWER,MALVACEAE,Y,N,,,,FAC,N,Y
+2787,Melochia spicata,(L.)Fryxell,,BRETONICA PELUDA,MALVACEAE,Y,N,,,,FAC,N,Y
+3985,Melochia tomentosa,L.,,WOOLLY PYRAMIDFLOWER; TEABUSH; BROOMWOOD,MALVACEAE,Y,N,,,,,N,Y
+3631,Melothria pendula,L.,,CREEPING CUCUMBER,CUCURBITACEAE,Y,N,,,,FAC,N,Y
+2587,Mentzelia floridana,Nutt. ex Torr. & A.Gray,,POORMAN'S PATCH; STICKLEAF,LOASACEAE,Y,N,,,,,N,Y
+2911,Mesadenus lucayanus,(Britton)Schltr.,,FLORIDA KEYS LADIESTRESSES; GRAY LADIESTRESSES; FT. GEORGE LADIESTRESSES,ORCHIDACEAE,Y,N,Endangered-State,,FACW,,N,Y
+2520,Metastelma blodgettii,A.Gray,,BLODGETT'S SWALLOWWORT,APOCYNACEAE,Y,N,Threatened-State,,,,N,Y
+575,Metastelma northropiae,Schltr.,,FRAGRANT SWALLOWWORT,APOCYNACEAE,Y,N,,,,,N,N
+581,Metopium toxiferum,(L.)Krug &. Urb.,,FLORIDA POISONTREE; POISONWOOD,ANACARDIACEAE,Y,N,,,FAC,FAC,N,Y
+3768,Miconia bicolor,(Mill.)Triana,,FLORIDA CLOVER ASH; TETRAZYGIA,MELASTOMATACEAE,Y,N,Threatened-State,,,FAC,N,Y
+1220,Micranthemum glomeratum,(Chapm.)Shinners,,MANATEE MUDFLOWER,LINDERNIACEAE,Y,Y,,,OBL,OBL,N,Y
+3111,Micranthemum umbrosum,(J.F.Gmel.)S.F.Blake,,SHADE MUDFLOWER,LINDERNIACEAE,Y,N,,,OBL,OBL,N,Y
+2713,Microgramma heterophylla,(L.)Wherry,,CLIMBING VINE FERN,POLYPODIACEAE,Y,N,Endangered-State,,,,N,Y
+4786,Microlejeunea bullata,(Taylor) A. Evans,,,LEJEUNEACEAE,Y,,,,,,,N
+4787,Microlejeunea epiphylla,Bischl.,,,LEJEUNEACEAE,Y,,,,,,,N
+4531,Micromitrium megalosporum,Austin,,,EPHEMERACEAE,Y,,,,,,,N
+2228,Mikania cordifolia,(L.f.)Willd.,,FLORIDA KEYS HEMPVINE,ASTERACEAE,Y,N,,,,FACW,N,Y
+3395,Mikania scandens,(L.)Willd.,,CLIMBING HEMPVINE,ASTERACEAE,Y,N,,,,FACW+,N,Y
+3370,Mimosa quadrivalvis var. angustata,L.,(Torr. & A.Gray)Barneby,SENSITIVE BRIER,FABACEAE,Y,N,,,,,N,Y
+2515,Mimosa quadrivalvis var. floridana,L.,(Chapm.)Barneby,FLORIDA SENSITIVE BRIER,FABACEAE,Y,N,,,,,N,Y
+2162,Mimosa strigillosa,Torr. & A.Gray,,POWDERPUFF,FABACEAE,Y,N,,,,FAC,N,Y
+3615,Mitchella repens,L.,,PARTRIDGEBERRY; TWINBERRY,RUBIACEAE,Y,N,,,,FACU,N,Y
+2565,Mitreola angustifolia,(Torr. & A.Gray)J.B.Nelson,,NARROWLEAF HORNPOD,LOGANIACEAE,Y,N,,,FACW,FAC,N,Y
+3100,Mitreola petiolata,(J.F.Gmel.)Torr. & A.Gray,,LAX HORNPOD,LOGANIACEAE,Y,N,,,FACW,FACW,N,Y
+843,Mitreola sessilifolia,(J.F.Gmel.)G.Don,,SWAMP HORNPOD,LOGANIACEAE,Y,N,,,FACW,FACW,N,Y
+533,Modiola caroliniana,(L.)G.Don,,CAROLINA BRISTLEMALLOW,MALVACEAE,Y,N,,,,FACU,N,Y
+3478,Monarda punctata,L.,,SPOTTED BEEBALM,LAMIACEAE,Y,N,,,,FACU,N,Y
+3568,Monotropa uniflora,L.,,INDIANPIPE,ERICACEAE,Y,N,,,,FACU,N,Y
+3942,Morella cerifera,(L.)Small,,SOUTHERN BAYBERRY; WAX MYRTLE,MYRICACEAE,Y,N,,,FAC,FAC,N,Y
+3676,Morinda royoc,L.,,REDGAL,RUBIACEAE,Y,N,,,FACW,,N,Y
+3420,Morus rubra,L.,,RED MULBERRY,MORACEAE,Y,N,,,FAC,FACU,N,Y
+2583,Mosiera longipes,(O.Berg)Small,,MANGROVEBERRY,MYRTACEAE,Y,N,Threatened-State,,,,N,Y
+898,Mucuna sloanei,Fawc. & Rendle,,HORSEEYE BEAN,FABACEAE,Y,N,,,,,N,Y
+3189,Muenchhusia coccinea,(Walter) M.M.Hanes & R.L.Barrett,,SCARLET ROSEMALLOW,MALVACEAE,Y,N,,,OBL,OBL,N,Y
+2098,Muenchhusia grandiflora,(Michx.) M.M.Hanes & R.L.Barrett,,SWAMP ROSEMALLOW,MALVACEAE,Y,N,,,OBL,OBL,N,Y
+2069,Muhlenbergia capillaris var. capillaris,(Lam.)Trin.,,HAIRAWN MUHLY,POACEAE,Y,N,,,OBL,FAC,N,Y
+2308,Muhlenbergia capillaris var. filipes,(Lam.)Trin.,(M.A.Curtis)Chapm. ex Beal,GULF HAIRAWN MUHLY,POACEAE,Y,N,,,,OBL,N,Y
+3035,Muhlenbergia schreberi,J.F.Gmel.,,NIMBLEWILL MUHLY,POACEAE,Y,N,,,FACW,FAC,N,Y
+705,Myrcia neopallens,A.R.Lourenço & E.Lucas,,PALE LIDFLOWER; SPICEWOOD,MYRTACEAE,Y,N,Threatened-State,,,,N,Y
+2784,Myrcia zuzygium,(L.)A.R.Lourenço & E.Lucas,,MYRTLE-OF-THE-RIVER,MYRTACEAE,Y,N,Endangered-State,,,,N,Y
+2832,Myrcianthes fragrans,(Sw.)McVaugh,,TWINBERRY; SIMPSON'S STOPPER,MYRTACEAE,Y,N,Threatened-State,,,,N,Y
+2594,Myriophyllum heterophyllum,Michx.,,TWOLEAF WATERMILFOIL,HALORAGACEAE,Y,N,,,,OBL,N,Y
+3320,Myriophyllum pinnatum,(Walter)Britton et al.,,CUTLEAF WATERMILFOIL,HALORAGACEAE,Y,N,,,,OBL,N,Y
+2830,Myriopteris microphylla,(Sw.)Grusz & Windham,,SOUTHERN LIP FERN,PTERIDACEAE,Y,N,Endangered-State,,,,N,Y
+2792,Myriopus volubilis,(L.)Small,,TWINING SOLDIERBUSH,BORAGINACEAE,Y,N,,,,,N,Y
+3811,Myrsine cubana,A.DC.,,MYRSINE; COLICWOOD,PRIMULACEAE,Y,N,,,FAC,FAC,N,Y
+2708,Najas guadalupensis,(Spreng.)Magnus,,SOUTHERN WATERNYMPH,HYDROCHARITACEAE,Y,N,,,,OBL,N,Y
+2087,Najas marina,L.,,SPINY WATERNYMPH,HYDROCHARITACEAE,Y,N,,,,OBL,N,Y
+603,Najas wrightiana,A.Braun,,WRIGHT'S WATERNYMPH,HYDROCHARITACEAE,Y,N,,,,OBL,N,Y
+1266,Nasturtium floridanum,(Al-Shehbaz & Rollins)Al-Shehbaz & R.A.Price,,FLORIDA WATERCRESS,BRASSICACEAE,Y,Y,,,OBL,,N,Y
+4597,Neckeropsis disticha,(Hedw.) Kindb.,,,NECKERACEAE,Y,,,,,,,N
+4596,Neckeropsis undulata,(Hedw.) Reichardt,,,NECKERACEAE,Y,,,,,,,N
+980,Nekemias arborea,(L.)J.Wen & Boggan,,PEPPERVINE,VITACEAE,Y,N,,,,FAC,N,Y
+2954,Nelumbo lutea,Willd.,,AMERICAN LOTUS,NELUMBONACEAE,Y,N,,,OBL,OBL,N,Y
+1265,Nemastylis floridana,Small,,CELESTIAL LILY; FALLFLOWERING IXIA; HAPPYHOUR FLOWER,IRIDACEAE,Y,Y,Endangered-State,,FACW,OBL,N,Y
+2905,Nephrolepis biserrata,(Sw.)Schott,,GIANT SWORD FERN,NEPHROLEPIDACEAE,Y,N,Threatened-State,,FAC,FACW-,N,Y
+2809,Nephrolepis exaltata,(L.)Schott,,SWORD FERN; WILD BOSTON FERN,NEPHROLEPIDACEAE,Y,N,,,FAC,FAC,N,Y
+2371,Nephrolepis x averyi,Nauman,,AVERY'S SWORD FERN,NEPHROLEPIDACEAE,Y,N,,,FAC,,N,Y
+795,Neptunia pubescens,Benth.,,TROPICAL PUFF,FABACEAE,Y,N,,,,FAC,N,Y
+1080,Nolina atopocarpa,Bartlett,,FLORIDA BEARGRASS,RUSCACEAE,Y,Y,Threatened-State,,,FAC,N,Y
+3782,Nothoscordum bivalve,(L.)Britton,,CROWPOISON; FALSE GARLIC,ALLIACEAE,Y,N,,,,FACU,N,Y
+3050,Nuphar advena subsp. advena,(Aiton)W.T.Aiton,,SPATTERDOCK; YELLOW PONDLILY,NYMPHAEACEAE,Y,N,,,OBL,OBL,N,Y
+2279,Nymphaea ampla,(Salisb.)DC.,,DOTLEAF WATERLILY,NYMPHAEACEAE,Y,N,,,OBL,OBL,N,Y
+852,Nymphaea elegans,Hook.,,TROPICAL ROYALBLUE WATERLILY,NYMPHAEACEAE,Y,N,,,OBL,OBL,N,Y
+632,Nymphaea jamesoniana,Planch.,,JAMESON'S WATERLILY; NIGHTBLOOMING WATERLILY,NYMPHAEACEAE,Y,N,Endangered-State,,OBL,OBL,N,Y
+769,Nymphaea mexicana,Zucc.,,YELLOW WATERLILY,NYMPHAEACEAE,Y,N,,,OBL,OBL,N,Y
+2277,Nymphaea odorata,Aiton,,AMERICAN WHITE WATERLILY,NYMPHAEACEAE,Y,N,,,OBL,OBL,N,Y
+3134,Nymphoides aquatica,(J.F.Gmel.)Kuntze,,BIG FLOATINGHEART,MENYANTHACEAE,Y,N,,,OBL,OBL,N,Y
+3117,Nyssa biflora,Walter,,SWAMP TUPELO,NYSSACEAE,Y,N,,,OBL,OBL,N,Y
+753,Ocimum campechianum,Mill.,,WILD SWEET BASIL; WILD MOSQUITOPLANT,LAMIACEAE,Y,N,Endangered-State,,,,N,Y
+2355,Oclemena reticulata,(Pursh)G.L.Nesom,,WHITETOP ASTER; PINEBARREN ASTER,ASTERACEAE,Y,N,,,,FAC,N,Y
+4588,Octoblepharum albidum,Hedw.,,,LEUCOPHANACEAE,Y,,,,,,,N
+4694,Odontoschisma sphagni,(Dicks.)Dumort.,,,CEPHALOZIACEAE,Y,,,,,,,N
+3630,Oenothera biennis,L.,,COMMON EVENINGPRIMROSE,ONAGRACEAE,Y,N,,,,FACU,N,Y
+4041,Oenothera humifusa,Nutt.,,SEABEACH EVENINGPRIMROSE,ONAGRACEAE,Y,N,,,,,N,Y
+2062,Oenothera laciniata,Hill,,CUTLEAF EVENINGPRIMROSE,ONAGRACEAE,Y,N,,,,FACU,N,Y
+3271,Oenothera simulans,(Small)W.L.Wagner & Hoch,,SOUTHERN BEEBLOSSOM,ONAGRACEAE,Y,N,,,,,N,Y
+766,Okenia hypogaea,Schltdl. & Cham.,,BURROWING FOUR-O'CLOCK; BEACH PEANUT,NYCTAGINACEAE,Y,N,Endangered-State,,,,N,Y
+702,Oncidium ensatum,Lindl.,,FLORIDA DANCINGLADY ORCHID; FLORIDA ONCIDIUM,ORCHIDACEAE,Y,N,Endangered-State,,,FACW,N,Y
+3086,Ophioglossum nudicaule,L.f.,,SLENDER ADDER'S-TONGUE,OPHIOGLOSSACEAE,Y,N,,,,FAC,N,Y
+2715,Ophioglossum palmatum,L.,,HAND FERN,OPHIOGLOSSACEAE,Y,N,Endangered-State,,,FAC+,N,Y
+3950,Ophioglossum petiolatum,Hook.,,STALKED ADDER'S-TONGUE,OPHIOGLOSSACEAE,Y,N,,,,FAC,N,Y
+4892,Oplismenus setarius,(Lam.)Roem. & Schult.,,WOODSGRASS; BASKETGRASS,POACEAE,Y,N,,,,,,Y
+4960,Opuntia abjecta,Small ex Britton & Rose,,KEYS SPANISH LADY,CACTACEAE,Y,Y,Endangered-State,,,,N,N
+4961,Opuntia austrina,Small,,DEVIL'S-TONGUE,CACTACEAE,Y,Y,,,,,N,Y
+4963,Opuntia mesacantha subsp. lata,Raf.,(Small)Majure,PRICKLYPEAR,CACTACEAE,Y,N,,,,,N,Y
+2260,Opuntia ochrocentra,Small ex Britton & Rose,,BULLSUCKERS,CACTACEAE,Y,Y,,,,,N,Y
+3595,Opuntia stricta,(Haw.)Haw.,,ERECT PRICKLYPEAR; SHELL-MOUND PRICKLYPEAR,CACTACEAE,Y,N,Threatened-State,,,UPL,N,Y
+3629,Orontium aquaticum,L.,,GOLDENCLUB; NEVERWET,ARACEAE,Y,N,,,OBL,OBL,N,Y
+2417,Orthochilus ecristatus,(Fernald)Bytebier,,GIANT ORCHID; NON-CRESTED EULOPHIA,ORCHIDACEAE,Y,N,,,,,N,Y
+2390,Orthosia scoparia,(Nutt.)Liede & Meve,,LEAFLESS SWALLOWWORT,APOCYNACEAE,Y,N,,,,,N,Y
+3066,Osmunda spectabilis,Willd.,,ROYAL FERN,OSMUNDACEAE,Y,N,,,OBL,OBL,N,Y
+2893,Osmundastrum cinnamomeum,(L.)C.Presl,,CINNAMON FERN,OSMUNDACEAE,Y,N,,,FACW,FACW,N,Y
+2759,Oxalis corniculata,L.,,COMMON YELLOW WOODSORREL; CREEPING WOODSORREL,OXALIDACEAE,Y,N,,,,UPL,N,Y
+4473,Oxyrrhynchium hians,(Hedw.) Loeske,,,BRACHYTHECIACEAE,Y,,,,,,,N
+839,Packera glabella,(Poir.)C.Jeffrey,,BUTTERWEED,ASTERACEAE,Y,N,,,OBL,OBL,N,Y
+1272,Palafoxia feayi,A.Gray,,FEAY'S PALAFOX,ASTERACEAE,Y,Y,,,,,N,Y
+2687,Palafoxia integrifolia,(Nutt.)Torr. & A.Gray,,COASTALPLAIN PALAFOX,ASTERACEAE,Y,N,,,,,N,Y
+4801,Pallavicinia lyellii,(Hook.) A. Gray,,,PALLAVICINIACEAE,Y,,,,,,,N
+3663,Panicum amarum,Elliott,,BITTER PANICGRASS,POACEAE,Y,N,,,,FAC,N,Y
+2533,Panicum dichotomiflorum var. bartowense,Michx.,(Scribn. & Merr.)Fernald,FALL PANICGRASS,POACEAE,Y,N,,,,FACW,N,Y
+2123,Panicum dichotomiflorum var. dichotomiflorum,Michx.,,FALL PANICGRASS,POACEAE,Y,N,,,FACW,FACW,N,Y
+3532,Panicum virgatum,L.,,SWITCHGRASS,POACEAE,Y,N,,,FACW,FAC,N,Y
+4590,Papillaria nigrescens,(Hedw.) A. Jaeger,,,METEORIACEAE,Y,,,,,,,N
+2328,Parietaria floridana,Nutt.,,FLORIDA PELLITORY,URTICACEAE,Y,N,,,FAC,FAC,N,Y
+2357,Parietaria praetermissa,Hinton,,CLUSTERED PELLITORY,URTICACEAE,Y,N,,,FAC,FACU,N,Y
+667,Paronychia americana,(Nutt.)Fenzl ex Walp.,,AMERICAN NAILWORT,CARYOPHYLLACEAE,Y,N,,,,,N,Y
+2975,Paronychia herniarioides,(Michx.)Nutt.,,COASTALPLAIN NAILWORT,CARYOPHYLLACEAE,Y,N,,,,,N,Y
+3742,Parthenocissus quinquefolia,(L.)Planch.,,VIRGINIA CREEPER; WOODBINE,VITACEAE,Y,N,,,,FACU,N,Y
+2347,Paspalidium chapmanii,(Vasey)Davidse & R.W.Pohl,,CORAL PANICUM; CORAL PANICGRASS,POACEAE,Y,N,Endangered-State,,,,N,Y
+126,Paspalidium geminatum,(Forssk.)Stapf,,EGYPTIAN PASPALIDIUM; KISSIMMEEGRASS,POACEAE,Y,N,,,OBL,OBL,N,Y
+2133,Paspalum bifidum,(Bertol.)Nash,,PITCHFORK CROWNGRASS,POACEAE,Y,N,,,,FACW,N,Y
+2525,Paspalum blodgettii,Chapm.,,CORAL PASPALUM; BLODGETT'S CROWNGRASS,POACEAE,Y,N,,,,FAC,N,Y
+3843,Paspalum boscianum,Flüggé,,BULL CROWNGRASS,POACEAE,Y,N,,,FACW,FACW,N,Y
+2711,Paspalum caespitosum,Flüggé,,BLUE CROWNGRASS,POACEAE,Y,N,,,,FAC,N,Y
+850,Paspalum conjugatum,P.J.Bergius,,SOUR PASPALUM; HILOGRASS,POACEAE,Y,N,,,FAC,FAC,N,Y
+3640,Paspalum dissectum,(L.)L.,,MUDBANK CROWNGRASS,POACEAE,Y,N,,,OBL,OBL,N,Y
+3897,Paspalum distichum,L.,,KNOTGRASS,POACEAE,Y,N,,,OBL,OBL,N,Y
+2413,Paspalum eglume,Morrone & Zuloaga,,FLORIDA REIMARGRASS,POACEAE,Y,N,,,FACW,OBL,N,Y
+2327,Paspalum floridanum,Michx.,,FLORIDA PASPALUM,POACEAE,Y,N,,,FACW,FACW,N,Y
+2608,Paspalum laeve,Michx.,,FIELD PASPALUM,POACEAE,Y,N,,,FACW,FACW,N,Y
+480,Paspalum laxum,Lam.,,COCONUT PASPALUM,POACEAE,Y,N,,,,,N,Y
+2398,Paspalum monostachyum,Vasey ex Chapm.,,GULFDUNE PASPALUM,POACEAE,Y,N,,,OBL,FACW,N,Y
+2086,Paspalum plicatulum,Michx.,,BROWNSEED PASPALUM,POACEAE,Y,N,,,FAC,FAC,N,Y
+3877,Paspalum praecox,Walter,,EARLY PASPALUM,POACEAE,Y,N,,,OBL,OBL,N,Y
+845,Paspalum repens,P.J.Bergius,,WATER PASPALUM,POACEAE,Y,N,,,OBL,OBL,N,Y
+3304,Paspalum setaceum,Michx.,,THIN PASPALUM,POACEAE,Y,N,,,FAC,FAC,N,Y
+2780,Paspalum vaginatum,Sw.,,SEASHORE PASPALUM,POACEAE,Y,N,,,,OBL,N,Y
+3464,Passiflora incarnata,L.,,PURPLE PASSIONFLOWER,PASSIFLORACEAE,Y,N,,,,,N,Y
+3979,Passiflora multiflora,L.,,WHITEFLOWER PASSIONFLOWER; WHITE-FLOWERED PASSIONVINE,PASSIFLORACEAE,Y,N,Endangered-State,,,,N,Y
+602,Passiflora pallens,Poepp. ex Mast.,,PINELAND PASSIONFLOWER; PINELAND PASSIONVINE,PASSIFLORACEAE,Y,N,Endangered-State,,,,N,Y
+630,Passiflora sexflora,Juss.,,GOATSFOOT,PASSIFLORACEAE,Y,N,Endangered-State,,,UPL,N,Y
+2080,Passiflora suberosa,L.,,CORKYSTEM PASSIONFLOWER,PASSIFLORACEAE,Y,N,,,,UPL,N,Y
+3168,Pattalias palustris,(Pursh)Fishbein,,GULF COAST SWALLOWWORT,APOCYNACEAE,Y,N,,,,FACW,N,Y
+3588,Pavonia paludicola,Nicolson ex Fryxell,,SWAMPBUSH,MALVACEAE,Y,N,Endangered-State,,FACW,OBL,N,Y
+2367,Pecluma dispersa,(A.M.Evans)M.G.Price,,WIDESPREAD POLYPODY; WIDESPREAD ROCKCAP FERN,POLYPODIACEAE,Y,N,Endangered-State,,,,N,Y
+3382,Pecluma plumula,(Humb. & Bonpl. ex Willd.)M.G.Price,,PLUME POLYPODY; PLUMED ROCKCAP FERN,POLYPODIACEAE,Y,N,Endangered-State,,,,N,Y
+2777,Pecluma ptilota var. bourgeauana,(Kunze)M.G.Price,(E.Fourn.)A.R.Sm.,COMB POLYPODY; SWAMP PLUME POLYPODY; PALMLEAF ROCKCAP FERN,POLYPODIACEAE,Y,N,Endangered-State,,,FAC,N,Y
+3647,Pectis glaucescens,(Cass.)D.J.Keil,,SANDDUNE CINCHWEED,ASTERACEAE,Y,N,,,,,N,Y
+2475,Pectis linearifolia,Urb.,,FLORIDA CINCHWEED,ASTERACEAE,Y,Y,,,,,N,Y
+2918,Pectis prostrata,Cav.,,SPREADING CINCHWEED,ASTERACEAE,Y,N,,,,,N,Y
+2368,Pectis x floridana,D.J.Keil,,,ASTERACEAE,Y,N,,,,,N,Y
+4005,Pelexia adnata,(Sw.)Poit. ex Rich.,,HACHUELA; PELEXIA,ORCHIDACEAE,Y,N,Endangered-State,,,FACW,N,Y
+880,Peltandra virginica,(L.)Schott,,GREEN ARROW ARUM,ARACEAE,Y,N,,,OBL,OBL,N,Y
+2353,Penstemon multiflorus,(Benth.)Chapm. ex Small,,MANYFLOWER BEARDTONGUE,PLANTAGINACEAE,Y,N,,,,,N,Y
+3706,Pentalinon luteum,(L.)B.F.Hansen & Wunderlin,,WILD ALLAMANDA; HAMMOCK VIPERSTAIL,APOCYNACEAE,Y,N,,,FACW,FAC,N,Y
+699,Pentodon pentandrus,(Schumach. & Thonn.)Vatke,,HALES'S PENTODON,RUBIACEAE,Y,N,,,OBL,OBL,N,Y
+3076,Peperomia alata,Ruiz & Pav.,,WINGED PEPEROMIA,PIPERACEAE,Y,N,Endangered-State,,,FACW,N,Y
+452,Peperomia glabella,(Sw.)A.Dietr.,,CYPRESS PEPEROMIA,PIPERACEAE,Y,N,Endangered-State,,,FACW,N,Y
+959,Peperomia humilis,A.Dietr.,,LOW PEPEROMIA,PIPERACEAE,Y,N,Endangered-State,,,,N,Y
+960,Peperomia magnoliifolia,(Jacq.)A.Dietr.,,SPOONLEAF PEPEROMIA; SPATHULATE PEPEROMIA,PIPERACEAE,Y,N,Endangered-State,,,,N,Y
+516,Peperomia obtusifolia,(L.)A.Dietr.,,FLORIDA PEPEROMIA; BABY RUBBERPLANT,PIPERACEAE,Y,N,Endangered-State,,,,N,Y
+4105,Peperomia rotundifolia,(L.)Kunth,,YERBA LINDA,PIPERACEAE,Y,N,Endangered-State,,,,N,Y
+3592,Persea borbonia var. borbonia,(L.)Spreng.,,RED BAY,LAURACEAE,Y,N,,,,FACW,N,Y
+1197,Persea borbonia var. humilis,(L.)Spreng.,(Nash)L.E.Kopp,SILK BAY,LAURACEAE,Y,Y,,,,,N,Y
+2064,Persea palustris,(Raf.)Sarg.,,SWAMP BAY,LAURACEAE,Y,N,,,OBL,FACW,N,Y
+3868,Persicaria glabra,(Willd.)M.Gómez,,DENSEFLOWER KNOTWEED,POLYGONACEAE,Y,N,,,OBL,OBL,N,Y
+3169,Persicaria hirsuta,(Walter)Small,,HAIRY SMARTWEED,POLYGONACEAE,Y,N,,,OBL,OBL,N,Y
+3909,Persicaria hydropiperoides,(Michx.)Small,,MILD WATERPEPPER; SWAMP SMARTWEED,POLYGONACEAE,Y,N,,,OBL,OBL,N,Y
+1417,Persicaria lapathifolia,(L.)Delarbre,,CURLYTOP KNOTWEED; PALE SMARTWEED,POLYGONACEAE,Y,N,,,OBL,FACW,N,Y
+3040,Persicaria pensylvanica,L.)M.Gómez,,PENNSYLVANIA SMARTWEED,POLYGONACEAE,Y,N,,,OBL,FACW,N,Y
+3871,Persicaria punctata,(Elliott)Small,,DOTTED SMARTWEED,POLYGONACEAE,Y,N,,,OBL,OBL,N,Y
+2606,Persicaria setacea,(Baldwin)Small,,BOG SMARTWEED,POLYGONACEAE,Y,N,,,OBL,OBL,N,Y
+2822,Petiveria alliacea,L.,,GUINEA HEN WEED,PETIVERIACEAE,Y,N,,,,,N,Y
+2643,Phanopyrum gymnocarpon,(Elliott)Nash,,SAVANNAH PANICUM,POACEAE,Y,N,,,OBL,OBL,N,Y
+3394,Phaseolus polystachios var. polystachios,(L.)Britton et al.,,THICKET BEAN,FABACEAE,Y,N,,,,,N,Y
+2319,Phaseolus polystachios var. sinuatus,(L.)Britton et al.,(Nutt. ex Torr. & A.Gray)Maréchal et al.,THICKET BEAN,FABACEAE,Y,N,,,,,N,Y
+4465,Philonotis uncinata,(Schwägr.) Brid.,,,BARTRAMIACEAE,Y,,,,,,,N
+3613,Phlebodium aureum,(L.)J.Sm.,,GOLDEN POLYPODY,POLYPODIACEAE,Y,N,,,,,N,Y
+2895,Phlegmariurus dichotomus,(Jacq.)W.H.Wagner,,HANGING CLUB-MOSS,LYCOPODIACEAE,Y,N,Endangered-State,,,,N,Y
+2316,Phoebanthus grandiflorus,(Torr. & A.Gray) S.F.Blake,,FLORIDA FALSE SUNFLOWER,ASTERACEAE,Y,Y,,,,,N,Y
+3332,Phoradendron leucarpum,(Raf.)Reveal & M.C.Johnst.,,OAK MISTLETOE,VISCACEAE,Y,N,,,,,N,Y
+979,Phoradendron rubrum,(L.)Griseb.,,MAHOGANY MISTLETOE,VISCACEAE,Y,N,Endangered-State,,,,N,Y
+4893,Phragmites berlandieri,E.Fourn.,,COMMON REED,POACEAE,Y,N,,,,,,Y
+3520,Phyla nodiflora,(L.)Greene,,TURKEY TANGLE FOGFRUIT; CAPEWEED,VERBENACEAE,Y,N,,,FAC,FAC,N,Y
+855,Phyllanthus abnormis,Baill.,,DRUMMOND'S LEAFFLOWER,PHYLLANTHACEAE,Y,N,,,,,N,Y
+3286,Phyllanthus caroliniensis subsp. caroliniensis,Walter,,CAROLINA LEAFFLOWER,PHYLLANTHACEAE,Y,N,,,FACW,FAC,N,Y
+2383,Phyllanthus caroliniensis subsp. saxicola,Walter,(Small)G.L.Webster,ROCK CAROLINA LEAFFLOWER,PHYLLANTHACEAE,Y,N,,,,,N,Y
+1232,Phyllanthus pentaphyllus,C.Wright ex Griseb.,,FIVEPETAL LEAFFLOWER,PHYLLANTHACEAE,Y,N,,,,,N,Y
+2742,Physalis angulata,L.,,CUTLEAF GROUNDCHERRY,SOLANACEAE,Y,N,,,,FACU,N,Y
+666,Physalis angustifolia,Nutt.,,COASTAL GROUNDCHERRY,SOLANACEAE,Y,N,,,,,N,Y
+2494,Physalis arenicola,Kearney,,CYPRESSHEAD GROUNDCHERRY,SOLANACEAE,Y,N,,,,,N,Y
+767,Physalis cordata,Mill.,,HEARTLEAF GROUNDCHERRY,SOLANACEAE,Y,N,,,,,N,Y
+3893,Physalis pubescens,L.,,HUSK TOMATO,SOLANACEAE,Y,N,,,,UPL,N,Y
+841,Physalis walteri,Nutt.,,WALTER'S GROUNDCHERRY,SOLANACEAE,Y,N,,,,,N,Y
+2514,Physostegia leptophylla,Small,,SLENDERLEAF FALSE DRAGONHEAD,LAMIACEAE,Y,N,,,OBL,OBL,N,Y
+3296,Physostegia purpurea,(Walter)S.F.Blake,,EASTERN FALSE DRAGONHEAD,LAMIACEAE,Y,N,,,FACW,FACW,N,Y
+3668,Phytolacca americana,L.,,AMERICAN POKEWEED,PHYTOLACCACEAE,Y,N,,,,FACU,N,Y
+762,Picramnia pentandra,Sw.,,FLORIDA BITTERBUSH,PICRAMNIACEAE,Y,N,Endangered-State,,,,N,Y
+541,Pilea herniarioides,(Sw.)Lindl.,,CARIBBEAN CLEARWEED,URTICACEAE,Y,N,,,FACW,OBL,N,Y
+729,Pilea microphylla,(L.)Liebm.,,ARTILLERY PLANT; ROCKWEED,URTICACEAE,Y,N,,,FACW,FACU,N,Y
+2324,Piloblephis rigida,(W.Bartram ex Benth.)Raf.,,WILD PENNYROYAL,LAMIACEAE,Y,N,,,,,N,Y
+2249,Pilosocereus millspaughii,(Britton)Byles & G.D.Rowley,,GREATER ANTILLEAN TREE CACTUS,CACTACEAE,Y,N,,,,,N,Y
+4852,Pilosocereus robinii,(Lem.) Byles & G.D. Rowley,,KEY TREE CACTUS,CACTACEAE,Y,N,Endangered-State,Endangered-US,,,,Y
+3136,Pinguicula caerulea,Walter,,BLUEFLOWER BUTTERWORT,LENTIBULARIACEAE,Y,N,Threatened-State,,OBL,OBL,N,Y
+3209,Pinguicula lutea,Walter,,YELLOW BUTTERWORT; YELLOW-FLOWERED BUTTERWORT,LENTIBULARIACEAE,Y,N,Threatened-State,,OBL,OBL,N,Y
+2615,Pinguicula pumila,Michx.,,SMALL BUTTERWORT,LENTIBULARIACEAE,Y,N,,,OBL,OBL,N,Y
+643,Pinus clausa,(Chapm. ex Engelm.)Vasey ex Sarg.,,SAND PINE,PINACEAE,Y,N,,,,,N,Y
+3239,Pinus elliottii,Engelm.,,SLASH PINE,PINACEAE,Y,N,,,,FACW,N,Y
+3905,Pinus palustris,Mill.,,LONGLEAF PINE,PINACEAE,Y,N,,,,FACU,N,Y
+3526,Pinus taeda,L.,,LOBLOLLY PINE,PINACEAE,Y,N,,,,FAC,N,Y
+6,Piptochaetium avenacioides,(Nash)Valencia & Costas,,FLORIDA NEEDLEGRASS,POACEAE,Y,Y,,,FACW,,N,Y
+4631,Pireella cymbifolia,(Sull.) Cardot,,,PTEROBRYACEAE,Y,,,,,,,N
+4632,Pireella pohlii,(Schwägr.) Cardot,,,PTEROBRYACEAE,Y,,,,,,,N
+821,Piriqueta cistoides subsp. caroliniana,(L.)Griseb.,(Walter)Arbo,PITTED STRIPESEED,TURNERACEAE,Y,N,,,FAC,,N,Y
+3732,Piscidia piscipula,(L.)Sarg.,,FLORIDA FISHPOISON TREE; JAMAICAN DOGWOOD,FABACEAE,Y,N,,,,,N,Y
+3654,Pisonia aculeata,L.,,DEVIL'S CLAWS; PULLBACK,NYCTAGINACEAE,Y,N,,,,,N,Y
+2242,Pisonia rotundata,Griseb.,,SMOOTH DEVIL'S CLAWS; COCKSPUR,NYCTAGINACEAE,Y,N,Endangered-State,,FAC,FAC,N,Y
+4002,Pistia stratiotes,L.,,WATER-LETTUCE,ARACEAE,Y,N,,,,OBL,Y,Y
+4309,Pithecellobium bahamense,Northrop,,BAHAMA BLACKBEAD,FABACEAE,Y,N,Endangered-State,,,,N,Y
+2171,Pithecellobium keyense,Britton ex Britton & Rose,,FLORIDA KEYS BLACKBEAD,FABACEAE,Y,N,Threatened-State,,FAC,,N,Y
+724,Pithecellobium unguis-cati,(L.)Benth.,,CATCLAW BLACKBEAD,FABACEAE,Y,N,,,FAC,UPL,N,Y
+524,Pityopsis graminifolia,(Michx.)Nutt.,,NARROWLEAF SILKGRASS,ASTERACEAE,Y,N,,,,UPL,N,Y
+2800,Pityrogramma trifoliata,(L.)R.M.Tryon,,GOLDENROD FERN,PTERIDACEAE,Y,N,,,,FAC,N,Y
+4803,Plagiochila floridana,A. Evans,,,PLAGIOCHILACEAE,Y,,,,,,,N
+4805,Plagiochila laetevirens,Lindenb.,,,PLAGIOCHILACEAE,Y,,,,,,,N
+4807,Plagiochila montagnei,Nees,,,PLAGIOCHILACEAE,Y,,,,,,,N
+4808,Plagiochila patula,(Sw.) Lindenb.,,,PLAGIOCHILACEAE,Y,,,,,,,N
+4809,Plagiochila raddiana,Lindenb.,,,PLAGIOCHILACEAE,Y,,,,,,,N
+4593,Plagiomnium cuspidatum,(Hedw.) T.J. Kop.,,,MNIACEAE,Y,,,,,,,N
+3429,Plantago virginica,L.,,VIRGINIA PLANTAIN; SOUTHERN PLANTAIN,PLANTAGINACEAE,Y,N,,,,FACU,N,Y
+3778,Platanthera ciliaris,(L.)Lindl.,,YELLOW FRINGED ORCHID,ORCHIDACEAE,Y,N,Threatened-State,,OBL,FACW,N,Y
+2597,Platanthera nivea,(Nutt.) Luer,,SNOWY ORCHID,ORCHIDACEAE,Y,N,Threatened-State,,OBL,FACW,N,Y
+3828,Platanus occidentalis,L.,,AMERICAN SYCAMORE; AMERICAN PLANETREE,PLATANACEAE,Y,N,,,FACW,FACW,N,Y
+2871,Platythelys latifolia,(L.)Garay & Ormerod,,JUG ORCHID,ORCHIDACEAE,Y,N,,,FACW,FACW,N,Y
+4620,Plaubelia sprengelii,(Schwegrichen) R. H. Zander,,,POTTIACEAE,Y,,,,,,,N
+2915,Pleopeltis astrolepis,(Liebm.)E.Fourn.,,STAR-SCALE POLYPODY; STAR-SCALED FERN,POLYPODIACEAE,Y,N,Endangered-State,,,,N,Y
+2726,Pleopeltis marginata,A.R.Sm. & Tejero,,RIBBON FERN,POLYPODIACEAE,Y,N,Endangered-State,,,,N,Y
+3445,Pleopeltis michauxiana,(Weath.)Hickey & Sprunt,,RESURRECTION FERN,POLYPODIACEAE,Y,N,,,,FAC,N,Y
+4877,Pleopeltis polypodioides,(L.)E.G.Andrews & Windham,,TROPICAL RESURRECTION FERN,POLYPODIACEAE,Y,N,,,,,N,Y
+2500,Pluchea baccharis,(Mill.)Pruski,,ROSY CAMPHORWEED,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+875,Pluchea foetida,(L.)DC.,,STINKING CAMPHORWEED,ASTERACEAE,Y,N,,,FACW,OBL,N,Y
+2794,Pluchea odorata,(L.)Cass.,,SWEETSCENT,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+2781,Plumbago zeylanica,L.,,DOCTORBUSH,PLUMBAGINACEAE,Y,N,,,,UPL,N,Y
+3681,Pogonia ophioglossoides,(L.)Ker Gawl.,,ROSE POGONIA; SNAKEMOUTH ORCHID,ORCHIDACEAE,Y,N,Threatened-State,,OBL,OBL,N,Y
+2692,Polanisia tenuifolia,Torr. & A.Gray,,SLENDERLEAF CLAMMYWEED,CLEOMACEAE,Y,N,,,,,N,Y
+1221,Polygonum delopyrum,T.M.Schust. & Reveal,,HAIRY JOINTWEED,POLYGONACEAE,Y,Y,,,,,N,Y
+1216,Polygonum nesomii,T.M.Schust. & Reveal,,LARGEFLOWER JOINTWEED; SANDHILL WIREWEED,POLYGONACEAE,Y,Y,,,,,N,Y
+3790,Polygonum pinicola,T.M.Schust. & Reveal,,TALL JOINTWEED,POLYGONACEAE,Y,N,,,,,N,Y
+1126,Polygonum polygamum var. brachystachyum,Vent.,(Meisn.)T.M.Schust. & Reveal,OCTOBER FLOWER,POLYGONACEAE,Y,Y,,,,,N,Y
+910,Polygonum polygamum var. polygamum,Vent.,,OCTOBER FLOWER,POLYGONACEAE,Y,N,,,,,N,Y
+3616,Polypremum procumbens,L.,,RUSTWEED; JUNIPERLEAF,TETRACHONDRACEAE,Y,N,,,FAC,FACU,N,Y
+2890,Polystachya concreta,(Jacq.)Garay & H.R.Sweet,,GREATER YELLOWSPIKE ORCHID; PALE-FLOWERED POLYSTACHYA,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+3688,Pontederia cordata,L.,,PICKERELWEED,PONTEDERIACEAE,Y,N,,,OBL,OBL,N,Y
+2165,Ponthieva brittoniae,Ames,,BRITTON'S SHADOW WITCH,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+3321,Ponthieva racemosa,(Walter)C.Mohr,,HAIRY SHADOW WITCH,ORCHIDACEAE,Y,N,,,FACW,FACW,N,Y
+4811,Porella pinnata,L.,,,PORELLACEAE,Y,,,,,,,N
+4426,Portulaca minuta,Correll,,TINY PURSLANE,PORTULACACEAE,Y,N,,,,,N,Y
+1869,Portulaca oleracea,L.,,LITTLE HOGWEED,PORTULACACEAE,Y,N,,,,FACU,N,Y
+2033,Portulaca pilosa,L.,,PINK PURSLANE; KISS-ME-QUICK,PORTULACACEAE,Y,N,,,,FACU,N,Y
+3363,Portulaca rubricaulis,Kunth,,REDSTEM PURSLANE,PORTULACACEAE,Y,N,,,,,N,Y
+2736,Potamogeton illinoensis,Morong,,ILLINOIS PONDWEED,POTAMOGETONACEAE,Y,N,,,,OBL,N,Y
+2088,Potamogeton pusillus,L.,,SMALL PONDWEED,POTAMOGETONACEAE,Y,N,,,,OBL,N,Y
+4003,Prescottia oligantha,(Sw.)Lindl.,,SMALL PRESCOTT ORCHID; SMALL-FLOWERED ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,UPL,N,Y
+722,Priva lappulacea,(L.)Pers.,,CATSTONGUE; VELVETBURR,VERBENACEAE,Y,N,,,,,N,Y
+3463,Proserpinaca palustris,L.,,MARSH MERMAIDWEED,HALORAGACEAE,Y,N,,,OBL,OBL,N,Y
+1002,Proserpinaca pectinata,Lam.,,COMBLEAF MERMAIDWEED,HALORAGACEAE,Y,N,,,OBL,OBL,N,Y
+2522,Prosthechea boothiana var. erythronioides,(Lindl.)W.E.Higgins,(Small)W.E.Higgins,DOLLAR ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+2720,Prosthechea cochleata,(L.)W.E.Higgins,,CLAMSHELL ORCHID; FLORIDA COCKLESHELL ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+2169,Prosthechea pygmaea,(Hook.)W.E.Higgins,,DWARF BUTTERFLY ORCHID; DWARF EPIDENDRUM,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+3783,Prunus caroliniana,(Mill.)Aiton,,CAROLINA LAURELCHERRY,ROSACEAE,Y,N,,,,FACU,N,Y
+2756,Prunus myrtifolia,(L.)Urb.,,WEST INDIAN CHERRY,ROSACEAE,Y,N,Threatened-State,,,,N,Y
+989,Prunus serotina,Ehrh.,,BLACK CHERRY,ROSACEAE,Y,N,,,,FACU,N,Y
+3878,Prunus umbellata,Elliott,,FLATWOODS PLUM; HOG PLUM,ROSACEAE,Y,N,,,,,N,Y
+4447,Pseudocampylium radicale,(P. Beauv.) Vanderp. & Hedenäs,,,AMBLYSTEGIACEAE,Y,,,,,,,N
+4638,Pseudocryphaea domingensis,(Sprengel) W. R. Buck,,,RUTENBERGIACEAE,Y,,,,,,,N
+3956,Pseudognaphalium obtusifolium,(L.)Hilliard & B.L.Burtt,,SWEET EVERLASTING; RABBIT TOBACCO,ASTERACEAE,Y,N,,,,,N,Y
+2392,Pseudophoenix sargentii,H.Wendl. ex Sarg.,,SARGENT'S CHERRY PALM,ARECACEAE,Y,N,Endangered-State,,,FACU,N,Y
+2108,Psilotum nudum,(L.)P.Beauv.,,WHISK-FERN,PSILOTACEAE,Y,N,,,,FAC,N,Y
+2177,Psychotria ligustrifolia,(Northr.)Millsp.,,BAHAMA WILD COFFEE,RUBIACEAE,Y,N,Endangered-State,,FAC,,N,Y
+2811,Psychotria nervosa,Sw.,,WILD COFFEE,RUBIACEAE,Y,N,,,FAC,,N,Y
+2240,Psychotria tenuifolia,Sw.,,SHORTLEAF WILD COFFEE,RUBIACEAE,Y,N,,,FAC,,N,Y
+904,Pteridium aquilinum var. caudatum,(L.)Kuhn,(L.)Sadeb.,LACY BRACKEN,DENNSTAEDTIACEAE,Y,N,,,,FACU,N,Y
+2968,Pteridium aquilinum var. pseudocaudatum,(L.)Kuhn,(Clute)Clute ex A.Heller,TAILED BRACKEN,DENNSTAEDTIACEAE,Y,N,,,,FACU,N,Y
+3796,Pteris bahamensis,(J.Agardh)Fée,,BAHAMA LADDER BRAKE,PTERIDACEAE,Y,N,Threatened-State,,,,N,Y
+1666,Pteris quadriaurita,Retz.,,STRIPED BRAKE,PTERIDACEAE,Y,N,,,,FAC,,Y
+2399,Pteris x delchampsii,W.H.Wagner & Nauman,,DELCHAMPS' LADDER BRAKE,PTERIDACEAE,Y,N,,,,,N,Y
+2041,Pterocaulon pycnostachyum,(Michx.)Elliott,,BLACKROOT,ASTERACEAE,Y,N,,,,FACU,N,Y
+4813,Ptilidium pulcherrimum,(Weber) Hampe,,,PTILIDIACEAE,Y,,,,,,,N
+803,Ptilimnium capillaceum,(Michx.)Raf.,,MOCK BISHOPSWEED; HERBWILLIAM,APIACEAE,Y,N,,,FACW,OBL,N,Y
+4573,Pylaisia selwynii,Kindb.,,,HYPNACEAE,Y,,,,,,,N
+810,Pyrrhopappus carolinianus,(Walter)DC.,,CAROLINA DESERTCHICORY,ASTERACEAE,Y,N,,,,,N,Y
+2034,Quadrella jamaicensis,(Jacq.)J.Presl,,JAMAICAN CAPERTREE,CAPPARACEAE,Y,N,,,,FAC,N,Y
+644,Quercus chapmanii,Sarg.,,CHAPMAN'S OAK,FAGACEAE,Y,N,,,,,N,Y
+2464,Quercus geminata,Small,,SAND LIVE OAK,FAGACEAE,Y,N,,,,,N,Y
+686,Quercus incana,W.Bartram,,BLUEJACK OAK,FAGACEAE,Y,N,,,,,N,Y
+1173,Quercus inopina,Ashe,,SCRUB OAK,FAGACEAE,Y,Y,,,,,N,Y
+3963,Quercus laevis,Walter,,TURKEY OAK,FAGACEAE,Y,N,,,,,N,Y
+3901,Quercus laurifolia,Michx.,,LAUREL OAK; DIAMOND OAK; DARLINGTON OAK,FAGACEAE,Y,N,,,FACW,FACW,N,Y
+2589,Quercus minima,(Sarg.)Small,,DWARF LIVE OAK,FAGACEAE,Y,N,,,,FAC,N,Y
+3910,Quercus myrtifolia,Willd.,,MYRTLE OAK,FAGACEAE,Y,N,,,,,N,Y
+3969,Quercus nigra,L.,,WATER OAK,FAGACEAE,Y,N,,,FACW,FAC,N,Y
+3933,Quercus pumila,Walter,,RUNNING OAK,FAGACEAE,Y,N,,,,,N,Y
+3904,Quercus virginiana,Mill.,,LIVE OAK,FAGACEAE,Y,N,,,,FACU,N,Y
+2363,Quercus x rolfsii,Small,,,FAGACEAE,Y,N,,,,,N,Y
+2362,Quercus x succulenta,Small,,,FAGACEAE,Y,N,,,,,N,Y
+4636,Racopilum tomentosum,(Hedw.) Brid.,,,RACOPILACEAE,Y,,,,,,,N
+4814,Radula australis,Austin,,,RADULACEAE,Y,,,,,,,N
+4816,Radula flaccida,Lindenb. & Gottsche,,,RADULACEAE,Y,,,,,,,N
+4817,Radula javanica,Gottsche,,,RADULACEAE,Y,,,,,,,N
+4819,Radula quadrata,Gottsche,,,RADULACEAE,Y,,,,,,,N
+3620,Randia aculeata,L.,,WHITE INDIGOBERRY,RUBIACEAE,Y,N,,,FAC,FAC,N,Y
+2919,Rayjacksonia phyllocephala,(DC.)R.L.Hartm. & M.A.Lane,,CAMPHOR DAISY,ASTERACEAE,Y,N,,,,FACU,N,Y
+4790,Rectolejeunea berteroana,(Gottsche) A. Evans,,,LEJEUNEACEAE,Y,,,,,,,N
+2018,Reynosia septentrionalis,Urb.,,DARLINGPLUM,RHAMNACEAE,Y,N,Threatened-State,,FAC,,N,Y
+3578,Rhabdadenia biflora,(Jacq.)Müll.Arg.,,RUBBERVINE; MANGROVEVINE,APOCYNACEAE,Y,N,,,,FACW,N,Y
+2251,Rhexia cubensis,Griseb.,,WEST INDIAN MEADOWBEAUTY,MELASTOMATACEAE,Y,N,,,FACW,FACW,N,Y
+2899,Rhexia mariana,L.,,PALE MEADOWBEAUTY; MARYLAND MEADOWBEAUTY,MELASTOMATACEAE,Y,N,,,FACW,FACW,N,Y
+2496,Rhexia nashii,Small,,MAID MARIAN,MELASTOMATACEAE,Y,N,,,FACW,FACW,N,Y
+2688,Rhexia nuttallii,C.W.James,,NUTTALL'S MEADOWBEAUTY,MELASTOMATACEAE,Y,N,,,FACW,FACW,N,Y
+3319,Rhexia petiolata,Walter,,FRINGED MEADOWBEAUTY,MELASTOMATACEAE,Y,N,,,FACW,FACW,N,Y
+901,Rhipsalis baccifera,(Sol.)Stearn,,MISTLETOE CACTUS,CACTACEAE,Y,N,Endangered-State,,,,N,Y
+3926,Rhizophora mangle,L.,,RED MANGROVE,RHIZOPHORACEAE,Y,N,,,OBL,OBL,N,Y
+3377,Rhododendron viscosum,(L.)Torr.,,SWAMP AZALEA,ERICACEAE,Y,N,,,FACW,OBL,N,Y
+3543,Rhus copallinum,L.,,WINGED SUMAC,ANACARDIACEAE,Y,N,,,,UPL,N,Y
+1200,Rhynchosia cinerea,Nash,,BROWNHAIR SNOUTBEAN,FABACEAE,Y,Y,,,,,N,Y
+2544,Rhynchosia michauxii,Vail,,MICHAUX'S SNOUTBEAN,FABACEAE,Y,N,,,,,N,Y
+2782,Rhynchosia minima,(L.)DC.,,LEAST SNOUTBEAN,FABACEAE,Y,N,,,,,N,Y
+2296,Rhynchosia parvifolia,DC.,,SMALL-LEAF SNOUTBEAN,FABACEAE,Y,N,Threatened-State,,,,N,Y
+3112,Rhynchosia reniformis,DC.,,DOLLARLEAF,FABACEAE,Y,N,,,,,N,Y
+657,Rhynchosia swartzii,(Vail)Urb.,,SWARTZ'S SNOUTBEAN,FABACEAE,Y,N,Endangered-State,,,,N,Y
+2636,Rhynchospora baldwinii,A.Gray,,BALDWIN'S BEAKSEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+3245,Rhynchospora caduca,Elliott,,ANGLESTEM BEAKSEDGE,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+2961,Rhynchospora cephalantha,A.Gray,,BUNCHED BEAKSEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2979,Rhynchospora chapmanii,M.A.Curtis,,CHAPMAN'S BEAKSEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2551,Rhynchospora ciliaris,(Michx.)C.Mohr,,FRINGED BEAKSEDGE,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+726,Rhynchospora colorata,(L.)H.Pfeiff.,,STARRUSH WHITETOP,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+3807,Rhynchospora corniculata,(Lam.)A.Gray,,SHORTBRISTLE HORNED BEAKSEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+3218,Rhynchospora divergens,Chapm. ex M.A.Curtis,,SPREADING BEAKSEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+310,Rhynchospora eximia,(Nees)Boeck.,,FLORIDA BEAKSEDGE; BALDRUSH,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+535,Rhynchospora fascicularis,(Michx.)Vahl,,FASCICLED BEAKSEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+2637,Rhynchospora fernaldii,Gale,,FERNALD'S BEAKSEDGE,CYPERACEAE,Y,N,,,FACW,FAC,N,Y
+3015,Rhynchospora filifolia,A.Gray,,THREADLEAF BEAKSEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+637,Rhynchospora floridensis,(Britton ex Small)H.Pfeiff.,,FLORIDA WHITETOP,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+2411,Rhynchospora galeana,Naczi et al.,,SHORTBRISTLE BEAKSEDGE,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+2568,Rhynchospora globularis,(Chapm.)Small,,GLOBE BEAKSEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+692,Rhynchospora grayi,Kunth,,GRAY'S BEAKSEDGE,CYPERACEAE,Y,N,,,,UPL,N,Y
+2673,Rhynchospora harperi,Small,,HARPER'S BEAKSEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+3802,Rhynchospora intermedia,(Chapm.)Britton,,PINEBARREN BEAKSEDGE,CYPERACEAE,Y,N,,,,FACW,N,Y
+2900,Rhynchospora inundata,(Oakes)Fernald,,NARROWFRUIT HORNED BEAKSEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2671,Rhynchospora latifolia,(Baldwin)W.W.Thomas,,GIANT WHITETOP; SANDSWAMP WHITETOP,CYPERACEAE,Y,N,,,OBL,FACW,N,Y
+2402,Rhynchospora megalocarpa,A.Gray,,SANDYFIELD BEAKSEDGE,CYPERACEAE,Y,N,,,,,N,Y
+3007,Rhynchospora microcarpa,Baldwin ex A.Gray,,SOUTHERN BEAKSEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2952,Rhynchospora microcephala,(Britton)Britton ex Small,,BUNCHED BEAKSEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+2082,Rhynchospora miliacea,(Lam.)A.Gray,,MILLET BEAKSEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2106,Rhynchospora nitens,(Vahl)A.Gray,,SHORTBEAK BEAKSEDGE; BALDRUSH,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2270,Rhynchospora odorata,C.Wright ex Griseb.,,FRAGRANT BEAKSEDGE,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+2406,Rhynchospora plumosa,Elliott,,PLUMED BEAKSEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+2426,Rhynchospora pusilla,Chapm. ex M.A.Curtis,,FAIRY BEAKSEDGE,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+2702,Rhynchospora rariflora,(Michx.)Elliott,,FEWFLOWER BEAKSEDGE,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+2432,Rhynchospora tracyi,Britton,,TRACY'S BEAKSEDGE,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+614,Rhynchospora wrightiana,Boeck.,,WRIGHT'S BEAKSEDGE,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+4474,Rhynchostegium serrulatum,(Hedw.) A. Jaeger,,,BRACHYTHECIACEAE,Y,,,,,,,N
+4681,Riccardia multifida subsp. multifida,(L.) Gray,,,ANEURACEAE,Y,,,,,,,N
+4823,Riccia cavernosa,Hoffm.,,,RICCIACEAE,Y,,,,,,,N
+4825,Riccia fluitans,L.,,,RICCIACEAE,Y,,,,,,,N
+4828,Riccia howei,R.M. Schust.,,,RICCIACEAE,Y,,,,,,,N
+4834,Ricciocarpos natans,(L.) Corda,,,RICCIACEAE,Y,,,,,,,N
+3672,Rivina humilis,L.,,ROUGEPLANT,PETIVERIACEAE,Y,N,,,,UPL,N,Y
+749,Rorippa palustris,(L.)Besser,,BOG YELLOWCRESS,BRASSICACEAE,Y,N,,,OBL,OBL,N,Y
+3385,Rorippa teres,(Michx.)Stuckey,,SOUTHERN MARSH YELLOWCRESS,BRASSICACEAE,Y,N,,,OBL,OBL,N,Y
+4487,Rosulabryum capillare,(Hedw.) J. R. Spence,,,BRYACEAE,Y,,,,,,,N
+4488,Rosulabryum pseudocapillare,(Besch.) Ochyra,,,BRYACEAE,Y,,,,,,,N
+887,Rotala ramosior,(L.)Koehne,,LOWLAND ROTALA; TOOTHCUP,LYTHRACEAE,Y,N,,,OBL,OBL,N,Y
+604,Roystonea regia,(Kunth)O.F.Cook,,FLORIDA ROYAL PALM,ARECACEAE,Y,N,Endangered-State,,FACW,FACW,N,Y
+2116,Rubus cuneifolius,Pursh,,SAND BLACKBERRY,ROSACEAE,Y,N,,,FAC,FACU,N,Y
+2256,Rubus pensilvanicus,Poir.,,SAWTOOTH BLACKBERRY; PENNSYLVANIA BLACKBERRY,ROSACEAE,Y,N,,,FAC,FAC,N,Y
+3943,Rubus trivialis,Michx.,,SOUTHERN DEWBERRY,ROSACEAE,Y,N,,,FAC,FACU,N,Y
+2286,Rudbeckia hirta,L.,,BLACKEYED SUSAN,ASTERACEAE,Y,N,,,,FACU,N,Y
+812,Ruellia caroliniensis,(J.F.Gmel.)Steud.,,CAROLINA WILD PETUNIA,ACANTHACEAE,Y,N,,,FAC,FACU,N,Y
+2630,Ruellia ciliosa,Pursh,,CILIATE WILD PETUNIA,ACANTHACEAE,Y,N,,,,,N,Y
+1098,Ruellia succulenta,Small,,THICKLEAF WILD PETUNIA,ACANTHACEAE,Y,Y,,,,,N,Y
+2303,Rumex hastatulus,Baldwin,,HEARTWING DOCK; HASTATELEAF DOCK,POLYGONACEAE,Y,N,,,FACW,FACU,N,Y
+3952,Rumex verticillatus,L.,,SWAMP DOCK,POLYGONACEAE,Y,N,,,FACW,FACW,N,Y
+2038,Ruppia maritima,L.,,WIGEONGRASS,RUPPIACEAE,Y,N,,,,OBL,N,Y
+1190,Sabal etonia,Swingle ex Nash,,SCRUB PALMETTO,ARECACEAE,Y,Y,,,,,N,Y
+2287,Sabal minor,(Jacq.)Pers.,,DWARF PALMETTO; BLUESTEM PALM,ARECACEAE,Y,N,,,FACW,FACW,N,Y
+639,Sabal palmetto,(Walter)Lodd. ex Schult. & Schult.f.,,CABBAGE PALM,ARECACEAE,Y,N,,,FAC,FAC,N,Y
+1119,Sabal x miamiensis,Zona,,,ARECACEAE,Y,Y,,,,,N,Y
+2333,Sabatia brevifolia,Raf.,,SHORTLEAF ROSEGENTIAN,GENTIANACEAE,Y,N,,,FACW,FACW,N,Y
+2857,Sabatia calycina,(Lam.)A.Heller,,COASTAL ROSEGENTIAN,GENTIANACEAE,Y,N,,,OBL,OBL,N,Y
+2421,Sabatia decandra,(Walter)R.M.Harper,,BARTRAM'S ROSEGENTIAN,GENTIANACEAE,Y,N,,,OBL,OBL,N,Y
+878,Sabatia difformis,(L.)Druce,,LANCELEAF ROSEGENTIAN,GENTIANACEAE,Y,N,,,FACW,OBL,N,Y
+2356,Sabatia grandiflora,(A.Gray)Small,,LARGEFLOWER ROSEGENTIAN,GENTIANACEAE,Y,N,,,FACW,FACW,N,Y
+3930,Sabatia stellaris,Pursh,,ROSE-OF-PLYMOUTH,GENTIANACEAE,Y,N,,,FACW,OBL,N,Y
+882,Sabdariffa furcellata,Lam.,,LINDENLEAF ROSEMALLOW,MALVACEAE,Y,N,,,,FAC,N,Y
+3329,Saccharum giganteum,(Walter)Pers.,,SUGARCANE PLUMEGRASS,POACEAE,Y,N,,,OBL,FACW,N,Y
+3534,Sacciolepis striata,(L.)Nash,,AMERICAN CUPSCALE,POACEAE,Y,N,,,OBL,OBL,N,Y
+2253,Sachsia polycephala,Griseb.,,BAHAMA SACHSIA,ASTERACEAE,Y,N,Threatened-State,,FACW,,N,Y
+2298,Sacoila lanceolata var. lanceolata,(Aubl.)Garay,,LEAFLESS BEAKED LADIESTRESSES; LEAFLESS BEAKED ORCHID,ORCHIDACEAE,Y,N,Threatened-State,,,FAC,N,Y
+1097,Sacoila lanceolata var. paludicola,(Aubl.)Garay,(Luer)Sauleda et al.,LEAFY BEAKED LADIESTRESSES,ORCHIDACEAE,Y,N,Threatened-State,,,,N,Y
+2024,Sageretia minutiflora,(Michx.)C.Mohr,,SMALLFLOWER MOCK BUCKTHORN,RHAMNACEAE,Y,N,,,,FAC,N,Y
+2147,Sagittaria filiformis,J.G.Sm.,,THREADLEAF ARROWHEAD,ALISMATACEAE,Y,N,,,OBL,OBL,N,Y
+2481,Sagittaria graminea var. chapmanii,Michx.,J.G.Sm.,CHAPMAN'S ARROWHEAD,ALISMATACEAE,Y,N,,,OBL,,N,Y
+2217,Sagittaria graminea var. graminea,Michx.,,GRASSY ARROWHEAD,ALISMATACEAE,Y,N,,,OBL,OBL,N,Y
+2490,Sagittaria isoetiformis,J.G.Sm.,,QUILLWORT ARROWHEAD,ALISMATACEAE,Y,N,,,OBL,OBL,N,Y
+2817,Sagittaria lancifolia subsp. lancifolia,L.,,BULLTONGUE ARROWHEAD,ALISMATACEAE,Y,N,,,OBL,OBL,N,Y
+2039,Sagittaria latifolia,Willd.,,BROADLEAF ARROWHEAD; COMMON ARROWHEAD; DUCK POTATO,ALISMATACEAE,Y,N,,,OBL,OBL,N,Y
+890,Sagittaria subulata,(L.)Buchenau,,AWL-LEAF ARROWHEAD,ALISMATACEAE,Y,N,,,OBL,OBL,N,Y
+1020,Salicornia ambigua,Michx.,,PERENNIAL GLASSWORT; VIRGINIA GLASSWORT,AMARANTHACEAE,Y,N,,,OBL,OBL,N,Y
+3805,Salicornia bigelovii,Torr.,,ANNUAL GLASSWORT; DWARF GLASSWORT,AMARANTHACEAE,Y,N,,,OBL,OBL,N,Y
+4040,Salix caroliniana,Michx.,,CAROLINA WILLOW; COASTALPLAIN WILLOW,SALICACEAE,Y,N,,,OBL,OBL,N,Y
+986,Salvia azurea,Michx. ex Lam.,,AZURE BLUE SAGE,LAMIACEAE,Y,N,,,,,N,Y
+3524,Salvia lyrata,L.,,LYRELEAF SAGE,LAMIACEAE,Y,N,,,,FACU,N,Y
+3072,Salvia misella,Kunth,,SOUTHERN RIVER SAGE; RIVER SAGE,LAMIACEAE,Y,N,,,,,N,Y
+2774,Salvia occidentalis,Sw.,,WEST INDIAN SAGE,LAMIACEAE,Y,N,,,,FAC,N,Y
+3903,Salvia serotina,L.,,LITTLEWOMAN,LAMIACEAE,Y,N,,,,,N,Y
+2186,Sambucus nigra subsp. canadensis,L.,(L.) Bolli,AMERICAN ELDER; ELDERBERRY,VIBURNACEAE,Y,N,,,FAC,FACW,N,Y
+2241,Samolus ebracteatus,Kunth,,WATER PIMPERNEL; LIMEWATER BROOKWEED,SAMOLACEAE,Y,N,,,OBL,OBL,N,Y
+971,Samolus valerandi subsp. parviflorus,L.,(Raf.)Hultén,PINELAND PIMPERNEL; SEASIDE BROOKWEED,SAMOLACEAE,Y,N,,,OBL,OBL,N,Y
+2276,Sapindus saponaria,L.,,SOAPBERRY,SAPINDACEAE,Y,N,,,,FACU,N,Y
+3598,Saururus cernuus,L.,,LIZARD'S TAIL,SAURURACEAE,Y,N,,,OBL,OBL,N,Y
+2179,Scaevola plumieri,(L.)Vahl,,BEACHBERRY; INKBERRY; GULLFEED,GOODENIACEAE,Y,N,Threatened-State,,,FACU,N,Y
+2227,Schaefferia frutescens,Jacq.,,FLORIDA BOXWOOD,CELASTRACEAE,Y,N,Endangered-State,,,,N,Y
+2710,Schizachyrium gracile,(Spreng.)Nash,,WIRE BLUESTEM,POACEAE,Y,N,,,FAC,FAC,N,Y
+4890,Schizachyrium rhizomatum,(Swallen)Gould,,SOUTH FLORIDA LITTLE BLUESTEM,POACEAE,Y,Y,,,,,,Y
+597,Schizachyrium sanguineum,(Retz.)Alston,,CRIMSON BLUESTEM,POACEAE,Y,N,,,FAC,,N,Y
+1239,Schizachyrium sericatum,(Swallen)Gould,,SILKY BLUESTEM,POACEAE,Y,Y,Endangered-State,,FAC,,N,Y
+4891,Schizachyrium stoloniferum,Nash,,CREEPING LITTLE BLUESTEM,POACEAE,Y,N,,,FAC,FACU,,Y
+4601,Schlotheimia rugifolia,(Hook.) Schwaegr.,,,ORTHOTRICHACEAE,Y,,,,,,,N
+4504,Schoenobryum concavifolium,(Griff.) Gangulee,,,CRYPHAEACEAE,Y,,,,,,,N
+2085,Schoenocaulon dubium,(Michx.)Small,,FLORIDA FEATHERSHANK,MELANTHIACEAE,Y,Y,,,,,N,Y
+3709,Schoenolirion albiflorum,(Raf.)R.R.Gates,,WHITE SUNNYBELL,HYACINTHACEAE,Y,N,,,FACW,OBL,N,Y
+2478,Schoenoplectiella erecta subsp. raynalii,(Poir.)Lye,(Schuyler)Beentje,RAYNAL'S BULRUSH,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+3127,Schoenoplectus americanus,(Pers.)Volkart ex Schinz & R.Keller,,AMERICAN BULRUSH,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2194,Schoenoplectus californicus,(C.A.Mey.)Soják,,GIANT BULRUSH; CALIFORNIA BULRUSH,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+884,Schoenoplectus pungens,(Vahl)Palla,,THREESQUARE BULRUSH,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+2706,Schoenoplectus tabernaemontani,(C.C.Gmel.)Palla,,SOFTSTEM BULRUSH,CYPERACEAE,Y,N,,,OBL,OBL,N,Y
+3637,Schoenus nigricans,L.,,BLACK BOGRUSH,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+933,Schoepfia schreberi,J.F.Gmel.,,GRAYTWIG,SCHOEPFIACEAE,Y,N,,,,,N,Y
+2066,Scirpus lineatus,Michx.,,DROOPING BULRUSH,CYPERACEAE,Y,N,,,OBL,,N,Y
+2686,Scleria baldwinii,(Torr.)Steud.,,BALDWIN'S NUTRUSH,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+2076,Scleria ciliata,Michx.,,FRINGED NUTRUSH,CYPERACEAE,Y,N,,,FACW,FAC,N,Y
+3081,Scleria distans,Poir.,,RIVERSWAMP NUTRUSH,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+2627,Scleria georgiana,Core,,SLENDERFRUIT NUTRUSH,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+2740,Scleria lithosperma,(L.)Sw.,,FLORIDA KEYS NUTRUSH,CYPERACEAE,Y,N,Endangered-State,,FACW,FAC,N,Y
+2070,Scleria oligantha,Michx.,,LITTLEHEAD NUTRUSH,CYPERACEAE,Y,N,,,FACW,FAC,N,Y
+2071,Scleria reticularis,Michx.,,NETTED NUTRUSH,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+2055,Scleria triglomerata,Michx.,,TALL NUTGRASS; WHIP NUTRUSH,CYPERACEAE,Y,N,,,FACW,FACW,N,Y
+3057,Scleria verticillata,Muhl. ex Willd.,,LOW NUTRUSH,CYPERACEAE,Y,N,,,FACW,OBL,N,Y
+3679,Scoparia dulcis,L.,,SWEETBROOM; LICORICEWEED,PLANTAGINACEAE,Y,N,,,FAC,FAC,N,Y
+1199,Scutellaria arenicola,Small,,FLORIDA SCRUB SKULLCAP,LAMIACEAE,Y,N,,,,FAC,N,Y
+2237,Scutellaria havanensis,Jacq.,,HAVANA SKULLCAP,LAMIACEAE,Y,N,Endangered-State,,,,N,Y
+3494,Scutellaria integrifolia,L.,,HELMET SKULLCAP,LAMIACEAE,Y,N,,,FAC,FAC,N,Y
+2486,Selaginella arenicola,Underw.,,SAND SPIKE-MOSS,SELAGINELLACEAE,Y,N,,,,,N,Y
+2381,Selaginella armata var. eatonii,Baker,(Hieron. ex Small)B.F.Hansen & Wunderlin,EATON'S SPIKE-MOSS; PYGMY SPIKE-MOSS,SELAGINELLACEAE,Y,N,Endangered-State,,,,N,Y
+4853,Sematophyllum adnatum,(Michx.) E. Britton,,,SEMATOPHYLLACEAE,Y,,,,,,,N
+4641,Sematophyllum demissum,(Wilson) Mitt.,,,SEMATOPHYLLACEAE,Y,,,,,,,N
+4642,Sematophyllum subpinnatum,(Brid.) E. Britton,,,SEMATOPHYLLACEAE,Y,,,,,,,N
+1131,Senega arenicola,(Small)J.F.B.Pastore & J.R.Abbott,,SMALL'S MILKWORT; TINY POLYGALA,POLYGALACEAE,Y,Y,Endangered-State,Endangered-US,FACW,FACU,N,Y
+2449,Senega balduini,(Nutt.)J.F.B.Pastore & J.R.Abbott,,BALDWIN'S MILKWORT,POLYGALACEAE,Y,N,,,FACW,OBL,N,N
+687,Senega boykinii,(Nutt.)J.F.B.Pastore & J.R.Abbott,,BOYKIN'S MILKWORT,POLYGALACEAE,Y,N,,,FACW,,N,Y
+3413,Senega cruciata,(L.)J.F.B.Pastore & J.R.Abbott,,DRUMHEADS,POLYGALACEAE,Y,N,,,FACW,OBL,N,Y
+3199,Senega cymosa,(Walter)J.F.B.Pastore & J.R.Abbott,,TALL PINEBARREN MILKWORT,POLYGALACEAE,Y,N,,,OBL,OBL,N,Y
+3418,Senega incarnata,(L.)J.F.B.Pastore & J.R.Abbott,,PROCESSION FLOWER,POLYGALACEAE,Y,N,,,FACW,FAC,N,Y
+3417,Senega lutea,(L.)J.F.B.Pastore & J.R.Abbott,,ORANGE MILKWORT,POLYGALACEAE,Y,N,,,FACW,FACW,N,Y
+3303,Senega nana,(Michx.)J.F.B.Pastore & J.R.Abbott,,CANDYROOT,POLYGALACEAE,Y,N,,,FACW,FACW,N,Y
+3181,Senega polygama,(Walter)J.F.B.Pastore & J.R.Abbott,,RACEMED MILKWORT,POLYGALACEAE,Y,N,,,,FACU,N,Y
+3270,Senega ramosa,(Elliott)J.F.B.Pastore & J.R.Abbott,,LOW PINEBARREN MILKWORT,POLYGALACEAE,Y,N,,,FACW,OBL,N,Y
+1161,Senega rugelii,(Shuttlew. ex Chapm.)J.F.B.Pastore & J.R.Abbott,,YELLOW MILKWORT,POLYGALACEAE,Y,Y,,,FACW,FACW,N,Y
+2980,Senega setacea,(Michx.) J. F. B.Pastore & J. R. Abbott,,COASTALPLAIN MILKWORT,POLYGALACEAE,Y,N,,,FACW,FACW,N,Y
+3046,Senega verticillata,(L.)J.F.B.Pastore & J.R.Abbott,,WHORLED MILKWORT,POLYGALACEAE,Y,N,,,,UPL,N,Y
+2173,Senna ligustrina,(L.)H.S.Irwin & Barneby,,PRIVET WILD SENSITIVE PLANT,FABACEAE,Y,N,,,,,N,Y
+2519,Senna mexicana var. chapmanii,(Jacq.)H.S.Irwin & Barneby,(Isely)H.S.Irwin & Barneby,CHAPMAN'S WILD SENSITIVE PLANT,FABACEAE,Y,N,Threatened-State,,,FAC,N,Y
+2262,Senna obtusifolia,(L.)H.S.Irwin & Barneby,,COFFEEWEED; SICKLEPOD,FABACEAE,Y,N,,,,FACU,N,Y
+2664,Serenoa repens,(W.Bartram)Small,,SAW PALMETTO,ARECACEAE,Y,N,,,,FACU,N,Y
+3207,Sericocarpus tortifolius,(Michx.)Nees,,WHITETOP ASTER; DIXIE ASTER,ASTERACEAE,Y,N,,,,,N,Y
+4030,Serpocaulon triseriale,(Sw.)A.R.Sm.,,ANGLE-VEIN FERN,POLYPODIACEAE,Y,N,,,,,N,Y
+2920,Sesbania herbacea,(Mill.)McVaugh,,DANGLEPOD,FABACEAE,Y,N,,,FAC,FACW,N,Y
+2379,Sesbania vesicaria,(Jacq.)Elliott,,BLADDERPOD; BAGPOD,FABACEAE,Y,N,,,FAC,FAC,N,Y
+3122,Sesuvium maritimum,(Walter)Britton et al.,,SLENDER SEAPURSLANE,AIZOACEAE,Y,N,,,FACW,FACW,N,Y
+2290,Sesuvium portulacastrum,(L.)L.,,SHORELINE SEAPURSLANE,AIZOACEAE,Y,N,,,FACW,FACW,N,Y
+689,Setaria corrugata,(Elliott)Schult.,,COASTAL BRISTLEGRASS; COASTAL FOXTAIL,POACEAE,Y,N,,,,,N,Y
+642,Setaria macrosperma,(Scribn. & Merr.)K.Schum.,,CORAL BRISTLEGRASS; CORAL FOXTAIL,POACEAE,Y,N,,,,FAC,N,Y
+2810,Setaria magna,Griseb.,,GIANT BRISTLEGRASS,POACEAE,Y,N,,,OBL,FACW,N,Y
+802,Setaria parviflora,(Poir.)Kerguélen,,YELLOW BRISTLEGRASS; KNOTROOT FOXTAIL,POACEAE,Y,N,,,FAC,FACW,N,Y
+3090,Seymeria cassioides,(J.F.Gmel.)S.F.Blake,,YAUPON BLACKSENNA,OROBANCHACEAE,Y,N,,,FAC,FAC,N,Y
+3280,Seymeria pectinata,Pursh,,PIEDMONT BLACKSENNA,OROBANCHACEAE,Y,N,,,,,N,Y
+608,Sida abutilifolia,Mill.,,SPREADING FANPETALS,MALVACEAE,Y,N,,,,,N,Y
+2797,Sida ciliaris,L.,,BRACTED FANPETALS; FRINGED FANPETALS,MALVACEAE,Y,N,,,,,N,Y
+3229,Sida elliottii,Torr. & A.Gray,,ELLIOTT'S FANPETALS,MALVACEAE,Y,N,,,,,N,Y
+2741,Sida rhombifolia,L.,,CUBAN JUTE; INDIAN HEMP,MALVACEAE,Y,N,,,,FACU,N,Y
+2753,Sida ulmifolia,Mill.,,COMMON WIREWEED; COMMON FANPETALS,MALVACEAE,Y,N,,,,UPL,N,Y
+2913,Sideroxylon celastrinum,(Kunth)T.D.Penn.,,SAFFRON PLUM,SAPOTACEAE,Y,N,,,FAC,,N,Y
+624,Sideroxylon foetidissimum,Jacq.,,FALSE MASTIC,SAPOTACEAE,Y,N,,,,,N,Y
+1123,Sideroxylon reclinatum subsp. austrofloridense,Michx.,(Whetstone)Kartesz & Gandhi,FLORIDA BULLY,SAPOTACEAE,Y,Y,Endangered-State,Threatened-US,FAC,FAC,N,Y
+2701,Sideroxylon reclinatum subsp. reclinatum,Michx.,,FLORIDA BULLY,SAPOTACEAE,Y,N,,,FAC,FAC,N,Y
+739,Sideroxylon salicifolium,(L.)Lam.,,WILLOW BUSTIC; WHITE BULLY,SAPOTACEAE,Y,N,,,,,N,Y
+3285,Sideroxylon tenax,L.,,TOUGH BULLY,SAPOTACEAE,Y,N,,,,,N,Y
+3938,Silene antirrhina,L.,,SLEEPY CATCHFLY,CARYOPHYLLACEAE,Y,N,,,,,N,Y
+3273,Silphium asteriscus,L.,,STARRY ROSINWEED,ASTERACEAE,Y,N,,,,,N,Y
+606,Simarouba glauca,DC.,,PARADISETREE,SIMAROUBACEAE,Y,N,,,,,N,Y
+618,Sisyrinchium angustifolium,Mill.,,NARROWLEAF BLUE-EYED GRASS,IRIDACEAE,Y,N,,,FACW,FACW,N,Y
+2499,Sisyrinchium nashii,E.P.Bicknell,,NASH'S BLUE-EYED GRASS,IRIDACEAE,Y,N,,,,FAC,N,Y
+2497,Sisyrinchium xerophyllum,Greene,,JEWELED BLUE-EYED GRASS,IRIDACEAE,Y,N,,,,,N,Y
+3157,Smilax auriculata,Walter,,EARLEAF GREENBRIER,SMILACACEAE,Y,N,,,,FACU,N,Y
+3934,Smilax bona-nox,L.,,SAW GREENBRIER,SMILACACEAE,Y,N,,,,FAC,N,Y
+2235,Smilax havanensis,Jacq.,,EVERGLADES GREENBRIER,SMILACACEAE,Y,N,Threatened-State,,,,N,Y
+3900,Smilax laurifolia,L.,,LAUREL GREENBRIER; BAMBOO VINE,SMILACACEAE,Y,N,,,,FACW,N,Y
+3187,Smilax pumila,Walter,,SARSAPARILLA VINE,SMILACACEAE,Y,N,,,,UPL,N,Y
+3841,Smilax tamnoides,L.,,BRISTLY GREENBRIER; HOGBRIER,SMILACACEAE,Y,N,,,,FAC,N,Y
+3860,Smilax walteri,Pursh,,CORAL GREENBRIER,SMILACACEAE,Y,N,,,,OBL,N,Y
+870,Solanum americanum,Mill.,,AMERICAN BLACK NIGHTSHADE,SOLANACEAE,Y,N,,,,FACU,N,Y
+2181,Solanum bahamense,L.,,BAHAMA NIGHTSHADE; CANKERBERRY,SOLANACEAE,Y,N,,,FACW,FAC,N,Y
+3277,Solanum carolinense var. carolinense,L.,,CAROLINA HORSENETTLE,SOLANACEAE,Y,N,,,,FACU,N,Y
+558,Solanum chenopodioides,Lam.,,BLACK NIGHTSHADE,SOLANACEAE,Y,N,,,,FACU,N,Y
+3622,Solanum donianum,Walp.,,MULLEIN NIGHTSHADE,SOLANACEAE,Y,N,Threatened-State,,,FAC,N,Y
+771,Solanum erianthum,D.Don,,POTATOTREE,SOLANACEAE,Y,N,,,FACW,FAC,N,Y
+3031,Solidago canadensis var. scabra,L.,(Muhl. ex Willd.)Torr. & A.Gray,CANADA GOLDENROD,ASTERACEAE,Y,N,,,,FACU,N,Y
+1023,Solidago fistulosa,Mill.,,PINEBARREN GOLDENROD,ASTERACEAE,Y,N,,,FACW,FAC,N,Y
+2258,Solidago leavenworthii,Torr. & A.Gray,,LEAVENWORTH'S GOLDENROD,ASTERACEAE,Y,N,,,FACW,FAC,N,Y
+2325,Solidago odora var. chapmanii,Aiton,(A.Gray)Cronquist,CHAPMAN'S GOLDENROD,ASTERACEAE,Y,N,,,,,N,Y
+3935,Solidago sempervirens,L.,,SEASIDE GOLDENROD,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+3967,Solidago stricta,Aiton,,WAND GOLDENROD,ASTERACEAE,Y,N,,,FACW,OBL,N,Y
+3201,Solidago tortifolia,Elliott,,TWISTEDLEAF GOLDENROD,ASTERACEAE,Y,N,,,,,N,Y
+2474,Sophora tomentosa var. truncata,L.,Torr. & A.Gray,YELLOW NECKLACEPOD,FABACEAE,Y,N,,,FACW,FAC,N,Y
+2424,Sophronanthe hispida,Benth. ex Lindl.,,ROUGH HEDGEHYSSOP,PLANTAGINACEAE,Y,N,,,FAC,FAC,N,Y
+3302,Sophronanthe pilosa,(Michx.)Small,,SHAGGY HEDGEHYSSOP,PLANTAGINACEAE,Y,N,,,FACW,FACW,N,Y
+2407,Sorghastrum secundum,(Elliott)Nash,,LOPSIDED INDIANGRASS,POACEAE,Y,N,,,,FACU,N,Y
+3818,Spartina alterniflora,Loisel.,,SALTMARSH CORDGRASS; SMOOTH CORDGRASS,POACEAE,Y,N,,,OBL,OBL,N,Y
+2531,Spartina bakeri,Merr.,,SAND CORDGRASS,POACEAE,Y,N,,,FACW,FACW,N,Y
+3723,Spartina patens,(Aiton)Muhl.,,MARSHHAY CORDGRASS; SALTMEADOW CORDGRASS,POACEAE,Y,N,,,FACW,FACW,N,Y
+851,Spartina spartinae,(Trin.)Merr. ex Hitchc.,,GULF CORDGRASS,POACEAE,Y,N,,,OBL,OBL,N,Y
+2523,Spermacoce keyensis,Small,,FLORIDA FALSE BUTTONWEED,RUBIACEAE,Y,N,,,,,N,Y
+2391,Spermacoce prostrata,Aubl.,,PROSTRATE FALSE BUTTONWEED,RUBIACEAE,Y,N,,,,FACW,N,Y
+601,Spermacoce tetraquetra,A.Rich.,,PINELAND FALSE BUTTONWEED,RUBIACEAE,Y,N,,,,,N,Y
+806,Spermolepis divaricata,(Walter)Raf.,,ROUGHFRUIT SCALESEED,APIACEAE,Y,N,,,,FAC,N,Y
+563,Spermolepis echinata,(Nutt. ex DC.)A.Heller,,BRISTLY SCALESEED,APIACEAE,Y,N,,,,FACU,N,Y
+4836,Sphaerocarpos donnellii,Austin,,,SPHAEROCARPACEAE,Y,,,,,,,N
+4648,Sphagnum cribrosum,Lindb.,,,SPHAGNACEAE,Y,,,,,,,N
+4649,Sphagnum cuspidatum,Hoffm.,,,SPHAGNACEAE,Y,,,,,,,N
+4653,Sphagnum lescurii,Sull.,,,SPHAGNACEAE,Y,,,,,,,N
+4654,Sphagnum macrophyllum,Brid.,,,SPHAGNACEAE,Y,,,,,,,N
+4655,Sphagnum magniae,A.J. Shaw et al.,,,SPHAGNACEAE,Y,,,,,,,N
+4659,Sphagnum perichaetiale,Hampe,,,SPHAGNACEAE,Y,,,,,,,N
+4662,Sphagnum strictum,Sull.,,,SPHAGNACEAE,Y,,,,,,,N
+4664,Sphagnum trinitense,Müll. Hal.,,,SPHAGNACEAE,Y,,,,,,,N
+3651,Sphenomeris clavata,(L.)J.Sm.,,WEDGELET FERN,LINDSAEACEAE,Y,N,Endangered-State,,,UPL,N,Y
+2584,Sphenopholis obtusata,(Michx.)Scribn.,,PRAIRIE WEDGESCALE,POACEAE,Y,N,,,,FAC,N,Y
+3619,Spigelia anthelmia,L.,,WEST INDIAN PINKROOT,LOGANIACEAE,Y,N,,,,,N,Y
+2388,Spiranthes amesiana,Schltr.,,AMES' LADIESTRESSES,ORCHIDACEAE,Y,N,,,FACW,,N,N
+3336,Spiranthes brevilabris,Lindl.,,TEXAS LADIESTRESSES; SMALL LADIESTRESSES,ORCHIDACEAE,Y,N,Endangered-State,,FACW,FACW,N,N
+2418,Spiranthes floridana,(Wherry)Cory,,FLORIDA LADIESTRESSES,ORCHIDACEAE,Y,N,,,FACW,FACW,N,Y
+2400,Spiranthes lacera,(Raf.)Raf.,,EATON'S LADIESTRESSES,ORCHIDACEAE,Y,N,,,FACW,FACU,,Y
+2489,Spiranthes laciniata,(Small)Ames,,LACELIP LADIESTRESSES,ORCHIDACEAE,Y,N,Threatened-State,,FACW,FACW,N,Y
+2885,Spiranthes longilabris,Lindl.,,LONGLIP LADIESTRESSES; GIANTSPIRAL LADIESTRESSES,ORCHIDACEAE,Y,N,Threatened-State,,FACW,FACW,N,Y
+2998,Spiranthes odorata,(Nutt.)Lindl.,,FRAGRANT LADIESTRESSES; MARSH LADIESTRESSES; UNDERWATER ORCHID,ORCHIDACEAE,Y,N,,,FACW,OBL,N,Y
+3114,Spiranthes praecox,(Walter)S.Watson,,GREENVEIN LADIESTRESSES,ORCHIDACEAE,Y,N,,,FACW,FACW,N,Y
+2834,Spiranthes torta,(Thunb.)Garay & H.R.Sweet,,SOUTHERN LADIESTRESSES,ORCHIDACEAE,Y,N,Endangered-State,,FACW,FACU,N,Y
+4876,Spiranthes triloba,(Small)K.Schum.,,,ORCHIDACEAE,Y,Y,,,,,N,Y
+2924,Spiranthes tuberosa,Raf.,,LITTLE LADIESTRESSES; LITTLE PEARL-TWIST,ORCHIDACEAE,Y,N,Threatened-State,,FACW,FACU,N,Y
+3349,Spiranthes vernalis,Engelm. & A.Gray,,SPRING LADIESTRESSES,ORCHIDACEAE,Y,N,,,FACW,FACW,N,Y
+947,Spirodela polyrhiza,(L.)Schleiden,,COMMON DUCKWEED,ARACEAE,Y,N,,,,OBL,N,Y
+4666,Splachnobryum obtusum,(Brid.) Müll. Hal.,,,SPLACHNOBRYACEAE,Y,,,,,,,N
+4665,Splachnum pensylvanicum,(Brid.) Grout ex H. A. Crum,,,SPLACHNACEAE,Y,,,,,,,N
+3064,Sporobolus compositus var. clandestinus,(Poir.)Merr.,(Biehler)Wipff & S.D.Jones,HIDDEN DROPSEED; ROUGH DROPSEED,POACEAE,Y,N,,,,,N,Y
+628,Sporobolus domingensis,(Trin.)Kunth,,CORAL DROPSEED,POACEAE,Y,N,,,,FACU,N,Y
+940,Sporobolus junceus,(P.Beauv.)Kunth,,PINEYWOODS DROPSEED,POACEAE,Y,N,,,,,N,Y
+3600,Sporobolus pyramidatus,(Lam.)Hitchc.,,WHORLED DROPSEED,POACEAE,Y,N,,,,FAC,N,Y
+885,Sporobolus virginicus,(L.)Kunth,,SEASHORE DROPSEED,POACEAE,Y,N,,,OBL,FACW,N,Y
+650,Stachys floridana,Shuttlew. ex Benth.,,FLORIDA HEDGENETTLE; FLORIDA BETONY,LAMIACEAE,Y,N,,,,FAC,N,Y
+703,Stachytarpheta jamaicensis,(L.)Vahl,,BLUE PORTERWEED; JOEE,VERBENACEAE,Y,N,,,,FACU,N,Y
+1145,Stapfochloa elata,(Desv.)P.M.Peterson,,TALL WINDMILLGRASS; MANYSPIKED FINGERGRASS,POACEAE,Y,N,,,,,N,Y
+3247,Steinchisma hians,(Elliott) Nash,,GAPING PANICUM,POACEAE,Y,N,,,FAC,OBL,N,Y
+2766,Stelis gelida,(Lindl.)Pridgeon & M.W.Chase,,FLOR DE LLANTEN; FROSTED ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+596,Stenandrium dulce,(Cav.)Nees,,SWEET SHAGGYTUFT,ACANTHACEAE,Y,N,,,FACW,OBL,N,Y
+3292,Stenanthium densum,(Desr.)Zomlefer & Judd,,CROWPOISON; OSCEOLA'S PLUME,MELANTHIACEAE,Y,N,,,FACW,FACW,N,Y
+3754,Stenotaphrum secundatum,(Walter)Kuntze,,ST. AUGUSTINEGRASS,POACEAE,Y,N,,,,FAC,N,Y
+4668,Stereophyllum radiculosum,(Hook.) Mitt.,,,STEREOPHYLLACEAE,Y,,,,,,,N
+2577,Stillingia aquatica,Chapm.,,WATER TOOTHLEAF; CORKWOOD,EUPHORBIACEAE,Y,N,,,OBL,OBL,N,Y
+3664,Stillingia sylvatica,L.,,QUEENSDELIGHT,EUPHORBIACEAE,Y,N,,,FAC,,N,Y
+1248,Stipulicida setacea var. lacerata,Michx.,C.W.James,PINELAND SCALYPINK,CARYOPHYLLACEAE,Y,N,,,,,N,Y
+2112,Stipulicida setacea var. setacea,Michx.,,PINELAND SCALYPINK,CARYOPHYLLACEAE,Y,N,,,,,N,Y
+3739,Strophostyles umbellata,(Muhl. ex Willd.)Britton,,PINK FUZZYBEAN,FABACEAE,Y,N,,,,FAC,N,Y
+715,Strumpfia maritima,Jacq.,,PRIDE-OF-BIG-PINE,RUBIACEAE,Y,N,Endangered-State,,FACW,FAC,N,Y
+2164,Stuckenia pectinata,(L.)Börner,,SAGO PONDWEED,POTAMOGETONACEAE,Y,N,,,,OBL,N,Y
+1093,Stylisma abdita,Myint,,SHOWY DAWNFLOWER; HIDDEN STYLISMA; AUSTIN'S DAWNFLOWER,CONVOLVULACEAE,Y,Y,Endangered-State,,,,N,Y
+2549,Stylisma villosa,(Nash)House,,HAIRY DAWNFLOWER,CONVOLVULACEAE,Y,N,,,,,N,Y
+3694,Stylosanthes biflora,(L.) Britton et al.,,SIDEBEAK PENCILFLOWER,FABACEAE,Y,N,,,,,N,Y
+2401,Stylosanthes calcicola,Small,,EVERGLADES KEY PENCILFLOWER,FABACEAE,Y,N,Endangered-State,,,,N,N
+939,Stylosanthes hamata,(L.) Taub.,,CHEESYTOES,FABACEAE,Y,N,,,,,N,Y
+984,Styrax americanus,Lam.,,AMERICAN SNOWBELL,STYRACACEAE,Y,N,,,OBL,FACW,N,Y
+3287,Suaeda linearis,(Elliott)Moq.,,SEA BLITE; ANNUAL SEEPWEED,AMARANTHACEAE,Y,N,,,OBL,OBL,N,Y
+2808,Suriana maritima,L.,,BAY CEDAR,SURIANACEAE,Y,N,,,FAC,FAC,N,Y
+3577,Swietenia mahagoni,(L.)Jacq.,,WEST INDIAN MAHOGANY,MELIACEAE,Y,N,Threatened-State,,,UPL,N,Y
+1030,Symphyotrichum adnatum,(Nutt.)G.L.Nesom,,SCALELEAF ASTER,ASTERACEAE,Y,N,,,,FACW,N,Y
+4231,Symphyotrichum bahamense,(Britton)G.L.Nesom,,BAHAMAN ASTER,ASTERACEAE,Y,N,,,OBL,OBL,N,Y
+3150,Symphyotrichum carolinianum,(Walter)Wunderlin & B.F.Hansen,,CLIMBING ASTER,ASTERACEAE,Y,N,,,OBL,OBL,N,Y
+3538,Symphyotrichum concolor,(L.)G.L.Nesom,,EASTERN SILVER ASTER,ASTERACEAE,Y,N,,,,,N,Y
+3675,Symphyotrichum dumosum,(L.)G.L.Nesom,,RICE BUTTON ASTER,ASTERACEAE,Y,N,,,FAC,FAC,N,Y
+3237,Symphyotrichum elliottii,(Torr. & A.Gray)G.L.Nesom,,ELLIOTT'S ASTER,ASTERACEAE,Y,N,,,OBL,OBL,N,Y
+4230,Symphyotrichum expansum,(Poeppig ex Spreng.)G.L.Nesom,,SOUTHWESTERN ANNUAL SALTMARSH ASTER,ASTERACEAE,Y,N,,,,OBL,N,Y
+4163,Symphyotrichum fontinale,(Alexander)G.L.Nesom,,FLORIDA WATER ASTER,ASTERACEAE,Y,Y,,,,,N,Y
+4162,Symphyotrichum simmondsii,(Small)G.L.Nesom,,SIMMONDS' ASTER,ASTERACEAE,Y,N,,,,FAC,N,Y
+3916,Symphyotrichum tenuifolium,(L.)G.L.Nesom,,PERENNIAL SALTMARSH ASTER,ASTERACEAE,Y,N,,,OBL,OBL,N,Y
+2050,Syngonanthus flavidulus,(Michx.)Ruhland,,YELLOW HATPINS,ERIOCAULACEAE,Y,N,,,FACW,FACW,N,Y
+921,Syringodium filiforme,Kütz.,,MANATEEGRASS,CYMODOCEACEAE,Y,N,,,,OBL,N,Y
+4495,Syrrhopodon incompletus,Schwaegr.,,,CALYMPERACEAE,Y,,,,,,,N
+4496,Syrrhopodon ligulatus,Mont.,,,CALYMPERACEAE,Y,,,,,,,N
+4497,Syrrhopodon parasticus,(Brid.) Besch.,,,CALYMPERACEAE,Y,,,,,,,N
+4499,Syrrhopodon texanus,Sull.,,,CALYMPERACEAE,Y,,,,,,,N
+4643,Taxithelium planum,(Brid.) Mitt.,,,SEMATOPHYLLACEAE,Y,,,,,,,N
+3922,Taxodium ascendens,Brongn.,,POND-CYPRESS,CUPRESSACEAE,Y,N,,,OBL,OBL,N,Y
+929,Taxodium distichum,(L.)Rich.,,BALD-CYPRESS,CUPRESSACEAE,Y,N,,,OBL,OBL,N,Y
+2835,Tectaria coriandrifolia,(Sw.)Underw.,,HAIRY HALBERD FERN; HATTIE BAUER HALBERD FERN,TECTARIACEAE,Y,N,,,,OBL,N,Y
+2166,Tectaria fimbriata,(Willd.)Proctor & Lourteig,,LEAST HALBERD FERN,TECTARIACEAE,Y,N,Endangered-State,,,FACW,N,Y
+2727,Tectaria heracleifolia,(Willd.)Underw.,,BROAD HALBERD FERN,TECTARIACEAE,Y,N,Threatened-State,,,FACU,N,Y
+2382,Tectaria x amesiana,A.A.Eaton,,AMES' HALBERD FERN,TECTARIACEAE,Y,N,,,,OBL,N,N
+4794,Telaranea longifolia,(M.A. Howe)J.J. Engel & G.L. Merr.,,,LEPIDOZIACEAE,Y,,,,,,,N
+2592,Telmatoblechnum serrulatum,(Rich.)Perrie et al.,,TOOTHED MIDSORUS FERN; SWAMP FERN,BLECHNACEAE,Y,N,,,FACW,FACW,N,Y
+1085,Tephrosia angustissima var. angustissima,Shuttlew. ex Chapm.,,NARROWLEAF HOARYPEA,FABACEAE,Y,Y,Endangered-State,,,,N,N
+2384,Tephrosia angustissima var. corallicola,Shuttlew. ex Chapm.,(Small)Isely,CORAL HOARYPEA,FABACEAE,Y,N,Endangered-State,,,,N,Y
+1087,Tephrosia angustissima var. curtissii,Shuttlew. ex Chapm.,(Small ex Rydb.)Isely,CURTISS' HOARYPEA,FABACEAE,Y,Y,Endangered-State,,,,N,Y
+2614,Tephrosia chrysophylla,Pursh,,SCURF HOARYPEA,FABACEAE,Y,N,,,,,N,Y
+2042,Tephrosia florida,(F.Dietr.)C.E.Wood,,FLORIDA HOARYPEA,FABACEAE,Y,N,,,,,N,Y
+3734,Tephrosia hispidula,(Michx.)Pers.,,SPRAWLING HOARYPEA,FABACEAE,Y,N,,,,FACU,N,Y
+1218,Tephrosia rugelii,Shuttlew. ex B.L.Rob.,,RUGEL'S HOARYPEA,FABACEAE,Y,Y,,,,,N,Y
+3108,Tephrosia spicata,(Walter)Torr. & A.Gray,,SPIKED HOARYPEA,FABACEAE,Y,N,,,,,N,Y
+579,Terminalia molinetii,M.Gómez,,SPINY BLACK OLIVE,COMBRETACEAE,Y,N,,,,,N,Y
+2204,Teucrium canadense,L.,,WOOD SAGE; CANADIAN GERMANDER,LAMIACEAE,Y,N,,,FACW,FACW,N,Y
+556,Thalassia testudinum,K.D.Koenig,,TURTLEGRASS,HYDROCHARITACEAE,Y,N,,,,OBL,N,Y
+3590,Thalia geniculata,L.,,ALLIGATORFLAG; FIREFLAG,MARANTACEAE,Y,N,,,OBL,OBL,N,Y
+4669,Thelia asprella,(Schimp.) Sull. & Lesq,,,THELIACEAE,Y,,,,,,,N
+2264,Thelypteris augescens,(Link)Munz & I.M.Johnst.,,ABRUPT-TIP MAIDEN FERN,THELYPTERIDACEAE,Y,N,Threatened-State,,FACW,,N,Y
+2825,Thelypteris grandis,A.R.Sm.,,STATELY MAIDEN FERN; COLLIER COUNTY MAIDEN FERN,THELYPTERIDACEAE,Y,N,Endangered-State,,FACW,,N,Y
+4965,Thelypteris guadalupensis,(Wikstr.)Proctor,,GUADALOUPE MAIDEN FERN,THELYPTERIDACEAE,Y,N,,,,,N,Y
+2471,Thelypteris hispidula var. versicolor,(Decne.)C.F.Reed,(R.P.St.John)Lellinger,HAIRY MAIDEN FERN,THELYPTERIDACEAE,Y,N,,,FACW,FACU-,N,Y
+2748,Thelypteris interrupta,(Willd.)K.Iwats.,,HOTTENTOT FERN; WILLDENOW'S FERN,THELYPTERIDACEAE,Y,N,,,FACW,FACW,N,Y
+3379,Thelypteris kunthii,(Desv.)C.V.Morton,,WIDESPREAD MAIDEN FERN; SOUTHERN SHIELD FERN,THELYPTERIDACEAE,Y,N,,,FACW,FACW,N,Y
+2366,Thelypteris ovata,R.P.St.John,,OVATE MARSH FERN,THELYPTERIDACEAE,Y,N,,,FACW,FACW,N,Y
+2207,Thelypteris palustris var. pubescens,Schott,(G.Lawson)Fernald,MARSH FERN,THELYPTERIDACEAE,Y,N,,,FACW,OBL,N,Y
+2848,Thelypteris patens,(Sw.)Small ex R.P.St.John,,GRID-SCALE MAIDEN FERN,THELYPTERIDACEAE,Y,N,Endangered-State,,FACW,FACU,N,Y
+2841,Thelypteris reptans,(J.F.Gmel.)C.V.Morton,,CREEPING STAR-HAIR FERN,THELYPTERIDACEAE,Y,N,Endangered-State,,FACW,,N,Y
+3585,Thelypteris resinifera,(Desv.)Proctor,,GLANDULAR MAIDEN FERN,THELYPTERIDACEAE,Y,N,,,FACW,FACW,N,Y
+2851,Thelypteris reticulata,(L.)Proctor,,LATTICE-VEIN FERN,THELYPTERIDACEAE,Y,N,Endangered-State,,FACW,FACW,N,Y
+4238,Thelypteris sancta,(L.)Ching,,CARIBBEAN MAIDEN FERN,THELYPTERIDACEAE,Y,N,,,,FAC,N,Y
+2265,Thelypteris sclerophylla,(Poepp. ex Spreng.)C.V.Morton,,STIFF STAR-HAIR FERN,THELYPTERIDACEAE,Y,N,Endangered-State,,FACW,UPL,N,Y
+2243,Thelypteris serrata,(Cav.)Alston,,TOOTHED LATTICE-VEIN FERN; DENTATE LATTICE-VEIN FERN,THELYPTERIDACEAE,Y,N,Endangered-State,,FACW,FACW,N,Y
+621,Thrinax radiata,Lodd. ex Schult. & Schult.f.,,FLORIDA THATCH PALM,ARECACEAE,Y,N,Endangered-State,,FAC,,N,Y
+4677,Thuidium delicatulum,(Hedw.) Schimp.,,,THUIDIACEAE,Y,,,,,,,N
+3233,Tiedemannia filiformis subsp. filiformis,(Walter)Feist & S.R.Downie,,WATER COWBANE,APIACEAE,Y,N,,,OBL,OBL,N,Y
+733,Tillandsia balbisiana,Schult. & Schult.f.,,NORTHERN NEEDLELEAF,BROMELIACEAE,Y,N,Threatened-State,,,,N,Y
+2022,Tillandsia bartramii,Elliott,,BARTRAM'S AIRPLANT,BROMELIACEAE,Y,N,,,,,N,Y
+2842,Tillandsia fasciculata,Sw.,,CARDINAL AIRPLANT; COMMON WILD PINE; STIFF-LEAVED WILD PINE,BROMELIACEAE,Y,N,Endangered-State,,,,N,Y
+2225,Tillandsia flexuosa,Sw.,,TWISTED AIRPLANT; BANDED AIRPLANT,BROMELIACEAE,Y,N,Threatened-State,,,,N,Y
+2532,Tillandsia floridana,(L.B.Sm.)H.Luther,,FLORIDA AIRPLANT,BROMELIACEAE,Y,Y,,,,,N,Y
+611,Tillandsia paucifolia,Baker,,POTBELLY AIRPLANT,BROMELIACEAE,Y,N,,,,,N,Y
+716,Tillandsia pruinosa,Sw.,,FUZZYWUZZY AIRPLANT; HOARY AIRPLANT,BROMELIACEAE,Y,N,Endangered-State,,,,N,Y
+2829,Tillandsia recurvata,(L.)L.,,BALLMOSS,BROMELIACEAE,Y,N,,,,,N,Y
+717,Tillandsia setacea,Sw.,,SOUTHERN NEEDLELEAF,BROMELIACEAE,Y,N,,,,,N,Y
+1219,Tillandsia simulata,Small,,FLORIDA AIRPLANT,BROMELIACEAE,Y,Y,,,,,N,Y
+2814,Tillandsia usneoides,(L.)L.,,SPANISH MOSS,BROMELIACEAE,Y,N,,,,FAC,N,Y
+2849,Tillandsia utriculata,L.,,GIANT AIRPLANT; GIANT WILD PINE,BROMELIACEAE,Y,N,Endangered-State,,,,N,Y
+2921,Tillandsia variabilis,Schltdl.,,LEATHERLEAF AIRPLANT; SOFT-LEAVED WILD PINE,BROMELIACEAE,Y,N,Threatened-State,,,,N,Y
+2369,Tillandsia x smalliana,H.Luther,,REDDISH WILD-PINE,BROMELIACEAE,Y,N,,,,,N,Y
+573,Tolumnia bahamensis,(Nash ex Britton & Millsp.)Braem,,VARIEGATED ORCHID; ANGELITA; DANCINGLADY ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+4621,Tortella flavovirens,(Bruch.) Broth.,,,POTTIACEAE,Y,,,,,,,N
+3476,Toxicodendron radicans,(L.)Kuntze,,EASTERN POISON IVY,ANACARDIACEAE,Y,N,,,,FAC,N,Y
+2992,Tradescantia ohiensis,Raf.,,BLUEJACKET; OHIO SPIDERWORT,COMMELINACEAE,Y,N,,,,FAC,N,Y
+1132,Tragia saxicola,Small,,FLORIDA KEYS NOSEBURN; ROCKLANDS NOSEBURN,EUPHORBIACEAE,Y,Y,Threatened-State,,,,N,Y
+3581,Tragia urens,L.,,WAVYLEAF NOSEBURN,EUPHORBIACEAE,Y,N,,,,,N,Y
+4980,Trema floridanum,Britton ex Small,,FLORIDA TREMA,CANNABACEAE,Y,N,,,,,N,Y
+750,Trema lamarckianum,(Schult.)Blume,,PAIN-IN-THE-BACK; WEST INDIAN TREMA; LAMARCK'S TREMA,CANNABACEAE,Y,N,Endangered-State,,FAC,,N,N
+4481,Trematodon longicollis,Michx.,,,BRUCHIACEAE,Y,,,,,,,N
+3597,Trianthema portulacastrum,L.,,DESERT HORSEPURSLANE,AIZOACEAE,Y,N,,,FACW,FACW,N,Y
+2908,Tricerma phyllanthoides,(Benth.)Lundell,,FLORIDA MAYTEN,CELASTRACEAE,Y,N,Threatened-State,,FAC,FAC,N,Y
+4036,Trichocentrum carthagenense,(Jacq.)M.W.Chase & N.H.Williams,,COOT BAY DANCINGLADY ORCHID,ORCHIDACEAE,Y,N,,,,,N,N
+725,Trichocentrum undulatum,(Sw.)Ackerman & M.W.Chase,,MULE-EAR ONCIDIUM; CAPE SABLE DANCINGLADY ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+704,Trichomanes holopterum,Kunze,,ENTIRE-WINGED BRISTLE FERN,HYMENOPHYLLACEAE,Y,N,Endangered-State,,,,N,Y
+2294,Trichomanes krausii,Hook. & Grev.,,KRAUS' BRISTLE FERN; TREEMOSS BRISTLE FERN,HYMENOPHYLLACEAE,Y,N,Endangered-State,,,UPL,N,Y
+2823,Trichomanes lineolatum,(Bosch)Hooker,,LINED BRISTLE FERN,HYMENOPHYLLACEAE,Y,N,Endangered-State,,,UPL,N,Y
+1122,Trichomanes punctatum subsp. floridanum,Poir.,Wess. Boer,FLORIDA BRISTLE FERN,HYMENOPHYLLACEAE,Y,Y,Endangered-State,Endangered-US,,UPL,N,Y
+3638,Trichostema dichotomum,L.,,FORKED BLUECURLS,LAMIACEAE,Y,N,,,,UPL,N,Y
+877,Trichostema setaceum,Houtt.,,NARROWLEAF BLUECURLS,LAMIACEAE,Y,N,,,,,N,Y
+2032,Trichostigma octandrum,(L.)H.Walter,,HOOPVINE,PHYTOLACCACEAE,Y,N,Endangered-State,,,FACU,N,Y
+4023,Tridens eragrostoides,(Vasey & Scribn.)Nash,,LOVEGRASS TRIDENS,POACEAE,Y,N,,,,,N,Y
+2604,Tridens flavus var. chapmanii,(L.)Hitchc.,(Small)Shinners,CHAPMAN'S PURPLETOP TRIDENS,POACEAE,Y,N,,,,,N,Y
+3403,Tridens flavus var. flavus,(L.)Hitchc.,,TALL REDTOP; PURPLETOP TRIDENS,POACEAE,Y,N,,,,FACU,N,Y
+3071,Triglochin striata,Ruiz & Pav.,,ARROWGRASS,JUNCAGINACEAE,Y,N,,,OBL,OBL,N,Y
+1156,Triphora craigheadii,Luer,,CRAIGHEAD'S NODDINGCAPS; CRAIGHEAD'S ORCHID,ORCHIDACEAE,Y,Y,Endangered-State,,FACW,,N,Y
+2761,Triphora gentianoides,(Sw.)Ames & Schltr.,,GENTIAN NODDINGCAPS,ORCHIDACEAE,Y,N,,,FACW,,N,Y
+3917,Triplasis americana,P.Beauv.,,PERENNIAL SANDGRASS,POACEAE,Y,N,,,,,N,Y
+3472,Triplasis purpurea,(Walter)Chapm.,,PURPLE SANDGRASS,POACEAE,Y,N,,,,,N,Y
+3607,Tripsacum dactyloides,(L.)L.,,EASTERN GAMAGRASS; FAKAHATCHEEGRASS,POACEAE,Y,N,,,FAC,FAC,N,Y
+2396,Tripsacum floridanum,Porter ex Vasey,,FLORIDA MOCK GAMAGRASS; FLORIDA TRIPSACUM,POACEAE,Y,N,Threatened-State,,,,N,Y
+3810,Tropidia polystachya,(Sw.)Ames,,YOUNG PALM ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+2289,Typha domingensis,Pers.,,SOUTHERN CATTAIL,TYPHACEAE,Y,N,,,OBL,OBL,N,Y
+3842,Typha latifolia,L.,,BROADLEAF CATTAIL,TYPHACEAE,Y,N,,,OBL,OBL,N,Y
+3530,Ulmus americana,L.,,AMERICAN ELM,ULMACEAE,Y,N,,,FACW,FAC,N,Y
+2063,Uniola paniculata,L.,,SEAOATS,POACEAE,Y,N,,,,FACU,N,Y
+2297,Urochloa adspersa,(Trin.)R.D.Webster,,DOMINICAN SIGNALGRASS,POACEAE,Y,N,,,,,N,Y
+2275,Urochloa platyphylla,(Munro ex C.Wright)R.D.Webster,,BROADLEAF SIGNALGRASS,POACEAE,Y,N,,,,FAC,N,Y
+3889,Urtica chamaedryoides,Pursh,,HEARTLEAF NETTLE,URTICACEAE,Y,N,,,,FAC,N,Y
+584,Utricularia amethystina,Salzm. ex A.St.-Hil. & Girard,,FLORIDA PURPLE BLADDERWORT,LENTIBULARIACEAE,Y,N,,,OBL,OBL,N,N
+2208,Utricularia cornuta,Michx.,,HORNED BLADDERWORT,LENTIBULARIACEAE,Y,N,,,OBL,OBL,N,Y
+2728,Utricularia foliosa,L.,,LEAFY BLADDERWORT,LENTIBULARIACEAE,Y,N,,,OBL,OBL,N,Y
+3522,Utricularia gibba,L.,,HUMPED BLADDERWORT,LENTIBULARIACEAE,Y,N,,,OBL,OBL,N,Y
+3337,Utricularia inflata,Walter,,FLOATING BLADDERWORT,LENTIBULARIACEAE,Y,N,,,OBL,OBL,N,Y
+669,Utricularia juncea,Vahl,,SOUTHERN BLADDERWORT,LENTIBULARIACEAE,Y,N,,,OBL,OBL,N,Y
+3160,Utricularia purpurea,Walter,,EASTERN PURPLE BLADDERWORT,LENTIBULARIACEAE,Y,N,,,OBL,OBL,N,Y
+2575,Utricularia radiata,Small,,LITTLE FLOATING BLADDERWORT,LENTIBULARIACEAE,Y,N,,,OBL,OBL,N,Y
+752,Utricularia resupinata,B.D.Greene ex Bigel.,,LAVENDER BLADDERWORT; SMALL PURPLE BLADDERWORT,LENTIBULARIACEAE,Y,N,,,OBL,OBL,N,Y
+589,Utricularia simulans,Pilg.,,FRINGED BLADDERWORT,LENTIBULARIACEAE,Y,N,,,OBL,OBL,N,Y
+3506,Utricularia subulata,L.,,ZIGZAG BLADDERWORT,LENTIBULARIACEAE,Y,N,,,OBL,OBL,N,Y
+3946,Vaccinium arboreum,Marshall,,SPARKLEBERRY; FARKLEBERRY,ERICACEAE,Y,N,,,,FACU,N,Y
+3689,Vaccinium corymbosum,L.,,HIGHBUSH BLUEBERRY,ERICACEAE,Y,N,,,FACW,FACW,N,Y
+742,Vaccinium darrowii,Camp,,DARROW'S BLUEBERRY,ERICACEAE,Y,N,,,,FACU,N,Y
+653,Vaccinium myrsinites,Lam.,,SHINY BLUEBERRY,ERICACEAE,Y,N,,,,FACU,N,Y
+3867,Vaccinium stamineum,L.,,DEERBERRY,ERICACEAE,Y,N,,,,FACU,N,Y
+571,Vachellia choriophylla,(Benth.)Seigler & Ebinger,,CINNECORD; TAMARINDILLO,FABACEAE,Y,N,Endangered-State,,,,N,Y
+2283,Vachellia farnesiana var. farnesiana,(L.)Wight & Arn.,,SWEET ACACIA,FABACEAE,Y,N,,,,FACU,N,Y
+1084,Vachellia farnesiana var. pinetorum,(L.)Wight & Arn.,(F.J.Herm.)Seigler & Ebinger,PINELAND ACACIA,FABACEAE,Y,Y,,,,,N,Y
+2301,Vachellia macracantha,(Humb. & Bonpl. ex Willd.)Seigler & Ebinger,,PORKNUT,FABACEAE,Y,N,,,,UPL,N,Y
+1545,Vachellia tortuosa,(L.)Seigler & Ebinger,,POPONAX,FABACEAE,Y,N,Endangered-State,,,,N,Y
+2529,Vallesia antillana,Woodson,,TEARSHRUB,APOCYNACEAE,Y,N,Endangered-State,,,,N,Y
+2090,Vallisneria americana,Michx.,,TAPEGRASS; AMERICAN EELGRASS,HYDROCHARITACEAE,Y,N,,,,OBL,N,Y
+2255,Vanilla barbellata,Rchb.f.,,WORMVINE ORCHID,ORCHIDACEAE,Y,N,Endangered-State,,,FACU,N,Y
+2385,Vanilla dilloniana,Correll,,LEAFLESS VANILLA; MRS. LOTT'S VANILLA; DILLON'S VANILLA,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+1315,Vanilla mexicana,Mill.,,MEXICAN VANILLA; FUCHS'  VANILLA; UNSCENTED VANILLA,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+3997,Vanilla phaeantha,Rchb.f.,,LEAFY VANILLA,ORCHIDACEAE,Y,N,Endangered-State,,,,N,Y
+2168,Varronia bahamensis,(Urb.)Millsp.,,BAHAMA MANJACK,BORAGINACEAE,Y,N,,,,,N,Y
+3821,Varronia globosa,Jacq.,,CURACAO BUSH,BORAGINACEAE,Y,N,Endangered-State,,,,N,Y
+978,Verbena carnea,Medik.,,CAROLINA FALSE VERVAIN,VERBENACEAE,Y,N,,,,,N,Y
+1029,Verbena scabra,Vahl,,SANDPAPER VERVAIN; HARSH VERVAIN,VERBENACEAE,Y,N,,,FACW,FACW,N,Y
+3454,Verbesina virginica,L.,,WHITE CROWNBEARD; FROSTWEED,ASTERACEAE,Y,N,,,FAC,FACU,N,Y
+2465,Vernonia blodgettii,Small,,FLORIDA IRONWEED; BLODGETT'S IRONWEED,ASTERACEAE,Y,N,,,FACW,FACW,N,Y
+3255,Vernonia gigantea,(Walter)Trel. ex Branner & Coville,,GIANT IRONWEED,ASTERACEAE,Y,N,,,FACW,FAC,N,Y
+3343,Veronica peregrina,L.,,NECKWEED,PLANTAGINACEAE,Y,N,,,,FAC,N,Y
+4578,Vesicularia vesicularis,(Schwagrichen) Broth.,,,HYPNACEAE,Y,,,,,,,N
+3923,Viburnum nudum,L.,,POSSUMHAW,VIBURNACEAE,Y,N,,,FACW,FACW,N,Y
+3202,Viburnum obovatum,Walter,,WALTER'S VIBURNUM; SMALL-LEAF VIBURNUM,VIBURNACEAE,Y,N,,,FACW,FACW,N,Y
+2647,Vicia acutifolia,Elliott,,FOURLEAF VETCH,FABACEAE,Y,N,,,FACW,FACW,N,Y
+2358,Vicia floridana,S.Watson,,FLORIDA VETCH,FABACEAE,Y,N,,,FACW,FACW,N,Y
+620,Vigna luteola,(Jacq.)Benth.,,HAIRYPOD COWPEA,FABACEAE,Y,N,,,,FACW,N,Y
+2214,Viola lanceolata,L.,,BOG WHITE VIOLET,VIOLACEAE,Y,N,,,OBL,OBL,N,Y
+3440,Viola palmata,L.,,EARLY BLUE VIOLET,VIOLACEAE,Y,N,,,FACW,FACU,N,Y
+3459,Viola primulifolia,L.,,PRIMROSELEAF VIOLET,VIOLACEAE,Y,N,,,FACW,FACW,N,Y
+3566,Viola sororia,Willd.,,COMMON BLUE VIOLET,VIOLACEAE,Y,N,,,FACW,FAC,N,Y
+2025,Vitis aestivalis,Michx.,,SUMMER GRAPE,VITACEAE,Y,N,,,,FACU,N,Y
+652,Vitis cinerea var. floridana,(Engelm.)Engelm. ex Millardet,Munson,FLORIDA GRAPE,VITACEAE,Y,N,,,,FAC,N,Y
+2026,Vitis rotundifolia,Michx.,,MUSCADINE,VITACEAE,Y,N,,,,FAC,N,Y
+2513,Vitis shuttleworthii,House,,CALLOOSE GRAPE,VITACEAE,Y,Y,,,,FAC,N,Y
+2719,Vittaria lineata,(L.)Sm.,,SHOESTRING FERN,PTERIDACEAE,Y,N,,,,FAC,N,Y
+765,Voyria parasitica,(Schltdl. & Cham.)Ruyters & Maas,,PARASITIC GHOSTPLANT,GENTIANACEAE,Y,N,Endangered-State,,,,N,Y
+4988,Waltheria bahamensis,Britton,,,MALVACEAE,Y,N,,,,,N,Y
+2743,Waltheria indica,L.,,SLEEPY MORNING,MALVACEAE,Y,N,,,,UPL,N,Y
+1106,Warea carteri,Small,,CARTER'S PINELANDCRESS; CARTER'S MUSTARD,BRASSICACEAE,Y,Y,Endangered-State,Endangered-US,,,N,Y
+4626,Weissia controversa,Hedw.,,,POTTIACEAE,Y,,,,,,,N
+4627,Weissia jamaicensis,(Mitt.) Grout,,,POTTIACEAE,Y,,,,,,,N
+732,Wolffia columbiana,H.Karst.,,COLUMBIAN WATERMEAL,ARACEAE,Y,N,,,,OBL,N,Y
+755,Wolffiella gladiata,(Hegelm.)Hegelm.,,FLORIDA MUDMIDGET,ARACEAE,Y,N,,,,OBL,N,Y
+756,Wolffiella lingulata,(Hegelm.)Hegelm.,,TONGUESHAPED BOGMAT,ARACEAE,Y,N,,,,OBL,N,N
+592,Wolffiella oblonga,(Phil.)Hegelm.,,SABER MUDMIDGET,ARACEAE,Y,N,,,,OBL,N,Y
+3686,Woodwardia areolata,(L.)T.Moore,,NETTED CHAIN FERN,BLECHNACEAE,Y,N,,,OBL,OBL,N,Y
+3714,Woodwardia virginica,(L.)Sm.,,VIRGINIA CHAIN FERN,BLECHNACEAE,Y,N,,,FACW,OBL,N,Y
+2127,Ximenia americana,L.,,TALLOW WOOD; HOG PLUM,XIMENIACEAE,Y,N,,,,FACU,N,Y
+4301,Xylosma buxifolia,A.Gray,,MUCHA-GENTE,SALICACEAE,Y,N,Endangered-State,,,,N,Y
+651,Xyris ambigua,Beyr. ex Kunth,,COASTALPLAIN YELLOWEYED GRASS,XYRIDACEAE,Y,N,,,OBL,OBL,N,Y
+2700,Xyris brevifolia,Michx.,,SHORTLEAF YELLOWEYED GRASS,XYRIDACEAE,Y,N,,,OBL,OBL,N,Y
+4179,Xyris calcicola,E.L.Bridges & Orzell,,LIMESTONE YELLOWEYED GRASS,XYRIDACEAE,Y,Y,,,,,N,Y
+3145,Xyris caroliniana,Walter,,CAROLINA YELLOWEYED GRASS,XYRIDACEAE,Y,N,,,FACW,FACW,N,Y
+2436,Xyris elliottii,Chapm.,,ELLIOTT'S YELLOWEYED GRASS,XYRIDACEAE,Y,N,,,OBL,OBL,N,Y
+2678,Xyris fimbriata,Elliott,,FRINGED YELLOWEYED GRASS,XYRIDACEAE,Y,N,,,OBL,OBL,N,Y
+2439,Xyris flabelliformis,Chapm.,,SAVANNAH YELLOWEYED GRASS,XYRIDACEAE,Y,N,,,OBL,OBL,N,Y
+2639,Xyris floridana,(Kral)E.L.Bridges & Orzell,,FLORIDA YELLOWEYED GRASS,XYRIDACEAE,Y,N,,,OBL,OBL,N,Y
+123,Xyris jupicai,Rich.,,RICHARD'S YELLOWEYED GRASS,XYRIDACEAE,Y,N,,,FACW,OBL,N,Y
+2389,Xyris platylepis,Chapm.,,TALL YELLOWEYED GRASS,XYRIDACEAE,Y,N,,,OBL,OBL,N,Y
+2488,Xyris smalliana,Nash,,SMALL'S YELLOWEYED GRASS,XYRIDACEAE,Y,N,,,OBL,OBL,N,Y
+1735,Yucca aloifolia,L.,,SPANISH BAYONET; ALOE YUCCA,AGAVACEAE,Y,N,,,,UPL,N,Y
+3542,Yucca filamentosa,L.,,ADAM'S NEEDLE,AGAVACEAE,Y,N,,,,,N,Y
+2105,Zamia integrifolia,L.f.,,FLORIDA ARROWROOT; COONTIE,ZAMIACEAE,Y,N,,,,,N,Y
+3891,Zanthoxylum clava-herculis,L.,,HERCULES-CLUB,RUTACEAE,Y,N,,,,FAC,N,Y
+2804,Zanthoxylum fagara,(L.)Sarg.,,WILD LIME; LIME PRICKLYASH,RUTACEAE,Y,N,,,,FACU,N,Y
+763,Zanthoxylum flavum,Vahl,,WEST INDIAN SATINWOOD; YELLOWWOOD; YELLOWHEART,RUTACEAE,Y,N,Endangered-State,,,,N,Y
+2234,Zanthoxylum spinosum,(Sw.)Sw.,,BISCAYNE PRICKLYASH; LEATHERY PRICKLYASH,RUTACEAE,Y,N,Endangered-State,,,,N,Y
+4476,Zelometeorium patulum,(Hedw.) Manuel,,,BRACHYTHECIACEAE,Y,,,,,,,N
+1070,Zephyranthes simpsonii,Chapm.,,REDMARGIN ZEPHYRLILY; SIMPSON'S ZEPHYRLILY,AMARYLLIDACEAE,Y,N,Threatened-State,,,FAC,N,Y
+981,Zizaniopsis miliacea,(Michx.)Döll & Asch.,,SOUTHERN WILD RICE; GIANT CUTGRASS,POACEAE,Y,N,,,OBL,OBL,N,Y
+2670,Zornia bracteata,J.F.Gmel.,,VIPERINA,FABACEAE,Y,N,,,,,N,Y

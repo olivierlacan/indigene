@@ -229,6 +229,21 @@ export const FRANCE_ATLANTIC: ProseTable = {
   // France atlantique — arbustes.
   // -------------------------------------------------------------------------
   "Crataegus monogyna": {
+    // Les signes pour la reconnaître (data/invasives.ts) : indigène ici,
+    // envahissante dans le Nord-Ouest Pacifique, comme le houx.
+    marks: [
+      { feature: "Feuilles", text: "Petites, profondément découpées en trois à cinq lobes." },
+      { feature: "Épines", text: "Des épines acérées, jusqu'à 2,5 cm, le long des rameaux." },
+      { feature: "Baies", text: "Rouge sombre, un seul noyau chacune, en automne. Celles de Crataegus douglasii, l'aubépine indigène, sont noires." },
+    ],
+    removal: {
+      steps: [
+        "Arrachez les semis quand le sol est mouillé, racine comprise.",
+        "Coupez les plus grands au pied et dessouchez : une souche coupée rejette.",
+        "Coupez les rejets et arrachez les semis apportés par les oiseaux pendant quelques années.",
+      ],
+      dispose: "Les branches à baies vont à la poubelle, pour que les oiseaux n'emportent pas les graines.",
+    },
     nativeNote:
       "L'arbuste qui fait l'ossature du bocage atlantique — ces haies vives qui recousent la campagne française — et qui garnit tout aussi bien les haies, les fourrés et les vieilles terrasses du Midi.",
     careNote:

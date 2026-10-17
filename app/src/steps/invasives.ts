@@ -7,7 +7,7 @@
 //                        who says so, what to grow instead, and real
 //                        photographs from a region where it's wanted.
 //
-// A region page lists its five as rows that link here. The depth lives on the
+// A region page lists its plants as rows that link here. The depth lives on the
 // plant's page rather than in a box that folds open on the list — see
 // "No folding boxes" in CLAUDE.md.
 import { el, clear } from "../ui";

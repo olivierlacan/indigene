@@ -1,102 +1,107 @@
 {
-  "asOf": "2026-10-12",
+  "asOf": "2026-10-17",
   "counts": {
     "mid-atlantic": {
-      "alliaria-petiolata": 87326,
-      "celastrus-orbiculatus": 53808,
-      "elaeagnus-umbellata": 47056,
-      "reynoutria-japonica": 42839,
-      "lythrum-salicaria": 35953
+      "alliaria-petiolata": 87371,
+      "celastrus-orbiculatus": 53983,
+      "elaeagnus-umbellata": 47225,
+      "reynoutria-japonica": 42941,
+      "lythrum-salicaria": 35988
     },
     "north-michigan": {
-      "centaurea-stoebe": 1829,
-      "elaeagnus-umbellata": 1036,
-      "securigera-varia": 822,
-      "lythrum-salicaria": 556,
+      "centaurea-stoebe": 1833,
+      "elaeagnus-umbellata": 1039,
+      "securigera-varia": 821,
+      "lythrum-salicaria": 557,
       "lonicera-morrowii": 442
     },
     "chicago": {
-      "rhamnus-cathartica": 5210,
-      "lonicera-maackii": 9196,
-      "alliaria-petiolata": 7018,
-      "dipsacus-laciniatus": 3936,
-      "lythrum-salicaria": 3872
+      "rhamnus-cathartica": 5228,
+      "lonicera-maackii": 9230,
+      "alliaria-petiolata": 7019,
+      "dipsacus-laciniatus": 3945,
+      "lythrum-salicaria": 3882
     },
     "pnw": {
-      "cytisus-scoparius": 24765,
-      "geranium-robertianum": 25919,
-      "ilex-aquifolium": 22489,
-      "hedera-helix": 15910,
-      "jacobaea-vulgaris": 12656
+      "reynoutria-x-bohemica": 605,
+      "ilex-aquifolium": 22602,
+      "rubus-armeniacus": 13175,
+      "crataegus-monogyna": 12581,
+      "iris-pseudacorus": 5908,
+      "jacobaea-vulgaris": 12693,
+      "clematis-vitalba": 2809,
+      "cytisus-scoparius": 24813,
+      "geranium-robertianum": 26092,
+      "hedera-helix": 15970
     },
     "ca-south-coast": {
       "spartium-junceum": 4406,
-      "carpobrotus-edulis": 4047,
-      "oncosiphon-pilulifer": 3388,
-      "arundo-donax": 3348,
-      "cortaderia-selloana": 2848
+      "carpobrotus-edulis": 4055,
+      "oncosiphon-pilulifer": 3389,
+      "arundo-donax": 3360,
+      "cortaderia-selloana": 2859
     },
     "ca-central-coast": {
-      "genista-monspessulana": 11609,
-      "rubus-armeniacus": 10244,
-      "centaurea-solstitialis": 6674,
-      "carpobrotus-edulis": 5426,
-      "hedera-helix": 4334
+      "genista-monspessulana": 11619,
+      "rubus-armeniacus": 10258,
+      "centaurea-solstitialis": 6681,
+      "carpobrotus-edulis": 5440,
+      "hedera-helix": 4344
     },
     "central-texas": {
-      "melia-azedarach": 14940,
-      "sorghum-halepense": 13994,
-      "rapistrum-rugosum": 13176,
-      "ligustrum-lucidum": 12729,
-      "nandina-domestica": 11266
+      "melia-azedarach": 14970,
+      "sorghum-halepense": 14023,
+      "rapistrum-rugosum": 13178,
+      "ligustrum-lucidum": 12758,
+      "nandina-domestica": 11271
     },
     "florida-central": {
-      "schinus-terebinthifolia": 7012,
-      "urena-lobata": 6650,
-      "ardisia-crenata": 4713,
-      "nephrolepis-cordifolia": 4556,
-      "ludwigia-peruviana": 3969
+      "schinus-terebinthifolia": 7027,
+      "urena-lobata": 6691,
+      "ardisia-crenata": 4718,
+      "nephrolepis-cordifolia": 4596,
+      "ludwigia-peruviana": 3974
     },
     "florida-south": {
-      "schinus-terebinthifolia": 5732,
-      "urena-lobata": 2736,
-      "abrus-precatorius": 2724,
-      "dioscorea-bulbifera": 2059,
-      "ardisia-elliptica": 2028
+      "schinus-terebinthifolia": 5738,
+      "urena-lobata": 2740,
+      "abrus-precatorius": 2731,
+      "dioscorea-bulbifera": 2062,
+      "ardisia-elliptica": 2033
     },
     "france-atlantic": {
-      "buddleja-davidii": 5029,
-      "robinia-pseudoacacia": 3687,
-      "prunus-laurocerasus": 3331,
-      "reynoutria-japonica": 3023,
-      "senecio-inaequidens": 2832
+      "buddleja-davidii": 5040,
+      "robinia-pseudoacacia": 3701,
+      "prunus-laurocerasus": 3336,
+      "reynoutria-japonica": 3034,
+      "senecio-inaequidens": 2850
     },
     "france-continental": {
-      "robinia-pseudoacacia": 5101,
-      "ailanthus-altissima": 3729,
-      "impatiens-glandulifera": 1949,
-      "buddleja-davidii": 1626,
-      "reynoutria-japonica": 1378
+      "robinia-pseudoacacia": 5112,
+      "ailanthus-altissima": 3742,
+      "impatiens-glandulifera": 1951,
+      "buddleja-davidii": 1630,
+      "reynoutria-japonica": 1386
     },
     "france-mediterranean": {
-      "agave-americana": 1545,
-      "robinia-pseudoacacia": 1388,
-      "ailanthus-altissima": 1263,
+      "agave-americana": 1548,
+      "robinia-pseudoacacia": 1390,
+      "ailanthus-altissima": 1264,
       "oxalis-pes-caprae": 1191,
       "carpobrotus-edulis": 1059
     },
     "france-alpine": {
-      "buddleja-davidii": 898,
-      "phytolacca-americana": 819,
-      "robinia-pseudoacacia": 765,
-      "ailanthus-altissima": 523,
-      "reynoutria-japonica": 458
+      "buddleja-davidii": 903,
+      "phytolacca-americana": 823,
+      "robinia-pseudoacacia": 769,
+      "ailanthus-altissima": 533,
+      "reynoutria-japonica": 461
     },
     "ireland": {
-      "buddleja-davidii": 834,
-      "rhododendron-ponticum": 759,
-      "prunus-laurocerasus": 617,
-      "impatiens-glandulifera": 607,
+      "buddleja-davidii": 838,
+      "rhododendron-ponticum": 763,
+      "prunus-laurocerasus": 618,
+      "impatiens-glandulifera": 608,
       "gunnera-tinctoria": 334
     }
   }

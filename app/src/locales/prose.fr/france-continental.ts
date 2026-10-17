@@ -285,6 +285,21 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     },
   },
   "Clematis vitalba": {
+    // Les signes pour la reconnaître (data/invasives.ts) : indigène ici,
+    // envahissante dans le Nord-Ouest Pacifique.
+    marks: [
+      { feature: "Feuilles", text: "Opposées, le plus souvent à cinq folioles, à bord lisse ou à peine denté." },
+      { feature: "Plumets", text: "Des plumets duveteux gris-blanc qui couvrent les arbres tout l'hiver." },
+      { feature: "Tiges", text: "Les vieilles lianes, cordées et grosses comme un poignet, ont une écorce qui s'effiloche." },
+    ],
+    removal: {
+      steps: [
+        "Coupez chaque liane à hauteur de taille puis au ras du sol, et laissez le haut mourir dans l'arbre : l'arracher déchire les branches.",
+        "Déterrez la souche et arrachez les tiges qui s'enracinent au sol.",
+        "Coupez les repousses pendant quelques années, avant la floraison.",
+      ],
+      dispose: "Les lianes s'enracinent au contact d'un sol humide : faites-les sécher hors du sol, puis jetez-les.",
+    },
     pioneerNote:
       "Elle recouvre un grillage, un talus de voie ferrée ou un tas de pierres calcaires en une saison. Vigoureuse jusqu'à l'excès : donnez-lui quelque chose que vous voulez cacher.",
     supportNotes: {

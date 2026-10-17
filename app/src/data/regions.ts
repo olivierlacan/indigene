@@ -20,6 +20,7 @@
 // app's download, and a reader wants one of them. `loadPlants` in
 // `lib/plants.ts` is the front door; it caches, so a list is fetched once.
 import type { RegionDef } from "./region";
+import { onForeignLand } from "../lib/borders";
 import { REGION as MID_ATLANTIC } from "./region.mid-atlantic";
 import { REGION as NORTH_MICHIGAN } from "./region.north-michigan";
 import { REGION as CHICAGO } from "./region.chicago";
@@ -110,8 +111,11 @@ export const REGIONS: RegionDef[] = [
  * list rather than the much larger Atlantic one.
  */
 export function regionsForCoords(lat: number, lon: number): RegionDef[] {
-  return REGIONS.filter(({ meta: { bounds: b } }) =>
-    lat >= b.minLat && lat <= b.maxLat && lon >= b.minLon && lon <= b.maxLon
+  return REGIONS.filter(({ meta: { id, bounds: b } }) =>
+    lat >= b.minLat && lat <= b.maxLat && lon >= b.minLon && lon <= b.maxLon &&
+    // A box takes in whatever lies under it, across a border too: Atlantic
+    // France's reaches Brighton. Another country's land is not the region's.
+    !onForeignLand(id, lat, lon)
   ).sort((a, b) => boxArea(a) - boxArea(b));
 }
 

@@ -97,6 +97,16 @@ const PLACES = [
   { name: "Marseille", lat: 43.2965, lon: 5.3698, region: "france-mediterranean", via: "eea-biogeo" },
   { name: "Paris", lat: 48.8566, lon: 2.3522, region: "france-atlantic", via: "eea-biogeo" },
   { name: "Dublin", lat: 53.3498, lon: -6.2603, region: "ireland", via: "eea-biogeo" },
+  // --- Across a French border. Each of these is inside a French region's box
+  // and inside the same EEA zone; only the border says no (lib/borders.ts).
+  { name: "Brighton (Atlantic zone, Atlantic France's box)", lat: 50.8225, lon: -0.1372, region: null },
+  { name: "Brussels (Atlantic zone, Atlantic France's box)", lat: 50.8503, lon: 4.3517, region: null },
+  { name: "Kehl (across the Rhine from Strasbourg)", lat: 48.5703, lon: 7.8158, region: null },
+  { name: "Geneva", lat: 46.2044, lon: 6.1432, region: null },
+  // ... and their French neighbours, which must keep their lists.
+  { name: "Dunkirk", lat: 51.0344, lon: 2.3768, region: "france-atlantic", via: "eea-biogeo" },
+  { name: "Strasbourg", lat: 48.5734, lon: 7.7521, region: "france-continental", via: "eea-biogeo" },
+  { name: "Menton (3 km from Italy)", lat: 43.7764, lon: 7.4975, region: "france-mediterranean", via: "eea-biogeo" },
   { name: "Auckland", lat: -36.8485, lon: 174.7633, region: "nz-auckland", via: "resolve-2017" },
 
   // --- Central Texas: three EPA codes, and the neighbours it leaves out ---

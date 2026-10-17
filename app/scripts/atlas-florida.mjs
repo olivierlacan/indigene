@@ -117,8 +117,16 @@ function check() {
   }
 }
 
-// FNPS's forms, in our vocabulary.
-const FORM = { tree: "tree", shrub: "shrub", herb: "perennial", grass: "grass", fern: "fern", vine: "vine", groundcover: "groundcover" };
+// FNPS's forms, in our vocabulary (`PlantForm` in src/types.ts). Palms go with
+// trees, as cabbage palm does; sedges with grasses; aquatics with perennials.
+// FNPS has no groundcover form, so those are picked from the perennials by a
+// person. A herb FNPS calls annual is an annual.
+const FORM = { tree: "tree", palm: "tree", shrub: "shrub", herb: "perennial", aquatic: "perennial", grass: "grass", sedge: "grass", fern: "fern", vine: "vine" };
+const formOf = (p) => {
+  const theirs = (p.form[0] ?? "").toLowerCase();
+  if (theirs === "herb" && p.lifeSpan === "annual") return "annual";
+  return FORM[theirs] ?? theirs ?? "?";
+};
 
 async function candidates(region) {
   if (!REGION_FILE[region]) throw new Error(`unknown Florida region "${region}" — florida-central or florida-south`);
@@ -146,7 +154,7 @@ async function candidates(region) {
     if (!p) { tally.notWrittenUp++; continue; }
     if (!p.zones.some((z) => zones.includes(z))) { tally.outOfZone++; continue; }
     if (!sells(p)) { tally.notSold++; continue; }
-    const form = FORM[(p.form[0] ?? "").toLowerCase()] ?? (p.form[0] ?? "?").toLowerCase();
+    const form = formOf(p);
     if (onlyForm && form !== onlyForm) continue;
     const a = atlas.byBinomial.get(k)[0];
     picks.push({ form, latin: p.latin, common: p.common, p, a });
@@ -173,7 +181,9 @@ async function candidates(region) {
     console.log(`\n${form} — ${rows.length} to consider (we carry ${have[form] ?? 0})`);
     for (const { latin, common, p, a } of rows) {
       const k = kew?.get(latin);
+      const theirs = (p.form[0] ?? "").toLowerCase();
       const flags = [
+        theirs !== form && theirs !== "herb" && `FNPS: ${theirs}`,
         k && k.kew !== "NATIVE" && `Kew: ${k.kew}`,
         k?.accepted && key(k.accepted) !== key(latin) && `Kew: ${k.accepted}`,
         a.endemic === "Y" && "endemic",

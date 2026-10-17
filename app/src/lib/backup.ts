@@ -30,6 +30,7 @@
 // as-is. A file that has been hand-edited, half-saved, or written by something
 // else entirely is an ordinary thing to meet, and the answer to it is a row
 // left out and counted — never a broken screen.
+import { isPlantForm } from "./forms";
 import {
   getCachedObservations,
   kvGet,
@@ -965,6 +966,7 @@ function toFilters(v: unknown): ActiveFilters | undefined {
   for (const k of Object.keys(NO_FILTERS) as (keyof ActiveFilters)[]) {
     const val = r[k];
     if (k === "maxHeightFt" || k === "maxSpreadFt") out[k] = num(val);
+    else if (k === "hiddenForms") out[k] = Array.isArray(val) ? val.filter(isPlantForm) : [];
     else if (typeof val === "boolean") out[k] = val;
   }
   return out;

@@ -4499,6 +4499,28 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
 .place-search-row .btn {
   flex: none;
 }
+/* The plant list's type toggles: one row of equal icon squares that always
+   fits (columns set inline from how many types the region has), and a line
+   under it naming what's hidden. On means shown. */
+.type-chips {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0.6rem 0 0;
+}
+.type-chips .btn {
+  min-width: 0;
+  min-height: 2.6rem;
+  padding: 0.3rem 0;
+  justify-content: center;
+}
+.type-chips .btn[aria-pressed="false"] {
+  opacity: 0.45;
+}
+.type-caption {
+  margin: 0.3rem 0 0.4rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
 .privacy-note {
   margin: 0.4rem 0 0;
   font-size: 0.82rem;

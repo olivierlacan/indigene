@@ -75,3 +75,11 @@ taxref/*.zip
 # committed.
 pnw-flora/raw/
 !pnw-flora/*.csv
+
+# The FNPS plant-database harvest: their pages are "All Rights Reserved", so
+# the per-plant facts stay out and only the counts are committed.
+fnps/raw/
+
+# Kew's answers for the Florida shortlist (`npm run atlas -- --candidates`),
+# cached so the second region and every rerun don't ask again.
+wcvp/cache/

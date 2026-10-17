@@ -224,6 +224,15 @@
     "attribution": "(c) Paul G. Johnson, some rights reserved (CC BY-NC-SA), uploaded by Paul G. Johnson",
     "color": "#6f6b5b"
   },
+  "aristida-stricta": {
+    "taxonId": 158672,
+    "photoId": 1390474,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/1390474/square.jpg",
+    "observer": "Mary Keim",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Mary Keim, some rights reserved (CC BY-NC-SA)",
+    "color": "#66685d"
+  },
   "aristolochia-californica": {
     "taxonId": 55190,
     "photoId": 353949827,
@@ -610,6 +619,15 @@
     "license": "cc-by",
     "attribution": "(c) Sandy Rae, some rights reserved (CC BY)",
     "color": "#5a594a"
+  },
+  "campsis-radicans": {
+    "taxonId": 75995,
+    "photoId": 7300976,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/7300976/square.jpeg",
+    "observer": "Gary House",
+    "license": "cc-by-nc",
+    "attribution": "(c) Gary House, some rights reserved (CC BY-NC), uploaded by Gary House",
+    "color": "#484c14"
   },
   "cardamine-pratensis": {
     "taxonId": 54531,
@@ -1250,6 +1268,15 @@
     "attribution": "(c) teabbee, some rights reserved (CC BY-NC), uploaded by teabbee",
     "color": "#786c3b"
   },
+  "eragrostis-spectabilis": {
+    "taxonId": 162409,
+    "photoId": 219308535,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/219308535/square.jpeg",
+    "observer": "Sara Rall",
+    "license": "cc-by-nc",
+    "attribution": "(c) Sara Rall, some rights reserved (CC BY-NC), uploaded by Sara Rall",
+    "color": "#6d4e43"
+  },
   "erica-cinerea": {
     "taxonId": 55775,
     "photoId": 401262195,
@@ -1753,6 +1780,15 @@
     "license": "cc-by-sa",
     "attribution": "(c) Joe Decruyenaere, some rights reserved (CC BY-SA)",
     "color": "#687164"
+  },
+  "juncus-effusus": {
+    "taxonId": 56153,
+    "photoId": 41202988,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/41202988/square.jpg",
+    "observer": "Nelson DeBarros",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Nelson DeBarros, some rights reserved (CC BY-NC-SA), uploaded by Nelson DeBarros",
+    "color": "#818841"
   },
   "juniper-hairstreak": {
     "taxonId": 84239,
@@ -3491,6 +3527,24 @@
     "attribution": "(c) Scott Ranger, some rights reserved (CC BY-NC), uploaded by Scott Ranger",
     "color": "#3f432c"
   },
+  "telmatoblechnum-serrulatum": {
+    "taxonId": 855610,
+    "photoId": 30558737,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/30558737/square.jpg",
+    "observer": "Mary Keim",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Mary Keim, some rights reserved (CC BY-NC-SA)",
+    "color": "#6d6239"
+  },
+  "thelypteris-kunthii": {
+    "taxonId": 1413422,
+    "photoId": 443184593,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/443184593/square.jpeg",
+    "observer": "Michael J. Papay",
+    "license": "cc-by",
+    "attribution": "(c) Michael J. Papay, some rights reserved (CC BY), uploaded by Michael J. Papay",
+    "color": "#2d3b10"
+  },
   "thuja-occidentalis": {
     "taxonId": 54037,
     "photoId": 4684247,
@@ -3760,6 +3814,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) 104623964081378888743, some rights reserved (CC BY-NC), uploaded by 104623964081378888743",
     "color": "#7e7d54"
+  },
+  "woodwardia-areolata": {
+    "taxonId": 118731,
+    "photoId": 85809395,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/85809395/square.jpg",
+    "observer": "abelkinser",
+    "license": "cc-by-nc",
+    "attribution": "(c) abelkinser, some rights reserved (CC BY-NC)",
+    "color": "#7a9558"
   },
   "woodwardia-fimbriata": {
     "taxonId": 52685,

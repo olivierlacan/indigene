@@ -771,6 +771,14 @@
     },
     {
       "subject": "plant",
+      "id": "osmundastrum-cinnamomeum",
+      "name": "Osmundastrum cinnamomeum",
+      "taxonId": 204165,
+      "reason": "chosen photo 75969516 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/204165/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "passiflora-suberosa",
       "name": "Passiflora suberosa",
       "taxonId": 129327,
@@ -995,6 +1003,14 @@
     },
     {
       "subject": "plant",
+      "id": "sorghastrum-secundum",
+      "name": "Sorghastrum secundum",
+      "taxonId": 123822,
+      "reason": "chosen photo 162813346 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/123822/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "sporobolus-heterolepis",
       "name": "Sporobolus heterolepis",
       "taxonId": 120557,
@@ -1136,6 +1152,14 @@
       "taxonId": 64104,
       "reason": "chosen photo 4265418 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/64104/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "wisteria-frutescens",
+      "name": "Wisteria frutescens",
+      "taxonId": 51266,
+      "reason": "chosen photo 35736058 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/51266/browse_photos"
     },
     {
       "subject": "plant",

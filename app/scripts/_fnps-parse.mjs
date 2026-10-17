@@ -111,3 +111,17 @@ export function parsePlant(html) {
   for (const k of LIST_FIELDS) plant[k] = list(k);
   return plant;
 }
+
+// FNPS's zones are USDA half-zones, except that zone 11 is written whole; a
+// region is in if any of its zones are.
+export const REGION_ZONES = {
+  "florida-central": ["8B", "9A", "9B"],
+  "florida-south": ["10A", "10B", "11", "11A", "11B"],
+};
+// Where each Florida region's rows live.
+export const REGION_FILE = { "florida-central": "plants.florida.ts", "florida-south": "plants.florida-south.ts" };
+/** Genus + epithet, lowercased: what two lists can be compared on. */
+export const key = (latin) => latin.toLowerCase().split(/\s+/).slice(0, 2).join(" ");
+// Something a person can buy: a nursery, a store, an FNPS plant sale, a
+// specialty grower or seed. "Friends" is a pass-along, not a sale.
+export const sells = (p) => p.availability.some((a) => a !== "Friends");

@@ -49,7 +49,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { requireProxyAwareFetch } from "./_net.mjs";
 import { wcvpAccepted, wcvpDistributions, wcvpStatus } from "./_wcvp.mjs";
-import { parseIndex, parsePlant } from "./_fnps-parse.mjs";
+import { REGION_FILE, REGION_ZONES, key, parseIndex, parsePlant, sells } from "./_fnps-parse.mjs";
 import { allowed, robotsFor } from "./_robots.mjs";
 
 requireProxyAwareFetch("harvest:fnps");
@@ -125,18 +125,6 @@ async function harvest() {
 
 // ---------------------------------------------------------------------------
 // The report: what FNPS writes up that a region doesn't carry.
-
-// FNPS's zones are USDA half-zones, except that zone 11 is written whole; a
-// region is in if any of its zones are.
-const REGION_ZONES = {
-  "florida-central": ["8B", "9A", "9B"],
-  "florida-south": ["10A", "10B", "11", "11A", "11B"],
-};
-const REGION_FILE = { "florida-central": "plants.florida.ts", "florida-south": "plants.florida-south.ts" };
-const key = (latin) => latin.toLowerCase().split(/\s+/).slice(0, 2).join(" ");
-// Something a person can buy: a nursery, a store, an FNPS plant sale, a
-// specialty grower or seed. "Friends" is a pass-along, not a sale.
-const sells = (p) => p.availability.some((a) => a !== "Friends");
 
 async function report(region) {
   const zones = REGION_ZONES[region];

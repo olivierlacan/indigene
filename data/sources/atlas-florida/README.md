@@ -2,8 +2,10 @@
 
 **Upstream:** <https://florida.plantatlas.usf.edu/>
 **Retrieve:** by a person, in a browser. See below.
-**Consumed by:** nothing in the app yet. The academic corroboration for a
-Florida native-status claim, next to FNPS and Kew.
+**Read by:** `cd app && npm run atlas`, offline: checks every Florida row is
+native here, and with `-- --candidates <region>` lists natives to add, joined
+with the FNPS harvest. The academic corroboration for a Florida native-status
+claim, next to FNPS and Kew.
 
 ## Why a person, not a script
 

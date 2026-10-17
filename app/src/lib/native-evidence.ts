@@ -71,3 +71,48 @@ export function nativeEvidence(plantId: string, regionId: string | undefined): N
     unconfirmed: (reason as Unconfirmed) ?? null,
   };
 }
+
+/** What one regional flora says: native, or why not. */
+export type FloraVerdict = "native" | "introduced" | "both" | "uncertain" | "absent";
+
+export interface FloraSaid {
+  /** The flora's name, in the reader's language ("The Burke Museum"). */
+  name: string;
+  url: string;
+  /** Where it was asked about, as a phrase ("in Oregon", "en Oregon"). */
+  area: string;
+  verdict: FloraVerdict;
+}
+
+const FLORAS = (TABLE as { floras?: unknown }).floras as
+  | Record<
+      string,
+      {
+        sources: { id: string; name: Record<string, string>; url: string; area: Record<string, string> }[];
+        checked: string;
+        rows: number;
+        disagree: Record<string, Record<string, string>>;
+      }
+    >
+  | undefined;
+
+/**
+ * What the region's own floras say about this plant — the Burke Museum's and
+ * OregonFlora's checklists for the Pacific Northwest — or null where a region
+ * has none. Same storage as Kew's: a plant not in `disagree` is native in all.
+ */
+export function regionalFloras(plantId: string, regionId: string | undefined): { checked: string; said: FloraSaid[] } | null {
+  const region = regionId ? FLORAS?.[regionId] : undefined;
+  if (!region) return null;
+  const lang = getLang();
+  const verdicts = region.disagree[plantId] ?? {};
+  return {
+    checked: region.checked,
+    said: region.sources.map((s) => ({
+      name: s.name[lang] ?? s.name.en,
+      url: s.url,
+      area: s.area[lang] ?? s.area.en,
+      verdict: (verdicts[s.id] as FloraVerdict) ?? "native",
+    })),
+  };
+}

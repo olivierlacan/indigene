@@ -180,6 +180,7 @@ try {
     { slug: "privacy", title: "Privacy & safety", subtitle: "what we ask for, what we never do — made safe for everyone" },
     { slug: "plants", title: "Native plants", subtitle: "every plant Indigene knows, from every region", stat: `<b>${totalPlants}</b> native plants · <b>${nRegions}</b> regions` },
     { slug: "regions", title: "Meet the natives", subtitle: "the regions Indigene covers, and their rosters", stat: `<b>${nRegions}</b> regions · <b>${totalPlants}</b> native plants` },
+    { slug: "map", title: "Map of the regions", subtitle: "every region with a plant list, by continent", stat: `<b>${nRegions}</b> regions · <b>${totalPlants}</b> native plants` },
     { slug: "wildlife", title: "Browse by wildlife", subtitle: "pick a creature, see the natives that feed it", stat: `<b>${nCreatures}</b> creatures mapped so far` },
     { slug: "browse", title: "Browse", subtitle: "start from a region or a standout plant" },
     // The one card that leads with the question rather than the answer. It is

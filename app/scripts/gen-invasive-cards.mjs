@@ -1,8 +1,8 @@
 // Draws one share card per most-wanted invasive, one per region's list, plus
 // one for the index — the picture an unfurler shows beside an "/invasives"
 // link. A region's card (`in-<region>.jpg`, for `/invasives/in/<region>`) names
-// the place and lists its five, ranked: the whole answer to "what should I be
-// pulling round here?" before anyone taps.
+// the place and lists its top five, ranked: the answer to "what should I be
+// pulling round here?" before anyone taps. Five is what fits beside the name.
 //
 //   node scripts/gen-invasive-cards.mjs               # every invasive + index
 //   node scripts/gen-invasive-cards.mjs alliaria-petiolata index
@@ -163,14 +163,14 @@ function indexHtml({ fakeGlyph, facts }) {
 <div class="mid">
   <div class="names">
     <h1>Worst invasives</h1>
-    <div class="role">Each region’s five to pull first, and how to spot them.</div>
+    <div class="role">Each region’s worst to pull first, and how to spot them.</div>
   </div>
   <div class="pair" aria-hidden="true">${fakeGlyph}</div>
 </div>
 <ul>${factRow(facts)}<li class="url">indigene.app</li></ul>`;
 }
 
-/** A region's card: the place, and its five in rank order beside it. */
+/** A region's card: the place, and its top five in rank order beside it. */
 function regionHtml({ name, ranked, facts }) {
   return `<!doctype html><meta charset="utf-8"><style>${STYLE}
   h1 { font-size: ${nameSize(name)}px; max-width: 11ch; }
@@ -224,7 +224,7 @@ try {
     fakeGlyph: glyphMarkup("perennial", 240, AMBER),
     facts: [
       { icon: "flag", value: String(invasives.length), label: "invasive plants" },
-      { icon: "region", value: "5", label: "per region" },
+      { icon: "region", value: String(wantedRegionIds().length), label: "regions" },
     ],
   };
   const regionCards = wantedRegionIds().map((id) => {
@@ -234,7 +234,7 @@ try {
       slug: `in-${id}`,
       region: true,
       name: region.meta.short,
-      ranked: rows.map((r) => displayName(r.invasive.common)),
+      ranked: rows.slice(0, 5).map((r) => displayName(r.invasive.common)),
       facts: [
         { icon: "flag", value: String(rows.length), label: "ranked worst first" },
         { icon: "region", value: regionIsRated(id) ? "Rated" : "Seen", label: regionIsRated(id) ? "by local experts" : "most often, wild" },

@@ -83,3 +83,9 @@ atlas-florida/raw/
 # Kew's answers for the Florida shortlist (`npm run atlas -- --candidates`),
 # cached so the second region and every rerun don't ask again.
 wcvp/cache/
+
+# The Flora of the PNW Checklist ZIP and the herbaria's county list, as
+# downloaded (`npm run pnw:checklist`). The facts-only CSV made from them is
+# committed.
+pnw-flora/raw/
+!pnw-flora/*.csv

@@ -70,6 +70,7 @@ export const APP_STEPS = [
   "film",
   "posts",
   "people",
+  "map",
 ] as const;
 
 export type AppStep = (typeof APP_STEPS)[number];
@@ -114,6 +115,7 @@ export const PARAM_STEPS = new Set<string>([
 export const SHAREABLE_INDEXES: readonly string[] = [
   "plants",
   "regions",
+  "map",
   "browse",
   "wildlife",
   "lookalikes",

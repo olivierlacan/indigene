@@ -371,17 +371,17 @@ export interface TellApart {
  *
  * The words are the ones the assessing bodies use between them — severe,
  * substantial, minor — and the scale is the one the NatureServe Invasive
- * Species Assessment Protocol established and California, Virginia and the
- * French botanical conservatories each apply to their own ground.
+ * Species Assessment Protocol established and California, Virginia, Washington
+ * and the French botanical conservatories each apply to their own ground.
  *
  *  - "transforms" It changes the habitat itself: the natives go, and what
  *                 replaces them is a stand of this. Cal-IPC *High*, Virginia
- *                 *High*, FISC *Category I*, « EEE implantée ».
+ *                 *High*, WIRS *High*, FISC *Category I*, « EEE implantée ».
  *  - "spreads"    Out in the wild and gaining, with real damage, but not
  *                 remaking the place. Cal-IPC *Moderate*, Virginia *Medium*,
- *                 FISC *Category II*, « EEE émergente ».
+ *                 WIRS *Moderate*, FISC *Category II*, « EEE émergente ».
  *  - "patchy"     Loose in the wild, and staying local. Cal-IPC *Limited*,
- *                 Virginia *Low*, « plante potentiellement invasive ».
+ *                 Virginia *Low*, WIRS *Low*, « plante potentiellement invasive ».
  */
 export type PressureLevel = "transforms" | "spreads" | "patchy";
 

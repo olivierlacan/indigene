@@ -277,7 +277,27 @@ async function fisc() {
   return (latin) => rows.get(latin) ?? null;
 }
 
+/**
+ * WIRS publishes one PDF per species, and a table on its landing page naming
+ * each one: scientific name, common name, Ecological Impact Rank, and the link
+ * to that PDF. The PDFs draw their text in embedded-font glyph codes `pdfText`
+ * can't read, so the table is what this asks, matched on the PDF link we print
+ * — WIRS files Himalayan blackberry as Rubus bifrons, so a name wouldn't match.
+ */
+async function wirs() {
+  const rows = new Map();
+  const html = await getText("https://dnr.wa.gov/natural-heritage-program/ecosystems-washington/wa-invasive-ranking-system");
+  for (const tr of html.match(/<tr[\s\S]*?<\/tr>/gi) ?? []) {
+    const file = tr.match(/href="[^"]*\/(amp_nh_wirs_[a-z]+\.pdf)"/i)?.[1];
+    const cells = [...tr.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((m) => plain(m[1]).trim());
+    if (file && cells.length >= 3) rows.set(file, cells[2]);
+  }
+  if (rows.size < 50) throw new Error(`WIRS table parsed to ${rows.size} rows — the page changed`);
+  return (_latin, url) => rows.get(url.split("/").pop()) ?? null;
+}
+
 const READERS = {
+  "the Washington Natural Heritage Program": { build: wirs },
   "the California Invasive Plant Council": { build: calipc },
   "the Washington State Noxious Weed Control Board": { build: async () => nwcb() },
   "the Mediterranean botanical conservatories": { build: async () => invmed() },

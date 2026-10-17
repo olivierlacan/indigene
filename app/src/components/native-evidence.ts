@@ -10,7 +10,7 @@
 // interesting cases here are the twelve rows where a world checklist and a
 // regional flora disagree, and a tick cannot say that.
 import { el } from "../ui";
-import { nativeEvidence, NATIVE_EVIDENCE_URL } from "../lib/native-evidence";
+import { nativeEvidence, NATIVE_EVIDENCE_URL, regionalFloras } from "../lib/native-evidence";
 import { t } from "../lib/i18n";
 import { langTag } from "../lib/i18n";
 import { guideHref } from "./guide-link";
@@ -75,6 +75,43 @@ export function nativeEvidenceLine(plantId: string, regionId?: string): HTMLElem
       t("evidence.stands"),
       " ", meta,
     ]),
+  ]);
+}
+
+/**
+ * The second line, where a region has floras of its own: what its botanists'
+ * checklists say, by name. Kew sees whole states; these see the region, so
+ * this is the line that settles a plant like meadow checkermallow, where the
+ * two floras disagree with each other.
+ */
+export function floraEvidenceLine(plantId: string, regionId?: string): HTMLElement | null {
+  const ev = regionalFloras(plantId, regionId);
+  if (!ev) return null;
+  const link = (s: (typeof ev.said)[number]): HTMLElement =>
+    el("a", { href: s.url, target: "_blank", rel: "noopener", class: "src-link" }, s.name);
+  const meta = el("a", {
+    class: "native-evidence-meta",
+    href: guideHref("sources", "floras"),
+    "aria-label": t("evidence.checkedAria", { when: monthYear(ev.checked) }),
+    title: t("evidence.checkedAria", { when: monthYear(ev.checked) }),
+  }, [clockIcon(), shortMonthYear(ev.checked)]);
+  const [a, b] = ev.said;
+
+  if (ev.said.every((s) => s.verdict === "native")) {
+    return el("div", { class: "native-evidence" }, [
+      mark("ok"),
+      el("p", {}, [link(a), t("flora.and"), link(b), t("flora.agree"), " ", meta]),
+    ]);
+  }
+  // Each flora in its own clause, so a reader sees who said what.
+  const clauses = ev.said.flatMap((s, i) => [
+    ...(i ? ["; "] : []),
+    link(s),
+    t(`flora.said.${s.verdict}` as const, { area: s.area }),
+  ]);
+  return el("div", { class: "native-evidence native-evidence-open" }, [
+    mark("warn"),
+    el("p", {}, [...clauses, ". ", meta]),
   ]);
 }
 

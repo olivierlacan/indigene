@@ -4507,6 +4507,33 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
 .type-chips .btn[aria-pressed="false"] {
   opacity: 0.45;
 }
+/* What a Shift-click or a long press would do — "only" or "except" — tucked
+   under the icon so the square keeps its size. A hold shows it only once it
+   outlasts a tap, so a quick tap doesn't flash it. */
+.type-chips .btn {
+  position: relative;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+.type-mode {
+  position: absolute;
+  inset: auto 0 0.1rem;
+  font-size: 0.65rem;
+  font-weight: 650;
+  line-height: 1;
+  visibility: hidden;
+}
+.shift-held .type-mode {
+  visibility: visible;
+}
+.type-chips .btn.holding .type-mode {
+  visibility: visible;
+  transition: visibility 0s 0.2s;
+}
+.shift-held .type-chips .btn svg,
+.type-chips .btn.holding svg {
+  transform: translateY(-0.3rem);
+}
 .type-caption {
   margin: 0.3rem 0 0.4rem;
   font-size: 0.85rem;
@@ -7511,4 +7538,56 @@ a.welcome-way:hover strong { text-decoration: underline; }
 }
 .flower-swatch-split {
   background: linear-gradient(135deg, var(--swatch-a) 50%, var(--swatch-b) 50%);
+}
+
+/* --- The map page (#/map) ---------------------------------------------- */
+/* Pictures from `scripts/_coverage-map.mjs`; the names are links laid over
+   them, placed by `components/coverage-map.ts`. The world is the overview,
+   capped so a laptop doesn't get a poster; the continents below sit two to a
+   row where there's room. */
+.coverage-world {
+  max-width: 46rem;
+  margin: 0 auto 1.2rem;
+}
+.coverage-continents {
+  display: grid;
+  gap: 1rem 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(22rem, 100%), 1fr));
+  align-items: start;
+}
+.coverage-continent h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+.coverage-frame {
+  position: relative;
+  min-width: 0;
+}
+.coverage-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius) - 6px);
+}
+.coverage-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.08rem 0.35rem;
+  border-radius: 0.6rem;
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  color: var(--ink);
+  font-size: 0.7rem;
+  font-weight: 650;
+  line-height: 1.15;
+  /* One line wherever there's room; never wider than its picture. */
+  width: max-content;
+  max-width: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+.coverage-label:hover,
+.coverage-label:focus-visible {
+  background: var(--brand);
+  color: var(--on-brand);
 }

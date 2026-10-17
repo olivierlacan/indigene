@@ -1,6 +1,7 @@
 // Draw each region's boundary as a small map, once, at build time.
 //
 //   node scripts/build-region-maps.mjs [regionId…]      (npm run maps:build)
+//   node scripts/build-region-maps.mjs --coverage-only  (just the world map)
 //
 // Why a script and not a runtime map. A reader on a region page wants to see
 // how far the region reaches, and no paragraph does that job as well as a
@@ -49,6 +50,8 @@ import { openLoader } from "./_load-ts.mjs";
 import { requireProxyAwareFetch } from "./_net.mjs";
 import { withSeeds } from "./_regions.mjs";
 import { ecoregionFeatures } from "./_resolve.mjs";
+import { buildCoverageMaps } from "./_coverage-map.mjs";
+import polygonClipping from "polygon-clipping";
 
 requireProxyAwareFetch("maps:build");
 
@@ -484,6 +487,87 @@ const rect = (box) => [[
   [box.maxLon, box.maxLat], [box.minLon, box.maxLat],
 ]];
 
+/** Land a region may shade beyond its own `countries`, which name its flags,
+ *  not its edges. Ireland is the island: Belfast and Derry are on its map. */
+const ALSO_IN = { ireland: ["GB"] };
+
+/**
+ * A region's shading, kept off other countries' land.
+ *
+ * The coverage is an ecoregion clipped to a box, and neither knows about
+ * borders: Atlantic France's box reaches 51.2°N and the Atlantic bioregion
+ * doesn't stop at the Channel, so the shading ran along the English south
+ * coast. So each ring loses whatever lies in *another* country (Natural Earth
+ * 1:50m). Subtracting the neighbours rather than intersecting with the region's
+ * own country leaves the coastline exactly as the ecoregion drew it — only
+ * foreign ground is cut — and a ring with nothing foreign in it is untouched.
+ */
+function offForeignLand(rings, meta, features) {
+  const codes = [...(meta.countries ?? []), ...(ALSO_IN[meta.id] ?? [])];
+  if (!codes.length) return rings;
+  const b = meta.bounds;
+  const near = (f) => {
+    const pts = ringsOf(f.geometry).flat();
+    return pts.some(([lon, lat]) => lon >= b.minLon - 1 && lon <= b.maxLon + 1 && lat >= b.minLat - 1 && lat <= b.maxLat + 1);
+  };
+  const polys = (f) => (f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates);
+  const nearby = features.filter(near);
+  const own = nearby.filter((f) => codes.includes(f.properties.ISO_A2_EH)).flatMap(polys);
+  const foreign = nearby.filter((f) => !codes.includes(f.properties.ISO_A2_EH)).flatMap(polys);
+  if (!foreign.length) return rings;
+  const closed = (r) => {
+    const [p, q] = [r[0], r[r.length - 1]];
+    return p[0] === q[0] && p[1] === q[1] ? r : [...r, p];
+  };
+  // **Whose shore is a piece on?** The ecoregion's coastline and Natural
+  // Earth's never quite agree, so subtracting England's land still left a thin
+  // green line along its south coast — the part of the ecoregion that Natural
+  // Earth calls sea. Every piece left over therefore goes to the nearest
+  // country, measured from its middle: a piece nearer a neighbour than any of
+  // the region's own countries is that neighbour's shore, and goes. (A French
+  // islet Natural Earth leaves out is still nearest France, and stays.)
+  const inside = ([x, y], ring) => {
+    let hit = false;
+    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      const [xi, yi] = ring[i];
+      const [xj, yj] = ring[j];
+      if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) hit = !hit;
+    }
+    return hit;
+  };
+  const distance = (pt, set) => {
+    let best = Infinity;
+    const k = Math.cos((pt[1] * Math.PI) / 180);
+    for (const poly of set) {
+      if (inside(pt, poly[0]) && !poly.slice(1).some((h) => inside(pt, h))) return 0;
+      for (const [lon, lat] of poly[0]) {
+        best = Math.min(best, Math.hypot((lon - pt[0]) * k, lat - pt[1]));
+      }
+    }
+    return best;
+  };
+  const middle = (ring) => {
+    let x = 0, y = 0;
+    for (const [lon, lat] of ring) { x += lon; y += lat; }
+    return [x / ring.length, y / ring.length];
+  };
+  const ours = (ring) => distance(middle(ring), own) <= distance(middle(ring), foreign);
+  const out = [];
+  let trimmed = 0;
+  for (const ring of rings) {
+    const poly = [[closed(ring)]];
+    if (!polygonClipping.intersection(poly, foreign).length) {
+      if (ours(ring)) out.push(ring);
+      else trimmed++;
+      continue;
+    }
+    for (const p of polygonClipping.difference(poly, foreign)) out.push(...p.filter(ours));
+    trimmed++;
+  }
+  if (trimmed) console.log(`  ${meta.id}: ${trimmed} ring(s) kept off a neighbour's land`);
+  return out;
+}
+
 // ---- the drawing ----------------------------------------------------------
 
 /** The palette, as an internal stylesheet. Values are the app's own tokens from
@@ -765,6 +849,8 @@ async function buildRegion(meta) {
     }
   }
 
+  if (drawn) cover = offForeignLand(cover, meta, await countries());
+
   const source = southBox ? "coverage box over Natural Earth country outlines (public domain)" : {
     "eea-biogeo":
       "EEA Biogeographical Regions of Europe (2016), CC BY 4.0 © European Environment Agency",
@@ -795,14 +881,18 @@ async function buildRegion(meta) {
       desc: escape(`${meta.extent} Boundary data: ${source}.`),
     },
   });
-  const file = join(OUT_DIR, `${meta.id}.svg`);
-  writeFileSync(file, svg);
+  // `--coverage-only` redraws the world map without touching the region maps,
+  // whose services drift by a vertex or two between runs.
+  if (!COVERAGE_ONLY) writeFileSync(join(OUT_DIR, `${meta.id}.svg`), svg);
   const { height } = projector(view);
   return {
     id: meta.id,
     bytes: svg.length,
     rings: land.length + (admin?.length ?? 0) + cover.length,
     size: { w: WIDTH, h: Math.round(height) },
+    // Kept for the world map, which draws every region's coverage again.
+    cover,
+    bounds: meta.bounds,
   };
 }
 
@@ -826,6 +916,7 @@ ${rows.join("\n")}
 // ---- main -----------------------------------------------------------------
 
 const only = process.argv.slice(2).filter((a) => !a.startsWith("-"));
+const COVERAGE_ONLY = process.argv.includes("--coverage-only");
 const loader = await openLoader();
 try {
   const { REGIONS: REGIONS_RAW } = await loader.load("/src/data/regions.ts");
@@ -844,8 +935,13 @@ try {
   }
   // Only a full run knows every region's size; a single-region rebuild leaves
   // the generated module alone rather than truncating it to one entry.
-  if (!only.length) writeSizes(sizes);
-  else console.log("(partial run — src/data/region-maps.ts left as it was)");
+  if (!only.length) {
+    if (!COVERAGE_ONLY) writeSizes(sizes);
+    // The world map and its insets (`_coverage-map.mjs`) need every region, so
+    // only a full run draws them.
+    await buildCoverageMaps(sizes, OUT_DIR, join(APP_ROOT, "src", "data", "coverage-map.ts"));
+    console.log("map: world + continents → public/maps/coverage-*.svg");
+  } else console.log("(partial run — src/data/region-maps.ts left as it was)");
 } finally {
   await loader.close();
 }

@@ -392,7 +392,7 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "Marcottez une tige basse en l'agrafant dans la tourbe humide ; elle s'enracine en une saison.",
     supportNotes: {
       "emperor-moth":
-        "Les chenilles du petit paon de nuit mangent le piment royal sur les landes humides.",
+        "Les chenilles du petit paon de nuit mangent la myrique baumier sur les landes humides.",
     },
   },
   "Lonicera periclymenum": {

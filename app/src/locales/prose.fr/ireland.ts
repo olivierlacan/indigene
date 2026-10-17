@@ -341,7 +341,7 @@ export const IRELAND: ProseTable = {
   },
   "Rosa spinosissima": {
     pioneerNote:
-      "Le rosier pimprenelle pousse dans les fissures des dalles calcaires et dans le sable nu des dunes, bas et épineux face au vent de l'Atlantique.",
+      "Le rosier très épineux pousse dans les fissures des dalles calcaires et dans le sable nu des dunes, bas et épineux face au vent de l'Atlantique.",
     nativeNote:
       "Le rosier bas et férocement épineux des dunes d'Irlande et du calcaire du Burren — des fleurs blanc crème en mai et des cynorhodons noirs, ce qu'aucun autre rosier d'ici ne possède.",
     careNote:
@@ -352,7 +352,7 @@ export const IRELAND: ProseTable = {
       "Prélevez en hiver un drageon enraciné — il en fait beaucoup. Les boutures dormantes s'enracinent bien en sol sableux.",
     supportNotes: {
       "winter-thrushes":
-        "Le rosier pimprenelle est ici le seul rosier aux cynorhodons noirs plutôt que rouges, et les grives les prennent tard — après ceux de l'églantier sur la même dune.",
+        "Le rosier très épineux est ici le seul rosier aux cynorhodons noirs plutôt que rouges, et les grives les prennent tard — après ceux de l'églantier sur la même dune.",
     },
   },
   "Salix cinerea": {
@@ -440,7 +440,7 @@ export const IRELAND: ProseTable = {
       "Il se marcotte de lui-même là où les branches touchent le sol mouillé : on peut souvent détacher des morceaux enracinés au printemps. Les boutures semi-aoûtées s'enracinent dans un mélange humide, sans calcaire et sans tourbe.",
     supportNotes: {
       "emperor-moth":
-        "Le piment royal est l'une des plantes de tourbière du petit paon de nuit, à côté de la callune avec laquelle il partage le terrain.",
+        "La myrique baumier est l'une des plantes de tourbière du petit paon de nuit, à côté de la callune avec laquelle elle partage le terrain.",
     },
   },
   "Juniperus communis": {

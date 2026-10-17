@@ -39,7 +39,8 @@ const CENTRE_LON = 150;
  *  the continent its box's centre falls in; a region in none fails the build. */
 const CONTINENTS = [
   { id: "north-america", box: { minLon: -126, maxLon: -66, minLat: 24, maxLat: 50.5 } },
-  { id: "europe", box: { minLon: -11, maxLon: 10.5, minLat: 41.2, maxLat: 55.6 } },
+  // North to the Moray Firth, so the Scottish Lowlands sit inside the frame.
+  { id: "europe", box: { minLon: -11, maxLon: 10.5, minLat: 41.2, maxLat: 57.8 } },
   { id: "asia", box: { minLon: 125, maxLon: 147, minLat: 31, maxLat: 41.5 } },
   // The North Island only: the region is its northern tip, and the whole of
   // New Zealand would be a tall picture of mostly somewhere else.
@@ -67,6 +68,7 @@ const LABELS = {
   "florida-central": { lon: -82.0, lat: 29.6, side: "right" },
   "florida-south": { lon: -80.9, lat: 26.2, side: "right" },
   ireland: { lon: -8.0, lat: 53.3, side: "left" },
+  "scotland-lowlands": { lon: -3.8, lat: 55.7, side: "right" },
   "france-atlantic": { lon: -0.6, lat: 47.4, side: "left" },
   "france-continental": { lon: 4.6, lat: 48.2, side: "right" },
   "france-alpine": { lon: 6.4, lat: 45.3, side: "right" },

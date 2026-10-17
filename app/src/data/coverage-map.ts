@@ -39,13 +39,14 @@ export const COVERAGE_MAPS: CoverageMap[] = [
   {
     id: "europe",
     w: 640,
-    h: 520,
+    h: 591,
     labels: [
-      { id: "france-atlantic", x: 48.44, y: 54.88, side: "left" },
-      { id: "france-continental", x: 71.46, y: 49.26, side: "right" },
-      { id: "france-mediterranean", x: 70.35, y: 81.48, side: "below" },
-      { id: "france-alpine", x: 80.07, y: 69.85, side: "right" },
-      { id: "ireland", x: 17.12, y: 14.76, side: "left" },
+      { id: "france-atlantic", x: 48.44, y: 60.26, side: "left" },
+      { id: "france-continental", x: 71.46, y: 55.32, side: "right" },
+      { id: "france-mediterranean", x: 70.35, y: 83.67, side: "below" },
+      { id: "france-alpine", x: 80.07, y: 73.44, side: "right" },
+      { id: "ireland", x: 17.12, y: 24.97, side: "left" },
+      { id: "scotland-lowlands", x: 35.26, y: 11.42, side: "right" },
     ],
   },
   {

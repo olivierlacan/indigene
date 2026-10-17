@@ -569,6 +569,17 @@ export const en = {
   "explore.docTitle": "Meet the natives · Indigene",
   "explore.title": "Meet the natives",
   "explore.lede": "{plants} native plants across the {regions} regions Indigene covers so far. Open yours to see its whole roster, or tap the plant on a card to meet it.",
+  "steps.map": "Map",
+  "map.docTitle": "Map of the regions · Indigene",
+  "map.title": "Map of the regions",
+  "map.lede": "The {n} regions with a plant list so far. Tap a name to open it.",
+  "map.worldAlt": "World map with a green glow on each region that has a plant list",
+  "map.continent.north-america": "North America",
+  "map.continent.europe": "Europe",
+  "map.continent.asia": "Asia",
+  "map.continent.oceania": "Oceania",
+  "map.asList": "See them as a list",
+  "explore.onMap": "See them on a map",
   "explore.missing": "Don't see your region? {link}.",
   "explore.byWildlife": "Or browse by wildlife → ",
   "explore.byWildlifeSub":
@@ -1529,12 +1540,6 @@ export const en = {
   // Native alternatives: "grow this instead of a common ornamental".
   // ---------------------------------------------------------------------
   "plant.alternativesTitle": "Grow it instead of: ",
-  // The third line of the same stack, and the only one that is the same on
-  // every plant page: the way into `#/crops`. It states where the question
-  // comes up rather than answering it, because the answer has caveats and a
-  // one-line summary of it would be the advert the page refuses to be.
-  "plant.cropsTitle": "Near the vegetables: ",
-  "plant.cropsLink": "what farms measured",
   "steps.alternatives": "Native swaps",
   "alternatives.indexTitle": "Natives to grow instead of common ornamentals",
   "alternatives.indexDocTitle": "Native swaps: grow these instead · Indigene",
@@ -1719,6 +1724,8 @@ export const en = {
   "form.chip.fern": "Ferns",
   "filter.typesLabel": "Plant types to show",
   "filter.typesKeepOne": "Keep at least one type on.",
+  "filter.typesOnly": "only",
+  "filter.typesExcept": "except",
   "filter.typesAll": "Showing every plant type. Tap one to hide it.",
   "filter.typesHiding": "Hiding {types}.",
   "form.perennial": "Perennials & wildflowers",

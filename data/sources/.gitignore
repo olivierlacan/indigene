@@ -63,3 +63,9 @@ wildflower-center/raw/
 # the blanket `*.csv` above.
 waflora/raw/
 oregonflora/raw/
+
+# TAXREF's official download: a quarter-gigabyte table a person fetches in a
+# browser (the site challenges scripts). Only the extract for the names the app
+# shows is committed (`npm run taxref:extract`).
+taxref/TAXREFv*.txt
+taxref/*.zip

@@ -32,6 +32,10 @@ export function renderExplore(main: HTMLElement): void {
     el("h2", { class: "step-title" }, t("explore.title")),
     el("p", { class: "step-lede" },
       t("explore.lede", { plants: fmtNumber(totalPlants), regions: fmtNumber(REGIONS.length) })),
+    // Where they all are lives on its own page; this one is the list.
+    el("p", { class: "more-link", style: "margin:0 0 0.8rem" }, [
+      el("a", { href: "#/map" }, t("explore.onMap")),
+    ]),
     el("div", { class: "card-grid" }, REGIONS.map(regionCard)),
     // The map grows one region at a time, by request.
     el("p", { class: "more-link", style: "margin:0.8rem 0 0" }, tx("explore.missing", {

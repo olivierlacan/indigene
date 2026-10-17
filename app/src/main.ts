@@ -38,6 +38,7 @@ import { renderSettings } from "./steps/settings";
 import { renderAbout } from "./steps/about";
 import { renderCrops } from "./steps/crops";
 import { renderNative } from "./steps/native";
+import { renderMap } from "./steps/map";
 import { renderPostsIndex, renderPost } from "./steps/posts";
 import { renderPeople } from "./steps/people";
 import { renderLlm } from "./steps/llm";
@@ -92,6 +93,8 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   browse: { fn: renderBrowse, labelKey: "steps.browse", inFlow: false },
   plants: { fn: renderPlants, labelKey: "steps.plants", inFlow: false },
   regions: { fn: renderExplore, labelKey: "steps.explore", inFlow: false },
+  // Every region on a map, by continent (issue #254).
+  map: { fn: renderMap, labelKey: "steps.map", inFlow: false },
   // The index takes a wildlife *kind*, not a route param — `#/wildlife` alone
   // is the whole catalog; the grouped pages come through `renderWildlife`.
   wildlife: { fn: (m) => renderWildlifeIndex(m), labelKey: "steps.wildlife", inFlow: false },
@@ -302,6 +305,7 @@ function renderStepRail(active: AppStep): void {
 const SECTION_OF: Record<string, string> = {
   browse: "regions",
   regions: "regions",
+  map: "regions",
   plants: "plants",
   lookalikes: "plants",
   alternatives: "plants",
@@ -329,7 +333,7 @@ function sectionOf(step: string): string | undefined {
  * techniques at `#/planting`. The profile pages widen differently — see
  * `updateLayout`.
  */
-const WIDE_STEPS = new Set(["plants", "regions", "wildlife", "lookalikes", "alternatives", "invasives", "planting"]);
+const WIDE_STEPS = new Set(["plants", "regions", "map", "wildlife", "lookalikes", "alternatives", "invasives", "planting"]);
 
 const DOC_STEPS = new Set(["about", "privacy", "sources", "confidence", "settings"]);
 

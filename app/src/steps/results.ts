@@ -320,8 +320,16 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
   const isHidden = (chip: PlantForm) => formsOf(chip).every((f) => store.filters.hiddenForms.includes(f));
   const typeButtons: HTMLButtonElement[] = [];
   const typeCaption = el("p", { class: "type-caption", "aria-live": "polite" });
+  // Shift turns a click into "only this type", and on the type that already
+  // stands alone, "all but this one". Each square names which while Shift is
+  // held (a class on the root, below), so the reader sees it before clicking.
+  watchShift();
+  const typeModes: HTMLElement[] = [];
+  const onlyShown = (chip: PlantForm) =>
+    !isHidden(chip) && formsHere.every((x) => x === chip || isHidden(x));
   const pressTypes = () => {
     typeButtons.forEach((b, i) => b.setAttribute("aria-pressed", isHidden(formsHere[i]) ? "false" : "true"));
+    typeModes.forEach((m, i) => { m.textContent = t(onlyShown(formsHere[i]) ? "filter.typesExcept" : "filter.typesOnly"); });
     const hidden = formsHere.filter(isHidden);
     typeCaption.textContent = hidden.length
       ? t("filter.typesHiding", { types: fmtList(hidden.map((f) => t(`form.chip.${f}` as const))) })
@@ -337,27 +345,58 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
         formsHere.map((f) => {
           const icon = silhouetteFor(f, 24);
           icon.setAttribute("aria-hidden", "true");
+          const mode = el("span", { class: "type-mode", "aria-hidden": "true" });
+          typeModes.push(mode);
+          const press = (solo: boolean) => {
+            const hidden = store.filters.hiddenForms;
+            const mine = formsOf(f);
+            const others = formsHere.filter((x) => x !== f).flatMap(formsOf);
+            const next = solo
+              ? (onlyShown(f) ? mine : others)
+              : isHidden(f)
+              ? hidden.filter((x) => !mine.includes(x))
+              : [...hidden.filter((x) => !mine.includes(x)), ...mine];
+            if (formsHere.every((x) => formsOf(x).every((m) => next.includes(m)))) {
+              toast(t("filter.typesKeepOne"));
+              return;
+            }
+            store.filters.hiddenForms = next;
+            pressTypes();
+            persistPrefs();
+            rerender();
+          };
+          // A phone has no Shift: holding a square does the same. Its label
+          // shows once the hold outlasts a tap, and the click that ends the
+          // hold is swallowed so it doesn't toggle the square straight back.
+          let holdTimer = 0;
+          let held = false;
+          const release = () => { clearTimeout(holdTimer); btn.classList.remove("holding"); };
           const btn = el("button", {
             class: "btn btn-secondary",
             type: "button",
             "aria-label": t(`form.chip.${f}` as const),
             title: t(`form.chip.${f}` as const),
-            onClick: () => {
-              const hidden = store.filters.hiddenForms;
-              const mine = formsOf(f);
-              const next = isHidden(f)
-                ? hidden.filter((x) => !mine.includes(x))
-                : [...hidden.filter((x) => !mine.includes(x)), ...mine];
-              if (formsHere.every((x) => formsOf(x).every((m) => next.includes(m)))) {
-                toast(t("filter.typesKeepOne"));
-                return;
-              }
-              store.filters.hiddenForms = next;
-              pressTypes();
-              persistPrefs();
-              rerender();
+            onPointerdown: (ev: Event) => {
+              const e = ev as PointerEvent;
+              if (e.pointerType === "mouse") return;
+              held = false;
+              btn.classList.add("holding");
+              holdTimer = window.setTimeout(() => {
+                held = true;
+                btn.classList.remove("holding");
+                navigator.vibrate?.(15);
+                press(true);
+              }, 500);
             },
-          }, [icon]) as HTMLButtonElement;
+            onPointerup: release,
+            onPointercancel: release,
+            onPointerleave: release,
+            onContextmenu: (e: Event) => e.preventDefault(),
+            onClick: (e: Event) => {
+              if (held) { held = false; return; }
+              press((e as MouseEvent).shiftKey);
+            },
+          }, [icon, mode]) as HTMLButtonElement;
           typeButtons.push(btn);
           return btn;
         })), typeCaption])
@@ -561,4 +600,17 @@ function renderNoRegion(main: HTMLElement): void {
 function activeFilters(f: typeof store.filters): number {
   return [f.requireNoWater, f.requireDeerResistant, f.excludeThorny, f.excludePetToxic, f.excludeAggressive]
     .filter(Boolean).length + (f.maxHeightFt != null ? 1 : 0) + (f.maxSpreadFt != null ? 1 : 0);
+}
+
+// Shift held anywhere marks the root, so the type squares can say what a
+// click would do. Installed once; losing focus counts as letting go.
+let shiftWatched = false;
+function watchShift(): void {
+  if (shiftWatched) return;
+  shiftWatched = true;
+  const root = document.documentElement;
+  const set = (on: boolean) => root.classList.toggle("shift-held", on);
+  document.addEventListener("keydown", (e) => { if (e.key === "Shift") set(true); });
+  document.addEventListener("keyup", (e) => { if (e.key === "Shift") set(false); });
+  window.addEventListener("blur", () => set(false));
 }

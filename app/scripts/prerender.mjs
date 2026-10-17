@@ -360,6 +360,10 @@ async function collectPages(load) {
     image: pageCard("regions"),
     imageAlt: "Meet the natives — the regions Indigene covers and the size of their rosters",
   });
+  add("map", en["map.docTitle"], fill(en["map.lede"], { n: REGIONS.length }), {
+    image: pageCard("map"),
+    imageAlt: "Map of the regions — every region Indigene has a plant list for, by continent",
+  });
   add("browse", en["browse.docTitle"], en["browse.lede"], {
     image: pageCard("browse"),
     imageAlt: "Browse — start from a region or a standout plant, no location needed",

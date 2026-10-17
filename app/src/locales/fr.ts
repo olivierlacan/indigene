@@ -1492,8 +1492,6 @@ export const fr: Dict = {
   // Alternatives natives : « planter ceci plutôt qu'un ornemental courant ».
   // ---------------------------------------------------------------------
   "plant.alternativesTitle": "À planter plutôt que : ",
-  "plant.cropsTitle": "Près du potager : ",
-  "plant.cropsLink": "ce que les fermes ont mesuré",
   "steps.alternatives": "Alternatives",
   "alternatives.indexTitle": "Des indigènes à planter plutôt que les ornementaux courants",
   "alternatives.indexDocTitle": "Alternatives indigènes : à planter à la place · Indigene",

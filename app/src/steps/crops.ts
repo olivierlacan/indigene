@@ -26,7 +26,9 @@
 //     paragraphs of citation (components/crops-figures.ts). What this page
 //     argues is *which animal does what*, and that is a picture.
 //
-// The plant pages carry one line into here (`cropsLine` in steps/plant.ts).
+// The way in is the Plants index's "Natives & crops" door (steps/plants.ts),
+// not a line on every plant page: the evidence is the same whichever plant
+// you arrived on.
 import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { statTiles, type Stat } from "../components/stat-card";

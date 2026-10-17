@@ -25,11 +25,11 @@ import {
 } from "../lib/plain";
 import { getSpot, saveSpot } from "../db";
 import { townFor } from "../lib/places";
-import { t, tn, tx, fmtNumber } from "../lib/i18n";
+import { t, tn, tx, fmtNumber, fmtList } from "../lib/i18n";
 import { maxHeightChoices, maxSpreadChoices, temperature } from "../lib/units";
 import { commonName, regionName, regionReference } from "../lib/names";
 import { filterBox, norm } from "../components/filter-field";
-import type { Plant } from "../types";
+import type { Plant, PlantForm } from "../types";
 
 /** How deep a slice of the ranking the recompute line compares — the same
  *  window the goals step previews, so the two pages report on the same thing. */
@@ -305,22 +305,50 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
   // above: "no trees, I have no room" is the first thing many readers want
   // and the panel is easy to miss (Show HN, #255). On means shown; the list
   // keeps at least one type on, because an empty list answers nothing.
-  const formsHere = FORM_ORDER.filter((f) => plants.some((p) => p.form === f));
+  //
+  // Icons only, on one row of equal squares: eight labelled chips either wrap
+  // to four lines or scroll sideways, and a chip scrolled out of view is a
+  // filter nobody finds. The silhouettes are the ones every plant card and
+  // region heading wears; the line under the row names what's hidden, in words.
+  //
+  // Annuals share the flower drawing (there is no annual glyph), so one
+  // Flowers toggle covers both: two identical squares would ask the reader to
+  // tell apart what the page draws the same.
+  const chipFor = (f: PlantForm): PlantForm => (f === "annual" ? "perennial" : f);
+  const formsHere = FORM_ORDER.filter((f) => plants.some((p) => chipFor(p.form) === f));
+  const formsOf = (chip: PlantForm): PlantForm[] => FORM_ORDER.filter((f) => chipFor(f) === chip);
+  const isHidden = (chip: PlantForm) => formsOf(chip).every((f) => store.filters.hiddenForms.includes(f));
   const typeButtons: HTMLButtonElement[] = [];
-  const pressTypes = () => typeButtons.forEach((b, i) =>
-    b.setAttribute("aria-pressed", store.filters.hiddenForms.includes(formsHere[i]) ? "false" : "true"));
+  const typeCaption = el("p", { class: "type-caption", "aria-live": "polite" });
+  const pressTypes = () => {
+    typeButtons.forEach((b, i) => b.setAttribute("aria-pressed", isHidden(formsHere[i]) ? "false" : "true"));
+    const hidden = formsHere.filter(isHidden);
+    typeCaption.textContent = hidden.length
+      ? t("filter.typesHiding", { types: fmtList(hidden.map((f) => t(`form.chip.${f}` as const))) })
+      : t("filter.typesAll");
+  };
   const typeChips = formsHere.length > 1
-    ? el("div", { class: "type-chips", role: "group", "aria-label": t("filter.typesLabel") },
+    ? el("div", {}, [el("div", {
+        class: "type-chips",
+        role: "group",
+        "aria-label": t("filter.typesLabel"),
+        style: `grid-template-columns:repeat(${formsHere.length},1fr)`,
+      },
         formsHere.map((f) => {
-          const icon = silhouetteFor(f, 17);
+          const icon = silhouetteFor(f, 24);
           icon.setAttribute("aria-hidden", "true");
           const btn = el("button", {
             class: "btn btn-secondary",
             type: "button",
+            "aria-label": t(`form.chip.${f}` as const),
+            title: t(`form.chip.${f}` as const),
             onClick: () => {
               const hidden = store.filters.hiddenForms;
-              const next = hidden.includes(f) ? hidden.filter((x) => x !== f) : [...hidden, f];
-              if (formsHere.every((x) => next.includes(x))) {
+              const mine = formsOf(f);
+              const next = isHidden(f)
+                ? hidden.filter((x) => !mine.includes(x))
+                : [...hidden.filter((x) => !mine.includes(x)), ...mine];
+              if (formsHere.every((x) => formsOf(x).every((m) => next.includes(m)))) {
                 toast(t("filter.typesKeepOne"));
                 return;
               }
@@ -329,10 +357,10 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
               persistPrefs();
               rerender();
             },
-          }, [icon, t(`form.chip.${f}` as const)]) as HTMLButtonElement;
+          }, [icon]) as HTMLButtonElement;
           typeButtons.push(btn);
           return btn;
-        }))
+        })), typeCaption])
     : null;
   pressTypes();
 

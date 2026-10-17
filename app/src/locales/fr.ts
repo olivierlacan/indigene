@@ -1674,6 +1674,8 @@ export const fr: Dict = {
   "form.chip.fern": "Fougères",
   "filter.typesLabel": "Types de plantes à afficher",
   "filter.typesKeepOne": "Gardez au moins un type.",
+  "filter.typesAll": "Tous les types de plantes. Touchez-en un pour le masquer.",
+  "filter.typesHiding": "Masqués : {types}.",
   "form.perennial": "Vivaces et fleurs sauvages",
   "form.annual": "Annuelles",
   "form.grass": "Graminées et laîches",

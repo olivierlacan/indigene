@@ -70,6 +70,20 @@ oregonflora/raw/
 taxref/TAXREFv*.txt
 taxref/*.zip
 
+# The FNPS plant-database harvest: their pages are "All Rights Reserved", so
+# the per-plant facts stay out and only the counts are committed.
+fnps/raw/
+
+# The Atlas of Florida Plants: a person's export (`raw/`, with the Atlas's own
+# notes in it) stays out; the facts-only CSV made from it is committed, so a
+# row's native claim can be checked against it without re-running the search.
+atlas-florida/raw/
+!atlas-florida/*.csv
+
+# Kew's answers for the Florida shortlist (`npm run atlas -- --candidates`),
+# cached so the second region and every rerun don't ask again.
+wcvp/cache/
+
 # The Flora of the PNW Checklist ZIP and the herbaria's county list, as
 # downloaded (`npm run pnw:checklist`). The facts-only CSV made from them is
 # committed.

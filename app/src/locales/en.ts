@@ -1713,6 +1713,8 @@ export const en = {
   "form.chip.fern": "Ferns",
   "filter.typesLabel": "Plant types to show",
   "filter.typesKeepOne": "Keep at least one type on.",
+  "filter.typesOnly": "only",
+  "filter.typesExcept": "except",
   "filter.typesAll": "Showing every plant type. Tap one to hide it.",
   "filter.typesHiding": "Hiding {types}.",
   "form.perennial": "Perennials & wildflowers",

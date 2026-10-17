@@ -41,8 +41,8 @@ cited it in a row's `basis` — real, but not re-askable.
 | Mid-Atlantic | **Kew WCVP** ✓ | USDA PLANTS · EPA | Wildflower Center ✓ | Tallamy/NWF | **Audubon** ✓ |
 | Northern Michigan | **Kew WCVP** ✓ | USDA PLANTS · EPA | Wildflower Center ✓ | Tallamy/NWF | **Audubon** ✓ |
 | Pacific Northwest | **Kew WCVP** ✓ | USDA PLANTS · EPA | OregonFlora · Burke Herbarium · Wildflower Center ✓ | Tallamy/NWF · Xerces | **Audubon** ✓ |
-| Southern California | **Kew WCVP** ✓ | USDA PLANTS · EPA | Jepson · Wildflower Center ✓ | Tallamy/NWF | **Audubon** ✓ |
-| Central California Coast | **Kew WCVP** ✓ | USDA PLANTS · EPA | Jepson · Wildflower Center ✓ | Tallamy/NWF | **Audubon** ✓ |
+| Southern California | **Kew WCVP** ✓ | USDA PLANTS · EPA | Jepson · Wildflower Center ✓ | Tallamy/NWF | **Audubon** ✓ · CNPS Calscape |
+| Central California Coast | **Kew WCVP** ✓ | USDA PLANTS · EPA | Jepson · Wildflower Center ✓ | Tallamy/NWF | **Audubon** ✓ · CNPS Calscape |
 | North & Central Florida | **Kew WCVP** ✓ | USDA PLANTS · EPA | Atlas of Florida Plants · UF-IFAS · Wildflower Center ✓ | Tallamy/NWF | **Audubon** ✓ · FNPS |
 | South Florida | **Kew WCVP** ✓ | USDA PLANTS · EPA | Atlas of Florida Plants · IRC · Wildflower Center ✓ | Tallamy/NWF | **Audubon** ✓ · FNPS |
 | Atlantic France | **Kew WCVP** ✓ · Tela Botanica BDTFX | INPN/MNHN · CBN Brest, Sud-Atlantique, Bassin parisien · EEA | — | **Gaytán 2026** ✓ | — |

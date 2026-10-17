@@ -8,16 +8,32 @@ list; this folder is how the check gets to read it without a mirror.
   — TAXREF v*N*, a zip holding `TAXREFv<N>.txt` (tab-separated, ~700,000 rows)
 - Publisher: INPN / Muséum national d'Histoire naturelle
 - Licence: **Licence Ouverte / Etalab**. Attribution: "TAXREF, INPN / MNHN."
-- Refresh: download in a browser, unzip, put `TAXREFv<N>.txt` here (git-ignored),
-  then `cd app && npm run taxref:extract` → `extract.json` (committed)
+- Refresh: `cd app && npm run taxref:extract -- --fetch` → `extract.json`
+  (committed); the zip and `TAXREFv<N>.txt` it unpacks stay here, git-ignored.
+  `.github/workflows/vernacular.yml` does the same each quarter before the check.
 
-## Why a person downloads it
+## Where the file comes from
 
-Both the TAXREF API and the download page sit behind a browser challenge that
-refuses scripts — from this repo's checks, from GitHub's runners, from anywhere
-without a browser. The quarterly check of 2026-10-15 made 797 requests to the
-API and got 797 challenge pages. So the big table is fetched by hand, the way
-the Gaytán matrix is, and what the repo keeps is the small part it depends on.
+Both the TAXREF API and the INPN download page sit behind a browser challenge
+that refuses scripts — from this repo's checks, from GitHub's runners, from
+anywhere without a browser. The quarterly check of 2026-10-15 made 797 requests
+to the API and got 797 challenge pages.
+
+Since the MNHN's 2025 outage, PatriNat serves the same release from a plain
+asset host, listed on its
+[temporary download page](https://www.patrinat.fr/fr/page-temporaire-de-telechargement-des-referentiels-de-donnees-lies-linpn-7353):
+`https://assets.patrinat.fr/files/referentiel/TAXREF_v18_2025.zip` (60 MB;
+`TAXREFv18.txt` inside is 317 MB, 708,685 rows). That is what `--fetch` takes,
+and `TAXREF_ZIP` in `app/scripts/taxref-extract.mjs` is where the file name is
+bumped when v19 appears. Should that host go away too, the fallback is the one
+the script's error message gives: download from the INPN page in a browser and
+put the `.txt` here. Either way the repo keeps only the small part it depends
+on, the way it does with the Gaytán matrix.
+
+Measured 2026-10-17 against v18: 435 of the 797 names the app shows are in
+TAXREF (15 of them under a synonym), 395 of those with a French name. The rest
+are North American and Pacific taxa the référentiel has no row for, which is
+what Wikidata is the fallback for.
 
 ## What is committed
 

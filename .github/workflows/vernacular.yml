@@ -66,6 +66,15 @@ jobs:
         working-directory: app
         run: npm ci
 
+      # TAXREF itself, from the file the Muséum publishes: 60 MB from PatriNat's
+      # asset host, reduced to the ~800 names the app shows. The check reads
+      # that extract offline, and the refreshed extract rides in the PR with
+      # the snapshot. GBIF's copy is only the fallback if this step fails.
+      - name: Fetch TAXREF and extract the names we show
+        continue-on-error: true
+        working-directory: app
+        run: npm run taxref:extract -- --fetch
+
       # continue-on-error so a disagreement still produces the snapshot and the
       # PR — a reviewer needs to see *what* disagreed, not just that something
       # did. The check step below re-reads the result and fails the job.

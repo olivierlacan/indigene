@@ -3,17 +3,20 @@
 // offline, from the file the Muséum publishes, rather than from a mirror.
 //
 //   npm run taxref:extract                      # finds data/sources/taxref/TAXREFv*.txt
+//   npm run taxref:extract -- --fetch           # download the zip first (60 MB)
 //   npm run taxref:extract -- --file path/to/TAXREFv18.txt
 //
-// ## Why a person downloads it
+// ## Where the table comes from
 //
-// TAXREF is published at inpn.mnhn.fr as a zipped tab-separated table (about
-// 700,000 rows, a quarter of a gigabyte unpacked). The site sits behind a
-// browser challenge that refuses scripts, so neither this machine nor a GitHub
-// runner can fetch it: somebody downloads it in a browser and drops the `.txt`
-// into `data/sources/taxref/`, which is git-ignored. Same arrangement as the
-// Gaytán matrix (`eu-lep-plant-matrix/`): the big file stays out of the repo,
-// and this script commits the small, reviewable part the app depends on.
+// TAXREF is published as a zipped tab-separated table (about 700,000 rows, a
+// third of a gigabyte unpacked). Its home at inpn.mnhn.fr sits behind a
+// browser challenge that refuses scripts, but since the MNHN's 2025 outage
+// PatriNat serves the same zip from a plain asset host, and `--fetch` takes it
+// from there (`TAXREF_ZIP` below). If that address ever stops answering, a
+// browser can still download it from the INPN page and drop the `.txt` into
+// `data/sources/taxref/`, which is git-ignored. Same arrangement either way as
+// the Gaytán matrix (`eu-lep-plant-matrix/`): the big file stays out of the
+// repo, and this script commits the small, reviewable part the app depends on.
 //
 // ## What it writes
 //
@@ -28,7 +31,8 @@
 // Columns are found by header name, never by position: TAXREF has added
 // columns between versions and will again. A header without CD_NOM, CD_REF,
 // LB_NOM, RANG or NOM_VERN is refused with the headers it did find.
-import { createReadStream, existsSync, readdirSync, writeFileSync } from "node:fs";
+import { createReadStream, existsSync, mkdirSync, readdirSync, writeFileSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { createInterface } from "node:readline";
 import { fileURLToPath } from "node:url";
 import { basename, join } from "node:path";
@@ -38,17 +42,37 @@ import { withSeeds } from "./_regions.mjs";
 const DIR = fileURLToPath(new URL("../../data/sources/taxref/", import.meta.url));
 const OUT = join(DIR, "extract.json");
 
+/** The current release, as PatriNat serves it. Listed on
+ *  https://www.patrinat.fr/fr/page-temporaire-de-telechargement-des-referentiels-de-donnees-lies-linpn-7353
+ *  — bump the file name when a new TAXREF version is published. */
+const TAXREF_ZIP = "https://assets.patrinat.fr/files/referentiel/TAXREF_v18_2025.zip";
+
 const args = process.argv.slice(2);
 const fileArg = args[args.indexOf("--file") + 1];
-const file =
-  args.includes("--file") && fileArg
-    ? fileArg
-    : readdirSync(DIR).filter((f) => /^TAXREFv[\d.]+\.txt$/i.test(f)).sort().map((f) => join(DIR, f)).pop();
+const findTable = () =>
+  readdirSync(DIR).filter((f) => /^TAXREFv[\d.]+\.txt$/i.test(f)).sort().map((f) => join(DIR, f)).pop();
+
+if (args.includes("--fetch")) {
+  mkdirSync(DIR, { recursive: true });
+  const zip = join(DIR, basename(TAXREF_ZIP));
+  console.log(`Fetching ${TAXREF_ZIP} …`);
+  const res = await fetch(TAXREF_ZIP, { headers: { "User-Agent": "IndigeneTaxrefExtract/0.1 (https://github.com/olivierlacan/indigene)" } });
+  if (!res.ok) {
+    console.error(`download failed: HTTP ${res.status}. Download it in a browser instead and put TAXREFv<N>.txt in ${DIR}.`);
+    process.exit(2);
+  }
+  writeFileSync(zip, Buffer.from(await res.arrayBuffer()));
+  // Only the main table: the zip also carries 350 MB of links and changes.
+  execFileSync("unzip", ["-o", "-q", zip, "TAXREFv*.txt", "-d", DIR]);
+  console.log(`Unpacked ${findTable()}`);
+}
+
+const file = args.includes("--file") && fileArg ? fileArg : findTable();
 if (!file || !existsSync(file)) {
   console.error(
-    "No TAXREF table found. Download the current version from\n" +
+    "No TAXREF table found. Run with --fetch, or download the current version from\n" +
       "  https://inpn.mnhn.fr/telechargement/referentielEspece/referentielTaxo\n" +
-      "(a browser is needed: the site challenges scripts), unzip it, and put\n" +
+      "in a browser (the site challenges scripts), unzip it, and put\n" +
       "TAXREFv<N>.txt in data/sources/taxref/ — or pass --file <path>.",
   );
   process.exit(2);
@@ -91,7 +115,7 @@ let rows = 0;
 const rl = createInterface({ input: createReadStream(file, { encoding: "utf8" }), crlfDelay: Infinity });
 for await (const line of rl) {
   if (!header) {
-    header = line.replace(/^﻿/, "").split("\t");
+    header = line.replace(/^﻿/, "").split("\t").map((h) => h.replace(/^"|"$/g, ""));
     const need = ["CD_NOM", "CD_REF", "LB_NOM", "RANG", "NOM_VERN"];
     col = Object.fromEntries(need.map((n) => [n, header.indexOf(n)]));
     const missing = need.filter((n) => col[n] < 0);
@@ -103,7 +127,8 @@ for await (const line of rl) {
   }
   if (!line) continue;
   rows++;
-  const f = line.split("\t");
+  // Strings are double-quoted in the table ("Quercus robur"), numbers are not.
+  const f = line.split("\t").map((v) => (v.startsWith('"') && v.endsWith('"') ? v.slice(1, -1) : v));
   const cdNom = f[col.CD_NOM];
   const slim = { cdNom, cdRef: f[col.CD_REF], name: f[col.LB_NOM], rank: f[col.RANG], vern: f[col.NOM_VERN] ?? "" };
   refs.set(cdNom, slim);

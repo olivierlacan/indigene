@@ -27,7 +27,8 @@
 //   - says who it is: the user-agent names Indigene and links to the project,
 //     where the other harvesters borrow a browser's;
 //   - reads their robots.txt first, every run, and stops if it shuts us out;
-//   - asks slowly — one page every three seconds (longer if they ask), one at a time — and never
+//   - asks one page at a time, waiting a random 0.1–5 s between them (longer
+//     if robots.txt sets a Crawl-delay) — and never
 //     asks twice: each page is reduced to its facts and cached, and a rerun
 //     only fetches pages it hasn't read;
 //   - reads only the public plant pages. The county map on each page is fed by
@@ -57,7 +58,11 @@ const DIR = fileURLToPath(new URL("../../data/sources/fnps/", import.meta.url));
 const RAW = `${DIR}raw/plants.json`;
 const BASE = "https://www.fnps.org";
 const UA = "Indigene native-plant app (+https://indigene.app; https://github.com/olivierlacan/indigene)";
-const PAUSE_MS = 3000;
+// A random wait between pages, 0.1–5 s (≈2.5 s on average). Never shorter
+// than a Crawl-delay their robots.txt sets.
+const PAUSE_MIN_MS = 100;
+const PAUSE_MAX_MS = 5000;
+const RETRY_MS = 3000;
 
 const args = process.argv.slice(2);
 const flag = (name) => {
@@ -74,7 +79,7 @@ async function getHtml(url, attempt = 0) {
     return await res.text();
   } catch (err) {
     if (attempt >= 2) throw err;
-    await sleep(PAUSE_MS * 2 ** (attempt + 1));
+    await sleep(RETRY_MS * 2 ** (attempt + 1));
     return getHtml(url, attempt + 1);
   }
 }
@@ -88,7 +93,8 @@ async function harvest() {
   const raw = loadRaw();
   // Their robots.txt is the line; checked every run, not remembered from today.
   const robots = robotsFor((await getHtml(`${BASE}/robots.txt`)) ?? "", UA);
-  const pause = Math.max(PAUSE_MS, (robots.delay ?? 0) * 1000);
+  const floor = (robots.delay ?? 0) * 1000;
+  const pause = () => Math.max(floor, PAUSE_MIN_MS + Math.random() * (PAUSE_MAX_MS - PAUSE_MIN_MS));
   if (!allowed(robots, "/plant") || !allowed(robots, "/plant/acer-rubrum")) {
     throw new Error("FNPS's robots.txt now asks scripts to stay off the plant pages — stopping");
   }
@@ -101,7 +107,7 @@ async function harvest() {
   mkdirSync(`${DIR}raw`, { recursive: true });
   let n = 0;
   for (const slug of todo) {
-    await sleep(pause);
+    await sleep(pause());
     const html = await getHtml(`${BASE}/plant/${slug}`);
     raw.plants[slug] = html ? parsePlant(html) : null;
     n++;

@@ -24,8 +24,8 @@ by a person.
 ## Being a good guest
 
 FNPS is volunteer-run. The harvester names itself in its user-agent, reads
-`robots.txt` every run and stops if it shuts us out, asks for one page every
-three seconds, and never asks for a page twice. It keeps facts, never prose or
+`robots.txt` every run and stops if it shuts us out, asks for one page at a
+time with a random 0.1–5 s wait between them, and never asks for a page twice. It keeps facts, never prose or
 photos, and leaves the county map alone: that is fed by a keyed private
 endpoint. Their `robots.txt` allows it (`Content-Signal: search=yes,
 ai-input=yes`); the pages are "All Rights Reserved", so `raw/` is git-ignored

@@ -40,6 +40,8 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   // Flore de France — TAXREF / BDTFX.
   // ---------------------------------------------------------------------
   // Ireland and lowland Scotland — every one of these grows wild in France too.
+  "Petasites albus": { name: "Pétasite blanc", src: "taxref" },
+  "Petasites japonicus": { name: "Pétasite du Japon", src: "taxref" },
   "Allium ursinum": { name: "Ail des ours", src: "taxref" },
   "Anemone nemorosa": { name: "Anémone des bois", src: "taxref" },
   "Anthoxanthum odoratum": { name: "Flouve odorante", src: "taxref" },

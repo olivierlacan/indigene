@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Florida (TDWG:FLA — whole state)",
   "region": "florida-central",
-  "ranAt": "2026-10-16T19:41:02.803Z",
+  "ranAt": "2026-10-17T08:07:28.383Z",
   "rows": [
     {
       "id": "quercus-virginiana",
@@ -337,6 +337,46 @@
       "viaSynonym": null
     },
     {
+      "id": "aristida-stricta",
+      "latin": "Aristida stricta",
+      "asked": "Aristida stricta",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "eragrostis-spectabilis",
+      "latin": "Eragrostis spectabilis",
+      "asked": "Eragrostis spectabilis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sorghastrum-secundum",
+      "latin": "Sorghastrum secundum",
+      "asked": "Sorghastrum secundum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "juncus-effusus",
+      "latin": "Juncus effusus",
+      "asked": "Juncus effusus",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "passiflora-incarnata",
       "latin": "Passiflora incarnata",
       "asked": "Passiflora incarnata",
@@ -377,6 +417,26 @@
       "viaSynonym": null
     },
     {
+      "id": "wisteria-frutescens",
+      "latin": "Wisteria frutescens",
+      "asked": "Wisteria frutescens",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "campsis-radicans",
+      "latin": "Campsis radicans",
+      "asked": "Campsis radicans",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "mimosa-strigillosa",
       "latin": "Mimosa strigillosa",
       "asked": "Mimosa strigillosa",
@@ -390,6 +450,46 @@
       "id": "helianthus-debilis",
       "latin": "Helianthus debilis",
       "asked": "Helianthus debilis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "osmundastrum-cinnamomeum",
+      "latin": "Osmundastrum cinnamomeum",
+      "asked": "Osmundastrum cinnamomeum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "thelypteris-kunthii",
+      "latin": "Thelypteris kunthii",
+      "asked": "Thelypteris kunthii",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "woodwardia-areolata",
+      "latin": "Woodwardia areolata",
+      "asked": "Woodwardia areolata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "telmatoblechnum-serrulatum",
+      "latin": "Telmatoblechnum serrulatum",
+      "asked": "Telmatoblechnum serrulatum",
       "verdict": "NATIVE",
       "areas": {
         "FLA": "NATIVE"

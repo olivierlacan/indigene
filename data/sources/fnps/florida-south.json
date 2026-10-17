@@ -1,0 +1,25 @@
+{
+  "source": "Florida Native Plant Society — Plant Database",
+  "url": "https://www.fnps.org/plant",
+  "note": "A society's native-status claim plus gardening facts. Corroborated by the Atlas of Florida Plants (USF) and Kew; nursery availability is never evidence of native status. Facts only; the raw harvest is git-ignored.",
+  "region": "florida-south",
+  "zones": [
+    "10A",
+    "10B",
+    "11",
+    "11A",
+    "11B"
+  ],
+  "harvested": "2026-10-17",
+  "counts": {
+    "read": 708,
+    "inZone": 359,
+    "ours": 21,
+    "oursWrittenUp": 20,
+    "oursBuyable": 20,
+    "inZoneBuyableNotOurs": 319
+  },
+  "oursNotWrittenUp": [
+    "salvia coccinea"
+  ]
+}

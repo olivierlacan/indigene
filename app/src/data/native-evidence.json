@@ -56,8 +56,8 @@
         "fr": "la Floride"
       },
       "coarse": true,
-      "checked": "2026-10-16",
-      "rows": 39,
+      "checked": "2026-10-17",
+      "rows": 49,
       "unconfirmed": {}
     },
     "florida-south": {
@@ -205,6 +205,48 @@
         "viburnum-dentatum": "absent",
         "campanula-rotundifolia": "absent",
         "matteuccia-struthiopteris": "absent"
+      }
+    }
+  },
+  "floras": {
+    "pnw": {
+      "sources": [
+        {
+          "id": "burke",
+          "name": {
+            "en": "The Burke Museum",
+            "fr": "Le musée Burke"
+          },
+          "url": "https://burkeherbarium.org/pnwflora/",
+          "area": {
+            "en": "in the Pacific Northwest",
+            "fr": "dans le Nord-Ouest Pacifique"
+          }
+        },
+        {
+          "id": "oregonflora",
+          "name": {
+            "en": "OregonFlora",
+            "fr": "OregonFlora"
+          },
+          "url": "https://oregonflora.org/pages/taxonomic-checklist.php",
+          "area": {
+            "en": "in Oregon",
+            "fr": "en Oregon"
+          }
+        }
+      ],
+      "checked": "2026-10-17",
+      "rows": 106,
+      "disagree": {
+        "achillea-millefolium": {
+          "burke": "both",
+          "oregonflora": "both"
+        },
+        "sidalcea-campestris": {
+          "burke": "introduced",
+          "oregonflora": "native"
+        }
       }
     }
   }

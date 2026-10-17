@@ -1216,6 +1216,16 @@ export const SECTIONS = [
           "a mistake on its own: Kew records whole states and provinces, and a " +
           `regional flora can know better. [What “native” means here](${APP}/native).`,
       },
+      {
+        id: "floras",
+        heading: "Checked against regional floras",
+        body:
+          "In the Pacific Northwest, each plant is also checked against two " +
+          "checklists written by the region’s own botanists: the Burke Museum’s, " +
+          "at the University of Washington, and OregonFlora’s, at Oregon State. " +
+          "They know the region better than Kew does, and they don’t always agree " +
+          "with each other. Where they don’t, the page says who said what.",
+      },
     ],
     visit: [
       { label: "Where our numbers come from", href: `${APP}/sources` },
@@ -1230,6 +1240,16 @@ export const SECTIONS = [
         label: "World Checklist of Vascular Plants",
         source: "Royal Botanic Gardens, Kew",
         href: "https://powo.science.kew.org/",
+      },
+      {
+        label: "Flora of the Pacific Northwest Checklist",
+        source: "Burke Museum, University of Washington",
+        href: "https://burkeherbarium.org/pnwflora/",
+      },
+      {
+        label: "Oregon Vascular Plant Checklist",
+        source: "OregonFlora, Oregon State University",
+        href: "https://oregonflora.org/pages/taxonomic-checklist.php",
       },
     ],
     match: { segments: ["sources", "confidence"] },

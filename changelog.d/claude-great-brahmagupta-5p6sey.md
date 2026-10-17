@@ -1,0 +1,4 @@
+### Added
+
+- Plants: in the Pacific Northwest, a plant's page now says whether the region's own botanists agree it's native — the Burke Museum's and OregonFlora's checklists — and names the one that disagrees, as on [meadow checkermallow](https://indigene.app/plants/sidalcea-campestris).
+- Internal: `npm run pnw:checklist` reads the Flora of the Pacific Northwest Checklist (Burke Museum, UW) and OregonFlora's checklist (OSU, downloaded by hand), joins them to herbarium specimens from the 37 counties west of the Cascade crest, and snapshots both verdicts on every PNW row (`data/sources/pnw-flora/pnw.json`). It fails on a new or changed disagreement, like `native:check`; `flora-check.test.ts` keeps the snapshot and the page's evidence table in step. `npm run candidates -- --region pnw` now ranks only plants native in Kew and both floras, and lists the rest with the flora that disagrees.

@@ -1412,6 +1412,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:325344-2",
+    "scientificName": "Aristida stricta",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "325344-2",
+      "wfo": "wfo-0000849427",
+      "gbif": "2706263",
+      "usda": "ARST5",
+      "itis": "41433",
+      "inat": "158672",
+      "wikidata": "Q3757710",
+      "indigene": "aristida-stricta"
+    },
+    "commonNames": [
+      "Wiregrass"
+    ],
+    "aliases": [
+      "aristida stricta",
+      "wiregrass"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:92803-1",
     "scientificName": "Aristolochia californica",
     "family": "Aristolochiaceae",
@@ -3059,6 +3088,35 @@ export const REGISTRY: RegistryEntry[] = [
       "north-michigan",
       "st-lawrence",
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:109140-1",
+    "scientificName": "Campsis radicans",
+    "family": "Bignoniaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "109140-1",
+      "wfo": "wfo-0000781862",
+      "gbif": "3172549",
+      "usda": "CARA2",
+      "itis": "34309",
+      "inat": "75995",
+      "wikidata": "Q468778",
+      "indigene": "campsis-radicans"
+    },
+    "commonNames": [
+      "Trumpet Creeper"
+    ],
+    "aliases": [
+      "campsis radicans",
+      "trumpet creeper"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -6199,6 +6257,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:1137778-2",
+    "scientificName": "Eragrostis spectabilis",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1137778-2",
+      "wfo": "wfo-0000868452",
+      "gbif": "2705413",
+      "usda": "ERSP",
+      "itis": "40717",
+      "inat": "162409",
+      "wikidata": "Q17398477",
+      "indigene": "eragrostis-spectabilis"
+    },
+    "commonNames": [
+      "Purple Lovegrass"
+    ],
+    "aliases": [
+      "eragrostis spectabilis",
+      "purple lovegrass"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:332092-2",
     "scientificName": "Erica carnea",
     "family": "Ericaceae",
@@ -8770,6 +8857,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:442917-1",
+    "scientificName": "Juncus effusus",
+    "family": "Juncaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "442917-1",
+      "wfo": "wfo-0000776350",
+      "gbif": "2701311",
+      "usda": "JUEF",
+      "itis": "39232",
+      "inat": "56153",
+      "wikidata": "Q161677",
+      "indigene": "juncus-effusus"
+    },
+    "commonNames": [
+      "Soft Rush"
+    ],
+    "aliases": [
+      "juncus effusus",
+      "soft rush"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:443335-1",
     "scientificName": "Juncus patens",
     "family": "Juncaceae",
@@ -11217,6 +11333,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:60447721-2",
+    "scientificName": "Osmundastrum cinnamomeum",
+    "family": "Osmundaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "60447721-2",
+      "wfo": "wfo-0001113307",
+      "gbif": "7319895",
+      "itis": "1012094",
+      "inat": "204165",
+      "wikidata": "Q1802734",
+      "indigene": "osmundastrum-cinnamomeum"
+    },
+    "commonNames": [
+      "Cinnamon Fern"
+    ],
+    "aliases": [
+      "cinnamon fern",
+      "osmundastrum cinnamomeum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -16995,6 +17139,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:240832-2",
+    "scientificName": "Sorghastrum secundum",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "240832-2",
+      "wfo": "wfo-0000900112",
+      "gbif": "2704421",
+      "usda": "SOSE5",
+      "itis": "42103",
+      "inat": "123822",
+      "wikidata": "Q7563462",
+      "indigene": "sorghastrum-secundum"
+    },
+    "commonNames": [
+      "Lopsided Indiangrass"
+    ],
+    "aliases": [
+      "lopsided indiangrass",
+      "sorghastrum secundum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:30135991-2",
     "scientificName": "Spiraea douglasii",
     "family": "Rosaceae",
@@ -17591,6 +17764,33 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:77142412-1",
+    "scientificName": "Telmatoblechnum serrulatum",
+    "family": "Blechnaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "77142412-1",
+      "wfo": "wfo-0001340533",
+      "gbif": "7633685",
+      "inat": "855610",
+      "wikidata": "Q80350809",
+      "indigene": "telmatoblechnum-serrulatum"
+    },
+    "commonNames": [
+      "Swamp Fern"
+    ],
+    "aliases": [
+      "swamp fern",
+      "telmatoblechnum serrulatum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:460717-1",
     "scientificName": "Teucrium scorodonia",
     "family": "Lamiaceae",
@@ -17618,6 +17818,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "ireland",
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:251400-2",
+    "scientificName": "Thelypteris kunthii",
+    "family": "Thelypteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "251400-2",
+      "wfo": "wfo-0001109419",
+      "gbif": "5275298",
+      "usda": "THKU",
+      "itis": "17258",
+      "inat": "1413422",
+      "wikidata": "Q7781160",
+      "indigene": "thelypteris-kunthii"
+    },
+    "commonNames": [
+      "Southern Shield Fern"
+    ],
+    "aliases": [
+      "southern shield fern",
+      "thelypteris kunthii"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -19201,6 +19430,64 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:1175869-2",
+    "scientificName": "Wisteria frutescens",
+    "family": "Fabaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "1175869-2",
+      "wfo": "wfo-0000178771",
+      "gbif": "2977310",
+      "usda": "WIFR",
+      "itis": "27021",
+      "inat": "51266",
+      "wikidata": "Q8027753",
+      "indigene": "wisteria-frutescens"
+    },
+    "commonNames": [
+      "American Wisteria"
+    ],
+    "aliases": [
+      "american wisteria",
+      "wisteria frutescens"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:17235260-1",
+    "scientificName": "Woodwardia areolata",
+    "family": "Blechnaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17235260-1",
+      "wfo": "wfo-0001109467",
+      "gbif": "5275360",
+      "usda": "WOAR",
+      "itis": "17749",
+      "inat": "118731",
+      "wikidata": "Q8033591",
+      "indigene": "woodwardia-areolata"
+    },
+    "commonNames": [
+      "Netted Chain Fern"
+    ],
+    "aliases": [
+      "netted chain fern",
+      "woodwardia areolata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {

@@ -6864,6 +6864,113 @@
       "wikidata": "Q7924704"
     }
   },
+  "Aristida stricta": {
+    "identifiers": {
+      "ipni": "325344-2",
+      "wfo": "wfo-0000849427",
+      "usda": "ARST5",
+      "itis": "41433",
+      "inat": "158672",
+      "gbif": "2706263",
+      "wikidata": "Q3757710"
+    }
+  },
+  "Campsis radicans": {
+    "identifiers": {
+      "ipni": "109140-1",
+      "wfo": "wfo-0000781862",
+      "usda": "CARA2",
+      "itis": "34309",
+      "inat": "75995",
+      "gbif": "3172549",
+      "wikidata": "Q468778"
+    }
+  },
+  "Eragrostis spectabilis": {
+    "identifiers": {
+      "ipni": "1137778-2",
+      "wfo": "wfo-0000868452",
+      "usda": "ERSP",
+      "itis": "40717",
+      "inat": "162409",
+      "gbif": "2705413",
+      "wikidata": "Q17398477"
+    }
+  },
+  "Juncus effusus": {
+    "identifiers": {
+      "ipni": "442917-1",
+      "wfo": "wfo-0000776350",
+      "usda": "JUEF",
+      "itis": "39232",
+      "inat": "56153",
+      "gbif": "2701311",
+      "wikidata": "Q161677"
+    }
+  },
+  "Osmundastrum cinnamomeum": {
+    "identifiers": {
+      "ipni": "60447721-2",
+      "wfo": "wfo-0001113307",
+      "itis": "1012094",
+      "inat": "204165",
+      "gbif": "7319895",
+      "wikidata": "Q1802734"
+    }
+  },
+  "Sorghastrum secundum": {
+    "identifiers": {
+      "ipni": "240832-2",
+      "wfo": "wfo-0000900112",
+      "usda": "SOSE5",
+      "itis": "42103",
+      "inat": "123822",
+      "gbif": "2704421",
+      "wikidata": "Q7563462"
+    }
+  },
+  "Telmatoblechnum serrulatum": {
+    "identifiers": {
+      "ipni": "77142412-1",
+      "wfo": "wfo-0001340533",
+      "inat": "855610",
+      "gbif": "7633685",
+      "wikidata": "Q80350809"
+    }
+  },
+  "Thelypteris kunthii": {
+    "identifiers": {
+      "ipni": "251400-2",
+      "wfo": "wfo-0001109419",
+      "usda": "THKU",
+      "itis": "17258",
+      "gbif": "5275298",
+      "wikidata": "Q7781160",
+      "inat": "1413422"
+    }
+  },
+  "Wisteria frutescens": {
+    "identifiers": {
+      "ipni": "1175869-2",
+      "wfo": "wfo-0000178771",
+      "usda": "WIFR",
+      "itis": "27021",
+      "inat": "51266",
+      "gbif": "2977310",
+      "wikidata": "Q8027753"
+    }
+  },
+  "Woodwardia areolata": {
+    "identifiers": {
+      "ipni": "17235260-1",
+      "wfo": "wfo-0001109467",
+      "usda": "WOAR",
+      "itis": "17749",
+      "inat": "118731",
+      "gbif": "5275360",
+      "wikidata": "Q8033591"
+    }
+  },
   "Armeria maritima": {
     "identifiers": {
       "ipni": "19793-2",

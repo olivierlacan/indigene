@@ -69,3 +69,9 @@ oregonflora/raw/
 # shows is committed (`npm run taxref:extract`).
 taxref/TAXREFv*.txt
 taxref/*.zip
+
+# The Flora of the PNW Checklist ZIP and the herbaria's county list, as
+# downloaded (`npm run pnw:checklist`). The facts-only CSV made from them is
+# committed.
+pnw-flora/raw/
+!pnw-flora/*.csv

@@ -296,7 +296,120 @@ async function wirs() {
   return (_latin, url) => rows.get(url.split("/").pop()) ?? null;
 }
 
+/** One retry, because texasinvasives.org drops a connection now and then and
+ *  a reset isn't a verdict on the list. */
+async function getTextRetry(url) {
+  try {
+    return await getText(url);
+  } catch {
+    return await getText(url);
+  }
+}
+
+/**
+ * TIPPC's results table runs over two pages: name, rating, and a link to each
+ * species' assessment by USDA symbol. Matched on that link, as WIRS is.
+ */
+async function tippc() {
+  const rows = new Map();
+  for (const offset of [0, 20, 40]) {
+    const html = await getTextRetry(`https://www.texasinvasives.org/professionals/assessment_results.php?offset=${offset}`);
+    for (const tr of html.match(/<tr[\s\S]*?<\/tr>/gi) ?? []) {
+      const symbol = tr.match(/assessment_detail\.php\?symbol=([A-Z0-9]+)/)?.[1];
+      const cells = [...tr.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((m) => plain(m[1]).trim());
+      if (symbol && cells.length >= 2) rows.set(symbol, cells[1]);
+    }
+  }
+  if (rows.size < 25) throw new Error(`TIPPC table parsed to ${rows.size} rows — the page changed`);
+  return (_latin, url) => rows.get(new URL(url).searchParams.get("symbol")) ?? null;
+}
+
+/** A PDF's text, fetched once per URL. */
+function pdfCache() {
+  const cache = new Map();
+  return async (url) => {
+    if (!cache.has(url)) {
+      const res = await fetch(url, { headers: { "user-agent": UA } });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      cache.set(url, pdfText(Buffer.from(await res.arrayBuffer())).replace(/\s+/g, " "));
+    }
+    return cache.get(url);
+  };
+}
+
+/**
+ * Brittany's 2024 list gives each category its own table — Tableau 4 the
+ * « invasives avérées », 5 the « potentielles », 6 « à surveiller » — and a
+ * row ends with the 2024 code (IA1i, IP2…). Earlier tables list what *changed*
+ * since 2016, with both years' codes, so only the three category tables are
+ * read: the text from the fourth table's heading (its second appearance — the
+ * first is the contents page) to the first annex.
+ */
+function bretagne() {
+  const text = pdfCache();
+  const WORDS = { i: "invasive avérée installée", e: "invasive avérée émergente" };
+  return async (latin, url) => {
+    // A tagged PDF: each cell's string carries its language, "fr-FR", glued on.
+    const t = (await text(url)).replace(/fr-FR/g, " ");
+    const head = "Tableau 4 : Liste des plantes invasives avérées";
+    const from = t.indexOf(head, t.indexOf(head) + 1);
+    const to = t.indexOf("Annexe 1", from);
+    if (from < 0 || to < 0) throw new Error("category tables not found — the document changed");
+    const tables = t.slice(from, to);
+    const at = tables.indexOf(latin);
+    if (at < 0) return null;
+    const code = tables.slice(at, at + 200).match(/\b(IA\d[\d/]*([ie])\*?|IP\d|AS\d)\b/);
+    if (!code) return null;
+    if (code[1].startsWith("IA")) return WORDS[code[2]];
+    return code[1].startsWith("IP") ? "invasive potentielle" : "à surveiller";
+  };
+}
+
+/**
+ * The Alpine conservatory's list prints each species with its rarity and its
+ * Lavergne score — "Robinia pseudoacacia L. C 5" — and the score is the
+ * category: 4–5 « avérée », 3 « potentielle », 2 « émergente ».
+ */
+function alpes() {
+  const text = pdfCache();
+  return async (latin, url) => {
+    const t = await text(url);
+    // A hybrid's sign is "×" here and "x-" there ("Reynoutria x-bohemica").
+    const name = latin.replace(/ × /g, " [x×][- ]?").replace(/ /g, "\\s+");
+    const row = new RegExp(`${name}\\s+[^0-9]{0,60}?\\b(?:CC|C|AC|PC|AR|R|RR|E|N)\\s+([1-5])`).exec(t);
+    if (!row) return null;
+    const score = Number(row[1]);
+    const kind = score >= 4 ? "avérée" : score === 3 ? "potentielle" : "émergente";
+    return `espèce exotique envahissante ${kind}`;
+  };
+}
+
+/**
+ * Ireland's two lists are separate PDFs, so the listing's own URL says which
+ * one we claim; this reads both and answers with the one the species is on.
+ * The lists still use Fallopia for the knotweeds.
+ */
+function ireland() {
+  const text = pdfCache();
+  const LISTS = {
+    "High Impact": "https://invasives.ie/app/uploads/2022/01/Invasives_taggedlist_HighImpact_2013RA-1.pdf",
+    "Medium Impact": "https://invasives.ie/app/uploads/2022/01/Invasives_taggedMediumImpact_2013RA-2.pdf",
+  };
+  const SYNONYMS = { "Reynoutria japonica": "Fallopia japonica" };
+  return async (latin) => {
+    const name = SYNONYMS[latin] ?? latin;
+    for (const [as, url] of Object.entries(LISTS)) {
+      if ((await text(url)).includes(name)) return as;
+    }
+    return null;
+  };
+}
+
 const READERS = {
+  "the Texas Invasive Plant & Pest Council": { build: tippc },
+  "the Brest botanical conservatory": { build: async () => bretagne() },
+  "the Alpine botanical conservatory": { build: async () => alpes() },
+  "the National Biodiversity Data Centre": { build: async () => ireland() },
   "the Washington Natural Heritage Program": { build: wirs },
   "the California Invasive Plant Council": { build: calipc },
   "the Washington State Noxious Weed Control Board": { build: async () => nwcb() },

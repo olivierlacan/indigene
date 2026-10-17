@@ -2,18 +2,22 @@
 // database, one page per plant, as a shortlist and a cross-check for both
 // Florida regions.
 //
-// ## What it is admitted for, and what it is not
+// ## What it is admitted for
 //
-// FNPS writes a page per plant that a gardener can act on: what nurseries sell
+// FNPS writes up Florida natives, so a page here is a **native-status claim**,
+// from a society that knows the state's flora. A claim, not the last word: a
+// row also needs the Atlas of Florida Plants (USF) to agree, and Kew to pass
+// `native:check`. Nursery availability is never evidence of native status —
+// plenty of what native nurseries sell is sold because it's popular.
+//
+// It also writes a page per plant that a gardener can act on: what nurseries sell
 // it, how much sun and water it takes, what soil, which USDA zones. That is the
 // half of a row we otherwise piece together from three places, and the
 // availability line answers the one question no checklist can — *can anybody
 // actually buy this?*
 //
-// It is **not** a native-status source. A plant being sold by native nurseries,
-// or written up by a native plant society, does not settle whether it is native
-// to North & Central Florida. That stays with Kew (`native:check`) and the
-// Atlas of Florida Plants. The report below asks Kew, and says so on every row.
+// The report asks Kew about every row it prints. The Atlas is read by a person
+// (`data/sources/atlas-florida/`), so its column is filled in by hand.
 //
 // ## Being a good guest
 //
@@ -144,8 +148,8 @@ async function report(region) {
   console.log(`  ours: ${ours.size} · written up by FNPS: ${oursListed.length} · sold by a nursery per FNPS: ${oursSold.length}`);
   console.log(`  in zone, sold by a nursery, not on our list: ${gaps.length}`);
 
-  // Kew decides native status, not FNPS — asked here so the shortlist can't be
-  // read as a list of natives on FNPS's word alone.
+  // FNPS's page is one source for native status; Kew is asked here so the
+  // shortlist shows where the two already agree, and the Atlas is the third.
   const byForm = new Map();
   const onlyForm = flag("--form");
   let asked = 0;
@@ -172,7 +176,7 @@ async function report(region) {
     source: "Florida Native Plant Society — Plant Database",
     url: `${BASE}/plant`,
     note:
-      "A gardening reference, not a native-status source: native status is Kew's and the Atlas of Florida Plants'. Facts only; the raw harvest is git-ignored.",
+      "A society's native-status claim plus gardening facts. Corroborated by the Atlas of Florida Plants (USF) and Kew; nursery availability is never evidence of native status. Facts only; the raw harvest is git-ignored.",
     region,
     zones,
     harvested: raw.harvested,

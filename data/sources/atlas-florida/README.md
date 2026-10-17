@@ -2,8 +2,8 @@
 
 **Upstream:** <https://florida.plantatlas.usf.edu/>
 **Retrieve:** by a person, in a browser. See below.
-**Consumed by:** nothing in the app yet. The Florida native-status source
-next to Kew.
+**Consumed by:** nothing in the app yet. The academic corroboration for a
+Florida native-status claim, next to FNPS and Kew.
 
 ## Why a person, not a script
 

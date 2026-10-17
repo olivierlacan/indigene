@@ -7,18 +7,19 @@
 
 ## What it is admitted for
 
-A page per plant with what a gardener needs: which kinds of nursery sell it,
+A native-status claim, and a page per plant with what a gardener needs: which kinds of nursery sell it,
 light, moisture range, salt tolerance, soil, pH and USDA zones. It answers the
 one question no checklist can — *can anybody buy this?* — and fills the site
 half of a row.
 
-## What it is not
+## Native status: a claim that needs corroboration
 
-**Not a native-status source.** A native plant society writing a plant up, or
-native nurseries selling it, does not settle that it is native to North &
-Central Florida. Native status stays with Kew (`native:check`) and the
-[Atlas of Florida Plants](../atlas-florida/). The report asks Kew about every
-row it prints and says what Kew answered.
+FNPS writes up Florida natives, so its page is a **native-status claim** from
+a society that knows the state's flora. A row ships when the
+[Atlas of Florida Plants](../atlas-florida/) (USF) agrees and Kew passes
+`native:check`. **Nursery availability is never evidence of native status.**
+The report asks Kew about every row it prints; the Atlas column is filled in
+by a person.
 
 ## Being a good guest
 

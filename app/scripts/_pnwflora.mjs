@@ -178,3 +178,51 @@ export const CSV_COLUMNS = [
 export function toCsv(rows, columns = CSV_COLUMNS) {
   return `${[columns.join(","), ...rows.map((r) => columns.map((c) => cell(r[c])).join(","))].join("\n")}\n`;
 }
+
+// ---------------------------------------------------------------------------
+// Verdicts: what each checklist says about one plant, in the five words the
+// plant page has sentences for. Name differences are not verdicts — a row the
+// checklist files under another name is still `native` there.
+
+/** `native`, `introduced`, `both`, `uncertain` or `absent`, from the Burke checklist. */
+export function burkeVerdict(row) {
+  if (!row || row.excluded) return "absent";
+  if (row.origin === "native") return "native";
+  if (row.origin === "introduced") return "introduced";
+  if (row.origin === "both") return "both";
+  return "uncertain";
+}
+
+/** The same five, from OregonFlora's wording ("exotic, naturalized" is introduced). */
+export function oregonfloraVerdict(row) {
+  if (!row) return "absent";
+  if (row.origin === "native") return "native";
+  if (row.origin === "native and exotic") return "both";
+  if (row.origin.startsWith("exotic")) return "introduced";
+  return "uncertain";
+}
+
+/**
+ * Both checklists' verdicts on one name. `reviewed` is the hand-kept table of
+ * names a checklist draws differently ({ burke: "Rubus nutkanus" }): the row is
+ * looked up under that name instead, and the caller checks it still exists.
+ */
+export function floraVerdicts(latin, { burke, oregonflora }, reviewed = {}) {
+  const find = (rows, name) => lookup(rows, name) ?? lookup(rows, name.split(" ").slice(0, 2).join(" "));
+  const b = reviewed.burke ? lookup(burke, reviewed.burke) : find(burke, latin);
+  const o = reviewed.oregonflora ? lookup(oregonflora, reviewed.oregonflora) : find(oregonflora, latin);
+  return {
+    burke: { as: b?.name ?? null, verdict: burkeVerdict(b), westCounties: b?.westCounties ?? 0 },
+    oregonflora: { as: o?.name ?? null, verdict: oregonfloraVerdict(o) },
+  };
+}
+
+/** Read one of the committed CSVs back into rows `lookup` understands. */
+export function readCommitted(text) {
+  return readCsv(text).map((r) => ({
+    ...r,
+    synonyms: r.synonyms ? r.synonyms.split("; ") : [],
+    westCounties: Number(r.westCounties ?? 0),
+    excluded: r.excluded === "Y",
+  }));
+}

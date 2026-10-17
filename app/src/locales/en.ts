@@ -2606,6 +2606,13 @@ export const en = {
   // The line under "where it's native": who re-checked the claim, and when.
   // Split around the linked checklist name, which is why it is three fragments
   // rather than one sentence with a placeholder.
+  "flora.and": " and ",
+  "flora.agree": " both list it as native.",
+  "flora.said.native": " lists it as native",
+  "flora.said.introduced": " lists it as introduced",
+  "flora.said.both": " lists native and introduced strains",
+  "flora.said.uncertain": " isn't sure it's native",
+  "flora.said.absent": " doesn't record it {area}",
   "evidence.checkedAria": "Checked {when}. What this check means",
   "evidence.checklist": "Kew's World Checklist",
   "evidence.confirmedAfter": " agrees it's native in {area}.",

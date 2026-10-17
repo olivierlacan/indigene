@@ -43,7 +43,7 @@ names Indigene in its user-agent.
 naturalized`, `native and exotic`, `uncertain`), its taxonomic `note`, and
 `synonyms`. Misapplied names are left out.
 
-`ours.json` — what both say about each of our rows that isn't clean.
+`pnw.json` — both checklists' verdict on every row the region ships, the way `data/sources/wcvp/pnw.json` holds Kew's. `npm run native-evidence` reduces it to the line on each plant's page; `app/src/data/flora-check.test.ts` fails when a row is missing from it. A new or changed disagreement fails `npm run pnw:checklist`; a recorded one is printed. Names a checklist draws differently from our row (thimbleberry, red-osier dogwood) are looked up under its name, in the `REVIEWED` table in `app/scripts/pnw-checklist.mjs`.
 
 The downloads themselves stay in the git-ignored `raw/`.
 
@@ -110,18 +110,17 @@ an exotic that has persisted 3–5 years and spread.
 
 ## What they say about our rows (2026-10-17)
 
-99 of our 106 rows are native in both checklists under the name we use, with a
-west-side specimen. The other seven:
+104 of our 106 rows are native in both checklists, five of them under another
+name (*Rhamnus purshiana*, *Sambucus cerulea*, *Urtica dioica* ssp. *gracilis*,
+and the two in `REVIEWED`). The plant page shows the other two:
 
-| Our name | Burke (2023 download) | OregonFlora 2.4 | For a person |
+| Our name | Burke (2023 download) | OregonFlora 2.4 | Note |
 |---|---|---|---|
-| *Frangula purshiana* | native | native, as *Rhamnus purshiana* | name only |
-| *Sambucus nigra* subsp. *caerulea* | native, as *S. cerulea* | native, as *S. mexicana* ssp. *cerulea* | name only |
-| *Urtica gracilis* | native, as *U. dioica* ssp. *gracilis* | the same | name only |
-| *Rubus parviflorus* | not listed; PNW thimbleberry is *R. nutkanus* | native | name only |
-| *Cornus sericea* | "ambiguous": split between *C. occidentalis* and *C. stolonifera*, both native | native | name only |
-| *Achillea millefolium* | both | native and exotic | keep; say which to buy |
+| *Achillea millefolium* | both | native and exotic | native and introduced yarrows both grow here |
 | *Sidalcea campestris* | **introduced**, and also endemic | **native** | Burke's entry looks like a data error; OregonFlora is newer and agrees with Kew |
+
+Thimbleberry has no west-side county count: the herbaria file it as *Rubus
+parviflorus*, which the 2023 download doesn't map to *R. nutkanus*.
 
 ## Terms
 

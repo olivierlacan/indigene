@@ -63,13 +63,14 @@
 //
 // Needs open internet (GBIF + iNaturalist). Behind a proxy this only works as
 // `npm run candidates`, which sets NODE_USE_ENV_PROXY=1 — see `_net.mjs`.
-import { writeFileSync, mkdirSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
 import { requireProxyAwareFetch } from "./_net.mjs";
 import { wcvpAccepted, wcvpDistributions } from "./_wcvp.mjs";
 import { withSeeds } from "./_regions.mjs";
+import { floraVerdicts, readCommitted } from "./_pnwflora.mjs";
 
 requireProxyAwareFetch("candidates");
 
@@ -414,9 +415,27 @@ console.log("\n");
 // `shipped` is a plant we already carry under the name iNaturalist keeps for it
 // — caught only after the rename, which is why it is dropped here rather than
 // with the rest of the already-shipped pool further up.
-const natives = checked.filter(
+const kewNatives = checked.filter(
   (c) => (c.status === "native" || c.status === "endemic") && !c.shipped,
 );
+
+// The region's own floras, where it has them (the Pacific Northwest: the Burke
+// Museum's checklist and OregonFlora's, committed by `npm run pnw:checklist`).
+// Native in Kew *and* in both is the bar for the ranked list. Anything less is
+// listed below it with the flora that disagrees — a plant missing from
+// OregonFlora may simply not reach Oregon, and a person should see that.
+const FLORA_DIR = join(REPO_ROOT, "data", "sources", "pnw-flora");
+const floras =
+  REGION_ID === "pnw" && existsSync(join(FLORA_DIR, "oregonflora.csv"))
+    ? {
+        burke: readCommitted(readFileSync(join(FLORA_DIR, "pnw-checklist.csv"), "utf8")),
+        oregonflora: readCommitted(readFileSync(join(FLORA_DIR, "oregonflora.csv"), "utf8")),
+      }
+    : null;
+for (const c of kewNatives) if (floras) c.floras = floraVerdicts(c.renamedTo ?? c.latin, floras);
+const floraNative = (c) => !c.floras || (c.floras.burke.verdict === "native" && c.floras.oregonflora.verdict === "native");
+const natives = kewNatives.filter(floraNative);
+const floraDisagree = kewNatives.filter((c) => !floraNative(c));
 const rejected = checked.filter((c) => c.status === "introduced");
 const unsure = checked.filter((c) => !["native", "endemic", "introduced"].includes(c.status));
 
@@ -475,6 +494,14 @@ const why = (c) => {
   if (c.renamedTo) bits.push(`accepted name **${c.renamedTo}**`);
   if (c.statusSource) bits.push(`native here per ${c.statusSource} (${c.statusPlaces || "—"})`);
   if (c.usda) bits.push(`USDA ${c.usda.symbol}: ${c.usda.said}`);
+  if (c.floras) {
+    const f = c.floras;
+    const as = (v, latin) => (v.as && v.as !== latin ? ` as ${v.as}` : "");
+    bits.push(
+      `Burke checklist: ${f.burke.verdict}${as(f.burke, c.latin)} (${f.burke.westCounties} of 37 west-side counties); ` +
+        `OregonFlora: ${f.oregonflora.verdict}${as(f.oregonflora, c.latin)}`,
+    );
+  }
   if (!haveGenus.has(c.genus)) bits.push(`**new genus** for this list`);
   else bits.push(`genus already on the list`);
   const h = hostByGenus.get(c.genus);
@@ -507,6 +534,10 @@ lines.push(
     `(the World Checklist of Vascular Plants, CC BY, via ` +
     `GBIF) first and of **iNaturalist** only for ` +
     `the names WCVP has no row for. Every row below says which of the two answered it. ` +
+    (floras
+      ? "Every ranked row is also native in both of the region's own floras: the Burke Museum's " +
+        "*Flora of the Pacific Northwest* checklist and OregonFlora's checklist (Oregon State University). "
+      : "") +
     `**USDA PLANTS** appears as a public-domain cross-check and is not used to rank or rule out: it ` +
     `publishes one status for the whole Lower 48, which calls black locust native in a region where ` +
     `WCVP knows it is introduced. ` +
@@ -520,6 +551,23 @@ ranked.forEach((c, i) => {
   lines.push(`| ${i + 1} | **${c.latin}** | ${c.family ?? "—"} | ${why(c)} |`);
 });
 lines.push("");
+if (floras) {
+  lines.push(`## Native per Kew, but a regional flora disagrees (${floraDisagree.length})`);
+  lines.push("");
+  lines.push(
+    "Kept off the ranked list: the Burke Museum's checklist or OregonFlora doesn't call these native. " +
+      "`absent` from OregonFlora can just mean the plant doesn't reach Oregon.",
+  );
+  lines.push("");
+  lines.push(
+    floraDisagree.length
+      ? floraDisagree
+          .map((c) => `${c.latin} (Burke: ${c.floras.burke.verdict}; OregonFlora: ${c.floras.oregonflora.verdict})`)
+          .join(" · ")
+      : "_none in this pool_",
+  );
+  lines.push("");
+}
 lines.push(`## Ruled out as introduced (${rejected.length})`);
 lines.push("");
 lines.push(
@@ -547,6 +595,7 @@ console.log(`top ${ranked.length} candidates:\n`);
 ranked.forEach((c, i) => {
   console.log(`  ${String(i + 1).padStart(2)}. ${c.latin.padEnd(30)} ${why(c)}`);
 });
+if (floras) console.log(`\n  native per Kew, but a regional flora disagrees: ${floraDisagree.length}`);
 console.log(`\n  ruled out as introduced: ${rejected.length}`);
 console.log(`  no answer on native status: ${unsure.length}`);
 

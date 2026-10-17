@@ -116,6 +116,43 @@ for (const file of readdirSync(SRC).filter((f) => f.endsWith(".json")).sort()) {
   };
 }
 
+// Regional floras, where a region has them: checklists written by the region's
+// own botanists, put to every row by `npm run pnw:checklist`. Same rule as Kew:
+// the date, the row count, and only the rows where a flora doesn't say native.
+// Each flora's verdict is kept, because the page names who said what.
+const FLORAS = {
+  pnw: {
+    file: "../../data/sources/pnw-flora/pnw.json",
+    sources: [
+      {
+        id: "burke",
+        name: { en: "The Burke Museum", fr: "Le musée Burke" },
+        url: "https://burkeherbarium.org/pnwflora/",
+        area: { en: "in the Pacific Northwest", fr: "dans le Nord-Ouest Pacifique" },
+      },
+      {
+        id: "oregonflora",
+        name: { en: "OregonFlora", fr: "OregonFlora" },
+        url: "https://oregonflora.org/pages/taxonomic-checklist.php",
+        area: { en: "in Oregon", fr: "en Oregon" },
+      },
+    ],
+  },
+};
+
+const floras = {};
+for (const [id, f] of Object.entries(FLORAS)) {
+  const file = fileURLToPath(new URL(f.file, import.meta.url));
+  if (!existsSync(file)) continue;
+  const doc = JSON.parse(readFileSync(file, "utf8"));
+  const disagree = {};
+  for (const row of doc.rows) {
+    const said = Object.fromEntries(f.sources.map((s) => [s.id, row[s.id].verdict]));
+    if (Object.values(said).some((v) => v !== "native")) disagree[row.id] = said;
+  }
+  floras[id] = { sources: f.sources, checked: doc.ranAt, rows: doc.rows.length, disagree };
+}
+
 const out = {
   source: "World Checklist of Vascular Plants (WCVP), Royal Botanic Gardens Kew",
   license: "CC BY 4.0",
@@ -123,6 +160,7 @@ const out = {
   note:
     "Only the rows WCVP did not confirm are listed. A plant in a checked region that is absent from `unconfirmed` came back native.",
   regions,
+  floras,
 };
 writeFileSync(OUT, `${JSON.stringify(out, null, 2)}\n`);
 

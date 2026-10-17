@@ -1,0 +1,1388 @@
+{
+  "region": "pnw",
+  "ranAt": "2026-10-17",
+  "sources": {
+    "burke": "Flora of the Pacific Northwest Checklist (Burke Museum, UW)",
+    "oregonflora": "OregonFlora Checklist (Oregon State University)"
+  },
+  "rows": [
+    {
+      "id": "quercus-garryana",
+      "latin": "Quercus garryana",
+      "burke": {
+        "as": "Quercus garryana",
+        "verdict": "native",
+        "westCounties": 30
+      },
+      "oregonflora": {
+        "as": "Quercus garryana",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "pseudotsuga-menziesii",
+      "latin": "Pseudotsuga menziesii",
+      "burke": {
+        "as": "Pseudotsuga menziesii",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Pseudotsuga menziesii",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "thuja-plicata",
+      "latin": "Thuja plicata",
+      "burke": {
+        "as": "Thuja plicata",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Thuja plicata",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "acer-macrophyllum",
+      "latin": "Acer macrophyllum",
+      "burke": {
+        "as": "Acer macrophyllum",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Acer macrophyllum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "populus-trichocarpa",
+      "latin": "Populus trichocarpa",
+      "burke": {
+        "as": "Populus trichocarpa",
+        "verdict": "native",
+        "westCounties": 31
+      },
+      "oregonflora": {
+        "as": "Populus trichocarpa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "arbutus-menziesii",
+      "latin": "Arbutus menziesii",
+      "burke": {
+        "as": "Arbutus menziesii",
+        "verdict": "native",
+        "westCounties": 32
+      },
+      "oregonflora": {
+        "as": "Arbutus menziesii",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "amelanchier-alnifolia",
+      "latin": "Amelanchier alnifolia",
+      "burke": {
+        "as": "Amelanchier alnifolia",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Amelanchier alnifolia",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "salix-scouleriana",
+      "latin": "Salix scouleriana",
+      "burke": {
+        "as": "Salix scouleriana",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Salix scouleriana",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "salix-lasiandra",
+      "latin": "Salix lasiandra",
+      "burke": {
+        "as": "Salix lasiandra",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Salix lasiandra",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "salix-hookeriana",
+      "latin": "Salix hookeriana",
+      "burke": {
+        "as": "Salix hookeriana",
+        "verdict": "native",
+        "westCounties": 34
+      },
+      "oregonflora": {
+        "as": "Salix hookeriana",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "salix-sitchensis",
+      "latin": "Salix sitchensis",
+      "burke": {
+        "as": "Salix sitchensis",
+        "verdict": "native",
+        "westCounties": 34
+      },
+      "oregonflora": {
+        "as": "Salix sitchensis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "alnus-rubra",
+      "latin": "Alnus rubra",
+      "burke": {
+        "as": "Alnus rubra",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Alnus rubra",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "prunus-emarginata",
+      "latin": "Prunus emarginata",
+      "burke": {
+        "as": "Prunus emarginata",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Prunus emarginata",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "acer-circinatum",
+      "latin": "Acer circinatum",
+      "burke": {
+        "as": "Acer circinatum",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Acer circinatum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "tsuga-heterophylla",
+      "latin": "Tsuga heterophylla",
+      "burke": {
+        "as": "Tsuga heterophylla",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Tsuga heterophylla",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "fraxinus-latifolia",
+      "latin": "Fraxinus latifolia",
+      "burke": {
+        "as": "Fraxinus latifolia",
+        "verdict": "native",
+        "westCounties": 25
+      },
+      "oregonflora": {
+        "as": "Fraxinus latifolia",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "cornus-nuttallii",
+      "latin": "Cornus nuttallii",
+      "burke": {
+        "as": "Cornus nuttallii",
+        "verdict": "native",
+        "westCounties": 32
+      },
+      "oregonflora": {
+        "as": "Cornus nuttallii",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "crataegus-douglasii",
+      "latin": "Crataegus douglasii",
+      "burke": {
+        "as": "Crataegus douglasii",
+        "verdict": "native",
+        "westCounties": 18
+      },
+      "oregonflora": {
+        "as": "Crataegus douglasii",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "betula-papyrifera",
+      "latin": "Betula papyrifera",
+      "burke": {
+        "as": "Betula papyrifera",
+        "verdict": "native",
+        "westCounties": 8
+      },
+      "oregonflora": {
+        "as": "Betula papyrifera",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "malus-fusca",
+      "latin": "Malus fusca",
+      "burke": {
+        "as": "Malus fusca",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Malus fusca",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "pinus-ponderosa",
+      "latin": "Pinus ponderosa",
+      "burke": {
+        "as": "Pinus ponderosa",
+        "verdict": "native",
+        "westCounties": 14
+      },
+      "oregonflora": {
+        "as": "Pinus ponderosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "frangula-purshiana",
+      "latin": "Frangula purshiana",
+      "burke": {
+        "as": "Frangula purshiana",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Rhamnus purshiana",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "picea-sitchensis",
+      "latin": "Picea sitchensis",
+      "burke": {
+        "as": "Picea sitchensis",
+        "verdict": "native",
+        "westCounties": 27
+      },
+      "oregonflora": {
+        "as": "Picea sitchensis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "pinus-contorta",
+      "latin": "Pinus contorta",
+      "burke": {
+        "as": "Pinus contorta",
+        "verdict": "native",
+        "westCounties": 31
+      },
+      "oregonflora": {
+        "as": "Pinus contorta",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "taxus-brevifolia",
+      "latin": "Taxus brevifolia",
+      "burke": {
+        "as": "Taxus brevifolia",
+        "verdict": "native",
+        "westCounties": 32
+      },
+      "oregonflora": {
+        "as": "Taxus brevifolia",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "sambucus-nigra-caerulea",
+      "latin": "Sambucus nigra subsp. caerulea",
+      "burke": {
+        "as": "Sambucus cerulea",
+        "verdict": "native",
+        "westCounties": 34
+      },
+      "oregonflora": {
+        "as": "Sambucus mexicana ssp. cerulea",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "berberis-aquifolium",
+      "latin": "Berberis aquifolium",
+      "burke": {
+        "as": "Berberis aquifolium",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Berberis aquifolium",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "rubus-parviflorus",
+      "latin": "Rubus parviflorus",
+      "burke": {
+        "as": "Rubus nutkanus",
+        "verdict": "native",
+        "westCounties": 0
+      },
+      "oregonflora": {
+        "as": "Rubus parviflorus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "berberis-nervosa",
+      "latin": "Berberis nervosa",
+      "burke": {
+        "as": "Berberis nervosa",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Berberis nervosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "ribes-sanguineum",
+      "latin": "Ribes sanguineum",
+      "burke": {
+        "as": "Ribes sanguineum",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Ribes sanguineum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "holodiscus-discolor",
+      "latin": "Holodiscus discolor",
+      "burke": {
+        "as": "Holodiscus discolor",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Holodiscus discolor",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "symphoricarpos-albus",
+      "latin": "Symphoricarpos albus",
+      "burke": {
+        "as": "Symphoricarpos albus",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Symphoricarpos albus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "cornus-sericea",
+      "latin": "Cornus sericea",
+      "burke": {
+        "as": "Cornus stolonifera",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Cornus sericea",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "rosa-nutkana",
+      "latin": "Rosa nutkana",
+      "burke": {
+        "as": "Rosa nutkana",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Rosa nutkana",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "gaultheria-shallon",
+      "latin": "Gaultheria shallon",
+      "burke": {
+        "as": "Gaultheria shallon",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Gaultheria shallon",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "rubus-spectabilis",
+      "latin": "Rubus spectabilis",
+      "burke": {
+        "as": "Rubus spectabilis",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Rubus spectabilis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "sambucus-racemosa",
+      "latin": "Sambucus racemosa",
+      "burke": {
+        "as": "Sambucus racemosa",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Sambucus racemosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "vaccinium-ovatum",
+      "latin": "Vaccinium ovatum",
+      "burke": {
+        "as": "Vaccinium ovatum",
+        "verdict": "native",
+        "westCounties": 24
+      },
+      "oregonflora": {
+        "as": "Vaccinium ovatum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "physocarpus-capitatus",
+      "latin": "Physocarpus capitatus",
+      "burke": {
+        "as": "Physocarpus capitatus",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Physocarpus capitatus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "lonicera-involucrata",
+      "latin": "Lonicera involucrata",
+      "burke": {
+        "as": "Lonicera involucrata",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Lonicera involucrata",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "corylus-cornuta",
+      "latin": "Corylus cornuta",
+      "burke": {
+        "as": "Corylus cornuta",
+        "verdict": "native",
+        "westCounties": 33
+      },
+      "oregonflora": {
+        "as": "Corylus cornuta",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "oemleria-cerasiformis",
+      "latin": "Oemleria cerasiformis",
+      "burke": {
+        "as": "Oemleria cerasiformis",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Oemleria cerasiformis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "spiraea-douglasii",
+      "latin": "Spiraea douglasii",
+      "burke": {
+        "as": "Spiraea douglasii",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Spiraea douglasii",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "ceanothus-sanguineus",
+      "latin": "Ceanothus sanguineus",
+      "burke": {
+        "as": "Ceanothus sanguineus",
+        "verdict": "native",
+        "westCounties": 29
+      },
+      "oregonflora": {
+        "as": "Ceanothus sanguineus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "vaccinium-parvifolium",
+      "latin": "Vaccinium parvifolium",
+      "burke": {
+        "as": "Vaccinium parvifolium",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Vaccinium parvifolium",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "rhododendron-macrophyllum",
+      "latin": "Rhododendron macrophyllum",
+      "burke": {
+        "as": "Rhododendron macrophyllum",
+        "verdict": "native",
+        "westCounties": 29
+      },
+      "oregonflora": {
+        "as": "Rhododendron macrophyllum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "morella-californica",
+      "latin": "Morella californica",
+      "burke": {
+        "as": "Morella californica",
+        "verdict": "native",
+        "westCounties": 14
+      },
+      "oregonflora": {
+        "as": "Morella californica",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "paxistima-myrsinites",
+      "latin": "Paxistima myrsinites",
+      "burke": {
+        "as": "Paxistima myrsinites",
+        "verdict": "native",
+        "westCounties": 31
+      },
+      "oregonflora": {
+        "as": "Paxistima myrsinites",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "euonymus-occidentalis",
+      "latin": "Euonymus occidentalis",
+      "burke": {
+        "as": "Euonymus occidentalis",
+        "verdict": "native",
+        "westCounties": 15
+      },
+      "oregonflora": {
+        "as": "Euonymus occidentalis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "arctostaphylos-columbiana",
+      "latin": "Arctostaphylos columbiana",
+      "burke": {
+        "as": "Arctostaphylos columbiana",
+        "verdict": "native",
+        "westCounties": 30
+      },
+      "oregonflora": {
+        "as": "Arctostaphylos columbiana",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "garrya-elliptica",
+      "latin": "Garrya elliptica",
+      "burke": {
+        "as": "Garrya elliptica",
+        "verdict": "native",
+        "westCounties": 5
+      },
+      "oregonflora": {
+        "as": "Garrya elliptica",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "philadelphus-lewisii",
+      "latin": "Philadelphus lewisii",
+      "burke": {
+        "as": "Philadelphus lewisii",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Philadelphus lewisii",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "rosa-gymnocarpa",
+      "latin": "Rosa gymnocarpa",
+      "burke": {
+        "as": "Rosa gymnocarpa",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Rosa gymnocarpa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "camassia-quamash",
+      "latin": "Camassia quamash",
+      "burke": {
+        "as": "Camassia quamash",
+        "verdict": "native",
+        "westCounties": 34
+      },
+      "oregonflora": {
+        "as": "Camassia quamash",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "achillea-millefolium",
+      "latin": "Achillea millefolium",
+      "burke": {
+        "as": "Achillea millefolium",
+        "verdict": "both",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Achillea millefolium",
+        "verdict": "both"
+      }
+    },
+    {
+      "id": "aquilegia-formosa",
+      "latin": "Aquilegia formosa",
+      "burke": {
+        "as": "Aquilegia formosa",
+        "verdict": "native",
+        "westCounties": 34
+      },
+      "oregonflora": {
+        "as": "Aquilegia formosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "penstemon-serrulatus",
+      "latin": "Penstemon serrulatus",
+      "burke": {
+        "as": "Penstemon serrulatus",
+        "verdict": "native",
+        "westCounties": 24
+      },
+      "oregonflora": {
+        "as": "Penstemon serrulatus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "eriophyllum-lanatum",
+      "latin": "Eriophyllum lanatum",
+      "burke": {
+        "as": "Eriophyllum lanatum",
+        "verdict": "native",
+        "westCounties": 34
+      },
+      "oregonflora": {
+        "as": "Eriophyllum lanatum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "asclepias-speciosa",
+      "latin": "Asclepias speciosa",
+      "burke": {
+        "as": "Asclepias speciosa",
+        "verdict": "native",
+        "westCounties": 15
+      },
+      "oregonflora": {
+        "as": "Asclepias speciosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "solidago-lepida",
+      "latin": "Solidago lepida",
+      "burke": {
+        "as": "Solidago lepida",
+        "verdict": "native",
+        "westCounties": 31
+      },
+      "oregonflora": {
+        "as": "Solidago lepida",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "symphyotrichum-subspicatum",
+      "latin": "Symphyotrichum subspicatum",
+      "burke": {
+        "as": "Symphyotrichum subspicatum",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Symphyotrichum subspicatum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "lupinus-polyphyllus",
+      "latin": "Lupinus polyphyllus",
+      "burke": {
+        "as": "Lupinus polyphyllus",
+        "verdict": "native",
+        "westCounties": 34
+      },
+      "oregonflora": {
+        "as": "Lupinus polyphyllus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "anaphalis-margaritacea",
+      "latin": "Anaphalis margaritacea",
+      "burke": {
+        "as": "Anaphalis margaritacea",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Anaphalis margaritacea",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "viola-adunca",
+      "latin": "Viola adunca",
+      "burke": {
+        "as": "Viola adunca",
+        "verdict": "native",
+        "westCounties": 34
+      },
+      "oregonflora": {
+        "as": "Viola adunca",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "grindelia-integrifolia",
+      "latin": "Grindelia integrifolia",
+      "burke": {
+        "as": "Grindelia integrifolia",
+        "verdict": "native",
+        "westCounties": 16
+      },
+      "oregonflora": {
+        "as": "Grindelia integrifolia",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "chamaenerion-angustifolium",
+      "latin": "Chamaenerion angustifolium",
+      "burke": {
+        "as": "Chamaenerion angustifolium",
+        "verdict": "native",
+        "westCounties": 34
+      },
+      "oregonflora": {
+        "as": "Chamaenerion angustifolium",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "trillium-ovatum",
+      "latin": "Trillium ovatum",
+      "burke": {
+        "as": "Trillium ovatum",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Trillium ovatum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "aruncus-dioicus",
+      "latin": "Aruncus dioicus",
+      "burke": {
+        "as": "Aruncus dioicus",
+        "verdict": "native",
+        "westCounties": 34
+      },
+      "oregonflora": {
+        "as": "Aruncus dioicus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "sidalcea-campestris",
+      "latin": "Sidalcea campestris",
+      "burke": {
+        "as": "Sidalcea campestris",
+        "verdict": "introduced",
+        "westCounties": 18
+      },
+      "oregonflora": {
+        "as": "Sidalcea campestris",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "dicentra-formosa",
+      "latin": "Dicentra formosa",
+      "burke": {
+        "as": "Dicentra formosa",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Dicentra formosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "tiarella-trifoliata",
+      "latin": "Tiarella trifoliata",
+      "burke": {
+        "as": "Tiarella trifoliata",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Tiarella trifoliata",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "erythronium-oregonum",
+      "latin": "Erythronium oregonum",
+      "burke": {
+        "as": "Erythronium oregonum",
+        "verdict": "native",
+        "westCounties": 31
+      },
+      "oregonflora": {
+        "as": "Erythronium oregonum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "heracleum-maximum",
+      "latin": "Heracleum maximum",
+      "burke": {
+        "as": "Heracleum maximum",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Heracleum maximum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "tellima-grandiflora",
+      "latin": "Tellima grandiflora",
+      "burke": {
+        "as": "Tellima grandiflora",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Tellima grandiflora",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "petasites-frigidus",
+      "latin": "Petasites frigidus",
+      "burke": {
+        "as": "Petasites frigidus",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Petasites frigidus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "lysichiton-americanus",
+      "latin": "Lysichiton americanus",
+      "burke": {
+        "as": "Lysichiton americanus",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Lysichiton americanus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "euthamia-occidentalis",
+      "latin": "Euthamia occidentalis",
+      "burke": {
+        "as": "Euthamia occidentalis",
+        "verdict": "native",
+        "westCounties": 19
+      },
+      "oregonflora": {
+        "as": "Euthamia occidentalis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "symphyotrichum-chilense",
+      "latin": "Symphyotrichum chilense",
+      "burke": {
+        "as": "Symphyotrichum chilense",
+        "verdict": "native",
+        "westCounties": 17
+      },
+      "oregonflora": {
+        "as": "Symphyotrichum chilense",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "iris-tenax",
+      "latin": "Iris tenax",
+      "burke": {
+        "as": "Iris tenax",
+        "verdict": "native",
+        "westCounties": 27
+      },
+      "oregonflora": {
+        "as": "Iris tenax",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "lilium-columbianum",
+      "latin": "Lilium columbianum",
+      "burke": {
+        "as": "Lilium columbianum",
+        "verdict": "native",
+        "westCounties": 32
+      },
+      "oregonflora": {
+        "as": "Lilium columbianum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "geum-macrophyllum",
+      "latin": "Geum macrophyllum",
+      "burke": {
+        "as": "Geum macrophyllum",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Geum macrophyllum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "plectritis-congesta",
+      "latin": "Plectritis congesta",
+      "burke": {
+        "as": "Plectritis congesta",
+        "verdict": "native",
+        "westCounties": 34
+      },
+      "oregonflora": {
+        "as": "Plectritis congesta",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "urtica-gracilis",
+      "latin": "Urtica gracilis",
+      "burke": {
+        "as": "Urtica dioica ssp. gracilis",
+        "verdict": "native",
+        "westCounties": 34
+      },
+      "oregonflora": {
+        "as": "Urtica dioica ssp. gracilis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "festuca-roemeri",
+      "latin": "Festuca roemeri",
+      "burke": {
+        "as": "Festuca roemeri",
+        "verdict": "native",
+        "westCounties": 23
+      },
+      "oregonflora": {
+        "as": "Festuca roemeri",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "elymus-glaucus",
+      "latin": "Elymus glaucus",
+      "burke": {
+        "as": "Elymus glaucus",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Elymus glaucus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "deschampsia-cespitosa",
+      "latin": "Deschampsia cespitosa",
+      "burke": {
+        "as": "Deschampsia cespitosa",
+        "verdict": "native",
+        "westCounties": 32
+      },
+      "oregonflora": {
+        "as": "Deschampsia cespitosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "carex-obnupta",
+      "latin": "Carex obnupta",
+      "burke": {
+        "as": "Carex obnupta",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Carex obnupta",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "juncus-patens",
+      "latin": "Juncus patens",
+      "burke": {
+        "as": "Juncus patens",
+        "verdict": "native",
+        "westCounties": 18
+      },
+      "oregonflora": {
+        "as": "Juncus patens",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "lonicera-ciliosa",
+      "latin": "Lonicera ciliosa",
+      "burke": {
+        "as": "Lonicera ciliosa",
+        "verdict": "native",
+        "westCounties": 32
+      },
+      "oregonflora": {
+        "as": "Lonicera ciliosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "rubus-ursinus",
+      "latin": "Rubus ursinus",
+      "burke": {
+        "as": "Rubus ursinus",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Rubus ursinus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "clematis-ligusticifolia",
+      "latin": "Clematis ligusticifolia",
+      "burke": {
+        "as": "Clematis ligusticifolia",
+        "verdict": "native",
+        "westCounties": 25
+      },
+      "oregonflora": {
+        "as": "Clematis ligusticifolia",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "fragaria-chiloensis",
+      "latin": "Fragaria chiloensis",
+      "burke": {
+        "as": "Fragaria chiloensis",
+        "verdict": "native",
+        "westCounties": 24
+      },
+      "oregonflora": {
+        "as": "Fragaria chiloensis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "polystichum-munitum",
+      "latin": "Polystichum munitum",
+      "burke": {
+        "as": "Polystichum munitum",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Polystichum munitum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "arctostaphylos-uva-ursi",
+      "latin": "Arctostaphylos uva-ursi",
+      "burke": {
+        "as": "Arctostaphylos uva-ursi",
+        "verdict": "native",
+        "westCounties": 31
+      },
+      "oregonflora": {
+        "as": "Arctostaphylos uva-ursi",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "struthiopteris-spicant",
+      "latin": "Struthiopteris spicant",
+      "burke": {
+        "as": "Struthiopteris spicant",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Struthiopteris spicant",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "sedum-oreganum",
+      "latin": "Sedum oreganum",
+      "burke": {
+        "as": "Sedum oreganum",
+        "verdict": "native",
+        "westCounties": 29
+      },
+      "oregonflora": {
+        "as": "Sedum oreganum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "eriogonum-umbellatum",
+      "latin": "Eriogonum umbellatum",
+      "burke": {
+        "as": "Eriogonum umbellatum",
+        "verdict": "native",
+        "westCounties": 16
+      },
+      "oregonflora": {
+        "as": "Eriogonum umbellatum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "adiantum-aleuticum",
+      "latin": "Adiantum aleuticum",
+      "burke": {
+        "as": "Adiantum aleuticum",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Adiantum aleuticum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "woodwardia-fimbriata",
+      "latin": "Woodwardia fimbriata",
+      "burke": {
+        "as": "Woodwardia fimbriata",
+        "verdict": "native",
+        "westCounties": 11
+      },
+      "oregonflora": {
+        "as": "Woodwardia fimbriata",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "maianthemum-dilatatum",
+      "latin": "Maianthemum dilatatum",
+      "burke": {
+        "as": "Maianthemum dilatatum",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Maianthemum dilatatum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "linnaea-borealis",
+      "latin": "Linnaea borealis",
+      "burke": {
+        "as": "Linnaea borealis",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Linnaea borealis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "polypodium-glycyrrhiza",
+      "latin": "Polypodium glycyrrhiza",
+      "burke": {
+        "as": "Polypodium glycyrrhiza",
+        "verdict": "native",
+        "westCounties": 37
+      },
+      "oregonflora": {
+        "as": "Polypodium glycyrrhiza",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "achlys-triphylla",
+      "latin": "Achlys triphylla",
+      "burke": {
+        "as": "Achlys triphylla",
+        "verdict": "native",
+        "westCounties": 29
+      },
+      "oregonflora": {
+        "as": "Achlys triphylla",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "viola-glabella",
+      "latin": "Viola glabella",
+      "burke": {
+        "as": "Viola glabella",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Viola glabella",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "asarum-caudatum",
+      "latin": "Asarum caudatum",
+      "burke": {
+        "as": "Asarum caudatum",
+        "verdict": "native",
+        "westCounties": 33
+      },
+      "oregonflora": {
+        "as": "Asarum caudatum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "oxalis-oregana",
+      "latin": "Oxalis oregana",
+      "burke": {
+        "as": "Oxalis oregana",
+        "verdict": "native",
+        "westCounties": 33
+      },
+      "oregonflora": {
+        "as": "Oxalis oregana",
+        "verdict": "native"
+      }
+    }
+  ]
+}

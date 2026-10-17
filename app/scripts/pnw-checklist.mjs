@@ -32,14 +32,25 @@
 //
 // ## Usage
 //
-//   npm run pnw:checklist              build the CSV and check our rows
+//   npm run pnw:checklist              rebuild the CSVs from raw/ if it's there,
+//                                      then check our rows → pnw.json
 //   npm run pnw:checklist -- --fetch   download the Burke and herbaria files again
 //                                      (OregonFlora's is always by hand)
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { requireProxyAwareFetch } from "./_net.mjs";
-import { checklistRows, lookup, OREGONFLORA_COLUMNS, oregonfloraRows, readCsv, readTsv, toCsv } from "./_pnwflora.mjs";
+import {
+  checklistRows,
+  floraVerdicts,
+  lookup,
+  OREGONFLORA_COLUMNS,
+  oregonfloraRows,
+  readCommitted,
+  readCsv,
+  readTsv,
+  toCsv,
+} from "./_pnwflora.mjs";
 
 const DIR = fileURLToPath(new URL("../../data/sources/pnw-flora/", import.meta.url));
 const RAW = `${DIR}raw/`;
@@ -128,44 +139,98 @@ function buildOregonFlora() {
   return { version, rows };
 }
 
-const find = (rows, latin) => lookup(rows, latin) ?? lookup(rows, latin.split(" ").slice(0, 2).join(" "));
+// Names a checklist draws differently from our row, looked up under the
+// checklist's name instead — the way `check-vascan.mjs` keeps its REVIEWED
+// table. Each is re-checked every run: if the checklist drops the name, the
+// entry is STALE and the run fails.
+export const REVIEWED = {
+  "Rubus parviflorus": {
+    burke: "Rubus nutkanus",
+    why: "The Burke checklist splits western thimbleberry off as R. nutkanus and keeps R. parviflorus for the plant east of the Rockies.",
+  },
+  "Cornus sericea": {
+    burke: "Cornus stolonifera",
+    why: "The Burke checklist calls C. sericea ambiguous; red-osier dogwood, the plant our row is, is its C. stolonifera.",
+  },
+};
 
-/** What both checklists say about every plant the region ships. */
-function checkOurs(burke, oregon) {
+/**
+ * Put every row the region ships to both checklists, write the snapshot, and
+ * say what moved — the same rules `check-native.mjs` keeps for Kew:
+ *
+ *   recorded   a disagreement the committed snapshot already carries: printed, not a failure
+ *   NEW        a row with no previous verdict that isn't native in both: fails
+ *   CHANGED    a verdict that differs from the committed one: fails
+ *   STALE      a REVIEWED name the checklist no longer has: fails
+ *
+ * A first run has no snapshot, so every disagreement is NEW.
+ */
+function checkOurs() {
+  const burke = readCommitted(readFileSync(`${DIR}pnw-checklist.csv`, "utf8"));
+  const oregonflora = existsSync(`${DIR}oregonflora.csv`) ? readCommitted(readFileSync(`${DIR}oregonflora.csv`, "utf8")) : [];
+  const outFile = `${DIR}pnw.json`;
+  const previous = new Map();
+  if (existsSync(outFile)) for (const r of JSON.parse(readFileSync(outFile, "utf8")).rows) previous.set(r.id, r);
+
   const src = readFileSync(fileURLToPath(new URL("../src/data/plants.pnw.ts", import.meta.url)), "utf8");
-  const ours = [...src.matchAll(/latin: "([^"]+)"/g)].map((m) => m[1]);
-  const verdicts = ours.map((latin) => {
-    const b = find(burke, latin);
-    const o = oregon && find(oregon.rows, latin);
-    return {
-      latin,
-      burke: b ? { name: b.name, origin: b.origin, westCounties: b.westCounties } : null,
-      oregonflora: oregon ? (o ? { name: o.name, origin: o.origin } : null) : undefined,
-    };
-  });
-  // Clean: native in both, under our own name, with a specimen west of the crest.
-  const clean = (v) =>
-    v.burke?.origin === "native" &&
-    v.burke.name === v.latin &&
-    v.burke.westCounties > 0 &&
-    (v.oregonflora === undefined || (v.oregonflora?.origin === "native" && v.oregonflora.name === v.latin));
-  const say = (x, w) => (!x ? "not listed" : `${x.origin || "no origin"}${x.name !== w ? ` as ${x.name}` : ""}`);
-  const flagged = verdicts.filter((v) => !clean(v));
-  console.log(`\nOur ${ours.length} PNW rows: ${ours.length - flagged.length} native in both, under our name, with west-side specimens.`);
-  for (const v of flagged) {
-    const west = v.burke && !v.burke.westCounties ? " · no west-side specimen" : "";
-    const of = v.oregonflora === undefined ? "" : ` · OregonFlora: ${say(v.oregonflora, v.latin)}`;
-    console.log(`  ${v.latin.padEnd(32)} Burke: ${say(v.burke, v.latin)}${west}${of}`);
+  const ours = [...src.matchAll(/^\s+id: "([^"]+)",\n\s+common: "([^"]+)",\n\s+latin: "([^"]+)"/gm)].map((m) => ({
+    id: m[1],
+    latin: m[3],
+  }));
+
+  const problems = [];
+  for (const [latin, r] of Object.entries(REVIEWED)) {
+    if (r.burke && !lookup(burke, r.burke)) problems.push(`STALE ${latin}: the Burke checklist no longer has ${r.burke}`);
+    if (r.oregonflora && !lookup(oregonflora, r.oregonflora)) problems.push(`STALE ${latin}: OregonFlora no longer has ${r.oregonflora}`);
   }
+  const rows = ours.map(({ id, latin }) => ({ id, latin, ...floraVerdicts(latin, { burke, oregonflora }, REVIEWED[latin]) }));
+  const agrees = (r) => r.burke.verdict === "native" && r.oregonflora.verdict === "native";
+  const say = (r) => `Burke: ${r.burke.verdict}${r.burke.as && r.burke.as !== r.latin ? ` (as ${r.burke.as})` : ""} · OregonFlora: ${r.oregonflora.verdict}${r.oregonflora.as && r.oregonflora.as !== r.latin ? ` (as ${r.oregonflora.as})` : ""}`;
+
+  console.log(`\nOur ${rows.length} PNW rows, put to both checklists:`);
+  for (const r of rows) {
+    const prev = previous.get(r.id);
+    const was = prev && `${prev.burke.verdict}/${prev.oregonflora.verdict}`;
+    const now = `${r.burke.verdict}/${r.oregonflora.verdict}`;
+    if (prev && was !== now) problems.push(`CHANGED ${r.latin}: was ${was}, now ${now}`);
+    else if (!agrees(r) && !prev) problems.push(`NEW ${r.latin}: ${say(r)}`);
+    else if (!agrees(r)) console.log(`  rec  ${r.latin.padEnd(32)} ${say(r)}`);
+    if (agrees(r) && !r.burke.westCounties) console.log(`  note ${r.latin.padEnd(32)} native in both; no herbarium specimen west of the crest under this name`);
+  }
+  console.log(`  ${rows.filter(agrees).length} of ${rows.length} native in both.`);
+
   writeFileSync(
-    `${DIR}ours.json`,
-    `${JSON.stringify({ sources: ["Flora of the Pacific Northwest Checklist (Burke Museum, UW)", oregon?.version].filter(Boolean), flagged }, null, 2)}\n`,
+    outFile,
+    `${JSON.stringify(
+      {
+        region: "pnw",
+        ranAt: new Date().toISOString().slice(0, 10),
+        sources: {
+          burke: "Flora of the Pacific Northwest Checklist (Burke Museum, UW)",
+          oregonflora: oregonflora.length ? "OregonFlora Checklist (Oregon State University)" : null,
+        },
+        rows,
+      },
+      null,
+      2,
+    )}\n`,
   );
-  console.log("→ data/sources/pnw-flora/ours.json");
+  console.log("→ data/sources/pnw-flora/pnw.json — then `npm run native-evidence`");
+  if (problems.length) {
+    console.log(`\n${problems.length} to review (the snapshot is written; re-run once reviewed):`);
+    for (const p of problems) console.log(`  ${p}`);
+    process.exitCode = 1;
+  }
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  requireProxyAwareFetch("pnw:checklist");
-  await fetchSources(process.argv.includes("--fetch"));
-  checkOurs(build(), buildOregonFlora());
+  // The committed CSVs are enough to re-check our rows; the raw downloads are
+  // only needed to rebuild them.
+  if (process.argv.includes("--fetch") || !existsSync(`${DIR}pnw-checklist.csv`)) {
+    requireProxyAwareFetch("pnw:checklist");
+    await fetchSources(true);
+  }
+  if (existsSync(`${RAW}pnwflora.txt`) && existsSync(`${RAW}cpnwh-west.txt`)) build();
+  buildOregonFlora();
+  checkOurs();
 }

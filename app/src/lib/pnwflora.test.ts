@@ -4,7 +4,7 @@
 // newer than the checklist, and a county list with counties east of the crest.
 import { describe, expect, it } from "vitest";
 // @ts-expect-error — a plain .mjs build script, no type declarations.
-import { checklistRows, lookup, oregonfloraRows, readCsv, readTsv, toCsv } from "../../scripts/_pnwflora.mjs";
+import { checklistRows, floraVerdicts, lookup, oregonfloraRows, readCsv, readTsv, toCsv } from "../../scripts/_pnwflora.mjs";
 
 const tsv = (rows: string[][]) => rows.map((r) => r.join("\t")).join("\n");
 
@@ -114,5 +114,24 @@ describe("oregonfloraRows", () => {
 
   it("leaves a misapplied name out", () => {
     expect(lookup(oregonflora, "Rhamnus alnifolia")).toBeNull();
+  });
+});
+
+describe("floraVerdicts", () => {
+  const floras = { burke: rows, oregonflora };
+
+  it("words each checklist's origin as one of five verdicts", () => {
+    expect(floraVerdicts("Hedera helix", floras).burke.verdict).toBe("introduced");
+    expect(floraVerdicts("Achillea millefolium", floras).burke.verdict).toBe("both");
+    expect(floraVerdicts("Bromus tectorum", floras).oregonflora.verdict).toBe("introduced");
+  });
+
+  it("calls a plant a checklist doesn't list absent, not introduced", () => {
+    expect(floraVerdicts("Hedera helix", floras).oregonflora).toEqual({ as: null, verdict: "absent" });
+  });
+
+  it("looks a reviewed name up under the checklist's own", () => {
+    const v = floraVerdicts("Cornus sericea", floras, { oregonflora: "Cornus stolonifera" });
+    expect(v.oregonflora).toEqual({ as: "Cornus stolonifera", verdict: "native" });
   });
 });

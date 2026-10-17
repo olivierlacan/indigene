@@ -1,6 +1,5 @@
-### Added
+### Changed
 
-- Regions: both California pages now point to
-  [Calscape](https://calscape.org/), the California Native Plant Society's
-  garden planner, beside the society's chapters: every California native by
-  address, with the nurseries that stock it.
+- Internal: Calscape (CNPS) gets its row in `DATA_SOURCES.md` and the source
+  ledger: cited in 36 California plant rows, it was the one reference the audit
+  document never listed.

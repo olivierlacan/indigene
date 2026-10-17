@@ -70,15 +70,10 @@ export const SOCIETIES: Record<string, Society[]> = {
   ],
   "ca-south-coast": [
     { name: "California Native Plant Society", url: "https://www.cnps.org/chapters", what: "chapters" },
-    // CNPS's own garden planner: every California native by address, with
-    // nurseries that stock it. Cited in the rows above as a reference; here as
-    // the place a reader goes next.
-    { name: "Calscape", url: "https://calscape.org/", what: "advice" },
     { name: "Theodore Payne Foundation", url: "https://theodorepayne.org/", what: "sales" },
   ],
   "ca-central-coast": [
     { name: "California Native Plant Society", url: "https://www.cnps.org/chapters", what: "chapters" },
-    { name: "Calscape", url: "https://calscape.org/", what: "advice" },
   ],
   "central-texas": [
     { name: "Native Plant Society of Texas", url: "https://www.npsot.org/", what: "chapters" },

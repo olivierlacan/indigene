@@ -43,8 +43,8 @@ subtitle on the What's new page.
 
 **The Scottish Lowlands, a map of every region & guides to the app**
 
-[![The Scottish Lowlands on the regions map](docs/screenshots/pr-274/thumb.png)](docs/screenshots/pr-274/region-after-dark.png)
-[Map](docs/screenshots/pr-274/region-after-dark.png) · [Light](docs/screenshots/pr-274/region-after-light.png)
+[![The Scottish Lowlands on the map of every region](docs/screenshots/pr-288/thumb.png)](docs/screenshots/pr-288/after-dark.png)
+[Dark](docs/screenshots/pr-288/after-dark.png) · [Light](docs/screenshots/pr-288/after-light.png)
 
 ### Added
 
@@ -154,7 +154,6 @@ subtitle on the What's new page.
 
 ### Fixed
 
-- The [map of every region](https://indigene.app/map) now shades the Scottish Lowlands, which showed as a dot on blank land.
 - The [wild leek](https://indigene.app/plants/allium-tricoccum) page now says what the Myaamia Center says — šikaakwa,
   written "Chicago" by the French, names both the wild leek and the striped
   skunk.

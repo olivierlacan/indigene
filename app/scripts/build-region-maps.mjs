@@ -940,7 +940,7 @@ try {
     // The world map and its insets (`_coverage-map.mjs`) need every region, so
     // only a full run draws them.
     await buildCoverageMaps(sizes, OUT_DIR, join(APP_ROOT, "src", "data", "coverage-map.ts"));
-    console.log("map: world + insets → public/maps/coverage-*.svg");
+    console.log("map: world + continents → public/maps/coverage-*.svg");
   } else console.log("(partial run — src/data/region-maps.ts left as it was)");
 } finally {
   await loader.close();

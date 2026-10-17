@@ -1,5 +1,5 @@
-// One map of every region at once — the regions page's answer to "do you cover
-// me?", which used to take reading seventeen names (issue #254).
+// The map page (`#/map`): every region at once, the answer to "do you cover
+// me?" that used to take reading seventeen names (issue #254).
 //
 // Built by `build-region-maps.mjs` on a full run, from the same coverage shapes
 // it draws each region with, so the two can't disagree.
@@ -12,9 +12,9 @@
 //
 // At phone width the whole world is about 360 pixels across, and North America
 // — ten of the regions — is fifty of them. No set of labels fits that. So the
-// world map shows *where* (a glowing dot per region) and names only the regions
-// that stand alone; the two crowded continents get an inset each, at a scale
-// where every region has room for its name.
+// world map shows *where*, a glowing dot per region and no names, and each
+// continent with a region in it gets a map of its own below, close enough
+// that every region has room for its name.
 //
 // The names themselves are not in the pictures. They are HTML links laid over
 // them (`components/coverage-map.ts`), so they translate, and each one opens its
@@ -22,7 +22,7 @@
 // (`src/data/coverage-map.ts`).
 //
 // Land: Natural Earth (public domain) — 1:110m for the world, 1:50m for the
-// insets. Country borders are drawn, faintly, as a reference and nothing more.
+// continents. Country borders are drawn, faintly, as a reference and nothing more.
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { geoEqualEarth, geoPath } from "d3-geo";
@@ -34,11 +34,16 @@ const WIDTH = 640;
 /** Where the world is centred. See the header: the Pacific, not Greenwich. */
 const CENTRE_LON = 150;
 
-/** The two places too crowded to name at world scale, drawn again closer up.
- *  A region belongs to the inset its box's centre falls in. */
-const INSETS = [
-  { id: "north-america", box: { minLon: -127, maxLon: -63, minLat: 23.5, maxLat: 51.5 } },
-  { id: "europe", box: { minLon: -13, maxLon: 14, minLat: 41, maxLat: 56 } },
+/** The map page's sections, one per continent with a region in it, each drawn
+ *  close enough that every region has room for its name. A region belongs to
+ *  the continent its box's centre falls in; a region in none fails the build. */
+const CONTINENTS = [
+  { id: "north-america", box: { minLon: -126, maxLon: -66, minLat: 24, maxLat: 50.5 } },
+  { id: "europe", box: { minLon: -11, maxLon: 10.5, minLat: 41.2, maxLat: 55.6 } },
+  { id: "asia", box: { minLon: 125, maxLon: 147, minLat: 31, maxLat: 41.5 } },
+  // The North Island only: the region is its northern tip, and the whole of
+  // New Zealand would be a tall picture of mostly somewhere else.
+  { id: "oceania", box: { minLon: 166, maxLon: 182, minLat: -41.8, maxLat: -34 } },
 ];
 
 /**
@@ -186,15 +191,21 @@ ${layers.filter(Boolean).join("\n")}
  */
 export async function buildCoverageMaps(regions, outDir, dataFile) {
   for (const r of regions) {
+    const lon = (r.bounds.minLon + r.bounds.maxLon) / 2;
+    const lat = (r.bounds.minLat + r.bounds.maxLat) / 2;
+    const { box: b } = CONTINENTS.find(({ box }) => lon >= box.minLon && lon <= box.maxLon && lat >= box.minLat && lat <= box.maxLat) ?? { box: null };
+    if (!b) {
+      throw new Error(`${r.id}: no continent on the map covers it — add one to CONTINENTS in scripts/_coverage-map.mjs.`);
+    }
     if (!LABELS[r.id]) {
       throw new Error(`${r.id}: the coverage map needs a place for its name — add it to LABELS in scripts/_coverage-map.mjs.`);
     }
   }
   const tone = tones(regions.map((r) => ({ id: r.id, bounds: r.bounds })));
-  const insetOf = (r) => {
+  const continentOf = (r) => {
     const lon = (r.bounds.minLon + r.bounds.maxLon) / 2;
     const lat = (r.bounds.minLat + r.bounds.maxLat) / 2;
-    return INSETS.find(({ box }) => lon >= box.minLon && lon <= box.maxLon && lat >= box.minLat && lat <= box.maxLat)?.id ?? null;
+    return CONTINENTS.find(({ box }) => lon >= box.minLon && lon <= box.maxLon && lat >= box.minLat && lat <= box.maxLat)?.id ?? null;
   };
   const [world110, world50] = await Promise.all([
     geojson("ne_110m_admin_0_countries"),
@@ -217,34 +228,27 @@ export async function buildCoverageMaps(regions, outDir, dataFile) {
     const land = world110.map(rewind).map((f) => (path(f), ctx.result())).join("");
     const glows = regions.map((r) => {
       const [x, y] = proj([LABELS[r.id].lon, LABELS[r.id].lat]);
-      return `<circle class="glow" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="9"/>`;
+      return `<circle class="glow" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="13"/>`;
     });
     const covers = regions.map((r) =>
       `<path class="cover t${tone[r.id]}" d="${coverPath(r.cover, proj, 0.4)}"/>`);
-    // Only the regions with no inset are named here, so only they get a dot.
-    const alone = regions.filter((r) => !insetOf(r));
-    const pins = alone.map((r) => {
-      const [x, y] = proj([LABELS[r.id].lon, LABELS[r.id].lat]);
-      return `<circle class="pin" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4"/>`;
-    });
+    // Every region is named in its continent's section below, so the world
+    // only shows where: a glow per region, no names.
     writeFileSync(join(outDir, "coverage-world.svg"), svg({
       w: WIDTH, h, title: "Where Indigene has plant lists",
-      layers: [`<path class="sea" d="${sea}"/>`, `<path class="land" d="${land}"/>`, ...glows, ...covers, ...pins],
+      layers: [`<path class="sea" d="${sea}"/>`, `<path class="land" d="${land}"/>`, ...glows, ...covers],
     }));
     table.world = {
       w: WIDTH, h,
-      labels: alone.map((r) => {
-        const [x, y] = proj([LABELS[r.id].lon, LABELS[r.id].lat]);
-        return { id: r.id, x: pct(x, WIDTH), y: pct(y, h), side: LABELS[r.id].side };
-      }),
+      labels: [],
     };
     sizes.push(["coverage-world", h]);
   }
 
-  // ---- the insets ----
-  for (const inset of INSETS) {
+  // ---- the continents ----
+  for (const inset of CONTINENTS) {
     const { box } = inset;
-    const mine = regions.filter((r) => insetOf(r) === inset.id);
+    const mine = regions.filter((r) => continentOf(r) === inset.id);
     if (!mine.length) continue;
     // Centred on the inset's own middle, so its meridians barely lean.
     const corners = {
@@ -265,7 +269,9 @@ export async function buildCoverageMaps(regions, outDir, dataFile) {
     const covers = mine.map((r) => `<path class="cover t${tone[r.id]}" d="${coverPath(r.cover, proj, 0.6)}"/>`);
     const pins = mine.map((r) => {
       const [x, y] = proj([LABELS[r.id].lon, LABELS[r.id].lat]);
-      return `<circle class="pin" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4.5"/>`;
+      // The glow keeps a small region (Kantō, a few pixels across) findable.
+      return `<circle class="glow" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="14"/>` +
+        `<circle class="pin" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5"/>`;
     });
     writeFileSync(join(outDir, `coverage-${inset.id}.svg`), svg({
       w: WIDTH, h, title: "Where Indigene has plant lists",
@@ -281,7 +287,7 @@ export async function buildCoverageMaps(regions, outDir, dataFile) {
     sizes.push([`coverage-${inset.id}`, h]);
   }
 
-  const order = ["world", ...INSETS.map((i) => i.id)].filter((k) => table[k]);
+  const order = ["world", ...CONTINENTS.map((i) => i.id)].filter((k) => table[k]);
   const body = order.map((k) => {
     const m = table[k];
     const labels = m.labels.map((l) => `      { id: "${l.id}", x: ${l.x}, y: ${l.y}, side: "${l.side}" },`).join("\n");

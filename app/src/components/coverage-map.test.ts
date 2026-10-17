@@ -1,14 +1,19 @@
-// The coverage map's two promises: every region is on it, and no name runs off
-// the picture or onto another name.
+// The map page's promises: every region is on it under a named continent, and
+// no name runs off its picture or onto another name.
 import { describe, it, expect } from "vitest";
 import { placeLabels } from "./coverage-map";
 import { COVERAGE_MAPS } from "../data/coverage-map";
+import { CONTINENT_NAMES } from "../steps/map";
 import { REGIONS } from "../data/regions";
 
 describe("coverage map", () => {
   it("names every region — a new one needs `npm run maps:coverage`", () => {
     const named = COVERAGE_MAPS.flatMap((m) => m.labels.map((l) => l.id)).sort();
     expect(named).toEqual(REGIONS.map((r) => r.meta.id).sort());
+  });
+
+  it("gives every continent a heading", () => {
+    for (const m of COVERAGE_MAPS.slice(1)) expect(CONTINENT_NAMES[m.id], m.id).toBeTruthy();
   });
 
   it("takes the preferred side when it is free", () => {

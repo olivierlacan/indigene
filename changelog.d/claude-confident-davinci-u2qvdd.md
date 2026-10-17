@@ -1,7 +1,7 @@
 ### Added
 
-- **A map of every region.** The [regions page](https://indigene.app/regions) now opens on a world map, drawn in Equal Earth so every country shows at its true size. North America and Europe get a closer look, and each region's name opens it.
-- Internal: `scripts/_coverage-map.mjs` draws the world (Equal Earth, centred on 150°E) and two insets from the coverage shapes `maps:build` already makes; `npm run maps:coverage` redraws them alone. Names are laid out in the browser (`placeLabels`) so French fits too.
+- **A map of every region.** The new [map page](https://indigene.app/map) shows the world in Equal Earth, every country at its true size, then a map per continent with each region named. Tap a name to open it.
+- Internal: `scripts/_coverage-map.mjs` draws the world (Equal Earth, centred on 150°E) and one map per continent from the coverage shapes `maps:build` already makes; `npm run maps:coverage` redraws them alone. Names are laid out in the browser (`placeLabels`) so French fits too.
 
 ### Fixed
 

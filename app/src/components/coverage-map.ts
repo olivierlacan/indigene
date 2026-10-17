@@ -1,37 +1,25 @@
-// Every region on one map, so "do you cover me?" is a glance rather than a
-// read through seventeen names (issue #254).
+// The pictures on the map page (`steps/map.ts`): the world, then each
+// continent with a region in it (issue #254).
 //
-// The pictures are drawn at build time (`scripts/_coverage-map.mjs`): the world
-// in Equal Earth, then North America and Europe again, closer, because at phone
-// width their regions are a few pixels apart. The names are links laid over the
-// pictures from the generated table, so they translate with the app and each
-// one opens its region. Same reasoning as the region maps: a plain <img>, no
-// map library, nothing fetched from anyone else.
+// They are drawn at build time (`scripts/_coverage-map.mjs`). The names are
+// links laid over them from the generated table, so they translate with the
+// app and each one opens its region. Same reasoning as the region maps: a
+// plain <img>, no map library, nothing fetched from anyone else.
 //
 // **Where a name goes is worked out on the page**, not at build time. A name's
 // width depends on the language and the font, and North America at 360 px has
 // ten of them in three hundred pixels: "Nord-Ouest Pacifique" needs room that
 // "Pacific Northwest" doesn't. So each name is measured where it will be read
-// and tried on every side of its dot — the side the table prefers first —
-// taking the first spot that stays in the picture and clear of every name and
-// dot already placed. The same rule the region maps' cities follow.
+// and tried on every side of its dot, and a line up or down beside it — the
+// side the table prefers first — taking the first spot that stays in the
+// picture and clear of every name and dot already placed. The same rule the
+// region maps' cities follow.
 import { el } from "../ui";
 import { REGIONS } from "../lib/plants";
-import { COVERAGE_MAPS, type CoverageMap, type LabelSide } from "../data/coverage-map";
+import { type CoverageMap, type LabelSide } from "../data/coverage-map";
 import { regionShort } from "../lib/names";
-import { t } from "../lib/i18n";
 
-export function coverageMap(): HTMLElement {
-  const [world, ...insets] = COVERAGE_MAPS;
-  return el("figure", { class: "coverage-map" }, [
-    frame(world, t("coverageMap.alt")),
-    // The insets' names are links of their own; the pictures add nothing a
-    // screen reader needs beyond the world map's description.
-    el("div", { class: "coverage-insets" }, insets.map((m) => frame(m, ""))),
-  ]);
-}
-
-function frame(map: CoverageMap, alt: string): HTMLElement {
+export function coverageFrame(map: CoverageMap, alt: string): HTMLElement {
   const byId = new Map(REGIONS.map((r) => [r.meta.id, r.meta]));
   const labels = map.labels.flatMap((l) => {
     const meta = byId.get(l.id);
@@ -59,7 +47,7 @@ function frame(map: CoverageMap, alt: string): HTMLElement {
 }
 
 type Rect = { x1: number; y1: number; x2: number; y2: number };
-type Side = LabelSide | "ne" | "se" | "nw" | "sw";
+type Side = LabelSide | "ne" | "se" | "nw" | "sw" | "right-up" | "right-down" | "left-up" | "left-down";
 const GAP = 5;
 const DOT = 5;
 const overlap = (a: Rect, b: Rect) =>
@@ -77,6 +65,11 @@ function at(side: Side, x: number, y: number, w: number, h: number): [number, nu
     case "se": return [x + 1, y + GAP - 2];
     case "nw": return [x - 1 - w, y - GAP - h + 2];
     case "sw": return [x - 1 - w, y + GAP - 2];
+    // Beside the dot but slid a line up or down, for a crowded column.
+    case "right-up": return [x + GAP, y - h * 1.2];
+    case "right-down": return [x + GAP, y + h * 0.2];
+    case "left-up": return [x - GAP - w, y - h * 1.2];
+    case "left-down": return [x - GAP - w, y + h * 0.2];
   }
 }
 
@@ -94,7 +87,10 @@ export function placeLabels(
   const dots = labels.map(({ x, y }) => ({ x1: x - DOT, y1: y - DOT, x2: x + DOT, y2: y + DOT }));
   const placed: Rect[] = [];
   return labels.map(({ x, y, w, h, side: preferred }, i) => {
-    const sides: Side[] = [preferred, "right", "left", "above", "below", "ne", "se", "nw", "sw"];
+    const sides: Side[] = [
+      preferred, "right", "left", "above", "below", "ne", "se", "nw", "sw",
+      "right-up", "right-down", "left-up", "left-down",
+    ];
     let best: { r: Rect; cost: number } | null = null;
     for (const side of sides) {
       const [lx, ly] = at(side, x, y, w, h);

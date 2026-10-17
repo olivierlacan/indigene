@@ -2267,7 +2267,7 @@ export const en = {
   "wanted.growInstead": "What to grow instead",
   "wanted.indexDocTitle": "Worst invasives · Indigene",
   "wanted.docTitle": "{name} · invasive plant · Indigene",
-  "wanted.indexLede": "Each region's five invasive plants to pull first. Open one to learn to spot it.",
+  "wanted.indexLede": "Each region's worst invasive plants, to pull first. Open one to learn to spot it.",
   "wanted.unratedShort": "Nobody has rated these here, so they're ranked by sightings alone.",
   "wanted.backToIndex": "← All the worst invasives",
   "wanted.howToSpot": "Identification",

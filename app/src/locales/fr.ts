@@ -2218,7 +2218,7 @@ export const fr: Dict = {
   "wanted.growInstead": "Que planter à la place",
   "wanted.indexDocTitle": "Les pires plantes envahissantes · Indigene",
   "wanted.docTitle": "{name} · plante envahissante · Indigene",
-  "wanted.indexLede": "Les cinq plantes envahissantes à arracher en premier dans chaque région. Ouvrez-en une pour apprendre à la reconnaître.",
+  "wanted.indexLede": "Les pires plantes envahissantes de chaque région, à arracher en premier. Ouvrez-en une pour apprendre à la reconnaître.",
   "wanted.unratedShort": "Personne ne les a évaluées ici : elles sont classées selon les observations seules.",
   "wanted.backToIndex": "← Toutes les plantes envahissantes",
   "wanted.howToSpot": "Identification",

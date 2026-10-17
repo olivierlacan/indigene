@@ -151,6 +151,8 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Quercus pubescens": { name: "Chêne pubescent", src: "taxref" },
   "Quercus robur": { name: "Chêne pédonculé", src: "taxref" },
   "Reynoutria japonica": { name: "Renouée du Japon", src: "taxref" },
+  "Reynoutria × bohemica": { name: "Renouée de Bohême", src: "taxref" },
+  "Iris pseudacorus": { name: "Iris faux acore", src: "taxref" },
   "Rhamnus alaternus": { name: "Alaterne", src: "taxref" },
   "Rhododendron ferrugineum": { name: "Rhododendron ferrugineux", src: "taxref" },
   "Rosa arvensis": { name: "Rosier des champs", src: "taxref" },

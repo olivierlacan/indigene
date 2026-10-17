@@ -79,6 +79,15 @@ subtitle on the What's new page.
   names no animal on any of them; two ties added by hand. French names only
   where a source has one (Jonc diffus, Trompette de Virginie).
 - Internal: `npm run harvest:fnps` reads the Florida Native Plant Society's plant pages (nursery availability, light, moisture, soil, zones) as a shortlist for both Florida regions, slowly and within their robots.txt. Its pages count as a native-status claim that the Atlas and Kew must corroborate; nursery availability never does. `data/sources/atlas-florida/` documents the Atlas of Florida Plants county search a person runs by hand, since its robots.txt keeps scripts off. `npm run atlas` checks every Florida row against those exports and, with `--candidates`, lists Atlas natives FNPS says can be bought, thinnest forms first.
+- [North & Central Florida](https://indigene.app/regions/florida-central) gets
+  fourteen more natives: the scrub and sandhill oaks, slash pine, sweetgum,
+  elderberry, shiny blueberry, muscadine grape, pickerelweed for pond edges, and
+  frogfruit, a lawn you can walk on that feeds butterflies.
+- Internal: picked from `npm run candidates -- --region florida-central`
+  (refreshed in `docs/candidates/florida-central.md`), skipping seagrasses,
+  epiphytes, weedy or spiny picks and south-Florida plants. Kew WCVP: native in
+  Florida for all 63 rows. Four new plants have no republishable iNaturalist
+  photo and are queued for review.
 - Invasives: Bohemian knotweed, English hawthorn, yellow flag iris and old man's beard each have a page on how to spot and remove them.
 - Internal: PNW ties now carry WIRS (Washington Natural Heritage Program) Ecological Impact ranks as `impact` listings — High → transforms, Moderate → spreads — via a `wirs()` helper; broom, herb-robert and ivy keep their WA weed-board class until WIRS assesses them. `listings:check` reads WIRS's landing-page table (the per-species PDFs use glyph-coded fonts `pdfText` can't read). Region share cards now show the top five.
 - [Further reading](https://indigene.app/reading) for Chicago: John Hilty's
@@ -145,6 +154,7 @@ subtitle on the What's new page.
 
 ### Fixed
 
+- The [map of every region](https://indigene.app/map) now shades the Scottish Lowlands, which showed as a dot on blank land.
 - The [wild leek](https://indigene.app/plants/allium-tricoccum) page now says what the Myaamia Center says — šikaakwa,
   written "Chicago" by the French, names both the wild leek and the striped
   skunk.

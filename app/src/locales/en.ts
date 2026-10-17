@@ -2628,6 +2628,7 @@ export const en = {
   "reading.why.gardenJungle": "The insects already in your garden, and the small changes that keep them there.",
   "reading.why.postWild": "How to plant natives in layers, like a meadow, so they hold together.",
   "reading.why.camels": "The skeptic's case: most plants from elsewhere do no harm, so judge them by what they do.",
+  "reading.why.calscape": "Every California native by address, with the nurseries that stock it. The best plant-finder any region has.",
   "reading.why.inaturalist": "Photograph a plant, learn its name, and see where it grows wild near you.",
   "reading.audience.observers.one": "{n} observer",
   "reading.audience.observers.other": "{n} observers",

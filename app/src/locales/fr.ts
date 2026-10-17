@@ -2552,6 +2552,7 @@ export const fr: Dict = {
   "reading.why.gardenJungle": "Les insectes déjà dans votre jardin, et les petits gestes qui les y gardent.",
   "reading.why.postWild": "Planter les indigènes en strates, comme une prairie, pour qu'elles se tiennent.",
   "reading.why.camels": "Le point de vue sceptique : la plupart des plantes venues d'ailleurs ne nuisent pas, alors jugez-les à ce qu'elles font.",
+  "reading.why.calscape": "Chaque plante indigène de Californie par adresse, avec les pépinières qui la vendent. Le meilleur outil de ce genre, toutes régions confondues.",
   "reading.why.inaturalist": "Photographiez une plante, apprenez son nom et voyez où elle pousse à l'état sauvage près de chez vous.",
   "reading.audience.observers.one": "{n} observateur",
   "reading.audience.observers.other": "{n} observateurs",

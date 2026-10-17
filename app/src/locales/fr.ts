@@ -570,6 +570,7 @@ export const fr: Dict = {
   "explore.docTitle": "À la rencontre des indigènes · Indigene",
   "explore.title": "À la rencontre des indigènes",
   "explore.lede": "{plants} plantes indigènes réparties sur les {regions} régions couvertes jusqu'ici. Ouvrez la vôtre pour voir toute sa liste, ou touchez la plante d'une carte pour faire sa connaissance.",
+  "coverageMap.alt": "Carte du monde des régions qui ont une liste de plantes, en vert",
   "explore.missing": "Votre région n'y est pas ? {link}.",
   "explore.byWildlife": "Ou parcourir par animal → ",
   "explore.byWildlifeSub":

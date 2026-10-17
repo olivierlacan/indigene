@@ -7512,3 +7512,52 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .flower-swatch-split {
   background: linear-gradient(135deg, var(--swatch-a) 50%, var(--swatch-b) 50%);
 }
+
+/* --- Every region on one map (Explore) ----------------------------------- */
+/* Pictures from `scripts/_coverage-map.mjs`; the names are links laid over
+   them, placed by `components/coverage-map.ts`. A pill rather than a halo, because the names sit on sea and
+   land and shading alike, and one background reads on all three. */
+.coverage-map {
+  margin: 0 0 1rem;
+}
+.coverage-frame {
+  position: relative;
+}
+/* On a laptop the world at full width is a poster; the insets beside each
+   other are the part worth the room. */
+.coverage-map > .coverage-frame {
+  max-width: 42rem;
+  margin-inline: auto;
+}
+.coverage-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius) - 6px);
+}
+.coverage-insets {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr));
+  align-items: start;
+}
+.coverage-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.08rem 0.35rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  color: var(--ink);
+  font-size: 0.7rem;
+  font-weight: 650;
+  line-height: 1.15;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.coverage-label:hover,
+.coverage-label:focus-visible {
+  background: var(--brand);
+  color: var(--on-brand);
+}

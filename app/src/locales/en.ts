@@ -569,6 +569,7 @@ export const en = {
   "explore.docTitle": "Meet the natives · Indigene",
   "explore.title": "Meet the natives",
   "explore.lede": "{plants} native plants across the {regions} regions Indigene covers so far. Open yours to see its whole roster, or tap the plant on a card to meet it.",
+  "coverageMap.alt": "World map of the regions with plant lists, shaded green",
   "explore.missing": "Don't see your region? {link}.",
   "explore.byWildlife": "Or browse by wildlife → ",
   "explore.byWildlifeSub":

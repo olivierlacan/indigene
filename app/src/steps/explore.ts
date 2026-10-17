@@ -21,6 +21,7 @@ import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { ISSUES_URL } from "../lib/plain";
 import { nameLines, regionName, regionReference } from "../lib/names";
 import { flagRow } from "../components/flags";
+import { coverageMap } from "../components/coverage-map";
 
 export function renderExplore(main: HTMLElement): void {
   clear(main);
@@ -32,6 +33,8 @@ export function renderExplore(main: HTMLElement): void {
     el("h2", { class: "step-title" }, t("explore.title")),
     el("p", { class: "step-lede" },
       t("explore.lede", { plants: fmtNumber(totalPlants), regions: fmtNumber(REGIONS.length) })),
+    // Where they all are, before the cards say what each holds.
+    coverageMap(),
     el("div", { class: "card-grid" }, REGIONS.map(regionCard)),
     // The map grows one region at a time, by request.
     el("p", { class: "more-link", style: "margin:0.8rem 0 0" }, tx("explore.missing", {

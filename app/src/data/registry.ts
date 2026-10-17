@@ -2202,6 +2202,33 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:17054720-1",
+    "scientificName": "Athyrium cyclosorum",
+    "family": "Athyriaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17054720-1",
+      "wfo": "wfo-0001110262",
+      "gbif": "8577717",
+      "inat": "61002",
+      "wikidata": "Q15607118",
+      "indigene": "athyrium-cyclosorum"
+    },
+    "commonNames": [
+      "Lady Fern"
+    ],
+    "aliases": [
+      "athyrium cyclosorum",
+      "lady fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:17055840-1",
     "scientificName": "Athyrium niponicum",
     "family": "Athyriaceae",
@@ -2815,6 +2842,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:394684-1",
+    "scientificName": "Calamagrostis nutkaensis",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "394684-1",
+      "wfo": "wfo-0000857768",
+      "gbif": "2704874",
+      "usda": "CANU",
+      "itis": "40558",
+      "inat": "61063",
+      "wikidata": "Q5018376",
+      "indigene": "calamagrostis-nutkaensis"
+    },
+    "commonNames": [
+      "Pacific Reedgrass"
+    ],
+    "aliases": [
+      "calamagrostis nutkaensis",
+      "pacific reedgrass"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:319128-2",
     "scientificName": "Callicarpa americana",
     "family": "Lamiaceae",
@@ -3151,6 +3207,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:46073-2",
+    "scientificName": "Carex densa",
+    "family": "Cyperaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "46073-2",
+      "wfo": "wfo-0000345963",
+      "gbif": "2725182",
+      "usda": "CADE8",
+      "itis": "39574",
+      "inat": "61177",
+      "wikidata": "Q15570452",
+      "indigene": "carex-densa"
+    },
+    "commonNames": [
+      "Dense Sedge"
+    ],
+    "aliases": [
+      "carex densa",
+      "dense sedge"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:299484-1",
     "scientificName": "Carex dispalata",
     "family": "Cyperaceae",
@@ -3260,6 +3345,35 @@ export const REGISTRY: RegistryEntry[] = [
     "aliases": [
       "carex obnupta",
       "slough sedge"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:46817-2",
+    "scientificName": "Carex pansa",
+    "family": "Cyperaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "46817-2",
+      "wfo": "wfo-0000349786",
+      "gbif": "2722018",
+      "usda": "CAPA16",
+      "itis": "39740",
+      "inat": "76090",
+      "wikidata": "Q5039114",
+      "indigene": "carex-pansa"
+    },
+    "commonNames": [
+      "Dune Sedge"
+    ],
+    "aliases": [
+      "carex pansa",
+      "dune sedge"
     ],
     "cultivarOf": null,
     "regions": [
@@ -4457,6 +4571,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "pnw",
       "ca-south-coast",
       "ca-central-coast"
     ]
@@ -4990,6 +5105,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:271698-1",
+    "scientificName": "Cornus unalaschkensis",
+    "family": "Cornaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "271698-1",
+      "gbif": "3082254",
+      "usda": "COUN",
+      "itis": "27819",
+      "inat": "1096279",
+      "wikidata": "Q5171928",
+      "indigene": "cornus-unalaschkensis"
+    },
+    "commonNames": [
+      "Western Bunchberry"
+    ],
+    "aliases": [
+      "cornus unalaschkensis",
+      "western bunchberry"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:295439-1",
     "scientificName": "Corylus americana",
     "family": "Betulaceae",
@@ -5419,6 +5562,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "pnw",
       "ca-central-coast"
     ]
   },
@@ -5924,6 +6068,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "pnw",
       "ca-south-coast",
       "ca-central-coast"
     ]
@@ -7325,7 +7470,8 @@ export const REGISTRY: RegistryEntry[] = [
       "mid-atlantic",
       "north-michigan",
       "chicago",
-      "st-lawrence"
+      "st-lawrence",
+      "pnw"
     ]
   },
   {
@@ -9129,6 +9275,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:406615-1",
+    "scientificName": "Koeleria macrantha",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "406615-1",
+      "wfo": "wfo-0000877153",
+      "gbif": "2705914",
+      "usda": "KOMA",
+      "itis": "503284",
+      "inat": "57183",
+      "wikidata": "Q159962",
+      "indigene": "koeleria-macrantha"
+    },
+    "commonNames": [
+      "Prairie Junegrass"
+    ],
+    "aliases": [
+      "koeleria macrantha",
+      "prairie junegrass"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {
@@ -16432,6 +16607,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:313911-1",
+    "scientificName": "Scirpus microcarpus",
+    "family": "Cyperaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "313911-1",
+      "wfo": "wfo-0000541492",
+      "gbif": "2717391",
+      "usda": "SCMI2",
+      "itis": "40235",
+      "inat": "59068",
+      "wikidata": "Q7434049",
+      "indigene": "scirpus-microcarpus"
+    },
+    "commonNames": [
+      "Small-fruited Bulrush"
+    ],
+    "aliases": [
+      "scirpus microcarpus",
+      "small-fruited bulrush"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
+    ]
+  },
+  {
     "primaryId": "ipni:230956-2",
     "scientificName": "Scrophularia californica",
     "family": "Scrophulariaceae",
@@ -18817,6 +19021,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:107623-1",
+    "scientificName": "Vancouveria hexandra",
+    "family": "Berberidaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "107623-1",
+      "wfo": "wfo-0001146472",
+      "gbif": "5371716",
+      "usda": "VAHE",
+      "itis": "18853",
+      "inat": "79480",
+      "wikidata": "Q7914286",
+      "indigene": "vancouveria-hexandra"
+    },
+    "commonNames": [
+      "Inside-out Flower"
+    ],
+    "aliases": [
+      "inside-out flower",
+      "vancouveria hexandra"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "pnw"
     ]
   },
   {

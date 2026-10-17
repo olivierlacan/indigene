@@ -176,8 +176,8 @@
         "fr": "Washington, l'Oregon et la Colombie-Britannique"
       },
       "coarse": false,
-      "checked": "2026-10-16",
-      "rows": 106,
+      "checked": "2026-10-17",
+      "rows": 118,
       "unconfirmed": {
         "sambucus-nigra-caerulea": "inconclusive",
         "achillea-millefolium": "absent"
@@ -237,7 +237,7 @@
         }
       ],
       "checked": "2026-10-17",
-      "rows": 106,
+      "rows": 118,
       "disagree": {
         "achillea-millefolium": {
           "burke": "both",

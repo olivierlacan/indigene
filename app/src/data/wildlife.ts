@@ -2523,6 +2523,34 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     "petasites-frigidus": [
       { wildlifeId: "bumble-bees", support: "nectar", note: "It flowers in February on bare stalks, in the weeks when a queen out of hibernation has to feed before she can start a colony at all.", basis: "Xerces Society Maritime Northwest planting guide." },
     ],
+    "danthonia-californica": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "A prairie bunchgrass is caterpillar food and winter shelter at once: skippers and wood-nymphs feed on the blades and sit out the cold inside the tuft.", basis: "Xerces Society; BAMONA." },
+    ],
+    "koeleria-macrantha": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "Small native bunchgrasses on dry ground are where several skippers lay; the caterpillars live in rolled leaf shelters at the base.", basis: "Xerces Society; BAMONA." },
+    ],
+    "calamagrostis-nutkaensis": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "A coastal tussock that stays green all year, so grass-feeding caterpillars have food and cover on a bluff where little else grows.", basis: "Xerces Society; BAMONA." },
+    ],
+    "carex-pansa": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "Some skippers and satyrs grow up on sedges rather than grasses. A sedge lawn left a little long gives them a place to feed and overwinter that turf never does.", basis: "Xerces Society; BAMONA." },
+    ],
+    "carex-densa": [
+      { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "Sedge-feeding skippers and satyrs overwinter as caterpillars down in the clump, so leave it standing until spring.", basis: "Xerces Society; BAMONA." },
+    ],
+    "vancouveria-hexandra": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Tiny white flowers on wiry stems in late spring, for the small solitary bees of shady woods.", basis: "Xerces Society." },
+    ],
+    "clinopodium-douglasii": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Small white mint flowers from June into September, for small native bees and hoverflies at the woodland edge.", basis: "Xerces Society." },
+    ],
+    "cornus-unalaschkensis": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Clusters of bright red berries in late summer, low enough for thrushes and grouse working the forest floor.", basis: "Cornell Lab; USFS FEIS." },
+    ],
+    "fragaria-virginiana": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Open white flowers in April and May, low and easy for the smallest solitary bees.", basis: "Xerces Society." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Tiny, very sweet strawberries in early summer for towhees, robins and sparrows.", basis: "Cornell Lab; USDA PLANTS." },
+    ],
   },
 
   "ca-central-coast": {

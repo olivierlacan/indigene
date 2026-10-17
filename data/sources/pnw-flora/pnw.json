@@ -1151,6 +1151,84 @@
       }
     },
     {
+      "id": "danthonia-californica",
+      "latin": "Danthonia californica",
+      "burke": {
+        "as": "Danthonia californica",
+        "verdict": "native",
+        "westCounties": 32
+      },
+      "oregonflora": {
+        "as": "Danthonia californica",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "koeleria-macrantha",
+      "latin": "Koeleria macrantha",
+      "burke": {
+        "as": "Koeleria macrantha",
+        "verdict": "native",
+        "westCounties": 27
+      },
+      "oregonflora": {
+        "as": "Koeleria macrantha",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "calamagrostis-nutkaensis",
+      "latin": "Calamagrostis nutkaensis",
+      "burke": {
+        "as": "Calamagrostis nutkaensis",
+        "verdict": "native",
+        "westCounties": 12
+      },
+      "oregonflora": {
+        "as": "Calamagrostis nutkaensis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "carex-pansa",
+      "latin": "Carex pansa",
+      "burke": {
+        "as": "Carex pansa",
+        "verdict": "native",
+        "westCounties": 13
+      },
+      "oregonflora": {
+        "as": "Carex pansa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "carex-densa",
+      "latin": "Carex densa",
+      "burke": {
+        "as": "Carex densa",
+        "verdict": "native",
+        "westCounties": 19
+      },
+      "oregonflora": {
+        "as": "Carex densa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "scirpus-microcarpus",
+      "latin": "Scirpus microcarpus",
+      "burke": {
+        "as": "Scirpus microcarpus",
+        "verdict": "native",
+        "westCounties": 36
+      },
+      "oregonflora": {
+        "as": "Scirpus microcarpus",
+        "verdict": "native"
+      }
+    },
+    {
       "id": "lonicera-ciliosa",
       "latin": "Lonicera ciliosa",
       "burke": {
@@ -1381,6 +1459,84 @@
       },
       "oregonflora": {
         "as": "Oxalis oregana",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "athyrium-cyclosorum",
+      "latin": "Athyrium cyclosorum",
+      "burke": {
+        "as": "Athyrium filix-femina ssp. cyclosorum",
+        "verdict": "native",
+        "westCounties": 35
+      },
+      "oregonflora": {
+        "as": "Athyrium filix-femina var. cyclosorum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "dryopteris-arguta",
+      "latin": "Dryopteris arguta",
+      "burke": {
+        "as": "Dryopteris arguta",
+        "verdict": "native",
+        "westCounties": 25
+      },
+      "oregonflora": {
+        "as": "Dryopteris arguta",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "vancouveria-hexandra",
+      "latin": "Vancouveria hexandra",
+      "burke": {
+        "as": "Vancouveria hexandra",
+        "verdict": "native",
+        "westCounties": 29
+      },
+      "oregonflora": {
+        "as": "Vancouveria hexandra",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "clinopodium-douglasii",
+      "latin": "Clinopodium douglasii",
+      "burke": {
+        "as": "Clinopodium douglasii",
+        "verdict": "native",
+        "westCounties": 34
+      },
+      "oregonflora": {
+        "as": "Clinopodium douglasii",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "cornus-unalaschkensis",
+      "latin": "Cornus unalaschkensis",
+      "burke": {
+        "as": "Cornus unalaschkensis",
+        "verdict": "native",
+        "westCounties": 31
+      },
+      "oregonflora": {
+        "as": "Cornus unalaschkensis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "fragaria-virginiana",
+      "latin": "Fragaria virginiana",
+      "burke": {
+        "as": "Fragaria virginiana",
+        "verdict": "native",
+        "westCounties": 30
+      },
+      "oregonflora": {
+        "as": "Fragaria virginiana",
         "verdict": "native"
       }
     }

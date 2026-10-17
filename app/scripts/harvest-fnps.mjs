@@ -126,14 +126,17 @@ async function harvest() {
 // ---------------------------------------------------------------------------
 // The report: what FNPS writes up that a region doesn't carry.
 
-// FNPS's zones are USDA half-zones; a region is in if any of its zones are.
+// FNPS's zones are USDA half-zones, except that zone 11 is written whole; a
+// region is in if any of its zones are.
 const REGION_ZONES = {
   "florida-central": ["8B", "9A", "9B"],
-  "florida-south": ["10A", "10B", "11A", "11B"],
+  "florida-south": ["10A", "10B", "11", "11A", "11B"],
 };
 const REGION_FILE = { "florida-central": "plants.florida.ts", "florida-south": "plants.florida-south.ts" };
 const key = (latin) => latin.toLowerCase().split(/\s+/).slice(0, 2).join(" ");
-const sells = (p) => p.availability.some((a) => /nurser/i.test(a));
+// Something a person can buy: a nursery, a store, an FNPS plant sale, a
+// specialty grower or seed. "Friends" is a pass-along, not a sale.
+const sells = (p) => p.availability.some((a) => a !== "Friends");
 
 async function report(region) {
   const zones = REGION_ZONES[region];
@@ -151,8 +154,8 @@ async function report(region) {
 
   console.log(`\nFNPS plant database — ${region}`);
   console.log(`  ${plants.length} plants read; ${inZone.length} grow in zones ${zones.join("/")}`);
-  console.log(`  ours: ${ours.size} · written up by FNPS: ${oursListed.length} · sold by a nursery per FNPS: ${oursSold.length}`);
-  console.log(`  in zone, sold by a nursery, not on our list: ${gaps.length}`);
+  console.log(`  ours: ${ours.size} · written up by FNPS: ${oursListed.length} · buyable per FNPS: ${oursSold.length}`);
+  console.log(`  in zone, buyable, not on our list: ${gaps.length}`);
 
   // FNPS's page is one source for native status; Kew is asked here so the
   // shortlist shows where the two already agree, and the Atlas is the third.
@@ -191,8 +194,8 @@ async function report(region) {
       inZone: inZone.length,
       ours: ours.size,
       oursWrittenUp: oursListed.length,
-      oursSoldByNursery: oursSold.length,
-      inZoneSoldNotOurs: gaps.length,
+      oursBuyable: oursSold.length,
+      inZoneBuyableNotOurs: gaps.length,
     },
     oursNotWrittenUp: [...ours].filter((k) => !oursListed.includes(k)).sort(),
   };

@@ -212,6 +212,7 @@ async function seedGarden(d: Device): Promise<void> {
       requireNoWater: false,
       maxHeightFt: 6,
       maxSpreadFt: null,
+      hiddenForms: ["tree"],
     });
     await db.kvSet("sticky", { defaultRegion: "pnw" });
     account.setLinkedLogin("a-gardener");

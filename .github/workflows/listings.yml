@@ -62,6 +62,7 @@ jobs:
         id: check
         continue-on-error: true
         working-directory: app
+        shell: bash # explicit, so pipefail is on and tee can't hide a failure
         run: npm run listings:check | tee "$RUNNER_TEMP/listings.txt"
 
       - name: Read the report

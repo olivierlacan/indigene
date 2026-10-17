@@ -10,7 +10,7 @@
         "fr": "la Californie"
       },
       "coarse": true,
-      "checked": "2026-09-21",
+      "checked": "2026-10-16",
       "rows": 64,
       "unconfirmed": {
         "sambucus-nigra-caerulea": "inconclusive",
@@ -23,7 +23,7 @@
         "fr": "la Californie"
       },
       "coarse": true,
-      "checked": "2026-09-21",
+      "checked": "2026-10-16",
       "rows": 64,
       "unconfirmed": {
         "sambucus-nigra-caerulea": "inconclusive",
@@ -36,7 +36,7 @@
         "fr": "le Texas"
       },
       "coarse": true,
-      "checked": "2026-10-12",
+      "checked": "2026-10-16",
       "rows": 67,
       "unconfirmed": {}
     },
@@ -46,7 +46,7 @@
         "fr": "l'Illinois"
       },
       "coarse": true,
-      "checked": "2026-10-12",
+      "checked": "2026-10-16",
       "rows": 63,
       "unconfirmed": {}
     },
@@ -56,8 +56,8 @@
         "fr": "la Floride"
       },
       "coarse": true,
-      "checked": "2026-09-21",
-      "rows": 24,
+      "checked": "2026-10-16",
+      "rows": 39,
       "unconfirmed": {}
     },
     "florida-south": {
@@ -66,7 +66,7 @@
         "fr": "la Floride"
       },
       "coarse": true,
-      "checked": "2026-09-21",
+      "checked": "2026-10-16",
       "rows": 21,
       "unconfirmed": {
         "passiflora-suberosa": "absent"
@@ -78,7 +78,7 @@
         "fr": "France"
       },
       "coarse": true,
-      "checked": "2026-09-21",
+      "checked": "2026-10-16",
       "rows": 41,
       "unconfirmed": {
         "sesleria-caerulea": "absent"
@@ -90,7 +90,7 @@
         "fr": "France"
       },
       "coarse": true,
-      "checked": "2026-09-21",
+      "checked": "2026-10-16",
       "rows": 46,
       "unconfirmed": {}
     },
@@ -100,7 +100,7 @@
         "fr": "France"
       },
       "coarse": true,
-      "checked": "2026-09-21",
+      "checked": "2026-10-16",
       "rows": 38,
       "unconfirmed": {}
     },
@@ -110,7 +110,7 @@
         "fr": "France et Corse"
       },
       "coarse": true,
-      "checked": "2026-09-21",
+      "checked": "2026-10-16",
       "rows": 52,
       "unconfirmed": {}
     },
@@ -120,7 +120,7 @@
         "fr": "l'île d'Irlande"
       },
       "coarse": false,
-      "checked": "2026-09-21",
+      "checked": "2026-10-16",
       "rows": 67,
       "unconfirmed": {}
     },
@@ -130,7 +130,7 @@
         "fr": "le Japon"
       },
       "coarse": true,
-      "checked": "2026-10-02",
+      "checked": "2026-10-16",
       "rows": 59,
       "unconfirmed": {}
     },
@@ -140,7 +140,7 @@
         "fr": "la Pennsylvanie et les neuf États voisins"
       },
       "coarse": false,
-      "checked": "2026-10-12",
+      "checked": "2026-10-16",
       "rows": 44,
       "unconfirmed": {
         "penstemon-digitalis": "introduced"
@@ -152,7 +152,7 @@
         "fr": "le Michigan"
       },
       "coarse": false,
-      "checked": "2026-09-21",
+      "checked": "2026-10-16",
       "rows": 46,
       "unconfirmed": {
         "solidago-speciosa": "absent",
@@ -166,7 +166,7 @@
         "fr": "l'île du Nord de Nouvelle-Zélande"
       },
       "coarse": false,
-      "checked": "2026-09-24",
+      "checked": "2026-10-16",
       "rows": 47,
       "unconfirmed": {}
     },
@@ -176,9 +176,10 @@
         "fr": "Washington, l'Oregon et la Colombie-Britannique"
       },
       "coarse": false,
-      "checked": "2026-09-24",
-      "rows": 85,
+      "checked": "2026-10-16",
+      "rows": 106,
       "unconfirmed": {
+        "sambucus-nigra-caerulea": "inconclusive",
         "achillea-millefolium": "absent"
       }
     },
@@ -191,6 +192,20 @@
       "checked": "2026-10-17",
       "rows": 59,
       "unconfirmed": {}
+    },
+    "st-lawrence": {
+      "area": {
+        "en": "Québec, Ontario, New York and Vermont",
+        "fr": "le Québec, l'Ontario, l'État de New York et le Vermont"
+      },
+      "coarse": false,
+      "checked": "2026-10-16",
+      "rows": 55,
+      "unconfirmed": {
+        "viburnum-dentatum": "absent",
+        "campanula-rotundifolia": "absent",
+        "matteuccia-struthiopteris": "absent"
+      }
     }
   }
 }

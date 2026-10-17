@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Washington, Oregon & British Columbia (TDWG:WAS, ORE, BRC)",
   "region": "pnw",
-  "ranAt": "2026-09-24T08:31:18.007Z",
+  "ranAt": "2026-10-16T19:39:47.345Z",
   "rows": [
     {
       "id": "quercus-garryana",
@@ -94,6 +94,42 @@
       "id": "salix-scouleriana",
       "latin": "Salix scouleriana",
       "asked": "Salix scouleriana",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "salix-lasiandra",
+      "latin": "Salix lasiandra",
+      "asked": "Salix lasiandra",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "salix-hookeriana",
+      "latin": "Salix hookeriana",
+      "asked": "Salix hookeriana",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "salix-sitchensis",
+      "latin": "Salix sitchensis",
+      "asked": "Salix sitchensis",
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
@@ -255,6 +291,30 @@
         "WAS": "NATIVE",
         "ORE": "NATIVE",
         "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "taxus-brevifolia",
+      "latin": "Taxus brevifolia",
+      "asked": "Taxus brevifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sambucus-nigra-caerulea",
+      "latin": "Sambucus nigra subsp. caerulea",
+      "asked": "Sambucus nigra",
+      "verdict": "INCONCLUSIVE",
+      "areas": {
+        "WAS": "ABSENT",
+        "ORE": "ABSENT",
+        "BRC": "ABSENT"
       },
       "viaSynonym": null
     },
@@ -490,6 +550,90 @@
       "id": "rhododendron-macrophyllum",
       "latin": "Rhododendron macrophyllum",
       "asked": "Rhododendron macrophyllum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "morella-californica",
+      "latin": "Morella californica",
+      "asked": "Morella californica",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": "Myrica californica Cham."
+    },
+    {
+      "id": "paxistima-myrsinites",
+      "latin": "Paxistima myrsinites",
+      "asked": "Paxistima myrsinites",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "euonymus-occidentalis",
+      "latin": "Euonymus occidentalis",
+      "asked": "Euonymus occidentalis",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "ABSENT",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "arctostaphylos-columbiana",
+      "latin": "Arctostaphylos columbiana",
+      "asked": "Arctostaphylos columbiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "garrya-elliptica",
+      "latin": "Garrya elliptica",
+      "asked": "Garrya elliptica",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "ABSENT",
+        "ORE": "NATIVE",
+        "BRC": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "philadelphus-lewisii",
+      "latin": "Philadelphus lewisii",
+      "asked": "Philadelphus lewisii",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rosa-gymnocarpa",
+      "latin": "Rosa gymnocarpa",
+      "asked": "Rosa gymnocarpa",
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
@@ -775,6 +919,90 @@
       "viaSynonym": null
     },
     {
+      "id": "euthamia-occidentalis",
+      "latin": "Euthamia occidentalis",
+      "asked": "Euthamia occidentalis",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "symphyotrichum-chilense",
+      "latin": "Symphyotrichum chilense",
+      "asked": "Symphyotrichum chilense",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "iris-tenax",
+      "latin": "Iris tenax",
+      "asked": "Iris tenax",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lilium-columbianum",
+      "latin": "Lilium columbianum",
+      "asked": "Lilium columbianum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "geum-macrophyllum",
+      "latin": "Geum macrophyllum",
+      "asked": "Geum macrophyllum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "plectritis-congesta",
+      "latin": "Plectritis congesta",
+      "asked": "Plectritis congesta",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": "Valeriana congesta (Lindl.) Byng & Christenh."
+    },
+    {
+      "id": "urtica-gracilis",
+      "latin": "Urtica gracilis",
+      "asked": "Urtica gracilis",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "festuca-roemeri",
       "latin": "Festuca roemeri",
       "asked": "Festuca roemeri",
@@ -1018,6 +1246,30 @@
       "id": "viola-glabella",
       "latin": "Viola glabella",
       "asked": "Viola glabella",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "asarum-caudatum",
+      "latin": "Asarum caudatum",
+      "asked": "Asarum caudatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "oxalis-oregana",
+      "latin": "Oxalis oregana",
+      "asked": "Oxalis oregana",
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",

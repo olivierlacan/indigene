@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Florida (TDWG:FLA — whole state)",
   "region": "florida-central",
-  "ranAt": "2026-09-21T07:00:33.706Z",
+  "ranAt": "2026-10-16T19:41:02.803Z",
   "rows": [
     {
       "id": "quercus-virginiana",
@@ -77,6 +77,66 @@
       "viaSynonym": null
     },
     {
+      "id": "diospyros-virginiana",
+      "latin": "Diospyros virginiana",
+      "asked": "Diospyros virginiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "celtis-laevigata",
+      "latin": "Celtis laevigata",
+      "asked": "Celtis laevigata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "magnolia-virginiana",
+      "latin": "Magnolia virginiana",
+      "asked": "Magnolia virginiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vaccinium-arboreum",
+      "latin": "Vaccinium arboreum",
+      "asked": "Vaccinium arboreum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "juniperus-virginiana",
+      "latin": "Juniperus virginiana",
+      "asked": "Juniperus virginiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "morella-cerifera",
+      "latin": "Morella cerifera",
+      "asked": "Morella cerifera",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": "Myrica cerifera L."
+    },
+    {
       "id": "serenoa-repens",
       "latin": "Serenoa repens",
       "asked": "Serenoa repens",
@@ -130,6 +190,36 @@
       "id": "myrcianthes-fragrans",
       "latin": "Myrcianthes fragrans",
       "asked": "Myrcianthes fragrans",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cephalanthus-occidentalis",
+      "latin": "Cephalanthus occidentalis",
+      "asked": "Cephalanthus occidentalis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "erythrina-herbacea",
+      "latin": "Erythrina herbacea",
+      "asked": "Erythrina herbacea",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rhus-copallinum",
+      "latin": "Rhus copallinum",
+      "asked": "Rhus copallinum",
       "verdict": "NATIVE",
       "areas": {
         "FLA": "NATIVE"
@@ -197,6 +287,36 @@
       "viaSynonym": null
     },
     {
+      "id": "lobelia-cardinalis",
+      "latin": "Lobelia cardinalis",
+      "asked": "Lobelia cardinalis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rudbeckia-hirta",
+      "latin": "Rudbeckia hirta",
+      "asked": "Rudbeckia hirta",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "helianthus-angustifolius",
+      "latin": "Helianthus angustifolius",
+      "asked": "Helianthus angustifolius",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "muhlenbergia-capillaris",
       "latin": "Muhlenbergia capillaris",
       "asked": "Muhlenbergia capillaris",
@@ -220,6 +340,36 @@
       "id": "passiflora-incarnata",
       "latin": "Passiflora incarnata",
       "asked": "Passiflora incarnata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "gelsemium-sempervirens",
+      "latin": "Gelsemium sempervirens",
+      "asked": "Gelsemium sempervirens",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lonicera-sempervirens",
+      "latin": "Lonicera sempervirens",
+      "asked": "Lonicera sempervirens",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "bignonia-capreolata",
+      "latin": "Bignonia capreolata",
+      "asked": "Bignonia capreolata",
       "verdict": "NATIVE",
       "areas": {
         "FLA": "NATIVE"

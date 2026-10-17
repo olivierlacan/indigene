@@ -2,8 +2,9 @@
 
 **Status: the one native-status source every region can be re-asked against.**
 `DATA_SOURCES.md` has named WCVP as the global backbone since the scaling
-section was written. Ireland was the first region to stand on it; all twelve now
-do.
+section was written. Ireland was the first region to stand on it; all seventeen
+now do, and `app/src/data/native-check.test.ts` fails a pull request that ships
+a row with no verdict in this folder.
 
 Widening it was not the original plan. It happened because the lists we had
 been measuring against are *recommendation* lists: they can show a gap and
@@ -21,7 +22,12 @@ the check is as fine as the region:
 |---|---|---|
 | Mid-Atlantic | PEN NWJ DEL MRY VRG NWY CNT RHO MAS WVA | good — one native area is enough, and the breakdown is stored |
 | Northern Michigan | MIC | good |
-| Pacific Northwest | WAS ORE | good |
+| Pacific Northwest | WAS ORE BRC | good |
+| St Lawrence Lowlands | QUE ONT NWY VER | good — provinces and states, as fine as the claim; VASCAN answers for Québec too |
+| Chicago & the Corn Belt | ILL | good — the whole state, narrowed by the box |
+| Central Texas | TEX | **weak** — one area from the Piney Woods to El Paso |
+| Auckland & Northland | NZN | good — the North Island |
+| The Kantō Plain | JAP | **floor check only** — one area for the whole country |
 | Both Californias | CAL | **weak** — one area for deserts and coast alike |
 | Both Floridas | FLA | **weak** — one area for the panhandle and the Keys |
 | Ireland | IRE | good — the whole island, which is the claim |
@@ -36,7 +42,10 @@ the country or state at all, which is the error that matters most.
 - Licence: **CC BY 4.0**. Attribution: "Native range from the World Checklist of
   Vascular Plants (WCVP), Royal Botanic Gardens Kew."
 - Refresh: `cd app && npm run native:check -- --region <id>` → `<id>.json`, for any
-  region in the script's `TDWG_AREA` table (all twelve)
+  region in the script's `TDWG_AREA` table (every region); `--all` does them
+  in turn, and `.github/workflows/native.yml` runs that quarterly and opens a
+  PR. A flag already in the committed file is "on record" and fails nothing; a
+  new or changed verdict fails the run
 
 ## What it is admitted for
 

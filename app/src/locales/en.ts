@@ -1524,7 +1524,7 @@ export const en = {
   "lookalikes.notFoundLede": "No look-alike here has the address \u201c{slug}\u201d.",
   "plant.lookalikesTitle": "Don't confuse it with: ",
   // The pavement-pioneer line, under the badge of the same name.
-  "plant.pioneerTitle": "It can take: ",
+  "plant.resilienceTitle": "Resilience",
   // ---------------------------------------------------------------------
   // Native alternatives: "grow this instead of a common ornamental".
   // ---------------------------------------------------------------------
@@ -1709,6 +1709,18 @@ export const en = {
   // ---------------------------------------------------------------------
   "form.tree": "Trees",
   "form.shrub": "Shrubs",
+  "form.chip.tree": "Trees",
+  "form.chip.shrub": "Shrubs",
+  "form.chip.perennial": "Flowers",
+  "form.chip.annual": "Annuals",
+  "form.chip.grass": "Grasses",
+  "form.chip.vine": "Vines",
+  "form.chip.groundcover": "Groundcovers",
+  "form.chip.fern": "Ferns",
+  "filter.typesLabel": "Plant types to show",
+  "filter.typesKeepOne": "Keep at least one type on.",
+  "filter.typesAll": "Showing every plant type. Tap one to hide it.",
+  "filter.typesHiding": "Hiding {types}.",
   "form.perennial": "Perennials & wildflowers",
   "form.annual": "Annuals",
   "form.grass": "Grasses & sedges",
@@ -2628,6 +2640,7 @@ export const en = {
   "reading.why.gardenJungle": "The insects already in your garden, and the small changes that keep them there.",
   "reading.why.postWild": "How to plant natives in layers, like a meadow, so they hold together.",
   "reading.why.camels": "The skeptic's case: most plants from elsewhere do no harm, so judge them by what they do.",
+  "reading.why.calscape": "Every California native by address, with the nurseries that stock it, and a garden planner to lay them out.",
   "reading.why.inaturalist": "Photograph a plant, learn its name, and see where it grows wild near you.",
   "reading.audience.observers.one": "{n} observer",
   "reading.audience.observers.other": "{n} observers",

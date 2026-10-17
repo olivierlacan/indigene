@@ -93,6 +93,7 @@ const preferences: Required<Preferences> = {
     requireNoWater: false,
     maxHeightFt: 6,
     maxSpreadFt: null,
+    hiddenForms: ["tree"],
   },
   sticky: {
     spot: {
@@ -146,6 +147,21 @@ describe("parseSpotsFile", () => {
     expect(read.file.lookups).toEqual(lookups);
     expect(read.file.sightings).toEqual([sighting]);
     expect(read.file.preferences).toEqual(preferences);
+  });
+
+  it("reads filters saved before the plant-type chips as showing every type", () => {
+    const { hiddenForms: _h, ...olderFilters } = preferences.filters;
+    const text = JSON.stringify({ ...file([spot], [planting]), preferences: { ...preferences, filters: olderFilters } });
+    const read = parseSpotsFile(text);
+    expect(read.ok).toBe(true);
+    if (!read.ok) return;
+    expect(read.file.preferences.filters).toEqual({ ...olderFilters, hiddenForms: [] });
+  });
+
+  it("drops plant types it doesn't know from saved filters", () => {
+    const filters = { ...preferences.filters, hiddenForms: ["tree", "bush", 7] };
+    const read = parseSpotsFile(JSON.stringify({ ...file([spot], [planting]), preferences: { ...preferences, filters } }));
+    expect(read.ok && read.file.preferences.filters?.hiddenForms).toEqual(["tree"]);
   });
 
   it("still reads a version-1 file, with nothing extra", () => {

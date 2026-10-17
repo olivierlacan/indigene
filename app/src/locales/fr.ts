@@ -1487,7 +1487,7 @@ export const fr: Dict = {
   "lookalikes.notFoundLede": "Aucun sosie ici n'a l'adresse «\u202f{slug}\u202f».",
   "plant.lookalikesTitle": "À ne pas confondre avec : ",
   // La ligne des pionnières du bitume, sous l'étiquette du même nom.
-  "plant.pioneerTitle": "Elle encaisse : ",
+  "plant.resilienceTitle": "Résilience",
   // ---------------------------------------------------------------------
   // Alternatives natives : « planter ceci plutôt qu'un ornemental courant ».
   // ---------------------------------------------------------------------
@@ -1664,6 +1664,18 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   "form.tree": "Arbres",
   "form.shrub": "Arbustes",
+  "form.chip.tree": "Arbres",
+  "form.chip.shrub": "Arbustes",
+  "form.chip.perennial": "Fleurs",
+  "form.chip.annual": "Annuelles",
+  "form.chip.grass": "Graminées",
+  "form.chip.vine": "Grimpantes",
+  "form.chip.groundcover": "Couvre-sols",
+  "form.chip.fern": "Fougères",
+  "filter.typesLabel": "Types de plantes à afficher",
+  "filter.typesKeepOne": "Gardez au moins un type.",
+  "filter.typesAll": "Tous les types de plantes. Touchez-en un pour le masquer.",
+  "filter.typesHiding": "Masqués : {types}.",
   "form.perennial": "Vivaces et fleurs sauvages",
   "form.annual": "Annuelles",
   "form.grass": "Graminées et laîches",
@@ -2552,6 +2564,7 @@ export const fr: Dict = {
   "reading.why.gardenJungle": "Les insectes déjà dans votre jardin, et les petits gestes qui les y gardent.",
   "reading.why.postWild": "Planter les indigènes en strates, comme une prairie, pour qu'elles se tiennent.",
   "reading.why.camels": "Le point de vue sceptique : la plupart des plantes venues d'ailleurs ne nuisent pas, alors jugez-les à ce qu'elles font.",
+  "reading.why.calscape": "Chaque plante indigène de Californie par adresse, avec les pépinières qui la vendent, et un planificateur pour composer son jardin.",
   "reading.why.inaturalist": "Photographiez une plante, apprenez son nom et voyez où elle pousse à l'état sauvage près de chez vous.",
   "reading.audience.observers.one": "{n} observateur",
   "reading.audience.observers.other": "{n} observateurs",

@@ -5,6 +5,7 @@
 // the plant's page. Category pages are shareable straight-to-the-point URLs
 // ("the trees of the PNW") and let you jump to the same category in another
 // region without going back through the roster.
+import { FORM_ORDER } from "../lib/forms";
 import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { REGIONS, loadPlants } from "../lib/plants";
@@ -39,7 +40,6 @@ import { alternativeCountForRegion } from "../lib/alternatives";
 import { richText } from "../components/rich-text";
 import { pioneersUntranslated } from "../lib/prose";
 
-const FORM_ORDER: PlantForm[] = ["tree", "shrub", "perennial", "annual", "grass", "vine", "groundcover", "fern"];
 /** The category headings. A function, not a record: a record built at import
  *  time would be stuck in whichever language loaded first. */
 const formLabel = (f: PlantForm): string => t(`form.${f}` as const);

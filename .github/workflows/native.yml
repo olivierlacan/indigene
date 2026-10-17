@@ -1,0 +1,154 @@
+# Re-asks the two botanical authorities every quarter whether every plant we
+# call native still is — Kew's World Checklist for all seventeen regions, and
+# VASCAN for the two whose lists cross into Canada.
+#
+# `native-check.test.ts` already refuses a pull request that ships a row with no
+# verdict on record. What it cannot see is a verdict that *moves*: Kew revising
+# a range, a synonym resolving differently, a name we spell one way and the
+# checklist now spells another. Those only show when somebody re-asks, and
+# nobody re-asks on a schedule by hand. This does.
+#
+# Two things are deliberate:
+#
+#   - **It fails on change, not on disagreement.** Fifteen rows are on record as
+#     ones Kew does not confirm (Michigan's harebell, the Mid-Atlantic's foxglove
+#     beardtongue); the plant pages say so, and `check-native.mjs` prints them
+#     as "on record" without failing. A NEW flag, a CHANGED verdict, or a row the
+#     service didn't answer for fails the job — and still opens the PR, so the
+#     snapshot diff is there to read.
+#   - **It commits what it found either way.** The snapshots and the evidence
+#     table the plant pages read are pushed as a PR, the way `reconcile.yml`
+#     and `vernacular.yml` do it, so the "checked on" date on every plant page
+#     moves forward with the check rather than drifting behind it.
+#
+# Same arrangement as the other scheduled checks: the step that pipes through
+# `tee` sets `shell: bash`, because the default shell drops the pipe's exit code
+# and a failed check would read as green.
+name: Re-ask Kew and VASCAN
+
+on:
+  workflow_dispatch:
+    inputs:
+      region:
+        description: "One region id (empty = every region)"
+        type: string
+        default: ""
+  schedule:
+    - cron: "0 6 22 1,4,7,10 *" # 06:00 UTC on the 22nd, quarterly
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: native-reask
+  cancel-in-progress: false
+
+jobs:
+  reask:
+    name: Re-ask the checklists
+    runs-on: ubuntu-latest
+    env:
+      REGION: ${{ inputs.region || '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      # continue-on-error so a changed verdict still produces the snapshot and
+      # the PR — a reviewer needs to see *what* moved. The last step re-reads
+      # the outcome and fails the job.
+      - name: Re-ask Kew's World Checklist about every row
+        id: kew
+        continue-on-error: true
+        working-directory: app
+        shell: bash # explicit, so pipefail is on and tee can't hide a failure
+        run: |
+          if [ -n "$REGION" ]; then
+            npm run native:check -- --region "$REGION" | tee "$RUNNER_TEMP/kew.txt"
+          else
+            npm run native:check -- --all | tee "$RUNNER_TEMP/kew.txt"
+          fi
+
+      - name: Reduce the snapshots to what the plant pages show
+        working-directory: app
+        run: npm run native-evidence
+
+      # VASCAN's Darwin Core Archive is 2.9 MB and git-ignored; the check reads
+      # it offline. Fetched here rather than through `probe:vascan`, which would
+      # also rewrite the probe snapshot.
+      - name: Fetch VASCAN's archive
+        run: |
+          mkdir -p data/sources/vascan/dwca
+          curl -sSL --retry 3 -o data/sources/vascan/vascan-dwca.zip \
+            "https://data.canadensys.net/ipt/archive.do?r=vascan"
+          unzip -q -o data/sources/vascan/vascan-dwca.zip -d data/sources/vascan/dwca
+
+      - name: Check the cross-border lists against VASCAN
+        id: vascan
+        continue-on-error: true
+        working-directory: app
+        shell: bash # explicit, so pipefail is on and tee can't hide a failure
+        run: npm run vascan:check | tee "$RUNNER_TEMP/vascan.txt"
+
+      - name: Read the reports
+        id: report
+        if: always()
+        run: |
+          {
+            echo "text<<REPORT_EOF"
+            echo "### Kew WCVP"
+            echo '```'
+            sed -n '/^Summary:/,$p' "$RUNNER_TEMP/kew.txt" 2>/dev/null || true
+            grep -E '^  (NEW|CHG|ERR) ' "$RUNNER_TEMP/kew.txt" 2>/dev/null || echo "no new or changed verdict"
+            echo '```'
+            echo "### VASCAN"
+            echo '```'
+            cat "$RUNNER_TEMP/vascan.txt" 2>/dev/null || echo "_(no report written)_"
+            echo '```'
+            echo "REPORT_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      # See reconcile.yml for why this is continue-on-error: the branch is
+      # pushed either way, and opening the PR automatically needs "Allow GitHub
+      # Actions to create and approve pull requests" in the repo settings.
+      - name: Open a PR with the refreshed verdicts
+        continue-on-error: true
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: native/reask
+          title: "Re-ask Kew and VASCAN about every plant we call native"
+          commit-message: "Refresh the WCVP verdicts and the native-evidence table"
+          body: |
+            Quarterly re-check of every row's native status against Kew's World
+            Checklist of Vascular Plants (all regions) and VASCAN (the Pacific
+            Northwest and St Lawrence lists, for British Columbia and Québec).
+
+            A **CHANGED** verdict means Kew now says something different about a
+            plant we ship: read the row, then decide — a disagreement is
+            editorial (`data/sources/wcvp/README.md`), never smoothed over. A
+            **NEW** flag is a plant added since the last check that the
+            checklist does not confirm. Rows already on record print as such and
+            fail nothing. The "checked on" date on every plant page moves to
+            this run when this merges.
+
+            ${{ steps.report.outputs.text }}
+
+            🤖 Generated with [Claude Code](https://claude.com/claude-code)
+          add-paths: |
+            data/sources/wcvp/*.json
+            app/src/data/native-evidence.json
+
+      - name: Fail if a verdict is new, changed, or missing
+        if: steps.kew.outcome == 'failure' || steps.vascan.outcome == 'failure'
+        run: |
+          echo "::error::A native-status verdict changed, a new row is unconfirmed, or VASCAN records an introduction. Read the PR."
+          exit 1

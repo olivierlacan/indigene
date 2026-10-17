@@ -23,6 +23,14 @@
 //   - Mediterranean     the INVMED conservatories, PACA « Majeure »
 //   - Continental       the Grand Est conservatories, « implantée »
 //   - Pacific Northwest Washington Natural Heritage (WIRS), High and Moderate
+//   - Central Texas     the Texas Invasive Plant & Pest Council, High
+//   - Atlantic          the Brest conservatory, Brittany, « invasive avérée »
+//   - Alpine            the Alpine conservatory, Rhône-Alpes, « avérée »
+//   - Ireland           the 2013 all-island risk assessment, High Impact
+//
+// Each list then ends with a plant from its old five that the same authority
+// rates a step lower — butterfly bush in Brittany and Ireland, pokeweed in the
+// Alps, nandina in Texas — rather than dropping it.
 //
 // The Northwest's ten mix two sources. WIRS has ranked 71 plants so far, and
 // not Scotch broom, herb-robert or English ivy: those keep the weed board's
@@ -30,15 +38,19 @@
 // until WIRS gets to them.
 //
 // Where no body has rated the ground in a form we can check — northern
-// Michigan, Central Texas, Atlantic and Alpine France, Ireland — the five are
-// plants the local authorities name as invasive, again taken by sightings, and
-// the page says the order is sightings alone. Beech and sycamore turn up high in the French and
-// Irish counts and are left out: native in France, and nobody's target in
-// Ireland.
+// Michigan — the five are plants the local authorities name as invasive, again
+// taken by sightings, and the page says the order is sightings alone. Michigan's
+// lists are management priorities (what to map, what to treat) or law, and the
+// one scored list nearby is a single Upper Peninsula forest's. Beech and
+// sycamore turn up high in the French and Irish counts and are left out: native
+// in France, and only Medium Impact in Ireland — below the top tier, and native
+// across the Channel, so it stays off a "worst" list.
 //
 // Chicago's five come from Illinois' Exotic Weed Act list. That is a law about
 // sale and planting, not a ranking of harm, so they carry no listing and are
-// ordered by sightings like the others.
+// ordered by sightings like the others. Indiana's council scores plants, but it
+// covers only the Indiana edge of the region, defines its top tier by what may
+// be regulated, and puts all five in that tier — it would change no order.
 //
 // The counts live in `invasive-counts.json` (`npm run invasives:count`), and
 // `lib/invasives.ts` does the ranking at runtime, so a refreshed count can
@@ -1164,6 +1176,73 @@ const wirs = (as: "High" | "Moderate" | "Low", code: string): LookalikeListing =
   as,
   url: `https://dnr.wa.gov/sites/default/files/2025-05/amp_nh_wirs_${code}.pdf`,
 });
+/**
+ * The Texas Invasive Plant & Pest Council's inventory: Cal-IPC's own criteria,
+ * re-scored for Texas ecoregions, so its words mean what Cal-IPC's do. One
+ * page per species, named by its USDA PLANTS symbol. Statewide, not per
+ * ecoregion, and scored 2011–13.
+ */
+const tippc = (as: "High" | "Moderate" | "Limited", symbol: string): LookalikeListing => ({
+  kind: "impact",
+  level: as === "High" ? "transforms" : as === "Moderate" ? "spreads" : "patchy",
+  by: "the Texas Invasive Plant & Pest Council",
+  as,
+  url: `https://www.texasinvasives.org/professionals/assessment_detail.php?symbol=${symbol}`,
+});
+/** Brittany's 2024 list, CBN de Brest. « Invasive avérée installée » (IA1i) is
+ *  a plant spreading through natural habitats and changing them; « potentielle »
+ *  is one so far invasive only on disturbed or man-made ground. */
+const BRETAGNE_URL = "https://www.cbnbrest.fr/pmb_pdf/CBNB_Burguin_2024_71957.pdf";
+const BRETAGNE_IA: LookalikeListing = {
+  kind: "impact",
+  level: "transforms",
+  by: "the Brest botanical conservatory",
+  as: "invasive avérée installée",
+  url: BRETAGNE_URL,
+};
+const BRETAGNE_IP: LookalikeListing = {
+  kind: "impact",
+  level: "patchy",
+  by: "the Brest botanical conservatory",
+  as: "invasive potentielle",
+  url: BRETAGNE_URL,
+};
+/** The Alpine conservatory's 2020 ranked list for Rhône-Alpes — Savoie,
+ *  Haute-Savoie, Isère. « Avérée » is invasive in natural habitats with real
+ *  damage (Lavergne score 4–5); « potentielle » only on cultivated or disturbed
+ *  ground (3). Linked at the Société botanique de France's copy, which answers
+ *  where the DRAAF original often doesn't. */
+const ALPES_URL = "https://societebotaniquedefrance.fr/wp-content/uploads/2021/10/Rhone-Alpes_invasives.pdf";
+const ALPES_AVEREE: LookalikeListing = {
+  kind: "impact",
+  level: "transforms",
+  by: "the Alpine botanical conservatory",
+  as: "espèce exotique envahissante avérée",
+  url: ALPES_URL,
+};
+const ALPES_POTENTIELLE: LookalikeListing = {
+  kind: "impact",
+  level: "patchy",
+  by: "the Alpine botanical conservatory",
+  as: "espèce exotique envahissante potentielle",
+  url: ALPES_URL,
+};
+/** Ireland's all-island risk assessment (Kelly, O'Flynn & Maguire, 2013),
+ *  republished by the National Biodiversity Data Centre as two lists. */
+const IRELAND_HIGH: LookalikeListing = {
+  kind: "impact",
+  level: "transforms",
+  by: "the National Biodiversity Data Centre",
+  as: "High Impact",
+  url: "https://invasives.ie/app/uploads/2022/01/Invasives_taggedlist_HighImpact_2013RA-1.pdf",
+};
+const IRELAND_MEDIUM: LookalikeListing = {
+  kind: "impact",
+  level: "spreads",
+  by: "the National Biodiversity Data Centre",
+  as: "Medium Impact",
+  url: "https://invasives.ie/app/uploads/2022/01/Invasives_taggedMediumImpact_2013RA-2.pdf",
+};
 /** Washington's classes are one per species page, so the URL is per row. */
 const waClass = (klass: "B" | "C", slug: string): LookalikeListing => ({
   kind: "regulation",
@@ -1182,10 +1261,10 @@ const WA = "Washington State Noxious Weed Control Board.";
 const WIRS = "Washington Natural Heritage Program, Washington Invasive Ranking System (2025); Washington State Noxious Weed Control Board.";
 const PACA = "INVMED — CBN Méditerranéen & CBN Alpin, liste des EVEE de Provence-Alpes-Côte d'Azur.";
 const GE = "CBN Nord-Est, CBA & CBN Bassin parisien, liste catégorisée des EEE du Grand Est (2020).";
-const FR_ATL = "CBN de Brest, liste des plantes vasculaires invasives de Bretagne; OFB Centre de ressources EEE.";
-const FR_ALP = "CBN Alpin, espèces végétales exotiques envahissantes des Alpes; OFB Centre de ressources EEE.";
-const TX = "Texas Invasive Species Institute, Invaders of Texas (texasinvasives.org).";
-const IE = "National Biodiversity Data Centre, invasive species of Ireland; Invasive Species Ireland.";
+const FR_ATL = "CBN de Brest, liste des plantes vasculaires exotiques envahissantes en Bretagne (Burguin, 2024); OFB Centre de ressources EEE.";
+const FR_ALP = "CBN Alpin, liste actualisée et hiérarchisée des EEE de Rhône-Alpes (2020); OFB Centre de ressources EEE.";
+const TX = "Texas Invasive Plant & Pest Council, Texas Invasive Plant Inventory; Texas Invasive Species Institute.";
+const IE = "Kelly, O'Flynn & Maguire, risk analysis and prioritisation for invasive species in Ireland (2013); National Biodiversity Data Centre.";
 
 // ---- The ties: each region's list, in any order — `lib/invasives.ts` ranks it ----
 export const MOST_WANTED: Record<string, WantedLink[]> = {
@@ -1211,11 +1290,12 @@ export const MOST_WANTED: Record<string, WantedLink[]> = {
     { invasiveId: "lonicera-morrowii", basis: MI },
   ],
   "central-texas": [
-    { invasiveId: "melia-azedarach", basis: TX },
-    { invasiveId: "sorghum-halepense", basis: TX },
-    { invasiveId: "rapistrum-rugosum", basis: TX },
-    { invasiveId: "ligustrum-lucidum", basis: TX },
-    { invasiveId: "nandina-domestica", basis: TX },
+    { invasiveId: "melia-azedarach", listing: tippc("High", "MEAZ"), basis: TX },
+    { invasiveId: "sorghum-halepense", listing: tippc("High", "SOHA"), basis: TX },
+    { invasiveId: "rapistrum-rugosum", listing: tippc("High", "RARU"), basis: TX },
+    { invasiveId: "ligustrum-lucidum", listing: tippc("High", "LILU2"), basis: TX },
+    { invasiveId: "arundo-donax", listing: tippc("High", "ARDO4"), basis: TX },
+    { invasiveId: "nandina-domestica", listing: tippc("Moderate", "NADO"), basis: TX },
   ],
   // WIRS where it has ranked the plant; the weed board's class where it hasn't
   // yet, which ranks it after the rated ones. Himalayan blackberry is WIRS's
@@ -1261,11 +1341,14 @@ export const MOST_WANTED: Record<string, WantedLink[]> = {
     { invasiveId: "ardisia-elliptica", listing: FISC_I, basis: FL },
   ],
   "france-atlantic": [
-    { invasiveId: "buddleja-davidii", basis: FR_ATL },
-    { invasiveId: "robinia-pseudoacacia", basis: FR_ATL },
-    { invasiveId: "prunus-laurocerasus", basis: FR_ATL },
-    { invasiveId: "reynoutria-japonica", basis: FR_ATL },
-    { invasiveId: "senecio-inaequidens", basis: FR_ATL },
+    { invasiveId: "robinia-pseudoacacia", listing: BRETAGNE_IA, basis: FR_ATL },
+    { invasiveId: "prunus-laurocerasus", listing: BRETAGNE_IA, basis: FR_ATL },
+    { invasiveId: "reynoutria-japonica", listing: BRETAGNE_IA, basis: FR_ATL },
+    { invasiveId: "senecio-inaequidens", listing: BRETAGNE_IA, basis: FR_ATL },
+    { invasiveId: "rhododendron-ponticum", listing: BRETAGNE_IA, basis: FR_ATL },
+    { invasiveId: "carpobrotus-edulis", listing: BRETAGNE_IA, basis: FR_ATL },
+    { invasiveId: "cortaderia-selloana", listing: BRETAGNE_IA, basis: FR_ATL },
+    { invasiveId: "buddleja-davidii", listing: BRETAGNE_IP, basis: FR_ATL },
   ],
   "france-continental": [
     { invasiveId: "robinia-pseudoacacia", listing: GRAND_EST_IMPLANTEE, basis: GE },
@@ -1282,17 +1365,20 @@ export const MOST_WANTED: Record<string, WantedLink[]> = {
     { invasiveId: "carpobrotus-edulis", listing: INVMED_MAJEURE, basis: PACA },
   ],
   "france-alpine": [
-    { invasiveId: "buddleja-davidii", basis: FR_ALP },
-    { invasiveId: "phytolacca-americana", basis: FR_ALP },
-    { invasiveId: "robinia-pseudoacacia", basis: FR_ALP },
-    { invasiveId: "ailanthus-altissima", basis: FR_ALP },
-    { invasiveId: "reynoutria-japonica", basis: FR_ALP },
+    { invasiveId: "buddleja-davidii", listing: ALPES_AVEREE, basis: FR_ALP },
+    { invasiveId: "robinia-pseudoacacia", listing: ALPES_AVEREE, basis: FR_ALP },
+    { invasiveId: "ailanthus-altissima", listing: ALPES_AVEREE, basis: FR_ALP },
+    { invasiveId: "reynoutria-japonica", listing: ALPES_AVEREE, basis: FR_ALP },
+    { invasiveId: "reynoutria-x-bohemica", listing: ALPES_AVEREE, basis: FR_ALP },
+    { invasiveId: "impatiens-glandulifera", listing: ALPES_AVEREE, basis: FR_ALP },
+    { invasiveId: "phytolacca-americana", listing: ALPES_POTENTIELLE, basis: FR_ALP },
   ],
   ireland: [
-    { invasiveId: "buddleja-davidii", basis: IE },
-    { invasiveId: "rhododendron-ponticum", basis: IE },
-    { invasiveId: "prunus-laurocerasus", basis: IE },
-    { invasiveId: "impatiens-glandulifera", basis: IE },
-    { invasiveId: "gunnera-tinctoria", basis: IE },
+    { invasiveId: "rhododendron-ponticum", listing: IRELAND_HIGH, basis: IE },
+    { invasiveId: "prunus-laurocerasus", listing: IRELAND_HIGH, basis: IE },
+    { invasiveId: "impatiens-glandulifera", listing: IRELAND_HIGH, basis: IE },
+    { invasiveId: "gunnera-tinctoria", listing: IRELAND_HIGH, basis: IE },
+    { invasiveId: "reynoutria-japonica", listing: IRELAND_HIGH, basis: IE },
+    { invasiveId: "buddleja-davidii", listing: IRELAND_MEDIUM, basis: IE },
   ],
 };

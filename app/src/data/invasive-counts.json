@@ -11,7 +11,7 @@
     "north-michigan": {
       "centaurea-stoebe": 1833,
       "elaeagnus-umbellata": 1039,
-      "securigera-varia": 821,
+      "securigera-varia": 822,
       "lythrum-salicaria": 557,
       "lonicera-morrowii": 442
     },
@@ -24,22 +24,22 @@
     },
     "pnw": {
       "reynoutria-x-bohemica": 605,
-      "ilex-aquifolium": 22602,
+      "ilex-aquifolium": 22605,
       "rubus-armeniacus": 13175,
       "crataegus-monogyna": 12581,
       "iris-pseudacorus": 5908,
       "jacobaea-vulgaris": 12693,
       "clematis-vitalba": 2809,
       "cytisus-scoparius": 24813,
-      "geranium-robertianum": 26092,
-      "hedera-helix": 15970
+      "geranium-robertianum": 26093,
+      "hedera-helix": 15971
     },
     "ca-south-coast": {
       "spartium-junceum": 4406,
       "carpobrotus-edulis": 4055,
       "oncosiphon-pilulifer": 3389,
       "arundo-donax": 3360,
-      "cortaderia-selloana": 2859
+      "cortaderia-selloana": 2860
     },
     "ca-central-coast": {
       "genista-monspessulana": 11619,
@@ -53,6 +53,7 @@
       "sorghum-halepense": 14023,
       "rapistrum-rugosum": 13178,
       "ligustrum-lucidum": 12758,
+      "arundo-donax": 4328,
       "nandina-domestica": 11271
     },
     "florida-central": {
@@ -70,11 +71,14 @@
       "ardisia-elliptica": 2033
     },
     "france-atlantic": {
-      "buddleja-davidii": 5040,
       "robinia-pseudoacacia": 3701,
       "prunus-laurocerasus": 3336,
       "reynoutria-japonica": 3034,
-      "senecio-inaequidens": 2850
+      "senecio-inaequidens": 2851,
+      "rhododendron-ponticum": 1953,
+      "carpobrotus-edulis": 550,
+      "cortaderia-selloana": 1167,
+      "buddleja-davidii": 5040
     },
     "france-continental": {
       "robinia-pseudoacacia": 5112,
@@ -92,17 +96,20 @@
     },
     "france-alpine": {
       "buddleja-davidii": 903,
-      "phytolacca-americana": 823,
       "robinia-pseudoacacia": 769,
       "ailanthus-altissima": 533,
-      "reynoutria-japonica": 461
+      "reynoutria-japonica": 461,
+      "reynoutria-x-bohemica": 29,
+      "impatiens-glandulifera": 447,
+      "phytolacca-americana": 823
     },
     "ireland": {
-      "buddleja-davidii": 838,
       "rhododendron-ponticum": 763,
       "prunus-laurocerasus": 618,
       "impatiens-glandulifera": 608,
-      "gunnera-tinctoria": 334
+      "gunnera-tinctoria": 334,
+      "reynoutria-japonica": 311,
+      "buddleja-davidii": 838
     }
   }
 }

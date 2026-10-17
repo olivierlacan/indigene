@@ -150,7 +150,17 @@ async function getJson(src, url, headers = {}, attempt = 0) {
       }
     }
     if (!res.ok) return null;
-    return await res.json();
+    const text = await res.text();
+    try {
+      return JSON.parse(text);
+    } catch {
+      // A 200 that isn't JSON is the service answering with an error page (Tela
+      // writes its SQL errors that way). It is not a dropped connection, so it
+      // is counted under its own key and not retried: retrying a bad request
+      // gets the same page, slower.
+      noteStatus(src, `${res.status}-not-json`);
+      return null;
+    }
   } catch {
     // A reset connection is about the wire, not the taxon — and read as "no
     // name" it turns one dropped packet into a row that looks unbacked. One
@@ -284,10 +294,14 @@ async function fromBdtfx(latin) {
 
   // `nom_vernaculaire` has to be *asked for*: a field left out of
   // `retour.champs` comes back null rather than omitted, so reading it without
-  // requesting it looks exactly like a taxon with no French name.
+  // requesting it looks exactly like a taxon with no French name. And nothing
+  // else may be asked for: this list once named `conseil_emploi`, which is not
+  // a column of Tela's table, and the service answered every request with an
+  // SQL error as text under a 200. Read as "no name", that made Tela look dark
+  // for a whole quarter (measured 2026-10-17, from a browser and from here).
   const vernUrl =
     `${TELA_EFLORE}/nvjfl/noms-vernaculaires?masque.nt=${encodeURIComponent(nt)}` +
-    `&retour.champs=nom_vernaculaire,num_statut,conseil_emploi&navigation.limite=30`;
+    `&retour.champs=nom_vernaculaire,num_statut&navigation.limite=30`;
   const verns = await getJson("bdtfx", vernUrl, accept);
   const rows = Object.values(verns?.resultat ?? {}).filter(Boolean);
   const pick =

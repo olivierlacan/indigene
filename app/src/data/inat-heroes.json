@@ -1439,6 +1439,15 @@
     "attribution": "(c) harum.koh, some rights reserved (CC BY-SA), uploaded by harum.koh",
     "color": "#666f3c"
   },
+  "euthamia-caroliniana": {
+    "taxonId": 129032,
+    "photoId": 100509967,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/100509967/square.jpeg",
+    "observer": "Lauren McLaurin",
+    "license": "cc-by",
+    "attribution": "(c) Lauren McLaurin, some rights reserved (CC BY), uploaded by Lauren McLaurin",
+    "color": "#6c7928"
+  },
   "euthamia-occidentalis": {
     "taxonId": 58826,
     "photoId": 23392855,
@@ -2042,6 +2051,15 @@
     "attribution": "(c) Li Jianong, some rights reserved (CC BY-NC), uploaded by Li Jianong",
     "color": "#3a4224"
   },
+  "liquidambar-styraciflua": {
+    "taxonId": 49658,
+    "photoId": 239888168,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/239888168/square.jpeg",
+    "observer": "Randy Puckett",
+    "license": "cc-by-nc",
+    "attribution": "(c) Randy Puckett, some rights reserved (CC BY-NC), uploaded by Randy Puckett",
+    "color": "#936c67"
+  },
   "lobelia-siphilitica": {
     "taxonId": 119806,
     "photoId": 153600161,
@@ -2113,6 +2131,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Sonia Paź-Dyderska, some rights reserved (CC BY-NC), uploaded by Sonia Paź-Dyderska",
     "color": "#647f2c"
+  },
+  "lyonia-lucida": {
+    "taxonId": 129433,
+    "photoId": 76628034,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/76628034/square.jpg",
+    "observer": "cotinis",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) cotinis, some rights reserved (CC BY-NC-SA)",
+    "color": "#796f5d"
   },
   "machilus-thunbergii": {
     "taxonId": 341952,
@@ -2528,6 +2555,15 @@
     "attribution": "(c) Ad Konings, some rights reserved (CC BY-NC), uploaded by Ad Konings",
     "color": "#6a86af"
   },
+  "pinus-elliottii": {
+    "taxonId": 69985,
+    "photoId": 471031454,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/471031454/square.jpg",
+    "observer": "Jean-Paul Boerekamps",
+    "license": "cc0",
+    "attribution": "no rights reserved, uploaded by Jean-Paul Boerekamps",
+    "color": "#6d7b63"
+  },
   "pinus-ponderosa": {
     "taxonId": 81248,
     "photoId": 8702067,
@@ -2878,6 +2914,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Sunny Corey Tsai, some rights reserved (CC BY-NC), uploaded by Sunny Corey Tsai",
     "color": "#3e3813"
+  },
+  "quercus-laevis": {
+    "taxonId": 128752,
+    "photoId": 143245430,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/143245430/square.jpg",
+    "observer": "Keith Bradley",
+    "license": "cc-by-nc",
+    "attribution": "(c) Keith Bradley, some rights reserved (CC BY-NC), uploaded by Keith Bradley",
+    "color": "#8b7124"
   },
   "quercus-lobata": {
     "taxonId": 49011,
@@ -3274,6 +3319,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) fritillariabiflora, some rights reserved (CC BY-NC)",
     "color": "#6e6d38"
+  },
+  "sambucus-canadensis": {
+    "taxonId": 84300,
+    "photoId": 104695913,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/104695913/square.jpg",
+    "observer": "Rison Thumboor",
+    "license": "cc-by-sa",
+    "attribution": "(c) Rison Thumboor, some rights reserved (CC BY-SA)",
+    "color": "#6c7a4b"
   },
   "sambucus-nigra-caerulea": {
     "taxonId": 143799,
@@ -3761,6 +3815,15 @@
     "attribution": "(c) John C., some rights reserved (CC BY-NC), uploaded by John C.",
     "color": "#907c6d"
   },
+  "vaccinium-myrsinites": {
+    "taxonId": 170106,
+    "photoId": 115106149,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/115106149/square.jpeg",
+    "observer": "marylusk",
+    "license": "cc-by-nc",
+    "attribution": "(c) marylusk, some rights reserved (CC BY-NC), uploaded by marylusk",
+    "color": "#938475"
+  },
   "vaccinium-parvifolium": {
     "taxonId": 48354,
     "photoId": 423599790,
@@ -3913,6 +3976,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) roomthily, some rights reserved (CC BY-NC), uploaded by roomthily",
     "color": "#6d6832"
+  },
+  "vitis-rotundifolia": {
+    "taxonId": 82529,
+    "photoId": 76764131,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/76764131/square.jpg",
+    "observer": "Mary Keim",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Mary Keim, some rights reserved (CC BY-NC-SA)",
+    "color": "#565d2b"
   },
   "white-letter-hairstreak": {
     "taxonId": 318441,

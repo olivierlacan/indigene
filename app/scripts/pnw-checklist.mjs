@@ -16,22 +16,30 @@
 //   own "Origin" column comes from specimen labels and disagrees with itself,
 //   so it is not read. robots.txt allows the county list.
 //
+// - **Oregon, again: OregonFlora's checklist** (Oregon State University),
+//   version 2.4 of May 2026 — newer than the Burke download, and the only one
+//   of the three that covers **southern Oregon**, the Klamath country the
+//   flora leaves out. Its robots.txt shuts out every agent but the big search
+//   engines, so a person downloads it from
+//   https://oregonflora.org/pages/taxonomic-checklist.php into
+//   `raw/oregonflora/`. Statewide, so it says native *in Oregon*, east side
+//   included.
+//
 // The flora's region is wider than ours: it reaches east to western Montana and
-// north to 51° N in British Columbia, and leaves out **southern Oregon** — the
-// Klamath country our region runs down to. So a native here means native
-// somewhere in the flora's region; the county count says whether that includes
-// our side of the mountains. Southern Oregon's answer is OregonFlora's (Oregon
-// State University), whose robots.txt keeps scripts off: see the README.
+// north to 51° N in British Columbia. So a native there means native somewhere
+// in the flora's region; the county count says whether that includes our side
+// of the mountains.
 //
 // ## Usage
 //
 //   npm run pnw:checklist              build the CSV and check our rows
-//   npm run pnw:checklist -- --fetch   download both sources again first
+//   npm run pnw:checklist -- --fetch   download the Burke and herbaria files again
+//                                      (OregonFlora's is always by hand)
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { requireProxyAwareFetch } from "./_net.mjs";
-import { checklistRows, lookup, readTsv, toCsv } from "./_pnwflora.mjs";
+import { checklistRows, lookup, OREGONFLORA_COLUMNS, oregonfloraRows, readCsv, readTsv, toCsv } from "./_pnwflora.mjs";
 
 const DIR = fileURLToPath(new URL("../../data/sources/pnw-flora/", import.meta.url));
 const RAW = `${DIR}raw/`;
@@ -100,24 +108,64 @@ function build() {
   return rows;
 }
 
-/** What the checklist says about every plant the region ships. */
-function checkOurs(rows) {
+const OREGONFLORA = `${RAW}oregonflora/Checklist_ForWeb.csv`;
+
+/** OregonFlora's checklist, when a person has put it in `raw/`. */
+function buildOregonFlora() {
+  if (!existsSync(OREGONFLORA)) {
+    console.log(`\nNo OregonFlora checklist in raw/oregonflora/ — see the README to download it.`);
+    return null;
+  }
+  // Their export is Windows-1252, not UTF-8 ("Sesleria caerulea", "×").
+  const text = new TextDecoder("windows-1252").decode(readFileSync(OREGONFLORA));
+  const rows = oregonfloraRows(readCsv(text));
+  const version = text.match(/OregonFlora Checklist version [^"\n]+/)?.[0] ?? "OregonFlora Checklist";
+  writeFileSync(`${DIR}oregonflora.csv`, toCsv(rows, OREGONFLORA_COLUMNS));
+  const count = (o) => rows.filter((r) => r.origin === o).length;
+  console.log(`\n${version}: ${rows.length} accepted taxa`);
+  console.log(`  native ${count("native")} · exotic, naturalized ${count("exotic, naturalized")} · exotic, not naturalized ${count("exotic, not naturalized")} · native and exotic ${count("native and exotic")} · uncertain ${count("uncertain")}`);
+  console.log("→ data/sources/pnw-flora/oregonflora.csv");
+  return { version, rows };
+}
+
+const find = (rows, latin) => lookup(rows, latin) ?? lookup(rows, latin.split(" ").slice(0, 2).join(" "));
+
+/** What both checklists say about every plant the region ships. */
+function checkOurs(burke, oregon) {
   const src = readFileSync(fileURLToPath(new URL("../src/data/plants.pnw.ts", import.meta.url)), "utf8");
   const ours = [...src.matchAll(/latin: "([^"]+)"/g)].map((m) => m[1]);
-  const flag = [];
-  for (const latin of ours) {
-    const r = lookup(rows, latin) ?? lookup(rows, latin.split(" ").slice(0, 2).join(" "));
-    if (!r) flag.push(`  ${latin.padEnd(30)} not on the checklist under this name or a synonym`);
-    else if (r.origin !== "native") flag.push(`  ${latin.padEnd(30)} ${r.origin || "no origin"}${r.name !== latin ? ` (as ${r.name})` : ""}`);
-    else if (!r.westCounties) flag.push(`  ${latin.padEnd(30)} native, but no specimen west of the crest`);
-    else if (r.name !== latin) flag.push(`  ${latin.padEnd(30)} native, filed as ${r.name}`);
+  const verdicts = ours.map((latin) => {
+    const b = find(burke, latin);
+    const o = oregon && find(oregon.rows, latin);
+    return {
+      latin,
+      burke: b ? { name: b.name, origin: b.origin, westCounties: b.westCounties } : null,
+      oregonflora: oregon ? (o ? { name: o.name, origin: o.origin } : null) : undefined,
+    };
+  });
+  // Clean: native in both, under our own name, with a specimen west of the crest.
+  const clean = (v) =>
+    v.burke?.origin === "native" &&
+    v.burke.name === v.latin &&
+    v.burke.westCounties > 0 &&
+    (v.oregonflora === undefined || (v.oregonflora?.origin === "native" && v.oregonflora.name === v.latin));
+  const say = (x, w) => (!x ? "not listed" : `${x.origin || "no origin"}${x.name !== w ? ` as ${x.name}` : ""}`);
+  const flagged = verdicts.filter((v) => !clean(v));
+  console.log(`\nOur ${ours.length} PNW rows: ${ours.length - flagged.length} native in both, under our name, with west-side specimens.`);
+  for (const v of flagged) {
+    const west = v.burke && !v.burke.westCounties ? " · no west-side specimen" : "";
+    const of = v.oregonflora === undefined ? "" : ` · OregonFlora: ${say(v.oregonflora, v.latin)}`;
+    console.log(`  ${v.latin.padEnd(32)} Burke: ${say(v.burke, v.latin)}${west}${of}`);
   }
-  console.log(`\nOur ${ours.length} PNW rows: ${ours.length - flag.length} native under the same name with west-side specimens.`);
-  for (const line of flag) console.log(line);
+  writeFileSync(
+    `${DIR}ours.json`,
+    `${JSON.stringify({ sources: ["Flora of the Pacific Northwest Checklist (Burke Museum, UW)", oregon?.version].filter(Boolean), flagged }, null, 2)}\n`,
+  );
+  console.log("→ data/sources/pnw-flora/ours.json");
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   requireProxyAwareFetch("pnw:checklist");
   await fetchSources(process.argv.includes("--fetch"));
-  checkOurs(build());
+  checkOurs(build(), buildOregonFlora());
 }

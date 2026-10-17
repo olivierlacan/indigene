@@ -1,6 +1,7 @@
-// Reading the Flora of the Pacific Northwest Checklist (Burke Museum, UW) and
-// the Consortium of Pacific Northwest Herbaria's county list: pure, no network,
-// so `src/lib/pnwflora.test.ts` can pin it. `pnw-checklist.mjs` does the asking.
+// Reading the Flora of the Pacific Northwest Checklist (Burke Museum, UW), the
+// Consortium of Pacific Northwest Herbaria's county list and OregonFlora's
+// checklist (Oregon State University): pure, no network, so
+// `src/lib/pnwflora.test.ts` can pin it. `pnw-checklist.mjs` does the asking.
 
 /** A tab-delimited file with one header row and no quoting, as both sources write. */
 export function readTsv(text) {
@@ -10,6 +11,60 @@ export function readTsv(text) {
     const parts = line.split("\t");
     return Object.fromEntries(cols.map((c, i) => [c, (parts[i] ?? "").trim()]));
   });
+}
+
+/**
+ * A comma-separated file with a header row, quoting as RFC 4180 does: a quoted
+ * cell may hold commas, newlines and doubled quotes. OregonFlora's checklist is
+ * one ("vol2, pg72").
+ */
+export function readCsv(text) {
+  const rows = [];
+  let row = [];
+  let cell = "";
+  let quoted = false;
+  const src = text.replace(/^\ufeff/, "");
+  for (let i = 0; i < src.length; i++) {
+    const ch = src[i];
+    if (quoted) {
+      if (ch === '"' && src[i + 1] === '"') (cell += '"'), i++;
+      else if (ch === '"') quoted = false;
+      else cell += ch;
+    } else if (ch === '"') quoted = true;
+    else if (ch === ",") row.push(cell), (cell = "");
+    else if (ch === "\n" || ch === "\r") {
+      if (ch === "\r" && src[i + 1] === "\n") i++;
+      row.push(cell), rows.push(row), (row = []), (cell = "");
+    } else cell += ch;
+  }
+  if (cell || row.length) row.push(cell), rows.push(row);
+  const [head, ...body] = rows.filter((r) => r.some((c) => c.trim()));
+  return body.map((r) => Object.fromEntries(head.map((c, i) => [c.trim(), (r[i] ?? "").trim()])));
+}
+
+/**
+ * OregonFlora's checklist, one row per accepted taxon: its origin as the
+ * checklist words it (`native`, `exotic, naturalized`, `exotic, not
+ * naturalized`, `native and exotic`, `uncertain`) and the names it lists as
+ * synonyms. A misapplied name is left out: it was someone else's plant.
+ */
+export function oregonfloraRows(checklist) {
+  const synonyms = new Map();
+  for (const r of checklist) {
+    if (r.Name_Status !== "Synonym") continue;
+    if (!synonyms.has(r.Accepted_Name)) synonyms.set(r.Accepted_Name, new Set());
+    synonyms.get(r.Accepted_Name).add(r.Scientific_name);
+  }
+  return checklist
+    .filter((r) => r.Name_Status === "Accepted")
+    .map((r) => ({
+      name: r.Scientific_name,
+      family: r.Family,
+      origin: r.Origin,
+      note: r.Taxonomic_Note,
+      synonyms: [...(synonyms.get(r.Scientific_name) ?? [])].sort(),
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
 }
 
 // The checklist's own codes, spelled out. `B` is a taxon with native and
@@ -83,20 +138,28 @@ export function checklistRows({ pnwflora, synonymy, counties, westCounties }) {
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
-/** The row a name lands on: itself, or the accepted name it is a synonym of. */
+/**
+ * The row a name lands on: itself, the accepted name it is a synonym of, or —
+ * for a species — the one row its subspecies are synonyms of. OregonFlora lists
+ * *Frangula purshiana* ssp. *purshiana* under *Rhamnus purshiana*, but never
+ * the bare species name.
+ */
 export function lookup(rows, name) {
   const want = name.replace(/\bsubsp\./, "ssp.");
-  return (
-    rows.find((r) => r.name === want) ??
-    rows.find((r) => r.synonyms.includes(want)) ??
-    null
-  );
+  const exact = rows.find((r) => r.name === want) ?? rows.find((r) => r.synonyms.includes(want));
+  if (exact || want.split(" ").length !== 2) return exact ?? null;
+  // Only when the subspecies all point one way: *Cornus sericea*'s are split
+  // between *C. occidentalis* and *C. stolonifera*, and picking one would be a guess.
+  const via = rows.filter((r) => r.synonyms.some((s) => s.startsWith(`${want} `)));
+  return via.length === 1 ? via[0] : null;
 }
 
 const cell = (v) => {
   const s = Array.isArray(v) ? v.join("; ") : typeof v === "boolean" ? (v ? "Y" : "") : String(v);
   return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
 };
+
+export const OREGONFLORA_COLUMNS = ["name", "family", "origin", "note", "synonyms"];
 
 export const CSV_COLUMNS = [
   "name",
@@ -111,7 +174,7 @@ export const CSV_COLUMNS = [
   "synonyms",
 ];
 
-/** The committed file: one header, one row per taxon. */
-export function toCsv(rows) {
-  return `${[CSV_COLUMNS.join(","), ...rows.map((r) => CSV_COLUMNS.map((c) => cell(r[c])).join(","))].join("\n")}\n`;
+/** A committed file: one header, one row per taxon. */
+export function toCsv(rows, columns = CSV_COLUMNS) {
+  return `${[columns.join(","), ...rows.map((r) => columns.map((c) => cell(r[c])).join(","))].join("\n")}\n`;
 }

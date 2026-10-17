@@ -4,7 +4,7 @@
 // newer than the checklist, and a county list with counties east of the crest.
 import { describe, expect, it } from "vitest";
 // @ts-expect-error — a plain .mjs build script, no type declarations.
-import { checklistRows, lookup, readTsv, toCsv } from "../../scripts/_pnwflora.mjs";
+import { checklistRows, lookup, oregonfloraRows, readCsv, readTsv, toCsv } from "../../scripts/_pnwflora.mjs";
 
 const tsv = (rows: string[][]) => rows.map((r) => r.join("\t")).join("\n");
 
@@ -78,5 +78,41 @@ describe("toCsv", () => {
   it("quotes a cell with a comma and joins lists", () => {
     const csv = toCsv([{ ...lookup(rows, "Hedera helix"), family: "Araliaceae, ivy" }]);
     expect(csv.split("\n")[1]).toBe('Hedera helix,"Araliaceae, ivy",introduced,,,,,,3,');
+  });
+});
+
+// OregonFlora's export: quoted cells with commas in them, a version note in a
+// header column of its own, and a species named only through its subspecies.
+const oregonflora = oregonfloraRows(
+  readCsv(
+    [
+      'Group,Family,Scientific_name,Name_Status,Accepted_Name,Taxonomic_Note,Origin,FloraPage,"OregonFlora Checklist version 2.4, May 26, 2026"',
+      'Dicotyledons,Rhamnaceae,Rhamnus purshiana,Accepted,Rhamnus purshiana,,native,"vol2, pg72",',
+      "Dicotyledons,Rhamnaceae,Frangula purshiana ssp. purshiana,Synonym,Rhamnus purshiana,,,,",
+      "Dicotyledons,Rhamnaceae,Rhamnus alnifolia,Misapplied,Rhamnus purshiana,,,,",
+      "Dicotyledons,Cornaceae,Cornus occidentalis,Accepted,Cornus occidentalis,,native,,",
+      "Dicotyledons,Cornaceae,Cornus sericea ssp. occidentalis,Synonym,Cornus occidentalis,,,,",
+      "Dicotyledons,Cornaceae,Cornus stolonifera,Accepted,Cornus stolonifera,,native,,",
+      "Dicotyledons,Cornaceae,Cornus sericea ssp. stolonifera,Synonym,Cornus stolonifera,,,,",
+      'Monocotyledons,Poaceae,Bromus tectorum,Accepted,Bromus tectorum,,"exotic, naturalized",,',
+    ].join("\r\n"),
+  ),
+);
+
+describe("oregonfloraRows", () => {
+  it("reads a quoted origin with a comma in it", () => {
+    expect(lookup(oregonflora, "Bromus tectorum").origin).toBe("exotic, naturalized");
+  });
+
+  it("finds a species through its subspecies' synonym", () => {
+    expect(lookup(oregonflora, "Frangula purshiana")?.name).toBe("Rhamnus purshiana");
+  });
+
+  it("won't guess when the subspecies point two ways", () => {
+    expect(lookup(oregonflora, "Cornus sericea")).toBeNull();
+  });
+
+  it("leaves a misapplied name out", () => {
+    expect(lookup(oregonflora, "Rhamnus alnifolia")).toBeNull();
   });
 });

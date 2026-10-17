@@ -3213,6 +3213,12 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     "bignonia-capreolata": [
       { wildlifeId: "ruby-throated-hummingbird", support: "nectar", note: "Its orange-red trumpets open as the first ruby-throats arrive in spring.", basis: "UF/IFAS; LBJ Wildflower Center." },
     ],
+    "wisteria-frutescens": [
+      { wildlifeId: "silver-spotted-skipper", support: "host", note: "One of the legumes its caterpillars eat, folding a leaflet into a shelter to feed in.", basis: "Butterflies and Moths of North America; UF/IFAS." },
+    ],
+    "campsis-radicans": [
+      { wildlifeId: "ruby-throated-hummingbird", support: "nectar", note: "Long orange trumpets that open all summer, shaped to a hummingbird's bill.", basis: "Cornell Lab; UF/IFAS." },
+    ],
   },
 
   "florida-south": {

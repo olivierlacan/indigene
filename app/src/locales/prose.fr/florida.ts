@@ -555,6 +555,120 @@ export const FLORIDA: ProseTable = {
   },
 
   // -------------------------------------------------------------------------
+  // Floride du Nord et du Centre — le troisième lot : les premières fougères,
+  // et les graminées et grimpantes qui manquaient. Indigènes selon l'Atlas of
+  // Florida Plants et décrites par la FNPS.
+  // -------------------------------------------------------------------------
+  "Aristida stricta": {
+    nativeNote:
+      "La graminée en touffes qui tapisse les flatwoods à pin des marais — ces pinèdes plates du bas pays — et les collines sableuses de Floride, entretenues par le feu.",
+    careNote:
+      "Plantez des mottes en plein soleil sur sable sec et arrosez-les tout le premier été ; ensuite, elle ne demande rien. Lente à s'étoffer, et difficile à trouver en vente.",
+    givesNote:
+      "De fines touffes vertes qui rendent au sol sous les pins l'allure des flatwoods, et un couvert pour les oiseaux qui nichent au sol, comme le bruant des pinèdes.",
+    propagationNote:
+      "On la cultive à partir de mottes, car ses graines sauvages ne sont bonnes qu'après un feu en pleine saison de croissance. Divisez une touffe installée au printemps si vous en avez une.",
+  },
+  "Eragrostis spectabilis": {
+    nativeNote:
+      "Indigène sur les sols sableux et secs, les bords de route et les pinèdes ouvertes du nord et du centre de la Floride.",
+    careNote:
+      "Plein soleil et sol pauvre et sec lui conviennent le mieux ; un sol riche ou l'ombre la font s'affaisser. Rabattez-la en fin d'hiver. Elle se ressème un peu, jamais loin.",
+    givesNote:
+      "Un nuage bas d'épillets pourpre rougeâtre en fin d'été, puis des graines pour les bruants et d'autres petits oiseaux.",
+    propagationNote:
+      "Éparpillez les graines sur un sol nu au printemps et tassez-les. Les touffes se divisent facilement au printemps.",
+  },
+  "Sorghastrum secundum": {
+    nativeNote:
+      "Indigène dans les collines sableuses, les flatwoods et les prairies sèches du nord et du centre de la Floride, où elle fleurit après le feu.",
+    careNote:
+      "Plein soleil sur sable bien drainé. Les feuilles restent basses ; les tiges florales jaillissent à l'automne. Rabattez en fin d'hiver.",
+    givesNote:
+      "De hauts plumets bronze doré à l'automne, chaque épillet penché du même côté, et des graines pour les oiseaux jusqu'en hiver.",
+    propagationNote:
+      "Semez sur sol nu au printemps, ou divisez une touffe au printemps.",
+  },
+  "Juncus effusus": {
+    nativeNote:
+      "Indigène dans les marais, les fossés et au bord des mares dans toute la Floride.",
+    careNote:
+      "Il veut les pieds dans l'eau : un jardin de pluie, une berge de mare, un creux détrempé. Persistant, il n'a jamais besoin d'être taillé.",
+    givesNote:
+      "Des tiges vertes serrées qui absorbent le ruissellement et tiennent les berges boueuses, avec un abri pour les grenouilles et les oiseaux nicheurs.",
+    propagationNote:
+      "Tranchez une touffe en morceaux au printemps. Ses graines, fines comme de la poussière, ont besoin de lumière : pressez-les sur un sol mouillé et gardez-le mouillé.",
+  },
+  "Wisteria frutescens": {
+    nativeNote:
+      "Indigène le long des rivières, en bordure des marécages et dans les bois humides du nord et du centre de la Floride.",
+    careNote:
+      "Donnez-lui une clôture ou une tonnelle solide au soleil. Bien plus sage que les glycines asiatiques : elle fleurit jeune, après la feuillaison, et n'étouffe pas les arbres. Ses graines sont toxiques.",
+    givesNote:
+      "Des grappes lavande au printemps pour les bourdons et les xylocopes, et des feuilles pour les chenilles de deux hespéries américaines.",
+    propagationNote:
+      "Fixez une tige basse au sol et elle s'enracine en une saison. Les boutures herbacées s'enracinent au début de l'été. Les semis peuvent mettre des années à fleurir.",
+    supportNotes: {
+      "silver-spotted-skipper":
+        "L'une des légumineuses que mangent ses chenilles, qui replient une foliole en abri pour s'y nourrir.",
+    },
+  },
+  "Campsis radicans": {
+    nativeNote:
+      "Indigène dans les bois, les haies et les plaines inondables du nord et du centre de la Floride.",
+    careNote:
+      "Il lui faut un poteau ou un mur solide, et de la place : elle grimpe par des racines-crampons et drageonne à plusieurs mètres. Arrachez les drageons dès qu'ils paraissent. Portez des gants ; la sève irrite certaines peaux.",
+    givesNote:
+      "De grandes trompettes orange tout l'été, faites pour les colibris à gorge rubis, qui les visitent plus que presque toute autre fleur.",
+    propagationNote:
+      "Déterrez un drageon enraciné au printemps ; elle en a beaucoup. Les graines ailées germent aussi facilement.",
+    supportNotes: {
+      "ruby-throated-hummingbird":
+        "De longues trompettes orange ouvertes tout l'été, taillées pour le bec d'un colibri.",
+    },
+  },
+  "Osmundastrum cinnamomeum": {
+    nativeNote:
+      "Indigène dans les marécages, les flatwoods humides et les berges suintantes du nord et du centre de la Floride.",
+    careNote:
+      "De l'ombre et un sol qui ne sèche jamais : un coin humide, un bord de mare, un creux sous les arbres. Elle reste en touffe nette et ne s'étale pas.",
+    givesNote:
+      "De grandes frondes en vase, avec des tiges sporifères couleur cannelle au printemps, et un abri pour les grenouilles et les salamandres. Les colibris tapissent leur nid de son duvet.",
+    propagationNote:
+      "Coupez une vieille souche en fin d'hiver, en gardant des racines sur chaque morceau. Ses spores vertes meurent en quelques jours : semez-les fraîches sur un terreau humide, sous couvercle.",
+  },
+  "Thelypteris kunthii": {
+    nativeNote:
+      "Indigène dans les hammocks — ces îlots de forêt dense et humide —, sur les berges des ruisseaux et dans les bois frais du nord et du centre de la Floride.",
+    careNote:
+      "La fougère la plus facile de Floride : de l'ombre, une terre de jardin ordinaire, et à boire par temps sec. Elle s'étend par ses rhizomes en une large nappe souple.",
+    givesNote:
+      "Des frondes vert pâle qui couvrent le sol à l'ombre, là où le gazon refuse de pousser, et un abri pour les lézards, les crapauds et les carabes.",
+    propagationNote:
+      "Arrachez et divisez une nappe au printemps ; chaque morceau avec des racines reprend. Elle lève aussi toute seule de ses spores, à l'ombre humide.",
+  },
+  "Woodwardia areolata": {
+    nativeNote:
+      "Indigène dans les marécages, les tourbières et les bois humides et acides du nord et du centre de la Floride.",
+    careNote:
+      "Ombre profonde et sol acide qui reste mouillé. Elle disparaît l'hiver et s'étend lentement par ses rhizomes en un tapis bas et lustré.",
+    givesNote:
+      "Des frondes brillantes pour le coin le plus mouillé et le plus ombragé du jardin, avec un abri pour les grenouilles et les petites bêtes dont elles se nourrissent.",
+    propagationNote:
+      "Coupez un tronçon de rhizome portant quelques frondes et replantez-le en sol mouillé.",
+  },
+  "Telmatoblechnum serrulatum": {
+    nativeNote:
+      "Indigène dans les marécages, les prairies humides et les fossés du centre de la Floride et plus au sud.",
+    careNote:
+      "Elle supporte plus de soleil que la plupart des fougères si ses racines restent mouillées : un jardin de pluie, un fossé, une berge de mare. Elle s'étend par stolons en un massif.",
+    givesNote:
+      "Des frondes dressées et dentées qui tiennent le sol mouillé et filtrent le ruissellement, avec un abri pour les grenouilles. Les jeunes frondes s'ouvrent rose bronze.",
+    propagationNote:
+      "Déterrez au printemps un morceau de stolon avec frondes et racines, et plantez-le en sol mouillé.",
+  },
+
+  // -------------------------------------------------------------------------
   // Les taxa dont la clé simple appartient à la liste du Mid-Atlantic : ici,
   // leur fiche floridienne.
   // -------------------------------------------------------------------------

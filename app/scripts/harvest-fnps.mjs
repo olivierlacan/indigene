@@ -27,8 +27,8 @@
 //   - says who it is: the user-agent names Indigene and links to the project,
 //     where the other harvesters borrow a browser's;
 //   - reads their robots.txt first, every run, and stops if it shuts us out;
-//   - asks one page at a time, waiting a random 0.1–5 s between them (longer
-//     if robots.txt sets a Crawl-delay) — and never
+//   - asks three pages at a time at most, each waiting a random 0.1–2 s (one
+//     at a time, and longer, if robots.txt sets a Crawl-delay) — and never
 //     asks twice: each page is reduced to its facts and cached, and a rerun
 //     only fetches pages it hasn't read;
 //   - reads only the public plant pages. The county map on each page is fed by
@@ -41,8 +41,9 @@
 //
 // ## Usage
 //
-//   npm run harvest:fnps                              read every page (≈40 min)
+//   npm run harvest:fnps                              read every page (≈5–10 min)
 //   npm run harvest:fnps -- --limit 20                the first 20 not yet read
+//   npm run harvest:fnps -- --workers 1               one page at a time
 //   npm run harvest:fnps -- --report florida-central  shortlist, no fetching
 //                                                     except Kew
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -58,10 +59,12 @@ const DIR = fileURLToPath(new URL("../../data/sources/fnps/", import.meta.url));
 const RAW = `${DIR}raw/plants.json`;
 const BASE = "https://www.fnps.org";
 const UA = "Indigene native-plant app (+https://indigene.app; https://github.com/olivierlacan/indigene)";
-// A random wait between pages, 0.1–5 s (≈2.5 s on average). Never shorter
-// than a Crawl-delay their robots.txt sets.
+// A few pages at a time, each worker waiting a random 0.1–2 s between its own
+// requests: roughly 2–3 pages a second in all. Never shorter than a
+// Crawl-delay their robots.txt sets, and one worker when it sets one.
 const PAUSE_MIN_MS = 100;
-const PAUSE_MAX_MS = 5000;
+const PAUSE_MAX_MS = 2000;
+const WORKERS = 3;
 const RETRY_MS = 3000;
 
 const args = process.argv.slice(2);
@@ -105,20 +108,27 @@ async function harvest() {
   const todo = unread.slice(0, limit);
   console.log(`FNPS lists ${slugs.length} plants; ${slugs.length - unread.length} already read; reading ${todo.length}.`);
   mkdirSync(`${DIR}raw`, { recursive: true });
+  const save = () => {
+    raw.harvested = new Date().toISOString().slice(0, 10);
+    raw.indexed = slugs.length;
+    writeFileSync(RAW, `${JSON.stringify(raw, null, 1)}\n`);
+  };
+  const queue = [...todo];
   let n = 0;
-  for (const slug of todo) {
-    await sleep(pause());
-    const html = await getHtml(`${BASE}/plant/${slug}`);
-    raw.plants[slug] = html ? parsePlant(html) : null;
-    n++;
-    process.stdout.write(`\r  ${n}/${todo.length} ${slug.padEnd(40)}`);
-    // Save as we go, so an interrupted run never asks for a page twice.
-    if (n % 10 === 0 || n === todo.length) {
-      raw.harvested = new Date().toISOString().slice(0, 10);
-      raw.indexed = slugs.length;
-      writeFileSync(RAW, `${JSON.stringify(raw, null, 1)}\n`);
+  const worker = async () => {
+    for (let slug = queue.shift(); slug; slug = queue.shift()) {
+      await sleep(pause());
+      const html = await getHtml(`${BASE}/plant/${slug}`);
+      raw.plants[slug] = html ? parsePlant(html) : null;
+      n++;
+      process.stdout.write(`\r  ${n}/${todo.length} ${slug.padEnd(40)}`);
+      // Save as we go, so an interrupted run never asks for a page twice.
+      if (n % 10 === 0) save();
     }
-  }
+  };
+  const workers = robots.delay ? 1 : Number(flag("--workers") ?? WORKERS);
+  await Promise.all(Array.from({ length: workers }, worker));
+  save();
   const unreadable = Object.entries(raw.plants).filter(([, p]) => !p).map(([s]) => s);
   console.log(`\nRead ${Object.keys(raw.plants).length} pages; ${unreadable.length} carried no plant: ${unreadable.join(", ") || "none"}`);
 }

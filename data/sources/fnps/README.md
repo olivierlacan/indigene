@@ -1,7 +1,7 @@
 # Florida Native Plant Society — Plant Database
 
 **Upstream:** <https://www.fnps.org/plant>
-**Retrieve:** `nvm use && cd app && npm run harvest:fnps` (≈30–60 min, resumable)
+**Retrieve:** `nvm use && cd app && npm run harvest:fnps` (≈5–10 min, resumable)
 **Reduce:** `cd app && npm run harvest:fnps -- --report florida-central`
 **Consumed by:** nothing in the app. A shortlist and a cross-check.
 
@@ -24,8 +24,9 @@ by a person.
 ## Being a good guest
 
 FNPS is volunteer-run. The harvester names itself in its user-agent, reads
-`robots.txt` every run and stops if it shuts us out, asks for one page at a
-time with a random 0.1–5 s wait between them, and never asks for a page twice. It keeps facts, never prose or
+`robots.txt` every run and stops if it shuts us out, asks for three pages at
+a time at most, each waiting a random 0.1–2 s (one at a time if robots.txt
+sets a Crawl-delay), and never asks for a page twice. It keeps facts, never prose or
 photos, and leaves the county map alone: that is fed by a keyed private
 endpoint. Their `robots.txt` allows it (`Content-Signal: search=yes,
 ai-input=yes`); the pages are "All Rights Reserved", so `raw/` is git-ignored

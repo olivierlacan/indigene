@@ -247,9 +247,11 @@ function moistureShort(b: MoistureBand): string {
   return t(`stat.moistureWord.${b}` as const);
 }
 
-function phWord(min: number, max: number): string {
-  if (max < 6.5) return t("ph.word.acidic");
-  if (min > 7) return t("ph.word.alkaline");
+// "Around neutral" is 6.5–7. A range that only touches that band at its edge —
+// 4.5–6.5, 7.0–8.5 — belongs to the side it spends the rest of its span on.
+export function phWord(min: number, max: number): string {
+  if (max <= 6.5) return t("ph.word.acidic");
+  if (min >= 7) return t("ph.word.alkaline");
   if (min < 6 && max > 7) return t("ph.word.acidicToAlkaline");
   return t("ph.word.neutral");
 }

@@ -7421,3 +7421,81 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .copy-btn::before { content: ""; position: absolute; inset: -0.6rem; }
 .copy-btn svg { width: 0.95em; height: 0.95em; }
 .copy-btn:hover, .copy-btn:focus-visible { color: var(--focus); }
+
+/* ---------------------------------------------------------------------------
+   Flower colour tokens — the sixteen hues `lib/flower-color.ts` maps the
+   rows' colour words onto, drawn once here in light and once in dark. In
+   `oklch()` so a hue keeps its weight beside its neighbours and the dark
+   variant is the same hue a few steps lighter; the hex before each is the
+   fallback for a browser without it. Tune lightness and chroma on a real
+   card; keep the hue angles. White gets its edge from `.flower-swatch`.
+   --------------------------------------------------------------------------- */
+:root {
+  --flower-white: #f8f5ee; --flower-white: oklch(97% 0.01 90);
+  --flower-cream: #f6e7bb; --flower-cream: oklch(93% 0.06 92);
+  --flower-yellow: #fbd530; --flower-yellow: oklch(88% 0.17 95);
+  --flower-orange: #fa8927; --flower-orange: oklch(74% 0.17 55);
+  --flower-red: #d42325; --flower-red: oklch(56% 0.21 27);
+  --flower-maroon: #751e26; --flower-maroon: oklch(38% 0.12 20);
+  --flower-pink: #faa6ce; --flower-pink: oklch(82% 0.11 350);
+  --flower-magenta: #d941b2; --flower-magenta: oklch(63% 0.22 340);
+  --flower-purple: #753ba8; --flower-purple: oklch(48% 0.17 305);
+  --flower-lavender: #bface4; --flower-lavender: oklch(78% 0.08 300);
+  --flower-blue: #427fd8; --flower-blue: oklch(60% 0.15 258);
+  --flower-violet: #6b5ad4; --flower-violet: oklch(55% 0.18 285);
+  --flower-green: #6e925a; --flower-green: oklch(62% 0.09 135);
+  --flower-brown: #715035; --flower-brown: oklch(46% 0.06 60);
+  --flower-tan: #c0a780; --flower-tan: oklch(74% 0.06 78);
+  --flower-silver: #b9bec4; --flower-silver: oklch(80% 0.01 250);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --flower-white: #eae8e0; --flower-white: oklch(93% 0.01 90);
+    --flower-cream: #efdda9; --flower-cream: oklch(90% 0.07 92);
+    --flower-yellow: #f4ce23; --flower-yellow: oklch(86% 0.17 95);
+    --flower-red: #ea3d38; --flower-red: oklch(62% 0.21 27);
+    --flower-maroon: #8f373b; --flower-maroon: oklch(46% 0.12 20);
+    --flower-pink: #f89dc9; --flower-pink: oklch(80% 0.12 350);
+    --flower-magenta: #eb53c2; --flower-magenta: oklch(68% 0.22 340);
+    --flower-purple: #9860d0; --flower-purple: oklch(60% 0.17 305);
+    --flower-blue: #659ff4; --flower-blue: oklch(70% 0.14 258);
+    --flower-violet: #877cf1; --flower-violet: oklch(65% 0.17 285);
+    --flower-green: #86ab72; --flower-green: oklch(70% 0.09 135);
+    --flower-brown: #99714f; --flower-brown: oklch(57% 0.07 60);
+    --flower-tan: #c6ad86; --flower-tan: oklch(76% 0.06 78);
+    --flower-silver: #b3b8be; --flower-silver: oklch(78% 0.01 250);
+  }
+}
+:root[data-theme="dark"] {
+  --flower-white: #eae8e0; --flower-white: oklch(93% 0.01 90);
+  --flower-cream: #efdda9; --flower-cream: oklch(90% 0.07 92);
+  --flower-yellow: #f4ce23; --flower-yellow: oklch(86% 0.17 95);
+  --flower-red: #ea3d38; --flower-red: oklch(62% 0.21 27);
+  --flower-maroon: #8f373b; --flower-maroon: oklch(46% 0.12 20);
+  --flower-pink: #f89dc9; --flower-pink: oklch(80% 0.12 350);
+  --flower-magenta: #eb53c2; --flower-magenta: oklch(68% 0.22 340);
+  --flower-purple: #9860d0; --flower-purple: oklch(60% 0.17 305);
+  --flower-blue: #659ff4; --flower-blue: oklch(70% 0.14 258);
+  --flower-violet: #877cf1; --flower-violet: oklch(65% 0.17 285);
+  --flower-green: #86ab72; --flower-green: oklch(70% 0.09 135);
+  --flower-brown: #99714f; --flower-brown: oklch(57% 0.07 60);
+  --flower-tan: #c6ad86; --flower-tan: oklch(76% 0.06 78);
+  --flower-silver: #b3b8be; --flower-silver: oklch(78% 0.01 250);
+}
+
+/* The dot itself: inline, a touch smaller than the x-height, with an edge so
+   a white flower shows on a light card and a dark one on a dark card. A split
+   dot for a two-tone flower is two halves, not a blend. */
+.flower-swatch {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  margin-right: 0.35em;
+  vertical-align: -0.02em;
+  background: var(--swatch-a);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 28%, transparent);
+}
+.flower-swatch-split {
+  background: linear-gradient(135deg, var(--swatch-a) 50%, var(--swatch-b) 50%);
+}

@@ -14,7 +14,7 @@ export const REGION: RegionMeta = {
   zones: "≈8a–9a",
   note: "Every plant here is recorded as native in this region's own 10 km squares by the BSBI's Plant Atlas 2020, not just somewhere in Britain. That is why Scots pine is missing: in the lowlands it is planted, and its native pinewoods are Highland. Host-insect figures are counted from the open European Lepidoptera–plant matrix (Gaytán et al. 2026) for native, oceanic-temperate relatives of each plant.",
   extent: "From the Highland line south to the Solway and the English border, and from the Ayrshire and Galloway coast east to the Lothians, Fife and the Tay.",
-  countries: ["GB"],
+  countries: ["GB-SCT"],
   // Coarse box over lowland Scotland: the Mull of Galloway (~54.63° N) north to
   // the Tay and the foot of the Highlands at ~56.6° N, and from the Rhins of
   // Galloway (~-5.15° E) east to St Abbs Head and Berwick (~-2.0° E).

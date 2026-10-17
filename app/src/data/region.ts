@@ -70,7 +70,9 @@ export interface RegionMeta {
    */
   extent: string;
   /**
-   * Every country the region reaches, as ISO 3166-1 alpha-2 codes, the one it
+   * Every country the region reaches, as ISO 3166-1 alpha-2 codes — or an
+   * ISO 3166-2 code where the nation is what a reader recognises ("GB-SCT"
+   * for Scotland, drawn as the saltire) — the one it
    * mostly lies in first: `["US", "CA"]` for the Pacific Northwest, which
    * crosses the border. Drawn as small flags beside the region's name wherever
    * regions are listed, so a reader can find their country before reading

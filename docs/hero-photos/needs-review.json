@@ -227,6 +227,14 @@
     },
     {
       "subject": "invasive",
+      "id": "lysichiton-americanus",
+      "name": "Lysichiton americanus",
+      "taxonId": 48537,
+      "reason": "chosen photo 65701886 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/48537/browse_photos"
+    },
+    {
+      "subject": "invasive",
       "id": "lythrum-salicaria",
       "name": "Lythrum salicaria",
       "taxonId": 61321,

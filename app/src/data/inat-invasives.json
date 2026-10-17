@@ -107,6 +107,15 @@
     "attribution": "(c) Marianna Boi, some rights reserved (CC BY), uploaded by Marianna Boi",
     "color": "#7a8351"
   },
+  "heracleum-mantegazzianum": {
+    "taxonId": 130228,
+    "photoId": 139805841,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/139805841/square.jpg",
+    "observer": "iangregory",
+    "license": "cc-by-nc",
+    "attribution": "(c) iangregory, some rights reserved (CC BY-NC), uploaded by iangregory",
+    "color": "#28311e"
+  },
   "ilex-aquifolium": {
     "taxonId": 53856,
     "photoId": 117929954,

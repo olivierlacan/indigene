@@ -25,7 +25,8 @@
 //   - Pacific Northwest Washington's weed board — a regulation, so no rank
 //
 // Where no body has rated the ground in a form we can check — northern
-// Michigan, Central Texas, Atlantic and Alpine France, Ireland — the five are
+// Michigan, Central Texas, Atlantic and Alpine France, Ireland, lowland
+// Scotland — the five are
 // plants the local authorities name as invasive, again taken by sightings, and
 // the page says the order is sightings alone. Beech and sycamore turn up high in the French and
 // Irish counts and are left out: native in France, and nobody's target in
@@ -799,6 +800,46 @@ export const INVASIVES: Invasive[] = [
       basis: "National Biodiversity Data Centre; Invasive Species Ireland.",
     },
   },
+  {
+    id: "heracleum-mantegazzianum",
+    common: "Giant hogweed",
+    latin: "Heracleum mantegazzianum",
+    form: "perennial",
+    marks: [
+      { part: "shape", feature: "Size", text: "A cow parsley the size of a small tree, well over head height." },
+      { part: "stem", feature: "Stems", text: "Thick, hollow and blotched with purple, with stiff white hairs." },
+      { part: "flower", feature: "Flowers", text: "White umbrellas of flowers, wider than a bicycle wheel, in June and July." },
+    ],
+    removal: {
+      steps: [
+        { method: "gear", text: "Never touch it bare-skinned: the sap burns skin in sunlight. Wear gloves, long sleeves and goggles." },
+        { method: "cut", text: "Cut and bag the flower heads before they seed; dig out young plants below ground level." },
+        { method: "pro", text: "A big stand, or one by a river, is a job for a professional." },
+      ],
+      dispose: "Bag seed heads; never compost or strim them.",
+      basis: "NatureScot; SEPA Invasive Non-native Species guidance.",
+    },
+  },
+  {
+    id: "lysichiton-americanus",
+    common: "American skunk cabbage",
+    latin: "Lysichiton americanus",
+    form: "perennial",
+    marks: [
+      { part: "flower", feature: "Flowers", text: "A bright yellow hood around a green spike, straight out of the mud in early spring." },
+      { part: "leaf", feature: "Leaves", text: "Huge, glossy and paddle-shaped, up to waist height, after the flowers." },
+      { part: "smell", feature: "Smell", text: "Musky and rank, like a fox." },
+    ],
+    removal: {
+      steps: [
+        { method: "cut", text: "Cut off the yellow flower spikes before they set seed." },
+        { method: "dig", text: "Dig out the whole thick root; it goes deep in wet ground." },
+        { method: "pro", text: "A stand along a burn or in a wet wood needs a professional." },
+      ],
+      dispose: "Bag seed heads and roots; don't leave them near water.",
+      basis: "NatureScot; SEPA Invasive Non-native Species guidance.",
+    },
+  },
   // ---------------- Grasses ----------------
   {
     id: "sorghum-halepense",
@@ -1086,6 +1127,12 @@ const FR_ATL = "CBN de Brest, liste des plantes vasculaires invasives de Bretagn
 const FR_ALP = "CBN Alpin, espèces végétales exotiques envahissantes des Alpes; OFB Centre de ressources EEE.";
 const TX = "Texas Invasive Species Institute, Invaders of Texas (texasinvasives.org).";
 const IE = "National Biodiversity Data Centre, invasive species of Ireland; Invasive Species Ireland.";
+// NatureScot's own list: the five plants it names as "priorities for strategic
+// control at landscape-scale in Scotland" (Scotland's Environment, ecosystem
+// health indicator 11, https://www.environment.gov.scot/our-environment/state-of-the-environment/ecosystem-health-indicators/resilience-indicators/indicator-11-invasive-non-native-species/).
+// A priority for control, not a severity score, so no listing and no rank —
+// ordered by sightings like Ireland's.
+const SCOT = "NatureScot, priorities for strategic control at landscape scale (Scotland's Environment, indicator 11).";
 
 // ---- The ties: each region's list, in any order — `lib/invasives.ts` ranks it ----
 export const MOST_WANTED: Record<string, WantedLink[]> = {
@@ -1186,5 +1233,12 @@ export const MOST_WANTED: Record<string, WantedLink[]> = {
     { invasiveId: "prunus-laurocerasus", basis: IE },
     { invasiveId: "impatiens-glandulifera", basis: IE },
     { invasiveId: "gunnera-tinctoria", basis: IE },
+  ],
+  "scotland-lowlands": [
+    { invasiveId: "rhododendron-ponticum", basis: SCOT },
+    { invasiveId: "reynoutria-japonica", basis: SCOT },
+    { invasiveId: "heracleum-mantegazzianum", basis: SCOT },
+    { invasiveId: "impatiens-glandulifera", basis: SCOT },
+    { invasiveId: "lysichiton-americanus", basis: SCOT },
   ],
 };

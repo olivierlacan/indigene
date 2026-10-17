@@ -18,8 +18,20 @@ search on the site and exports the table.
 `<region>.csv` — one row per native taxon the search returned, facts only:
 name and authors, common name, family, native, endemic, state and federal
 listing, wetland status (DEP, NWI), FLEPPC category, and whether a specimen
-backs it. `plant_id` is the Atlas's own id, so
-`https://florida.plantatlas.usf.edu/plant/species/<plant_id>` opens the taxon.
+backs it. `plant_id` is the Atlas's own id, kept for joining two exports, not
+for linking.
+
+**Linking to the Atlas** follows its own
+[How to link](https://florida.plantatlas.usf.edu/howtolink) page: search by
+name, never by id, so a link survives the Atlas renumbering.
+
+| To link | URL |
+|---|---|
+| a species | `https://florida.plantatlas.usf.edu/plant/results?KeywordSearch=Acer+rubrum&KeywordCategory=Sci_Name` |
+| a family | `https://florida.plantatlas.usf.edu/plant/results?KeywordCategory=family&KeywordSearch=Orchidaceae` |
+| a genus | `https://florida.plantatlas.usf.edu/plant/results?KeywordCategory=genus&KeywordSearch=Myosotis` |
+| a synonym | `https://florida.plantatlas.usf.edu/plant/results?KeywordCategory=sci_name&KeywordSearch=Apassalus+humistratus&SortBy=Synonym` |
+
 The Atlas's own "Plant Notes" prose is left out, and the export itself stays
 in the git-ignored `raw/`.
 

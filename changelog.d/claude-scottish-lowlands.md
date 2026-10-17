@@ -6,3 +6,4 @@
 - Ireland and the Scottish Lowlands now read in French, every plant and every note.
 - Internal: `npm run bsbi:check` asks the BSBI Plant Atlas 2020 whether each row is native in the region's own 10 km squares, and commits the counts to `data/sources/bsbi-plant-atlas/`. WCVP (`TDWG:GRB`) stays as the floor check under it.
 - Internal: the region flag is `GB-SCT` (ISO 3166-2), drawn as the saltire; `flags.ts` names subdivisions itself.
+- Internal: the coverage map now fails a region whose box runs off its continent's frame, in the builder and in `coverage-map.test.ts` (the frame is written into `coverage-map.ts`); `docs/adding-a-region.md` lists `maps:coverage` as a step.

@@ -39,6 +39,7 @@ depend on. Run them after the data is written.
 |---|---------|----------|--------|
 | 7 | `npm run registry:build` | `src/data/registry.ts` (+ `public/registry/…json`) | Required for `registry:check`. New taxa land with `primaryId: null` — the in-branch chain below (`reconcile` → rebuild) fills the external ids and the hero photos. |
 | 8 | `npm run maps:build <id>` | `public/maps/<id>.svg` | **Network** (EPA + Natural Earth). First add the region to the `LANDMARKS` table in the script — a few major cities that fix its edges; the builder now **refuses** to draw a region with fewer than three, because a shape with no labelled places is a blob nobody can locate themselves on. A *partial* run prints the drawn size but leaves `src/data/region-maps.ts` untouched — add the `{ w, h }` entry it reports by hand. Then look at the rendered map and check you can find a place you know on it. |
+| 8b | `npm run maps:coverage` | `public/maps/coverage-*.svg`, `src/data/coverage-map.ts` | The world and per-continent maps on `/map`. First give the region a name position in `LABELS` in `scripts/_coverage-map.mjs`, and check its whole box sits inside its continent's frame in `CONTINENTS` — widen the frame if not. The builder and `coverage-map.test.ts` both fail otherwise (the test on every PR). Needs the RESOLVE file once: `npm run resolve:fetch`. Then look at `/map`: the region's dot and name, not just a passing build. |
 | 9 | `node scripts/gen-plant-cards.mjs <slug…>` | `public/og/plants/<slug>.jpg` | The share/preview card for every new plant. `routes:check` fails without them. |
 | 10 | CHANGELOG entry | `CHANGELOG.md` under `## [Unreleased]` | One warm `Added` bullet; developer notes as `Internal:`. |
 
@@ -126,6 +127,7 @@ measures the coverage.
 [ ] look-alikes in lookalikes.ts        (optional)
 [ ] npm run registry:build
 [ ] npm run maps:build <id>             + region-maps.ts size entry
+[ ] npm run maps:coverage               (LABELS entry; region box inside its continent frame)
 [ ] node scripts/gen-plant-cards.mjs <slugs>
 [ ] CHANGELOG.md Unreleased bullet
 — live-data tiers, IN ORDER (reconcile feeds the rest) —

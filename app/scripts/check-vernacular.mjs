@@ -30,7 +30,7 @@
 // run it on a GitHub runner and open a PR with the result. The snapshot it
 // writes to `data/sources/vernacular-names/` is committed, so upstream drift
 // shows up in a diff instead of going unnoticed.
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
@@ -196,7 +196,30 @@ async function getJson(src, url, headers = {}, attempt = 0) {
 const TAXREF_ON_GBIF = "0e61f8fe-7d25-4f81-ada7-d970bbb2c6d6";
 const GBIF_SPECIES = "https://api.gbif.org/v1/species";
 
+/**
+ * **The official download comes first.** When somebody has fetched TAXREF
+ * itself and run `npm run taxref:extract`, `data/sources/taxref/extract.json`
+ * holds the référentiel's own row for every name the app shows, and that is
+ * what this reads — offline, the version named, no mirror in between. GBIF's
+ * copy (below) is the fallback for a checkout without the extract.
+ */
+const TAXREF_EXTRACT = join(REPO_ROOT, "data", "sources", "taxref", "extract.json");
+const taxrefExtract = existsSync(TAXREF_EXTRACT) ? JSON.parse(readFileSync(TAXREF_EXTRACT, "utf8")) : null;
+const TAXREF_VIA = taxrefExtract
+  ? `the official download, TAXREF v${taxrefExtract.version} (extracted ${taxrefExtract.extractedAt})`
+  : "GBIF's copy of the checklist";
+
 async function fromTaxref(latin) {
+  if (taxrefExtract) {
+    // An offline answer is still an answer the health block should count, so a
+    // stale or empty extract can't masquerade as "TAXREF has no name".
+    noteStatus("taxref", "extract");
+    const row = taxrefExtract.taxa[latin];
+    const names = (row?.french ?? []).map((n) => n.replace(/\s*\((?:le|la|les|l')\)\s*$/i, "").trim()).filter(Boolean);
+    if (!names.length) return null;
+    alsoKnownAs.set(`taxref:${latin}`, names);
+    return names[0];
+  }
   const accept = { Accept: "application/json" };
   const url = `${GBIF_SPECIES}?datasetKey=${TAXREF_ON_GBIF}&name=${encodeURIComponent(latin)}&limit=5`;
   const data = await getJson("taxref", url, accept);
@@ -339,6 +362,7 @@ const report = {
   unconfirmed: [],
   pending: [],
   missing: [],
+  taxrefVia: TAXREF_VIA,
   health,
   warnings: [],
 };
@@ -447,6 +471,7 @@ if (asJson) {
 } else {
   console.log(`Checked ${report.checked} taxa for "${report.locale}".`);
   console.log(`  Asked: ${report.authorities.join(", ")} — VASCAN is fr-CA and no longer consulted.`);
+  console.log(`  TAXREF read from ${TAXREF_VIA}.`);
   console.log(`  ✓ confirmed by their own source: ${report.confirmed.length}`);
   console.log(`  ≠ disagree with their source:    ${report.mismatched.length}`);
   console.log(`  ? source had nothing to say:     ${report.unconfirmed.length}`);

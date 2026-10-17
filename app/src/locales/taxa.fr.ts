@@ -402,4 +402,215 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Robinia pseudoacacia": { name: "Robinier faux-acacia", src: "taxref" },
   "Rubus armeniacus": { name: "Ronce d'Arménie", src: "taxref" },
   "Pyrus calleryana": { name: "Poirier de Callery", src: "pending" },
+  // ---------------------------------------------------------------------
+  // Names the reference lists give for taxa this table showed in Latin until
+  // the verification run of 2026-10-17 (the "upstream has a name we lack"
+  // section of data/sources/vernacular-names/fr.json). Each row is tagged to
+  // the list that gave the name, TAXREF first, then Tela Botanica, then
+  // Wikidata, and `npm run names:check` verifies it like any other. Five
+  // Wikidata labels were left out rather than shown: three Latin synonyms, a
+  // typo and a Dutch description. The Māori names (kauri, mānuka, pōhutukawa,
+  // rewarewa, kohekohe) are what a French reader calls those trees too.
+  // ---------------------------------------------------------------------
+  "Abrus precatorius": { name: "Cascavelle", src: "taxref" }, // Rosary pea
+  "Acer palmatum": { name: "Érable palmé", src: "taxref" }, // Japanese Maple
+  "Acer saccharum": { name: "Érable à sucre", src: "wikidata" }, // Sugar Maple
+  "Adiantum pedatum": { name: "Adiante du Canada", src: "wikidata" }, // Maidenhair Fern
+  "Aesculus californica": { name: "Pavier de Californie", src: "wikidata" }, // California Buckeye
+  "Agathis australis": { name: "Kauri", src: "wikidata" }, // Kauri
+  "Aglais io": { name: "Paon-du-jour", src: "taxref" }, // Peacock butterfly
+  "Akebia quinata": { name: "Akébie à cinq feuilles", src: "taxref" }, // Akebi Chocolate Vine
+  "Allium ursinum": { name: "Ail des ours", src: "taxref" }, // Wild Garlic (Ramsons)
+  "Alnus japonica": { name: "Aulne du Japon", src: "taxref" }, // Japanese Alder
+  "Alnus rhombifolia": { name: "Aulne de la sierra", src: "wikidata" }, // White Alder
+  "Amelanchier laevis": { name: "Amélanchier de Lamark", src: "bdtfx" }, // Allegheny Serviceberry
+  "Anemone nemorosa": { name: "Anémone des bois", src: "taxref" }, // Wood Anemone
+  "Anthoxanthum odoratum": { name: "Flouve odorante", src: "taxref" }, // Sweet Vernal-grass
+  "Archilochus alexandri": { name: "Colibri à gorge noire", src: "wikidata" }, // Black-chinned hummingbird
+  "Ardisia crenata": { name: "Ardisie crénelée", src: "taxref" }, // Coral ardisia (coral berry)
+  "Ardisia elliptica": { name: "Ardisie elliptique", src: "taxref" }, // Shoebutton ardisia
+  "Aruncus dioicus": { name: "Spirée barbe-de-bouc", src: "taxref" }, // Goat's Beard
+  "Asarum canadense": { name: "Asaret du Canada", src: "wikidata" }, // Wild Ginger
+  "Asclepias curassavica": { name: "Herbe à gendarme", src: "taxref" }, // Tropical milkweed
+  "Asclepias syriaca": { name: "Asclépiade de Syrie", src: "taxref" }, // Common Milkweed
+  "Asterocampa celtis": { name: "Papillon du micocoulier", src: "wikidata" }, // Hackberry emperor
+  "Aucuba japonica": { name: "Aucuba du Japon", src: "taxref" }, // Aoki Spotted Laurel
+  "Baptisia australis": { name: "Baptisia austral", src: "taxref" }, // Blue Wild Indigo
+  "Betula papyrifera": { name: "Bouleau à papier", src: "taxref" }, // Paper Birch
+  "Betula pubescens": { name: "Bouleau pubescent", src: "taxref" }, // Downy Birch
+  "Callipepla californica": { name: "Colin de Californie", src: "taxref" }, // California quail
+  "Callophrys gryneus": { name: "Porte-queue verdâtre", src: "wikidata" }, // Juniper & cypress hairstreaks
+  "Caltha palustris": { name: "Populage des marais", src: "taxref" }, // Marsh Marigold
+  "Camellia japonica": { name: "Camélia du Japon", src: "taxref" }, // Yabu-tsubaki Camellia
+  "Campanula rotundifolia": { name: "Campanule à feuilles rondes", src: "taxref" }, // Harebell
+  "Carex obnupta": { name: "Carex voilé", src: "wikidata" }, // Slough Sedge
+  "Carya illinoinensis": { name: "Carya de l'Illinois", src: "taxref" }, // Pecan
+  "Carya ovata": { name: "Caryer ovale", src: "taxref" }, // Shagbark Hickory
+  "Castanea crenata": { name: "Châtaignier crénelé", src: "taxref" }, // Japanese Chestnut
+  "Ceanothus thyrsiflorus": { name: "Céanothe à fleurs en thyrse", src: "taxref" }, // Blueblossom
+  "Celastrus orbiculatus": { name: "Célastre", src: "bdtfx" }, // Asian bittersweet
+  "Celastrus scandens": { name: "Bourreau des arbres", src: "bdtfx" }, // American Bittersweet
+  "Celtis occidentalis": { name: "Micocoulier d'Occident", src: "taxref" }, // Hackberry
+  "Centaurea solstitialis": { name: "Centaurée du solstice", src: "taxref" }, // Yellow star-thistle
+  "Centaurea stoebe": { name: "Centaurée du Rhin", src: "taxref" }, // Spotted knapweed
+  "Chamaenerion angustifolium": { name: "Épilobe à feuilles étroites", src: "taxref" }, // Fireweed
+  "Clematis lasiantha": { name: "Clématite flammette", src: "taxref" }, // Chaparral Clematis (Pipestem)
+  "Cordyline australis": { name: "Cordyline australe", src: "taxref" }, // Tī Kōuka
+  "Cornus canadensis": { name: "Cornouiller du Canada", src: "taxref" }, // Bunchberry
+  "Cornus kousa": { name: "Cornouiller du Japon", src: "wikidata" }, // Yamaboshi Dogwood
+  "Cycas revoluta": { name: "Sagoutier", src: "taxref" }, // Sago palm
+  "Dianthus superbus": { name: "Œillet superbe", src: "taxref" }, // Kawaranadeshiko Pink
+  "Dicentra formosa": { name: "Dicentra gracieux", src: "taxref" }, // Pacific Bleeding Heart
+  "Dichondra repens": { name: "Dichondra rampant", src: "taxref" }, // Mercury Bay Weed
+  "Diervilla lonicera": { name: "Diervilla chèvrefeuille", src: "taxref" }, // Northern Bush Honeysuckle
+  "Dioscorea bulbifera": { name: "Patate en l'air", src: "taxref" }, // Air potato
+  "Diospyros virginiana": { name: "Plaqueminier de Virginie", src: "taxref" }, // Common Persimmon
+  "Dipsacus laciniatus": { name: "Cardère laciniée", src: "taxref" }, // Cut-leaved teasel
+  "Dryopteris erythrosora": { name: "Dryoptéride à sores rouges", src: "taxref" }, // Benishida Autumn Fern
+  "Dysoxylum spectabile": { name: "Kohekohe", src: "wikidata" }, // Kohekohe
+  "Elaeagnus umbellata": { name: "Chalef en ombelle", src: "taxref" }, // Autumn olive
+  "Erica cinerea": { name: "Bruyère cendrée", src: "taxref" }, // Bell Heather
+  "Erica tetralix": { name: "Bruyère à quatre angles", src: "taxref" }, // Cross-leaved Heath
+  "Erigeron glaucus": { name: "Érigéron glauque", src: "taxref" }, // Seaside Daisy
+  "Eriophyllum lanatum": { name: "Ériophylle laineux", src: "taxref" }, // Oregon Sunshine
+  "Eryngium yuccifolium": { name: "Panicaut à feuilles de yucca", src: "taxref" }, // Rattlesnake Master
+  "Eschscholzia californica": { name: "Pavot de Californie", src: "taxref" }, // California Poppy
+  "Euphydryas aurinia": { name: "Damier de la Succise", src: "taxref" }, // Marsh fritillary
+  "Fagus grandifolia": { name: "Hêtre à grandes feuilles", src: "wikidata" }, // American Beech
+  "Filipendula ulmaria": { name: "Reine-des-prés", src: "taxref" }, // Meadowsweet
+  "Geranium sanguineum": { name: "Géranium sanguin", src: "taxref" }, // Bloody Cranesbill
+  "Geum macrophyllum": { name: "Benoîte à grandes feuilles", src: "bdtfx" }, // Large-leaved Avens
+  "Gunnera tinctoria": { name: "Gunnéra des teinturiers", src: "taxref" }, // Chilean rhubarb
+  "Helianthus debilis": { name: "Hélianthe débile", src: "taxref" }, // Beach / Dune Sunflower
+  "Helianthus maximiliani": { name: "Hélianthe de Maximilian", src: "taxref" }, // Maximilian Sunflower
+  "Hemiphaga novaeseelandiae": { name: "Carpophage de Nouvelle-Zélande", src: "wikidata" }, // Kererū
+  "Heracleum mantegazzianum": { name: "Berce du Caucase", src: "taxref" }, // Giant hogweed
+  "Heracleum maximum": { name: "Berce laineuse", src: "wikidata" }, // Cow Parsnip
+  "Hesperocyparis forbesii": { name: "Cyprès de Forbes", src: "taxref" }, // Tecate Cypress
+  "Hesperocyparis sargentii": { name: "Cyprès de Sargent", src: "taxref" }, // Sargent Cypress
+  "Hydrangea macrophylla": { name: "Hydrangelle hortensia", src: "taxref" }, // Ajisai Hydrangea
+  "Icaricia icarioides": { name: "Bleu de Boisduval", src: "wikidata" }, // Lupine blues
+  "Iris ensata": { name: "Iris à feuilles en épées", src: "taxref" }, // Hanashōbu Iris
+  "Juniperus virginiana": { name: "Genévrier de Virginie", src: "taxref" }, // Southern Red Cedar
+  "Knightia excelsa": { name: "Rewarewa", src: "wikidata" }, // Rewarewa
+  "Lantana camara": { name: "Lantana", src: "taxref" }, // Common lantana
+  "Lathyrus pratensis": { name: "Gesse des prés", src: "taxref" }, // Meadow Vetchling
+  "Leptidea juvernica": { name: "Piéride irlandaise", src: "taxref" }, // Cryptic wood white
+  "Leptospermum scoparium": { name: "Manuka", src: "wikidata" }, // Mānuka
+  "Lespedeza bicolor": { name: "Bosklaver", src: "bdtfx" }, // Yama-hagi
+  "Libytheana carinenta": { name: "Papillon longs-palpes", src: "wikidata" }, // American snout
+  "Ligustrum lucidum": { name: "Troène luisant", src: "taxref" }, // Glossy privet
+  "Lilium columbianum": { name: "Lys de Colombie", src: "wikidata" }, // Columbia Lily (Tiger Lily)
+  "Lilium speciosum": { name: "Lis remarquable", src: "taxref" }, // Kanokoyuri Lily
+  "Linnaea borealis": { name: "Linnée boréale", src: "taxref" }, // Twinflower
+  "Lobelia siphilitica": { name: "Lobélie syphilitique", src: "taxref" }, // Great Blue Lobelia
+  "Lonicera maackii": { name: "Chèvrefeuille de Maack", src: "taxref" }, // Amur honeysuckle (bush honeysuckle)
+  "Lupinus perennis": { name: "Lupin vivace", src: "taxref" }, // Wild Lupine
+  "Lysichiton americanus": { name: "Lysichiton d'Amérique", src: "taxref" }, // Western Skunk Cabbage
+  "Magnolia kobus": { name: "Magnolia de Kobé", src: "taxref" }, // Kobushi Magnolia
+  "Magnolia virginiana": { name: "Magnolia de Virginie", src: "taxref" }, // Sweetbay Magnolia
+  "Malus sylvestris": { name: "Pommier sylvestre", src: "taxref" }, // Crab Apple
+  "Matteuccia struthiopteris": { name: "Matteuccia struthioptéride", src: "taxref" }, // Ostrich Fern
+  "Melia azedarach": { name: "Margousier azédarach", src: "taxref" }, // Chinaberry
+  "Metrosideros excelsa": { name: "Pohutukawa", src: "wikidata" }, // Pōhutukawa
+  "Microlaena stipoides": { name: "Microlène faux-stipe", src: "taxref" }, // Pātītī
+  "Miscanthus sinensis": { name: "Miscanthus de Chine", src: "taxref" }, // Susuki Silver Grass
+  "Molinia caerulea": { name: "Molinie bleue", src: "taxref" }, // Purple Moor-grass
+  "Muehlenbeckia complexa": { name: "Muehlenbeckia complexe", src: "taxref" }, // Pōhuehue
+  "Myoporum laetum": { name: "Myoporum plaisant", src: "taxref" }, // Ngaio
+  "Myrcianthes fragrans": { name: "Bois d'Inde Batârd", src: "taxref" }, // Simpson's Stopper
+  "Myrica gale": { name: "Myrique baumier", src: "taxref" }, // Bog Myrtle
+  "Nandina domestica": { name: "Nandine domestique", src: "taxref" }, // Nandina (heavenly bamboo)
+  "Nephrolepis cordifolia": { name: "Néphrolépide à feuilles cordées", src: "taxref" }, // Tuberous sword fern
+  "Oenothera speciosa": { name: "Onagre remarquable", src: "taxref" }, // Pink Evening Primrose
+  "Onoclea sensibilis": { name: "Onoclée sensible", src: "taxref" }, // Sensitive Fern
+  "Ophiopogon japonicus": { name: "Muguet du Japon", src: "bdtfx" }, // Ryū-no-hige Mondo Grass
+  "Osmunda regalis": { name: "Osmonde royale", src: "taxref" }, // Royal Fern
+  "Pachysandra terminalis": { name: "Pachysandra terminal", src: "taxref" }, // Fukkisō Japanese Spurge
+  "Papilio glaucus": { name: "Papillon glauque", src: "wikidata" }, // Eastern tiger swallowtail
+  "Papilio polyxenes": { name: "Papillon du céleri", src: "wikidata" }, // Black swallowtail
+  "Papilio zelicaon": { name: "Papillon de l'anise", src: "wikidata" }, // Anise swallowtail
+  "Parthenocissus tricuspidata": { name: "Vigne-vierge à trois pointes", src: "taxref" }, // Tsuta Boston Ivy
+  "Passiflora suberosa": { name: "Passiflore à fruit violet", src: "taxref" }, // Corkystem Passionflower
+  "Patagioenas fasciata": { name: "Pigeon à queue barrée", src: "wikidata" }, // Band-tailed pigeon
+  "Phormium tenax": { name: "Phormium tenace", src: "taxref" }, // Harakeke
+  "Phyla nodiflora": { name: "Verveine du pays", src: "taxref" }, // Frogfruit
+  "Picea sitchensis": { name: "Épicéa de Sitka", src: "taxref" }, // Sitka Spruce
+  "Pieris japonica": { name: "Piéris du Japon", src: "taxref" }, // Asebi
+  "Pinus contorta": { name: "Pin tordu", src: "taxref" }, // Shore Pine
+  "Pinus coulteri": { name: "Pin de Coulter", src: "taxref" }, // Coulter Pine
+  "Pinus ponderosa": { name: "Pin ponderosa", src: "taxref" }, // Ponderosa Pine
+  "Pinus strobus": { name: "Pin Weymouth", src: "taxref" }, // Eastern White Pine
+  "Pittosporum crassifolium": { name: "Pittosporum à feuilles épaisses", src: "taxref" }, // Karo
+  "Platanus occidentalis": { name: "Platane d’Occident", src: "taxref" }, // American Sycamore
+  "Poa trivialis": { name: "Pâturin commun", src: "taxref" }, // Rough Meadow-grass
+  "Poecile rufescens": { name: "Mésange à dos marron", src: "wikidata" }, // Chestnut-backed chickadee
+  "Polioptila californica": { name: "Gobemoucheron de Californie", src: "wikidata" }, // California gnatcatcher
+  "Populus tremuloides": { name: "Peuplier faux-tremble", src: "wikidata" }, // Quaking Aspen
+  "Primula vulgaris": { name: "Primevère commune", src: "taxref" }, // Primrose
+  "Prosthemadera novaeseelandiae": { name: "Méliphage tui", src: "wikidata" }, // Tūī
+  "Psaltriparus minimus": { name: "Orite buissonnière", src: "wikidata" }, // Bushtit
+  "Psychotria nervosa": { name: "Psycotre nerveuse", src: "wikidata" }, // Wild Coffee
+  "Pyracantha angustifolia": { name: "Pyracantha à feuilles étroites", src: "taxref" }, // Firethorn (pyracantha)
+  "Quercus agrifolia": { name: "Chêne d'Auzende", src: "taxref" }, // Coast Live Oak
+  "Quercus glauca": { name: "Chêne bleu", src: "taxref" }, // Arakashi Oak
+  "Quercus macrocarpa": { name: "Chêne à gros fruits", src: "wikidata" }, // Bur Oak
+  "Quercus shumardii": { name: "Chêne de Shumard", src: "wikidata" }, // Shumard Oak
+  "Rapistrum rugosum": { name: "Rapistre rugueux", src: "taxref" }, // Bastard cabbage
+  "Ratibida pinnata": { name: "Ratibida penné", src: "taxref" }, // Yellow Coneflower
+  "Rhamnus cathartica": { name: "Nerprun purgatif", src: "taxref" }, // Common buckthorn
+  "Rhododendron indicum": { name: "Rhododendron des Indes", src: "taxref" }, // Satsuki Azalea
+  "Rhododendron ponticum": { name: "Rhododendron du Pont", src: "taxref" }, // Pontic rhododendron
+  "Rhus glabra": { name: "Sumac glabre", src: "taxref" }, // Smooth Sumac
+  "Ribes speciosum": { name: "Groseillier à fleur de fuchsia", src: "taxref" }, // Fuchsia-flowered Gooseberry
+  "Rivina humilis": { name: "Rivine humble", src: "taxref" }, // Rougeplant (Bloodberry)
+  "Rosa multiflora": { name: "Rosier multiflore", src: "taxref" }, // Noibara Rose
+  "Rosa setigera": { name: "Églantier de la Prairie", src: "bdtfx" }, // Prairie Rose
+  "Rosa spinosissima": { name: "Rosier très épineux", src: "taxref" }, // Burnet Rose
+  "Rudbeckia hirta": { name: "Rudbeckie hérissée", src: "taxref" }, // Black-eyed Susan
+  "Sabal palmetto": { name: "Palmier sabal", src: "taxref" }, // Cabbage Palm (Sabal Palm)
+  "Salix cinerea": { name: "Saule cendré", src: "taxref" }, // Gray Willow (Sally)
+  "Salix discolor": { name: "Saule discolore", src: "wikidata" }, // Pussy Willow
+  "Salix nigra": { name: "Saule noir", src: "wikidata" }, // Black Willow
+  "Salvia farinacea": { name: "Sauge farineuse", src: "taxref" }, // Mealy Blue Sage
+  "Sanguisorba officinalis": { name: "Sanguisorbe officinale", src: "taxref" }, // Waremokō Burnet
+  "Sasa veitchii": { name: "Sasa de Veitch", src: "taxref" }, // Kumazasa Dwarf Bamboo
+  "Saxifraga stolonifera": { name: "Saxifrage stolonifère", src: "taxref" }, // Yukinoshita Strawberry Saxifrage
+  "Schinus terebinthifolia": { name: "Schinus à feuilles de térébinthe", src: "taxref" }, // Brazilian pepper
+  "Securigera varia": { name: "Coronille variée", src: "taxref" }, // Crown vetch
+  "Sequoia sempervirens": { name: "Séquoia toujours vert", src: "taxref" }, // Coast Redwood
+  "Silene dioica": { name: "Silène dioïque", src: "taxref" }, // Red Campion
+  "Sitta pusilla": { name: "Sittelle à tête brune", src: "wikidata" }, // Brown-headed nuthatch
+  "Sorghum halepense": { name: "Sorgho d'Alep", src: "taxref" }, // Johnsongrass
+  "Spinus psaltria": { name: "Chardonneret mineur", src: "wikidata" }, // Lesser goldfinch
+  "Spiraea douglasii": { name: "Spirée de Douglas", src: "taxref" }, // Douglas Spirea (Hardhack)
+  "Stachytarpheta cayennensis": { name: "Herbe bleue", src: "taxref" }, // Nettleleaf porterweed
+  "Stachytarpheta jamaicensis": { name: "Épi bleu", src: "taxref" }, // Blue Porterweed
+  "Styrax japonicus": { name: "Styrax du Japon", src: "wikidata" }, // Egonoki Snowbell
+  "Symphyotrichum laeve": { name: "Symphyotriche lisse", src: "taxref" }, // Smooth Blue Aster
+  "Taraxacum officinale": { name: "Pissenlit officinal", src: "taxref" }, // Dandelion
+  "Taxus baccata": { name: "If à baies", src: "taxref" }, // Yew
+  "Taxus brevifolia": { name: "If à feuilles courtes", src: "taxref" }, // Pacific Yew
+  "Tellima grandiflora": { name: "Tellima à grandes fleurs", src: "taxref" }, // Fringecup
+  "Teucrium scorodonia": { name: "Germandrée scorodoine", src: "taxref" }, // Wood Sage
+  "Thuja occidentalis": { name: "Thuya d'Occident", src: "taxref" }, // Northern White Cedar
+  "Thymus praecox": { name: "Thym précoce", src: "taxref" }, // Wild Thyme
+  "Tilia americana": { name: "Tilleul d'Amérique", src: "taxref" }, // American Basswood
+  "Trifolium repens": { name: "Trèfle rampant", src: "taxref" }, // White Clover
+  "Tsuga canadensis": { name: "Tsuga du Canada", src: "taxref" }, // Eastern Hemlock
+  "Ulex europaeus": { name: "Ajonc d'Europe", src: "taxref" }, // Gorse (Furze)
+  "Umbellularia californica": { name: "Umbellularia de Californie", src: "taxref" }, // California Bay (Bay Laurel)
+  "Urena lobata": { name: "Hérisson rouge", src: "taxref" }, // Caesarweed
+  "Urtica dioica": { name: "Ortie dioïque", src: "taxref" }, // Common Nettle
+  "Vanessa atalanta": { name: "Vulcain", src: "taxref" }, // Red admiral
+  "Vanessa cardui": { name: "Vanesse des Chardons", src: "taxref" }, // Painted lady
+  "Viburnum opulus": { name: "Viorne obier", src: "taxref" }, // Guelder Rose
+  "Vicia cracca": { name: "Vesce cracca", src: "taxref" }, // Tufted Vetch
+  "Viola glabella": { name: "Violette glabre", src: "wikidata" }, // Stream Violet
+  "Vitis riparia": { name: "Vigne des rives", src: "taxref" }, // Riverbank Grape
+  "Washingtonia robusta": { name: "Washingtonia filifère", src: "taxref" }, // Mexican fan palm
+  "Wisteria floribunda": { name: "Glycine très fleurie", src: "taxref" }, // Noda-fuji Wisteria
+  "Zelkova serrata": { name: "Orme du Japon", src: "bdtfx" }, // Keyaki
+  "Zerene eurydice": { name: "Papillon de Californie", src: "wikidata" }, // California dogface butterfly
+  "Zosterops lateralis": { name: "Zosterops à dos gris", src: "taxref" }, // Tauhou (silvereye)
 };

@@ -50,6 +50,26 @@
       "src": "taxref"
     },
     {
+      "latin": "Fagus grandifolia",
+      "name": "Hêtre à grandes feuilles",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Tilia americana",
+      "name": "Tilleul d'Amérique",
+      "src": "taxref"
+    },
+    {
+      "latin": "Tsuga canadensis",
+      "name": "Tsuga du Canada",
+      "src": "taxref"
+    },
+    {
+      "latin": "Pinus strobus",
+      "name": "Pin Weymouth",
+      "src": "taxref"
+    },
+    {
       "latin": "Hamamelis virginiana",
       "name": "Hamamélis de Virginie",
       "src": "taxref"
@@ -93,6 +113,11 @@
       "leads": "Symphyotriche de Nouvelle-Angleterre"
     },
     {
+      "latin": "Baptisia australis",
+      "name": "Baptisia austral",
+      "src": "taxref"
+    },
+    {
       "latin": "Lonicera sempervirens",
       "name": "Chèvrefeuille toujours vert",
       "src": "taxref"
@@ -103,9 +128,44 @@
       "src": "taxref"
     },
     {
+      "latin": "Acer saccharum",
+      "name": "Érable à sucre",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Betula papyrifera",
+      "name": "Bouleau à papier",
+      "src": "taxref"
+    },
+    {
+      "latin": "Thuja occidentalis",
+      "name": "Thuya d'Occident",
+      "src": "taxref"
+    },
+    {
+      "latin": "Populus tremuloides",
+      "name": "Peuplier faux-tremble",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Amelanchier laevis",
+      "name": "Amélanchier de Lamark",
+      "src": "bdtfx"
+    },
+    {
+      "latin": "Salix discolor",
+      "name": "Saule discolore",
+      "src": "wikidata"
+    },
+    {
       "latin": "Corylus cornuta",
       "name": "Noisetier à long bec",
       "src": "wikidata"
+    },
+    {
+      "latin": "Diervilla lonicera",
+      "name": "Diervilla chèvrefeuille",
+      "src": "taxref"
     },
     {
       "latin": "Sambucus racemosa",
@@ -114,15 +174,115 @@
       "leads": "Sureau à grappes"
     },
     {
+      "latin": "Lupinus perennis",
+      "name": "Lupin vivace",
+      "src": "taxref"
+    },
+    {
+      "latin": "Symphyotrichum laeve",
+      "name": "Symphyotriche lisse",
+      "src": "taxref"
+    },
+    {
+      "latin": "Rudbeckia hirta",
+      "name": "Rudbeckie hérissée",
+      "src": "taxref"
+    },
+    {
+      "latin": "Campanula rotundifolia",
+      "name": "Campanule à feuilles rondes",
+      "src": "taxref"
+    },
+    {
       "latin": "Anaphalis margaritacea",
       "name": "Anaphale marguerite",
       "src": "taxref",
       "leads": "Anaphale perlée"
     },
     {
+      "latin": "Vitis riparia",
+      "name": "Vigne des rives",
+      "src": "taxref"
+    },
+    {
       "latin": "Arctostaphylos uva-ursi",
       "name": "Busserole",
       "src": "wikidata"
+    },
+    {
+      "latin": "Cornus canadensis",
+      "name": "Cornouiller du Canada",
+      "src": "taxref"
+    },
+    {
+      "latin": "Matteuccia struthiopteris",
+      "name": "Matteuccia struthioptéride",
+      "src": "taxref"
+    },
+    {
+      "latin": "Quercus macrocarpa",
+      "name": "Chêne à gros fruits",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Carya ovata",
+      "name": "Caryer ovale",
+      "src": "taxref"
+    },
+    {
+      "latin": "Celtis occidentalis",
+      "name": "Micocoulier d'Occident",
+      "src": "taxref"
+    },
+    {
+      "latin": "Rosa setigera",
+      "name": "Églantier de la Prairie",
+      "src": "bdtfx"
+    },
+    {
+      "latin": "Rhus glabra",
+      "name": "Sumac glabre",
+      "src": "taxref"
+    },
+    {
+      "latin": "Eryngium yuccifolium",
+      "name": "Panicaut à feuilles de yucca",
+      "src": "taxref"
+    },
+    {
+      "latin": "Asclepias syriaca",
+      "name": "Asclépiade de Syrie",
+      "src": "taxref"
+    },
+    {
+      "latin": "Ratibida pinnata",
+      "name": "Ratibida penné",
+      "src": "taxref"
+    },
+    {
+      "latin": "Lobelia siphilitica",
+      "name": "Lobélie syphilitique",
+      "src": "taxref"
+    },
+    {
+      "latin": "Asarum canadense",
+      "name": "Asaret du Canada",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Onoclea sensibilis",
+      "name": "Onoclée sensible",
+      "src": "taxref"
+    },
+    {
+      "latin": "Adiantum pedatum",
+      "name": "Adiante du Canada",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Celastrus scandens",
+      "name": "Bourreau des arbres",
+      "src": "bdtfx"
     },
     {
       "latin": "Quercus garryana",
@@ -168,6 +328,26 @@
       "src": "wikidata"
     },
     {
+      "latin": "Pinus ponderosa",
+      "name": "Pin ponderosa",
+      "src": "taxref"
+    },
+    {
+      "latin": "Picea sitchensis",
+      "name": "Épicéa de Sitka",
+      "src": "taxref"
+    },
+    {
+      "latin": "Pinus contorta",
+      "name": "Pin tordu",
+      "src": "taxref"
+    },
+    {
+      "latin": "Taxus brevifolia",
+      "name": "If à feuilles courtes",
+      "src": "taxref"
+    },
+    {
       "latin": "Berberis aquifolium",
       "name": "Mahonia à feuilles de houx",
       "src": "taxref"
@@ -203,8 +383,18 @@
       "src": "wikidata"
     },
     {
+      "latin": "Spiraea douglasii",
+      "name": "Spirée de Douglas",
+      "src": "taxref"
+    },
+    {
       "latin": "Achillea millefolium",
       "name": "Achillée millefeuille",
+      "src": "taxref"
+    },
+    {
+      "latin": "Eriophyllum lanatum",
+      "name": "Ériophylle laineux",
       "src": "taxref"
     },
     {
@@ -214,9 +404,54 @@
       "leads": "Lupin polyphylle"
     },
     {
+      "latin": "Chamaenerion angustifolium",
+      "name": "Épilobe à feuilles étroites",
+      "src": "taxref"
+    },
+    {
+      "latin": "Aruncus dioicus",
+      "name": "Spirée barbe-de-bouc",
+      "src": "taxref"
+    },
+    {
+      "latin": "Dicentra formosa",
+      "name": "Dicentra gracieux",
+      "src": "taxref"
+    },
+    {
+      "latin": "Heracleum maximum",
+      "name": "Berce laineuse",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Tellima grandiflora",
+      "name": "Tellima à grandes fleurs",
+      "src": "taxref"
+    },
+    {
+      "latin": "Lysichiton americanus",
+      "name": "Lysichiton d'Amérique",
+      "src": "taxref"
+    },
+    {
+      "latin": "Lilium columbianum",
+      "name": "Lys de Colombie",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Geum macrophyllum",
+      "name": "Benoîte à grandes feuilles",
+      "src": "bdtfx"
+    },
+    {
       "latin": "Deschampsia cespitosa",
       "name": "Canche cespiteuse",
       "src": "taxref"
+    },
+    {
+      "latin": "Carex obnupta",
+      "name": "Carex voilé",
+      "src": "wikidata"
     },
     {
       "latin": "Fragaria chiloensis",
@@ -235,10 +470,95 @@
       "leads": "Struthioptéride en épi"
     },
     {
+      "latin": "Linnaea borealis",
+      "name": "Linnée boréale",
+      "src": "taxref"
+    },
+    {
+      "latin": "Viola glabella",
+      "name": "Violette glabre",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Quercus agrifolia",
+      "name": "Chêne d'Auzende",
+      "src": "taxref"
+    },
+    {
+      "latin": "Umbellularia californica",
+      "name": "Umbellularia de Californie",
+      "src": "taxref"
+    },
+    {
+      "latin": "Aesculus californica",
+      "name": "Pavier de Californie",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Hesperocyparis forbesii",
+      "name": "Cyprès de Forbes",
+      "src": "taxref"
+    },
+    {
+      "latin": "Pinus coulteri",
+      "name": "Pin de Coulter",
+      "src": "taxref"
+    },
+    {
+      "latin": "Ribes speciosum",
+      "name": "Groseillier à fleur de fuchsia",
+      "src": "taxref"
+    },
+    {
+      "latin": "Eschscholzia californica",
+      "name": "Pavot de Californie",
+      "src": "taxref"
+    },
+    {
+      "latin": "Clematis lasiantha",
+      "name": "Clématite flammette",
+      "src": "taxref"
+    },
+    {
       "latin": "Fragaria vesca",
       "name": "Fraisier des bois",
       "src": "taxref",
       "leads": "Fraisier sauvage"
+    },
+    {
+      "latin": "Sequoia sempervirens",
+      "name": "Séquoia toujours vert",
+      "src": "taxref"
+    },
+    {
+      "latin": "Hesperocyparis sargentii",
+      "name": "Cyprès de Sargent",
+      "src": "taxref"
+    },
+    {
+      "latin": "Alnus rhombifolia",
+      "name": "Aulne de la sierra",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Ceanothus thyrsiflorus",
+      "name": "Céanothe à fleurs en thyrse",
+      "src": "taxref"
+    },
+    {
+      "latin": "Erigeron glaucus",
+      "name": "Érigéron glauque",
+      "src": "taxref"
+    },
+    {
+      "latin": "Quercus shumardii",
+      "name": "Chêne de Shumard",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Carya illinoinensis",
+      "name": "Carya de l'Illinois",
+      "src": "taxref"
     },
     {
       "latin": "Taxodium distichum",
@@ -247,9 +567,39 @@
       "leads": "Taxodium distique"
     },
     {
+      "latin": "Platanus occidentalis",
+      "name": "Platane d’Occident",
+      "src": "taxref"
+    },
+    {
+      "latin": "Salix nigra",
+      "name": "Saule noir",
+      "src": "wikidata"
+    },
+    {
       "latin": "Callicarpa americana",
       "name": "Callicarpe d'Amérique",
       "src": "wikidata"
+    },
+    {
+      "latin": "Helianthus maximiliani",
+      "name": "Hélianthe de Maximilian",
+      "src": "taxref"
+    },
+    {
+      "latin": "Salvia farinacea",
+      "name": "Sauge farineuse",
+      "src": "taxref"
+    },
+    {
+      "latin": "Oenothera speciosa",
+      "name": "Onagre remarquable",
+      "src": "taxref"
+    },
+    {
+      "latin": "Phyla nodiflora",
+      "name": "Verveine du pays",
+      "src": "taxref"
     },
     {
       "latin": "Adiantum capillus-veneris",
@@ -267,6 +617,31 @@
       "src": "taxref"
     },
     {
+      "latin": "Sabal palmetto",
+      "name": "Palmier sabal",
+      "src": "taxref"
+    },
+    {
+      "latin": "Diospyros virginiana",
+      "name": "Plaqueminier de Virginie",
+      "src": "taxref"
+    },
+    {
+      "latin": "Magnolia virginiana",
+      "name": "Magnolia de Virginie",
+      "src": "taxref"
+    },
+    {
+      "latin": "Juniperus virginiana",
+      "name": "Genévrier de Virginie",
+      "src": "taxref"
+    },
+    {
+      "latin": "Myrcianthes fragrans",
+      "name": "Bois d'Inde Batârd",
+      "src": "taxref"
+    },
+    {
       "latin": "Salvia coccinea",
       "name": "Sauge écarlate",
       "src": "taxref"
@@ -277,10 +652,35 @@
       "src": "taxref"
     },
     {
+      "latin": "Helianthus debilis",
+      "name": "Hélianthe débile",
+      "src": "taxref"
+    },
+    {
       "latin": "Chrysobalanus icaco",
       "name": "Icaquier",
       "src": "taxref",
       "leads": "Pomme-icaque"
+    },
+    {
+      "latin": "Psychotria nervosa",
+      "name": "Psycotre nerveuse",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Stachytarpheta jamaicensis",
+      "name": "Épi bleu",
+      "src": "taxref"
+    },
+    {
+      "latin": "Rivina humilis",
+      "name": "Rivine humble",
+      "src": "taxref"
+    },
+    {
+      "latin": "Passiflora suberosa",
+      "name": "Passiflore à fruit violet",
+      "src": "taxref"
     },
     {
       "latin": "Quercus robur",
@@ -972,8 +1372,288 @@
       "src": "taxref"
     },
     {
+      "latin": "Betula pubescens",
+      "name": "Bouleau pubescent",
+      "src": "taxref"
+    },
+    {
+      "latin": "Taxus baccata",
+      "name": "If à baies",
+      "src": "taxref"
+    },
+    {
+      "latin": "Malus sylvestris",
+      "name": "Pommier sylvestre",
+      "src": "taxref"
+    },
+    {
+      "latin": "Erica cinerea",
+      "name": "Bruyère cendrée",
+      "src": "taxref"
+    },
+    {
+      "latin": "Erica tetralix",
+      "name": "Bruyère à quatre angles",
+      "src": "taxref"
+    },
+    {
+      "latin": "Rosa spinosissima",
+      "name": "Rosier très épineux",
+      "src": "taxref"
+    },
+    {
+      "latin": "Salix cinerea",
+      "name": "Saule cendré",
+      "src": "taxref"
+    },
+    {
+      "latin": "Viburnum opulus",
+      "name": "Viorne obier",
+      "src": "taxref"
+    },
+    {
+      "latin": "Ulex europaeus",
+      "name": "Ajonc d'Europe",
+      "src": "taxref"
+    },
+    {
+      "latin": "Myrica gale",
+      "name": "Myrique baumier",
+      "src": "taxref"
+    },
+    {
+      "latin": "Primula vulgaris",
+      "name": "Primevère commune",
+      "src": "taxref"
+    },
+    {
+      "latin": "Filipendula ulmaria",
+      "name": "Reine-des-prés",
+      "src": "taxref"
+    },
+    {
       "latin": "Lythrum salicaria",
       "name": "Salicaire commune",
+      "src": "taxref"
+    },
+    {
+      "latin": "Caltha palustris",
+      "name": "Populage des marais",
+      "src": "taxref"
+    },
+    {
+      "latin": "Urtica dioica",
+      "name": "Ortie dioïque",
+      "src": "taxref"
+    },
+    {
+      "latin": "Anemone nemorosa",
+      "name": "Anémone des bois",
+      "src": "taxref"
+    },
+    {
+      "latin": "Allium ursinum",
+      "name": "Ail des ours",
+      "src": "taxref"
+    },
+    {
+      "latin": "Teucrium scorodonia",
+      "name": "Germandrée scorodoine",
+      "src": "taxref"
+    },
+    {
+      "latin": "Silene dioica",
+      "name": "Silène dioïque",
+      "src": "taxref"
+    },
+    {
+      "latin": "Geranium sanguineum",
+      "name": "Géranium sanguin",
+      "src": "taxref"
+    },
+    {
+      "latin": "Taraxacum officinale",
+      "name": "Pissenlit officinal",
+      "src": "taxref"
+    },
+    {
+      "latin": "Molinia caerulea",
+      "name": "Molinie bleue",
+      "src": "taxref"
+    },
+    {
+      "latin": "Anthoxanthum odoratum",
+      "name": "Flouve odorante",
+      "src": "taxref"
+    },
+    {
+      "latin": "Poa trivialis",
+      "name": "Pâturin commun",
+      "src": "taxref"
+    },
+    {
+      "latin": "Vicia cracca",
+      "name": "Vesce cracca",
+      "src": "taxref"
+    },
+    {
+      "latin": "Lathyrus pratensis",
+      "name": "Gesse des prés",
+      "src": "taxref"
+    },
+    {
+      "latin": "Trifolium repens",
+      "name": "Trèfle rampant",
+      "src": "taxref"
+    },
+    {
+      "latin": "Thymus praecox",
+      "name": "Thym précoce",
+      "src": "taxref"
+    },
+    {
+      "latin": "Osmunda regalis",
+      "name": "Osmonde royale",
+      "src": "taxref"
+    },
+    {
+      "latin": "Metrosideros excelsa",
+      "name": "Pohutukawa",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Agathis australis",
+      "name": "Kauri",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Knightia excelsa",
+      "name": "Rewarewa",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Dysoxylum spectabile",
+      "name": "Kohekohe",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Cordyline australis",
+      "name": "Cordyline australe",
+      "src": "taxref"
+    },
+    {
+      "latin": "Leptospermum scoparium",
+      "name": "Manuka",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Pittosporum crassifolium",
+      "name": "Pittosporum à feuilles épaisses",
+      "src": "taxref"
+    },
+    {
+      "latin": "Myoporum laetum",
+      "name": "Myoporum plaisant",
+      "src": "taxref"
+    },
+    {
+      "latin": "Phormium tenax",
+      "name": "Phormium tenace",
+      "src": "taxref"
+    },
+    {
+      "latin": "Microlaena stipoides",
+      "name": "Microlène faux-stipe",
+      "src": "taxref"
+    },
+    {
+      "latin": "Dichondra repens",
+      "name": "Dichondra rampant",
+      "src": "taxref"
+    },
+    {
+      "latin": "Muehlenbeckia complexa",
+      "name": "Muehlenbeckia complexe",
+      "src": "taxref"
+    },
+    {
+      "latin": "Quercus glauca",
+      "name": "Chêne bleu",
+      "src": "taxref"
+    },
+    {
+      "latin": "Castanea crenata",
+      "name": "Châtaignier crénelé",
+      "src": "taxref"
+    },
+    {
+      "latin": "Zelkova serrata",
+      "name": "Orme du Japon",
+      "src": "bdtfx"
+    },
+    {
+      "latin": "Acer palmatum",
+      "name": "Érable palmé",
+      "src": "taxref"
+    },
+    {
+      "latin": "Alnus japonica",
+      "name": "Aulne du Japon",
+      "src": "taxref"
+    },
+    {
+      "latin": "Styrax japonicus",
+      "name": "Styrax du Japon",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Magnolia kobus",
+      "name": "Magnolia de Kobé",
+      "src": "taxref"
+    },
+    {
+      "latin": "Camellia japonica",
+      "name": "Camélia du Japon",
+      "src": "taxref"
+    },
+    {
+      "latin": "Hydrangea macrophylla",
+      "name": "Hydrangelle hortensia",
+      "src": "taxref"
+    },
+    {
+      "latin": "Lespedeza bicolor",
+      "name": "Bosklaver",
+      "src": "bdtfx"
+    },
+    {
+      "latin": "Rhododendron indicum",
+      "name": "Rhododendron des Indes",
+      "src": "taxref"
+    },
+    {
+      "latin": "Aucuba japonica",
+      "name": "Aucuba du Japon",
+      "src": "taxref"
+    },
+    {
+      "latin": "Pieris japonica",
+      "name": "Piéris du Japon",
+      "src": "taxref"
+    },
+    {
+      "latin": "Rosa multiflora",
+      "name": "Rosier multiflore",
+      "src": "taxref"
+    },
+    {
+      "latin": "Wisteria floribunda",
+      "name": "Glycine très fleurie",
+      "src": "taxref"
+    },
+    {
+      "latin": "Akebia quinata",
+      "name": "Akébie à cinq feuilles",
       "src": "taxref"
     },
     {
@@ -982,8 +1662,83 @@
       "src": "taxref"
     },
     {
+      "latin": "Parthenocissus tricuspidata",
+      "name": "Vigne-vierge à trois pointes",
+      "src": "taxref"
+    },
+    {
+      "latin": "Cornus kousa",
+      "name": "Cornouiller du Japon",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Sanguisorba officinalis",
+      "name": "Sanguisorbe officinale",
+      "src": "taxref"
+    },
+    {
+      "latin": "Iris ensata",
+      "name": "Iris à feuilles en épées",
+      "src": "taxref"
+    },
+    {
+      "latin": "Dianthus superbus",
+      "name": "Œillet superbe",
+      "src": "taxref"
+    },
+    {
+      "latin": "Lilium speciosum",
+      "name": "Lis remarquable",
+      "src": "taxref"
+    },
+    {
+      "latin": "Miscanthus sinensis",
+      "name": "Miscanthus de Chine",
+      "src": "taxref"
+    },
+    {
+      "latin": "Sasa veitchii",
+      "name": "Sasa de Veitch",
+      "src": "taxref"
+    },
+    {
+      "latin": "Ophiopogon japonicus",
+      "name": "Muguet du Japon",
+      "src": "bdtfx"
+    },
+    {
+      "latin": "Pachysandra terminalis",
+      "name": "Pachysandra terminal",
+      "src": "taxref"
+    },
+    {
+      "latin": "Saxifraga stolonifera",
+      "name": "Saxifrage stolonifère",
+      "src": "taxref"
+    },
+    {
+      "latin": "Dryopteris erythrosora",
+      "name": "Dryoptéride à sores rouges",
+      "src": "taxref"
+    },
+    {
       "latin": "Danaus plexippus",
       "name": "Monarque",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Papilio polyxenes",
+      "name": "Papillon du céleri",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Papilio glaucus",
+      "name": "Papillon glauque",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Asterocampa celtis",
+      "name": "Papillon du micocoulier",
       "src": "wikidata"
     },
     {
@@ -994,6 +1749,36 @@
     {
       "latin": "Vanessa virginiensis",
       "name": "Vanesse des perlières",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Vanessa atalanta",
+      "name": "Vulcain",
+      "src": "taxref"
+    },
+    {
+      "latin": "Papilio zelicaon",
+      "name": "Papillon de l'anise",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Callophrys gryneus",
+      "name": "Porte-queue verdâtre",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Icaricia icarioides",
+      "name": "Bleu de Boisduval",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Vanessa cardui",
+      "name": "Vanesse des Chardons",
+      "src": "taxref"
+    },
+    {
+      "latin": "Zerene eurydice",
+      "name": "Papillon de Californie",
       "src": "wikidata"
     },
     {
@@ -1046,6 +1831,21 @@
     {
       "latin": "Anthocharis cardamines",
       "name": "Aurore",
+      "src": "taxref"
+    },
+    {
+      "latin": "Euphydryas aurinia",
+      "name": "Damier de la Succise",
+      "src": "taxref"
+    },
+    {
+      "latin": "Leptidea juvernica",
+      "name": "Piéride irlandaise",
+      "src": "taxref"
+    },
+    {
+      "latin": "Aglais io",
+      "name": "Paon-du-jour",
       "src": "taxref"
     },
     {
@@ -1136,6 +1936,16 @@
       "src": "wikidata"
     },
     {
+      "latin": "Poecile rufescens",
+      "name": "Mésange à dos marron",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Patagioenas fasciata",
+      "name": "Pigeon à queue barrée",
+      "src": "wikidata"
+    },
+    {
       "latin": "Bombycilla cedrorum",
       "name": "Jaseur d'Amérique",
       "src": "wikidata"
@@ -1149,6 +1959,31 @@
       "latin": "Setophaga coronata",
       "name": "Paruline à croupion jaune",
       "src": "taxref"
+    },
+    {
+      "latin": "Psaltriparus minimus",
+      "name": "Orite buissonnière",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Spinus psaltria",
+      "name": "Chardonneret mineur",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Sitta pusilla",
+      "name": "Sittelle à tête brune",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Callipepla californica",
+      "name": "Colin de Californie",
+      "src": "taxref"
+    },
+    {
+      "latin": "Polioptila californica",
+      "name": "Gobemoucheron de Californie",
+      "src": "wikidata"
     },
     {
       "latin": "Coccothraustes coccothraustes",
@@ -1181,6 +2016,31 @@
       "src": "wikidata"
     },
     {
+      "latin": "Prosthemadera novaeseelandiae",
+      "name": "Méliphage tui",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Hemiphaga novaeseelandiae",
+      "name": "Carpophage de Nouvelle-Zélande",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Zosterops lateralis",
+      "name": "Zosterops à dos gris",
+      "src": "taxref"
+    },
+    {
+      "latin": "Libytheana carinenta",
+      "name": "Papillon longs-palpes",
+      "src": "wikidata"
+    },
+    {
+      "latin": "Archilochus alexandri",
+      "name": "Colibri à gorge noire",
+      "src": "wikidata"
+    },
+    {
       "latin": "Acer platanoides",
       "name": "Érable plane",
       "src": "taxref"
@@ -1201,6 +2061,16 @@
       "src": "taxref"
     },
     {
+      "latin": "Washingtonia robusta",
+      "name": "Washingtonia filifère",
+      "src": "taxref"
+    },
+    {
+      "latin": "Lonicera maackii",
+      "name": "Chèvrefeuille de Maack",
+      "src": "taxref"
+    },
+    {
       "latin": "Prunus laurocerasus",
       "name": "Laurier-cerise",
       "src": "taxref",
@@ -1213,8 +2083,28 @@
       "leads": "Buddleia de David"
     },
     {
+      "latin": "Ardisia crenata",
+      "name": "Ardisie crénelée",
+      "src": "taxref"
+    },
+    {
+      "latin": "Lantana camara",
+      "name": "Lantana",
+      "src": "taxref"
+    },
+    {
+      "latin": "Cycas revoluta",
+      "name": "Sagoutier",
+      "src": "taxref"
+    },
+    {
       "latin": "Rubus armeniacus",
       "name": "Ronce d'Arménie",
+      "src": "taxref"
+    },
+    {
+      "latin": "Asclepias curassavica",
+      "name": "Herbe à gendarme",
       "src": "taxref"
     },
     {
@@ -1223,8 +2113,58 @@
       "src": "wikidata"
     },
     {
+      "latin": "Heracleum mantegazzianum",
+      "name": "Berce du Caucase",
+      "src": "taxref"
+    },
+    {
       "latin": "Cortaderia selloana",
       "name": "Herbe de la pampa",
+      "src": "taxref"
+    },
+    {
+      "latin": "Pyracantha angustifolia",
+      "name": "Pyracantha à feuilles étroites",
+      "src": "taxref"
+    },
+    {
+      "latin": "Stachytarpheta cayennensis",
+      "name": "Herbe bleue",
+      "src": "taxref"
+    },
+    {
+      "latin": "Melia azedarach",
+      "name": "Margousier azédarach",
+      "src": "taxref"
+    },
+    {
+      "latin": "Ligustrum lucidum",
+      "name": "Troène luisant",
+      "src": "taxref"
+    },
+    {
+      "latin": "Schinus terebinthifolia",
+      "name": "Schinus à feuilles de térébinthe",
+      "src": "taxref"
+    },
+    {
+      "latin": "Elaeagnus umbellata",
+      "name": "Chalef en ombelle",
+      "src": "taxref"
+    },
+    {
+      "latin": "Nandina domestica",
+      "name": "Nandine domestique",
+      "src": "taxref"
+    },
+    {
+      "latin": "Rhamnus cathartica",
+      "name": "Nerprun purgatif",
+      "src": "taxref"
+    },
+    {
+      "latin": "Dipsacus laciniatus",
+      "name": "Cardère laciniée",
       "src": "taxref"
     },
     {
@@ -1239,8 +2179,23 @@
       "src": "taxref"
     },
     {
+      "latin": "Urena lobata",
+      "name": "Hérisson rouge",
+      "src": "taxref"
+    },
+    {
+      "latin": "Ardisia elliptica",
+      "name": "Ardisie elliptique",
+      "src": "taxref"
+    },
+    {
       "latin": "Agave americana",
       "name": "Agave d'Amérique",
+      "src": "taxref"
+    },
+    {
+      "latin": "Rhododendron ponticum",
+      "name": "Rhododendron du Pont",
       "src": "taxref"
     },
     {
@@ -1249,8 +2204,23 @@
       "src": "taxref"
     },
     {
+      "latin": "Rapistrum rugosum",
+      "name": "Rapistre rugueux",
+      "src": "taxref"
+    },
+    {
       "latin": "Reynoutria japonica",
       "name": "Renouée du Japon",
+      "src": "taxref"
+    },
+    {
+      "latin": "Centaurea stoebe",
+      "name": "Centaurée du Rhin",
+      "src": "taxref"
+    },
+    {
+      "latin": "Centaurea solstitialis",
+      "name": "Centaurée du solstice",
       "src": "taxref"
     },
     {
@@ -1282,8 +2252,33 @@
       "leads": "Phytolaque d'Amérique"
     },
     {
+      "latin": "Gunnera tinctoria",
+      "name": "Gunnéra des teinturiers",
+      "src": "taxref"
+    },
+    {
+      "latin": "Sorghum halepense",
+      "name": "Sorgho d'Alep",
+      "src": "taxref"
+    },
+    {
       "latin": "Arundo donax",
       "name": "Canne de Provence",
+      "src": "taxref"
+    },
+    {
+      "latin": "Celastrus orbiculatus",
+      "name": "Célastre",
+      "src": "bdtfx"
+    },
+    {
+      "latin": "Abrus precatorius",
+      "name": "Cascavelle",
+      "src": "taxref"
+    },
+    {
+      "latin": "Dioscorea bulbifera",
+      "name": "Patate en l'air",
       "src": "taxref"
     },
     {
@@ -1293,10 +2288,20 @@
       "leads": "Ficoïde douce"
     },
     {
+      "latin": "Securigera varia",
+      "name": "Coronille variée",
+      "src": "taxref"
+    },
+    {
       "latin": "Oxalis pes-caprae",
       "name": "Oxalis pied-de-chèvre",
       "src": "taxref",
       "leads": "Oxalide pied-de-chèvre"
+    },
+    {
+      "latin": "Nephrolepis cordifolia",
+      "name": "Néphrolépide à feuilles cordées",
+      "src": "taxref"
     }
   ],
   "mismatched": [],
@@ -1619,137 +2624,11 @@
   ],
   "missing": [
     {
-      "latin": "Fagus grandifolia",
-      "suggested": {
-        "wikidata": "Hêtre à grandes feuilles"
-      },
-      "english": "American Beech"
-    },
-    {
-      "latin": "Tilia americana",
-      "suggested": {
-        "taxref": "Tilleul d'Amérique",
-        "bdtfx": "Tilleul d'Amérique",
-        "wikidata": "Tilleul d'Amérique"
-      },
-      "english": "American Basswood"
-    },
-    {
-      "latin": "Tsuga canadensis",
-      "suggested": {
-        "taxref": "Tsuga du Canada",
-        "bdtfx": "Pruche de l'Est",
-        "wikidata": "pruche du Canada"
-      },
-      "english": "Eastern Hemlock"
-    },
-    {
-      "latin": "Pinus strobus",
-      "suggested": {
-        "taxref": "Pin Weymouth",
-        "bdtfx": "Pin blanc"
-      },
-      "english": "Eastern White Pine"
-    },
-    {
-      "latin": "Baptisia australis",
-      "suggested": {
-        "taxref": "Baptisia austral"
-      },
-      "english": "Blue Wild Indigo"
-    },
-    {
-      "latin": "Acer saccharum",
-      "suggested": {
-        "wikidata": "érable à sucre"
-      },
-      "english": "Sugar Maple"
-    },
-    {
-      "latin": "Betula papyrifera",
-      "suggested": {
-        "taxref": "Bouleau à papier",
-        "bdtfx": "Bouleau à canots",
-        "wikidata": "Bouleau à papier"
-      },
-      "english": "Paper Birch"
-    },
-    {
-      "latin": "Thuja occidentalis",
-      "suggested": {
-        "taxref": "Thuya d'Occident",
-        "bdtfx": "Thuya occidental",
-        "wikidata": "Thuya occidental"
-      },
-      "english": "Northern White Cedar"
-    },
-    {
-      "latin": "Populus tremuloides",
-      "suggested": {
-        "wikidata": "Peuplier faux-tremble"
-      },
-      "english": "Quaking Aspen"
-    },
-    {
-      "latin": "Amelanchier laevis",
-      "suggested": {
-        "bdtfx": "Amélanchier de Lamark"
-      },
-      "english": "Allegheny Serviceberry"
-    },
-    {
-      "latin": "Salix discolor",
-      "suggested": {
-        "wikidata": "Saule discolore"
-      },
-      "english": "Pussy Willow"
-    },
-    {
       "latin": "Vaccinium angustifolium",
       "suggested": {
         "wikidata": "bleuet feuilles troites"
       },
       "english": "Lowbush Blueberry"
-    },
-    {
-      "latin": "Diervilla lonicera",
-      "suggested": {
-        "taxref": "Diervilla chèvrefeuille"
-      },
-      "english": "Northern Bush Honeysuckle"
-    },
-    {
-      "latin": "Lupinus perennis",
-      "suggested": {
-        "taxref": "Lupin vivace",
-        "bdtfx": "Lupin vivace"
-      },
-      "english": "Wild Lupine"
-    },
-    {
-      "latin": "Symphyotrichum laeve",
-      "suggested": {
-        "taxref": "Symphyotriche lisse",
-        "bdtfx": "Aster lisse"
-      },
-      "english": "Smooth Blue Aster"
-    },
-    {
-      "latin": "Rudbeckia hirta",
-      "suggested": {
-        "taxref": "Rudbeckie hérissée",
-        "bdtfx": "Rudbeckia hérissé"
-      },
-      "english": "Black-eyed Susan"
-    },
-    {
-      "latin": "Campanula rotundifolia",
-      "suggested": {
-        "taxref": "Campanule à feuilles rondes",
-        "bdtfx": "Campanule à feuilles rondes",
-        "wikidata": "Campanule à feuilles rondes"
-      },
-      "english": "Harebell"
     },
     {
       "latin": "Eutrochium maculatum",
@@ -1759,407 +2638,11 @@
       "english": "Spotted Joe-Pye Weed"
     },
     {
-      "latin": "Vitis riparia",
-      "suggested": {
-        "taxref": "Vigne des rives",
-        "wikidata": "Vigne des rivages"
-      },
-      "english": "Riverbank Grape"
-    },
-    {
-      "latin": "Cornus canadensis",
-      "suggested": {
-        "taxref": "Cornouiller du Canada",
-        "wikidata": "quatre-temps"
-      },
-      "english": "Bunchberry"
-    },
-    {
-      "latin": "Matteuccia struthiopteris",
-      "suggested": {
-        "taxref": "Matteuccia struthioptéride",
-        "bdtfx": "Fougère allemande",
-        "wikidata": "matteuccie"
-      },
-      "english": "Ostrich Fern"
-    },
-    {
-      "latin": "Quercus macrocarpa",
-      "suggested": {
-        "wikidata": "chêne à gros fruits"
-      },
-      "english": "Bur Oak"
-    },
-    {
-      "latin": "Carya ovata",
-      "suggested": {
-        "taxref": "Caryer ovale",
-        "bdtfx": "Noyer tendre",
-        "wikidata": "noyer tendre"
-      },
-      "english": "Shagbark Hickory"
-    },
-    {
-      "latin": "Celtis occidentalis",
-      "suggested": {
-        "taxref": "Micocoulier d'Occident",
-        "bdtfx": "Micocoulier de Virginie",
-        "wikidata": "Micocoulier occidental"
-      },
-      "english": "Hackberry"
-    },
-    {
-      "latin": "Rosa setigera",
-      "suggested": {
-        "bdtfx": "Églantier de la Prairie"
-      },
-      "english": "Prairie Rose"
-    },
-    {
-      "latin": "Rhus glabra",
-      "suggested": {
-        "taxref": "Sumac glabre",
-        "bdtfx": "Sumac glabre",
-        "wikidata": "Sumac à bois glabre"
-      },
-      "english": "Smooth Sumac"
-    },
-    {
-      "latin": "Eryngium yuccifolium",
-      "suggested": {
-        "taxref": "Panicaut à feuilles de yucca",
-        "wikidata": "Panicaut à feuilles de yucca"
-      },
-      "english": "Rattlesnake Master"
-    },
-    {
-      "latin": "Asclepias syriaca",
-      "suggested": {
-        "taxref": "Asclépiade de Syrie",
-        "bdtfx": "Asclépiade de Syrie",
-        "wikidata": "herbe à ouate"
-      },
-      "english": "Common Milkweed"
-    },
-    {
-      "latin": "Ratibida pinnata",
-      "suggested": {
-        "taxref": "Ratibida penné"
-      },
-      "english": "Yellow Coneflower"
-    },
-    {
-      "latin": "Lobelia siphilitica",
-      "suggested": {
-        "taxref": "Lobélie syphilitique"
-      },
-      "english": "Great Blue Lobelia"
-    },
-    {
-      "latin": "Asarum canadense",
-      "suggested": {
-        "wikidata": "Asaret du Canada"
-      },
-      "english": "Wild Ginger"
-    },
-    {
-      "latin": "Onoclea sensibilis",
-      "suggested": {
-        "taxref": "Onoclée sensible",
-        "bdtfx": "Onoclée",
-        "wikidata": "Onoclée sensible"
-      },
-      "english": "Sensitive Fern"
-    },
-    {
-      "latin": "Adiantum pedatum",
-      "suggested": {
-        "wikidata": "Adiante du Canada"
-      },
-      "english": "Maidenhair Fern"
-    },
-    {
-      "latin": "Celastrus scandens",
-      "suggested": {
-        "bdtfx": "Bourreau des arbres"
-      },
-      "english": "American Bittersweet"
-    },
-    {
-      "latin": "Pinus ponderosa",
-      "suggested": {
-        "taxref": "Pin ponderosa",
-        "bdtfx": "Pin jaune",
-        "wikidata": "Pin ponderosa"
-      },
-      "english": "Ponderosa Pine"
-    },
-    {
-      "latin": "Picea sitchensis",
-      "suggested": {
-        "taxref": "Épicéa de Sitka",
-        "bdtfx": "Épicéa de Sitka",
-        "wikidata": "épinette de Sitka"
-      },
-      "english": "Sitka Spruce"
-    },
-    {
-      "latin": "Pinus contorta",
-      "suggested": {
-        "taxref": "Pin tordu",
-        "bdtfx": "Pin tordu",
-        "wikidata": "pin tordu"
-      },
-      "english": "Shore Pine"
-    },
-    {
-      "latin": "Taxus brevifolia",
-      "suggested": {
-        "taxref": "If à feuilles courtes",
-        "wikidata": "If de l'Ouest"
-      },
-      "english": "Pacific Yew"
-    },
-    {
-      "latin": "Spiraea douglasii",
-      "suggested": {
-        "taxref": "Spirée de Douglas",
-        "bdtfx": "Spirée de Douglas"
-      },
-      "english": "Douglas Spirea (Hardhack)"
-    },
-    {
-      "latin": "Eriophyllum lanatum",
-      "suggested": {
-        "taxref": "Ériophylle laineux",
-        "bdtfx": "Oregon Sunshine"
-      },
-      "english": "Oregon Sunshine"
-    },
-    {
-      "latin": "Chamaenerion angustifolium",
-      "suggested": {
-        "taxref": "Épilobe à feuilles étroites",
-        "bdtfx": "Épilobe à feuilles étroites",
-        "wikidata": "Laurier de Saint-Antoine"
-      },
-      "english": "Fireweed"
-    },
-    {
-      "latin": "Aruncus dioicus",
-      "suggested": {
-        "taxref": "Spirée barbe-de-bouc",
-        "bdtfx": "Barbe-de-bouc",
-        "wikidata": "Barbe de bouc"
-      },
-      "english": "Goat's Beard"
-    },
-    {
-      "latin": "Dicentra formosa",
-      "suggested": {
-        "taxref": "Dicentra gracieux",
-        "bdtfx": "Bleeding-heart"
-      },
-      "english": "Pacific Bleeding Heart"
-    },
-    {
-      "latin": "Heracleum maximum",
-      "suggested": {
-        "wikidata": "Berce laineuse"
-      },
-      "english": "Cow Parsnip"
-    },
-    {
-      "latin": "Tellima grandiflora",
-      "suggested": {
-        "taxref": "Tellima à grandes fleurs",
-        "bdtfx": "Fringecups"
-      },
-      "english": "Fringecup"
-    },
-    {
-      "latin": "Lysichiton americanus",
-      "suggested": {
-        "taxref": "Lysichiton d'Amérique"
-      },
-      "english": "Western Skunk Cabbage"
-    },
-    {
-      "latin": "Lilium columbianum",
-      "suggested": {
-        "wikidata": "Lys de Colombie"
-      },
-      "english": "Columbia Lily (Tiger Lily)"
-    },
-    {
-      "latin": "Geum macrophyllum",
-      "suggested": {
-        "bdtfx": "Benoîte à grandes feuilles"
-      },
-      "english": "Large-leaved Avens"
-    },
-    {
-      "latin": "Carex obnupta",
-      "suggested": {
-        "wikidata": "Carex voilé"
-      },
-      "english": "Slough Sedge"
-    },
-    {
-      "latin": "Linnaea borealis",
-      "suggested": {
-        "taxref": "Linnée boréale",
-        "bdtfx": "Linnée boréale",
-        "wikidata": "Linnée boréale"
-      },
-      "english": "Twinflower"
-    },
-    {
-      "latin": "Viola glabella",
-      "suggested": {
-        "wikidata": "violette glabre"
-      },
-      "english": "Stream Violet"
-    },
-    {
-      "latin": "Quercus agrifolia",
-      "suggested": {
-        "taxref": "Chêne d'Auzende"
-      },
-      "english": "Coast Live Oak"
-    },
-    {
-      "latin": "Umbellularia californica",
-      "suggested": {
-        "taxref": "Umbellularia de Californie",
-        "bdtfx": "Californian Bay",
-        "wikidata": "Laurier de Californie"
-      },
-      "english": "California Bay (Bay Laurel)"
-    },
-    {
-      "latin": "Aesculus californica",
-      "suggested": {
-        "wikidata": "Pavier de Californie"
-      },
-      "english": "California Buckeye"
-    },
-    {
-      "latin": "Hesperocyparis forbesii",
-      "suggested": {
-        "taxref": "Cyprès de Forbes"
-      },
-      "english": "Tecate Cypress"
-    },
-    {
-      "latin": "Pinus coulteri",
-      "suggested": {
-        "taxref": "Pin de Coulter",
-        "bdtfx": "Pin à gros cônes",
-        "wikidata": "Pin à gros cônes"
-      },
-      "english": "Coulter Pine"
-    },
-    {
-      "latin": "Ribes speciosum",
-      "suggested": {
-        "taxref": "Groseillier à fleur de fuchsia",
-        "bdtfx": "Fuchsia-flowered Gooseberry"
-      },
-      "english": "Fuchsia-flowered Gooseberry"
-    },
-    {
-      "latin": "Eschscholzia californica",
-      "suggested": {
-        "taxref": "Pavot de Californie",
-        "bdtfx": "Pavot de Californie",
-        "wikidata": "Pavot de Californie"
-      },
-      "english": "California Poppy"
-    },
-    {
-      "latin": "Clematis lasiantha",
-      "suggested": {
-        "taxref": "Clématite flammette",
-        "bdtfx": "Clématite brûlante"
-      },
-      "english": "Chaparral Clematis (Pipestem)"
-    },
-    {
-      "latin": "Sequoia sempervirens",
-      "suggested": {
-        "taxref": "Séquoia toujours vert",
-        "bdtfx": "Séquoia à feuilles d'if"
-      },
-      "english": "Coast Redwood"
-    },
-    {
-      "latin": "Hesperocyparis sargentii",
-      "suggested": {
-        "taxref": "Cyprès de Sargent"
-      },
-      "english": "Sargent Cypress"
-    },
-    {
-      "latin": "Alnus rhombifolia",
-      "suggested": {
-        "wikidata": "Aulne de la sierra"
-      },
-      "english": "White Alder"
-    },
-    {
-      "latin": "Ceanothus thyrsiflorus",
-      "suggested": {
-        "taxref": "Céanothe à fleurs en thyrse",
-        "bdtfx": "Lilas de Californie"
-      },
-      "english": "Blueblossom"
-    },
-    {
       "latin": "Eriophyllum staechadifolium",
       "suggested": {
         "wikidata": "Eriophyllum stoechadifolium"
       },
       "english": "Lizard Tail"
-    },
-    {
-      "latin": "Erigeron glaucus",
-      "suggested": {
-        "taxref": "Érigéron glauque",
-        "bdtfx": "Vergerette glauque",
-        "wikidata": "Vergerette glauque"
-      },
-      "english": "Seaside Daisy"
-    },
-    {
-      "latin": "Quercus shumardii",
-      "suggested": {
-        "wikidata": "chêne de Shumard"
-      },
-      "english": "Shumard Oak"
-    },
-    {
-      "latin": "Carya illinoinensis",
-      "suggested": {
-        "taxref": "Carya de l'Illinois",
-        "wikidata": "Pacanier"
-      },
-      "english": "Pecan"
-    },
-    {
-      "latin": "Platanus occidentalis",
-      "suggested": {
-        "taxref": "Platane d’Occident",
-        "bdtfx": "Platane"
-      },
-      "english": "American Sycamore"
-    },
-    {
-      "latin": "Salix nigra",
-      "suggested": {
-        "wikidata": "Saule noir"
-      },
-      "english": "Black Willow"
     },
     {
       "latin": "Prosopis glandulosa",
@@ -2169,603 +2652,6 @@
       "english": "Honey Mesquite"
     },
     {
-      "latin": "Helianthus maximiliani",
-      "suggested": {
-        "taxref": "Hélianthe de Maximilian"
-      },
-      "english": "Maximilian Sunflower"
-    },
-    {
-      "latin": "Salvia farinacea",
-      "suggested": {
-        "taxref": "Sauge farineuse",
-        "bdtfx": "Sauge farineuse"
-      },
-      "english": "Mealy Blue Sage"
-    },
-    {
-      "latin": "Oenothera speciosa",
-      "suggested": {
-        "taxref": "Onagre remarquable"
-      },
-      "english": "Pink Evening Primrose"
-    },
-    {
-      "latin": "Phyla nodiflora",
-      "suggested": {
-        "taxref": "Verveine du pays",
-        "bdtfx": "Phyla à fleurs nodales",
-        "wikidata": "Verveine Nodiflore"
-      },
-      "english": "Frogfruit"
-    },
-    {
-      "latin": "Sabal palmetto",
-      "suggested": {
-        "taxref": "Palmier sabal",
-        "bdtfx": "Chou palmiste"
-      },
-      "english": "Cabbage Palm (Sabal Palm)"
-    },
-    {
-      "latin": "Diospyros virginiana",
-      "suggested": {
-        "taxref": "Plaqueminier de Virginie"
-      },
-      "english": "Common Persimmon"
-    },
-    {
-      "latin": "Magnolia virginiana",
-      "suggested": {
-        "taxref": "Magnolia de Virginie"
-      },
-      "english": "Sweetbay Magnolia"
-    },
-    {
-      "latin": "Juniperus virginiana",
-      "suggested": {
-        "taxref": "Genévrier de Virginie",
-        "bdtfx": "Genévrier de Virginie",
-        "wikidata": "Genévrier de Virginie"
-      },
-      "english": "Southern Red Cedar"
-    },
-    {
-      "latin": "Myrcianthes fragrans",
-      "suggested": {
-        "taxref": "Bois d'Inde Batârd"
-      },
-      "english": "Simpson's Stopper"
-    },
-    {
-      "latin": "Helianthus debilis",
-      "suggested": {
-        "taxref": "Hélianthe débile"
-      },
-      "english": "Beach / Dune Sunflower"
-    },
-    {
-      "latin": "Psychotria nervosa",
-      "suggested": {
-        "wikidata": "Psycotre nerveuse"
-      },
-      "english": "Wild Coffee"
-    },
-    {
-      "latin": "Stachytarpheta jamaicensis",
-      "suggested": {
-        "taxref": "Épi bleu",
-        "wikidata": "Verveine bleue"
-      },
-      "english": "Blue Porterweed"
-    },
-    {
-      "latin": "Rivina humilis",
-      "suggested": {
-        "taxref": "Rivine humble"
-      },
-      "english": "Rougeplant (Bloodberry)"
-    },
-    {
-      "latin": "Passiflora suberosa",
-      "suggested": {
-        "taxref": "Passiflore à fruit violet"
-      },
-      "english": "Corkystem Passionflower"
-    },
-    {
-      "latin": "Betula pubescens",
-      "suggested": {
-        "taxref": "Bouleau pubescent",
-        "bdtfx": "Bouleau blanc",
-        "wikidata": "Bouleau pubescent"
-      },
-      "english": "Downy Birch"
-    },
-    {
-      "latin": "Taxus baccata",
-      "suggested": {
-        "taxref": "If à baies",
-        "bdtfx": "If",
-        "wikidata": "If commun"
-      },
-      "english": "Yew"
-    },
-    {
-      "latin": "Malus sylvestris",
-      "suggested": {
-        "taxref": "Pommier sylvestre",
-        "bdtfx": "Boquettier",
-        "wikidata": "pommier"
-      },
-      "english": "Crab Apple"
-    },
-    {
-      "latin": "Erica cinerea",
-      "suggested": {
-        "taxref": "Bruyère cendrée",
-        "bdtfx": "Bruyère cendrée",
-        "wikidata": "Bruyère Cendrée"
-      },
-      "english": "Bell Heather"
-    },
-    {
-      "latin": "Erica tetralix",
-      "suggested": {
-        "taxref": "Bruyère à quatre angles",
-        "bdtfx": "Bruyère à quatre angles",
-        "wikidata": "Bruyère tétragone"
-      },
-      "english": "Cross-leaved Heath"
-    },
-    {
-      "latin": "Rosa spinosissima",
-      "suggested": {
-        "taxref": "Rosier très épineux",
-        "bdtfx": "Églantier pimprenelle",
-        "wikidata": "Rosa pimpinellifolia"
-      },
-      "english": "Burnet Rose"
-    },
-    {
-      "latin": "Salix cinerea",
-      "suggested": {
-        "taxref": "Saule cendré",
-        "bdtfx": "Saule cendré",
-        "wikidata": "Saule cendré"
-      },
-      "english": "Gray Willow (Sally)"
-    },
-    {
-      "latin": "Viburnum opulus",
-      "suggested": {
-        "taxref": "Viorne obier",
-        "bdtfx": "Obier",
-        "wikidata": "Viorne obier"
-      },
-      "english": "Guelder Rose"
-    },
-    {
-      "latin": "Ulex europaeus",
-      "suggested": {
-        "taxref": "Ajonc d'Europe",
-        "bdtfx": "Ajonc d'Europe",
-        "wikidata": "ajonc deurope"
-      },
-      "english": "Gorse (Furze)"
-    },
-    {
-      "latin": "Myrica gale",
-      "suggested": {
-        "taxref": "Myrique baumier",
-        "bdtfx": "Galé odorant",
-        "wikidata": "piment royal"
-      },
-      "english": "Bog Myrtle"
-    },
-    {
-      "latin": "Primula vulgaris",
-      "suggested": {
-        "taxref": "Primevère commune",
-        "bdtfx": "Primevère acaule",
-        "wikidata": "Primevère commune"
-      },
-      "english": "Primrose"
-    },
-    {
-      "latin": "Filipendula ulmaria",
-      "suggested": {
-        "taxref": "Reine-des-prés",
-        "bdtfx": "Fausse Spirée",
-        "wikidata": "Reine-des-prés"
-      },
-      "english": "Meadowsweet"
-    },
-    {
-      "latin": "Caltha palustris",
-      "suggested": {
-        "taxref": "Populage des marais",
-        "bdtfx": "Caltha des marais",
-        "wikidata": "Populage des marais"
-      },
-      "english": "Marsh Marigold"
-    },
-    {
-      "latin": "Urtica dioica",
-      "suggested": {
-        "taxref": "Ortie dioïque",
-        "bdtfx": "Grande Ortie",
-        "wikidata": "grande ortie, ortie dioïque"
-      },
-      "english": "Common Nettle"
-    },
-    {
-      "latin": "Anemone nemorosa",
-      "suggested": {
-        "taxref": "Anémone des bois",
-        "bdtfx": "Anémone des bois",
-        "wikidata": "Anémone sylvie"
-      },
-      "english": "Wood Anemone"
-    },
-    {
-      "latin": "Allium ursinum",
-      "suggested": {
-        "taxref": "Ail des ours",
-        "bdtfx": "Ail des bois",
-        "wikidata": "Ail des ours"
-      },
-      "english": "Wild Garlic (Ramsons)"
-    },
-    {
-      "latin": "Teucrium scorodonia",
-      "suggested": {
-        "taxref": "Germandrée scorodoine",
-        "bdtfx": "Germandrée scorodoine",
-        "wikidata": "germandrée scorodine"
-      },
-      "english": "Wood Sage"
-    },
-    {
-      "latin": "Silene dioica",
-      "suggested": {
-        "taxref": "Silène dioïque",
-        "bdtfx": "Compagnon rouge",
-        "wikidata": "compagnon rouge"
-      },
-      "english": "Red Campion"
-    },
-    {
-      "latin": "Geranium sanguineum",
-      "suggested": {
-        "taxref": "Géranium sanguin",
-        "bdtfx": "Géranium rouge sang",
-        "wikidata": "Herbe à becquet"
-      },
-      "english": "Bloody Cranesbill"
-    },
-    {
-      "latin": "Taraxacum officinale",
-      "suggested": {
-        "taxref": "Pissenlit officinal",
-        "wikidata": "Taraxacum section Ruderalia"
-      },
-      "english": "Dandelion"
-    },
-    {
-      "latin": "Molinia caerulea",
-      "suggested": {
-        "taxref": "Molinie bleue",
-        "bdtfx": "Molinie bleue",
-        "wikidata": "molinie"
-      },
-      "english": "Purple Moor-grass"
-    },
-    {
-      "latin": "Anthoxanthum odoratum",
-      "suggested": {
-        "taxref": "Flouve odorante",
-        "bdtfx": "Flouve odorante",
-        "wikidata": "Flouve odorante"
-      },
-      "english": "Sweet Vernal-grass"
-    },
-    {
-      "latin": "Poa trivialis",
-      "suggested": {
-        "taxref": "Pâturin commun",
-        "bdtfx": "Gazon d'Angleterre",
-        "wikidata": "Pâturin commun"
-      },
-      "english": "Rough Meadow-grass"
-    },
-    {
-      "latin": "Vicia cracca",
-      "suggested": {
-        "taxref": "Vesce cracca",
-        "bdtfx": "Jarosse",
-        "wikidata": "Vesce craque"
-      },
-      "english": "Tufted Vetch"
-    },
-    {
-      "latin": "Lathyrus pratensis",
-      "suggested": {
-        "taxref": "Gesse des prés",
-        "bdtfx": "Gesse des prés",
-        "wikidata": "gesse des prés"
-      },
-      "english": "Meadow Vetchling"
-    },
-    {
-      "latin": "Trifolium repens",
-      "suggested": {
-        "taxref": "Trèfle rampant",
-        "bdtfx": "Trèfle blanc",
-        "wikidata": "Trèfle blanc"
-      },
-      "english": "White Clover"
-    },
-    {
-      "latin": "Thymus praecox",
-      "suggested": {
-        "taxref": "Thym précoce",
-        "bdtfx": "Serpolet couchet",
-        "wikidata": "serpolet couché"
-      },
-      "english": "Wild Thyme"
-    },
-    {
-      "latin": "Osmunda regalis",
-      "suggested": {
-        "taxref": "Osmonde royale",
-        "bdtfx": "Fougère royale",
-        "wikidata": "Osmonde Royale"
-      },
-      "english": "Royal Fern"
-    },
-    {
-      "latin": "Metrosideros excelsa",
-      "suggested": {
-        "wikidata": "Pohutukawa"
-      },
-      "english": "Pōhutukawa"
-    },
-    {
-      "latin": "Agathis australis",
-      "suggested": {
-        "wikidata": "Kauri"
-      },
-      "english": "Kauri"
-    },
-    {
-      "latin": "Knightia excelsa",
-      "suggested": {
-        "wikidata": "Rewarewa"
-      },
-      "english": "Rewarewa"
-    },
-    {
-      "latin": "Dysoxylum spectabile",
-      "suggested": {
-        "wikidata": "Kohekohe"
-      },
-      "english": "Kohekohe"
-    },
-    {
-      "latin": "Cordyline australis",
-      "suggested": {
-        "taxref": "Cordyline australe",
-        "bdtfx": "Cordyline"
-      },
-      "english": "Tī Kōuka"
-    },
-    {
-      "latin": "Leptospermum scoparium",
-      "suggested": {
-        "wikidata": "Manuka"
-      },
-      "english": "Mānuka"
-    },
-    {
-      "latin": "Pittosporum crassifolium",
-      "suggested": {
-        "taxref": "Pittosporum à feuilles épaisses"
-      },
-      "english": "Karo"
-    },
-    {
-      "latin": "Myoporum laetum",
-      "suggested": {
-        "taxref": "Myoporum plaisant",
-        "bdtfx": "Ngaio Tree"
-      },
-      "english": "Ngaio"
-    },
-    {
-      "latin": "Phormium tenax",
-      "suggested": {
-        "taxref": "Phormium tenace",
-        "bdtfx": "Formio común"
-      },
-      "english": "Harakeke"
-    },
-    {
-      "latin": "Microlaena stipoides",
-      "suggested": {
-        "taxref": "Microlène faux-stipe"
-      },
-      "english": "Pātītī"
-    },
-    {
-      "latin": "Dichondra repens",
-      "suggested": {
-        "taxref": "Dichondra rampant",
-        "bdtfx": "Alfombra"
-      },
-      "english": "Mercury Bay Weed"
-    },
-    {
-      "latin": "Muehlenbeckia complexa",
-      "suggested": {
-        "taxref": "Muehlenbeckia complexe",
-        "bdtfx": "Enredadera de alambre"
-      },
-      "english": "Pōhuehue"
-    },
-    {
-      "latin": "Quercus glauca",
-      "suggested": {
-        "taxref": "Chêne bleu"
-      },
-      "english": "Arakashi Oak"
-    },
-    {
-      "latin": "Castanea crenata",
-      "suggested": {
-        "taxref": "Châtaignier crénelé",
-        "bdtfx": "Châtaignier crénelé"
-      },
-      "english": "Japanese Chestnut"
-    },
-    {
-      "latin": "Zelkova serrata",
-      "suggested": {
-        "bdtfx": "Orme du Japon"
-      },
-      "english": "Keyaki"
-    },
-    {
-      "latin": "Acer palmatum",
-      "suggested": {
-        "taxref": "Érable palmé",
-        "bdtfx": "Érable japonais lisse",
-        "wikidata": "érable palmé"
-      },
-      "english": "Japanese Maple"
-    },
-    {
-      "latin": "Alnus japonica",
-      "suggested": {
-        "taxref": "Aulne du Japon",
-        "bdtfx": "Seaside Alder"
-      },
-      "english": "Japanese Alder"
-    },
-    {
-      "latin": "Styrax japonicus",
-      "suggested": {
-        "wikidata": "styrax du Japon"
-      },
-      "english": "Egonoki Snowbell"
-    },
-    {
-      "latin": "Magnolia kobus",
-      "suggested": {
-        "taxref": "Magnolia de Kobé",
-        "bdtfx": "Magnolia",
-        "wikidata": "Magnolia de Kobé"
-      },
-      "english": "Kobushi Magnolia"
-    },
-    {
-      "latin": "Camellia japonica",
-      "suggested": {
-        "taxref": "Camélia du Japon",
-        "bdtfx": "Camélia du Japon",
-        "wikidata": "Camélia du Japon"
-      },
-      "english": "Yabu-tsubaki Camellia"
-    },
-    {
-      "latin": "Hydrangea macrophylla",
-      "suggested": {
-        "taxref": "Hydrangelle hortensia",
-        "bdtfx": "Bigleaf Hydrangea"
-      },
-      "english": "Ajisai Hydrangea"
-    },
-    {
-      "latin": "Lespedeza bicolor",
-      "suggested": {
-        "bdtfx": "Bosklaver"
-      },
-      "english": "Yama-hagi"
-    },
-    {
-      "latin": "Rhododendron indicum",
-      "suggested": {
-        "taxref": "Rhododendron des Indes"
-      },
-      "english": "Satsuki Azalea"
-    },
-    {
-      "latin": "Aucuba japonica",
-      "suggested": {
-        "taxref": "Aucuba du Japon",
-        "bdtfx": "Aucuba"
-      },
-      "english": "Aoki Spotted Laurel"
-    },
-    {
-      "latin": "Pieris japonica",
-      "suggested": {
-        "taxref": "Piéris du Japon",
-        "bdtfx": "Lavendelheide"
-      },
-      "english": "Asebi"
-    },
-    {
-      "latin": "Rosa multiflora",
-      "suggested": {
-        "taxref": "Rosier multiflore",
-        "bdtfx": "Églantier multiflore"
-      },
-      "english": "Noibara Rose"
-    },
-    {
-      "latin": "Wisteria floribunda",
-      "suggested": {
-        "taxref": "Glycine très fleurie",
-        "bdtfx": "Japanese Wisteria"
-      },
-      "english": "Noda-fuji Wisteria"
-    },
-    {
-      "latin": "Akebia quinata",
-      "suggested": {
-        "taxref": "Akébie à cinq feuilles",
-        "bdtfx": "Akébia",
-        "wikidata": "Akébie à cinq feuilles"
-      },
-      "english": "Akebi Chocolate Vine"
-    },
-    {
-      "latin": "Parthenocissus tricuspidata",
-      "suggested": {
-        "taxref": "Vigne-vierge à trois pointes",
-        "bdtfx": "Vigne-vierge à trois pointes",
-        "wikidata": "Lierre japonais"
-      },
-      "english": "Tsuta Boston Ivy"
-    },
-    {
-      "latin": "Cornus kousa",
-      "suggested": {
-        "wikidata": "Cornouiller du Japon"
-      },
-      "english": "Yamaboshi Dogwood"
-    },
-    {
-      "latin": "Sanguisorba officinalis",
-      "suggested": {
-        "taxref": "Sanguisorbe officinale",
-        "bdtfx": "Grande Pimprenelle",
-        "wikidata": "Sanguisorbe officinale"
-      },
-      "english": "Waremokō Burnet"
-    },
-    {
       "latin": "Patrinia scabiosifolia",
       "suggested": {
         "wikidata": "Patrinia scabiosaefolia"
@@ -2773,487 +2659,11 @@
       "english": "Ominaeshi Golden Lace"
     },
     {
-      "latin": "Iris ensata",
-      "suggested": {
-        "taxref": "Iris à feuilles en épées",
-        "bdtfx": "Japanese Iris"
-      },
-      "english": "Hanashōbu Iris"
-    },
-    {
-      "latin": "Dianthus superbus",
-      "suggested": {
-        "taxref": "Œillet superbe",
-        "bdtfx": "Oeillet à plumet",
-        "wikidata": "oeillet superbe"
-      },
-      "english": "Kawaranadeshiko Pink"
-    },
-    {
-      "latin": "Lilium speciosum",
-      "suggested": {
-        "taxref": "Lis remarquable",
-        "bdtfx": "Lis du Japon"
-      },
-      "english": "Kanokoyuri Lily"
-    },
-    {
-      "latin": "Miscanthus sinensis",
-      "suggested": {
-        "taxref": "Miscanthus de Chine",
-        "bdtfx": "Miscanthus de Chine"
-      },
-      "english": "Susuki Silver Grass"
-    },
-    {
-      "latin": "Sasa veitchii",
-      "suggested": {
-        "taxref": "Sasa de Veitch",
-        "bdtfx": "Veitch's Bamboo"
-      },
-      "english": "Kumazasa Dwarf Bamboo"
-    },
-    {
-      "latin": "Ophiopogon japonicus",
-      "suggested": {
-        "bdtfx": "Muguet du Japon",
-        "wikidata": "muguet du Japon"
-      },
-      "english": "Ryū-no-hige Mondo Grass"
-    },
-    {
-      "latin": "Pachysandra terminalis",
-      "suggested": {
-        "taxref": "Pachysandra terminal"
-      },
-      "english": "Fukkisō Japanese Spurge"
-    },
-    {
-      "latin": "Saxifraga stolonifera",
-      "suggested": {
-        "taxref": "Saxifrage stolonifère",
-        "bdtfx": "Saxifrage stolonifère",
-        "wikidata": "Saxifrage stolonifère"
-      },
-      "english": "Yukinoshita Strawberry Saxifrage"
-    },
-    {
-      "latin": "Dryopteris erythrosora",
-      "suggested": {
-        "taxref": "Dryoptéride à sores rouges"
-      },
-      "english": "Benishida Autumn Fern"
-    },
-    {
       "latin": "Athyrium niponicum",
       "suggested": {
         "wikidata": "Soort varen uit het geslacht Athyrium"
       },
       "english": "Nishikishida Painted Fern"
-    },
-    {
-      "latin": "Papilio polyxenes",
-      "suggested": {
-        "wikidata": "Papillon du céleri"
-      },
-      "english": "Black swallowtail"
-    },
-    {
-      "latin": "Papilio glaucus",
-      "suggested": {
-        "wikidata": "Papillon glauque"
-      },
-      "english": "Eastern tiger swallowtail"
-    },
-    {
-      "latin": "Asterocampa celtis",
-      "suggested": {
-        "wikidata": "Papillon du micocoulier"
-      },
-      "english": "Hackberry emperor"
-    },
-    {
-      "latin": "Vanessa atalanta",
-      "suggested": {
-        "taxref": "Vulcain",
-        "wikidata": "vulcain"
-      },
-      "english": "Red admiral"
-    },
-    {
-      "latin": "Papilio zelicaon",
-      "suggested": {
-        "wikidata": "Papillon de l'anise"
-      },
-      "english": "Anise swallowtail"
-    },
-    {
-      "latin": "Callophrys gryneus",
-      "suggested": {
-        "wikidata": "Porte-queue verdâtre"
-      },
-      "english": "Juniper & cypress hairstreaks"
-    },
-    {
-      "latin": "Icaricia icarioides",
-      "suggested": {
-        "wikidata": "Bleu de Boisduval"
-      },
-      "english": "Lupine blues"
-    },
-    {
-      "latin": "Vanessa cardui",
-      "suggested": {
-        "taxref": "Vanesse des Chardons",
-        "wikidata": "Vanesse du chardon"
-      },
-      "english": "Painted lady"
-    },
-    {
-      "latin": "Zerene eurydice",
-      "suggested": {
-        "wikidata": "Papillon de Californie"
-      },
-      "english": "California dogface butterfly"
-    },
-    {
-      "latin": "Euphydryas aurinia",
-      "suggested": {
-        "taxref": "Damier de la Succise",
-        "wikidata": "damier de la succise"
-      },
-      "english": "Marsh fritillary"
-    },
-    {
-      "latin": "Leptidea juvernica",
-      "suggested": {
-        "taxref": "Piéride irlandaise"
-      },
-      "english": "Cryptic wood white"
-    },
-    {
-      "latin": "Aglais io",
-      "suggested": {
-        "taxref": "Paon-du-jour",
-        "wikidata": "paon du jour"
-      },
-      "english": "Peacock butterfly"
-    },
-    {
-      "latin": "Poecile rufescens",
-      "suggested": {
-        "wikidata": "Mésange à dos marron"
-      },
-      "english": "Chestnut-backed chickadee"
-    },
-    {
-      "latin": "Patagioenas fasciata",
-      "suggested": {
-        "wikidata": "Pigeon à queue barrée"
-      },
-      "english": "Band-tailed pigeon"
-    },
-    {
-      "latin": "Psaltriparus minimus",
-      "suggested": {
-        "wikidata": "Orite buissonnière"
-      },
-      "english": "Bushtit"
-    },
-    {
-      "latin": "Spinus psaltria",
-      "suggested": {
-        "wikidata": "Chardonneret mineur"
-      },
-      "english": "Lesser goldfinch"
-    },
-    {
-      "latin": "Sitta pusilla",
-      "suggested": {
-        "wikidata": "Sittelle à tête brune"
-      },
-      "english": "Brown-headed nuthatch"
-    },
-    {
-      "latin": "Callipepla californica",
-      "suggested": {
-        "taxref": "Colin de Californie",
-        "wikidata": "Colin de Californie"
-      },
-      "english": "California quail"
-    },
-    {
-      "latin": "Polioptila californica",
-      "suggested": {
-        "wikidata": "Gobemoucheron de Californie"
-      },
-      "english": "California gnatcatcher"
-    },
-    {
-      "latin": "Prosthemadera novaeseelandiae",
-      "suggested": {
-        "wikidata": "Méliphage tui"
-      },
-      "english": "Tūī"
-    },
-    {
-      "latin": "Hemiphaga novaeseelandiae",
-      "suggested": {
-        "wikidata": "Carpophage de Nouvelle-Zélande"
-      },
-      "english": "Kererū"
-    },
-    {
-      "latin": "Zosterops lateralis",
-      "suggested": {
-        "taxref": "Zosterops à dos gris",
-        "wikidata": "Zostérops à dos gris"
-      },
-      "english": "Tauhou (silvereye)"
-    },
-    {
-      "latin": "Libytheana carinenta",
-      "suggested": {
-        "wikidata": "Papillon longs-palpes"
-      },
-      "english": "American snout"
-    },
-    {
-      "latin": "Archilochus alexandri",
-      "suggested": {
-        "wikidata": "Colibri à gorge noire"
-      },
-      "english": "Black-chinned hummingbird"
-    },
-    {
-      "latin": "Washingtonia robusta",
-      "suggested": {
-        "taxref": "Washingtonia filifère",
-        "bdtfx": "Palmier du Mexique"
-      },
-      "english": "Mexican fan palm"
-    },
-    {
-      "latin": "Lonicera maackii",
-      "suggested": {
-        "taxref": "Chèvrefeuille de Maack",
-        "wikidata": "Chèvrefeuille de Maack"
-      },
-      "english": "Amur honeysuckle (bush honeysuckle)"
-    },
-    {
-      "latin": "Ardisia crenata",
-      "suggested": {
-        "taxref": "Ardisie crénelée"
-      },
-      "english": "Coral ardisia (coral berry)"
-    },
-    {
-      "latin": "Lantana camara",
-      "suggested": {
-        "taxref": "Lantana"
-      },
-      "english": "Common lantana"
-    },
-    {
-      "latin": "Cycas revoluta",
-      "suggested": {
-        "taxref": "Sagoutier",
-        "wikidata": "Cycas du Japon"
-      },
-      "english": "Sago palm"
-    },
-    {
-      "latin": "Asclepias curassavica",
-      "suggested": {
-        "taxref": "Herbe à gendarme",
-        "bdtfx": "Asclépiade de Curaçao"
-      },
-      "english": "Tropical milkweed"
-    },
-    {
-      "latin": "Heracleum mantegazzianum",
-      "suggested": {
-        "taxref": "Berce du Caucase",
-        "bdtfx": "Berce de Mantegazzi"
-      },
-      "english": "Giant hogweed"
-    },
-    {
-      "latin": "Pyracantha angustifolia",
-      "suggested": {
-        "taxref": "Pyracantha à feuilles étroites"
-      },
-      "english": "Firethorn (pyracantha)"
-    },
-    {
-      "latin": "Stachytarpheta cayennensis",
-      "suggested": {
-        "taxref": "Herbe bleue"
-      },
-      "english": "Nettleleaf porterweed"
-    },
-    {
-      "latin": "Melia azedarach",
-      "suggested": {
-        "taxref": "Margousier azédarach",
-        "bdtfx": "Lilas des Indes"
-      },
-      "english": "Chinaberry"
-    },
-    {
-      "latin": "Ligustrum lucidum",
-      "suggested": {
-        "taxref": "Troène luisant",
-        "bdtfx": "Troène de Chine"
-      },
-      "english": "Glossy privet"
-    },
-    {
-      "latin": "Schinus terebinthifolia",
-      "suggested": {
-        "taxref": "Schinus à feuilles de térébinthe",
-        "bdtfx": "Faux Poivrier à baies roses"
-      },
-      "english": "Brazilian pepper"
-    },
-    {
-      "latin": "Elaeagnus umbellata",
-      "suggested": {
-        "taxref": "Chalef en ombelle",
-        "bdtfx": "Oléastre à ombelles"
-      },
-      "english": "Autumn olive"
-    },
-    {
-      "latin": "Nandina domestica",
-      "suggested": {
-        "taxref": "Nandine domestique"
-      },
-      "english": "Nandina (heavenly bamboo)"
-    },
-    {
-      "latin": "Rhamnus cathartica",
-      "suggested": {
-        "taxref": "Nerprun purgatif",
-        "bdtfx": "Nerprun cathartique",
-        "wikidata": "Nerprun purgatif"
-      },
-      "english": "Common buckthorn"
-    },
-    {
-      "latin": "Dipsacus laciniatus",
-      "suggested": {
-        "taxref": "Cardère laciniée",
-        "bdtfx": "Cardère à feuilles laciniées",
-        "wikidata": "Cardère laciniée"
-      },
-      "english": "Cut-leaved teasel"
-    },
-    {
-      "latin": "Urena lobata",
-      "suggested": {
-        "taxref": "Hérisson rouge"
-      },
-      "english": "Caesarweed"
-    },
-    {
-      "latin": "Ardisia elliptica",
-      "suggested": {
-        "taxref": "Ardisie elliptique"
-      },
-      "english": "Shoebutton ardisia"
-    },
-    {
-      "latin": "Rhododendron ponticum",
-      "suggested": {
-        "taxref": "Rhododendron du Pont",
-        "bdtfx": "Rhododendron de la mer Noire",
-        "wikidata": "rhododendron pontique"
-      },
-      "english": "Pontic rhododendron"
-    },
-    {
-      "latin": "Rapistrum rugosum",
-      "suggested": {
-        "taxref": "Rapistre rugueux",
-        "bdtfx": "Rapistre rugueux",
-        "wikidata": "Rapistre rugueux"
-      },
-      "english": "Bastard cabbage"
-    },
-    {
-      "latin": "Centaurea stoebe",
-      "suggested": {
-        "taxref": "Centaurée du Rhin",
-        "bdtfx": "Centaurée du Rhin",
-        "wikidata": "centaurée du rhin"
-      },
-      "english": "Spotted knapweed"
-    },
-    {
-      "latin": "Centaurea solstitialis",
-      "suggested": {
-        "taxref": "Centaurée du solstice",
-        "bdtfx": "Centaurée du solstice",
-        "wikidata": "Centaurée du solstice"
-      },
-      "english": "Yellow star-thistle"
-    },
-    {
-      "latin": "Gunnera tinctoria",
-      "suggested": {
-        "taxref": "Gunnéra des teinturiers",
-        "bdtfx": "Gunnéra du Chili"
-      },
-      "english": "Chilean rhubarb"
-    },
-    {
-      "latin": "Sorghum halepense",
-      "suggested": {
-        "taxref": "Sorgho d'Alep",
-        "bdtfx": "Houlque d'Alep",
-        "wikidata": "sorgho d'alep"
-      },
-      "english": "Johnsongrass"
-    },
-    {
-      "latin": "Celastrus orbiculatus",
-      "suggested": {
-        "bdtfx": "Célastre"
-      },
-      "english": "Asian bittersweet"
-    },
-    {
-      "latin": "Abrus precatorius",
-      "suggested": {
-        "taxref": "Cascavelle"
-      },
-      "english": "Rosary pea"
-    },
-    {
-      "latin": "Dioscorea bulbifera",
-      "suggested": {
-        "taxref": "Patate en l'air",
-        "wikidata": "Hoffe"
-      },
-      "english": "Air potato"
-    },
-    {
-      "latin": "Securigera varia",
-      "suggested": {
-        "taxref": "Coronille variée",
-        "bdtfx": "Coronille bigarrée",
-        "wikidata": "Coronille bigarrée"
-      },
-      "english": "Crown vetch"
-    },
-    {
-      "latin": "Nephrolepis cordifolia",
-      "suggested": {
-        "taxref": "Néphrolépide à feuilles cordées"
-      },
-      "english": "Tuberous sword fern"
     }
   ],
   "taxrefVia": "the official download, TAXREF v18 (extracted 2026-10-17)",
@@ -3267,23 +2677,22 @@
       }
     },
     "bdtfx": {
-      "requests": 1159,
-      "answered": 307,
-      "empty": 490,
+      "requests": 1155,
+      "answered": 305,
+      "empty": 492,
       "statuses": {
-        "200": 712,
-        "404": 439,
+        "200": 706,
+        "404": 441,
         "network-error": 8
       }
     },
     "wikidata": {
-      "requests": 800,
+      "requests": 799,
       "answered": 323,
       "empty": 474,
       "statuses": {
         "200": 797,
-        "429": 2,
-        "502": 1
+        "network-error": 2
       }
     }
   },

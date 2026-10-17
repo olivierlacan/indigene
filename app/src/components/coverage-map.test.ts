@@ -6,6 +6,13 @@ import { COVERAGE_MAPS } from "../data/coverage-map";
 import { CONTINENT_NAMES } from "../steps/map";
 import { REGIONS } from "../data/regions";
 
+// Through the `?raw` glob brand.test.ts uses, so the typecheck needs no Node types.
+const SVGS = import.meta.glob("../../public/maps/coverage-*.svg", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
 describe("coverage map", () => {
   it("names every region — a new one needs `npm run maps:coverage`", () => {
     const named = COVERAGE_MAPS.flatMap((m) => m.labels.map((l) => l.id)).sort();
@@ -27,6 +34,19 @@ describe("coverage map", () => {
           `${id} runs off the ${map.id} frame`,
         ).toBe(true);
       }
+    }
+  });
+
+  it("shades every region it names", () => {
+    // The Scottish Lowlands shipped as a dot over unshaded land: its country
+    // code "GB-SCT" never matched Natural Earth's "GB", so all of Britain
+    // counted as foreign and the shading was cut away to an empty path.
+    for (const map of COVERAGE_MAPS.slice(1)) {
+      const svg = SVGS[`../../public/maps/coverage-${map.id}.svg`];
+      expect(svg, map.id).toBeTruthy();
+      const shades = [...svg.matchAll(/class="cover[^"]*" d="([^"]*)"/g)].map((m) => m[1]);
+      expect(shades.length, map.id).toBe(map.labels.length);
+      shades.forEach((d, i) => expect(d, `${map.labels[i].id} has no shading on ${map.id}`).not.toBe(""));
     }
   });
 

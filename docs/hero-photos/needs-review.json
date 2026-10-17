@@ -451,6 +451,14 @@
     },
     {
       "subject": "plant",
+      "id": "baccharis-halimifolia",
+      "name": "Baccharis halimifolia",
+      "taxonId": 84813,
+      "reason": "chosen photo 56150639 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/84813/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "baptisia-lactea",
       "name": "Baptisia lactea",
       "taxonId": 1609409,
@@ -608,6 +616,14 @@
       "taxonId": 162431,
       "reason": "chosen photo 388963902 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/162431/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "eriogonum-tomentosum",
+      "name": "Eriogonum tomentosum",
+      "taxonId": 126573,
+      "reason": "chosen photo 166609631 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/126573/browse_photos"
     },
     {
       "subject": "plant",
@@ -923,6 +939,14 @@
     },
     {
       "subject": "plant",
+      "id": "pontederia-cordata",
+      "name": "Pontederia cordata",
+      "taxonId": 52599,
+      "reason": "chosen photo 20738067 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/52599/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "primula-vulgaris",
       "name": "Primula vulgaris",
       "taxonId": 56136,
@@ -944,6 +968,14 @@
       "taxonId": 405342,
       "reason": "chosen photo 60114064 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/405342/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "quercus-geminata",
+      "name": "Quercus geminata",
+      "taxonId": 121402,
+      "reason": "chosen photo 29700882 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/121402/browse_photos"
     },
     {
       "subject": "plant",

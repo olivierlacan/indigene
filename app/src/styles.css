@@ -4507,6 +4507,33 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
 .type-chips .btn[aria-pressed="false"] {
   opacity: 0.45;
 }
+/* What a Shift-click or a long press would do — "only" or "except" — tucked
+   under the icon so the square keeps its size. A hold shows it only once it
+   outlasts a tap, so a quick tap doesn't flash it. */
+.type-chips .btn {
+  position: relative;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+.type-mode {
+  position: absolute;
+  inset: auto 0 0.1rem;
+  font-size: 0.65rem;
+  font-weight: 650;
+  line-height: 1;
+  visibility: hidden;
+}
+.shift-held .type-mode {
+  visibility: visible;
+}
+.type-chips .btn.holding .type-mode {
+  visibility: visible;
+  transition: visibility 0s 0.2s;
+}
+.shift-held .type-chips .btn svg,
+.type-chips .btn.holding svg {
+  transform: translateY(-0.3rem);
+}
 .type-caption {
   margin: 0.3rem 0 0.4rem;
   font-size: 0.85rem;

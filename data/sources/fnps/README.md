@@ -1,7 +1,7 @@
 # Florida Native Plant Society — Plant Database
 
 **Upstream:** <https://www.fnps.org/plant>
-**Retrieve:** `cd app && npm run harvest:fnps` (≈40 min, resumable)
+**Retrieve:** `nvm use && cd app && npm run harvest:fnps` (≈30–60 min, resumable)
 **Reduce:** `cd app && npm run harvest:fnps -- --report florida-central`
 **Consumed by:** nothing in the app. A shortlist and a cross-check.
 

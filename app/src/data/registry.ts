@@ -2342,6 +2342,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:319078-2",
+    "scientificName": "Baccharis halimifolia",
+    "family": "Asteraceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "319078-2",
+      "wfo": "wfo-0000038084",
+      "gbif": "3129663",
+      "usda": "BAHA",
+      "itis": "35682",
+      "inat": "84813",
+      "wikidata": "Q948018",
+      "indigene": "baccharis-halimifolia"
+    },
+    "commonNames": [
+      "Groundsel Tree"
+    ],
+    "aliases": [
+      "baccharis halimifolia",
+      "groundsel tree"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:183599-1",
     "scientificName": "Baccharis pilularis",
     "family": "Asteraceae",
@@ -6606,6 +6635,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:306108-2",
+    "scientificName": "Eriogonum tomentosum",
+    "family": "Polygonaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "306108-2",
+      "wfo": "wfo-0000675532",
+      "gbif": "2889645",
+      "usda": "ERTO2",
+      "itis": "21260",
+      "inat": "126573",
+      "wikidata": "Q5389450",
+      "indigene": "eriogonum-tomentosum"
+    },
+    "commonNames": [
+      "Dogtongue Buckwheat"
+    ],
+    "aliases": [
+      "dogtongue buckwheat",
+      "eriogonum tomentosum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:30010704-2",
     "scientificName": "Eriogonum umbellatum",
     "family": "Polygonaceae",
@@ -6985,6 +7043,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:102422-2",
+    "scientificName": "Euthamia caroliniana",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "102422-2",
+      "gbif": "8054757",
+      "usda": "EUCA26",
+      "itis": "513470",
+      "inat": "129032",
+      "wikidata": "Q19848829",
+      "indigene": "euthamia-caroliniana"
+    },
+    "commonNames": [
+      "Slender Goldentop"
+    ],
+    "aliases": [
+      "euthamia caroliniana",
+      "slender goldentop"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -9829,6 +9915,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:430718-1",
+    "scientificName": "Liquidambar styraciflua",
+    "family": "Altingiaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "430718-1",
+      "wfo": "wfo-0000364015",
+      "gbif": "3152824",
+      "usda": "LIST2",
+      "itis": "19027",
+      "inat": "49658",
+      "wikidata": "Q469652",
+      "indigene": "liquidambar-styraciflua"
+    },
+    "commonNames": [
+      "Sweetgum"
+    ],
+    "aliases": [
+      "liquidambar styraciflua",
+      "sweetgum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:142946-1",
     "scientificName": "Lobelia angulata",
     "family": "Campanulaceae",
@@ -10306,6 +10421,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:331149-1",
+    "scientificName": "Lyonia lucida",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "331149-1",
+      "wfo": "wfo-0001047112",
+      "gbif": "5333386",
+      "usda": "LYLU3",
+      "itis": "23563",
+      "inat": "129433",
+      "wikidata": "Q6709743",
+      "indigene": "lyonia-lucida"
+    },
+    "commonNames": [
+      "Fetterbush"
+    ],
+    "aliases": [
+      "fetterbush",
+      "lyonia lucida"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -11715,7 +11859,8 @@ export const REGISTRY: RegistryEntry[] = [
       "mid-atlantic",
       "north-michigan",
       "chicago",
-      "central-texas"
+      "central-texas",
+      "florida-central"
     ]
   },
   {
@@ -12288,7 +12433,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "central-texas"
+      "central-texas",
+      "florida-central"
     ]
   },
   {
@@ -12528,6 +12674,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:262921-1",
+    "scientificName": "Pinus elliottii",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "262921-1",
+      "wfo": "wfo-0000481442",
+      "gbif": "5285777",
+      "usda": "PIEL",
+      "itis": "18036",
+      "inat": "69985",
+      "wikidata": "Q1249109",
+      "indigene": "pinus-elliottii"
+    },
+    "commonNames": [
+      "Slash Pine"
+    ],
+    "aliases": [
+      "pinus elliottii",
+      "slash pine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -13273,6 +13448,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:283610-2",
+    "scientificName": "Pontederia cordata",
+    "family": "Pontederiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "283610-2",
+      "wfo": "wfo-0000500933",
+      "gbif": "2766030",
+      "usda": "POCO14",
+      "itis": "42620",
+      "inat": "52599",
+      "wikidata": "Q621050",
+      "indigene": "pontederia-cordata"
+    },
+    "commonNames": [
+      "Pickerelweed"
+    ],
+    "aliases": [
+      "pickerelweed",
+      "pontederia cordata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -14204,6 +14408,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:215869-2",
+    "scientificName": "Quercus geminata",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "215869-2",
+      "wfo": "wfo-0000290887",
+      "gbif": "2878250",
+      "usda": "QUGE2",
+      "itis": "195176",
+      "inat": "121402",
+      "wikidata": "Q4112997",
+      "indigene": "quercus-geminata"
+    },
+    "commonNames": [
+      "Sand Live Oak"
+    ],
+    "aliases": [
+      "quercus geminata",
+      "sand live oak"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:927477-1",
     "scientificName": "Quercus glauca",
     "family": "Fagaceae",
@@ -14261,6 +14494,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:296349-1",
+    "scientificName": "Quercus laevis",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "296349-1",
+      "wfo": "wfo-0000291517",
+      "gbif": "2878626",
+      "usda": "QULA2",
+      "itis": "19367",
+      "inat": "128752",
+      "wikidata": "Q2586757",
+      "indigene": "quercus-laevis"
+    },
+    "commonNames": [
+      "Turkey Oak"
+    ],
+    "aliases": [
+      "quercus laevis",
+      "turkey oak"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -16333,6 +16595,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:321978-2",
+    "scientificName": "Sambucus canadensis",
+    "family": "Adoxaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "321978-2",
+      "wfo": "wfo-0000439346",
+      "gbif": "6369819",
+      "itis": "35317",
+      "inat": "84300",
+      "wikidata": "Q21877280",
+      "indigene": "sambucus-canadensis"
+    },
+    "commonNames": [
+      "Elderberry"
+    ],
+    "aliases": [
+      "elderberry",
+      "sambucus canadensis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -18867,6 +19157,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:261931-2",
+    "scientificName": "Vaccinium myrsinites",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "261931-2",
+      "wfo": "wfo-0001047099",
+      "gbif": "2882937",
+      "usda": "VAMY3",
+      "itis": "23603",
+      "inat": "170106",
+      "wikidata": "Q7907966",
+      "indigene": "vaccinium-myrsinites"
+    },
+    "commonNames": [
+      "Shiny Blueberry"
+    ],
+    "aliases": [
+      "shiny blueberry",
+      "vaccinium myrsinites"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:30006039-2",
     "scientificName": "Vaccinium myrtillus",
     "family": "Ericaceae",
@@ -19634,6 +19953,35 @@ export const REGISTRY: RegistryEntry[] = [
       "north-michigan",
       "chicago",
       "st-lawrence"
+    ]
+  },
+  {
+    "primaryId": "ipni:308496-2",
+    "scientificName": "Vitis rotundifolia",
+    "family": "Vitaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "308496-2",
+      "wfo": "wfo-0000421819",
+      "gbif": "5372394",
+      "usda": "VIRO3",
+      "itis": "28609",
+      "inat": "82529",
+      "wikidata": "Q2701573",
+      "indigene": "vitis-rotundifolia"
+    },
+    "commonNames": [
+      "Muscadine Grape"
+    ],
+    "aliases": [
+      "muscadine grape",
+      "vitis rotundifolia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {

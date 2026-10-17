@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Florida (TDWG:FLA — whole state)",
   "region": "florida-central",
-  "ranAt": "2026-10-17T08:07:28.383Z",
+  "ranAt": "2026-10-17T09:09:58.806Z",
   "rows": [
     {
       "id": "quercus-virginiana",
@@ -137,6 +137,46 @@
       "viaSynonym": "Myrica cerifera L."
     },
     {
+      "id": "quercus-geminata",
+      "latin": "Quercus geminata",
+      "asked": "Quercus geminata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "quercus-laevis",
+      "latin": "Quercus laevis",
+      "asked": "Quercus laevis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pinus-elliottii",
+      "latin": "Pinus elliottii",
+      "asked": "Pinus elliottii",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "liquidambar-styraciflua",
+      "latin": "Liquidambar styraciflua",
+      "asked": "Liquidambar styraciflua",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "serenoa-repens",
       "latin": "Serenoa repens",
       "asked": "Serenoa repens",
@@ -227,6 +267,46 @@
       "viaSynonym": null
     },
     {
+      "id": "sambucus-canadensis",
+      "latin": "Sambucus canadensis",
+      "asked": "Sambucus canadensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "baccharis-halimifolia",
+      "latin": "Baccharis halimifolia",
+      "asked": "Baccharis halimifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vaccinium-myrsinites",
+      "latin": "Vaccinium myrsinites",
+      "asked": "Vaccinium myrsinites",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lyonia-lucida",
+      "latin": "Lyonia lucida",
+      "asked": "Lyonia lucida",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "zamia-integrifolia",
       "latin": "Zamia integrifolia",
       "asked": "Zamia integrifolia",
@@ -310,6 +390,36 @@
       "id": "helianthus-angustifolius",
       "latin": "Helianthus angustifolius",
       "asked": "Helianthus angustifolius",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "eriogonum-tomentosum",
+      "latin": "Eriogonum tomentosum",
+      "asked": "Eriogonum tomentosum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pontederia-cordata",
+      "latin": "Pontederia cordata",
+      "asked": "Pontederia cordata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "euthamia-caroliniana",
+      "latin": "Euthamia caroliniana",
+      "asked": "Euthamia caroliniana",
       "verdict": "NATIVE",
       "areas": {
         "FLA": "NATIVE"
@@ -437,6 +547,26 @@
       "viaSynonym": null
     },
     {
+      "id": "vitis-rotundifolia",
+      "latin": "Vitis rotundifolia",
+      "asked": "Vitis rotundifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "parthenocissus-quinquefolia",
+      "latin": "Parthenocissus quinquefolia",
+      "asked": "Parthenocissus quinquefolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "mimosa-strigillosa",
       "latin": "Mimosa strigillosa",
       "asked": "Mimosa strigillosa",
@@ -450,6 +580,16 @@
       "id": "helianthus-debilis",
       "latin": "Helianthus debilis",
       "asked": "Helianthus debilis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "phyla-nodiflora",
+      "latin": "Phyla nodiflora",
+      "asked": "Phyla nodiflora",
       "verdict": "NATIVE",
       "areas": {
         "FLA": "NATIVE"

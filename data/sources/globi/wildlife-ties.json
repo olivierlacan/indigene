@@ -14052,12 +14052,12 @@
     },
     "florida-central": {
       "region": "North & Central Florida",
-      "plantsAsked": 49,
-      "animalsNamed": 5467,
+      "plantsAsked": 63,
+      "animalsNamed": 6677,
       "dropped": {
-        "notAnimal": 18,
+        "notAnimal": 17,
         "unmatched": 5,
-        "absent": 18,
+        "absent": 19,
         "introduced": []
       },
       "candidates": [
@@ -14155,6 +14155,111 @@
                   "name": "Thessen 2014, associations text-mined from the Encyclopedia of Life",
                   "records": 2,
                   "citation": "A. Thessen. 2014. Species associations extracted from EOL text data objects via text mining."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "latin": "Vanessa atalanta",
+          "common": "Red Admiral",
+          "iconic": "Insecta",
+          "inatId": 49133,
+          "inCatalogAs": "red-admiral",
+          "observationsInBox": 1923,
+          "establishment": "native",
+          "establishmentPerSource": {
+            "inaturalist": "unknown",
+            "gbif": "native"
+          },
+          "ties": [
+            {
+              "plantId": "liquidambar-styraciflua",
+              "plant": "Liquidambar styraciflua",
+              "interactionTypes": [
+                "hostOf"
+              ],
+              "records": 1,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 1,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            },
+            {
+              "plantId": "ilex-vomitoria",
+              "plant": "Ilex vomitoria",
+              "interactionTypes": [
+                "eatenBy",
+                "hostOf"
+              ],
+              "records": 3,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 3,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            },
+            {
+              "plantId": "viburnum-obovatum",
+              "plant": "Viburnum obovatum",
+              "interactionTypes": [
+                "flowersVisitedBy",
+                "hostOf"
+              ],
+              "records": 1,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 1,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            },
+            {
+              "plantId": "cephalanthus-occidentalis",
+              "plant": "Cephalanthus occidentalis",
+              "interactionTypes": [
+                "eatenBy",
+                "flowersVisitedBy",
+                "hostOf"
+              ],
+              "records": 70,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 68,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                },
+                {
+                  "name": "Thessen 2014, associations text-mined from the Encyclopedia of Life",
+                  "records": 1,
+                  "citation": "A. Thessen. 2014. Species associations extracted from EOL text data objects via text mining."
+                },
+                {
+                  "name": "Robertson 1929, flower visitors of Carlinville (via Miller)",
+                  "records": 1,
+                  "citation": "Sarah E Miller. 6/25/2015. Species associations manually extracted from Robertson, C. 1929. Flowers and insects: lists of visitors to four hundred and fifty-three flowers. Carlinville, IL, USA, C. Robertson."
                 }
               ]
             }
@@ -14266,58 +14371,18 @@
           ]
         },
         {
-          "latin": "Vanessa atalanta",
-          "common": "Red Admiral",
+          "latin": "Vanessa cardui",
+          "common": "Painted Lady",
           "iconic": "Insecta",
-          "inatId": 49133,
-          "inCatalogAs": "red-admiral",
-          "observationsInBox": 1923,
+          "inatId": 48548,
+          "inCatalogAs": "painted-lady",
+          "observationsInBox": 362,
           "establishment": "native",
           "establishmentPerSource": {
             "inaturalist": "unknown",
             "gbif": "native"
           },
           "ties": [
-            {
-              "plantId": "ilex-vomitoria",
-              "plant": "Ilex vomitoria",
-              "interactionTypes": [
-                "eatenBy",
-                "hostOf"
-              ],
-              "records": 3,
-              "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 3,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            },
-            {
-              "plantId": "viburnum-obovatum",
-              "plant": "Viburnum obovatum",
-              "interactionTypes": [
-                "flowersVisitedBy",
-                "hostOf"
-              ],
-              "records": 1,
-              "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 1,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            },
             {
               "plantId": "cephalanthus-occidentalis",
               "plant": "Cephalanthus occidentalis",
@@ -14326,17 +14391,10 @@
                 "flowersVisitedBy",
                 "hostOf"
               ],
-              "records": 70,
+              "records": 2,
               "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
+              "lifeStages": [],
               "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 68,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                },
                 {
                   "name": "Thessen 2014, associations text-mined from the Encyclopedia of Life",
                   "records": 1,
@@ -14346,142 +14404,6 @@
                   "name": "Robertson 1929, flower visitors of Carlinville (via Miller)",
                   "records": 1,
                   "citation": "Sarah E Miller. 6/25/2015. Species associations manually extracted from Robertson, C. 1929. Flowers and insects: lists of visitors to four hundred and fifty-three flowers. Carlinville, IL, USA, C. Robertson."
-                }
-              ]
-            },
-            {
-              "plantId": "asclepias-tuberosa",
-              "plant": "Asclepias tuberosa",
-              "interactionTypes": [
-                "eatenBy",
-                "flowersVisitedBy",
-                "hostOf"
-              ],
-              "records": 6,
-              "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 6,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "latin": "Epargyreus clarus",
-          "common": "Silver-spotted Skipper",
-          "iconic": "Insecta",
-          "inatId": 81559,
-          "inCatalogAs": "silver-spotted-skipper",
-          "observationsInBox": 667,
-          "establishment": "native",
-          "establishmentPerSource": {
-            "inaturalist": "unknown",
-            "gbif": "native"
-          },
-          "ties": [
-            {
-              "plantId": "cephalanthus-occidentalis",
-              "plant": "Cephalanthus occidentalis",
-              "interactionTypes": [
-                "eatenBy",
-                "flowersVisitedBy",
-                "hostOf"
-              ],
-              "records": 167,
-              "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 163,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                },
-                {
-                  "name": "Hale et al. 2024, terrestrial herbivory food web (Phil. Trans. R. Soc. B)",
-                  "records": 2,
-                  "citation": "@article{Hale_2024, title={A highly resolved network reveals the role of terrestrial herbivory in structuring aboveground food webs}, volume={379}, ISSN={1471-2970}, url={http://dx.doi.org/10.1098/rstb.2023.0180}, DOI={10.1098/rstb.2023.0180}, number={1909}, journal={Philosophical Transactions of the Royal Society B: Biological Sciences}, publisher={The Royal Society}, author={Hale, Kayla R. S. and Curlis, John David and Auteri, Giorgia G. and Bishop, Sasha and French, Rowan L. K. and Jones, Lance E. and Mills, Kirby L. and Scholtens, Brian G. and Simons, Meagan and Thompson, Cody and Tourville, Jordon and Valdovinos, Fernanda S.}, year={2024}, month=jul }"
-                },
-                {
-                  "name": "Thessen 2014, associations text-mined from the Encyclopedia of Life",
-                  "records": 2,
-                  "citation": "A. Thessen. 2014. Species associations extracted from EOL text data objects via text mining."
-                }
-              ]
-            },
-            {
-              "plantId": "erythrina-herbacea",
-              "plant": "Erythrina herbacea",
-              "interactionTypes": [
-                "eatenBy",
-                "hostOf"
-              ],
-              "records": 4,
-              "larvalEvidence": false,
-              "lifeStages": [],
-              "studies": [
-                {
-                  "name": "Ferrer-Paris et al. 2013, butterfly–host plant associations",
-                  "records": 2,
-                  "citation": "Ferrer-Paris JR, Sánchez-Mercado A, Viloria ÁL, Donaldson J (2013) Congruence and Diversity of Butterfly-Host Plant Associations at Higher Taxonomic Levels. PLoS ONE 8(5): e63570. doi:10.1371/journal.pone.0063570"
-                },
-                {
-                  "name": "NHM Interactions Bank, Natural History Museum",
-                  "records": 1,
-                  "citation": "Ed Baker; Ian J. Kitching; George W. Beccaloni; Amoret Whitaker et al. (2016). Dataset: NHM Interactions Bank. Natural History Museum Data Portal (data.nhm.ac.uk). https://doi.org/10.5519/0060767"
-                },
-                {
-                  "name": "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM)",
-                  "records": 1,
-                  "citation": "Gaden S. Robinson; Phillip R. Ackery; Ian Kitching; George W Beccaloni; Luis M. Hernández (2023). HOSTS (from HOSTS - a Database of the World's Lepidopteran Hostplants) [Data set resource]. Natural History Museum. https://data.nhm.ac.uk/dataset/hosts/resource/877f387a-36a3-486c-a0c1-b8d5fb69f85a via Natural History Museum (2023). Data Portal query on 1 resources created at 2023-05-24 11:19:42.032183 PID https://doi.org/10.5519/qd.bsucrxdz"
-                }
-              ]
-            },
-            {
-              "plantId": "asclepias-tuberosa",
-              "plant": "Asclepias tuberosa",
-              "interactionTypes": [
-                "eatenBy",
-                "flowersVisitedBy",
-                "hostOf"
-              ],
-              "records": 4,
-              "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 4,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            },
-            {
-              "plantId": "monarda-punctata",
-              "plant": "Monarda punctata",
-              "interactionTypes": [
-                "flowersVisitedBy",
-                "hostOf"
-              ],
-              "records": 10,
-              "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 10,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
                 }
               ]
             }
@@ -14583,12 +14505,12 @@
           ]
         },
         {
-          "latin": "Vanessa cardui",
-          "common": "Painted Lady",
+          "latin": "Papilio polyxenes",
+          "common": "Black Swallowtail",
           "iconic": "Insecta",
-          "inatId": 48548,
-          "inCatalogAs": "painted-lady",
-          "observationsInBox": 362,
+          "inatId": 58523,
+          "inCatalogAs": "eastern-black-swallowtail",
+          "observationsInBox": 4890,
           "establishment": "native",
           "establishmentPerSource": {
             "inaturalist": "unknown",
@@ -14596,11 +14518,9 @@
           },
           "ties": [
             {
-              "plantId": "cephalanthus-occidentalis",
-              "plant": "Cephalanthus occidentalis",
+              "plantId": "magnolia-virginiana",
+              "plant": "Magnolia virginiana",
               "interactionTypes": [
-                "eatenBy",
-                "flowersVisitedBy",
                 "hostOf"
               ],
               "records": 2,
@@ -14608,14 +14528,80 @@
               "lifeStages": [],
               "studies": [
                 {
-                  "name": "Thessen 2014, associations text-mined from the Encyclopedia of Life",
+                  "name": "Ferrer-Paris et al. 2013, butterfly–host plant associations",
                   "records": 1,
-                  "citation": "A. Thessen. 2014. Species associations extracted from EOL text data objects via text mining."
+                  "citation": "Ferrer-Paris JR, Sánchez-Mercado A, Viloria ÁL, Donaldson J (2013) Congruence and Diversity of Butterfly-Host Plant Associations at Higher Taxonomic Levels. PLoS ONE 8(5): e63570. doi:10.1371/journal.pone.0063570"
                 },
                 {
-                  "name": "Robertson 1929, flower visitors of Carlinville (via Miller)",
+                  "name": "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM)",
                   "records": 1,
-                  "citation": "Sarah E Miller. 6/25/2015. Species associations manually extracted from Robertson, C. 1929. Flowers and insects: lists of visitors to four hundred and fifty-three flowers. Carlinville, IL, USA, C. Robertson."
+                  "citation": "Gaden S. Robinson; Phillip R. Ackery; Ian Kitching; George W Beccaloni; Luis M. Hernández (2023). HOSTS (from HOSTS - a Database of the World's Lepidopteran Hostplants) [Data set resource]. Natural History Museum. https://data.nhm.ac.uk/dataset/hosts/resource/877f387a-36a3-486c-a0c1-b8d5fb69f85a via Natural History Museum (2023). Data Portal query on 1 resources created at 2023-05-24 11:19:42.032183 PID https://doi.org/10.5519/qd.bsucrxdz"
+                }
+              ]
+            },
+            {
+              "plantId": "cephalanthus-occidentalis",
+              "plant": "Cephalanthus occidentalis",
+              "interactionTypes": [
+                "flowersVisitedBy",
+                "hostOf"
+              ],
+              "records": 13,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 13,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            },
+            {
+              "plantId": "salvia-coccinea",
+              "plant": "Salvia coccinea",
+              "interactionTypes": [
+                "flowersVisitedBy",
+                "hostOf"
+              ],
+              "records": 4,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 4,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            },
+            {
+              "plantId": "asclepias-tuberosa",
+              "plant": "Asclepias tuberosa",
+              "interactionTypes": [
+                "eatenBy",
+                "flowersVisitedBy",
+                "hostOf"
+              ],
+              "records": 72,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 71,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                },
+                {
+                  "name": "Ollerton J, Liede-Schumann S, Endress ME, Meve U, Rech AR, Shuttleworth A, Keller HA, Fishbein M, Alvarado-Cárdenas L…",
+                  "records": 1,
+                  "citation": "Ollerton J, Liede-Schumann S, Endress ME, Meve U, Rech AR, Shuttleworth A, Keller HA, Fishbein M, Alvarado-Cárdenas LO, Amorim FW, Bernhardt P, Celep F, Chirango Y, Chiriboga-Arroyo F, Civeyrel L, Cocucci A, Cranmer L, da Silva-Batista IC, de Jager L, Deprá MS, Domingos-Melo A, Dvorsky C, Agostini K, Freitas L, Gaglianone MC, Galetto L, Gilbert M, González-Ramírez I, Gorostiague P, Goyder D, Hachuy-Filho L, Heiduk A, Howard A, Ionta G, Islas-Hernández SC, Johnson SD, Joubert L, Kaiser-Bunbury CN, Kephart S, Kidyoo A, Koptur S, Koschnitzke C, Lamborn E, Livshultz T, Machado IC, Marino S, Mema L, Mochizuki K, Morellato LPC, Mrisha CK, Muiruri EW, Nakahama N, Nascimento VT, Nuttman C, Oliveira PE, Peter CI, Punekar S, Rafferty N, Rapini A, Ren ZX, Rodríguez-Flores CI, Rosero L, Sakai S, Sazima M, Steenhuisen SL, Tan CW, Torres C, Trøjelsgaard K, Ushimaru A, Vieira MF, Wiemer AP, Yamashiro T, Nadia T, Queiroz J, Quirino Z. The diversity and evolution of pollination systems in large plant clades: Apocynaceae as a case study. Ann Bot. 2019 Jan 23;123(2):311-325. doi: 10.1093/aob/mcy127. PMID: 30099492; PMCID: PMC6344220."
                 }
               ]
             }
@@ -14732,40 +14718,18 @@
           ]
         },
         {
-          "latin": "Papilio polyxenes",
-          "common": "Black Swallowtail",
+          "latin": "Anartia jatrophae",
+          "common": "White Peacock",
           "iconic": "Insecta",
-          "inatId": 58523,
-          "inCatalogAs": "eastern-black-swallowtail",
-          "observationsInBox": 4890,
-          "establishment": "native",
+          "inatId": 49761,
+          "inCatalogAs": "white-peacock",
+          "observationsInBox": 10725,
+          "establishment": "unknown",
           "establishmentPerSource": {
             "inaturalist": "unknown",
-            "gbif": "native"
+            "gbif": "unknown"
           },
           "ties": [
-            {
-              "plantId": "magnolia-virginiana",
-              "plant": "Magnolia virginiana",
-              "interactionTypes": [
-                "hostOf"
-              ],
-              "records": 2,
-              "larvalEvidence": false,
-              "lifeStages": [],
-              "studies": [
-                {
-                  "name": "Ferrer-Paris et al. 2013, butterfly–host plant associations",
-                  "records": 1,
-                  "citation": "Ferrer-Paris JR, Sánchez-Mercado A, Viloria ÁL, Donaldson J (2013) Congruence and Diversity of Butterfly-Host Plant Associations at Higher Taxonomic Levels. PLoS ONE 8(5): e63570. doi:10.1371/journal.pone.0063570"
-                },
-                {
-                  "name": "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM)",
-                  "records": 1,
-                  "citation": "Gaden S. Robinson; Phillip R. Ackery; Ian Kitching; George W Beccaloni; Luis M. Hernández (2023). HOSTS (from HOSTS - a Database of the World's Lepidopteran Hostplants) [Data set resource]. Natural History Museum. https://data.nhm.ac.uk/dataset/hosts/resource/877f387a-36a3-486c-a0c1-b8d5fb69f85a via Natural History Museum (2023). Data Portal query on 1 resources created at 2023-05-24 11:19:42.032183 PID https://doi.org/10.5519/qd.bsucrxdz"
-                }
-              ]
-            },
             {
               "plantId": "cephalanthus-occidentalis",
               "plant": "Cephalanthus occidentalis",
@@ -14773,7 +14737,7 @@
                 "flowersVisitedBy",
                 "hostOf"
               ],
-              "records": 13,
+              "records": 2,
               "larvalEvidence": false,
               "lifeStages": [
                 "adult"
@@ -14781,19 +14745,19 @@
               "studies": [
                 {
                   "name": "iNaturalist observations",
-                  "records": 13,
+                  "records": 2,
                   "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
                 }
               ]
             },
             {
-              "plantId": "salvia-coccinea",
-              "plant": "Salvia coccinea",
+              "plantId": "pontederia-cordata",
+              "plant": "Pontederia cordata",
               "interactionTypes": [
                 "flowersVisitedBy",
                 "hostOf"
               ],
-              "records": 4,
+              "records": 7,
               "larvalEvidence": false,
               "lifeStages": [
                 "adult"
@@ -14801,20 +14765,19 @@
               "studies": [
                 {
                   "name": "iNaturalist observations",
-                  "records": 4,
+                  "records": 7,
                   "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
                 }
               ]
             },
             {
-              "plantId": "asclepias-tuberosa",
-              "plant": "Asclepias tuberosa",
+              "plantId": "euthamia-caroliniana",
+              "plant": "Euthamia caroliniana",
               "interactionTypes": [
-                "eatenBy",
                 "flowersVisitedBy",
                 "hostOf"
               ],
-              "records": 72,
+              "records": 6,
               "larvalEvidence": false,
               "lifeStages": [
                 "adult"
@@ -14822,13 +14785,28 @@
               "studies": [
                 {
                   "name": "iNaturalist observations",
-                  "records": 71,
+                  "records": 6,
                   "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                },
+                }
+              ]
+            },
+            {
+              "plantId": "helianthus-debilis",
+              "plant": "Helianthus debilis",
+              "interactionTypes": [
+                "flowersVisitedBy",
+                "hostOf"
+              ],
+              "records": 1,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
                 {
-                  "name": "Ollerton J, Liede-Schumann S, Endress ME, Meve U, Rech AR, Shuttleworth A, Keller HA, Fishbein M, Alvarado-Cárdenas L…",
+                  "name": "iNaturalist observations",
                   "records": 1,
-                  "citation": "Ollerton J, Liede-Schumann S, Endress ME, Meve U, Rech AR, Shuttleworth A, Keller HA, Fishbein M, Alvarado-Cárdenas LO, Amorim FW, Bernhardt P, Celep F, Chirango Y, Chiriboga-Arroyo F, Civeyrel L, Cocucci A, Cranmer L, da Silva-Batista IC, de Jager L, Deprá MS, Domingos-Melo A, Dvorsky C, Agostini K, Freitas L, Gaglianone MC, Galetto L, Gilbert M, González-Ramírez I, Gorostiague P, Goyder D, Hachuy-Filho L, Heiduk A, Howard A, Ionta G, Islas-Hernández SC, Johnson SD, Joubert L, Kaiser-Bunbury CN, Kephart S, Kidyoo A, Koptur S, Koschnitzke C, Lamborn E, Livshultz T, Machado IC, Marino S, Mema L, Mochizuki K, Morellato LPC, Mrisha CK, Muiruri EW, Nakahama N, Nascimento VT, Nuttman C, Oliveira PE, Peter CI, Punekar S, Rafferty N, Rapini A, Ren ZX, Rodríguez-Flores CI, Rosero L, Sakai S, Sazima M, Steenhuisen SL, Tan CW, Torres C, Trøjelsgaard K, Ushimaru A, Vieira MF, Wiemer AP, Yamashiro T, Nadia T, Queiroz J, Quirino Z. The diversity and evolution of pollination systems in large plant clades: Apocynaceae as a case study. Ann Bot. 2019 Jan 23;123(2):311-325. doi: 10.1093/aob/mcy127. PMID: 30099492; PMCID: PMC6344220."
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
                 }
               ]
             }
@@ -15018,6 +14996,94 @@
           ]
         },
         {
+          "latin": "Phyciodes phaon",
+          "common": "Phaon Crescent",
+          "iconic": "Insecta",
+          "inatId": 68274,
+          "inCatalogAs": "phaon-crescent",
+          "observationsInBox": 4369,
+          "establishment": "unknown",
+          "establishmentPerSource": {
+            "inaturalist": "unknown",
+            "gbif": "unknown"
+          },
+          "ties": [
+            {
+              "plantId": "coreopsis-leavenworthii",
+              "plant": "Coreopsis leavenworthii",
+              "interactionTypes": [
+                "flowersVisitedBy",
+                "hostOf"
+              ],
+              "records": 1,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 1,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            },
+            {
+              "plantId": "asclepias-tuberosa",
+              "plant": "Asclepias tuberosa",
+              "interactionTypes": [
+                "eatenBy",
+                "flowersVisitedBy",
+                "hostOf"
+              ],
+              "records": 5,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 5,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            },
+            {
+              "plantId": "phyla-nodiflora",
+              "plant": "Phyla nodiflora",
+              "interactionTypes": [
+                "eatenBy",
+                "flowersVisitedBy",
+                "hostOf"
+              ],
+              "records": 77,
+              "larvalEvidence": true,
+              "lifeStages": [
+                "larvae",
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 61,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                },
+                {
+                  "name": "Ecdysis arthropod occurrence portal",
+                  "records": 8,
+                  "citation": "ecdysis - a portal for live-managing arthropod occurrence data"
+                },
+                {
+                  "name": "Ferrer-Paris et al. 2013, butterfly–host plant associations",
+                  "records": 3,
+                  "citation": "Ferrer-Paris JR, Sánchez-Mercado A, Viloria ÁL, Donaldson J (2013) Congruence and Diversity of Butterfly-Host Plant Associations at Higher Taxonomic Levels. PLoS ONE 8(5): e63570. doi:10.1371/journal.pone.0063570"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "latin": "Nymphalis antiopa",
           "common": "Mourning Cloak",
           "iconic": "Insecta",
@@ -15081,6 +15147,59 @@
           ]
         },
         {
+          "latin": "Spinus psaltria",
+          "common": "Lesser Goldfinch",
+          "iconic": "Aves",
+          "inatId": 145308,
+          "inCatalogAs": "lesser-goldfinch",
+          "observationsInBox": 10,
+          "establishment": "unknown",
+          "establishmentPerSource": {
+            "inaturalist": "unknown",
+            "gbif": "unknown"
+          },
+          "ties": [
+            {
+              "plantId": "liquidambar-styraciflua",
+              "plant": "Liquidambar styraciflua",
+              "interactionTypes": [
+                "flowersVisitedBy",
+                "hostOf"
+              ],
+              "records": 3,
+              "larvalEvidence": false,
+              "lifeStages": [],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 3,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            },
+            {
+              "plantId": "salvia-coccinea",
+              "plant": "Salvia coccinea",
+              "interactionTypes": [
+                "eatenBy",
+                "hostOf"
+              ],
+              "records": 2,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 2,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "latin": "Archilochus alexandri",
           "common": "Black-chinned Hummingbird",
           "iconic": "Aves",
@@ -15104,152 +15223,6 @@
               "records": 2,
               "larvalEvidence": false,
               "lifeStages": [],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 2,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "latin": "Anartia jatrophae",
-          "common": "White Peacock",
-          "iconic": "Insecta",
-          "inatId": 49761,
-          "inCatalogAs": "white-peacock",
-          "observationsInBox": 10725,
-          "establishment": "unknown",
-          "establishmentPerSource": {
-            "inaturalist": "unknown",
-            "gbif": "unknown"
-          },
-          "ties": [
-            {
-              "plantId": "cephalanthus-occidentalis",
-              "plant": "Cephalanthus occidentalis",
-              "interactionTypes": [
-                "flowersVisitedBy",
-                "hostOf"
-              ],
-              "records": 2,
-              "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 2,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            },
-            {
-              "plantId": "helianthus-debilis",
-              "plant": "Helianthus debilis",
-              "interactionTypes": [
-                "flowersVisitedBy",
-                "hostOf"
-              ],
-              "records": 1,
-              "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 1,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "latin": "Phyciodes phaon",
-          "common": "Phaon Crescent",
-          "iconic": "Insecta",
-          "inatId": 68274,
-          "inCatalogAs": "phaon-crescent",
-          "observationsInBox": 4369,
-          "establishment": "unknown",
-          "establishmentPerSource": {
-            "inaturalist": "unknown",
-            "gbif": "unknown"
-          },
-          "ties": [
-            {
-              "plantId": "coreopsis-leavenworthii",
-              "plant": "Coreopsis leavenworthii",
-              "interactionTypes": [
-                "flowersVisitedBy",
-                "hostOf"
-              ],
-              "records": 1,
-              "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 1,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            },
-            {
-              "plantId": "asclepias-tuberosa",
-              "plant": "Asclepias tuberosa",
-              "interactionTypes": [
-                "eatenBy",
-                "flowersVisitedBy",
-                "hostOf"
-              ],
-              "records": 5,
-              "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 5,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "latin": "Spinus psaltria",
-          "common": "Lesser Goldfinch",
-          "iconic": "Aves",
-          "inatId": 145308,
-          "inCatalogAs": "lesser-goldfinch",
-          "observationsInBox": 10,
-          "establishment": "unknown",
-          "establishmentPerSource": {
-            "inaturalist": "unknown",
-            "gbif": "unknown"
-          },
-          "ties": [
-            {
-              "plantId": "salvia-coccinea",
-              "plant": "Salvia coccinea",
-              "interactionTypes": [
-                "eatenBy",
-                "hostOf"
-              ],
-              "records": 2,
-              "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
               "studies": [
                 {
                   "name": "iNaturalist observations",
@@ -15423,14 +15396,12 @@
               ]
             },
             {
-              "plantId": "salvia-coccinea",
-              "plant": "Salvia coccinea",
+              "plantId": "baccharis-halimifolia",
+              "plant": "Baccharis halimifolia",
               "interactionTypes": [
-                "eatenBy",
-                "flowersVisitedBy",
                 "hostOf"
               ],
-              "records": 46,
+              "records": 7,
               "larvalEvidence": false,
               "lifeStages": [
                 "adult"
@@ -15438,7 +15409,7 @@
               "studies": [
                 {
                   "name": "iNaturalist observations",
-                  "records": 46,
+                  "records": 7,
                   "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
                 }
               ]
@@ -15722,22 +15693,118 @@
               ]
             },
             {
-              "plantId": "asclepias-tuberosa",
-              "plant": "Asclepias tuberosa",
+              "plantId": "baccharis-halimifolia",
+              "plant": "Baccharis halimifolia",
               "interactionTypes": [
-                "eatenBy",
                 "flowersVisitedBy",
                 "hostOf"
               ],
-              "records": 9,
+              "records": 17,
+              "larvalEvidence": true,
+              "lifeStages": [
+                "adult",
+                "larva"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 17,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "latin": "Sialia sialis",
+          "common": "Eastern Bluebird",
+          "iconic": "Aves",
+          "inatId": 12942,
+          "inCatalogAs": null,
+          "observationsInBox": 6687,
+          "establishment": "unknown",
+          "establishmentPerSource": {
+            "inaturalist": "unknown",
+            "gbif": "unknown"
+          },
+          "ties": [
+            {
+              "plantId": "magnolia-grandiflora",
+              "plant": "Magnolia grandiflora",
+              "interactionTypes": [
+                "eatenBy"
+              ],
+              "records": 1,
+              "larvalEvidence": false,
+              "lifeStages": [],
+              "studies": [
+                {
+                  "name": "Fricke & Svenning 2020, global plant–frugivore meta-network (Nature)",
+                  "records": 1,
+                  "citation": "Fricke, E.C., Svenning, J. Accelerating homogenization of the global plant–frugivore meta-network. Nature 585, 74–78 (2020). https://doi.org/10.1038/s41586-020-2640-y"
+                }
+              ]
+            },
+            {
+              "plantId": "celtis-laevigata",
+              "plant": "Celtis laevigata",
+              "interactionTypes": [
+                "eatenBy"
+              ],
+              "records": 2,
+              "larvalEvidence": false,
+              "lifeStages": [],
+              "studies": [
+                {
+                  "name": "Fricke & Svenning 2020, global plant–frugivore meta-network (Nature)",
+                  "records": 1,
+                  "citation": "Fricke, E.C., Svenning, J. Accelerating homogenization of the global plant–frugivore meta-network. Nature 585, 74–78 (2020). https://doi.org/10.1038/s41586-020-2640-y"
+                },
+                {
+                  "name": "Hurlbert et al. 2021, Avian Diet Database",
+                  "records": 1,
+                  "citation": "Hurlbert, A. H., Olsen, A. M., Sawyer, M. M., and Winner, P. M. 2021. Avian Diet Database. Scientific Data 8: 260. https://www.nature.com/articles/s41597-021-01049-9"
+                }
+              ]
+            },
+            {
+              "plantId": "vaccinium-arboreum",
+              "plant": "Vaccinium arboreum",
+              "interactionTypes": [
+                "eatenBy"
+              ],
+              "records": 1,
+              "larvalEvidence": false,
+              "lifeStages": [],
+              "studies": [
+                {
+                  "name": "Fricke & Svenning 2020, global plant–frugivore meta-network (Nature)",
+                  "records": 1,
+                  "citation": "Fricke, E.C., Svenning, J. Accelerating homogenization of the global plant–frugivore meta-network. Nature 585, 74–78 (2020). https://doi.org/10.1038/s41586-020-2640-y"
+                }
+              ]
+            },
+            {
+              "plantId": "juniperus-virginiana",
+              "plant": "Juniperus virginiana",
+              "interactionTypes": [
+                "eatenBy",
+                "hostOf"
+              ],
+              "records": 2,
               "larvalEvidence": false,
               "lifeStages": [
                 "adult"
               ],
               "studies": [
                 {
+                  "name": "Hale et al. 2024, terrestrial herbivory food web (Phil. Trans. R. Soc. B)",
+                  "records": 1,
+                  "citation": "@article{Hale_2024, title={A highly resolved network reveals the role of terrestrial herbivory in structuring aboveground food webs}, volume={379}, ISSN={1471-2970}, url={http://dx.doi.org/10.1098/rstb.2023.0180}, DOI={10.1098/rstb.2023.0180}, number={1909}, journal={Philosophical Transactions of the Royal Society B: Biological Sciences}, publisher={The Royal Society}, author={Hale, Kayla R. S. and Curlis, John David and Auteri, Giorgia G. and Bishop, Sasha and French, Rowan L. K. and Jones, Lance E. and Mills, Kirby L. and Scholtens, Brian G. and Simons, Meagan and Thompson, Cody and Tourville, Jordon and Valdovinos, Fernanda S.}, year={2024}, month=jul }"
+                },
+                {
                   "name": "iNaturalist observations",
-                  "records": 9,
+                  "records": 1,
                   "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
                 }
               ]
@@ -15773,6 +15840,26 @@
                 {
                   "name": "iNaturalist observations",
                   "records": 10,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            },
+            {
+              "plantId": "baccharis-halimifolia",
+              "plant": "Baccharis halimifolia",
+              "interactionTypes": [
+                "flowersVisitedBy",
+                "hostOf"
+              ],
+              "records": 11,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 11,
                   "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
                 }
               ]
@@ -15816,24 +15903,88 @@
                   "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
                 }
               ]
+            }
+          ]
+        },
+        {
+          "latin": "Dryocopus pileatus",
+          "common": "Pileated Woodpecker",
+          "iconic": "Aves",
+          "inatId": 17855,
+          "inCatalogAs": null,
+          "observationsInBox": 5998,
+          "establishment": "unknown",
+          "establishmentPerSource": {
+            "inaturalist": "unknown",
+            "gbif": "unknown"
+          },
+          "ties": [
+            {
+              "plantId": "magnolia-grandiflora",
+              "plant": "Magnolia grandiflora",
+              "interactionTypes": [
+                "eatenBy"
+              ],
+              "records": 1,
+              "larvalEvidence": false,
+              "lifeStages": [],
+              "studies": [
+                {
+                  "name": "Fricke & Svenning 2020, global plant–frugivore meta-network (Nature)",
+                  "records": 1,
+                  "citation": "Fricke, E.C., Svenning, J. Accelerating homogenization of the global plant–frugivore meta-network. Nature 585, 74–78 (2020). https://doi.org/10.1038/s41586-020-2640-y"
+                }
+              ]
             },
             {
-              "plantId": "rudbeckia-hirta",
-              "plant": "Rudbeckia hirta",
+              "plantId": "acer-rubrum",
+              "plant": "Acer rubrum",
               "interactionTypes": [
                 "flowersVisitedBy",
                 "hostOf"
               ],
-              "records": 2,
+              "records": 3,
               "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
+              "lifeStages": [],
               "studies": [
                 {
                   "name": "iNaturalist observations",
-                  "records": 2,
+                  "records": 3,
                   "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            },
+            {
+              "plantId": "celtis-laevigata",
+              "plant": "Celtis laevigata",
+              "interactionTypes": [
+                "eatenBy"
+              ],
+              "records": 1,
+              "larvalEvidence": false,
+              "lifeStages": [],
+              "studies": [
+                {
+                  "name": "Fricke & Svenning 2020, global plant–frugivore meta-network (Nature)",
+                  "records": 1,
+                  "citation": "Fricke, E.C., Svenning, J. Accelerating homogenization of the global plant–frugivore meta-network. Nature 585, 74–78 (2020). https://doi.org/10.1038/s41586-020-2640-y"
+                }
+              ]
+            },
+            {
+              "plantId": "vaccinium-arboreum",
+              "plant": "Vaccinium arboreum",
+              "interactionTypes": [
+                "eatenBy"
+              ],
+              "records": 1,
+              "larvalEvidence": false,
+              "lifeStages": [],
+              "studies": [
+                {
+                  "name": "Fricke & Svenning 2020, global plant–frugivore meta-network (Nature)",
+                  "records": 1,
+                  "citation": "Fricke, E.C., Svenning, J. Accelerating homogenization of the global plant–frugivore meta-network. Nature 585, 74–78 (2020). https://doi.org/10.1038/s41586-020-2640-y"
                 }
               ]
             }
@@ -16979,89 +17130,6 @@
           ]
         },
         {
-          "latin": "Vireo griseus",
-          "common": "White-eyed Vireo",
-          "iconic": "Aves",
-          "inatId": 17408,
-          "inCatalogAs": null,
-          "observationsInBox": 2255,
-          "establishment": "unknown",
-          "establishmentPerSource": {
-            "inaturalist": "unknown",
-            "gbif": "unknown"
-          },
-          "ties": [
-            {
-              "plantId": "magnolia-grandiflora",
-              "plant": "Magnolia grandiflora",
-              "interactionTypes": [
-                "eatenBy"
-              ],
-              "records": 1,
-              "larvalEvidence": false,
-              "lifeStages": [],
-              "studies": [
-                {
-                  "name": "Fricke & Svenning 2020, global plant–frugivore meta-network (Nature)",
-                  "records": 1,
-                  "citation": "Fricke, E.C., Svenning, J. Accelerating homogenization of the global plant–frugivore meta-network. Nature 585, 74–78 (2020). https://doi.org/10.1038/s41586-020-2640-y"
-                }
-              ]
-            },
-            {
-              "plantId": "sabal-palmetto",
-              "plant": "Sabal palmetto",
-              "interactionTypes": [
-                "eatenBy"
-              ],
-              "records": 1,
-              "larvalEvidence": false,
-              "lifeStages": [],
-              "studies": [
-                {
-                  "name": "Fricke & Svenning 2020, global plant–frugivore meta-network (Nature)",
-                  "records": 1,
-                  "citation": "Fricke, E.C., Svenning, J. Accelerating homogenization of the global plant–frugivore meta-network. Nature 585, 74–78 (2020). https://doi.org/10.1038/s41586-020-2640-y"
-                }
-              ]
-            },
-            {
-              "plantId": "celtis-laevigata",
-              "plant": "Celtis laevigata",
-              "interactionTypes": [
-                "eatenBy"
-              ],
-              "records": 1,
-              "larvalEvidence": false,
-              "lifeStages": [],
-              "studies": [
-                {
-                  "name": "Fricke & Svenning 2020, global plant–frugivore meta-network (Nature)",
-                  "records": 1,
-                  "citation": "Fricke, E.C., Svenning, J. Accelerating homogenization of the global plant–frugivore meta-network. Nature 585, 74–78 (2020). https://doi.org/10.1038/s41586-020-2640-y"
-                }
-              ]
-            },
-            {
-              "plantId": "vaccinium-arboreum",
-              "plant": "Vaccinium arboreum",
-              "interactionTypes": [
-                "eatenBy"
-              ],
-              "records": 1,
-              "larvalEvidence": false,
-              "lifeStages": [],
-              "studies": [
-                {
-                  "name": "Fricke & Svenning 2020, global plant–frugivore meta-network (Nature)",
-                  "records": 1,
-                  "citation": "Fricke, E.C., Svenning, J. Accelerating homogenization of the global plant–frugivore meta-network. Nature 585, 74–78 (2020). https://doi.org/10.1038/s41586-020-2640-y"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "latin": "Xylocopa micans",
           "common": "Southern Carpenter Bee",
           "iconic": "Insecta",
@@ -17219,22 +17287,19 @@
               ]
             },
             {
-              "plantId": "asclepias-tuberosa",
-              "plant": "Asclepias tuberosa",
+              "plantId": "baccharis-halimifolia",
+              "plant": "Baccharis halimifolia",
               "interactionTypes": [
                 "eatenBy",
-                "flowersVisitedBy",
                 "hostOf"
               ],
-              "records": 15,
+              "records": 3,
               "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
+              "lifeStages": [],
               "studies": [
                 {
                   "name": "iNaturalist observations",
-                  "records": 14,
+                  "records": 2,
                   "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
                 },
                 {
@@ -17328,6 +17393,110 @@
                 {
                   "name": "iNaturalist observations",
                   "records": 1,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "latin": "Trigonopeltastes delta",
+          "common": "Delta Flower Scarab",
+          "iconic": "Insecta",
+          "inatId": 84027,
+          "inCatalogAs": null,
+          "observationsInBox": 1783,
+          "establishment": "unknown",
+          "establishmentPerSource": {
+            "inaturalist": "unknown",
+            "gbif": "unknown"
+          },
+          "ties": [
+            {
+              "plantId": "sabal-palmetto",
+              "plant": "Sabal palmetto",
+              "interactionTypes": [
+                "flowersVisitedBy",
+                "hostOf"
+              ],
+              "records": 5,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 5,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            },
+            {
+              "plantId": "serenoa-repens",
+              "plant": "Serenoa repens",
+              "interactionTypes": [
+                "flowersVisitedBy",
+                "hostOf"
+              ],
+              "records": 16,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 14,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                },
+                {
+                  "name": "Symbiota Collections of Arthropods Network (SCAN)",
+                  "records": 1,
+                  "citation": "Symbiota Collections of Arthropods Network (SCAN)"
+                },
+                {
+                  "name": "Sarah E. Miller. 07/06/2017. Information extracted from dataset https://www.idigbio.org/portal/recordsets/db4bb0df-85…",
+                  "records": 1,
+                  "citation": "Sarah E. Miller. 07/06/2017. Information extracted from dataset https://www.idigbio.org/portal/recordsets/db4bb0df-8539-4617-ab5f-eb118aa3126b."
+                }
+              ]
+            },
+            {
+              "plantId": "callicarpa-americana",
+              "plant": "Callicarpa americana",
+              "interactionTypes": [
+                "flowersVisitedBy",
+                "hostOf"
+              ],
+              "records": 4,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 4,
+                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
+                }
+              ]
+            },
+            {
+              "plantId": "cephalanthus-occidentalis",
+              "plant": "Cephalanthus occidentalis",
+              "interactionTypes": [
+                "hostOf"
+              ],
+              "records": 3,
+              "larvalEvidence": false,
+              "lifeStages": [
+                "adult"
+              ],
+              "studies": [
+                {
+                  "name": "iNaturalist observations",
+                  "records": 3,
                   "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
                 }
               ]
@@ -17810,96 +17979,6 @@
           ]
         },
         {
-          "latin": "Atlides halesus",
-          "common": "Great Purple Hairstreak",
-          "iconic": "Insecta",
-          "inatId": 59128,
-          "inCatalogAs": null,
-          "observationsInBox": 1201,
-          "establishment": "unknown",
-          "establishmentPerSource": {
-            "inaturalist": "unknown",
-            "gbif": "unknown"
-          },
-          "ties": [
-            {
-              "plantId": "vaccinium-arboreum",
-              "plant": "Vaccinium arboreum",
-              "interactionTypes": [
-                "flowersVisitedBy",
-                "hostOf"
-              ],
-              "records": 1,
-              "larvalEvidence": false,
-              "lifeStages": [],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 1,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            },
-            {
-              "plantId": "serenoa-repens",
-              "plant": "Serenoa repens",
-              "interactionTypes": [
-                "flowersVisitedBy",
-                "hostOf"
-              ],
-              "records": 3,
-              "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 3,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            },
-            {
-              "plantId": "ilex-vomitoria",
-              "plant": "Ilex vomitoria",
-              "interactionTypes": [
-                "eatenBy"
-              ],
-              "records": 2,
-              "larvalEvidence": false,
-              "lifeStages": [
-                "adult"
-              ],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 2,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            },
-            {
-              "plantId": "myrcianthes-fragrans",
-              "plant": "Myrcianthes fragrans",
-              "interactionTypes": [
-                "flowersVisitedBy",
-                "hostOf"
-              ],
-              "records": 1,
-              "larvalEvidence": false,
-              "lifeStages": [],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 1,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            }
-          ]
-        },
-        {
           "latin": "Scolia nobilitata",
           "common": "Noble Scoliid Wasp",
           "iconic": "Insecta",
@@ -17989,99 +18068,6 @@
                   "name": "iNaturalist observations",
                   "records": 4,
                   "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "latin": "Vireo olivaceus",
-          "common": "Red-eyed Vireo",
-          "iconic": "Aves",
-          "inatId": 891704,
-          "inCatalogAs": null,
-          "observationsInBox": 1126,
-          "establishment": "unclear",
-          "establishmentPerSource": {
-            "inaturalist": "unknown",
-            "gbif": "unclear"
-          },
-          "ties": [
-            {
-              "plantId": "magnolia-grandiflora",
-              "plant": "Magnolia grandiflora",
-              "interactionTypes": [
-                "eatenBy"
-              ],
-              "records": 2,
-              "larvalEvidence": false,
-              "lifeStages": [],
-              "studies": [
-                {
-                  "name": "Fricke & Svenning 2020, global plant–frugivore meta-network (Nature)",
-                  "records": 1,
-                  "citation": "Fricke, E.C., Svenning, J. Accelerating homogenization of the global plant–frugivore meta-network. Nature 585, 74–78 (2020). https://doi.org/10.1038/s41586-020-2640-y"
-                },
-                {
-                  "name": "iNaturalist observations",
-                  "records": 1,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                }
-              ]
-            },
-            {
-              "plantId": "sabal-palmetto",
-              "plant": "Sabal palmetto",
-              "interactionTypes": [
-                "eatenBy"
-              ],
-              "records": 2,
-              "larvalEvidence": false,
-              "lifeStages": [],
-              "studies": [
-                {
-                  "name": "iNaturalist observations",
-                  "records": 1,
-                  "citation": "http://iNaturalist.org is a place where you can record what you see in nature, meet other nature lovers, and learn about the natural world."
-                },
-                {
-                  "name": "Fricke & Svenning 2020, global plant–frugivore meta-network (Nature)",
-                  "records": 1,
-                  "citation": "Fricke, E.C., Svenning, J. Accelerating homogenization of the global plant–frugivore meta-network. Nature 585, 74–78 (2020). https://doi.org/10.1038/s41586-020-2640-y"
-                }
-              ]
-            },
-            {
-              "plantId": "celtis-laevigata",
-              "plant": "Celtis laevigata",
-              "interactionTypes": [
-                "eatenBy"
-              ],
-              "records": 1,
-              "larvalEvidence": false,
-              "lifeStages": [],
-              "studies": [
-                {
-                  "name": "Fricke & Svenning 2020, global plant–frugivore meta-network (Nature)",
-                  "records": 1,
-                  "citation": "Fricke, E.C., Svenning, J. Accelerating homogenization of the global plant–frugivore meta-network. Nature 585, 74–78 (2020). https://doi.org/10.1038/s41586-020-2640-y"
-                }
-              ]
-            },
-            {
-              "plantId": "vaccinium-arboreum",
-              "plant": "Vaccinium arboreum",
-              "interactionTypes": [
-                "eatenBy"
-              ],
-              "records": 1,
-              "larvalEvidence": false,
-              "lifeStages": [],
-              "studies": [
-                {
-                  "name": "Fricke & Svenning 2020, global plant–frugivore meta-network (Nature)",
-                  "records": 1,
-                  "citation": "Fricke, E.C., Svenning, J. Accelerating homogenization of the global plant–frugivore meta-network. Nature 585, 74–78 (2020). https://doi.org/10.1038/s41586-020-2640-y"
                 }
               ]
             }

@@ -69,6 +69,7 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Asplenium scolopendrium": { name: "Scolopendre officinale", src: "taxref" },
   "Asplenium trichomanes": { name: "Capillaire des murailles", src: "taxref" },
   "Asplenium viride": { name: "Doradille verte", src: "taxref" },
+  "Baccharis halimifolia": { name: "Séneçon en arbre", src: "bdtfx" },
   "Betula pendula": { name: "Bouleau verruqueux", src: "taxref" },
   "Brachypodium pinnatum": { name: "Brachypode penné", src: "taxref" },
   "Brachypodium retusum": { name: "Brachypode rameux", src: "taxref" },
@@ -132,6 +133,7 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Larix decidua": { name: "Mélèze d'Europe", src: "taxref" },
   "Lavandula angustifolia": { name: "Lavande vraie", src: "taxref" },
   "Ligustrum vulgare": { name: "Troène commun", src: "taxref" },
+  "Liquidambar styraciflua": { name: "Copalme d'Amérique", src: "bdtfx" },
   "Lonicera implexa": { name: "Chèvrefeuille des Baléares", src: "taxref" },
   "Lonicera periclymenum": { name: "Chèvrefeuille des bois", src: "taxref" },
   "Lotus corniculatus": { name: "Lotier corniculé", src: "taxref" },
@@ -200,6 +202,7 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Vaccinium vitis-idaea": { name: "Airelle rouge", src: "taxref" },
   "Viburnum lantana": { name: "Viorne lantane", src: "taxref" },
   "Viburnum tinus": { name: "Laurier-tin", src: "taxref" },
+  "Vitis rotundifolia": { name: "Vigne à feuilles rondes", src: "bdtfx" },
 
   // Circumboreal species: on the French list *and* the North American one.
   // TAXREF wins, because it is the list a French reader's field guide follows.

@@ -7292,5 +7292,243 @@
       "gbif": "5372394",
       "wikidata": "Q2701573"
     }
+  },
+  "Acrostichum danaeifolium": {
+    "identifiers": {
+      "ipni": "17002360-1",
+      "wfo": "wfo-0001109379",
+      "usda": "ACDA",
+      "itis": "17306",
+      "inat": "130818",
+      "gbif": "2651707",
+      "wikidata": "Q15313263"
+    }
+  },
+  "Andropogon glomeratus": {
+    "identifiers": {
+      "ipni": "12850-2",
+      "wfo": "wfo-0000846663",
+      "usda": "ANGL2",
+      "itis": "40454",
+      "gbif": "2706097",
+      "wikidata": "Q2112970",
+      "inat": "1616972"
+    }
+  },
+  "Canavalia rosea": {
+    "identifiers": {
+      "ipni": "30187778-2",
+      "wfo": "wfo-0000189858",
+      "usda": "CARO26",
+      "itis": "501188",
+      "inat": "131242",
+      "gbif": "2962021",
+      "wikidata": "Q1317365"
+    }
+  },
+  "Centrosema virginianum": {
+    "identifiers": {
+      "ipni": "51897-2",
+      "wfo": "wfo-0000179164",
+      "usda": "CEVI2",
+      "itis": "25778",
+      "inat": "127681",
+      "gbif": "2964906",
+      "wikidata": "Q5063036"
+    }
+  },
+  "Crinum americanum": {
+    "identifiers": {
+      "ipni": "319172-2",
+      "wfo": "wfo-0000764381",
+      "usda": "CRAM2",
+      "itis": "182710",
+      "inat": "128713",
+      "gbif": "2853938",
+      "wikidata": "Q5185769"
+    }
+  },
+  "Echites umbellatus": {
+    "identifiers": {
+      "ipni": "78821-1",
+      "wfo": "wfo-0000947877",
+      "usda": "ECUM2",
+      "itis": "893837",
+      "inat": "277412",
+      "gbif": "7156076",
+      "wikidata": "Q18083962"
+    }
+  },
+  "Eragrostis elliottii": {
+    "identifiers": {
+      "ipni": "93090-2",
+      "wfo": "wfo-0000867703",
+      "usda": "EREL",
+      "itis": "40720",
+      "inat": "288051",
+      "gbif": "2705344",
+      "wikidata": "Q15513654"
+    }
+  },
+  "Ernodea littoralis": {
+    "identifiers": {
+      "ipni": "748814-1",
+      "wfo": "wfo-0000953791",
+      "usda": "ERLI5",
+      "itis": "34988",
+      "inat": "133299",
+      "gbif": "2893696",
+      "wikidata": "Q15441908"
+    }
+  },
+  "Ipomoea pes-caprae": {
+    "identifiers": {
+      "ipni": "269517-1",
+      "wfo": "wfo-0001296638",
+      "usda": "IPPE",
+      "itis": "30787",
+      "inat": "60879",
+      "gbif": "7999386",
+      "wikidata": "Q198794"
+    }
+  },
+  "Jacquemontia pentanthos": {
+    "identifiers": {
+      "ipni": "270229-1",
+      "wfo": "wfo-0001296681",
+      "usda": "JAPE",
+      "itis": "503227",
+      "inat": "164213",
+      "gbif": "5341727",
+      "wikidata": "Q21278194"
+    }
+  },
+  "Melanthera nivea": {
+    "identifiers": {
+      "ipni": "156327-2",
+      "wfo": "wfo-0000038453",
+      "usda": "MENI3",
+      "itis": "38093",
+      "inat": "131167",
+      "gbif": "3092271",
+      "wikidata": "Q15556966"
+    }
+  },
+  "Nephrolepis exaltata": {
+    "identifiers": {
+      "ipni": "17160830-1",
+      "wfo": "wfo-0001109173",
+      "usda": "NEEX",
+      "itis": "17605",
+      "inat": "130866",
+      "gbif": "2650927",
+      "wikidata": "Q136883"
+    }
+  },
+  "Osmunda spectabilis": {
+    "identifiers": {
+      "ipni": "177119-2",
+      "wfo": "wfo-0001110612",
+      "inat": "1002684",
+      "gbif": "7319878",
+      "wikidata": "Q7107257"
+    }
+  },
+  "Pentalinon luteum": {
+    "identifiers": {
+      "ipni": "942487-1",
+      "wfo": "wfo-0000266801",
+      "usda": "PELU3",
+      "itis": "504237",
+      "inat": "166467",
+      "gbif": "3169681",
+      "wikidata": "Q7165009"
+    }
+  },
+  "Ruellia caroliniensis": {
+    "identifiers": {
+      "ipni": "30014408-2",
+      "wfo": "wfo-0001044886",
+      "usda": "RUCA4",
+      "itis": "34373",
+      "inat": "128653",
+      "gbif": "5415376",
+      "wikidata": "Q7377823"
+    }
+  },
+  "Sagittaria lancifolia": {
+    "identifiers": {
+      "ipni": "58516-1",
+      "wfo": "wfo-0000736828",
+      "usda": "SALA",
+      "itis": "38923",
+      "inat": "69813",
+      "gbif": "5328895",
+      "wikidata": "Q7399298"
+    }
+  },
+  "Sesuvium portulacastrum": {
+    "identifiers": {
+      "ipni": "235145-2",
+      "wfo": "wfo-0000432992",
+      "usda": "SEPO2",
+      "itis": "19910",
+      "inat": "130743",
+      "gbif": "3084883",
+      "wikidata": "Q2472430"
+    }
+  },
+  "Solidago stricta": {
+    "identifiers": {
+      "ipni": "240530-2",
+      "wfo": "wfo-0000061970",
+      "usda": "SOST",
+      "itis": "36315",
+      "inat": "169130",
+      "gbif": "5388869",
+      "wikidata": "Q15568678"
+    }
+  },
+  "Spartina bakeri": {
+    "identifiers": {
+      "ipni": "241102-2",
+      "wfo": "wfo-0000900685",
+      "usda": "SPBA",
+      "itis": "41273",
+      "gbif": "5290039",
+      "wikidata": "Q7573949",
+      "inat": "773039"
+    }
+  },
+  "Symphyotrichum carolinianum": {
+    "identifiers": {
+      "ipni": "1136843-2",
+      "wfo": "wfo-0000137858",
+      "gbif": "3104917",
+      "wikidata": "Q55962473",
+      "inat": "127046"
+    }
+  },
+  "Tripsacum floridanum": {
+    "identifiers": {
+      "ipni": "258703-2",
+      "wfo": "wfo-0000904821",
+      "usda": "TRFL4",
+      "itis": "41288",
+      "inat": "170021",
+      "gbif": "2705534",
+      "wikidata": "Q7843776"
+    }
+  },
+  "Uniola paniculata": {
+    "identifiers": {
+      "ipni": "325380-2",
+      "wfo": "wfo-0000906627",
+      "usda": "UNPA",
+      "itis": "41317",
+      "inat": "126303",
+      "gbif": "2702847",
+      "wikidata": "Q3549978"
+    }
   }
 }

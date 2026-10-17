@@ -26,6 +26,15 @@
     "attribution": "(c) CallieSanDiego, some rights reserved (CC BY-NC), uploaded by CallieSanDiego",
     "color": "#68630e"
   },
+  "acrostichum-danaeifolium": {
+    "taxonId": 130818,
+    "photoId": 591304376,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/591304376/square.jpg",
+    "observer": "Julien Piolain",
+    "license": "cc-by-nc",
+    "attribution": "(c) Julien Piolain, some rights reserved (CC BY-NC), uploaded by Julien Piolain",
+    "color": "#797d41"
+  },
   "adiantum-aleuticum": {
     "taxonId": 52667,
     "photoId": 45713149,
@@ -169,6 +178,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Carol Blaney, some rights reserved (CC BY-NC), uploaded by Carol Blaney",
     "color": "#5c5f4a"
+  },
+  "andropogon-glomeratus": {
+    "taxonId": 1616972,
+    "photoId": 90782688,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/90782688/square.jpg",
+    "observer": "z7nikon",
+    "license": "cc-by-nc",
+    "attribution": "(c) z7nikon, some rights reserved (CC BY-NC), uploaded by z7nikon",
+    "color": "#586122"
   },
   "anemone-nemorosa": {
     "taxonId": 950603,
@@ -646,6 +664,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Gary House, some rights reserved (CC BY-NC), uploaded by Gary House",
     "color": "#484c14"
+  },
+  "canavalia-rosea": {
+    "taxonId": 131242,
+    "photoId": 309988164,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/309988164/square.jpg",
+    "observer": "Kim and Peter Connolly",
+    "license": "cc-by-nc",
+    "attribution": "(c) Kim and Peter Connolly, some rights reserved (CC BY-NC), uploaded by Kim and Peter Connolly",
+    "color": "#3d3734"
   },
   "cardamine-pratensis": {
     "taxonId": 54531,
@@ -1322,6 +1349,15 @@
     "attribution": "(c) teabbee, some rights reserved (CC BY-NC), uploaded by teabbee",
     "color": "#786c3b"
   },
+  "eragrostis-elliottii": {
+    "taxonId": 288051,
+    "photoId": 4721025,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/4721025/square.jpg",
+    "observer": "Mary Keim",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Mary Keim, some rights reserved (CC BY-NC-SA)",
+    "color": "#777b49"
+  },
   "eragrostis-spectabilis": {
     "taxonId": 162409,
     "photoId": 219308535,
@@ -1808,6 +1844,15 @@
     "attribution": "(c) Thomas Shahan, some rights reserved (CC BY-NC), uploaded by Thomas Shahan",
     "color": "#776855"
   },
+  "ipomoea-pes-caprae": {
+    "taxonId": 60879,
+    "photoId": 9069310,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/9069310/square.jpeg",
+    "observer": "Tony Wood",
+    "license": "cc-by-nc",
+    "attribution": "(c) Tony Wood, some rights reserved (CC BY-NC), uploaded by Tony Wood",
+    "color": "#6e635a"
+  },
   "iris-douglasiana": {
     "taxonId": 50854,
     "photoId": 7384130,
@@ -1843,6 +1888,15 @@
     "license": "cc-by-nc-sa",
     "attribution": "(c) stonebird, some rights reserved (CC BY-NC-SA), uploaded by stonebird",
     "color": "#536c1d"
+  },
+  "jacquemontia-pentanthos": {
+    "taxonId": 164213,
+    "photoId": 40755665,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/40755665/square.jpg",
+    "observer": "Bronzit_poet",
+    "license": "cc-by-nc",
+    "attribution": "(c) Bronzit_poet, some rights reserved (CC BY-NC), uploaded by Bronzit_poet",
+    "color": "#4b517c"
   },
   "juglans-californica": {
     "taxonId": 54503,
@@ -2240,6 +2294,15 @@
     "attribution": "(c) stelluti, some rights reserved (CC BY-NC)",
     "color": "#98896a"
   },
+  "melanthera-nivea": {
+    "taxonId": 131167,
+    "photoId": 279010,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/279010/square.jpg",
+    "observer": "Bob Peterson",
+    "license": "cc-by-sa",
+    "attribution": "(c) Bob Peterson, some rights reserved (CC BY-SA)",
+    "color": "#7d7f62"
+  },
   "melicytus-ramiflorus": {
     "taxonId": 197063,
     "photoId": 195607553,
@@ -2321,6 +2384,15 @@
     "attribution": "(c) Almantas Kulbis, some rights reserved (CC BY-NC), uploaded by Almantas Kulbis",
     "color": "#799746"
   },
+  "nephrolepis-exaltata": {
+    "taxonId": 130866,
+    "photoId": 19251591,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/19251591/square.jpg",
+    "observer": "taofeek",
+    "license": "cc-by-nc",
+    "attribution": "(c) taofeek, some rights reserved (CC BY-NC)",
+    "color": "#649245"
+  },
   "nettle-tree-butterfly": {
     "taxonId": 321526,
     "photoId": 105052712,
@@ -2383,6 +2455,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Susan Elliott, some rights reserved (CC BY-NC), uploaded by Susan Elliott",
     "color": "#677a2b"
+  },
+  "osmunda-spectabilis": {
+    "taxonId": 1002684,
+    "photoId": 127317399,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/127317399/square.jpeg",
+    "observer": "Janet Wright",
+    "license": "cc-by-nc",
+    "attribution": "(c) Janet Wright, some rights reserved (CC BY-NC), uploaded by Janet Wright",
+    "color": "#535e49"
   },
   "oxalis-oregana": {
     "taxonId": 47757,
@@ -3167,6 +3248,15 @@
     "attribution": "(c) germangirl, some rights reserved (CC BY-NC), uploaded by germangirl",
     "color": "#878f2e"
   },
+  "ruellia-caroliniensis": {
+    "taxonId": 128653,
+    "photoId": 354009899,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/354009899/square.jpeg",
+    "observer": "Michael J. Papay",
+    "license": "cc-by",
+    "attribution": "(c) Michael J. Papay, some rights reserved (CC BY), uploaded by Michael J. Papay",
+    "color": "#153725"
+  },
   "rumex-acetosa": {
     "taxonId": 55821,
     "photoId": 130014502,
@@ -3419,6 +3509,15 @@
     "attribution": "(c) Wolfgang Jauch, some rights reserved (CC BY), uploaded by Wolfgang Jauch",
     "color": "#837764"
   },
+  "sesuvium-portulacastrum": {
+    "taxonId": 130743,
+    "photoId": 2743722,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/2743722/square.jpg",
+    "observer": "Nick Block",
+    "license": "cc-by",
+    "attribution": "(c) Nick Block, some rights reserved (CC BY), uploaded by Nick Block",
+    "color": "#6e614b"
+  },
   "sidalcea-campestris": {
     "taxonId": 168939,
     "photoId": 3907847,
@@ -3527,6 +3626,15 @@
     "attribution": "(c) Sequoia Janirella Wrens, some rights reserved (CC BY-NC), uploaded by Sequoia Janirella Wrens",
     "color": "#848234"
   },
+  "solidago-stricta": {
+    "taxonId": 169130,
+    "photoId": 156583563,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/156583563/square.jpeg",
+    "observer": "Bonnie Semmling",
+    "license": "cc-by",
+    "attribution": "(c) Bonnie Semmling, some rights reserved (CC BY), uploaded by Bonnie Semmling",
+    "color": "#6d6528"
+  },
   "solidago-velutina-californica": {
     "taxonId": 80217,
     "photoId": 11677,
@@ -3580,6 +3688,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Erica Fraley, some rights reserved (CC BY-NC), uploaded by Erica Fraley",
     "color": "#758c8e"
+  },
+  "spartina-bakeri": {
+    "taxonId": 773039,
+    "photoId": 354291773,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/354291773/square.jpeg",
+    "observer": "Nate Hartley",
+    "license": "cc-by-nc",
+    "attribution": "(c) Nate Hartley, some rights reserved (CC BY-NC), uploaded by Nate Hartley",
+    "color": "#6c756b"
   },
   "spicebush-swallowtail": {
     "taxonId": 58525,
@@ -3752,6 +3869,15 @@
     "attribution": "(c) Drew T Henderson, some rights reserved (CC BY-NC), uploaded by Drew T Henderson",
     "color": "#8c903f"
   },
+  "tripsacum-floridanum": {
+    "taxonId": 170021,
+    "photoId": 1397058,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/1397058/square.jpg",
+    "observer": "Marie Studer",
+    "license": "cc-by",
+    "attribution": "(c) Marie Studer, some rights reserved (CC BY), uploaded by Marie Studer",
+    "color": "#726636"
+  },
   "tsuga-canadensis": {
     "taxonId": 48734,
     "photoId": 400071107,
@@ -3796,6 +3922,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Nido Paras, some rights reserved (CC BY-NC), uploaded by Nido Paras",
     "color": "#415825"
+  },
+  "uniola-paniculata": {
+    "taxonId": 126303,
+    "photoId": 146522460,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/146522460/square.jpeg",
+    "observer": "forestseasons",
+    "license": "cc-by-nc",
+    "attribution": "(c) forestseasons, some rights reserved (CC BY-NC), uploaded by forestseasons",
+    "color": "#7b8d9a"
   },
   "urtica-gracilis": {
     "taxonId": 141854,

@@ -515,6 +515,14 @@
     },
     {
       "subject": "plant",
+      "id": "centrosema-virginianum",
+      "name": "Centrosema virginianum",
+      "taxonId": 127681,
+      "reason": "chosen photo 282475735 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/127681/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "clematis-lasiantha",
       "name": "Clematis lasiantha",
       "taxonId": 49876,
@@ -563,6 +571,14 @@
     },
     {
       "subject": "plant",
+      "id": "crinum-americanum",
+      "name": "Crinum americanum",
+      "taxonId": 128713,
+      "reason": "chosen photo 21742403 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/128713/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "cytisus-villosus",
       "name": "Cytisus villosus",
       "taxonId": 161579,
@@ -592,6 +608,14 @@
       "taxonId": 777371,
       "reason": "chosen photo 18817746 is cc-by-nc-nd",
       "gallery": "https://www.inaturalist.org/taxa/777371/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "echites-umbellatus",
+      "name": "Echites umbellatus",
+      "taxonId": 277412,
+      "reason": "chosen photo 3635571 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/277412/browse_photos"
     },
     {
       "subject": "plant",
@@ -640,6 +664,14 @@
       "taxonId": 60963,
       "reason": "chosen photo 132798591 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/60963/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "ernodea-littoralis",
+      "name": "Ernodea littoralis",
+      "taxonId": 133299,
+      "reason": "chosen photo 2697179 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/133299/browse_photos"
     },
     {
       "subject": "plant",
@@ -875,6 +907,14 @@
     },
     {
       "subject": "plant",
+      "id": "pentalinon-luteum",
+      "name": "Pentalinon luteum",
+      "taxonId": 166467,
+      "reason": "chosen photo 77841581 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/166467/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "philadelphus-lewisii",
       "name": "Philadelphus lewisii",
       "taxonId": 62223,
@@ -1043,6 +1083,14 @@
     },
     {
       "subject": "plant",
+      "id": "sagittaria-lancifolia",
+      "name": "Sagittaria lancifolia",
+      "taxonId": 69813,
+      "reason": "chosen photo 64947365 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/69813/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "salix-sitchensis",
       "name": "Salix sitchensis",
       "taxonId": 61100,
@@ -1128,6 +1176,14 @@
       "taxonId": 53456,
       "reason": "chosen photo 123050688 is cc-by-nc-nd",
       "gallery": "https://www.inaturalist.org/taxa/53456/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "symphyotrichum-carolinianum",
+      "name": "Symphyotrichum carolinianum",
+      "taxonId": 127046,
+      "reason": "chosen photo 100215 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/127046/browse_photos"
     },
     {
       "subject": "plant",

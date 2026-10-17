@@ -339,6 +339,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:17002360-1",
+    "scientificName": "Acrostichum danaeifolium",
+    "family": "Pteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17002360-1",
+      "wfo": "wfo-0001109379",
+      "gbif": "2651707",
+      "usda": "ACDA",
+      "itis": "17306",
+      "inat": "130818",
+      "wikidata": "Q15313263",
+      "indigene": "acrostichum-danaeifolium"
+    },
+    "commonNames": [
+      "Giant Leather Fern"
+    ],
+    "aliases": [
+      "acrostichum danaeifolium",
+      "giant leather fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:271629-2",
     "scientificName": "Adiantum aleuticum",
     "family": "Pteridaceae",
@@ -992,6 +1021,35 @@ export const REGISTRY: RegistryEntry[] = [
       "mid-atlantic",
       "chicago",
       "st-lawrence"
+    ]
+  },
+  {
+    "primaryId": "ipni:12850-2",
+    "scientificName": "Andropogon glomeratus",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "12850-2",
+      "wfo": "wfo-0000846663",
+      "gbif": "2706097",
+      "usda": "ANGL2",
+      "itis": "40454",
+      "inat": "1616972",
+      "wikidata": "Q2112970",
+      "indigene": "andropogon-glomeratus"
+    },
+    "commonNames": [
+      "Bushy Bluestem"
+    ],
+    "aliases": [
+      "andropogon glomeratus",
+      "bushy bluestem"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
     ]
   },
   {
@@ -1901,7 +1959,8 @@ export const REGISTRY: RegistryEntry[] = [
       "mid-atlantic",
       "north-michigan",
       "chicago",
-      "st-lawrence"
+      "st-lawrence",
+      "florida-south"
     ]
   },
   {
@@ -3205,6 +3264,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30187778-2",
+    "scientificName": "Canavalia rosea",
+    "family": "Fabaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30187778-2",
+      "wfo": "wfo-0000189858",
+      "gbif": "2962021",
+      "usda": "CARO26",
+      "itis": "501188",
+      "inat": "131242",
+      "wikidata": "Q1317365",
+      "indigene": "canavalia-rosea"
+    },
+    "commonNames": [
+      "Beach Bean",
+      "Bay Bean"
+    ],
+    "aliases": [
+      "bay bean",
+      "beach bean",
+      "canavalia rosea"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:45334-2",
     "scientificName": "Cardamine pratensis",
     "family": "Brassicaceae",
@@ -4098,6 +4188,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:51897-2",
+    "scientificName": "Centrosema virginianum",
+    "family": "Fabaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "51897-2",
+      "wfo": "wfo-0000179164",
+      "gbif": "2964906",
+      "usda": "CEVI2",
+      "itis": "25778",
+      "inat": "127681",
+      "wikidata": "Q5063036",
+      "indigene": "centrosema-virginianum"
+    },
+    "commonNames": [
+      "Spurred Butterfly Pea"
+    ],
+    "aliases": [
+      "centrosema virginianum",
+      "spurred butterfly pea"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:319140-2",
     "scientificName": "Cephalanthus occidentalis",
     "family": "Rubiaceae",
@@ -4863,7 +4982,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "florida-central"
+      "florida-central",
+      "florida-south"
     ]
   },
   {
@@ -5387,6 +5507,37 @@ export const REGISTRY: RegistryEntry[] = [
       "france-mediterranean",
       "ireland",
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:319172-2",
+    "scientificName": "Crinum americanum",
+    "family": "Amaryllidaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "319172-2",
+      "wfo": "wfo-0000764381",
+      "gbif": "2853938",
+      "usda": "CRAM2",
+      "itis": "182710",
+      "inat": "128713",
+      "wikidata": "Q5185769",
+      "indigene": "crinum-americanum"
+    },
+    "commonNames": [
+      "String Lily",
+      "Swamp Lily"
+    ],
+    "aliases": [
+      "crinum americanum",
+      "string lily",
+      "swamp lily"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
     ]
   },
   {
@@ -6282,6 +6433,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:78821-1",
+    "scientificName": "Echites umbellatus",
+    "family": "Apocynaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "78821-1",
+      "wfo": "wfo-0000947877",
+      "gbif": "7156076",
+      "usda": "ECUM2",
+      "itis": "893837",
+      "inat": "277412",
+      "wikidata": "Q18083962",
+      "indigene": "echites-umbellatus"
+    },
+    "commonNames": [
+      "Devil's Potato"
+    ],
+    "aliases": [
+      "devil's potato",
+      "echites umbellatus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:88877-2",
     "scientificName": "Ehretia anacua",
     "family": "Boraginaceae",
@@ -6428,6 +6608,35 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "ca-south-coast",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:93090-2",
+    "scientificName": "Eragrostis elliottii",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "93090-2",
+      "wfo": "wfo-0000867703",
+      "gbif": "2705344",
+      "usda": "EREL",
+      "itis": "40720",
+      "inat": "288051",
+      "wikidata": "Q15513654",
+      "indigene": "eragrostis-elliottii"
+    },
+    "commonNames": [
+      "Elliott's Lovegrass"
+    ],
+    "aliases": [
+      "elliott's lovegrass",
+      "eragrostis elliottii"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
     ]
   },
   {
@@ -6776,6 +6985,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:748814-1",
+    "scientificName": "Ernodea littoralis",
+    "family": "Rubiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "748814-1",
+      "wfo": "wfo-0000953791",
+      "gbif": "2893696",
+      "usda": "ERLI5",
+      "itis": "34988",
+      "inat": "133299",
+      "wikidata": "Q15441908",
+      "indigene": "ernodea-littoralis"
+    },
+    "commonNames": [
+      "Golden Creeper"
+    ],
+    "aliases": [
+      "ernodea littoralis",
+      "golden creeper"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
     ]
   },
   {
@@ -8915,6 +9153,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:269517-1",
+    "scientificName": "Ipomoea pes-caprae",
+    "family": "Convolvulaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "269517-1",
+      "wfo": "wfo-0001296638",
+      "gbif": "7999386",
+      "usda": "IPPE",
+      "itis": "30787",
+      "inat": "60879",
+      "wikidata": "Q198794",
+      "indigene": "ipomoea-pes-caprae"
+    },
+    "commonNames": [
+      "Railroad Vine",
+      "Beach Morning Glory"
+    ],
+    "aliases": [
+      "beach morning glory",
+      "ipomoea pes-caprae",
+      "railroad vine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:438555-1",
     "scientificName": "Iris douglasiana",
     "family": "Iridaceae",
@@ -9057,6 +9326,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:270229-1",
+    "scientificName": "Jacquemontia pentanthos",
+    "family": "Convolvulaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "270229-1",
+      "wfo": "wfo-0001296681",
+      "gbif": "5341727",
+      "usda": "JAPE",
+      "itis": "503227",
+      "inat": "164213",
+      "wikidata": "Q21278194",
+      "indigene": "jacquemontia-pentanthos"
+    },
+    "commonNames": [
+      "Skyblue Clustervine"
+    ],
+    "aliases": [
+      "jacquemontia pentanthos",
+      "skyblue clustervine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
     ]
   },
   {
@@ -9710,7 +10008,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "florida-central"
+      "florida-central",
+      "florida-south"
     ]
   },
   {
@@ -10887,6 +11186,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:156327-2",
+    "scientificName": "Melanthera nivea",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "156327-2",
+      "wfo": "wfo-0000038453",
+      "gbif": "3092271",
+      "usda": "MENI3",
+      "itis": "38093",
+      "inat": "131167",
+      "wikidata": "Q15556966",
+      "indigene": "melanthera-nivea"
+    },
+    "commonNames": [
+      "Snow Squarestem"
+    ],
+    "aliases": [
+      "melanthera nivea",
+      "snow squarestem"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:866981-1",
     "scientificName": "Melicytus ramiflorus",
     "family": "Violaceae",
@@ -10997,7 +11325,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "florida-central"
+      "florida-central",
+      "florida-south"
     ]
   },
   {
@@ -11449,6 +11778,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:17160830-1",
+    "scientificName": "Nephrolepis exaltata",
+    "family": "Nephrolepidaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "17160830-1",
+      "wfo": "wfo-0001109173",
+      "gbif": "2650927",
+      "usda": "NEEX",
+      "itis": "17605",
+      "inat": "130866",
+      "wikidata": "Q136883",
+      "indigene": "nephrolepis-exaltata"
+    },
+    "commonNames": [
+      "Wild Boston Fern"
+    ],
+    "aliases": [
+      "nephrolepis exaltata",
+      "wild boston fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:33923-1",
     "scientificName": "Oemleria cerasiformis",
     "family": "Rosaceae",
@@ -11652,6 +12010,33 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:177119-2",
+    "scientificName": "Osmunda spectabilis",
+    "family": "Osmundaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "177119-2",
+      "wfo": "wfo-0001110612",
+      "gbif": "7319878",
+      "inat": "1002684",
+      "wikidata": "Q7107257",
+      "indigene": "osmunda-spectabilis"
+    },
+    "commonNames": [
+      "Royal Fern"
+    ],
+    "aliases": [
+      "osmunda spectabilis",
+      "royal fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
     ]
   },
   {
@@ -12265,6 +12650,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:942487-1",
+    "scientificName": "Pentalinon luteum",
+    "family": "Apocynaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "942487-1",
+      "wfo": "wfo-0000266801",
+      "gbif": "3169681",
+      "usda": "PELU3",
+      "itis": "504237",
+      "inat": "166467",
+      "wikidata": "Q7165009",
+      "indigene": "pentalinon-luteum"
+    },
+    "commonNames": [
+      "Wild Allamanda"
+    ],
+    "aliases": [
+      "pentalinon luteum",
+      "wild allamanda"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:1061719-2",
     "scientificName": "Petasites frigidus",
     "family": "Asteraceae",
@@ -12434,7 +12848,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "central-texas",
-      "florida-central"
+      "florida-central",
+      "florida-south"
     ]
   },
   {
@@ -13476,7 +13891,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "florida-central"
+      "florida-central",
+      "florida-south"
     ]
   },
   {
@@ -15872,6 +16288,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30014408-2",
+    "scientificName": "Ruellia caroliniensis",
+    "family": "Acanthaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30014408-2",
+      "wfo": "wfo-0001044886",
+      "gbif": "5415376",
+      "usda": "RUCA4",
+      "itis": "34373",
+      "inat": "128653",
+      "wikidata": "Q7377823",
+      "indigene": "ruellia-caroliniensis"
+    },
+    "commonNames": [
+      "Carolina Wild Petunia"
+    ],
+    "aliases": [
+      "carolina wild petunia",
+      "ruellia caroliniensis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:332105-2",
     "scientificName": "Rumex acetosa",
     "family": "Polygonaceae",
@@ -15961,6 +16406,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-central",
+      "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:58516-1",
+    "scientificName": "Sagittaria lancifolia",
+    "family": "Alismataceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "58516-1",
+      "wfo": "wfo-0000736828",
+      "gbif": "5328895",
+      "usda": "SALA",
+      "itis": "38923",
+      "inat": "69813",
+      "wikidata": "Q7399298",
+      "indigene": "sagittaria-lancifolia"
+    },
+    "commonNames": [
+      "Bulltongue Arrowhead"
+    ],
+    "aliases": [
+      "bulltongue arrowhead",
+      "sagittaria lancifolia"
+    ],
+    "cultivarOf": null,
+    "regions": [
       "florida-south"
     ]
   },
@@ -17101,6 +17575,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:235145-2",
+    "scientificName": "Sesuvium portulacastrum",
+    "family": "Aizoaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "235145-2",
+      "wfo": "wfo-0000432992",
+      "gbif": "3084883",
+      "usda": "SEPO2",
+      "itis": "19910",
+      "inat": "130743",
+      "wikidata": "Q2472430",
+      "indigene": "sesuvium-portulacastrum"
+    },
+    "commonNames": [
+      "Sea Purslane"
+    ],
+    "aliases": [
+      "sea purslane",
+      "sesuvium portulacastrum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:564393-1",
     "scientificName": "Sidalcea campestris",
     "family": "Malvaceae",
@@ -17421,6 +17924,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:240530-2",
+    "scientificName": "Solidago stricta",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "240530-2",
+      "wfo": "wfo-0000061970",
+      "gbif": "5388869",
+      "usda": "SOST",
+      "itis": "36315",
+      "inat": "169130",
+      "wikidata": "Q15568678",
+      "indigene": "solidago-stricta"
+    },
+    "commonNames": [
+      "Wand Goldenrod"
+    ],
+    "aliases": [
+      "solidago stricta",
+      "wand goldenrod"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:1086574-2",
     "scientificName": "Solidago velutina subsp. californica",
     "family": "Asteraceae",
@@ -17659,6 +18191,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:241102-2",
+    "scientificName": "Spartina bakeri",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "241102-2",
+      "wfo": "wfo-0000900685",
+      "gbif": "5290039",
+      "usda": "SPBA",
+      "itis": "41273",
+      "inat": "773039",
+      "wikidata": "Q7573949",
+      "indigene": "spartina-bakeri"
+    },
+    "commonNames": [
+      "Sand Cordgrass"
+    ],
+    "aliases": [
+      "sand cordgrass",
+      "spartina bakeri"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
     ]
   },
   {
@@ -17958,6 +18519,33 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "ca-south-coast",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:1136843-2",
+    "scientificName": "Symphyotrichum carolinianum",
+    "family": "Asteraceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": true,
+    "identifiers": {
+      "ipni": "1136843-2",
+      "wfo": "wfo-0000137858",
+      "gbif": "3104917",
+      "inat": "127046",
+      "wikidata": "Q55962473",
+      "indigene": "symphyotrichum-carolinianum"
+    },
+    "commonNames": [
+      "Climbing Aster"
+    ],
+    "aliases": [
+      "climbing aster",
+      "symphyotrichum carolinianum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
     ]
   },
   {
@@ -18281,7 +18869,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "florida-central"
+      "florida-central",
+      "florida-south"
     ]
   },
   {
@@ -18340,7 +18929,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "florida-central"
+      "florida-central",
+      "florida-south"
     ]
   },
   {
@@ -18770,6 +19360,35 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:258703-2",
+    "scientificName": "Tripsacum floridanum",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "258703-2",
+      "wfo": "wfo-0000904821",
+      "gbif": "2705534",
+      "usda": "TRFL4",
+      "itis": "41288",
+      "inat": "170021",
+      "wikidata": "Q7843776",
+      "indigene": "tripsacum-floridanum"
+    },
+    "commonNames": [
+      "Florida Gamagrass"
+    ],
+    "aliases": [
+      "florida gamagrass",
+      "tripsacum floridanum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:306789-2",
     "scientificName": "Trollius europaeus",
     "family": "Ranunculaceae",
@@ -19008,6 +19627,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:325380-2",
+    "scientificName": "Uniola paniculata",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "325380-2",
+      "wfo": "wfo-0000906627",
+      "gbif": "2702847",
+      "usda": "UNPA",
+      "itis": "41317",
+      "inat": "126303",
+      "wikidata": "Q3549978",
+      "indigene": "uniola-paniculata"
+    },
+    "commonNames": [
+      "Sea Oats"
+    ],
+    "aliases": [
+      "sea oats",
+      "uniola paniculata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
     ]
   },
   {
@@ -19981,7 +20629,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "florida-central"
+      "florida-central",
+      "florida-south"
     ]
   },
   {

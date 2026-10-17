@@ -519,7 +519,10 @@ const ALSO_IN = { ireland: ["GB"] };
  * foreign ground is cut — and a ring with nothing foreign in it is untouched.
  */
 function offForeignLand(rings, meta, features) {
-  const codes = [...(meta.countries ?? []), ...(ALSO_IN[meta.id] ?? [])];
+  // Natural Earth knows countries, not their parts: the Scottish Lowlands
+  // declare "GB-SCT", and matching that against "GB" made all of Britain
+  // foreign and cut the whole shading away.
+  const codes = [...(meta.countries ?? []), ...(ALSO_IN[meta.id] ?? [])].map((c) => c.split("-")[0]);
   if (!codes.length) return rings;
   const b = meta.bounds;
   const near = (f) => {

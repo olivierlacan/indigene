@@ -1,6 +1,7 @@
 // The map page's promises: every region is on it under a named continent, and
 // no name runs off its picture or onto another name.
 import { describe, it, expect } from "vitest";
+import { readFileSync } from "node:fs";
 import { placeLabels } from "./coverage-map";
 import { COVERAGE_MAPS } from "../data/coverage-map";
 import { CONTINENT_NAMES } from "../steps/map";
@@ -27,6 +28,18 @@ describe("coverage map", () => {
           `${id} runs off the ${map.id} frame`,
         ).toBe(true);
       }
+    }
+  });
+
+  it("shades every region it names", () => {
+    // The Scottish Lowlands shipped as a dot over unshaded land: its country
+    // code "GB-SCT" never matched Natural Earth's "GB", so all of Britain
+    // counted as foreign and the shading was cut away to an empty path.
+    for (const map of COVERAGE_MAPS.slice(1)) {
+      const svg = readFileSync(new URL(`../../public/maps/coverage-${map.id}.svg`, import.meta.url), "utf8");
+      const shades = [...svg.matchAll(/class="cover[^"]*" d="([^"]*)"/g)].map((m) => m[1]);
+      expect(shades.length, map.id).toBe(map.labels.length);
+      shades.forEach((d, i) => expect(d, `${map.labels[i].id} has no shading on ${map.id}`).not.toBe(""));
     }
   });
 

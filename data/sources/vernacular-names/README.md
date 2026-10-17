@@ -27,7 +27,7 @@ The locale is **fr-FR**, so these are France's lists. See `DATA_SOURCES.md` →
 
 | Source | Covers | Licence |
 |---|---|---|
-| [TAXREF](https://inpn.mnhn.fr/programme/referentiel-taxonomique-taxref) (INPN / MNHN) | the flora **and fauna** of France and its overseas territories — the authority for anything that grows or flies here | Licence Ouverte / Etalab |
+| [TAXREF](https://inpn.mnhn.fr/programme/referentiel-taxonomique-taxref) (INPN / MNHN) | the flora **and fauna** of France and its overseas territories — the authority for anything that grows or flies here. Read through [GBIF's copy](https://www.gbif.org/dataset/0e61f8fe-7d25-4f81-ada7-d970bbb2c6d6) since the MNHN API went behind a Cloudflare challenge (every request a 403 from 2026-10 on) | Licence Ouverte / Etalab |
 | [Tela Botanica — BDTFX / NVJFL](https://www.tela-botanica.org/bdtfx/) | flora of metropolitan France; the vernacular names French botanists use | CC BY-SA |
 | [Wikidata](https://www.wikidata.org/) | `P1843` (taxon common name, `fr`) and the `fr` label — the crosswalk of last resort | CC0 |
 

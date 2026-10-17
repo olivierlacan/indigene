@@ -15,6 +15,7 @@ import { t, fmtNumber, monthName } from "../lib/i18n";
 import { lengthTick, temperatureSpan } from "../lib/units";
 import { commonName } from "../lib/names";
 import { richText } from "./rich-text";
+import { flowerSwatch } from "./flower-swatch";
 
 let dialogSeq = 0;
 
@@ -23,6 +24,9 @@ export interface Stat {
   label: string;
   value: string;
   sub?: string;
+  /** A mark drawn beside `sub` — the flower-colour dot. Decoration: `sub`
+   *  already says it in words. */
+  swatch?: HTMLElement | null;
   /** What the metric means and why it matters for natives (the tap-to-open dialog). */
   explain: string;
   /** Citation for the figure, shown in the dialog (e.g. the host count's basis). */
@@ -118,7 +122,7 @@ export function statTiles(stats: Stat[], ariaLabel: string, opts: TileOptions = 
         ]),
         el("span", { class: "stat-v", "aria-hidden": "true" }, [
           s.value,
-          s.sub ? el("span", { class: "stat-sub" }, s.sub) : null,
+          s.sub ? el("span", { class: "stat-sub" }, [s.swatch ?? null, s.sub]) : null,
         ]),
       ])
     ),
@@ -218,6 +222,7 @@ function statsFor(p: Plant): Stat[] {
               ? monthName(p.bloom.startMonth, "short")
               : `${monthName(p.bloom.startMonth, "short")}–${monthName(p.bloom.endMonth, "short")}`,
           sub: bloomColorWord(p.bloom.color),
+          swatch: flowerSwatch(p.bloom.color),
           explain: t("stat.bloom.explain"),
         }
       : {

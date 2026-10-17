@@ -12,25 +12,8 @@
 import type { Plant } from "../types";
 import { HUMAN_FT, getUnits, humanHeightLabel, lengthTick } from "../lib/units";
 import { t, fmtNumber, getLang } from "../lib/i18n";
+import { flowerHues } from "../lib/flower-color";
 
-const bloomColors: Record<string, string> = {
-  red: "#c62828",
-  "red-yellow": "#d84315",
-  "coral-red": "#e5533d",
-  orange: "#ef6c00",
-  yellow: "#f9a825",
-  gold: "#f9a825",
-  white: "#e8e8e0",
-  pink: "#d81b8c",
-  purple: "#7b3fa0",
-  lavender: "#9575cd",
-  mauve: "#a1567e",
-  blue: "#3f51b5",
-  green: "#6d8f4e",
-  tan: "#b39b6e",
-  "purple-tan": "#8d7ba0",
-  brown: "#8d6e63",
-};
 
 // The canvas rasterizes the theme's colors once, so unlike the surrounding CSS
 // it goes stale when the device flips light/dark (iOS auto-appearance) or the
@@ -154,7 +137,10 @@ function render(canvas: HTMLCanvasElement, plant: Plant): void {
   ctx.fillText(`(${humanHeightLabel()})`, col0x, groundY + 20);
 
   // Columns 1..n: the plant at each age.
-  const tint = plant.bloom ? bloomColors[plant.bloom.color] ?? brand : brand;
+  // The same hue tokens the Bloom tile's swatch uses, so the drawing and the
+  // tile never disagree about what colour a flower is.
+  const hue = flowerHues(plant.bloom?.color)?.[0];
+  const tint = hue ? cssVar(`--flower-${hue}`, brand) : brand;
   plant.size.forEach((snap, i) => {
     const cx = padL + colW * (1.5 + i);
     drawPlant(ctx, plant.form, cx, groundY, snap.heightFt * pxPerFt, snap.spreadFt * pxPerFt, brand, tint);

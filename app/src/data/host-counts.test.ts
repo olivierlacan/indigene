@@ -55,6 +55,7 @@ const GAYTAN_ZONE: Record<string, string> = {
   "france-alpine": "Mountain",
   "france-mediterranean": "Mediterranean",
   ireland: "Oceanic temperate",
+  "scotland-lowlands": "Oceanic temperate",
 };
 
 const genusOf = (latin: string) => latin.split(/\s+/)[0];

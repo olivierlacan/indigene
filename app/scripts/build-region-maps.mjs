@@ -52,6 +52,7 @@ import { withSeeds } from "./_regions.mjs";
 import { ecoregionFeatures } from "./_resolve.mjs";
 import { buildCoverageMaps } from "./_coverage-map.mjs";
 import polygonClipping from "polygon-clipping";
+import { homeCodes } from "./_borders.mjs";
 
 requireProxyAwareFetch("maps:build");
 
@@ -487,10 +488,6 @@ const rect = (box) => [[
   [box.maxLon, box.maxLat], [box.minLon, box.maxLat],
 ]];
 
-/** Land a region may shade beyond its own `countries`, which name its flags,
- *  not its edges. Ireland is the island: Belfast and Derry are on its map. */
-const ALSO_IN = { ireland: ["GB"] };
-
 /**
  * A region's shading, kept off other countries' land.
  *
@@ -503,7 +500,7 @@ const ALSO_IN = { ireland: ["GB"] };
  * foreign ground is cut — and a ring with nothing foreign in it is untouched.
  */
 function offForeignLand(rings, meta, features) {
-  const codes = [...(meta.countries ?? []), ...(ALSO_IN[meta.id] ?? [])];
+  const codes = homeCodes(meta);
   if (!codes.length) return rings;
   const b = meta.bounds;
   const near = (f) => {

@@ -1529,12 +1529,6 @@ export const en = {
   // Native alternatives: "grow this instead of a common ornamental".
   // ---------------------------------------------------------------------
   "plant.alternativesTitle": "Grow it instead of: ",
-  // The third line of the same stack, and the only one that is the same on
-  // every plant page: the way into `#/crops`. It states where the question
-  // comes up rather than answering it, because the answer has caveats and a
-  // one-line summary of it would be the advert the page refuses to be.
-  "plant.cropsTitle": "Near the vegetables: ",
-  "plant.cropsLink": "what farms measured",
   "steps.alternatives": "Native swaps",
   "alternatives.indexTitle": "Natives to grow instead of common ornamentals",
   "alternatives.indexDocTitle": "Native swaps: grow these instead · Indigene",

@@ -148,6 +148,11 @@ export const REVIEWED = {
     burke: "Rubus nutkanus",
     why: "The Burke checklist splits western thimbleberry off as R. nutkanus and keeps R. parviflorus for the plant east of the Rockies.",
   },
+  "Athyrium cyclosorum": {
+    burke: "Athyrium filix-femina ssp. cyclosorum",
+    oregonflora: "Athyrium filix-femina var. cyclosorum",
+    why: "Kew keeps the western lady fern as its own species; both floras keep it inside A. filix-femina, as a subspecies (Burke) and a variety (OregonFlora).",
+  },
   "Cornus sericea": {
     burke: "Cornus stolonifera",
     why: "The Burke checklist calls C. sericea ambiguous; red-osier dogwood, the plant our row is, is its C. stolonifera.",

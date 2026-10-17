@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Washington, Oregon & British Columbia (TDWG:WAS, ORE, BRC)",
   "region": "pnw",
-  "ranAt": "2026-10-16T19:39:47.345Z",
+  "ranAt": "2026-10-17T08:32:25.035Z",
   "rows": [
     {
       "id": "quercus-garryana",
@@ -1063,6 +1063,78 @@
       "viaSynonym": null
     },
     {
+      "id": "danthonia-californica",
+      "latin": "Danthonia californica",
+      "asked": "Danthonia californica",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "koeleria-macrantha",
+      "latin": "Koeleria macrantha",
+      "asked": "Koeleria macrantha",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "calamagrostis-nutkaensis",
+      "latin": "Calamagrostis nutkaensis",
+      "asked": "Calamagrostis nutkaensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "carex-pansa",
+      "latin": "Carex pansa",
+      "asked": "Carex pansa",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "carex-densa",
+      "latin": "Carex densa",
+      "asked": "Carex densa",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "scirpus-microcarpus",
+      "latin": "Scirpus microcarpus",
+      "asked": "Scirpus microcarpus",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "lonicera-ciliosa",
       "latin": "Lonicera ciliosa",
       "asked": "Lonicera ciliosa",
@@ -1270,6 +1342,78 @@
       "id": "oxalis-oregana",
       "latin": "Oxalis oregana",
       "asked": "Oxalis oregana",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "athyrium-cyclosorum",
+      "latin": "Athyrium cyclosorum",
+      "asked": "Athyrium cyclosorum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "dryopteris-arguta",
+      "latin": "Dryopteris arguta",
+      "asked": "Dryopteris arguta",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vancouveria-hexandra",
+      "latin": "Vancouveria hexandra",
+      "asked": "Vancouveria hexandra",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "clinopodium-douglasii",
+      "latin": "Clinopodium douglasii",
+      "asked": "Clinopodium douglasii",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cornus-unalaschkensis",
+      "latin": "Cornus unalaschkensis",
+      "asked": "Cornus unalaschkensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "fragaria-virginiana",
+      "latin": "Fragaria virginiana",
+      "asked": "Fragaria virginiana",
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",

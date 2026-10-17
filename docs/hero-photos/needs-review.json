@@ -435,6 +435,14 @@
     },
     {
       "subject": "plant",
+      "id": "athyrium-cyclosorum",
+      "name": "Athyrium cyclosorum",
+      "taxonId": 61002,
+      "reason": "chosen photo 580749735 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/61002/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "athyrium-niponicum",
       "name": "Athyrium niponicum",
       "taxonId": 142824,

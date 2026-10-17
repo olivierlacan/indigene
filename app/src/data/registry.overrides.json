@@ -7076,5 +7076,91 @@
       "gbif": "2888763",
       "wikidata": "Q157819"
     }
-  }
+  },
+  "Koeleria macrantha": {
+    "identifiers": {
+      "ipni": "406615-1",
+      "wfo": "wfo-0000877153",
+      "usda": "KOMA",
+      "itis": "503284",
+      "inat": "57183",
+      "gbif": "2705914",
+      "wikidata": "Q159962"
+    }
+  },
+  "Calamagrostis nutkaensis": {
+    "identifiers": {
+      "ipni": "394684-1",
+      "wfo": "wfo-0000857768",
+      "usda": "CANU",
+      "itis": "40558",
+      "inat": "61063",
+      "gbif": "2704874",
+      "wikidata": "Q5018376"
+    }
+  },
+  "Carex pansa": {
+    "identifiers": {
+      "ipni": "46817-2",
+      "wfo": "wfo-0000349786",
+      "usda": "CAPA16",
+      "itis": "39740",
+      "inat": "76090",
+      "gbif": "2722018",
+      "wikidata": "Q5039114"
+    }
+  },
+  "Carex densa": {
+    "identifiers": {
+      "ipni": "46073-2",
+      "wfo": "wfo-0000345963",
+      "usda": "CADE8",
+      "itis": "39574",
+      "inat": "61177",
+      "gbif": "2725182",
+      "wikidata": "Q15570452"
+    }
+  },
+  "Scirpus microcarpus": {
+    "identifiers": {
+      "ipni": "313911-1",
+      "wfo": "wfo-0000541492",
+      "usda": "SCMI2",
+      "itis": "40235",
+      "inat": "59068",
+      "gbif": "2717391",
+      "wikidata": "Q7434049"
+    }
+  },
+  "Athyrium cyclosorum": {
+    "identifiers": {
+      "ipni": "17054720-1",
+      "wfo": "wfo-0001110262",
+      "gbif": "8577717",
+      "wikidata": "Q15607118",
+      "inat": "61002"
+    }
+  },
+  "Vancouveria hexandra": {
+    "identifiers": {
+      "ipni": "107623-1",
+      "wfo": "wfo-0001146472",
+      "usda": "VAHE",
+      "itis": "18853",
+      "inat": "79480",
+      "gbif": "5371716",
+      "wikidata": "Q7914286"
+    }
+  },
+  "Cornus unalaschkensis": {
+    "identifiers": {
+      "ipni": "271698-1",
+      "usda": "COUN",
+      "itis": "27819",
+      "gbif": "3082254",
+      "wikidata": "Q5171928",
+      "inat": "1096279"
+    }
+  },
+  "$note-athyrium-cyclosorum": "iNaturalist keeps the western lady fern as Athyrium filix-femina ssp. cyclosorum (taxon 61002, ~3,900 records); its Athyrium cyclosorum page (1115464) holds a few dozen. Set by hand so the photo and the region's record count follow the plant."
 }

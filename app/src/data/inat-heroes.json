@@ -557,6 +557,15 @@
     "attribution": "(c) Kevin Krebs, some rights reserved (CC BY-NC-SA)",
     "color": "#595747"
   },
+  "calamagrostis-nutkaensis": {
+    "taxonId": 61063,
+    "photoId": 225985208,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/225985208/square.jpeg",
+    "observer": "grassgirl",
+    "license": "cc-by-nc",
+    "attribution": "(c) grassgirl, some rights reserved (CC BY-NC), uploaded by grassgirl",
+    "color": "#7a8160"
+  },
   "california-dogface": {
     "taxonId": 117317,
     "photoId": 11227632,
@@ -647,6 +656,15 @@
     "attribution": "(c) Karen Andrea Boehme, some rights reserved (CC BY-NC), uploaded by Karen Andrea Boehme",
     "color": "#778252"
   },
+  "carex-densa": {
+    "taxonId": 61177,
+    "photoId": 70367090,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/70367090/square.jpeg",
+    "observer": "James Miskelly",
+    "license": "cc-by-nc",
+    "attribution": "(c) James Miskelly, some rights reserved (CC BY-NC), uploaded by James Miskelly",
+    "color": "#739b50"
+  },
   "carex-dispalata": {
     "taxonId": 495745,
     "photoId": 3718621,
@@ -682,6 +700,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) T. Abe Lloyd, some rights reserved (CC BY-NC), uploaded by T. Abe Lloyd",
     "color": "#96a019"
+  },
+  "carex-pansa": {
+    "taxonId": 76090,
+    "photoId": 566280985,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/566280985/square.jpg",
+    "observer": "Don Marsille",
+    "license": "cc-by-nc",
+    "attribution": "(c) Don Marsille, some rights reserved (CC BY-NC), uploaded by Don Marsille",
+    "color": "#aca567"
   },
   "carex-praegracilis": {
     "taxonId": 60255,
@@ -1006,6 +1033,15 @@
     "license": "cc-by",
     "attribution": "(c) Σ64, some rights reserved (CC BY)",
     "color": "#667549"
+  },
+  "cornus-unalaschkensis": {
+    "taxonId": 1096279,
+    "photoId": 678726721,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/678726721/square.jpg",
+    "observer": "vedant jain",
+    "license": "cc-by-nc",
+    "attribution": "(c) vedant jain, some rights reserved (CC BY-NC), uploaded by vedant jain",
+    "color": "#57722e"
   },
   "crataegus-douglasii": {
     "taxonId": 76469,
@@ -1888,6 +1924,15 @@
     "license": "cc-by-nc-sa",
     "attribution": "(c) Szymon Stoma, some rights reserved (CC BY-NC-SA)",
     "color": "#9f976c"
+  },
+  "koeleria-macrantha": {
+    "taxonId": 57183,
+    "photoId": 42363755,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/42363755/square.jpg",
+    "observer": "rfors55",
+    "license": "cc-by-nc",
+    "attribution": "(c) rfors55, some rights reserved (CC BY-NC)",
+    "color": "#767945"
   },
   "kunzea-robusta": {
     "taxonId": 411247,
@@ -3275,6 +3320,15 @@
     "attribution": "(c) Rebecca Ryen-Stols, some rights reserved (CC BY-SA), uploaded by Rebecca Ryen-Stols",
     "color": "#988f77"
   },
+  "scirpus-microcarpus": {
+    "taxonId": 59068,
+    "photoId": 8626608,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/8626608/square.jpg",
+    "observer": "Donna Pomeroy",
+    "license": "cc-by-nc",
+    "attribution": "(c) Donna Pomeroy, some rights reserved (CC BY-NC), uploaded by Donna Pomeroy",
+    "color": "#766e51"
+  },
   "scrophularia-californica": {
     "taxonId": 50812,
     "photoId": 34843942,
@@ -3724,6 +3778,15 @@
     "license": "cc0",
     "attribution": "no rights reserved, uploaded by peakaytea",
     "color": "#41612e"
+  },
+  "vancouveria-hexandra": {
+    "taxonId": 79480,
+    "photoId": 203106606,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/203106606/square.jpeg",
+    "observer": "Gavin Slater",
+    "license": "cc-by",
+    "attribution": "(c) Gavin Slater, some rights reserved (CC BY), uploaded by Gavin Slater",
+    "color": "#557b33"
   },
   "variable-checkerspot": {
     "taxonId": 50892,

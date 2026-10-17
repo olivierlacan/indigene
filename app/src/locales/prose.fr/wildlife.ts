@@ -311,6 +311,18 @@ export const WILDLIFE_FR: ProseTable = {
     blurb:
       "Les petits fringilles qui vivent de la graine des fleurs sauvages — chardonnerets pendus la tête en bas à une tête de centaurée, linottes et verdiers passant en bandes gazouillantes. Ce qu'il leur faut, c'est de la graine laissée sur pied tout l'hiver : coupez tout en septembre et ils vont ailleurs.",
   },
+  "Euphydryas aurinia": {
+    blurb:
+      "Un petit papillon en damier éclatant, orange, crème et brun, des prairies humides non amendées, et le seul insecte protégé par la loi en Irlande. Ses chenilles éclosent ensemble sur la succise des prés, tissent une tente de soie sur la plante et y passent l'hiver, blotties en un amas noir.",
+  },
+  "Leptidea juvernica": {
+    blurb:
+      "Une petite piéride blanche au vol faible, qui longe les talus et les bords de route plutôt que de les traverser. Elle n'est reconnue comme espèce à part entière que depuis 2011 et, en Grande-Bretagne et en Irlande, ne vit qu'en Irlande — ce qui en fait ce que l'île a de plus proche d'un papillon à elle.",
+  },
+  "Aglais io": {
+    blurb:
+      "Quatre grands ocelles bleu et noir sur une aile rouge profond, et un revers presque noir qui le fait disparaître dès qu'il se referme. Il hiverne adulte dans les remises et les arbres creux, et siffle en frottant ses ailes si on le dérange. Ses chenilles mangent de l'ortie, et rien d'autre.",
+  },
   "Garrulus glandarius": {
     blurb:
       "Le corvidé rose et gris avec une plage de bleu ciel barré sur l'aile, entendu criailler bien plus souvent qu'il n'est vu. Chaque automne, un geai enterre quelques milliers de glands, souvent à des centaines de mètres de l'arbre, et ne revient jamais les chercher tous — c'est ainsi que les chênaies gravissent les collines.",

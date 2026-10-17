@@ -8,6 +8,11 @@ export interface CoverageMap {
   id: string;
   w: number;
   h: number;
+  /** The frame a continent's picture is drawn over (the world has none). A
+   *  region's box must sit wholly inside it, or the picture clips the region —
+   *  which is how the Scottish Lowlands first shipped half off the top of
+   *  Europe. `coverage-map.test.ts` holds every region to it. */
+  box?: { minLon: number; maxLon: number; minLat: number; maxLat: number };
   labels: { id: string; x: number; y: number; side: LabelSide }[];
 }
 export const COVERAGE_MAPS: CoverageMap[] = [
@@ -23,6 +28,7 @@ export const COVERAGE_MAPS: CoverageMap[] = [
     id: "north-america",
     w: 640,
     h: 348,
+    box: { minLon: -126, maxLon: -66, minLat: 24, maxLat: 50.5 },
     labels: [
       { id: "mid-atlantic", x: 79.9, y: 37.17, side: "right" },
       { id: "north-michigan", x: 66.44, y: 20.39, side: "above" },
@@ -39,19 +45,22 @@ export const COVERAGE_MAPS: CoverageMap[] = [
   {
     id: "europe",
     w: 640,
-    h: 520,
+    h: 591,
+    box: { minLon: -11, maxLon: 10.5, minLat: 41.2, maxLat: 57.8 },
     labels: [
-      { id: "france-atlantic", x: 48.44, y: 54.88, side: "left" },
-      { id: "france-continental", x: 71.46, y: 49.26, side: "right" },
-      { id: "france-mediterranean", x: 70.35, y: 81.48, side: "below" },
-      { id: "france-alpine", x: 80.07, y: 69.85, side: "right" },
-      { id: "ireland", x: 17.12, y: 14.76, side: "left" },
+      { id: "france-atlantic", x: 48.44, y: 60.26, side: "left" },
+      { id: "france-continental", x: 71.46, y: 55.32, side: "right" },
+      { id: "france-mediterranean", x: 70.35, y: 83.67, side: "below" },
+      { id: "france-alpine", x: 80.07, y: 73.44, side: "right" },
+      { id: "ireland", x: 17.12, y: 24.97, side: "left" },
+      { id: "scotland-lowlands", x: 35.26, y: 11.42, side: "right" },
     ],
   },
   {
     id: "asia",
     w: 640,
     h: 393,
+    box: { minLon: 125, maxLon: 147, minLat: 31, maxLat: 41.5 },
     labels: [
       { id: "kanto", x: 66.84, y: 51.42, side: "right" },
     ],
@@ -60,6 +69,7 @@ export const COVERAGE_MAPS: CoverageMap[] = [
     id: "oceania",
     w: 640,
     h: 403,
+    box: { minLon: 166, maxLon: 182, minLat: -41.8, maxLat: -34 },
     labels: [
       { id: "nz-auckland", x: 53.7, y: 33.95, side: "right" },
     ],

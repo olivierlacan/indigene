@@ -69,6 +69,14 @@ const FLAGS: Record<string, (clip: string) => Shape[]> = {
   // fifths of the height, and the 30 × 20 box is already 3:2, so this is the
   // flag at actual proportions rather than a drawing of it.
   JP: () => [rect(0, 0, W, H, "#fff"), ["circle", { cx: W / 2, cy: H / 2, r: (3 / 5 * H) / 2, fill: "#BC002D" }]],
+  // Scotland's saltire, under its ISO 3166-2 code. A Scottish region shows
+  // Scotland's flag, not the Union Flag: `GB` stays free for a region that
+  // genuinely spans the UK.
+  "GB-SCT": () => [
+    rect(0, 0, W, H, "#005EB8"),
+    ["line", { x1: 0, y1: 0, x2: W, y2: H, stroke: "#fff", "stroke-width": 4 }],
+    ["line", { x1: 0, y1: H, x2: W, y2: 0, stroke: "#fff", "stroke-width": 4 }],
+  ],
   NZ: (clip) => [
     rect(0, 0, W, H, "#012169"),
     ...unionFlag(0, 0, W / 2, H / 2, clip),
@@ -116,6 +124,12 @@ function flagSvg(code: string): SVGSVGElement | null {
   return svg;
 }
 
+/** Subdivision codes (ISO 3166-2) the browser can't name: `Intl.DisplayNames`
+ *  only knows countries, and throws on "GB-SCT". */
+const SUBDIVISION: Record<string, Record<string, string>> = {
+  "GB-SCT": { en: "Scotland", fr: "Écosse" },
+};
+
 /** "United States", "États-Unis" — the browser's own country names. */
 function countryNames(codes: readonly string[]): string {
   let names: Intl.DisplayNames | null = null;
@@ -124,7 +138,7 @@ function countryNames(codes: readonly string[]): string {
   } catch {
     /* an old browser: fall back to the codes */
   }
-  const list = codes.map((c) => names?.of(c) ?? c);
+  const list = codes.map((c) => SUBDIVISION[c]?.[langTag().slice(0, 2)] ?? SUBDIVISION[c]?.en ?? names?.of(c) ?? c);
   try {
     return new Intl.ListFormat([langTag()], { type: "conjunction" }).format(list);
   } catch {

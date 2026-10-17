@@ -293,6 +293,66 @@ export const INVASIVES_FR: ProseTable = {
       dispose: "Laissez les pieds arrachés en tas hors du sol humide, ou mettez en sac ceux en fleur.",
     },
   },
+  "Heracleum mantegazzianum": {
+    marks: [
+      { feature: "Taille", text: "Une berce de la taille d'un petit arbre, bien plus haute qu'un homme." },
+      { feature: "Tiges", text: "Épaisses, creuses, tachées de pourpre, avec des poils blancs raides." },
+      { feature: "Fleurs", text: "Des ombrelles blanches plus larges qu'une roue de vélo, en juin et juillet." },
+    ],
+    removal: {
+      steps: [
+        "Ne la touchez jamais à mains nues : sa sève brûle la peau au soleil. Gants, manches longues et lunettes.",
+        "Coupez et ensachez les ombelles avant les graines ; déterrez les jeunes pieds sous le niveau du sol.",
+        "Un grand massif, ou un massif au bord d'une rivière, est une affaire de professionnels.",
+      ],
+      dispose: "Ensachez les ombelles ; ne les compostez ni ne les broyez jamais.",
+    },
+  },
+  "Lysichiton americanus": {
+    marks: [
+      { feature: "Fleurs", text: "Un capuchon jaune vif autour d'un épi vert, sortant tout droit de la boue au début du printemps." },
+      { feature: "Feuilles", text: "Immenses, luisantes, en forme de pagaie, jusqu'à hauteur de taille, après les fleurs." },
+      { feature: "Odeur", text: "Musquée et forte, comme un renard." },
+    ],
+    removal: {
+      steps: [
+        "Coupez les épis jaunes avant qu'ils ne fassent des graines.",
+        "Déterrez toute la racine épaisse ; elle s'enfonce loin en sol mouillé.",
+        "Un massif le long d'un ruisseau ou dans un bois humide demande un professionnel.",
+      ],
+      dispose: "Ensachez épis et racines ; ne les laissez pas près de l'eau.",
+    },
+  },
+  "Petasites albus": {
+    marks: [
+      { feature: "Fleurs", text: "De gros épis de fleurs blanc crème en mars, avant toute feuille." },
+      { feature: "Feuilles", text: "Rondes, grandes comme celles de la rhubarbe, feutrées de blanc dessous, en tapis continu." },
+      { feature: "Sosie", text: "Le pétasite officinal, indigène, a des fleurs roses et pousse au bord des rivières." },
+    ],
+    removal: {
+      steps: [
+        "Déterrez les racines rampantes ; chaque morceau oublié repousse.",
+        "Revenez toutes les quelques semaines pendant deux ou trois ans, et déterrez ce qui revient.",
+        "Étouffez une tache sous un carton épais et du paillis pendant toute une saison.",
+      ],
+      dispose: "Ensachez les racines ; ne les compostez ni ne les jetez dans la nature.",
+    },
+  },
+  "Petasites japonicus": {
+    marks: [
+      { feature: "Feuilles", text: "D'énormes feuilles rondes, jusqu'à un mètre de large, sur de hauts pétioles." },
+      { feature: "Fleurs", text: "Des grappes vert pâle et blanches au ras du sol, en fin d'hiver." },
+      { feature: "Où", text: "En massifs denses le long des ruisseaux et des mares, échappés de vieux jardins." },
+    ],
+    removal: {
+      steps: [
+        "Déterrez les grosses racines, jusqu'au dernier morceau.",
+        "Continuez à déterrer les repousses pendant plusieurs années.",
+        "Un massif le long d'un cours d'eau est une affaire de professionnels.",
+      ],
+      dispose: "Ensachez les racines ; ne les jetez jamais près de l'eau.",
+    },
+  },
   "Senecio inaequidens": {
     marks: [
       { feature: "Fleurs", text: "Des marguerites jaunes de l'été jusqu'aux gelées." },

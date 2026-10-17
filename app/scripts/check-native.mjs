@@ -79,6 +79,11 @@ const TDWG_AREA = {
   // narrowing and each row's note says where on the plain the plant grows.
   kanto: { codes: ["JAP"], label: "Japan (TDWG:JAP — the whole country)" },
   ireland: { codes: ["IRE"], label: "Ireland (TDWG:IRE — the whole island)" },
+  // Great Britain is one TDWG area, Cornwall to Shetland, so this is a floor
+  // check: it can catch a plant that isn't British at all, and it can't tell
+  // the lowlands from Kent. The finer claim is the BSBI atlas's, square by
+  // square — `npm run bsbi:check -- --region scotland-lowlands`.
+  "scotland-lowlands": { codes: ["GRB"], label: "Great Britain (TDWG:GRB; floor check only — bsbi:check carries the regional claim)" },
   // The Piedmont/Northeast box: Virginia up through southern New England.
   "mid-atlantic": {
     codes: ["PEN", "NWJ", "DEL", "MRY", "VRG", "NWY", "CNT", "RHO", "MAS", "WVA"],

@@ -4200,6 +4200,143 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "mason-bees", support: "nectar", note: "Short tubes at ground level, which is what the small solitary bees of dry limestone and dune sand can actually reach into.", basis: "All-Ireland Pollinator Plan." },
     ],
   },
+  // Lowland Scotland. Every animal is reused from the European catalog, and
+  // each was checked against its Scottish range rather than assumed from
+  // Ireland's: hazel dormouse, brimstone and the purple emperor tie to plants
+  // this list ships and none of them lives here. Black grouse does, on the
+  // moor edges of the Southern Uplands, and Ireland lacks it.
+  "scotland-lowlands": {
+    "primula-vulgaris": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Early nectar for the first solitary bees of spring.", basis: "BWARS (Bees, Wasps & Ants Recording Society)." },
+    ],
+    "quercus-petraea": [
+      { wildlifeId: "purple-hairstreak", support: "host", reliance: "sole", note: "Its caterpillars eat only oak, and the adults spend their lives in the canopy. Scotland's colonies are mostly in the western oakwoods.", basis: "Butterfly Conservation Scotland; European butterfly foodplant checklist (Dryad)." },
+      { wildlifeId: "eurasian-jay", support: "seeds", note: "A jay buries thousands of acorns each autumn and forgets enough to plant the next wood.", basis: "RSPB Scotland." },
+    ],
+    "quercus-robur": [
+      { wildlifeId: "purple-hairstreak", support: "host", reliance: "sole", note: "Either native oak will do: the hairstreak is after oak leaves, not one species.", basis: "Butterfly Conservation Scotland." },
+      { wildlifeId: "eurasian-jay", support: "seeds", note: "The long-stalked acorns are the ones jays carry off and bury.", basis: "RSPB Scotland." },
+    ],
+    "betula-pendula": [
+      { wildlifeId: "conifer-seed-finches", support: "seeds", note: "Siskins and redpolls hang upside down from the catkins all winter.", basis: "RSPB Scotland." },
+      { wildlifeId: "black-grouse", support: "shelter", note: "Birch scrub at the moor edge is where black grouse feed on buds in winter. The Southern Uplands hold some of the birds' last lowland strongholds.", basis: "RSPB Scotland; Game & Wildlife Conservation Trust, Scottish black grouse surveys." },
+    ],
+    "betula-pubescens": [
+      { wildlifeId: "conifer-seed-finches", support: "seeds", note: "The same winter finch flocks as silver birch, on the wetter ground.", basis: "RSPB Scotland." },
+      { wildlifeId: "emperor-moth", support: "host", note: "Emperor moth caterpillars feed on birch as well as heather.", basis: "Butterfly Conservation Scotland." },
+    ],
+    "alnus-glutinosa": [
+      { wildlifeId: "conifer-seed-finches", support: "seeds", note: "Siskins and redpolls work the small cones along lowland rivers in January.", basis: "RSPB Scotland." },
+    ],
+    "salix-caprea": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Sallow catkins are the first big pollen supply for queen bumblebees in March.", basis: "Bumblebee Conservation Trust." },
+      { wildlifeId: "poplar-hawk-moth", support: "host", note: "The poplar hawk-moth lays on willows as often as poplars.", basis: "Butterfly Conservation Scotland." },
+    ],
+    "salix-cinerea": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "The commonest sallow in wet ground, doing the same March pollen job as goat willow.", basis: "Bumblebee Conservation Trust." },
+    ],
+    "populus-tremula": [
+      { wildlifeId: "poplar-hawk-moth", support: "host", note: "Aspen is one of the moth's main food plants.", basis: "Butterfly Conservation Scotland." },
+    ],
+    "sorbus-aucuparia": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Flat heads of open flowers that short-tongued solitary bees can use.", basis: "BWARS (Bees, Wasps & Ants Recording Society)." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Redwings and fieldfares arriving from Scandinavia can strip a rowan in two days.", basis: "RSPB Scotland." },
+    ],
+    "prunus-padus": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Blackbirds and thrushes take the small black cherries in late summer.", basis: "RSPB Scotland." },
+    ],
+    "prunus-avium": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Blackbirds and mistle thrushes strip a gean in July.", basis: "RSPB Scotland." },
+    ],
+    "ilex-aquifolium": [
+      { wildlifeId: "holly-blue", support: "host", note: "Spring caterpillars of the holly blue feed on holly flowers and berries. The butterfly has spread into the Central Belt in recent years.", basis: "Butterfly Conservation Scotland; Butterflies for the New Millennium." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Thrushes turn to holly berries once the rowans are bare.", basis: "RSPB Scotland." },
+    ],
+    "crataegus-monogyna": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Haws feed redwings, fieldfares and blackbirds well into winter.", basis: "RSPB Scotland." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "May blossom on every hedge, at the time worker bees are multiplying.", basis: "Bumblebee Conservation Trust." },
+    ],
+    "prunus-spinosa": [
+      { wildlifeId: "mason-bees", support: "nectar", note: "Open blossom in April, when mining bees are first out.", basis: "BWARS (Bees, Wasps & Ants Recording Society)." },
+      { wildlifeId: "emperor-moth", support: "host", note: "Emperor moth caterpillars also feed on blackthorn.", basis: "Butterfly Conservation Scotland." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Sloes left on the bush feed thrushes after a frost.", basis: "RSPB Scotland." },
+    ],
+    "rosa-spinosissima": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Its black hips are taken late, after the dog-rose hips have gone.", basis: "RSPB Scotland." },
+    ],
+    "rosa-canina": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Hips last on the bush into the new year.", basis: "RSPB Scotland." },
+    ],
+    "juniperus-communis": [
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Thrushes and other birds take the blue-black berries in winter.", basis: "RSPB Scotland." },
+    ],
+    "sambucus-nigra": [
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Blackcaps and other warblers fatten on elderberries before migrating.", basis: "RSPB Scotland." },
+    ],
+    "viburnum-opulus": [
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "Birds take the red berries late, once sweeter fruit is gone.", basis: "RSPB Scotland." },
+    ],
+    "lonicera-periclymenum": [
+      { wildlifeId: "blackcaps-warblers", support: "berries", note: "The red berries feed warblers and thrushes in autumn.", basis: "RSPB Scotland." },
+    ],
+    "hedera-helix": [
+      { wildlifeId: "holly-blue", support: "host", note: "The holly blue's second brood lays on ivy flower buds in late summer.", basis: "Butterfly Conservation Scotland." },
+      { wildlifeId: "red-admiral", support: "nectar", note: "Ivy blossom in October is the red admiral's last big meal of the year.", basis: "Butterfly Conservation Scotland." },
+      { wildlifeId: "winter-thrushes", support: "berries", note: "Ripe in late winter, when little other fruit is left.", basis: "RSPB Scotland." },
+    ],
+    "calluna-vulgaris": [
+      { wildlifeId: "emperor-moth", support: "host", note: "The emperor moth's main food plant on Scottish moors.", basis: "Butterfly Conservation Scotland." },
+      { wildlifeId: "green-hairstreak", support: "host", note: "Green hairstreak caterpillars feed on heather on moorland edges.", basis: "Butterfly Conservation Scotland." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "August heather is the last big flush of nectar for moorland bumblebees.", basis: "Bumblebee Conservation Trust." },
+      { wildlifeId: "black-grouse", support: "shelter", note: "Black grouse nest in tall heather and feed on its shoots.", basis: "RSPB Scotland; Game & Wildlife Conservation Trust." },
+    ],
+    "erica-cinerea": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Flowers a month before heather, bridging the gap for moorland bees.", basis: "Bumblebee Conservation Trust." },
+    ],
+    "vaccinium-myrtillus": [
+      { wildlifeId: "green-hairstreak", support: "host", note: "Green hairstreaks lay on blaeberry as well as heather.", basis: "Butterfly Conservation Scotland." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Early flowers for queen bumblebees on acid ground.", basis: "Bumblebee Conservation Trust." },
+      { wildlifeId: "black-grouse", support: "berries", note: "Blaeberry shoots and berries are a staple for black grouse, and its caterpillars feed the chicks.", basis: "RSPB Scotland; Game & Wildlife Conservation Trust." },
+    ],
+    "cytisus-scoparius": [
+      { wildlifeId: "green-hairstreak", support: "host", note: "Green hairstreak caterpillars also feed on broom.", basis: "Butterfly Conservation Scotland." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumblebees force open the flowers and get dusted with pollen.", basis: "Bumblebee Conservation Trust." },
+    ],
+    "myrica-gale": [
+      { wildlifeId: "emperor-moth", support: "host", note: "Emperor moth caterpillars feed on bog myrtle on wet heath.", basis: "Butterfly Conservation Scotland." },
+    ],
+    "succisa-pratensis": [
+      { wildlifeId: "marsh-fritillary", support: "host", reliance: "sole", note: "The marsh fritillary's caterpillars eat only devil's-bit scabious. Scotland's colonies are in the south-west, in Dumfries and Galloway and Argyll.", basis: "Butterfly Conservation Scotland; NatureScot." },
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Late nectar into October.", basis: "Bumblebee Conservation Trust." },
+    ],
+    "centaurea-nigra": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "One of the best late-summer bumblebee flowers.", basis: "Bumblebee Conservation Trust." },
+      { wildlifeId: "goldfinches-linnets", support: "seeds", note: "Goldfinches pick the seed from the dry heads in autumn.", basis: "RSPB Scotland." },
+      { wildlifeId: "painted-lady", support: "nectar", note: "Painted ladies arriving from the south feed on knapweed in summer.", basis: "Butterfly Conservation Scotland." },
+    ],
+    "digitalis-purpurea": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Built for bumblebees: they climb right inside the bells.", basis: "Bumblebee Conservation Trust." },
+    ],
+    "lotus-corniculatus": [
+      { wildlifeId: "common-blue", support: "host", note: "The common blue's main food plant in Scotland.", basis: "Butterfly Conservation Scotland." },
+      { wildlifeId: "six-spot-burnet", support: "host", note: "Six-spot burnet caterpillars feed on it on dunes and verges.", basis: "Butterfly Conservation Scotland." },
+    ],
+    "thymus-praecox": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A low carpet of nectar bees work all summer.", basis: "Bumblebee Conservation Trust." },
+    ],
+    "teucrium-scorodonia": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumblebees work its pale spikes in late summer.", basis: "Bumblebee Conservation Trust." },
+    ],
+    "silene-dioica": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "A long season of flowers for bumblebees.", basis: "Bumblebee Conservation Trust." },
+    ],
+    "geranium-sanguineum": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bees visit the open flowers all summer.", basis: "Bumblebee Conservation Trust." },
+    ],
+    "corylus-avellana": [
+      { wildlifeId: "eurasian-jay", support: "seeds", note: "Jays cache hazelnuts as they do acorns.", basis: "RSPB Scotland." },
+    ],
+  },
 
   "nz-auckland": {
     "metrosideros-excelsa": [

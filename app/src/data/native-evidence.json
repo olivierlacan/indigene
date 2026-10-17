@@ -183,6 +183,16 @@
         "achillea-millefolium": "absent"
       }
     },
+    "scotland-lowlands": {
+      "area": {
+        "en": "Great Britain",
+        "fr": "la Grande-Bretagne"
+      },
+      "coarse": true,
+      "checked": "2026-10-17",
+      "rows": 59,
+      "unconfirmed": {}
+    },
     "st-lawrence": {
       "area": {
         "en": "Québec, Ontario, New York and Vermont",

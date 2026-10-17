@@ -39,6 +39,18 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   // ---------------------------------------------------------------------
   // Flore de France — TAXREF / BDTFX.
   // ---------------------------------------------------------------------
+  // Ireland and lowland Scotland — every one of these grows wild in France too.
+  "Petasites albus": { name: "Pétasite blanc", src: "taxref" },
+  "Petasites japonicus": { name: "Pétasite du Japon", src: "taxref" },
+  "Armeria maritima": { name: "Armérie maritime", src: "taxref" },
+  "Avenella flexuosa": { name: "Canche flexueuse", src: "taxref" },
+  "Cirsium heterophyllum": { name: "Cirse hétérophylle", src: "taxref" },
+  "Geranium sylvaticum": { name: "Géranium des bois", src: "taxref" },
+  "Geum rivale": { name: "Benoîte des ruisseaux", src: "taxref" },
+  "Leucanthemum vulgare": { name: "Marguerite commune", src: "taxref" },
+  "Luzula sylvatica": { name: "Luzule des bois", src: "taxref" },
+  "Rhinanthus minor": { name: "Petit rhinanthe", src: "taxref" },
+  "Valeriana officinalis": { name: "Valériane officinale", src: "taxref" },
   "Acer campestre": { name: "Érable champêtre", src: "taxref" },
   "Acer monspessulanum": { name: "Érable de Montpellier", src: "taxref" },
   "Acer pseudoplatanus": { name: "Érable sycomore", src: "taxref" },

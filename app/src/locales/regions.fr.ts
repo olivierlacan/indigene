@@ -91,4 +91,18 @@ export const REGIONS_FR: Record<string, RegionText> = {
     note: "Le statut d'indigène est établi pour la région biogéographique alpine de France métropolitaine, et les plantes proposées ici sont choisies pour les Alpes en particulier : étages montagnard et subalpin, entre 600 et 2 000 m environ. Les Pyrénées relèvent de la même désignation européenne mais forment une flore distincte, avec ses propres endémiques ; elles sont délibérément laissées de côté plutôt que devinées. Plus bas, ce sont les régions continentale, atlantique et méditerranéenne qui s'appliquent. Les chiffres d'insectes hôtes sont comptés à partir de la matrice européenne ouverte des associations lépidoptères–plantes (Gaytán et al. 2026), pour les espèces proches, indigènes et de l'étage montagnard.",
     extent: "Les Alpes françaises uniquement — du Vercors et des Écrins au nord jusqu'au Chablais, et à l'est jusqu'à la frontière italienne. Terrain de montagne, entre 600 et 2 000 m environ. Les Pyrénées n'en font pas partie.",
   },
+  ireland: {
+    name: "Irlande",
+    short: "Irlande",
+    reference: "Dublin, Cork et Galway",
+    note: "Le statut d'indigène est établi pour l'île d'Irlande — la République comme l'Irlande du Nord — d'après la World Checklist of Vascular Plants de Kew. La flore irlandaise est plus pauvre que celles de la Grande-Bretagne ou de la France : la mer s'est refermée derrière les glaces en retrait avant l'arrivée de nombreuses espèces, si bien qu'il n'y a ici ni érable, ni tilleul, ni charme indigène, et que le hêtre et l'érable sycomore sont des introductions, si vieux qu'ils paraissent. Les chiffres d'insectes hôtes sont comptés à partir de la matrice européenne ouverte des associations lépidoptères–plantes (Gaytán et al. 2026), pour les espèces proches, indigènes et de climat océanique tempéré.",
+    extent: "Toute l'île, de Mizen Head et Cork au sud jusqu'à Malin Head et la côte d'Antrim au nord, et des falaises atlantiques du Kerry, du Clare et du Donegal à l'ouest jusqu'à Dublin et la péninsule d'Ards à l'est.",
+  },
+  "scotland-lowlands": {
+    name: "Basses-Terres d'Écosse",
+    short: "Basses-Terres d'Écosse",
+    reference: "Glasgow, Édimbourg et Dundee",
+    note: "Chaque plante de cette liste est notée indigène dans les propres carrés de 10 km de la région par le Plant Atlas 2020 de la BSBI, pas seulement quelque part en Grande-Bretagne. C'est pourquoi le pin sylvestre en est absent : dans les Basses-Terres, il est planté, et ses pinèdes indigènes sont dans les Highlands. Les chiffres d'insectes hôtes sont comptés à partir de la matrice européenne ouverte des associations lépidoptères–plantes (Gaytán et al. 2026), pour les espèces proches, indigènes et de climat océanique tempéré.",
+    extent: "De la ligne des Highlands au nord jusqu'au Solway et à la frontière anglaise au sud, et des côtes de l'Ayrshire et du Galloway à l'ouest jusqu'aux Lothians, au Fife et à la Tay à l'est.",
+  },
 };

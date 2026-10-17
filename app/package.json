@@ -55,6 +55,7 @@
     "taxref:extract": "node scripts/taxref-extract.mjs",
     "native-evidence": "node scripts/build-native-evidence.mjs",
     "native:check": "NODE_USE_ENV_PROXY=1 node scripts/check-native.mjs",
+    "bsbi:check": "NODE_USE_ENV_PROXY=1 node scripts/check-bsbi.mjs",
     "prose:check": "node scripts/check-prose.mjs",
     "blurbs:check": "node scripts/check-blurbs.mjs",
     "reading:check": "NODE_USE_ENV_PROXY=1 node scripts/check-reading.mjs",

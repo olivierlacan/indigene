@@ -12,6 +12,24 @@ describe("coverage map", () => {
     expect(named).toEqual(REGIONS.map((r) => r.meta.id).sort());
   });
 
+  it("draws every region wholly inside its continent's frame", () => {
+    // A region's own box must fit its picture: the generator only placed
+    // regions by their centre, and the Scottish Lowlands shipped with half the
+    // region off the top of the Europe map. Widen the frame in
+    // scripts/_coverage-map.mjs, then \`npm run maps:coverage\`.
+    for (const map of COVERAGE_MAPS) {
+      if (!map.box) continue;
+      for (const { id } of map.labels) {
+        const b = REGIONS.find((r) => r.meta.id === id)!.meta.bounds;
+        const f = map.box;
+        expect(
+          b.minLon >= f.minLon && b.maxLon <= f.maxLon && b.minLat >= f.minLat && b.maxLat <= f.maxLat,
+          `${id} runs off the ${map.id} frame`,
+        ).toBe(true);
+      }
+    }
+  });
+
   it("gives every continent a heading", () => {
     for (const m of COVERAGE_MAPS.slice(1)) expect(CONTINENT_NAMES[m.id], m.id).toBeTruthy();
   });

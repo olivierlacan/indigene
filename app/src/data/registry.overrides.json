@@ -6970,5 +6970,111 @@
       "gbif": "5275360",
       "wikidata": "Q8033591"
     }
+  },
+  "Armeria maritima": {
+    "identifiers": {
+      "ipni": "19793-2",
+      "wfo": "wfo-0000549005",
+      "usda": "ARMA6",
+      "itis": "21326",
+      "inat": "60476",
+      "gbif": "8930531",
+      "wikidata": "Q21036"
+    }
+  },
+  "Avenella flexuosa": {
+    "identifiers": {
+      "ipni": "391947-1",
+      "wfo": "wfo-0000852552",
+      "itis": "565865",
+      "inat": "288069",
+      "gbif": "4149465",
+      "wikidata": "Q106580875"
+    }
+  },
+  "Cirsium heterophyllum": {
+    "identifiers": {
+      "ipni": "195465-1",
+      "wfo": "wfo-0000014883",
+      "itis": "511038",
+      "inat": "332681",
+      "gbif": "3113745",
+      "wikidata": "Q1446001"
+    }
+  },
+  "Geranium sylvaticum": {
+    "identifiers": {
+      "ipni": "322492-2",
+      "wfo": "wfo-0000701427",
+      "usda": "GESY",
+      "itis": "502765",
+      "inat": "85429",
+      "gbif": "2891147",
+      "wikidata": "Q161644"
+    }
+  },
+  "Geum rivale": {
+    "identifiers": {
+      "ipni": "725355-1",
+      "wfo": "wfo-0001004152",
+      "usda": "GERI2",
+      "itis": "24659",
+      "inat": "55750",
+      "gbif": "5369701",
+      "wikidata": "Q161625"
+    }
+  },
+  "Iris pseudacorus": {
+    "identifiers": {
+      "ipni": "438992-1",
+      "wfo": "wfo-0000783754",
+      "usda": "IRPS",
+      "itis": "43194",
+      "inat": "47779",
+      "gbif": "5298231",
+      "wikidata": "Q21173"
+    }
+  },
+  "Leucanthemum vulgare": {
+    "identifiers": {
+      "ipni": "230103-1",
+      "wfo": "wfo-0000036932",
+      "usda": "LEVU",
+      "itis": "37903",
+      "inat": "56057",
+      "gbif": "8848598",
+      "wikidata": "Q27164"
+    }
+  },
+  "Luzula sylvatica": {
+    "identifiers": {
+      "ipni": "20009373-1",
+      "wfo": "wfo-0000778183",
+      "gbif": "2700859",
+      "wikidata": "Q162491",
+      "inat": "338102"
+    }
+  },
+  "Rhinanthus minor": {
+    "identifiers": {
+      "ipni": "30116962-2",
+      "wfo": "wfo-0000747233",
+      "usda": "RHMI13",
+      "itis": "504749",
+      "inat": "61470",
+      "gbif": "3172043",
+      "wikidata": "Q147181"
+    }
+  },
+  "Valeriana officinalis": {
+    "identifiers": {
+      "ipni": "860012-1",
+      "wfo": "wfo-0000426953",
+      "usda": "VAOF",
+      "itis": "35363",
+      "inat": "56160",
+      "gbif": "2888763",
+      "wikidata": "Q157819"
+    }
   }
 }

@@ -103,6 +103,12 @@ export const SOCIETIES: Record<string, Society[]> = {
     { name: "Native Woodland Trust", url: "https://www.nativewoodlandtrust.ie/", what: "woodland" },
     { name: "BSBI Ireland", url: "https://bsbi.org/ireland", what: "records" },
   ],
+  "scotland-lowlands": [
+    { name: "Scottish Wildlife Trust", url: "https://scottishwildlifetrust.org.uk/", what: "walks" },
+    { name: "Trees for Life", url: "https://treesforlife.org.uk/", what: "woodland" },
+    { name: "Bumblebee Conservation Trust", url: "https://www.bumblebeeconservation.org/", what: "pollinators" },
+    { name: "BSBI Scotland", url: "https://bsbi.org/scotland", what: "records" },
+  ],
   "nz-auckland": [
     { name: "New Zealand Plant Conservation Network", url: "https://www.nzpcn.org.nz/", what: "records" },
     { name: "Auckland Botanical Society", url: "https://www.nzpcn.org.nz/conservation/botanic-societies/", what: "walks" },

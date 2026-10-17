@@ -34,6 +34,7 @@ import { REGION as FRANCE_CONTINENTAL } from "./region.france-continental";
 import { REGION as FRANCE_MEDITERRANEAN } from "./region.france-mediterranean";
 import { REGION as FRANCE_ALPINE } from "./region.france-alpine";
 import { REGION as IRELAND } from "./region.ireland";
+import { REGION as SCOTLAND_LOWLANDS } from "./region.scotland-lowlands";
 import { REGION as NZ_AUCKLAND } from "./region.nz-auckland";
 import { REGION as KANTO } from "./region.kanto";
 import { REGION as CENTRAL_TEXAS } from "./region.central-texas";
@@ -82,6 +83,12 @@ export const REGIONS: RegionDef[] = [
   // It is the first region whose native claim rests on Kew's WCVP rather than a
   // national flora; see the head of `plants.ireland.ts`.
   { meta: IRELAND, load: () => import("./plants.ireland").then((m) => m.SEED_RAW) },
+
+  // The first region in Britain. Same Atlantic code again, so the box decides —
+  // and its native claim is finer than WCVP's: each row is checked against the
+  // BSBI atlas's native records in the region's own 10 km squares. See the head
+  // of `plants.scotland-lowlands.ts`.
+  { meta: SCOTLAND_LOWLANDS, load: () => import("./plants.scotland-lowlands").then((m) => m.SEED_RAW) },
 
   // The first region south of the equator. Seasons, sun hours and the sun
   // picker flip on their own (`lib/hemisphere.ts`), and the RESOLVE ecoregion

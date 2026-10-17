@@ -243,6 +243,14 @@
     },
     {
       "subject": "invasive",
+      "id": "lysichiton-americanus",
+      "name": "Lysichiton americanus",
+      "taxonId": 48537,
+      "reason": "chosen photo 65701886 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/48537/browse_photos"
+    },
+    {
+      "subject": "invasive",
       "id": "lythrum-salicaria",
       "name": "Lythrum salicaria",
       "taxonId": 61321,
@@ -256,6 +264,14 @@
       "taxonId": 78258,
       "reason": "chosen photo 8756339 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/78258/browse_photos"
+    },
+    {
+      "subject": "invasive",
+      "id": "petasites-japonicus",
+      "name": "Petasites japonicus",
+      "taxonId": 129038,
+      "reason": "chosen photo 61930506 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/129038/browse_photos"
     },
     {
       "subject": "invasive",
@@ -392,6 +408,14 @@
       "taxonId": 158589,
       "reason": "chosen photo 40043710 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/158589/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "armeria-maritima",
+      "name": "Armeria maritima",
+      "taxonId": 60476,
+      "reason": "chosen photo 176790677 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/60476/browse_photos"
     },
     {
       "subject": "plant",
@@ -619,11 +643,27 @@
     },
     {
       "subject": "plant",
+      "id": "geranium-sylvaticum",
+      "name": "Geranium sylvaticum",
+      "taxonId": 85429,
+      "reason": "chosen photo 62573011 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/85429/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "helianthus-angustifolius",
       "name": "Helianthus angustifolius",
       "taxonId": 126700,
       "reason": "chosen photo 188246 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/126700/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "iris-pseudacorus",
+      "name": "Iris pseudacorus",
+      "taxonId": 47779,
+      "reason": "chosen photo 132791736 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/47779/browse_photos"
     },
     {
       "subject": "plant",
@@ -912,6 +952,14 @@
       "taxonId": 78836,
       "reason": "chosen photo 401477062 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/78836/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "rhinanthus-minor",
+      "name": "Rhinanthus minor",
+      "taxonId": 61470,
+      "reason": "chosen photo 15760 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/61470/browse_photos"
     },
     {
       "subject": "plant",

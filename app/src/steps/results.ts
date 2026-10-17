@@ -401,7 +401,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
       site: store.draft.site,
       sun: store.draft.sun,
       horizon: store.draft.horizon,
-      soilOverride: soilAnswer(store.draft.moistureOverride, store.draft.site),
+      soilOverride: soilAnswer(store.draft.moistureOverride, store.draft.site, store.draft.textureOverride),
       deciduousOverhead: store.draft.deciduousOverhead,
       regionOverride: store.draft.regionOverride,
       weights: { ...store.weights },

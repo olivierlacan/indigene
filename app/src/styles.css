@@ -4499,6 +4499,18 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
 .place-search-row .btn {
   flex: none;
 }
+/* The confirm step's soil answer: three short toggles on one row. */
+.soil-feel {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+}
+.soil-feel .btn {
+  flex: 1 1 0;
+  min-width: 0;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 .privacy-note {
   margin: 0.4rem 0 0;
   font-size: 0.82rem;

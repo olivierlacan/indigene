@@ -1,6 +1,8 @@
 // Central app state. Local-first: the working "draft" spot lives in memory and
 // is only written to IndexedDB when the user saves. Weights and filters persist
 // across sessions so the app remembers what a person cares about.
+import { isSoilFeel } from "./lib/soil-answer";
+import type { SoilFeel } from "./lib/soil-answer";
 import type {
   HorizonMask,
   MoistureBand,
@@ -25,6 +27,8 @@ export interface Draft {
   horizon: HorizonMask | null;
   deciduousOverhead: boolean;
   moistureOverride: MoistureBand | null;
+  /** What the reader's soil feels like, when they said; the map's texture otherwise. */
+  textureOverride: SoilFeel | null;
   /**
    * Region id the user picked by hand ("I know my ecoregion") instead of
    * letting coordinates decide. When set with no coordinates, the flow runs
@@ -55,6 +59,7 @@ function emptyDraft(): Draft {
     horizon: null,
     deciduousOverhead: false,
     moistureOverride: null,
+    textureOverride: null,
     regionOverride: null,
     editingId: null,
     recalled: { sun: false, moisture: false },
@@ -242,6 +247,9 @@ export function openSavedSpot(s: SavedSpot): void {
     horizon: s.horizon,
     deciduousOverhead: s.deciduousOverhead ?? false,
     moistureOverride: s.soilOverride?.moisture ?? null,
+    // Only a reader's own answer comes back as one; a map class stored for
+    // want of an answer ("silt loam") is not.
+    textureOverride: isSoilFeel(s.soilOverride?.texture) ? s.soilOverride.texture : null,
     regionOverride: s.regionOverride ?? null,
     editingId: s.id,
     // A saved spot's readings are its own, given by name and on purpose —

@@ -668,10 +668,223 @@ export const FLORIDA: ProseTable = {
       "Déterrez au printemps un morceau de stolon avec frondes et racines, et plantez-le en sol mouillé.",
   },
 
+  "Quercus geminata": {
+    nativeNote:
+      "Indigène dans le scrub, les dunes et les crêtes de sable sec de Floride.",
+    careNote:
+      "Le chêne de Virginie des sables profonds et secs, là où son grand cousin peine. Plein soleil, aucun arrosage une fois enraciné, et il tient au vent sur la côte. Il reste un petit arbre ou un fourré dense.",
+    givesNote:
+      "Des glands pour le geai à gorge blanche de Floride, les dindons sauvages et les écureuils, et les centaines de chenilles que nourrit tout chêne.",
+    propagationNote:
+      "Semez les glands frais à l'automne, là où l'arbre restera. Gardez ceux qui coulent dans l'eau, et ne les laissez jamais sécher.",
+    supportNotes: {
+      "acorn-birds":
+        "Ce chêne est l'un de ceux dont vit le geai à gorge blanche de Floride : il enterre des milliers de glands chaque automne et plante ainsi le fourré suivant.",
+      "acorn-mammals":
+        "Cerfs, ratons laveurs et écureuils ramassent les glands tombés dans le sable.",
+    },
+  },
+  "Quercus laevis": {
+    nativeNote:
+      "Le chêne des collines sableuses à pin des marais, indigène du Panhandle jusqu'au centre de la Floride.",
+    careNote:
+      "Pour le sable le plus sec et le plus pauvre, en plein soleil. L'été, ses feuilles se tournent de profil face au soleil ; à l'automne, elles rougissent. Il accompagne naturellement le pin des marais.",
+    givesNote:
+      "Des glands pour les dindons sauvages, les cerfs, les geais et les écureuils fauves, des cavités pour les pics, et des chenilles par centaines.",
+    propagationNote:
+      "Ramassez les glands à l'automne, gardez ceux qui coulent, et semez-les aussitôt dehors pour que l'hiver leur donne le froid.",
+    supportNotes: {
+      "acorn-birds":
+        "Dindons sauvages et geais se nourrissent de ses glands sous les pins des marais.",
+      "acorn-mammals":
+        "Un aliment de base pour l'écureuil fauve des collines sableuses et pour les cerfs à l'automne.",
+    },
+  },
+  "Pinus elliottii": {
+    nativeNote:
+      "Le pin des flatwoods de Floride — ces pinèdes plates au sol sableux et humide — indigène dans tout l'État.",
+    careNote:
+      "Rapide et robuste : il accepte le sol mouillé des flatwoods qui noie le pin des marais, et le sable sec aussi. Plein soleil. Plantez-le loin de la maison, car il monte haut.",
+    givesNote:
+      "Des graines pour les sittelles, les pics et les écureuils, des sites de nid pour les buses, et de quoi nourrir des centaines de chenilles.",
+    propagationNote:
+      "Cueillez les cônes quand ils passent du vert au brun au début de l'automne et laissez-les s'ouvrir au chaud et au sec. Semez la graine fraîche, à peine couverte.",
+    supportNotes: {
+      "brown-headed-nuthatch":
+        "La sittelle à tête brune fouille son écorce en quête d'insectes et niche dans ses chicots morts.",
+    },
+  },
+  "Liquidambar styraciflua": {
+    nativeNote:
+      "Indigène dans les bois frais et les plaines inondables, du Panhandle jusqu'au centre de la Floride.",
+    careNote:
+      "Rapide, et l'un des rares arbres d'ici aux vraies couleurs d'automne. Ses boules de graines épineuses tombent tout l'hiver : tenez-le loin d'une allée ou d'une terrasse. Arrosez-le pendant son premier été.",
+    givesNote:
+      "Le papillon lune y élève ses chenilles, et chardonnerets et mésanges picorent en hiver les graines de ses boules épineuses.",
+    propagationNote:
+      "Cueillez les boules vert-brun à l'automne avant qu'elles s'ouvrent, faites-les sécher à l'intérieur et secouez-en la graine. Un mois au réfrigérateur dans du sable humide accélère la levée.",
+    supportNotes: {
+      "luna-moth":
+        "Le copalme est l'un des principaux arbres à chenilles du papillon lune dans le Sud profond.",
+      "american-goldfinch":
+        "Les chardonnerets en hivernage tirent les minuscules graines des boules épineuses.",
+    },
+  },
+  "Sambucus canadensis": {
+    nativeNote:
+      "Indigène dans les fossés humides, les bords de marécage et les clairières de toute la Floride.",
+    careNote:
+      "Il pousse vite dans tout coin frais et ensoleillé et drageonne en fourré. Rabattez les vieilles tiges au sol en hiver pour le contenir. Feuilles, tiges et baies crues sont toxiques.",
+    givesNote:
+      "De larges ombelles blanches pour les abeilles et les mouches, puis des baies noir pourpré que des dizaines d'oiseaux dévorent en quelques jours.",
+    propagationNote:
+      "Enfoncez en hiver dans un sol humide des tiges grosses comme un crayon, deux bourgeons sous terre : la plupart s'enracinent. Les rejets enracinés prélevés au bord d'une touffe vont plus vite encore.",
+    supportNotes: {
+      "berry-songbirds":
+        "Moqueurs, moqueurs chats, cardinaux et merlebleus vident les grappes à mesure qu'elles mûrissent.",
+      "cedar-waxwing":
+        "Une bande de jaseurs s'abat et vide un arbuste en une après-midi.",
+    },
+  },
+  "Baccharis halimifolia": {
+    nativeNote:
+      "Indigène dans toute la Floride, au bord des marais, dans les fossés et les friches, y compris en sol salé près de la côte.",
+    careNote:
+      "Il supporte les embruns, les inondations et la sécheresse. Fleurs mâles et femelles sont sur des pieds séparés ; les femelles se couvrent à l'automne de graines duveteuses blanc argenté et se ressèment volontiers. Toxique pour le bétail.",
+    givesNote:
+      "L'une des dernières grandes sources de nectar de l'année, visitée par les monarques en migration, les guêpes et les abeilles, et un abri pour les oiseaux au bord d'un marais salé.",
+    propagationNote:
+      "Posez les graines duveteuses sur un sol humide à la fin de l'automne, sans les couvrir. Les boutures tendres d'été s'enracinent facilement.",
+    supportNotes: {
+      monarch:
+        "Il fleurit à l'automne, au moment où les monarques traversent la Floride vers le sud.",
+      "gulf-fritillary":
+        "L'Agraulis vanillae butine ses fleurs tardives quand la saison des passiflores s'achève.",
+    },
+  },
+  "Vaccinium myrsinites": {
+    nativeNote:
+      "Un myrtillier bas et persistant des flatwoods, des collines sableuses et du scrub de Floride.",
+    careNote:
+      "Un arbuste couvre-sol à hauteur de genou pour un sable acide, au soleil ou sous l'ombre légère des pins. Il s'étend lentement par tiges souterraines. N'ajoutez ni chaux ni terre riche.",
+    givesNote:
+      "Des clochettes d'hiver pour les premières abeilles, puis de petites baies bleues pour les oiseaux, les tortues-boîtes et les tortues gaufrées. Comme tout myrtillier, il nourrit un très grand nombre de chenilles.",
+    propagationNote:
+      "Prélevez en hiver un morceau enraciné au bord d'une plaque et replantez-le aussitôt. Les graines de baies écrasées lèvent lentement sur un terreau acide humide.",
+    supportNotes: {
+      "gopher-tortoise":
+        "Les tortues gaufrées mangent les baies basses dans les collines sableuses et les flatwoods qu'elles partagent avec lui.",
+      "berry-songbirds":
+        "Moqueurs, moqueurs roux et tohis prennent les petites baies au printemps.",
+    },
+  },
+  "Lyonia lucida": {
+    nativeNote:
+      "Indigène dans les flatwoods humides, les marécages à magnolias et les bords d'étang de Floride.",
+    careNote:
+      "Il veut un sol acide qui reste frais, au soleil ou à mi-ombre. Des feuilles persistantes et luisantes toute l'année. Toutes ses parties sont toxiques si on les avale.",
+    givesNote:
+      "Des grappes de clochettes roses en fin d'hiver et au printemps, parmi les premières fleurs pour les bourdons dans les flatwoods, et un couvert persistant dense.",
+    propagationNote:
+      "Enracinez des pousses d'été raffermies dans un terreau acide humide. La graine est fine comme de la poussière : répandez-la en surface et gardez-la humide.",
+    supportNotes: {
+      "bumble-bees":
+        "Ses clochettes s'ouvrent en fin d'hiver, quand les reines de bourdon ont besoin de nourriture et que presque rien d'autre ne fleurit.",
+    },
+  },
+  "Eriogonum tomentosum": {
+    nativeNote:
+      "Indigène dans les collines sableuses et les pinèdes sèches du nord et du centre de la Floride.",
+    careNote:
+      "Il lui faut un sable profond et sec en plein soleil ; une terre riche ou humide le fait pourrir. Une rosette plate de feuilles duveteuses lance des tiges ramifiées à la fin de l'été. Il déteste être déplacé.",
+    givesNote:
+      "Des têtes fleuries de fin d'été qui grouillent de guêpes, d'abeilles et de petits papillons, à un moment où peu d'autres plantes fleurissent sur la colline sableuse.",
+    propagationNote:
+      "Semez la graine mûre à l'automne, là où il poussera, dans du sable nu. Il a une racine pivotante profonde : ne le transplantez pas.",
+  },
+  "Pontederia cordata": {
+    nativeNote:
+      "Indigène dans les étangs peu profonds, les marais et les cours d'eau lents de toute la Floride.",
+    careNote:
+      "Pour un bord d'étang, un bassin de rétention ou la partie la plus mouillée d'un jardin de pluie, jusqu'à trente centimètres d'eau. Elle s'étend par de grosses racines en un massif. Plein soleil pour fleurir.",
+    givesNote:
+      "Des épis bleus pour les abeilles et les papillons du printemps à l'automne, des graines pour les canards, et de l'ombre et un abri pour les grenouilles et les petits poissons.",
+    propagationNote:
+      "Coupez une touffe au printemps en morceaux portant un bourgeon et des racines, et enfoncez-les dans la vase ou dans un pot immergé.",
+    supportNotes: {
+      "bumble-bees":
+        "Les bourdons visitent ses épis bleus au bord de l'eau du printemps à l'automne.",
+      "white-peacock":
+        "L'Anartia jatrophae butine ses épis pendant toute la saison chaude.",
+    },
+  },
+  "Euthamia caroliniana": {
+    nativeNote:
+      "Indigène dans toute la Floride, dans les flatwoods, les prairies humides, les fossés et les friches.",
+    careNote:
+      "Une parente des verges d'or aux feuilles fines comme de l'herbe. Elle s'étend par ses racines en une plaque : donnez-lui une prairie ou un coin plutôt qu'un massif soigné. Son pollen est porté par les insectes, pas par le vent : elle ne donne pas le rhume des foins.",
+    givesNote:
+      "Des fleurs jaunes en corymbes plats à l'automne, couvertes d'abeilles, de guêpes et de papillons en migration, et des graines pour les bruants en hiver.",
+    propagationNote:
+      "Déterrez et divisez une plaque en hiver ou au printemps. Ou répandez la graine duveteuse sur un sol nu à l'automne, sans la couvrir.",
+    supportNotes: {
+      monarch:
+        "Du nectar d'automne pour les monarques qui descendent vers le sud à travers la Floride.",
+      "white-peacock":
+        "L'Anartia jatrophae se presse sur ses corymbes jaunes à l'automne.",
+    },
+  },
+  "Vitis rotundifolia": {
+    nativeNote:
+      "La vigne sauvage de Floride, indigène dans les bois, les hammocks et les haies de tout l'État.",
+    careNote:
+      "Donnez-lui une clôture solide, une tonnelle ou un treillage au soleil, sinon elle grimpera dans l'arbre le plus proche. Les vignes sauvages ne fructifient que sur les pieds femelles ; les variétés de pépinière fructifient seules. Le raisin est toxique pour les chiens.",
+    givesNote:
+      "Des raisins à peau épaisse à la fin de l'été pour les oiseaux, les renards, les ratons laveurs et les ours, et des feuilles pour de grandes chenilles de sphinx.",
+    propagationNote:
+      "Couchez une tige au sol : elle s'enracine en une saison. Les boutures de bois sec reprennent mal ; les boutures tendres d'été sous brumisation réussissent mieux.",
+    supportNotes: {
+      "berry-songbirds":
+        "Moqueurs, moqueurs roux et moqueurs chats mangent les raisins qui éclatent sur la vigne.",
+      "acorn-mammals":
+        "Renards, ratons laveurs, opossums, cerfs et ours noirs se nourrissent des raisins tombés.",
+    },
+  },
+
   // -------------------------------------------------------------------------
   // Les taxa dont la clé simple appartient à la liste du Mid-Atlantic : ici,
   // leur fiche floridienne.
   // -------------------------------------------------------------------------
+  "Parthenocissus quinquefolia@florida-central": {
+    nativeNote:
+      "Indigène dans les bois et les hammocks de toute la Floride.",
+    careNote:
+      "Elle pousse en ombre profonde comme en plein soleil et couvre vite une clôture, un mur ou un talus nu. Tenez-la à l'écart d'un bardage en bois. Cinq folioles, pas les trois de l'herbe à puce. Ses baies sont toxiques pour les personnes et les animaux.",
+    givesNote:
+      "Des baies bleu-noir sur des pédoncules rouges à l'automne pour de nombreux oiseaux, et des feuilles pour les chenilles de sphinx.",
+    propagationNote:
+      "Enracinez dans un sol frais des pousses tendres d'été ou des tronçons de liane en hiver. Les tiges qui touchent le sol s'enracinent seules : coupez-les et soulevez-les.",
+    supportNotes: {
+      "berry-songbirds":
+        "Grives, moqueurs et pics prennent les baies tout l'automne et l'hiver.",
+    },
+  },
+  "Phyla nodiflora@florida-central": {
+    nativeNote:
+      "Indigène dans toute la Floride, dans les pelouses, les bords de route et les creux humides.",
+    careNote:
+      "Une alternative au gazon qui supporte la tonte, le piétinement, les inondations et la sécheresse, et reste verte dans la chaleur floridienne. Elle s'étend vite par stolons : tenez-la hors des massifs.",
+    givesNote:
+      "De minuscules fleurs presque toute l'année pour les petites abeilles et les papillons, et la nourriture des chenilles du Phyciodes phaon, de l'Anartia jatrophae et du Junonia coenia.",
+    propagationNote:
+      "Chaque stolon s'enracine là où il touche le sol : coupez un morceau enraciné et replantez-le, en toute saison.",
+    supportNotes: {
+      "phaon-crescent":
+        "La verveine du pays est la nourriture des chenilles du Phyciodes phaon : laissez un coin sans tonte et il le trouvera.",
+      "white-peacock":
+        "L'une des plantes à chenilles de l'Anartia jatrophae en Floride.",
+    },
+  },
   "Acer rubrum@florida-central": {
     nativeNote:
       "Indigène dans toute la Floride, dans les marécages, les plaines inondables et les bois frais — l'érable le plus répandu de l'État.",

@@ -3107,6 +3107,55 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
   },
 
   "florida-central": {
+    "quercus-geminata": [
+      { wildlifeId: "acorn-birds", support: "seeds", note: "Sand live oak is one of the scrub oaks the Florida scrub-jay lives on: it buries thousands of the acorns each fall and plants the next thicket.", basis: "Cornell Lab of Ornithology; UF/IFAS." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "Deer, raccoons and squirrels take the acorns that fall in the sand.", basis: "UF/IFAS." },
+    ],
+    "quercus-laevis": [
+      { wildlifeId: "acorn-birds", support: "seeds", note: "Wild turkeys and jays feed on turkey oak acorns under the longleaf pines.", basis: "UF/IFAS; Cornell Lab of Ornithology." },
+      { wildlifeId: "acorn-mammals", support: "seeds", note: "A staple for the sandhill fox squirrel and for deer in fall.", basis: "UF/IFAS." },
+    ],
+    "pinus-elliottii": [
+      { wildlifeId: "brown-headed-nuthatch", support: "shelter", note: "Brown-headed nuthatches work slash pine bark for insects and nest in its dead snags.", basis: "Cornell Lab of Ornithology." },
+    ],
+    "liquidambar-styraciflua": [
+      { wildlifeId: "luna-moth", support: "host", note: "Sweetgum is one of the luna moth's main caterpillar trees in the Deep South.", basis: "NWF Native Plant Finder; UF/IFAS." },
+      { wildlifeId: "american-goldfinch", support: "seeds", note: "Wintering goldfinches pick the tiny seeds out of the spiky balls.", basis: "Cornell Lab of Ornithology." },
+    ],
+    "sambucus-canadensis": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Mockingbirds, catbirds, cardinals and bluebirds strip the berry clusters as fast as they ripen.", basis: "Cornell Lab of Ornithology; UF/IFAS." },
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "Waxwing flocks drop in and empty a bush in an afternoon.", basis: "Cornell Lab of Ornithology." },
+    ],
+    "baccharis-halimifolia": [
+      { wildlifeId: "monarch", support: "nectar", note: "It blooms in fall, just as monarchs pass through Florida on their way south.", basis: "Xerces Society; UF/IFAS." },
+      { wildlifeId: "gulf-fritillary", support: "nectar", note: "Gulf fritillaries feed on the late flowers once the passionvine season winds down.", basis: "GloBI — iNaturalist observation records." },
+    ],
+    "vaccinium-myrsinites": [
+      { wildlifeId: "gopher-tortoise", support: "berries", note: "Gopher tortoises eat the low-hanging berries in the sandhills and flatwoods they share.", basis: "UF/IFAS; Florida gopher tortoise guidance." },
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Mockingbirds, thrashers and towhees take the small berries in spring.", basis: "Cornell Lab of Ornithology; UF/IFAS." },
+    ],
+    "lyonia-lucida": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Its bells open in late winter, when bumble bee queens need food and little else is blooming.", basis: "FNPS; Xerces Society." },
+    ],
+    "pontederia-cordata": [
+      { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees work the blue spikes from spring to fall along the water's edge.", basis: "Xerces Society; UF/IFAS." },
+      { wildlifeId: "white-peacock", support: "nectar", note: "White peacocks feed at the flower spikes all through the warm months.", basis: "GloBI — iNaturalist observation records." },
+    ],
+    "euthamia-caroliniana": [
+      { wildlifeId: "monarch", support: "nectar", note: "Fall nectar for monarchs moving south through Florida.", basis: "Xerces Society; FNPS." },
+      { wildlifeId: "white-peacock", support: "nectar", note: "White peacocks crowd the flat yellow heads in fall.", basis: "GloBI — iNaturalist observation records." },
+    ],
+    "vitis-rotundifolia": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Mockingbirds, thrashers and catbirds eat the grapes that split on the vine.", basis: "Cornell Lab of Ornithology; UF/IFAS." },
+      { wildlifeId: "acorn-mammals", support: "berries", note: "Foxes, raccoons, opossums, deer and black bears feed on the fallen grapes.", basis: "UF/IFAS." },
+    ],
+    "parthenocissus-quinquefolia": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Thrushes, mockingbirds and woodpeckers take the berries through fall and winter.", basis: "Cornell Lab of Ornithology." },
+    ],
+    "phyla-nodiflora": [
+      { wildlifeId: "phaon-crescent", support: "host", reliance: "sole", note: "Frogfruit is the phaon crescent's caterpillar food: leave a patch unmown and they will find it.", basis: "GloBI — iNaturalist observation records; BAMONA; UF/IFAS." },
+      { wildlifeId: "white-peacock", support: "host", note: "One of the white peacock's caterpillar plants in Florida.", basis: "UF/IFAS; BAMONA." },
+    ],
     "pinus-palustris": [
       { wildlifeId: "brown-headed-nuthatch", support: "shelter", reliance: "narrow", note: "The brown-headed nuthatch lives in longleaf pine and almost nowhere else — working the bark for insects, and excavating its nest in a dead pine snag. Leave the standing deadwood and you keep the bird.", basis: "GloBI — iNaturalist observation records; Cornell Lab of Ornithology." },
       { wildlifeId: "acorn-birds", support: "seeds", note: "Wild turkeys work the ground under longleaf for fallen seed, and woodpeckers work the trunks above it.", basis: "GloBI — iNaturalist observation records; Cornell Lab of Ornithology." },

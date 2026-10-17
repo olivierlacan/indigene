@@ -4512,8 +4512,15 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
    outlasts a tap, so a quick tap doesn't flash it. */
 .type-chips .btn {
   position: relative;
-  -webkit-touch-callout: none;
-  user-select: none;
+}
+/* On a touch screen the long press is a gesture, not a text selection or a
+   callout. Safari still needs the prefix; a mouse can select as usual. */
+@media (hover: none) {
+  .type-chips {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
 }
 .type-mode {
   position: absolute;

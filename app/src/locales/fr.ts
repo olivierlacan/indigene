@@ -1487,7 +1487,7 @@ export const fr: Dict = {
   "lookalikes.notFoundLede": "Aucun sosie ici n'a l'adresse «\u202f{slug}\u202f».",
   "plant.lookalikesTitle": "À ne pas confondre avec : ",
   // La ligne des pionnières du bitume, sous l'étiquette du même nom.
-  "plant.pioneerTitle": "Elle encaisse : ",
+  "plant.resilienceTitle": "Résilience",
   // ---------------------------------------------------------------------
   // Alternatives natives : « planter ceci plutôt qu'un ornemental courant ».
   // ---------------------------------------------------------------------

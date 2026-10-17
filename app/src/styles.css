@@ -3768,15 +3768,6 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
 /* The same thing on a plant's page, under the badge that provoked the question.
    `.kv` gives it the label-then-text shape of the lines around it; the chips
    and the sentence each need their own line, so this one is a block. */
-.pioneer-line {
-  margin-top: 0.4rem;
-}
-.pioneer-line .pioneer-tags {
-  margin-top: 0.35rem;
-}
-.pioneer-line .pioneer-note {
-  margin-top: 0.4rem;
-}
 /* The credit for the nickname, at the foot of the pioneers page. Quiet, but not
    hidden — it's an acknowledgement, so it reads as a note rather than a
    disclaimer. */

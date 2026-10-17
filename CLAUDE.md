@@ -370,6 +370,11 @@ Three more conventions the compiler understands:
   picture viewer (‹ › / ← → / swipe), so keep them to the two lines above:
   they're what the reader pages through. `npm run notes:check` drives it.
 
+  **The release PR shows the same thumbnail.** Put it at the top of the
+  description, under the release name, as a raw URL pinned to the commit SHA
+  (like the screenshots above), so a reviewer sees the picture the page will
+  show without opening a file.
+
 Preview the page locally with `npm run release-notes` (writes
 `app/dist/release-notes/index.html`); the script fails loudly if the changelog
 doesn't parse, and the same check runs on every PR.

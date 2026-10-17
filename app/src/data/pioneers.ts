@@ -531,6 +531,44 @@ export const PIONEERS: Record<string, Record<string, PioneerEntry>> = {
     },
   },
 
+  "scotland-lowlands": {
+    "betula-pendula": {
+      pressures: ["poor-soil", "disturbance", "drought"],
+      note: "The tree that turned West Lothian's bare shale bings into birch wood, unplanted. A rubble heap or a cleared site is the same offer.",
+      basis: "BSBI Plant Atlas 2020; Scottish Wildlife Trust (Addiewell Bing reserve).",
+    },
+    "cytisus-scoparius": {
+      pressures: ["poor-soil", "disturbance", "drought"],
+      note: "Broom fixes its own nitrogen, which is how it covers railway cuttings, quarry spoil and motorway banks where the topsoil is gone.",
+      basis: "BSBI Plant Atlas 2020; Royal Horticultural Society.",
+    },
+    "salix-caprea": {
+      pressures: ["disturbance", "compaction", "poor-soil"],
+      note: "Seeds itself into old quarries, gap sites and the edges of car parks within a year or two, then flowers for the first bees of spring.",
+      basis: "BSBI Plant Atlas 2020; Woodland Trust.",
+    },
+    "hedera-helix": {
+      pressures: ["crevice", "poor-soil", "drought", "compaction"],
+      note: "Climbs a tenement back wall from a crack at its foot, in dry shade where nothing else grows, and flowers in October.",
+      basis: "BSBI Plant Atlas 2020; Royal Horticultural Society.",
+    },
+    "armeria-maritima": {
+      pressures: ["salt", "crevice", "drought", "poor-soil"],
+      note: "Grows in cracks in sea walls and on salted ground, so a gritted verge or the gap between paving slabs suits it.",
+      basis: "BSBI Plant Atlas 2020; Royal Horticultural Society.",
+    },
+    "thymus-praecox": {
+      pressures: ["crevice", "drought", "poor-soil", "reflected-heat"],
+      note: "Lives on bare rock and thin soil on the hills, so a sunny wall top or the joints of a patio are home.",
+      basis: "BSBI Plant Atlas 2020; Royal Horticultural Society.",
+    },
+    "achillea-millefolium": {
+      pressures: ["compaction", "drought", "disturbance"],
+      note: "Takes being walked on and mown, which is why it is in nearly every lawn and verge, and still flowers.",
+      basis: "BSBI Plant Atlas 2020.",
+    },
+  },
+
   "nz-auckland": {
     "metrosideros-excelsa": {
       pressures: ["crevice", "salt", "poor-soil", "reflected-heat"],

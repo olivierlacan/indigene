@@ -53,6 +53,9 @@ const AREA_WORDS = {
   "florida-central": { en: "Florida", fr: "la Floride" },
   "florida-south": { en: "Florida", fr: "la Floride" },
   ireland: { en: "the island of Ireland", fr: "l'île d'Irlande" },
+  // WCVP's area is all of Great Britain; the region's finer claim is the BSBI
+  // atlas's, which this page doesn't read. Flagged coarse below.
+  "scotland-lowlands": { en: "Great Britain", fr: "la Grande-Bretagne" },
   "nz-auckland": { en: "the North Island of New Zealand", fr: "l'île du Nord de Nouvelle-Zélande" },
   // Japan is one TDWG area, Hokkaidō to Kyūshū — far coarser than the Kantō
   // Plain, and flagged as such so the page says so.
@@ -68,6 +71,7 @@ const AREA_WORDS = {
 // garden than "native in Michigan" is about a Petoskey one.
 const COARSE = new Set([
   "kanto",
+  "scotland-lowlands",
   "ca-south-coast",
   "ca-central-coast",
   "florida-central",

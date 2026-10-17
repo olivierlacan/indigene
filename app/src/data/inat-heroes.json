@@ -422,6 +422,15 @@
     "attribution": "(c) Chris Close, some rights reserved (CC BY-NC), uploaded by Chris Close",
     "color": "#73734b"
   },
+  "avenella-flexuosa": {
+    "taxonId": 288069,
+    "photoId": 150447888,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/150447888/square.jpeg",
+    "observer": "Giovanni Perico",
+    "license": "cc-by-nc",
+    "attribution": "(c) Giovanni Perico, some rights reserved (CC BY-NC), uploaded by Giovanni Perico",
+    "color": "#2d2e2b"
+  },
   "baccharis-pilularis": {
     "taxonId": 53359,
     "photoId": 5362069,
@@ -835,6 +844,15 @@
     "license": "cc-by",
     "attribution": "(c) Garth Harwood, some rights reserved (CC BY), uploaded by Garth Harwood",
     "color": "#828175"
+  },
+  "cirsium-heterophyllum": {
+    "taxonId": 332681,
+    "photoId": 139588510,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/139588510/square.jpeg",
+    "observer": "Lizzie Roeble",
+    "license": "cc-by-nc",
+    "attribution": "(c) Lizzie Roeble, some rights reserved (CC BY-NC), uploaded by Lizzie Roeble",
+    "color": "#98a16f"
   },
   "cirsium-japonicum": {
     "taxonId": 354344,
@@ -1520,6 +1538,15 @@
     "attribution": "(c) Гончарова Ольга, some rights reserved (CC BY-NC), uploaded by Гончарова Ольга",
     "color": "#758f35"
   },
+  "geum-rivale": {
+    "taxonId": 55750,
+    "photoId": 9583,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/9583/square.jpg",
+    "observer": "AnneTanne",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) AnneTanne, some rights reserved (CC BY-NC-SA)",
+    "color": "#79873a"
+  },
   "glandularia-bipinnatifida": {
     "taxonId": 125675,
     "photoId": 68984174,
@@ -1871,6 +1898,15 @@
     "attribution": "no rights reserved, uploaded by Peter de Lange",
     "color": "#7f8170"
   },
+  "leucanthemum-vulgare": {
+    "taxonId": 56057,
+    "photoId": 385004026,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/385004026/square.jpg",
+    "observer": "Ben Zerante",
+    "license": "cc-by-nc",
+    "attribution": "(c) Ben Zerante, some rights reserved (CC BY-NC), uploaded by Ben Zerante",
+    "color": "#5f693c"
+  },
   "leucophyllum-frutescens": {
     "taxonId": 123118,
     "photoId": 153156324,
@@ -1987,6 +2023,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Greg Lasley, some rights reserved (CC BY-NC), uploaded by Greg Lasley",
     "color": "#606853"
+  },
+  "luzula-sylvatica": {
+    "taxonId": 338102,
+    "photoId": 356945329,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/356945329/square.jpeg",
+    "observer": "Sonia Paź-Dyderska",
+    "license": "cc-by-nc",
+    "attribution": "(c) Sonia Paź-Dyderska, some rights reserved (CC BY-NC), uploaded by Sonia Paź-Dyderska",
+    "color": "#647f2c"
   },
   "machilus-thunbergii": {
     "taxonId": 341952,
@@ -3616,6 +3661,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Phil Pickering, some rights reserved (CC BY-NC), uploaded by Phil Pickering",
     "color": "#384a2d"
+  },
+  "valeriana-officinalis": {
+    "taxonId": 56160,
+    "photoId": 293453309,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/293453309/square.jpeg",
+    "observer": "peakaytea",
+    "license": "cc0",
+    "attribution": "no rights reserved, uploaded by peakaytea",
+    "color": "#41612e"
   },
   "variable-checkerspot": {
     "taxonId": 50892,

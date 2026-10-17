@@ -277,7 +277,8 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "pnw",
       "ca-south-coast",
-      "ca-central-coast"
+      "ca-central-coast",
+      "scotland-lowlands"
     ]
   },
   {
@@ -697,7 +698,8 @@ export const REGISTRY: RegistryEntry[] = [
       "france-atlantic",
       "france-continental",
       "france-mediterranean",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -1466,6 +1468,37 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:19793-2",
+    "scientificName": "Armeria maritima",
+    "family": "Plumbaginaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "19793-2",
+      "wfo": "wfo-0000549005",
+      "gbif": "8930531",
+      "usda": "ARMA6",
+      "itis": "21326",
+      "inat": "60476",
+      "wikidata": "Q21036",
+      "indigene": "armeria-maritima"
+    },
+    "commonNames": [
+      "Thrift",
+      "Sea Pink"
+    ],
+    "aliases": [
+      "armeria maritima",
+      "sea pink",
+      "thrift"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "scotland-lowlands"
+    ]
+  },
+  {
     "primaryId": "ipni:60464254-2",
     "scientificName": "Artemisia alba",
     "family": "Asteraceae",
@@ -2225,6 +2258,34 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:391947-1",
+    "scientificName": "Avenella flexuosa",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "391947-1",
+      "wfo": "wfo-0000852552",
+      "gbif": "4149465",
+      "itis": "565865",
+      "inat": "288069",
+      "wikidata": "Q106580875",
+      "indigene": "avenella-flexuosa"
+    },
+    "commonNames": [
+      "Wavy Hair-grass"
+    ],
+    "aliases": [
+      "avenella flexuosa",
+      "wavy hair-grass"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "scotland-lowlands"
+    ]
+  },
+  {
     "primaryId": "ipni:183599-1",
     "scientificName": "Baccharis pilularis",
     "family": "Asteraceae",
@@ -2485,7 +2546,8 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-continental",
-      "france-alpine"
+      "france-alpine",
+      "scotland-lowlands"
     ]
   },
   {
@@ -2514,7 +2576,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -2844,7 +2907,8 @@ export const REGISTRY: RegistryEntry[] = [
       "france-continental",
       "france-mediterranean",
       "france-alpine",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -2873,7 +2937,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -2981,16 +3046,19 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "campanula-rotundifolia"
     },
     "commonNames": [
-      "Harebell"
+      "Harebell",
+      "Scottish Bluebell"
     ],
     "aliases": [
       "campanula rotundifolia",
-      "harebell"
+      "harebell",
+      "scottish bluebell"
     ],
     "cultivarOf": null,
     "regions": [
       "north-michigan",
-      "st-lawrence"
+      "st-lawrence",
+      "scotland-lowlands"
     ]
   },
   {
@@ -3792,7 +3860,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -4006,6 +4075,34 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:195465-1",
+    "scientificName": "Cirsium heterophyllum",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "195465-1",
+      "wfo": "wfo-0000014883",
+      "gbif": "3113745",
+      "itis": "511038",
+      "inat": "332681",
+      "wikidata": "Q1446001",
+      "indigene": "cirsium-heterophyllum"
+    },
+    "commonNames": [
+      "Melancholy Thistle"
+    ],
+    "aliases": [
+      "cirsium heterophyllum",
+      "melancholy thistle"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "scotland-lowlands"
     ]
   },
   {
@@ -4899,7 +4996,8 @@ export const REGISTRY: RegistryEntry[] = [
       "france-continental",
       "france-mediterranean",
       "france-alpine",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -5057,7 +5155,8 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-mediterranean",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -5143,7 +5242,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -5356,7 +5456,8 @@ export const REGISTRY: RegistryEntry[] = [
       "pnw",
       "france-atlantic",
       "france-continental",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -5531,7 +5632,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -5827,7 +5929,8 @@ export const REGISTRY: RegistryEntry[] = [
       "france-atlantic",
       "france-continental",
       "france-alpine",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -6150,7 +6253,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -7031,7 +7135,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -7100,7 +7205,8 @@ export const REGISTRY: RegistryEntry[] = [
       "france-atlantic",
       "france-continental",
       "france-alpine",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -7583,7 +7689,37 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:322492-2",
+    "scientificName": "Geranium sylvaticum",
+    "family": "Geraniaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "322492-2",
+      "wfo": "wfo-0000701427",
+      "gbif": "2891147",
+      "usda": "GESY",
+      "itis": "502765",
+      "inat": "85429",
+      "wikidata": "Q161644",
+      "indigene": "geranium-sylvaticum"
+    },
+    "commonNames": [
+      "Wood Cranesbill"
+    ],
+    "aliases": [
+      "geranium sylvaticum",
+      "wood cranesbill"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "scotland-lowlands"
     ]
   },
   {
@@ -7613,6 +7749,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:725355-1",
+    "scientificName": "Geum rivale",
+    "family": "Rosaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "725355-1",
+      "wfo": "wfo-0001004152",
+      "gbif": "5369701",
+      "usda": "GERI2",
+      "itis": "24659",
+      "inat": "55750",
+      "wikidata": "Q161625",
+      "indigene": "geum-rivale"
+    },
+    "commonNames": [
+      "Water Avens"
+    ],
+    "aliases": [
+      "geum rivale",
+      "water avens"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "scotland-lowlands"
     ]
   },
   {
@@ -7768,7 +7933,8 @@ export const REGISTRY: RegistryEntry[] = [
       "france-continental",
       "france-mediterranean",
       "france-alpine",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -8264,16 +8430,19 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "hyacinthoides-non-scripta"
     },
     "commonNames": [
-      "Bluebell"
+      "Bluebell",
+      "Wild Hyacinth"
     ],
     "aliases": [
       "bluebell",
-      "hyacinthoides non-scripta"
+      "hyacinthoides non-scripta",
+      "wild hyacinth"
     ],
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -8332,7 +8501,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -8481,6 +8651,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:438992-1",
+    "scientificName": "Iris pseudacorus",
+    "family": "Iridaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "438992-1",
+      "wfo": "wfo-0000783754",
+      "gbif": "5298231",
+      "usda": "IRPS",
+      "itis": "43194",
+      "inat": "47779",
+      "wikidata": "Q21173",
+      "indigene": "iris-pseudacorus"
+    },
+    "commonNames": [
+      "Yellow Iris"
+    ],
+    "aliases": [
+      "iris pseudacorus",
+      "yellow iris"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "scotland-lowlands"
     ]
   },
   {
@@ -8662,7 +8861,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -8784,7 +8984,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-continental"
+      "france-continental",
+      "scotland-lowlands"
     ]
   },
   {
@@ -9017,6 +9218,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:230103-1",
+    "scientificName": "Leucanthemum vulgare",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "230103-1",
+      "wfo": "wfo-0000036932",
+      "gbif": "8848598",
+      "usda": "LEVU",
+      "itis": "37903",
+      "inat": "56057",
+      "wikidata": "Q27164",
+      "indigene": "leucanthemum-vulgare"
+    },
+    "commonNames": [
+      "Oxeye Daisy"
+    ],
+    "aliases": [
+      "leucanthemum vulgare",
+      "oxeye daisy"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "scotland-lowlands"
     ]
   },
   {
@@ -9569,7 +9799,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -9638,7 +9869,8 @@ export const REGISTRY: RegistryEntry[] = [
       "france-continental",
       "france-mediterranean",
       "france-alpine",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -9756,6 +9988,33 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:20009373-1",
+    "scientificName": "Luzula sylvatica",
+    "family": "Juncaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "20009373-1",
+      "wfo": "wfo-0000778183",
+      "gbif": "2700859",
+      "inat": "338102",
+      "wikidata": "Q162491",
+      "indigene": "luzula-sylvatica"
+    },
+    "commonNames": [
+      "Great Wood-rush"
+    ],
+    "aliases": [
+      "great wood-rush",
+      "luzula sylvatica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "scotland-lowlands"
     ]
   },
   {
@@ -10719,7 +10978,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -12565,16 +12825,19 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Hard Shield Fern",
-      "Polystic à aiguillons"
+      "Polystic à aiguillons",
+      "Hard Shield-fern"
     ],
     "aliases": [
       "hard shield fern",
+      "hard shield-fern",
       "polystic à aiguillons",
       "polystichum aculeatum"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-continental"
+      "france-continental",
+      "scotland-lowlands"
     ]
   },
   {
@@ -12786,7 +13049,8 @@ export const REGISTRY: RegistryEntry[] = [
       "france-atlantic",
       "france-continental",
       "france-alpine",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -12901,7 +13165,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "scotland-lowlands"
     ]
   },
   {
@@ -12929,7 +13194,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -12990,7 +13256,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -13166,7 +13433,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -13233,7 +13501,8 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-mediterranean",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -13791,7 +14060,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-continental",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -13852,7 +14122,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -14091,6 +14362,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:30116962-2",
+    "scientificName": "Rhinanthus minor",
+    "family": "Orobanchaceae",
+    "form": "annual",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "30116962-2",
+      "wfo": "wfo-0000747233",
+      "gbif": "3172043",
+      "usda": "RHMI13",
+      "itis": "504749",
+      "inat": "61470",
+      "wikidata": "Q147181",
+      "indigene": "rhinanthus-minor"
+    },
+    "commonNames": [
+      "Yellow Rattle"
+    ],
+    "aliases": [
+      "rhinanthus minor",
+      "yellow rattle"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "scotland-lowlands"
     ]
   },
   {
@@ -14536,7 +14836,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-continental",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -14743,7 +15044,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -15145,7 +15447,8 @@ export const REGISTRY: RegistryEntry[] = [
       "france-atlantic",
       "france-continental",
       "france-alpine",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -15167,16 +15470,19 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Gray Willow",
-      "Sally"
+      "Sally",
+      "Grey Willow"
     ],
     "aliases": [
       "gray willow",
+      "grey willow",
       "salix cinerea",
       "sally"
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -15737,7 +16043,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -16239,7 +16546,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -16590,7 +16898,8 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-alpine",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -16831,7 +17140,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -16919,7 +17229,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -17305,7 +17616,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -17393,7 +17705,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -17760,7 +18073,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-alpine"
+      "france-alpine",
+      "scotland-lowlands"
     ]
   },
   {
@@ -18139,10 +18453,12 @@ export const REGISTRY: RegistryEntry[] = [
     "commonNames": [
       "Bilberry",
       "Myrtille",
-      "Fraochán"
+      "Fraochán",
+      "Blaeberry"
     ],
     "aliases": [
       "bilberry",
+      "blaeberry",
       "fraochán",
       "myrtille",
       "vaccinium myrtillus"
@@ -18151,7 +18467,8 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-alpine",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -18242,6 +18559,35 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:860012-1",
+    "scientificName": "Valeriana officinalis",
+    "family": "Caprifoliaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "identifiers": {
+      "ipni": "860012-1",
+      "wfo": "wfo-0000426953",
+      "gbif": "2888763",
+      "usda": "VAOF",
+      "itis": "35363",
+      "inat": "56160",
+      "wikidata": "Q157819",
+      "indigene": "valeriana-officinalis"
+    },
+    "commonNames": [
+      "Common Valerian"
+    ],
+    "aliases": [
+      "common valerian",
+      "valeriana officinalis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "scotland-lowlands"
     ]
   },
   {
@@ -18504,7 +18850,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {

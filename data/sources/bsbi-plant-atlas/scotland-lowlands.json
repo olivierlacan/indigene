@@ -1,0 +1,552 @@
+{
+  "source": "BSBI Plant Atlas 2020 (Botanical Society of Britain and Ireland)",
+  "url": "https://plantatlas2020.org/",
+  "what": "Count of 10 km squares inside the region's box where the plant was recorded 2000–2019, split by BSBI's native/introduced status. Counts only; no records are copied.",
+  "box": {
+    "minLat": 54.6,
+    "maxLat": 56.6,
+    "minLon": -5.2,
+    "maxLon": -2
+  },
+  "minNative": 10,
+  "region": "scotland-lowlands",
+  "ranAt": "2026-10-17T05:15:17.017Z",
+  "rows": [
+    {
+      "id": "quercus-petraea",
+      "latin": "Quercus petraea",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.vse",
+      "nativeHectads": 304,
+      "alienHectads": 31,
+      "olderOnly": 33
+    },
+    {
+      "id": "quercus-robur",
+      "latin": "Quercus robur",
+      "verdict": "PRESENT",
+      "bsbiId": "2cd4p9h.1y5",
+      "statusMapped": false,
+      "presentHectads": 373,
+      "alienHectads": 0,
+      "olderOnly": 19
+    },
+    {
+      "id": "betula-pendula",
+      "latin": "Betula pendula",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.v93",
+      "nativeHectads": 332,
+      "alienHectads": 34,
+      "olderOnly": 30
+    },
+    {
+      "id": "betula-pubescens",
+      "latin": "Betula pubescens",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.bmf",
+      "nativeHectads": 393,
+      "alienHectads": 0,
+      "olderOnly": 7
+    },
+    {
+      "id": "alnus-glutinosa",
+      "latin": "Alnus glutinosa",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.v6v",
+      "nativeHectads": 395,
+      "alienHectads": 7,
+      "olderOnly": 3
+    },
+    {
+      "id": "sorbus-aucuparia",
+      "latin": "Sorbus aucuparia",
+      "verdict": "PRESENT",
+      "bsbiId": "2cd4p9h.w2c",
+      "statusMapped": false,
+      "presentHectads": 404,
+      "alienHectads": 0,
+      "olderOnly": 3
+    },
+    {
+      "id": "prunus-padus",
+      "latin": "Prunus padus",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.5vp",
+      "nativeHectads": 303,
+      "alienHectads": 25,
+      "olderOnly": 30
+    },
+    {
+      "id": "prunus-avium",
+      "latin": "Prunus avium",
+      "verdict": "PRESENT",
+      "bsbiId": "2cd4p9h.xzf",
+      "statusMapped": false,
+      "presentHectads": 358,
+      "alienHectads": 0,
+      "olderOnly": 24
+    },
+    {
+      "id": "populus-tremula",
+      "latin": "Populus tremula",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.vrf",
+      "nativeHectads": 274,
+      "alienHectads": 37,
+      "olderOnly": 52
+    },
+    {
+      "id": "salix-caprea",
+      "latin": "Salix caprea",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.1ss",
+      "nativeHectads": 397,
+      "alienHectads": 1,
+      "olderOnly": 6
+    },
+    {
+      "id": "ilex-aquifolium",
+      "latin": "Ilex aquifolium",
+      "verdict": "PRESENT",
+      "bsbiId": "2cd4p9h.yp2",
+      "statusMapped": false,
+      "presentHectads": 365,
+      "alienHectads": 0,
+      "olderOnly": 19
+    },
+    {
+      "id": "corylus-avellana",
+      "latin": "Corylus avellana",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.r9",
+      "nativeHectads": 382,
+      "alienHectads": 6,
+      "olderOnly": 10
+    },
+    {
+      "id": "crataegus-monogyna",
+      "latin": "Crataegus monogyna",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.f6c",
+      "nativeHectads": 409,
+      "alienHectads": 1,
+      "olderOnly": 3
+    },
+    {
+      "id": "prunus-spinosa",
+      "latin": "Prunus spinosa",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.cfv",
+      "nativeHectads": 375,
+      "alienHectads": 1,
+      "olderOnly": 20
+    },
+    {
+      "id": "sambucus-nigra",
+      "latin": "Sambucus nigra",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.fyz",
+      "nativeHectads": 385,
+      "alienHectads": 2,
+      "olderOnly": 19
+    },
+    {
+      "id": "viburnum-opulus",
+      "latin": "Viburnum opulus",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.m7d",
+      "nativeHectads": 233,
+      "alienHectads": 24,
+      "olderOnly": 43
+    },
+    {
+      "id": "salix-cinerea",
+      "latin": "Salix cinerea",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.1t0",
+      "nativeHectads": 410,
+      "alienHectads": 0,
+      "olderOnly": 5
+    },
+    {
+      "id": "juniperus-communis",
+      "latin": "Juniperus communis",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.8r1",
+      "nativeHectads": 148,
+      "alienHectads": 28,
+      "olderOnly": 59
+    },
+    {
+      "id": "rosa-spinosissima",
+      "latin": "Rosa spinosissima",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.5k8",
+      "nativeHectads": 142,
+      "alienHectads": 16,
+      "olderOnly": 73
+    },
+    {
+      "id": "rosa-canina",
+      "latin": "Rosa canina",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.vz3",
+      "nativeHectads": 244,
+      "alienHectads": 0,
+      "olderOnly": 45
+    },
+    {
+      "id": "cytisus-scoparius",
+      "latin": "Cytisus scoparius",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.m2y",
+      "nativeHectads": 391,
+      "alienHectads": 1,
+      "olderOnly": 12
+    },
+    {
+      "id": "calluna-vulgaris",
+      "latin": "Calluna vulgaris",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.yea",
+      "nativeHectads": 402,
+      "alienHectads": 0,
+      "olderOnly": 8
+    },
+    {
+      "id": "erica-cinerea",
+      "latin": "Erica cinerea",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.537",
+      "nativeHectads": 334,
+      "alienHectads": 0,
+      "olderOnly": 52
+    },
+    {
+      "id": "vaccinium-myrtillus",
+      "latin": "Vaccinium myrtillus",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.w50",
+      "nativeHectads": 379,
+      "alienHectads": 0,
+      "olderOnly": 17
+    },
+    {
+      "id": "myrica-gale",
+      "latin": "Myrica gale",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.5eb",
+      "nativeHectads": 142,
+      "alienHectads": 0,
+      "olderOnly": 48
+    },
+    {
+      "id": "lonicera-periclymenum",
+      "latin": "Lonicera periclymenum",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.ff9",
+      "nativeHectads": 387,
+      "alienHectads": 1,
+      "olderOnly": 13
+    },
+    {
+      "id": "hedera-helix",
+      "latin": "Hedera helix",
+      "verdict": "PRESENT",
+      "bsbiId": "2cd4p9h.95p1tn",
+      "statusMapped": false,
+      "presentHectads": 399,
+      "alienHectads": 0,
+      "olderOnly": 12
+    },
+    {
+      "id": "digitalis-purpurea",
+      "latin": "Digitalis purpurea",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.ywh",
+      "nativeHectads": 409,
+      "alienHectads": 1,
+      "olderOnly": 2
+    },
+    {
+      "id": "succisa-pratensis",
+      "latin": "Succisa pratensis",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.23w",
+      "nativeHectads": 394,
+      "alienHectads": 0,
+      "olderOnly": 15
+    },
+    {
+      "id": "centaurea-nigra",
+      "latin": "Centaurea nigra",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.2d2nvb",
+      "nativeHectads": 414,
+      "alienHectads": 0,
+      "olderOnly": 2
+    },
+    {
+      "id": "knautia-arvensis",
+      "latin": "Knautia arvensis",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.xyv",
+      "nativeHectads": 151,
+      "alienHectads": 5,
+      "olderOnly": 69
+    },
+    {
+      "id": "leucanthemum-vulgare",
+      "latin": "Leucanthemum vulgare",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.q4",
+      "nativeHectads": 370,
+      "alienHectads": 3,
+      "olderOnly": 30
+    },
+    {
+      "id": "geranium-sylvaticum",
+      "latin": "Geranium sylvaticum",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.56w",
+      "nativeHectads": 279,
+      "alienHectads": 3,
+      "olderOnly": 36
+    },
+    {
+      "id": "geranium-sanguineum",
+      "latin": "Geranium sanguineum",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.xxz",
+      "nativeHectads": 57,
+      "alienHectads": 16,
+      "olderOnly": 41
+    },
+    {
+      "id": "primula-vulgaris",
+      "latin": "Primula vulgaris",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.5vd",
+      "nativeHectads": 396,
+      "alienHectads": 0,
+      "olderOnly": 13
+    },
+    {
+      "id": "primula-veris",
+      "latin": "Primula veris",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.94t",
+      "nativeHectads": 143,
+      "alienHectads": 40,
+      "olderOnly": 49
+    },
+    {
+      "id": "filipendula-ulmaria",
+      "latin": "Filipendula ulmaria",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.54r",
+      "nativeHectads": 413,
+      "alienHectads": 0,
+      "olderOnly": 1
+    },
+    {
+      "id": "iris-pseudacorus",
+      "latin": "Iris pseudacorus",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.vwt",
+      "nativeHectads": 377,
+      "alienHectads": 1,
+      "olderOnly": 21
+    },
+    {
+      "id": "caltha-palustris",
+      "latin": "Caltha palustris",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.f36",
+      "nativeHectads": 401,
+      "alienHectads": 0,
+      "olderOnly": 10
+    },
+    {
+      "id": "valeriana-officinalis",
+      "latin": "Valeriana officinalis",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.fz9",
+      "nativeHectads": 391,
+      "alienHectads": 0,
+      "olderOnly": 16
+    },
+    {
+      "id": "geum-rivale",
+      "latin": "Geum rivale",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.56p",
+      "nativeHectads": 370,
+      "alienHectads": 0,
+      "olderOnly": 22
+    },
+    {
+      "id": "achillea-millefolium",
+      "latin": "Achillea millefolium",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.88t",
+      "nativeHectads": 415,
+      "alienHectads": 0,
+      "olderOnly": 2
+    },
+    {
+      "id": "campanula-rotundifolia",
+      "latin": "Campanula rotundifolia",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.bys",
+      "nativeHectads": 408,
+      "alienHectads": 0,
+      "olderOnly": 7
+    },
+    {
+      "id": "hyacinthoides-non-scripta",
+      "latin": "Hyacinthoides non-scripta",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.z9",
+      "nativeHectads": 383,
+      "alienHectads": 2,
+      "olderOnly": 15
+    },
+    {
+      "id": "armeria-maritima",
+      "latin": "Armeria maritima",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.8b8",
+      "nativeHectads": 143,
+      "alienHectads": 4,
+      "olderOnly": 18
+    },
+    {
+      "id": "silene-dioica",
+      "latin": "Silene dioica",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.vn4",
+      "nativeHectads": 393,
+      "alienHectads": 0,
+      "olderOnly": 17
+    },
+    {
+      "id": "teucrium-scorodonia",
+      "latin": "Teucrium scorodonia",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.246",
+      "nativeHectads": 376,
+      "alienHectads": 0,
+      "olderOnly": 26
+    },
+    {
+      "id": "trollius-europaeus",
+      "latin": "Trollius europaeus",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.cnp",
+      "nativeHectads": 153,
+      "alienHectads": 0,
+      "olderOnly": 115
+    },
+    {
+      "id": "cirsium-heterophyllum",
+      "latin": "Cirsium heterophyllum",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.4ze",
+      "nativeHectads": 179,
+      "alienHectads": 3,
+      "olderOnly": 99
+    },
+    {
+      "id": "rhinanthus-minor",
+      "latin": "Rhinanthus minor",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.966",
+      "nativeHectads": 384,
+      "alienHectads": 1,
+      "olderOnly": 22
+    },
+    {
+      "id": "lotus-corniculatus",
+      "latin": "Lotus corniculatus",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.1e3",
+      "nativeHectads": 417,
+      "alienHectads": 0,
+      "olderOnly": 1
+    },
+    {
+      "id": "thymus-praecox",
+      "latin": "Thymus praecox",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.7mm638",
+      "nativeHectads": 365,
+      "alienHectads": 0,
+      "olderOnly": 42
+    },
+    {
+      "id": "fragaria-vesca",
+      "latin": "Fragaria vesca",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.54z",
+      "nativeHectads": 374,
+      "alienHectads": 0,
+      "olderOnly": 24
+    },
+    {
+      "id": "deschampsia-cespitosa",
+      "latin": "Deschampsia cespitosa",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.f7k",
+      "nativeHectads": 413,
+      "alienHectads": 0,
+      "olderOnly": 0
+    },
+    {
+      "id": "avenella-flexuosa",
+      "latin": "Avenella flexuosa",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.veyn0r",
+      "nativeHectads": 392,
+      "alienHectads": 0,
+      "olderOnly": 17
+    },
+    {
+      "id": "luzula-sylvatica",
+      "latin": "Luzula sylvatica",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.vme",
+      "nativeHectads": 387,
+      "alienHectads": 0,
+      "olderOnly": 16
+    },
+    {
+      "id": "dryopteris-filix-mas",
+      "latin": "Dryopteris filix-mas",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.bv1",
+      "nativeHectads": 411,
+      "alienHectads": 0,
+      "olderOnly": 5
+    },
+    {
+      "id": "struthiopteris-spicant",
+      "latin": "Struthiopteris spicant",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.x6c",
+      "nativeHectads": 383,
+      "alienHectads": 0,
+      "olderOnly": 14
+    },
+    {
+      "id": "polystichum-aculeatum",
+      "latin": "Polystichum aculeatum",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.esv",
+      "nativeHectads": 302,
+      "alienHectads": 0,
+      "olderOnly": 49
+    }
+  ]
+}

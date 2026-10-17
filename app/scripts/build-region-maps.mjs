@@ -135,6 +135,22 @@ const LANDMARKS = {
     { name: "Limerick", lat: 52.66, lon: -8.63 },
     { name: "Cork", lat: 51.9, lon: -8.47 },
   ],
+  // Perth and Dundee fix the Highland line and the Tay, Stranraer the
+  // Galloway coast, and Galashiels the Borders. Carlisle is in on
+  // purpose: the box reaches over the English border there, and a map that
+  // shades Cumbria without saying so would hide the compromise.
+  "scotland-lowlands": [
+    { name: "Perth", lat: 56.4, lon: -3.44 },
+    { name: "Dundee", lat: 56.46, lon: -2.97 },
+    { name: "Stirling", lat: 56.12, lon: -3.94 },
+    { name: "Glasgow", lat: 55.86, lon: -4.25 },
+    { name: "Edinburgh", lat: 55.95, lon: -3.19 },
+    { name: "Ayr", lat: 55.46, lon: -4.63 },
+    { name: "Galashiels", lat: 55.62, lon: -2.81 },
+    { name: "Dumfries", lat: 55.07, lon: -3.61 },
+    { name: "Stranraer", lat: 54.9, lon: -5.03 },
+    { name: "Carlisle", lat: 54.89, lon: -2.93 },
+  ],
   // Campbell River and Medford are the north and south ends of the claim, and
   // Victoria earns its label twice over: it is the far side of the border this
   // region crosses, and it is on an island, which nothing else here fixes.

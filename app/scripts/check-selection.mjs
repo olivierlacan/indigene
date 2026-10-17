@@ -97,6 +97,9 @@ const PLACES = [
   { name: "Marseille", lat: 43.2965, lon: 5.3698, region: "france-mediterranean", via: "eea-biogeo" },
   { name: "Paris", lat: 48.8566, lon: 2.3522, region: "france-atlantic", via: "eea-biogeo" },
   { name: "Dublin", lat: 53.3498, lon: -6.2603, region: "ireland", via: "eea-biogeo" },
+  { name: "Glasgow", lat: 55.8642, lon: -4.2518, region: "scotland-lowlands", via: "eea-biogeo" },
+  { name: "Edinburgh", lat: 55.9533, lon: -3.1883, region: "scotland-lowlands", via: "eea-biogeo" },
+  { name: "Dundee", lat: 56.462, lon: -2.9707, region: "scotland-lowlands", via: "eea-biogeo" },
   { name: "Auckland", lat: -36.8485, lon: 174.7633, region: "nz-auckland", via: "resolve-2017" },
 
   // --- Central Texas: three EPA codes, and the neighbours it leaves out ---

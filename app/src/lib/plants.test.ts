@@ -124,6 +124,17 @@ describe("regionForSite — Europe, where the codes are coarse", () => {
       .toBe("france-atlantic");
   });
 
+  it("gives lowland Scotland its own list, not Ireland's", () => {
+    // Britain is `atlantic` too — the third region on the code. Glasgow and
+    // Edinburgh land in the Scottish box; Kintyre, which Ireland's box has
+    // always clipped, stays Ireland's, because the two boxes don't overlap.
+    const atlantic = siteWith(eea("atlantic", "Atlantic"));
+    expect(regionForSite(55.8642, -4.2518, atlantic)?.meta.id).toBe("scotland-lowlands"); // Glasgow
+    expect(regionForSite(55.9533, -3.1883, atlantic)?.meta.id).toBe("scotland-lowlands"); // Edinburgh
+    expect(regionForSite(55.4257, -5.6053, atlantic)?.meta.id).toBe("ireland"); // Campbeltown
+    expect(regionForSite(57.1497, -2.0943, atlantic)).toBeNull(); // Aberdeen, north of the box
+  });
+
   it("refuses a French point whose code belongs to a different region", () => {
     // Marseille's own code is `mediterranean`; handed `alpine`, the
     // Mediterranean region must decline rather than answer anyway.

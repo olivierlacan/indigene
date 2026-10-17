@@ -379,6 +379,14 @@
     },
     {
       "subject": "plant",
+      "id": "armeria-maritima",
+      "name": "Armeria maritima",
+      "taxonId": 60476,
+      "reason": "chosen photo 176790677 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/60476/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "arum-italicum",
       "name": "Arum italicum",
       "taxonId": 61168,
@@ -603,11 +611,27 @@
     },
     {
       "subject": "plant",
+      "id": "geranium-sylvaticum",
+      "name": "Geranium sylvaticum",
+      "taxonId": 85429,
+      "reason": "chosen photo 62573011 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/85429/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "helianthus-angustifolius",
       "name": "Helianthus angustifolius",
       "taxonId": 126700,
       "reason": "chosen photo 188246 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/126700/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "iris-pseudacorus",
+      "name": "Iris pseudacorus",
+      "taxonId": 47779,
+      "reason": "chosen photo 132791736 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/47779/browse_photos"
     },
     {
       "subject": "plant",
@@ -888,6 +912,14 @@
       "taxonId": 78836,
       "reason": "chosen photo 401477062 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/78836/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "rhinanthus-minor",
+      "name": "Rhinanthus minor",
+      "taxonId": 61470,
+      "reason": "chosen photo 15760 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/61470/browse_photos"
     },
     {
       "subject": "plant",

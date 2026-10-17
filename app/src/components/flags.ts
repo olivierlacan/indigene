@@ -24,7 +24,7 @@ const H = 20;
 const rect = (x: number, y: number, w: number, h: number, fill: string): Shape =>
   ["rect", { x, y, width: w, height: h, fill }];
 
-/** The Union Flag, for New Zealand's canton: a w × h box at (x, y), clipped to it. Its proportions
+/** The Union Flag, whole or as New Zealand's canton: a w × h box at (x, y), clipped to it. Its proportions
  *  (white saltire 6/30 of the height, red 2/30, white cross 10/30, red 6/30)
  *  are the real ones; the red saltire's counterchange is dropped at this size. */
 function unionFlag(x: number, y: number, w: number, h: number, clipId: string): Shape[] {
@@ -69,6 +69,10 @@ const FLAGS: Record<string, (clip: string) => Shape[]> = {
   // fifths of the height, and the 30 × 20 box is already 3:2, so this is the
   // flag at actual proportions rather than a drawing of it.
   JP: () => [rect(0, 0, W, H, "#fff"), ["circle", { cx: W / 2, cy: H / 2, r: (3 / 5 * H) / 2, fill: "#BC002D" }]],
+  // The Union Flag for the United Kingdom. Scotland's own saltire would be the
+  // warmer choice for a Scottish region, but `countries` is ISO 3166-1, and GB
+  // is the country an English or Welsh region would list too.
+  GB: (clip) => unionFlag(0, 0, W, H, clip),
   NZ: (clip) => [
     rect(0, 0, W, H, "#012169"),
     ...unionFlag(0, 0, W / 2, H / 2, clip),

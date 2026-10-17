@@ -206,6 +206,15 @@
     "attribution": "(c) portioid, some rights reserved (CC BY), uploaded by portioid",
     "color": "#494e04"
   },
+  "petasites-albus": {
+    "taxonId": 55763,
+    "photoId": 9612,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/9612/square.jpg",
+    "observer": "AnneTanne",
+    "license": "cc-by-nc",
+    "attribution": "(c) AnneTanne, some rights reserved (CC BY-NC)",
+    "color": "#746945"
+  },
   "phytolacca-americana": {
     "taxonId": 48599,
     "photoId": 164206478,

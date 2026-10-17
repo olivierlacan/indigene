@@ -33,7 +33,7 @@
       "spartium-junceum": 4406,
       "carpobrotus-edulis": 4055,
       "oncosiphon-pilulifer": 3389,
-      "arundo-donax": 3359,
+      "arundo-donax": 3360,
       "cortaderia-selloana": 2859
     },
     "ca-central-coast": {
@@ -104,7 +104,10 @@
       "reynoutria-japonica": 449,
       "heracleum-mantegazzianum": 561,
       "impatiens-glandulifera": 1641,
-      "lysichiton-americanus": 173
+      "lysichiton-americanus": 173,
+      "gunnera-tinctoria": 100,
+      "petasites-albus": 160,
+      "petasites-japonicus": 137
     }
   }
 }

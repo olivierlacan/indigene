@@ -821,6 +821,46 @@ export const INVASIVES: Invasive[] = [
     },
   },
   {
+    id: "petasites-albus",
+    common: "White butterbur",
+    latin: "Petasites albus",
+    form: "perennial",
+    marks: [
+      { part: "flower", feature: "Flowers", text: "Fat spikes of creamy-white flowers in March, before any leaves." },
+      { part: "leaf", feature: "Leaves", text: "Round, rhubarb-sized and felted white underneath, in a solid carpet." },
+      { part: "where", feature: "Look-alike", text: "Native common butterbur has pink flowers and grows on riverbanks." },
+    ],
+    removal: {
+      steps: [
+        { method: "dig", text: "Dig out the creeping roots; every piece left behind regrows." },
+        { method: "repeat", text: "Go back every few weeks for two or three years and dig what returns." },
+        { method: "cover", text: "Smother a patch under thick cardboard and mulch for a full season." },
+      ],
+      dispose: "Bag the roots; don't compost or dump them.",
+      basis: "Scottish Invasive Species Initiative (NatureScot).",
+    },
+  },
+  {
+    id: "petasites-japonicus",
+    common: "Giant butterbur",
+    latin: "Petasites japonicus",
+    form: "perennial",
+    marks: [
+      { part: "leaf", feature: "Leaves", text: "Enormous round leaves, up to a metre across, on tall stalks." },
+      { part: "flower", feature: "Flowers", text: "Pale green-white flower clusters at ground level in late winter." },
+      { part: "where", feature: "Where", text: "Thick stands along burns and pond edges, spreading from old gardens." },
+    ],
+    removal: {
+      steps: [
+        { method: "dig", text: "Dig out the thick roots, getting every piece." },
+        { method: "repeat", text: "Keep digging regrowth for several years." },
+        { method: "pro", text: "A stand along a watercourse is a job for a professional." },
+      ],
+      dispose: "Bag the roots; never dump them near water.",
+      basis: "Scottish Invasive Species Initiative (NatureScot).",
+    },
+  },
+  {
     id: "lysichiton-americanus",
     common: "American skunk cabbage",
     latin: "Lysichiton americanus",
@@ -1133,6 +1173,12 @@ const IE = "National Biodiversity Data Centre, invasive species of Ireland; Inva
 // A priority for control, not a severity score, so no listing and no rank —
 // ordered by sightings like Ireland's.
 const SCOT = "NatureScot, priorities for strategic control at landscape scale (Scotland's Environment, indicator 11).";
+// The next tier: plants NatureScot says have "great potential to be invasive"
+// (giant rhubarb) or the Scottish Invasive Species Initiative targets
+// (https://www.invasivespecies.scot/other-invasive-plants), kept to those
+// actually recorded in the lowland box.
+const SISI = "Scottish Invasive Species Initiative (NatureScot), other invasive plants.";
+const SCOT_POTENTIAL = "NatureScot: great potential to be invasive; Scottish Invasive Species Initiative.";
 
 // ---- The ties: each region's list, in any order — `lib/invasives.ts` ranks it ----
 export const MOST_WANTED: Record<string, WantedLink[]> = {
@@ -1240,5 +1286,8 @@ export const MOST_WANTED: Record<string, WantedLink[]> = {
     { invasiveId: "heracleum-mantegazzianum", basis: SCOT },
     { invasiveId: "impatiens-glandulifera", basis: SCOT },
     { invasiveId: "lysichiton-americanus", basis: SCOT },
+    { invasiveId: "gunnera-tinctoria", basis: SCOT_POTENTIAL },
+    { invasiveId: "petasites-albus", basis: SISI },
+    { invasiveId: "petasites-japonicus", basis: SISI },
   ],
 };

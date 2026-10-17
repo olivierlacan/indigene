@@ -251,6 +251,14 @@
     },
     {
       "subject": "invasive",
+      "id": "petasites-japonicus",
+      "name": "Petasites japonicus",
+      "taxonId": 129038,
+      "reason": "chosen photo 61930506 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/129038/browse_photos"
+    },
+    {
+      "subject": "invasive",
       "id": "rapistrum-rugosum",
       "name": "Rapistrum rugosum",
       "taxonId": 78835,

@@ -1524,7 +1524,7 @@ export const en = {
   "lookalikes.notFoundLede": "No look-alike here has the address \u201c{slug}\u201d.",
   "plant.lookalikesTitle": "Don't confuse it with: ",
   // The pavement-pioneer line, under the badge of the same name.
-  "plant.pioneerTitle": "It can take: ",
+  "plant.resilienceTitle": "Resilience",
   // ---------------------------------------------------------------------
   // Native alternatives: "grow this instead of a common ornamental".
   // ---------------------------------------------------------------------

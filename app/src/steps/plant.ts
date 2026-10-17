@@ -57,7 +57,7 @@ import { richText } from "../components/rich-text";
 // route. Every heading shows the mark that hands it over
 // (`components/anchor-head.ts`). Listed in the order they appear in the phone
 // stack.
-const SECTIONS = ["needs", "ecosystem", "nearby", "propagation", "spot", "references"] as const;
+const SECTIONS = ["needs", "resilience", "ecosystem", "nearby", "propagation", "spot", "references"] as const;
 
 type Section = (typeof SECTIONS)[number];
 const sectionDomId = (s: Section): string => `sec-${s}`;
@@ -160,6 +160,7 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
         // it, so it arrives with every "what does this mean?" already open —
         // see `ecosystemSection`.
         needsSection(plant, region.meta.id),
+        ...(resilienceSection(plant, region.meta.id) ?? []),
         ecosystemSection(plant, entries, region.meta.id, section === "ecosystem"),
         nearby,
         propagationSection(plant, region.meta.id),
@@ -389,10 +390,6 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
           // Third of the same stack, and the one line on this page that is the
           // same for every plant: the way into `#/crops`.
           cropsLine(),
-          // What the "Pavement pioneer" label above actually means for this
-          // plant, in this region — under the labels, because that is where a
-          // reader who just read one looks next.
-          pioneerLine(p, region.meta.id),
         ]),
         el("div", { class: "plant-col" }, [
           // Which region's figures these are sits directly on top of them. It
@@ -936,8 +933,12 @@ function lookalikeLine(all: PlantEntry[]): HTMLElement | null {
 }
 
 /**
- * The pavement-pioneer line: the abuse this plant takes, as self-explaining
- * chips, and the sentence saying where it really does that.
+ * Resilience: the abuse this plant takes, as self-explaining chips, and the
+ * sentence saying where it really does that. A card of its own beside
+ * "Growing needs", which is the other half of the same question (what does it
+ * need, what will it put up with). It used to be a line in the identity
+ * column, where it was the only block not inside the card's padding and ran
+ * to the card's edge.
  *
  * Only the *active* region's row, unlike the two lines above it — those name
  * other catalog entries, which are the same wherever you read them, while this
@@ -949,17 +950,13 @@ function lookalikeLine(all: PlantEntry[]): HTMLElement | null {
  * Null when this region has no row for it, which is the ordinary case — the
  * list is eight plants out of a roster of forty or more.
  */
-function pioneerLine(p: Plant, regionId: string): HTMLElement | null {
+function resilienceSection(p: Plant, regionId: string): [HTMLElement] | null {
   const entry = pioneerFor(regionId, p.id);
   if (!entry) return null;
-  return el("div", { class: "kv pioneer-line" }, [
-    el("span", { class: "k" }, [
-      el("span", { "aria-hidden": "true" }, `${PIONEER_ICON} `),
-      t("plant.pioneerTitle"),
-    ]),
+  return [sectionCard("resilience", `${PIONEER_ICON} ${t("plant.resilienceTitle")}`, [
     el("div", { class: "pioneer-tags" }, pressureTags({ plant: p, entry })),
-    el("p", { class: "pioneer-note" }, pioneerNote(p.latin, entry.note, regionId)),
-  ]);
+    el("p", { class: "section-prose pioneer-note" }, pioneerNote(p.latin, entry.note, regionId)),
+  ])];
 }
 
 /**

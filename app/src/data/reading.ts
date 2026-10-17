@@ -68,9 +68,10 @@ export interface Reading {
   /** Editions published: a book kept in print through revisions is one people
    *  kept buying. */
   editions?: number;
-  /** Worldwide picks only: the key of one plain line saying what it gives a
-   *  reader of Indigene — `reading.why.<why>`. A regional pick's region says
-   *  that already. */
+  /** The key of one plain line saying what it gives a reader of Indigene —
+   *  `reading.why.<why>`. Every worldwide pick has one; a regional pick's
+   *  region usually says it already, so a regional line is for the rare site
+   *  that is itself the reason to go (Calscape). */
   why?: string;
 }
 
@@ -103,6 +104,9 @@ const CA_NATIVES_FOR_THE_GARDEN: Reading = {
   award: { name: "American Horticultural Society Book Award 2006" },
 };
 
+// First in both California lists, and the one regional pick with a line of
+// its own: CNPS's planner answers "what grows here" by address, with the
+// nurseries that stock each plant, which no book can do.
 const CALSCAPE: Reading = {
   kind: "site",
   title: "Calscape",
@@ -111,6 +115,7 @@ const CALSCAPE: Reading = {
   lang: "en",
   backer: "society",
   vouched: [UC_ANR_LIST],
+  why: "calscape",
 };
 
 const EP348: Voucher = { name: "UF/IFAS Extension", url: "https://ask.ifas.ufl.edu/publication/EP348" };
@@ -383,6 +388,7 @@ export const READING: Record<string, Reading[]> = {
     },
   ],
   "ca-south-coast": [
+    CALSCAPE,
     {
       kind: "book",
       title: "The California Native Landscape",
@@ -400,7 +406,6 @@ export const READING: Record<string, Reading[]> = {
       ],
     },
     CA_NATIVES_FOR_THE_GARDEN,
-    CALSCAPE,
     {
       kind: "site",
       title: "Plant guides",
@@ -412,6 +417,7 @@ export const READING: Record<string, Reading[]> = {
     },
   ],
   "ca-central-coast": [
+    CALSCAPE,
     {
       kind: "book",
       title: "California Native Gardening: A Month-by-Month Guide",
@@ -450,7 +456,6 @@ export const READING: Record<string, Reading[]> = {
       ],
     },
     CA_NATIVES_FOR_THE_GARDEN,
-    CALSCAPE,
     {
       kind: "site",
       title: "Gardening resources",

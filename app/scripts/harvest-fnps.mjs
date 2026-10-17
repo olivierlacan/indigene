@@ -16,8 +16,8 @@
 // availability line answers the one question no checklist can — *can anybody
 // actually buy this?*
 //
-// The report asks Kew about every row it prints. The Atlas is read by a person
-// (`data/sources/atlas-florida/`), so its column is filled in by hand.
+// The shortlist lives in `npm run atlas -- --candidates`, which filters by the
+// Atlas first and asks Kew last; `--report` here only writes the counts.
 //
 // ## Being a good guest
 //
@@ -44,12 +44,10 @@
 //   npm run harvest:fnps                              read every page (≈5–10 min)
 //   npm run harvest:fnps -- --limit 20                the first 20 not yet read
 //   npm run harvest:fnps -- --workers 1               one page at a time
-//   npm run harvest:fnps -- --report florida-central  shortlist, no fetching
-//                                                     except Kew
+//   npm run harvest:fnps -- --report florida-central  counts only, no fetching
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { requireProxyAwareFetch } from "./_net.mjs";
-import { wcvpAccepted, wcvpDistributions, wcvpStatus } from "./_wcvp.mjs";
 import { REGION_FILE, REGION_ZONES, key, parseIndex, parsePlant, sells } from "./_fnps-parse.mjs";
 import { allowed, robotsFor } from "./_robots.mjs";
 
@@ -155,29 +153,7 @@ async function report(region) {
   console.log(`  ours: ${ours.size} · written up by FNPS: ${oursListed.length} · buyable per FNPS: ${oursSold.length}`);
   console.log(`  in zone, buyable, not on our list: ${gaps.length}`);
 
-  // FNPS's page is one source for native status; Kew is asked here so the
-  // shortlist shows where the two already agree, and the Atlas is the third.
-  const byForm = new Map();
-  const onlyForm = flag("--form");
-  let asked = 0;
-  for (const [slug, p] of gaps) {
-    const form = (p.form[0] ?? "?").toLowerCase();
-    if (onlyForm && !form.includes(onlyForm)) continue;
-    const usage = await wcvpAccepted(p.latin);
-    const kew = usage ? wcvpStatus(await wcvpDistributions(usage.key), (r) => r.locationId === "TDWG:FLA") : "NO MATCH";
-    process.stdout.write(`\r  asked Kew about ${++asked}`);
-    if (!byForm.has(form)) byForm.set(form, []);
-    byForm.get(form).push({ slug, ...p, kew, accepted: usage?.name });
-  }
-  console.log("");
-  for (const [form, rows] of [...byForm].sort((a, b) => a[1].length - b[1].length)) {
-    console.log(`\n  ${form} — ${rows.length}`);
-    for (const r of rows.sort((a, b) => a.latin.localeCompare(b.latin))) {
-      const kew = r.kew === "NATIVE" ? "Kew: native in FL" : `Kew: ${r.kew}`;
-      const renamed = r.accepted && key(r.accepted) !== key(r.latin) ? ` (Kew: ${r.accepted})` : "";
-      console.log(`    ${r.latin.padEnd(34)} ${(r.common ?? "").slice(0, 26).padEnd(26)} ${kew}${renamed} · ${r.availability.join(", ")}`);
-    }
-  }
+  console.log("  For the shortlist itself, run `npm run atlas -- --candidates " + region + "`.");
 
   const snapshot = {
     source: "Florida Native Plant Society — Plant Database",

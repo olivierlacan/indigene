@@ -79,3 +79,7 @@ fnps/raw/
 # row's native claim can be checked against it without re-running the search.
 atlas-florida/raw/
 !atlas-florida/*.csv
+
+# Kew's answers for the Florida shortlist (`npm run atlas -- --candidates`),
+# cached so the second region and every rerun don't ask again.
+wcvp/cache/

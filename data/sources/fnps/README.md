@@ -2,7 +2,8 @@
 
 **Upstream:** <https://www.fnps.org/plant>
 **Retrieve:** `nvm use && cd app && npm run harvest:fnps` (≈5–10 min, resumable)
-**Reduce:** `cd app && npm run harvest:fnps -- --report florida-central`
+**Counts:** `cd app && npm run harvest:fnps -- --report florida-central`
+**Shortlist:** `cd app && npm run atlas -- --candidates florida-central`
 **Consumed by:** nothing in the app. A shortlist and a cross-check.
 
 ## What it is admitted for
@@ -18,8 +19,8 @@ FNPS writes up Florida natives, so its page is a **native-status claim** from
 a society that knows the state's flora. A row ships when the
 [Atlas of Florida Plants](../atlas-florida/) (USF) agrees and Kew passes
 `native:check`. **Nursery availability is never evidence of native status.**
-The report asks Kew about every row it prints; the Atlas column is filled in
-by a person.
+The shortlist filters by the Atlas first, then asks Kew only about what's
+left, six at a time, caching every answer.
 
 ## Being a good guest
 

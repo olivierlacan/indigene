@@ -28,7 +28,7 @@
     "guide:check": "node scripts/build-guide.mjs --check",
     "coverage": "node scripts/coverage.mjs",
     "harvest:wildflower": "NODE_USE_ENV_PROXY=1 node scripts/harvest-wildflower.mjs",
-    "atlas": "node scripts/atlas-florida.mjs",
+    "atlas": "NODE_USE_ENV_PROXY=1 node scripts/atlas-florida.mjs",
     "harvest:fnps": "NODE_USE_ENV_PROXY=1 node scripts/harvest-fnps.mjs",
     "harvest:audubon": "NODE_USE_ENV_PROXY=1 node scripts/harvest-audubon.mjs",
     "societies": "node scripts/societies.mjs",

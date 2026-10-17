@@ -144,7 +144,7 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
     // the question a person clearing a corner asks next — which of the plants
     // that *don't* belong to go after first, and how to know one. Ranked by the
     // region's own authority and by how often each has been recorded wild (see
-    // `lib/invasives.ts`), folded shut so it costs five rows until opened.
+    // `lib/invasives.ts`), one row per plant.
     ...mostWantedSection(region),
     // And who eats them. A roster is half the answer to "what lives here" —
     // the plants are the other half's food — and the two were a page apart:

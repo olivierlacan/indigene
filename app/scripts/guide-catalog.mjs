@@ -799,7 +799,7 @@ export const SECTIONS = [
     ],
     related: [
       { id: "find", why: "From a region to a list ranked for your own garden." },
-      { id: "invasives", why: "Each region’s five worst invasive plants, and how to remove them." },
+      { id: "invasives", why: "Each region’s worst invasive plants, and how to remove them." },
     ],
     learn: [
       {

@@ -173,6 +173,36 @@ export const INVASIVES_FR: ProseTable = {
       dispose: "Ne la compostez jamais, ne la jetez jamais dans la nature : faites sécher les tiges sur une bâche jusqu'à ce qu'elles meurent, puis jetez-les.",
     },
   },
+  "Reynoutria × bohemica": {
+    marks: [
+      { feature: "Tiges", text: "Des cannes creuses et articulées comme du bambou, souvent plus hautes qu'une personne." },
+      { feature: "Feuilles", text: "Grandes, à base droite ou légèrement en cœur, en zigzag le long de la tige." },
+      { feature: "Fleurs", text: "Des panaches de minuscules fleurs crème à la fin de l'été." },
+    ],
+    removal: {
+      steps: [
+        "Ne la bêchez pas, ne la débroussaillez pas, ne la tondez pas : un petit bout de racine fait une nouvelle plante.",
+        "Coupez ou arrachez chaque tige au ras du sol toutes les quelques semaines pendant la saison, des années durant, pour épuiser les racines.",
+        "Un grand massif, ou un massif au bord de l'eau, est l'affaire du service des plantes nuisibles du comté ou d'un professionnel.",
+      ],
+      dispose: "Ne la compostez jamais, ne la jetez jamais dans la nature : faites sécher les tiges sur une bâche jusqu'à ce qu'elles meurent, puis jetez-les.",
+    },
+  },
+  "Iris pseudacorus": {
+    marks: [
+      { feature: "Fleurs", text: "Des iris jaune vif à la fin du printemps." },
+      { feature: "Feuilles", text: "Des éventails raides de feuilles en épée, jusqu'à hauteur d'homme." },
+      { feature: "Où", text: "Des tapis épais en eau peu profonde et sur les berges humides des mares et des ruisseaux." },
+    ],
+    removal: {
+      steps: [
+        "Portez des gants : la sève irrite la peau.",
+        "Déterrez tout le gros rhizome — un morceau oublié repart — et coupez les fleurs avant que les capsules mûrissent.",
+        "Travailler dans un ruisseau ou un lac peut demander une autorisation : renseignez-vous d'abord auprès du service des plantes nuisibles du comté.",
+      ],
+      dispose: "Mettez les rhizomes et les capsules en sac ; ne les compostez pas.",
+    },
+  },
   "Centaurea stoebe": {
     marks: [
       { feature: "Capitules", text: "Rose-pourpre, comme ceux d'un chardon, mais sans piquants." },

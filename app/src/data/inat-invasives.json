@@ -35,6 +35,15 @@
     "attribution": "(c) Jeff Skrentny, some rights reserved (CC BY-NC), uploaded by Jeff Skrentny",
     "color": "#926955"
   },
+  "clematis-vitalba": {
+    "taxonId": 160697,
+    "photoId": 218591388,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/218591388/square.jpeg",
+    "observer": "Alexis Tinker-Tsavalas",
+    "license": "cc-by",
+    "attribution": "(c) Alexis Tinker-Tsavalas, some rights reserved (CC BY), uploaded by Alexis Tinker-Tsavalas",
+    "color": "#6e8059"
+  },
   "cortaderia-selloana": {
     "taxonId": 64240,
     "photoId": 173109660,
@@ -241,6 +250,15 @@
     "license": "pd",
     "attribution": "AnRo0002, no known copyright restrictions (public domain)",
     "color": "#607983"
+  },
+  "reynoutria-x-bohemica": {
+    "taxonId": 850784,
+    "photoId": 229589421,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/229589421/square.jpg",
+    "observer": "mmwillis",
+    "license": "cc-by-nc",
+    "attribution": "(c) mmwillis, some rights reserved (CC BY-NC)",
+    "color": "#6d865d"
   },
   "rhamnus-cathartica": {
     "taxonId": 54811,

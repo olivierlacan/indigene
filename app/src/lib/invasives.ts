@@ -108,7 +108,7 @@ export function mostWanted(regionId: string): WantedRow[] {
 /**
  * One region's list as a page of its own: `/invasives/in/<region>`. The
  * address somebody sends when the answer to "what should I be pulling round
- * here?" is five plants — so it has a file and a share card of its own, unlike
+ * here?" is a handful of plants — so it has a file and a share card of its own, unlike
  * the look-alikes' `in/<region>`, which is only a filter on an index.
  */
 export const WANTED_REGION_PREFIX = "in/";

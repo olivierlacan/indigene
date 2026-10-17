@@ -14,7 +14,7 @@
 //      severity, and no rank where nobody ranked.
 //
 // **Which plants, and in what order, is not a matter of taste.** Each region's
-// five are the species its authority rates highest, taken in order of how often
+// list is the species its authority rates highest, taken in order of how often
 // they have been recorded wild inside the region's box on iNaturalist:
 //
 //   - Mid-Atlantic      Virginia Natural Heritage, High
@@ -22,7 +22,12 @@
 //   - Florida           FISC, Category I (in that zone)
 //   - Mediterranean     the INVMED conservatories, PACA « Majeure »
 //   - Continental       the Grand Est conservatories, « implantée »
-//   - Pacific Northwest Washington's weed board — a regulation, so no rank
+//   - Pacific Northwest Washington Natural Heritage (WIRS), High and Moderate
+//
+// The Northwest's ten mix two sources. WIRS has ranked 71 plants so far, and
+// not Scotch broom, herb-robert or English ivy: those keep the weed board's
+// class, a regulation rather than a rank, so they sort after the rated ones
+// until WIRS gets to them.
 //
 // Where no body has rated the ground in a form we can check — northern
 // Michigan, Central Texas, Atlantic and Alpine France, Ireland, lowland
@@ -156,6 +161,26 @@ export const INVASIVES: Invasive[] = [
       ],
       dispose: "Berried branches go in the bin, so birds can't carry the seeds on.",
       basis: "King County Noxious Weeds; WSU Extension.",
+    },
+  },
+  {
+    id: "crataegus-monogyna",
+    common: "English hawthorn",
+    latin: "Crataegus monogyna",
+    form: "tree",
+    marks: [
+      { part: "leaf", feature: "Leaves", text: "Small and deeply cut into three to five lobes." },
+      { part: "thorn", feature: "Thorns", text: "Sharp spines up to an inch long along the twigs." },
+      { part: "fruit", feature: "Berries", text: "Dark red, one stone each, in autumn. The native black hawthorn's are black." },
+    ],
+    removal: {
+      steps: [
+        { method: "pull", text: "Pull seedlings when the ground is wet, root and all." },
+        { method: "dig", text: "Cut bigger ones at the base and dig out the stump: a cut stump resprouts." },
+        { method: "repeat", text: "Cut any resprouts and pull bird-sown seedlings for a few years." },
+      ],
+      dispose: "Berried branches go in the bin, so birds can't carry the seeds on.",
+      basis: "King County Noxious Weeds; Washington Natural Heritage Program.",
     },
   },
   {
@@ -601,6 +626,46 @@ export const INVASIVES: Invasive[] = [
     },
   },
   {
+    id: "reynoutria-x-bohemica",
+    common: "Bohemian knotweed",
+    latin: "Reynoutria × bohemica",
+    form: "perennial",
+    marks: [
+      { part: "stem", feature: "Stems", text: "Hollow, jointed canes like bamboo, often taller than a person." },
+      { part: "leaf", feature: "Leaves", text: "Large, with a flat to slightly heart-shaped base, zigzagging up the stem." },
+      { part: "flower", feature: "Flowers", text: "Sprays of tiny cream flowers in late summer." },
+    ],
+    removal: {
+      steps: [
+        { method: "avoid", text: "Don't dig, strim or mow it: a small piece of root grows a new plant." },
+        { method: "cut", text: "Cut or pull every stem to the ground every few weeks through the growing season, for years, to starve the roots." },
+        { method: "pro", text: "A big stand, or one by a stream, is a job for the county weed board or a professional." },
+      ],
+      dispose: "Never compost or dump it: dry the stems on a tarp until dead, then bin them.",
+      basis: "King County Noxious Weeds; Washington State Noxious Weed Control Board.",
+    },
+  },
+  {
+    id: "iris-pseudacorus",
+    common: "Yellow flag iris",
+    latin: "Iris pseudacorus",
+    form: "perennial",
+    marks: [
+      { part: "flower", feature: "Flowers", text: "Bright yellow irises in late spring." },
+      { part: "leaf", feature: "Leaves", text: "Stiff, sword-shaped fans up to head height." },
+      { part: "where", feature: "Where", text: "Thick mats in shallow water and wet ground at pond and stream edges." },
+    ],
+    removal: {
+      steps: [
+        { method: "gear", text: "Wear gloves: the sap irritates skin." },
+        { method: "dig", text: "Dig out the whole thick rhizome — a piece left behind regrows — and cut the flowers before the pods ripen." },
+        { method: "water", text: "Work in a stream or lake can need a permit: ask the county weed board first." },
+      ],
+      dispose: "Bag the rhizomes and seed pods; don't compost them.",
+      basis: "King County Noxious Weeds; WSU Extension.",
+    },
+  },
+  {
     id: "lythrum-salicaria",
     common: "Purple loosestrife",
     latin: "Lythrum salicaria",
@@ -1022,6 +1087,26 @@ export const INVASIVES: Invasive[] = [
       basis: "UF/IFAS Extension; Florida Invasive Species Council.",
     },
   },
+  {
+    id: "clematis-vitalba",
+    common: "Old man's beard",
+    latin: "Clematis vitalba",
+    form: "vine",
+    marks: [
+      { part: "leaf", feature: "Leaves", text: "In opposite pairs, usually five leaflets, smooth-edged or barely toothed." },
+      { part: "fruit", feature: "Seed heads", text: "Fluffy grey-white plumes blanketing trees all winter." },
+      { part: "stem", feature: "Stems", text: "Old vines ropey, as thick as a wrist, with peeling bark." },
+    ],
+    removal: {
+      steps: [
+        { method: "cut", text: "Cut each vine at waist height and again at the ground, and leave the top to die in the tree: pulling it down tears the branches." },
+        { method: "dig", text: "Dig out the root crown and pull up the runners rooting along the ground." },
+        { method: "repeat", text: "Cut the regrowth for a few years, before it flowers." },
+      ],
+      dispose: "Vines root where they touch moist soil: dry them off the ground, then bin them.",
+      basis: "King County Noxious Weeds; Washington State Noxious Weed Control Board.",
+    },
+  },
   // ---------------- Groundcovers ----------------
   {
     id: "carpobrotus-edulis",
@@ -1146,6 +1231,20 @@ const GRAND_EST_IMPLANTEE: LookalikeListing = {
   as: "Plante Exotique Envahissante implantée",
   url: "https://especes-exotiques-envahissantes.fr/wp-content/uploads/2023/07/20200402_plfcbnne_cba_cbnbp_liste-categorisee-des-eee-du-grand-est_vff.pdf",
 };
+/**
+ * WIRS, the Washington Natural Heritage Program's ranking of what each plant
+ * does to the state's wild ecosystems — the NatureServe protocol Virginia's
+ * ranks come from, scored by Washington's own ecologists. One PDF per species,
+ * so the URL is per row; `code` is that file's name. High is a habitat
+ * converted, Moderate a structural change short of that, Low a minor one.
+ */
+const wirs = (as: "High" | "Moderate" | "Low", code: string): LookalikeListing => ({
+  kind: "impact",
+  level: as === "High" ? "transforms" : as === "Moderate" ? "spreads" : "patchy",
+  by: "the Washington Natural Heritage Program",
+  as,
+  url: `https://dnr.wa.gov/sites/default/files/2025-05/amp_nh_wirs_${code}.pdf`,
+});
 /** Washington's classes are one per species page, so the URL is per row. */
 const waClass = (klass: "B" | "C", slug: string): LookalikeListing => ({
   kind: "regulation",
@@ -1161,6 +1260,7 @@ const FL = "Florida Invasive Species Council, 2023 plant list (zones C and S).";
 const IL = "Illinois Exotic Weed Act and its official list (Illinois DNR); Morton Arboretum; Midwest Invasive Plant Network.";
 const MI = "Michigan Natural Features Inventory, Invasive Species Best Control Practices; Midwest Invasive Species Information Network.";
 const WA = "Washington State Noxious Weed Control Board.";
+const WIRS = "Washington Natural Heritage Program, Washington Invasive Ranking System (2025); Washington State Noxious Weed Control Board.";
 const PACA = "INVMED — CBN Méditerranéen & CBN Alpin, liste des EVEE de Provence-Alpes-Côte d'Azur.";
 const GE = "CBN Nord-Est, CBA & CBN Bassin parisien, liste catégorisée des EEE du Grand Est (2020).";
 const FR_ATL = "CBN de Brest, liste des plantes vasculaires invasives de Bretagne; OFB Centre de ressources EEE.";
@@ -1210,12 +1310,20 @@ export const MOST_WANTED: Record<string, WantedLink[]> = {
     { invasiveId: "ligustrum-lucidum", basis: TX },
     { invasiveId: "nandina-domestica", basis: TX },
   ],
+  // WIRS where it has ranked the plant; the weed board's class where it hasn't
+  // yet, which ranks it after the rated ones. Himalayan blackberry is WIRS's
+  // Rubus bifrons, the same plant under the name Washington uses.
   pnw: [
+    { invasiveId: "reynoutria-x-bohemica", listing: wirs("High", "falboh"), basis: WIRS },
+    { invasiveId: "ilex-aquifolium", listing: wirs("High", "ileaqu"), basis: WIRS },
+    { invasiveId: "rubus-armeniacus", listing: wirs("High", "rubbif"), basis: WIRS },
+    { invasiveId: "crataegus-monogyna", listing: wirs("High", "cramon"), basis: WIRS },
+    { invasiveId: "iris-pseudacorus", listing: wirs("High", "iripse"), basis: WIRS },
+    { invasiveId: "jacobaea-vulgaris", listing: wirs("Moderate", "jacvul"), basis: WIRS },
+    { invasiveId: "clematis-vitalba", listing: wirs("Moderate", "clevit"), basis: WIRS },
     { invasiveId: "cytisus-scoparius", listing: waClass("B", "scotch-broom"), basis: WA },
     { invasiveId: "geranium-robertianum", listing: waClass("B", "herb-robert"), basis: WA },
-    { invasiveId: "ilex-aquifolium", listing: waClass("C", "english-holly"), basis: WA },
     { invasiveId: "hedera-helix", listing: waClass("C", "english-ivy"), basis: WA },
-    { invasiveId: "jacobaea-vulgaris", listing: waClass("B", "tansy-ragwort"), basis: WA },
   ],
   "ca-south-coast": [
     { invasiveId: "spartium-junceum", listing: CALIPC_HIGH, basis: CAL },

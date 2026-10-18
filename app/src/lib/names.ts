@@ -210,6 +210,12 @@ export function regionReference(meta: RegionMeta): string {
   return regionText(meta)?.reference ?? meta.reference;
 }
 
+/** The states and provinces, in the reader's language where the table has
+ *  them. Same order as the English, so index i names the same place in both. */
+export function regionAreas(meta: RegionMeta): string[] {
+  return regionText(meta)?.areas ?? meta.areas;
+}
+
 export function regionNote(meta: RegionMeta): string {
   return regionText(meta)?.note ?? meta.note;
 }

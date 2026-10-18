@@ -15,6 +15,7 @@ export const REGION: RegionMeta = {
   note: "Native here means native to the tallgrass prairie and oak savanna of northern and central Illinois. The forested Corn Belt east of Lafayette and the river valleys around Peoria have their own flora, not yet listed.",
   extent: "From the Wisconsin line and the Lake Michigan shore south through Joliet, Champaign and Springfield, and from Rockford east to the Indiana dunes.",
   countries: ["US"],
+  areas: ["Illinois", "Indiana"],
   // Coarse box around Central Corn Belt Plains (54) as the EPA draws it: from
   // Kenosha and the Wisconsin line south past Springfield, and from the
   // Mississippi's edge near the Quad Cities east to Lafayette. It touches no

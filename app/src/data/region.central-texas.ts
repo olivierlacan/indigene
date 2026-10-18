@@ -17,6 +17,7 @@ export const REGION: RegionMeta = {
   note: "Native here means native to the limestone Hill Country and the black-clay prairies east of it: hot, droughty summers, alkaline soil that is often caliche or heavy clay, and a lot of deer. The sandy post-oak country to the east, the brush country south of San Antonio and the Gulf coast at Houston each want a list of their own.",
   extent: "From the Red River south through Dallas–Fort Worth, Waco and Austin to San Antonio, and west across the Hill Country to about Junction and Uvalde.",
   countries: ["US"],
+  areas: ["Texas"],
   // Coarse box over the three ecoregions below, cut to Texas's own part of
   // them: the Red River (~33.9° N) to just south of San Antonio, and from the
   // western Edwards Plateau (~100° W) to the Blackland's eastern edge near

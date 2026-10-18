@@ -12,6 +12,7 @@ export const REGION: RegionMeta = {
   short: "Kantō",
   reference: "Tokyo, Yokohama, Saitama & Chiba",
   countries: ["JP"],
+  areas: ["Tokyo", "Kanagawa", "Chiba", "Saitama", "Ibaraki", "Tochigi", "Gunma"],
   // Tokyo and the bay shore are 9a–9b; the inland plain at Kumagaya and
   // Utsunomiya drops to 8b. Zones are a translation in Japan, as in Europe —
   // the local convention is a prefectural climate division, not a USDA number —

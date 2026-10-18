@@ -80,6 +80,16 @@ export interface RegionMeta {
    */
   countries: string[];
   /**
+   * The states, provinces or administrative regions a reader would type to
+   * find this one — "Illinois", "Brittany", "Kanagawa". Never shown on a card
+   * unless someone searches by one of them. List one only when the region
+   * covers a good share of it, since a region's edge is ecological, not
+   * political: Chicago's list names Illinois and Indiana, not Wisconsin.
+   * English, like `name`; `locales/regions.<lang>.ts` gives the reader's own,
+   * in the same order.
+   */
+  areas: string[];
+  /**
    * Coarse coverage box. Deliberately a bounding box, not a real ecoregion
    * polygon — it matches the app's other coarse-but-honest signals (soil,
    * ecoregion). A spot inside the box gets this region's plant list; outside

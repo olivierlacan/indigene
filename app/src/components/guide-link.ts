@@ -36,7 +36,7 @@ function mark(draw: (add: (tag: string, a: Record<string, string>) => void) => v
 }
 
 /** A circled "i": how this part works (the guide). */
-const infoIcon = (): SVGSVGElement =>
+export const infoIcon = (): SVGSVGElement =>
   mark((add) => {
     add("circle", { cx: "10", cy: "10", r: "8.2" });
     add("line", { x1: "10", y1: "9", x2: "10", y2: "14.2" });

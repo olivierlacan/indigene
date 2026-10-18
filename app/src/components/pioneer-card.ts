@@ -6,7 +6,7 @@
 //   - **compact** on a region's roster, where the section is a teaser and the
 //     chips are the whole message ("this one takes salt and compaction");
 //   - **full** on the region's own pioneers page, where the reader followed a
-//     link asking *why*, and gets the note and its source.
+//     link asking *why*, and gets the note. Its source is on the plant's page.
 //
 // The card is NOT wrapped in an `<a>`. The pressure chips are real `<button>`s
 // that open the term dialog (see `components/term-dialog.ts`), and a button
@@ -15,7 +15,6 @@
 import { el } from "../ui";
 import { plantThumb } from "./plant-thumb";
 import { termTag } from "./term-dialog";
-import { citation } from "./citation";
 import { keystoneIcon } from "./keystone-icon";
 import { pressureLabel } from "../lib/plain";
 import { orderedPressures } from "../lib/pioneers";
@@ -24,9 +23,11 @@ import { pioneerNote } from "../lib/prose";
 import { nameLines } from "../lib/names";
 import { t } from "../lib/i18n";
 
-/** The chips for one row, in the vocabulary's own display order. */
-export function pressureTags(pick: PioneerPick): HTMLElement[] {
-  return orderedPressures(pick.entry).map((p) => termTag(pressureLabel(p), "pressure"));
+/** The chips for one row, in the vocabulary's own display order. On a card in
+ *  a list they are glyphs alone (`iconOnly`), the word a hover or tap away; the
+ *  plant's own page spells them out. */
+export function pressureTags(pick: PioneerPick, opts: { iconOnly?: boolean } = {}): HTMLElement[] {
+  return orderedPressures(pick.entry).map((p) => termTag(pressureLabel(p), "pressure", opts));
 }
 
 export function pioneerCard(
@@ -54,15 +55,13 @@ export function pioneerCard(
         el("div", { class: "plant-latin", style: "font-size:0.85rem" }, names.sub),
       ]),
     ]),
-    el("div", { class: "pioneer-tags" }, pressureTags(pick)),
+    el("div", { class: "pioneer-tags" }, pressureTags(pick, { iconOnly: true })),
     ...(opts.full
       ? [
+          // The note, not its source: the source sits under the same note on
+          // the plant's page, one tap away — printed on every card it was the
+          // same three floras eight times over.
           el("p", { class: "pioneer-note" }, pioneerNote(plant.latin, entry.note, regionId)),
-          el("p", { class: "pioneer-basis" }, [
-            el("span", { class: "pioneer-basis-label" }, t("pioneers.basis")),
-            " ",
-            ...citation(entry.basis),
-          ]),
         ]
       : []),
   ]);

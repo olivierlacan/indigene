@@ -70,11 +70,17 @@ export function openTermDialog(info: TermInfo): void {
  * A chip that explains itself on tap. `variant` picks the color: "host" (green),
  * "sole" (gold, make-or-break), or "" (neutral). Screen readers get the term
  * plus a hint that it's tappable.
+ *
+ * `iconOnly` drops the visible word for a list that shows several chips per
+ * row: the glyph stays, the term moves to a hover tooltip, and a tap still
+ * opens the full explanation. The accessible name is unchanged.
  */
-export function termTag(info: TermInfo, variant = ""): HTMLButtonElement {
+export function termTag(info: TermInfo, variant = "", opts: { iconOnly?: boolean } = {}): HTMLButtonElement {
+  const iconOnly = opts.iconOnly && (info.glyph || info.icon);
   return el("button", {
     type: "button",
-    class: `tag${variant ? ` tag-${variant}` : ""}`,
+    class: `tag${variant ? ` tag-${variant}` : ""}${iconOnly ? " tag-icon-only" : ""}`,
+    title: iconOnly ? info.term : undefined,
     "aria-haspopup": "dialog",
     "aria-label": t("term.tapToLearn", { term: info.term }),
     onClick: (e: Event) => {
@@ -84,6 +90,6 @@ export function termTag(info: TermInfo, variant = ""): HTMLButtonElement {
     },
   }, [
     el("span", { class: "tag-glyph", "aria-hidden": "true" }, [iconNode(info, false)!]),
-    el("span", { class: "tag-label" }, info.term),
+    iconOnly ? null : el("span", { class: "tag-label" }, info.term),
   ]) as HTMLButtonElement;
 }

@@ -44,6 +44,8 @@ import type { RosterView } from "../lib/roster-sort";
 import { door } from "../components/plant-door";
 import { lookalikeIcon, alternativeIcon } from "../components/door-icons";
 import { supportIcon } from "../components/support-icon";
+import { openTermDialog } from "../components/term-dialog";
+import { infoIcon } from "../components/guide-link";
 
 /** The category headings. A function, not a record: a record built at import
  *  time would be stuck in whichever language loaded first. */
@@ -137,7 +139,11 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
       })()];
   // What the order means, said once above the list rather than on every row.
   if (view.sort === "caterpillars") {
-    groups.unshift(el("p", { class: "obs-section-lede" }, t("region.sortCaterpillarsLede")));
+    groups.unshift(el("p", { class: "obs-section-lede" }, [
+      t("region.sortCaterpillarsLede"),
+      " ",
+      caterpillarWhy(),
+    ]));
   }
 
   main.append(
@@ -167,8 +173,11 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
       // the argument list rather than pass through as null.
       ...[namingNote(plants)].filter((n): n is HTMLElement => n !== null),
       plantFilterField(allRows, sections),
-      categoryChips(region, plants, null),
       viewControls(region, view, pioneerIds.size),
+      // The plant types, only once the reader has asked to see the list by
+      // type: a phone screen of seven chips above every roster was a menu
+      // most readers scrolled past to reach the plants.
+      ...(view.grouped ? [categoryChips(region, plants, null)] : []),
     ]),
     ...groups,
     // And what to pull. The roster answers "what belongs here"; this answers
@@ -208,40 +217,77 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
 }
 
 /**
- * The roster's own controls, apart from the category links above them: those
- * open a page of one kind of plant, these re-read the list on this one. Two
- * rows, each under a word saying what it does — the order, then what is shown.
+ * The roster's own controls: three ways to slice the list, one row each, each
+ * drawn as what it is so they can't be mistaken for one another —
+ *
+ *   - **Sort** and **Group** are segmented: one of their options is always on,
+ *     and picking another moves the highlight.
+ *   - **Filter** is a checkbox-style toggle: on narrows the list, off shows it
+ *     all, and its box says which.
+ *
  * Links rather than buttons, so every view has an address to share.
  */
 function viewControls(region: RegionDef, view: RosterView, pioneers: number): HTMLElement {
   const base = `#/regions/${region.meta.id}`;
-  const chip = (to: RosterView, on: boolean, label: (string | Node)[]): HTMLElement =>
-    el("a", {
-      class: "btn btn-secondary",
-      style: chipStyle,
-      href: `${base}${rosterQuery(to)}`,
-      "aria-current": on ? "page" : undefined,
-    }, label);
-  const row = (word: string, chips: HTMLElement[]): HTMLElement =>
-    el("div", { style: "display:flex;flex-wrap:wrap;align-items:center;gap:0.4rem" }, [
-      el("span", { style: "font-size:0.85rem;color:var(--ink-soft);min-width:3.2rem" }, word),
-      ...chips,
-    ]);
-  return el("nav", { "aria-label": t("region.viewNav"), style: "display:flex;flex-direction:column;gap:0.4rem;margin:0 0 0.8rem" }, [
-    row(t("region.sortLabel"), [
-      chip({ ...view, sort: "name" }, view.sort === "name", [t("region.sortName")]),
-      chip({ ...view, sort: "caterpillars" }, view.sort === "caterpillars",
-        [supportIcon("host", 16), t("region.sortCaterpillars")]),
-    ]),
-    row(t("region.showLabel"), [
-      // Toggles: each link leads to the view with that one control flipped.
-      chip({ ...view, grouped: !view.grouped }, view.grouped, [t("region.groupByKind")]),
-      ...(pioneers
-        ? [chip({ ...view, pioneers: !view.pioneers }, view.pioneers,
-            [`${PIONEER_ICON} ${t("region.pioneersOnly", { n: fmtNumber(pioneers) })}`])]
-        : []),
-    ]),
-  ]);
+  const href = (to: RosterView): string => `${base}${rosterQuery(to)}`;
+  const segment = (to: RosterView, on: boolean, label: (string | Node)[]): HTMLElement =>
+    el("a", { class: "segment", href: href(to), "aria-current": on ? "page" : undefined }, label);
+  const row = (word: string, control: HTMLElement): HTMLElement =>
+    el("div", { class: "roster-control" }, [el("span", { class: "roster-control-label" }, word), control]);
+  const rows = [
+    row(t("region.sortLabel"), el("div", { class: "segmented" }, [
+      segment({ ...view, sort: "name" }, view.sort === "name", [t("region.sortName")]),
+      segment({ ...view, sort: "caterpillars" }, view.sort === "caterpillars",
+        [supportIcon("host", 15), t("region.sortCaterpillars")]),
+    ])),
+    row(t("region.groupLabel"), el("div", { class: "segmented" }, [
+      segment({ ...view, grouped: false }, !view.grouped, [t("region.groupNone")]),
+      segment({ ...view, grouped: true }, view.grouped, [t("region.groupByKind")]),
+    ])),
+  ];
+  if (pioneers) {
+    rows.push(row(t("region.filterLabel"),
+      el("a", {
+        class: "filter-toggle",
+        href: href({ ...view, pioneers: !view.pioneers }),
+        role: "switch",
+        "aria-checked": String(view.pioneers),
+      }, [
+        el("span", { class: "filter-box", "aria-hidden": "true" }, view.pioneers ? "✓" : ""),
+        `${PIONEER_ICON} ${t("region.pioneersOnly", { n: fmtNumber(pioneers) })}`,
+      ])));
+  }
+  return el("nav", { "aria-label": t("region.viewNav"), class: "roster-controls" }, rows);
+}
+
+/**
+ * "Most caterpillars" reads as a warning to anyone who has had a cabbage eaten:
+ * the ⓘ answers that in place, with its two sources. Herbivory, not a
+ * partnership — the claim is only that a native rarely loses much, and that
+ * what it loses feeds the birds.
+ */
+function caterpillarWhy(): HTMLElement {
+  const source = (href: string, label: string): HTMLElement =>
+    el("a", { href, target: "_blank", rel: "noopener" }, label);
+  return el("button", {
+    type: "button",
+    class: "inline-why",
+    "aria-haspopup": "dialog",
+    onClick: () => openTermDialog({
+      icon: "",
+      glyph: () => supportIcon("host", 18),
+      term: t("region.caterpillarWhyTitle"),
+      plain: t("region.caterpillarWhy"),
+      extra: [el("p", { class: "pioneer-basis", style: "margin:0 0 0.9rem" }, [
+        el("span", { class: "pioneer-basis-label" }, t("pioneers.basis")),
+        " ",
+        source("https://pmc.ncbi.nlm.nih.gov/articles/PMC4071545/", "Turcotte et al. 2014, Proc. R. Soc. B"),
+        "; ",
+        source("https://www.northcoastjournal.com/life-outdoors/gardening-for-caterpillars-25446452/", "Douglas Tallamy"),
+        ".",
+      ])],
+    }),
+  }, [infoIcon(), el("span", {}, t("region.caterpillarWhyTitle"))]);
 }
 
 /**

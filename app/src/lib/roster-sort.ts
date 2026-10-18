@@ -7,8 +7,8 @@
 //     named-wildlife ties are not: they are a short, hand-picked set of
 //     recognizable animals per plant, and ranking by how many we wrote down
 //     would rank our writing, not the plant.
-//   - grouped: under a heading per kind of plant (trees, shrubs…), or one list
-//     for a reader who doesn't care yet what kind of plant it is.
+//   - grouped: one list by default, for a reader who doesn't care yet what
+//     type of plant it is, or under a heading per plant type (trees, shrubs…).
 //   - pioneers: only the natives that take a beating (`data/pioneers.ts`).
 import type { Plant } from "../types";
 
@@ -24,7 +24,7 @@ export interface RosterView {
 export function rosterView(query: URLSearchParams): RosterView {
   return {
     sort: query.get("sort") === "caterpillars" ? "caterpillars" : "name",
-    grouped: query.get("group") !== "off",
+    grouped: query.get("group") === "type",
     pioneers: query.get("only") === "pioneers",
   };
 }
@@ -34,7 +34,7 @@ export function rosterView(query: URLSearchParams): RosterView {
 export function rosterQuery(view: RosterView): string {
   const q = new URLSearchParams();
   if (view.sort === "caterpillars") q.set("sort", "caterpillars");
-  if (!view.grouped) q.set("group", "off");
+  if (view.grouped) q.set("group", "type");
   if (view.pioneers) q.set("only", "pioneers");
   const s = q.toString();
   return s ? `?${s}` : "";

@@ -30,17 +30,17 @@ describe("byCaterpillars", () => {
 describe("rosterView", () => {
   const view = (q: string) => rosterView(new URLSearchParams(q));
 
-  it("defaults to grouped, by name, unfiltered", () => {
-    expect(view("")).toEqual({ sort: "name", grouped: true, pioneers: false });
-    expect(view("sort=wildlife&group=maybe&only=trees")).toEqual({ sort: "name", grouped: true, pioneers: false });
+  it("defaults to one list, by name, unfiltered", () => {
+    expect(view("")).toEqual({ sort: "name", grouped: false, pioneers: false });
+    expect(view("sort=wildlife&group=maybe&only=trees")).toEqual({ sort: "name", grouped: false, pioneers: false });
   });
 
   it("reads every control", () => {
-    expect(view("sort=caterpillars&group=off&only=pioneers")).toEqual({ sort: "caterpillars", grouped: false, pioneers: true });
+    expect(view("sort=caterpillars&group=type&only=pioneers")).toEqual({ sort: "caterpillars", grouped: true, pioneers: true });
   });
 
   it("writes the default view as no query at all", () => {
-    expect(rosterQuery({ sort: "name", grouped: true, pioneers: false })).toBe("");
+    expect(rosterQuery({ sort: "name", grouped: false, pioneers: false })).toBe("");
   });
 
   it("round-trips every combination", () => {

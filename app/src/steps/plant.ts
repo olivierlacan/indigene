@@ -955,6 +955,11 @@ function resilienceSection(p: Plant, regionId: string): [HTMLElement] | null {
   return [sectionCard("resilience", `${PIONEER_ICON} ${t("plant.resilienceTitle")}`, [
     el("div", { class: "pioneer-tags" }, pressureTags({ plant: p, entry })),
     el("p", { class: "section-prose pioneer-note" }, pioneerNote(p.latin, entry.note, regionId)),
+    el("p", { class: "pioneer-basis" }, [
+      el("span", { class: "pioneer-basis-label" }, t("pioneers.basis")),
+      " ",
+      ...citation(entry.basis),
+    ]),
   ])];
 }
 

@@ -72,6 +72,13 @@ export function nativeEvidence(plantId: string, regionId: string | undefined): N
   };
 }
 
+/** The place Kew's checklist was asked about for a region, in the reader's
+ *  language, or null where it never was. */
+export function kewArea(regionId: string): string | null {
+  const region = REGIONS[regionId];
+  return region ? (region.area[getLang()] ?? region.area.en) : null;
+}
+
 /** What one regional flora says: native, or why not. */
 export type FloraVerdict = "native" | "introduced" | "both" | "uncertain" | "absent";
 

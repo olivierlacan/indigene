@@ -253,7 +253,16 @@ the checklist does not confirm them** rather than showing a clean bill. The
 decision about what to do with a disagreement is editorial and belongs in the
 region file; see [`data/sources/wcvp/README.md`](data/sources/wcvp/README.md).
 
-### 7. Three kinds of source, not three of the same kind
+### 7. Cross-checked means two checklists, and a region that isn't says so
+
+Kew checks every region. A region is **cross-checked** once every plant it
+ships is also put, by script, to a checklist kept by botanists working there —
+the Burke Museum and OregonFlora, the Atlas of Florida Plants, the BSBI atlas,
+VASCAN. `app/src/data/cross-checks.ts` lists them; `cross-checks.test.ts`
+fails a region that claims one without a committed check covering every row.
+Every other region carries a warning on its page until it has one.
+
+### 8. Three kinds of source, not three of the same kind
 
 A region ships on at least three sources spanning at least three of the five
 jobs below, one of which must be an authority a script can re-ask. Two

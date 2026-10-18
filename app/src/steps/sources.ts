@@ -26,12 +26,15 @@ import { el, clear } from "../ui";
 import { withContents } from "../components/doc-contents";
 import { navigate } from "../state";
 import { DATA_SOURCES_URL, ISSUES_URL } from "../lib/plain";
-import { t, tx } from "../lib/i18n";
+import { t, tx, langTag } from "../lib/i18n";
 import type { TKey } from "../locales/en";
 import { NAME_SOURCE_INFO } from "../lib/names";
 import { CONFIDENCE_ROUTE } from "../components/confidence-meter";
 import type { ReferenceList } from "../lib/names";
 import { pageArt } from "../components/page-art";
+import { SECOND_CHECKS } from "../data/cross-checks";
+import { REGIONS } from "../lib/plants";
+import { regionName } from "../lib/names";
 
 const REPO_URL = "https://github.com/olivierlacan/indigene";
 const MATRIX_DOI = "https://doi.org/10.1002/ece3.73004";
@@ -83,6 +86,21 @@ const NAME_SOURCES: { src: ReferenceList; what: TKey }[] = [
   { src: "wikidata", what: "names.src.wikidata" },
 ];
 
+/**
+ * The regions whose native status clears the bar, each linked, joined the way
+ * the reader's language joins a list ("A, B and C").
+ */
+function crossCheckedRegions(): (Node | string)[] {
+  const metas = REGIONS.map((r) => r.meta).filter((m) => SECOND_CHECKS[m.id]);
+  const parts = new Intl.ListFormat(langTag(), { style: "long", type: "conjunction" })
+    .formatToParts(metas.map((m) => m.id));
+  return parts.map((p) => {
+    if (p.type === "literal") return p.value;
+    const meta = metas.find((m) => m.id === p.value)!;
+    return el("a", { href: `#/regions/${meta.id}` }, regionName(meta));
+  });
+}
+
 export function renderSources(main: HTMLElement): void {
   clear(main);
   document.title = t("sources.docTitle");
@@ -125,6 +143,31 @@ export function renderSources(main: HTMLElement): void {
       surenessGroup("estimated", t("sources.estimated"), t("sources.estimatedMeaning"), [
         figureKeys("sources.fig.size", "sources.fig.sizeFrom"),
         figureKeys("sources.fig.scores", "sources.fig.scoresFrom"),
+      ]),
+
+      // The bar, claim by claim: what each kind of fact has to clear before it
+      // ships. The section above says how sure a number is; this says what we
+      // refuse to publish. Native status first, because every other line on a
+      // plant page assumes it — and it is the one bar some regions don't clear
+      // yet, which their own pages say (`steps/region.ts`).
+      el("h3", {}, t("sources.barTitle")),
+      el("p", {}, t("sources.barLede")),
+      el("ul", {}, [
+        el("li", {}, [
+          el("strong", {}, t("sources.bar.native")),
+          t("sources.bar.nativeRest"),
+          " ",
+          ...tx("sources.bar.nativeBoth", { regions: el("span", {}, crossCheckedRegions()) }),
+        ]),
+        boldLead("sources.bar.invasive", "sources.bar.invasiveRest"),
+        boldLead("sources.bar.host", "sources.bar.hostRest"),
+        boldLead("sources.bar.ties", "sources.bar.tiesRest"),
+        boldLead("sources.bar.lookalikes", "sources.bar.lookalikesRest"),
+        boldLead("sources.bar.names", "sources.bar.namesRest"),
+        boldLead("sources.bar.photos", "sources.bar.photosRest"),
+        boldLead("sources.bar.region", "sources.bar.regionRest"),
+        boldLead("sources.bar.conservation", "sources.bar.conservationRest"),
+        boldLead("sources.bar.judgment", "sources.bar.judgmentRest"),
       ]),
 
       // The question the section above provokes: fine, but why believe *those*

@@ -38,12 +38,9 @@ import { alternativeCountForRegion } from "../lib/alternatives";
 import { pioneersUntranslated } from "../lib/prose";
 import { addressParam } from "../lib/routes";
 import { rosterQuery, rosterView, sortRoster } from "../lib/roster-sort";
-import type { RosterView } from "../lib/roster-sort";
 import { door } from "../components/plant-door";
 import { lookalikeIcon, alternativeIcon } from "../components/door-icons";
-import { supportIcon } from "../components/support-icon";
-import { openTermDialog } from "../components/term-dialog";
-import { infoIcon } from "../components/guide-link";
+import { rosterControls, caterpillarLede, countTag } from "../components/roster-controls";
 
 /** The category headings. A function, not a record: a record built at import
  *  time would be stuck in whichever language loaded first. */
@@ -140,13 +137,7 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
         return el("div", { class: "card-grid" }, rows.map((r) => r.node));
       })()];
   // What the order means, said once above the list rather than on every row.
-  if (view.sort === "caterpillars") {
-    groups.unshift(el("p", { class: "obs-section-lede" }, [
-      t("region.sortCaterpillarsLede"),
-      " ",
-      caterpillarWhy(),
-    ]));
-  }
+  if (view.sort === "caterpillars") groups.unshift(caterpillarLede());
 
   main.append(
     // Everything above the roster is one block — the name, the stats, the map
@@ -175,7 +166,7 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
       // the argument list rather than pass through as null.
       ...[namingNote(plants)].filter((n): n is HTMLElement => n !== null),
       plantFilterField(allRows, sections),
-      viewControls(region, view, pioneerIds.size),
+      rosterControls(view, (to) => `#/regions/${region.meta.id}${rosterQuery(to)}`, pioneerIds.size),
       // The plant types, only once the reader has asked to see the list by
       // type: a phone screen of seven chips above every roster was a menu
       // most readers scrolled past to reach the plants.
@@ -216,80 +207,6 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
       el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),
     ])
   );
-}
-
-/**
- * The roster's own controls: three ways to slice the list, one row each, each
- * drawn as what it is so they can't be mistaken for one another —
- *
- *   - **Sort** and **Group** are segmented: one of their options is always on,
- *     and picking another moves the highlight.
- *   - **Filter** is a checkbox-style toggle: on narrows the list, off shows it
- *     all, and its box says which.
- *
- * Links rather than buttons, so every view has an address to share.
- */
-function viewControls(region: RegionDef, view: RosterView, pioneers: number): HTMLElement {
-  const base = `#/regions/${region.meta.id}`;
-  const href = (to: RosterView): string => `${base}${rosterQuery(to)}`;
-  const segment = (to: RosterView, on: boolean, label: (string | Node)[]): HTMLElement =>
-    el("a", { class: "segment", href: href(to), "aria-current": on ? "page" : undefined }, label);
-  const row = (word: string, control: HTMLElement): HTMLElement =>
-    el("div", { class: "roster-control" }, [el("span", { class: "roster-control-label" }, word), control]);
-  const rows = [
-    row(t("region.sortLabel"), el("div", { class: "segmented" }, [
-      segment({ ...view, sort: "name" }, view.sort === "name", [t("region.sortName")]),
-      segment({ ...view, sort: "caterpillars" }, view.sort === "caterpillars",
-        [supportIcon("host", 15), t("region.sortCaterpillars")]),
-    ])),
-    row(t("region.groupLabel"), el("div", { class: "segmented" }, [
-      segment({ ...view, grouped: false }, !view.grouped, [t("region.groupNone")]),
-      segment({ ...view, grouped: true }, view.grouped, [t("region.groupByKind")]),
-    ])),
-  ];
-  if (pioneers) {
-    rows.push(row(t("region.filterLabel"),
-      el("a", {
-        class: "filter-toggle",
-        href: href({ ...view, pioneers: !view.pioneers }),
-        role: "switch",
-        "aria-checked": String(view.pioneers),
-      }, [
-        el("span", { class: "filter-box", "aria-hidden": "true" }, view.pioneers ? "✓" : ""),
-        `${PIONEER_ICON} ${t("region.pioneersOnly", { n: fmtNumber(pioneers) })}`,
-      ])));
-  }
-  return el("nav", { "aria-label": t("region.viewNav"), class: "roster-controls" }, rows);
-}
-
-/**
- * "Most caterpillars" reads as a warning to anyone who has had a cabbage eaten:
- * the ⓘ answers that in place, with its two sources. Herbivory, not a
- * partnership — the claim is only that a native rarely loses much, and that
- * what it loses feeds the birds.
- */
-function caterpillarWhy(): HTMLElement {
-  const source = (href: string, label: string): HTMLElement =>
-    el("a", { href, target: "_blank", rel: "noopener" }, label);
-  return el("button", {
-    type: "button",
-    class: "inline-why",
-    "aria-haspopup": "dialog",
-    onClick: () => openTermDialog({
-      icon: "",
-      glyph: () => supportIcon("host", 18),
-      term: t("region.caterpillarWhyTitle"),
-      plain: t("region.caterpillarWhy"),
-      extra: [el("p", { class: "pioneer-basis", style: "margin:0 0 0.9rem" }, [
-        el("span", { class: "pioneer-basis-label" }, t("pioneers.basis")),
-        " ",
-        source("https://pmc.ncbi.nlm.nih.gov/articles/PMC4071545/", "Turcotte et al. 2014, Proc. R. Soc. B"),
-        "; ",
-        source("https://www.northcoastjournal.com/life-outdoors/gardening-for-caterpillars-25446452/", "Douglas Tallamy"),
-        ".",
-      ])],
-    }),
-  }, [infoIcon(), el("span", {}, t("region.caterpillarWhyTitle"))]);
 }
 
 /**
@@ -619,17 +536,9 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
       sub,
     ]),
     opts.pioneer ? pressureFooter({ plant: p, entry: opts.pioneer }, { interactive: false }) : null,
-    // The figure the list is sorted by, as a tag pinned over the card's
-    // bottom-right edge: out of the name's way, and lined up down the list so
-    // the eye can run down the numbers. Spelled out for screen readers and on
-    // hover. Absent for a plant not counted yet.
+    // Absent for a plant not counted yet.
     opts.caterpillars && p.hostLepCount !== null
-      ? el("span", {
-          class: "count-tag",
-          role: "img",
-          title: t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
-          "aria-label": t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
-        }, [supportIcon("host", 14), fmtNumber(p.hostLepCount)])
+      ? countTag(p.hostLepCount)
       : null,
   ]);
   const mark = (nq: string): void => {

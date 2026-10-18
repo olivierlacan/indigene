@@ -139,6 +139,12 @@ for (const { meta, seed } of REGIONS) {
     listed.filter((e) => e.keystone).length === seed.filter((p) => p.keystone).length,
     `registry ${listed.filter((e) => e.keystone).length} vs list ${seed.filter((p) => p.keystone).length}`
   );
+  // The catalog sorts by the registry's count, the highest any list documents.
+  const low = seed.filter((p) => {
+    const e = listed.find((x) => x.identifiers.indigene === p.id);
+    return p.hostLepCount != null && (e?.hostLepCount ?? -1) < p.hostLepCount;
+  });
+  check(`${meta.id}: registry caterpillar counts cover the list's`, low.length === 0, low.map((p) => p.id).join(", "));
 }
 
 console.log(`\n${failures === 0 ? "All checks passed." : failures + " check(s) failed."}  (${REGISTRY.length} taxa)`);

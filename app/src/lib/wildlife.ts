@@ -206,6 +206,9 @@ export interface WildlifeIndexRow {
    *  usual order — the animal's regions, regardless of any filter, so a card
    *  can say where it lives rather than just how many places. */
   regionIds: string[];
+  /** True when, within the scope asked for, some plant is the animal's only
+   *  option (a `sole` tie): the make-or-break ones a garden can save. */
+  sole: boolean;
 }
 
 /** The whole index computed once: the joins below walk every region's roster
@@ -214,6 +217,8 @@ interface IndexEntry {
   wildlife: Wildlife;
   total: number;
   byRegion: Map<string, number>;
+  /** Regions where one of the animal's ties is `sole`. */
+  soleIn: Set<string>;
 }
 let entryCache: IndexEntry[] | null = null;
 
@@ -227,17 +232,20 @@ function indexEntries(): IndexEntry[] {
   const entries: IndexEntry[] = [];
   for (const wildlife of WILDLIFE) {
     const byRegion = new Map<string, number>();
+    const soleIn = new Set<string>();
     let total = 0;
     for (const [regionId, byPlant] of Object.entries(SUPPORT)) {
       if (!regionById.has(regionId)) continue;
       for (const links of Object.values(byPlant)) {
-        if (!links.some((l) => l.wildlifeId === wildlife.id)) continue;
+        const ties = links.filter((l) => l.wildlifeId === wildlife.id);
+        if (!ties.length) continue;
+        if (ties.some((l) => relianceOf(l) === "sole")) soleIn.add(regionId);
         byRegion.set(regionId, (byRegion.get(regionId) ?? 0) + 1);
         total++;
       }
     }
     if (!total) continue;
-    entries.push({ wildlife, total, byRegion });
+    entries.push({ wildlife, total, byRegion, soleIn });
   }
   entryCache = entries;
   return entries;
@@ -260,6 +268,7 @@ export function wildlifeIndex(regionId?: string): WildlifeIndexRow[] {
       wildlife: e.wildlife,
       plantCount: regionId ? (e.byRegion.get(regionId) ?? 0) : e.total,
       regionIds: REGIONS.filter((r) => e.byRegion.has(r.meta.id)).map((r) => r.meta.id),
+      sole: regionId ? e.soleIn.has(regionId) : e.soleIn.size > 0,
     }));
 }
 

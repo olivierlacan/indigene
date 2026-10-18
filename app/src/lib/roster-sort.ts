@@ -52,8 +52,10 @@ export function sortRoster(plants: Plant[], sort: RosterSort, name: (p: Plant) =
  * would claim nothing eats it and slot it among the plants that truly host
  * few.
  */
-export function byCaterpillars(plants: Plant[], name: (p: Plant) => string, lang: string): Plant[] {
-  const count = (p: Plant): number => p.hostLepCount ?? -1;
+export function byCaterpillars<T extends Pick<Plant, "hostLepCount" | "keystone">>(
+  plants: T[], name: (p: T) => string, lang: string,
+): T[] {
+  const count = (p: T): number => p.hostLepCount ?? -1;
   return plants.slice().sort((a, b) =>
     count(b) - count(a) ||
     Number(b.keystone) - Number(a.keystone) ||

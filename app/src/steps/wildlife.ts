@@ -17,7 +17,9 @@
 //                                    profile. An animal's id always wins the route.
 //
 // Every index shape carries the same type-to-narrow filter the region rosters
-// have, underlining what you typed exactly as the search page does.
+// have, underlining what you typed exactly as the search page does, and the
+// same Sort / Group / Filter panel (`lib/wildlife-view.ts`), its choices in the
+// query string: `#/wildlife/in/pnw?sort=plants&only=sole`.
 import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { REGIONS } from "../lib/plants";
@@ -58,6 +60,11 @@ import { t, tn, fmtNumber, fmtList, getLang } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { wildlifeBlurb, wildlifeLead, supportNote, wildlifeUntranslated } from "../lib/prose";
 import { reportUntranslated } from "../components/wip-banner";
+import { viewPanel } from "../components/roster-controls";
+import type { PanelRow } from "../components/roster-controls";
+import { addressParam } from "../lib/routes";
+import { sortWildlife, wildlifeQuery, wildlifeView } from "../lib/wildlife-view";
+import type { WildlifeView } from "../lib/wildlife-view";
 
 // Shared honesty note: this is the notable, mapped wildlife — never a claim to
 // be the whole food web. Shown on both the index and every animal's page. A
@@ -110,10 +117,22 @@ export function wildlifeRegionParam(param?: string): WildlifeRegionRoute | null 
 
 /** The address of an index: region and group are independent, and either can
  *  be absent. This is the one place that knows the URL shape. */
-function indexHref(regionId: string | null, kind: WildlifeKind | null): string {
+function indexHref(regionId: string | null, kind: WildlifeKind | null, view?: WildlifeView): string {
   const group = kind ? KIND_SLUGS[kind] : "";
-  if (!regionId) return group ? `#/wildlife/${group}` : "#/wildlife";
-  return `#/wildlife/${REGION_PREFIX}${regionId}${group ? `/${group}` : ""}`;
+  const query = view ? wildlifeQuery(view) : "";
+  if (!regionId) return `${group ? `#/wildlife/${group}` : "#/wildlife"}${query}`;
+  return `#/wildlife/${REGION_PREFIX}${regionId}${group ? `/${group}` : ""}${query}`;
+}
+
+/** The index's view, read off the address: either side of the `#`, the way the
+ *  region roster reads its own. */
+function viewFromUrl(): WildlifeView {
+  return wildlifeView(new URLSearchParams(
+    ["sort", "group", "only"].flatMap((k) => {
+      const v = addressParam(k, location.hash, location.search);
+      return v === null ? [] : [[k, v]];
+    })
+  ));
 }
 
 /** Which slice of the catalog an index page is showing. Both are optional and
@@ -137,6 +156,13 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
   const all = wildlifeIndex(region?.meta.id);
   const rows = kind ? all.filter((r) => r.wildlife.kind === kind) : all;
   const label = kind ? wildlifeKindLabel(kind) : null;
+  const panel = viewFromUrl();
+  const soleCount = rows.filter((r) => r.sole).length;
+  const shown = sortWildlife(
+    panel.sole ? rows.filter((r) => r.sole) : rows,
+    panel.sort, (r) => nameLines(r.wildlife).title, getLang(),
+  );
+  const here = (k: WildlifeKind | null, to: WildlifeView = panel): string => indexHref(region?.meta.id ?? null, k, to);
 
   document.title = label
     ? region
@@ -190,25 +216,19 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
       el("h2", { class: "step-title" }, t("wildlife.indexTitle")),
       el("p", { class: "step-lede" },
         region
-          ? t("wildlife.indexLedeRegion", { n: fmtNumber(rows.length), region: regionShort(region.meta) })
-          : t("wildlife.indexLede", { n: fmtNumber(all.length) })),
+          ? t("wildlife.indexLedeRegion", { region: regionShort(region.meta) })
+          : t("wildlife.indexLede")),
     );
-    if (!region) {
-      main.append(
-        el("p", { class: "note info", style: "margin-top:0" }, [
-          el("strong", {}, t("wildlife.allNative")),
-          t("wildlife.allNativeRest"),
-        ]),
-      );
-    }
   }
 
   const filterRows: FilterRow[] = [];
   const sections: FilterSection[] = [];
   const groups: HTMLElement[] = [];
 
-  if (kind) {
-    const cards = rows.map((r) => wildlifeCard(r, region ?? null));
+  // What the order means, said once above the list.
+  if (panel.sort === "plants") groups.push(el("p", { class: "obs-section-lede" }, t("wildlife.sortPlantsLede")));
+  if (kind || !panel.grouped) {
+    const cards = shown.map((r) => wildlifeCard(r, region ?? null));
     filterRows.push(...cards);
     // One column on a phone, columns on anything wider — the creature cards
     // are self-contained, so a laptop should show a group at a glance rather
@@ -221,13 +241,13 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
     );
   } else {
     for (const k of KIND_ORDER) {
-      const inKind = rows.filter((r) => r.wildlife.kind === k);
+      const inKind = shown.filter((r) => r.wildlife.kind === k);
       if (!inKind.length) continue;
       const kindLabel = wildlifeKindLabel(k);
       const cards = inKind.map((r) => wildlifeCard(r, region ?? null));
       const node = el("section", {}, [
         sectionHeading(
-          indexHref(region?.meta.id ?? null, k),
+          here(k),
           wildlifeIcon(k, 24),
           kindLabel.title,
           fmtNumber(inKind.length)
@@ -246,7 +266,7 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
     // reads first and the chips below it already show that region's counts.
     // "Every region" has to count what leaving the region behind would show —
     // the whole catalog, or the whole of this group — not what's on screen now.
-    regionFilter(view, kind ? wildlifeIndex().filter((r) => r.wildlife.kind === kind).length : mappedWildlifeCount()),
+    regionFilter(view, kind ? wildlifeIndex().filter((r) => r.wildlife.kind === kind).length : mappedWildlifeCount(), panel),
     // A filter over a single card is furniture, not help.
     ...(filterRows.length > 1 ? [filterField(filterRows, sections, {
       label: t("wildlife.filterAria"),
@@ -260,7 +280,7 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
         label
           ? [
               t("wildlife.filterNoneGroup", { group: label.title.toLowerCase(), q }),
-              el("a", { href: indexHref(region?.meta.id ?? null, null) }, t("wildlife.filterSeeAll")),
+              el("a", { href: here(null) }, t("wildlife.filterSeeAll")),
               t("wildlife.filterNoneRest"),
             ]
           : [
@@ -269,7 +289,10 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
               t("wildlife.filterNoneRest"),
             ],
     })] : []),
-    kindChips(all, kind ?? null, region ?? null),
+    indexPanel(panel, (to) => here(kind ?? null, to), soleCount, !kind),
+    // The animal types, once the reader has asked to see the list by type —
+    // or is on one type's page, where they're the way to the others.
+    ...(kind || panel.grouped ? [kindChips(all, kind ?? null, region ?? null, panel)] : []),
     ...groups,
     coverageLine(),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
@@ -287,11 +310,12 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
 function kindChips(
   rows: WildlifeIndexRow[],
   current: WildlifeKind | null,
-  region: RegionDef | null
+  region: RegionDef | null,
+  panel: WildlifeView
 ): HTMLElement {
   const chips: HTMLElement[] = [];
   if (current) {
-    chips.push(el("a", { class: "btn btn-secondary", style: chipStyle, href: indexHref(region?.meta.id ?? null, null) },
+    chips.push(el("a", { class: "btn btn-secondary", style: chipStyle, href: indexHref(region?.meta.id ?? null, null, panel) },
       t("wildlife.allChip", { n: fmtNumber(rows.length) })));
   }
   for (const k of KIND_ORDER) {
@@ -301,7 +325,7 @@ function kindChips(
     chips.push(el("a", {
       class: "btn btn-secondary",
       style: chipStyle,
-      href: indexHref(region?.meta.id ?? null, k),
+      href: indexHref(region?.meta.id ?? null, k, panel),
       "aria-current": k === current ? "page" : undefined,
     }, [
       wildlifeIcon(k),
@@ -320,7 +344,7 @@ function kindChips(
  * you're in: "the butterflies" and "the Pacific Northwest" are different
  * questions and neither should cancel the other.
  */
-function regionFilter(view: IndexView, totalHere: number): HTMLElement {
+function regionFilter(view: IndexView, totalHere: number, panel?: WildlifeView): HTMLElement {
   const counts = regionCounts(view.kind ?? null);
   const select = el("select", { id: "wildlife-region" }, [
     el("option", { value: "", selected: !view.region }, t("wildlife.regionFilterAll", { n: fmtNumber(totalHere) })),
@@ -335,12 +359,40 @@ function regionFilter(view: IndexView, totalHere: number): HTMLElement {
     ),
   ]) as HTMLSelectElement;
   select.addEventListener("change", () => {
-    location.hash = indexHref(select.value || null, view.kind ?? null);
+    location.hash = indexHref(select.value || null, view.kind ?? null, panel);
   });
   return el("div", { class: "field field-inline" }, [
     el("label", { for: "wildlife-region" }, t("wildlife.regionFilterLabel")),
     select,
   ]);
+}
+
+/**
+ * The index's Sort / Group / Filter panel. Group is left off one type's page,
+ * where there is nothing to group, and Filter wherever no animal here has a
+ * plant that is its only option.
+ */
+function indexPanel(view: WildlifeView, href: (to: WildlifeView) => string, sole: number, groupable: boolean): HTMLElement {
+  const rows: PanelRow<WildlifeView>[] = [
+    { label: t("region.sortLabel"), segments: [
+      { to: { ...view, sort: "name" }, on: view.sort === "name", label: [t("region.sortName")] },
+      { to: { ...view, sort: "plants" }, on: view.sort === "plants", label: ["🌱 ", t("wildlife.sortPlants")] },
+    ] },
+  ];
+  if (groupable) {
+    rows.push({ label: t("region.groupLabel"), segments: [
+      { to: { ...view, grouped: false }, on: !view.grouped, label: [t("region.groupNone")] },
+      { to: { ...view, grouped: true }, on: view.grouped, label: [t("wildlife.groupByKind")] },
+    ] });
+  }
+  if (sole || view.sole) {
+    rows.push({ label: t("region.filterLabel"), toggle: {
+      to: { ...view, sole: !view.sole },
+      on: view.sole,
+      label: t("wildlife.soleOnly", { n: fmtNumber(sole) }),
+    } });
+  }
+  return viewPanel(rows, href);
 }
 
 /** How many animals each region has *in this group* — so the number on an

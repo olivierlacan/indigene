@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { byCaterpillars, rosterSort } from "./roster-sort";
+import { byCaterpillars, rosterQuery, rosterView } from "./roster-sort";
 import type { Plant } from "../types";
 
 const plant = (id: string, hostLepCount: number | null, keystone = false): Plant =>
@@ -27,10 +27,28 @@ describe("byCaterpillars", () => {
   });
 });
 
-describe("rosterSort", () => {
-  it("reads only the values it knows", () => {
-    expect(rosterSort("caterpillars")).toBe("caterpillars");
-    expect(rosterSort(null)).toBe("category");
-    expect(rosterSort("wildlife")).toBe("category");
+describe("rosterView", () => {
+  const view = (q: string) => rosterView(new URLSearchParams(q));
+
+  it("defaults to grouped, by name, unfiltered", () => {
+    expect(view("")).toEqual({ sort: "name", grouped: true, pioneers: false });
+    expect(view("sort=wildlife&group=maybe&only=trees")).toEqual({ sort: "name", grouped: true, pioneers: false });
+  });
+
+  it("reads every control", () => {
+    expect(view("sort=caterpillars&group=off&only=pioneers")).toEqual({ sort: "caterpillars", grouped: false, pioneers: true });
+  });
+
+  it("writes the default view as no query at all", () => {
+    expect(rosterQuery({ sort: "name", grouped: true, pioneers: false })).toBe("");
+  });
+
+  it("round-trips every combination", () => {
+    for (const sort of ["name", "caterpillars"] as const)
+      for (const grouped of [true, false])
+        for (const pioneers of [true, false]) {
+          const v = { sort, grouped, pioneers };
+          expect(view(rosterQuery(v).slice(1))).toEqual(v);
+        }
   });
 });

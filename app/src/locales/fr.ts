@@ -1716,7 +1716,6 @@ export const fr: Dict = {
   // livre sans parler en son nom. Son titre reste en anglais, non traduit.
   // ---------------------------------------------------------------------
   "pioneers.title": "Pionnières du bitume",
-  "pioneers.chip": "Pionnières",
   "pioneers.docTitle": "Les pionnières du bitume de {region}",
   "pioneers.sectionLede": "Des indigènes pour les endroits ingrats : un bord de trottoir, un mur, un îlot de parking. Touchez une étiquette pour savoir ce qu'elle désigne.",
   "pioneers.count.one": "{n} indigène qui encaisse les mauvais traitements, pour {reference}.",
@@ -1752,12 +1751,15 @@ export const fr: Dict = {
   "pressure.disturbance.plain":
     "Un sol décapé, retourné, fauché ou brûlé, puis laissé à lui-même. Ce sont les plantes qui arrivent les premières et le tiennent jusqu'à ce qu'autre chose puisse.",
   "region.allChip": "Tout ({n})",
-  "region.sortNav": "Ordre",
-  "region.sortCategory": "Par catégorie",
   "region.sortCaterpillars": "Plus de chenilles",
   "region.sortCaterpillarsLede": "Combien d'espèces de papillons de jour et de nuit élèvent leurs chenilles sur chaque plante. La page de chaque plante cite sa source.",
+  "region.viewNav": "Trier et afficher",
+  "region.sortLabel": "Trier",
+  "region.showLabel": "Afficher",
+  "region.sortName": "A–Z",
+  "region.groupByKind": "Types",
+  "region.pioneersOnly": "Pionnières ({n})",
   "region.categoriesNav": "Catégories de plantes",
-  "region.invasivesChip": "🚩 Envahissantes ({n})",
   "region.filterAria": "Filtrer cette liste par nom de plante",
   "region.filterPlaceholder": "Filtrer par nom…",
   "region.filterCount.one": "{shown} plante sur {total} correspond à « {q} ».",

@@ -23,7 +23,7 @@ import { regionStatGrid } from "../components/region-stats";
 import { wildlifeRegionGroups } from "../components/wildlife-chips";
 import { wildlifeIndex } from "../lib/wildlife";
 import { pioneerCard } from "../components/pioneer-card";
-import { pioneersForRegion, pioneerCountForRegion } from "../lib/pioneers";
+import { pioneersForRegion } from "../lib/pioneers";
 import { PIONEER_ICON, CONCRETE_BOTANY_URL } from "../data/pioneers";
 import { regionRefLine, zoneChip } from "../components/zone-chip";
 import { regionBoundaryCard } from "../components/region-boundary";
@@ -34,14 +34,15 @@ import { flagRow } from "../components/flags";
 import { prose } from "../lib/prose";
 import { reportRosterUntranslated, reportUntranslated } from "../components/wip-banner";
 import { mostWantedSection } from "../components/most-wanted";
-import { mostWanted, wantedRegionHref } from "../lib/invasives";
 import { mappedLookalikeIds } from "../lib/lookalikes";
 import { alternativeCountForRegion } from "../lib/alternatives";
 import { richText } from "../components/rich-text";
 import { pioneersUntranslated } from "../lib/prose";
 import { addressParam } from "../lib/routes";
-import { byCaterpillars, rosterSort } from "../lib/roster-sort";
-import type { RosterSort } from "../lib/roster-sort";
+import { rosterQuery, rosterView, sortRoster } from "../lib/roster-sort";
+import type { RosterView } from "../lib/roster-sort";
+import { door } from "../components/plant-door";
+import { lookalikeIcon, alternativeIcon } from "../components/door-icons";
 import { supportIcon } from "../components/support-icon";
 
 /** The category headings. A function, not a record: a record built at import
@@ -99,23 +100,45 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
   document.title = t("region.docTitle", { region: regionName(region.meta) });
   reportRosterUntranslated(plants, region.meta.id);
 
-  // The roster reads by category unless the address asks for the plants that
-  // raise the most caterpillars first — a shareable slice, like a category.
-  const sort = rosterSort(addressParam("sort", location.hash, location.search));
+  // Three controls, read from the address so any view can be shared: the
+  // order, whether the list is grouped by kind of plant, and whether it is
+  // narrowed to the pioneers (see `lib/roster-sort.ts`).
+  const view = rosterView(new URLSearchParams(
+    ["sort", "group", "only"].flatMap((k) => {
+      const v = addressParam(k, location.hash, location.search);
+      return v === null ? [] : [[k, v]];
+    })
+  ));
+  const pioneerIds = new Set(pioneersForRegion(region.meta.id, plants).map((pick) => pick.plant.id));
+  const shown = sortRoster(
+    view.pioneers ? plants.filter((p) => pioneerIds.has(p.id)) : plants,
+    view.sort, commonName, getLang()
+  );
+  const rowOf = (p: Plant): FilterRow => filterRow(p, region.meta.id, { caterpillars: view.sort === "caterpillars" });
   const allRows: FilterRow[] = [];
   const sections: FilterSection[] = [];
-  const groups = sort === "caterpillars" ? [caterpillarGroup(plants, region, allRows)] : FORM_ORDER.map((f) => {
-    const inForm = sortedByCommon(plants, f);
-    if (!inForm.length) return null;
-    const rows = inForm.map((p) => filterRow(p, region.meta.id));
-    const node = el("section", {}, [
-      sectionHeading(categoryHref(region, f), formIcon(f, 24), formLabel(f), fmtNumber(inForm.length)),
-      el("div", { class: "card-grid" }, rows.map((r) => r.node)),
-    ]);
-    allRows.push(...rows);
-    sections.push({ node, rows });
-    return node;
-  }).filter((g): g is HTMLElement => g !== null);
+  const groups = view.grouped
+    ? FORM_ORDER.map((f) => {
+        const inForm = shown.filter((p) => p.form === f);
+        if (!inForm.length) return null;
+        const rows = inForm.map(rowOf);
+        const node = el("section", {}, [
+          sectionHeading(categoryHref(region, f), formIcon(f, 24), formLabel(f), fmtNumber(inForm.length)),
+          el("div", { class: "card-grid" }, rows.map((r) => r.node)),
+        ]);
+        allRows.push(...rows);
+        sections.push({ node, rows });
+        return node;
+      }).filter((g): g is HTMLElement => g !== null)
+    : [(() => {
+        const rows = shown.map(rowOf);
+        allRows.push(...rows);
+        return el("div", { class: "card-grid" }, rows.map((r) => r.node));
+      })()];
+  // What the order means, said once above the list rather than on every row.
+  if (view.sort === "caterpillars") {
+    groups.unshift(el("p", { class: "obs-section-lede" }, t("region.sortCaterpillarsLede")));
+  }
 
   main.append(
     // Everything above the roster is one block — the name, the stats, the map
@@ -145,7 +168,7 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
       ...[namingNote(plants)].filter((n): n is HTMLElement => n !== null),
       plantFilterField(allRows, sections),
       categoryChips(region, plants, null),
-      sortChips(region, sort),
+      viewControls(region, view, pioneerIds.size),
     ]),
     ...groups,
     // And what to pull. The roster answers "what belongs here"; this answers
@@ -154,6 +177,7 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
     // region's own authority and by how often each has been recorded wild (see
     // `lib/invasives.ts`), one row per plant.
     ...mostWantedSection(region),
+    ...otherPlantsDoors(region),
     // And who eats them. A roster is half the answer to "what lives here" —
     // the plants are the other half's food — and the two were a page apart:
     // the animals had their own index and this page never named one.
@@ -183,33 +207,60 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
   );
 }
 
-/** The whole roster as one list, most caterpillar species first, each row
- *  showing its count. Its rows join `allRows` so the filter still narrows it. */
-function caterpillarGroup(plants: Plant[], region: RegionDef, allRows: FilterRow[]): HTMLElement {
-  const rows = byCaterpillars(plants, commonName, getLang())
-    .map((p) => filterRow(p, region.meta.id, { caterpillars: true }));
-  allRows.push(...rows);
-  return el("section", {}, [
-    el("p", { class: "obs-section-lede" }, t("region.sortCaterpillarsLede")),
-    el("div", { class: "card-grid" }, rows.map((r) => r.node)),
-  ]);
-}
-
-/** The two ways to read the roster. Links, not toggles: each order has an
- *  address of its own to share, the way a category does. */
-function sortChips(region: RegionDef, current: RosterSort): HTMLElement {
+/**
+ * The roster's own controls, apart from the category links above them: those
+ * open a page of one kind of plant, these re-read the list on this one. Two
+ * rows, each under a word saying what it does — the order, then what is shown.
+ * Links rather than buttons, so every view has an address to share.
+ */
+function viewControls(region: RegionDef, view: RosterView, pioneers: number): HTMLElement {
   const base = `#/regions/${region.meta.id}`;
-  const chip = (sort: RosterSort, href: string, label: (string | Node)[]): HTMLElement =>
+  const chip = (to: RosterView, on: boolean, label: (string | Node)[]): HTMLElement =>
     el("a", {
       class: "btn btn-secondary",
       style: chipStyle,
-      href,
-      "aria-current": sort === current ? "page" : undefined,
+      href: `${base}${rosterQuery(to)}`,
+      "aria-current": on ? "page" : undefined,
     }, label);
-  return el("nav", { "aria-label": t("region.sortNav"), style: "display:flex;flex-wrap:wrap;gap:0.4rem;margin:0 0 0.8rem" }, [
-    chip("category", base, [t("region.sortCategory")]),
-    chip("caterpillars", `${base}?sort=caterpillars`, [supportIcon("host", 16), t("region.sortCaterpillars")]),
+  const row = (word: string, chips: HTMLElement[]): HTMLElement =>
+    el("div", { style: "display:flex;flex-wrap:wrap;align-items:center;gap:0.4rem" }, [
+      el("span", { style: "font-size:0.85rem;color:var(--ink-soft);min-width:3.2rem" }, word),
+      ...chips,
+    ]);
+  return el("nav", { "aria-label": t("region.viewNav"), style: "display:flex;flex-direction:column;gap:0.4rem;margin:0 0 0.8rem" }, [
+    row(t("region.sortLabel"), [
+      chip({ ...view, sort: "name" }, view.sort === "name", [t("region.sortName")]),
+      chip({ ...view, sort: "caterpillars" }, view.sort === "caterpillars",
+        [supportIcon("host", 16), t("region.sortCaterpillars")]),
+    ]),
+    row(t("region.showLabel"), [
+      // Toggles: each link leads to the view with that one control flipped.
+      chip({ ...view, grouped: !view.grouped }, view.grouped, [t("region.groupByKind")]),
+      ...(pioneers
+        ? [chip({ ...view, pioneers: !view.pioneers }, view.pioneers,
+            [`${PIONEER_ICON} ${t("region.pioneersOnly", { n: fmtNumber(pioneers) })}`])]
+        : []),
+    ]),
   ]);
+}
+
+/**
+ * The pages about the plants that aren't this region's natives — the ones
+ * mistaken for them, and the ones to swap out. Below the roster, beside the
+ * worst invasives, because they answer a different question from "what grows
+ * here": the list above is natives only. Absent for a region with neither.
+ */
+function otherPlantsDoors(region: RegionDef): HTMLElement[] {
+  const id = region.meta.id;
+  const doors = [
+    ...(mappedLookalikeIds(id).size
+      ? [door(`#/lookalikes/in/${id}`, lookalikeIcon(24), t("plants.door.lookalikes"), t("plants.door.lookalikesHint"))]
+      : []),
+    ...(alternativeCountForRegion(id)
+      ? [door(`#/alternatives/in/${id}`, alternativeIcon(24), t("plants.door.alternatives"), t("plants.door.alternativesHint"))]
+      : []),
+  ];
+  return doors.length ? [el("div", { class: "plant-doors", style: "margin-top:1rem" }, doors)] : [];
 }
 
 /** The animals this region's plants are documented to support, as the wildlife
@@ -287,7 +338,7 @@ function renderPioneers(main: HTMLElement, region: RegionDef, plants: Plant[]): 
         ])
       : el("p", { class: "step-lede" }, t("pioneers.empty", { region: regionName(region.meta) })),
     el("p", { class: "note info" }, t("pioneers.what")),
-    categoryChips(region, plants, PIONEERS_SLUG),
+    categoryChips(region, plants, null, true),
     el("div", { class: "card-grid" },
       picks.map((pick) => pioneerCard(pick, region.meta.id, { full: true }))),
     // The book is a real link, placed by the translator rather than by this
@@ -386,19 +437,21 @@ function renderCategory(
 }
 
 /**
- * Chip nav across a region's categories; `current` marks the active one.
+ * Chip nav across a region's kinds of plant; `current` marks the active one.
+ * Kinds only: the roster's sort and filters are `viewControls`, and the pages
+ * about plants that aren't natives sit below the roster.
  *
- * `"pioneers"` is a current value as well as a form, because that page is one
- * of the roster's slices even though it cuts across all seven forms — a reader
- * on it should be able to jump to "trees" without going back first.
+ * "All" leads the row on any page that isn't the whole roster — a category,
+ * or the pioneers, which cut across every kind.
  */
 function categoryChips(
   region: RegionDef,
   plants: Plant[],
-  current: PlantForm | typeof PIONEERS_SLUG | null
+  current: PlantForm | null,
+  showAll = current !== null
 ): HTMLElement {
   const chips: HTMLElement[] = [];
-  if (current) {
+  if (showAll) {
     chips.push(el("a", {
       class: "btn btn-secondary",
       style: chipStyle,
@@ -414,40 +467,6 @@ function categoryChips(
       href: categoryHref(region, f),
       "aria-current": f === current ? "page" : undefined,
     }, [formIcon(f), ` ${formLabel(f)} (${fmtNumber(count)})`]));
-  }
-  // The natives for bad ground: a slice of this very roster, so it leads the
-  // chips that leave it.
-  const tough = pioneerCountForRegion(region.meta.id);
-  if (tough) {
-    chips.push(el("a", {
-      class: "btn btn-secondary",
-      style: chipStyle,
-      href: pioneersHref(region),
-      "aria-current": current === PIONEERS_SLUG ? "page" : undefined,
-    }, `${PIONEER_ICON} ${t("pioneers.chip")} (${fmtNumber(tough)})`));
-  }
-  // The worst invasives sit below the whole roster, so they get a chip here
-  // too: the one place a reader scanning the categories will see them.
-  const wanted = mostWanted(region.meta.id).length;
-  if (wanted) {
-    chips.push(el("a", {
-      class: "btn btn-secondary",
-      style: chipStyle,
-      href: wantedRegionHref(region.meta.id),
-    }, t("region.invasivesChip", { n: fmtNumber(wanted) })));
-  }
-  // The region's own slice of the look-alike and swap pages: they exist for
-  // every region with ties, and nothing else on the page reaches them. No count
-  // — the indexes leave out a tie whose native isn't loaded, so a number read
-  // off the tie table could disagree with the page it opens.
-  const id = region.meta.id;
-  if (mappedLookalikeIds(id).size) {
-    chips.push(el("a", { class: "btn btn-secondary", style: chipStyle, href: `#/lookalikes/in/${id}` },
-      `👀 ${t("plants.door.lookalikes")}`));
-  }
-  if (alternativeCountForRegion(id)) {
-    chips.push(el("a", { class: "btn btn-secondary", style: chipStyle, href: `#/alternatives/in/${id}` },
-      `🌿 ${t("plants.door.alternatives")}`));
   }
   return el("nav", { "aria-label": t("region.categoriesNav"), style: "display:flex;flex-wrap:wrap;gap:0.4rem;margin:0.6rem 0 0.8rem" }, chips);
 }

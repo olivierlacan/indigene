@@ -1,17 +1,49 @@
-// The order a region's roster can be read in besides by category: most
-// caterpillar species first. The host count is the one wildlife figure every
-// plant row carries with a cited source and a confidence level, so it is the
-// one a list can honestly be ranked by. The named-wildlife ties are not: they
-// are a short, hand-picked set of recognizable animals per plant, and ranking
-// by how many we wrote down would rank our writing, not the plant.
+// How a region's roster is read: three controls that combine, each kept in
+// the address so a view can be shared.
+//
+//   - sort: by name, or most caterpillar species first. The host count is the
+//     one wildlife figure every plant row carries with a cited source and a
+//     confidence level, so it is the one a list can honestly be ranked by. The
+//     named-wildlife ties are not: they are a short, hand-picked set of
+//     recognizable animals per plant, and ranking by how many we wrote down
+//     would rank our writing, not the plant.
+//   - grouped: under a heading per kind of plant (trees, shrubs…), or one list
+//     for a reader who doesn't care yet what kind of plant it is.
+//   - pioneers: only the natives that take a beating (`data/pioneers.ts`).
 import type { Plant } from "../types";
 
-/** How a roster is ordered — the `?sort=` value, absent for the default. */
-export type RosterSort = "category" | "caterpillars";
+export type RosterSort = "name" | "caterpillars";
 
-/** Read a `?sort=` value; anything unknown is the default. */
-export function rosterSort(param: string | null): RosterSort {
-  return param === "caterpillars" ? "caterpillars" : "category";
+export interface RosterView {
+  sort: RosterSort;
+  grouped: boolean;
+  pioneers: boolean;
+}
+
+/** Read the view from a query string; anything unknown is the default. */
+export function rosterView(query: URLSearchParams): RosterView {
+  return {
+    sort: query.get("sort") === "caterpillars" ? "caterpillars" : "name",
+    grouped: query.get("group") !== "off",
+    pioneers: query.get("only") === "pioneers",
+  };
+}
+
+/** The query string for a view, "" for the default one — so the plain roster
+ *  keeps its plain address. */
+export function rosterQuery(view: RosterView): string {
+  const q = new URLSearchParams();
+  if (view.sort === "caterpillars") q.set("sort", "caterpillars");
+  if (!view.grouped) q.set("group", "off");
+  if (view.pioneers) q.set("only", "pioneers");
+  const s = q.toString();
+  return s ? `?${s}` : "";
+}
+
+/** A view's plants in its order. */
+export function sortRoster(plants: Plant[], sort: RosterSort, name: (p: Plant) => string, lang: string): Plant[] {
+  if (sort === "caterpillars") return byCaterpillars(plants, name, lang);
+  return plants.slice().sort((a, b) => name(a).localeCompare(name(b), lang));
 }
 
 /**

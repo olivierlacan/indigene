@@ -1757,7 +1757,6 @@ export const en = {
   // him. Don't let it drift back into claiming he was involved.
   // ---------------------------------------------------------------------
   "pioneers.title": "Pavement pioneers",
-  "pioneers.chip": "Pioneers",
   "pioneers.docTitle": "Pavement pioneers of {region}",
   "pioneers.sectionLede": "Natives for the hard places: a kerb gap, a wall, a car park island. Tap a tag to see what it means.",
   "pioneers.count.one": "{n} native that takes a beating in {reference}.",
@@ -1792,12 +1791,15 @@ export const en = {
   "pressure.disturbance.plain":
     "Ground scraped, dug, mown or burned and then left. These are the plants that arrive first and hold it until something else can.",
   "region.allChip": "All ({n})",
-  "region.sortNav": "Order",
-  "region.sortCategory": "By category",
   "region.sortCaterpillars": "Most caterpillars",
   "region.sortCaterpillarsLede": "How many butterfly and moth species raise their caterpillars on each plant. Each plant's page cites its source.",
+  "region.viewNav": "Sort and show",
+  "region.sortLabel": "Sort",
+  "region.showLabel": "Show",
+  "region.sortName": "A–Z",
+  "region.groupByKind": "Kinds",
+  "region.pioneersOnly": "Pioneers ({n})",
   "region.categoriesNav": "Plant categories",
-  "region.invasivesChip": "🚩 Worst invasives ({n})",
   "region.filterAria": "Filter this list by plant name",
   "region.filterPlaceholder": "Filter by name…",
   "region.filterCount.one": "{shown} of {total} plants match “{q}”.",

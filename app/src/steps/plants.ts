@@ -16,6 +16,7 @@ import { REGIONS } from "../lib/plants";
 // name matches — and *looks* matched — identically wherever you type it.
 import { highlight, norm } from "../components/filter-field";
 import { plantThumb } from "../components/plant-thumb";
+import { door } from "../components/plant-door";
 import { lookalikeIcon, alternativeIcon, invasiveIcon, cropsIcon, propagateIcon } from "../components/door-icons";
 import type { PlantForm } from "../types";
 import { t, fmtNumber, getLang } from "../lib/i18n";
@@ -28,19 +29,6 @@ import { mappedOrnamentalIds } from "../lib/alternatives";
 import { regionName, regionShort, searchAliases, localName, commonName } from "../lib/names";
 
 const regionMetaOf = (id: string) => REGIONS.find((x) => x.meta.id === id)?.meta;
-
-// One "way in" row: the whole row links to `href`, with a drawn icon in a
-// tinted slot, the section's name, what it answers, and a chevron.
-function door(href: string, icon: SVGElement, name: string, hint: string): HTMLElement {
-  return el("a", { href, class: "card plant-door" }, [
-    el("span", { class: "plant-door-icon", "aria-hidden": "true" }, [icon]),
-    el("span", { class: "plant-door-text" }, [
-      el("span", { class: "plant-door-name" }, name),
-      el("span", { class: "plant-door-hint" }, hint),
-    ]),
-    el("span", { class: "plant-door-chevron", "aria-hidden": "true" }, "›"),
-  ]);
-}
 
 type Row = {
   slug: string;

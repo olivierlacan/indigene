@@ -58,10 +58,7 @@ import { richText } from "../components/rich-text";
 // route. Every heading shows the mark that hands it over
 // (`components/anchor-head.ts`). Listed in the order they appear in the phone
 // stack.
-const SECTIONS = ["needs", "resilience", "ecosystem", "nearby", "propagation", "spot", "sources"] as const;
-// The Sources card was "Look it up elsewhere", at `#references`, before it took
-// in every source line on the page. Links already shared still land on it.
-const SECTION_ALIASES: Record<string, Section> = { references: "sources" };
+const SECTIONS = ["needs", "resilience", "ecosystem", "nearby", "propagation", "spot", "sources", "references"] as const;
 
 type Section = (typeof SECTIONS)[number];
 const sectionDomId = (s: Section): string => `sec-${s}`;
@@ -92,9 +89,7 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
   }
   const fromFragment = isHashRoute(location.hash) ? "" : location.hash.slice(1);
   const wanted = fromFragment || fromRoute;
-  const section = (SECTIONS as readonly string[]).includes(wanted)
-    ? (wanted as Section)
-    : (SECTION_ALIASES[wanted] ?? null);
+  const section = (SECTIONS as readonly string[]).includes(wanted) ? (wanted as Section) : null;
 
   const entries = await findPlant(slug);
   if (!entries.length) {
@@ -139,9 +134,11 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
   // laptop it goes under the spot check — both ask where you are — because the
   // left column otherwise ran a screenful longer than the right.
   const nearby = nearbyObservationsSection(plant);
-  const references = sourcesSection(plant, entries, region.meta.id);
+  const sources = sourcesSection(plant, entries, region.meta.id);
+  const references = referencesSection(plant);
   const sectionsRight = el("div", { class: "plant-sections-col" }, [
     suitabilityChecker(entries),
+    sources,
     references,
   ]);
 
@@ -181,13 +178,13 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
     ])
   );
 
-  if (nearby) unplace.push(onLaptop(nearby, () => sectionsRight.insertBefore(nearby, references)));
+  if (nearby) unplace.push(onLaptop(nearby, () => sectionsRight.insertBefore(nearby, sources)));
 
   if (section) revealSection(section);
   // Arrived on the old route form: put the shareable one in the address bar,
   // silently and without a history entry, so what the reader copies from here
   // is the address that previews as this plant.
-  if (section && (section !== wanted || (fromRoute && !fromFragment))) history.replaceState(history.state, "", sectionAddress(section));
+  if (section && fromRoute && !fromFragment) history.replaceState(history.state, "", sectionAddress(section));
 
   main.addEventListener("click", onAnchorClick);
 
@@ -1045,8 +1042,9 @@ function propagationSection(p: Plant, regionId: string): HTMLElement {
 }
 
 /**
- * Every claim on the page beside what backs it, then the databases to look the
- * plant up in.
+ * Every claim on the page beside what backs it. The databases to look the plant
+ * up in are a different thing — references, not sources — and keep their own
+ * card below.
  *
  * The sources used to be scattered: a line under the confidence meter, another
  * under the propagation methods, the pioneer list's own line, and each wildlife
@@ -1081,7 +1079,6 @@ function sourcesSection(p: Plant, entries: PlantEntry[], regionId: string): HTML
   return sectionCard("sources", t("plantSources.title"), [
     el("p", { style: "margin:0.5rem 0 0.3rem" }, t("plantSources.lede")),
     claims,
-    ...databaseLinks(p),
     el("p", { class: "more-link" }, [el("a", { href: "#/sources" }, `${t("sources.title")} →`)]),
   ]);
 }
@@ -1106,7 +1103,7 @@ function basisClaim(part: BasisPart): string {
 // a stable record link where an id is reconciled, and a name search as a graceful
 // fallback where it isn't yet — so the section is useful today and gets richer as
 // identifiers are filled in. This is the registry's first user-facing use.
-function databaseLinks(p: Plant): HTMLElement[] {
+function referencesSection(p: Plant): HTMLElement {
   const entry = entryForPlant(p.id);
   const links = entry ? deepLinks(entry) : null;
   // The database *names* are proper nouns and stay as they are; only the
@@ -1129,10 +1126,8 @@ function databaseLinks(p: Plant): HTMLElement[] {
       el("p", { class: "score-why" }, s.sub),
     ]),
   );
-  if (!items.length) return [];
   const body: HTMLElement[] = [
-    el("h3", { class: "sources-sub" }, t("ref.title")),
-    el("p", { class: "score-why" }, t("ref.lede")),
+    el("p", { style: "margin:0.5rem 0 0.3rem" }, t("ref.lede")),
     el("ul", { class: "score-list" }, items),
   ];
   if (entry?.primaryId) {
@@ -1150,7 +1145,7 @@ function databaseLinks(p: Plant): HTMLElement[] {
       ]),
     );
   }
-  return body;
+  return sectionCard("references", t("ref.title"), body);
 }
 
 /**

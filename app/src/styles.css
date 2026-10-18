@@ -3283,12 +3283,6 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
   margin: 0.15rem 0 0;
 }
 
-/* The plant page's Sources card: the database list under the claims. */
-.sources-sub {
-  font-size: 1rem;
-  margin: 1.1rem 0 0;
-}
-
 /* --- The ecosystem card's folding glosses --------------------------------
    Only this one list folds (`.score-list-folding`); the propagation methods and
    the database descriptions use the same `.score-item` shape and stay open,

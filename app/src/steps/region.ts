@@ -514,8 +514,8 @@ function plantFilterField(rows: FilterRow[], sections: FilterSection[]): HTMLEle
 // name lines with the filter query underlined, exactly as a search result does
 // — the row says which word kept it on screen.
 interface RowOptions {
-  /** Show the caterpillar count in place of the "what it does" line — the
-   *  figure the list is sorted by, so a scan can see why a plant ranks there. */
+  /** Show the caterpillar count beside the name — the figure the list is
+   *  sorted by, so a scan can see why a plant ranks there. */
   caterpillars?: boolean;
 }
 
@@ -543,18 +543,21 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
               style: "margin-left:0.3rem;color:var(--brand)",
             }, [keystoneIcon(13)])
           : null,
+        // The figure the list is sorted by, as quiet as the keystone beside it:
+        // a glyph and a number, spelled out for a screen reader and on hover.
+        opts.caterpillars && p.hostLepCount !== null
+          ? el("span", {
+              title: t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
+              role: "img",
+              "aria-label": t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
+              style: "margin-left:0.4rem;font-weight:400;font-size:0.8rem;color:var(--ink-soft);white-space:nowrap;display:inline-flex;align-items:center;gap:0.2rem;vertical-align:0.05em",
+            }, [supportIcon("host", 12), fmtNumber(p.hostLepCount)])
+          : null,
       ]),
       sub,
-      opts.caterpillars
-        ? el("div", { style: "font-size:0.85rem;color:var(--ink-soft);display:flex;align-items:center;gap:0.3rem" }, [
-            supportIcon("host", 14),
-            p.hostLepCount === null
-              ? t("stat.host.uncounted")
-              : t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
-          ])
-        : el("div", {
-            style: "font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis",
-          }, richText(prose(p, "givesNote", regionId))),
+      el("div", {
+        style: "font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis",
+      }, richText(prose(p, "givesNote", regionId))),
     ]),
   ]);
   const mark = (nq: string): void => {

@@ -1369,6 +1369,8 @@ export const en = {
   "stat.host.subValue": "food-web value",
   "stat.host.explain": "How many butterfly and moth species can raise their caterpillars on this plant. Most songbirds raise their chicks on caterpillars, so this is a good measure of how much life a plant supports. Most non-native plants score far lower.",
   "stat.host.explainKeystone": "This one is essential: it hosts far more species than most, and local food webs lean on it. Ecologists call it a keystone plant.",
+  "stat.host.subGenus": "for all of {genus}",
+  "stat.host.explainGenus": "This figure is for the whole genus, {genus}: the sources count caterpillars genus by genus, so every {genus} here shows the same number.",
   "stat.host.uncounted": "Not counted",
   "stat.host.uncountedSub": "no source yet",
   "stat.host.explainUncounted":
@@ -1756,6 +1758,7 @@ export const en = {
   // in the list, so the credit line recommends his book and never speaks for
   // him. Don't let it drift back into claiming he was involved.
   // ---------------------------------------------------------------------
+  "pioneers.copesWith": "Copes with",
   "pioneers.title": "Pavement pioneers",
   "pioneers.docTitle": "Pavement pioneers of {region}",
   "pioneers.sectionLede": "Natives for the hard places: a kerb gap, a wall, a car park island. Tap a tag to see what it means.",

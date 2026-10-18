@@ -22,12 +22,12 @@ import { keystoneIcon } from "../components/keystone-icon";
 import { regionStatGrid } from "../components/region-stats";
 import { wildlifeRegionGroups } from "../components/wildlife-chips";
 import { wildlifeIndex } from "../lib/wildlife";
-import { pioneerCard } from "../components/pioneer-card";
-import { pioneersForRegion } from "../lib/pioneers";
+import { pioneerFor, pioneersForRegion } from "../lib/pioneers";
+import { pioneerCard, pressureFooter } from "../components/pioneer-card";
 import { PIONEER_ICON, CONCRETE_BOTANY_URL } from "../data/pioneers";
 import { regionRefLine, zoneChip } from "../components/zone-chip";
 import { regionBoundaryCard } from "../components/region-boundary";
-import type { Plant, PlantForm } from "../types";
+import type { PioneerEntry, Plant, PlantForm } from "../types";
 import { t, tn, tx, fmtNumber, getLang } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionNote, regionReference, localNameCoverage } from "../lib/names";
 import { flagRow } from "../components/flags";
@@ -116,7 +116,11 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
     view.pioneers ? plants.filter((p) => pioneerIds.has(p.id)) : plants,
     view.sort, commonName, getLang()
   );
-  const rowOf = (p: Plant): FilterRow => filterRow(p, region.meta.id, { caterpillars: view.sort === "caterpillars" });
+  const rowOf = (p: Plant): FilterRow => filterRow(p, region.meta.id, {
+    caterpillars: view.sort === "caterpillars",
+    // Filtered to the pioneers, each row says what it copes with.
+    pioneer: view.pioneers ? pioneerFor(region.meta.id, p.id) : undefined,
+  });
   const allRows: FilterRow[] = [];
   const sections: FilterSection[] = [];
   const groups = view.grouped
@@ -582,6 +586,8 @@ interface RowOptions {
   /** Show the caterpillar count beside the name — the figure the list is
    *  sorted by, so a scan can see why a plant ranks there. */
   caterpillars?: boolean;
+  /** This region's pioneer row for the plant: shown as the card's footer. */
+  pioneer?: PioneerEntry;
 }
 
 function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HTMLElement; mark: (nq: string) => void } {
@@ -591,13 +597,14 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
   const node = el("a", {
     href: `#/plants/${p.id}`,
     class: "card",
-    style: "display:flex;gap:0.7rem;align-items:center;text-decoration:none;color:inherit;padding:0.6rem 0.8rem;margin:0;height:100%",
+    // Wraps only to put a pioneer's footer on a line of its own.
+    style: "display:flex;flex-wrap:wrap;gap:0.7rem;align-items:center;text-decoration:none;color:inherit;padding:0.6rem 0.8rem;margin:0;height:100%",
   }, [
     // This region's photograph, not just any region's: a live oak in Florida
     // and the same species in Maryland are not the same-looking tree, and the
     // roster you're reading is one region's.
     plantThumb(p.id, p.form, { regionId, attrs: { style: "flex:0 0 auto" } }),
-    el("div", { style: "min-width:0" }, [
+    el("div", { style: "flex:1 1 0;min-width:0" }, [
       el("div", { style: "font-weight:700" }, [
         title,
         p.keystone
@@ -624,6 +631,7 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
         style: "font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis",
       }, richText(prose(p, "givesNote", regionId))),
     ]),
+    opts.pioneer ? pressureFooter({ plant: p, entry: opts.pioneer }, { interactive: false }) : null,
   ]);
   const mark = (nq: string): void => {
     title.replaceChildren(...highlight(names.title, nq));

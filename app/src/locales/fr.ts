@@ -1348,6 +1348,8 @@ export const fr: Dict = {
   "stat.host.subValue": "valeur nourricière",
   "stat.host.explain": "Combien d'espèces de papillons peuvent élever leurs chenilles sur cette plante. La plupart des passereaux nourrissent leurs petits de chenilles : c'est donc une bonne mesure de la vie qu'une plante fait vivre. La plupart des plantes exotiques obtiennent bien moins.",
   "stat.host.explainKeystone": "Celle-ci est essentielle : elle héberge bien plus d'espèces que la moyenne, et les réseaux alimentaires locaux s'appuient sur elle. Les écologues parlent de plante « clé de voûte ».",
+  "stat.host.subGenus": "pour tout {genus}",
+  "stat.host.explainGenus": "Ce chiffre vaut pour tout le genre {genus} : les sources comptent les chenilles genre par genre, donc chaque {genus} d’ici affiche le même nombre.",
   "stat.host.uncounted": "Non compté",
   "stat.host.uncountedSub": "pas encore de source",
   "stat.host.explainUncounted":
@@ -1715,6 +1717,7 @@ export const fr: Dict = {
   // n'a pris aucune part à la liste, donc la ligne de fin recommande son
   // livre sans parler en son nom. Son titre reste en anglais, non traduit.
   // ---------------------------------------------------------------------
+  "pioneers.copesWith": "Supporte",
   "pioneers.title": "Pionnières du bitume",
   "pioneers.docTitle": "Les pionnières du bitume de {region}",
   "pioneers.sectionLede": "Des indigènes pour les endroits ingrats : un bord de trottoir, un mur, un îlot de parking. Touchez une étiquette pour savoir ce qu'elle désigne.",

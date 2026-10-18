@@ -17,17 +17,42 @@ import { plantThumb } from "./plant-thumb";
 import { termTag } from "./term-dialog";
 import { keystoneIcon } from "./keystone-icon";
 import { pressureLabel } from "../lib/plain";
+import { pressureIcon } from "./pressure-icon";
+import type { PioneerPressure } from "../types";
 import { orderedPressures } from "../lib/pioneers";
 import type { PioneerPick } from "../lib/pioneers";
 import { pioneerNote } from "../lib/prose";
 import { nameLines } from "../lib/names";
 import { t } from "../lib/i18n";
 
-/** The chips for one row, in the vocabulary's own display order. On a card in
- *  a list they are glyphs alone (`iconOnly`), the word a hover or tap away; the
- *  plant's own page spells them out. */
-export function pressureTags(pick: PioneerPick, opts: { iconOnly?: boolean } = {}): HTMLElement[] {
-  return orderedPressures(pick.entry).map((p) => termTag(pressureLabel(p), "pressure", opts));
+/** A pressure's words with its drawn glyph (`pressure-icon.ts`) — the glyph
+ *  wins over the emoji wherever a chip or its dialog draws one. */
+const pressureInfo = (p: PioneerPressure) => ({ ...pressureLabel(p), glyph: () => pressureIcon(p) });
+
+/** The chips for one row, in the vocabulary's own display order, each word
+ *  spelled out — the plant's own page. */
+export function pressureTags(pick: PioneerPick): HTMLElement[] {
+  return orderedPressures(pick.entry).map((p) => termTag(pressureInfo(p), "pressure"));
+}
+
+/**
+ * The same chips as a card's footer, for a list: a hairline, "Copes with",
+ * then the glyphs bare — the words are a hover away, and a tap opens the
+ * explanation. `interactive: false` draws them as labelled pictures instead,
+ * for a card that is itself a link (a button can't live inside one).
+ */
+export function pressureFooter(pick: PioneerPick, opts: { interactive?: boolean } = {}): HTMLElement {
+  const interactive = opts.interactive ?? true;
+  const glyphs = orderedPressures(pick.entry).map((p) => {
+    const info = pressureInfo(p);
+    return interactive
+      ? termTag(info, "bare", { iconOnly: true })
+      : el("span", { class: "pressure-glyph", role: "img", "aria-label": info.term, title: info.term }, [info.glyph()]);
+  });
+  return el("div", { class: "pressure-footer" }, [
+    el("span", { class: "pressure-footer-label" }, t("pioneers.copesWith")),
+    el("span", { class: "pressure-footer-glyphs" }, glyphs),
+  ]);
 }
 
 export function pioneerCard(
@@ -55,7 +80,6 @@ export function pioneerCard(
         el("div", { class: "plant-latin", style: "font-size:0.85rem" }, names.sub),
       ]),
     ]),
-    el("div", { class: "pioneer-tags" }, pressureTags(pick, { iconOnly: true })),
     ...(opts.full
       ? [
           // The note, not its source: the source sits under the same note on
@@ -64,5 +88,6 @@ export function pioneerCard(
           el("p", { class: "pioneer-note" }, pioneerNote(plant.latin, entry.note, regionId)),
         ]
       : []),
+    pressureFooter(pick),
   ]);
 }

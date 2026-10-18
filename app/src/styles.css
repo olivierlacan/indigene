@@ -3120,11 +3120,7 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
   padding: 0.2rem;
   font-size: 0.95rem;
 }
-/* On a card, glyphs alone don't need the slate pill to read as one set: a
-   faint tint of the ink blends into the card instead of shouting over it. */
-.tag-pressure.tag-icon-only {
-  background: color-mix(in srgb, var(--ink) 7%, transparent);
-}
+
 .tag .tag-label {
   text-decoration: underline dotted;
   text-underline-offset: 2px;
@@ -3860,6 +3856,53 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
 }
 /* The chips wrap as a block of their own under the name. `margin-top` rather
    than a gap on the card: on the compact card they're the last thing in it. */
+/* A pioneer card's footer in a list: a hairline, "Copes with", and the
+   conditions as bare glyphs — one quiet strip, not a row of pills. */
+.pressure-footer {
+  flex: 1 0 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--line);
+}
+.card > .pressure-footer {
+  margin-top: 0; /* a row card already spaces its children with gap */
+}
+.pressure-footer-label {
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--ink-soft);
+}
+.pressure-footer-glyphs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.1rem;
+}
+.pressure-glyph,
+.pressure-footer .tag-bare {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.9rem;
+  min-height: 1.9rem;
+  line-height: 1;
+  color: var(--ink);
+}
+.pressure-footer .pressure-icon {
+  width: 22px;
+  height: 22px;
+}
+.pressure-footer .tag-bare {
+  padding: 0;
+  background: transparent;
+  border-radius: 8px;
+}
+.pressure-footer .tag-bare:is(:hover, :focus-visible) {
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+}
 .pioneer-tags {
   display: flex;
   flex-wrap: wrap;

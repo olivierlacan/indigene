@@ -623,7 +623,7 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
       // pinned over the card's corner — the only line the tag reaches. One
       // truncated line, so the room it leaves can't make anything wrap.
       el("div", {
-        style: `font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis${opts.caterpillars ? ";padding-right:2.6rem" : ""}`,
+        style: `font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis${opts.caterpillars ? ";padding-right:2.3rem" : ""}`,
       }, richText(prose(p, "givesNote", regionId))),
     ]),
     opts.pioneer ? pressureFooter({ plant: p, entry: opts.pioneer }, { interactive: false }) : null,
@@ -637,7 +637,7 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
           role: "img",
           title: t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
           "aria-label": t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
-        }, [supportIcon("host", 15), fmtNumber(p.hostLepCount)])
+        }, [supportIcon("host", 14), fmtNumber(p.hostLepCount)])
       : null,
   ]);
   const mark = (nq: string): void => {

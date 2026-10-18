@@ -1764,28 +1764,33 @@ details[open] > summary::after {
 /* The caterpillar count on a roster card, sorted by it: a small round tag
    pinned over the card's bottom-right edge, half on the card and half off. */
 /* Out of the flow entirely, so it can never push a name onto another line.
-   It rises 1.7rem into a card padded 0.6rem: it can only ever reach the last
+   It rises 1.35rem into a card padded 0.6rem: it can only ever reach the last
    line, the one-line description, which stops short of it (steps/region.ts). */
 .count-tag {
   position: absolute;
-  right: -0.35rem;
+  right: -0.3rem;
   bottom: -1rem;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.12rem;
-  min-width: 2.7rem;
-  height: 2.7rem;
-  padding: 0 0.3rem;
+  gap: 0.05rem;
+  min-width: 2.35rem;
+  height: 2.35rem;
+  /* The caterpillar sits low in its 24-unit box (empty sky above its back),
+     so the pair is nudged up to sit on the circle's optical centre. */
+  padding: 0 0.25rem 0.18rem;
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--brand) 22%, transparent);
   background: var(--brand-bg);
   color: var(--brand);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   line-height: 1;
   font-variant-numeric: tabular-nums;
+}
+.count-tag .tie-glyph {
+  margin-top: -0.2rem;
 }
 /* Room below each card for the tag that hangs off it. */
 .card-grid:has(.count-tag) {

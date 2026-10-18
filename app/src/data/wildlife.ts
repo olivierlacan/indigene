@@ -3370,6 +3370,51 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     "helianthus-debilis": [
       { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Dune sunflower's pollen supports sunflower-family specialist bees along the coast.", basis: "Fowler & Droege; UF/IFAS." },
     ],
+    "andropogon-glomeratus": [
+      { wildlifeId: "grass-skippers", support: "host", note: "Bluestems are caterpillar grass for several skippers, which hide in rolled-up blades and winter down in the clump.", basis: "NWF Native Plant Finder; Xerces Society." },
+    ],
+    "canavalia-rosea": [
+      { wildlifeId: "eastern-carpenter-bee", support: "nectar", note: "Carpenter bees are heavy enough to force open its pea flowers, and they're its main visitors on the dune.", basis: "Institute for Regional Conservation; Xerces Society." },
+    ],
+    "vitis-rotundifolia": [
+      { wildlifeId: "berry-songbirds", support: "berries", note: "Mockingbirds, thrashers and catbirds eat the grapes that split on the vine.", basis: "Cornell Lab of Ornithology; UF/IFAS." },
+      { wildlifeId: "acorn-mammals", support: "berries", note: "Foxes, raccoons, opossums and deer feed on the fallen grapes.", basis: "UF/IFAS." },
+    ],
+    "symphyotrichum-carolinianum": [
+      { wildlifeId: "monarch", support: "nectar", note: "It flowers in winter here, when Florida's resident monarchs have little else to feed on.", basis: "Xerces Society; UF/IFAS." },
+      { wildlifeId: "queen-butterfly", support: "nectar", note: "Queens crowd its fragrant flowers through the dry season.", basis: "UF/IFAS; Florida Native Plant Society." },
+    ],
+    "phyla-nodiflora": [
+      { wildlifeId: "phaon-crescent", support: "host", reliance: "sole", note: "Frogfruit is the phaon crescent's caterpillar food: leave a patch unmown and they will find it.", basis: "GloBI — iNaturalist observation records; BAMONA; UF/IFAS." },
+      { wildlifeId: "white-peacock", support: "host", note: "One of the white peacock's caterpillar plants, and it flowers in every month the butterfly flies here.", basis: "UF/IFAS; BAMONA." },
+    ],
+    "mimosa-strigillosa": [
+      { wildlifeId: "grass-skippers", support: "nectar", note: "Fiery skippers come down to it constantly — one of the few nectar plants that survives being walked over.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
+    ],
+    "pontederia-cordata": [
+      { wildlifeId: "white-peacock", support: "nectar", note: "White peacocks feed at the flower spikes most of the year along south-Florida canals.", basis: "GloBI — iNaturalist observation records." },
+    ],
+    "coreopsis-leavenworthii": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Florida's state wildflower group — its pollen feeds sunflower-family specialist bees, here nearly all year.", basis: "Fowler & Droege; UF/IFAS." },
+    ],
+    "asclepias-incarnata": [
+      { wildlifeId: "monarch", support: "host", reliance: "sole", note: "A milkweed of wet ground and a monarch host; in south Florida some monarchs breed all year.", basis: "Xerces Society; UF/IFAS." },
+      { wildlifeId: "queen-butterfly", support: "host", reliance: "sole", note: "Queen caterpillars, the monarch's cousin, also eat only milkweeds.", basis: "UF/IFAS; Florida Native Plant Society." },
+    ],
+    "solidago-stricta": [
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Goldenrods carry more pollen-specialist bees than almost any other plant.", basis: "Fowler & Droege, Pollen Specialist Bees." },
+      { wildlifeId: "monarch", support: "nectar", note: "Prime fall nectar for the monarchs that winter in south Florida.", basis: "Xerces Society; UF/IFAS." },
+    ],
+    "ruellia-caroliniensis": [
+      { wildlifeId: "white-peacock", support: "host", note: "Carolina wild petunia is one of the white peacock's caterpillar plants.", basis: "UF/IFAS; Florida Native Plant Society." },
+    ],
+    "liatris-gracilis": [
+      { wildlifeId: "monarch", support: "nectar", note: "Its purple spikes are prime fall nectar for the monarchs that winter in south Florida.", basis: "UF/IFAS; Xerces." },
+      { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "A sunflower-family bloom supporting specialist bees.", basis: "Fowler & Droege." },
+    ],
+    "melanthera-nivea": [
+      { wildlifeId: "zebra-longwing", support: "nectar", note: "Its white flowers, open all year, are a favorite nectar of the zebra longwing.", basis: "GloBI — iNaturalist observation records; Institute for Regional Conservation." },
+    ],
   },
 
   // ---- France. Sources are the French/European equivalents of the American

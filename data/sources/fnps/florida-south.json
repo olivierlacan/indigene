@@ -14,12 +14,15 @@
   "counts": {
     "read": 708,
     "inZone": 359,
-    "ours": 21,
-    "oursWrittenUp": 20,
-    "oursBuyable": 20,
-    "inZoneBuyableNotOurs": 319
+    "ours": 52,
+    "oursWrittenUp": 48,
+    "oursBuyable": 47,
+    "inZoneBuyableNotOurs": 294
   },
   "oursNotWrittenUp": [
-    "salvia coccinea"
+    "echites umbellatus",
+    "osmunda spectabilis",
+    "salvia coccinea",
+    "vitis rotundifolia"
   ]
 }

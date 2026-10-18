@@ -2,9 +2,9 @@
 // keeping a live oak's two paragraphs side by side is how you notice they say
 // different things.
 //
-// North & central Florida holds the plain keys; south Florida and the Keys hold
-// its own twelve taxa plus a region-qualified entry (`"Latin@florida-south"`) for
-// each of the nine it shares. Red maple and butterfly weed belong to the
+// North & central Florida holds the plain keys; every south Florida and Keys
+// entry is region-qualified (`"Latin@florida-south"`), whether or not the north
+// lists the plant too. Red maple and butterfly weed belong to the
 // Mid-Atlantic list first, so their Florida rows are qualified too.
 //
 // **Most of these have no French name**, and this file does not invent one: a
@@ -1362,6 +1362,383 @@ export const FLORIDA: ProseTable = {
     supportNotes: {
       "sunflower-specialist-bees":
         "Le pollen de l'Helianthus debilis fait vivre les abeilles spécialistes des astéracées le long du littoral.",
+    },
+  },
+  // -------------------------------------------------------------------------
+  // Sud de la Floride — ajouts : fougères, graminées, lianes, vivaces.
+  // -------------------------------------------------------------------------
+  "Acrostichum danaeifolium@florida-south": {
+    nativeNote:
+      "La plus grande fougère d'Amérique du Nord, indigène dans les marais d'eau douce et saumâtre, en bordure des mangroves et sur les berges des canaux du sud de la Floride.",
+    careNote:
+      "Un sol mouillé, au soleil ou à l'ombre : une mare, une rive de lac, une noue qui garde l'eau. Elle supporte un peu de sel. Elle devient énorme : donnez-lui la place qu'il faudrait à un arbuste.",
+    givesNote:
+      "D'immenses frondes coriaces qui tiennent une berge et ralentissent le ruissellement, avec un abri pour les échassiers, les grenouilles et les petits poissons au bord de l'eau.",
+    propagationNote:
+      "Tranchez à la bêche un morceau en bordure d'une vieille touffe, en gardant des racines, et plantez-le en sol mouillé. Les spores de l'extrémité rousse des frondes peuvent se semer sur un terreau humide, sous couvercle.",
+  },
+  "Nephrolepis exaltata@florida-south": {
+    nativeNote:
+      "Indigène dans les hammocks — ces îlots de forêt dense et humide — et les marécages du sud de la Floride, au sol, sur les rochers et dans les gaines des palmiers Sabal palmetto.",
+    careNote:
+      "De l'ombre et une terre ordinaire ; une fois enracinée, elle passe la saison sèche. Achetez l'indigène : Nephrolepis cordifolia porte de petits tubercules ronds sur ses stolons, et Nephrolepis brownii a des pétioles velus. Celle-ci n'a ni l'un ni l'autre.",
+    givesNote:
+      "Des frondes vertes et arquées pour le sol à l'ombre, et un abri pour les anolis et les rainettes.",
+    propagationNote:
+      "Rempotez les petits plants qui se forment le long de ses stolons, ou divisez une touffe pendant la saison des pluies. Partez d'un pied dont vous êtes sûr qu'il est indigène.",
+  },
+  "Thelypteris kunthii@florida-south": {
+    nativeNote:
+      "Indigène dans les hammocks, les bandes de cyprès chauves et les bois frais, jusqu'au comté de Miami-Dade.",
+    careNote:
+      "De l'ombre et une terre ordinaire, calcaire comprise. Arrosez-la pendant la saison sèche, de l'hiver au printemps ; sans gel, elle reste verte toute l'année. Elle s'étend par ses rhizomes en une large nappe souple.",
+    givesNote:
+      "Des frondes vert pâle qui couvrent le sol à l'ombre, là où le gazon refuse de pousser, et un abri pour les anolis, les crapauds et les carabes.",
+    propagationNote:
+      "Arrachez et divisez une nappe au début de la saison des pluies ; chaque morceau avec des racines reprend. Elle lève aussi toute seule de ses spores, à l'ombre humide.",
+  },
+  "Telmatoblechnum serrulatum@florida-south": {
+    nativeNote:
+      "Indigène dans tous les Everglades et le Big Cypress, dans les dômes de cyprès, les prairies humides, les bords de marais et les fossés.",
+    careNote:
+      "Elle supporte presque le plein soleil si ses racines restent mouillées : un jardin de pluie, une noue, une berge de mare. Les frondes peuvent brunir lors d'un printemps sec et revenir avec les pluies. Elle s'étend par stolons en un massif.",
+    givesNote:
+      "Des frondes dressées et dentées qui tiennent le sol mouillé et filtrent le ruissellement, avec un abri pour les grenouilles. Les jeunes frondes s'ouvrent rose bronze.",
+    propagationNote:
+      "Déterrez au début de la saison des pluies un morceau de stolon avec frondes et racines, et plantez-le en sol mouillé.",
+  },
+  "Osmunda spectabilis@florida-south": {
+    nativeNote:
+      "Indigène dans les bandes de cyprès chauves, les marécages et les hammocks humides, jusqu'au Big Cypress, mais pas dans les Keys.",
+    careNote:
+      "De l'ombre et un sol qui ne sèche jamais, même en saison sèche : une berge de mare ou un creux sous les arbres. Lente à s'installer, puis longévive, en touffe nette.",
+    givesNote:
+      "De larges frondes souples, terminées par des grappes de spores rousses, et un couvert frais et humide pour les grenouilles au bord de l'eau.",
+    propagationNote:
+      "Divisez une vieille souche au début de la saison des pluies, en gardant des racines sur chaque morceau. Ses spores vertes meurent en quelques jours : semez-les fraîches sur un terreau humide, sous couvercle.",
+  },
+  "Spartina bakeri@florida-south": {
+    nativeNote:
+      "Indigène dans les prairies humides, les bords de marais et les rives de lacs, du lac Okeechobee vers le sud.",
+    careNote:
+      "Une grande fontaine de feuilles fines pour le soleil et un sol humide ou moyen. Elle encaisse aussi bien l'inondation que la saison sèche. Pas besoin de la rabattre.",
+    givesNote:
+      "Une touffe dense qui tient la berge d'une noue ou d'une mare et abrite les lapins des marais et les oiseaux qui nichent au sol.",
+    propagationNote:
+      "Sa graine lève rarement : divisez plutôt. Tranchez une touffe à la bêche en morceaux enracinés au début de la saison des pluies, et replantez.",
+  },
+  "Uniola paniculata@florida-south": {
+    nativeNote:
+      "La graminée qui bâtit les dunes des plages de Floride, indigène sur les deux côtes et dans les Keys.",
+    careNote:
+      "Plein soleil, sable nu et embruns. Arrosez les mottes jusqu'à ce qu'elles s'enracinent. Uniola paniculata est protégée par la loi en Floride dans la nature : achetez des plants de pépinière, et ne l'arrachez ni ne la cueillez jamais.",
+    givesNote:
+      "Des racines et des stolons qui piègent le sable soufflé et bâtissent la dune, et des épis qui nourrissent les oiseaux et les souris des plages.",
+    propagationNote:
+      "Partez de mottes de pépinière. Une touffe plantée émet des stolons qu'on peut détacher au printemps. La graine de vos propres pieds se sème fraîche dans un sable chaud et humide.",
+  },
+  "Tripsacum floridanum@florida-south": {
+    nativeNote:
+      "Un petit cousin de Tripsacum dactyloides, indigène dans les pinèdes sur roche calcaire et les prairies de marne du sud de la Floride.",
+    careNote:
+      "Du soleil et un sol calcaire ou sableux, sec ou mouillé selon la saison. Ses feuilles étroites forment une touffe nette là où Tripsacum dactyloides serait trop grand.",
+    givesNote:
+      "Une touffe soignée qui tient un sol mince et rocheux, avec des graines et un couvert pour les oiseaux qui vivent au sol.",
+    propagationNote:
+      "Divisez une touffe en morceaux enracinés au début de la saison des pluies. La graine dure peut se semer en terre chaude, mais seule une partie lèvera.",
+  },
+  "Andropogon glomeratus@florida-south": {
+    nativeNote:
+      "Indigène dans les flatwoods humides — ces pinèdes plates et basses sur sable —, les bords de marais et les fossés de tout le sud de la Floride.",
+    careNote:
+      "Plein soleil et sol frais à mouillé : une noue, un jardin de pluie, un fossé. Rabattez-le en fin d'hiver, une fois les plumets tombés. Il se ressème sur la terre nue et humide alentour.",
+    givesNote:
+      "Des plumets argentés et duveteux de l'automne à l'hiver, au-dessus de feuilles cuivrées, des graines pour les bruants, et de quoi nourrir les chenilles des hespéries.",
+    propagationNote:
+      "Éparpillez la graine duveteuse sur une terre nue et humide au printemps, et tassez-la. Les touffes se divisent facilement au début de la saison des pluies.",
+    supportNotes: {
+      "grass-skippers":
+        "Les Andropogon nourrissent les chenilles de plusieurs hespéries, qui se cachent dans des feuilles roulées et passent l'hiver au cœur de la touffe.",
+    },
+  },
+  "Eragrostis elliottii@florida-south": {
+    nativeNote:
+      "Indigène dans les flatwoods de pins, les dunes littorales et les clairières sableuses de tout le sud de la Floride.",
+    careNote:
+      "Du soleil et un sol sableux ; elle supporte les embruns. De courte vie, mais elle se ressème : un massif se renouvelle tout seul. Rabattez-la en fin d'hiver.",
+    givesNote:
+      "Des feuilles gris-bleu sous des nuages légers d'épillets argentés, puis des graines pour les colombes et les bruants.",
+    propagationNote:
+      "Éparpillez la graine sur un sol sableux nu au printemps, et tassez-la. Les jeunes touffes se divisent facilement.",
+  },
+  "Ipomoea pes-caprae@florida-south": {
+    nativeNote:
+      "La liane pionnière des plages du sud de la Floride, qui court sur le sable nu juste au-dessus de la laisse de mer.",
+    careNote:
+      "Donnez-lui du sable ouvert, ensoleillé, et de la place pour courir — elle rampe plutôt qu'elle ne grimpe, et s'enracine en avançant. Elle se moque des embruns, de la sécheresse et des submersions. Coupez les tiges qui débordent sur les allées.",
+    givesNote:
+      "Des ipomées rose-pourpre qui s'ouvrent chaque matin pour les abeilles indigènes, et de longues tiges rampantes qui s'enracinent et sont souvent la première chose à tenir une dune.",
+    propagationNote:
+      "Coupez un morceau de tige déjà enraciné à un nœud et replantez-le dans le sable — de loin le plus facile. La graine dure germe une fois le tégument entaillé ou poncé et la graine trempée une nuit.",
+  },
+  "Canavalia rosea@florida-south": {
+    nativeNote:
+      "Un haricot rampant des plages et des bords de dune du sud de la Floride, souvent emmêlé avec l'Ipomoea pes-caprae.",
+    careNote:
+      "Il lui faut le plein soleil et un sable meuble ; laissez-le courir sur une dune ou monter sur une clôture basse. Insensible au sel et à la sécheresse. Les graines crues sont toxiques pour les gens et les animaux.",
+    givesNote:
+      "Des fleurs de pois rose vif toute l'année pour les xylocopes et les abeilles coupeuses de feuilles, et des tiges rampantes qui retiennent le sable de la dune. Légumineuse, il enrichit aussi le sable pauvre.",
+    propagationNote:
+      "Entaillez ou poncez le tégument dur, faites tremper la graine une nuit, et semez-la dans du sable chaud — elle lève en une quinzaine de jours. Un morceau de tige avec un nœud peut aussi s'enraciner.",
+    supportNotes: {
+      "eastern-carpenter-bee":
+        "Les xylocopes sont assez lourds pour forcer ses fleurs de pois, et ce sont ses principaux visiteurs sur la dune.",
+    },
+  },
+  "Jacquemontia pentanthos@florida-south": {
+    nativeNote:
+      "Une petite liane rare des pine rocklands — pinèdes sur dalle calcaire — et des lisières de hammock littoral, à Miami-Dade et dans les Keys.",
+    careNote:
+      "Une liane volubile légère pour une clôture, un treillage ou un arbuste clair au soleil ; elle n'étouffe pas son support. Elle veut un drainage parfait et accepte le calcaire et les embruns. Menacée en Floride : achetez-la en pépinière, ne la prélevez jamais.",
+    givesNote:
+      "Des bouquets de fleurs bleu ciel de l'automne au printemps pour les petites abeilles indigènes et les papillons, quand peu d'autres lianes fleurissent.",
+    propagationNote:
+      "Récoltez la graine quand les capsules papyracées sèchent, entaillez-la ou faites-la tremper, et semez au chaud. Les boutures de pointes tendres s'enracinent aussi. Ne prélevez graines et boutures que sur des plantes de jardin — les pieds sauvages sont protégés.",
+  },
+  "Centrosema virginianum@florida-south": {
+    nativeNote:
+      "Un pois sauvage grêle des pinèdes, des flatwoods sableux — ces pinèdes plates du bas pays — et des lisières de hammock du sud de la Floride.",
+    careNote:
+      "Une liane volubile délicate : laissez-la grimper sur une clôture basse, un arbuste ou de hautes herbes, au soleil ou à mi-ombre légère. Résistante à la sécheresse, à l'aise sur sable pauvre ou sur roche.",
+    givesNote:
+      "De grandes fleurs de pois lavande pour les abeilles et les papillons, et des feuilles pour les chenilles de l'Urbanus proteus.",
+    propagationNote:
+      "Cueillez les longues gousses plates quand elles brunissent, avant qu'elles ne se tordent en projetant la graine. Entaillez ou poncez le tégument, faites tremper une nuit, et semez au chaud.",
+  },
+  "Pentalinon luteum@florida-south": {
+    nativeNote:
+      "Une liane volubile des lisières de hammock littoral, des pinèdes et des bords de mangrove du sud de la Floride et des Keys.",
+    careNote:
+      "Palissez-la sur une clôture ou un treillage, ou laissez-la s'étaler en dôme. Tolérante au sel et à la sécheresse une fois installée ; sensible au gel. Le latex est toxique — portez des gants pour la tailler.",
+    givesNote:
+      "De grandes trompettes jaune vif une bonne partie de l'année, travaillées par les abeilles à longue langue, et des feuilles pour les chenilles de la Syntomeida epilais.",
+    propagationNote:
+      "Les boutures aoûtées d'été s'enracinent bien dans un mélange léger et humide. Une tige couchée au sol s'enracine aussi. La graine à aigrette soyeuse des longues gousses par paires se sème fraîche et au chaud.",
+  },
+  "Echites umbellatus@florida-south": {
+    nativeNote:
+      "Une liane volubile des hammocks littoraux, des pinèdes et des bords de mangrove du sud de la Floride et des Keys.",
+    careNote:
+      "Elle pousse sur un gros tubercule : elle traverse la sécheresse et repart après une taille sévère ou une gelée. Donnez-lui une clôture ou un arbuste où s'enrouler. Le latex est toxique.",
+    givesNote:
+      "Des trompettes blanches parfumées pour les papillons de nuit au crépuscule, et des feuilles qui sont la nourriture indigène des chenilles de la Syntomeida epilais.",
+    propagationNote:
+      "Semez fraîche et au chaud la graine à aigrette soyeuse des longues gousses par paires. Les boutures de tiges aoûtées s'enracinent en été.",
+  },
+  "Vitis rotundifolia@florida-south": {
+    nativeNote:
+      "La vigne sauvage des hammocks et des pinèdes du sud de la Floride — ici surtout sa forme à petits fruits, la vigne de Munson.",
+    careNote:
+      "Donnez-lui une clôture solide ou une tonnelle au soleil, sinon elle grimpera dans l'arbre le plus proche. Elle accepte le calcaire et le sable d'ici. Seuls les pieds femelles fructifient. Le raisin est toxique pour les chiens.",
+    givesNote:
+      "De petits raisins sombres en été pour les moqueurs, les moqueurs chats, les ratons laveurs et les renards, et des feuilles pour de grandes chenilles de sphinx.",
+    propagationNote:
+      "Couchez une tige au sol : elle s'enracine en une saison. Les boutures de bois sec reprennent mal ; les boutures tendres d'été sous brumisation réussissent mieux. La graine semée fraîche, sortie de raisins mûrs, lève ici sans passer par le froid.",
+    supportNotes: {
+      "berry-songbirds":
+        "Moqueurs, moqueurs roux et moqueurs chats mangent les raisins qui éclatent sur la vigne.",
+      "acorn-mammals":
+        "Renards, ratons laveurs, opossums et cerfs se nourrissent des raisins tombés.",
+    },
+  },
+  "Symphyotrichum carolinianum@florida-south": {
+    nativeNote:
+      "Un aster sarmenteux des bords de marécage, de marais et de canal du sud de la Floride, qui s'appuie sur les arbustes au-dessus du sol humide.",
+    careNote:
+      "Un aster ligneux et étalé qui s'appuie sur tout ce qui l'entoure : donnez-lui une clôture, un arbuste ou un bord d'étang où grimper, au soleil. Il aime le sol humide. Rabattez-le sévèrement après la floraison pour qu'il reste fourni.",
+    givesNote:
+      "Les asters sont un groupe clé de voûte, plantes hôtes de nombreuses chenilles. Ici ses fleurs roses parfumées s'ouvrent en hiver, quand monarques, Danaus gilippus et abeilles trouvent peu d'autre chose.",
+    propagationNote:
+      "Les boutures de pointes tendres s'enracinent vite dans un mélange humide. Les longues tiges qui touchent le sol s'enracinent souvent seules — détachez-les et déplacez-les. La graine est rare et lève de façon irrégulière.",
+    supportNotes: {
+      "monarch":
+        "Il fleurit ici en hiver, quand les monarques sédentaires de Floride n'ont presque rien d'autre à butiner.",
+      "queen-butterfly":
+        "Les Danaus gilippus se pressent sur ses fleurs parfumées pendant toute la saison sèche.",
+    },
+  },
+  "Phyla nodiflora@florida-south": {
+    nativeNote:
+      "Indigène dans tout le sud de la Floride et les Keys, au bord des marais, sur les replats côtiers et dans les vieilles pelouses.",
+    careNote:
+      "Une alternative au gazon qui supporte la tonte, le piétinement, les inondations d'été, la sécheresse de la saison sèche et un peu de sel. Elle s'étend vite par stolons : tenez-la hors des massifs.",
+    givesNote:
+      "De minuscules fleurs tous les mois de l'année pour les petites abeilles et les papillons, et la nourriture des chenilles du Phyciodes phaon et de l'Anartia jatrophae.",
+    propagationNote:
+      "Chaque stolon s'enracine là où il touche le sol : coupez un morceau enraciné et replantez-le, en toute saison.",
+    supportNotes: {
+      "phaon-crescent":
+        "La verveine du pays est la nourriture des chenilles du Phyciodes phaon : laissez un coin sans tonte et il le trouvera.",
+      "white-peacock":
+        "L'une des plantes à chenilles de l'Anartia jatrophae, et elle fleurit chaque mois où le papillon vole ici.",
+    },
+  },
+  "Ernodea littoralis@florida-south": {
+    nativeNote:
+      "Indigène rampante des dunes, du cordon littoral et des pinèdes sur roche calcaire du sud de la Floride, jusque dans les Keys.",
+    careNote:
+      "Un couvre-sol arbustif bas et bombé pour le plein soleil, sur sable ou calcaire — à l'épreuve du sel et de la sécheresse. Craint le gel (zone 10+). Pourrit en sol humide ou riche.",
+    givesNote:
+      "De petites trompettes rosées pour les papillons et les abeilles une bonne partie de l'année, des baies dorées pour les oiseaux, et des tiges qui s'enracinent en rampant et tiennent la dune.",
+    propagationNote:
+      "Bouturez des extrémités de tiges aoûtées dans un mélange sableux pendant la saison chaude. Les tiges rampantes s'enracinent souvent là où elles touchent le sable : coupez-les et soulevez-les. Les graines des baies dorées mûres se sèment fraîches et au chaud, mais c'est lent.",
+  },
+  "Sesuvium portulacastrum@florida-south": {
+    nativeNote:
+      "Plante grasse indigène des plages, des étendues salées et des lisières de mangrove du sud de la Floride.",
+    careNote:
+      "Un tapis charnu pour l'endroit le plus salé que vous ayez — embruns, inondations de marée, sable nu. Plein soleil. Il ne supporte ni le piétinement ni l'ombre.",
+    givesNote:
+      "De petites étoiles roses presque toute l'année pour les petites abeilles, et un tapis vivant qui lie le sable de plage là où peu d'autres plantes s'enracinent.",
+    propagationNote:
+      "Posez un morceau de tige sur du sable humide et il s'enracine en quelques jours — de loin la méthode la plus simple. La minuscule graine lève à la surface d'un sable chaud et humide.",
+  },
+  "Mimosa strigillosa@florida-south": {
+    nativeNote:
+      "Couvre-sol indigène bas des pinèdes, des champs et des bords de route, jusque dans le bas de la péninsule.",
+    careNote:
+      "Un tapis vivant résistant à la sécheresse pour le plein soleil, qui supporte un piétinement léger. Il se plaît surtout sur le sable ; un sol calcaire mince et rocheux lui convient moins. Il s'étend vite par stolons : donnez-lui une bordure.",
+    givesNote:
+      "Des pompons roses du printemps à l'automne pour les abeilles et les hespéries, de l'azote fixé dans un sol pauvre, et une pelouse qui nourrit les chenilles de la petite coliade.",
+    propagationNote:
+      "Les stolons s'enracinent en chemin : soulevez un morceau enraciné et mettez-le en pot. La graine a un tégument dur : entaillez-la et faites-la tremper une nuit avant de semer au chaud.",
+    supportNotes: {
+      "grass-skippers":
+        "Les hespéries fauves y descendent sans arrêt — l'une des rares plantes à nectar qui survit au piétinement.",
+    },
+  },
+  "Pontederia cordata@florida-south": {
+    nativeNote:
+      "Indigène dans les marais et les sloughs des Everglades — ces chenaux d'eau lente du marais — et au bord des canaux et des étangs du sud de la Floride.",
+    careNote:
+      "Pour un étang, une berge de canal ou une noue humide, jusqu'à trente centimètres d'eau. Elle survit à la baisse des eaux de la saison sèche, mais fleurit mieux gardée dans l'eau. Elle s'étend par de grosses racines en un massif.",
+    givesNote:
+      "Des épis bleus pour les abeilles et les papillons la plus grande partie de l'année, des graines pour les canards, et un abri pour les grenouilles et les petits poissons.",
+    propagationNote:
+      "Coupez une touffe en morceaux portant un bourgeon et des racines, et enfoncez-les dans la vase ou dans un pot immergé. Ici, n'importe quel mois chaud convient.",
+    supportNotes: {
+      "white-peacock":
+        "L'Anartia jatrophae butine ses épis la plus grande partie de l'année le long des canaux du sud de la Floride.",
+    },
+  },
+  "Sagittaria lancifolia@florida-south": {
+    nativeNote:
+      "Indigène dans les marais, les sloughs et les marécages à cyprès chauves des Everglades et au bord des canaux, jusqu'en eau saumâtre.",
+    careNote:
+      "Pour l'eau peu profonde ou la vase d'un étang, d'un canal ou du creux d'un jardin de pluie, au soleil ou à mi-ombre. Elle s'étend par rhizomes en un massif : laissez-lui de la place.",
+    givesNote:
+      "De hauts épis de fleurs blanches à trois pétales pour les abeilles, des graines pour les canards et les oiseaux des marais, et des racines qui tiennent une berge boueuse.",
+    propagationNote:
+      "Détachez un morceau enraciné de la touffe et plantez-le dans la vase ou dans un pot immergé. La graine semée sur de la vase mouillée par temps chaud lève aussi, mais la division va plus vite.",
+  },
+  "Crinum americanum@florida-south": {
+    nativeNote:
+      "Indigène dans les marais des Everglades, les marécages à cyprès chauves et les lisières humides de hammock — ces îlots de forêt dense — dans tout le sud de la Floride.",
+    careNote:
+      "Pour un sol mouillé ou une eau peu profonde, au soleil ou à mi-ombre ; il pousse aussi dans un massif ordinaire si on l'arrose. Il forme lentement une touffe à partir de ses bulbes. Toutes ses parties sont toxiques si on les avale.",
+    givesNote:
+      "Des fleurs blanches parfumées, en araignée, qui s'ouvrent au crépuscule pour les sphinx, et la nourriture des chenilles de la Xanthopastis, la « noctuelle espagnole ».",
+    propagationNote:
+      "Soulevez une touffe et détachez les bulbes latéraux avec leurs racines. Les grosses graines charnues germent d'elles-mêmes : pressez-les fraîches sur un sol humide, sans les enterrer. Portez des gants ; les bulbes sont toxiques.",
+  },
+  "Coreopsis leavenworthii@florida-south": {
+    nativeNote:
+      "Le coréopsis propre à la Floride, sauvage dans les prairies humides, les pinèdes, les fossés et les bords de route du sud de la Floride ; les Coreopsis sont la fleur emblème de l'État.",
+    careNote:
+      "Elle vit peu : traitez-la comme une fleur sauvage qui se ressème — laissez-la grener dans un coin ensoleillé, frais à moyen, et elle continue. Ici, elle fleurit tous les mois, surtout au printemps.",
+    givesNote:
+      "Des marguerites jaunes presque toute l'année nourrissent les petites abeilles indigènes, les syrphes et les papillons, et les oiseaux granivores prennent la graine.",
+    propagationNote:
+      "Cultivez-la de semis et laissez-la se ressemer pour la garder. Pressez la graine fine à la surface du sol sans l'enterrer, puisqu'il lui faut de la lumière pour lever, et tenez-la humide. Dans le sud sans gel, on peut semer en tout mois, mais l'automne et l'hiver sont le plus faciles.",
+    supportNotes: {
+      "sunflower-specialist-bees":
+        "Le groupe de la fleur emblème de la Floride — son pollen nourrit les abeilles spécialistes des astéracées, ici presque toute l'année.",
+    },
+  },
+  "Asclepias incarnata@florida-south": {
+    nativeNote:
+      "Asclépiade indigène des marais, des prairies humides et des bords de fossé du sud de la Floride.",
+    careNote:
+      "Elle demande une humidité régulière — bord d'étang, jardin de pluie ou point bas humide — et ne supporte pas un été sec. Souvent de courte vie dans le sud : laissez-la grener. Sa sève est toxique si on l'avale. Plantez-la à la place de l'asclépiade tropicale, qui n'est pas indigène.",
+    givesNote:
+      "Une plante hôte des chenilles du monarque et du Danaus gilippus, son cousin, dont les fleurs roses parfumées attirent abeilles et papillons tout au long des mois chauds.",
+    propagationNote:
+      "Récoltez la graine dans les gousses ouvertes et donnez-lui quelques semaines de froid humide au réfrigérateur avant de semer, puisqu'un hiver du sud de la Floride ne s'en charge pas. Elle accepte aussi la division : soulevez et séparez une touffe au départ de la nouvelle pousse.",
+    supportNotes: {
+      monarch:
+        "Une asclépiade des sols humides, plante hôte du monarque ; dans le sud de la Floride, des monarques se reproduisent toute l'année.",
+      "queen-butterfly":
+        "Les chenilles du Danaus gilippus, le cousin du monarque, ne mangent elles aussi que des asclépiades.",
+    },
+  },
+  "Solidago stricta@florida-south": {
+    nativeNote:
+      "Verge d'or élancée des pinèdes humides, des flatwoods — ces plaines de pins clairsemés sur sol sableux et plat — des bords de marais et des dépressions littorales du sud de la Floride.",
+    careNote:
+      "Une verge d'or étroite et dressée : une rosette plate presque toute l'année, puis une haute baguette jaune à l'automne. Elle prend un sol humide ou moyen et un peu de sel, et ne s'étend que lentement. Elle ne donne pas le rhume des foins — c'est l'ambroisie.",
+    givesNote:
+      "Une espèce clé : les verges d'or nourrissent plus d'une centaine d'espèces de chenilles, et leurs fleurs d'automne nourrissent abeilles, guêpes et papillons quand presque rien d'autre ne fleurit.",
+    propagationNote:
+      "Le plus simple est la division : soulevez une touffe en fin d'hiver et détachez des rosettes enracinées. De semis, récoltez les têtes duveteuses au début de l'hiver et éparpillez la graine à la surface d'un sol humide.",
+    supportNotes: {
+      "sunflower-specialist-bees":
+        "Les verges d'or portent plus d'abeilles spécialistes de leur pollen que presque toute autre plante.",
+      monarch:
+        "Un nectar d'automne de premier ordre pour les monarques qui passent l'hiver dans le sud de la Floride.",
+    },
+  },
+  "Ruellia caroliniensis@florida-south": {
+    nativeNote:
+      "Petite fleur sauvage des pinèdes, des lisières de hammock — ces îlots de forêt dense — et des bois clairs du sud de la Floride.",
+    careNote:
+      "Petite et facile, au soleil ou à mi-ombre, elle fleurit tous les mois et se ressème avec modération. Ne la confondez pas avec le Ruellia simplex, plus haut, qui lui ressemble et envahit les zones humides.",
+    givesNote:
+      "Des trompettes lavande pour les abeilles et les petits papillons, et un feuillage qui nourrit les chenilles du Junonia coenia, du Siproeta stelenes et de l'Anartia jatrophae.",
+    propagationNote:
+      "Elle se sème toute seule : les capsules mûres éclatent et projettent la graine autour de la plante, il suffit d'empoter les semis. Vous pouvez aussi semer la graine au chaud, diviser une touffe ou bouturer une tige tendre.",
+    supportNotes: {
+      "white-peacock":
+        "Le Ruellia caroliniensis est l'une des plantes hôtes de l'Anartia jatrophae.",
+    },
+  },
+  "Liatris gracilis@florida-south": {
+    nativeNote:
+      "Un liatris indigène des pinèdes sur roche calcaire, des flatwoods et des clairières sableuses sèches du sud de la Floride.",
+    careNote:
+      "Plein soleil et drainage parfait — sable ou calcaire — et aucune eau une fois installé ; il pourrit en sol riche et humide. Ses baguettes pourpres s'ouvrent du haut vers le bas à l'automne, un peu plus tard que dans le nord.",
+    givesNote:
+      "Une plante à nectar d'automne de premier ordre : ses épis se couvrent de papillons, dont les monarques qui passent l'hiver ici, et d'abeilles indigènes.",
+    propagationNote:
+      "Semez à l'automne, après quelques semaines de froid humide au réfrigérateur, ce qui améliore la levée. Les pieds installés font de petits cormes souterrains qu'on peut soulever et séparer en hiver.",
+    supportNotes: {
+      monarch:
+        "Ses épis pourpres sont un nectar d'automne de premier ordre pour les monarques qui hivernent dans le sud de la Floride.",
+      "sunflower-specialist-bees":
+        "Une fleur d'astéracée qui nourrit les abeilles spécialistes.",
+    },
+  },
+  "Melanthera nivea@florida-south": {
+    nativeNote:
+      "Fleur sauvage commune des pinèdes, des lisières de hammock et des terrains ensoleillés remués du sud de la Floride.",
+    careNote:
+      "Facile et rapide au soleil ou à mi-ombre, sur sable ou calcaire, avec des tiges carrées et des fleurs blanches en boutons tous les mois. Elle devient lâche et penche : rabattez-la sévèrement une ou deux fois par an.",
+    givesNote:
+      "L'une des plantes à nectar les plus fréquentées par les papillons du sud de la Floride — hespéries, thècles, coliades et Heliconius s'y succèdent — et une source régulière de pollen pour les abeilles indigènes.",
+    propagationNote:
+      "Les boutures de tiges tendres s'enracinent vite en terreau humide, et les tiges qui se couchent s'enracinent souvent là où elles touchent le sol. Elle vient aussi facilement de semis au chaud, et se ressème un peu.",
+    supportNotes: {
+      "zebra-longwing":
+        "Ses fleurs blanches, ouvertes toute l'année, sont parmi les nectars favoris de l'Heliconius charithonia.",
     },
   },
 };

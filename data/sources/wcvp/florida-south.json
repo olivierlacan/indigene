@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Florida (TDWG:FLA — whole state)",
   "region": "florida-south",
-  "ranAt": "2026-10-16T19:41:12.420Z",
+  "ranAt": "2026-10-17T19:03:50.158Z",
   "rows": [
     {
       "id": "quercus-virginiana",
@@ -187,6 +187,136 @@
       "viaSynonym": null
     },
     {
+      "id": "pontederia-cordata",
+      "latin": "Pontederia cordata",
+      "asked": "Pontederia cordata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sagittaria-lancifolia",
+      "latin": "Sagittaria lancifolia",
+      "asked": "Sagittaria lancifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "crinum-americanum",
+      "latin": "Crinum americanum",
+      "asked": "Crinum americanum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "coreopsis-leavenworthii",
+      "latin": "Coreopsis leavenworthii",
+      "asked": "Coreopsis leavenworthii",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "asclepias-incarnata",
+      "latin": "Asclepias incarnata",
+      "asked": "Asclepias incarnata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "solidago-stricta",
+      "latin": "Solidago stricta",
+      "asked": "Solidago stricta",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ruellia-caroliniensis",
+      "latin": "Ruellia caroliniensis",
+      "asked": "Ruellia caroliniensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "liatris-gracilis",
+      "latin": "Liatris gracilis",
+      "asked": "Liatris gracilis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "melanthera-nivea",
+      "latin": "Melanthera nivea",
+      "asked": "Melanthera nivea",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "phyla-nodiflora",
+      "latin": "Phyla nodiflora",
+      "asked": "Phyla nodiflora",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ernodea-littoralis",
+      "latin": "Ernodea littoralis",
+      "asked": "Ernodea littoralis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sesuvium-portulacastrum",
+      "latin": "Sesuvium portulacastrum",
+      "asked": "Sesuvium portulacastrum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "mimosa-strigillosa",
+      "latin": "Mimosa strigillosa",
+      "asked": "Mimosa strigillosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "muhlenbergia-capillaris",
       "latin": "Muhlenbergia capillaris",
       "asked": "Muhlenbergia capillaris",
@@ -207,12 +337,192 @@
       "viaSynonym": null
     },
     {
+      "id": "spartina-bakeri",
+      "latin": "Spartina bakeri",
+      "asked": "Spartina bakeri",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": "Sporobolus bakeri (Merr.) P.M.Peterson & Saarela"
+    },
+    {
+      "id": "uniola-paniculata",
+      "latin": "Uniola paniculata",
+      "asked": "Uniola paniculata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "tripsacum-floridanum",
+      "latin": "Tripsacum floridanum",
+      "asked": "Tripsacum floridanum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "andropogon-glomeratus",
+      "latin": "Andropogon glomeratus",
+      "asked": "Andropogon glomeratus",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": "Anatherum glomeratum (Walter) Voronts. & E.A.Kellogg"
+    },
+    {
+      "id": "eragrostis-elliottii",
+      "latin": "Eragrostis elliottii",
+      "asked": "Eragrostis elliottii",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "passiflora-suberosa",
       "latin": "Passiflora suberosa",
       "asked": "Passiflora suberosa",
       "verdict": "ABSENT",
       "areas": {
         "FLA": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ipomoea-pes-caprae",
+      "latin": "Ipomoea pes-caprae",
+      "asked": "Ipomoea pes-caprae",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "canavalia-rosea",
+      "latin": "Canavalia rosea",
+      "asked": "Canavalia rosea",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "jacquemontia-pentanthos",
+      "latin": "Jacquemontia pentanthos",
+      "asked": "Jacquemontia pentanthos",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "centrosema-virginianum",
+      "latin": "Centrosema virginianum",
+      "asked": "Centrosema virginianum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pentalinon-luteum",
+      "latin": "Pentalinon luteum",
+      "asked": "Pentalinon luteum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "echites-umbellatus",
+      "latin": "Echites umbellatus",
+      "asked": "Echites umbellatus",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vitis-rotundifolia",
+      "latin": "Vitis rotundifolia",
+      "asked": "Vitis rotundifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "symphyotrichum-carolinianum",
+      "latin": "Symphyotrichum carolinianum",
+      "asked": "Symphyotrichum carolinianum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": "Ampelaster carolinianus (Walter) G.L.Nesom"
+    },
+    {
+      "id": "acrostichum-danaeifolium",
+      "latin": "Acrostichum danaeifolium",
+      "asked": "Acrostichum danaeifolium",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "nephrolepis-exaltata",
+      "latin": "Nephrolepis exaltata",
+      "asked": "Nephrolepis exaltata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "thelypteris-kunthii",
+      "latin": "Thelypteris kunthii",
+      "asked": "Thelypteris kunthii",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "telmatoblechnum-serrulatum",
+      "latin": "Telmatoblechnum serrulatum",
+      "asked": "Telmatoblechnum serrulatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "osmunda-spectabilis",
+      "latin": "Osmunda spectabilis",
+      "asked": "Osmunda spectabilis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
       },
       "viaSynonym": null
     }

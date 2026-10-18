@@ -15,6 +15,7 @@ export const REGION: RegionMeta = {
   note: "Native status is asserted for subtropical south Florida and the Keys, south of roughly Lake Okeechobee. Many species here are frost-tender and belong only in this region; north & central Florida has its own list.",
   extent: "From about Lake Okeechobee south through the Everglades, the Miami–Naples coasts and the whole chain of the Keys.",
   countries: ["US"],
+  areas: ["Florida"],
   // South Florida: from the Keys (~24.4° N) up to the ~27.2° N seam. Abuts —
   // never overlaps — the north & central Florida box.
   bounds: { minLat: 24.4, maxLat: 27.2, minLon: -82.5, maxLon: -79.9 },

@@ -14,6 +14,7 @@ export const REGION: RegionMeta = {
   // Canada first: Montréal, Québec City and Ottawa carry most of the people
   // here, and Burlington and Plattsburgh are the southern end of the same plain.
   countries: ["CA", "US"],
+  areas: ["Quebec", "Ontario", "Vermont", "New York"],
   zones: "4b–5b",
   note: "Native status is asserted for the St Lawrence plain and the Champlain valley, from VASCAN — Canada's own plant database — for Québec. The region crosses the border because the lowland does: Montréal, Ottawa, Burlington and Plattsburgh are one ecoregion, and the river is its middle rather than its edge. Away from the plain — up on the Canadian Shield, or east past the Townships — the growing season shortens and the flora changes; treat these recommendations as untested there.",
   extent: "The St Lawrence plain from Québec City upriver past Trois-Rivières, Montréal and Ottawa to Kingston, the Eastern Townships behind it, and the Champlain valley south to Burlington and Plattsburgh.",

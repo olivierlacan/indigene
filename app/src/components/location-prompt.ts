@@ -61,41 +61,7 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
   }
 
   // ---- Route 1: the device's location ----
-  const gpsBtn = el("button", {
-    type: "button",
-    class: "btn btn-primary spot-gps",
-    onClick: useGps,
-  }, `📍 ${gpsLabel}`) as HTMLButtonElement;
-
-  function resetGps(): void {
-    gpsBtn.disabled = false;
-    gpsBtn.textContent = `📍 ${gpsLabel}`;
-  }
-
-  function useGps(): void {
-    clear(msg);
-    if (!("geolocation" in navigator)) {
-      note(t("prompt.noGeolocation"));
-      return;
-    }
-    gpsBtn.disabled = true;
-    gpsBtn.textContent = t("prompt.getting");
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        resetGps();
-        onResolve(pos.coords.latitude, pos.coords.longitude);
-      },
-      (err) => {
-        resetGps();
-        note(
-          err.code === err.PERMISSION_DENIED
-            ? t("prompt.denied")
-            : t("prompt.noFix"),
-        );
-      },
-      { enableHighAccuracy: true, timeout: 15000, maximumAge: 300000 },
-    );
-  }
+  const gpsBtn = gpsButton(gpsLabel, (lat, lon) => onResolve(lat, lon), note, () => clear(msg));
 
   // ---- Route 2: a ZIP code or town ----
   const input = el("input", {
@@ -179,6 +145,53 @@ export function locationPrompt(config: LocationPromptConfig): HTMLElement {
     // page (`.spot-picks`).
     el("div", { class: "spot-picks" }, [results, msg]),
   ]);
+}
+
+/**
+ * The "📍 My location" button on its own, for a page that wants the GPS route
+ * without the prompt's place field (the regions page has a field of its own).
+ * It asks once per tap, says so while it waits, and hands any failure to
+ * `note` already worded, with the postal-code route as the way forward.
+ */
+export function gpsButton(
+  label: string,
+  onFix: (lat: number, lon: number) => void,
+  note: (text: string) => void,
+  onStart: () => void = () => {},
+): HTMLButtonElement {
+  const btn = el("button", {
+    type: "button",
+    class: "btn btn-primary spot-gps",
+    onClick: useGps,
+  }, `📍 ${label}`) as HTMLButtonElement;
+
+  function reset(): void {
+    btn.disabled = false;
+    btn.textContent = `📍 ${label}`;
+  }
+
+  function useGps(): void {
+    onStart();
+    if (!("geolocation" in navigator)) {
+      note(t("prompt.noGeolocation"));
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = t("prompt.getting");
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        reset();
+        onFix(pos.coords.latitude, pos.coords.longitude);
+      },
+      (err) => {
+        reset();
+        note(err.code === err.PERMISSION_DENIED ? t("prompt.denied") : t("prompt.noFix"));
+      },
+      { enableHighAccuracy: true, timeout: 15000, maximumAge: 300000 },
+    );
+  }
+
+  return btn;
 }
 
 /**

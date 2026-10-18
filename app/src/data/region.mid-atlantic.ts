@@ -15,6 +15,7 @@ export const REGION: RegionMeta = {
   note: "Native status is asserted for the Piedmont and the forests of the Northeast. Elsewhere, treat these picks as untested.",
   extent: "North to southern New England, south to central Virginia, and from the Atlantic coast west to the Appalachian ridges.",
   countries: ["US"],
+  areas: ["Pennsylvania", "New Jersey", "Delaware", "Maryland", "Virginia", "New York", "Connecticut", "Rhode Island", "Massachusetts"],
   // Coarse box over the Piedmont/Northeast the seed list is tuned to: roughly
   // Virginia up through southern New England, west to the Appalachians.
   // **The north edge stops at 44.2, where the St Lawrence Lowlands begin.** It

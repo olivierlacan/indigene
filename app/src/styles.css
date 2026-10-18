@@ -3083,12 +3083,13 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
 }
 /* The part of a name that matches what you typed — on a search result, and
    equally on a card narrowed by an in-page filter (a region's roster, the
-   wildlife index, the ranked picks for a spot). Not the browser's yellow
+   wildlife index, the ranked picks for a spot, the regions page). Not the browser's yellow
    <mark> — that fights both themes. Keeping the ink and underlining in the
    brand color preserves AAA contrast, and can't be mistaken for a link: result
    cards render their text undecorated. */
 .card mark,
-.plant mark {
+.plant mark,
+.region-card mark {
   background: none;
   color: inherit;
   text-decoration: underline;

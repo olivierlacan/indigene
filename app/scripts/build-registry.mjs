@@ -70,6 +70,11 @@ for (const { meta, seed } of REGIONS) {
         // cards, chiefly — never have to fetch a region's whole plant list for
         // one boolean. It is the same in every region that lists a taxon.
         keystone: Boolean(p.keystone),
+        // Carried for the catalog's caterpillar sort, for the same reason.
+        // Unlike the keystone flag it can differ by region (each list cites
+        // its own host data), so the catalog takes the highest documented
+        // count; null only when no region has counted the plant.
+        hostLepCount: p.hostLepCount ?? null,
         commonNames: commonNames(p.common),
         cultivarOf: null,
         regions: [],
@@ -79,6 +84,7 @@ for (const { meta, seed } of REGIONS) {
       bySci.set(key, e);
     } else {
       if (e._id !== p.id) warnings.push(`id conflict for ${p.latin}: ${e._id} vs ${p.id} (kept ${e._id})`);
+      if (p.hostLepCount != null) e.hostLepCount = Math.max(e.hostLepCount ?? 0, p.hostLepCount);
       for (const cn of commonNames(p.common)) if (!e.commonNames.includes(cn)) e.commonNames.push(cn);
     }
     if (!e.regions.includes(meta.id)) e.regions.push(meta.id);
@@ -111,6 +117,7 @@ function finalize(e) {
     form: e.form,
     rank: e.rank,
     keystone: e.keystone,
+    hostLepCount: e.hostLepCount,
     identifiers,
     commonNames: e.commonNames,
     aliases: [...e._aliasSet].sort(),

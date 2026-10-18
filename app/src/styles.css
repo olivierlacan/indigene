@@ -1666,7 +1666,7 @@ details[open] > summary::after {
   background: var(--brand-bg);
 }
 
-/* --- A region roster's Sort / Group / Filter panel (steps/region.ts) ---
+/* --- A plant list's Sort / Group / Filter panel (components/roster-controls.ts) ---
    One quiet box, a row per control under a hairline, each control drawn as
    what it does: segmented for Sort and Group (one option always on), a
    checkbox-style toggle for the Filter (on or off). */
@@ -5377,6 +5377,7 @@ button.card-stat:focus-visible .card-stat-tap {
    phone-width ribbon down the middle of a desktop screen: five times the
    scrolling, with a screenful of empty margin either side. */
 .plant-index-card {
+  position: relative;
   display: flex;
   gap: 0.7rem;
   align-items: stretch;
@@ -5417,6 +5418,10 @@ button.card-stat:focus-visible .card-stat-tap {
 .plant-index-card .region-pills {
   margin-top: auto;
   padding-top: 0.4rem;
+}
+/* Sorted by caterpillars, the pills stop short of the count tag in the corner. */
+.plant-index-card:has(.count-tag) .region-pills {
+  padding-right: 2.2rem;
 }
 
 /* --- Wildlife index: one card per creature ------------------------------ */

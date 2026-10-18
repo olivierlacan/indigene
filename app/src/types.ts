@@ -796,6 +796,10 @@ export interface RegistryEntry {
    *  area's caterpillars. Mirrored from the plant lists so a page can say so
    *  without downloading one (see `scripts/build-registry.mjs`). */
   keystone: boolean;
+  /** Caterpillar species the taxon hosts: the highest count any region's list
+   *  documents, or null when none has counted it. Mirrored for the catalog's
+   *  caterpillar sort, like `keystone`. */
+  hostLepCount: number | null;
   /** Cross-reference identifiers by scheme, each a bare accession. Always carries
    *  `indigene` (our catalog id); external schemes are filled by reconciliation. */
   identifiers: Partial<Record<IdScheme, string>>;

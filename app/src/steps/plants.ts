@@ -8,6 +8,10 @@
 // because `#/plants/<slug>` is already one plant's profile — "oak" is a search,
 // not a slug, and the two can't share a shape. `#/search` and `#/search/<q>`
 // were the old addresses; main.ts folds them into these.
+//
+// The list sorts, groups and filters the way a region's roster does, with the
+// same panel (`components/roster-controls.ts`), and those choices ride in the
+// same query string: `/plants?q=oak&sort=caterpillars`.
 import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { REGISTRY } from "../lib/registry";
@@ -18,6 +22,14 @@ import { highlight, norm } from "../components/filter-field";
 import { plantThumb } from "../components/plant-thumb";
 import { door } from "../components/plant-door";
 import { lookalikeIcon, alternativeIcon, invasiveIcon, cropsIcon, propagateIcon } from "../components/door-icons";
+import { keystoneIcon } from "../components/keystone-icon";
+import { silhouetteFor } from "../components/plant-card";
+import { sectionTitle } from "../components/section-link";
+import { rosterControls, caterpillarLede, countTag } from "../components/roster-controls";
+import { rosterQuery, rosterView, byCaterpillars } from "../lib/roster-sort";
+import type { RosterView } from "../lib/roster-sort";
+import { FORM_ORDER } from "../lib/forms";
+import { PIONEERS } from "../data/pioneers";
 import type { PlantForm } from "../types";
 import { t, fmtNumber, getLang } from "../lib/i18n";
 import { INVASIVES } from "../data/invasives";
@@ -35,6 +47,8 @@ type Row = {
   common: string;
   latin: string;
   form: PlantForm;
+  keystone: boolean;
+  hostLepCount: number | null;
   regions: string[];
   hay: string;
   alts: string[];
@@ -67,6 +81,8 @@ function buildRows(): Row[] {
       common,
       latin: e.scientificName,
       form: e.form,
+      keystone: e.keystone,
+      hostLepCount: e.hostLepCount,
       regions: e.regions,
       hay: norm([common, ...e.commonNames, e.scientificName, ...e.aliases, ...searchAliases(taxon)].join(" ")),
       alts,
@@ -85,19 +101,45 @@ function buildRows(): Row[] {
  *  address bar (`syncAddressBar` in main.ts) — but the hash form is still what
  *  an old link, a bookmark or the retired `#/search/<query>` address arrives
  *  as, and either is a fine thing to be handed. */
-function queryFromUrl(): string {
+function paramsFromUrl(): URLSearchParams {
   const at = location.hash.indexOf("?");
-  const params =
-    at >= 0
-      ? new URLSearchParams(location.hash.slice(at + 1))
-      : new URLSearchParams(location.search);
-  return params.get("q") ?? "";
+  return at >= 0
+    ? new URLSearchParams(location.hash.slice(at + 1))
+    : new URLSearchParams(location.search);
+}
+
+/** The page's address for a query and a view: the canonical path form, not the
+ *  hash, because this page has a prerendered file, so `/plants?q=oak` is a real
+ *  address that previews. The query leads, then the view's own parameters. */
+function plantsHref(q: string, view: RosterView): string {
+  const base = `${import.meta.env.BASE_URL}plants`;
+  const all = new URLSearchParams(q.trim() ? { q: q.trim() } : {});
+  for (const [k, v] of new URLSearchParams(rosterQuery(view))) all.set(k, v);
+  const str = all.toString();
+  return str ? `${base}?${str}` : base;
+}
+
+/** Every plant that is a pioneer in at least one region. The catalog has no
+ *  region to ask, so a plant counts if any region's table names it. */
+function pioneerIds(): Set<string> {
+  return new Set(Object.values(PIONEERS).flatMap((table) => Object.keys(table)));
+}
+
+/** A plant type's silhouette at heading size, the same drawing as the cards. */
+function formIcon(f: PlantForm): SVGSVGElement {
+  const svg = silhouetteFor(f, 24);
+  svg.setAttribute("aria-hidden", "true");
+  svg.style.verticalAlign = "-0.18em";
+  return svg;
 }
 
 export function renderPlants(main: HTMLElement): void {
   clear(main);
   document.title = t("plants.docTitle");
   const ROWS = buildRows();
+  const PIONEER_IDS = pioneerIds();
+  const pioneerCount = ROWS.filter((r) => PIONEER_IDS.has(r.slug)).length;
+  let view = rosterView(paramsFromUrl());
 
   const input = el("input", {
     type: "search",
@@ -113,6 +155,7 @@ export function renderPlants(main: HTMLElement): void {
   // them, they would read the whole catalogue aloud.
   const count = el("p", { id: "search-count", class: "coords", role: "status", style: "margin:0.5rem 0 0.8rem" }, "");
   const results = el("div");
+  const controls = el("div");
 
   function rank(r: Row, nq: string): number {
     if (!nq) return 0;
@@ -139,7 +182,19 @@ export function renderPlants(main: HTMLElement): void {
       el("a", { href: `#/plants/${r.slug}`, class: "card plant-index-card" }, [
         plantThumb(r.slug, r.form, { attrs: { style: "flex:none" } }),
         el("span", { class: "plant-index-text" }, [
-          el("span", { class: "plant-name", style: "display:block;font-weight:700" }, highlight(r.common, nq)),
+          el("span", { class: "plant-name", style: "display:block;font-weight:700" }, [
+            ...highlight(r.common, nq),
+            // A word joiner keeps the star from wrapping onto a line alone.
+            r.keystone ? "\u2060" : null,
+            r.keystone
+              ? el("span", {
+                  title: t("explore.keystoneTitle"),
+                  role: "img",
+                  "aria-label": t("explore.keystoneLabel"),
+                  class: "name-mark",
+                }, [keystoneIcon(13)])
+              : null,
+          ]),
           el("span", { class: "plant-latin", style: "display:block" }, highlight(r.latin, nq)),
           alt && el("span", { class: "plant-index-alt" },
             [t("plants.alsoCalled"), ...highlight(alt, nq), t("plants.alsoCalledEnd")]),
@@ -149,18 +204,32 @@ export function renderPlants(main: HTMLElement): void {
               meta ? regionShort(meta) : id);
           })),
         ]),
+        // Sorted by caterpillars, the count the list is ordered by. Absent for
+        // a plant no region has counted yet.
+        view.sort === "caterpillars" && r.hostLepCount !== null ? countTag(r.hostLepCount) : null,
       ]),
     ]);
   }
 
+  // Redraw in place for a new view, and keep the address in step with it.
+  function pick(to: RosterView): void {
+    view = to;
+    history.replaceState(null, "", plantsHref(input.value, view));
+    run(input.value);
+  }
+
   function run(q: string): void {
     const nq = norm(q);
-    const matches = (nq ? ROWS.filter((r) => r.hay.includes(nq)) : ROWS)
-      .slice()
-      .sort((a, b) => rank(a, nq) - rank(b, nq) || a.common.localeCompare(b.common, getLang()));
+    const pool = view.pioneers ? ROWS.filter((r) => PIONEER_IDS.has(r.slug)) : ROWS;
+    const hits = nq ? pool.filter((r) => r.hay.includes(nq)) : pool;
+    const matches = view.sort === "caterpillars"
+      ? byCaterpillars(hits, (r) => r.common, getLang())
+      : hits.slice().sort((a, b) => rank(a, nq) - rank(b, nq) || a.common.localeCompare(b.common, getLang()));
     count.textContent = nq
-      ? t("plants.matchCount", { n: fmtNumber(matches.length), total: fmtNumber(ROWS.length), q: q.trim() })
-      : t("plants.idle", { total: fmtNumber(ROWS.length), regions: fmtNumber(REGIONS.length) });
+      ? t("plants.matchCount", { n: fmtNumber(matches.length), total: fmtNumber(pool.length), q: q.trim() })
+      : t("plants.idle", { total: fmtNumber(pool.length), regions: fmtNumber(REGIONS.length) });
+    // The panel's links carry the typed query too, so it's redrawn with it.
+    controls.replaceChildren(rosterControls(view, (to) => plantsHref(q, to), pioneerCount, pick));
     clear(results);
     if (!matches.length) {
       const pages = nq ? otherPages(nq) : [];
@@ -184,22 +253,30 @@ export function renderPlants(main: HTMLElement): void {
     // A grid, not a stack: the cards are self-contained, so a laptop shows
     // three across instead of one phone-wide ribbon down the middle of the
     // screen (see `.card-grid`, and `WIDE_STEPS` in main.ts).
-    results.append(
-      el("ul", { class: "card-grid", style: "list-style:none;margin:0;padding:0" },
-        matches.map((r) => card(r, nq)))
-    );
+    const grid = (rows: Row[]): HTMLElement =>
+      el("ul", { class: "card-grid", style: "list-style:none;margin:0;padding:0" }, rows.map((r) => card(r, nq)));
+    if (view.sort === "caterpillars") results.append(caterpillarLede());
+    if (!view.grouped) {
+      results.append(grid(matches));
+      return;
+    }
+    for (const f of FORM_ORDER) {
+      const inForm = matches.filter((r) => r.form === f);
+      if (!inForm.length) continue;
+      results.append(el("section", {}, [
+        sectionTitle(formIcon(f), t(`form.${f}` as const), fmtNumber(inForm.length)),
+        grid(inForm),
+      ]));
+    }
   }
 
   input.addEventListener("input", () => {
     const q = input.value;
     run(q);
     // Reflect the query into the URL for sharing, without triggering a re-route.
-    // The canonical path form, not the hash: this page has a prerendered file,
-    // so `/plants?q=oak` is a real address that previews — and writing the hash
-    // form here would leave `…/plants/#/plants?q=oak` on a page that was itself
-    // opened by its path.
-    const base = `${import.meta.env.BASE_URL}plants`;
-    history.replaceState(null, "", q.trim() ? `${base}?q=${encodeURIComponent(q.trim())}` : base);
+    // The path form (see `plantsHref`): writing the hash form here would leave
+    // `…/plants/#/plants?q=oak` on a page that was itself opened by its path.
+    history.replaceState(null, "", plantsHref(q, view));
   });
 
   main.append(
@@ -218,6 +295,7 @@ export function renderPlants(main: HTMLElement): void {
       door("#/planting", propagateIcon(24), t("plants.door.planting"), t("plants.door.plantingHint")),
     ]),
     el("div", { class: "field" }, [el("label", { for: "plant-q" }, t("plants.label")), input]),
+    controls,
     count,
     results,
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
@@ -226,7 +304,7 @@ export function renderPlants(main: HTMLElement): void {
     ]),
   );
 
-  const initial = queryFromUrl();
+  const initial = paramsFromUrl().get("q") ?? "";
   if (initial) input.value = initial;
   run(initial);
   queueMicrotask(() => input.focus());

@@ -1764,8 +1764,8 @@ details[open] > summary::after {
 /* The caterpillar count on a roster card, sorted by it: a small round tag
    pinned over the card's bottom-right edge, half on the card and half off. */
 /* Out of the flow entirely, so it can never push a name onto another line.
-   It rises 1.35rem into a card padded 0.6rem: it can only ever reach the last
-   line, the one-line description, which stops short of it (steps/region.ts). */
+   It rises 1.35rem into a card padded 0.6rem, below the name and the Latin
+   name, which sit centred against the taller thumbnail. */
 .count-tag {
   position: absolute;
   right: -0.3rem;

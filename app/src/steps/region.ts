@@ -31,12 +31,10 @@ import type { PioneerEntry, Plant, PlantForm } from "../types";
 import { t, tn, tx, fmtNumber, getLang } from "../lib/i18n";
 import { commonName, nameLines, regionName, regionNote, regionReference, localNameCoverage } from "../lib/names";
 import { flagRow } from "../components/flags";
-import { prose } from "../lib/prose";
 import { reportRosterUntranslated, reportUntranslated } from "../components/wip-banner";
 import { mostWantedSection } from "../components/most-wanted";
 import { mappedLookalikeIds } from "../lib/lookalikes";
 import { alternativeCountForRegion } from "../lib/alternatives";
-import { richText } from "../components/rich-text";
 import { pioneersUntranslated } from "../lib/prose";
 import { addressParam } from "../lib/routes";
 import { rosterQuery, rosterView, sortRoster } from "../lib/roster-sort";
@@ -619,12 +617,6 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
           : null,
       ]),
       sub,
-      // Sorted by caterpillars, the last line stops short of the count tag
-      // pinned over the card's corner — the only line the tag reaches. One
-      // truncated line, so the room it leaves can't make anything wrap.
-      el("div", {
-        style: `font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis${opts.caterpillars ? ";padding-right:2.3rem" : ""}`,
-      }, richText(prose(p, "givesNote", regionId))),
     ]),
     opts.pioneer ? pressureFooter({ plant: p, entry: opts.pioneer }, { interactive: false }) : null,
     // The figure the list is sorted by, as a tag pinned over the card's

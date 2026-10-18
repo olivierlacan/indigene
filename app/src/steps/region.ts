@@ -620,9 +620,10 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
       ]),
       sub,
       // Sorted by caterpillars, the last line stops short of the count tag
-      // pinned over the card's corner — the only line the tag reaches.
+      // pinned over the card's corner — the only line the tag reaches. One
+      // truncated line, so the room it leaves can't make anything wrap.
       el("div", {
-        style: `font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis${opts.caterpillars ? ";padding-right:2.2rem" : ""}`,
+        style: `font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis${opts.caterpillars ? ";padding-right:2.6rem" : ""}`,
       }, richText(prose(p, "givesNote", regionId))),
     ]),
     opts.pioneer ? pressureFooter({ plant: p, entry: opts.pioneer }, { interactive: false }) : null,

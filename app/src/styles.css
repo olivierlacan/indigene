@@ -1763,10 +1763,13 @@ details[open] > summary::after {
 
 /* The caterpillar count on a roster card, sorted by it: a small round tag
    pinned over the card's bottom-right edge, half on the card and half off. */
+/* Out of the flow entirely, so it can never push a name onto another line.
+   It rises 1.7rem into a card padded 0.6rem: it can only ever reach the last
+   line, the one-line description, which stops short of it (steps/region.ts). */
 .count-tag {
   position: absolute;
   right: -0.35rem;
-  bottom: -0.7rem;
+  bottom: -1rem;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -1786,7 +1789,7 @@ details[open] > summary::after {
 }
 /* Room below each card for the tag that hangs off it. */
 .card-grid:has(.count-tag) {
-  row-gap: 1.3rem;
+  row-gap: 1.6rem;
 }
 /* The keystone star beside a plant's name, sized to the name's own type so it
    reads at a glance instead of trailing it as a speck. */

@@ -1123,17 +1123,17 @@ function referencesSection(p: Plant): HTMLElement {
     { key: "inaturalist", label: "iNaturalist", sub: t("ref.inaturalist") },
     { key: "wikidata", label: "Wikidata", sub: t("ref.wikidata") },
   ];
+  // Two to a row, name over its one-line purpose: eight databases stacked one
+  // per row ran longer than any other card on the page.
   const items = SOURCES.filter((s) => links?.[s.key]).map((s) =>
-    el("li", { class: "score-item" }, [
-      el("div", { class: "score-head" }, [
-        el("a", { href: links![s.key] as string, target: "_blank", rel: "noopener" }, `${s.label} ↗`),
-      ]),
-      el("p", { class: "score-why" }, s.sub),
+    el("li", {}, [
+      el("a", { href: links![s.key] as string, target: "_blank", rel: "noopener" }, `${s.label}\u00a0↗`),
+      el("span", { class: "ref-sub" }, s.sub),
     ]),
   );
   const body: HTMLElement[] = [
-    el("p", { style: "margin:0.5rem 0 0.3rem" }, t("ref.lede")),
-    el("ul", { class: "score-list" }, items),
+    el("p", { style: "margin:0.5rem 0 0" }, t("ref.lede")),
+    el("ul", { class: "ref-grid" }, items),
   ];
   if (entry?.primaryId) {
     body.push(

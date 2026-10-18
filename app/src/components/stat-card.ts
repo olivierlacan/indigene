@@ -8,6 +8,7 @@
 // Every tile is a button: tapping it opens a small dialog that explains what
 // the metric means and why it matters for native plants — just-in-time
 // education, one metric at a time.
+import { genusOf, hostCountIsGenus } from "../lib/host-scope";
 import type { MoistureBand, Plant } from "../types";
 import { el } from "../ui";
 import { sunLabel, growthPlain, bloomColorWord, SOURCES_ROUTE, ZONE_INFO_URL, MOISTURE_INFO_URL } from "../lib/plain";
@@ -209,8 +210,14 @@ function statsFor(p: Plant): Stat[] {
           icon: "🐛",
           label: t("stat.host.label"),
           value: t("stat.host.value", { n: fmtNumber(p.hostLepCount) }),
-          sub: p.keystone ? t("stat.host.subKeystone") : t("stat.host.subValue"),
-          explain: t("stat.host.explain") + (p.keystone ? ` ${t("stat.host.explainKeystone")}` : ""),
+          // A genus figure says so under the number: every willow reads 300,
+          // and the tile shouldn't let that pass as this species' own count.
+          sub: hostCountIsGenus(p)
+            ? t("stat.host.subGenus", { genus: genusOf(p.latin) })
+            : p.keystone ? t("stat.host.subKeystone") : t("stat.host.subValue"),
+          explain: t("stat.host.explain") +
+            (p.keystone ? ` ${t("stat.host.explainKeystone")}` : "") +
+            (hostCountIsGenus(p) ? ` ${t("stat.host.explainGenus", { genus: genusOf(p.latin) })}` : ""),
           source: p.basis,
         },
     p.bloom

@@ -1585,7 +1585,6 @@ export const en = {
   "alternative.tellApartLink": "see how to tell it from the native",
   "plant.propagationTitle": "🪴 How to grow more",
   "plant.forThisPlant": "For this plant: ",
-  "plant.howToSource": "How-to source: ",
   "plant.savedFit.one":
     "You've saved a spot this would suit. Open it to see everything else that thrives there.",
   "plant.savedFit.other":
@@ -1612,6 +1611,14 @@ export const en = {
   "plant.notFoundTitle": "We don't know that plant yet",
   "plant.notFoundLede": "Nothing in Indigene's regional lists matches “{slug}”. Every entry is checked for native status and honest numbers, so the lists grow carefully.",
   "plant.notFoundBrowse": "Browse the natives we do know",
+  "plantSources.title": "📚 Sources",
+  "plantSources.lede": "What backs each claim on this page.",
+  "plantSources.native": "Native range",
+  "plantSources.hosts": "Caterpillar count",
+  "plantSources.size": "Size",
+  "plantSources.general": "Profile",
+  "plantSources.propagation": "Growing more",
+  "plant.seeSources": "Sources for each figure",
   "ref.title": "🔎 Look it up elsewhere",
   "ref.lede": "The same plant in botanical and wildlife databases, matched by a shared code so you land on the right record.",
   "ref.powo": "accepted name & native range",

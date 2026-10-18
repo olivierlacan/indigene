@@ -15,7 +15,8 @@ import { savedSpotsThatSuit } from "../lib/saved-fit";
 import { activeEntry } from "../lib/plant-view";
 import { renderPlantPhotos, PHOTOS_ROUTE, photosHref } from "./plant-photos";
 import type { PlantEntry, Suitability } from "../lib/explore";
-import { bestTies } from "../lib/wildlife";
+import { bestTies, wildlifeForPlant } from "../lib/wildlife";
+import { parseBasis, type BasisPart } from "../lib/basis";
 import { lookalikesForPlant } from "../lib/lookalikes";
 import { ornamentalsForPlant } from "../lib/alternatives";
 import { latPlain, lonPlain } from "../lib/plain";
@@ -57,7 +58,10 @@ import { richText } from "../components/rich-text";
 // route. Every heading shows the mark that hands it over
 // (`components/anchor-head.ts`). Listed in the order they appear in the phone
 // stack.
-const SECTIONS = ["needs", "resilience", "ecosystem", "nearby", "propagation", "spot", "references"] as const;
+const SECTIONS = ["needs", "resilience", "ecosystem", "nearby", "propagation", "spot", "sources"] as const;
+// The Sources card was "Look it up elsewhere", at `#references`, before it took
+// in every source line on the page. Links already shared still land on it.
+const SECTION_ALIASES: Record<string, Section> = { references: "sources" };
 
 type Section = (typeof SECTIONS)[number];
 const sectionDomId = (s: Section): string => `sec-${s}`;
@@ -88,7 +92,9 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
   }
   const fromFragment = isHashRoute(location.hash) ? "" : location.hash.slice(1);
   const wanted = fromFragment || fromRoute;
-  const section = (SECTIONS as readonly string[]).includes(wanted) ? (wanted as Section) : null;
+  const section = (SECTIONS as readonly string[]).includes(wanted)
+    ? (wanted as Section)
+    : (SECTION_ALIASES[wanted] ?? null);
 
   const entries = await findPlant(slug);
   if (!entries.length) {
@@ -133,7 +139,7 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
   // laptop it goes under the spot check — both ask where you are — because the
   // left column otherwise ran a screenful longer than the right.
   const nearby = nearbyObservationsSection(plant);
-  const references = referencesSection(plant);
+  const references = sourcesSection(plant, entries, region.meta.id);
   const sectionsRight = el("div", { class: "plant-sections-col" }, [
     suitabilityChecker(entries),
     references,
@@ -181,7 +187,7 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
   // Arrived on the old route form: put the shareable one in the address bar,
   // silently and without a history entry, so what the reader copies from here
   // is the address that previews as this plant.
-  if (section && fromRoute && !fromFragment) history.replaceState(history.state, "", sectionAddress(section));
+  if (section && (section !== wanted || (fromRoute && !fromFragment))) history.replaceState(history.state, "", sectionAddress(section));
 
   main.addEventListener("click", onAnchorClick);
 
@@ -224,7 +230,9 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
       if (!chip.classList.contains("region-chip-on")) location.replace(chip.href);
       return;
     }
-    const link = (e.target as Element | null)?.closest("a.anchor-link");
+    // A heading's `#` mark copies the card's address; a jump link inside the
+    // page (`.section-jump`) only goes there.
+    const link = (e.target as Element | null)?.closest("a.anchor-link, a.section-jump");
     if (!link || !main.contains(link)) return;
     const wantedSection = (link.getAttribute("href") ?? "").slice(1);
     if (!(SECTIONS as readonly string[]).includes(wantedSection)) return;
@@ -232,7 +240,7 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
     const address = sectionAddress(wantedSection as Section);
     history.replaceState(history.state, "", address);
     revealSection(wantedSection as Section);
-    void copyLink(`${location.origin}${address}`);
+    if (link.classList.contains("anchor-link")) void copyLink(`${location.origin}${address}`);
   }
 
   /**
@@ -407,7 +415,11 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
                 confidenceMeter(p.confidence),
                 el("span", { class: "confidence-arrow", "aria-hidden": "true" }, "→"),
               ]),
-              el("p", {}, [t("card.source"), ...richText(p.basis, citation)]),
+              // The sources themselves are in their own card, each beside the
+              // claim it backs; this only points there.
+              el("p", {}, [
+                el("a", { class: "section-jump", href: plantSectionHref("sources") }, `${t("plant.seeSources")} ↓`),
+              ]),
             ]),
           ]),
         ]),
@@ -996,7 +1008,7 @@ function alternativeLine(all: PlantEntry[]): HTMLElement | null {
 // three paragraphs about scarification would otherwise be printed on the forty
 // plant pages that mention it, pushing this plant's own story below the fold.
 function propagationSection(p: Plant, regionId: string): HTMLElement {
-  const { methods, basis } = p.propagation;
+  const { methods } = p.propagation;
   const methodItems = methods.map((m) => {
     const g = propagationMethod(m);
     const tech = techniqueFor(m);
@@ -1029,17 +1041,64 @@ function propagationSection(p: Plant, regionId: string): HTMLElement {
     el("p", { class: "more-link prop-all" }, [
       el("a", { href: "#/planting" }, `${t("planting.allTechniques")} →`),
     ]),
-    el("p", { class: "confidence", style: "margin-top:0.4rem" }, [
-      el("span", {}, [
-        t("plant.howToSource"),
-        // Only the row's own sources. A fixed "USFS Native Plant Network" link
-        // used to follow every row, so a French ivy or a New Zealand flax
-        // seemed to cite a North American database it never came from; the
-        // rows that do use it name it, and `citation` links the name.
-        ...richText(basis, citation),
-      ]),
-    ]),
   ]);
+}
+
+/**
+ * Every claim on the page beside what backs it, then the databases to look the
+ * plant up in.
+ *
+ * The sources used to be scattered: a line under the confidence meter, another
+ * under the propagation methods, the pioneer list's own line, and each wildlife
+ * tie's basis shown nowhere on this page. Here they are one list, one row per
+ * claim, and a source text shared by several claims (two animals documented by
+ * the same records) is printed once with all of them named. Only the row's own
+ * sources: `citation` links an authority's name where the row uses it.
+ */
+function sourcesSection(p: Plant, entries: PlantEntry[], regionId: string): HTMLElement {
+  const rows = new Map<string, string[]>(); // source text → the claims it backs
+  const add = (claim: string, text: string | undefined): void => {
+    const key = text?.trim();
+    if (!key) return;
+    const claims = rows.get(key) ?? [];
+    if (!claims.includes(claim)) claims.push(claim);
+    rows.set(key, claims);
+  };
+  for (const part of parseBasis(p.basis)) add(basisClaim(part), part.text);
+  add(t("plantSources.propagation"), p.propagation.basis);
+  add(t("plant.resilienceTitle"), pioneerFor(regionId, p.id)?.basis);
+  // A plant on two lists shows the union of its ties (`bestTies`), so its
+  // sources come from every list too.
+  for (const e of entries) {
+    for (const { wildlife, link } of wildlifeForPlant(e.region.meta.id, e.plant.id)) add(commonName(wildlife), link.basis);
+  }
+  const claims = el("ul", { class: "score-list" }, [...rows].map(([text, names]) =>
+    el("li", { class: "score-item" }, [
+      el("div", { class: "score-head" }, el("strong", {}, names.join(" · "))),
+      el("p", { class: "score-why" }, richText(text, citation)),
+    ]),
+  ));
+  return sectionCard("sources", t("plantSources.title"), [
+    el("p", { style: "margin:0.5rem 0 0.3rem" }, t("plantSources.lede")),
+    claims,
+    ...databaseLinks(p),
+    el("p", { class: "more-link" }, [el("a", { href: "#/sources" }, `${t("sources.title")} →`)]),
+  ]);
+}
+
+/** The claim a `basis` part backs, in the reader's language where it is one of
+ *  the figures every plant carries; otherwise its label as written. A
+ *  qualifier on the label ("Native status/range (var. patens)") is kept. */
+function basisClaim(part: BasisPart): string {
+  const named: Partial<Record<BasisPart["kind"], [RegExp, string]>> = {
+    native: [/^native status(\/range)?/i, t("plantSources.native")],
+    hosts: [/^host count/i, t("plantSources.hosts")],
+    size: [/^size/i, t("plantSources.size")],
+    confidence: [/^confidence \w+/i, t("card.confidence")],
+  };
+  if (part.kind === "general" || !part.label) return t("plantSources.general");
+  const known = named[part.kind];
+  return known ? part.label.replace(known[0], known[1]) : part.label;
 }
 
 // Look this plant up in the authoritative botanical & observation databases.
@@ -1047,7 +1106,7 @@ function propagationSection(p: Plant, regionId: string): HTMLElement {
 // a stable record link where an id is reconciled, and a name search as a graceful
 // fallback where it isn't yet — so the section is useful today and gets richer as
 // identifiers are filled in. This is the registry's first user-facing use.
-function referencesSection(p: Plant): HTMLElement {
+function databaseLinks(p: Plant): HTMLElement[] {
   const entry = entryForPlant(p.id);
   const links = entry ? deepLinks(entry) : null;
   // The database *names* are proper nouns and stay as they are; only the
@@ -1070,8 +1129,10 @@ function referencesSection(p: Plant): HTMLElement {
       el("p", { class: "score-why" }, s.sub),
     ]),
   );
+  if (!items.length) return [];
   const body: HTMLElement[] = [
-    el("p", { style: "margin:0.5rem 0 0.3rem" }, t("ref.lede")),
+    el("h3", { class: "sources-sub" }, t("ref.title")),
+    el("p", { class: "score-why" }, t("ref.lede")),
     el("ul", { class: "score-list" }, items),
   ];
   if (entry?.primaryId) {
@@ -1089,7 +1150,7 @@ function referencesSection(p: Plant): HTMLElement {
       ]),
     );
   }
-  return sectionCard("references", t("ref.title"), body);
+  return body;
 }
 
 /**

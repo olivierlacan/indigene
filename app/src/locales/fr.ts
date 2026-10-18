@@ -1546,7 +1546,6 @@ export const fr: Dict = {
   "alternative.tellApartLink": "voyez comment la distinguer de l'indigène",
   "plant.propagationTitle": "🪴 Comment la multiplier",
   "plant.forThisPlant": "Pour cette plante : ",
-  "plant.howToSource": "Source du mode d'emploi : ",
   "plant.savedFit.one":
     "Vous avez enregistré un coin qui lui conviendrait. Ouvrez-le pour voir tout ce qui y prospère.",
   "plant.savedFit.other":
@@ -1573,6 +1572,14 @@ export const fr: Dict = {
   "plant.notFoundTitle": "Nous ne connaissons pas encore cette plante",
   "plant.notFoundLede": "Rien dans les listes régionales d'Indigene ne correspond à « {slug} ». Chaque entrée est vérifiée (statut d'indigène, honnêteté des chiffres), alors les listes grandissent prudemment.",
   "plant.notFoundBrowse": "Parcourir les indigènes que nous connaissons",
+  "plantSources.title": "📚 Sources",
+  "plantSources.lede": "Ce qui appuie chaque affirmation de cette page.",
+  "plantSources.native": "Aire d'indigénat",
+  "plantSources.hosts": "Nombre de chenilles",
+  "plantSources.size": "Taille",
+  "plantSources.general": "Fiche",
+  "plantSources.propagation": "Multiplication",
+  "plant.seeSources": "Les sources de chaque chiffre",
   "ref.title": "🔎 La chercher ailleurs",
   "ref.lede": "La même plante dans les bases botaniques et naturalistes, retrouvée par un code commun pour tomber sur la bonne fiche.",
   "ref.powo": "nom accepté et aire d'indigénat",

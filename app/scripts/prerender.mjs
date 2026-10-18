@@ -368,7 +368,7 @@ async function collectPages(load) {
     image: pageCard("browse"),
     imageAlt: "Browse — start from a region or a standout plant, no location needed",
   });
-  add("wildlife", en["wildlife.indexDocTitle"], fill(en["wildlife.indexLede"], { n: WILDLIFE.length }), {
+  add("wildlife", en["wildlife.indexDocTitle"], en["wildlife.indexLede"], {
     image: pageCard("wildlife"),
     imageAlt: "Browse by wildlife — pick a creature and see the native plants that feed it",
   });

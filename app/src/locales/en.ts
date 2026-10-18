@@ -1633,10 +1633,8 @@ export const en = {
   // ---------------------------------------------------------------------
   "wildlife.coverageNote": "The ties we've checked and sourced, not every insect a plant feeds. An oak alone hosts hundreds of moths; these are the ones worth choosing a plant for.",
   "wildlife.indexDocTitle": "Native plants by the wildlife they support · Indigene",
-  "wildlife.indexTitle": "Browse by wildlife",
-  "wildlife.indexLede": "Pick the insect or animal you want in your yard and see which native plants support it, and how. {n} creatures mapped so far, from monarchs to the gopher tortoise.",
-  "wildlife.allNative": "🌿 Every animal here is itself native. ",
-  "wildlife.allNativeRest": "That's the whole point: native plants feeding native wildlife. So the managed honey bee is left out. The 📍 figure counts the regions we've mapped a creature in; open it for their names.",
+  "wildlife.indexTitle": "Native wildlife",
+  "wildlife.indexLede": "Pick an animal to see which native plants support it, and how. Every animal here is native too, so the honey bee isn't.",
   "wildlife.browsePlants": "← Browse plants instead",
   "wildlife.browsePlantsShort": "Browse plants",
   "wildlife.startFromSpot": "Start from a spot",
@@ -1706,7 +1704,7 @@ export const en = {
   // The region cut of the index — the other axis the group chips run on.
   "wildlife.regionDocTitle": "Wildlife the natives of {region} support · Indigene",
   "wildlife.groupInRegionDocTitle": "{group} of {region} · Indigene",
-  "wildlife.indexLedeRegion": "{n} creatures the natives on Indigene's {region} list support. Pick one to see which of those plants raise or feed it, and how.",
+  "wildlife.indexLedeRegion": "Pick an animal to see which {region} natives support it, and how.",
   "wildlife.groupInRegionLede": "{n} on Indigene's {region} list. {blurb}",
   "wildlife.regionFilterLabel": "Show the wildlife of",
   "wildlife.regionFilterAll": "Every region ({n})",

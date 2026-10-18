@@ -216,17 +216,9 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
       el("h2", { class: "step-title" }, t("wildlife.indexTitle")),
       el("p", { class: "step-lede" },
         region
-          ? t("wildlife.indexLedeRegion", { n: fmtNumber(rows.length), region: regionShort(region.meta) })
-          : t("wildlife.indexLede", { n: fmtNumber(all.length) })),
+          ? t("wildlife.indexLedeRegion", { region: regionShort(region.meta) })
+          : t("wildlife.indexLede")),
     );
-    if (!region) {
-      main.append(
-        el("p", { class: "note info", style: "margin-top:0" }, [
-          el("strong", {}, t("wildlife.allNative")),
-          t("wildlife.allNativeRest"),
-        ]),
-      );
-    }
   }
 
   const filterRows: FilterRow[] = [];

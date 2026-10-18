@@ -39,6 +39,10 @@ import { mappedLookalikeIds } from "../lib/lookalikes";
 import { alternativeCountForRegion } from "../lib/alternatives";
 import { richText } from "../components/rich-text";
 import { pioneersUntranslated } from "../lib/prose";
+import { addressParam } from "../lib/routes";
+import { byCaterpillars, rosterSort } from "../lib/roster-sort";
+import type { RosterSort } from "../lib/roster-sort";
+import { supportIcon } from "../components/support-icon";
 
 /** The category headings. A function, not a record: a record built at import
  *  time would be stuck in whichever language loaded first. */
@@ -95,9 +99,12 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
   document.title = t("region.docTitle", { region: regionName(region.meta) });
   reportRosterUntranslated(plants, region.meta.id);
 
+  // The roster reads by category unless the address asks for the plants that
+  // raise the most caterpillars first — a shareable slice, like a category.
+  const sort = rosterSort(addressParam("sort", location.hash, location.search));
   const allRows: FilterRow[] = [];
   const sections: FilterSection[] = [];
-  const groups = FORM_ORDER.map((f) => {
+  const groups = sort === "caterpillars" ? [caterpillarGroup(plants, region, allRows)] : FORM_ORDER.map((f) => {
     const inForm = sortedByCommon(plants, f);
     if (!inForm.length) return null;
     const rows = inForm.map((p) => filterRow(p, region.meta.id));
@@ -138,6 +145,7 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
       ...[namingNote(plants)].filter((n): n is HTMLElement => n !== null),
       plantFilterField(allRows, sections),
       categoryChips(region, plants, null),
+      sortChips(region, sort),
     ]),
     ...groups,
     // And what to pull. The roster answers "what belongs here"; this answers
@@ -173,6 +181,35 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
       el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),
     ])
   );
+}
+
+/** The whole roster as one list, most caterpillar species first, each row
+ *  showing its count. Its rows join `allRows` so the filter still narrows it. */
+function caterpillarGroup(plants: Plant[], region: RegionDef, allRows: FilterRow[]): HTMLElement {
+  const rows = byCaterpillars(plants, commonName, getLang())
+    .map((p) => filterRow(p, region.meta.id, { caterpillars: true }));
+  allRows.push(...rows);
+  return el("section", {}, [
+    el("p", { class: "obs-section-lede" }, t("region.sortCaterpillarsLede")),
+    el("div", { class: "card-grid" }, rows.map((r) => r.node)),
+  ]);
+}
+
+/** The two ways to read the roster. Links, not toggles: each order has an
+ *  address of its own to share, the way a category does. */
+function sortChips(region: RegionDef, current: RosterSort): HTMLElement {
+  const base = `#/regions/${region.meta.id}`;
+  const chip = (sort: RosterSort, href: string, label: (string | Node)[]): HTMLElement =>
+    el("a", {
+      class: "btn btn-secondary",
+      style: chipStyle,
+      href,
+      "aria-current": sort === current ? "page" : undefined,
+    }, label);
+  return el("nav", { "aria-label": t("region.sortNav"), style: "display:flex;flex-wrap:wrap;gap:0.4rem;margin:0 0 0.8rem" }, [
+    chip("category", base, [t("region.sortCategory")]),
+    chip("caterpillars", `${base}?sort=caterpillars`, [supportIcon("host", 16), t("region.sortCaterpillars")]),
+  ]);
 }
 
 /** The animals this region's plants are documented to support, as the wildlife
@@ -452,8 +489,8 @@ function sortedByCommon(plants: Plant[], form: PlantForm): Plant[] {
 
 // The haystack carries the English name too, not only the displayed one: a
 // French reader who knows a plant as "red maple" should still find it.
-function filterRow(p: Plant, regionId: string): FilterRow {
-  const { node, mark } = plantRow(p, regionId);
+function filterRow(p: Plant, regionId: string, opts: RowOptions = {}): FilterRow {
+  const { node, mark } = plantRow(p, regionId, opts);
   return { hay: norm(`${commonName(p)} ${p.common} ${p.latin}`), node, mark };
 }
 
@@ -476,7 +513,13 @@ function plantFilterField(rows: FilterRow[], sections: FilterSection[]): HTMLEle
 // with the full story living on the plant's own page. `mark` re-draws the two
 // name lines with the filter query underlined, exactly as a search result does
 // — the row says which word kept it on screen.
-function plantRow(p: Plant, regionId: string): { node: HTMLElement; mark: (nq: string) => void } {
+interface RowOptions {
+  /** Show the caterpillar count in place of the "what it does" line — the
+   *  figure the list is sorted by, so a scan can see why a plant ranks there. */
+  caterpillars?: boolean;
+}
+
+function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HTMLElement; mark: (nq: string) => void } {
   const names = nameLines(p);
   const title = el("span", {});
   const sub = el("div", { class: "plant-latin", style: "font-size:0.85rem" });
@@ -502,9 +545,16 @@ function plantRow(p: Plant, regionId: string): { node: HTMLElement; mark: (nq: s
           : null,
       ]),
       sub,
-      el("div", {
-        style: "font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis",
-      }, richText(prose(p, "givesNote", regionId))),
+      opts.caterpillars
+        ? el("div", { style: "font-size:0.85rem;color:var(--ink-soft);display:flex;align-items:center;gap:0.3rem" }, [
+            supportIcon("host", 14),
+            p.hostLepCount === null
+              ? t("stat.host.uncounted")
+              : t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
+          ])
+        : el("div", {
+            style: "font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis",
+          }, richText(prose(p, "givesNote", regionId))),
     ]),
   ]);
   const mark = (nq: string): void => {

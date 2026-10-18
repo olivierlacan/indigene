@@ -1752,6 +1752,10 @@ export const fr: Dict = {
   "pressure.disturbance.plain":
     "Un sol décapé, retourné, fauché ou brûlé, puis laissé à lui-même. Ce sont les plantes qui arrivent les premières et le tiennent jusqu'à ce qu'autre chose puisse.",
   "region.allChip": "Tout ({n})",
+  "region.sortNav": "Ordre",
+  "region.sortCategory": "Par catégorie",
+  "region.sortCaterpillars": "Plus de chenilles",
+  "region.sortCaterpillarsLede": "Combien d'espèces de papillons de jour et de nuit élèvent leurs chenilles sur chaque plante. La page de chaque plante cite sa source.",
   "region.categoriesNav": "Catégories de plantes",
   "region.invasivesChip": "🚩 Envahissantes ({n})",
   "region.filterAria": "Filtrer cette liste par nom de plante",

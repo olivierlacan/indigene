@@ -1792,6 +1792,10 @@ export const en = {
   "pressure.disturbance.plain":
     "Ground scraped, dug, mown or burned and then left. These are the plants that arrive first and hold it until something else can.",
   "region.allChip": "All ({n})",
+  "region.sortNav": "Order",
+  "region.sortCategory": "By category",
+  "region.sortCaterpillars": "Most caterpillars",
+  "region.sortCaterpillarsLede": "How many butterfly and moth species raise their caterpillars on each plant. Each plant's page cites its source.",
   "region.categoriesNav": "Plant categories",
   "region.invasivesChip": "🚩 Worst invasives ({n})",
   "region.filterAria": "Filter this list by plant name",

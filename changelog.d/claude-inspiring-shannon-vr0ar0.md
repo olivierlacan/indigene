@@ -6,6 +6,8 @@
 
 ### Changed
 
+- Plants: essential plants now wear a small star beside their name instead of the arch, which was hard to make out at that size.
+
 - Regions: a region's plants now open as one list; the plant types appear once you group by them. Look-alikes and native swaps moved below the list, beside the worst invasives.
 - Pioneers: each card ends with "Copes with" and drawn icons for rubble, cracks, salt and the rest; hover for the name, tap for what it means. Sources moved to the plant's own page.
 - Plants: a caterpillar count measured for a whole genus now says so under the number, like "for all of Salix", since every willow shares it.

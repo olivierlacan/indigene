@@ -583,8 +583,8 @@ function plantFilterField(rows: FilterRow[], sections: FilterSection[]): HTMLEle
 // name lines with the filter query underlined, exactly as a search result does
 // — the row says which word kept it on screen.
 interface RowOptions {
-  /** Show the caterpillar count beside the name — the figure the list is
-   *  sorted by, so a scan can see why a plant ranks there. */
+  /** Show the caterpillar count as a tag on the card's corner — the figure
+   *  the list is sorted by, so a scan can see why a plant ranks there. */
   caterpillars?: boolean;
   /** This region's pioneer row for the plant: shown as the card's footer. */
   pioneer?: PioneerEntry;
@@ -598,13 +598,15 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
     href: `#/plants/${p.id}`,
     class: "card",
     // Wraps only to put a pioneer's footer on a line of its own.
-    style: "display:flex;flex-wrap:wrap;gap:0.7rem;align-items:center;text-decoration:none;color:inherit;padding:0.6rem 0.8rem;margin:0;height:100%",
+    style: "position:relative;display:flex;flex-wrap:wrap;gap:0.7rem;align-items:center;text-decoration:none;color:inherit;padding:0.6rem 0.8rem;margin:0;height:100%",
   }, [
     // This region's photograph, not just any region's: a live oak in Florida
     // and the same species in Maryland are not the same-looking tree, and the
     // roster you're reading is one region's.
     plantThumb(p.id, p.form, { regionId, attrs: { style: "flex:0 0 auto" } }),
-    el("div", { style: "flex:1 1 0;min-width:0" }, [
+    // Sorted by caterpillars, the text keeps clear of the count tag pinned
+    // over the card's corner.
+    el("div", { style: `flex:1 1 0;min-width:0${opts.caterpillars ? ";padding-right:2.2rem" : ""}` }, [
       el("div", { style: "font-weight:700" }, [
         title,
         p.keystone
@@ -615,16 +617,6 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
               style: "margin-left:0.3rem;color:var(--brand)",
             }, [keystoneIcon(13)])
           : null,
-        // The figure the list is sorted by, as quiet as the keystone beside it:
-        // a glyph and a number, spelled out for a screen reader and on hover.
-        opts.caterpillars && p.hostLepCount !== null
-          ? el("span", {
-              title: t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
-              role: "img",
-              "aria-label": t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
-              style: "margin-left:0.4rem;font-weight:400;font-size:0.8rem;color:var(--ink-soft);white-space:nowrap;display:inline-flex;align-items:center;gap:0.2rem;vertical-align:0.05em",
-            }, [supportIcon("host", 12), fmtNumber(p.hostLepCount)])
-          : null,
       ]),
       sub,
       el("div", {
@@ -632,6 +624,18 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
       }, richText(prose(p, "givesNote", regionId))),
     ]),
     opts.pioneer ? pressureFooter({ plant: p, entry: opts.pioneer }, { interactive: false }) : null,
+    // The figure the list is sorted by, as a tag pinned over the card's
+    // bottom-right edge: out of the name's way, and lined up down the list so
+    // the eye can run down the numbers. Spelled out for screen readers and on
+    // hover. Absent for a plant not counted yet.
+    opts.caterpillars && p.hostLepCount !== null
+      ? el("span", {
+          class: "count-tag",
+          role: "img",
+          title: t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
+          "aria-label": t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
+        }, [supportIcon("host", 11), fmtNumber(p.hostLepCount)])
+      : null,
   ]);
   const mark = (nq: string): void => {
     title.replaceChildren(...highlight(names.title, nq));

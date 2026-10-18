@@ -1761,6 +1761,33 @@ details[open] > summary::after {
   color: var(--brand);
 }
 
+/* The caterpillar count on a roster card, sorted by it: a small round tag
+   pinned over the card's bottom-right edge, half on the card and half off. */
+.count-tag {
+  position: absolute;
+  right: 0.7rem;
+  bottom: -0.55rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.3rem;
+  height: 2.3rem;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+/* Room below each card for the tag that hangs off it. */
+.card-grid:has(.count-tag) {
+  row-gap: 1.1rem;
+}
+
 /* --- Stat grid: the "player card" block of at-a-glance characteristics ---
    Tiles are borderless soft chips (a border per tile made adjacent edges read
    as one cramped lattice) and every tile is a button that opens a dialog
@@ -3863,12 +3890,17 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 0.75rem;
-  padding-top: 0.4rem;
+  /* Bleeds to the card's edges (both cards pad 0.6rem 0.8rem) so the hairline
+     runs the full width, on a faint tint that sets the strip apart. */
+  margin: 0.8rem -0.8rem -0.6rem;
+  padding: 0.45rem 0.8rem;
   border-top: 1px solid var(--line);
+  border-radius: 0 0 calc(var(--radius) - 1px) calc(var(--radius) - 1px);
+  background: color-mix(in srgb, var(--ink) 4%, transparent);
 }
-.card > .pressure-footer {
-  margin-top: 0; /* a row card already spaces its children with gap */
+/* A roster row is a flex card: its gap already spaces the strip. */
+a.card > .pressure-footer {
+  margin-top: 0.1rem;
 }
 .pressure-footer-label {
   font-size: 0.78rem;

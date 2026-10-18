@@ -6,4 +6,4 @@
 
 ### Changed
 
-- Wildlife: the top of the page is now one heading and two short sentences, so the first animals show up without scrolling.
+- Wildlife: the top of the page is now a heading and one sentence, so the first animals show up without scrolling.

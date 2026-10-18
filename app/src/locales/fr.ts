@@ -1595,7 +1595,7 @@ export const fr: Dict = {
   "wildlife.coverageNote": "Les liens que nous avons vérifiés et sourcés, pas tous les insectes qu'une plante fait vivre. Un seul chêne héberge des centaines d'espèces de papillons de nuit ; voici celles pour lesquelles il vaut la peine de choisir une plante.",
   "wildlife.indexDocTitle": "Plantes indigènes par la faune qu'elles font vivre · Indigene",
   "wildlife.indexTitle": "Faune indigène",
-  "wildlife.indexLede": "Choisissez un animal pour voir quelles plantes indigènes le font vivre, et comment. Chaque animal est lui-même indigène : l’abeille domestique n’y figure donc pas.",
+  "wildlife.indexLede": "Choisissez un animal pour voir quelles plantes indigènes le font vivre, et comment.",
   "wildlife.browsePlants": "← Parcourir plutôt les plantes",
   "wildlife.browsePlantsShort": "Parcourir les plantes",
   "wildlife.startFromSpot": "Partir d'un lieu",

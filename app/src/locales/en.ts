@@ -1634,7 +1634,7 @@ export const en = {
   "wildlife.coverageNote": "The ties we've checked and sourced, not every insect a plant feeds. An oak alone hosts hundreds of moths; these are the ones worth choosing a plant for.",
   "wildlife.indexDocTitle": "Native plants by the wildlife they support · Indigene",
   "wildlife.indexTitle": "Native wildlife",
-  "wildlife.indexLede": "Pick an animal to see which native plants support it, and how. Every animal here is native too, so the honey bee isn't.",
+  "wildlife.indexLede": "Pick an animal to see which native plants support it, and how.",
   "wildlife.browsePlants": "← Browse plants instead",
   "wildlife.browsePlantsShort": "Browse plants",
   "wildlife.startFromSpot": "Start from a spot",

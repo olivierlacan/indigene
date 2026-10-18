@@ -1,7 +1,8 @@
-// A plant list's Sort / Group / Filter panel, with the pieces that go with it:
-// the line explaining the caterpillar order and the count tag on each card.
-// Shared by a region's roster (steps/region.ts) and the catalog
-// (steps/plants.ts), so the two lists slice the same way and look it.
+// A list's Sort / Group / Filter panel, with the pieces a plant list adds to
+// it: the line explaining the caterpillar order and the count tag on each card.
+// Shared by a region's roster (steps/region.ts), the plant catalog
+// (steps/plants.ts) and the wildlife index (steps/wildlife.ts), so every list
+// slices the same way and looks it.
 import { el } from "../ui";
 import { t, fmtNumber } from "../lib/i18n";
 import type { RosterView } from "../lib/roster-sort";
@@ -10,26 +11,34 @@ import { supportIcon } from "./support-icon";
 import { openTermDialog } from "./term-dialog";
 import { infoIcon } from "./guide-link";
 
+/** One option of a segmented control: the view it leads to, whether it's the
+ *  one showing, and its words. */
+export interface Segment<V> {
+  to: V;
+  on: boolean;
+  label: (string | Node)[];
+}
+
+/** One row of the panel: a segmented control (one option always on), or a
+ *  checkbox-style toggle (on narrows the list, off shows it all). */
+export type PanelRow<V> =
+  | { label: string; segments: Segment<V>[] }
+  | { label: string; toggle: { to: V; on: boolean; label: string } };
+
 /**
- * Three ways to slice the list, one row each, each drawn as what it is so they
- * can't be mistaken for one another —
- *
- *   - **Sort** and **Group** are segmented: one of their options is always on,
- *     and picking another moves the highlight.
- *   - **Filter** is a checkbox-style toggle: on narrows the list, off shows it
- *     all, and its box says which. Absent when there are no pioneers.
+ * A list's view panel: one quiet box, a row per control, each drawn as what it
+ * is so Sort, Group and Filter can't be mistaken for one another.
  *
  * Links rather than buttons, so every view has an address to share. `onPick`,
  * when given, takes the click instead of following the link — for a page that
  * redraws in place rather than routing.
  */
-export function rosterControls(
-  view: RosterView,
-  href: (to: RosterView) => string,
-  pioneers: number,
-  onPick?: (to: RosterView) => void,
+export function viewPanel<V>(
+  rows: PanelRow<V>[],
+  href: (to: V) => string,
+  onPick?: (to: V) => void,
 ): HTMLElement {
-  const link = (to: RosterView, attrs: Record<string, string | undefined>, label: (string | Node)[]): HTMLElement =>
+  const link = (to: V, attrs: Record<string, string | undefined>, label: (string | Node)[]): HTMLElement =>
     el("a", {
       ...attrs,
       href: href(to),
@@ -42,33 +51,46 @@ export function rosterControls(
           }
         : undefined,
     }, label);
-  const segment = (to: RosterView, on: boolean, label: (string | Node)[]): HTMLElement =>
-    link(to, { class: "segment", "aria-current": on ? "page" : undefined }, label);
-  const row = (word: string, control: HTMLElement): HTMLElement =>
-    el("div", { class: "roster-control" }, [el("span", { class: "roster-control-label" }, word), control]);
-  const rows = [
-    row(t("region.sortLabel"), el("div", { class: "segmented" }, [
-      segment({ ...view, sort: "name" }, view.sort === "name", [t("region.sortName")]),
-      segment({ ...view, sort: "caterpillars" }, view.sort === "caterpillars",
-        [supportIcon("host", 15), t("region.sortCaterpillars")]),
-    ])),
-    row(t("region.groupLabel"), el("div", { class: "segmented" }, [
-      segment({ ...view, grouped: false }, !view.grouped, [t("region.groupNone")]),
-      segment({ ...view, grouped: true }, view.grouped, [t("region.groupByKind")]),
-    ])),
+  return el("nav", { "aria-label": t("region.viewNav"), class: "roster-controls" }, rows.map((r) =>
+    el("div", { class: "roster-control" }, [
+      el("span", { class: "roster-control-label" }, r.label),
+      "segments" in r
+        ? el("div", { class: "segmented" }, r.segments.map((sg) =>
+            link(sg.to, { class: "segment", "aria-current": sg.on ? "page" : undefined }, sg.label)))
+        : link(r.toggle.to, { class: "filter-toggle", role: "switch", "aria-checked": String(r.toggle.on) }, [
+            el("span", { class: "filter-box", "aria-hidden": "true" }, r.toggle.on ? "✓" : ""),
+            r.toggle.label,
+          ]),
+    ])));
+}
+
+/** A plant list's panel: A–Z or most caterpillars, grouped by plant type or
+ *  not, and the pioneers only (no Filter row when there are none). */
+export function rosterControls(
+  view: RosterView,
+  href: (to: RosterView) => string,
+  pioneers: number,
+  onPick?: (to: RosterView) => void,
+): HTMLElement {
+  const rows: PanelRow<RosterView>[] = [
+    { label: t("region.sortLabel"), segments: [
+      { to: { ...view, sort: "name" }, on: view.sort === "name", label: [t("region.sortName")] },
+      { to: { ...view, sort: "caterpillars" }, on: view.sort === "caterpillars",
+        label: [supportIcon("host", 15), t("region.sortCaterpillars")] },
+    ] },
+    { label: t("region.groupLabel"), segments: [
+      { to: { ...view, grouped: false }, on: !view.grouped, label: [t("region.groupNone")] },
+      { to: { ...view, grouped: true }, on: view.grouped, label: [t("region.groupByKind")] },
+    ] },
   ];
   if (pioneers) {
-    rows.push(row(t("region.filterLabel"),
-      link({ ...view, pioneers: !view.pioneers }, {
-        class: "filter-toggle",
-        role: "switch",
-        "aria-checked": String(view.pioneers),
-      }, [
-        el("span", { class: "filter-box", "aria-hidden": "true" }, view.pioneers ? "✓" : ""),
-        `${PIONEER_ICON} ${t("region.pioneersOnly", { n: fmtNumber(pioneers) })}`,
-      ])));
+    rows.push({ label: t("region.filterLabel"), toggle: {
+      to: { ...view, pioneers: !view.pioneers },
+      on: view.pioneers,
+      label: `${PIONEER_ICON} ${t("region.pioneersOnly", { n: fmtNumber(pioneers) })}`,
+    } });
   }
-  return el("nav", { "aria-label": t("region.viewNav"), class: "roster-controls" }, rows);
+  return viewPanel(rows, href, onPick);
 }
 
 /** What the caterpillar order means, said once above the list rather than on

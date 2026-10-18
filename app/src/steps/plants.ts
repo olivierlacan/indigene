@@ -30,6 +30,8 @@ import { rosterQuery, rosterView, byCaterpillars } from "../lib/roster-sort";
 import type { RosterView } from "../lib/roster-sort";
 import { FORM_ORDER } from "../lib/forms";
 import { PIONEERS } from "../data/pioneers";
+import { pressuresAnywhere } from "../lib/pioneers";
+import { pressureFooter } from "../components/pioneer-card";
 import type { PlantForm } from "../types";
 import { t, fmtNumber, getLang } from "../lib/i18n";
 import { INVASIVES } from "../data/invasives";
@@ -207,6 +209,11 @@ export function renderPlants(main: HTMLElement): void {
         // Sorted by caterpillars, the count the list is ordered by. Absent for
         // a plant no region has counted yet.
         view.sort === "caterpillars" && r.hostLepCount !== null ? countTag(r.hostLepCount) : null,
+        // Filtered to the pioneers, each card says what it copes with, as a
+        // region's roster does. No region here, so it's every region's claims.
+        view.pioneers
+          ? pressureFooter({ entry: { pressures: pressuresAnywhere(r.slug) } }, { interactive: false })
+          : null,
       ]),
     ]);
   }

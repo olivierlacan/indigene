@@ -18,7 +18,7 @@ import { termTag } from "./term-dialog";
 import { keystoneIcon } from "./keystone-icon";
 import { pressureLabel } from "../lib/plain";
 import { pressureIcon } from "./pressure-icon";
-import type { PioneerPressure } from "../types";
+import type { PioneerEntry, PioneerPressure } from "../types";
 import { orderedPressures } from "../lib/pioneers";
 import type { PioneerPick } from "../lib/pioneers";
 import { pioneerNote } from "../lib/prose";
@@ -39,9 +39,10 @@ export function pressureTags(pick: PioneerPick): HTMLElement[] {
  * The same chips as a card's footer, for a list: a hairline, "Copes with",
  * then the glyphs bare — the words are a hover away, and a tap opens the
  * explanation. `interactive: false` draws them as labelled pictures instead,
- * for a card that is itself a link (a button can't live inside one).
+ * for a card that is itself a link (a button can't live inside one). Only the
+ * pressures are read, so the catalog can pass a plant's across every region.
  */
-export function pressureFooter(pick: PioneerPick, opts: { interactive?: boolean } = {}): HTMLElement {
+export function pressureFooter(pick: { entry: Pick<PioneerEntry, "pressures"> }, opts: { interactive?: boolean } = {}): HTMLElement {
   const interactive = opts.interactive ?? true;
   const glyphs = orderedPressures(pick.entry).map((p) => {
     const info = pressureInfo(p);

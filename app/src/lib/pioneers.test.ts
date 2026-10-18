@@ -8,7 +8,7 @@
 // build, so the check belongs here rather than in a reviewer's head.
 import { describe, expect, it } from "vitest";
 import { PIONEERS, PRESSURE_ORDER, PRESSURE_ICON } from "../data/pioneers";
-import { pioneersForRegion, pioneerCountForRegion, orderedPressures } from "./pioneers";
+import { pioneersForRegion, pioneerCountForRegion, orderedPressures, pressuresAnywhere } from "./pioneers";
 import { traitsFor } from "./traits";
 import { REGIONS, loadPlants } from "./plants";
 
@@ -94,5 +94,28 @@ describe("the Pavement pioneer label", () => {
     // A caller that doesn't know its region never gets the label: a card must
     // not promise toughness we only documented somewhere else.
     expect(ids(cherry)).not.toContain("pioneer");
+  });
+});
+
+describe("a plant's pressures across every region", () => {
+  it("are every region's claims together, once each, in display order", () => {
+    const rows = new Map<string, Set<string>>();
+    for (const table of Object.values(PIONEERS))
+      for (const [id, entry] of Object.entries(table))
+        for (const p of entry.pressures) (rows.get(id) ?? rows.set(id, new Set()).get(id)!).add(p);
+    for (const [id, want] of rows) {
+      const got = pressuresAnywhere(id);
+      expect(new Set(got)).toEqual(want);
+      expect(got).toEqual(PRESSURE_ORDER.filter((p) => want.has(p)));
+    }
+    // Somewhere a plant is claimed differently in two regions, or the union
+    // above would be no different from reading one table.
+    const split = [...rows].some(([id, all]) =>
+      Object.values(PIONEERS).some((table) => table[id] && table[id].pressures.length < all.size));
+    expect(split).toBe(true);
+  });
+
+  it("are none for a plant no region lists", () => {
+    expect(pressuresAnywhere("no-such-plant")).toEqual([]);
   });
 });

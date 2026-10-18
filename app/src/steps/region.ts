@@ -596,7 +596,7 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
     href: `#/plants/${p.id}`,
     class: "card",
     // Wraps only to put a pioneer's footer on a line of its own.
-    style: "position:relative;display:flex;flex-wrap:wrap;gap:0.7rem;align-items:center;text-decoration:none;color:inherit;padding:0.6rem 0.8rem;margin:0;height:100%",
+    style: "position:relative;display:flex;flex-wrap:wrap;gap:0.7rem;align-items:center;text-decoration:none;color:inherit;padding:var(--list-card-pad);margin:0;height:100%",
   }, [
     // This region's photograph, not just any region's: a live oak in Florida
     // and the same species in Maryland are not the same-looking tree, and the

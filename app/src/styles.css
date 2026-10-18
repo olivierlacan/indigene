@@ -40,6 +40,9 @@
   --sun: #e2a516;
   --focus: #1747b3; /* ≥7:1 on --surface and --bg */
   --radius: 14px;
+  /* A list card's inset, the same on all four sides so a thumbnail sits in
+     an even frame (region rows, pioneer cards). */
+  --list-card-pad: 0.75rem;
   --tap: 3rem; /* 48px minimum tap target */
   --maxw: 34rem;
 
@@ -1764,7 +1767,7 @@ details[open] > summary::after {
 /* The caterpillar count on a roster card, sorted by it: a small round tag
    pinned over the card's bottom-right edge, half on the card and half off. */
 /* Out of the flow entirely, so it can never push a name onto another line.
-   It rises 1.35rem into a card padded 0.6rem, below the name and the Latin
+   It rises 1.35rem into a card padded --list-card-pad, below the name and the Latin
    name, which sit centred against the taller thumbnail. */
 .count-tag {
   position: absolute;
@@ -3887,7 +3890,7 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
 /* The card is NOT a link (its chips are buttons — see components/pioneer-card.ts),
    so the name carries the only anchor and has to look like one. */
 .pioneer-card {
-  padding: 0.6rem 0.8rem;
+  padding: var(--list-card-pad);
   margin: 0;
   height: 100%;
 }
@@ -3911,10 +3914,10 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  /* Bleeds to the card's edges (both cards pad 0.6rem 0.8rem) so the hairline
-     runs the full width, on a faint tint that sets the strip apart. */
-  margin: 0.8rem -0.8rem -0.6rem;
-  padding: 0.45rem 0.8rem;
+  /* Bleeds to the card's edges (both cards pad --list-card-pad) so the
+     hairline runs the full width, on a faint tint that sets the strip apart. */
+  margin: var(--list-card-pad) calc(-1 * var(--list-card-pad)) calc(-1 * var(--list-card-pad));
+  padding: 0.45rem var(--list-card-pad);
   border-top: 1px solid var(--line);
   border-radius: 0 0 calc(var(--radius) - 1px) calc(var(--radius) - 1px);
   background: color-mix(in srgb, var(--ink) 4%, transparent);

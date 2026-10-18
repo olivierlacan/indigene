@@ -1765,27 +1765,40 @@ details[open] > summary::after {
    pinned over the card's bottom-right edge, half on the card and half off. */
 .count-tag {
   position: absolute;
-  right: 0.7rem;
-  bottom: -0.55rem;
+  right: -0.35rem;
+  bottom: -0.7rem;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 2.3rem;
-  height: 2.3rem;
+  gap: 0.12rem;
+  min-width: 2.7rem;
+  height: 2.7rem;
   padding: 0 0.3rem;
   border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: var(--ink-soft);
-  font-size: 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--brand) 22%, transparent);
+  background: var(--brand-bg);
+  color: var(--brand);
+  font-size: 0.72rem;
   font-weight: 700;
   line-height: 1;
   font-variant-numeric: tabular-nums;
 }
 /* Room below each card for the tag that hangs off it. */
 .card-grid:has(.count-tag) {
-  row-gap: 1.1rem;
+  row-gap: 1.3rem;
+}
+/* The keystone star beside a plant's name, sized to the name's own type so it
+   reads at a glance instead of trailing it as a speck. */
+.name-mark {
+  display: inline-flex;
+  margin-left: 0.3rem;
+  color: var(--brand);
+  vertical-align: -0.08em;
+}
+.name-mark .keystone-icon {
+  width: 0.95em;
+  height: 0.95em;
 }
 
 /* --- Stat grid: the "player card" block of at-a-glance characteristics ---

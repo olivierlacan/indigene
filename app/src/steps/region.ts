@@ -604,23 +604,25 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
     // and the same species in Maryland are not the same-looking tree, and the
     // roster you're reading is one region's.
     plantThumb(p.id, p.form, { regionId, attrs: { style: "flex:0 0 auto" } }),
-    // Sorted by caterpillars, the text keeps clear of the count tag pinned
-    // over the card's corner.
-    el("div", { style: `flex:1 1 0;min-width:0${opts.caterpillars ? ";padding-right:2.2rem" : ""}` }, [
+    el("div", { style: "flex:1 1 0;min-width:0" }, [
       el("div", { style: "font-weight:700" }, [
         title,
+        // A word joiner keeps the star from wrapping onto a line alone.
+        p.keystone ? "\u2060" : null,
         p.keystone
           ? el("span", {
               title: t("explore.keystoneTitle"),
               role: "img",
               "aria-label": t("explore.keystoneLabel"),
-              style: "margin-left:0.3rem;color:var(--brand)",
+              class: "name-mark",
             }, [keystoneIcon(13)])
           : null,
       ]),
       sub,
+      // Sorted by caterpillars, the last line stops short of the count tag
+      // pinned over the card's corner — the only line the tag reaches.
       el("div", {
-        style: "font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis",
+        style: `font-size:0.85rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis${opts.caterpillars ? ";padding-right:2.2rem" : ""}`,
       }, richText(prose(p, "givesNote", regionId))),
     ]),
     opts.pioneer ? pressureFooter({ plant: p, entry: opts.pioneer }, { interactive: false }) : null,
@@ -634,7 +636,7 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
           role: "img",
           title: t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
           "aria-label": t("explore.caterpillarSpecies", { n: fmtNumber(p.hostLepCount) }),
-        }, [supportIcon("host", 11), fmtNumber(p.hostLepCount)])
+        }, [supportIcon("host", 15), fmtNumber(p.hostLepCount)])
       : null,
   ]);
   const mark = (nq: string): void => {

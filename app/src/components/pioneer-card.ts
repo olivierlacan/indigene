@@ -68,12 +68,14 @@ export function pioneerCard(
       el("div", { style: "min-width:0" }, [
         el("div", { class: "pioneer-name" }, [
           el("a", { href: `#/plants/${plant.id}` }, names.title),
+          // A word joiner keeps the star from wrapping onto a line alone.
+          plant.keystone ? "\u2060" : null,
           plant.keystone
             ? el("span", {
                 title: t("explore.keystoneTitle"),
                 role: "img",
                 "aria-label": t("explore.keystoneLabel"),
-                style: "margin-left:0.3rem;color:var(--brand)",
+                class: "name-mark",
               }, [keystoneIcon(13)])
             : null,
         ]),

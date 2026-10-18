@@ -759,12 +759,14 @@ function supportRow(s: PlantSupport): FilterRow {
     el("div", { class: "support-row-text" }, [
       el("div", { style: "font-weight:700" }, [
         title,
+        // A word joiner keeps the star from wrapping onto a line alone.
+        p.keystone ? "\u2060" : null,
         p.keystone
           ? el("span", {
               title: t("explore.keystoneTitle"),
               role: "img",
               "aria-label": t("explore.keystoneLabel"),
-              style: "margin-left:0.3rem;color:var(--brand)",
+              class: "name-mark",
             }, [keystoneIcon(13)])
           : null,
       ]),

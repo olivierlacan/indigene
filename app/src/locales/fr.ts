@@ -1348,6 +1348,8 @@ export const fr: Dict = {
   "stat.host.subValue": "valeur nourricière",
   "stat.host.explain": "Combien d'espèces de papillons peuvent élever leurs chenilles sur cette plante. La plupart des passereaux nourrissent leurs petits de chenilles : c'est donc une bonne mesure de la vie qu'une plante fait vivre. La plupart des plantes exotiques obtiennent bien moins.",
   "stat.host.explainKeystone": "Celle-ci est essentielle : elle héberge bien plus d'espèces que la moyenne, et les réseaux alimentaires locaux s'appuient sur elle. Les écologues parlent de plante « clé de voûte ».",
+  "stat.host.subGenus": "pour tout {genus}",
+  "stat.host.explainGenus": "Ce chiffre vaut pour tout le genre {genus} : les sources comptent les chenilles genre par genre, donc chaque {genus} d’ici affiche le même nombre.",
   "stat.host.uncounted": "Non compté",
   "stat.host.uncountedSub": "pas encore de source",
   "stat.host.explainUncounted":
@@ -1715,8 +1717,8 @@ export const fr: Dict = {
   // n'a pris aucune part à la liste, donc la ligne de fin recommande son
   // livre sans parler en son nom. Son titre reste en anglais, non traduit.
   // ---------------------------------------------------------------------
+  "pioneers.copesWith": "Supporte",
   "pioneers.title": "Pionnières du bitume",
-  "pioneers.chip": "Pionnières",
   "pioneers.docTitle": "Les pionnières du bitume de {region}",
   "pioneers.sectionLede": "Des indigènes pour les endroits ingrats : un bord de trottoir, un mur, un îlot de parking. Touchez une étiquette pour savoir ce qu'elle désigne.",
   "pioneers.count.one": "{n} indigène qui encaisse les mauvais traitements, pour {reference}.",
@@ -1752,8 +1754,19 @@ export const fr: Dict = {
   "pressure.disturbance.plain":
     "Un sol décapé, retourné, fauché ou brûlé, puis laissé à lui-même. Ce sont les plantes qui arrivent les premières et le tiennent jusqu'à ce qu'autre chose puisse.",
   "region.allChip": "Tout ({n})",
-  "region.categoriesNav": "Catégories de plantes",
-  "region.invasivesChip": "🚩 Envahissantes ({n})",
+  "region.sortCaterpillars": "Plus de chenilles",
+  "region.sortCaterpillarsLede": "Combien d’espèces de papillons de jour et de nuit élèvent leurs chenilles sur chaque plante.",
+  "region.viewNav": "Trier et afficher",
+  "region.sortLabel": "Trier",
+  "region.sortName": "A–Z",
+  "region.groupByKind": "Type de plante",
+  "region.pioneersOnly": "Pionnières ({n})",
+  "region.groupLabel": "Grouper",
+  "region.groupNone": "Aucun",
+  "region.filterLabel": "Filtrer",
+  "region.caterpillarWhyTitle": "Elles vont manger mes plantes ?",
+  "region.caterpillarWhy": "Un peu, et c'est le but : les chenilles sont ce que la plupart des passereaux donnent à leurs petits. Sur 1 058 espèces de plantes, les herbivores ont mangé environ 5 % des feuilles produites chaque année, et les oiseaux mangent la plupart des chenilles quand elles sont encore petites. Une plante indigène y perd rarement plus que quelques trous.",
+  "region.categoriesNav": "Types de plantes",
   "region.filterAria": "Filtrer cette liste par nom de plante",
   "region.filterPlaceholder": "Filtrer par nom…",
   "region.filterCount.one": "{shown} plante sur {total} correspond à « {q} ».",

@@ -1369,6 +1369,8 @@ export const en = {
   "stat.host.subValue": "food-web value",
   "stat.host.explain": "How many butterfly and moth species can raise their caterpillars on this plant. Most songbirds raise their chicks on caterpillars, so this is a good measure of how much life a plant supports. Most non-native plants score far lower.",
   "stat.host.explainKeystone": "This one is essential: it hosts far more species than most, and local food webs lean on it. Ecologists call it a keystone plant.",
+  "stat.host.subGenus": "for all of {genus}",
+  "stat.host.explainGenus": "This figure is for the whole genus, {genus}: the sources count caterpillars genus by genus, so every {genus} here shows the same number.",
   "stat.host.uncounted": "Not counted",
   "stat.host.uncountedSub": "no source yet",
   "stat.host.explainUncounted":
@@ -1756,8 +1758,8 @@ export const en = {
   // in the list, so the credit line recommends his book and never speaks for
   // him. Don't let it drift back into claiming he was involved.
   // ---------------------------------------------------------------------
+  "pioneers.copesWith": "Copes with",
   "pioneers.title": "Pavement pioneers",
-  "pioneers.chip": "Pioneers",
   "pioneers.docTitle": "Pavement pioneers of {region}",
   "pioneers.sectionLede": "Natives for the hard places: a kerb gap, a wall, a car park island. Tap a tag to see what it means.",
   "pioneers.count.one": "{n} native that takes a beating in {reference}.",
@@ -1792,8 +1794,19 @@ export const en = {
   "pressure.disturbance.plain":
     "Ground scraped, dug, mown or burned and then left. These are the plants that arrive first and hold it until something else can.",
   "region.allChip": "All ({n})",
-  "region.categoriesNav": "Plant categories",
-  "region.invasivesChip": "🚩 Worst invasives ({n})",
+  "region.sortCaterpillars": "Most caterpillars",
+  "region.sortCaterpillarsLede": "How many kinds of butterfly and moth raise their caterpillars on each plant.",
+  "region.viewNav": "Sort and show",
+  "region.sortLabel": "Sort",
+  "region.sortName": "A–Z",
+  "region.groupByKind": "Plant type",
+  "region.pioneersOnly": "Pioneers ({n})",
+  "region.groupLabel": "Group",
+  "region.groupNone": "None",
+  "region.filterLabel": "Filter",
+  "region.caterpillarWhyTitle": "Won't they eat my plants?",
+  "region.caterpillarWhy": "A little, and that's the point: caterpillars are what most songbirds feed their chicks. Across 1,058 plant species, plant-eaters took about 5% of the leaves grown each year, and birds eat most caterpillars while they're small. A native plant rarely loses more than a few holes.",
+  "region.categoriesNav": "Plant types",
   "region.filterAria": "Filter this list by plant name",
   "region.filterPlaceholder": "Filter by name…",
   "region.filterCount.one": "{shown} of {total} plants match “{q}”.",

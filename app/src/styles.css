@@ -40,6 +40,9 @@
   --sun: #e2a516;
   --focus: #1747b3; /* ≥7:1 on --surface and --bg */
   --radius: 14px;
+  /* A list card's inset, the same on all four sides so a thumbnail sits in
+     an even frame (region rows, pioneer cards). */
+  --list-card-pad: 0.75rem;
   --tap: 3rem; /* 48px minimum tap target */
   --maxw: 34rem;
 
@@ -1663,6 +1666,152 @@ details[open] > summary::after {
   background: var(--brand-bg);
 }
 
+/* --- A region roster's Sort / Group / Filter panel (steps/region.ts) ---
+   One quiet box, a row per control under a hairline, each control drawn as
+   what it does: segmented for Sort and Group (one option always on), a
+   checkbox-style toggle for the Filter (on or off). */
+.roster-controls {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.roster-control {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.6rem;
+}
+.roster-control + .roster-control {
+  border-top: 1px solid var(--line);
+}
+.roster-control-label {
+  flex: 0 0 3.4rem;
+  font-size: 0.8rem;
+  font-weight: 650;
+  color: var(--ink-soft);
+}
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.segment,
+.filter-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 2.2rem;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.88rem;
+  font-weight: 650;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.segment + .segment {
+  border-left: 1px solid var(--line-strong);
+}
+.segment[aria-current="page"] {
+  background: var(--brand-bg);
+  color: var(--brand-ink);
+}
+.filter-toggle {
+  padding-left: 0.2rem;
+}
+.filter-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+.filter-toggle[aria-checked="true"] .filter-box {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: var(--on-brand);
+}
+
+/* A question answered in a dialog, at the end of a sentence (the caterpillar
+   sort's "Won't they eat my plants?"): a quiet link with its circled i. */
+.inline-why {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 2px;
+}
+.inline-why svg {
+  width: 1em;
+  height: 1em;
+  flex: 0 0 auto;
+}
+.inline-why:is(:hover, :focus-visible) {
+  color: var(--brand);
+}
+
+/* The caterpillar count on a roster card, sorted by it: a small round tag
+   pinned over the card's bottom-right edge, half on the card and half off. */
+/* Out of the flow entirely, so it can never push a name onto another line.
+   It rises 1.35rem into a card padded --list-card-pad, below the name and the Latin
+   name, which sit centred against the taller thumbnail. */
+.count-tag {
+  position: absolute;
+  right: -0.3rem;
+  bottom: -1rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.05rem;
+  min-width: 2.35rem;
+  height: 2.35rem;
+  /* The caterpillar sits low in its 24-unit box (empty sky above its back),
+     so the pair is nudged up to sit on the circle's optical centre. */
+  padding: 0 0.25rem 0.18rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--brand) 22%, transparent);
+  background: var(--brand-bg);
+  color: var(--brand);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.count-tag .tie-glyph {
+  margin-top: -0.2rem;
+}
+/* Room below each card for the tag that hangs off it. */
+.card-grid:has(.count-tag) {
+  row-gap: 1.6rem;
+}
+/* The keystone star beside a plant's name, sized to the name's own type so it
+   reads at a glance instead of trailing it as a speck. */
+.name-mark {
+  display: inline-flex;
+  margin-left: 0.3rem;
+  color: var(--brand);
+  vertical-align: -0.08em;
+}
+.name-mark .keystone-icon {
+  width: 0.95em;
+  height: 0.95em;
+}
+
 /* --- Stat grid: the "player card" block of at-a-glance characteristics ---
    Tiles are borderless soft chips (a border per tile made adjacent edges read
    as one cramped lattice) and every tile is a button that opens a dialog
@@ -3013,6 +3162,16 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
   background: var(--surface-2);
   color: var(--ink-soft);
 }
+/* A chip that is only its glyph (pioneer cards): a round target big enough to
+   tap, the word in its tooltip and accessible name. */
+.tag.tag-icon-only {
+  justify-content: center;
+  min-width: 2rem;
+  min-height: 2rem;
+  padding: 0.2rem;
+  font-size: 0.95rem;
+}
+
 .tag .tag-label {
   text-decoration: underline dotted;
   text-underline-offset: 2px;
@@ -3731,7 +3890,7 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
 /* The card is NOT a link (its chips are buttons — see components/pioneer-card.ts),
    so the name carries the only anchor and has to look like one. */
 .pioneer-card {
-  padding: 0.6rem 0.8rem;
+  padding: var(--list-card-pad);
   margin: 0;
   height: 100%;
 }
@@ -3748,6 +3907,58 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
 }
 /* The chips wrap as a block of their own under the name. `margin-top` rather
    than a gap on the card: on the compact card they're the last thing in it. */
+/* A pioneer card's footer in a list: a hairline, "Copes with", and the
+   conditions as bare glyphs — one quiet strip, not a row of pills. */
+.pressure-footer {
+  flex: 1 0 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* Bleeds to the card's edges (both cards pad --list-card-pad) so the
+     hairline runs the full width, on a faint tint that sets the strip apart. */
+  margin: var(--list-card-pad) calc(-1 * var(--list-card-pad)) calc(-1 * var(--list-card-pad));
+  padding: 0.45rem var(--list-card-pad);
+  border-top: 1px solid var(--line);
+  border-radius: 0 0 calc(var(--radius) - 1px) calc(var(--radius) - 1px);
+  background: color-mix(in srgb, var(--ink) 4%, transparent);
+}
+/* A roster row is a flex card: its gap already spaces the strip. */
+a.card > .pressure-footer {
+  margin-top: 0.1rem;
+}
+.pressure-footer-label {
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--ink-soft);
+}
+.pressure-footer-glyphs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.1rem;
+}
+.pressure-glyph,
+.pressure-footer .tag-bare {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.9rem;
+  min-height: 1.9rem;
+  line-height: 1;
+  color: var(--ink);
+}
+.pressure-footer .pressure-icon {
+  width: 22px;
+  height: 22px;
+}
+.pressure-footer .tag-bare {
+  padding: 0;
+  background: transparent;
+  border-radius: 8px;
+}
+.pressure-footer .tag-bare:is(:hover, :focus-visible) {
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+}
 .pioneer-tags {
   display: flex;
   flex-wrap: wrap;
@@ -4461,7 +4672,7 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
 /* The section's one-line lede: subordinate to the controls under it, because
    the controls are what the reader came to use. */
 .obs-section-lede {
-  margin: 0.2rem 0 0.1rem;
+  margin: 0.2rem 0 0.6rem;
   font-size: 0.9rem;
   color: var(--ink-soft);
 }

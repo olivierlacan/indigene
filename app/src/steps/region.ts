@@ -535,7 +535,7 @@ function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HT
       ]),
       sub,
     ]),
-    opts.pioneer ? pressureFooter({ plant: p, entry: opts.pioneer }, { interactive: false }) : null,
+    opts.pioneer ? pressureFooter({ entry: opts.pioneer }, { interactive: false }) : null,
     // Absent for a plant not counted yet.
     opts.caterpillars && p.hostLepCount !== null
       ? countTag(p.hostLepCount)

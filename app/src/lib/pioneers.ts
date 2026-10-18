@@ -70,7 +70,7 @@ export function pioneersForRegion(regionId: string, plants: Plant[]): PioneerPic
  * what's most telling about *that* plant, which is the right thing for an
  * auditor reading one line and the wrong thing for a reader scanning a column.
  */
-export function orderedPressures(entry: PioneerEntry): PioneerPressure[] {
+export function orderedPressures(entry: Pick<PioneerEntry, "pressures">): PioneerPressure[] {
   const have = new Set(entry.pressures);
   return PRESSURE_ORDER.filter((p) => have.has(p));
 }
@@ -80,5 +80,15 @@ export function orderedPressures(entry: PioneerEntry): PioneerPressure[] {
 export function pressuresPresent(picks: PioneerPick[]): PioneerPressure[] {
   const have = new Set<PioneerPressure>();
   for (const { entry } of picks) for (const p of entry.pressures) have.add(p);
+  return PRESSURE_ORDER.filter((p) => have.has(p));
+}
+
+/**
+ * Every pressure any region documents for a plant, in display order — for the
+ * catalog, which has no region to ask. Empty if no region lists it.
+ */
+export function pressuresAnywhere(plantId: string): PioneerPressure[] {
+  const have = new Set<PioneerPressure>();
+  for (const table of Object.values(PIONEERS)) for (const p of table[plantId]?.pressures ?? []) have.add(p);
   return PRESSURE_ORDER.filter((p) => have.has(p));
 }

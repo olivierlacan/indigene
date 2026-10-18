@@ -5410,6 +5410,15 @@ button.card-stat:focus-visible .card-stat-tap {
   margin: 0;
   height: 100%;
 }
+/* Filtered to the pioneers, the "Copes with" strip wraps to a line of its own
+   and bleeds to this card's own padding. */
+.plant-index-card:has(> .pressure-footer) {
+  flex-wrap: wrap;
+}
+.plant-index-card > .pressure-footer {
+  margin: 0.1rem -0.85rem -0.7rem;
+  padding-inline: 0.85rem;
+}
 .plant-index-card:hover {
   border-color: var(--line-strong);
 }
@@ -5428,7 +5437,9 @@ button.card-stat:focus-visible .card-stat-tap {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  flex: 1 1 auto;
+  /* A zero basis, so a wrapping card never pushes the text to a line below
+     the picture. */
+  flex: 1 1 0;
 }
 .plant-index-alt {
   display: block;

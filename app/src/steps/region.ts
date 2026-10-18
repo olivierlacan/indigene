@@ -42,7 +42,6 @@ import { door } from "../components/plant-door";
 import { lookalikeIcon, alternativeIcon } from "../components/door-icons";
 import { rosterControls, caterpillarLede, countTag } from "../components/roster-controls";
 import { isCrossChecked } from "../data/cross-checks";
-import { kewArea } from "../lib/native-evidence";
 import { SOURCES_ROUTE } from "../lib/plain";
 
 /** The category headings. A function, not a record: a record built at import
@@ -220,13 +219,11 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
  * `#/sources`; which regions clear it is `data/cross-checks.ts`.
  */
 function crossCheckWarning(region: RegionDef): HTMLElement | null {
-  const area = kewArea(region.meta.id);
-  if (isCrossChecked(region.meta.id) || !area) return null;
+  if (isCrossChecked(region.meta.id)) return null;
   return el("p", { class: "note warn cross-check-warn" }, [
     el("strong", {}, t("region.crossCheckWarn")),
-    ...tx("region.crossCheckWarnRest", {
-      link: el("a", { href: SOURCES_ROUTE }, t("region.crossCheckLink")),
-    }, { area }),
+    " ",
+    el("a", { href: SOURCES_ROUTE }, t("region.crossCheckLink")),
   ]);
 }
 

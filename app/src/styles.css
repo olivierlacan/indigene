@@ -150,8 +150,9 @@ a {
    or focus, so a paragraph with three links doesn't read as a paragraph of
    blue. Buttons, chips, heading links and the contents list keep their own
    looks; a paragraph that is only a way on (`.more-link`) stays bright. */
-.privacy-page > p a,
-.privacy-page > :is(ul, ol) > li a,
+/* `.doc-body` is the same prose once `withContents` has wrapped it. */
+:is(.privacy-page, .doc-body) > p a,
+:is(.privacy-page, .doc-body) > :is(ul, ol) > li a,
 .note a:not(.btn),
 .kv a,
 .step-lede a,
@@ -163,11 +164,11 @@ a {
   text-underline-offset: 2px;
   text-decoration-color: color-mix(in srgb, var(--focus) 55%, transparent);
 }
-:is(.privacy-page > p, .privacy-page > :is(ul, ol) > li, .note, .kv, .step-lede, .pioneers-credit, .region-tag) a:is(:hover, :focus-visible) {
+:is(:is(.privacy-page, .doc-body) > p, :is(.privacy-page, .doc-body) > :is(ul, ol) > li, .note, .kv, .step-lede, .pioneers-credit, .region-tag) a:is(:hover, :focus-visible) {
   color: var(--focus);
   text-decoration-color: currentColor;
 }
-.privacy-page > p.more-link a,
+:is(.privacy-page, .doc-body) > p.more-link a,
 p.more-link a {
   color: var(--focus);
   text-decoration-color: currentColor;

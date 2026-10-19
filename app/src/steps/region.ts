@@ -41,6 +41,8 @@ import { rosterQuery, rosterView, sortRoster } from "../lib/roster-sort";
 import { door } from "../components/plant-door";
 import { lookalikeIcon, alternativeIcon } from "../components/door-icons";
 import { rosterControls, caterpillarLede, countTag } from "../components/roster-controls";
+import { isCrossChecked } from "../data/cross-checks";
+import { SOURCES_ROUTE } from "../lib/plain";
 
 /** The category headings. A function, not a record: a record built at import
  *  time would be stuck in whichever language loaded first. */
@@ -159,6 +161,9 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
       // region and does it include me?", asked before the roster.
       regionStatGrid(region, plants),
       el("p", { class: "region-head-note" }, regionNote(region.meta)),
+      // Said before the map and the roster: how far to trust "native here"
+      // is a question about the whole list, not one plant.
+      ...[crossCheckWarning(region)].filter((n): n is HTMLElement => n !== null),
       regionBoundaryCard(region.meta),
       // Which of these plants we can't name in the reader's language. (The
       // *writing* we haven't translated is the page-top banner's job, reported
@@ -207,6 +212,19 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
       el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),
     ])
   );
+}
+
+/**
+ * A region whose native status rests on Kew alone says so. The bar is on
+ * `#/sources`; which regions clear it is `data/cross-checks.ts`.
+ */
+function crossCheckWarning(region: RegionDef): HTMLElement | null {
+  if (isCrossChecked(region.meta.id)) return null;
+  return el("p", { class: "note warn cross-check-warn" }, [
+    el("strong", {}, t("region.crossCheckWarn")),
+    " ",
+    el("a", { href: SOURCES_ROUTE }, t("region.crossCheckLink")),
+  ]);
 }
 
 /**

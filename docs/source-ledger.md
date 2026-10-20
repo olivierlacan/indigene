@@ -105,6 +105,10 @@ Lusitanian element.
 
 ## The academic column, checked
 
+> **Since 2026-10-17:** [`academic-checklists/`](academic-checklists/README.md)
+> names two regional checklists with native and non-native status for every
+> region, scriptable or by hand. The table below is the earlier pass.
+
 The ledger listed OregonFlora, Jepson, Calflora, the Atlas of Florida Plants and
 the Burke Herbarium as *referenced* and said each "would be a genuine third
 opinion in the region that needs it most". They were checked on 2026-09-21.

@@ -101,7 +101,7 @@ export interface TaxonProse {
    *  One list per taxon, whatever region it's wanted in. */
   marks?: Omit<InvasiveMark, "part">[];
   /** Most-wanted invasives only: how to get rid of it (`Invasive.removal`). */
-  removal?: { steps: string[]; dispose: string };
+  removal?: { steps: string[]; dispose: string; cue?: string };
 }
 
 export type ProseTable = Record<string, TaxonProse>;
@@ -339,6 +339,14 @@ export function invasiveRemoval(inv: Invasive): Pick<InvasiveRemoval, "steps" | 
         dispose: translated.dispose,
       }
     : inv.removal;
+}
+
+/** When to remove it — the cue beside the season strip, translated where a
+ *  locale has written one. */
+export function invasiveRemovalCue(inv: Invasive): string | null {
+  const w = inv.removal.window;
+  if (!w) return null;
+  return entry(inv.latin)?.removal?.cue ?? w.cue;
 }
 
 /** Is any of these plants' writing still in the authored English? */

@@ -7849,3 +7849,23 @@ a.welcome-way:hover strong { text-decoration: underline; }
   background: var(--brand);
   color: var(--on-brand);
 }
+
+/* An invasive's removal window: the shared year strip, then the cue and its
+   source — the same strip a propagation technique wears. */
+.removal-window {
+  margin: 0.2rem 0 0.6rem;
+}
+.removal-window .season-strip {
+  margin-bottom: 0.35rem;
+}
+.removal-cue {
+  margin: 0 0 0.2rem;
+}
+/* The invasives' "worth pulling this season" list has no technique icon, so
+   the name and its cue stack in one column. */
+.season-now-list.no-icon li {
+  grid-template-columns: 1fr;
+}
+.season-now-list.no-icon .season-now-when {
+  grid-column: 1;
+}

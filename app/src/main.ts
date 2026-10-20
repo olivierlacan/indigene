@@ -39,6 +39,7 @@ import { renderAbout } from "./steps/about";
 import { renderCrops } from "./steps/crops";
 import { renderNative } from "./steps/native";
 import { renderMap } from "./steps/map";
+import { renderRemoving } from "./steps/removing";
 import { renderPostsIndex, renderPost } from "./steps/posts";
 import { renderPeople } from "./steps/people";
 import { renderLlm } from "./steps/llm";
@@ -110,6 +111,9 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   // The propagation techniques: `#/planting` is all fifteen against the
   // calendar, `#/planting/<slug>` is one of them in full.
   planting: { fn: renderPlantingIndex, labelKey: "steps.planting", inFlow: false },
+  // Before pulling anything: whether it should go, when, how, and whose
+  // permission. The invasive pages' removal steps link here.
+  removing: { fn: renderRemoving, labelKey: "steps.removing", inFlow: false },
   privacy: { fn: renderPrivacy, labelKey: "steps.privacy", inFlow: false },
   sources: { fn: renderSources, labelKey: "steps.sources", inFlow: false },
   // Further reading: `#/reading` is every region's list, `#/reading/<region>` one.

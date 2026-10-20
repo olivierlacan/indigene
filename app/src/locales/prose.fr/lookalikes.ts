@@ -35,6 +35,7 @@ export const LOOKALIKES_FR: ProseTable = {
         "Arrachez les rejets qui viennent encore, plusieurs années durant.",
       ],
       dispose: "Le bois fait un bon bois de chauffage ; les morceaux de racine vont à la poubelle.",
+      cue: "Coupez chaque tige, encore et encore, en feuilles",
     },
     origin:
       "Indigène des Appalaches, en Amérique du Nord ; planté en Europe depuis le XVIIe siècle.",
@@ -55,6 +56,7 @@ export const LOOKALIKES_FR: ProseTable = {
         "Portez des gants, et ne le broyez pas en lieu clos — les feuilles écrasées dégagent du cyanure.",
       ],
       dispose: "Les branches à baies vont à la poubelle.",
+      cue: "Avant que les cerises mûrissent",
     },
     origin: "Indigène des Balkans, de Turquie et des rivages de la mer Noire.",
     blurb:
@@ -105,6 +107,7 @@ export const LOOKALIKES_FR: ProseTable = {
         "Arrachez chaque rejet dès qu'il paraît, plusieurs années durant.",
       ],
       dispose: "Les grappes de graines et les morceaux de racine vont à la poubelle, pas au compost.",
+      cue: "Coupez en début de saison, puis en fin",
     },
     origin:
       "Indigène de Chine ; planté à travers l'Europe et l'Amérique du Nord depuis le XVIIIe siècle.",
@@ -130,6 +133,7 @@ export const LOOKALIKES_FR: ProseTable = {
         "Un grand massif en zone humide est l'affaire du service local de lutte contre les espèces envahissantes.",
       ],
       dispose: "Mettez les épis en sac.",
+      cue: "Quand les épis violets apparaissent",
     },
     origin: "Indigène d'Europe et d'Asie.",
     blurb:
@@ -185,6 +189,7 @@ export const LOOKALIKES_FR: ProseTable = {
         "Si vous en gardez un, coupez chaque épi fané avant qu'il fasse ses graines.",
       ],
       dispose: "Les épis en graines vont à la poubelle.",
+      cue: "À la première floraison, avant les graines",
     },
     origin: "Indigène du centre de la Chine.",
     blurb:
@@ -249,6 +254,7 @@ export const LOOKALIKES_FR: ProseTable = {
         "Coupez les pousses qui reviennent, et plantez de quoi faire de l'ombre : elle déteste l'ombre.",
       ],
       dispose: "Les tiges s'enracinent là où elles touchent le sol : entassez-les sur une bâche pour qu'elles sèchent.",
+      cue: "Rabattez souvent, des années durant",
     },
     origin:
       "Indigène d'Arménie et du nord de l'Iran, malgré le nom qu'on lui a donné.",
@@ -284,6 +290,7 @@ export const LOOKALIKES_FR: ProseTable = {
         "Revenez chaque année : les graines continuent de germer.",
       ],
       dispose: "Mettez les baies en sac ; ne les compostez pas.",
+      cue: "Quand la plante n'a pas de baies rouges",
     },
     origin: "Indigène d'Asie de l'Est.",
     blurb:

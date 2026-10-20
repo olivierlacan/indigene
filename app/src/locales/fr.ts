@@ -2696,6 +2696,13 @@ export const fr: Dict = {
   // Ce que chaque émoji veut dire *ici*, lu par un lecteur d'écran à la place
   // de son nom Unicode. Voir lib/emoji.ts.
   "emoji.groups": "associations de plantes indigènes",
+  "groups.title": "Les groupes qui les arrachent près de chez vous",
+  "groups.lede": "Chantiers bénévoles, conseils, et où signaler une nouvelle tache.",
+  "groups.what.finder": "trouver le groupe local",
+  "groups.what.workdays": "chantiers bénévoles",
+  "groups.what.training": "formations et bénévolat",
+  "groups.what.report": "signaler une observation",
+  "groups.what.boards": "le bureau des mauvaises herbes du comté",
   "society.title": "Associations de plantes indigènes",
   "society.lede": "Ventes de plantes, sorties et conseils de gens qui jardinent ce sol.",
   "society.what.chapters": "sections locales et rencontres",

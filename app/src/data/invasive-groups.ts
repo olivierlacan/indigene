@@ -1,4 +1,4 @@
-// Who's pulling them near you — the people to join once a region's list has
+// Local invasive plant groups — the people to join once a region's list has
 // said what to pull.
 //
 // The removal advice says the same thing everywhere: on ground that isn't

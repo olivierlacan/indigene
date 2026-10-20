@@ -1,4 +1,4 @@
-// "Who's pulling them near you" — under a region's list of invasives, the
+// "Local invasive plant groups" — under a region's list of invasives, the
 // partnerships a reader can join, ask or report to. Same shape as the native
 // plant groups on the region page (`societies-section.ts`): links off the site,
 // so a plain title and a new tab, and nothing at all where we have none.

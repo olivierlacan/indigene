@@ -106,6 +106,28 @@ Short. The pitch is four facts:
 Personalize both. A template that reads like a template gets the reply a
 template deserves.
 
+## Invasive-plant partnerships: FISC and the CISMAs
+
+Suggested by Rikki Ocampos. The Florida Invasive Species Council keeps a
+[resources page](https://www.floridainvasives.org/resources/) — "a list of
+campaigns and organizations you can join to help control the spread of invasive
+species" — and the [CISMA list](https://www.floridainvasives.org/cismas/) that
+Indigene now links from both Florida invasives pages. Being listed there is the
+same ask (3) as above, aimed at people who already pull invasives and need to
+know what to plant in the gap.
+
+No page on floridainvasives.org says how a resource gets listed (checked 20
+October 2026: Resources, CISMA Resources, About, For Homeowners, Join; `/contact/`
+is a 404). The routes it does publish:
+
+- the FISC-PAC partner contact form, linked from
+  [CISMA Resources](https://www.floridainvasives.org/cisma-resources/) as
+  "FISC-PAC Partner Contact Form – Keep in touch with FISC!";
+- the membership chair's address on the [Join page](https://www.floridainvasives.org/join-fisc/).
+
+Lead with ask (1): the five Florida invasives and their native swaps, for a
+CISMA coordinator to check. Ask for the listing only once they've seen it.
+
 ## Be straight about the overlap
 
 CNPS runs Calscape. The Institute for Regional Conservation runs *Natives For

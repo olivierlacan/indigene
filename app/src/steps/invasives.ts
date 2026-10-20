@@ -40,6 +40,7 @@ import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { nameChoiceNote } from "../lib/name-choice";
 import { t, fmtNumber, fmtDate } from "../lib/i18n";
 import { wantedList } from "../components/most-wanted";
+import { invasiveGroupsSection } from "../components/invasive-groups-section";
 import { heroFigure } from "../components/hero-figure";
 import { silhouetteFor } from "../components/plant-card";
 import { sectionHeading, sectionTitle } from "../components/section-link";
@@ -111,6 +112,8 @@ function renderInvasiveRegion(main: HTMLElement, region: RegionDef): void {
     ...[thisSeasonCard(region.meta.id)].filter((n): n is HTMLElement => n !== null),
     el("p", { class: "confidence", style: "margin:0.6rem 0 0" },
       t("wanted.countsNote", { date: fmtDate(Date.parse(sightingsAsOf)) })),
+    // Who to join, ask or report to about these, here.
+    ...invasiveGroupsSection(region.meta.id),
     // The same list for the other regions — a row of places, as the region
     // category pages offer "the trees of the other regions".
     el("div", { class: "card", style: "margin-top:1rem" }, [

@@ -2761,6 +2761,13 @@ export const en = {
   // The last section on a region page: who else already knows this flora.
   // The "what they do" phrases are shared — four societies running chapters
   // share one string to write and one to translate.
+  "groups.title": "Local invasive plant groups",
+  "groups.lede": "Volunteer days, advice, and where to report a sighting.",
+  "groups.what.finder": "find your local group",
+  "groups.what.workdays": "volunteer workdays",
+  "groups.what.training": "training and volunteering",
+  "groups.what.report": "report a sighting",
+  "groups.what.boards": "your county weed board",
   "society.title": "Native plant groups",
   "society.lede": "Plant sales, walks, and advice from people who garden this ground.",
   "society.what.chapters": "local chapters and meetings",

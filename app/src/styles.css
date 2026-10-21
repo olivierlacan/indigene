@@ -1412,8 +1412,9 @@ p.more-link a {
 }
 
 /* --- Disclosures --- */
-/* The only things that still open and close are the sort/filter panels on the
-   results page — everything else renders in plain sight. Their summaries look
+/* The only things that still open and close are the filter panels — the
+   results page's, and a plant list's Filter drawer — everything else renders
+   in plain sight. Their summaries look
    like real buttons, with an explicit Open/Close pill so the state and the
    tap target are unmistakable. */
 summary {
@@ -1738,6 +1739,77 @@ details[open] > summary::after {
   background: var(--brand);
   border-color: var(--brand);
   color: var(--on-brand);
+}
+/* The Filter row is a drawer, closed by default: its summary sits in the
+   label column like Sort and Group, then one line naming the filters that
+   are on (or what there is to filter, quietly), then the chevron. Open, the
+   toggles stack under it at full width so a long label may wrap rather than
+   push the panel wider than the phone. */
+.roster-drawer {
+  display: block;
+}
+.roster-drawer-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.2rem;
+  cursor: pointer;
+  list-style: none;
+}
+.roster-drawer-summary::after {
+  content: none;
+  display: none;
+}
+.roster-drawer-value {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+.roster-drawer-value.is-hint {
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+.roster-drawer[open] > summary .control-chevron {
+  transform: rotate(180deg);
+}
+.roster-control-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 0.2rem;
+}
+.roster-control-stack .filter-toggle {
+  padding-right: 0;
+  white-space: normal;
+}
+.filter-cap-row {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.88rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.filter-cap-row .filter-toggle {
+  white-space: nowrap;
+}
+/* Shorter than a form's select, so the two size rows stack with air
+   between them; the row around it keeps the tap target. */
+.filter-cap {
+  width: auto;
+  height: 1.9rem;
+  min-height: 0;
+  padding: 0 0.15rem 0 0.35rem;
+  border-width: 1.5px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+}
+.filter-cap-row {
+  margin: 0.1rem 0;
 }
 
 /* A question answered in a dialog, at the end of a sentence (the caterpillar

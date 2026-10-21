@@ -11,7 +11,9 @@
 //
 // The list sorts, groups and filters the way a region's roster does, with the
 // same panel (`components/roster-controls.ts`), and those choices ride in the
-// same query string: `/plants?q=oak&sort=caterpillars`.
+// same query string: `/plants?q=oak&sort=caterpillars&filter=pet-safe`. The
+// filters read the registry's traits, merged across regions the cautious way
+// (`lib/filter-traits.ts`), since this page has no region's list to hand.
 import { el, clear } from "../ui";
 import { navigate } from "../state";
 import { REGISTRY } from "../lib/registry";
@@ -29,6 +31,8 @@ import { rosterControls, caterpillarLede, countTag } from "../components/roster-
 import { rosterQuery, rosterView, byCaterpillars } from "../lib/roster-sort";
 import type { RosterView } from "../lib/roster-sort";
 import { FORM_ORDER } from "../lib/forms";
+import { passesFilters } from "../lib/filter-traits";
+import type { FilterTraits } from "../lib/filter-traits";
 import { PIONEERS } from "../data/pioneers";
 import { pressuresAnywhere } from "../lib/pioneers";
 import { pressureFooter } from "../components/pioneer-card";
@@ -51,6 +55,7 @@ type Row = {
   form: PlantForm;
   keystone: boolean;
   hostLepCount: number | null;
+  traits: FilterTraits;
   regions: string[];
   hay: string;
   alts: string[];
@@ -85,6 +90,7 @@ function buildRows(): Row[] {
       form: e.form,
       keystone: e.keystone,
       hostLepCount: e.hostLepCount,
+      traits: e.traits,
       regions: e.regions,
       hay: norm([common, ...e.commonNames, e.scientificName, ...e.aliases, ...searchAliases(taxon)].join(" ")),
       alts,
@@ -227,7 +233,8 @@ export function renderPlants(main: HTMLElement): void {
 
   function run(q: string): void {
     const nq = norm(q);
-    const pool = view.pioneers ? ROWS.filter((r) => PIONEER_IDS.has(r.slug)) : ROWS;
+    const pool = ROWS.filter((r) =>
+      (!view.pioneers || PIONEER_IDS.has(r.slug)) && passesFilters(r.traits, view.filters));
     const hits = nq ? pool.filter((r) => r.hay.includes(nq)) : pool;
     const matches = view.sort === "caterpillars"
       ? byCaterpillars(hits, (r) => r.common, getLang())
@@ -238,6 +245,10 @@ export function renderPlants(main: HTMLElement): void {
     // The panel's links carry the typed query too, so it's redrawn with it.
     controls.replaceChildren(rosterControls(view, (to) => plantsHref(q, to), pioneerCount, pick));
     clear(results);
+    if (!pool.length) {
+      results.append(el("div", { class: "note warn" }, t("roster.noneFiltered")));
+      return;
+    }
     if (!matches.length) {
       const pages = nq ? otherPages(nq) : [];
       if (pages.length) {

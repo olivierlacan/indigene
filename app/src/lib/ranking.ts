@@ -16,6 +16,8 @@ import type {
 import { zoneFromMinTemp } from "./site";
 import { moistureWord, sunLabel } from "./plain";
 import { fmtNumber, fmtOrList, t } from "./i18n";
+import { passesFilters, traitsOf, NO_TRAIT_FILTERS } from "./filter-traits";
+import type { TraitFilters } from "./filter-traits";
 
 export const DEFAULT_WEIGHTS: Weights = {
   host: 5, // caterpillar/moth host value is the strongest food-web proxy
@@ -27,32 +29,14 @@ export const DEFAULT_WEIGHTS: Weights = {
   establishment: 3,
 };
 
-export interface ActiveFilters {
-  requireDeerResistant: boolean;
-  excludeThorny: boolean;
-  excludePetToxic: boolean;
-  excludeAggressive: boolean;
-  requireNoWater: boolean; // guerrilla mode: survives with zero aftercare
-  /** Mature-size ceilings in feet; null means no limit. Judged against the
-   *  plant's honest eventual size, not a young nursery specimen. */
-  maxHeightFt: number | null;
-  maxSpreadFt: number | null;
+export interface ActiveFilters extends TraitFilters {
   /** Plant types switched off with the list's type chips ("no trees"). Kept
    *  as the ones hidden, not shown, so a form added later starts visible and
    *  prefs saved before this existed mean "show everything". */
   hiddenForms: PlantForm[];
 }
 
-export const NO_FILTERS: ActiveFilters = {
-  requireDeerResistant: false,
-  excludeThorny: false,
-  excludePetToxic: false,
-  excludeAggressive: false,
-  requireNoWater: false,
-  maxHeightFt: null,
-  maxSpreadFt: null,
-  hiddenForms: [],
-};
+export const NO_FILTERS: ActiveFilters = { ...NO_TRAIT_FILTERS, hiddenForms: [] };
 
 export interface Ranked {
   plant: Plant;
@@ -193,14 +177,8 @@ export function rankPlants(
     if (zoneNum != null && (zoneNum < plant.zones.min || zoneNum > plant.zones.max)) {
       continue; // not winter-hardy (or needs more cold) here
     }
-    if (ctx.filters.requireDeerResistant && !plant.filters.deerResistant) continue;
-    // "No thorns" is a question about touching the plant, so a nettle fails it too.
-    if (ctx.filters.excludeThorny && (plant.filters.thorny || plant.filters.stinging)) continue;
-    if (ctx.filters.excludePetToxic && plant.filters.petToxic) continue;
-    if (ctx.filters.excludeAggressive && plant.filters.aggressive) continue;
-    if (ctx.filters.requireNoWater && !plant.noWaterEstablish) continue;
-    if (ctx.filters.maxHeightFt != null && plant.matureHeightFt > ctx.filters.maxHeightFt) continue;
-    if (ctx.filters.maxSpreadFt != null && plant.matureSpreadFt > ctx.filters.maxSpreadFt) continue;
+    // The filters every plant list shares (`lib/filter-traits.ts`).
+    if (!passesFilters(traitsOf(plant), ctx.filters)) continue;
     if (ctx.filters.hiddenForms?.includes(plant.form)) continue;
 
     const eco = ecoScore(plant, ctx.weights);

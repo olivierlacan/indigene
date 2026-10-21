@@ -2,6 +2,7 @@
 // consumes it can't drift apart.
 
 import type { Season } from "./lib/planting";
+import type { FilterTraits } from "./lib/filter-traits";
 
 export type PlantForm =
   | "tree"
@@ -826,6 +827,10 @@ export interface RegistryEntry {
    *  documents, or null when none has counted it. Mirrored for the catalog's
    *  caterpillar sort, like `keystone`. */
   hostLepCount: number | null;
+  /** What the list filters read — deer, thorns, pets, spreaders, watering,
+   *  size — merged cautiously across the regions that list the taxon, so the
+   *  catalog filters without downloading a list (`lib/filter-traits.ts`). */
+  traits: FilterTraits;
   /** Cross-reference identifiers by scheme, each a bare accession. Always carries
    *  `indigene` (our catalog id); external schemes are filled by reconciliation. */
   identifiers: Partial<Record<IdScheme, string>>;

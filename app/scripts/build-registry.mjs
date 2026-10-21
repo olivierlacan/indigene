@@ -32,6 +32,7 @@ const ANCHOR_ORDER = ["ipni", "wfo"];
 const loader = await openLoader();
 const { REGIONS: REGIONS_RAW } = await loader.load("/src/data/regions.ts");
 const REGIONS = await withSeeds(REGIONS_RAW);
+const { traitsOf, mergeTraits } = await loader.load("/src/lib/filter-traits.ts");
 await loader.close();
 
 const REGION_ORDER = REGIONS.map((r) => r.meta.id);
@@ -75,6 +76,10 @@ for (const { meta, seed } of REGIONS) {
         // its own host data), so the catalog takes the highest documented
         // count; null only when no region has counted the plant.
         hostLepCount: p.hostLepCount ?? null,
+        // The facts the list filters read (no watering, deer, thorns, pets,
+        // spreaders, size), so the catalog can filter without a region's
+        // list. Merged the cautious way round when regions disagree.
+        traits: traitsOf(p),
         commonNames: commonNames(p.common),
         cultivarOf: null,
         regions: [],
@@ -85,6 +90,7 @@ for (const { meta, seed } of REGIONS) {
     } else {
       if (e._id !== p.id) warnings.push(`id conflict for ${p.latin}: ${e._id} vs ${p.id} (kept ${e._id})`);
       if (p.hostLepCount != null) e.hostLepCount = Math.max(e.hostLepCount ?? 0, p.hostLepCount);
+      e.traits = mergeTraits(e.traits, traitsOf(p));
       for (const cn of commonNames(p.common)) if (!e.commonNames.includes(cn)) e.commonNames.push(cn);
     }
     if (!e.regions.includes(meta.id)) e.regions.push(meta.id);
@@ -118,6 +124,7 @@ function finalize(e) {
     rank: e.rank,
     keystone: e.keystone,
     hostLepCount: e.hostLepCount,
+    traits: e.traits,
     identifiers,
     commonNames: e.commonNames,
     aliases: [...e._aliasSet].sort(),

@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { byCaterpillars, rosterQuery, rosterView } from "./roster-sort";
 import type { Plant } from "../types";
+import { NO_TRAIT_FILTERS as filters } from "./filter-traits";
 
 const plant = (id: string, hostLepCount: number | null, keystone = false): Plant =>
   ({ id, common: id, hostLepCount, keystone }) as Plant;
@@ -31,24 +32,31 @@ describe("rosterView", () => {
   const view = (q: string) => rosterView(new URLSearchParams(q));
 
   it("defaults to one list, by name, unfiltered", () => {
-    expect(view("")).toEqual({ sort: "name", grouped: false, pioneers: false });
-    expect(view("sort=wildlife&group=maybe&only=trees")).toEqual({ sort: "name", grouped: false, pioneers: false });
+    expect(view("")).toEqual({ sort: "name", grouped: false, pioneers: false, filters });
+    expect(view("sort=wildlife&group=maybe&only=trees")).toEqual({ sort: "name", grouped: false, pioneers: false, filters });
   });
 
   it("reads every control", () => {
-    expect(view("sort=caterpillars&group=type&only=pioneers")).toEqual({ sort: "caterpillars", grouped: true, pioneers: true });
+    expect(view("sort=caterpillars&group=type&only=pioneers")).toEqual({ sort: "caterpillars", grouped: true, pioneers: true, filters });
   });
 
   it("writes the default view as no query at all", () => {
-    expect(rosterQuery({ sort: "name", grouped: false, pioneers: false })).toBe("");
+    expect(rosterQuery({ sort: "name", grouped: false, pioneers: false, filters })).toBe("");
   });
 
   it("round-trips every combination", () => {
     for (const sort of ["name", "caterpillars"] as const)
       for (const grouped of [true, false])
         for (const pioneers of [true, false]) {
-          const v = { sort, grouped, pioneers };
+          const v = { sort, grouped, pioneers, filters };
           expect(view(rosterQuery(v).slice(1))).toEqual(v);
         }
+  });
+
+  it("reads and writes the spot filters", () => {
+    const v = view("filter=pet-safe,deer,bogus&max-height=9.84&max-spread=-2");
+    expect(v.filters).toEqual({ ...filters, excludePetToxic: true, requireDeerResistant: true, maxHeightFt: 9.84 });
+    expect(rosterQuery(v)).toBe("?filter=deer%2Cpet-safe&max-height=9.84");
+    expect(view(rosterQuery(v).slice(1))).toEqual(v);
   });
 });

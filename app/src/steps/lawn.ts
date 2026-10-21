@@ -1,20 +1,16 @@
 // "Kill your lawn" (route `#/kill-your-lawn`, `#/kill-your-lawn/<region>`) —
-// the Halloween post, and a guide that outlives the holiday.
+// the guide to swapping a lawn for natives, written to be linked all year.
 //
-// The joke carries one sentence: a lawn is a zombie, green and feeding almost
-// nothing, and it drinks. The decorations stay — only the lights go on a
-// timer, for the birds migrating overhead. Then the page gets to work: how to bury a lawn under
-// cardboard (sheet mulching, after UC and Oregon State Extension), how to do it
-// a bed at a time, and what to plant, layer by layer, for the reader's region.
+// It says what a lawn costs in one short section, then gets to work: how to
+// bury a lawn under cardboard (sheet mulching, after UC and Oregon State
+// Extension), how to do it a bed at a time, and what to plant, layer by layer,
+// for the reader's region. The Halloween post (`posts/halloween-2026`) carries
+// the zombie and the decorations, and sends people here.
 //
 // The picks come from `lib/lawn.ts`: the easiest-to-establish natives in each
 // layer, from the region's own list. Ground cover is one layer of five on
 // purpose — a lawn swapped for ground cover alone is a smaller lawn — and the
 // evergreens get a row of their own for winter.
-//
-// It is also a post (`data/posts.ts`, with `route`), so it shows in the posts
-// index with its date, but lives at the top level: people will be sent here in
-// April too.
 import { el, clear } from "../ui";
 import { knownRegion, navigate } from "../state";
 import { t, tx, fmtNumber } from "../lib/i18n";
@@ -27,8 +23,6 @@ import { regionSwitch } from "../components/region-list";
 import { LAWN_LAYERS, lawnPicks } from "../lib/lawn";
 import type { LawnLayer } from "../lib/lawn";
 import { plantRow, categoryHref, formIcon } from "./region";
-import { postWhenLine } from "./posts";
-import { POSTS } from "../data/posts";
 import type { Plant, PlantForm } from "../types";
 
 /** The evidence, in the order the page leans on it. Names are the pages' own
@@ -46,22 +40,6 @@ const SOURCES: { name: string; url: string; what: TKey }[] = [
   // Overwatering "carries away fertilizers"; native plants "reduce the amount
   // of fertilizer needed".
   { name: "U.S. EPA — Nutrient pollution: what you can do in your yard", url: "https://www.epa.gov/nutrientpollution/what-you-can-do-your-yard", what: "lawn.src.epa" },
-  // "Birds can get entangled in the fake webs, and so can any small animals
-  // that are not strong enough to break free."
-  { name: "Forest Preserve District of Will County — Fake spider webs are nightmares for wildlife", url: "https://reconnectwithnature.org/News-Events/The-Buzz/Fake-Spider-Webs-Are-Nightmares-For-Wildlife", what: "lawn.src.webs" },
-  // "Many of these webs you'll find are made out of a polyester-like
-  // material, which is a petroleum-based product."
-  { name: "City of Hayward — Eco-Friendly Halloween", url: "https://hayward-ca.gov/discover/news/sep24/eco-friendly-halloween", what: "lawn.src.hayward" },
-  // An Adelaide resident "has gathered over a dozen nests" fallen from trees
-  // with fake Halloween cobweb in them, "generally made of polyester". No
-  // source we could find measures cobwebs shedding microplastics, so the page
-  // says only this.
-  { name: "ABC News (Australia) — Fake Halloween cobwebs and plastic appearing in birds' nests", url: "https://www.abc.net.au/news/2019-11-08/fake-halloween-cobwebs-appearing-in-birds-nests-but-is-it-bad/11679248", what: "lawn.src.nests" },
-  // "These and other birds migrate mostly at night, using the moon and stars
-  // to navigate"; "artificial lights at night can disorient and distract
-  // birds"; "Turn off exterior decorative lighting from 11pm to 6am now
-  // through November 30."
-  { name: "Audubon North Carolina — Turn off lights at night to reduce risk for migrating birds", url: "https://www.audubon.org/north-carolina/press-room/turn-lights-night-reduce-risk-migrating-birds", what: "lawn.src.audubon" },
   // "Mow the lawn short as your mower will go and leave the grass on the
   // lawn"; overlap "each edge by 6 inches"; wood chips "3 inches" (4–6 on
   // warm-season lawns); "Green-in-winter lawns take 1 to 3 months.
@@ -110,8 +88,7 @@ function layerSection(region: RegionDef, layer: LawnLayer, picks: ReturnType<typ
 
 export async function renderLawn(main: HTMLElement, param?: string): Promise<void> {
   clear(main);
-  document.title = t("posts.halloween2026.docTitle");
-  const post = POSTS.find((x) => x.key === "halloween2026")!;
+  document.title = t("lawn.docTitle");
 
   // The region in the address wins; then the reader's own; else they pick.
   const regionId = param ?? knownRegion();
@@ -136,19 +113,15 @@ export async function renderLawn(main: HTMLElement, param?: string): Promise<voi
   main.append(
     el("article", { class: "privacy-page" }, [
       pageArt("killYourLawn"),
-      el("h2", { class: "step-title" }, t("posts.halloween2026.title")),
-      postWhenLine(post),
-      el("p", { class: "step-lede" }, t("posts.halloween2026.lede")),
+      el("h2", { class: "step-title" }, t("lawn.title")),
+      el("p", { class: "step-lede" }, t("lawn.lede")),
 
-      el("h3", {}, t("lawn.zombieTitle")),
-      p("lawn.zombie1"),
-      p("lawn.zombie2"),
-      el("p", {}, tx("lawn.zombie3", {
-        homegrown: el("a", { href: "#/homegrown" }, t("lawn.zombie3Link")),
+      el("h3", {}, t("lawn.costTitle")),
+      p("lawn.cost1"),
+      p("lawn.cost2"),
+      el("p", {}, tx("lawn.cost3", {
+        homegrown: el("a", { href: "#/homegrown" }, t("lawn.cost3Link")),
       })),
-
-      el("h3", {}, t("lawn.lightsTitle")),
-      p("lawn.lights"),
 
       el("h3", {}, t("lawn.mulchTitle")),
       p("lawn.mulchLede"),
@@ -185,7 +158,7 @@ export async function renderLawn(main: HTMLElement, param?: string): Promise<voi
       )),
 
       el("div", { class: "btn-row", style: "margin-top:1.5rem" }, [
-        el("button", { class: "btn btn-secondary", onClick: () => navigate("posts") }, t("posts.allPosts")),
+        el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("privacy.home")),
         el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("privacy.findPlants")),
       ]),
     ]),

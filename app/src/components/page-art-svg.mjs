@@ -1,5 +1,5 @@
 // The drawings at the head of the pages off the main path — Reading, What's
-// new, the Guide, Privacy, Sources, About, the Native page, Homegrown, Kill your lawn — in the manner of
+// new, the Guide, Privacy, Sources, About, the Native page, Homegrown, Kill your lawn, the Halloween post — in the manner of
 // the basket on "Peoples and plants" (`people-art.ts`): flat shapes on a soft
 // green card, coloured by classes so they follow the theme.
 //
@@ -431,11 +431,11 @@ function homegrown() {
   return s;
 }
 
-/** Kill your lawn: Halloween night. On the left the lawn, shorn flat and all
+/** The Halloween post: Halloween night. On the left the lawn, shorn flat and all
  *  one plant, with its headstone and a jack-o'-lantern; on the right what
  *  replaced it — goldenrod, asters, a pine for winter, and a real spider on
  *  a real web. A moon and two bats overhead. */
-function killYourLawn() {
+function halloween() {
   let s = "";
   // The moon: a gold disc with the card's own colour biting a crescent out.
   s += circle("gold", 34, 30, 15);
@@ -498,7 +498,54 @@ function killYourLawn() {
   return s;
 }
 
-const SCENES = { reading, whatsNew, guide, privacy, sources, about, native, homegrown, killYourLawn };
+/** Kill your lawn: a flat strip of lawn on the left, part of it already
+ *  buried under cardboard and chips with a seedling planted through; on the
+ *  right what replaces it, every layer at once — ground cover, coneflowers,
+ *  a berried shrub and an oak — under the sun. */
+function killYourLawn() {
+  let s = "";
+  // The sun.
+  for (let i = 0; i < 10; i++) {
+    const a = (i * 36 * Math.PI) / 180;
+    s += path("ray", `M${f(40 + Math.cos(a) * 19)} ${f(30 + Math.sin(a) * 19)}L${f(40 + Math.cos(a) * 26)} ${f(30 + Math.sin(a) * 26)}`);
+  }
+  s += circle("gold", 40, 30, 14);
+  // The lawn: one plant, one height.
+  s += rect("grass", 10, 112, 76, 12, 2);
+  for (let x = 13; x < 84; x += 4.2) s += path("leaf", blade(x, 113, x + 0.6, 107, 1.2, 0));
+  // The buried part: cardboard, then a mound of wood chips over it.
+  s += rect("paper", 86, 114, 72, 6, 1);
+  s += path("wood", "M84 118Q122 100 160 118Z");
+  for (const [x, y] of [[98, 114], [108, 110], [118, 108], [128, 109], [140, 112], [150, 115], [112, 115], [134, 115], [122, 113]]) {
+    s += ellipse("earth", x, y, 2.6, 1.2, (x * 7) % 40 - 20);
+  }
+  // A seedling planted through it.
+  s += stem(122, 108, 121, 100, 122, 92);
+  s += path("leaf", leaf(122, 94, 112, 88, 3.4));
+  s += path("leaf", leaf(122, 92, 132, 85, 3.4));
+
+  // What replaces it: ground cover, flowers, a shrub, an oak.
+  for (const x of [170, 182, 194]) {
+    s += path("leaf", leaf(x, BASE, x - 7, BASE - 7, 3));
+    s += path("leaf", leaf(x, BASE, x + 7, BASE - 8, 3));
+  }
+  s += coneflower(186, 180, 70, -4);
+  s += coneflower(198, 206, 82, 4);
+  // The shrub: a mound of leaves with berries.
+  s += `<g class="pa-soft">`;
+  for (const [cx, cy, r] of [[232, 108, 16], [220, 112, 11], [246, 112, 11], [232, 96, 11]]) s += circle("leaf", cx, cy, r);
+  s += `</g>`;
+  for (const [x, y] of [[226, 100], [238, 104], [230, 110], [244, 98], [220, 108]]) s += circle("red", x, y, 2.2);
+  // The oak: a crown faded as one, the trunk over it.
+  s += `<g class="pa-soft">`;
+  for (const [cx, cy, r] of [[284, 44, 24], [266, 52, 16], [302, 52, 16], [276, 30, 15], [296, 30, 14]]) s += circle("leaf", cx, cy, r);
+  s += `</g>`;
+  s += path("wood", "M279 124Q283 96 281 66L289 66Q287 96 293 124Z");
+  s += path("branch", "M284 88Q272 80 262 78M286 80Q298 72 306 66");
+  return s;
+}
+
+const SCENES = { reading, whatsNew, guide, privacy, sources, about, native, homegrown, killYourLawn, halloween };
 
 /** The names a page can ask for. */
 export const PAGE_ART_NAMES = Object.keys(SCENES);

@@ -15,23 +15,18 @@ export interface Post {
   key: string;
   /** Publication date, `YYYY-MM-DD`. */
   date: string;
-  /** A post with a page of its own at the top level (`kill-your-lawn`), not
-   *  under `posts/`: one that is also a guide people will come back to. The
-   *  index links there, and `posts/<slug>` isn't a page. */
-  route?: string;
 }
 
 /** Newest first. */
 export const POSTS: readonly Post[] = [
-  { slug: "kill-your-lawn", key: "halloween2026", date: "2026-10-31", route: "kill-your-lawn" },
+  { slug: "halloween-2026", key: "halloween2026", date: "2026-10-31" },
   { slug: "indigenous-peoples-day-2026", key: "ipd2026", date: "2026-10-12" },
 ];
 
 export function postBySlug(slug: string): Post | undefined {
-  return POSTS.find((p) => p.slug === slug && !p.route);
+  return POSTS.find((p) => p.slug === slug);
 }
 
-/** The posts that live at `posts/<slug>`. */
 export function postSlugs(): string[] {
-  return POSTS.filter((p) => !p.route).map((p) => p.slug);
+  return POSTS.map((p) => p.slug);
 }

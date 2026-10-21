@@ -38,7 +38,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
  *  of the line under it. */
 const STORIES = {
   ipd2026: { art: "people", line: "people.lede" },
-  halloween2026: { art: "page:killYourLawn", line: "posts.halloween2026.lede" },
+  halloween2026: { art: "page:halloween", line: "posts.halloween2026.lede" },
 };
 
 /** The app's modules, bundled twice: for the page (iife) and for this script

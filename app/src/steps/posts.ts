@@ -17,6 +17,7 @@ import { POSTS, postBySlug } from "../data/posts";
 import { heroPhotoFor } from "../lib/hero-photo";
 import { budget } from "../lib/photo";
 import { heroFigure } from "../components/hero-figure";
+import { pageArt } from "../components/page-art";
 import type { TKey } from "../locales/en";
 
 /** Where people without a GitHub account can write. */
@@ -44,7 +45,7 @@ export function postWhen(post: { key: string; date: string }): string {
 
 /** The same line for the post's own page: the occasion and the date styled
  *  apart (`.post-when` in styles.css), the date in a `<time>`. */
-export function postWhenLine(post: { key: string; date: string }): HTMLElement {
+function postWhenLine(post: { key: string; date: string }): HTMLElement {
   return el("p", { class: "region-tag post-when" }, [
     el("span", { class: "post-occasion" }, t(pk(post.key, "occasion"))),
     el("span", { "aria-hidden": "true" }, " · "),
@@ -137,8 +138,71 @@ function ipd2026Body(key: string): HTMLElement[] {
   ];
 }
 
+/** The evidence behind the Halloween post's figures. Names are the pages' own
+ *  titles and stay untranslated. The guide it sends people to, `#/kill-your-lawn`,
+ *  carries the rest. */
+//
+// Checked 21 October 2026: each page was opened and the words quoted beside
+// its row found in it. No source we could find measures fake cobwebs shedding
+// microplastics, so the post says only what these do.
+const HALLOWEEN_SOURCES: { name: string; url: string; what: TKey }[] = [
+  // Turf covers "three times larger than any irrigated crop" in the US.
+  { name: "Milesi et al. 2005 — Environmental Management", url: "https://doi.org/10.1007/s00267-004-0316-2", what: "lawn.src.milesi" },
+  // "The average U.S. household uses more water outdoors than for showering
+  // and washing clothes combined."
+  { name: "U.S. EPA WaterSense — Outdoor water use", url: "https://www.epa.gov/watersense/outdoor", what: "lawn.src.watersense" },
+  // Overwatering "carries away fertilizers".
+  { name: "U.S. EPA — Nutrient pollution: what you can do in your yard", url: "https://www.epa.gov/nutrientpollution/what-you-can-do-your-yard", what: "lawn.src.epa" },
+  // "Birds can get entangled in the fake webs, and so can any small animals
+  // that are not strong enough to break free."
+  { name: "Forest Preserve District of Will County — Fake spider webs are nightmares for wildlife", url: "https://reconnectwithnature.org/News-Events/The-Buzz/Fake-Spider-Webs-Are-Nightmares-For-Wildlife", what: "posts.halloween2026.src.webs" },
+  // "Many of these webs you'll find are made out of a polyester-like
+  // material, which is a petroleum-based product."
+  { name: "City of Hayward — Eco-Friendly Halloween", url: "https://hayward-ca.gov/discover/news/sep24/eco-friendly-halloween", what: "posts.halloween2026.src.hayward" },
+  // An Adelaide resident "has gathered over a dozen nests" fallen from trees
+  // with fake Halloween cobweb in them, "generally made of polyester".
+  { name: "ABC News (Australia) — Fake Halloween cobwebs and plastic appearing in birds' nests", url: "https://www.abc.net.au/news/2019-11-08/fake-halloween-cobwebs-appearing-in-birds-nests-but-is-it-bad/11679248", what: "posts.halloween2026.src.nests" },
+  // "These and other birds migrate mostly at night, using the moon and stars
+  // to navigate"; "artificial lights at night can disorient and distract
+  // birds"; "Turn off exterior decorative lighting from 11pm to 6am now
+  // through November 30."
+  { name: "Audubon North Carolina — Turn off lights at night to reduce risk for migrating birds", url: "https://www.audubon.org/north-carolina/press-room/turn-lights-night-reduce-risk-migrating-birds", what: "posts.halloween2026.src.audubon" },
+];
+
+/** Halloween: the lawn as a zombie, the decorations kept with their lights on
+ *  a timer, and a way on to the guide that outlasts the holiday. */
+function halloween2026Body(key: string): HTMLElement[] {
+  return [
+    el("h3", {}, t(pk(key, "zombieTitle"))),
+    el("p", {}, t(pk(key, "zombie1"))),
+    el("p", {}, t(pk(key, "zombie2"))),
+    el("p", {}, tx(pk(key, "zombie3"), {
+      homegrown: el("a", { href: "#/homegrown" }, t(pk(key, "zombie3Link"))),
+    })),
+    el("h3", {}, t(pk(key, "lightsTitle"))),
+    el("p", {}, t(pk(key, "lights"))),
+    el("h3", {}, t(pk(key, "buryTitle"))),
+    el("p", {}, tx(pk(key, "bury"), {
+      guide: el("a", { href: "#/kill-your-lawn" }, t(pk(key, "buryLink"))),
+    })),
+    el("h3", {}, t("lawn.sourcesTitle")),
+    el("ul", { class: "who-list" }, HALLOWEEN_SOURCES.map(({ name, url, what }) =>
+      el("li", {}, [
+        el("a", { href: url, target: "_blank", rel: "noopener" }, el("strong", {}, name)),
+        el("span", { class: "sureness-from" }, ` — ${t(what)}`),
+      ])
+    )),
+  ];
+}
+
 const BODIES: Record<string, (key: string) => HTMLElement[]> = {
   ipd2026: ipd2026Body,
+  halloween2026: halloween2026Body,
+};
+
+/** A post's drawing, for the ones that have one. */
+const ART: Record<string, Parameters<typeof pageArt>[0]> = {
+  halloween2026: "halloween",
 };
 
 export function renderPostsIndex(main: HTMLElement): void {
@@ -150,7 +214,7 @@ export function renderPostsIndex(main: HTMLElement): void {
       el("p", { class: "step-lede" }, t("posts.lede")),
       el("ul", { class: "who-list" }, POSTS.map((p) =>
         el("li", {}, [
-          el("a", { href: `#/${p.route ?? `posts/${p.slug}`}` }, el("strong", {}, t(pk(p.key, "title")))),
+          el("a", { href: `#/posts/${p.slug}` }, el("strong", {}, t(pk(p.key, "title")))),
           el("span", { class: "sureness-from" }, ` · ${formatDate(p.date)}`),
           el("p", {}, t(pk(p.key, "lede"))),
         ])
@@ -166,6 +230,7 @@ export function renderPost(main: HTMLElement, slug?: string): void {
   document.title = t(pk(post.key, "docTitle"));
   main.append(
     el("article", { class: "privacy-page" }, [
+      ART[post.key] ? pageArt(ART[post.key]) : null,
       el("h2", { class: "step-title" }, t(pk(post.key, "title"))),
       postWhenLine(post),
       el("p", { class: "step-lede" }, t(pk(post.key, "lede"))),

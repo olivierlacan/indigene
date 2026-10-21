@@ -1,20 +1,24 @@
-# Kill your lawn: Instagram template
+# Halloween 2026: Instagram template
 
-The Halloween post at [indigene.app/kill-your-lawn](https://indigene.app/kill-your-lawn).
-Images are drawn from the app's own words and drawing, so they can't drift from
-the page:
+The Halloween post, [indigene.app/posts/halloween-2026](https://indigene.app/posts/halloween-2026),
+sends people to the guide that stays up all year,
+[indigene.app/kill-your-lawn](https://indigene.app/kill-your-lawn). The caption
+links the guide: it's the page that answers "what do I plant?", in April too.
+
+Images are drawn from the post's own words and drawing, so they can't drift
+from the page:
 
 ```sh
 cd app
-node scripts/gen-story.mjs kill-your-lawn --feed            # feed post, 1080×1350
-node scripts/gen-story.mjs kill-your-lawn                   # story, 1080×1920
-node scripts/gen-story.mjs kill-your-lawn --feed --lang fr  # French versions
-node scripts/gen-story.mjs kill-your-lawn --lang fr
+node scripts/gen-story.mjs halloween-2026 --feed            # feed post, 1080×1350
+node scripts/gen-story.mjs halloween-2026                   # story, 1080×1920
+node scripts/gen-story.mjs halloween-2026 --feed --lang fr  # French versions
+node scripts/gen-story.mjs halloween-2026 --lang fr
 ```
 
 | Feed post | Story |
 |---|---|
-| <img src="post-kill-your-lawn.png" width="300"> | <img src="story-kill-your-lawn.png" width="240"> |
+| <img src="post-halloween-2026.png" width="300"> | <img src="story-halloween-2026.png" width="240"> |
 
 **When:** 31 October, morning. The story goes up the same day with a link
 sticker in the clear band under the text.
@@ -58,14 +62,14 @@ sticker in the clear band under the text.
 
 ## Alt text
 
-> A dark card titled "Kill your lawn", Halloween, October 31, 2026. A drawing:
+> A dark card titled "Your lawn is already a zombie", Halloween, October 31, 2026. A drawing:
 > under a crescent moon and two bats, a flat strip of lawn holds a headstone
 > and a jack-o'-lantern; beside it grow goldenrod, purple asters, a pine, and a
 > spider on its web.
 
 ## Notes
 
-- Every figure in the caption is on the page with its source (EPA WaterSense
+- Every figure in the caption is on the post with its source (EPA WaterSense
   for the water; Will County Forest Preserve for the webs; Audubon North
   Carolina for the lights). Don't add one that
   isn't.

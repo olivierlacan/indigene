@@ -1,4 +1,4 @@
-export type PageArtName = "reading" | "whatsNew" | "guide" | "privacy" | "sources" | "about" | "native" | "homegrown" | "killYourLawn";
+export type PageArtName = "reading" | "whatsNew" | "guide" | "privacy" | "sources" | "about" | "native" | "homegrown" | "killYourLawn" | "halloween";
 export const PAGE_ART_NAMES: PageArtName[];
 export function pageArtSvg(name: PageArtName): string;
 export const PAGE_ART_RULES: string;

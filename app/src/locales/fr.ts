@@ -3112,10 +3112,11 @@ export const fr: Dict = {
   "about.whyHomegrown": "L'idée qui le porte est celle de Doug Tallamy : {link}.",
   "about.homegrownLink": "Homegrown National Park",
 
-  // « Tuez votre pelouse » (steps/lawn.ts).
-  "steps.lawn": "Tuez votre pelouse",
-  "posts.halloween2026.docTitle": "Tuez votre pelouse · Indigene",
-  "posts.halloween2026.title": "Tuez votre pelouse",
+  // « Tue ton gazon » (steps/lawn.ts). The title is a slogan, so it says « tu »
+  // the way a placard would; the page under it says « vous » like every other.
+  "steps.lawn": "Tue ton gazon",
+  "posts.halloween2026.docTitle": "Tue ton gazon · Indigene",
+  "posts.halloween2026.title": "Tue ton gazon",
   "posts.halloween2026.occasion": "Halloween",
   "posts.halloween2026.lede": "Joyeux Halloween. La plupart des jardins ont déjà leur zombie : la pelouse. Elle a l'air vivante, ne nourrit presque rien, et elle boit. Voici comment l'enterrer, et quoi planter à la place.",
   "lawn.zombieTitle": "La pelouse est un zombie",
@@ -3123,6 +3124,9 @@ export const fr: Dict = {
   "lawn.zombie2": "Elle reste verte à coups d'engrais et de désherbant, et l'eau en trop emporte l'engrais jusqu'aux rivières. Dans la nature, rien ne pousse en une seule plante, à une seule hauteur, d'un mur à l'autre. La contenir chaque week-end, c'est beaucoup de travail, pas une vertu.",
   "lawn.zombie3": "Pendant ce temps, les chenilles, les abeilles et les oiseaux qui font le printemps manquent de nourriture. Et nous accrochons des araignées en plastique et des toiles en polyester qui piègent passereaux, chouettes et vraies araignées. Les nourrir à la place, c'est l'idée du {homegrown}.",
   "lawn.zombie3Link": "Homegrown National Park",
+  "lawn.lightsTitle": "Lumières et décors gonflables sur minuterie",
+  "lawn.lights": "Gardez les citrouilles lumineuses et le fantôme gonflable géant. Programmez simplement une minuterie pour les éteindre à 23 h. La plupart des oiseaux migrent de nuit, guidés par la lune et les étoiles, et les lumières les égarent et les envoient contre les vitres. Éteint jusqu'à 6 h, tout le mois de novembre, et vous retrouvez les étoiles en prime.",
+  "lawn.src.audubon": "l'éclairage, la migration de nuit et la plage de 23 h à 6 h",
   "lawn.mulchTitle": "L'enterrer sous du carton",
   "lawn.mulchLede": "Le paillage en feuillets tue le gazon en le privant de lumière. Pas de bêchage, pas de poison, et la pelouse morte devient de la terre. Commencez cet automne et tout sera prêt à planter au printemps.",
   "lawn.mulch1": "Tondez aussi ras que possible et laissez l'herbe coupée sur place. Arrosez bien.",

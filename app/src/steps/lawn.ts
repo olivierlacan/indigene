@@ -2,7 +2,8 @@
 // the Halloween post, and a guide that outlives the holiday.
 //
 // The joke carries one sentence: a lawn is a zombie, green and feeding almost
-// nothing, and it drinks. Then the page gets to work: how to bury a lawn under
+// nothing, and it drinks. The decorations stay — only the lights go on a
+// timer, for the birds migrating overhead. Then the page gets to work: how to bury a lawn under
 // cardboard (sheet mulching, after UC and Oregon State Extension), how to do it
 // a bed at a time, and what to plant, layer by layer, for the reader's region.
 //
@@ -51,6 +52,11 @@ const SOURCES: { name: string; url: string; what: TKey }[] = [
   // "Many of these webs you'll find are made out of a polyester-like
   // material, which is a petroleum-based product."
   { name: "City of Hayward — Eco-Friendly Halloween", url: "https://hayward-ca.gov/discover/news/sep24/eco-friendly-halloween", what: "lawn.src.hayward" },
+  // "These and other birds migrate mostly at night, using the moon and stars
+  // to navigate"; "artificial lights at night can disorient and distract
+  // birds"; "Turn off exterior decorative lighting from 11pm to 6am now
+  // through November 30."
+  { name: "Audubon North Carolina — Turn off lights at night to reduce risk for migrating birds", url: "https://www.audubon.org/north-carolina/press-room/turn-lights-night-reduce-risk-migrating-birds", what: "lawn.src.audubon" },
   // "Mow the lawn short as your mower will go and leave the grass on the
   // lawn"; overlap "each edge by 6 inches"; wood chips "3 inches" (4–6 on
   // warm-season lawns); "Green-in-winter lawns take 1 to 3 months.
@@ -135,6 +141,9 @@ export async function renderLawn(main: HTMLElement, param?: string): Promise<voi
       el("p", {}, tx("lawn.zombie3", {
         homegrown: el("a", { href: "#/homegrown" }, t("lawn.zombie3Link")),
       })),
+
+      el("h3", {}, t("lawn.lightsTitle")),
+      p("lawn.lights"),
 
       el("h3", {}, t("lawn.mulchTitle")),
       p("lawn.mulchLede"),

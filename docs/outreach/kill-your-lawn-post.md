@@ -32,8 +32,8 @@ sticker in the clear band under the text.
 >
 > Easy natives for your region: link in bio → indigene.app/kill-your-lawn
 >
-> 🕸️ And keep the fake cobwebs indoors. They trap songbirds, owls and real
-> spiders.
+> 🎃 Keep the inflatable ghoul. Just put the lights on a timer, off at 11 pm:
+> birds migrate at night by the stars. 🕸️ And keep the fake cobwebs indoors.
 >
 > #KillYourLawn #NativePlants #Halloween #SheetMulching #HomegrownNationalPark #NoMowMay
 
@@ -50,10 +50,11 @@ sticker in the clear band under the text.
 > Des plantes indigènes faciles pour votre région : lien en bio →
 > indigene.app/kill-your-lawn
 >
-> 🕸️ Et gardez les fausses toiles d'araignée à l'intérieur : elles piègent
-> passereaux, chouettes et vraies araignées.
+> 🎃 Gardez le fantôme gonflable. Mettez juste les lumières sur minuterie,
+> éteintes à 23 h : les oiseaux migrent de nuit, guidés par les étoiles.
+> 🕸️ Et gardez les fausses toiles d'araignée à l'intérieur.
 >
-> #TuezVotrePelouse #PlantesIndigènes #Halloween #Paillage #JardinSauvage
+> #TueTonGazon #PlantesIndigènes #Halloween #Paillage #JardinSauvage
 
 ## Alt text
 
@@ -65,7 +66,8 @@ sticker in the clear band under the text.
 ## Notes
 
 - Every figure in the caption is on the page with its source (EPA WaterSense
-  for the water; Will County Forest Preserve for the webs). Don't add one that
+  for the water; Will County Forest Preserve for the webs; Audubon North
+  Carolina for the lights). Don't add one that
   isn't.
 - The US water figure doesn't hold for every reader. The French caption leaves
   it out rather than borrow an American number.

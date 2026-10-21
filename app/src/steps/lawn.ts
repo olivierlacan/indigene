@@ -52,6 +52,11 @@ const SOURCES: { name: string; url: string; what: TKey }[] = [
   // "Many of these webs you'll find are made out of a polyester-like
   // material, which is a petroleum-based product."
   { name: "City of Hayward — Eco-Friendly Halloween", url: "https://hayward-ca.gov/discover/news/sep24/eco-friendly-halloween", what: "lawn.src.hayward" },
+  // An Adelaide resident "has gathered over a dozen nests" fallen from trees
+  // with fake Halloween cobweb in them, "generally made of polyester". No
+  // source we could find measures cobwebs shedding microplastics, so the page
+  // says only this.
+  { name: "ABC News (Australia) — Fake Halloween cobwebs and plastic appearing in birds' nests", url: "https://www.abc.net.au/news/2019-11-08/fake-halloween-cobwebs-appearing-in-birds-nests-but-is-it-bad/11679248", what: "lawn.src.nests" },
   // "These and other birds migrate mostly at night, using the moon and stars
   // to navigate"; "artificial lights at night can disorient and distract
   // birds"; "Turn off exterior decorative lighting from 11pm to 6am now

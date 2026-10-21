@@ -7676,6 +7676,7 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .page-art .pa-red { fill: var(--pa-red); }
 .page-art .pa-orange { fill: var(--pa-orange); }
 .page-art .pa-egg { fill: var(--pa-egg); }
+.page-art .pa-thread { fill: none; stroke: var(--pa-edge); stroke-width: 0.8; }
 
 /* A post's occasion and date (steps/posts.ts): the occasion leads, in the
    brand colour; the date sits back, a touch smaller, with even numerals. */

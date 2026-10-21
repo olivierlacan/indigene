@@ -198,6 +198,8 @@ try {
     // is what gets shared; with a second, posts get cards of their own and this
     // one says how many there are.
     { slug: "posts", title: "Plants that fed people first", subtitle: "Indigenous Peoples\u2019 Day \u00b7 12 October 2026" },
+    // The Halloween post: its own card, because it's the link that gets shared.
+    { slug: "kill-your-lawn", title: "Kill your lawn", subtitle: "Halloween \u00b7 bury the grass, plant what feeds wildlife", stat: `easy natives for <b>${nRegions}</b> regions` },
     // The LLM bill's two headline figures, from the same module the page reads.
     { slug: "llm", title: "What building Indigene with an LLM cost", subtitle: "measured, estimated \u2014 and how the design pays it back", stat: `<b>${SNAPSHOT.sessions}</b> sessions \u00b7 <b>\u2248${round2(bill().kWh.mid)} kWh</b>` },
     // Drawn rather than marked: the idea is a picture — a street where half the

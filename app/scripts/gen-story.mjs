@@ -5,6 +5,7 @@
 //   node scripts/gen-story.mjs                       # the newest post, in English
 //   node scripts/gen-story.mjs <post-slug>           # → docs/outreach/story-<slug>.png
 //   node scripts/gen-story.mjs <post-slug> --lang fr # → docs/outreach/story-<slug>-fr.png
+//   node scripts/gen-story.mjs <post-slug> --feed    # → docs/outreach/post-<slug>.png, 1080×1350
 //
 // Everything comes from the app: the post from data/posts.ts, its words from
 // the locales, the tagline from data/brand.json, and the drawing from the
@@ -18,12 +19,18 @@
 //
 // Instagram covers roughly the top 250 px and bottom 340 px of a story with its
 // own controls, so nothing that matters sits there, and the band under the
-// words is left clear for link stickers.
+// words is left clear for link stickers. A feed post (`--feed`, 4:5 portrait,
+// the tallest the grid allows) has no controls over it, so it keeps an even
+// margin all round instead.
+//
+// A drawing is either the peoples page's basket (`people`) or one of the
+// page drawings by name (`page:<name>`, from `page-art-svg.mjs`).
 import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { build } from "esbuild";
 import { chromium } from "playwright";
+import { PAGE_ART_RULES, PAGE_ART_DARK } from "../src/components/page-art-svg.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -31,10 +38,8 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
  *  of the line under it. */
 const STORIES = {
   ipd2026: { art: "people", line: "people.lede" },
+  halloween2026: { art: "page:killYourLawn", line: "posts.halloween2026.lede" },
 };
-
-const W = 1080;
-const H = 1920;
 
 /** The app's modules, bundled twice: for the page (iife) and for this script
  *  (esm, to pick the post and name the file). */
@@ -44,7 +49,9 @@ const ENTRY = `
   import { fr } from "./src/locales/fr.ts";
   import { POSTS } from "./src/data/posts.ts";
   import BRAND from "./src/data/brand.json";
+  import { pageArtSvg } from "./src/components/page-art-svg.mjs";
   export const art = { people: peopleArt };
+  export { pageArtSvg };
   export const dicts = { en, fr };
   export { POSTS, BRAND };
 `;
@@ -62,6 +69,11 @@ const LANGS = { en: "en-US", fr: "fr-FR" };
 const args = process.argv.slice(2);
 const langAt = args.indexOf("--lang");
 const lang = langAt >= 0 ? args.splice(langAt, 2)[1] : "en";
+const feedAt = args.indexOf("--feed");
+const feed = feedAt >= 0;
+if (feed) args.splice(feedAt, 1);
+const W = 1080;
+const H = feed ? 1350 : 1920;
 if (!LANGS[lang]) {
   console.error(`No language "${lang}". Languages: ${Object.keys(LANGS).join(", ")}`);
   process.exit(1);
@@ -78,7 +90,7 @@ const date = new Date(Date.UTC(y, m - 1, d)).toLocaleDateString(LANGS[lang], {
   year: "numeric", month: "long", day: "numeric", timeZone: "UTC",
 }).replace(/(\d) (\p{L})/u, "$1\u00a0$2");
 
-const out = join(root, "..", "docs", "outreach", `story-${post.slug}${lang === "en" ? "" : `-${lang}`}.png`);
+const out = join(root, "..", "docs", "outreach", `${feed ? "post" : "story"}-${post.slug}${lang === "en" ? "" : `-${lang}`}.png`);
 mkdirSync(dirname(out), { recursive: true });
 
 const mark = readFileSync(join(root, "public", "favicon.svg"), "utf8")
@@ -97,7 +109,7 @@ const html = `<!doctype html>
     width: ${W}px; height: ${H}px;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     background: var(--bg); color: #f2f1e8;
-    padding: 250px 84px 350px;
+    padding: ${feed ? "84px 84px 84px" : "250px 84px 350px"};
     display: flex; flex-direction: column;
     position: relative; overflow: hidden;
   }
@@ -108,7 +120,7 @@ const html = `<!doctype html>
     opacity: 0.55;
   }
   .row, .mid, .foot { position: relative; }
-  .mid { margin-top: 84px; }
+  .mid { margin-top: ${feed ? 56 : 84}px; }
   /* Room for the link stickers, between the words and the footer. */
   .foot { margin-top: auto; }
   .row { display: flex; align-items: center; gap: 26px; }
@@ -131,6 +143,8 @@ const html = `<!doctype html>
   .people-art .pa-rim { fill: var(--accent); stroke: var(--bg); stroke-width: 1.5; }
   .people-art .pa-weave { fill: none; stroke: var(--bg); stroke-width: 1.4; opacity: 0.55; }
   .people-art .pa-lily { fill: #fffdf4; stroke: var(--line-strong); stroke-width: 1; }
+  ${PAGE_ART_RULES}
+  .page-art { ${PAGE_ART_DARK} }
   .lede { margin-top: 36px; font-size: 36px; line-height: 1.38; color: #cdcdbd; }
   .foot { display: flex; justify-content: space-between; align-items: baseline; }
   .tagline { font-size: 32px; color: #cdcdbd; }
@@ -160,7 +174,8 @@ const html = `<!doctype html>
   d.textContent = ${JSON.stringify(date)};
   when.append(en["posts." + key + ".occasion"] + " · ", d);
   document.getElementById("title").textContent = en["posts." + key + ".title"];
-  if (story.art) document.getElementById("art").append(art[story.art]());
+  if (story.art?.startsWith("page:")) document.getElementById("art").innerHTML = STORY.pageArtSvg(story.art.slice(5));
+  else if (story.art) document.getElementById("art").append(art[story.art]());
   document.getElementById("lede").textContent = en[story.line];
   const t = BRAND.tagline[lang];
   document.getElementById("tagline").textContent = t.charAt(0).toUpperCase() + t.slice(1);

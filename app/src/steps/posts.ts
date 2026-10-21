@@ -44,7 +44,7 @@ export function postWhen(post: { key: string; date: string }): string {
 
 /** The same line for the post's own page: the occasion and the date styled
  *  apart (`.post-when` in styles.css), the date in a `<time>`. */
-function postWhenLine(post: { key: string; date: string }): HTMLElement {
+export function postWhenLine(post: { key: string; date: string }): HTMLElement {
   return el("p", { class: "region-tag post-when" }, [
     el("span", { class: "post-occasion" }, t(pk(post.key, "occasion"))),
     el("span", { "aria-hidden": "true" }, " · "),
@@ -150,7 +150,7 @@ export function renderPostsIndex(main: HTMLElement): void {
       el("p", { class: "step-lede" }, t("posts.lede")),
       el("ul", { class: "who-list" }, POSTS.map((p) =>
         el("li", {}, [
-          el("a", { href: `#/posts/${p.slug}` }, el("strong", {}, t(pk(p.key, "title")))),
+          el("a", { href: `#/${p.route ?? `posts/${p.slug}`}` }, el("strong", {}, t(pk(p.key, "title")))),
           el("span", { class: "sureness-from" }, ` · ${formatDate(p.date)}`),
           el("p", {}, t(pk(p.key, "lede"))),
         ])

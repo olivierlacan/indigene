@@ -1,5 +1,5 @@
 // The drawings at the head of the pages off the main path — Reading, What's
-// new, the Guide, Privacy, Sources, About, the Native page, Homegrown — in the manner of
+// new, the Guide, Privacy, Sources, About, the Native page, Homegrown, Kill your lawn — in the manner of
 // the basket on "Peoples and plants" (`people-art.ts`): flat shapes on a soft
 // green card, coloured by classes so they follow the theme.
 //
@@ -431,7 +431,74 @@ function homegrown() {
   return s;
 }
 
-const SCENES = { reading, whatsNew, guide, privacy, sources, about, native, homegrown };
+/** Kill your lawn: Halloween night. On the left the lawn, shorn flat and all
+ *  one plant, with its headstone and a jack-o'-lantern; on the right what
+ *  replaced it — goldenrod, asters, a pine for winter, and a real spider on
+ *  a real web. A moon and two bats overhead. */
+function killYourLawn() {
+  let s = "";
+  // The moon: a gold disc with the card's own colour biting a crescent out.
+  s += circle("gold", 34, 30, 15);
+  s += circle("ground", 41, 25, 13);
+  s += sparkle(70, 18, 4);
+  s += sparkle(142, 30, 3);
+  // Two bats, small and round-eared.
+  const bat = (x, y, k) =>
+    path("wood", `M${f(x)} ${f(y)}Q${f(x - 5 * k)} ${f(y - 6 * k)} ${f(x - 13 * k)} ${f(y - 3 * k)}Q${f(x - 10 * k)} ${f(y)} ${f(x - 11 * k)} ${f(y + 3 * k)}Q${f(x - 6 * k)} ${f(y + 1 * k)} ${f(x)} ${f(y + 4 * k)}Q${f(x + 6 * k)} ${f(y + 1 * k)} ${f(x + 11 * k)} ${f(y + 3 * k)}Q${f(x + 10 * k)} ${f(y)} ${f(x + 13 * k)} ${f(y - 3 * k)}Q${f(x + 5 * k)} ${f(y - 6 * k)} ${f(x)} ${f(y)}Z`) +
+    circle("wood", x, y + 0.5 * k, 2.6 * k) +
+    path("wood", `M${f(x - 2.4 * k)} ${f(y - 1 * k)}l${f(0.6 * k)} ${f(-3 * k)}l${f(1.2 * k)} ${f(2.2 * k)}ZM${f(x + 2.4 * k)} ${f(y - 1 * k)}l${f(-0.6 * k)} ${f(-3 * k)}l${f(-1.2 * k)} ${f(2.2 * k)}Z`);
+  s += bat(92, 26, 1);
+  s += bat(118, 44, 0.7);
+
+  // The lawn: a flat green slab, every blade the same height.
+  s += rect("grass", 10, 112, 150, 12, 2);
+  for (let x = 13; x < 158; x += 4.2) s += path("leaf", blade(x, 113, x + 0.6, 107, 1.2, 0));
+  // Its headstone, a little crooked.
+  s += path("paper", "M42 113V90Q42 78 56 78Q70 78 70 90V113Z");
+  s += path("ink", "M49 91h14M51 97h10");
+  // The jack-o'-lantern: ribbed, a stem, a face cut from the card's colour.
+  s += ellipse("orange", 112, 101, 13, 11);
+  s += ellipse("orange", 103, 102, 8, 10);
+  s += ellipse("orange", 121, 102, 8, 10);
+  s += path("band", "M107 92Q104 101 107 111M117 92Q120 101 117 111");
+  s += path("stalk", "M112 91Q112 85 116 83");
+  s += path("ground", "M104 97l4 -4l3 4ZM113 97l4 -4l3 4Z");
+  s += path("ground", "M103 103Q112 111 121 103L118 104L116 102L114 105L111 102L109 105L106 102Z");
+
+  // What replaced it: a pine, goldenrod, asters, grass, all heights at once.
+  s += rect("wood", 285, 100, 6, 24, 1);
+  for (const [y, w] of [[104, 24], [86, 19], [70, 14], [56, 9]]) {
+    s += path("leaf", `M${288 - w} ${y}L288 ${y - 22}L${288 + w} ${y}Z`);
+  }
+  s += stem(196, BASE, 204, 80, 188, 46);
+  for (let i = 0; i < 7; i++) {
+    const q = along(196, BASE, 204, 80, 188, 46, 0.5 + i * 0.08);
+    s += circle("gold", q.x - 3.5, q.y - 2, 3.2 - i * 0.2);
+    s += circle("gold", q.x + 3, q.y - 3.5, 3 - i * 0.2);
+  }
+  s += path("leaf", leaf(198, 104, 214, 96, 3.5));
+  s += path("leaf", leaf(197, 94, 182, 86, 3.5));
+  for (const [x, y, h] of [[234, 62, 0], [252, 74, 6], [222, 80, -4]]) {
+    s += stem(x + h, BASE, x + h / 2, (BASE + y) / 2, x, y);
+    s += petals(x, y, 12, 9, 2.6, "violet");
+    s += circle("gold", x, y, 2.6);
+  }
+  s += grass(176, 6, 30, 24);
+  s += grass(266, 5, 26, 20);
+  // A real web between the goldenrod and an aster, and its spider.
+  const hub = [212, 50];
+  for (const [x, y] of [[196, 40], [200, 64], [214, 34], [228, 44], [226, 62], [212, 66]]) {
+    s += path("ink", `M${hub[0]} ${hub[1]}L${x} ${y}`);
+  }
+  for (const r of [4, 8, 12]) s += circle("thread", hub[0], hub[1], r);
+  s += path("ink", "M214 34V26");
+  s += path("root fine", "M212 54l-4 -2M212 56l-4 2M216 54l4 -2M216 56l4 2");
+  s += ellipse("wood", 214, 55, 2.6, 3.2);
+  s += circle("wood", 214, 51, 1.8);
+  return s;
+}
+
+const SCENES = { reading, whatsNew, guide, privacy, sources, about, native, homegrown, killYourLawn };
 
 /** The names a page can ask for. */
 export const PAGE_ART_NAMES = Object.keys(SCENES);
@@ -485,6 +552,7 @@ export const PAGE_ART_RULES = `
 .page-art .pa-red { fill: var(--pa-red); }
 .page-art .pa-orange { fill: var(--pa-orange); }
 .page-art .pa-egg { fill: var(--pa-egg); }
+.page-art .pa-thread { fill: none; stroke: var(--pa-edge); stroke-width: 0.8; }
 `;
 
 /** The `--pa-*` colours, light then dark. */

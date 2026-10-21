@@ -41,6 +41,7 @@ import { renderNative } from "./steps/native";
 import { renderMap } from "./steps/map";
 import { renderRemoving } from "./steps/removing";
 import { renderPostsIndex, renderPost } from "./steps/posts";
+import { renderLawn } from "./steps/lawn";
 import { renderPeople } from "./steps/people";
 import { renderLlm } from "./steps/llm";
 import { renderHomegrown } from "./steps/homegrown";
@@ -139,6 +140,9 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   film: { fn: renderFilm, labelKey: "steps.film", inFlow: false },
   // Writing tied to a date: `#/posts` lists them, `#/posts/<slug>` is one.
   posts: { fn: renderPostsIndex, labelKey: "steps.posts", inFlow: false },
+  // The Halloween post, and a guide to swapping a lawn for natives. A param is
+  // a region whose picks to show.
+  "kill-your-lawn": { fn: renderLawn, labelKey: "steps.lawn", inFlow: false },
   // The peoples who named and tended these plants, and their own sources.
   people: { fn: renderPeople, labelKey: "steps.people", inFlow: false },
 };
@@ -166,6 +170,7 @@ const PARAM_RENDERERS: Record<string, StepFn> = {
   film: renderFilm,
   traits: renderTraits,
   posts: renderPost,
+  "kill-your-lawn": renderLawn,
 };
 
 const FLOW: AppStep[] = ["location", "sun", "confirm", "priorities", "results"];

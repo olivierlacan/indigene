@@ -456,11 +456,26 @@ async function collectPages(load) {
     image: pageCard("posts"),
     imageAlt: "Posts — writing about the plants, the places and the people behind Indigene",
   });
-  for (const post of POSTS) {
+  for (const post of POSTS.filter((p) => !p.route)) {
     add(`posts/${post.slug}`, en[`posts.${post.key}.docTitle`], en[`posts.${post.key}.lede`], {
       image: pageCard("posts"),
       imageAlt: en[`posts.${post.key}.title`],
     });
+  }
+  // Kill your lawn: the Halloween post at the top level, and the same page with
+  // one region's picks, so "what do I plant instead, in Texas?" has a link.
+  const lawn = POSTS.find((p) => p.route === "kill-your-lawn");
+  add("kill-your-lawn", en[`posts.${lawn.key}.docTitle`], en[`posts.${lawn.key}.lede`], {
+    image: pageCard("kill-your-lawn"),
+    imageAlt: "Kill your lawn — a lawn with a headstone and a jack-o'-lantern beside a native garden",
+  });
+  for (const region of REGIONS) {
+    add(
+      `kill-your-lawn/${region.meta.id}`,
+      fill(en["lawn.picksTitle"], { region: region.meta.name }) + " · Indigene",
+      en[`posts.${lawn.key}.lede`],
+      { image: pageCard("kill-your-lawn"), imageAlt: en[`posts.${lawn.key}.title`] }
+    );
   }
   // The LLM bill: measured tokens, estimated electricity, and the design that
   // pays it back. The lede is the description, as on the native page.

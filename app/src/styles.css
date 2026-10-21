@@ -7870,3 +7870,8 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .season-now-list.no-icon .season-now-when {
   grid-column: 1;
 }
+
+/* Kill your lawn (steps/lawn.ts): each layer's line of why sits under its
+   heading, not a paragraph away from it. */
+.lawn-layer h4 { margin-bottom: 0.15rem; }
+.lawn-layer h4 + p { margin-top: 0; }

@@ -13,6 +13,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 77,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "781250-1",
       "wfo": "wfo-0000514040",
@@ -45,6 +54,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 130,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 25,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "317375-2",
       "wfo": "wfo-0000514128",
@@ -75,6 +93,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 130,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 75,
+      "spreadFt": 55
+    },
     "identifiers": {
       "ipni": "317376-2",
       "wfo": "wfo-0000514511",
@@ -106,6 +133,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 78,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 30,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "781402-1",
       "wfo": "wfo-0000514593",
@@ -136,6 +172,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 69,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 28,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "781435-1",
       "wfo": "wfo-0000514777",
@@ -166,6 +211,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 80,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 90,
+      "spreadFt": 60
+    },
     "identifiers": {
       "ipni": "781462-1",
       "wfo": "wfo-0000514908",
@@ -198,6 +252,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 285,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 55,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "781490-1",
       "wfo": "wfo-0000514966",
@@ -231,6 +294,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 285,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 45
+    },
     "identifiers": {
       "ipni": "56795-1",
       "wfo": "wfo-0000515026",
@@ -263,6 +335,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 82,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "2294-2",
       "wfo": "wfo-0000042097",
@@ -298,6 +379,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1.2,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "106370-1",
       "wfo": "wfo-0000516103",
@@ -328,6 +418,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 35,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "60448516-2",
       "wfo": "wfo-0000508280",
@@ -357,6 +456,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 12,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "17002360-1",
       "wfo": "wfo-0001109379",
@@ -387,6 +495,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "271629-2",
       "wfo": "wfo-0001114717",
@@ -417,6 +534,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "17009280-1",
       "wfo": "wfo-0001109469",
@@ -452,6 +578,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "30093455-2",
       "wfo": "wfo-0001109473",
@@ -482,6 +617,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 0,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "17012140-1",
       "wfo": "wfo-0001107191",
@@ -512,6 +656,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "781583-1",
       "wfo": "wfo-0000522247",
@@ -543,6 +696,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 100,
+      "spreadFt": 50
+    },
     "identifiers": {
       "ipni": "261668-1",
       "wfo": "wfo-0000907999",
@@ -573,6 +735,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 30,
+      "spreadFt": 13
+    },
     "identifiers": {
       "ipni": "106376-1",
       "wfo": "wfo-0000524888",
@@ -603,6 +774,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 11,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "781648-1",
       "wfo": "wfo-0000525461",
@@ -632,6 +812,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "529036-1",
       "wfo": "wfo-0000757603",
@@ -662,6 +851,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 16,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 1.3,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "529088-1",
       "wfo": "wfo-0000757676",
@@ -694,6 +892,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 163,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 16,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "30015316-2",
       "wfo": "wfo-0000944137",
@@ -725,6 +932,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 163,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 70,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "30036759-2",
       "wfo": "wfo-0000945215",
@@ -763,6 +979,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 46,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 55,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "294936-1",
       "wfo": "wfo-0000946310",
@@ -793,6 +1018,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 120,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 75,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "294983-1",
       "wfo": "wfo-0000947401",
@@ -823,6 +1057,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 130,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "294986-1",
       "wfo": "wfo-0000947467",
@@ -853,6 +1096,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 119,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 18,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "30005905-2",
       "wfo": "wfo-0001009073",
@@ -883,6 +1135,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 119,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 20,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "30053201-2",
       "wfo": "wfo-0001007218",
@@ -914,6 +1175,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 119,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 22,
+      "spreadFt": 18
+    },
     "identifiers": {
       "ipni": "11206-2",
       "wfo": "wfo-0001009248",
@@ -946,6 +1216,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 8,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "473778-1",
       "wfo": "wfo-0000173836",
@@ -976,6 +1255,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "60431313-2",
       "wfo": "wfo-0000178822",
@@ -1006,6 +1294,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 25,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "176437-1",
       "wfo": "wfo-0000092746",
@@ -1038,6 +1335,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 33,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 7,
+      "spreadFt": 3
+    },
     "identifiers": {
       "gbif": "4932035",
       "inat": "121968",
@@ -1065,6 +1371,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 33,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "12850-2",
       "wfo": "wfo-0000846663",
@@ -1095,6 +1410,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 16,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.6,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "13472-2",
       "wfo": "wfo-0000535569",
@@ -1125,6 +1449,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "13942-2",
       "wfo": "wfo-0000537171",
@@ -1155,6 +1488,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.8,
+      "spreadFt": 1.2
+    },
     "identifiers": {
       "ipni": "389034-1",
       "wfo": "wfo-0000848178",
@@ -1185,6 +1527,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 35,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.3,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "128124-3",
       "wfo": "wfo-0000212115",
@@ -1217,6 +1568,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "1005468-1",
       "wfo": "wfo-0000340380",
@@ -1245,6 +1605,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "30028287-2",
       "wfo": "wfo-0000541210",
@@ -1278,6 +1647,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "16830-2",
       "wfo": "wfo-0000541324",
@@ -1309,6 +1687,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 60,
+      "spreadFt": 45
+    },
     "identifiers": {
       "ipni": "326479-1",
       "wfo": "wfo-0000543147",
@@ -1340,6 +1727,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 14,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 16
+    },
     "identifiers": {
       "ipni": "326526-1",
       "wfo": "wfo-0000543204",
@@ -1372,6 +1768,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "17764-2",
       "wfo": "wfo-0000543480",
@@ -1402,6 +1807,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "17800-2",
       "wfo": "wfo-0000543536",
@@ -1432,6 +1846,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "17827-2",
       "wfo": "wfo-0000543580",
@@ -1462,6 +1885,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "1024084-2",
       "wfo": "wfo-0000543738",
@@ -1496,6 +1928,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "587115-1",
       "wfo": "wfo-0000544471",
@@ -1526,6 +1967,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "325344-2",
       "wfo": "wfo-0000849427",
@@ -1556,6 +2006,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 20,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "92803-1",
       "wfo": "wfo-0000547621",
@@ -1586,6 +2045,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 6,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "92883-1",
       "wfo": "wfo-0000547728",
@@ -1614,6 +2082,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 9,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 1.2
+    },
     "identifiers": {
       "ipni": "19793-2",
       "wfo": "wfo-0000549005",
@@ -1646,6 +2123,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 143,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "60464254-2",
       "wfo": "wfo-0000002713",
@@ -1676,6 +2162,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 60,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "179291-1",
       "wfo": "wfo-0000022700",
@@ -1706,6 +2201,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 60,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 6,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "309108-2",
       "wfo": "wfo-0000091420",
@@ -1737,6 +2241,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 16,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "179985-1",
       "wfo": "wfo-0000005942",
@@ -1765,6 +2278,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 132,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "180284-1",
       "wfo": "wfo-0000115588",
@@ -1795,6 +2317,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
     "identifiers": {
       "gbif": "8401316",
       "inat": "409520",
@@ -1820,6 +2351,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 2,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "86047-1",
       "wfo": "wfo-0000279414",
@@ -1852,6 +2392,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 6,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "20973-2",
       "wfo": "wfo-0001018107",
@@ -1882,6 +2431,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "93467-1",
       "wfo": "wfo-0000550779",
@@ -1912,6 +2470,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.8,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "93471-1",
       "wfo": "wfo-0000550790",
@@ -1942,6 +2509,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "21143-2",
       "wfo": "wfo-0000551126",
@@ -1972,6 +2548,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "94272-1",
       "wfo": "wfo-0000551316",
@@ -2003,6 +2588,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "94351-1",
       "wfo": "wfo-0000551403",
@@ -2037,6 +2631,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "94654-1",
       "wfo": "wfo-0000551772",
@@ -2068,6 +2671,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "94683-1",
       "wfo": "wfo-0000551803",
@@ -2098,6 +2710,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "94704-1",
       "wfo": "wfo-0000551830",
@@ -2132,6 +2753,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "17040420-1",
       "wfo": "wfo-0001121375",
@@ -2160,6 +2790,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.7,
+      "spreadFt": 1.2
+    },
     "identifiers": {
       "ipni": "17040860-1",
       "wfo": "wfo-0001115841",
@@ -2191,6 +2830,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "17051170-1",
       "wfo": "wfo-0001110391",
@@ -2225,6 +2873,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.8,
+      "spreadFt": 1
+    },
     "identifiers": {
       "ipni": "310197-2",
       "wfo": "wfo-0001109364",
@@ -2257,6 +2914,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.6,
+      "spreadFt": 1
+    },
     "identifiers": {
       "ipni": "17053570-1",
       "wfo": "wfo-0001109866",
@@ -2288,6 +2954,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "531608-1",
       "wfo": "wfo-0000638538",
@@ -2316,6 +2991,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "181745-1",
       "wfo": "wfo-0000014412",
@@ -2344,6 +3028,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "17054720-1",
       "wfo": "wfo-0001110262",
@@ -2372,6 +3065,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1.8,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "17055840-1",
       "wfo": "wfo-0001114565",
@@ -2401,6 +3103,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "271451-1",
       "wfo": "wfo-0000297052",
@@ -2431,6 +3142,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "77111678-1",
       "wfo": "wfo-0000922825",
@@ -2460,6 +3180,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 7,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 1.2
+    },
     "identifiers": {
       "ipni": "391947-1",
       "wfo": "wfo-0000852552",
@@ -2489,6 +3218,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "319078-2",
       "wfo": "wfo-0000038084",
@@ -2519,6 +3257,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 9,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "183599-1",
       "wfo": "wfo-0000084764",
@@ -2550,6 +3297,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 18,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "480953-1",
       "wfo": "wfo-0000182246",
@@ -2580,6 +3336,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 18,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4.5,
+      "spreadFt": 3.5
+    },
     "identifiers": {
       "ipni": "29306-2",
       "wfo": "wfo-0000164285",
@@ -2609,6 +3374,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "31334-2",
       "wfo": "wfo-0000562782",
@@ -2638,6 +3412,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "31492-2",
       "wfo": "wfo-0000563585",
@@ -2667,6 +3450,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "107152-1",
       "wfo": "wfo-0000563960",
@@ -2696,6 +3488,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 284,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 50,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "295155-1",
       "wfo": "wfo-0000334917",
@@ -2726,6 +3527,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 284,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 70,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "32197-2",
       "wfo": "wfo-0000335192",
@@ -2758,6 +3568,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 327,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "295174-1",
       "wfo": "wfo-0000335449",
@@ -2793,6 +3612,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 306,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 55,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "295185-1",
       "wfo": "wfo-0000335985",
@@ -2824,6 +3652,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "108626-1",
       "wfo": "wfo-0000781348",
@@ -2855,6 +3692,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "17570940-1",
       "wfo": "wfo-0000163307",
@@ -2883,6 +3729,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "1198286-2",
       "wfo": "wfo-0000853887",
@@ -2913,6 +3768,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "1008094-1",
       "wfo": "wfo-0000853891",
@@ -2943,6 +3807,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 72,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "67790-3",
       "wfo": "wfo-0000854513",
@@ -2975,6 +3848,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 74,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "393178-1",
       "wfo": "wfo-0000854576",
@@ -3006,6 +3888,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "38669-2",
       "wfo": "wfo-0000576316",
@@ -3036,6 +3927,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "394684-1",
       "wfo": "wfo-0000857768",
@@ -3066,6 +3966,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 8,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "319128-2",
       "wfo": "wfo-0000767775",
@@ -3097,6 +4006,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 7,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "927277-1",
       "wfo": "wfo-0000769349",
@@ -3127,6 +4045,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "30007339-2",
       "wfo": "wfo-0000580557",
@@ -3157,6 +4084,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 118,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 3.5
+    },
     "identifiers": {
       "ipni": "327304-1",
       "wfo": "wfo-0000580837",
@@ -3196,6 +4132,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 7,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.3,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "42867-2",
       "wfo": "wfo-0000581660",
@@ -3227,6 +4172,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "188166-1",
       "wfo": "wfo-0000127155",
@@ -3257,6 +4211,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 1
+    },
     "identifiers": {
       "ipni": "30019006-2",
       "wfo": "wfo-0000762884",
@@ -3287,6 +4250,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 28,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 14
+    },
     "identifiers": {
       "ipni": "828524-1",
       "wfo": "wfo-0000582404",
@@ -3317,6 +4289,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 22,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.2,
+      "spreadFt": 1.2
+    },
     "identifiers": {
       "ipni": "30036649-2",
       "wfo": "wfo-0000828550",
@@ -3351,6 +4332,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "109140-1",
       "wfo": "wfo-0000781862",
@@ -3381,6 +4371,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "30187778-2",
       "wfo": "wfo-0000189858",
@@ -3413,6 +4412,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 23,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1.5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "45334-2",
       "wfo": "wfo-0000587355",
@@ -3445,6 +4453,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "46073-2",
       "wfo": "wfo-0000345963",
@@ -3475,6 +4492,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 7,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "299484-1",
       "wfo": "wfo-0000346100",
@@ -3503,6 +4529,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 85,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 1.5,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "299756-1",
       "wfo": "wfo-0000346645",
@@ -3535,6 +4570,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 7,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "301072-1",
       "wfo": "wfo-0000349019",
@@ -3565,6 +4609,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "46763-2",
       "wfo": "wfo-0000349408",
@@ -3595,6 +4648,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.7,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "46817-2",
       "wfo": "wfo-0000349786",
@@ -3625,6 +4687,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 36,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.8,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "301498-1",
       "wfo": "wfo-0000349907",
@@ -3658,6 +4729,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 1.2,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "301682-1",
       "wfo": "wfo-0000350242",
@@ -3688,6 +4768,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "302178-1",
       "wfo": "wfo-0000351147",
@@ -3716,6 +4805,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 86,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "302193-1",
       "wfo": "wfo-0000351168",
@@ -3748,6 +4846,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 86,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "302516-1",
       "wfo": "wfo-0000351795",
@@ -3780,6 +4887,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "47320-2",
       "wfo": "wfo-0000352183",
@@ -3810,6 +4926,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 92,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 65,
+      "spreadFt": 45
+    },
     "identifiers": {
       "ipni": "295248-1",
       "wfo": "wfo-0000804581",
@@ -3843,6 +4968,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 28,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 45,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "295265-1",
       "wfo": "wfo-0000805429",
@@ -3871,6 +5005,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 200,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 75,
+      "spreadFt": 50
+    },
     "identifiers": {
       "ipni": "442167-1",
       "wfo": "wfo-0000588763",
@@ -3901,6 +5044,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 200,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "30122806-2",
       "wfo": "wfo-0000588816",
@@ -3931,6 +5083,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 156,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "30319741-2",
       "wfo": "wfo-0000811268",
@@ -3961,6 +5122,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 55
+    },
     "identifiers": {
       "ipni": "50956789-1",
       "wfo": "wfo-0000815170",
@@ -3989,6 +5159,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 45,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "319138-2",
       "wfo": "wfo-0000591761",
@@ -4022,6 +5201,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 50,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "716787-1",
       "wfo": "wfo-0000591805",
@@ -4054,6 +5242,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 60,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "317381-2",
       "wfo": "wfo-0000592072",
@@ -4086,6 +5283,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 55,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 18
+    },
     "identifiers": {
       "ipni": "30085424-2",
       "wfo": "wfo-0000592092",
@@ -4116,6 +5322,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 25,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "319139-2",
       "wfo": "wfo-0000592929",
@@ -4146,6 +5361,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 65,
+      "spreadFt": 50
+    },
     "identifiers": {
       "ipni": "850999-1",
       "wfo": "wfo-0000593422",
@@ -4178,6 +5402,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 43,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 60,
+      "spreadFt": 50
+    },
     "identifiers": {
       "ipni": "836997-1",
       "wfo": "wfo-0000593589",
@@ -4209,6 +5442,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 43,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 55,
+      "spreadFt": 45
+    },
     "identifiers": {
       "ipni": "301424-2",
       "wfo": "wfo-0000593651",
@@ -4239,6 +5481,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 22,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 65,
+      "spreadFt": 55
+    },
     "identifiers": {
       "ipni": "851171-1",
       "wfo": "wfo-0000593746",
@@ -4269,6 +5520,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 88,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "191100-1",
       "wfo": "wfo-0000043513",
@@ -4303,6 +5563,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 93,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "57128-3",
       "wfo": "wfo-0000013986",
@@ -4336,6 +5605,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "51897-2",
       "wfo": "wfo-0000179164",
@@ -4366,6 +5644,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 18,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 10,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "319140-2",
       "wfo": "wfo-0000829890",
@@ -4400,6 +5687,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 24,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 28
+    },
     "identifiers": {
       "ipni": "485668-1",
       "wfo": "wfo-0000174035",
@@ -4433,6 +5729,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "611374-1",
       "wfo": "wfo-0000599740",
@@ -4463,6 +5768,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "55649-2",
       "wfo": "wfo-0000859191",
@@ -4493,6 +5807,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 18,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "319141-2",
       "wfo": "wfo-0000830265",
@@ -4523,6 +5846,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "722181-1",
       "wfo": "wfo-0000830291",
@@ -4553,6 +5885,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 69,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "195465-1",
       "wfo": "wfo-0000014883",
@@ -4582,6 +5923,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "195527-1",
       "wfo": "wfo-0000062624",
@@ -4612,6 +5962,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "168163-1",
       "wfo": "wfo-0000607197",
@@ -4642,6 +6001,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 47,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 10,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "30129020-2",
       "wfo": "wfo-0000609451",
@@ -4673,6 +6041,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 47,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "709687-1",
       "wfo": "wfo-0000609903",
@@ -4705,6 +6082,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 18,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "30025729-2",
       "wfo": "wfo-0000610181",
@@ -4737,6 +6123,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "709845-1",
       "wfo": "wfo-0000610199",
@@ -4767,6 +6162,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 35,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "709949-1",
       "wfo": "wfo-0000610441",
@@ -4796,6 +6200,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 18,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 20,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "710188-1",
       "wfo": "wfo-0000610908",
@@ -4827,6 +6240,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 47,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 45,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "710194-1",
       "wfo": "wfo-0000610926",
@@ -4859,6 +6281,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.5,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "61186-2",
       "wfo": "wfo-0000891513",
@@ -4891,6 +6322,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "693641-1",
       "wfo": "wfo-0000613093",
@@ -4921,6 +6361,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 30,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "693918-1",
       "wfo": "wfo-0000613437",
@@ -4951,6 +6400,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "533232-1",
       "wfo": "wfo-0000763824",
@@ -4983,6 +6441,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 35,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "319151-2",
       "wfo": "wfo-0000618338",
@@ -5013,6 +6480,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "197044-1",
       "wfo": "wfo-0000025867",
@@ -5043,6 +6519,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 27,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "747491-1",
       "wfo": "wfo-0000923570",
@@ -5073,6 +6558,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 27,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 18,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "747499-1",
       "wfo": "wfo-0000923682",
@@ -5101,6 +6595,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "533544-1",
       "wfo": "wfo-0000764205",
@@ -5131,6 +6634,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "198072-1",
       "wfo": "wfo-0000137822",
@@ -5162,6 +6674,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.6,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "271519-1",
       "wfo": "wfo-0000924607",
@@ -5193,6 +6714,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 118,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "271556-1",
       "wfo": "wfo-0000924658",
@@ -5223,6 +6753,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 118,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 25,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "271574-1",
       "wfo": "wfo-0000924674",
@@ -5253,6 +6792,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 30,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "271602-1",
       "wfo": "wfo-0000924739",
@@ -5283,6 +6831,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 42,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 18,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "271612-1",
       "wfo": "wfo-0000924760",
@@ -5315,6 +6872,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 100,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 40,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "66154-2",
       "wfo": "wfo-0000924781",
@@ -5345,6 +6911,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 118,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "271653-1",
       "wfo": "wfo-0000924819",
@@ -5375,6 +6950,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 42,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "271661-1",
       "wfo": "wfo-0000924828",
@@ -5405,6 +6989,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 118,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 9,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "66169-2",
       "wfo": "wfo-0000924839",
@@ -5438,6 +7031,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.7,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "271698-1",
       "gbif": "3082254",
@@ -5467,6 +7069,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 131,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "295439-1",
       "wfo": "wfo-0000925248",
@@ -5499,6 +7110,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 124,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 20,
+      "spreadFt": 18
+    },
     "identifiers": {
       "ipni": "295446-1",
       "wfo": "wfo-0000925259",
@@ -5538,6 +7158,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 131,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 15,
+      "spreadFt": 14
+    },
     "identifiers": {
       "ipni": "108018-1",
       "wfo": "wfo-0000925296",
@@ -5573,6 +7202,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 45,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "272100-1",
       "wfo": "wfo-0000925786",
@@ -5603,6 +7241,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 110,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "723298-1",
       "wfo": "wfo-0001003993",
@@ -5633,6 +7280,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 201,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 22,
+      "spreadFt": 18
+    },
     "identifiers": {
       "ipni": "723644-1",
       "wfo": "wfo-0001009174",
@@ -5665,6 +7321,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 203,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 30,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "723820-1",
       "wfo": "wfo-0001009785",
@@ -5702,6 +7367,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "319172-2",
       "wfo": "wfo-0000764381",
@@ -5734,6 +7408,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 30,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "17072400-1",
       "wfo": "wfo-0000139888",
@@ -5763,6 +7446,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 50,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "17073420-1",
       "wfo": "wfo-0001257250",
@@ -5792,6 +7484,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 107,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 9,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "489963-1",
       "wfo": "wfo-0000213711",
@@ -5824,6 +7525,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 117,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 9,
+      "spreadFt": 7
+    },
     "identifiers": {
       "ipni": "490033-1",
       "wfo": "wfo-0000213303",
@@ -5856,6 +7566,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 7,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 100,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "687947-1",
       "wfo": "wfo-0000636634",
@@ -5886,6 +7605,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "76326-2",
       "wfo": "wfo-0000169115",
@@ -5916,6 +7644,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "397487-1",
       "wfo": "wfo-0000861830",
@@ -5947,6 +7684,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 7,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "831294-1",
       "wfo": "wfo-0000637755",
@@ -5979,6 +7725,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "77116898-1",
       "wfo": "wfo-0001042783",
@@ -6008,6 +7763,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 62,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "397953-1",
       "wfo": "wfo-0000862467",
@@ -6046,6 +7810,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "153941-1",
       "wfo": "wfo-0000644338",
@@ -6076,6 +7849,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1.5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "672641-1",
       "wfo": "wfo-0000644965",
@@ -6106,6 +7888,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.3,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "267765-1",
       "wfo": "wfo-0001297426",
@@ -6135,6 +7926,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 20,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "17083940-1",
       "wfo": "wfo-0000141579",
@@ -6165,6 +7965,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "148473-1",
       "wfo": "wfo-0000647174",
@@ -6196,6 +8005,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "802077-1",
       "wfo": "wfo-0000647394",
@@ -6228,6 +8046,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 46,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "323100-1",
       "wfo": "wfo-0000649848",
@@ -6258,6 +8085,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 46,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "323180-1",
       "wfo": "wfo-0000649953",
@@ -6288,6 +8124,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "802107-1",
       "wfo": "wfo-0000650077",
@@ -6319,6 +8164,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "82063-2",
       "wfo": "wfo-0000765518",
@@ -6347,6 +8201,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 0,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.4,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "361625-1",
       "wfo": "wfo-0000652284",
@@ -6375,6 +8238,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 37,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "493388-1",
       "wfo": "wfo-0000212137",
@@ -6407,6 +8279,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 17,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.4,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "724675-1",
       "wfo": "wfo-0000996365",
@@ -6439,6 +8320,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "17436370-1",
       "wfo": "wfo-0001110267",
@@ -6471,6 +8361,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "17094660-1",
       "wfo": "wfo-0001107300",
@@ -6500,6 +8399,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "17094880-1",
       "wfo": "wfo-0001109081",
@@ -6536,6 +8444,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "85620-2",
       "wfo": "wfo-0000657737",
@@ -6568,6 +8485,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 45,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "578324-1",
       "wfo": "wfo-0000658823",
@@ -6596,6 +8522,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "202375-1",
       "wfo": "wfo-0000020152",
@@ -6626,6 +8561,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "1174497-2",
       "wfo": "wfo-0000036347",
@@ -6656,6 +8600,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "78821-1",
       "wfo": "wfo-0000947877",
@@ -6686,6 +8639,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 30,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "88877-2",
       "wfo": "wfo-0000663336",
@@ -6716,6 +8678,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "400271-1",
       "wfo": "wfo-0000866302",
@@ -6747,6 +8718,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "203105-1",
       "wfo": "wfo-0000035355",
@@ -6777,6 +8757,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "1160084-2",
       "wfo": "wfo-0000025251",
@@ -6807,6 +8796,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "92449-2",
       "wfo": "wfo-0000668881",
@@ -6840,6 +8838,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "93090-2",
       "wfo": "wfo-0000867703",
@@ -6870,6 +8877,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "1137778-2",
       "wfo": "wfo-0000868452",
@@ -6900,6 +8916,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 68,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.2,
+      "spreadFt": 3.5
+    },
     "identifiers": {
       "ipni": "332092-2",
       "wfo": "wfo-0000671633",
@@ -6930,6 +8955,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 56,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "328424-1",
       "wfo": "wfo-0000671681",
@@ -6961,6 +8995,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 56,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "329737-1",
       "wfo": "wfo-0000673399",
@@ -6991,6 +9034,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "203908-1",
       "wfo": "wfo-0000127212",
@@ -7021,6 +9073,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 60,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "694152-1",
       "wfo": "wfo-0000674787",
@@ -7051,6 +9112,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 50,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "694339-1",
       "wfo": "wfo-0000675279",
@@ -7081,6 +9151,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "306108-2",
       "wfo": "wfo-0000675532",
@@ -7111,6 +9190,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 25,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 3.5
+    },
     "identifiers": {
       "ipni": "30010704-2",
       "wfo": "wfo-0000675570",
@@ -7141,6 +9229,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "204850-1",
       "wfo": "wfo-0000133670",
@@ -7171,6 +9268,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "1105505-2",
       "wfo": "wfo-0000081244",
@@ -7201,6 +9307,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "204895-1",
       "gbif": "6443404",
@@ -7230,6 +9345,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "748814-1",
       "wfo": "wfo-0000953791",
@@ -7260,6 +9384,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "842103-1",
       "wfo": "wfo-0000678333",
@@ -7290,6 +9423,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "96601-2",
       "wfo": "wfo-0000165896",
@@ -7320,6 +9462,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.2,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "96849-2",
       "wfo": "wfo-0000766958",
@@ -7350,6 +9501,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "672740-1",
       "wfo": "wfo-0000680430",
@@ -7381,6 +9541,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 29,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 9
+    },
     "identifiers": {
       "ipni": "30148396-2",
       "wfo": "wfo-0000681572",
@@ -7411,6 +9580,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 16,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "160876-1",
       "wfo": "wfo-0000681728",
@@ -7444,6 +9622,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 18,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "30051051-2",
       "wfo": "wfo-0000681962",
@@ -7474,6 +9661,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 73,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 4.5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "346016-1",
       "wfo": "wfo-0000961343",
@@ -7506,6 +9702,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 13,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "828738-1",
       "wfo": "wfo-0000683065",
@@ -7536,6 +9741,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "102422-2",
       "gbif": "8054757",
@@ -7565,6 +9779,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "317250-2",
       "wfo": "wfo-0000061844",
@@ -7595,6 +9818,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 42,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 6,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "60437839-2",
       "wfo": "wfo-0000095626",
@@ -7627,6 +9859,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 42,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 7,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "60437842-2",
       "wfo": "wfo-0000077471",
@@ -7657,6 +9898,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 126,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 50
+    },
     "identifiers": {
       "ipni": "295597-1",
       "wfo": "wfo-0000966434",
@@ -7689,6 +9939,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 115,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 100,
+      "spreadFt": 70
+    },
     "identifiers": {
       "ipni": "305836-2",
       "wfo": "wfo-0000966507",
@@ -7722,6 +9981,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "207632-1",
       "wfo": "wfo-0000134933",
@@ -7750,6 +10018,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 25,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "103786-2",
       "wfo": "wfo-0000870029",
@@ -7780,6 +10057,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 190,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "403162-1",
       "wfo": "wfo-0000871130",
@@ -7811,6 +10097,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 190,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "403212-1",
       "wfo": "wfo-0000871222",
@@ -7843,6 +10138,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 25,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 1.2
+    },
     "identifiers": {
       "ipni": "277175-2",
       "wfo": "wfo-0000871845",
@@ -7872,6 +10176,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 186,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "30010036-2",
       "wfo": "wfo-0000871854",
@@ -7903,6 +10216,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "1015492-1",
       "wfo": "wfo-0000418195",
@@ -7931,6 +10253,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 44,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4.5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "724943-1",
       "wfo": "wfo-0000983427",
@@ -7962,6 +10293,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 76,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 0.7,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "105458-2",
       "wfo": "wfo-0000989973",
@@ -7995,6 +10335,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 50,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 0.6,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "30074127-2",
       "wfo": "wfo-0000993770",
@@ -8034,6 +10383,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 76,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 0.5,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "318974-2",
       "wfo": "wfo-0001005555",
@@ -8068,6 +10426,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 53,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 15,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "717344-1",
       "wfo": "wfo-0000691852",
@@ -8099,6 +10466,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 25,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "30435046-2",
       "wfo": "wfo-0000691873",
@@ -8130,6 +10506,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "717360-1",
       "wfo": "wfo-0000691882",
@@ -8160,6 +10545,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 55,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 30,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "30426867-2",
       "wfo": "wfo-0000691925",
@@ -8190,6 +10584,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 90,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 45
+    },
     "identifiers": {
       "ipni": "609072-1",
       "wfo": "wfo-0000832626",
@@ -8220,6 +10623,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 79,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "609128-1",
       "wfo": "wfo-0000832712",
@@ -8252,6 +10664,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 127,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "750829-1",
       "wfo": "wfo-0000970562",
@@ -8288,6 +10709,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 18,
+      "spreadFt": 14
+    },
     "identifiers": {
       "ipni": "271782-1",
       "wfo": "wfo-0000428258",
@@ -8319,6 +10749,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "317388-2",
       "wfo": "wfo-0000695411",
@@ -8350,6 +10789,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "60448812-2",
       "wfo": "wfo-0000696053",
@@ -8380,6 +10828,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 134,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "496342-1",
       "wfo": "wfo-0000213360",
@@ -8410,6 +10867,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 127,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 3.5
+    },
     "identifiers": {
       "ipni": "496408-1",
       "wfo": "wfo-0000213769",
@@ -8440,6 +10906,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 21,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "368453-1",
       "wfo": "wfo-0000697915",
@@ -8472,6 +10947,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 24,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "322491-2",
       "wfo": "wfo-0000700788",
@@ -8504,6 +10988,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 41,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.3,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "373620-1",
       "wfo": "wfo-0000701279",
@@ -8535,6 +11028,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 41,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "322492-2",
       "wfo": "wfo-0000701427",
@@ -8565,6 +11067,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "725292-1",
       "wfo": "wfo-0001002865",
@@ -8595,6 +11106,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 19,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "725355-1",
       "wfo": "wfo-0001004152",
@@ -8625,6 +11145,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "862854-1",
       "wfo": "wfo-0000972681",
@@ -8655,6 +11184,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "210611-1",
       "wfo": "wfo-0000136528",
@@ -8685,6 +11223,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 63,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 18,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "430697-1",
       "wfo": "wfo-0001065240",
@@ -8717,6 +11264,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "752194-1",
       "wfo": "wfo-0000979110",
@@ -8748,6 +11304,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 18,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "90723-1",
       "wfo": "wfo-0000979730",
@@ -8787,6 +11352,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 70,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "169032-1",
       "wfo": "wfo-0000717621",
@@ -8819,6 +11393,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 66,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 7,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "315752-2",
       "wfo": "wfo-0000066553",
@@ -8849,6 +11432,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 66,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "167393-3",
       "wfo": "wfo-0000115987",
@@ -8882,6 +11474,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 66,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "329260-2",
       "wfo": "wfo-0000074910",
@@ -8912,6 +11513,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 36,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "213382-1",
       "wfo": "wfo-0000000535",
@@ -8942,6 +11552,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 25,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 8,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "843087-1",
       "wfo": "wfo-0001068396",
@@ -8972,6 +11591,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 30,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "60451550-2",
       "wfo": "wfo-0000912965",
@@ -9002,6 +11630,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 35,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "60451563-2",
       "wfo": "wfo-0000912979",
@@ -9031,6 +11668,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "1095274-2",
       "wfo": "wfo-0000658097",
@@ -9063,6 +11709,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 25,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "725491-1",
       "gbif": "5370154",
@@ -9095,6 +11750,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "121607-2",
       "wfo": "wfo-0001135501",
@@ -9125,6 +11789,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "30041126-2",
       "wfo": "wfo-0001135503",
@@ -9155,6 +11828,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 18,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 25,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "561009-1",
       "wfo": "wfo-0000724178",
@@ -9185,6 +11867,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 45,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 14,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "1027403-2",
       "wfo": "wfo-0001013826",
@@ -9216,6 +11907,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1.8,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "536636-1",
       "wfo": "wfo-0000663448",
@@ -9244,6 +11944,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 27,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 22,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "303502-2",
       "wfo": "wfo-0000725866",
@@ -9278,6 +11987,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.3,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "971733-1",
       "wfo": "wfo-0000664295",
@@ -9312,6 +12030,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 7,
+      "spreadFt": 7
+    },
     "identifiers": {
       "ipni": "791637-1",
       "wfo": "wfo-0000726228",
@@ -9342,6 +12069,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 7,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "83051-1",
       "wfo": "wfo-0000729203",
@@ -9374,6 +12110,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 39,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 18,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "30032254-2",
       "wfo": "wfo-0001078525",
@@ -9404,6 +12149,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 39,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 8,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "83852-1",
       "wfo": "wfo-0001078505",
@@ -9436,6 +12190,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 39,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 18,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "83863-1",
       "wfo": "wfo-0000729937",
@@ -9467,6 +12230,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "269517-1",
       "wfo": "wfo-0001296638",
@@ -9499,6 +12271,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "438555-1",
       "wfo": "wfo-0000783279",
@@ -9529,6 +12310,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "438572-1",
       "wfo": "wfo-0000783305",
@@ -9559,6 +12349,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 19,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "438992-1",
       "wfo": "wfo-0000783754",
@@ -9589,6 +12388,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "439169-1",
       "wfo": "wfo-0000783941",
@@ -9619,6 +12427,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 25,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "962494-1",
       "wfo": "wfo-0000116480",
@@ -9649,6 +12466,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "270229-1",
       "wfo": "wfo-0001296681",
@@ -9679,6 +12505,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 55,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "30014392-2",
       "wfo": "wfo-0001067449",
@@ -9709,6 +12544,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "442917-1",
       "wfo": "wfo-0000776350",
@@ -9739,6 +12583,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "443335-1",
       "wfo": "wfo-0000777034",
@@ -9772,6 +12625,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "262163-1",
       "wfo": "wfo-0000355594",
@@ -9802,6 +12664,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 58,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "30088655-2",
       "wfo": "wfo-0000355532",
@@ -9838,6 +12709,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 56,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "262299-1",
       "wfo": "wfo-0000355658",
@@ -9870,6 +12750,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 42,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "132551-2",
       "wfo": "wfo-0000354923",
@@ -9900,6 +12789,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "133347-2",
       "wfo": "wfo-0001136780",
@@ -9932,6 +12830,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "319318-1",
       "wfo": "wfo-0000356720",
@@ -9965,6 +12872,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "704692-1",
       "wfo": "wfo-0000356860",
@@ -9993,6 +12909,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 1
+    },
     "identifiers": {
       "ipni": "406615-1",
       "wfo": "wfo-0000877153",
@@ -10023,6 +12948,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "77141733-1",
       "wfo": "wfo-0001340309",
@@ -10051,6 +12985,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "135351-2",
       "wfo": "wfo-0000223460",
@@ -10081,6 +13024,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 45,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 110,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "262420-1",
       "wfo": "wfo-0000443338",
@@ -10113,6 +13065,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 48,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "501954-1",
       "wfo": "wfo-0000212701",
@@ -10143,6 +13104,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 27,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "449008-1",
       "wfo": "wfo-0000224116",
@@ -10175,6 +13145,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 29,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "597505-1",
       "wfo": "wfo-0000226751",
@@ -10205,6 +13184,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 25,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "502415-1",
       "wfo": "wfo-0000185056",
@@ -10235,6 +13223,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 13,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "230103-1",
       "wfo": "wfo-0000036932",
@@ -10265,6 +13262,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "139187-2",
       "wfo": "wfo-0001136787",
@@ -10295,6 +13301,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "139353-2",
       "wfo": "wfo-0000878172",
@@ -10325,6 +13340,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 1.2
+    },
     "identifiers": {
       "ipni": "139575-2",
       "wfo": "wfo-0000075008",
@@ -10356,6 +13380,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "230623-1",
       "wfo": "wfo-0000030984",
@@ -10386,6 +13419,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 0,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "439850-1",
       "wfo": "wfo-0000784650",
@@ -10414,6 +13456,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 38,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 13,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "610130-1",
       "wfo": "wfo-0000815984",
@@ -10446,6 +13497,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 1
+    },
     "identifiers": {
       "ipni": "325013-2",
       "wfo": "wfo-0000678175",
@@ -10478,6 +13538,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "537798-1",
       "wfo": "wfo-0000680746",
@@ -10506,6 +13575,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "465469-1",
       "wfo": "wfo-0001070371",
@@ -10534,6 +13612,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.4,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "140689-2",
       "wfo": "wfo-0000358023",
@@ -10564,6 +13651,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 35,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 70,
+      "spreadFt": 45
+    },
     "identifiers": {
       "ipni": "430718-1",
       "wfo": "wfo-0000364015",
@@ -10594,6 +13690,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.2,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "142946-1",
       "wfo": "wfo-0000813949",
@@ -10622,6 +13727,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "142115-2",
       "wfo": "wfo-0000814269",
@@ -10655,6 +13769,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 1
+    },
     "identifiers": {
       "ipni": "143920-1",
       "wfo": "wfo-0000814885",
@@ -10685,6 +13808,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 33,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "1021717-2",
       "wfo": "wfo-0001290653",
@@ -10715,6 +13847,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 33,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "30105539-2",
       "wfo": "wfo-0001290711",
@@ -10745,6 +13886,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 55,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "148839-1",
       "wfo": "wfo-0000359592",
@@ -10775,6 +13925,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 33,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "148846-1",
       "wfo": "wfo-0001290592",
@@ -10805,6 +13964,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 9,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 26,
+      "spreadFt": 18
+    },
     "identifiers": {
       "ipni": "927299-1",
       "wfo": "wfo-0000359579",
@@ -10835,6 +14003,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 57,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "149006-1",
       "wfo": "wfo-0000367818",
@@ -10869,6 +14046,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 33,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 18,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "30080890-2",
       "wfo": "wfo-0001290705",
@@ -10900,6 +14086,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 115,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.2,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "30179739-2",
       "wfo": "wfo-0000212180",
@@ -10941,6 +14136,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 33,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "30008684-2",
       "wfo": "wfo-0000174684",
@@ -10972,6 +14176,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 33,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "504907-1",
       "wfo": "wfo-0000213846",
@@ -11002,6 +14215,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 33,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "504939-1",
       "wfo": "wfo-0000213847",
@@ -11032,6 +14254,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 33,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 1
+    },
     "identifiers": {
       "ipni": "279946-2",
       "wfo": "wfo-0000174773",
@@ -11062,6 +14293,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 24,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "20009373-1",
       "wfo": "wfo-0000778183",
@@ -11090,6 +14330,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 6,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "331149-1",
       "wfo": "wfo-0001047112",
@@ -11120,6 +14369,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "147962-2",
       "wfo": "wfo-0000231603",
@@ -11150,6 +14408,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 3.5
+    },
     "identifiers": {
       "ipni": "147990-2",
       "wfo": "wfo-0000366878",
@@ -11180,6 +14447,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 60,
+      "spreadFt": 50
+    },
     "identifiers": {
       "ipni": "466273-1",
       "wfo": "wfo-0000373778",
@@ -11208,6 +14484,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 21,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 65,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "554723-1",
       "wfo": "wfo-0000233174",
@@ -11238,6 +14523,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 50,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "332100-2",
       "wfo": "wfo-0000233225",
@@ -11268,6 +14562,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 21,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 35,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "30016308-2",
       "wfo": "wfo-0000233456",
@@ -11298,6 +14601,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 0.8,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "149429-2",
       "wfo": "wfo-0000691294",
@@ -11328,6 +14640,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 25,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "149662-2",
       "wfo": "wfo-0001077089",
@@ -11358,6 +14679,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 18,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "1032103-2",
       "wfo": "wfo-0001051353",
@@ -11388,6 +14718,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 180,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 35,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "150114-2",
       "wfo": "wfo-0001013573",
@@ -11418,6 +14757,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 311,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "150119-2",
       "wfo": "wfo-0001013576",
@@ -11448,6 +14796,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 43,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 28,
+      "spreadFt": 26
+    },
     "identifiers": {
       "ipni": "726415-1",
       "wfo": "wfo-0001016475",
@@ -11478,6 +14835,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "562237-1",
       "wfo": "wfo-0000449492",
@@ -11508,6 +14874,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "17145680-1",
       "wfo": "wfo-0001109164",
@@ -11539,6 +14914,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "232106-1",
       "wfo": "wfo-0000025541",
@@ -11569,6 +14953,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "156327-2",
       "wfo": "wfo-0000038453",
@@ -11599,6 +14992,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 22,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 30,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "866981-1",
       "wfo": "wfo-0000451842",
@@ -11627,6 +15029,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 17,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 60,
+      "spreadFt": 70
+    },
     "identifiers": {
       "ipni": "598207-1",
       "wfo": "wfo-0000242427",
@@ -11655,6 +15066,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "408485-1",
       "wfo": "wfo-0000879917",
@@ -11685,6 +15105,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "313006-2",
       "wfo": "wfo-0000174650",
@@ -11718,6 +15147,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 7,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "408768-1",
       "wfo": "wfo-0000880299",
@@ -11748,6 +15186,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 21,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "408809-1",
       "wfo": "wfo-0000880418",
@@ -11778,6 +15225,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 1
+    },
     "identifiers": {
       "ipni": "452023-1",
       "wfo": "wfo-0000245301",
@@ -11808,6 +15264,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "452042-1",
       "wfo": "wfo-0000245324",
@@ -11841,6 +15306,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "452072-1",
       "wfo": "wfo-0000245372",
@@ -11873,6 +15347,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "1113865-2",
       "wfo": "wfo-0001085144",
@@ -11903,6 +15386,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "164286-2",
       "wfo": "wfo-0000448186",
@@ -11936,6 +15428,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 32,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "694744-1",
       "wfo": "wfo-0000452366",
@@ -11966,6 +15467,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "408959-1",
       "wfo": "wfo-0000880650",
@@ -11997,6 +15507,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "164816-2",
       "wfo": "wfo-0000880801",
@@ -12027,6 +15546,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4.5,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "164873-2",
       "wfo": "wfo-0000880911",
@@ -12057,6 +15585,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "585291-1",
       "wfo": "wfo-0001085082",
@@ -12087,6 +15624,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "166091-2",
       "wfo": "wfo-0000248020",
@@ -12118,6 +15664,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 42,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "300581-2",
       "wfo": "wfo-0000447393",
@@ -12149,6 +15704,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 9
+    },
     "identifiers": {
       "ipni": "599719-1",
       "wfo": "wfo-0000248712",
@@ -12181,6 +15745,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "17160830-1",
       "wfo": "wfo-0001109173",
@@ -12211,6 +15784,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 16,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "33923-1",
       "wfo": "wfo-0000984299",
@@ -12243,6 +15825,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "614089-1",
       "wfo": "wfo-0000389747",
@@ -12273,6 +15864,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 0,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 2.5,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "17166830-1",
       "wfo": "wfo-0001109206",
@@ -12304,6 +15904,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.8,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "429781-1",
       "wfo": "wfo-0000673577",
@@ -12334,6 +15943,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 41,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "453395-1",
       "wfo": "wfo-0000260765",
@@ -12366,6 +15984,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "77117634-1",
       "wfo": "wfo-0000750727",
@@ -12394,6 +16021,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 0,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "305721-2",
       "wfo": "wfo-0001109067",
@@ -12424,6 +16060,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "177119-2",
       "wfo": "wfo-0001110612",
@@ -12452,6 +16097,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "60447721-2",
       "wfo": "wfo-0001113307",
@@ -12481,6 +16135,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 0.8,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "375214-1",
       "wfo": "wfo-0000386872",
@@ -12512,6 +16175,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "353208-1",
       "wfo": "wfo-0000733029",
@@ -12542,6 +16214,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "1016222-2",
       "wfo": "wfo-0000006878",
@@ -12574,6 +16255,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 28,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "413537-1",
       "wfo": "wfo-0000886863",
@@ -12606,6 +16296,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 25,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "183994-2",
       "wfo": "wfo-0000264784",
@@ -12634,6 +16333,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 33,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "68399-1",
       "wfo": "wfo-0000474309",
@@ -12668,6 +16376,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "68407-1",
       "wfo": "wfo-0000474320",
@@ -12698,6 +16415,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "675096-1",
       "wfo": "wfo-0001090757",
@@ -12731,6 +16457,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 18,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "321973-2",
       "wfo": "wfo-0000480120",
@@ -12761,6 +16496,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 0,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 30,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "675517-1",
       "wfo": "wfo-0001091198",
@@ -12789,6 +16533,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "859466-1",
       "wfo": "wfo-0001225082",
@@ -12817,6 +16570,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "185932-2",
       "wfo": "wfo-0001077098",
@@ -12847,6 +16609,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "1053872-2",
       "wfo": "wfo-0001292667",
@@ -12877,6 +16648,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 4
+    },
     "identifiers": {
       "gbif": "11842758",
       "inat": "1413422",
@@ -12902,6 +16682,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 1
+    },
     "identifiers": {
       "ipni": "17170500-1",
       "wfo": "wfo-0001109208",
@@ -12932,6 +16721,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 1
+    },
     "identifiers": {
       "ipni": "808044-1",
       "wfo": "wfo-0001136586",
@@ -12962,6 +16760,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "187353-2",
       "wfo": "wfo-0001136588",
@@ -12993,6 +16800,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2.5,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "60456598-2",
       "wfo": "wfo-0001136600",
@@ -13023,6 +16839,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "808298-1",
       "wfo": "wfo-0001137141",
@@ -13053,6 +16878,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "1129486-2",
       "wfo": "wfo-0001114298",
@@ -13083,6 +16917,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "942487-1",
       "wfo": "wfo-0000266801",
@@ -13113,6 +16956,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 2,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "1061719-2",
       "wfo": "wfo-0000126786",
@@ -13143,6 +16995,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "317401-2",
       "wfo": "wfo-0001135569",
@@ -13173,6 +17034,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "610935-1",
       "wfo": "wfo-0000817995",
@@ -13203,6 +17073,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "539915-1",
       "wfo": "wfo-0000716264",
@@ -13231,6 +17110,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "539927-1",
       "wfo": "wfo-0000717490",
@@ -13261,6 +17149,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "194567-2",
       "wfo": "wfo-0000270345",
@@ -13293,6 +17190,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 13,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "195615-2",
       "wfo": "wfo-0001013796",
@@ -13323,6 +17229,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 41,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 9,
+      "spreadFt": 9
+    },
     "identifiers": {
       "ipni": "20005342-1",
       "wfo": "wfo-0001017550",
@@ -13356,6 +17271,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 68,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 130,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "262609-1",
       "wfo": "wfo-0000482030",
@@ -13388,6 +17312,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 68,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 180,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "676986-1",
       "wfo": "wfo-0000482639",
@@ -13418,6 +17351,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 9,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 10,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "331662-1",
       "wfo": "wfo-0001047846",
@@ -13448,6 +17390,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 64,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 75,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "262848-1",
       "wfo": "wfo-0000482273",
@@ -13480,6 +17431,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 200,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 45,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "30000492-2",
       "wfo": "wfo-0000481330",
@@ -13510,6 +17470,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 140,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "196961-2",
       "wfo": "wfo-0000481341",
@@ -13540,6 +17509,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 203,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 80,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "262921-1",
       "wfo": "wfo-0000481442",
@@ -13570,6 +17548,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 68,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 60,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "262982-1",
       "wfo": "wfo-0000481363",
@@ -13602,6 +17589,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 203,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 90,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "263186-1",
       "wfo": "wfo-0000481804",
@@ -13632,6 +17628,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 200,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 130,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "307165-2",
       "wfo": "wfo-0000481903",
@@ -13662,6 +17667,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 203,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 80,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "263339-1",
       "wfo": "wfo-0000481530",
@@ -13694,6 +17708,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 64,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 85,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "263353-1",
       "wfo": "wfo-0000481648",
@@ -13726,6 +17749,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 140,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 45
+    },
     "identifiers": {
       "ipni": "282913-2",
       "wfo": "wfo-0000481576",
@@ -13756,6 +17788,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 10,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "681346-1",
       "wfo": "wfo-0000479181",
@@ -13784,6 +17825,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 37,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 13,
+      "spreadFt": 13
+    },
     "identifiers": {
       "ipni": "70253-1",
       "wfo": "wfo-0000394118",
@@ -13816,6 +17866,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "957688-1",
       "wfo": "wfo-0000487387",
@@ -13846,6 +17905,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "684708-1",
       "wfo": "wfo-0001094611",
@@ -13876,6 +17944,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 176,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "321285-2",
       "wfo": "wfo-0000486603",
@@ -13911,6 +17988,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 45,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 80,
+      "spreadFt": 60
+    },
     "identifiers": {
       "ipni": "685871-1",
       "wfo": "wfo-0000487082",
@@ -13941,6 +18027,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 45,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 90,
+      "spreadFt": 70
+    },
     "identifiers": {
       "ipni": "685878-1",
       "wfo": "wfo-0000487091",
@@ -13971,6 +18066,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "144523-1",
       "wfo": "wfo-0000816758",
@@ -14001,6 +18105,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 0.5
+    },
     "identifiers": {
       "ipni": "30030760-2",
       "wfo": "wfo-0001143750",
@@ -14031,6 +18144,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 173,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "320039-2",
       "wfo": "wfo-0000893068",
@@ -14064,6 +18186,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 173,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "320346-2",
       "wfo": "wfo-0000894135",
@@ -14094,6 +18225,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 11,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "263597-1",
       "wfo": "wfo-0000484935",
@@ -14124,6 +18264,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.4,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "17189950-1",
       "wfo": "wfo-0001109244",
@@ -14154,6 +18303,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "17205300-1",
       "wfo": "wfo-0001109261",
@@ -14187,6 +18345,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 3.5
+    },
     "identifiers": {
       "ipni": "17205720-1",
       "wfo": "wfo-0001239724",
@@ -14220,6 +18387,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "17414110-1",
       "wfo": "wfo-0001109272",
@@ -14252,6 +18428,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "17207740-1",
       "wfo": "wfo-0001109274",
@@ -14284,6 +18469,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3.5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "17414550-1",
       "wfo": "wfo-0001107397",
@@ -14313,6 +18507,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 6
+    },
     "identifiers": {
       "wfo": "wfo-0000472191",
       "gbif": "3876809",
@@ -14340,6 +18543,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "283610-2",
       "wfo": "wfo-0000500933",
@@ -14371,6 +18583,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 190,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 90,
+      "spreadFt": 55
+    },
     "identifiers": {
       "ipni": "306544-2",
       "wfo": "wfo-0000928140",
@@ -14401,6 +18622,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 257,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 90,
+      "spreadFt": 55
+    },
     "identifiers": {
       "ipni": "776790-1",
       "wfo": "wfo-0000928297",
@@ -14433,6 +18663,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 258,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "776884-1",
       "wfo": "wfo-0000928205",
@@ -14471,6 +18710,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 368,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "776886-1",
       "wfo": "wfo-0000928260",
@@ -14502,6 +18750,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 300,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 120,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "776891-1",
       "wfo": "wfo-0000928244",
@@ -14531,6 +18788,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 1
+    },
     "identifiers": {
       "ipni": "60447606-2",
       "wfo": "wfo-0001280208",
@@ -14560,6 +18826,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 35,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 1.2
+    },
     "identifiers": {
       "ipni": "702751-1",
       "wfo": "wfo-0000482741",
@@ -14591,6 +18866,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 35,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.6,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "702779-1",
       "wfo": "wfo-0000482762",
@@ -14621,6 +18905,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "210440-2",
       "wfo": "wfo-0000169068",
@@ -14651,6 +18944,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 318,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 55,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "30093848-2",
       "wfo": "wfo-0001005630",
@@ -14685,6 +18987,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 200,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "30051006-2",
       "wfo": "wfo-0001013841",
@@ -14715,6 +19026,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 120,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "30123157-2",
       "wfo": "wfo-0001013868",
@@ -14745,6 +19065,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 105,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 55,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "1006782-1",
       "gbif": "3020620",
@@ -14772,6 +19101,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 319,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 30,
+      "spreadFt": 22
+    },
     "identifiers": {
       "ipni": "729931-1",
       "wfo": "wfo-0001013325",
@@ -14804,6 +19142,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 340,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 22,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "30012498-2",
       "wfo": "wfo-0001013884",
@@ -14834,6 +19181,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 318,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 45,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "730076-1",
       "wfo": "wfo-0001008273",
@@ -14868,6 +19224,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 340,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 60,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "30010850-2",
       "wfo": "wfo-0000995988",
@@ -14901,6 +19266,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 318,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 18,
+      "spreadFt": 18
+    },
     "identifiers": {
       "ipni": "730297-1",
       "wfo": "wfo-0001007437",
@@ -14938,6 +19312,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 16,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "91865-1",
       "wfo": "wfo-0000284122",
@@ -14966,6 +19349,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 180,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "211600-2",
       "wfo": "wfo-0000478194",
@@ -14997,6 +19389,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 8,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "329821-2",
       "wfo": "wfo-0000286803",
@@ -15027,6 +19428,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "1128143-2",
       "wfo": "wfo-0000289039",
@@ -15056,6 +19466,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 116,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 45,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "77066454-1",
       "wfo": "wfo-0000983612",
@@ -15085,6 +19504,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 123,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 26,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "731262-1",
       "wfo": "wfo-0000998826",
@@ -15115,6 +19543,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 531,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 60,
+      "spreadFt": 45
+    },
     "identifiers": {
       "ipni": "295743-1",
       "wfo": "wfo-0000289386",
@@ -15145,6 +19582,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 200,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 70
+    },
     "identifiers": {
       "ipni": "295759-1",
       "wfo": "wfo-0000289442",
@@ -15176,6 +19622,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 511,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 75,
+      "spreadFt": 75
+    },
     "identifiers": {
       "ipni": "295763-1",
       "wfo": "wfo-0000289457",
@@ -15208,6 +19663,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 511,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 60,
+      "spreadFt": 50
+    },
     "identifiers": {
       "ipni": "295855-1",
       "wfo": "wfo-0000289757",
@@ -15238,6 +19702,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 511,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "284107-2",
       "wfo": "wfo-0000289876",
@@ -15268,6 +19741,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 511,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 35,
+      "spreadFt": 45
+    },
     "identifiers": {
       "ipni": "359649-1",
       "wfo": "wfo-0000290856",
@@ -15298,6 +19780,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 280,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 65,
+      "spreadFt": 60
+    },
     "identifiers": {
       "ipni": "296175-1",
       "wfo": "wfo-0000290875",
@@ -15330,6 +19821,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 430,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 30,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "215869-2",
       "wfo": "wfo-0000290887",
@@ -15360,6 +19860,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 531,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "927477-1",
       "wfo": "wfo-0000290946",
@@ -15390,6 +19899,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 399,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 65,
+      "spreadFt": 60
+    },
     "identifiers": {
       "ipni": "296290-1",
       "wfo": "wfo-0000291202",
@@ -15422,6 +19940,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 430,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "296349-1",
       "wfo": "wfo-0000291517",
@@ -15452,6 +19979,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 200,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 90,
+      "spreadFt": 100
+    },
     "identifiers": {
       "ipni": "296396-1",
       "wfo": "wfo-0000291724",
@@ -15482,6 +20018,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 511,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 70
+    },
     "identifiers": {
       "ipni": "296423-1",
       "wfo": "wfo-0000291873",
@@ -15513,6 +20058,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 531,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 55,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "296481-1",
       "wfo": "wfo-0000292104",
@@ -15542,6 +20096,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 401,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 90,
+      "spreadFt": 70
+    },
     "identifiers": {
       "ipni": "359961-1",
       "wfo": "wfo-0000292459",
@@ -15576,6 +20139,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 399,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 55,
+      "spreadFt": 55
+    },
     "identifiers": {
       "ipni": "326376-2",
       "wfo": "wfo-0000292685",
@@ -15606,6 +20178,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 391,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 80,
+      "spreadFt": 75
+    },
     "identifiers": {
       "ipni": "296690-1",
       "wfo": "wfo-0000292858",
@@ -15640,6 +20221,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 511,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 60
+    },
     "identifiers": {
       "ipni": "296701-1",
       "wfo": "wfo-0000293006",
@@ -15673,6 +20263,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 531,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "60444831-2",
       "wfo": "wfo-0000293164",
@@ -15703,6 +20302,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 511,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 60,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "284115-2",
       "wfo": "wfo-0000293271",
@@ -15733,6 +20341,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 511,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 45,
+      "spreadFt": 40
+    },
     "identifiers": {
       "ipni": "216416-2",
       "wfo": "wfo-0000293374",
@@ -15763,6 +20380,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 430,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 60,
+      "spreadFt": 90
+    },
     "identifiers": {
       "ipni": "324846-2",
       "wfo": "wfo-0000293884",
@@ -15794,6 +20420,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "217868-2",
       "wfo": "wfo-0000083837",
@@ -15824,6 +20459,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "217881-2",
       "wfo": "wfo-0000121004",
@@ -15854,6 +20498,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 63,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 16,
+      "spreadFt": 13
+    },
     "identifiers": {
       "ipni": "718169-1",
       "wfo": "wfo-0000462513",
@@ -15886,6 +20539,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 0.5
+    },
     "identifiers": {
       "ipni": "30116962-2",
       "wfo": "wfo-0000747233",
@@ -15916,6 +20578,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 22,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3.5,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "332420-1",
       "wfo": "wfo-0000400806",
@@ -15947,6 +20618,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 34,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "1137397-2",
       "wfo": "wfo-0000400687",
@@ -15975,6 +20655,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 22,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 15,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "332831-1",
       "wfo": "wfo-0001047073",
@@ -16005,6 +20694,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 54,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "70474-1",
       "wfo": "wfo-0001049902",
@@ -16035,6 +20733,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 54,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "70565-1",
       "wfo": "wfo-0001049359",
@@ -16065,6 +20772,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "70615-1",
       "wfo": "wfo-0001049906",
@@ -16095,6 +20811,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 54,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "219818-2",
       "wfo": "wfo-0001049755",
@@ -16125,6 +20850,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 54,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "219942-2",
       "wfo": "wfo-0001049940",
@@ -16155,6 +20889,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "317405-2",
       "wfo": "wfo-0000405232",
@@ -16188,6 +20931,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "792998-1",
       "wfo": "wfo-0001135632",
@@ -16219,6 +20971,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "221479-2",
       "wfo": "wfo-0000404539",
@@ -16251,6 +21012,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "673954-1",
       "wfo": "wfo-0001090302",
@@ -16283,6 +21053,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 113,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 7,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "731660-1",
       "wfo": "wfo-0001012155",
@@ -16313,6 +21092,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 113,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 8,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "30033304-2",
       "wfo": "wfo-0001014357",
@@ -16344,6 +21132,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 113,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "731955-1",
       "wfo": "wfo-0001005999",
@@ -16378,6 +21175,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 80,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "30022809-2",
       "wfo": "wfo-0001014400",
@@ -16408,6 +21214,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 24,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 13
+    },
     "identifiers": {
       "ipni": "927374-1",
       "wfo": "wfo-0001001254",
@@ -16438,6 +21253,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 80,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "30027683-2",
       "wfo": "wfo-0001014416",
@@ -16468,6 +21292,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 113,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "733641-1",
       "wfo": "wfo-0001018161",
@@ -16500,6 +21333,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 111,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 13
+    },
     "identifiers": {
       "ipni": "734215-1",
       "wfo": "wfo-0000992954",
@@ -16532,6 +21374,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 139,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "734247-1",
       "wfo": "wfo-0001017675",
@@ -16562,6 +21413,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 113,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 9
+    },
     "identifiers": {
       "ipni": "324822-2",
       "wfo": "wfo-0001014557",
@@ -16593,6 +21453,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 189,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 30
+    },
     "identifiers": {
       "gbif": "2988638",
       "inat": "1449268",
@@ -16624,6 +21493,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 195,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 7,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "298089-2",
       "wfo": "wfo-0001000827",
@@ -16656,6 +21534,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 110,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "738961-1",
       "wfo": "wfo-0001016292",
@@ -16686,6 +21573,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 120,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 9,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "223579-2",
       "wfo": "wfo-0000984083",
@@ -16716,6 +21612,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 185,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "740982-1",
       "wfo": "wfo-0000985000",
@@ -16748,6 +21653,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 120,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "741021-1",
       "wfo": "wfo-0001007329",
@@ -16781,6 +21695,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "241701-1",
       "wfo": "wfo-0000014241",
@@ -16811,6 +21734,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "223740-2",
       "wfo": "wfo-0000027627",
@@ -16843,6 +21775,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "30014408-2",
       "wfo": "wfo-0001044886",
@@ -16873,6 +21814,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 192,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "332105-2",
       "wfo": "wfo-0000403595",
@@ -16904,6 +21854,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 199,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 1.2,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "145048-3",
       "wfo": "wfo-0000403586",
@@ -16936,6 +21895,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 45,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "669727-1",
       "wfo": "wfo-0000299302",
@@ -16969,6 +21937,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "58516-1",
       "wfo": "wfo-0000736828",
@@ -16999,6 +21976,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 370,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 75,
+      "spreadFt": 50
+    },
     "identifiers": {
       "ipni": "776974-1",
       "wfo": "wfo-0000929085",
@@ -17031,6 +22017,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 385,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 40,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "777256-1",
       "wfo": "wfo-0000929313",
@@ -17069,6 +22064,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 377,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 16
+    },
     "identifiers": {
       "ipni": "777326-1",
       "wfo": "wfo-0000929149",
@@ -17104,6 +22108,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 389,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 18,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "284528-2",
       "wfo": "wfo-0000928583",
@@ -17136,6 +22149,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 62,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 9
+    },
     "identifiers": {
       "ipni": "777701-1",
       "wfo": "wfo-0000928541",
@@ -17166,6 +22188,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 300,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 20,
+      "spreadFt": 16
+    },
     "identifiers": {
       "ipni": "302621-2",
       "wfo": "wfo-0000928813",
@@ -17198,6 +22229,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 300,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 40,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "284532-2",
       "wfo": "wfo-0000928739",
@@ -17227,6 +22267,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 220,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 35,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "301954-2",
       "wfo": "wfo-0000928742",
@@ -17258,6 +22307,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 389,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 45,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "778291-1",
       "wfo": "wfo-0000929858",
@@ -17288,6 +22346,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 300,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 35,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "226166-2",
       "wfo": "wfo-0000930287",
@@ -17318,6 +22385,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 300,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 20,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "778867-1",
       "wfo": "wfo-0000930233",
@@ -17348,6 +22424,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "290024-2",
       "wfo": "wfo-0000300281",
@@ -17378,6 +22463,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "226502-2",
       "wfo": "wfo-0000300707",
@@ -17408,6 +22502,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "455978-1",
       "wfo": "wfo-0000300715",
@@ -17441,6 +22544,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "456204-1",
       "wfo": "wfo-0000300986",
@@ -17471,6 +22583,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "456321-1",
       "wfo": "wfo-0000301129",
@@ -17501,6 +22622,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "289832-2",
       "wfo": "wfo-0000301567",
@@ -17531,6 +22661,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 68,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "457007-1",
       "wfo": "wfo-0000301989",
@@ -17563,6 +22702,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "321576-2",
       "wfo": "wfo-0000302157",
@@ -17593,6 +22741,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 70,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "60474677-2",
       "wfo": "wfo-0000302167",
@@ -17623,6 +22780,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "226989-2",
       "wfo": "wfo-0000302340",
@@ -17653,6 +22819,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 42,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "321978-2",
       "wfo": "wfo-0000439346",
@@ -17682,6 +22857,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 31,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "30122169-2",
       "wfo": "wfo-0000439308",
@@ -17714,6 +22898,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "1045079-2",
       "wfo": "wfo-0001367132",
@@ -17745,6 +22938,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 42,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 18,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "30056767-2",
       "wfo": "wfo-0000439333",
@@ -17777,6 +22979,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "741402-1",
       "wfo": "wfo-0000983287",
@@ -17807,6 +23018,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 35,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "784612-1",
       "wfo": "wfo-0001135006",
@@ -17836,6 +23056,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 13
+    },
     "identifiers": {
       "ipni": "420574-1",
       "wfo": "wfo-0000897621",
@@ -17866,6 +23095,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.6,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "794584-1",
       "wfo": "wfo-0000494724",
@@ -17896,6 +23134,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 61,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "319793-1",
       "wfo": "wfo-0000500277",
@@ -17928,6 +23175,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 35,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "420956-1",
       "wfo": "wfo-0000898183",
@@ -17962,6 +23218,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "313911-1",
       "wfo": "wfo-0000541492",
@@ -17992,6 +23257,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 6,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "230956-2",
       "wfo": "wfo-0001137173",
@@ -18022,6 +23296,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "284824-2",
       "wfo": "wfo-0001299441",
@@ -18052,6 +23335,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.2,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "384361-1",
       "wfo": "wfo-0001065176",
@@ -18080,6 +23372,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 250,
+      "spreadFt": 45
+    },
     "identifiers": {
       "ipni": "263741-1",
       "wfo": "wfo-0000437871",
@@ -18110,6 +23411,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "941782-1",
       "wfo": "wfo-0000309573",
@@ -18141,6 +23451,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "1005554-2",
       "wfo": "wfo-0000898775",
@@ -18173,6 +23492,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "235145-2",
       "wfo": "wfo-0000432992",
@@ -18203,6 +23531,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "564393-1",
       "wfo": "wfo-0001077112",
@@ -18233,6 +23570,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 15,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "296019-2",
       "wfo": "wfo-0001077124",
@@ -18263,6 +23609,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 74,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "157239-1",
       "wfo": "wfo-0000440478",
@@ -18294,6 +23649,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 9,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "315757-2",
       "wfo": "wfo-0000117950",
@@ -18324,6 +23688,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 9,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "30257140-2",
       "wfo": "wfo-0000079762",
@@ -18354,6 +23727,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "1001300-2",
       "wfo": "wfo-0000786457",
@@ -18385,6 +23767,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 100,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 4.5,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "240318-2",
       "wfo": "wfo-0000136548",
@@ -18414,6 +23805,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 115,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "249731-1",
       "wfo": "wfo-0000013309",
@@ -18444,6 +23844,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 115,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "249837-1",
       "wfo": "wfo-0000129341",
@@ -18473,6 +23882,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 115,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "249846-1",
       "wfo": "wfo-0000027996",
@@ -18504,6 +23922,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 115,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "240517-2",
       "wfo": "wfo-0000032825",
@@ -18534,6 +23961,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 115,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "240530-2",
       "wfo": "wfo-0000061970",
@@ -18564,6 +24000,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 70,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "1086574-2",
       "wfo": "wfo-0000108899",
@@ -18593,6 +24038,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 30,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "518812-1",
       "wfo": "wfo-0000502470",
@@ -18621,6 +24075,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "240593-2",
       "wfo": "wfo-0000165358",
@@ -18651,6 +24114,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 109,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 40,
+      "spreadFt": 22
+    },
     "identifiers": {
       "ipni": "741641-1",
       "wfo": "wfo-0001016186",
@@ -18688,6 +24160,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 109,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "324828-2",
       "wfo": "wfo-0001019042",
@@ -18720,6 +24201,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 109,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 60,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "742021-1",
       "wfo": "wfo-0001014076",
@@ -18752,6 +24242,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 7,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "240823-2",
       "wfo": "wfo-0000900100",
@@ -18783,6 +24282,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 6,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "240832-2",
       "wfo": "wfo-0000900112",
@@ -18813,6 +24321,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "241102-2",
       "wfo": "wfo-0000900685",
@@ -18843,6 +24360,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 7,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "30135991-2",
       "wfo": "wfo-0000985407",
@@ -18875,6 +24401,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "1026241-2",
       "wfo": "wfo-0000901178",
@@ -18905,6 +24440,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "1092351-2",
       "wfo": "wfo-0000314894",
@@ -18935,6 +24479,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "285668-2",
       "wfo": "wfo-0000902718",
@@ -18965,6 +24518,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "30048227-2",
       "wfo": "wfo-0001110263",
@@ -18998,6 +24560,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "519718-1",
       "wfo": "wfo-0000176767",
@@ -19028,6 +24599,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 13,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 26,
+      "spreadFt": 22
+    },
     "identifiers": {
       "ipni": "826818-1",
       "wfo": "wfo-0000492190",
@@ -19058,6 +24638,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 9,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "320331-1",
       "wfo": "wfo-0000500443",
@@ -19090,6 +24679,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "247027-2",
       "wfo": "wfo-0000439047",
@@ -19121,6 +24719,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 25,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "149459-1",
       "wfo": "wfo-0001290667",
@@ -19152,6 +24759,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 109,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 12,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "1136843-2",
       "wfo": "wfo-0000137858",
@@ -19180,6 +24796,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 60,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "981782-1",
       "wfo": "wfo-0000090638",
@@ -19212,6 +24837,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 109,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "911502-1",
       "wfo": "wfo-0000129622",
@@ -19243,6 +24877,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 109,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "981863-1",
       "wfo": "wfo-0000115996",
@@ -19276,6 +24919,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 109,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "981868-1",
       "wfo": "wfo-0000094410",
@@ -19306,6 +24958,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 95,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "981907-1",
       "wfo": "wfo-0000126131",
@@ -19336,6 +24997,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 142,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 1.2,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "1003018-2",
       "wfo": "wfo-0000062154",
@@ -19366,6 +25036,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 80,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "30052311-2",
       "wfo": "wfo-0000408602",
@@ -19397,6 +25076,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 7,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "306036-2",
       "wfo": "wfo-0000408637",
@@ -19427,6 +25115,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 35,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "249736-2",
       "wfo": "wfo-0000408633",
@@ -19457,6 +25154,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "794860-1",
       "wfo": "wfo-0000459248",
@@ -19487,6 +25193,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "77142412-1",
       "wfo": "wfo-0001340533",
@@ -19516,6 +25231,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 35,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "460717-1",
       "wfo": "wfo-0000322618",
@@ -19547,6 +25271,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "251400-2",
       "wfo": "wfo-0001109419",
@@ -19578,6 +25311,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 40,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "263956-1",
       "wfo": "wfo-0000407772",
@@ -19609,6 +25351,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 8,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 130,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "60443333-2",
       "wfo": "wfo-0000407856",
@@ -19639,6 +25390,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 85,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.3,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "461536-1",
       "wfo": "wfo-0000324555",
@@ -19670,6 +25430,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 94,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.4,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "461649-1",
       "wfo": "wfo-0000324739",
@@ -19701,6 +25470,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 94,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.3,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "461765-1",
       "wfo": "wfo-0000324951",
@@ -19733,6 +25511,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1.5,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "794902-1",
       "wfo": "wfo-0001135731",
@@ -19763,6 +25550,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 150,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 75,
+      "spreadFt": 50
+    },
     "identifiers": {
       "ipni": "286108-2",
       "wfo": "wfo-0000457477",
@@ -19796,6 +25592,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 100,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 85,
+      "spreadFt": 55
+    },
     "identifiers": {
       "ipni": "835277-1",
       "wfo": "wfo-0000457451",
@@ -19829,6 +25634,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 13
+    },
     "identifiers": {
       "ipni": "82528-1",
       "wfo": "wfo-0000326442",
@@ -19857,6 +25671,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "173408-1",
       "wfo": "wfo-0000589305",
@@ -19887,6 +25710,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 107,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "523575-1",
       "wfo": "wfo-0000213053",
@@ -19923,6 +25755,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 105,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 0.6,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "523626-1",
       "wfo": "wfo-0000213062",
@@ -19953,6 +25794,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1.5,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "317429-2",
       "wfo": "wfo-0000750666",
@@ -19985,6 +25835,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 25,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "424990-1",
       "wfo": "wfo-0000904805",
@@ -20018,6 +25877,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "258703-2",
       "wfo": "wfo-0000904821",
@@ -20048,6 +25916,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 5,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2.5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "306789-2",
       "wfo": "wfo-0000455242",
@@ -20080,6 +25957,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 45,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 65,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "264005-1",
       "wfo": "wfo-0000456302",
@@ -20112,6 +25998,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 150,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "264010-1",
       "wfo": "wfo-0000456392",
@@ -20142,6 +26037,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 39,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "524298-1",
       "wfo": "wfo-0000213410",
@@ -20174,6 +26078,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 213,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 35
+    },
     "identifiers": {
       "ipni": "302278-2",
       "wfo": "wfo-0001143152",
@@ -20204,6 +26117,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 126,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 100,
+      "spreadFt": 60
+    },
     "identifiers": {
       "ipni": "856863-1",
       "wfo": "wfo-0000416717",
@@ -20234,6 +26156,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 60,
+      "spreadFt": 50
+    },
     "identifiers": {
       "ipni": "30189264-2",
       "wfo": "wfo-0001071259",
@@ -20267,6 +26198,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "785564-1",
       "wfo": "wfo-0001134889",
@@ -20297,6 +26237,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 6,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "325380-2",
       "wfo": "wfo-0000906627",
@@ -20327,6 +26276,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 85,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "260630-2",
       "wfo": "wfo-0000416616",
@@ -20357,6 +26315,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 7,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "262034-2",
       "wfo": "wfo-0001143258",
@@ -20386,6 +26353,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 217,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "261779-2",
       "wfo": "wfo-0000422967",
@@ -20417,6 +26393,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 217,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 15
+    },
     "identifiers": {
       "ipni": "317271-2",
       "wfo": "wfo-0001047661",
@@ -20447,6 +26432,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 217,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 7,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "261823-2",
       "wfo": "wfo-0000422953",
@@ -20478,6 +26472,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 217,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "261931-2",
       "wfo": "wfo-0001047099",
@@ -20508,6 +26511,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 227,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "30006039-2",
       "wfo": "wfo-0000422209",
@@ -20547,6 +26559,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 150,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 8,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "859071-1",
       "wfo": "wfo-0001047102",
@@ -20578,6 +26599,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 150,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 10,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "317275-2",
       "wfo": "wfo-0001046870",
@@ -20608,6 +26638,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 227,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "293975-2",
       "wfo": "wfo-0000421966",
@@ -20640,6 +26679,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 18,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "860012-1",
       "wfo": "wfo-0000426953",
@@ -20670,6 +26718,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1.5,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "107623-1",
       "wfo": "wfo-0001146472",
@@ -20700,6 +26757,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "865207-1",
       "wfo": "wfo-0000331939",
@@ -20730,6 +26796,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 3
+    },
     "identifiers": {
       "ipni": "257707-1",
       "wfo": "wfo-0000042964",
@@ -20760,6 +26835,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 18,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "812694-1",
       "gbif": "7861306",
@@ -20787,6 +26871,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 104,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "326264-2",
       "wfo": "wfo-0001290753",
@@ -20818,6 +26911,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 21,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "927323-1",
       "wfo": "wfo-0001042018",
@@ -20848,6 +26950,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 27,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "326265-2",
       "wfo": "wfo-0000421166",
@@ -20880,6 +26991,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 104,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 16,
+      "spreadFt": 10
+    },
     "identifiers": {
       "ipni": "326266-2",
       "wfo": "wfo-0001290597",
@@ -20912,6 +27032,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 104,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "149845-1",
       "wfo": "wfo-0001290681",
@@ -20942,6 +27071,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 27,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 13
+    },
     "identifiers": {
       "ipni": "326268-2",
       "wfo": "wfo-0000422807",
@@ -20973,6 +27111,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 104,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 18,
+      "spreadFt": 12
+    },
     "identifiers": {
       "ipni": "30314446-2",
       "wfo": "wfo-0001290686",
@@ -21003,6 +27150,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 11
+    },
     "identifiers": {
       "ipni": "326271-2",
       "wfo": "wfo-0000422887",
@@ -21035,6 +27191,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 78,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 6
+    },
     "identifiers": {
       "ipni": "73031-3",
       "wfo": "wfo-0000214046",
@@ -21065,6 +27230,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.5,
+      "spreadFt": 2.5
+    },
     "identifiers": {
       "ipni": "265687-2",
       "wfo": "wfo-0001144419",
@@ -21098,6 +27272,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.8,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "868221-1",
       "wfo": "wfo-0001144633",
@@ -21128,6 +27311,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 1.5
+    },
     "identifiers": {
       "ipni": "868269-1",
       "wfo": "wfo-0001144918",
@@ -21156,6 +27348,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 60,
+      "spreadFt": 50
+    },
     "identifiers": {
       "ipni": "865843-1",
       "wfo": "wfo-0000333234",
@@ -21184,6 +27385,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 45,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 40,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "68599-1",
       "wfo": "wfo-0001145336",
@@ -21214,6 +27424,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 7,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "327401-2",
       "wfo": "wfo-0000421604",
@@ -21242,6 +27461,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 40,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 30,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "266086-2",
       "wfo": "wfo-0001145338",
@@ -21272,6 +27500,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 30,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 45,
+      "spreadFt": 20
+    },
     "identifiers": {
       "ipni": "69009-1",
       "wfo": "wfo-0000421816",
@@ -21304,6 +27541,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 45,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 60,
+      "spreadFt": 25
+    },
     "identifiers": {
       "ipni": "308496-2",
       "wfo": "wfo-0000421819",
@@ -21335,6 +27581,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 19,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 30
+    },
     "identifiers": {
       "ipni": "525791-1",
       "wfo": "wfo-0000214069",
@@ -21365,6 +27620,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 12,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 30,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "1175869-2",
       "wfo": "wfo-0000178771",
@@ -21395,6 +27659,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2,
+      "spreadFt": 5
+    },
     "identifiers": {
       "ipni": "17235260-1",
       "wfo": "wfo-0001109467",
@@ -21425,6 +27698,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 8,
+      "spreadFt": 8
+    },
     "identifiers": {
       "ipni": "17365470-1",
       "wfo": "wfo-0001111079",
@@ -21457,6 +27739,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": true,
     "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 4
+    },
     "identifiers": {
       "ipni": "270527-2",
       "wfo": "wfo-0000429999",
@@ -21487,6 +27778,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 26,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 80,
+      "spreadFt": 65
+    },
     "identifiers": {
       "ipni": "858079-1",
       "wfo": "wfo-0001143208",
@@ -21517,6 +27817,15 @@ export const REGISTRY: RegistryEntry[] = [
     "rank": "species",
     "keystone": false,
     "hostLepCount": 10,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2
+    },
     "identifiers": {
       "ipni": "850044-1",
       "wfo": "wfo-0001067721",

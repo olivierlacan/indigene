@@ -1827,6 +1827,7 @@ export const en = {
   "region.pioneersOnly": "Pioneers ({n})",
   "region.groupLabel": "Group",
   "region.groupNone": "None",
+  "roster.noneFiltered": "No plant here passes every filter that’s on. Switch one off to see more.",
   "region.filterLabel": "Filter",
   "region.caterpillarWhyTitle": "Won't they eat my plants?",
   "region.caterpillarWhy": "A little, and that's the point: caterpillars are what most songbirds feed their chicks. Across 1,058 plant species, plant-eaters took about 5% of the leaves grown each year, and birds eat most caterpillars while they're small. A native plant rarely loses more than a few holes.",

@@ -26,9 +26,10 @@ import {
 import { getSpot, saveSpot } from "../db";
 import { townFor } from "../lib/places";
 import { t, tn, tx, fmtNumber, fmtList } from "../lib/i18n";
-import { maxHeightChoices, maxSpreadChoices, temperature } from "../lib/units";
+import { maxHeightChoices, maxSpreadChoices, nearestRung, temperature } from "../lib/units";
 import { commonName, regionName, regionReference } from "../lib/names";
 import { filterBox, norm } from "../components/filter-field";
+import { filterCount } from "../lib/filter-traits";
 import type { Plant, PlantForm } from "../types";
 
 /** How deep a slice of the ranking the recompute line compares — the same
@@ -138,7 +139,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
       // Blame the right culprit: with any filter set, it's almost certainly the
       // filters that emptied the list, not the climate.
       const f = store.filters;
-      const anyFilter = f.requireNoWater || f.requireDeerResistant || f.excludeThorny || f.excludePetToxic || f.excludeAggressive || f.maxHeightFt != null || f.maxSpreadFt != null;
+      const anyFilter = filterCount(f) > 0;
       listEl.append(el("div", { class: "note warn" },
         anyFilter ? t("results.noneFiltered", { region: name }) : t("results.noneHardy", { region: name })));
     }
@@ -248,7 +249,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     // Keep whatever was stored selected even after a units switch moved the
     // ladder: pick the nearest rung rather than silently resetting the filter.
     const stored = store.filters[s.key];
-    const selectedFt = stored == null ? s.choices[1].ft : nearest(s.choices, stored);
+    const selectedFt = stored == null ? s.choices[1].ft : nearestRung(s.choices, stored);
     const select = el("select", {
       style: "width:auto;flex:0 0 auto;min-height:2.4rem;padding:0.25rem 0.5rem;font-size:0.95rem",
       "aria-label": s.aria,
@@ -282,8 +283,8 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
         el("span", { class: "control-label" }, t("filter.summary")),
         // What they're for while none is on; once some are, how many — so a
         // closed panel still says the list is narrowed.
-        el("span", { class: "control-value" }, activeFilters(store.filters)
-          ? t("filter.activeCount", { n: activeFilters(store.filters) })
+        el("span", { class: "control-value" }, filterCount(store.filters)
+          ? t("filter.activeCount", { n: filterCount(store.filters) })
           : t("filter.hint")),
       ]),
       chevronIcon("down"),
@@ -541,12 +542,6 @@ function nameHay(p: Plant): string {
   return norm(`${commonName(p)} ${p.common} ${p.latin}`);
 }
 
-/** The rung of the ladder closest to a stored value, in feet. */
-function nearest(choices: { ft: number }[], value: number): number {
-  return choices.reduce((best, c) =>
-    Math.abs(c.ft - value) < Math.abs(best - value) ? c.ft : best, choices[0].ft);
-}
-
 function cryptoId(): string {
   if ("randomUUID" in crypto) return crypto.randomUUID();
   return "spot-" + Math.abs(Date.now() ^ (performance.now() * 1000)).toString(36);
@@ -594,12 +589,6 @@ function renderNoRegion(main: HTMLElement): void {
       el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
     ])
   );
-}
-
-/** How many filters are switched on — each checkbox, and each size limit. */
-function activeFilters(f: typeof store.filters): number {
-  return [f.requireNoWater, f.requireDeerResistant, f.excludeThorny, f.excludePetToxic, f.excludeAggressive]
-    .filter(Boolean).length + (f.maxHeightFt != null ? 1 : 0) + (f.maxSpreadFt != null ? 1 : 0);
 }
 
 // Shift held anywhere marks the root, so the type squares can say what a

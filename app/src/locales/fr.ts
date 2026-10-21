@@ -1787,6 +1787,7 @@ export const fr: Dict = {
   "region.pioneersOnly": "Pionnières ({n})",
   "region.groupLabel": "Grouper",
   "region.groupNone": "Aucun",
+  "roster.noneFiltered": "Aucune plante ici ne passe tous les filtres activés. Désactivez-en un pour en voir plus.",
   "region.filterLabel": "Filtrer",
   "region.caterpillarWhyTitle": "Elles vont manger mes plantes ?",
   "region.caterpillarWhy": "Un peu, et c'est le but : les chenilles sont ce que la plupart des passereaux donnent à leurs petits. Sur 1 058 espèces de plantes, les herbivores ont mangé environ 5 % des feuilles produites chaque année, et les oiseaux mangent la plupart des chenilles quand elles sont encore petites. Une plante indigène y perd rarement plus que quelques trous.",

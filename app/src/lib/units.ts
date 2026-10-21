@@ -267,6 +267,13 @@ export function maxSpreadChoices(): { ft: number; label: string }[] {
   return maxHeightChoices();
 }
 
+/** The rung of a size ladder closest to a stored value, in feet — so a cap
+ *  saved in the other units still shows as a rung rather than resetting. */
+export function nearestRung(choices: { ft: number }[], value: number): number {
+  return choices.reduce((best, c) =>
+    Math.abs(c.ft - value) < Math.abs(best - value) ? c.ft : best, choices[0].ft);
+}
+
 /** The reference human in the size drawing: 5′6″, or the same person in metres. */
 export const HUMAN_FT = 5.5;
 

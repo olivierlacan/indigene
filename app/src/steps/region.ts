@@ -37,7 +37,8 @@ import { mappedLookalikeIds } from "../lib/lookalikes";
 import { alternativeCountForRegion } from "../lib/alternatives";
 import { pioneersUntranslated } from "../lib/prose";
 import { addressParam } from "../lib/routes";
-import { rosterQuery, rosterView, sortRoster } from "../lib/roster-sort";
+import { rosterQuery, rosterView, sortRoster, ROSTER_KEYS } from "../lib/roster-sort";
+import { passesFilters, traitsOf } from "../lib/filter-traits";
 import { door } from "../components/plant-door";
 import { lookalikeIcon, alternativeIcon } from "../components/door-icons";
 import { rosterControls, caterpillarLede, countTag } from "../components/roster-controls";
@@ -99,18 +100,18 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
   document.title = t("region.docTitle", { region: regionName(region.meta) });
   reportRosterUntranslated(plants, region.meta.id);
 
-  // Three controls, read from the address so any view can be shared: the
-  // order, whether the list is grouped by kind of plant, and whether it is
-  // narrowed to the pioneers (see `lib/roster-sort.ts`).
+  // The controls, read from the address so any view can be shared: the
+  // order, whether the list is grouped by kind of plant, and what narrows it —
+  // the pioneers, and the spot flow's filters (see `lib/roster-sort.ts`).
   const view = rosterView(new URLSearchParams(
-    ["sort", "group", "only"].flatMap((k) => {
+    ROSTER_KEYS.flatMap((k) => {
       const v = addressParam(k, location.hash, location.search);
       return v === null ? [] : [[k, v]];
     })
   ));
   const pioneerIds = new Set(pioneersForRegion(region.meta.id, plants).map((pick) => pick.plant.id));
   const shown = sortRoster(
-    view.pioneers ? plants.filter((p) => pioneerIds.has(p.id)) : plants,
+    plants.filter((p) => (!view.pioneers || pioneerIds.has(p.id)) && passesFilters(traitsOf(p), view.filters)),
     view.sort, commonName, getLang()
   );
   const rowOf = (p: Plant): FilterRow => filterRow(p, region.meta.id, {
@@ -140,6 +141,7 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
       })()];
   // What the order means, said once above the list rather than on every row.
   if (view.sort === "caterpillars") groups.unshift(caterpillarLede());
+  if (!shown.length) groups.push(el("div", { class: "note warn" }, t("roster.noneFiltered")));
 
   main.append(
     // Everything above the roster is one block — the name, the stats, the map

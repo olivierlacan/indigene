@@ -1412,8 +1412,9 @@ p.more-link a {
 }
 
 /* --- Disclosures --- */
-/* The only things that still open and close are the sort/filter panels on the
-   results page — everything else renders in plain sight. Their summaries look
+/* The only things that still open and close are the filter panels — the
+   results page's, and a plant list's Filter drawer — everything else renders
+   in plain sight. Their summaries look
    like real buttons, with an explicit Open/Close pill so the state and the
    tap target are unmistakable. */
 summary {
@@ -1739,17 +1740,47 @@ details[open] > summary::after {
   border-color: var(--brand);
   color: var(--on-brand);
 }
-/* The Filter row holds a stack of toggles (the spot flow's filters and the
-   pioneers), so its label sits above them rather than beside, and a long
-   label may wrap rather than push the panel wider than the phone. */
+/* The Filter row is a drawer, closed by default: its summary sits in the
+   label column like Sort and Group, then one line naming the filters that
+   are on (or what there is to filter, quietly), then the chevron. Open, the
+   toggles stack under it at full width so a long label may wrap rather than
+   push the panel wider than the phone. */
+.roster-drawer {
+  display: block;
+}
+.roster-drawer-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.2rem;
+  cursor: pointer;
+  list-style: none;
+}
+.roster-drawer-summary::after {
+  content: none;
+  display: none;
+}
+.roster-drawer-value {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+.roster-drawer-value.is-hint {
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+.roster-drawer[open] > summary .control-chevron {
+  transform: rotate(180deg);
+}
 .roster-control-stack {
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0;
-}
-.roster-control-stack .roster-control-label {
-  flex: none;
-  margin-bottom: 0.15rem;
+  padding-top: 0.2rem;
 }
 .roster-control-stack .filter-toggle {
   padding-right: 0;

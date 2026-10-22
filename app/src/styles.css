@@ -7748,6 +7748,7 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .page-art .pa-red { fill: var(--pa-red); }
 .page-art .pa-orange { fill: var(--pa-orange); }
 .page-art .pa-egg { fill: var(--pa-egg); }
+.page-art .pa-thread { fill: none; stroke: var(--pa-edge); stroke-width: 0.8; }
 
 /* A post's occasion and date (steps/posts.ts): the occasion leads, in the
    brand colour; the date sits back, a touch smaller, with even numerals. */
@@ -7941,3 +7942,8 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .season-now-list.no-icon .season-now-when {
   grid-column: 1;
 }
+
+/* Kill your lawn (steps/lawn.ts): each layer's line of why sits under its
+   heading, not a paragraph away from it. */
+.lawn-layer h4 { margin-bottom: 0.15rem; }
+.lawn-layer h4 + p { margin-top: 0; }

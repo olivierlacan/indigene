@@ -194,10 +194,15 @@ try {
     { slug: "removing", title: "Before you pull a plant", subtitle: "whether it should go, when, how, and whose permission you need" },
     // The peoples page leads with what it does, and what it doesn't.
     { slug: "people", title: "Peoples and plants", subtitle: "who named and tended these plants, in their own words" },
-    // Dated writing. While there is one post the card names it, because the post
-    // is what gets shared; with a second, posts get cards of their own and this
-    // one says how many there are.
-    { slug: "posts", title: "Plants that fed people first", subtitle: "Indigenous Peoples\u2019 Day \u00b7 12 October 2026" },
+    // Dated writing. Each post has a card of its own (`post-<slug>`), because
+    // the post is what gets shared; this one is the index's.
+    { slug: "posts", title: "Posts", subtitle: "writing about the plants, the places and the people behind Indigene" },
+    { slug: "post-indigenous-peoples-day-2026", title: "Plants that fed people first", subtitle: "Indigenous Peoples\u2019 Day \u00b7 12 October 2026" },
+    // The guide to swapping a lawn, linked all year.
+    { slug: "kill-your-lawn", title: "Kill your lawn", subtitle: "bury the grass, plant what feeds wildlife", stat: `easy natives for <b>${nRegions}</b> regions` },
+    // A post with a card of its own: the prerenderer uses `post-<slug>` when
+    // it exists, and the posts card otherwise.
+    { slug: "post-halloween-2026", title: "Your lawn is already a zombie", subtitle: "Halloween \u00b7 31 October 2026" },
     // The LLM bill's two headline figures, from the same module the page reads.
     { slug: "llm", title: "What building Indigene with an LLM cost", subtitle: "measured, estimated \u2014 and how the design pays it back", stat: `<b>${SNAPSHOT.sessions}</b> sessions \u00b7 <b>\u2248${round2(bill().kWh.mid)} kWh</b>` },
     // Drawn rather than marked: the idea is a picture — a street where half the

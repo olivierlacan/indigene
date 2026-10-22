@@ -463,14 +463,14 @@ const chipStyle = "flex:0 1 auto;min-height:2.4rem;padding:0.4rem 0.6rem;font-si
  *  A heading's type is half again the size of a chip's, so its glyph is too:
  *  one size for both left the heading wearing a speck of green beside words
  *  twice its height. */
-function formIcon(f: PlantForm, size = 17): SVGSVGElement {
+export function formIcon(f: PlantForm, size = 17): SVGSVGElement {
   const svg = silhouetteFor(f, size);
   svg.setAttribute("aria-hidden", "true");
   svg.style.verticalAlign = "-0.18em";
   return svg;
 }
 
-function categoryHref(region: RegionDef, form: PlantForm): string {
+export function categoryHref(region: RegionDef, form: PlantForm): string {
   return `#/regions/${region.meta.id}/${FORM_SLUGS[form]}`;
 }
 
@@ -525,7 +525,7 @@ interface RowOptions {
   pioneer?: PioneerEntry;
 }
 
-function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HTMLElement; mark: (nq: string) => void } {
+export function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HTMLElement; mark: (nq: string) => void } {
   const names = nameLines(p);
   const title = el("span", {});
   const sub = el("div", { class: "plant-latin", style: "font-size:0.85rem" });

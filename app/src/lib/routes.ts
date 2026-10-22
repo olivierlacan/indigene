@@ -72,6 +72,7 @@ export const APP_STEPS = [
   "posts",
   "people",
   "map",
+  "kill-your-lawn",
 ] as const;
 
 export type AppStep = (typeof APP_STEPS)[number];
@@ -109,6 +110,8 @@ export const PARAM_STEPS = new Set<string>([
   "traits",
   // `posts/<slug>` is one dated post.
   "posts",
+  // `kill-your-lawn/<region>` is the page with one region's picks.
+  "kill-your-lawn",
 ]);
 
 /** The index pages that are shareable in their own right. `settings` is absent
@@ -137,6 +140,7 @@ export const SHAREABLE_INDEXES: readonly string[] = [
   "traits",
   "posts",
   "people",
+  "kill-your-lawn",
 ];
 
 const STEP_SET = new Set<string>(APP_STEPS);
@@ -231,6 +235,9 @@ export function canonicalPath(step: string, param?: string): string | null {
     // One dated post.
     case "posts":
       return postSlugs().includes(param) ? at(param) : null;
+    // The lawn page with one region's picks.
+    case "kill-your-lawn":
+      return REGIONS.some((r) => r.meta.id === param) ? at(param) : null;
     default:
       return null;
   }
@@ -344,6 +351,7 @@ export function shareablePaths(): string[] {
   for (const tech of TECHNIQUES) paths.push(`planting/${tech.slug}`);
   for (const id of readingRegionIds()) paths.push(`reading/${id}`);
   for (const slug of postSlugs()) paths.push(`posts/${slug}`);
+  for (const region of REGIONS) paths.push(`kill-your-lawn/${region.meta.id}`);
   paths.push("film/fr");
   return paths;
 }

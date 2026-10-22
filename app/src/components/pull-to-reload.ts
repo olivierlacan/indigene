@@ -195,7 +195,7 @@ function show(): void {
   // Fly the bee in again. Removing the class isn't enough on its own — an
   // animation only restarts once the element has been laid out without it,
   // which is what reading `offsetWidth` forces.
-  // A ghost instead in the Halloween look, read per pull so Settings can
+  // A ghost instead in the spooky theme, read per pull so Settings can
   // switch it off mid-visit.
   bee.textContent = halloweenOn() ? "\u{1F47B}" : "\u{1F41D}";
   bee.classList.remove("is-arriving");

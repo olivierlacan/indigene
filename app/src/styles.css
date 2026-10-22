@@ -75,7 +75,7 @@
 }
 
 /* The same dark palette, forced: `data-theme="dark"` on <html> whatever the
-   device says. Only the Halloween look sets it today (lib/halloween.ts), and
+   device says. Only the spooky theme sets it today (lib/halloween.ts), and
    every dark-only rule in this file carries a copy like this one so the page
    is all of one theme. */
 :root[data-theme="dark"] {
@@ -100,10 +100,11 @@
   --focus: #8fb3ff;
 }
 
-/* The Halloween look (lib/halloween.ts): pumpkin orange on near-black, from
-   15 to 31 October. More contrast than the everyday dark, not less — body
-   text 14:1 on a card (10:1 every other day), the header's ink on orange 8:1 —
-   so it can stay up a fortnight without anyone squinting. Layered on the forced dark palette above. */
+/* The spooky theme (lib/halloween.ts): pumpkin orange on near-black, on by
+   default 17 to 31 October and opt-in the rest of the year. More contrast
+   than the everyday dark, not less — body text 14:1 on a card (10:1 in the
+   everyday dark), the header's ink on orange 8:1 — so it can stay up for
+   weeks without anyone squinting. Layered on the forced dark palette above. */
 :root[data-halloween] {
   --bg: #0d0b0f;
   --surface: #1a161d;
@@ -8015,7 +8016,7 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .lawn-layer h4 { margin-bottom: 0.15rem; }
 .lawn-layer h4 + p { margin-top: 0; }
 
-/* --- Halloween look ---------------------------------------------------------
+/* --- Spooky theme ----------------------------------------------------------
    Everything `data-halloween` on <html> changes beyond the colour tokens
    (lib/halloween.ts). Each rule leads with `:root[data-halloween]`, which is
    what lets it beat the everyday rule it replaces without !important. */

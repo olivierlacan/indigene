@@ -103,7 +103,7 @@ const MEANING: Record<string, TKey> = {
   "✨": "emoji.new",
   "🔖": "emoji.saved",
   "🔄": "emoji.reload",
-  // The Halloween look's cast (lib/halloween.ts): the logo and the menu.
+  // The spooky theme's cast (lib/halloween.ts): the logo and the menu.
   "📜": "emoji.guide",
   "🔮": "emoji.new",
   "🪦": "emoji.saved",

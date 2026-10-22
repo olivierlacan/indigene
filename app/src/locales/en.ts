@@ -46,7 +46,7 @@ export const en = {
   "nav.menu": "Menu",
   "nav.savedLocations": "Saved spots",
   "nav.settings": "Settings",
-  "nav.halloween": "Halloween look",
+  "nav.halloween": "Spooky theme",
   "nav.languageAndUnits": "Language & units",
   // Only ever shown when the app was opened from a Home Screen icon, which has
   // no reload button of its own (components/pull-to-reload.ts).
@@ -127,15 +127,15 @@ export const en = {
   "settings.spotsLede": "They live in this browser only, which is why a phone and a laptop don't know about each other. Here's how to bridge that yourself.",
   "settings.countingTitle": "Counting visits",
   "settings.countingLede": "The one thing Indigene tells anyone about your visit, and how to turn it off.",
-  "settings.halloweenTitle": "Halloween",
-  "halloween.title": "Halloween look",
-  "halloween.lede": "Orange and dark, with a ghost in the logo.",
-  "halloween.on": "Haunted",
-  "halloween.onSub": "The Halloween look, until October 31.",
+  "settings.halloweenTitle": "Theme",
+  "halloween.title": "Spooky theme",
+  "halloween.lede": "Orange and dark, with a ghost in the logo. On by default from October 17 to 31.",
+  "halloween.on": "Spooky",
+  "halloween.onSub": "All year, until you switch back.",
   "halloween.off": "Usual",
-  "halloween.offSub": "The everyday colors, light or dark as your device is set.",
-  "halloween.nowOn": "Boo. The Halloween look is on.",
-  "halloween.nowOff": "Back to the usual look.",
+  "halloween.offSub": "Light or dark, as your device is set.",
+  "halloween.nowOn": "Boo. Spooky theme on.",
+  "halloween.nowOff": "Back to the usual theme.",
   "settings.done": "Done",
 
   // ---------------------------------------------------------------------

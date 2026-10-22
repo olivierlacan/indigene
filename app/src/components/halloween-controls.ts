@@ -1,6 +1,6 @@
-// Settings → Halloween: the one switch for the Halloween look
-// (`lib/halloween.ts`). Shown only while the season runs; after it there is
-// nothing to switch.
+// Settings → Spooky theme: the one switch for the Halloween theme
+// (`lib/halloween.ts`). On by default from 17 to 31 October, opt-in the rest
+// of the year.
 import { el, clear, toast } from "../ui";
 import { t } from "../lib/i18n";
 import { halloweenOn, setHalloween } from "../lib/halloween";

@@ -10,7 +10,7 @@
 // same plant, so the first load and every load after it look alike — keep the
 // two copies of `SEEDLING` in step.
 //
-// It carries a ghost too, hidden except in the Halloween look
+// It carries a ghost too, hidden except in the spooky theme
 // (`lib/halloween.ts`), when the flower wilts and the ghost rises out of the
 // soil beside it.
 import { el } from "../ui";

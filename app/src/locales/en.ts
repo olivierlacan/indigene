@@ -1096,6 +1096,23 @@ export const en = {
   // ---------------------------------------------------------------------
   // Plant card.
   // ---------------------------------------------------------------------
+  "check.title": "Garden checks",
+  "check.water": "Watering",
+  "check.water.none": "Rain alone",
+  "check.water.first": "At first",
+  "check.deer": "Deer",
+  "check.deer.yes": "Mostly left alone",
+  "check.deer.no": "Not resistant",
+  "check.thorns": "Thorns",
+  "check.thorns.no": "None",
+  "check.thorns.yes": "Thorny",
+  "check.thorns.stings": "Stings",
+  "check.pets": "Pets",
+  "check.pets.safe": "No known harm",
+  "check.pets.toxic": "Toxic",
+  "check.spread": "Spreading",
+  "check.spread.no": "Not aggressive",
+  "check.spread.yes": "Spreads fast",
   "badge.keystone": "Essential",
   "badge.noWater": "No watering",
   "badge.needsWater": "Water at first",

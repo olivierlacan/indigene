@@ -34,6 +34,8 @@ import { pioneerFor } from "../lib/pioneers";
 import { PIONEER_ICON } from "../data/pioneers";
 import { heroFigure } from "../components/hero-figure";
 import { traitBadges } from "../components/trait-badges";
+import { gardenChecksList } from "../components/garden-checks";
+import { CHECKED_TRAITS } from "../lib/traits";
 import { regionLinks, regionSwitch as switchRow } from "../components/region-list";
 import { statGrid } from "../components/stat-card";
 import { drawSizeViz } from "../components/size-viz";
@@ -370,7 +372,7 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
               el("h2", { class: "plant-name", style: "margin:0" }, names.title),
               el("div", { class: names.subIsLatin ? "plant-latin" : "plant-latin plant-foreign" }, names.sub),
               photosLink(p),
-              traitBadges(p, true, region.meta.id),
+              traitBadges(p, true, region.meta.id, CHECKED_TRAITS),
             ]),
           ]),
           // Where it grows wild, in words: its habitat. ("Native to" above
@@ -402,6 +404,7 @@ export async function renderPlant(main: HTMLElement, param?: string): Promise<((
           // screen further down.
           regionSwitch(p, all, active),
           statGrid(p),
+          gardenChecksList(p),
           chart,
           el("div", { class: "plant-body" }, [
             // The level as a meter, linked to the page that says what each

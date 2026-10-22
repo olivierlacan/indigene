@@ -2,7 +2,7 @@
 // "No thorns or stings" filter keeps it off the list. Plus the shape an annual's
 // row must have, because the growth tile and size chart both read it.
 import { describe, it, expect } from "vitest";
-import { traitsFor } from "./traits";
+import { traitsFor, gardenChecks } from "./traits";
 import { rankPlants, DEFAULT_WEIGHTS, NO_FILTERS } from "./ranking";
 import { loadPlants } from "./plants";
 import { REGIONS } from "../data/regions";
@@ -49,5 +49,23 @@ describe("annuals", () => {
         }
       }
     }
+  });
+});
+
+describe("garden checks", () => {
+  // The labels only speak up for a yes; the checks must answer the no too, or
+  // a plant deer eat says nothing — the gap the checks exist to close.
+  it("answer every filter, yes or no", async () => {
+    const values = (await Promise.all(["urtica-gracilis", "rosa-gymnocarpa"].map(plant)))
+      .map((p) => gardenChecks(p).map((c) => c.value));
+    for (const v of values) expect(v).toHaveLength(5);
+    expect(values[0]).toContain("check.thorns.stings");
+    expect(values[1]).toContain("check.thorns.yes");
+  });
+
+  it("flag only the answers that call for care", async () => {
+    const nettle = gardenChecks(await plant("urtica-gracilis"));
+    expect(nettle.find((c) => c.label === "check.thorns")!.caution).toBe(true);
+    expect(nettle.find((c) => c.label === "check.water")!.caution).toBe(false);
   });
 });

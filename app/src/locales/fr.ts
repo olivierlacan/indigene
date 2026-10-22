@@ -1081,6 +1081,23 @@ export const fr: Dict = {
   // ---------------------------------------------------------------------
   // Fiche de plante.
   // ---------------------------------------------------------------------
+  "check.title": "À vérifier au jardin",
+  "check.water": "Arrosage",
+  "check.water.none": "La pluie suffit",
+  "check.water.first": "Au début",
+  "check.deer": "Cerfs",
+  "check.deer.yes": "Peu broutée",
+  "check.deer.no": "Non résistante",
+  "check.thorns": "Épines",
+  "check.thorns.no": "Aucune",
+  "check.thorns.yes": "Épineuse",
+  "check.thorns.stings": "Urticante",
+  "check.pets": "Animaux",
+  "check.pets.safe": "Aucun risque connu",
+  "check.pets.toxic": "Toxique",
+  "check.spread": "Expansion",
+  "check.spread.no": "Modérée",
+  "check.spread.yes": "S'étale vite",
   "badge.keystone": "Essentielle",
   "badge.noWater": "Sans arrosage",
   "badge.needsWater": "Arroser au début",

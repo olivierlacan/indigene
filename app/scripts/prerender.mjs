@@ -70,6 +70,8 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { openLoader } from "./_load-ts.mjs";
+import { sitemapXml } from "./_sitemap.mjs";
+import { SECTIONS } from "./guide-catalog.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const dist = join(root, "dist");
@@ -743,5 +745,16 @@ for (const page of pages) {
   mkdirSync(dirname(out), { recursive: true });
   writeFileSync(out, shell.replace(/[ \t]*<\/head>/, `${headMeta(page)}  </head>`));
 }
+
+// Every page above, so a crawler finds the ones only one other page links to.
+// The guide and the release notes are built after this script, from catalogs
+// that already say what they'll write.
+writeFileSync(join(dist, "sitemap.xml"), sitemapXml(ORIGIN, [
+  "",
+  ...pages.map((p) => p.path),
+  "guide/",
+  ...SECTIONS.filter((s) => s.published).map((s) => `guide/${s.id}/`),
+  "release-notes/",
+]));
 
 console.log(`prerendered ${pages.length} pages into dist/`);

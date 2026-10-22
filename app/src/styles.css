@@ -1200,8 +1200,8 @@ p.more-link a {
   padding-top: 1rem;
 }
 /* The other pages, in a row. Wraps at 360px (or with the text scaled up) rather
-   than pushing the page wider; a middot sits between links but never leads a
-   wrapped line, because it's a separate item the wrap can land on. */
+   than pushing the page wider; each middot is held to the link before it
+   (`.footer-nav-item`), so it can end a wrapped line but never lead one. */
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
@@ -1211,6 +1211,11 @@ p.more-link a {
 }
 .footer-nav a {
   color: var(--focus);
+}
+.footer-nav-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
 }
 .footer-nav-sep {
   color: var(--ink-soft);
@@ -7683,6 +7688,10 @@ a.zone-chip-link:hover, a.zone-chip-link:focus-visible { color: var(--focus); bo
    on a laptop. Rows are cards, not buttons — the start button stays the only
    call to action. */
 .welcome-more { margin-top: 1.8rem; }
+/* A new post's one line above the home title: small and soft, so it reads as
+   a note in passing and the start button stays the call to action. */
+.welcome-news { margin: 0 0 0.6rem; font-size: 0.85rem; color: var(--ink-soft); }
+.welcome-news-icon { margin-right: 0.35rem; }
 .welcome-ways {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(22rem, 100%), 1fr));

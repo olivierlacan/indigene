@@ -218,6 +218,8 @@ export function renderRemoving(main: HTMLElement): void {
       el("h3", {}, t("removing.afterTitle")),
       el("ul", {}, (["removing.after1", "removing.after2", "removing.after3"] as TKey[])
         .map((k) => el("li", {}, t(k)))),
+      // Turf is the other ground people clear, and it has a page of its own.
+      el("p", { class: "more-link" }, tx("lawn.wayOn", { link: el("a", { href: "#/kill-your-lawn" }, t("lawn.wayOnLink")) })),
 
       el("h3", {}, t("removing.sourcesTitle")),
       el("ul", { class: "who-list" }, SOURCES.map(({ name, url, what }) =>

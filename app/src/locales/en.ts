@@ -67,6 +67,7 @@ export const en = {
   "footer.guide": "Guide",
   "footer.reading": "Reading",
   "footer.people": "People",
+  "footer.posts": "Posts",
   "footer.releaseNotes": "What's new",
   "footer.privacy": "Privacy & safety",
   // Read out beside the green dot, and folded into the gear's accessible name.
@@ -250,6 +251,8 @@ export const en = {
   "welcome.start": "Start where you're standing",
   "welcome.ratherNot": "Or {link}.",
   "welcome.ratherNotLink": "browse without sharing your location",
+  // The one line the home page gives a post, for two weeks after its date.
+  "welcome.newPost": "New post: {link}",
   "welcome.whyTitle": "Why native plants?",
   "welcome.why1":
     "Most caterpillars can only eat the plants they evolved with, and most songbirds raise their chicks on caterpillars. Fewer natives, fewer caterpillars, fewer baby birds.",
@@ -2945,6 +2948,7 @@ export const en = {
   "emoji.private": "private",
   "emoji.gear": "gear",
   "emoji.guide": "guide",
+  "emoji.post": "post",
   "emoji.new": "new",
   "emoji.saved": "saved",
   "emoji.reload": "reload",
@@ -3209,6 +3213,8 @@ export const en = {
   "homegrown.src.keystone": "the few plant genera that feed most caterpillars",
   "about.whyHomegrown": "The idea underneath it is Doug Tallamy's {link}.",
   "about.homegrownLink": "Homegrown National Park",
+  "about.posts": "Now and then, a day gets a short piece of writing of its own: {link}.",
+  "about.postsLink": "the posts",
 
   // "Kill your lawn" (steps/lawn.ts) — how to swap a lawn for natives — and the
   // Halloween post that sends people there (posts.halloween2026.*).
@@ -3216,6 +3222,9 @@ export const en = {
   "lawn.docTitle": "Kill your lawn · Indigene",
   "lawn.title": "Kill your lawn",
   "lawn.lede": "A lawn looks alive, feeds almost nothing, and drinks. Here's how to bury it under cardboard, swap it a bed at a time, and what to plant in its place.",
+  // The way on from Homegrown National Park, Planting and Removing.
+  "lawn.wayOn": "Got a lawn to replace? Start with {link}.",
+  "lawn.wayOnLink": "Kill your lawn",
   "lawn.costTitle": "What a lawn costs",
   "lawn.cost1": "Lawn covers three times more of the United States than any irrigated crop. An American household uses more water outdoors than for showers and laundry together, mostly to water the yard.",
   "lawn.cost2": "It stays green on fertilizer and weedkiller, and the extra water washes the fertilizer into streams. Nothing in nature grows as one plant at one height, wall to wall. Holding that back every weekend is a lot of work, not a virtue.",

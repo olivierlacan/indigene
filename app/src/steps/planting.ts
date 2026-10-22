@@ -203,6 +203,8 @@ export async function renderPlantingIndex(main: HTMLElement): Promise<void> {
     ]),
     techniqueGroup("seed"),
     techniqueGroup("plant"),
+    // Most gardens start from turf, and none of the techniques above clear it.
+    el("p", { class: "more-link" }, tx("lawn.wayOn", { link: el("a", { href: "#/kill-your-lawn" }, t("lawn.wayOnLink")) })),
     sourcesSection(),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, t("planting.browsePlants")),

@@ -45,6 +45,8 @@ export function renderHomegrown(main: HTMLElement): void {
       el("p", {}, tx("homegrown.idea2", {
         map: el("a", { href: HNP_URL, target: "_blank", rel: "noopener" }, t("homegrown.mapLink")),
       })),
+      // The page that does the work the idea asks for.
+      el("p", { class: "more-link" }, tx("lawn.wayOn", { link: el("a", { href: "#/kill-your-lawn" }, t("lawn.wayOnLink")) })),
 
       el("h3", {}, t("homegrown.birdsTitle")),
       p("homegrown.birds1"),

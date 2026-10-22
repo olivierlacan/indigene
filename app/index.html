@@ -68,6 +68,39 @@
       })();
     </script>
 
+    <!-- halloween: the spooky theme. On by default from 17 October to the end
+         of the 31st on the reader's clock; otherwise only if they chose it.
+         Decided here so the first paint is already orange. A trimmed copy of
+         `wanted()` in lib/halloween.ts, which reads the verdict back;
+         halloween.test.ts keeps the dates and key in step. `?spooky=on|off`
+         (or `?halloween=`) saves the choice, like Settings does. -->
+    <script>
+      (function () {
+        var d = new Date();
+        var season = d.getMonth() === 9 && d.getDate() >= 17;
+        var pick = null;
+        try {
+          pick = localStorage.getItem("indigene:halloween");
+        } catch (e) {}
+        var m = /[?&](?:spooky|halloween)=(on|off)\b/.exec(location.search);
+        if (m) {
+          pick = m[1];
+          try {
+            localStorage.setItem("indigene:halloween", pick);
+          } catch (e) {}
+        }
+        if (!(pick ? pick === "on" : season)) return;
+        var root = document.documentElement;
+        root.dataset.halloween = "";
+        root.dataset.theme = "dark";
+        var metas = document.querySelectorAll('meta[name="theme-color"]');
+        for (var i = 0; i < metas.length; i++) {
+          metas[i].dataset.usual = metas[i].content;
+          metas[i].content = "#ff8a1f";
+        }
+      })();
+    </script>
+
     <meta
       name="description"
       content="Stand in a spot, and find native plants that will actually thrive there, ranked by what they do for the local ecosystem."
@@ -142,14 +175,18 @@
            and the moment its back is turned the seedling blooms, so it comes
            racing across to feed. Every piece of it is decoration, hidden from
            screen readers; the link's accessible name stays "Indigene". The
-           choreography lives in styles.css (`bee-errand`). -->
+           choreography lives in styles.css (`bee-errand`).
+           In the spooky theme (lib/halloween.ts) the night cast takes over:
+           a ghost drifts over to a rose, and the rose wilts the moment it
+           arrives and stays that way while the ghost hovers over it
+           (`ghost-haunt`). -->
       <h1 class="app-title">
         <a href="#/"
           ><span class="brand-plant" aria-hidden="true"
-            ><span class="brand-seed">🌱</span
-            ><span class="brand-bloom">🌼</span></span
+            ><span class="brand-seed"><span class="brand-day">🌱</span><span class="brand-night">🌹</span></span
+            ><span class="brand-bloom"><span class="brand-day">🌼</span><span class="brand-night">🥀</span></span></span
           > Indigene<span class="brand-bee" aria-hidden="true"
-            ><span class="brand-bee-body">🐝</span></span
+            ><span class="brand-bee-body"><span class="brand-day">🐝</span><span class="brand-night">👻</span></span></span
           ></a
         >
       </h1>
@@ -227,6 +264,11 @@
                 <ellipse cx="32" cy="17" rx="2.6" ry="6" transform="rotate(300 32 23)"/>
                 <circle class="grow-heart" cx="32" cy="23" r="3.6"/>
               </g>
+            </g>
+            <g class="grow-ghost">
+              <path d="M44 46V36a7 7 0 0 1 14 0v10l-2.3-2-2.4 2-2.3-2-2.3 2-2.4-2z"/>
+              <circle class="grow-ghost-eye" cx="48.6" cy="36" r="1.2"/>
+              <circle class="grow-ghost-eye" cx="53.4" cy="36" r="1.2"/>
             </g>
           </svg>
         </div>

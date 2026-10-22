@@ -17,7 +17,7 @@ import { POSTS, postBySlug } from "../data/posts";
 import { heroPhotoFor } from "../lib/hero-photo";
 import { budget } from "../lib/photo";
 import { heroFigure } from "../components/hero-figure";
-import { pageArt } from "../components/page-art";
+import { pageArt, squareArt, type SquareName } from "../components/page-art";
 import type { TKey } from "../locales/en";
 
 /** Where people without a GitHub account can write. */
@@ -170,28 +170,33 @@ const HALLOWEEN_SOURCES: { name: string; url: string; what: TKey }[] = [
 ];
 
 /** Halloween: the lawn as a zombie, the decorations kept with their lights on
- *  a timer, and a way on to the guide that outlasts the holiday. */
+ *  a timer, and a way on to the guide that outlasts the holiday. Each section
+ *  carries a small square drawing of what its heading says. */
 function halloween2026Body(key: string): HTMLElement[] {
+  const section = (art: SquareName, title: string, body: HTMLElement[]) =>
+    el("section", { class: "post-section" }, [squareArt(art), el("h3", {}, title), ...body]);
   return [
-    el("h3", {}, t(pk(key, "zombieTitle"))),
-    el("p", {}, t(pk(key, "zombie1"))),
-    el("p", {}, t(pk(key, "zombie2"))),
-    el("p", {}, tx(pk(key, "zombie3"), {
-      homegrown: el("a", { href: "#/homegrown" }, t(pk(key, "zombie3Link"))),
-    })),
-    el("h3", {}, t(pk(key, "lightsTitle"))),
-    el("p", {}, t(pk(key, "lights"))),
-    el("h3", {}, t(pk(key, "buryTitle"))),
-    el("p", {}, tx(pk(key, "bury"), {
-      guide: el("a", { href: "#/kill-your-lawn" }, t(pk(key, "buryLink"))),
-    })),
-    el("h3", {}, t("lawn.sourcesTitle")),
-    el("ul", { class: "who-list" }, HALLOWEEN_SOURCES.map(({ name, url, what }) =>
-      el("li", {}, [
-        el("a", { href: url, target: "_blank", rel: "noopener" }, el("strong", {}, name)),
-        el("span", { class: "sureness-from" }, ` — ${t(what)}`),
-      ])
-    )),
+    section("zombie", t(pk(key, "zombieTitle")), [
+      el("p", {}, t(pk(key, "zombie1"))),
+      el("p", {}, t(pk(key, "zombie2"))),
+      el("p", {}, tx(pk(key, "zombie3"), {
+        homegrown: el("a", { href: "#/homegrown" }, t(pk(key, "zombie3Link"))),
+      })),
+    ]),
+    section("lights", t(pk(key, "lightsTitle")), [el("p", {}, t(pk(key, "lights")))]),
+    section("bury", t(pk(key, "buryTitle")), [
+      el("p", {}, tx(pk(key, "bury"), {
+        guide: el("a", { href: "#/kill-your-lawn" }, t(pk(key, "buryLink"))),
+      })),
+    ]),
+    section("sources", t("lawn.sourcesTitle"), [
+      el("ul", { class: "who-list" }, HALLOWEEN_SOURCES.map(({ name, url, what }) =>
+        el("li", {}, [
+          el("a", { href: url, target: "_blank", rel: "noopener" }, el("strong", {}, name)),
+          el("span", { class: "sureness-from" }, ` — ${t(what)}`),
+        ])
+      )),
+    ]),
   ];
 }
 

@@ -20,7 +20,8 @@
 //
 // Every card is addressable — `#/settings/language`, `#/settings/units`,
 // `#/settings/spot`, `#/settings/region`, `#/settings/goal`,
-// `#/settings/whatsnew`, `#/settings/spots`, `#/settings/counting` — so a link
+// `#/settings/whatsnew`, `#/settings/spots`, `#/settings/counting`,
+// `#/settings/spooky` — so a link
 // can land on the thing it names instead of dropping the reader at the top of
 // the page to hunt for it.
 import { el, clear } from "../ui";
@@ -35,6 +36,8 @@ import {
   whatsNewCard,
 } from "../components/memory-controls";
 import { spotsFileCard } from "../components/backup-controls";
+import { halloweenCard } from "../components/halloween-controls";
+import { inSeason } from "../lib/halloween";
 import { stickyReady } from "../lib/sticky";
 import { townsReady } from "../lib/places";
 import { prefsReady } from "../state";
@@ -50,6 +53,7 @@ const CARD_IDS: Record<string, string> = {
   counting: "settings-counting",
   spots: "settings-spots",
   inat: "settings-inat",
+  spooky: "settings-spooky",
 };
 
 export async function renderSettings(main: HTMLElement, param?: string): Promise<void> {
@@ -73,16 +77,27 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
     counting: visitCountCard(),
     spots: await spotsFileCard(),
     inat: inatCard(),
+    spooky: halloweenCard(),
   };
   for (const [key, card] of Object.entries(cards)) card.id = CARD_IDS[key];
+  const spookyFirst = inSeason();
+  const theme = [
+    el("h3", { class: "settings-group" }, t("settings.halloweenTitle")),
+    el("div", { class: "settings-cards" }, [cards.spooky]),
+  ];
 
   // Each group's cards sit in a `.settings-cards` box: one column on a phone,
   // two abreast on a laptop, where a single column left the window empty.
   main.append(
     el("h2", { class: "step-title" }, t("settings.title")),
     el("p", { class: "step-lede" }, t("settings.lede")),
+    // First in the run-up to Halloween, when it changes every page and the
+    // menu's 🎃 row comes here for it; after Language & units the rest of
+    // the year, when it's opt-in.
+    ...(spookyFirst ? theme : []),
     el("h3", { class: "settings-group" }, t("settings.readingTitle")),
     el("div", { class: "settings-cards" }, [cards.language, cards.units]),
+    ...(spookyFirst ? [] : theme),
     el("h3", { class: "settings-group" }, t("settings.memoryTitle")),
     el("p", { class: "step-lede" }, t("settings.memoryLede")),
     el("div", { class: "settings-cards" }, [cards.spot, cards.region, cards.goal, cards.whatsnew]),

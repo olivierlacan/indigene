@@ -70,6 +70,7 @@ export function renderAbout(main: HTMLElement): void {
       // nothing renders those, and they'd show up literally on the page.
       el("p", {}, tx("about.why2", { here: el("em", {}, t("about.hereEm")) })),
       el("p", {}, tx("about.whyHomegrown", { link: el("a", { href: "#/homegrown" }, t("about.homegrownLink")) })),
+      el("p", {}, tx("about.posts", { link: el("a", { href: "#/posts" }, t("about.postsLink")) })),
 
       el("h3", {}, t("about.forTitle")),
       el("p", {}, t("about.forLede")),

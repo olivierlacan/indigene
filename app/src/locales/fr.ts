@@ -60,6 +60,7 @@ export const fr: Dict = {
   "footer.guide": "Guide",
   "footer.reading": "Lectures",
   "footer.people": "Peuples",
+  "footer.posts": "Articles",
   "footer.releaseNotes": "Nouveautés",
   "footer.privacy": "Vie privée et sécurité",
   // Lu à voix haute à côté du point vert, et intégré au nom accessible de la
@@ -242,6 +243,7 @@ export const fr: Dict = {
   "welcome.start": "Commencer là où je suis",
   "welcome.ratherNot": "Ou {link}.",
   "welcome.ratherNotLink": "parcourez sans partager votre position",
+  "welcome.newPost": "Nouvel article : {link}",
   "welcome.whyTitle": "Pourquoi des plantes indigènes ?",
   "welcome.why1":
     "La plupart des chenilles ne peuvent manger que les plantes avec lesquelles elles ont évolué, et la plupart des passereaux élèvent leurs petits avec des chenilles. Moins d'indigènes, moins de chenilles, moins d'oisillons.",
@@ -2863,6 +2865,7 @@ export const fr: Dict = {
   "emoji.private": "privé",
   "emoji.gear": "engrenage",
   "emoji.guide": "guide",
+  "emoji.post": "article",
   "emoji.new": "nouveau",
   "emoji.saved": "enregistré",
   "emoji.reload": "recharger",
@@ -3121,6 +3124,8 @@ export const fr: Dict = {
   "homegrown.src.keystone": "les quelques genres de plantes qui nourrissent la plupart des chenilles",
   "about.whyHomegrown": "L'idée qui le porte est celle de Doug Tallamy : {link}.",
   "about.homegrownLink": "Homegrown National Park",
+  "about.posts": "De temps en temps, une date a droit à son propre texte : {link}.",
+  "about.postsLink": "les articles",
 
   // « Tue ton gazon » (steps/lawn.ts), and the Halloween post. The page's title is a slogan, so it says « tu »
   // the way a placard would; the page under it says « vous » like every other.
@@ -3128,6 +3133,8 @@ export const fr: Dict = {
   "lawn.docTitle": "Tue ton gazon · Indigene",
   "lawn.title": "Tue ton gazon",
   "lawn.lede": "Une pelouse a l'air vivante, ne nourrit presque rien, et elle boit. Voici comment l'enterrer sous du carton, la remplacer une plate-bande à la fois, et quoi planter à la place.",
+  "lawn.wayOn": "Une pelouse à remplacer ? Commencez par {link}.",
+  "lawn.wayOnLink": "Tue ton gazon",
   "lawn.costTitle": "Ce que coûte une pelouse",
   "lawn.cost1": "Aux États-Unis, le gazon couvre trois fois plus de terrain que n'importe quelle culture irriguée. Un foyer américain consomme plus d'eau dehors que pour les douches et la lessive réunies, surtout pour arroser le jardin.",
   "lawn.cost2": "Elle reste verte à coups d'engrais et de désherbant, et l'eau en trop emporte l'engrais jusqu'aux rivières. Dans la nature, rien ne pousse en une seule plante, à une seule hauteur, d'un mur à l'autre. La contenir chaque week-end, c'est beaucoup de travail, pas une vertu.",

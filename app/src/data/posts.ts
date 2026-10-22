@@ -30,3 +30,19 @@ export function postBySlug(slug: string): Post | undefined {
 export function postSlugs(): string[] {
   return POSTS.map((p) => p.slug);
 }
+
+/** How long the home page mentions a new post, in days after its date. */
+export const RECENT_DAYS = 14;
+
+/** The newest post published in the last `RECENT_DAYS` days as of `today`
+ *  (`YYYY-MM-DD`, the reader's own calendar day), or none. A post dated ahead
+ *  waits for its day: the home page never announces writing for a date that
+ *  hasn't come. */
+export function recentPost(today: string, posts: readonly Post[] = POSTS): Post | undefined {
+  const day = (iso: string) => Date.UTC(+iso.slice(0, 4), +iso.slice(5, 7) - 1, +iso.slice(8, 10)) / 86_400_000;
+  const now = day(today);
+  return posts.find((p) => {
+    const age = now - day(p.date);
+    return age >= 0 && age <= RECENT_DAYS;
+  });
+}

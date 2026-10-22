@@ -55,14 +55,11 @@ function renderFooter(): void {
   if (nav) {
     const hrefOf = (suffix: string, fallback: string) =>
       nav.querySelector<HTMLAnchorElement>(`a[href$="${suffix}"]`)?.getAttribute("href") ?? fallback;
-    const sep = () => el("span", { class: "footer-nav-sep", "aria-hidden": "true" }, "·");
-    nav.replaceChildren(
+    const links = [
       el("a", { href: hrefOf("guide/", "guide/") }, t("footer.guide")),
-      sep(),
       el("a", { href: "#/reading" }, t("footer.reading")),
-      sep(),
       el("a", { href: "#/people" }, t("footer.people")),
-      sep(),
+      el("a", { href: "#/posts" }, t("footer.posts")),
       // The dot rides inside the link, so the words it carries become part of
       // the link's own accessible name rather than a separate stop.
       el(
@@ -70,11 +67,13 @@ function renderFooter(): void {
         { href: hrefOf("release-notes/", "release-notes/") },
         hasUnseenRelease() ? [t("footer.releaseNotes"), newDot()] : [t("footer.releaseNotes")]
       ),
-      sep(),
       el("a", { href: "#/about" }, t("footer.about")),
-      sep(),
-      el("a", { href: "#/privacy" }, t("footer.privacy"))
-    );
+      el("a", { href: "#/privacy" }, t("footer.privacy")),
+    ];
+    // Each middot rides with the link before it, so a wrap can leave one at
+    // the end of a line but never at the start of the next.
+    nav.replaceChildren(...links.map((a, i) => i === links.length - 1 ? a :
+      el("span", { class: "footer-nav-item" }, [a, el("span", { class: "footer-nav-sep", "aria-hidden": "true" }, "·")])));
   }
 
   const p = document.getElementById("footer-text");

@@ -7,6 +7,8 @@ import { filmRoute } from "../lib/film";
 import { REGIONS } from "../lib/plants";
 import { wildlifeThumb } from "../components/wildlife-thumb";
 import { plantThumb, invasiveThumb, lookalikeThumb } from "../components/plant-thumb";
+import { recentPost } from "../data/posts";
+import type { TKey } from "../locales/en";
 
 export function renderWelcome(main: HTMLElement): void {
   clear(main);
@@ -18,6 +20,7 @@ export function renderWelcome(main: HTMLElement): void {
   // The pitch and the film are one hero: stacked on a phone, side by side on a
   // laptop, where a single 34rem column left most of the window empty.
   const pitch = el("div", { class: "welcome-pitch" }, [
+    newPostLine(),
     el("h2", { class: "step-title" }, t("welcome.title")),
     el("p", { class: "step-lede" }, t("welcome.lede1")),
     el("p", { class: "step-lede" }, t("welcome.lede2")),
@@ -106,6 +109,24 @@ export function renderWelcome(main: HTMLElement): void {
       );
     })
     .catch(() => {});
+}
+
+/**
+ * One quiet line for a post in its first two weeks, and nothing otherwise: the
+ * home page isn't a news feed, and a post past its fortnight is on the
+ * footer's Posts page like the rest.
+ */
+function newPostLine(): HTMLElement | null {
+  const d = new Date();
+  const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  const post = recentPost(today);
+  if (!post) return null;
+  return el("p", { class: "welcome-news" }, [
+    el("span", { class: "welcome-news-icon", "aria-hidden": "true" }, "📝"),
+    ...tx("welcome.newPost", {
+      link: el("a", { href: `#/posts/${post.slug}` }, t(`posts.${post.key}.title` as TKey)),
+    }),
+  ]);
 }
 
 /**

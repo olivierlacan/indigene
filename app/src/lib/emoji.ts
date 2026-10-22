@@ -100,6 +100,7 @@ const MEANING: Record<string, TKey> = {
   "🔒": "emoji.private",
   "⚙": "emoji.gear",
   "📖": "emoji.guide",
+  "📝": "emoji.post",
   "✨": "emoji.new",
   "🔖": "emoji.saved",
   "🔄": "emoji.reload",

@@ -8021,9 +8021,9 @@ a.welcome-way:hover strong { text-decoration: underline; }
    (lib/halloween.ts). Each rule leads with `:root[data-halloween]`, which is
    what lets it beat the everyday rule it replaces without !important. */
 
-/* The logo's night cast: a wilted rose for the seedling, the rose come back
-   from the dead for the bloom, a ghost for the bee. Both casts are in the
-   markup so the swap needs no script. */
+/* The logo's night cast: a rose for the seedling, the rose wilted for the
+   bloom, a ghost for the bee. Both casts are in the markup so the swap needs
+   no script. */
 .brand-night {
   display: none;
 }
@@ -8033,11 +8033,107 @@ a.welcome-way:hover strong { text-decoration: underline; }
 :root[data-halloween] .brand-night {
   display: inline;
 }
-/* A ghost doesn't buzz. It drifts, and flickers a little. */
+
+/* The ghost's errand is shorter than the bee's, and has no second act: it
+   drifts across the name to the rose, the rose wilts the instant it gets
+   there (`rose-wilt`, `wilt-droop`), and it stays hovering over what it did
+   for as long as you do. */
+:root[data-halloween] .app-title a:hover .brand-bee,
+:root[data-halloween] .app-title a:focus-visible .brand-bee,
+:root[data-halloween] .app-title a:active .brand-bee {
+  animation: ghost-haunt 3.2s linear forwards;
+}
+/* A ghost doesn't buzz. It bobs, and flickers a little. */
 :root[data-halloween] .app-title a:hover .brand-bee-body,
 :root[data-halloween] .app-title a:focus-visible .brand-bee-body,
 :root[data-halloween] .app-title a:active .brand-bee-body {
   animation: ghost-drift 1.6s ease-in-out infinite;
+}
+:root[data-halloween] .app-title a:hover .brand-seed,
+:root[data-halloween] .app-title a:focus-visible .brand-seed,
+:root[data-halloween] .app-title a:active .brand-seed {
+  animation: rose-wilt 0.45s ease-in 1.6s forwards;
+}
+:root[data-halloween] .app-title a:hover .brand-bloom,
+:root[data-halloween] .app-title a:focus-visible .brand-bloom,
+:root[data-halloween] .app-title a:active .brand-bloom {
+  animation: wilt-droop 0.8s ease-out 1.8s forwards;
+}
+@keyframes ghost-haunt {
+  0% {
+    left: 128%;
+    opacity: 0;
+    transform: translateY(0.6em) scale(0.4);
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.3, 1);
+  }
+  10% {
+    left: 100%;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    animation-timing-function: ease-in-out;
+  }
+  26% {
+    left: 70%;
+    transform: translateY(-0.3em) scale(1);
+  }
+  40% {
+    left: 38%;
+    transform: translateY(0.15em) scale(1);
+  }
+  /* Over the rose. */
+  52% {
+    left: 6%;
+    transform: translateY(-0.35em) scale(1);
+    animation-timing-function: ease-out;
+  }
+  /* It shrinks back a touch as the rose goes, then leans in to look. */
+  62% {
+    left: 16%;
+    transform: translateY(-0.5em) scale(1.08);
+  }
+  78% {
+    left: 5%;
+    transform: translateY(-0.4em) scale(1);
+  }
+  100% {
+    left: 9%;
+    opacity: 1;
+    transform: translateY(-0.3em) scale(1);
+  }
+}
+/* The rose shudders and drops away under the wilted one. */
+@keyframes rose-wilt {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  35% {
+    opacity: 1;
+    transform: rotate(-8deg);
+  }
+  65% {
+    opacity: 1;
+    transform: rotate(6deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(20deg) translateY(0.15em) scale(0.9);
+  }
+}
+/* The wilted rose sags into place and stays there. */
+@keyframes wilt-droop {
+  0% {
+    opacity: 0;
+    transform: rotate(-10deg) translateY(-0.1em);
+  }
+  45% {
+    opacity: 1;
+    transform: rotate(9deg) translateY(0.08em);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) translateY(0);
+  }
 }
 @keyframes ghost-drift {
   0%,
@@ -8048,6 +8144,20 @@ a.welcome-way:hover strong { text-decoration: underline; }
   50% {
     transform: translateY(-0.12em);
     opacity: 0.72;
+  }
+}
+/* Reduced motion: no flight. On hover the ghost is simply there, and the rose
+   simply wilted. */
+@media (prefers-reduced-motion: reduce) {
+  :root[data-halloween] .app-title a:hover .brand-seed,
+  :root[data-halloween] .app-title a:focus-visible .brand-seed,
+  :root[data-halloween] .app-title a:active .brand-seed {
+    opacity: 0;
+  }
+  :root[data-halloween] .app-title a:hover .brand-bloom,
+  :root[data-halloween] .app-title a:focus-visible .brand-bloom,
+  :root[data-halloween] .app-title a:active .brand-bloom {
+    opacity: 1;
   }
 }
 

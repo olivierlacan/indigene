@@ -7776,6 +7776,26 @@ a.welcome-way:hover strong { text-decoration: underline; }
   max-width: none;
   margin: 0.15rem 0 0.5rem 0.9rem;
 }
+/* Every other section's drawing sits on the left, so the page zigzags. */
+.post-section:nth-of-type(even) .page-art.square-art {
+  float: left;
+  margin: 0.15rem 0.9rem 0.5rem 0;
+}
+
+/* The posts index: each row opens on its date, so the list reads as a timeline. */
+.privacy-page .post-index li {
+  margin: 0 0 1.1rem;
+  padding-left: 0.8rem;
+  border-left: 3px solid var(--brand);
+}
+.post-index-date {
+  display: block;
+  font-size: 0.85em;
+  font-weight: 600;
+  color: var(--brand);
+  font-variant-numeric: tabular-nums;
+}
+.post-index p { margin: 0.25rem 0 0; }
 
 /* --- Page drawings ---------------------------------------------------------- */
 /* The drawings over the titles of Reading, Privacy, Sources, About, Native and

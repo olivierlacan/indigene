@@ -19,7 +19,7 @@ export interface Post {
 
 /** Newest first. */
 export const POSTS: readonly Post[] = [
-  { slug: "halloween-2026", key: "halloween2026", date: "2026-10-31" },
+  { slug: "halloween-2026", key: "halloween2026", date: "2026-10-22" },
   { slug: "indigenous-peoples-day-2026", key: "ipd2026", date: "2026-10-12" },
 ];
 

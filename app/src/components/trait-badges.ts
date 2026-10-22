@@ -5,7 +5,7 @@ import { el } from "../ui";
 import { t } from "../lib/i18n";
 import { keystoneIcon } from "./keystone-icon";
 import { withTip } from "./badge-tip";
-import { traitHref, traitsFor, type Trait } from "../lib/traits";
+import { traitHref, traitsFor, type Trait, type TraitId } from "../lib/traits";
 import type { Plant } from "../types";
 
 export function traitBadge(tr: Trait, link: boolean): HTMLElement {
@@ -19,7 +19,10 @@ export function traitBadge(tr: Trait, link: boolean): HTMLElement {
 }
 
 /** `regionId` adds the labels that are a claim about one region's conditions —
- *  today just "Pavement pioneer". Omitted, they're left off. */
-export function traitBadges(p: Plant, link: boolean, regionId?: string): HTMLElement {
-  return el("div", { class: "plant-badges" }, traitsFor(p, regionId).map((tr) => traitBadge(tr, link)));
+ *  today just "Pavement pioneer". Omitted, they're left off. `except` drops
+ *  labels the page says elsewhere (the plant page's garden checks). */
+export function traitBadges(p: Plant, link: boolean, regionId?: string, except?: ReadonlySet<TraitId>): HTMLElement {
+  return el("div", { class: "plant-badges" }, traitsFor(p, regionId)
+    .filter((tr) => !except?.has(tr.id))
+    .map((tr) => traitBadge(tr, link)));
 }

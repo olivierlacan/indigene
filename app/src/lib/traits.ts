@@ -88,3 +88,49 @@ export function traitsFor(p: Plant, regionId?: string): Trait[] {
 }
 
 export const traitHref = (id: TraitId): string => `#/traits/${id}`;
+
+/**
+ * A plant page's answer to every question the list filters ask — watering,
+ * deer, thorns, pets, spreading — said both ways. The labels above only speak
+ * up when the answer is yes, so a plant deer eat used to say nothing at all,
+ * and a reader couldn't tell "browsed" from "not written down".
+ *
+ * `trait` is where each row links: the traits page entry for the label that
+ * row is about, whichever way the answer goes.
+ */
+export interface GardenCheck {
+  icon: string;
+  label: TKey;
+  value: TKey;
+  /** The answer is a reason for care (thorns, toxic, a spreader). */
+  caution: boolean;
+  trait: TraitId;
+}
+
+/** The labels a garden check already says, so the page doesn't say them twice. */
+export const CHECKED_TRAITS: ReadonlySet<TraitId> = new Set<TraitId>(
+  ["no-water", "water-first", "deer", "thorny", "stinging", "inedible", "spreads"],
+);
+
+export function gardenChecks(p: Plant): GardenCheck[] {
+  const f = p.filters;
+  return [
+    p.noWaterEstablish
+      ? { icon: "🌾", label: "check.water", value: "check.water.none", caution: false, trait: "no-water" }
+      : { icon: "🌾", label: "check.water", value: "check.water.first", caution: false, trait: "water-first" },
+    f.deerResistant
+      ? { icon: "🦌", label: "check.deer", value: "check.deer.yes", caution: false, trait: "deer" }
+      : { icon: "🦌", label: "check.deer", value: "check.deer.no", caution: false, trait: "deer" },
+    f.stinging
+      ? { icon: "🌵", label: "check.thorns", value: "check.thorns.stings", caution: true, trait: "stinging" }
+      : f.thorny
+        ? { icon: "🌵", label: "check.thorns", value: "check.thorns.yes", caution: true, trait: "thorny" }
+        : { icon: "🌵", label: "check.thorns", value: "check.thorns.no", caution: false, trait: "thorny" },
+    f.petToxic
+      ? { icon: "🐕", label: "check.pets", value: "check.pets.toxic", caution: true, trait: "inedible" }
+      : { icon: "🐕", label: "check.pets", value: "check.pets.safe", caution: false, trait: "inedible" },
+    f.aggressive
+      ? { icon: "✋", label: "check.spread", value: "check.spread.yes", caution: true, trait: "spreads" }
+      : { icon: "✋", label: "check.spread", value: "check.spread.no", caution: false, trait: "spreads" },
+  ];
+}

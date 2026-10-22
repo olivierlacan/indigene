@@ -7778,12 +7778,12 @@ a.welcome-way:hover strong { text-decoration: underline; }
   height: auto;
   max-width: 26rem;
   margin: 0 auto 0.9rem;
-  --pa-wood: #7c430f; --pa-edge: #837e6b; --pa-paper: #fffdf4; --pa-gold: #d9a21b; --pa-pink: #c2557f; --pa-violet: #8a5bb8; --pa-red: #b8322a; --pa-orange: #e07b1a; --pa-egg: #9fd0dc; --pa-dark: #2b2118; --pa-earth: #d6c7a4; --pa-bg: #f7f5ef; --pa-slime: #5f8a2e;
+  --pa-wood: #7c430f; --pa-edge: #837e6b; --pa-paper: #fffdf4; --pa-gold: #d9a21b; --pa-pink: #c2557f; --pa-violet: #8a5bb8; --pa-red: #b8322a; --pa-orange: #e07b1a; --pa-egg: #9fd0dc; --pa-dark: #2b2118; --pa-earth: #d6c7a4; --pa-bg: #f7f5ef; --pa-slime: #b4c39a;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .page-art { --pa-wood: #e2a86a; --pa-edge: #727b5f; --pa-paper: #e8e2cc; --pa-gold: #f0c75a; --pa-pink: #e891b4; --pa-violet: #c4a0ec; --pa-red: #e46a5e; --pa-orange: #f0a050; --pa-egg: #8cc4d2; --pa-dark: #241c14; --pa-earth: #3a3226; --pa-bg: #14160f; --pa-slime: #a3d46b; }
+  :root:not([data-theme="light"]) .page-art { --pa-wood: #e2a86a; --pa-edge: #727b5f; --pa-paper: #e8e2cc; --pa-gold: #f0c75a; --pa-pink: #e891b4; --pa-violet: #c4a0ec; --pa-red: #e46a5e; --pa-orange: #f0a050; --pa-egg: #8cc4d2; --pa-dark: #241c14; --pa-earth: #3a3226; --pa-bg: #14160f; --pa-slime: #bfd0a2; }
 }
-:root[data-theme="dark"] .page-art { --pa-wood: #e2a86a; --pa-edge: #727b5f; --pa-paper: #e8e2cc; --pa-gold: #f0c75a; --pa-pink: #e891b4; --pa-violet: #c4a0ec; --pa-red: #e46a5e; --pa-orange: #f0a050; --pa-egg: #8cc4d2; --pa-dark: #241c14; --pa-earth: #3a3226; --pa-bg: #14160f; --pa-slime: #a3d46b; }
+:root[data-theme="dark"] .page-art { --pa-wood: #e2a86a; --pa-edge: #727b5f; --pa-paper: #e8e2cc; --pa-gold: #f0c75a; --pa-pink: #e891b4; --pa-violet: #c4a0ec; --pa-red: #e46a5e; --pa-orange: #f0a050; --pa-egg: #8cc4d2; --pa-dark: #241c14; --pa-earth: #3a3226; --pa-bg: #14160f; --pa-slime: #bfd0a2; }
 .page-art .pa-ground { fill: var(--brand-bg); }
 .page-art .pa-soil { fill: var(--line); opacity: 0.6; }
 .page-art .pa-leaf { fill: var(--brand); }
@@ -7805,8 +7805,8 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .page-art .pa-vein { fill: none; stroke: var(--pa-paper); stroke-width: 0.9; opacity: 0.8; }
 .page-art .pa-dark, .page-art .pa-stripe { fill: none; stroke: var(--pa-dark); stroke-width: 1.2; opacity: 1; }
 .page-art .pa-stripe { stroke-width: 1.8; }
-.page-art .pa-body, .page-art .pa-dark-fill { fill: var(--pa-dark); }
-.page-art .pa-slime { fill: var(--pa-slime); }
+.page-art .pa-body { fill: var(--pa-dark); }
+.page-art .pa-slime { fill: var(--pa-slime); stroke: var(--pa-dark); stroke-width: 1; stroke-linejoin: round; }
 .page-art .pa-grey { fill: var(--pa-edge); }
 .page-art .pa-wing { fill: var(--pa-paper); opacity: 0.75; }
 .page-art .pa-ray { fill: none; stroke: var(--pa-gold); stroke-width: 3; stroke-linecap: round; }

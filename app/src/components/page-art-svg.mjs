@@ -485,16 +485,17 @@ function halloween() {
   }
   s += grass(176, 6, 30, 24);
   s += grass(266, 5, 26, 20);
-  // A real web between the goldenrod and an aster, and its spider.
-  const hub = [212, 50];
-  for (const [x, y] of [[196, 40], [200, 64], [214, 34], [228, 44], [226, 62], [212, 66]]) {
+  // A real web between the goldenrod and the asters, every strand tied to a
+  // plant, and its spider at the hub.
+  const hub = [212, 60];
+  for (const [x, y] of [[191, 48], [196, 62], [200, 74], [232, 62], [229, 72], [222, 79]]) {
     s += path("ink", `M${hub[0]} ${hub[1]}L${x} ${y}`);
   }
+  s += path("ink", "M191 48L232 62");
   for (const r of [4, 8, 12]) s += circle("thread", hub[0], hub[1], r);
-  s += path("ink", "M214 34V26");
-  s += path("root fine", "M212 54l-4 -2M212 56l-4 2M216 54l4 -2M216 56l4 2");
-  s += ellipse("wood", 214, 55, 2.6, 3.2);
-  s += circle("wood", 214, 51, 1.8);
+  s += path("root fine", "M210 59l-4 -2M210 61l-4 2M214 59l4 -2M214 61l4 2");
+  s += ellipse("wood", 212, 61, 2.6, 3.2);
+  s += circle("wood", 212, 57, 1.8);
   return s;
 }
 
@@ -580,7 +581,7 @@ function sqLights() {
   s += sparkle(26, 6, 2);
   s += sparkle(56, 22, 2);
   // A bird, flying on by.
-  s += path("dark-fill", "M34 14Q38 10 42 14Q46 10 50 14Q46 12 42 16Q38 12 34 14Z");
+  s += path("wood", "M34 14Q38 10 42 14Q46 10 50 14Q46 12 42 16Q38 12 34 14Z");
   // The ghost: a round head, a hem, two eyes and a mouth.
   s += path("paper", "M10 56V34Q10 22 22 22Q34 22 34 34V56L30 52L26 56L22 52L18 56L14 52Z");
   s += circle("body", 18, 34, 2);
@@ -693,8 +694,8 @@ export const PAGE_ART_RULES = `
 .page-art .pa-vein { fill: none; stroke: var(--pa-paper); stroke-width: 0.9; opacity: 0.8; }
 .page-art .pa-dark, .page-art .pa-stripe { fill: none; stroke: var(--pa-dark); stroke-width: 1.2; opacity: 1; }
 .page-art .pa-stripe { stroke-width: 1.8; }
-.page-art .pa-body, .page-art .pa-dark-fill { fill: var(--pa-dark); }
-.page-art .pa-slime { fill: var(--pa-slime); }
+.page-art .pa-body { fill: var(--pa-dark); }
+.page-art .pa-slime { fill: var(--pa-slime); stroke: var(--pa-dark); stroke-width: 1; stroke-linejoin: round; }
 .page-art .pa-grey { fill: var(--pa-edge); }
 .page-art .pa-wing { fill: var(--pa-paper); opacity: 0.75; }
 .page-art .pa-ray { fill: none; stroke: var(--pa-gold); stroke-width: 3; stroke-linecap: round; }
@@ -709,9 +710,9 @@ export const PAGE_ART_RULES = `
 
 /** The `--pa-*` colours, light then dark. */
 export const PAGE_ART_LIGHT =
-  "--pa-wood: #7c430f; --pa-edge: #837e6b; --pa-paper: #fffdf4; --pa-gold: #d9a21b; --pa-pink: #c2557f; --pa-violet: #8a5bb8; --pa-red: #b8322a; --pa-orange: #e07b1a; --pa-egg: #9fd0dc; --pa-dark: #2b2118; --pa-earth: #d6c7a4; --pa-bg: #f7f5ef; --pa-slime: #5f8a2e;";
+  "--pa-wood: #7c430f; --pa-edge: #837e6b; --pa-paper: #fffdf4; --pa-gold: #d9a21b; --pa-pink: #c2557f; --pa-violet: #8a5bb8; --pa-red: #b8322a; --pa-orange: #e07b1a; --pa-egg: #9fd0dc; --pa-dark: #2b2118; --pa-earth: #d6c7a4; --pa-bg: #f7f5ef; --pa-slime: #b4c39a;";
 export const PAGE_ART_DARK =
-  "--pa-wood: #e2a86a; --pa-edge: #727b5f; --pa-paper: #e8e2cc; --pa-gold: #f0c75a; --pa-pink: #e891b4; --pa-violet: #c4a0ec; --pa-red: #e46a5e; --pa-orange: #f0a050; --pa-egg: #8cc4d2; --pa-dark: #241c14; --pa-earth: #3a3226; --pa-bg: #14160f; --pa-slime: #a3d46b;";
+  "--pa-wood: #e2a86a; --pa-edge: #727b5f; --pa-paper: #e8e2cc; --pa-gold: #f0c75a; --pa-pink: #e891b4; --pa-violet: #c4a0ec; --pa-red: #e46a5e; --pa-orange: #f0a050; --pa-egg: #8cc4d2; --pa-dark: #241c14; --pa-earth: #3a3226; --pa-bg: #14160f; --pa-slime: #bfd0a2;";
 
 /**
  * All of it, for the two pages built outside the app. The app's copy is in

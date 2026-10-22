@@ -58,6 +58,7 @@ import { applyDocumentLang, consumeLangParam, onLangChange, t } from "./lib/i18n
 import type { TKey } from "./locales/en";
 import { onUnitsChange } from "./lib/units";
 import { renderChrome } from "./components/chrome";
+import { paintHalloween } from "./lib/halloween";
 import { mountUntranslatedBanner, resetUntranslated } from "./components/wip-banner";
 import { mountLangOffer } from "./components/lang-offer";
 import { loadProse } from "./lib/prose";
@@ -617,6 +618,7 @@ async function boot(): Promise<void> {
   // or for a browser asking not to be tracked, it does nothing whatsoever.
   startAnalytics();
   renderChrome();
+  paintHalloween();
   mountLangOffer(main);
   watchEmoji(onLangChange);
   onLangChange(rerenderAll);

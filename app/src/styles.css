@@ -74,6 +74,58 @@
   }
 }
 
+/* The same dark palette, forced: `data-theme="dark"` on <html> whatever the
+   device says. Only the Halloween look sets it today (lib/halloween.ts), and
+   every dark-only rule in this file carries a copy like this one so the page
+   is all of one theme. */
+:root[data-theme="dark"] {
+  --bg: #14160f;
+  --surface: #1e2118;
+  --surface-2: #262a1e;
+  --ink: #f2f1e8;
+  --ink-soft: #cdcdbd;
+  --line: #3c4232;
+  --line-strong: #727b5f;
+  --brand: #7ec894;
+  --on-brand: #082b16;
+  --nav-pill: rgba(255, 255, 255, 0.32);
+  --brand-ink: #b9e6c6;
+  --brand-bg: #1f3326;
+  --accent: #e2a86a;
+  --warn-bg: #3a2e15;
+  --warn-ink: #f0d09a;
+  --danger-bg: #3d1f1a;
+  --danger-ink: #f2b8ae;
+  --good: #7ec894;
+  --focus: #8fb3ff;
+}
+
+/* The Halloween look (lib/halloween.ts): pumpkin orange on near-black, from
+   15 to 31 October. More contrast than the everyday dark, not less — body
+   text 14:1 on a card (10:1 every other day), the header's ink on orange 8:1 —
+   so it can stay up a fortnight without anyone squinting. Layered on the forced dark palette above. */
+:root[data-halloween] {
+  --bg: #0d0b0f;
+  --surface: #1a161d;
+  --surface-2: #241f29;
+  --ink: #fff8ef;
+  --ink-soft: #ece2d6;
+  --line: #4a3f52;
+  --line-strong: #9b8aa6;
+  --brand: #ff8a1f;
+  --on-brand: #140a00;
+  --nav-pill: rgba(0, 0, 0, 0.3);
+  --brand-ink: #ffc27a;
+  --brand-bg: #2e1a08;
+  --accent: #d4b0ff;
+  --warn-bg: #3a2410;
+  --warn-ink: #ffd9a0;
+  --danger-bg: #401418;
+  --danger-ink: #ffb8b0;
+  --good: #a3e86b;
+  --focus: #ffd23f;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -1058,6 +1110,12 @@ p.more-link a {
   .grow-heart {
     fill: #e8a94a;
   }
+}
+:root[data-theme="dark"] .grow-bloom {
+  fill: #e39ac3;
+}
+:root[data-theme="dark"] .grow-heart {
+  fill: #e8a94a;
 }
 @keyframes grow-stem {
   0% {
@@ -7700,6 +7758,14 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .post-plant { display: flow-root; }
 .post-plant .plant-hero { width: min(30vw, 8rem); }
 .post-plant p { margin: 0.35rem 0 0; }
+/* A post section with its square drawing floated beside the heading. */
+.post-section { display: flow-root; }
+.page-art.square-art {
+  float: right;
+  width: 4.75rem;
+  max-width: none;
+  margin: 0.15rem 0 0.5rem 0.9rem;
+}
 
 /* --- Page drawings ---------------------------------------------------------- */
 /* The drawings over the titles of Reading, Privacy, Sources, About, Native and
@@ -7711,12 +7777,12 @@ a.welcome-way:hover strong { text-decoration: underline; }
   height: auto;
   max-width: 26rem;
   margin: 0 auto 0.9rem;
-  --pa-wood: #7c430f; --pa-edge: #837e6b; --pa-paper: #fffdf4; --pa-gold: #d9a21b; --pa-pink: #c2557f; --pa-violet: #8a5bb8; --pa-red: #b8322a; --pa-orange: #e07b1a; --pa-egg: #9fd0dc; --pa-dark: #2b2118; --pa-earth: #d6c7a4; --pa-bg: #f7f5ef;
+  --pa-wood: #7c430f; --pa-edge: #837e6b; --pa-paper: #fffdf4; --pa-gold: #d9a21b; --pa-pink: #c2557f; --pa-violet: #8a5bb8; --pa-red: #b8322a; --pa-orange: #e07b1a; --pa-egg: #9fd0dc; --pa-dark: #2b2118; --pa-earth: #d6c7a4; --pa-bg: #f7f5ef; --pa-slime: #5f8a2e;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .page-art { --pa-wood: #e2a86a; --pa-edge: #727b5f; --pa-paper: #e8e2cc; --pa-gold: #f0c75a; --pa-pink: #e891b4; --pa-violet: #c4a0ec; --pa-red: #e46a5e; --pa-orange: #f0a050; --pa-egg: #8cc4d2; --pa-dark: #241c14; --pa-earth: #3a3226; --pa-bg: #14160f; }
+  :root:not([data-theme="light"]) .page-art { --pa-wood: #e2a86a; --pa-edge: #727b5f; --pa-paper: #e8e2cc; --pa-gold: #f0c75a; --pa-pink: #e891b4; --pa-violet: #c4a0ec; --pa-red: #e46a5e; --pa-orange: #f0a050; --pa-egg: #8cc4d2; --pa-dark: #241c14; --pa-earth: #3a3226; --pa-bg: #14160f; --pa-slime: #a3d46b; }
 }
-:root[data-theme="dark"] .page-art { --pa-wood: #e2a86a; --pa-edge: #727b5f; --pa-paper: #e8e2cc; --pa-gold: #f0c75a; --pa-pink: #e891b4; --pa-violet: #c4a0ec; --pa-red: #e46a5e; --pa-orange: #f0a050; --pa-egg: #8cc4d2; --pa-dark: #241c14; --pa-earth: #3a3226; --pa-bg: #14160f; }
+:root[data-theme="dark"] .page-art { --pa-wood: #e2a86a; --pa-edge: #727b5f; --pa-paper: #e8e2cc; --pa-gold: #f0c75a; --pa-pink: #e891b4; --pa-violet: #c4a0ec; --pa-red: #e46a5e; --pa-orange: #f0a050; --pa-egg: #8cc4d2; --pa-dark: #241c14; --pa-earth: #3a3226; --pa-bg: #14160f; --pa-slime: #a3d46b; }
 .page-art .pa-ground { fill: var(--brand-bg); }
 .page-art .pa-soil { fill: var(--line); opacity: 0.6; }
 .page-art .pa-leaf { fill: var(--brand); }
@@ -7738,7 +7804,8 @@ a.welcome-way:hover strong { text-decoration: underline; }
 .page-art .pa-vein { fill: none; stroke: var(--pa-paper); stroke-width: 0.9; opacity: 0.8; }
 .page-art .pa-dark, .page-art .pa-stripe { fill: none; stroke: var(--pa-dark); stroke-width: 1.2; opacity: 1; }
 .page-art .pa-stripe { stroke-width: 1.8; }
-.page-art .pa-body { fill: var(--pa-dark); }
+.page-art .pa-body, .page-art .pa-dark-fill { fill: var(--pa-dark); }
+.page-art .pa-slime { fill: var(--pa-slime); }
 .page-art .pa-grey { fill: var(--pa-edge); }
 .page-art .pa-wing { fill: var(--pa-paper); opacity: 0.75; }
 .page-art .pa-ray { fill: none; stroke: var(--pa-gold); stroke-width: 3; stroke-linecap: round; }
@@ -7947,3 +8014,121 @@ a.welcome-way:hover strong { text-decoration: underline; }
    heading, not a paragraph away from it. */
 .lawn-layer h4 { margin-bottom: 0.15rem; }
 .lawn-layer h4 + p { margin-top: 0; }
+
+/* --- Halloween look ---------------------------------------------------------
+   Everything `data-halloween` on <html> changes beyond the colour tokens
+   (lib/halloween.ts). Each rule leads with `:root[data-halloween]`, which is
+   what lets it beat the everyday rule it replaces without !important. */
+
+/* The logo's night cast: a wilted rose for the seedling, the rose come back
+   from the dead for the bloom, a ghost for the bee. Both casts are in the
+   markup so the swap needs no script. */
+.brand-night {
+  display: none;
+}
+:root[data-halloween] .brand-day {
+  display: none;
+}
+:root[data-halloween] .brand-night {
+  display: inline;
+}
+/* A ghost doesn't buzz. It drifts, and flickers a little. */
+:root[data-halloween] .app-title a:hover .brand-bee-body,
+:root[data-halloween] .app-title a:focus-visible .brand-bee-body,
+:root[data-halloween] .app-title a:active .brand-bee-body {
+  animation: ghost-drift 1.6s ease-in-out infinite;
+}
+@keyframes ghost-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-0.12em);
+    opacity: 0.72;
+  }
+}
+
+/* The header drips, like a carved pumpkin left out a day too long. Two rows
+   of drops at different spacings so they never line up into bunting. */
+:root[data-halloween] .app-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 0.7rem;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 0.22rem 0.55rem at 50% 0, var(--brand) 98%, transparent) 0.4rem 0 / 2.3rem 0.7rem repeat-x,
+    radial-gradient(ellipse 0.3rem 0.35rem at 50% 0, var(--brand) 98%, transparent) 1.5rem 0 / 3.1rem 0.5rem repeat-x;
+}
+
+/* The loader: the flower comes up orange and wilts, and a ghost rises out of
+   the soil beside it. Hidden outside the look. */
+.grow-ghost {
+  display: none;
+}
+:root[data-halloween] .grow-ghost {
+  display: inline;
+  fill: #fff8ef;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: grow-ghost var(--grow-t) ease-in-out infinite;
+}
+:root[data-halloween] .grow-ghost-eye {
+  fill: #140a00;
+}
+:root[data-halloween] .grow-bloom {
+  fill: #ff8a1f;
+}
+:root[data-halloween] .grow-heart {
+  fill: #140a00;
+}
+:root[data-halloween] .grow-plant {
+  animation-name: grow-wilt;
+}
+@keyframes grow-wilt {
+  0%,
+  50%,
+  100% {
+    transform: none;
+  }
+  64%,
+  86% {
+    transform: rotate(-16deg) translateY(1px);
+  }
+}
+@keyframes grow-ghost {
+  0%,
+  48% {
+    transform: translateY(10px) scale(0.6);
+    opacity: 0;
+  }
+  62% {
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+  72% {
+    transform: translateY(1px);
+    opacity: 0.85;
+  }
+  84% {
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root[data-halloween] .app-title a .brand-bee-body {
+    animation: none !important;
+  }
+  /* Still, the ghost simply stands beside the plant. */
+  :root[data-halloween] .grow-ghost {
+    opacity: 1;
+  }
+}

@@ -38,6 +38,7 @@
 import { el } from "../ui";
 import { t } from "../lib/i18n";
 import { hasUnseenRelease } from "../lib/visits";
+import { halloweenOn, inSeason } from "../lib/halloween";
 import { isHomeScreenApp } from "../lib/standalone";
 import { newDot } from "./new-dot";
 
@@ -133,10 +134,14 @@ function fill(target: HTMLElement): void {
     document
       .querySelector<HTMLAnchorElement>('#footer-nav a[href$="guide/"]')
       ?.getAttribute("href") ?? "guide/";
+  // The Halloween look swaps the glyphs for its own cast, and puts its switch
+  // a tap away for as long as the season runs, on or off.
+  const night = halloweenOn();
   target.replaceChildren(
-    row(guideHref, "📖", t("footer.guide")),
-    row(notesHref, "✨", t("footer.releaseNotes"), { dot: hasUnseenRelease() }),
-    row("#/saved", "🔖", t("nav.savedLocations")),
+    row(guideHref, night ? "📜" : "📖", t("footer.guide")),
+    row(notesHref, night ? "🔮" : "✨", t("footer.releaseNotes"), { dot: hasUnseenRelease() }),
+    row("#/saved", night ? "🪦" : "🔖", t("nav.savedLocations")),
+    ...(inSeason() ? [row("#/settings/halloween", "🎃", t("nav.halloween"))] : []),
     // One row, not one per setting. Language and units used to sit here as
     // their own values ("English", "Imperial") — two of the menu's four rows
     // spent on two of the settings page's five, and a menu that grows a row

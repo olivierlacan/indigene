@@ -545,6 +545,110 @@ function killYourLawn() {
   return s;
 }
 
+// --- Squares ----------------------------------------------------------------
+// Small square drawings that sit beside a section of a page, on the same card
+// and palette as the banners above. 64×64; each says what its heading says.
+
+const SQ = 64;
+
+/** "A lawn is a zombie": a hand clawing up out of a shorn lawn, a drop of the
+ *  water it drinks beside it. */
+function sqZombie() {
+  let s = "";
+  s += circle("gold", 50, 13, 6);
+  s += circle("ground", 53, 11, 5);
+  // The hand: a palm, four fingers crooked at the tips, a thumb.
+  s += path("slime", "M22 52V36Q22 32 26 31L38 31Q42 32 42 36V52Z");
+  for (const [x, top, lean] of [[23.5, 18, -2], [28.5, 14, -1], [33.5, 15, 1], [38.5, 20, 2]]) {
+    s += path("slime", `M${x - 2} 33V${top + 3}Q${x - 2} ${top} ${x + lean} ${top - 1}Q${x + 2.5} ${top} ${x + 2} ${top + 3}V33Z`);
+  }
+  s += path("slime", "M41 40Q47 36 49 30Q51 28 52 31Q51 38 42 46Z");
+  s += path("dark", "M27 40l3 2M33 44l3 -1");
+  // The water it drinks.
+  s += path("egg", "M12 30Q8 36 8 39Q8 43 12 43Q16 43 16 39Q16 36 12 30Z");
+  // The lawn, every blade the same height.
+  s += rect("grass", 0, 50, SQ, 14, 0);
+  for (let x = 2; x < SQ; x += 4) s += path("leaf", blade(x, 51, x + 0.5, 45, 1.1, 0));
+  return s;
+}
+
+/** "Lights and inflatables on a timer": an inflatable ghost on its lawn, a
+ *  timer at 11, and a bird going over by the stars. */
+function sqLights() {
+  let s = "";
+  s += sparkle(10, 10, 2.5);
+  s += sparkle(26, 6, 2);
+  s += sparkle(56, 22, 2);
+  // A bird, flying on by.
+  s += path("dark-fill", "M34 14Q38 10 42 14Q46 10 50 14Q46 12 42 16Q38 12 34 14Z");
+  // The ghost: a round head, a hem, two eyes and a mouth.
+  s += path("paper", "M10 56V34Q10 22 22 22Q34 22 34 34V56L30 52L26 56L22 52L18 56L14 52Z");
+  s += circle("body", 18, 34, 2);
+  s += circle("body", 26, 34, 2);
+  s += ellipse("body", 22, 41, 2, 2.6);
+  // The timer: a clock face at 11.
+  s += circle("paper", 48, 42, 10);
+  s += path("ink", "M48 42V35M48 42L44.5 38");
+  s += circle("orange", 48, 42, 1.4);
+  s += rect("grass", 0, 56, SQ, 8, 0);
+  return s;
+}
+
+/** "Bury it this fall": the lawn's headstone, cardboard under a mound of
+ *  chips, and the first seedling through. */
+function sqBury() {
+  let s = "";
+  s += path("paper", "M8 46V26Q8 16 18 16Q28 16 28 26V46Z");
+  s += path("ink", "M13 26h10M15 31h6");
+  s += rect("paper", 4, 50, 56, 4, 1);
+  s += path("wood", "M2 58Q32 38 62 58Z");
+  for (const [x, y] of [[20, 53], [28, 50], [38, 49], [46, 52], [32, 55], [52, 56], [14, 56]]) {
+    s += ellipse("earth", x, y, 2.2, 1, (x * 7) % 40 - 20);
+  }
+  s += stem(40, 50, 39, 42, 40, 34);
+  s += path("leaf", leaf(40, 37, 32, 31, 3));
+  s += path("leaf", leaf(40, 35, 49, 29, 3));
+  return s;
+}
+
+/** "Sources": a stack of books and a candle to read them by. */
+function sqSources() {
+  let s = "";
+  s += rect("violet", 8, 46, 34, 8, 1.5);
+  s += rect("orange", 11, 38, 30, 8, 1.5);
+  s += rect("red", 6, 30, 32, 8, 1.5);
+  s += path("vein", "M10 34h24M14 42h22M11 50h26");
+  // The candle, its drip, and the flame.
+  s += rect("paper", 46, 34, 8, 20, 1);
+  s += path("paper", "M46 37Q44 41 46 43Z");
+  s += path("gold", "M50 22Q46 28 50 32Q54 28 50 22Z");
+  s += path("ink", "M50 32V34");
+  s += rect("wood", 0, 54, SQ, 10, 0);
+  return s;
+}
+
+const SQUARES = { zombie: sqZombie, lights: sqLights, bury: sqBury, sources: sqSources };
+
+/** The names a section can ask for. */
+export const SQUARE_NAMES = Object.keys(SQUARES);
+
+/** One square drawing, as SVG markup. Static: no input reaches it. */
+export function squareArtSvg(name) {
+  const scene = SQUARES[name];
+  if (!scene) throw new Error(`No square called "${name}"`);
+  // Clipped to the card's rounded corners, so a lawn drawn edge to edge
+  // doesn't poke out at the bottom. One id per drawing, unique on the page.
+  const id = `square-${name}`;
+  return `<svg class="page-art square-art" viewBox="0 0 ${SQ} ${SQ}" aria-hidden="true" focusable="false"><clipPath id="${id}"><rect width="${SQ}" height="${SQ}" rx="10"/></clipPath><g clip-path="url(#${id})">${rect(
+    "ground",
+    0,
+    0,
+    SQ,
+    SQ,
+    10
+  )}${scene()}</g></svg>`;
+}
+
 const SCENES = { reading, whatsNew, guide, privacy, sources, about, native, homegrown, killYourLawn, halloween };
 
 /** The names a page can ask for. */
@@ -589,7 +693,8 @@ export const PAGE_ART_RULES = `
 .page-art .pa-vein { fill: none; stroke: var(--pa-paper); stroke-width: 0.9; opacity: 0.8; }
 .page-art .pa-dark, .page-art .pa-stripe { fill: none; stroke: var(--pa-dark); stroke-width: 1.2; opacity: 1; }
 .page-art .pa-stripe { stroke-width: 1.8; }
-.page-art .pa-body { fill: var(--pa-dark); }
+.page-art .pa-body, .page-art .pa-dark-fill { fill: var(--pa-dark); }
+.page-art .pa-slime { fill: var(--pa-slime); }
 .page-art .pa-grey { fill: var(--pa-edge); }
 .page-art .pa-wing { fill: var(--pa-paper); opacity: 0.75; }
 .page-art .pa-ray { fill: none; stroke: var(--pa-gold); stroke-width: 3; stroke-linecap: round; }
@@ -604,9 +709,9 @@ export const PAGE_ART_RULES = `
 
 /** The `--pa-*` colours, light then dark. */
 export const PAGE_ART_LIGHT =
-  "--pa-wood: #7c430f; --pa-edge: #837e6b; --pa-paper: #fffdf4; --pa-gold: #d9a21b; --pa-pink: #c2557f; --pa-violet: #8a5bb8; --pa-red: #b8322a; --pa-orange: #e07b1a; --pa-egg: #9fd0dc; --pa-dark: #2b2118; --pa-earth: #d6c7a4; --pa-bg: #f7f5ef;";
+  "--pa-wood: #7c430f; --pa-edge: #837e6b; --pa-paper: #fffdf4; --pa-gold: #d9a21b; --pa-pink: #c2557f; --pa-violet: #8a5bb8; --pa-red: #b8322a; --pa-orange: #e07b1a; --pa-egg: #9fd0dc; --pa-dark: #2b2118; --pa-earth: #d6c7a4; --pa-bg: #f7f5ef; --pa-slime: #5f8a2e;";
 export const PAGE_ART_DARK =
-  "--pa-wood: #e2a86a; --pa-edge: #727b5f; --pa-paper: #e8e2cc; --pa-gold: #f0c75a; --pa-pink: #e891b4; --pa-violet: #c4a0ec; --pa-red: #e46a5e; --pa-orange: #f0a050; --pa-egg: #8cc4d2; --pa-dark: #241c14; --pa-earth: #3a3226; --pa-bg: #14160f;";
+  "--pa-wood: #e2a86a; --pa-edge: #727b5f; --pa-paper: #e8e2cc; --pa-gold: #f0c75a; --pa-pink: #e891b4; --pa-violet: #c4a0ec; --pa-red: #e46a5e; --pa-orange: #f0a050; --pa-egg: #8cc4d2; --pa-dark: #241c14; --pa-earth: #3a3226; --pa-bg: #14160f; --pa-slime: #a3d46b;";
 
 /**
  * All of it, for the two pages built outside the app. The app's copy is in

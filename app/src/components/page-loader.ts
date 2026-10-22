@@ -9,6 +9,10 @@
 // is CSS (`.grow-*` in styles.css). The boot screen in `index.html` draws the
 // same plant, so the first load and every load after it look alike — keep the
 // two copies of `SEEDLING` in step.
+//
+// It carries a ghost too, hidden except in the Halloween look
+// (`lib/halloween.ts`), when the flower wilts and the ghost rises out of the
+// soil beside it.
 import { el } from "../ui";
 import { t } from "../lib/i18n";
 
@@ -28,6 +32,11 @@ export const SEEDLING = `<svg class="grow" viewBox="0 0 64 64" aria-hidden="true
       <ellipse cx="32" cy="17" rx="2.6" ry="6" transform="rotate(300 32 23)"/>
       <circle class="grow-heart" cx="32" cy="23" r="3.6"/>
     </g>
+  </g>
+  <g class="grow-ghost">
+    <path d="M44 46V36a7 7 0 0 1 14 0v10l-2.3-2-2.4 2-2.3-2-2.3 2-2.4-2z"/>
+    <circle class="grow-ghost-eye" cx="48.6" cy="36" r="1.2"/>
+    <circle class="grow-ghost-eye" cx="53.4" cy="36" r="1.2"/>
   </g>
 </svg>`;
 

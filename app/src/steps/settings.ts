@@ -20,7 +20,8 @@
 //
 // Every card is addressable — `#/settings/language`, `#/settings/units`,
 // `#/settings/spot`, `#/settings/region`, `#/settings/goal`,
-// `#/settings/whatsnew`, `#/settings/spots`, `#/settings/counting` — so a link
+// `#/settings/whatsnew`, `#/settings/spots`, `#/settings/counting`, and in
+// October `#/settings/halloween` — so a link
 // can land on the thing it names instead of dropping the reader at the top of
 // the page to hunt for it.
 import { el, clear } from "../ui";
@@ -35,6 +36,8 @@ import {
   whatsNewCard,
 } from "../components/memory-controls";
 import { spotsFileCard } from "../components/backup-controls";
+import { halloweenCard } from "../components/halloween-controls";
+import { inSeason } from "../lib/halloween";
 import { stickyReady } from "../lib/sticky";
 import { townsReady } from "../lib/places";
 import { prefsReady } from "../state";
@@ -50,6 +53,7 @@ const CARD_IDS: Record<string, string> = {
   counting: "settings-counting",
   spots: "settings-spots",
   inat: "settings-inat",
+  halloween: "settings-halloween",
 };
 
 export async function renderSettings(main: HTMLElement, param?: string): Promise<void> {
@@ -73,6 +77,7 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
     counting: visitCountCard(),
     spots: await spotsFileCard(),
     inat: inatCard(),
+    ...(inSeason() ? { halloween: halloweenCard() } : {}),
   };
   for (const [key, card] of Object.entries(cards)) card.id = CARD_IDS[key];
 
@@ -81,6 +86,12 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
   main.append(
     el("h2", { class: "step-title" }, t("settings.title")),
     el("p", { class: "step-lede" }, t("settings.lede")),
+    // First while it lasts: it is the setting that changes every page, and
+    // the one the menu's 🎃 row comes here for.
+    ...(cards.halloween ? [
+      el("h3", { class: "settings-group" }, t("settings.halloweenTitle")),
+      el("div", { class: "settings-cards" }, [cards.halloween]),
+    ] : []),
     el("h3", { class: "settings-group" }, t("settings.readingTitle")),
     el("div", { class: "settings-cards" }, [cards.language, cards.units]),
     el("h3", { class: "settings-group" }, t("settings.memoryTitle")),

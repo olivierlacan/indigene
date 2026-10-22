@@ -1,7 +1,9 @@
 // The drawings' colours live twice: in styles.css for the app, and in
 // PAGE_ART_CSS for What's new and the Guide. This holds the two alike.
 import { describe, it, expect } from "vitest";
-import { PAGE_ART_NAMES, PAGE_ART_RULES, PAGE_ART_LIGHT, PAGE_ART_DARK, pageArtSvg } from "./page-art-svg.mjs";
+import { PAGE_ART_NAMES, PAGE_ART_RULES, PAGE_ART_LIGHT, PAGE_ART_DARK, SQUARE_NAMES, pageArtSvg, squareArtSvg } from "./page-art-svg.mjs";
+
+const ALL = [...PAGE_ART_NAMES.map((n) => [n, pageArtSvg(n)]), ...SQUARE_NAMES.map((n) => [n, squareArtSvg(n)])];
 
 // Through the `?raw` glob brand.test.ts uses: a plain CSS import comes back
 // empty under the test runner.
@@ -19,14 +21,15 @@ describe("page drawings", () => {
   });
 
   it("gives every class a drawing uses a rule", () => {
-    for (const name of PAGE_ART_NAMES) {
-      const classes = new Set([...pageArtSvg(name).matchAll(/class="([^"]+)"/g)].flatMap((m) => m[1].split(" ")));
+    for (const [name, svg] of ALL) {
+      const classes = new Set([...svg.matchAll(/class="([^"]+)"/g)].flatMap((m) => m[1].split(" ")));
       classes.delete("page-art");
+      classes.delete("square-art");
       for (const c of classes) expect(PAGE_ART_RULES, `${name}: .${c}`).toMatch(new RegExp(`\\.${c}[ ,]`));
     }
   });
 
   it("hides every drawing from screen readers", () => {
-    for (const name of PAGE_ART_NAMES) expect(pageArtSvg(name)).toContain('aria-hidden="true"');
+    for (const [, svg] of ALL) expect(svg).toContain('aria-hidden="true"');
   });
 });

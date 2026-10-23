@@ -171,10 +171,16 @@ const HALLOWEEN_SOURCES: { name: string; url: string; what: TKey }[] = [
 
 /** Halloween: the lawn as a zombie, the decorations kept with their lights on
  *  a timer, and a way on to the guide that outlasts the holiday. Each section
- *  carries a small square drawing of what its heading says. */
+ *  carries a small square drawing of what its heading says, beside the body
+ *  rather than the heading, on alternating sides (styles.css). The drawing goes
+ *  inside the first paragraph (or list item), so it starts on the same line as
+ *  the text instead of above that paragraph's top margin. */
 function halloween2026Body(key: string): HTMLElement[] {
-  const section = (art: SquareName, title: string, body: HTMLElement[]) =>
-    el("section", { class: "post-section" }, [squareArt(art), el("h3", {}, title), ...body]);
+  const section = (art: SquareName, title: string, body: HTMLElement[]) => {
+    const first = body[0].tagName === "UL" ? body[0].firstElementChild! : body[0];
+    first.prepend(squareArt(art));
+    return el("section", { class: "post-section" }, [el("h3", {}, title), ...body]);
+  };
   return [
     section("zombie", t(pk(key, "zombieTitle")), [
       el("p", {}, t(pk(key, "zombie1"))),
@@ -217,10 +223,10 @@ export function renderPostsIndex(main: HTMLElement): void {
     el("article", { class: "privacy-page" }, [
       el("h2", { class: "step-title" }, t("posts.title")),
       el("p", { class: "step-lede" }, t("posts.lede")),
-      el("ul", { class: "who-list" }, POSTS.map((p) =>
+      el("ul", { class: "who-list post-index" }, POSTS.map((p) =>
         el("li", {}, [
+          el("time", { class: "post-index-date", datetime: p.date }, formatDate(p.date)),
           el("a", { href: `#/posts/${p.slug}` }, el("strong", {}, t(pk(p.key, "title")))),
-          el("span", { class: "sureness-from" }, ` · ${formatDate(p.date)}`),
           el("p", {}, t(pk(p.key, "lede"))),
         ])
       )),

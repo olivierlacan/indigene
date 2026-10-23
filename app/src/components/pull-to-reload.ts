@@ -187,9 +187,16 @@ function show(): void {
   // The band grows *from* the header, so where the header ends is where it has
   // to be pinned. Measured per gesture: the header wraps to two rows at large
   // text sizes, and the step rail comes and goes with the flow.
+  //
+  // Its height, not its bottom: the header is sticky at the top of the page,
+  // and by the first move WebKit may already have rubber-banded the page a few
+  // pixels down, header and all. Its bottom read then is that far too low, and
+  // once `preventDefault` lets the page spring back the band hangs below a
+  // gap that changes with how fast the drag started. One pixel of overlap too,
+  // tucked under the header, so a rounded edge never shows a hairline of page.
   const header = document.querySelector(".app-header");
-  const top = header ? header.getBoundingClientRect().bottom : 0;
-  band.style.setProperty("--pull-top", `${Math.round(top)}px`);
+  const top = header ? header.getBoundingClientRect().height - 1 : 0;
+  band.style.setProperty("--pull-top", `${Math.max(0, Math.floor(top))}px`);
   band.classList.remove("is-settling");
   band.hidden = false;
   // Fly the bee in again. Removing the class isn't enough on its own — an

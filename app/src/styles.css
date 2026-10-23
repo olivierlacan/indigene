@@ -1934,7 +1934,7 @@ details[open] > summary::after {
 }
 /* Room below each card for the tag that hangs off it. */
 .card-grid:has(.count-tag) {
-  row-gap: 1.6rem;
+  --row-gap: 1.6rem;
 }
 /* The keystone star beside a plant's name, sized to the name's own type so it
    reads at a glance instead of trailing it as a speck. */
@@ -5329,20 +5329,31 @@ body[data-layout="wide"] {
    rather than a fixed count means the tablet widths in between get two
    without another breakpoint. */
 .card-grid {
+  --row-gap: 0.7rem;
   display: grid;
-  gap: 0.7rem;
+  gap: var(--row-gap);
   grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr));
   align-items: start;
+}
+/* Masonry (lib/masonry.ts): 1px rows, each card spanning its own height plus
+   the gap, carried as its bottom margin so the script can read it back. */
+.card-grid.is-masonry {
+  grid-auto-rows: 1px;
+  row-gap: 0;
+}
+.card-grid.is-masonry > * {
+  margin-bottom: var(--row-gap);
+  /* A card filling its cell would feed its span back into its own height. */
+  height: auto;
 }
 
 /* --- The bottom-of-card stats row --------------------------------------- */
 /* Shared by the region cards on Explore and the creature cards on Wildlife
    (see components/card-stats.ts for why it's one component).
 
-   `margin-top: auto` is the point: the text above it varies in length, so a
-   row that simply follows the text sits at a different height on every card
-   and the eye has to hunt for it. Pinned to the bottom, a row of cards puts
-   its numbers on one line and reads like a table.
+   `margin-top: auto` keeps the row at the bottom of a card taller than its
+   text; in the masonry `.card-grid` each card fits its text, so it simply
+   follows.
 
    `nowrap` is the other point. Spelled-out labels ("44 natives · 6 keystones
    · 11 wildlife ties") wrapped onto two lines at phone width, costing a line
@@ -5423,9 +5434,6 @@ button.card-stat:focus-visible .card-stat-tap {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  /* Cards in a row end level with each other even when one region's name runs
-     to two lines and its neighbour's doesn't. */
-  height: 100%;
 }
 .region-card-name {
   font-size: 1.1rem;
@@ -5545,7 +5553,6 @@ button.card-stat:focus-visible .card-stat-tap {
   color: inherit;
   padding: 0.7rem 0.85rem;
   margin: 0;
-  height: 100%;
 }
 /* Filtered to the pioneers, the "Copes with" strip wraps to a line of its own
    and bleeds to this card's own padding. */
@@ -5583,9 +5590,7 @@ button.card-stat:focus-visible .card-stat-tap {
   font-size: 0.8rem;
   color: var(--ink-soft);
 }
-/* Pinned to the bottom of the card, so a row of cards puts its pills on one
-   line however long the names above them ran — the same trick `.card-stats`
-   plays on the other two indexes. */
+/* Pinned to the bottom of the card when it's taller than its content. */
 .plant-index-card .region-pills {
   margin-top: auto;
   padding-top: 0.4rem;
@@ -5596,8 +5601,8 @@ button.card-stat:focus-visible .card-stat-tap {
 }
 
 /* --- Wildlife index: one card per creature ------------------------------ */
-/* Icon beside a name, a blurb of whatever length, and the reach figures level
-   with every other card's.
+/* Icon beside a name, a blurb of whatever length, and the reach figures
+   under it. Each card is as tall as its own blurb (`.card-grid` is masonry).
 
    The card is not itself a link: the creature's name carries the link and
    stretches it over the whole card (same trick as `.region-card`), which
@@ -5613,7 +5618,6 @@ button.card-stat:focus-visible .card-stat-tap {
   color: inherit;
   padding: 0.7rem 0.85rem;
   margin: 0;
-  height: 100%;
 }
 .wildlife-card:hover {
   border-color: var(--line-strong);

@@ -71,9 +71,14 @@ export function viewPanel<V>(
   href: (to: V) => string,
   onPick?: (to: V) => void,
 ): HTMLElement {
-  const link = (to: V, attrs: Record<string, string | undefined>, label: (string | Node)[]): HTMLElement =>
+  // Each control's own name (`data-keep`): its row and its place in the row.
+  // Its address can't say which control it is — a toggle's changes when it's
+  // tapped — and main.ts needs to find it again to keep it under the reader's
+  // finger while the page redraws (see `lib/kept-place.ts`).
+  const link = (to: V, keep: string, attrs: Record<string, string | undefined>, label: (string | Node)[]): HTMLElement =>
     el("a", {
       ...attrs,
+      "data-keep": keep,
       href: href(to),
       onClick: onPick
         ? (ev: Event) => {
@@ -84,16 +89,17 @@ export function viewPanel<V>(
           }
         : undefined,
     }, label);
-  const toggle = (tg: Toggle<V>): HTMLElement =>
-    link(tg.to, { class: "filter-toggle", role: "switch", "aria-checked": String(tg.on) }, [
+  const toggle = (tg: Toggle<V>, keep: string): HTMLElement =>
+    link(tg.to, keep, { class: "filter-toggle", role: "switch", "aria-checked": String(tg.on) }, [
       el("span", { class: "filter-box", "aria-hidden": "true" }, tg.on ? "✓" : ""),
       tg.label,
     ]);
   // A cap's threshold is a select, not links: seven rungs of links would be a
   // second list. Picking one goes where its link would have.
-  const cap = (c: CapToggle<V>): HTMLElement => {
+  const cap = (c: CapToggle<V>, keep: string): HTMLElement => {
     const select = el("select", {
       class: "filter-cap",
+      "data-keep": `${keep}:cap`,
       "aria-label": c.aria,
       disabled: !c.on,
       onChange: () => {
@@ -102,11 +108,11 @@ export function viewPanel<V>(
         else location.href = href(to);
       },
     }, c.options.map((o) => el("option", { selected: o.selected }, o.label))) as HTMLSelectElement;
-    return el("span", { class: "filter-cap-row" }, [toggle(c), select, c.tail]);
+    return el("span", { class: "filter-cap-row" }, [toggle(c, keep), select, c.tail]);
   };
   // Filters are many, and most readers want none: closed, the drawer says
   // which are on in one line, so a narrowed list still says it's narrowed.
-  const drawer = (r: { label: string; toggles: (Toggle<V> | CapToggle<V>)[]; hint: string; after?: Node }): HTMLElement => {
+  const drawer = (r: { label: string; toggles: (Toggle<V> | CapToggle<V>)[]; hint: string; after?: Node }, ri: number): HTMLElement => {
     // A list, so only its first word is capitalized: "Pet-safe, under 2 m tall".
     const on = r.toggles.filter((tg) => tg.on).map((tg, i) => {
       const s = tg.short ?? tg.label;
@@ -120,7 +126,7 @@ export function viewPanel<V>(
         chevronIcon("down"),
       ]),
       el("div", { class: "roster-control-stack" }, [
-        ...r.toggles.map((tg) => ("options" in tg ? cap(tg) : toggle(tg))),
+        ...r.toggles.map((tg, i) => ("options" in tg ? cap(tg, `view:${ri}:${i}`) : toggle(tg, `view:${ri}:${i}`))),
         r.after ?? null,
       ]),
     ]) as HTMLDetailsElement;
@@ -129,14 +135,14 @@ export function viewPanel<V>(
     });
     return d;
   };
-  return el("nav", { "aria-label": t("region.viewNav"), class: "roster-controls" }, rows.map((r) =>
-    "toggles" in r ? drawer(r)
+  return el("nav", { "aria-label": t("region.viewNav"), class: "roster-controls" }, rows.map((r, ri) =>
+    "toggles" in r ? drawer(r, ri)
       : el("div", { class: "roster-control" }, [
           el("span", { class: "roster-control-label" }, r.label),
           "segments" in r
-            ? el("div", { class: "segmented" }, r.segments.map((sg) =>
-                link(sg.to, { class: "segment", "aria-current": sg.on ? "page" : undefined }, sg.label)))
-            : toggle(r.toggle),
+            ? el("div", { class: "segmented" }, r.segments.map((sg, i) =>
+                link(sg.to, `view:${ri}:${i}`, { class: "segment", "aria-current": sg.on ? "page" : undefined }, sg.label)))
+            : toggle(r.toggle, `view:${ri}:0`),
         ])));
 }
 

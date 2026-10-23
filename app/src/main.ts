@@ -5,6 +5,7 @@ import { loadTowns } from "./lib/places";
 import { REGIONS, loadPlants, regionForSite } from "./lib/plants";
 import { noteVisit } from "./lib/visits";
 import { startAnalytics, trackPageview } from "./lib/analytics";
+import { startMasonry } from "./lib/masonry";
 import { renderWelcome } from "./steps/welcome";
 import { renderLocation } from "./steps/location";
 import { renderSun } from "./steps/sun";
@@ -617,6 +618,7 @@ async function boot(): Promise<void> {
   // the deferred script lands, and on a local build, for an opted-out reader,
   // or for a browser asking not to be tracked, it does nothing whatsoever.
   startAnalytics();
+  startMasonry();
   renderChrome();
   paintHalloween();
   mountLangOffer(main);

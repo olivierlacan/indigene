@@ -15,10 +15,14 @@
  */
 const seen = new WeakSet<Element>();
 
-function span(item: HTMLElement): void {
+function measure(item: HTMLElement): string {
   const h = item.getBoundingClientRect().height;
   const gap = parseFloat(getComputedStyle(item).marginBottom) || 0;
-  item.style.gridRowEnd = `span ${Math.max(1, Math.ceil(h + gap))}`;
+  return `span ${Math.max(1, Math.ceil(h + gap))}`;
+}
+
+function span(item: HTMLElement): void {
+  item.style.gridRowEnd = measure(item);
 }
 
 const sizes = new ResizeObserver((entries) => {
@@ -26,23 +30,30 @@ const sizes = new ResizeObserver((entries) => {
 });
 
 function scan(): void {
+  const fresh: HTMLElement[] = [];
   for (const grid of document.querySelectorAll<HTMLElement>(".card-grid")) {
     grid.classList.add("is-masonry");
     for (const item of grid.children) {
       if (seen.has(item)) continue;
       seen.add(item);
-      sizes.observe(item);
+      fresh.push(item as HTMLElement);
     }
   }
+  // Spanned here, before the first paint, rather than left to the observer's
+  // first report: a rebuilt list must never show a frame of cards piled up in
+  // 1px rows. All the reads, then all the writes, so it's one layout.
+  const spans = fresh.map(measure);
+  fresh.forEach((item, i) => {
+    item.style.gridRowEnd = spans[i];
+    sizes.observe(item);
+  });
 }
 
 export function startMasonry(root: Node = document.body): void {
   if (typeof ResizeObserver === "undefined") return;
-  let queued = false;
-  new MutationObserver(() => {
-    if (queued) return;
-    queued = true;
-    requestAnimationFrame(() => { queued = false; scan(); });
-  }).observe(root, { childList: true, subtree: true });
+  // Scanned straight away, not on the next frame: a sort, a filter or a search
+  // keystroke rebuilds the whole list, and waiting a frame painted it as plain
+  // rows first, then jumped. Observed now, a card is spanned before any paint.
+  new MutationObserver(scan).observe(root, { childList: true, subtree: true });
   scan();
 }

@@ -6,6 +6,8 @@ import { REGIONS, loadPlants, regionForSite } from "./lib/plants";
 import { noteVisit } from "./lib/visits";
 import { startAnalytics, trackPageview } from "./lib/analytics";
 import { startMasonry } from "./lib/masonry";
+import { findKept } from "./lib/kept-place";
+import type { PlaceMark } from "./lib/kept-place";
 import { renderWelcome } from "./steps/welcome";
 import { renderLocation } from "./steps/location";
 import { renderSun } from "./steps/sun";
@@ -489,16 +491,31 @@ async function route(): Promise<void> {
  * control they tapped holds its place under their finger while the figures
  * around it change. Landing at the top for it read as a full reload.
  */
-let tapped: { href: string; top: number; at: number } | null = null;
+let tapped: (PlaceMark & { top: number; at: number }) | null = null;
+function noteTap(control: Element): void {
+  const top = control.getBoundingClientRect().top;
+  tapped = {
+    keep: (control as HTMLElement).dataset.keep,
+    href: control.getAttribute("href") ?? "",
+    top,
+    y: top + window.scrollY,
+    at: Date.now(),
+  };
+}
 document.addEventListener("click", (e) => {
   const link = (e.target as Element | null)?.closest("a[href]");
-  if (!link || !main.contains(link)) return;
-  tapped = { href: link.getAttribute("href") ?? "", top: link.getBoundingClientRect().top, at: Date.now() };
+  if (link && main.contains(link)) noteTap(link);
+}, true);
+// A view panel's size cap is a select that navigates when it changes; it has
+// no link to tap, so it's noted here, by its own name.
+document.addEventListener("change", (e) => {
+  const control = (e.target as Element | null)?.closest("[data-keep]");
+  if (control && main.contains(control)) noteTap(control);
 }, true);
 
 /** The place to keep, when this route is a tap that redraws the page already
  *  on screen; null when it is a page of its own and should start at the top. */
-function keptPlace(key: string): { href: string; top: number } | null {
+function keptPlace(key: string): (PlaceMark & { top: number }) | null {
   const tap = tapped;
   tapped = null;
   if (!tap || syncedRoute !== key || Date.now() - tap.at > 1000) return null;
@@ -506,10 +523,16 @@ function keptPlace(key: string): { href: string; top: number } | null {
 }
 
 /** Put the tapped control back where it was on screen, and focus it, so a
- *  keyboard reader carries on from the same spot. */
-function restorePlace(kept: { href: string; top: number }): void {
-  const again = [...main.querySelectorAll("a[href]")].find((a) => a.getAttribute("href") === kept.href);
-  if (!(again instanceof HTMLElement)) return;
+ *  keyboard reader carries on from the same spot. Which control that is takes
+ *  more than its address — see `lib/kept-place.ts`. */
+function restorePlace(kept: PlaceMark & { top: number }): void {
+  const all = [...main.querySelectorAll<HTMLElement>("a[href], [data-keep]")];
+  const again = all[findKept(all.map((el) => ({
+    keep: el.dataset.keep,
+    href: el.getAttribute("href") ?? "",
+    y: el.getBoundingClientRect().top + window.scrollY,
+  })), kept)];
+  if (!again) return;
   window.scrollBy(0, again.getBoundingClientRect().top - kept.top);
   again.focus({ preventScroll: true });
 }

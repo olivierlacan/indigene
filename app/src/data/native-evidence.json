@@ -248,6 +248,155 @@
           "oregonflora": "native"
         }
       }
+    },
+    "north-michigan": {
+      "sources": [
+        {
+          "id": "mi-fqa",
+          "name": {
+            "en": "The University of Michigan Herbarium",
+            "fr": "L'herbier de l'université du Michigan"
+          },
+          "url": "https://michiganflora.net/",
+          "area": {
+            "en": "in Michigan",
+            "fr": "au Michigan"
+          }
+        }
+      ],
+      "checked": "2026-10-24",
+      "rows": 46,
+      "disagree": {}
+    },
+    "chicago": {
+      "sources": [
+        {
+          "id": "chicago-fqa",
+          "name": {
+            "en": "The Flora of the Chicago Region",
+            "fr": "La Flore de la région de Chicago"
+          },
+          "url": "https://universalfqa.org/",
+          "area": {
+            "en": "in the Chicago Region",
+            "fr": "dans la région de Chicago"
+          }
+        },
+        {
+          "id": "il-fqa",
+          "name": {
+            "en": "Illinois's 1997 checklist",
+            "fr": "La liste de l'Illinois de 1997"
+          },
+          "url": "https://universalfqa.org/",
+          "area": {
+            "en": "in Illinois",
+            "fr": "en Illinois"
+          }
+        }
+      ],
+      "checked": "2026-10-24",
+      "rows": 63,
+      "disagree": {}
+    },
+    "mid-atlantic": {
+      "sources": [
+        {
+          "id": "pa",
+          "name": {
+            "en": "The Pennsylvania Natural Heritage Program",
+            "fr": "Le programme du patrimoine naturel de Pennsylvanie"
+          },
+          "url": "https://naturalheritage.dcnr.pa.gov/PlantChecklist.html",
+          "area": {
+            "en": "in Pennsylvania",
+            "fr": "en Pennsylvanie"
+          }
+        },
+        {
+          "id": "nj-fqa",
+          "name": {
+            "en": "New Jersey's environment agency",
+            "fr": "L'agence de l'environnement du New Jersey"
+          },
+          "url": "https://universalfqa.org/",
+          "area": {
+            "en": "in New Jersey",
+            "fr": "au New Jersey"
+          }
+        }
+      ],
+      "checked": "2026-10-24",
+      "rows": 44,
+      "disagree": {
+        "echinacea-purpurea": {
+          "pa": "introduced",
+          "nj-fqa": "absent"
+        },
+        "penstemon-digitalis": {
+          "pa": "native",
+          "nj-fqa": "introduced"
+        },
+        "baptisia-australis": {
+          "pa": "native",
+          "nj-fqa": "introduced"
+        }
+      }
+    },
+    "ireland": {
+      "sources": [
+        {
+          "id": "bsbi-ie",
+          "name": {
+            "en": "The BSBI Plant Atlas 2020",
+            "fr": "L'atlas des plantes 2020 de la BSBI"
+          },
+          "url": "https://plantatlas2020.org/",
+          "area": {
+            "en": "in Ireland",
+            "fr": "en Irlande"
+          }
+        }
+      ],
+      "checked": "2026-10-24",
+      "rows": 67,
+      "disagree": {}
+    },
+    "nz-auckland": {
+      "sources": [
+        {
+          "id": "nz-checklist",
+          "name": {
+            "en": "The Checklist of the New Zealand Flora",
+            "fr": "La liste de la flore de Nouvelle-Zélande"
+          },
+          "url": "https://datastore.landcareresearch.co.nz/dataset/checklist-of-the-new-zealand-flora-seed-plants-2026",
+          "area": {
+            "en": "in New Zealand",
+            "fr": "en Nouvelle-Zélande"
+          }
+        },
+        {
+          "id": "auckland",
+          "name": {
+            "en": "Auckland Council",
+            "fr": "Le conseil d'Auckland"
+          },
+          "url": "https://www.knowledgeauckland.org.nz/publications/conservation-status-of-vascular-plant-species-in-tamaki-makaurau-auckland-revised-march-2025/",
+          "area": {
+            "en": "in Auckland",
+            "fr": "à Auckland"
+          }
+        }
+      ],
+      "checked": "2026-10-24",
+      "rows": 47,
+      "disagree": {
+        "austroderia-fulvida": {
+          "nz-checklist": "native",
+          "auckland": "absent"
+        }
+      }
     }
   }
 }

@@ -32,6 +32,7 @@
     "atlas": "NODE_USE_ENV_PROXY=1 node scripts/atlas-florida.mjs",
     "harvest:fnps": "NODE_USE_ENV_PROXY=1 node scripts/harvest-fnps.mjs",
     "pnw:checklist": "NODE_USE_ENV_PROXY=1 node scripts/pnw-checklist.mjs",
+    "floras": "NODE_USE_ENV_PROXY=1 node scripts/check-floras.mjs",
     "harvest:audubon": "NODE_USE_ENV_PROXY=1 node scripts/harvest-audubon.mjs",
     "societies": "node scripts/societies.mjs",
     "swaps:coverage": "node scripts/alternatives-coverage.mjs",

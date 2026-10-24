@@ -56,8 +56,8 @@
         "fr": "la Floride"
       },
       "coarse": true,
-      "checked": "2026-10-17",
-      "rows": 63,
+      "checked": "2026-10-24",
+      "rows": 74,
       "unconfirmed": {}
     },
     "florida-south": {
@@ -66,8 +66,8 @@
         "fr": "la Floride"
       },
       "coarse": true,
-      "checked": "2026-10-17",
-      "rows": 52,
+      "checked": "2026-10-24",
+      "rows": 65,
       "unconfirmed": {
         "passiflora-suberosa": "absent"
       }
@@ -176,8 +176,8 @@
         "fr": "Washington, l'Oregon et la Colombie-Britannique"
       },
       "coarse": false,
-      "checked": "2026-10-17",
-      "rows": 118,
+      "checked": "2026-10-24",
+      "rows": 131,
       "unconfirmed": {
         "sambucus-nigra-caerulea": "inconclusive",
         "achillea-millefolium": "absent"
@@ -189,8 +189,8 @@
         "fr": "la Grande-Bretagne"
       },
       "coarse": true,
-      "checked": "2026-10-17",
-      "rows": 59,
+      "checked": "2026-10-24",
+      "rows": 73,
       "unconfirmed": {}
     },
     "st-lawrence": {
@@ -199,8 +199,8 @@
         "fr": "le Québec, l'Ontario, l'État de New York et le Vermont"
       },
       "coarse": false,
-      "checked": "2026-10-16",
-      "rows": 55,
+      "checked": "2026-10-24",
+      "rows": 69,
       "unconfirmed": {
         "viburnum-dentatum": "absent",
         "campanula-rotundifolia": "absent",
@@ -236,8 +236,8 @@
           }
         }
       ],
-      "checked": "2026-10-17",
-      "rows": 118,
+      "checked": "2026-10-24",
+      "rows": 131,
       "disagree": {
         "achillea-millefolium": {
           "burke": "both",

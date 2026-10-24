@@ -10,7 +10,7 @@
   },
   "minNative": 10,
   "region": "scotland-lowlands",
-  "ranAt": "2026-10-17T05:15:17.017Z",
+  "ranAt": "2026-10-24T18:50:08.326Z",
   "rows": [
     {
       "id": "quercus-petraea",
@@ -170,6 +170,15 @@
       "olderOnly": 5
     },
     {
+      "id": "salix-aurita",
+      "latin": "Salix aurita",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.1sp",
+      "nativeHectads": 379,
+      "alienHectads": 0,
+      "olderOnly": 19
+    },
+    {
       "id": "juniperus-communis",
       "latin": "Juniperus communis",
       "verdict": "NATIVE",
@@ -224,6 +233,15 @@
       "olderOnly": 52
     },
     {
+      "id": "erica-tetralix",
+      "latin": "Erica tetralix",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.c00",
+      "nativeHectads": 352,
+      "alienHectads": 0,
+      "olderOnly": 45
+    },
+    {
       "id": "vaccinium-myrtillus",
       "latin": "Vaccinium myrtillus",
       "verdict": "NATIVE",
@@ -240,6 +258,15 @@
       "nativeHectads": 142,
       "alienHectads": 0,
       "olderOnly": 48
+    },
+    {
+      "id": "rubus-idaeus",
+      "latin": "Rubus idaeus",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.m0t",
+      "nativeHectads": 396,
+      "alienHectads": 1,
+      "olderOnly": 8
     },
     {
       "id": "lonicera-periclymenum",
@@ -459,6 +486,69 @@
       "olderOnly": 99
     },
     {
+      "id": "anemone-nemorosa",
+      "latin": "Anemone nemorosa",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.gt",
+      "nativeHectads": 381,
+      "alienHectads": 0,
+      "olderOnly": 17
+    },
+    {
+      "id": "allium-ursinum",
+      "latin": "Allium ursinum",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.8a0",
+      "nativeHectads": 330,
+      "alienHectads": 0,
+      "olderOnly": 27
+    },
+    {
+      "id": "viola-riviniana",
+      "latin": "Viola riviniana",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.cp8",
+      "nativeHectads": 414,
+      "alienHectads": 0,
+      "olderOnly": 2
+    },
+    {
+      "id": "cardamine-pratensis",
+      "latin": "Cardamine pratensis",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.n1",
+      "nativeHectads": 408,
+      "alienHectads": 0,
+      "olderOnly": 5
+    },
+    {
+      "id": "silene-flos-cuculi",
+      "latin": "Silene flos-cuculi",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.6y63nq",
+      "nativeHectads": 386,
+      "alienHectads": 0,
+      "olderOnly": 16
+    },
+    {
+      "id": "achillea-ptarmica",
+      "latin": "Achillea ptarmica",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.v5w",
+      "nativeHectads": 387,
+      "alienHectads": 1,
+      "olderOnly": 19
+    },
+    {
+      "id": "hypericum-pulchrum",
+      "latin": "Hypericum pulchrum",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.yyr",
+      "nativeHectads": 390,
+      "alienHectads": 0,
+      "olderOnly": 21
+    },
+    {
       "id": "rhinanthus-minor",
       "latin": "Rhinanthus minor",
       "verdict": "NATIVE",
@@ -493,6 +583,33 @@
       "nativeHectads": 374,
       "alienHectads": 0,
       "olderOnly": 24
+    },
+    {
+      "id": "galium-verum",
+      "latin": "Galium verum",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.13b",
+      "nativeHectads": 389,
+      "alienHectads": 0,
+      "olderOnly": 15
+    },
+    {
+      "id": "ajuga-reptans",
+      "latin": "Ajuga reptans",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.ez4",
+      "nativeHectads": 389,
+      "alienHectads": 0,
+      "olderOnly": 14
+    },
+    {
+      "id": "potentilla-erecta",
+      "latin": "Potentilla erecta",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.5v7",
+      "nativeHectads": 412,
+      "alienHectads": 0,
+      "olderOnly": 4
     },
     {
       "id": "deschampsia-cespitosa",
@@ -547,6 +664,15 @@
       "nativeHectads": 302,
       "alienHectads": 0,
       "olderOnly": 49
+    },
+    {
+      "id": "polypodium-vulgare",
+      "latin": "Polypodium vulgare",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.bvd",
+      "nativeHectads": 341,
+      "alienHectads": 0,
+      "olderOnly": 20
     }
   ]
 }

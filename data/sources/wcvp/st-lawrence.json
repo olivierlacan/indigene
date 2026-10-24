@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Québec, Ontario, New York & Vermont (TDWG:QUE, ONT, NWY, VER)",
   "region": "st-lawrence",
-  "ranAt": "2026-10-16T19:44:18.697Z",
+  "ranAt": "2026-10-24T18:50:54.491Z",
   "rows": [
     {
       "id": "amelanchier-laevis",
@@ -179,6 +179,71 @@
       "id": "quercus-alba",
       "latin": "Quercus alba",
       "asked": "Quercus alba",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "quercus-macrocarpa",
+      "latin": "Quercus macrocarpa",
+      "asked": "Quercus macrocarpa",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "carya-ovata",
+      "latin": "Carya ovata",
+      "asked": "Carya ovata",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "carpinus-caroliniana",
+      "latin": "Carpinus caroliniana",
+      "asked": "Carpinus caroliniana",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "larix-laricina",
+      "latin": "Larix laricina",
+      "asked": "Larix laricina",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cornus-alternifolia",
+      "latin": "Cornus alternifolia",
+      "asked": "Cornus alternifolia",
       "verdict": "NATIVE",
       "areas": {
         "QUE": "NATIVE",
@@ -384,6 +449,71 @@
       "viaSynonym": null
     },
     {
+      "id": "rhus-typhina",
+      "latin": "Rhus typhina",
+      "asked": "Rhus typhina",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "spiraea-alba",
+      "latin": "Spiraea alba",
+      "asked": "Spiraea alba",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rubus-odoratus",
+      "latin": "Rubus odoratus",
+      "asked": "Rubus odoratus",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "alnus-incana",
+      "latin": "Alnus incana",
+      "asked": "Alnus incana",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "prunus-virginiana",
+      "latin": "Prunus virginiana",
+      "asked": "Prunus virginiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "asclepias-tuberosa",
       "latin": "Asclepias tuberosa",
       "asked": "Asclepias tuberosa",
@@ -540,6 +670,45 @@
       "viaSynonym": null
     },
     {
+      "id": "iris-versicolor",
+      "latin": "Iris versicolor",
+      "asked": "Iris versicolor",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "erythronium-americanum",
+      "latin": "Erythronium americanum",
+      "asked": "Erythronium americanum",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "maianthemum-racemosum",
+      "latin": "Maianthemum racemosum",
+      "asked": "Maianthemum racemosum",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "andropogon-gerardii",
       "latin": "Andropogon gerardii",
       "asked": "Andropogon gerardii",
@@ -673,6 +842,19 @@
       "id": "fragaria-virginiana",
       "latin": "Fragaria virginiana",
       "asked": "Fragaria virginiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "gaultheria-procumbens",
+      "latin": "Gaultheria procumbens",
+      "asked": "Gaultheria procumbens",
       "verdict": "NATIVE",
       "areas": {
         "QUE": "NATIVE",

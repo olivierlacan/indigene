@@ -347,6 +347,14 @@
     },
     {
       "subject": "plant",
+      "id": "acer-glabrum",
+      "name": "Acer glabrum",
+      "taxonId": 63078,
+      "reason": "chosen photo 340346792 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/63078/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "achlys-triphylla",
       "name": "Achlys triphylla",
       "taxonId": 75263,
@@ -384,6 +392,14 @@
       "taxonId": 158386,
       "reason": "chosen photo 27475973 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/158386/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "annona-glabra",
+      "name": "Annona glabra",
+      "taxonId": 69972,
+      "reason": "chosen photo 420980509 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/69972/browse_photos"
     },
     {
       "subject": "plant",
@@ -555,6 +571,14 @@
     },
     {
       "subject": "plant",
+      "id": "cornus-alternifolia",
+      "name": "Cornus alternifolia",
+      "taxonId": 54775,
+      "reason": "chosen photo 11567651 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/54775/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "cornus-racemosa",
       "name": "Cornus racemosa",
       "taxonId": 320160,
@@ -584,6 +608,14 @@
       "taxonId": 161579,
       "reason": "chosen photo 1639872 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/161579/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "dichondra-carolinensis",
+      "name": "Dichondra carolinensis",
+      "taxonId": 128939,
+      "reason": "chosen photo 175388440 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/128939/browse_photos"
     },
     {
       "subject": "plant",
@@ -699,6 +731,14 @@
     },
     {
       "subject": "plant",
+      "id": "gaultheria-procumbens",
+      "name": "Gaultheria procumbens",
+      "taxonId": 62376,
+      "reason": "chosen photo 17300 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/62376/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "geranium-sylvaticum",
       "name": "Geranium sylvaticum",
       "taxonId": 85429,
@@ -720,6 +760,14 @@
       "taxonId": 47779,
       "reason": "chosen photo 132791736 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/47779/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "iris-versicolor",
+      "name": "Iris versicolor",
+      "taxonId": 48726,
+      "reason": "chosen photo 135271513 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/48726/browse_photos"
     },
     {
       "subject": "plant",
@@ -987,6 +1035,14 @@
     },
     {
       "subject": "plant",
+      "id": "primula-hendersonii",
+      "name": "Primula hendersonii",
+      "taxonId": 487175,
+      "reason": "chosen photo 118338903 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/487175/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "primula-vulgaris",
       "name": "Primula vulgaris",
       "taxonId": 56136,
@@ -1003,6 +1059,14 @@
     },
     {
       "subject": "plant",
+      "id": "prunus-virginiana",
+      "name": "Prunus virginiana",
+      "taxonId": 54835,
+      "reason": "chosen photo 146282563 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/54835/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "pseudopanax-lessonii",
       "name": "Pseudopanax lessonii",
       "taxonId": 405342,
@@ -1016,6 +1080,14 @@
       "taxonId": 121402,
       "reason": "chosen photo 29700882 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/121402/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "quercus-myrtifolia",
+      "name": "Quercus myrtifolia",
+      "taxonId": 167660,
+      "reason": "chosen photo 76268810 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/167660/browse_photos"
     },
     {
       "subject": "plant",
@@ -1072,6 +1144,14 @@
       "taxonId": 1449268,
       "reason": "chosen photo 10407 is cc-by-nd",
       "gallery": "https://www.inaturalist.org/taxa/1449268/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "rubus-leucodermis",
+      "name": "Rubus leucodermis",
+      "taxonId": 63960,
+      "reason": "chosen photo 22798930 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/63960/browse_photos"
     },
     {
       "subject": "plant",
@@ -1264,6 +1344,14 @@
       "taxonId": 84542,
       "reason": "chosen photo 56287 is cc-by-nc-nd",
       "gallery": "https://www.inaturalist.org/taxa/84542/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "vaccinium-stamineum",
+      "name": "Vaccinium stamineum",
+      "taxonId": 67792,
+      "reason": "chosen photo 194120623 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/67792/browse_photos"
     },
     {
       "subject": "plant",

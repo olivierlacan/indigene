@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Great Britain (TDWG:GRB; floor check only — bsbi:check carries the regional claim)",
   "region": "scotland-lowlands",
-  "ranAt": "2026-10-17T05:15:57.084Z",
+  "ranAt": "2026-10-24T18:51:29.840Z",
   "rows": [
     {
       "id": "quercus-petraea",
@@ -177,6 +177,16 @@
       "viaSynonym": null
     },
     {
+      "id": "salix-aurita",
+      "latin": "Salix aurita",
+      "asked": "Salix aurita",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "juniperus-communis",
       "latin": "Juniperus communis",
       "asked": "Juniperus communis",
@@ -237,6 +247,16 @@
       "viaSynonym": null
     },
     {
+      "id": "erica-tetralix",
+      "latin": "Erica tetralix",
+      "asked": "Erica tetralix",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "vaccinium-myrtillus",
       "latin": "Vaccinium myrtillus",
       "asked": "Vaccinium myrtillus",
@@ -250,6 +270,16 @@
       "id": "myrica-gale",
       "latin": "Myrica gale",
       "asked": "Myrica gale",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rubus-idaeus",
+      "latin": "Rubus idaeus",
+      "asked": "Rubus idaeus",
       "verdict": "NATIVE",
       "areas": {
         "GRB": "NATIVE"
@@ -497,6 +527,76 @@
       "viaSynonym": null
     },
     {
+      "id": "anemone-nemorosa",
+      "latin": "Anemone nemorosa",
+      "asked": "Anemone nemorosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "allium-ursinum",
+      "latin": "Allium ursinum",
+      "asked": "Allium ursinum",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "viola-riviniana",
+      "latin": "Viola riviniana",
+      "asked": "Viola riviniana",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cardamine-pratensis",
+      "latin": "Cardamine pratensis",
+      "asked": "Cardamine pratensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "silene-flos-cuculi",
+      "latin": "Silene flos-cuculi",
+      "asked": "Silene flos-cuculi",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "achillea-ptarmica",
+      "latin": "Achillea ptarmica",
+      "asked": "Achillea ptarmica",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "hypericum-pulchrum",
+      "latin": "Hypericum pulchrum",
+      "asked": "Hypericum pulchrum",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "rhinanthus-minor",
       "latin": "Rhinanthus minor",
       "asked": "Rhinanthus minor",
@@ -530,6 +630,36 @@
       "id": "fragaria-vesca",
       "latin": "Fragaria vesca",
       "asked": "Fragaria vesca",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "galium-verum",
+      "latin": "Galium verum",
+      "asked": "Galium verum",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ajuga-reptans",
+      "latin": "Ajuga reptans",
+      "asked": "Ajuga reptans",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "potentilla-erecta",
+      "latin": "Potentilla erecta",
+      "asked": "Potentilla erecta",
       "verdict": "NATIVE",
       "areas": {
         "GRB": "NATIVE"
@@ -590,6 +720,16 @@
       "id": "polystichum-aculeatum",
       "latin": "Polystichum aculeatum",
       "asked": "Polystichum aculeatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "polypodium-vulgare",
+      "latin": "Polypodium vulgare",
+      "asked": "Polypodium vulgare",
       "verdict": "NATIVE",
       "areas": {
         "GRB": "NATIVE"

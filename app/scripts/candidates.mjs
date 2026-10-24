@@ -71,6 +71,7 @@ import { requireProxyAwareFetch } from "./_net.mjs";
 import { wcvpAccepted, wcvpDistributions } from "./_wcvp.mjs";
 import { withSeeds } from "./_regions.mjs";
 import { floraVerdicts, readCommitted } from "./_pnwflora.mjs";
+import { atlasVerdict, indexAtlas, parseCsv } from "./_atlas.mjs";
 
 requireProxyAwareFetch("candidates");
 
@@ -433,7 +434,21 @@ const floras =
       }
     : null;
 for (const c of kewNatives) if (floras) c.floras = floraVerdicts(c.renamedTo ?? c.latin, floras);
-const floraNative = (c) => !c.floras || (c.floras.burke.verdict === "native" && c.floras.oregonflora.verdict === "native");
+// Florida's second opinion is the Atlas of Florida Plants (USF), one export per
+// region's counties, committed by hand (`data/sources/atlas-florida/README.md`).
+// Same bar: native per Kew *and* per the Atlas, or listed below the ranking.
+const ATLAS_CSV = join(REPO_ROOT, "data", "sources", "atlas-florida", `${REGION_ID}.csv`);
+const atlas = existsSync(ATLAS_CSV) ? indexAtlas(parseCsv(readFileSync(ATLAS_CSV, "utf8"))) : null;
+if (atlas) {
+  for (const c of kewNatives) {
+    const own = atlasVerdict(atlas, c.latin);
+    // The Atlas may keep the name Kew renamed it from, or the one it renamed to.
+    c.atlas = own.verdict === "ABSENT" && c.renamedTo ? { ...atlasVerdict(atlas, c.renamedTo), as: c.renamedTo } : own;
+  }
+}
+const floraNative = (c) =>
+  (!c.floras || (c.floras.burke.verdict === "native" && c.floras.oregonflora.verdict === "native")) &&
+  (!c.atlas || c.atlas.verdict === "NATIVE");
 const natives = kewNatives.filter(floraNative);
 const floraDisagree = kewNatives.filter((c) => !floraNative(c));
 const rejected = checked.filter((c) => c.status === "introduced");
@@ -502,6 +517,7 @@ const why = (c) => {
         `OregonFlora: ${f.oregonflora.verdict}${as(f.oregonflora, c.latin)}`,
     );
   }
+  if (c.atlas) bits.push(`Atlas of Florida Plants: ${c.atlas.verdict.toLowerCase()}${c.atlas.as ? ` as ${c.atlas.as}` : ""}`);
   if (!haveGenus.has(c.genus)) bits.push(`**new genus** for this list`);
   else bits.push(`genus already on the list`);
   const h = hostByGenus.get(c.genus);
@@ -538,6 +554,10 @@ lines.push(
       ? "Every ranked row is also native in both of the region's own floras: the Burke Museum's " +
         "*Flora of the Pacific Northwest* checklist and OregonFlora's checklist (Oregon State University). "
       : "") +
+    (atlas
+      ? "Every ranked row is also native in the region's counties per the *Atlas of Florida Plants* " +
+        "(Institute for Systematic Botany, University of South Florida). "
+      : "") +
     `**USDA PLANTS** appears as a public-domain cross-check and is not used to rank or rule out: it ` +
     `publishes one status for the whole Lower 48, which calls black locust native in a region where ` +
     `WCVP knows it is introduced. ` +
@@ -564,6 +584,21 @@ if (floras) {
       ? floraDisagree
           .map((c) => `${c.latin} (Burke: ${c.floras.burke.verdict}; OregonFlora: ${c.floras.oregonflora.verdict})`)
           .join(" · ")
+      : "_none in this pool_",
+  );
+  lines.push("");
+}
+if (atlas) {
+  lines.push(`## Native per Kew, but the Atlas of Florida Plants disagrees (${floraDisagree.length})`);
+  lines.push("");
+  lines.push(
+    "Kept off the ranked list: the Atlas doesn't call these native in this region's counties. " +
+      "`absent` can just mean the Atlas files the plant under another name.",
+  );
+  lines.push("");
+  lines.push(
+    floraDisagree.length
+      ? floraDisagree.map((c) => `${c.latin} (Atlas: ${c.atlas.verdict.toLowerCase()})`).join(" · ")
       : "_none in this pool_",
   );
   lines.push("");
@@ -595,7 +630,7 @@ console.log(`top ${ranked.length} candidates:\n`);
 ranked.forEach((c, i) => {
   console.log(`  ${String(i + 1).padStart(2)}. ${c.latin.padEnd(30)} ${why(c)}`);
 });
-if (floras) console.log(`\n  native per Kew, but a regional flora disagrees: ${floraDisagree.length}`);
+if (floras || atlas) console.log(`\n  native per Kew, but a regional flora disagrees: ${floraDisagree.length}`);
 console.log(`\n  ruled out as introduced: ${rejected.length}`);
 console.log(`  no answer on native status: ${unsure.length}`);
 

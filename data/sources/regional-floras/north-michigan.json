@@ -1,0 +1,377 @@
+{
+  "region": "north-michigan",
+  "ranAt": "2026-10-24",
+  "sources": {
+    "mi-fqa": "Reznicek, Penskar, Walters & Slaughter. 2014. Michigan Floristic Quality Assessment Database. University of Michigan Herbarium & MNFI."
+  },
+  "rows": [
+    {
+      "id": "pinus-strobus",
+      "latin": "Pinus strobus",
+      "mi-fqa": {
+        "as": "Pinus strobus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "acer-saccharum",
+      "latin": "Acer saccharum",
+      "mi-fqa": {
+        "as": "Acer saccharum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "acer-rubrum",
+      "latin": "Acer rubrum",
+      "mi-fqa": {
+        "as": "Acer rubrum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "betula-papyrifera",
+      "latin": "Betula papyrifera",
+      "mi-fqa": {
+        "as": "Betula papyrifera",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "fagus-grandifolia",
+      "latin": "Fagus grandifolia",
+      "mi-fqa": {
+        "as": "Fagus grandifolia",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "quercus-rubra",
+      "latin": "Quercus rubra",
+      "mi-fqa": {
+        "as": "Quercus rubra",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "tsuga-canadensis",
+      "latin": "Tsuga canadensis",
+      "mi-fqa": {
+        "as": "Tsuga canadensis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "thuja-occidentalis",
+      "latin": "Thuja occidentalis",
+      "mi-fqa": {
+        "as": "Thuja occidentalis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "populus-tremuloides",
+      "latin": "Populus tremuloides",
+      "mi-fqa": {
+        "as": "Populus tremuloides",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "prunus-serotina",
+      "latin": "Prunus serotina",
+      "mi-fqa": {
+        "as": "Prunus serotina",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "tilia-americana",
+      "latin": "Tilia americana",
+      "mi-fqa": {
+        "as": "Tilia americana",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "amelanchier-laevis",
+      "latin": "Amelanchier laevis",
+      "mi-fqa": {
+        "as": "Amelanchier laevis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "salix-discolor",
+      "latin": "Salix discolor",
+      "mi-fqa": {
+        "as": "Salix discolor",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "vaccinium-angustifolium",
+      "latin": "Vaccinium angustifolium",
+      "mi-fqa": {
+        "as": "Vaccinium angustifolium",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "cornus-sericea",
+      "latin": "Cornus sericea",
+      "mi-fqa": {
+        "as": "Cornus sericea",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "physocarpus-opulifolius",
+      "latin": "Physocarpus opulifolius",
+      "mi-fqa": {
+        "as": "Physocarpus opulifolius",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "corylus-cornuta",
+      "latin": "Corylus cornuta",
+      "mi-fqa": {
+        "as": "Corylus cornuta",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "hamamelis-virginiana",
+      "latin": "Hamamelis virginiana",
+      "mi-fqa": {
+        "as": "Hamamelis virginiana",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "ilex-verticillata",
+      "latin": "Ilex verticillata",
+      "mi-fqa": {
+        "as": "Ilex verticillata",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "viburnum-lentago",
+      "latin": "Viburnum lentago",
+      "mi-fqa": {
+        "as": "Viburnum lentago",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "diervilla-lonicera",
+      "latin": "Diervilla lonicera",
+      "mi-fqa": {
+        "as": "Diervilla lonicera",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "sambucus-racemosa",
+      "latin": "Sambucus racemosa",
+      "mi-fqa": {
+        "as": "Sambucus racemosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "ceanothus-americanus",
+      "latin": "Ceanothus americanus",
+      "mi-fqa": {
+        "as": "Ceanothus americanus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "aquilegia-canadensis",
+      "latin": "Aquilegia canadensis",
+      "mi-fqa": {
+        "as": "Aquilegia canadensis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "lupinus-perennis",
+      "latin": "Lupinus perennis",
+      "mi-fqa": {
+        "as": "Lupinus perennis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "asclepias-tuberosa",
+      "latin": "Asclepias tuberosa",
+      "mi-fqa": {
+        "as": "Asclepias tuberosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "asclepias-incarnata",
+      "latin": "Asclepias incarnata",
+      "mi-fqa": {
+        "as": "Asclepias incarnata",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "monarda-fistulosa",
+      "latin": "Monarda fistulosa",
+      "mi-fqa": {
+        "as": "Monarda fistulosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "symphyotrichum-novae-angliae",
+      "latin": "Symphyotrichum novae-angliae",
+      "mi-fqa": {
+        "as": "Symphyotrichum novae-angliae",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "symphyotrichum-laeve",
+      "latin": "Symphyotrichum laeve",
+      "mi-fqa": {
+        "as": "Symphyotrichum laeve",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "solidago-speciosa",
+      "latin": "Solidago speciosa",
+      "mi-fqa": {
+        "as": "Solidago speciosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "rudbeckia-hirta",
+      "latin": "Rudbeckia hirta",
+      "mi-fqa": {
+        "as": "Rudbeckia hirta",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "campanula-rotundifolia",
+      "latin": "Campanula rotundifolia",
+      "mi-fqa": {
+        "as": "Campanula rotundifolia",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "lobelia-cardinalis",
+      "latin": "Lobelia cardinalis",
+      "mi-fqa": {
+        "as": "Lobelia cardinalis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "zizia-aurea",
+      "latin": "Zizia aurea",
+      "mi-fqa": {
+        "as": "Zizia aurea",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "eutrochium-maculatum",
+      "latin": "Eutrochium maculatum",
+      "mi-fqa": {
+        "as": "Eutrochium maculatum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "anaphalis-margaritacea",
+      "latin": "Anaphalis margaritacea",
+      "mi-fqa": {
+        "as": "Anaphalis margaritacea",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "schizachyrium-scoparium",
+      "latin": "Schizachyrium scoparium",
+      "mi-fqa": {
+        "as": "Schizachyrium scoparium",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "carex-pensylvanica",
+      "latin": "Carex pensylvanica",
+      "mi-fqa": {
+        "as": "Carex pensylvanica",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "parthenocissus-quinquefolia",
+      "latin": "Parthenocissus quinquefolia",
+      "mi-fqa": {
+        "as": "Parthenocissus quinquefolia",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "vitis-riparia",
+      "latin": "Vitis riparia",
+      "mi-fqa": {
+        "as": "Vitis riparia",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "fragaria-virginiana",
+      "latin": "Fragaria virginiana",
+      "mi-fqa": {
+        "as": "Fragaria virginiana",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "arctostaphylos-uva-ursi",
+      "latin": "Arctostaphylos uva-ursi",
+      "mi-fqa": {
+        "as": "Arctostaphylos uva-ursi",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "cornus-canadensis",
+      "latin": "Cornus canadensis",
+      "mi-fqa": {
+        "as": "Cornus canadensis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "matteuccia-struthiopteris",
+      "latin": "Matteuccia struthiopteris",
+      "mi-fqa": {
+        "as": "Matteuccia struthiopteris",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "polystichum-acrostichoides",
+      "latin": "Polystichum acrostichoides",
+      "mi-fqa": {
+        "as": "Polystichum acrostichoides",
+        "verdict": "native"
+      }
+    }
+  ]
+}

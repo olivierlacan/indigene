@@ -96,6 +96,20 @@ write before committing anything derived:
   département, already present as columns in the Hauts-de-France file, will be
   published. It would replace every French by-hand step.
 
+## Done by script (2026-10-24)
+
+[`data/sources/regional-floras/`](../../data/sources/regional-floras/README.md)
+(`npm run floras`) puts every row to the scriptable lists: Northern Michigan
+(Michigan FQA), Chicago (Chicago Region FQA, Illinois FQA), the Mid-Atlantic
+(PNHP, New Jersey FQA), Ireland (BSBI statuses) and Auckland (NZ Checklist,
+TR2025/6). Two planned sources couldn't be reached from the build container:
+Michigan Flora Online (its certificate chain doesn't verify) and INHS
+Illinois Plants (the connection is reset). Both are worth a retry.
+
+Still to script: the Virginia atlas (one CSV per county), the San Diego and
+Santa Cruz checklists, the French red lists and CBN catalogues, the Ontario
+NHIC list.
+
 ## Next
 
 One source folder per region, modelled on `data/sources/pnw-flora/`: a script

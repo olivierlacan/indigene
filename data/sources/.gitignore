@@ -97,3 +97,8 @@ fnps/raw/
 # Kew's answers for the Florida shortlist (`npm run atlas -- --candidates`),
 # cached so the second region and every rerun don't ask again.
 wcvp/cache/
+
+# The regional checklists `npm run floras` reads, as downloaded. The
+# facts-only CSV made from each is committed.
+regional-floras/raw/
+!regional-floras/*.csv

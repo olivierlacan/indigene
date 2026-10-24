@@ -1,0 +1,545 @@
+{
+  "region": "ireland",
+  "ranAt": "2026-10-24",
+  "sources": {
+    "bsbi-ie": "BSBI & UKCEH. 2024. Plant Atlas 2020 — Plant native statuses for Britain, Ireland and the Channel Islands. Zenodo, doi:10.5281/zenodo.11097371. CC BY 4.0."
+  },
+  "rows": [
+    {
+      "id": "quercus-petraea",
+      "latin": "Quercus petraea",
+      "bsbi-ie": {
+        "as": "Quercus petraea",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "quercus-robur",
+      "latin": "Quercus robur",
+      "bsbi-ie": {
+        "as": "Quercus robur",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "betula-pubescens",
+      "latin": "Betula pubescens",
+      "bsbi-ie": {
+        "as": "Betula pubescens",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "alnus-glutinosa",
+      "latin": "Alnus glutinosa",
+      "bsbi-ie": {
+        "as": "Alnus glutinosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "salix-caprea",
+      "latin": "Salix caprea",
+      "bsbi-ie": {
+        "as": "Salix caprea",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "populus-tremula",
+      "latin": "Populus tremula",
+      "bsbi-ie": {
+        "as": "Populus tremula",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "prunus-avium",
+      "latin": "Prunus avium",
+      "bsbi-ie": {
+        "as": "Prunus avium",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "prunus-padus",
+      "latin": "Prunus padus",
+      "bsbi-ie": {
+        "as": "Prunus padus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "sorbus-aucuparia",
+      "latin": "Sorbus aucuparia",
+      "bsbi-ie": {
+        "as": "Sorbus aucuparia",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "taxus-baccata",
+      "latin": "Taxus baccata",
+      "bsbi-ie": {
+        "as": "Taxus baccata",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "ilex-aquifolium",
+      "latin": "Ilex aquifolium",
+      "bsbi-ie": {
+        "as": "Ilex aquifolium",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "malus-sylvestris",
+      "latin": "Malus sylvestris",
+      "bsbi-ie": {
+        "as": "Malus sylvestris",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "corylus-avellana",
+      "latin": "Corylus avellana",
+      "bsbi-ie": {
+        "as": "Corylus avellana",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "crataegus-monogyna",
+      "latin": "Crataegus monogyna",
+      "bsbi-ie": {
+        "as": "Crataegus monogyna",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "prunus-spinosa",
+      "latin": "Prunus spinosa",
+      "bsbi-ie": {
+        "as": "Prunus spinosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "calluna-vulgaris",
+      "latin": "Calluna vulgaris",
+      "bsbi-ie": {
+        "as": "Calluna vulgaris",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "erica-cinerea",
+      "latin": "Erica cinerea",
+      "bsbi-ie": {
+        "as": "Erica cinerea",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "erica-tetralix",
+      "latin": "Erica tetralix",
+      "bsbi-ie": {
+        "as": "Erica tetralix",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "vaccinium-myrtillus",
+      "latin": "Vaccinium myrtillus",
+      "bsbi-ie": {
+        "as": "Vaccinium myrtillus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "rubus-fruticosus",
+      "latin": "Rubus fruticosus agg.",
+      "bsbi-ie": {
+        "as": "Rubus fruticosus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "rosa-canina",
+      "latin": "Rosa canina",
+      "bsbi-ie": {
+        "as": "Rosa canina",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "rosa-spinosissima",
+      "latin": "Rosa spinosissima",
+      "bsbi-ie": {
+        "as": "Rosa spinosissima",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "salix-cinerea",
+      "latin": "Salix cinerea",
+      "bsbi-ie": {
+        "as": "Salix cinerea",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "frangula-alnus",
+      "latin": "Frangula alnus",
+      "bsbi-ie": {
+        "as": "Frangula alnus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "euonymus-europaeus",
+      "latin": "Euonymus europaeus",
+      "bsbi-ie": {
+        "as": "Euonymus europaeus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "viburnum-opulus",
+      "latin": "Viburnum opulus",
+      "bsbi-ie": {
+        "as": "Viburnum opulus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "ulex-europaeus",
+      "latin": "Ulex europaeus",
+      "bsbi-ie": {
+        "as": "Ulex europaeus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "myrica-gale",
+      "latin": "Myrica gale",
+      "bsbi-ie": {
+        "as": "Myrica gale",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "juniperus-communis",
+      "latin": "Juniperus communis",
+      "bsbi-ie": {
+        "as": "Juniperus communis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "sambucus-nigra",
+      "latin": "Sambucus nigra",
+      "bsbi-ie": {
+        "as": "Sambucus nigra",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "cytisus-scoparius",
+      "latin": "Cytisus scoparius",
+      "bsbi-ie": {
+        "as": "Cytisus scoparius",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "succisa-pratensis",
+      "latin": "Succisa pratensis",
+      "bsbi-ie": {
+        "as": "Succisa pratensis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "digitalis-purpurea",
+      "latin": "Digitalis purpurea",
+      "bsbi-ie": {
+        "as": "Digitalis purpurea",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "primula-vulgaris",
+      "latin": "Primula vulgaris",
+      "bsbi-ie": {
+        "as": "Primula vulgaris",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "hyacinthoides-non-scripta",
+      "latin": "Hyacinthoides non-scripta",
+      "bsbi-ie": {
+        "as": "Hyacinthoides non-scripta",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "filipendula-ulmaria",
+      "latin": "Filipendula ulmaria",
+      "bsbi-ie": {
+        "as": "Filipendula ulmaria",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "lythrum-salicaria",
+      "latin": "Lythrum salicaria",
+      "bsbi-ie": {
+        "as": "Lythrum salicaria",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "caltha-palustris",
+      "latin": "Caltha palustris",
+      "bsbi-ie": {
+        "as": "Caltha palustris",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "centaurea-nigra",
+      "latin": "Centaurea nigra",
+      "bsbi-ie": {
+        "as": "Centaurea nigra",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "lotus-corniculatus",
+      "latin": "Lotus corniculatus",
+      "bsbi-ie": {
+        "as": "Lotus corniculatus",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "rumex-acetosa",
+      "latin": "Rumex acetosa",
+      "bsbi-ie": {
+        "as": "Rumex acetosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "urtica-dioica",
+      "latin": "Urtica dioica",
+      "bsbi-ie": {
+        "as": "Urtica dioica",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "anemone-nemorosa",
+      "latin": "Anemone nemorosa",
+      "bsbi-ie": {
+        "as": "Anemone nemorosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "allium-ursinum",
+      "latin": "Allium ursinum",
+      "bsbi-ie": {
+        "as": "Allium ursinum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "teucrium-scorodonia",
+      "latin": "Teucrium scorodonia",
+      "bsbi-ie": {
+        "as": "Teucrium scorodonia",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "silene-dioica",
+      "latin": "Silene dioica",
+      "bsbi-ie": {
+        "as": "Silene dioica",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "geranium-sanguineum",
+      "latin": "Geranium sanguineum",
+      "bsbi-ie": {
+        "as": "Geranium sanguineum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "taraxacum-officinale",
+      "latin": "Taraxacum officinale",
+      "bsbi-ie": {
+        "as": "Taraxacum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "festuca-rubra",
+      "latin": "Festuca rubra",
+      "bsbi-ie": {
+        "as": "Festuca rubra",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "molinia-caerulea",
+      "latin": "Molinia caerulea",
+      "bsbi-ie": {
+        "as": "Molinia caerulea",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "deschampsia-cespitosa",
+      "latin": "Deschampsia cespitosa",
+      "bsbi-ie": {
+        "as": "Deschampsia cespitosa",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "anthoxanthum-odoratum",
+      "latin": "Anthoxanthum odoratum",
+      "bsbi-ie": {
+        "as": "Anthoxanthum odoratum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "poa-trivialis",
+      "latin": "Poa trivialis",
+      "bsbi-ie": {
+        "as": "Poa trivialis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "hedera-helix",
+      "latin": "Hedera helix",
+      "bsbi-ie": {
+        "as": "Hedera helix",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "lonicera-periclymenum",
+      "latin": "Lonicera periclymenum",
+      "bsbi-ie": {
+        "as": "Lonicera periclymenum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "vicia-cracca",
+      "latin": "Vicia cracca",
+      "bsbi-ie": {
+        "as": "Vicia cracca",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "lathyrus-pratensis",
+      "latin": "Lathyrus pratensis",
+      "bsbi-ie": {
+        "as": "Lathyrus pratensis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "fragaria-vesca",
+      "latin": "Fragaria vesca",
+      "bsbi-ie": {
+        "as": "Fragaria vesca",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "galium-verum",
+      "latin": "Galium verum",
+      "bsbi-ie": {
+        "as": "Galium verum",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "plantago-lanceolata",
+      "latin": "Plantago lanceolata",
+      "bsbi-ie": {
+        "as": "Plantago lanceolata",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "trifolium-repens",
+      "latin": "Trifolium repens",
+      "bsbi-ie": {
+        "as": "Trifolium repens",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "thymus-praecox",
+      "latin": "Thymus praecox",
+      "bsbi-ie": {
+        "as": "Thymus drucei",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "dryopteris-filix-mas",
+      "latin": "Dryopteris filix-mas",
+      "bsbi-ie": {
+        "as": "Dryopteris filix-mas",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "osmunda-regalis",
+      "latin": "Osmunda regalis",
+      "bsbi-ie": {
+        "as": "Osmunda regalis",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "struthiopteris-spicant",
+      "latin": "Struthiopteris spicant",
+      "bsbi-ie": {
+        "as": "Blechnum spicant",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "asplenium-scolopendrium",
+      "latin": "Asplenium scolopendrium",
+      "bsbi-ie": {
+        "as": "Asplenium scolopendrium",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "polystichum-setiferum",
+      "latin": "Polystichum setiferum",
+      "bsbi-ie": {
+        "as": "Polystichum setiferum",
+        "verdict": "native"
+      }
+    }
+  ]
+}

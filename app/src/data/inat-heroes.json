@@ -539,6 +539,15 @@
     "attribution": "(c) Bryan, some rights reserved (CC BY-NC), uploaded by Bryan",
     "color": "#585b35"
   },
+  "betula-alleghaniensis": {
+    "taxonId": 49882,
+    "photoId": 35606988,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/35606988/square.jpg",
+    "observer": "Kir Talmage",
+    "license": "cc-by-nc",
+    "attribution": "(c) Kir Talmage, some rights reserved (CC BY-NC), uploaded by Kir Talmage",
+    "color": "#7c705f"
+  },
   "betula-pubescens": {
     "taxonId": 119061,
     "photoId": 177419071,
@@ -1232,6 +1241,15 @@
     "attribution": "no rights reserved, uploaded by Federico Biguzzi",
     "color": "#76745b"
   },
+  "dicentra-cucullaria": {
+    "taxonId": 51053,
+    "photoId": 16316623,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/16316623/square.jpeg",
+    "observer": "Ana Ka'ahanui",
+    "license": "cc-by",
+    "attribution": "(c) Ana Ka'ahanui, some rights reserved (CC BY), uploaded by Ana Ka'ahanui",
+    "color": "#68724c"
+  },
   "dicentra-formosa": {
     "taxonId": 51048,
     "photoId": 76022505,
@@ -1501,6 +1519,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Dwight Bohlmeyer, some rights reserved (CC BY-NC), uploaded by Dwight Bohlmeyer",
     "color": "#574f22"
+  },
+  "erythronium-albidum": {
+    "taxonId": 55629,
+    "photoId": 20143,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/20143/square.jpg",
+    "observer": "Anita",
+    "license": "cc-by-nc",
+    "attribution": "(c) Anita, some rights reserved (CC BY-NC)",
+    "color": "#6e6d5a"
   },
   "erythronium-americanum": {
     "taxonId": 48240,
@@ -2024,6 +2051,15 @@
     "attribution": "(c) Joe Decruyenaere, some rights reserved (CC BY-SA)",
     "color": "#687164"
   },
+  "juglans-nigra": {
+    "taxonId": 54504,
+    "photoId": 38351837,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/38351837/square.jpg",
+    "observer": "George Afghan",
+    "license": "cc-by-nc",
+    "attribution": "(c) George Afghan, some rights reserved (CC BY-NC), uploaded by George Afghan",
+    "color": "#7d966a"
+  },
   "juncus-effusus": {
     "taxonId": 56153,
     "photoId": 41202988,
@@ -2050,6 +2086,15 @@
     "license": "cc-by",
     "attribution": "(c) Roberto Daniel Avila, some rights reserved (CC BY), uploaded by Roberto Daniel Avila",
     "color": "#565531"
+  },
+  "juniperus-horizontalis": {
+    "taxonId": 47573,
+    "photoId": 250334018,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/250334018/square.jpg",
+    "observer": "kenttrulsson",
+    "license": "cc-by-nc",
+    "attribution": "(c) kenttrulsson, some rights reserved (CC BY-NC), uploaded by kenttrulsson",
+    "color": "#6e725f"
   },
   "juniperus-virginiana": {
     "taxonId": 49399,
@@ -2213,6 +2258,15 @@
     "attribution": "(c) 小铖/Smalltown, some rights reserved (CC BY-NC), uploaded by 小铖/Smalltown",
     "color": "#5e7072"
   },
+  "lindera-benzoin": {
+    "taxonId": 54793,
+    "photoId": 313884891,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/313884891/square.jpg",
+    "observer": "Sandy Wolkenberg",
+    "license": "cc-by",
+    "attribution": "(c) Sandy Wolkenberg, some rights reserved (CC BY), uploaded by Sandy Wolkenberg",
+    "color": "#6f8441"
+  },
   "lindera-umbellata": {
     "taxonId": 428425,
     "photoId": 63934758,
@@ -2257,6 +2311,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) redwoodriverbear, some rights reserved (CC BY-NC)",
     "color": "#647032"
+  },
+  "lonicera-dioica": {
+    "taxonId": 119808,
+    "photoId": 384142855,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/384142855/square.jpg",
+    "observer": "Tom Fishburn",
+    "license": "cc-by-nc",
+    "attribution": "(c) Tom Fishburn, some rights reserved (CC BY-NC), uploaded by Tom Fishburn",
+    "color": "#445d1a"
   },
   "lonicera-hispidula": {
     "taxonId": 53416,
@@ -2455,6 +2518,15 @@
     "license": "cc-by",
     "attribution": "(c) Jon Sullivan, some rights reserved (CC BY), uploaded by Jon Sullivan",
     "color": "#616d46"
+  },
+  "mertensia-virginica": {
+    "taxonId": 59771,
+    "photoId": 358541879,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/358541879/square.jpg",
+    "observer": "tlit46",
+    "license": "cc-by-nc",
+    "attribution": "(c) tlit46, some rights reserved (CC BY-NC), uploaded by tlit46",
+    "color": "#6d7d64"
   },
   "metrosideros-excelsa": {
     "taxonId": 122905,
@@ -2825,6 +2897,15 @@
     "attribution": "(c) Walter Siegmund, some rights reserved (CC BY-SA)",
     "color": "#688895"
   },
+  "pinus-resinosa": {
+    "taxonId": 52383,
+    "photoId": 4013782,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/4013782/square.jpg",
+    "observer": "timmenzies on Flickr",
+    "license": "cc-by-sa",
+    "attribution": "(c) timmenzies on Flickr, some rights reserved (CC BY-SA)",
+    "color": "#7c916f"
+  },
   "pinus-strobus": {
     "taxonId": 52391,
     "photoId": 638440764,
@@ -2914,6 +2995,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) gbiodiversity, some rights reserved (CC BY-NC)",
     "color": "#396a39"
+  },
+  "podophyllum-peltatum": {
+    "taxonId": 49288,
+    "photoId": 35674124,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/35674124/square.jpg",
+    "observer": "mefisher",
+    "license": "cc0",
+    "attribution": "no rights reserved, uploaded by mefisher",
+    "color": "#78774c"
   },
   "polypodium-glycyrrhiza": {
     "taxonId": 55104,
@@ -3221,6 +3311,24 @@
     "attribution": "(c) KENPEI, some rights reserved (CC BY-SA)",
     "color": "#6f8351"
   },
+  "quercus-palustris": {
+    "taxonId": 54785,
+    "photoId": 23431353,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/23431353/square.jpg",
+    "observer": "Sandy Wolkenberg",
+    "license": "cc-by",
+    "attribution": "(c) Sandy Wolkenberg, some rights reserved (CC BY), uploaded by Sandy Wolkenberg",
+    "color": "#6a7445"
+  },
+  "quercus-phellos": {
+    "taxonId": 119983,
+    "photoId": 149585805,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/149585805/square.jpg",
+    "observer": "dogtooth77",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) dogtooth77, some rights reserved (CC BY-NC-SA)",
+    "color": "#707e31"
+  },
   "quercus-serrata": {
     "taxonId": 359972,
     "photoId": 229875865,
@@ -3409,6 +3517,15 @@
     "license": "cc-by-sa",
     "attribution": "(c) Ole Husby, some rights reserved (CC BY-SA)",
     "color": "#947169"
+  },
+  "rubus-occidentalis": {
+    "taxonId": 125489,
+    "photoId": 140867750,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/140867750/square.jpeg",
+    "observer": "raviner",
+    "license": "cc-by-nc",
+    "attribution": "(c) raviner, some rights reserved (CC BY-NC)",
+    "color": "#63623a"
   },
   "rubus-odoratus": {
     "taxonId": 62377,
@@ -3652,6 +3769,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) there_be_dragons, some rights reserved (CC BY-NC), uploaded by there_be_dragons",
     "color": "#333a27"
+  },
+  "sanguinaria-canadensis": {
+    "taxonId": 51044,
+    "photoId": 1862384,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/1862384/square.jpg",
+    "observer": "Haley Selen",
+    "license": "cc-by-nc",
+    "attribution": "(c) Haley Selen, some rights reserved (CC BY-NC), uploaded by Haley Selen",
+    "color": "#5a4c40"
   },
   "sanguisorba-officinalis": {
     "taxonId": 64549,
@@ -4120,6 +4246,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Gennadiy Okatov, some rights reserved (CC BY-NC), uploaded by Gennadiy Okatov",
     "color": "#6e837e"
+  },
+  "trillium-grandiflorum": {
+    "taxonId": 55402,
+    "photoId": 80252,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/80252/square.jpg",
+    "observer": "sandy richard",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) sandy richard, some rights reserved (CC BY-NC-SA)",
+    "color": "#27321a"
   },
   "trillium-ovatum": {
     "taxonId": 49463,

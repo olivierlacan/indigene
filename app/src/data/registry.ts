@@ -401,6 +401,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "north-michigan",
       "chicago",
       "st-lawrence"
@@ -486,6 +487,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "ireland",
       "scotland-lowlands"
     ]
   },
@@ -997,6 +999,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "chicago"
     ]
   },
@@ -3757,6 +3760,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:32106-2",
+    "scientificName": "Betula alleghaniensis",
+    "family": "Betulaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "hostLepCount": 284,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 60,
+      "spreadFt": 40
+    },
+    "identifiers": {
+      "ipni": "32106-2",
+      "wfo": "wfo-0000330900",
+      "gbif": "5331779",
+      "usda": "BEAL2",
+      "itis": "19481",
+      "inat": "49882",
+      "wikidata": "Q1499241",
+      "indigene": "betula-alleghaniensis"
+    },
+    "commonNames": [
+      "Yellow Birch"
+    ],
+    "aliases": [
+      "betula alleghaniensis",
+      "yellow birch"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
+    ]
+  },
+  {
     "primaryId": "ipni:295155-1",
     "scientificName": "Betula nigra",
     "family": "Betulaceae",
@@ -4720,6 +4762,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine",
+      "ireland",
       "scotland-lowlands"
     ]
   },
@@ -5274,6 +5317,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "st-lawrence"
     ]
   },
@@ -5788,6 +5832,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "chicago"
     ]
   },
@@ -6038,6 +6083,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "chicago",
       "central-texas"
     ]
   },
@@ -6392,6 +6438,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:319144-2",
+    "scientificName": "Claytonia virginica",
+    "family": "Montiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.4,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "319144-2",
+      "wfo": "wfo-0000609208",
+      "gbif": "3084745",
+      "usda": "CLVI3",
+      "itis": "20382",
+      "inat": "117434",
+      "wikidata": "Q671939",
+      "indigene": "claytonia-virginica"
+    },
+    "commonNames": [
+      "Spring Beauty"
+    ],
+    "aliases": [
+      "claytonia virginica",
+      "spring beauty"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:30129020-2",
     "scientificName": "Clematis alpina",
     "family": "Ranunculaceae",
@@ -6626,6 +6711,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "chicago",
       "st-lawrence"
     ]
@@ -8276,6 +8362,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:672639-1",
+    "scientificName": "Dicentra cucullaria",
+    "family": "Papaveraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "672639-1",
+      "wfo": "wfo-0000644961",
+      "gbif": "2888548",
+      "usda": "DICU",
+      "itis": "18945",
+      "inat": "51053",
+      "wikidata": "Q2499207",
+      "indigene": "dicentra-cucullaria"
+    },
+    "commonNames": [
+      "Dutchman's Breeches"
+    ],
+    "aliases": [
+      "dicentra cucullaria",
+      "dutchman's breeches"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -9933,6 +10058,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:534904-1",
+    "scientificName": "Erythronium albidum",
+    "family": "Liliaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "534904-1",
+      "wfo": "wfo-0000766894",
+      "gbif": "2752906",
+      "usda": "ERAL9",
+      "itis": "42927",
+      "inat": "55629",
+      "wikidata": "Q531077",
+      "indigene": "erythronium-albidum"
+    },
+    "commonNames": [
+      "White Trout Lily"
+    ],
+    "aliases": [
+      "erythronium albidum",
+      "white trout lily"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:276827-2",
     "scientificName": "Erythronium americanum",
     "family": "Liliaceae",
@@ -9968,6 +10132,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "st-lawrence"
     ]
   },
@@ -11334,6 +11499,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "st-lawrence"
     ]
   },
@@ -11730,6 +11896,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "ireland",
       "scotland-lowlands"
     ]
   },
@@ -13085,14 +13252,17 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "iris-pseudacorus"
     },
     "commonNames": [
+      "Yellow Flag",
       "Yellow Iris"
     ],
     "aliases": [
       "iris pseudacorus",
+      "yellow flag",
       "yellow iris"
     ],
     "cultivarOf": null,
     "regions": [
+      "ireland",
       "scotland-lowlands"
     ]
   },
@@ -13292,6 +13462,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:279034-2",
+    "scientificName": "Juglans nigra",
+    "family": "Juglandaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 130,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 75,
+      "spreadFt": 60
+    },
+    "identifiers": {
+      "ipni": "279034-2",
+      "wfo": "wfo-0000355126",
+      "gbif": "3054357",
+      "usda": "JUNI",
+      "itis": "19254",
+      "inat": "54504",
+      "wikidata": "Q852572",
+      "indigene": "juglans-nigra"
+    },
+    "commonNames": [
+      "Black Walnut"
+    ],
+    "aliases": [
+      "black walnut",
+      "juglans nigra"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:442917-1",
     "scientificName": "Juncus effusus",
     "family": "Juncaceae",
@@ -13457,6 +13666,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:262244-1",
+    "scientificName": "Juniperus horizontalis",
+    "family": "Cupressaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 42,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 8
+    },
+    "identifiers": {
+      "ipni": "262244-1",
+      "wfo": "wfo-0000355700",
+      "gbif": "2684410",
+      "usda": "JUHO2",
+      "itis": "194846",
+      "inat": "47573",
+      "wikidata": "Q121427",
+      "indigene": "juniperus-horizontalis"
+    },
+    "commonNames": [
+      "Creeping Juniper"
+    ],
+    "aliases": [
+      "creeping juniper",
+      "juniperus horizontalis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:262299-1",
     "scientificName": "Juniperus oxycedrus",
     "family": "Cupressaceae",
@@ -13525,14 +13773,17 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "juniperus-virginiana"
     },
     "commonNames": [
+      "Eastern Red Cedar",
       "Southern Red Cedar"
     ],
     "aliases": [
+      "eastern red cedar",
       "juniperus virginiana",
       "southern red cedar"
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "florida-central"
     ]
   },
@@ -13616,6 +13867,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-continental",
+      "ireland",
       "scotland-lowlands"
     ]
   },
@@ -13848,6 +14100,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "st-lawrence"
     ]
   },
@@ -14007,6 +14260,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:138638-2",
+    "scientificName": "Lespedeza capitata",
+    "family": "Fabaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "138638-2",
+      "wfo": "wfo-0000164446",
+      "gbif": "2955772",
+      "usda": "LECA8",
+      "itis": "25897",
+      "inat": "125186",
+      "wikidata": "Q1950833",
+      "indigene": "lespedeza-capitata"
+    },
+    "commonNames": [
+      "Round-headed Bush Clover"
+    ],
+    "aliases": [
+      "lespedeza capitata",
+      "round-headed bush clover"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -14362,6 +14654,46 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:140503-2",
+    "scientificName": "Lindera benzoin",
+    "family": "Lauraceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 10,
+      "spreadFt": 10
+    },
+    "identifiers": {
+      "ipni": "140503-2",
+      "wfo": "wfo-0001071106",
+      "gbif": "5371740",
+      "usda": "LIBE3",
+      "itis": "18147",
+      "inat": "54793",
+      "wikidata": "Q3024124",
+      "indigene": "lindera-benzoin"
+    },
+    "commonNames": [
+      "Spicebush"
+    ],
+    "aliases": [
+      "lindera benzoin",
+      "spicebush"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic",
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:465469-1",
     "scientificName": "Lindera umbellata",
     "family": "Lauraceae",
@@ -14670,6 +15002,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:326317-2",
+    "scientificName": "Lonicera dioica",
+    "family": "Caprifoliaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 33,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 6
+    },
+    "identifiers": {
+      "ipni": "326317-2",
+      "wfo": "wfo-0001290590",
+      "gbif": "5334261",
+      "usda": "LODI2",
+      "itis": "35290",
+      "inat": "119808",
+      "wikidata": "Q17435084",
+      "indigene": "lonicera-dioica"
+    },
+    "commonNames": [
+      "Limber Honeysuckle"
+    ],
+    "aliases": [
+      "limber honeysuckle",
+      "lonicera dioica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -15037,7 +15408,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "chicago"
     ]
   },
   {
@@ -15894,6 +16266,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:118695-1",
+    "scientificName": "Mertensia virginica",
+    "family": "Boraginaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "118695-1",
+      "wfo": "wfo-0001215084",
+      "gbif": "5341242",
+      "usda": "MEVI3",
+      "itis": "31673",
+      "inat": "59771",
+      "wikidata": "Q12901028",
+      "indigene": "mertensia-virginica"
+    },
+    "commonNames": [
+      "Virginia Bluebells"
+    ],
+    "aliases": [
+      "mertensia virginica",
+      "virginia bluebells"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:598207-1",
     "scientificName": "Metrosideros excelsa",
     "family": "Myrtaceae",
@@ -16556,14 +16967,17 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "myrica-gale"
     },
     "commonNames": [
+      "Sweet Gale",
       "Bog Myrtle"
     ],
     "aliases": [
       "bog myrtle",
-      "myrica gale"
+      "myrica gale",
+      "sweet gale"
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "ireland",
       "scotland-lowlands"
     ]
@@ -16803,6 +17217,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "chicago",
       "st-lawrence"
     ]
@@ -18295,6 +18710,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:262801-1",
+    "scientificName": "Pinus banksiana",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "hostLepCount": 203,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 25
+    },
+    "identifiers": {
+      "ipni": "262801-1",
+      "wfo": "wfo-0000482353",
+      "gbif": "5285533",
+      "usda": "PIBA2",
+      "itis": "183319",
+      "inat": "58724",
+      "wikidata": "Q806838",
+      "indigene": "pinus-banksiana"
+    },
+    "commonNames": [
+      "Jack Pine"
+    ],
+    "aliases": [
+      "jack pine",
+      "pinus banksiana"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:262848-1",
     "scientificName": "Pinus cembra",
     "family": "Pinaceae",
@@ -18648,6 +19102,84 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:263261-1",
+    "scientificName": "Pinus resinosa",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "hostLepCount": 203,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 30
+    },
+    "identifiers": {
+      "ipni": "263261-1",
+      "wfo": "wfo-0000481843",
+      "gbif": "5285067",
+      "usda": "PIRE",
+      "itis": "183375",
+      "inat": "52383",
+      "wikidata": "Q2045958",
+      "indigene": "pinus-resinosa"
+    },
+    "commonNames": [
+      "Red Pine"
+    ],
+    "aliases": [
+      "pinus resinosa",
+      "red pine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
+    "primaryId": "ipni:263270-1",
+    "scientificName": "Pinus rigida",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "hostLepCount": 203,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 50,
+      "spreadFt": 35
+    },
+    "identifiers": {
+      "ipni": "263270-1",
+      "wfo": "wfo-0000481833",
+      "gbif": "5285635",
+      "usda": "PIRI",
+      "itis": "183376",
+      "inat": "53464",
+      "wikidata": "Q837410",
+      "indigene": "pinus-rigida"
+    },
+    "commonNames": [
+      "Pitch Pine"
+    ],
+    "aliases": [
+      "pinus rigida",
+      "pitch pine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
     ]
   },
   {
@@ -19007,6 +19539,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "chicago",
       "central-texas"
     ]
   },
@@ -19248,6 +19781,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:107599-1",
+    "scientificName": "Podophyllum peltatum",
+    "family": "Berberidaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 8
+    },
+    "identifiers": {
+      "ipni": "107599-1",
+      "wfo": "wfo-0000397408",
+      "gbif": "3033839",
+      "usda": "POPE",
+      "itis": "18850",
+      "inat": "49288",
+      "wikidata": "Q1572090",
+      "indigene": "podophyllum-peltatum"
+    },
+    "commonNames": [
+      "Mayapple"
+    ],
+    "aliases": [
+      "mayapple",
+      "podophyllum peltatum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:17189950-1",
     "scientificName": "Polypodium glycyrrhiza",
     "family": "Polypodiaceae",
@@ -19321,6 +19893,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "ireland",
       "scotland-lowlands"
     ]
   },
@@ -19845,6 +20418,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "ireland",
       "scotland-lowlands"
     ]
   },
@@ -19961,6 +20535,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "ireland",
       "scotland-lowlands"
     ]
   },
@@ -20446,6 +21021,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "st-lawrence"
     ]
   },
@@ -21274,6 +21850,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:359933-1",
+    "scientificName": "Quercus palustris",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "hostLepCount": 511,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 65,
+      "spreadFt": 45
+    },
+    "identifiers": {
+      "ipni": "359933-1",
+      "wfo": "wfo-0000292323",
+      "gbif": "8313153",
+      "usda": "QUPA2",
+      "itis": "19281",
+      "inat": "54785",
+      "wikidata": "Q161253",
+      "indigene": "quercus-palustris"
+    },
+    "commonNames": [
+      "Pin Oak"
+    ],
+    "aliases": [
+      "pin oak",
+      "quercus palustris"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
+    ]
+  },
+  {
     "primaryId": "ipni:359961-1",
     "scientificName": "Quercus petraea",
     "family": "Fagaceae",
@@ -21314,6 +21929,45 @@ export const REGISTRY: RegistryEntry[] = [
       "france-continental",
       "ireland",
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:284113-2",
+    "scientificName": "Quercus phellos",
+    "family": "Fagaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "hostLepCount": 511,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 50
+    },
+    "identifiers": {
+      "ipni": "284113-2",
+      "wfo": "wfo-0000292491",
+      "gbif": "2880652",
+      "usda": "QUPH",
+      "itis": "19282",
+      "inat": "119983",
+      "wikidata": "Q783224",
+      "indigene": "quercus-phellos"
+    },
+    "commonNames": [
+      "Willow Oak"
+    ],
+    "aliases": [
+      "quercus phellos",
+      "willow oak"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
     ]
   },
   {
@@ -22064,6 +22718,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "st-lawrence"
     ]
   },
@@ -22749,6 +23404,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine",
+      "ireland",
       "scotland-lowlands"
     ]
   },
@@ -22789,6 +23445,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:223350-2",
+    "scientificName": "Rubus occidentalis",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": true,
+    "hostLepCount": 163,
+    "traits": {
+      "deerResistant": false,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 8
+    },
+    "identifiers": {
+      "ipni": "223350-2",
+      "wfo": "wfo-0000983387",
+      "gbif": "2991466",
+      "usda": "RUOC",
+      "itis": "24854",
+      "inat": "125489",
+      "wikidata": "Q7376217",
+      "indigene": "rubus-occidentalis"
+    },
+    "commonNames": [
+      "Black Raspberry"
+    ],
+    "aliases": [
+      "black raspberry",
+      "rubus occidentalis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -23350,6 +24045,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "ireland",
       "scotland-lowlands"
     ]
   },
@@ -24221,14 +24917,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "sambucus-canadensis"
     },
     "commonNames": [
+      "American Elderberry",
       "Elderberry"
     ],
     "aliases": [
+      "american elderberry",
       "elderberry",
       "sambucus canadensis"
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
+      "chicago",
       "florida-central"
     ]
   },
@@ -24352,6 +25052,45 @@ export const REGISTRY: RegistryEntry[] = [
       "north-michigan",
       "st-lawrence",
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:673993-1",
+    "scientificName": "Sanguinaria canadensis",
+    "family": "Papaveraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "673993-1",
+      "wfo": "wfo-0000505870",
+      "gbif": "5334192",
+      "usda": "SACA13",
+      "itis": "18990",
+      "inat": "51044",
+      "wikidata": "Q2724394",
+      "indigene": "sanguinaria-canadensis"
+    },
+    "commonNames": [
+      "Bloodroot"
+    ],
+    "aliases": [
+      "bloodroot",
+      "sanguinaria canadensis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -25098,6 +25837,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "ireland",
       "scotland-lowlands"
     ]
   },
@@ -25848,6 +26588,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "st-lawrence"
     ]
   },
@@ -27326,6 +28067,84 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:304585-2",
+    "scientificName": "Trillium erectum",
+    "family": "Melanthiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "304585-2",
+      "wfo": "wfo-0000751087",
+      "gbif": "2742342",
+      "usda": "TRER3",
+      "itis": "43070",
+      "inat": "50855",
+      "wikidata": "Q3539177",
+      "indigene": "trillium-erectum"
+    },
+    "commonNames": [
+      "Red Trillium"
+    ],
+    "aliases": [
+      "red trillium",
+      "trillium erectum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:542553-1",
+    "scientificName": "Trillium grandiflorum",
+    "family": "Melanthiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "542553-1",
+      "wfo": "wfo-0000751101",
+      "gbif": "2742283",
+      "usda": "TRGR4",
+      "itis": "43074",
+      "inat": "55402",
+      "wikidata": "Q1548077",
+      "indigene": "trillium-grandiflorum"
+    },
+    "commonNames": [
+      "Large-flowered Trillium"
+    ],
+    "aliases": [
+      "large-flowered trillium",
+      "trillium grandiflorum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:317429-2",
     "scientificName": "Trillium ovatum",
     "family": "Melanthiaceae",
@@ -27364,6 +28183,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:542592-1",
+    "scientificName": "Trillium recurvatum",
+    "family": "Melanthiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 2,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.2,
+      "spreadFt": 1
+    },
+    "identifiers": {
+      "ipni": "542592-1",
+      "wfo": "wfo-0000750906",
+      "gbif": "2742260",
+      "usda": "TRRE5",
+      "itis": "43059",
+      "inat": "126334",
+      "wikidata": "Q3009702",
+      "indigene": "trillium-recurvatum"
+    },
+    "commonNames": [
+      "Prairie Trillium"
+    ],
+    "aliases": [
+      "prairie trillium",
+      "trillium recurvatum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -29032,6 +29890,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "ireland",
       "scotland-lowlands"
     ]
   },

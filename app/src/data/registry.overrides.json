@@ -8009,5 +8009,236 @@
       "gbif": "5295841",
       "wikidata": "Q1019121"
     }
+  },
+  "Betula alleghaniensis": {
+    "identifiers": {
+      "gbif": "5331779",
+      "inat": "49882",
+      "ipni": "32106-2",
+      "wfo": "wfo-0000330900",
+      "usda": "BEAL2",
+      "itis": "19481",
+      "wikidata": "Q1499241"
+    }
+  },
+  "Claytonia virginica": {
+    "identifiers": {
+      "gbif": "3084745",
+      "inat": "117434",
+      "ipni": "319144-2",
+      "wfo": "wfo-0000609208",
+      "usda": "CLVI3",
+      "itis": "20382",
+      "wikidata": "Q671939"
+    }
+  },
+  "Dicentra cucullaria": {
+    "identifiers": {
+      "gbif": "2888548",
+      "inat": "51053",
+      "ipni": "672639-1",
+      "wfo": "wfo-0000644961",
+      "usda": "DICU",
+      "itis": "18945",
+      "wikidata": "Q2499207"
+    }
+  },
+  "Erythronium albidum": {
+    "identifiers": {
+      "gbif": "2752906",
+      "inat": "55629",
+      "ipni": "534904-1",
+      "wfo": "wfo-0000766894",
+      "usda": "ERAL9",
+      "itis": "42927",
+      "wikidata": "Q531077"
+    }
+  },
+  "Juglans nigra": {
+    "identifiers": {
+      "gbif": "3054357",
+      "inat": "54504",
+      "ipni": "279034-2",
+      "wfo": "wfo-0000355126",
+      "usda": "JUNI",
+      "itis": "19254",
+      "wikidata": "Q852572"
+    }
+  },
+  "Juniperus horizontalis": {
+    "identifiers": {
+      "gbif": "2684410",
+      "inat": "47573",
+      "ipni": "262244-1",
+      "wfo": "wfo-0000355700",
+      "usda": "JUHO2",
+      "itis": "194846",
+      "wikidata": "Q121427"
+    }
+  },
+  "Lespedeza capitata": {
+    "identifiers": {
+      "gbif": "2955772",
+      "inat": "125186",
+      "ipni": "138638-2",
+      "wfo": "wfo-0000164446",
+      "usda": "LECA8",
+      "itis": "25897",
+      "wikidata": "Q1950833"
+    }
+  },
+  "Lindera benzoin": {
+    "identifiers": {
+      "gbif": "5371740",
+      "inat": "54793",
+      "ipni": "140503-2",
+      "wfo": "wfo-0001071106",
+      "usda": "LIBE3",
+      "itis": "18147",
+      "wikidata": "Q3024124"
+    }
+  },
+  "Lonicera dioica": {
+    "identifiers": {
+      "gbif": "5334261",
+      "inat": "119808",
+      "ipni": "326317-2",
+      "wfo": "wfo-0001290590",
+      "usda": "LODI2",
+      "itis": "35290",
+      "wikidata": "Q17435084"
+    }
+  },
+  "Mertensia virginica": {
+    "identifiers": {
+      "gbif": "5341242",
+      "inat": "59771",
+      "ipni": "118695-1",
+      "wfo": "wfo-0001215084",
+      "usda": "MEVI3",
+      "itis": "31673",
+      "wikidata": "Q12901028"
+    }
+  },
+  "Pinus banksiana": {
+    "identifiers": {
+      "gbif": "5285533",
+      "inat": "58724",
+      "ipni": "262801-1",
+      "wfo": "wfo-0000482353",
+      "usda": "PIBA2",
+      "itis": "183319",
+      "wikidata": "Q806838"
+    }
+  },
+  "Pinus resinosa": {
+    "identifiers": {
+      "gbif": "5285067",
+      "inat": "52383",
+      "ipni": "263261-1",
+      "wfo": "wfo-0000481843",
+      "usda": "PIRE",
+      "itis": "183375",
+      "wikidata": "Q2045958"
+    }
+  },
+  "Pinus rigida": {
+    "identifiers": {
+      "gbif": "5285635",
+      "inat": "53464",
+      "ipni": "263270-1",
+      "wfo": "wfo-0000481833",
+      "usda": "PIRI",
+      "itis": "183376",
+      "wikidata": "Q837410"
+    }
+  },
+  "Podophyllum peltatum": {
+    "identifiers": {
+      "gbif": "3033839",
+      "inat": "49288",
+      "ipni": "107599-1",
+      "wfo": "wfo-0000397408",
+      "usda": "POPE",
+      "itis": "18850",
+      "wikidata": "Q1572090"
+    }
+  },
+  "Quercus palustris": {
+    "identifiers": {
+      "gbif": "8313153",
+      "inat": "54785",
+      "ipni": "359933-1",
+      "wfo": "wfo-0000292323",
+      "usda": "QUPA2",
+      "itis": "19281",
+      "wikidata": "Q161253"
+    }
+  },
+  "Quercus phellos": {
+    "identifiers": {
+      "gbif": "2880652",
+      "inat": "119983",
+      "ipni": "284113-2",
+      "wfo": "wfo-0000292491",
+      "usda": "QUPH",
+      "itis": "19282",
+      "wikidata": "Q783224"
+    }
+  },
+  "Rubus occidentalis": {
+    "identifiers": {
+      "gbif": "2991466",
+      "inat": "125489",
+      "ipni": "223350-2",
+      "wfo": "wfo-0000983387",
+      "usda": "RUOC",
+      "itis": "24854",
+      "wikidata": "Q7376217"
+    }
+  },
+  "Sanguinaria canadensis": {
+    "identifiers": {
+      "gbif": "5334192",
+      "inat": "51044",
+      "ipni": "673993-1",
+      "wfo": "wfo-0000505870",
+      "usda": "SACA13",
+      "itis": "18990",
+      "wikidata": "Q2724394"
+    }
+  },
+  "Trillium erectum": {
+    "identifiers": {
+      "gbif": "2742342",
+      "inat": "50855",
+      "ipni": "304585-2",
+      "wfo": "wfo-0000751087",
+      "usda": "TRER3",
+      "itis": "43070",
+      "wikidata": "Q3539177"
+    }
+  },
+  "Trillium grandiflorum": {
+    "identifiers": {
+      "gbif": "2742283",
+      "inat": "55402",
+      "ipni": "542553-1",
+      "wfo": "wfo-0000751101",
+      "usda": "TRGR4",
+      "itis": "43074",
+      "wikidata": "Q1548077"
+    }
+  },
+  "Trillium recurvatum": {
+    "identifiers": {
+      "gbif": "2742260",
+      "inat": "126334",
+      "ipni": "542592-1",
+      "wfo": "wfo-0000750906",
+      "usda": "TRRE5",
+      "itis": "43059",
+      "wikidata": "Q3009702"
+    }
   }
 }

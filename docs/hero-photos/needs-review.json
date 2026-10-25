@@ -539,6 +539,14 @@
     },
     {
       "subject": "plant",
+      "id": "claytonia-virginica",
+      "name": "Claytonia virginica",
+      "taxonId": 117434,
+      "reason": "chosen photo 183910009 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/117434/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "clematis-lasiantha",
       "name": "Clematis lasiantha",
       "taxonId": 49876,
@@ -787,6 +795,14 @@
     },
     {
       "subject": "plant",
+      "id": "lespedeza-capitata",
+      "name": "Lespedeza capitata",
+      "taxonId": 125186,
+      "reason": "chosen photo 88789131 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/125186/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "liatris-pycnostachya",
       "name": "Liatris pycnostachya",
       "taxonId": 48691,
@@ -992,6 +1008,22 @@
       "taxonId": 68131,
       "reason": "chosen photo 14402959 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/68131/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "pinus-banksiana",
+      "name": "Pinus banksiana",
+      "taxonId": 58724,
+      "reason": "chosen photo 8937314 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/58724/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "pinus-rigida",
+      "name": "Pinus rigida",
+      "taxonId": 53464,
+      "reason": "chosen photo 268382766 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/53464/browse_photos"
     },
     {
       "subject": "plant",
@@ -1312,6 +1344,22 @@
       "taxonId": 79383,
       "reason": "chosen photo 100260194 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/79383/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "trillium-erectum",
+      "name": "Trillium erectum",
+      "taxonId": 50855,
+      "reason": "chosen photo 2802581 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/50855/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "trillium-recurvatum",
+      "name": "Trillium recurvatum",
+      "taxonId": 126334,
+      "reason": "chosen photo 92924 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/126334/browse_photos"
     },
     {
       "subject": "plant",

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { latestChange, pointAt, stepPaths } from "./growth";
+import { latestChange, pointAt, spreadLabels, stepPaths } from "./growth";
 
 describe("stepPaths", () => {
   it("holds each count flat until the next one, then runs on to the end", () => {
@@ -14,6 +14,28 @@ describe("stepPaths", () => {
 
   it("draws an empty count on the floor rather than dividing by zero", () => {
     expect(stepPaths([[0, 0], [10, 0]], 0, 10, 10, 10).line).toBe("M0,10H10V10H10");
+  });
+});
+
+describe("stepPaths with a shared peak", () => {
+  it("draws a smaller count lower, so two lines on one chart compare", () => {
+    expect(stepPaths([[0, 25]], 0, 100, 100, 10, 100).line).toBe("M0,7.5H100");
+  });
+});
+
+describe("spreadLabels", () => {
+  it("leaves labels beside their lines when they have room", () => {
+    expect(spreadLabels([100, 20], 100, 0.2)).toEqual([0, 0.8]);
+  });
+  it("pushes close labels apart, keeping them inside the box", () => {
+    const [a, b] = spreadLabels([10, 8], 100, 0.25);
+    expect(b - a).toBeCloseTo(0.25);
+    expect(b).toBeLessThanOrEqual(1);
+  });
+  it("pushes close labels apart near the top too, without leaving the box", () => {
+    const [a, b] = spreadLabels([100, 98], 100, 0.25);
+    expect(a).toBeGreaterThanOrEqual(0);
+    expect(b - a).toBeCloseTo(0.25);
   });
 });
 

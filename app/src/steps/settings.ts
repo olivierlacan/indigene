@@ -20,7 +20,7 @@
 //
 // Every card is addressable — `#/settings/language`, `#/settings/units`,
 // `#/settings/spot`, `#/settings/region`, `#/settings/goal`,
-// `#/settings/whatsnew`, `#/settings/spots`, `#/settings/counting`,
+// `#/settings/whatsnew`, `#/settings/spots`, `#/settings/offline`, `#/settings/counting`,
 // `#/settings/spooky` — so a link
 // can land on the thing it names instead of dropping the reader at the top of
 // the page to hunt for it.
@@ -36,6 +36,7 @@ import {
   whatsNewCard,
 } from "../components/memory-controls";
 import { spotsFileCard } from "../components/backup-controls";
+import { offlinePhotosCard } from "../components/offline-photos-controls";
 import { halloweenCard } from "../components/halloween-controls";
 import { inSeason } from "../lib/halloween";
 import { stickyReady } from "../lib/sticky";
@@ -52,6 +53,7 @@ const CARD_IDS: Record<string, string> = {
   whatsnew: "settings-whatsnew",
   counting: "settings-counting",
   spots: "settings-spots",
+  offline: "settings-offline",
   inat: "settings-inat",
   spooky: "settings-spooky",
 };
@@ -76,6 +78,7 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
     whatsnew: whatsNewCard(),
     counting: visitCountCard(),
     spots: await spotsFileCard(),
+    offline: offlinePhotosCard(),
     inat: inatCard(),
     spooky: halloweenCard(),
   };
@@ -103,7 +106,7 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
     el("div", { class: "settings-cards" }, [cards.spot, cards.region, cards.goal, cards.whatsnew]),
     el("h3", { class: "settings-group" }, t("settings.spotsTitle")),
     el("p", { class: "step-lede" }, t("settings.spotsLede")),
-    el("div", { class: "settings-cards" }, [cards.spots, cards.inat]),
+    el("div", { class: "settings-cards" }, [cards.spots, cards.inat, cards.offline]),
     el("h3", { class: "settings-group" }, t("settings.countingTitle")),
     el("p", { class: "step-lede" }, t("settings.countingLede")),
     el("div", { class: "settings-cards" }, [cards.counting]),

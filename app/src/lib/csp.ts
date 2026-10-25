@@ -44,6 +44,9 @@ export const CONNECT_HOSTS: readonly string[] = [
   "https://services7.arcgis.com", // ecoregion, North America (CEC)
   "https://services.arcgis.com", // ecoregion, south of the equator (RESOLVE, hosted by Esri)
   "https://cdn.usefathom.com", // the page count (lib/analytics.ts)
+  // Plant thumbnails kept for offline from Settings (lib/offline-save.ts):
+  // the open-data bucket only, the one host whose photos are openly licensed.
+  "https://inaturalist-open-data.s3.amazonaws.com",
 ];
 
 /** Where pictures come from: iNaturalist's photo hosts and the map tiles. */

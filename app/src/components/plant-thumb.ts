@@ -37,7 +37,7 @@ import type { PlantForm } from "../types";
 /** The slot's drawn width, matching `.plant-photo` in the stylesheet (4.5rem).
  *  Passed to the loader so it can ask iNaturalist for the smallest rendition
  *  that covers it — `square` on a laptop, `small` on a phone. */
-const THUMB_PX = 72;
+export const THUMB_PX = 72;
 
 /** What a slot needs to know to open the photo full size: the name the
  *  lightbox puts at the top, and the binomial its alt text and credit fall

@@ -18,6 +18,7 @@ export type PrivacySection =
   | "saved"
   | "log"
   | "inat"
+  | "photos"
   | "whatsnew"
   | "counting"
   | "film"

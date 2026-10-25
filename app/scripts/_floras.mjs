@@ -143,6 +143,46 @@ export function aucklandRows(sheet) {
 
 export const aucklandVerdict = (row) => (!row || row.origin === "Extinct" ? "absent" : "native");
 
+/**
+ * France's regional red lists, as INPN's BDC-Statuts file has them: one row
+ * per taxon × list (`CD_TYPE_STATUT` "LRR"), the list's old region in
+ * `LB_ADM_TR`. `regions` picks the lists inside one of our regions. A taxon is
+ * one row per `CD_REF`, with every name a list filed it under, and `origin`
+ * is each list's code: "Bretagne LC; Poitou-Charentes NA".
+ */
+export function redListRows(rows, regions) {
+  const want = new Set(regions);
+  const taxa = new Map();
+  for (const r of rows) {
+    if (r.CD_TYPE_STATUT !== "LRR" || r.REGNE !== "Plantae" || !want.has(r.LB_ADM_TR)) continue;
+    if (!taxa.has(r.CD_REF)) taxa.set(r.CD_REF, { names: new Set(), codes: new Map() });
+    const t = taxa.get(r.CD_REF);
+    // The accepted name first, so it's the one a row is filed `as`.
+    if (r.CD_NOM === r.CD_REF) t.names = new Set([clean(r.LB_NOM), ...t.names]);
+    else t.names.add(clean(r.LB_NOM));
+    t.codes.set(r.LB_ADM_TR, r.CODE_STATUT);
+  }
+  return [...taxa.values()].map((t) => {
+    const [name, ...synonyms] = t.names;
+    const origin = regions.filter((g) => t.codes.has(g)).map((g) => `${g} ${t.codes.get(g)}`).join("; ");
+    return { name, origin, synonyms };
+  });
+}
+
+// A red list scores only plants native to its region: every IUCN category
+// says native, and NA ("non applicable") says introduced. One list scoring it
+// is enough — the question is whether it's native in the region, not in every
+// corner of it. RE, EX and EW mean gone, as Auckland's "Extinct" does; NE is
+// "not evaluated", which settles nothing.
+const GONE = new Set(["RE", "EX", "EW"]);
+export const redListVerdict = (row) => {
+  if (!row) return "absent";
+  const codes = row.origin.split("; ").map((o) => o.split(" ").pop());
+  if (codes.some((c) => c !== "NA" && c !== "NE" && !GONE.has(c))) return "native";
+  if (codes.includes("NA")) return "introduced";
+  return codes.every((c) => GONE.has(c)) ? "absent" : "uncertain";
+};
+
 // ---------------------------------------------------------------------------
 
 /** A name as printed, with the spacing and entities a download carries. */

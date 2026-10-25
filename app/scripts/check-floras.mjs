@@ -14,6 +14,8 @@
 //   mid-atlantic    Pennsylvania Natural Heritage Program · New Jersey FQA (NJDEP 2019)
 //   ireland         BSBI Plant Atlas 2020 native statuses, for Ireland
 //   nz-auckland     Checklist of the New Zealand Flora 2026 · Auckland Council TR2025/6
+//   france-atlantic, france-continental, france-alpine
+//                   the regional red lists inside each, from INPN's BDC-Statuts
 //
 // ## Usage
 //
@@ -53,6 +55,8 @@ import {
   nzVerdict,
   paRows,
   paVerdict,
+  redListRows,
+  redListVerdict,
 } from "./_floras.mjs";
 
 const DIR = fileURLToPath(new URL("../../data/sources/regional-floras/", import.meta.url));
@@ -84,6 +88,28 @@ function readSheet(file, sheet) {
 }
 
 const LANDCARE = "https://datastore.landcareresearch.co.nz/dataset";
+
+// INPN's BDC-Statuts: every protection and red-list status in France, 329 MB
+// unpacked. Only the regional red-list rows are read, filtered before parsing,
+// and read once for all three regions.
+let bdc;
+const bdcRows = () =>
+  (bdc ??= readCsv(
+    execFileSync("sh", ["-c", `unzip -p "$0" BDC_18/bdc_18_01.csv | awk 'NR == 1 || /^[0-9]*,[0-9]*,[0-9]*,"LRR",/'`, `${RAW}bdc.zip`], {
+      maxBuffer: 1e9,
+    }).toString(),
+  ));
+
+const redList = (lists, area) => ({
+  files: { "bdc.zip": "https://assets.patrinat.fr/files/referentiel/BDC.zip" },
+  read: () => ({ rows: redListRows(bdcRows(), lists) }),
+  verdict: redListVerdict,
+  lists,
+  name: { en: "France's national nature inventory", fr: "L'Inventaire national du patrimoine naturel" },
+  cite: "PatriNat (OFB-MNHN-CNRS-IRD). 2025. BDC-Statuts v18, base de connaissance des statuts des espèces. INPN. Licence Ouverte / Etalab. Regional red lists of the vascular flora: " + lists.join(", ") + ".",
+  url: "https://inpn.mnhn.fr/programme/base-de-connaissance-statuts/presentation",
+  area,
+});
 
 // Every source: what it is, where it comes from, how its file becomes rows,
 // and what its words mean. `area` is the phrase the plant page puts after
@@ -166,6 +192,22 @@ export const SOURCES = {
     url: "https://www.knowledgeauckland.org.nz/publications/conservation-status-of-vascular-plant-species-in-tamaki-makaurau-auckland-revised-march-2025/",
     area: { en: "in Auckland", fr: "à Auckland" },
   },
+  // The old (pre-2016) regions whose red lists fall inside ours. Hauts-de-France
+  // loaded only its NA rows, so it can say introduced and never native. Provence's
+  // list is threatened plants only and Languedoc never finished one, which is
+  // why Mediterranean France isn't here: most of its rows would read "absent".
+  "lrr-atlantic": redList(
+    ["Bretagne", "Basse-Normandie", "Haute-Normandie", "Hauts-de-France", "Ile-de-France", "Pays-de-la-Loire", "Centre", "Poitou-Charentes", "Aquitaine", "Limousin"],
+    { en: "in the west's regional red lists", fr: "dans les listes rouges régionales de l'Ouest" },
+  ),
+  "lrr-continental": redList(["Alsace", "Lorraine", "Champagne-Ardenne", "Bourgogne", "Franche-Comté"], {
+    en: "in the east's regional red lists",
+    fr: "dans les listes rouges régionales de l'Est",
+  }),
+  "lrr-alpine": redList(["Rhône-Alpes", "Provence-Alpes-Côte-d'Azur"], {
+    en: "in the Alps' regional red lists",
+    fr: "dans les listes rouges régionales des Alpes",
+  }),
 };
 
 /** Which sources each region is put to, in the order the page names them. */
@@ -175,6 +217,9 @@ export const REGIONS = {
   "mid-atlantic": ["pa", "nj-fqa"],
   ireland: ["bsbi-ie"],
   "nz-auckland": ["nz-checklist", "auckland"],
+  "france-atlantic": ["lrr-atlantic"],
+  "france-continental": ["lrr-continental"],
+  "france-alpine": ["lrr-alpine"],
 };
 
 // Names a source draws differently from our row, looked up under the
@@ -214,17 +259,19 @@ export const REVIEWED = {
     "Thymus praecox": { "bsbi-ie": "Thymus drucei", why: "British and Irish floras call wild thyme T. drucei; Kew folds it into T. praecox." },
     "Struthiopteris spicant": { "bsbi-ie": "Blechnum spicant", why: "Hard fern: the atlas keeps the older genus, Blechnum." },
   },
+  "france-atlantic": {
+    "Pyrus pyraster": { "lrr-atlantic": "Pyrus communis subsp. pyraster", why: "TAXREF keeps the wild pear as a subspecies of the cultivated one." },
+  },
 };
 
 async function fetchSources(ids) {
   mkdirSync(RAW, { recursive: true });
-  for (const id of ids) {
-    for (const [file, url] of Object.entries(SOURCES[id].files)) {
-      console.log(`Fetching ${url} …`);
-      const res = await fetch(url, { headers: { "user-agent": UA } });
-      if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
-      writeFileSync(`${RAW}${file}`, Buffer.from(await res.arrayBuffer()));
-    }
+  // The three French sources share one download.
+  for (const [file, url] of new Map(ids.flatMap((id) => Object.entries(SOURCES[id].files)))) {
+    console.log(`Fetching ${url} …`);
+    const res = await fetch(url, { headers: { "user-agent": UA } });
+    if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`);
+    writeFileSync(`${RAW}${file}`, Buffer.from(await res.arrayBuffer()));
   }
 }
 

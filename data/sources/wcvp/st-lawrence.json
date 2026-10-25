@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Québec, Ontario, New York & Vermont (TDWG:QUE, ONT, NWY, VER)",
   "region": "st-lawrence",
-  "ranAt": "2026-10-24T18:50:54.491Z",
+  "ranAt": "2026-10-25T07:16:14.533Z",
   "rows": [
     {
       "id": "amelanchier-laevis",
@@ -709,6 +709,97 @@
       "viaSynonym": null
     },
     {
+      "id": "eupatorium-perfoliatum",
+      "latin": "Eupatorium perfoliatum",
+      "asked": "Eupatorium perfoliatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sanguinaria-canadensis",
+      "latin": "Sanguinaria canadensis",
+      "asked": "Sanguinaria canadensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "anemone-canadensis",
+      "latin": "Anemone canadensis",
+      "asked": "Anemone canadensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": "Anemonastrum canadense (L.) Mosyakin"
+    },
+    {
+      "id": "symphyotrichum-cordifolium",
+      "latin": "Symphyotrichum cordifolium",
+      "asked": "Symphyotrichum cordifolium",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "chelone-glabra",
+      "latin": "Chelone glabra",
+      "asked": "Chelone glabra",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "verbena-hastata",
+      "latin": "Verbena hastata",
+      "asked": "Verbena hastata",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "trillium-grandiflorum",
+      "latin": "Trillium grandiflorum",
+      "asked": "Trillium grandiflorum",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "andropogon-gerardii",
       "latin": "Andropogon gerardii",
       "asked": "Andropogon gerardii",
@@ -761,6 +852,32 @@
       "viaSynonym": null
     },
     {
+      "id": "elymus-canadensis",
+      "latin": "Elymus canadensis",
+      "asked": "Elymus canadensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "elymus-hystrix",
+      "latin": "Elymus hystrix",
+      "asked": "Elymus hystrix",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "ABSENT",
+        "ONT": "ABSENT",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "polystichum-acrostichoides",
       "latin": "Polystichum acrostichoides",
       "asked": "Polystichum acrostichoides",
@@ -785,6 +902,32 @@
         "VER": "ABSENT"
       },
       "viaSynonym": "Onoclea struthiopteris (L.) Roth"
+    },
+    {
+      "id": "osmundastrum-cinnamomeum",
+      "latin": "Osmundastrum cinnamomeum",
+      "asked": "Osmundastrum cinnamomeum",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "adiantum-pedatum",
+      "latin": "Adiantum pedatum",
+      "asked": "Adiantum pedatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
     },
     {
       "id": "vitis-riparia",
@@ -865,6 +1008,19 @@
       "viaSynonym": null
     },
     {
+      "id": "asarum-canadense",
+      "latin": "Asarum canadense",
+      "asked": "Asarum canadense",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "clematis-virginiana",
       "latin": "Clematis virginiana",
       "asked": "Clematis virginiana",
@@ -889,6 +1045,19 @@
         "VER": "NATIVE"
       },
       "viaSynonym": null
+    },
+    {
+      "id": "parthenocissus-vitacea",
+      "latin": "Parthenocissus vitacea",
+      "asked": "Parthenocissus vitacea",
+      "verdict": "NATIVE",
+      "areas": {
+        "QUE": "NATIVE",
+        "ONT": "NATIVE",
+        "NWY": "NATIVE",
+        "VER": "NATIVE"
+      },
+      "viaSynonym": "Parthenocissus inserta (A.Kern.) Fritsch"
     },
     {
       "id": "onoclea-sensibilis",

@@ -31,6 +31,7 @@
 // `data/sources/wcvp/README.md`), and the page says both rather than picking.
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { REGIONS as FLORA_REGIONS, SOURCES as FLORA_SOURCES } from "./check-floras.mjs";
 
 const SRC = fileURLToPath(new URL("../../data/sources/wcvp/", import.meta.url));
 const OUT = fileURLToPath(new URL("../src/data/native-evidence.json", import.meta.url));
@@ -121,9 +122,10 @@ for (const file of readdirSync(SRC).filter((f) => f.endsWith(".json")).sort()) {
 }
 
 // Regional floras, where a region has them: checklists written by the region's
-// own botanists, put to every row by `npm run pnw:checklist`. Same rule as Kew:
-// the date, the row count, and only the rows where a flora doesn't say native.
-// Each flora's verdict is kept, because the page names who said what.
+// own botanists, put to every row by `npm run pnw:checklist` and `npm run
+// floras`. Same rule as Kew: the date, the row count, and only the rows where a
+// flora doesn't say native. Each flora's verdict is kept, because the page
+// names who said what.
 const FLORAS = {
   pnw: {
     file: "../../data/sources/pnw-flora/pnw.json",
@@ -143,6 +145,15 @@ const FLORAS = {
     ],
   },
 };
+
+// The regions `npm run floras` checks, from the same table it asks with, so a
+// source's name, link and area are written once.
+for (const [region, ids] of Object.entries(FLORA_REGIONS)) {
+  FLORAS[region] = {
+    file: `../../data/sources/regional-floras/${region}.json`,
+    sources: ids.map((id) => ({ id, name: FLORA_SOURCES[id].name, url: FLORA_SOURCES[id].url, area: FLORA_SOURCES[id].area })),
+  };
+}
 
 const floras = {};
 for (const [id, f] of Object.entries(FLORAS)) {

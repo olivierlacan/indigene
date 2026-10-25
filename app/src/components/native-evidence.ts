@@ -98,10 +98,9 @@ export function floraEvidenceLine(plantId: string, regionId?: string): HTMLEleme
   const [a, b] = ev.said;
 
   if (ev.said.every((s) => s.verdict === "native")) {
-    return el("div", { class: "native-evidence" }, [
-      mark("ok"),
-      el("p", {}, [link(a), t("flora.and"), link(b), t("flora.agree"), " ", meta]),
-    ]);
+    // One flora says so in its own clause; two agree together.
+    const said = b ? [link(a), t("flora.and"), link(b), t("flora.agree")] : [link(a), t("flora.said.native", { area: a.area }), "."];
+    return el("div", { class: "native-evidence" }, [mark("ok"), el("p", {}, [...said, " ", meta])]);
   }
   // Each flora in its own clause, so a reader sees who said what.
   const clauses = ev.said.flatMap((s, i) => [

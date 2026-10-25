@@ -78,6 +78,15 @@ jobs:
             npm run native:check -- --all | tee "$RUNNER_TEMP/kew.txt"
           fi
 
+      # Fetched fresh each quarter, so a list that changed upstream shows as a
+      # CHANGED verdict in the PR.
+      - name: Check every region's own checklists
+        id: floras
+        continue-on-error: true
+        working-directory: app
+        shell: bash # explicit, so pipefail is on and tee can't hide a failure
+        run: npm run floras -- --fetch | tee "$RUNNER_TEMP/floras.txt"
+
       - name: Reduce the snapshots to what the plant pages show
         working-directory: app
         run: npm run native-evidence
@@ -109,6 +118,10 @@ jobs:
             echo '```'
             sed -n '/^Summary:/,$p' "$RUNNER_TEMP/kew.txt" 2>/dev/null || true
             grep -E '^  (NEW|CHG|ERR) ' "$RUNNER_TEMP/kew.txt" 2>/dev/null || echo "no new or changed verdict"
+            echo '```'
+            echo "### Regional checklists"
+            echo '```'
+            grep -E '^(  (NEW|CHANGED|STALE|rec) |[a-z-]+: our )' "$RUNNER_TEMP/floras.txt" 2>/dev/null || echo "_(no report written)_"
             echo '```'
             echo "### VASCAN"
             echo '```'
@@ -145,10 +158,11 @@ jobs:
             🤖 Generated with [Claude Code](https://claude.com/claude-code)
           add-paths: |
             data/sources/wcvp/*.json
+            data/sources/regional-floras/*.json
             app/src/data/native-evidence.json
 
       - name: Fail if a verdict is new, changed, or missing
-        if: steps.kew.outcome == 'failure' || steps.vascan.outcome == 'failure'
+        if: steps.kew.outcome == 'failure' || steps.vascan.outcome == 'failure' || steps.floras.outcome == 'failure'
         run: |
           echo "::error::A native-status verdict changed, a new row is unconfirmed, or VASCAN records an introduction. Read the PR."
           exit 1

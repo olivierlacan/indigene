@@ -1221,11 +1221,11 @@ export const SECTIONS = [
         id: "floras",
         heading: "Checked against regional floras",
         body:
-          "In the Pacific Northwest, each plant is also checked against two " +
-          "checklists written by the region’s own botanists: the Burke Museum’s, " +
-          "at the University of Washington, and OregonFlora’s, at Oregon State. " +
-          "They know the region better than Kew does, and they don’t always agree " +
-          "with each other. Where they don’t, the page says who said what.",
+          "In most regions, each plant is also checked against checklists " +
+          "written by the region’s own botanists, like the Burke Museum’s in the " +
+          "Pacific Northwest or Auckland Council’s in Auckland. They know the " +
+          "region better than Kew does, and they don’t always agree with each " +
+          "other. Where they don’t, the page says who said what.",
       },
     ],
     visit: [

@@ -1,5 +1,0 @@
-### Added
-
-- Regions: 118 more natives to plant this fall and winter — trees that go in bare, bulbs for autumn, seed that wants a winter outdoors. Nine regions gain 12 to 14 each, from the [Pacific Northwest](https://indigene.app/regions/pnw) to Ireland and the Mid-Atlantic.
-- A few to look for: chocolate lily, bald cypress, tamarack, wild lupine for the Karner blue, and cowslip. In Florida the cool, dry months are the planting season, and the new rows say so.
-- Internal: picked from fresh `npm run candidates` shortlists in the nine Northern Hemisphere regions with a second checklist (`SECOND_CHECKS`), weighted to woody plants, autumn bulbs and fall-sown seed. Every row is native per Kew (`native:check`) and per the region's own lists (Burke + OregonFlora, Atlas of Florida Plants, BSBI, VASCAN, `npm run floras`). Dropped where Kew disagrees: velvetleaf blueberry (Michigan), valerian and strawberry tree (Ireland). `candidates.mjs` now ranks Florida rows only when the Atlas agrees. Auckland waits for its own autumn.

@@ -3,7 +3,17 @@
  * the caching rules are meant to be readable and predictable.
  *
  * Strategy:
- *   - App shell + built assets: stale-while-revalidate (instant, self-healing).
+ *   - Built assets (`assets/*`, named by their content hash): cache-first and
+ *     kept across releases, because a name can never point at new bytes. Each
+ *     release prunes the cache to exactly the files it ships, so old releases
+ *     never pile up, and nothing has to be re-downloaded that didn't change.
+ *   - Everything else same-origin (the page, icons, registry JSON, maps, share
+ *     cards): stale-while-revalidate in a cache that belongs to one release,
+ *     so a new release can never be answered with the last one's copy.
+ *   - French is fetched only by French readers (`lib/i18n.ts`), then kept like
+ *     any built asset. When a release changes it, a device that had French
+ *     fetches the new French as the worker installs, before the old is pruned,
+ *     so it still opens in French offline.
  *   - Navigations: network-first with the HTTP cache bypassed, so a fresh
  *     deploy shows on the next load; the cached shell answers only when offline.
  *   - Site-data API calls (soil, elevation, climate): network-first, but every
@@ -23,10 +33,25 @@
  * right after boot (`warmOwnRegion` in main.ts), so the list you actually
  * garden with is here before you ever lose signal.
  */
-const VERSION = "indigene-v1";
-const SHELL_CACHE = `${VERSION}-shell`;
-const DATA_CACHE = `${VERSION}-data`;
-const PHOTO_CACHE = `${VERSION}-photos`;
+// Filled in by `scripts/stamp-sw.mjs` after each build: this release's id, the
+// files the page needs to open, every hashed file it ships, and the French
+// chunks. A new release changes these bytes, which is what makes the browser
+// install the new worker. Unstamped (dev), they are inert.
+const BUILD = "dev"; // stamped
+const CORE = []; // stamped
+const ASSETS = []; // stamped
+const FRENCH = []; // stamped
+
+// What a reader has gathered — looked-up spots and photos — outlives releases.
+// The names are the ones the first worker used, so no device loses them.
+const DATA_CACHE = "indigene-v1-data";
+const PHOTO_CACHE = "indigene-v1-photos";
+// Hashed build files, kept across releases and pruned to the current list.
+const ASSET_CACHE = "indigene-assets";
+// Unhashed same-origin files: one cache per release.
+const SHELL_CACHE = `indigene-shell-${BUILD}`;
+const KEEP = [DATA_CACHE, PHOTO_CACHE, ASSET_CACHE, SHELL_CACHE];
+const FRENCH_FILE = /\/assets\/(lang|prose)-fr-/;
 
 // The app may be served from a subpath (e.g. GitHub Pages /<repo>/). This
 // worker always sits at the app root, so derive the base from its own URL.
@@ -72,26 +97,41 @@ const PHOTO_CACHE_LIMIT = 600;
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches
-      .open(SHELL_CACHE)
-      .then((c) => c.addAll(SHELL_ASSETS))
-      .catch(() => {}) // a missing asset must not block install
-      .then(() => self.skipWaiting())
+    (async () => {
+      // A missing file must never block install: the worker still serves the
+      // network, and whatever it couldn't fetch now it caches on first use.
+      const shell = await caches.open(SHELL_CACHE);
+      await shell.addAll(SHELL_ASSETS).catch(() => {});
+      const assets = await caches.open(ASSET_CACHE);
+      const readsFrench = (await assets.keys()).some((r) => FRENCH_FILE.test(new URL(r.url).pathname));
+      const want = [...CORE, ...(readsFrench ? FRENCH : [])].map((f) => `${BASE}${f}`);
+      await Promise.all(
+        want.map((url) => assets.match(url).then((hit) => hit || assets.add(url)).catch(() => {}))
+      );
+      await self.skipWaiting();
+    })()
   );
 });
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches
-      .keys()
-      .then((keys) =>
-        Promise.all(
-          keys
-            .filter((k) => !k.startsWith(VERSION))
-            .map((k) => caches.delete(k))
-        )
-      )
-      .then(() => self.clients.claim())
+    (async () => {
+      // Earlier releases' shell caches (and the first worker's single one) go.
+      for (const key of await caches.keys()) {
+        if (!KEEP.includes(key)) await caches.delete(key);
+      }
+      // Built files this release no longer ships go too. An open tab from the
+      // old release that asks for one gets the network's answer; if the file
+      // is gone it reloads into this release (see `main.ts`).
+      if (ASSETS.length) {
+        const current = new Set(ASSETS.map((f) => `${BASE}${f}`));
+        const assets = await caches.open(ASSET_CACHE);
+        for (const req of await assets.keys()) {
+          if (!current.has(new URL(req.url).pathname)) await assets.delete(req);
+        }
+      }
+      await self.clients.claim();
+    })()
   );
 });
 
@@ -130,7 +170,13 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Same-origin app assets: stale-while-revalidate.
+  // Built files: named by their content, so a cached copy is always right.
+  if (url.origin === self.location.origin && url.pathname.startsWith(`${BASE}assets/`)) {
+    event.respondWith(cachedAsset(request));
+    return;
+  }
+
+  // Other same-origin files: stale-while-revalidate, in this release's cache.
   if (url.origin === self.location.origin) {
     event.respondWith(staleWhileRevalidate(request));
   }
@@ -210,6 +256,16 @@ async function trimCache(cache, limit) {
   const keys = await cache.keys();
   if (keys.length <= limit) return;
   await Promise.all(keys.slice(0, keys.length - limit).map((k) => cache.delete(k)));
+}
+
+/** Cache-first for hashed build files, kept until a release stops shipping them. */
+async function cachedAsset(request) {
+  const cache = await caches.open(ASSET_CACHE);
+  const cached = await cache.match(request);
+  if (cached) return cached;
+  const res = await fetch(request);
+  if (res.ok) await cache.put(request, res.clone()).catch(() => {});
+  return res;
 }
 
 async function staleWhileRevalidate(request) {

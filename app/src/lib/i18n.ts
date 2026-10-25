@@ -18,7 +18,6 @@
 //     Nothing here reaches into `units.ts`, and `units.ts` only reads the
 //     language to format numbers (1,000.5 vs 1 000,5) — never to pick a system.
 import { en } from "../locales/en";
-import { fr } from "../locales/fr";
 import type { Dict, TKey } from "../locales/en";
 
 export type Lang = "en" | "fr";
@@ -52,7 +51,39 @@ export const LANGUAGES: { code: Lang; endonym: string }[] = [
  */
 export const LOCALE: Record<Lang, string> = { en: "en-US", fr: "fr-FR" };
 
-const DICTS: Record<Lang, Dict> = { en, fr };
+// English is built in: it is the key set and the fallback. Every other
+// language's dictionary is a chunk of its own, fetched the first time a reader
+// needs it, so an English reader never downloads ~60 KB of French. The service
+// worker keeps the chunk once fetched, so it costs one download per release.
+const DICTS: Partial<Record<Lang, Dict>> = { en };
+
+const DICT_LOADERS: Record<Exclude<Lang, "en">, () => Promise<Dict>> = {
+  fr: () => import("../locales/fr").then((m) => m.fr),
+};
+
+/** In-flight loads, so boot and a route in the same tick share one fetch. */
+const PENDING_DICTS = new Map<Lang, Promise<void>>();
+
+/**
+ * Make sure the reader's language has its dictionary in memory. Awaited before
+ * anything renders (boot, every route, a language switch), so `t()` can stay
+ * synchronous. A no-op for English and once loaded. If the fetch fails —
+ * offline before the chunk was ever cached — `t()` falls back to English, the
+ * same honest degradation as an untranslated plant paragraph, never a blank.
+ */
+export function loadLanguage(lang: Lang = current): Promise<void> {
+  if (DICTS[lang] || lang === "en") return Promise.resolve();
+  const pending = PENDING_DICTS.get(lang);
+  if (pending) return pending;
+  const p = DICT_LOADERS[lang]()
+    .then((dict) => {
+      DICTS[lang] = dict;
+    })
+    .catch(() => {})
+    .finally(() => PENDING_DICTS.delete(lang));
+  PENDING_DICTS.set(lang, p);
+  return p;
+}
 
 const STORAGE_KEY = "indigene:lang";
 
@@ -290,7 +321,7 @@ function interpolate(template: string, params?: Params): string {
  *  can't fire today (the types guarantee coverage) but it means a locale file
  *  half-written on a branch degrades to English rather than to blank. */
 export function t(key: TKey, params?: Params): string {
-  const dict = DICTS[current];
+  const dict = DICTS[current] ?? en;
   return interpolate(dict[key] ?? en[key], params);
 }
 
@@ -304,7 +335,7 @@ export function t(key: TKey, params?: Params): string {
  * space where a flower colour should be is a bug.
  */
 export function tOptional(key: string): string | undefined {
-  const dict = DICTS[current] as Record<string, string | undefined>;
+  const dict = (DICTS[current] ?? en) as Record<string, string | undefined>;
   return dict[key] ?? (en as Record<string, string | undefined>)[key];
 }
 
@@ -337,7 +368,7 @@ export function tn(key: TPluralKey, n: number, params?: Params): string {
  * codes English word order, and French almost never agrees with it.
  */
 export function tx(key: TKey, nodes: Record<string, Node | string>, params?: Params): (Node | string)[] {
-  const template = interpolate(DICTS[current][key] ?? en[key], params);
+  const template = interpolate((DICTS[current] ?? en)[key] ?? en[key], params);
   const out: (Node | string)[] = [];
   let last = 0;
   const re = /\{(\w+)\}/g;

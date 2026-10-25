@@ -226,6 +226,14 @@ export interface Wildlife {
   native: true;
   /** Where the animal is native and a dependable source saying so. */
   nativeBasis: string;
+  /**
+   * For a group ("Bumble bees", "Fieldfares, redwings & blackbirds"): the
+   * species it stands for, as binomials. A group is not a taxon, so nothing
+   * can check "bumble bees are native to Ireland" — but each member can be
+   * put to the authorities one at a time (`npm run wildlife:native`). Name the
+   * species the blurb and the ties actually mean, not every one in the genus.
+   */
+  members?: string[];
   /** How to look this animal up in iNaturalist's sightings (see `InatScope`).
    *  Omitted for informal groups that don't map to a single taxon — they get no
    *  "see it near you" lookup, the same way they get no single species record. */

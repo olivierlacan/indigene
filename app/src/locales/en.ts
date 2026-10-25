@@ -2840,6 +2840,15 @@ export const en = {
   "evidence.unconfirmed.unmatched": " has no entry under this name.",
   "evidence.unconfirmed.inconclusive": " has no entry for this subspecies, so it couldn't be checked.",
   "evidence.stands": "We keep it on the regional list cited below.",
+  // An animal's native check (components/native-evidence.ts → faunaEvidenceLines).
+  // {who} is a list of authorities, always more than one.
+  "fauna.confirmedAll": "{who} agree it's native in every region below.",
+  "fauna.confirmedIn": "{who} agree it's native in {areas}.",
+  "fauna.unconfirmed.introduced": "{who} record it as introduced in {area}, not native.",
+  "fauna.unconfirmed.disputed": "{who} disagree on whether it's native in {area}.",
+  "fauna.unconfirmed.absent": "{who} don't record it in {area}.",
+  "fauna.unconfirmed.unknown": "{who} give it no native status in {area}.",
+  "fauna.unconfirmed.no-match": "{who} have no entry under this name, so {area} is unchecked.",
 
   // Further reading (data/reading.ts). Titles and authors are proper names and
   // stay as published; only the frame around them is translated.

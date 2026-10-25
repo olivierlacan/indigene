@@ -2769,6 +2769,13 @@ export const fr: Dict = {
   "evidence.unconfirmed.unmatched": " n'a aucune entrée sous ce nom.",
   "evidence.unconfirmed.inconclusive": " n'a pas d'entrée pour cette sous-espèce : la vérification n'a pas pu aboutir.",
   "evidence.stands": "Nous la gardons sur la liste régionale citée plus bas.",
+  "fauna.confirmedAll": "{who} confirment qu'il est indigène dans chaque région ci-dessous.",
+  "fauna.confirmedIn": "{who} confirment qu'il est indigène dans {areas}.",
+  "fauna.unconfirmed.introduced": "{who} le disent introduit, et non indigène, pour {area}.",
+  "fauna.unconfirmed.disputed": "{who} ne s'accordent pas sur son statut indigène pour {area}.",
+  "fauna.unconfirmed.absent": "{who} ne le recensent pas pour {area}.",
+  "fauna.unconfirmed.unknown": "{who} ne lui donnent aucun statut indigène pour {area}.",
+  "fauna.unconfirmed.no-match": "{who} n'ont aucune entrée sous ce nom : {area} n'a pas pu être vérifié.",
 
   "steps.reading": "Pour aller plus loin",
   "reading.title": "Pour aller plus loin",

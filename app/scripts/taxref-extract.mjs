@@ -90,7 +90,11 @@ const { INVASIVES } = await loader.load("/src/data/invasives.ts");
 await loader.close();
 const wanted = new Set();
 for (const r of REGIONS) for (const p of r.seed) wanted.add(p.latin);
-for (const w of WILDLIFE ?? []) if (w.latin) wanted.add(w.latin);
+for (const w of WILDLIFE ?? []) {
+  if (w.latin) wanted.add(w.latin);
+  // A group's member species, which the wildlife native check asks about.
+  for (const m of w.members ?? []) wanted.add(m);
+}
 for (const l of LOOKALIKES ?? []) wanted.add(l.latin);
 for (const i of INVASIVES ?? []) wanted.add(i.latin);
 
@@ -118,6 +122,8 @@ for await (const line of rl) {
     header = line.replace(/^﻿/, "").split("\t").map((h) => h.replace(/^"|"$/g, ""));
     const need = ["CD_NOM", "CD_REF", "LB_NOM", "RANG", "NOM_VERN"];
     col = Object.fromEntries(need.map((n) => [n, header.indexOf(n)]));
+    // Status in metropolitan France — optional, so an older table still reads.
+    col.FR = header.indexOf("FR");
     const missing = need.filter((n) => col[n] < 0);
     if (missing.length) {
       console.error(`Not a TAXREF table I can read: missing ${missing.join(", ")}.\nHeaders found: ${header.join(", ")}`);
@@ -130,7 +136,7 @@ for await (const line of rl) {
   // Strings are double-quoted in the table ("Quercus robur"), numbers are not.
   const f = line.split("\t").map((v) => (v.startsWith('"') && v.endsWith('"') ? v.slice(1, -1) : v));
   const cdNom = f[col.CD_NOM];
-  const slim = { cdNom, cdRef: f[col.CD_REF], name: f[col.LB_NOM], rank: f[col.RANG], vern: f[col.NOM_VERN] ?? "" };
+  const slim = { cdNom, cdRef: f[col.CD_REF], name: f[col.LB_NOM], rank: f[col.RANG], vern: f[col.NOM_VERN] ?? "", fr: col.FR >= 0 ? f[col.FR] : "" };
   refs.set(cdNom, slim);
   if (byAsked.has(slim.name)) {
     // Prefer the accepted row when a name appears more than once (TAXREF
@@ -158,6 +164,11 @@ for (const [asked, latin] of byAsked) {
     rank: accepted.rank,
     // TAXREF lists several names in one cell, its own first.
     french: accepted.vern ? accepted.vern.split(",").map((s) => s.trim()).filter(Boolean) : [],
+    // TAXREF's biogeographic status in metropolitan France, on the accepted
+    // taxon: P present (native), E endemic, S subendemic, C cryptogenic,
+    // I introduced, J introduced invasive, M introduced but not established
+    // (cultivated or domestic), B occasional, D doubtful, A absent, W/X extinct… The wildlife native check reads it (`_fauna.mjs`).
+    fr: accepted.fr || undefined,
   };
 }
 
@@ -172,7 +183,7 @@ writeFileSync(
       extractedAt: new Date().toISOString().slice(0, 10),
       rowsInTable: rows,
       method:
-        "LB_NOM matched exactly to each scientific name the app shows; the accepted row (CD_REF) supplies the French names, in TAXREF's own order. Only the names the app shows are kept.",
+        "LB_NOM matched exactly to each scientific name the app shows; the accepted row (CD_REF) supplies the French names, in TAXREF's own order, and its status in metropolitan France (FR). Only the names the app shows are kept.",
       taxa: Object.fromEntries(Object.entries(extract).sort(([a], [b]) => a.localeCompare(b))),
     },
     null,

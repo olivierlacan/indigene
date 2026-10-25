@@ -50,6 +50,7 @@ import { keystoneIcon } from "../components/keystone-icon";
 import { wildlifeNearbySection } from "../components/wildlife-nearby";
 import { wildlifeThumb, wildlifeHero, wildlifeIcon, wildlifeSilhouette } from "../components/wildlife-thumb";
 import { conservationNote } from "../components/conservation-note";
+import { faunaEvidenceLines } from "../components/native-evidence";
 import { glyphKeyFor } from "../components/wildlife-glyphs";
 import { cardStats } from "../components/card-stats";
 import { regionLinks } from "../components/region-list";
@@ -645,6 +646,10 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
               el("span", { "aria-hidden": "true" }, "🌿 "),
               ...citation(w.nativeBasis),
             ]),
+            // Who was asked, region by region, and what they said (`npm run
+            // wildlife:native`). The sentence above was written once; these
+            // are re-asked.
+            ...faunaEvidenceLines(w.id, byRegion.map((g) => g.region.meta.id)),
             speciesLink(w),
             // How many of the plants below raise its young, shelter it, or
             // have no substitute — but only on a list too long to tally by

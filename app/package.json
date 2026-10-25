@@ -72,6 +72,8 @@
     "resolve:fetch": "NODE_USE_ENV_PROXY=1 node --max-old-space-size=6144 scripts/fetch-resolve.mjs",
     "swipe:check": "node scripts/check-lightbox-swipe.mjs",
     "wildlife:taxa": "NODE_USE_ENV_PROXY=1 node scripts/wildlife-taxa.mjs",
+    "wildlife:native": "NODE_USE_ENV_PROXY=1 node scripts/check-wildlife-native.mjs",
+    "wildlife:ties": "NODE_USE_ENV_PROXY=1 node scripts/check-wildlife-ties.mjs",
     "maps:coverage": "NODE_USE_ENV_PROXY=1 node scripts/build-region-maps.mjs --coverage-only"
   },
   "devDependencies": {

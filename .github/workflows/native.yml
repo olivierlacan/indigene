@@ -1,6 +1,9 @@
 # Re-asks the two botanical authorities every quarter whether every plant we
 # call native still is — Kew's World Checklist for all seventeen regions, and
-# VASCAN for the two whose lists cross into Canada.
+# VASCAN for the two whose lists cross into Canada — and the fauna authorities
+# the same about every animal the plants are tied to (`wildlife:native`), with
+# the studies behind GloBI-relayed ties and DBIF's British food-plant records
+# (`wildlife:ties`).
 #
 # `native-check.test.ts` already refuses a pull request that ships a row with no
 # verdict on record. What it cannot see is a verdict that *moves*: Kew revising
@@ -108,6 +111,22 @@ jobs:
         shell: bash # explicit, so pipefail is on and tee can't hide a failure
         run: npm run vascan:check | tee "$RUNNER_TEMP/vascan.txt"
 
+      # TAXREF is read offline from the committed extract; everything else is
+      # asked live. Both write their snapshots even when a verdict moved.
+      - name: Ask the fauna authorities about every tied animal
+        id: fauna
+        continue-on-error: true
+        working-directory: app
+        shell: bash # explicit, so pipefail is on and tee can't hide a failure
+        run: npm run wildlife:native -- --all | tee "$RUNNER_TEMP/fauna.txt"
+
+      - name: Re-ask the sources behind each tie
+        id: ties
+        continue-on-error: true
+        working-directory: app
+        shell: bash # explicit, so pipefail is on and tee can't hide a failure
+        run: npm run wildlife:ties -- --all | tee "$RUNNER_TEMP/ties.txt"
+
       - name: Read the reports
         id: report
         if: always()
@@ -127,6 +146,15 @@ jobs:
             echo '```'
             cat "$RUNNER_TEMP/vascan.txt" 2>/dev/null || echo "_(no report written)_"
             echo '```'
+            echo "### Animals"
+            echo '```'
+            sed -n '/^Summary:/,$p' "$RUNNER_TEMP/fauna.txt" 2>/dev/null || true
+            grep -E '^  (NEW|CHG|ERR) ' "$RUNNER_TEMP/fauna.txt" 2>/dev/null || echo "no new or changed verdict"
+            echo '```'
+            echo "### Ties"
+            echo '```'
+            grep -E '^  (NEW|CHG|ERR) |ties checked' "$RUNNER_TEMP/ties.txt" 2>/dev/null || echo "_(no report written)_"
+            echo '```'
             echo "REPORT_EOF"
           } >> "$GITHUB_OUTPUT"
 
@@ -138,7 +166,7 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           branch: native/reask
-          title: "Re-ask Kew and VASCAN about every plant we call native"
+          title: "Re-ask the plant and animal authorities about everything we call native"
           commit-message: "Refresh the WCVP verdicts and the native-evidence table"
           body: |
             Quarterly re-check of every row's native status against Kew's World
@@ -159,10 +187,13 @@ jobs:
           add-paths: |
             data/sources/wcvp/*.json
             data/sources/regional-floras/*.json
+            data/sources/wildlife-native/*.json
+            data/sources/wildlife-ties/*.json
             app/src/data/native-evidence.json
+            app/src/data/wildlife-evidence.json
 
       - name: Fail if a verdict is new, changed, or missing
-        if: steps.kew.outcome == 'failure' || steps.vascan.outcome == 'failure' || steps.floras.outcome == 'failure'
+        if: steps.kew.outcome == 'failure' || steps.vascan.outcome == 'failure' || steps.floras.outcome == 'failure' || steps.fauna.outcome == 'failure' || steps.ties.outcome == 'failure'
         run: |
           echo "::error::A native-status verdict changed, a new row is unconfirmed, or VASCAN records an introduction. Read the PR."
           exit 1

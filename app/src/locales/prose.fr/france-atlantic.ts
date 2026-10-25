@@ -891,4 +891,357 @@ export const FRANCE_ATLANTIC: ProseTable = {
     propagationNote:
       "La voie facile, et légèrement magique : à l'automne, choisissez une vieille fronde portant de petites bulbilles le long de sa nervure, couchez-la à plat sur un plateau de terreau humide et fixez-la ; chaque bulbille s'enracine en une nouvelle fougère. Sinon, divisez une grosse souche au printemps, ou élevez-la de spores avec patience.",
   },
+  // -------------------------------------------------------------------------
+  // Ajouts — 35 plantes de plus (clés qualifiées par la région).
+  // -------------------------------------------------------------------------
+  "Acer campestre@france-atlantic": {
+    nativeNote:
+      "Le petit érable des haies et des lisières atlantiques, plus à l'aise sur l'argile et le calcaire.",
+    careNote:
+      "Il encaisse argile lourde, calcaire, vent et tailles sévères. Il se taille en haie dense ou devient un petit arbre d'ombre pour un jardin modeste.",
+    givesNote:
+      "Ses fleurs vertes d'avril nourrissent les abeilles, des dizaines de chenilles de papillons de nuit mangent ses feuilles, et ses graines ailées nourrissent pinsons et campagnols roussâtres jusqu'en hiver.",
+    propagationNote:
+      "Cueillez les graines ailées encore vertes en fin d'été et semez-les aussitôt dehors. Une graine laissée sécher et durcir peut attendre deux hivers avant de lever.",
+  },
+  "Malus sylvestris@france-atlantic": {
+    nativeNote:
+      "Le pommier sauvage des haies et des chênaies atlantiques — dispersé, épineux et facile à manquer.",
+    careNote:
+      "Petit, rustique et durable, il accepte la plupart des sols et beaucoup de vent. Achetez de vrais plants sauvages chez un pépiniériste de haies : les pommiers d'ornement sont le plus souvent d'autres espèces ou des hybrides.",
+    givesNote:
+      "Ses fleurs blanc rosé nourrissent abeilles et syrphes fin avril, et ses petites pommes acides nourrissent merles, grives mauvis et blaireaux une fois adoucies par les gelées.",
+    propagationNote:
+      "Écrasez des pommes mûres, lavez bien les pépins et semez-les dehors à l'automne, pour le froid d'hiver qu'il leur faut. Le semis donne un vrai arbre sauvage ; un arbre greffé repose souvent sur un porte-greffe de verger.",
+  },
+  "Quercus petraea@france-atlantic": {
+    nativeNote:
+      "Le chêne des pentes plus sèches et plus acides et des sols sableux de la façade atlantique, là où le chêne pédonculé cède la place.",
+    careNote:
+      "Comme son cousin, il est lent et très durable, mais il accepte un sol plus mince, plus sec et plus acide. Plantez-le petit : sa racine pivotante supporte mal le déplacement.",
+    givesNote:
+      "Des centaines d'espèces de chenilles, et donc les mésanges et fauvettes qui en nourrissent leurs petits, plus des glands pour les geais, les pics et les sangliers.",
+    propagationNote:
+      "Semez les glands frais à l'automne, directement dans un pot profond dehors, sans jamais les laisser sécher. Ils n'ont besoin d'aucun froid et s'enracinent en quelques semaines.",
+  },
+  "Euonymus europaeus@france-atlantic": {
+    nativeNote:
+      "Un arbuste de haie des lisières atlantiques, connu surtout pour ses fruits rose et orange d'automne.",
+    careNote:
+      "Facile au soleil ou à mi-ombre, sur calcaire ou argile, dans une haie mélangée ou seul. Toute la plante est toxique, les fruits surtout : tenez-la hors de portée des jeunes enfants et des animaux.",
+    givesNote:
+      "Ses petites fleurs de mai nourrissent mouches et petites abeilles, l'hyponomeute du fusain élève ses chenilles dans des toiles de soie sur les feuilles, et les rougegorges mangent ses fruits vifs.",
+    propagationNote:
+      "Les boutures de bois sec de fin d'automne s'enracinent bien dans une planche abritée. Par semis, c'est lent : ôtez l'enveloppe orange, semez dehors à l'automne et attendez les plantules au second printemps.",
+  },
+  "Viburnum opulus@france-atlantic": {
+    nativeNote:
+      "L'arbuste des berges, des bords de marais et des haies humides atlantiques.",
+    careNote:
+      "Rapide et facile dans tout sol frais, au soleil comme à l'ombre, et il supporte l'engorgement qui tue la plupart des arbustes.",
+    givesNote:
+      "Ses ombelles blanches nourrissent syrphes et coléoptères en juin, et ses baies rouges luisantes tiennent jusqu'en hiver pour les bouvreuils et les grives.",
+    propagationNote:
+      "Les boutures herbacées du début d'été comme les boutures de bois sec d'automne s'enracinent facilement. La graine nettoyée, semée dehors à l'automne, lève surtout au second printemps.",
+  },
+  "Ligustrum vulgare@france-atlantic": {
+    nativeNote:
+      "Le troène semi-persistant des haies, des dunes et des fourrés calcaires atlantiques — pas le troène de haie luisant venu du Japon.",
+    careNote:
+      "Très résistant sur calcaire, sable et vent côtier, et il se taille en haie. Taillez après la floraison, ou pas du tout, pour garder les fleurs parfumées et les baies noires.",
+    givesNote:
+      "Ses fleurs de juin attirent papillons et abeilles, les chenilles du sphinx du troène mangent ses feuilles, et grives et bouvreuils prennent ses baies en hiver.",
+    propagationNote:
+      "Les boutures de bois sec enfoncées en terre en fin d'automne reprennent presque toujours. La graine extraite des baies et semée dehors à l'automne lève au printemps.",
+  },
+  "Ulex europaeus@france-atlantic": {
+    nativeNote:
+      "L'arbuste épineux et jaune des landes, des falaises et des landes bretonnes de la façade atlantique.",
+    careNote:
+      "Pour un sol pauvre, acide et sableux en plein soleil ; une terre riche le rend dégingandé. Il brûle violemment : tenez-le loin des maisons, et rabattez les pieds dégarnis à la base au printemps.",
+    givesNote:
+      "Ses fleurs au parfum de noix de coco nourrissent les bourdons pendant les mois maigres, et son fourré épineux abrite les nids des tariers pâtres, des linottes et des fauvettes pitchou.",
+    propagationNote:
+      "Frottez la graine dure au papier de verre ou laissez-la tremper une nuit dans de l'eau chaude, puis semez au printemps. Élevez-le en pot et plantez-le jeune : un pied âgé supporte mal la transplantation.",
+  },
+  "Erica cinerea@france-atlantic": {
+    nativeNote:
+      "La bruyère pourpre des landes sèches et des falaises atlantiques, de la Bretagne aux Landes.",
+    careNote:
+      "Il lui faut un sol acide, pauvre et bien drainé et le plein soleil ; elle dépérit sur calcaire ou en terre riche. Taillez-la légèrement après la floraison pour la garder touffue.",
+    givesNote:
+      "Ses clochettes pourpres nourrissent bourdons et abeilles mellifères en plein été, et les bruyères nourrissent des dizaines d'espèces de chenilles, dont celle du petit paon de nuit.",
+    propagationNote:
+      "Prélevez en fin d'été de courtes boutures des pousses de l'année, dans un mélange sableux et acide. Ou buttez de terreau acide le cœur d'un vieux pied et détachez les pousses enracinées un an plus tard.",
+  },
+  "Rosa canina@france-atlantic": {
+    nativeNote:
+      "La rose sauvage rose pâle des haies et des lisières atlantiques.",
+    careNote:
+      "Vigoureux et épineux, c'est une plante de haie plutôt que de massif. Laissez-le s'arquer dans une haie et rabattez-le en fin d'hiver.",
+    givesNote:
+      "Ses fleurs roses ouvertes nourrissent les abeilles en juin, plus d'une centaine d'espèces de chenilles vivent sur les rosiers sauvages, et ses cynorhodons rouges nourrissent grives et merles tout l'hiver.",
+    propagationNote:
+      "Les boutures de bois sec enfoncées en terre humide à l'automne sont de loin le plus rapide. La graine des cynorhodons, semée dehors à l'automne, lève surtout au second printemps.",
+  },
+  "Primula vulgaris@france-atlantic": {
+    nativeNote:
+      "La primevère jaune pâle des talus de haie et des lisières atlantiques, parmi les premières fleurs de l'année.",
+    careNote:
+      "À l'aise à mi-ombre en sol frais et lourd — sous une haie, un arbre caduc ou dans l'herbe haute.",
+    givesNote:
+      "Ses fleurs précoces nourrissent les reines de bourdons et les bombyles en mars, et la lucine pond sur ses feuilles.",
+    propagationNote:
+      "Divisez les grosses touffes après la floraison et replantez aussitôt. Semez la graine fraîche en été et laissez le pot dehors l'hiver.",
+  },
+  "Silene dioica@france-atlantic": {
+    nativeNote:
+      "Le silène rose des talus de haie ombragés et des lisières atlantiques.",
+    careNote:
+      "Facile à mi-ombre dans tout sol frais, et il se ressème sans excès. Rabattez-le après la première floraison pour en avoir d'autres.",
+    givesNote:
+      "Ses fleurs roses, longtemps ouvertes, nourrissent bourdons et papillons, et les silènes nourrissent des dizaines de papillons de nuit, dont certaines chenilles vivent dans les capsules.",
+    propagationNote:
+      "Semez en automne ou au printemps sur sol humide, à peine recouvert. Les touffes se divisent au printemps.",
+  },
+  "Filipendula ulmaria@france-atlantic": {
+    nativeNote:
+      "La plante crème au parfum d'amande des prairies humides, des fossés et des berges atlantiques.",
+    careNote:
+      "Donnez-lui un sol qui ne sèche jamais : bord de mare, fossé ou massif lourd et frais. Coupez les vieilles tiges en fin d'hiver.",
+    givesNote:
+      "Son écume de fleurs attire syrphes, coléoptères et abeilles tout l'été, et ses feuilles nourrissent les chenilles du nacré de la sanguisorbe.",
+    propagationNote:
+      "Divisez les touffes en automne ou au printemps. La graine semée dehors à l'automne lève après le froid de l'hiver.",
+  },
+  "Lythrum salicaria@france-atlantic": {
+    nativeNote:
+      "Les hauts épis magenta des berges, des marais et des fossés atlantiques.",
+    careNote:
+      "Plantez-la en bord de mare, dans un coin marécageux ou une terre qui reste mouillée. Elle se ressème en sol humide : coupez les épis défleuris si vous en voulez moins.",
+    givesNote:
+      "Ses longs épis nourrissent bourdons, abeilles mellifères et papillons de juin à septembre, au bord de l'eau où peu d'autres fleurs poussent.",
+    propagationNote:
+      "Divisez les touffes au printemps. Ou semez en surface d'un terreau mouillé, le pot posé dans une soucoupe d'eau. Les jeunes pousses s'enracinent dans un bocal d'eau.",
+  },
+  "Iris pseudacorus@france-atlantic": {
+    nativeNote:
+      "L'iris jaune des bords de mare, des marais et des fossés atlantiques.",
+    careNote:
+      "Plantez-le en bord de mare ou en sol toujours humide, et il forme de grosses touffes. Divisez-les tous les quelques ans, avec des gants : la sève irrite la peau.",
+    givesNote:
+      "Ses grandes fleurs jaunes nourrissent les bourdons à langue longue au début de l'été, et ses touffes denses abritent grenouilles, tritons et poules d'eau au nid.",
+    propagationNote:
+      "Divisez les rhizomes après la floraison et replantez aussitôt au bord de l'eau. La graine fraîche, semée dans un pot de terreau mouillé, lève au printemps.",
+  },
+  "Leucanthemum vulgare@france-atlantic": {
+    nativeNote:
+      "La grande marguerite blanche des prairies de fauche, des bords de route et des talus secs atlantiques.",
+    careNote:
+      "Facile en plein soleil sur sol pauvre ; une terre riche la fait verser. Laissez-la dans l'herbe non fauchée jusqu'en juillet, puis fauchez et laissez tomber la graine.",
+    givesNote:
+      "Ses fleurs ouvertes nourrissent syrphes, coléoptères, petites abeilles et papillons au début de l'été, et les fringilles prennent ses graines.",
+    propagationNote:
+      "Semez à la volée sur sol nu en automne ou au printemps ; elle lève en quelques semaines. Les grosses touffes se divisent au printemps.",
+  },
+  "Knautia arvensis@france-atlantic": {
+    nativeNote:
+      "La pelote lilas des prairies, des bords de route et des talus herbeux secs atlantiques.",
+    careNote:
+      "Pour le plein soleil et un sol maigre et drainé, calcaire surtout. Supprimez les fleurs fanées pour en avoir jusqu'à l'automne, ou laissez les têtes en graines aux fringilles.",
+    givesNote:
+      "L'une des meilleures fleurs d'été pour les abeilles et les papillons, et le seul pollen que récolte l'andrène Andrena hattorfiana.",
+    propagationNote:
+      "Semez en automne ou au printemps, en pressant la graine à la surface d'un sol nu. Les jeunes pieds se déplacent facilement dès leur premier automne.",
+  },
+  "Origanum vulgare@france-atlantic": {
+    nativeNote:
+      "L'origan sauvage des talus ensoleillés, des pelouses calcaires et des bords de route secs atlantiques.",
+    careNote:
+      "Plein soleil et sol pauvre et drainé ; le calcaire est idéal. Rabattez-le après la floraison — ses feuilles sont l'herbe de cuisine.",
+    givesNote:
+      "L'une des toutes meilleures plantes à nectar de l'été : amaryllis, demi-deuils, bourdons et nombre de petites abeilles se pressent sur ses fleurs.",
+    propagationNote:
+      "Divisez les touffes au printemps, ou bouturez de jeunes pousses au début de l'été. La graine est fine : semez-la en surface sans la couvrir.",
+  },
+  "Achillea millefolium@france-atlantic": {
+    nativeNote:
+      "Les têtes blanches et plates des pelouses, prairies, bords de route et dunes atlantiques.",
+    careNote:
+      "Presque indestructible au soleil en sol sec et pauvre, et elle s'étend par stolons. Laissez-la gagner une pelouse rustique ou un talus sec plutôt qu'un massif soigné.",
+    givesNote:
+      "Ses ombelles plates servent de piste d'atterrissage aux syrphes, coléoptères et petites abeilles solitaires, et les achillées nourrissent plus de quatre-vingts espèces de chenilles.",
+    propagationNote:
+      "Déterrez et divisez les stolons au printemps ou à l'automne. La graine semée en surface au printemps lève en deux semaines environ.",
+  },
+  "Valeriana officinalis@france-atlantic": {
+    nativeNote:
+      "La haute valériane rose pâle des prairies humides, des fossés et des lisières fraîches atlantiques.",
+    careNote:
+      "Un sol frais au soleil ou à mi-ombre lui convient le mieux. Les chats adorent ses racines : protégez les jeunes pieds.",
+    givesNote:
+      "Ses têtes de fleurs parfumées nourrissent syrphes, abeilles et papillons au début de l'été.",
+    propagationNote:
+      "Semez en surface au printemps. Les touffes se divisent au printemps.",
+  },
+  "Eupatorium cannabinum@france-atlantic": {
+    nativeNote:
+      "Une haute plante rose sombre des fossés, des allées forestières humides et des berges atlantiques.",
+    careNote:
+      "Facile en sol frais, au soleil ou à mi-ombre, et elle forme une grosse touffe. Laissez les tiges debout l'hiver et coupez-les au printemps.",
+    givesNote:
+      "Un aimant à papillons en fin d'été : vulcains, paons du jour et robert-le-diable se pressent sur ses fleurs, comme l'écaille chinée.",
+    propagationNote:
+      "Divisez les touffes au printemps. La graine semée dehors à l'automne lève après l'hiver.",
+  },
+  "Malva moschata@france-atlantic": {
+    nativeNote:
+      "Une mauve rose pâle des talus de haie, des prairies et des bords de route secs atlantiques.",
+    careNote:
+      "Soleil et sol drainé. Elle vit peu mais se ressème ; rabattez-la après la première floraison pour en avoir d'autres.",
+    givesNote:
+      "Ses grandes fleurs ouvertes nourrissent bourdons et abeilles solitaires tout l'été, et les chenilles de l'hespérie de l'alcée mangent ses feuilles.",
+    propagationNote:
+      "Semez en automne ou au printemps à l'endroit voulu. Les plantules lèvent vite et fleurissent l'année suivante.",
+  },
+  "Teucrium scorodonia@france-atlantic": {
+    nativeNote:
+      "La sauge aux fleurs pâles des landes, des dunes, des bois secs et des murets atlantiques.",
+    careNote:
+      "Pour un sol sec et pauvre, au soleil ou à l'ombre légère, sableux ou acide surtout. Elle supporte la sécheresse sous les arbres.",
+    givesNote:
+      "Les bourdons butinent ses petites fleurs crème tout l'été, à l'ombre sèche où presque rien d'autre ne fleurit.",
+    propagationNote:
+      "Semez au printemps sur un sol caillouteux. Les touffes se divisent au printemps.",
+  },
+  "Anemone nemorosa@france-atlantic": {
+    nativeNote:
+      "Le tapis blanc de printemps des vieux bois et des talus de haie atlantiques.",
+    careNote:
+      "Plantez-la sous des arbres caducs ou une haie, dans une terre riche en feuilles qui reste fraîche au printemps. Elle s'étend très lentement, alors partez de plusieurs pieds, et elle disparaît dès juin.",
+    givesNote:
+      "Un pollen précoce pour les reines de bourdons, les andrènes et les syrphes en mars, avant que les arbres ne feuillent.",
+    propagationNote:
+      "Soulevez et divisez les rhizomes quand les feuilles fanent au début de l'été, et replantez aussitôt. Le semis est lent et doit se faire avec de la graine fraîche.",
+  },
+  "Cardamine pratensis@france-atlantic": {
+    nativeNote:
+      "La fleur lilas pâle des prairies humides, des fossés et des pelouses mouillées atlantiques en avril.",
+    careNote:
+      "Pour l'herbe humide au soleil ou à mi-ombre. Laissez une pelouse mouillée sans tonte jusqu'en juin : elle y est peut-être déjà.",
+    givesNote:
+      "La principale plante à chenilles de l'aurore, et un nectar précoce pour les abeilles et les premiers papillons du printemps.",
+    propagationNote:
+      "Semez la graine fraîche en été sur sol humide. Les feuilles posées sur la terre mouillée font de petites plantules à détacher une fois enracinées.",
+  },
+  "Echium vulgare@france-atlantic": {
+    nativeNote:
+      "Les épis bleus et hérissés des dunes, des talus secs et des vieilles carrières atlantiques.",
+    careNote:
+      "Une bisannuelle : des feuilles la première année, des fleurs la deuxième, puis elle meurt et se ressème. Donnez-lui le soleil et votre sol le plus pauvre, sec et caillouteux.",
+    givesNote:
+      "L'une des plantes à nectar les plus riches de l'été, qui se remplit toute la journée pour les bourdons, les abeilles mellifères et les anthidies.",
+    propagationNote:
+      "Semez à l'endroit voulu, en fin d'été ou au printemps, sur un sol nu et caillouteux. Elle se transplante mal une fois sa racine pivotante formée.",
+  },
+  "Hypericum perforatum@france-atlantic": {
+    nativeNote:
+      "Le millepertuis à fleurs jaunes des bords de route, des lisières et des pelouses sèches atlantiques.",
+    careNote:
+      "Facile au soleil en sol sec et pauvre, et il se ressème çà et là. Les animaux qui en broutent beaucoup prennent facilement des coups de soleil.",
+    givesNote:
+      "Ses fleurs riches en pollen nourrissent bourdons et syrphes, et les millepertuis nourrissent près de quarante espèces de chenilles.",
+    propagationNote:
+      "Semez la graine fine en surface au printemps, à la lumière. Les touffes se divisent au printemps.",
+  },
+  "Anthoxanthum odoratum@france-atlantic": {
+    nativeNote:
+      "La graminée précoce au parfum de foin des prairies, des landes et des vieilles pelouses atlantiques.",
+    careNote:
+      "Elle est déjà dans beaucoup de pelouses et de prairies : il suffit d'arrêter de tondre. Elle fleurit en avril, la première des graminées, et sent le foin frais une fois coupée.",
+    givesNote:
+      "Un pilier des prairies de fauche fleuries, avec des feuilles pour les chenilles des graminées et des graines pour fringilles et bruants.",
+    propagationNote:
+      "Semez à l'automne sur sol nu, seule ou dans un mélange prairial. Les touffes se divisent au printemps.",
+  },
+  "Briza media@france-atlantic": {
+    nativeNote:
+      "La graminée aux épillets tremblants des pelouses calcaires, des prairies sèches et des pelouses dunaires atlantiques.",
+    careNote:
+      "Pour un sol pauvre, maigre et ensoleillé, calcaire surtout ; nourrissez-la et les grandes graminées l'étouffent. Ses épillets en cœur sèchent bien en bouquet.",
+    givesNote:
+      "Un signe de vieille prairie jamais labourée, et ses graines nourrissent fringilles et bruants en fin d'été.",
+    propagationNote:
+      "Semez en automne ou au printemps sur sol nu et pauvre. Les touffes se divisent au printemps.",
+  },
+  "Molinia caerulea@france-atlantic": {
+    nativeNote:
+      "La graminée en touradons des landes humides, des tourbières et des landes de Gascogne.",
+    careNote:
+      "Pour un sol frais et acide au soleil, mais elle accepte un massif ordinaire qui reste frais. Ses tiges dorent à l'automne et tombent d'elles-mêmes en hiver.",
+    givesNote:
+      "Ses touradons abritent insectes en hivernage et petits mammifères, et ses feuilles nourrissent plusieurs papillons de nuit des graminées.",
+    propagationNote:
+      "Divisez les touffes au printemps, à la reprise. La graine semée à l'automne sur un terreau humide et acide lève au printemps.",
+  },
+  "Ajuga reptans@france-atlantic": {
+    nativeNote:
+      "Le tapis à épis bleus des bois frais, des prairies et des pelouses ombragées atlantiques.",
+    careNote:
+      "Elle s'étend en tapis par stolons de surface en sol frais, à l'ombre comme au soleil. Elle boude les longues sécheresses.",
+    givesNote:
+      "Des épis bleus de printemps pour les bourdons et les premiers papillons, au ras du sol sous les arbres.",
+    propagationNote:
+      "Rempotez les stolons enracinés au printemps ou à l'automne : chacun est une plante toute faite.",
+  },
+  "Prunella vulgaris@france-atlantic": {
+    nativeNote:
+      "La petite fleur pourpre des pelouses, des chemins et des prairies atlantiques.",
+    careNote:
+      "Elle supporte la tonte, le piétinement et la plupart des sols, et fleurit sous la lame si vous tondez un peu plus haut. Elle est souvent déjà dans la pelouse.",
+    givesNote:
+      "Ses fleurs pourpres nourrissent bourdons et petits papillons tout l'été, dans l'herbe rase où peu de fleurs survivent.",
+    propagationNote:
+      "Soulevez et divisez des morceaux enracinés au printemps ou à l'automne. La graine semée au printemps lève facilement.",
+  },
+  "Glechoma hederacea@france-atlantic": {
+    nativeNote:
+      "La menthe rampante à fleurs violettes des talus de haie, des bois et des pelouses ombragées atlantiques.",
+    careNote:
+      "Il s'étend vite en tapis à l'ombre : mettez-le sous une haie ou des arbustes, pas à côté de petites plantes. Malgré son nom, c'est une labiée, pas un lierre.",
+    givesNote:
+      "L'un des premiers nectars du printemps pour les reines de bourdons, les anthophores et les bombyles.",
+    propagationNote:
+      "Chaque tige s'enracine là où elle touche le sol. Soulevez et rempotez des morceaux enracinés à tout moment de la saison.",
+  },
+  "Athyrium filix-femina@france-atlantic": {
+    nativeNote:
+      "La fougère souple et plumeuse des bois humides, des fossés et des bords de ruisseau atlantiques.",
+    careNote:
+      "Il lui faut de l'ombre et un sol qui reste frais ; à l'air sec, ses frondes brunissent dès juillet. Elle disparaît l'hiver : coupez les vieilles frondes au début du printemps.",
+    givesNote:
+      "Du couvert et une litière humide pour grenouilles, crapauds et carabes dans un coin ombragé.",
+    propagationNote:
+      "Divisez une grosse souche au printemps, en gardant un bourgeon sur chaque morceau. Les spores semées sur un terreau stérile humide, sous un couvercle, sont lentes mais sûres.",
+  },
+  "Polypodium vulgare@france-atlantic": {
+    nativeNote:
+      "La fougère persistante des murets de pierre, des talus rocheux et des branches moussues atlantiques.",
+    careNote:
+      "Elle pousse au sommet d'un mur ombragé, sur un talus pierreux ou dans une mince terre de feuilles, et veut du drainage plus que de la profondeur. Ses frondes neuves sortent en été et restent vertes tout l'hiver.",
+    givesNote:
+      "Un couvert vert en hiver sur les murs et les talus pour les araignées, les cloportes et les troglodytes qui les chassent.",
+    propagationNote:
+      "Coupez un morceau du rhizome rampant avec ses frondes et fixez-le au printemps sur un terreau caillouteux ou dans une fente de mur. Les spores sont lentes.",
+  },
+  "Clematis vitalba@france-atlantic": {
+    nativeNote:
+      "La clématite sauvage qui drape les haies et les lisières atlantiques, sur calcaire surtout.",
+    careNote:
+      "Assez vigoureuse pour étouffer un petit arbre : donnez-lui une grande haie, une clôture ou un vieil abri, et rabattez-la fort en fin d'hiver. Sa sève irrite la peau.",
+    givesNote:
+      "Ses fleurs d'été parfumées nourrissent syrphes et abeilles, des papillons de nuit mangent ses feuilles, et ses plumets soyeux offrent un dortoir d'hiver aux troglodytes.",
+    propagationNote:
+      "Fixez une tige au sol et coupez-la une fois enracinée. Les boutures herbacées reprennent au début de l'été, et la graine semée dehors à l'automne lève au printemps.",
+  },
 };

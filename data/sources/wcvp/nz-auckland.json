@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "New Zealand North (TDWG:NZN — the North Island)",
   "region": "nz-auckland",
-  "ranAt": "2026-10-16T19:42:55.120Z",
+  "ranAt": "2026-10-25T07:32:49.421Z",
   "rows": [
     {
       "id": "metrosideros-excelsa",
@@ -147,6 +147,26 @@
       "viaSynonym": null
     },
     {
+      "id": "rhopalostylis-sapida",
+      "latin": "Rhopalostylis sapida",
+      "asked": "Rhopalostylis sapida",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pseudopanax-arboreus",
+      "latin": "Pseudopanax arboreus",
+      "asked": "Pseudopanax arboreus",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": "Neopanax arboreus (L.f.) Allan"
+    },
+    {
       "id": "leptospermum-scoparium",
       "latin": "Leptospermum scoparium",
       "asked": "Leptospermum scoparium",
@@ -247,6 +267,106 @@
       "viaSynonym": null
     },
     {
+      "id": "myrsine-australis",
+      "latin": "Myrsine australis",
+      "asked": "Myrsine australis",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "coprosma-lucida",
+      "latin": "Coprosma lucida",
+      "asked": "Coprosma lucida",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "coprosma-propinqua",
+      "latin": "Coprosma propinqua",
+      "asked": "Coprosma propinqua",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "brachyglottis-repanda",
+      "latin": "Brachyglottis repanda",
+      "asked": "Brachyglottis repanda",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "geniostoma-ligustrifolium",
+      "latin": "Geniostoma ligustrifolium",
+      "asked": "Geniostoma ligustrifolium",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": "Geniostoma rupestre var. ligustrifolium (A.Cunn.) B.J.Conn"
+    },
+    {
+      "id": "veronica-macrocarpa",
+      "latin": "Veronica macrocarpa",
+      "asked": "Veronica macrocarpa",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "corokia-buddleioides",
+      "latin": "Corokia buddleioides",
+      "asked": "Corokia buddleioides",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ozothamnus-leptophyllus",
+      "latin": "Ozothamnus leptophyllus",
+      "asked": "Ozothamnus leptophyllus",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "melicope-ternata",
+      "latin": "Melicope ternata",
+      "asked": "Melicope ternata",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "dodonaea-viscosa",
+      "latin": "Dodonaea viscosa",
+      "asked": "Dodonaea viscosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "phormium-tenax",
       "latin": "Phormium tenax",
       "asked": "Phormium tenax",
@@ -290,6 +410,106 @@
       "id": "libertia-grandiflora",
       "latin": "Libertia grandiflora",
       "asked": "Libertia grandiflora",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "dianella-nigra",
+      "latin": "Dianella nigra",
+      "asked": "Dianella nigra",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "euphorbia-glauca",
+      "latin": "Euphorbia glauca",
+      "asked": "Euphorbia glauca",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "scandia-rosifolia",
+      "latin": "Scandia rosifolia",
+      "asked": "Scandia rosifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "linum-monogynum",
+      "latin": "Linum monogynum",
+      "asked": "Linum monogynum",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lepidium-oleraceum",
+      "latin": "Lepidium oleraceum",
+      "asked": "Lepidium oleraceum",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "senecio-lautus",
+      "latin": "Senecio lautus",
+      "asked": "Senecio lautus",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "wahlenbergia-violacea",
+      "latin": "Wahlenbergia violacea",
+      "asked": "Wahlenbergia violacea",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "astelia-fragrans",
+      "latin": "Astelia fragrans",
+      "asked": "Astelia fragrans",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "apium-prostratum",
+      "latin": "Apium prostratum",
+      "asked": "Apium prostratum",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "haloragis-erecta",
+      "latin": "Haloragis erecta",
+      "asked": "Haloragis erecta",
       "verdict": "NATIVE",
       "areas": {
         "NZN": "NATIVE"
@@ -347,6 +567,26 @@
       "viaSynonym": null
     },
     {
+      "id": "machaerina-sinclairii",
+      "latin": "Machaerina sinclairii",
+      "asked": "Machaerina sinclairii",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "poa-anceps",
+      "latin": "Poa anceps",
+      "asked": "Poa anceps",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "dichondra-repens",
       "latin": "Dichondra repens",
       "asked": "Dichondra repens",
@@ -387,6 +627,46 @@
       "viaSynonym": null
     },
     {
+      "id": "coprosma-acerosa",
+      "latin": "Coprosma acerosa",
+      "asked": "Coprosma acerosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pimelea-prostrata",
+      "latin": "Pimelea prostrata",
+      "asked": "Pimelea prostrata",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "tetragonia-tetragonoides",
+      "latin": "Tetragonia tetragonoides",
+      "asked": "Tetragonia tetragonoides",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "acaena-novae-zelandiae",
+      "latin": "Acaena novae-zelandiae",
+      "asked": "Acaena novae-zelandiae",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "clematis-paniculata",
       "latin": "Clematis paniculata",
       "asked": "Clematis paniculata",
@@ -420,6 +700,26 @@
       "id": "parsonsia-heterophylla",
       "latin": "Parsonsia heterophylla",
       "asked": "Parsonsia heterophylla",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "metrosideros-perforata",
+      "latin": "Metrosideros perforata",
+      "asked": "Metrosideros perforata",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "metrosideros-fulgens",
+      "latin": "Metrosideros fulgens",
+      "asked": "Metrosideros fulgens",
       "verdict": "NATIVE",
       "areas": {
         "NZN": "NATIVE"
@@ -470,6 +770,56 @@
       "id": "blechnum-novae-zelandiae",
       "latin": "Blechnum novae-zelandiae",
       "asked": "Blechnum novae-zelandiae",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "asplenium-oblongifolium",
+      "latin": "Asplenium oblongifolium",
+      "asked": "Asplenium oblongifolium",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "microsorum-pustulatum",
+      "latin": "Microsorum pustulatum",
+      "asked": "Microsorum pustulatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": "Lecanopteris pustulata (G.Forst.) Perrie & Brownsey"
+    },
+    {
+      "id": "adiantum-cunninghamii",
+      "latin": "Adiantum cunninghamii",
+      "asked": "Adiantum cunninghamii",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "dicksonia-fibrosa",
+      "latin": "Dicksonia fibrosa",
+      "asked": "Dicksonia fibrosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "NZN": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lygodium-articulatum",
+      "latin": "Lygodium articulatum",
+      "asked": "Lygodium articulatum",
       "verdict": "NATIVE",
       "areas": {
         "NZN": "NATIVE"

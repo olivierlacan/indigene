@@ -237,6 +237,12 @@ export const REVIEWED = {
     "Symphyotrichum laeve": { "il-fqa": "Aster laevis", why: "The 1997 Illinois list predates the split of the American asters out of Aster." },
     "Eutrochium maculatum": { "il-fqa": "Eupatorium maculatum", why: "The 1997 Illinois list keeps Joe-Pye weeds in Eupatorium." },
     "Packera aurea": { "il-fqa": "Senecio aureus", why: "The 1997 Illinois list keeps golden ragwort in Senecio." },
+    "Cornus sericea": { "il-fqa": "Cornus stolonifera", why: "The 1997 Illinois list keeps red-osier dogwood under its older name." },
+    "Osmundastrum cinnamomeum": { "il-fqa": "Osmunda cinnamomea", why: "Cinnamon fern left Osmunda in 2008; the 1997 Illinois list predates the move." },
+    "Athyrium angustum": {
+      "chicago-fqa": "Athyrium filix-femina",
+      why: "Wilhelm & Rericha fold the American lady fern into the broad Athyrium filix-femina.",
+    },
   },
   "mid-atlantic": {
     "Schizachyrium scoparium": {

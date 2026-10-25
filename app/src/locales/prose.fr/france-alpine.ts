@@ -5,7 +5,8 @@
 // plain key; all six say something different at altitude — the rowan is a hedge
 // tree in the west and the highest broadleaf on the slope here — so each appears
 // again at the bottom under a region-qualified key (`"Latin@france-alpine"`).
-// See `./index.ts`.
+// See `./index.ts`. The second batch (from Fagus sylvatica down) is keyed the
+// same way throughout, so it never collides with another region's file.
 import type { ProseTable } from "../../lib/prose";
 
 export const FRANCE_ALPINE: ProseTable = {
@@ -692,5 +693,410 @@ export const FRANCE_ALPINE: ProseTable = {
       "Les fougères ne nourrissent presque aucune chenille, et il ne sert à rien de prétendre le contraire. Ce que celle-ci apporte, c'est la strate ombragée, humide et abritée qui manque à un jardin de montagne rocailleux : les frondes gardent le sol frais tout l'été, la souche tient un talus sous une averse, et c'est là que coléoptères, araignées, crapauds et salamandres passent l'année.",
     propagationNote:
       "Divisez une vieille souche au printemps, en gardant sur chaque morceau plusieurs frondes et une poignée de racines. Les spores semées sur un terreau stérilisé humide, sous couvercle, au frais et à mi-ombre, demandent des mois et réussissent.",
+  },
+  // -------------------------------------------------------------------------
+  // Deuxième lot : arbres, arbustes, vivaces, graminées, couvre-sols, fougères
+  // et une liane. Tous sous la clé qualifiée, pour ne jamais entrer en
+  // collision avec un autre fichier qui écrirait le même taxon.
+  // -------------------------------------------------------------------------
+  "Fagus sylvatica@france-alpine": {
+    nativeNote:
+      "Le feuillu des Alpes externes humides, indigène jusqu'à 1 500 m environ, où il partage la forêt montagnarde avec le sapin blanc.",
+    careNote:
+      "Il lui faut un air humide et un sol drainant ; il boude dans l'argile mouillée et dans les fonds de vallée chauds et secs. Il supporte l'ombre jeune et fait une belle haie qui garde ses feuilles rousses tout l'hiver.",
+    givesNote:
+      "Les faînes nourrissent geais, sittelles, loirs et écureuils roux, et peu d'arbres de montagne portent autant de chenilles. Les vieux hêtres se creusent et logent pics noirs et chauves-souris.",
+    propagationNote:
+      "Ramassez les faînes à leur chute en automne et semez-les aussitôt en pot dehors, à l'abri des mulots. Elles lèvent au printemps, après le froid de l'hiver.",
+  },
+  "Abies alba@france-alpine": {
+    nativeNote:
+      "Le sapin des Alpes externes humides, indigène entre 800 et 1 700 m environ et partenaire du hêtre dans la forêt montagnarde.",
+    careNote:
+      "L'arbre le plus tolérant à l'ombre d'ici : un semis peut attendre des décennies sous les hêtres qu'une trouée s'ouvre. Il lui faut un air frais et humide et un sol profond ; il craint le vent desséchant et les gelées tardives.",
+    givesNote:
+      "Sa graine nourrit becs-croisés, mésanges noires et écureuils, et son houppier dense et persistant abrite roitelets et chouettes en hiver. Les chevreuils broutent durement ses jeunes pousses, d'où sa rareté dans bien des bois.",
+    propagationNote:
+      "Cueillez les cônes sur l'arbre au début de l'automne, avant qu'ils se désagrègent, et séchez-les pour libérer la graine. Donnez-lui quatre semaines de froid humide et semez au printemps. La graine se conserve mal : semez-la dans l'année.",
+  },
+  "Pinus sylvestris@france-alpine": {
+    nativeNote:
+      "Le pin des vallées internes sèches — Maurienne, Durance, Briançonnais — indigène du fond de vallée jusqu'à 2 000 m environ sur les versants ensoleillés.",
+    careNote:
+      "Plein soleil et n'importe quel sol drainant, y compris le terrain maigre, pierreux ou calcaire qui tuerait un épicéa. Rapide jeune, il ralentit pour devenir un vieil arbre à cime plate, plein de caractère.",
+    givesNote:
+      "Sa graine nourrit becs-croisés, tarins et écureuils roux, et mésanges huppées et grimpereaux chassent sur son écorce orangée. La processionnaire du pin y fait aussi ses nids ; les poils de ses chenilles sont urticants, tenez donc enfants et chiens à l'écart.",
+    propagationNote:
+      "Cueillez les cônes en fin d'hiver, avant qu'ils s'ouvrent, et séchez-les au chaud jusqu'à ce que la graine tombe. Pas besoin de froid : semez clair au printemps et gardez les semis en pleine lumière.",
+  },
+  "Laburnum alpinum@france-alpine": {
+    nativeNote:
+      "Un petit arbre des bois rocheux montagnards des Alpes françaises, qui fleurit quelques semaines après le cytise des jardins.",
+    careNote:
+      "Soleil ou ombre légère et sol drainant ; le calcaire lui convient. Toutes ses parties sont toxiques, les graines surtout : réfléchissez-y là où jouent de jeunes enfants.",
+    givesNote:
+      "De longues grappes jaunes au début de l'été, que bourdons et osmies visitent assidûment. Comme les autres Fabacées, il enrichit en azote les sols pauvres.",
+    propagationNote:
+      "Versez de l'eau chaude sur la graine dure et laissez-la tremper une nuit, puis semez à l'automne en pot dehors. Mettez des gants pour la manipuler.",
+  },
+  "Alnus incana@france-alpine": {
+    nativeNote:
+      "L'aulne des torrents de montagne et des bancs de graviers, indigène le long des rivières alpines du fond de vallée jusqu'à 1 600 m environ.",
+    careNote:
+      "Rapide, robuste, à l'aise en sol mouillé ou pierreux, même sur le gravier nu d'une rivière. Comme tous les aulnes il fabrique son propre azote, et construit donc du sol là où peu de choses poussent.",
+    givesNote:
+      "Les aulnes nourrissent plus de chenilles que tout autre genre d'arbre d'ici, et leur graine est un aliment d'hiver pour tarins et sizerins. Au bord d'un ruisseau, ses racines tiennent la berge.",
+    propagationNote:
+      "Cueillez les petits cônes à l'automne quand ils brunissent et séchez-les pour libérer la graine. Pressez-la sur un terreau humide au printemps sans la couvrir : elle a besoin de lumière pour germer.",
+  },
+  "Taxus baccata@france-alpine": {
+    nativeNote:
+      "Disséminé dans les hêtraies-sapinières des Alpes externes sur calcaire, le plus souvent sous de plus grands arbres, dans des gorges raides et ombragées.",
+    careNote:
+      "Il supporte l'ombre profonde, tout sol drainant et toutes les tailles : c'est la meilleure haie indigène pour l'ombre. Tout est toxique sauf la chair rouge de la baie ; tenez-le loin des chevaux et du bétail.",
+    givesNote:
+      "Ses baies nourrissent grives, merles et jaseurs à l'automne, et son feuillage dense et persistant est un dortoir d'hiver sûr. Les oiseaux rejettent la graine intacte.",
+    propagationNote:
+      "Les boutures des pousses de l'année s'enracinent lentement mais sûrement en fin d'été, en pot à l'ombre. La graine demande deux hivers dehors avant de lever.",
+  },
+  "Sambucus racemosa@france-alpine": {
+    nativeNote:
+      "Le sureau des clairières de montagne et des couloirs d'avalanche, indigène de 600 m environ jusqu'à la limite des arbres, aux baies écarlates en juillet.",
+    careNote:
+      "Facile au soleil ou à mi-ombre, en sol frais, acide à neutre. Coupez à la base quelques vieilles tiges tous les quelques ans pour le garder jeune. Crues, baies et graines dérangent l'estomac.",
+    givesNote:
+      "Ses baies mûrissent en plein été, bien avant la plupart des autres, et nourrissent grives, rougegorges, fauvettes à tête noire et loirs. Ses fleurs crème précoces sortent les premières abeilles et les premiers coléoptères.",
+    propagationNote:
+      "Des boutures de rameaux nus, grosses comme un crayon, piquées en terre l'hiver, s'enracinent avant l'été. La graine nettoyée semée à l'automne lève à son deuxième printemps.",
+  },
+  "Amelanchier ovalis@france-alpine": {
+    nativeNote:
+      "Un arbuste des rochers calcaires ensoleillés et des fourrés secs, indigène jusqu'à 1 800 m environ — les fleurs blanches sur les falaises en avril.",
+    careNote:
+      "Plein soleil et sol drainant — une rocaille, un talus sec, une haie caillouteuse. Il ne demande aucune taille et encaisse sécheresse, vent et froid.",
+    givesNote:
+      "Des fleurs précoces pour les andrènes et les premières reines de bourdons, puis des baies bleu-noir en juillet que merles et fauvettes dévalisent vite. Elles se mangent aussi.",
+    propagationNote:
+      "Nettoyez la graine des baies mûres et semez-la aussitôt en pot dehors ; elle lève après un ou deux hivers. Une branche basse fixée au sol s'enracine en un an.",
+  },
+  "Lonicera alpigena@france-alpine": {
+    nativeNote:
+      "Un chèvrefeuille dressé des bois montagnards ombragés sur calcaire, aux baies rouges brillantes par paires, comme de petites cerises.",
+    careNote:
+      "Mi-ombre ou ombre, en sol frais et calcaire qui ne sèche pas. Lent et net, il ne demande aucune taille. Les baies sont toxiques pour nous.",
+    givesNote:
+      "Ses fleurs nourrissent les bourdons au début de l'été, et ses baies les grives et les fauvettes à tête noire. Les chèvrefeuilles nourrissent la chenille du petit sylvain.",
+    propagationNote:
+      "Des extrémités de pousses tendres prélevées au début de l'été s'enracinent en quelques semaines sous abri. La graine extraite des baies demande un hiver dehors.",
+  },
+  "Ribes alpinum@france-alpine": {
+    nativeNote:
+      "Un petit groseillier sans épines des bois montagnards rocheux et des éboulis, indigène jusqu'à 1 800 m environ.",
+    careNote:
+      "Robuste au soleil comme à l'ombre, dans tout sol drainant, et il fait une petite haie qui se taille bien. Les pieds sont mâles ou femelles, et seules les femelles portent des baies.",
+    givesNote:
+      "Des fleurs vert-jaune précoces pour les petites abeilles et les syrphes, puis des baies rouges pour merles et rougegorges. Les groseilliers nourrissent les chenilles de la zérène du groseillier.",
+    propagationNote:
+      "Des rameaux nus coupés en hiver et piqués en terre s'enracinent facilement. Prélevez-les sur un pied femelle si vous voulez des baies.",
+  },
+  "Hippophae rhamnoides@france-alpine": {
+    nativeNote:
+      "Un arbuste des graviers des rivières alpines — Durance, Guil, Isère — loin de toute mer, indigène jusqu'à 1 800 m environ.",
+    careNote:
+      "Plein soleil et sol pauvre et pierreux ; il fabrique son propre azote et drageonne en fourré. Plantez un mâle près des femelles, sinon pas de baies.",
+    givesNote:
+      "Des baies orange qui tiennent jusqu'en hiver et nourrissent grives, litornes et jaseurs quand il ne reste presque rien. Le fourré épineux est un nichoir sûr pour les petits oiseaux.",
+    propagationNote:
+      "Déterrez un drageon enraciné en hiver et replantez-le. Les boutures de bois sec s'enracinent aussi, et une bouture garde le sexe du pied mère.",
+  },
+  "Pinus mugo@france-alpine": {
+    nativeNote:
+      "Le pin bas et étalé des éboulis calcaires d'altitude et des pentes d'avalanche, près de la limite des arbres.",
+    careNote:
+      "Plein soleil et tout sol drainant, roche nue et calcaire compris. Lent, insensible au vent et à la neige : ses branches souples plient simplement sous son poids.",
+    givesNote:
+      "Un couvert bas, dense et persistant là où presque rien ne tient debout, qui abrite tétras lyre et petits oiseaux tout l'hiver. Sa graine nourrit becs-croisés et cassenoix.",
+    propagationNote:
+      "Cueillez les cônes en fin d'hiver et séchez-les jusqu'à ce qu'ils s'ouvrent. Semez la graine au printemps sans froid, et attendez-vous à des semis lents.",
+  },
+  "Cotoneaster integerrimus@france-alpine": {
+    nativeNote:
+      "Un arbuste bas des rochers ensoleillés et des pentes sèches, indigène jusqu'à 2 000 m environ — le cousin sauvage des cotonéasters de jardin.",
+    careNote:
+      "Plein soleil, sur un sol sec, pierreux et calcaire : une rocaille, un haut de mur, un éboulis. Il est lent et ne demande rien une fois installé.",
+    givesNote:
+      "De petites fleurs roses que guêpes et abeilles visitent de près, puis des baies rouges pour grives et merles.",
+    propagationNote:
+      "La graine demande deux hivers dehors avant de lever. Les boutures semi-aoûtées de fin d'été vont plus vite.",
+  },
+  "Arnica montana@france-alpine": {
+    nativeNote:
+      "La marguerite orangée des pâturages de montagne acides, indigène de 800 à 2 500 m environ et plus rare partout où l'on fertilise.",
+    careNote:
+      "Un sol acide et maigre qui ne voit jamais d'engrais, en plein soleil — une herbe haute sur granite, pas un massif. Achetez des plants de pépinière : la cueillette sauvage est réglementée.",
+    givesNote:
+      "Des fleurs pour abeilles, syrphes et papillons en plein été. Une tache d'arnica signale un pâturage resté intact.",
+    propagationNote:
+      "Semez la graine fraîche au printemps en surface, sur un mélange acide et graveleux. Les vieilles touffes se divisent au printemps.",
+  },
+  "Gentiana acaulis@france-alpine": {
+    nativeNote:
+      "La grande trompette bleue des pelouses alpines sur sol acide, indigène à partir de 1 200 m environ.",
+    careNote:
+      "Plein soleil, un sol graveleux qui reste frais l'été, et des hivers froids. Elle fleurit parfois mal ; une plantation ferme et aucun dérangement aident.",
+    givesNote:
+      "Les bourdons descendent au fond des trompettes chercher le nectar, et dans les alpages peu de fleurs en offrent autant.",
+    propagationNote:
+      "Semez la graine fine comme de la poussière en surface à l'automne et laissez le pot dehors pour l'hiver. Divisez un tapis installé après la floraison.",
+  },
+  "Astrantia major@france-alpine": {
+    nativeNote:
+      "Une plante des prairies montagnardes humides et des lisières, aux fleurs en pelote rose-blanc, comme du papier.",
+    careNote:
+      "Facile à mi-ombre en sol frais, et vendue dans la plupart des pépinières, souvent en variétés. Rabattez-la après la première floraison pour en avoir une seconde.",
+    givesNote:
+      "L'une des meilleures plantes à abeilles et à syrphes pour l'ombre : chaque tête compte des dizaines de minuscules fleurs. Coléoptères et petites guêpes viennent aussi.",
+    propagationNote:
+      "Divisez les touffes au printemps. La graine fraîche semée dehors à l'automne lève le printemps suivant ; les variétés ne se reproduisent pas fidèlement.",
+  },
+  "Geranium sylvaticum@france-alpine": {
+    nativeNote:
+      "Le géranium violet des prairies de fauche de montagne et des mégaphorbiaies, indigène jusqu'à 2 200 m environ.",
+    careNote:
+      "Facile au soleil ou à mi-ombre en sol frais. Rabattez-le après la floraison pour un feuillage neuf.",
+    givesNote:
+      "Des coupes ouvertes de nectar pour bourdons et petites abeilles solitaires au début de l'été, puis des graines pour les fringilles.",
+    propagationNote:
+      "Divisez les touffes au printemps ou à l'automne. La graine semée à l'automne lève au printemps suivant.",
+  },
+  "Aster alpinus@france-alpine": {
+    nativeNote:
+      "Une marguerite violette et basse des pelouses et rochers calcaires ensoleillés, indigène de 1 200 à 3 000 m environ.",
+    careNote:
+      "Plein soleil et drainage parfait — une rocaille ou un haut de mur. Un hiver humide lui fait plus de mal qu'un hiver froid.",
+    givesNote:
+      "Une piste d'atterrissage de nectar pour papillons, syrphes et petites abeilles pendant le court été alpin.",
+    propagationNote:
+      "Semez la graine fraîche à l'automne ou au printemps. Divisez la touffe après la floraison.",
+  },
+  "Pulsatilla alpina@france-alpine": {
+    nativeNote:
+      "La grande anémone blanche des alpages à la fonte des neiges, indigène à partir de 1 400 m environ, suivie d'une tignasse de plumets argentés.",
+    careNote:
+      "Difficile sous la montagne : il lui faut un sol froid, profond et drainant, et elle déteste être déplacée. Plantez-la jeune et laissez-la tranquille.",
+    givesNote:
+      "Une coupe de pollen précoce pour les reines de bourdons et les mouches, juste après le dégel.",
+    propagationNote:
+      "Semez la graine dès sa maturité, en laissant sa queue plumeuse dépasser de la surface. Les semis fleurissent à leur troisième ou quatrième année.",
+  },
+  "Lilium martagon@france-alpine": {
+    nativeNote:
+      "Le lis rose en turban des bois montagnards et des hautes prairies, indigène jusqu'à 2 300 m environ.",
+    careNote:
+      "Plantez le bulbe profond, à mi-ombre, en sol drainant, et soyez patient : les semis mettent cinq à sept ans à fleurir. Les lis sont mortels pour les chats, pollen compris.",
+    givesNote:
+      "Ses fleurs pendantes sont faites pour les sphinx, qui viennent au crépuscule boire en vol stationnaire dessous. Les bourdons prennent ce qu'ils laissent.",
+    propagationNote:
+      "La graine demande du chaud puis du froid et lève à son deuxième printemps. Des écailles détachées du bulbe et gardées dans un terreau humide font aussi de petits bulbes.",
+  },
+  "Aquilegia vulgaris@france-alpine": {
+    nativeNote:
+      "L'ancolie bleue sauvage des bois montagnards et des lisières de prairie, indigène jusqu'à 2 000 m environ.",
+    careNote:
+      "Facile au soleil ou à mi-ombre, et elle se ressème çà et là. Les ancolies de jardin s'hybrident librement avec elle : tenez la sauvage à l'écart si vous la voulez pure.",
+    givesNote:
+      "Les bourdons à longue langue atteignent le nectar au fond des éperons ; ceux à langue courte percent l'arrière pour le voler. Les fringilles mangent la graine.",
+    propagationNote:
+      "Semez la graine fraîche en été ou à l'automne et laissez le pot dehors pour l'hiver. Les plants fleurissent à leur deuxième année.",
+  },
+  "Primula veris@france-alpine": {
+    nativeNote:
+      "La primevère jaune du printemps des prairies calcaires ensoleillées, indigène jusqu'à 2 000 m environ.",
+    careNote:
+      "Facile au soleil ou à l'ombre légère, dans une herbe fauchée tard. Laissez mûrir les graines avant de tondre.",
+    givesNote:
+      "Un nectar précoce pour les reines de bourdons et les bombyles. Les primevères nourrissent la chenille de la lucine, un petit papillon peu commun des pentes herbeuses.",
+    propagationNote:
+      "Semez la graine fraîche en fin d'été et laissez le pot dehors pour l'hiver. Divisez les touffes après la floraison.",
+  },
+  "Knautia arvensis@france-alpine": {
+    nativeNote:
+      "La pelote lilas des prairies de fauche sèches et des bords de route, indigène jusqu'à 2 000 m environ.",
+    careNote:
+      "Plein soleil et sol maigre ; plante de prairie, elle se fauche avec le foin. Sa racine profonde la rend insensible à la sécheresse.",
+    givesNote:
+      "L'une des meilleures fleurs à papillons qui soient, et le seul pollen que récolte l'andrène de la scabieuse. Les chardonnerets prennent la graine.",
+    propagationNote:
+      "Semez à l'automne en place, ou en pots dehors. Elle fleurit à sa deuxième année.",
+  },
+  "Campanula scheuchzeri@france-alpine": {
+    nativeNote:
+      "Une campanule violette et penchée des alpages, indigène de 1 400 à 3 000 m environ.",
+    careNote:
+      "Soleil et sol graveleux qui reste frais l'été — une rocaille en altitude. Basse et lente à s'étendre.",
+    givesNote:
+      "De petites abeilles des campanules ne récoltent que leur pollen et dorment dans les clochettes. Bourdons et syrphes passent aussi.",
+    propagationNote:
+      "Pressez la graine fine comme de la poussière en surface au printemps et gardez-la humide. Divisez les touffes au printemps.",
+  },
+  "Digitalis grandiflora@france-alpine": {
+    nativeNote:
+      "La digitale jaune pâle des bois montagnards rocheux et des clairières, indigène jusqu'à 1 800 m environ.",
+    careNote:
+      "Facile à mi-ombre en sol drainant, et plus durable que la digitale pourpre. Toutes ses parties sont toxiques.",
+    givesNote:
+      "Les bourdons entrent tout entiers dans les tubes, et les fleurs se succèdent pendant des semaines.",
+    propagationNote:
+      "Répandez la graine fine en surface au printemps. Les vieilles touffes se divisent.",
+  },
+  "Salvia pratensis@france-alpine": {
+    nativeNote:
+      "La sauge bleu profond des prairies sèches et ensoleillées sur calcaire, indigène jusqu'à 1 800 m environ.",
+    careNote:
+      "Plein soleil et sol sec et calcaire ; en sol riche, elle s'affale et s'épuise. Rabattez-la après la floraison pour une seconde vague.",
+    givesNote:
+      "Chaque fleur porte un levier qui poudre de pollen le dos du bourdon qui la visite. Anthidies et osmies la butinent aussi.",
+    propagationNote:
+      "Semez au printemps ou à l'automne dans un mélange graveleux. Elle fleurit à sa deuxième année.",
+  },
+  "Origanum vulgare@france-alpine": {
+    nativeNote:
+      "L'origan rose des talus calcaires ensoleillés et des lisières sèches, indigène jusqu'à 1 800 m environ.",
+    careNote:
+      "Plein soleil et sol pauvre et sec. Il s'étend lentement en tapis ; coupez les tiges sèches au printemps, pas à l'automne.",
+    givesNote:
+      "Peu de plantes attirent autant de papillons en fin d'été — amaryllis, azurés, nacrés — et aussi syrphes et abeilles. Des insectes hivernent dans les tiges laissées debout.",
+    propagationNote:
+      "Divisez les touffes au printemps. La graine pressée en surface germe à la lumière en deux semaines.",
+  },
+  "Leucanthemum vulgare@france-alpine": {
+    nativeNote:
+      "La grande marguerite blanche des prairies de fauche de montagne, indigène jusqu'à 2 000 m environ.",
+    careNote:
+      "Facile au soleil sur sol maigre, et rapide de semis. Elle s'efface au bout de quelques années si l'herbe devient trop riche.",
+    givesNote:
+      "Des fleurs ouvertes pour syrphes, coléoptères, petites abeilles et papillons tout l'été.",
+    propagationNote:
+      "Répandez la graine à l'automne sur sol nu. Les touffes se divisent facilement au printemps.",
+  },
+  "Geum montanum@france-alpine": {
+    nativeNote:
+      "Une fleur dorée, comme un bouton d'or, des alpages acides, indigène à partir de 1 500 m environ, suivie de plumets soyeux.",
+    careNote:
+      "Plein soleil et sol acide et graveleux qui reste frais l'été. Une plante de rocaille qui a besoin d'hivers froids.",
+    givesNote:
+      "Des fleurs dorées et ouvertes pour mouches, coléoptères et petites abeilles pendant le court été alpin.",
+    propagationNote:
+      "Semez la graine fraîche à l'automne et laissez le pot dehors. Divisez la touffe au printemps.",
+  },
+  "Deschampsia cespitosa@france-alpine": {
+    nativeNote:
+      "La grande touffe aérienne des pâturages humides de montagne et des bords de ruisseau, indigène jusqu'à 2 500 m environ.",
+    careNote:
+      "Facile au soleil ou à mi-ombre en sol frais. Peignez les feuilles mortes au printemps.",
+    givesNote:
+      "Nourriture des chenilles de myrtils, de tristans et d'hespéries, qui hivernent aussi dans la touffe. Les fringilles prennent la graine.",
+    propagationNote:
+      "Coupez une touffe à la bêche au printemps. La graine semée au printemps lève en quelques semaines.",
+  },
+  "Briza media@france-alpine": {
+    nativeNote:
+      "La petite graminée dont les épillets en cœur tremblent à la moindre brise, indigène des prairies calcaires sèches jusqu'à 2 000 m environ.",
+    careNote:
+      "Il lui faut un sol pauvre en plein soleil ; en sol riche, des graminées plus grossières l'étouffent. Fauchez-la avec le foin.",
+    givesNote:
+      "Le signe d'une prairie jamais fertilisée, avec des graines pour les petits oiseaux. Quelques papillons de la famille des satyres l'utilisent comme chenilles.",
+    propagationNote:
+      "Semez à l'automne ou au printemps sur sol nu et maigre. Les petites touffes se divisent au printemps.",
+  },
+  "Luzula nivea@france-alpine": {
+    nativeNote:
+      "Une luzule des bois montagnards ombragés, aux têtes de fleurs d'un blanc pur, indigène dans les Alpes jusqu'à 2 000 m environ.",
+    careNote:
+      "Facile à l'ombre sèche ou fraîche sous les arbres, là où l'herbe ne pousse pas. Persistante ; nettoyez-la au printemps.",
+    givesNote:
+      "Un abri pour coléoptères et araignées au sol du bois, et des graines pour les petits oiseaux. Quelques chenilles de papillons de nuit mangent les luzules.",
+    propagationNote:
+      "Divisez les touffes au printemps. La graine semée à l'automne lève au printemps suivant.",
+  },
+  "Calamagrostis varia@france-alpine": {
+    nativeNote:
+      "Une haute graminée argentée des pentes calcaires raides, des éboulis et des pinèdes claires, indigène jusqu'à 2 200 m environ.",
+    careNote:
+      "Soleil ou ombre légère sur sol pierreux, calcaire et drainant. Ses racines traçantes tiennent un talus meuble.",
+    givesNote:
+      "Nourriture des chenilles de moirés et d'autres papillons qui mangent les graminées, et un abri d'hiver dans ses feuilles sèches.",
+    propagationNote:
+      "Arrachez et divisez une touffe au printemps, en gardant un bon morceau de racine sur chaque éclat. Le semis n'en vaut guère la peine.",
+  },
+  "Clematis vitalba@france-alpine": {
+    nativeNote:
+      "La clématite sauvage exubérante des haies et lisières de vallée, indigène jusqu'à 1 500 m environ, aux plumets argentés tout l'hiver.",
+    careNote:
+      "Assez vigoureuse pour étouffer un petit arbre : donnez-lui une grande haie ou une clôture et rabattez-la sévèrement en hiver. Une plante de vallée : au-dessus de 1 500 m environ, elle s'efface.",
+    givesNote:
+      "Des fleurs de fin d'été pour syrphes et abeilles, et ses plumets duveteux garnissent les nids des troglodytes et des chardonnerets. Plusieurs chenilles de papillons de nuit ne mangent que de la clématite.",
+    propagationNote:
+      "Fixez une longue pousse sous la terre au printemps et sevrez-la l'année suivante. La graine demande un hiver froid et humide dehors.",
+  },
+  "Arctostaphylos uva-ursi@france-alpine": {
+    nativeNote:
+      "Un tapis persistant des rochers ensoleillés et des pinèdes claires, indigène jusqu'à 2 500 m environ.",
+    careNote:
+      "Plein soleil et drainage parfait ; lente à démarrer, elle fait ensuite un tapis dense. Elle déteste être déplacée : plantez-la en godet.",
+    givesNote:
+      "Des clochettes précoces pour les reines de bourdons, et des baies rouges que tétras et grives prennent tout l'hiver.",
+    propagationNote:
+      "Des boutures semi-aoûtées de fin d'été s'enracinent lentement sous abri dans un mélange acide et graveleux. Une tige rampante fixée au sol s'enracine là où elle touche.",
+  },
+  "Sempervivum arachnoideum@france-alpine": {
+    nativeNote:
+      "La joubarbe dont chaque rosette porte une toile de poils blancs, indigène sur les rochers acides ensoleillés de 1 000 à 3 000 m environ.",
+    careNote:
+      "Du soleil, du gravier et rien d'autre — un haut de mur, une fissure, un pot de graviers. Un sol riche et mouillé est la seule chose qui la tue.",
+    givesNote:
+      "Des fleurs roses étoilées pour abeilles et papillons en plein été. Les joubarbes comptent parmi les plantes nourricières de la chenille de l'apollon.",
+    propagationNote:
+      "Chaque rosette émet des rejets : détachez-en un et pressez-le dans le gravier. La rosette qui fleurit meurt, mais ses rejets prennent le relais.",
+  },
+  "Antennaria dioica@france-alpine": {
+    nativeNote:
+      "Un tapis à feuilles argentées des pelouses rases et pauvres, aux bouquets de fleurs roses ou blanches comme une patte de chat.",
+    careNote:
+      "Plein soleil et sol mince et maigre ; nourrissez-la ou serrez-la et elle disparaît. Bien entre des pas japonais.",
+    givesNote:
+      "De petites fleurs pour syrphes et petites abeilles, et un tapis qui empêche un sol mince de partir.",
+    propagationNote:
+      "Détachez au printemps des éclats enracinés au bord du tapis et replantez-les. Les pieds sont mâles ou femelles : la graine demande les deux.",
+  },
+  "Athyrium filix-femina@france-alpine": {
+    nativeNote:
+      "La fougère souple et dentelée des bois de montagne humides et des bords de ruisseau, indigène jusqu'à 2 000 m environ.",
+    careNote:
+      "De l'ombre et un sol qui ne sèche jamais. Ses frondes meurent à l'automne ; coupez-les en fin d'hiver.",
+    givesNote:
+      "Presque aucune chenille ne mange les fougères. Leur valeur, c'est l'abri frais et humide sous les frondes, où grenouilles, coléoptères et salamandres passent l'été.",
+    propagationNote:
+      "Divisez la souche au printemps, en gardant frondes et racines sur chaque morceau. Les spores semées sur un terreau stérilisé humide, sous couvercle, lèvent en quelques mois.",
+  },
+  "Gymnocarpium dryopteris@france-alpine": {
+    nativeNote:
+      "Une petite fougère triangulaire d'un vert vif qui court dans la mousse des pessières ombragées, indigène jusqu'à 2 000 m environ.",
+    careNote:
+      "Ombre fraîche et sol acide, riche en feuilles, qui reste humide. Elle s'étend lentement en tapis.",
+    givesNote:
+      "Un tapis vivant pour le sol ombragé d'un bois de montagne, où s'abritent coléoptères, araignées et petites grenouilles.",
+    propagationNote:
+      "Prélevez au printemps un morceau du rhizome rampant et replantez-le peu profond. Les spores semées sur un terreau stérilisé humide, sous couvercle, demandent des mois.",
+  },
+  "Polypodium vulgare@france-alpine": {
+    nativeNote:
+      "La fougère persistante des rochers moussus, des murs et des vieux troncs, indigène jusqu'à 2 000 m environ.",
+    careNote:
+      "Installez-la sur un rocher moussu, un mur ou une souche, à l'ombre légère. Elle est persistante, et plus verte que jamais en hiver.",
+    givesNote:
+      "Elle garde verte et humide une paroi ou un mur, logis de mousses, d'araignées et de petits escargots.",
+    propagationNote:
+      "Coupez au printemps un morceau du rhizome rampant avec quelques frondes et posez-le sur de la mousse ou du gravier. Les spores semées sur un terreau stérilisé humide demandent des mois.",
   },
 };

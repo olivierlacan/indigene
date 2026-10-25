@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Washington, Oregon & British Columbia (TDWG:WAS, ORE, BRC)",
   "region": "pnw",
-  "ranAt": "2026-10-24T18:51:40.260Z",
+  "ranAt": "2026-10-25T07:16:42.878Z",
   "rows": [
     {
       "id": "quercus-garryana",
@@ -1306,6 +1306,18 @@
       "id": "clematis-ligusticifolia",
       "latin": "Clematis ligusticifolia",
       "asked": "Clematis ligusticifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lonicera-hispidula",
+      "latin": "Lonicera hispidula",
+      "asked": "Lonicera hispidula",
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",

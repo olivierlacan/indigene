@@ -1,0 +1,945 @@
+{
+  "region": "france-alpine",
+  "area": "metropolitan France",
+  "authorities": [
+    "TAXREF v18",
+    "GRIIS"
+  ],
+  "ranAt": "2026-10-25T18:09:41.413Z",
+  "rows": [
+    {
+      "id": "black-grouse",
+      "asked": "Lyrurus tetrix",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "blackcaps-warblers",
+      "verdict": "NATIVE",
+      "group": true,
+      "members": [
+        {
+          "name": "Sylvia atricapilla",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Curruca melanocephala",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": "Sylvia melanocephala"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Sylvia borin",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Erithacus rubecula",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "brimstone",
+      "asked": "Gonepteryx rhamni",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "bumble-bees",
+      "verdict": "NATIVE",
+      "group": true,
+      "members": [
+        {
+          "name": "Bombus impatiens",
+          "verdict": "NO-MATCH",
+          "said": {
+            "taxref": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Bombus griseocollis",
+          "verdict": "NO-MATCH",
+          "said": {
+            "taxref": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Bombus bimaculatus",
+          "verdict": "NO-MATCH",
+          "said": {
+            "taxref": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Bombus vosnesenskii",
+          "verdict": "NO-MATCH",
+          "said": {
+            "taxref": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Bombus melanopygus",
+          "verdict": "NO-MATCH",
+          "said": {
+            "taxref": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Bombus pascuorum",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Bombus terrestris",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Bombus lapidarius",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Bombus pratorum",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "comma",
+      "asked": "Polygonia c-album",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "common-blue",
+      "asked": "Polyommatus icarus",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "conifer-seed-finches",
+      "verdict": "NATIVE",
+      "group": true,
+      "members": [
+        {
+          "name": "Loxia curvirostra",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Spinus spinus",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Spinus pinus",
+          "verdict": "UNKNOWN",
+          "said": {
+            "taxref": {
+              "verdict": "unknown",
+              "code": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Acanthis flammea",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Acanthis cabaret",
+          "verdict": "NO-MATCH",
+          "said": {
+            "taxref": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "elephant-hawk-moth",
+      "asked": "Deilephila elpenor",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "emperor-moth",
+      "asked": "Saturnia pavonia",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "grass-skippers",
+      "verdict": "NATIVE",
+      "group": true,
+      "members": [
+        {
+          "name": "Cercyonis pegala",
+          "verdict": "NO-MATCH",
+          "said": {
+            "taxref": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Anatrytone logan",
+          "verdict": "NO-MATCH",
+          "said": {
+            "taxref": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Problema byssus",
+          "verdict": "NO-MATCH",
+          "said": {
+            "taxref": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Ochlodes sylvanoides",
+          "verdict": "NO-MATCH",
+          "said": {
+            "taxref": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Hylephila phyleus",
+          "verdict": "UNKNOWN",
+          "said": {
+            "taxref": {
+              "verdict": "unknown",
+              "code": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Aphantopus hyperantus",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Maniola jurtina",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Thymelicus sylvestris",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Ochlodes sylvanus",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "green-hairstreak",
+      "asked": "Callophrys rubi",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "hazel-dormouse",
+      "asked": "Muscardinus avellanarius",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "holly-blue",
+      "asked": "Celastrina argiolus",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "hummingbird-hawk-moth",
+      "asked": "Macroglossum stellatarum",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "large-blue",
+      "asked": "Phengaris arion",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "mason-bees",
+      "verdict": "NATIVE",
+      "group": true,
+      "members": [
+        {
+          "name": "Osmia lignaria",
+          "verdict": "NO-MATCH",
+          "said": {
+            "taxref": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Osmia bicornis",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Osmia cornuta",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Andrena erigeniae",
+          "verdict": "NO-MATCH",
+          "said": {
+            "taxref": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Andrena distans",
+          "verdict": "NO-MATCH",
+          "said": {
+            "taxref": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Andrena fulva",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Andrena clarkella",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Colletes hederae",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "mourning-cloak",
+      "asked": "Nymphalis antiopa",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "orange-tip",
+      "asked": "Anthocharis cardamines",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "poplar-hawk-moth",
+      "asked": "Laothoe populi",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "purple-emperor",
+      "asked": "Apatura iris",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "red-admiral",
+      "asked": "Vanessa atalanta",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "silver-studded-blue",
+      "asked": "Plebejus argus",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "six-spot-burnet",
+      "asked": "Zygaena filipendulae",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "small-blue",
+      "asked": "Cupido minimus",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "spotted-nutcracker",
+      "asked": "Nucifraga caryocatactes",
+      "verdict": "NATIVE",
+      "said": {
+        "taxref": {
+          "verdict": "native",
+          "code": "P",
+          "via": null
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
+    {
+      "id": "winter-thrushes",
+      "verdict": "NATIVE",
+      "group": true,
+      "members": [
+        {
+          "name": "Turdus pilaris",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Turdus iliacus",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Turdus merula",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Turdus viscivorus",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        },
+        {
+          "name": "Turdus torquatus",
+          "verdict": "NATIVE",
+          "said": {
+            "taxref": {
+              "verdict": "native",
+              "code": "P",
+              "via": null
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

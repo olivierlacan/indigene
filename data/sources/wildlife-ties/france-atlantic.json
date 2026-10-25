@@ -1,0 +1,69 @@
+{
+  "region": "france-atlantic",
+  "ranAt": "2026-10-25T18:07:05.124Z",
+  "ties": [
+    {
+      "plant": "betula-pendula",
+      "animal": "mourning-cloak",
+      "support": "host",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "trophiCH (Reji Chacko et al. 2024)"
+        ],
+        "confirmedBy": [
+          "trophiCH (Reji Chacko et al. 2024)"
+        ],
+        "records": 15
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "salix-caprea",
+      "animal": "mourning-cloak",
+      "support": "host",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "trophiCH (Reji Chacko et al. 2024)"
+        ],
+        "confirmedBy": [
+          "trophiCH (Reji Chacko et al. 2024)"
+        ],
+        "records": 15
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "hedera-helix",
+      "animal": "nettle-tree-butterfly",
+      "support": "nectar",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [
+          "iNaturalist observations"
+        ],
+        "records": 6
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "calluna-vulgaris",
+      "animal": "painted-lady",
+      "support": "nectar",
+      "globi": {
+        "verdict": "NOT-FOUND",
+        "cited": [
+          "trophiCH (Reji Chacko et al. 2024)"
+        ],
+        "confirmedBy": [],
+        "found": [],
+        "records": 0
+      },
+      "verdict": "NOT-FOUND"
+    }
+  ]
+}

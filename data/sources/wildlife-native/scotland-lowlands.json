@@ -1,0 +1,932 @@
+{
+  "region": "scotland-lowlands",
+  "area": "Great Britain",
+  "authorities": [
+    "NBN Atlas (UK Species Inventory)",
+    "GBIF",
+    "GRIIS"
+  ],
+  "ranAt": "2026-10-25T18:11:42.722Z",
+  "rows": [
+    {
+      "id": "black-grouse",
+      "asked": "Lyrurus tetrix",
+      "verdict": "NATIVE",
+      "said": {
+        "nbn": {
+          "verdict": "native",
+          "means": "Native",
+          "via": null,
+          "guid": "NBNSYS0000172474"
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        },
+        "presence": {
+          "records": 20122
+        }
+      }
+    },
+    {
+      "id": "blackcaps-warblers",
+      "verdict": "NATIVE",
+      "group": true,
+      "members": [
+        {
+          "name": "Sylvia atricapilla",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000530633"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 487834
+            }
+          }
+        },
+        {
+          "name": "Curruca melanocephala",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0021311382"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 313
+            }
+          }
+        },
+        {
+          "name": "Sylvia borin",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000530634"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 80075
+            }
+          }
+        },
+        {
+          "name": "Erithacus rubecula",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000530739"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 1612202
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "bumble-bees",
+      "verdict": "NATIVE",
+      "group": true,
+      "members": [
+        {
+          "name": "Bombus impatiens",
+          "verdict": "NO-MATCH",
+          "said": {
+            "nbn": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 0
+            }
+          }
+        },
+        {
+          "name": "Bombus griseocollis",
+          "verdict": "NO-MATCH",
+          "said": {
+            "nbn": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 0
+            }
+          }
+        },
+        {
+          "name": "Bombus bimaculatus",
+          "verdict": "NO-MATCH",
+          "said": {
+            "nbn": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 0
+            }
+          }
+        },
+        {
+          "name": "Bombus vosnesenskii",
+          "verdict": "NO-MATCH",
+          "said": {
+            "nbn": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 0
+            }
+          }
+        },
+        {
+          "name": "Bombus melanopygus",
+          "verdict": "NO-MATCH",
+          "said": {
+            "nbn": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 0
+            }
+          }
+        },
+        {
+          "name": "Bombus pascuorum",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000875576"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 167465
+            }
+          }
+        },
+        {
+          "name": "Bombus terrestris",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000875595"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 118935
+            }
+          }
+        },
+        {
+          "name": "Bombus lapidarius",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000875567"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 95312
+            }
+          }
+        },
+        {
+          "name": "Bombus pratorum",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000875578"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 56383
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "common-blue",
+      "asked": "Polyommatus icarus",
+      "verdict": "NATIVE",
+      "said": {
+        "nbn": {
+          "verdict": "native",
+          "means": "Native",
+          "via": null,
+          "guid": "NHMSYS0000516660"
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        },
+        "presence": {
+          "records": 1213935
+        }
+      }
+    },
+    {
+      "id": "conifer-seed-finches",
+      "verdict": "NATIVE",
+      "group": true,
+      "members": [
+        {
+          "name": "Loxia curvirostra",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000530454"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 34380
+            }
+          }
+        },
+        {
+          "name": "Spinus spinus",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0021004277"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 214647
+            }
+          }
+        },
+        {
+          "name": "Spinus pinus",
+          "verdict": "NO-MATCH",
+          "said": {
+            "nbn": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 0
+            }
+          }
+        },
+        {
+          "name": "Acanthis flammea",
+          "verdict": "NO-MATCH",
+          "said": {
+            "nbn": {
+              "verdict": "no-match",
+              "note": "ambiguous name"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 118717
+            }
+          }
+        },
+        {
+          "name": "Acanthis cabaret",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": "Acanthis flammea cabaret",
+              "guid": "NHMSYS0021933619"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 35425
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "emperor-moth",
+      "asked": "Saturnia pavonia",
+      "verdict": "NATIVE",
+      "said": {
+        "nbn": {
+          "verdict": "native",
+          "means": "Native",
+          "via": null,
+          "guid": "NBNSYS0000156325"
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        },
+        "presence": {
+          "records": 17338
+        }
+      }
+    },
+    {
+      "id": "eurasian-jay",
+      "asked": "Garrulus glandarius",
+      "verdict": "NATIVE",
+      "said": {
+        "nbn": {
+          "verdict": "native",
+          "means": "Native",
+          "via": null,
+          "guid": "NHMSYS0000530374"
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        },
+        "presence": {
+          "records": 379088
+        }
+      }
+    },
+    {
+      "id": "goldfinches-linnets",
+      "verdict": "NATIVE",
+      "group": true,
+      "members": [
+        {
+          "name": "Carduelis carduelis",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000530247"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 1099141
+            }
+          }
+        },
+        {
+          "name": "Linaria cannabina",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0021004282"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 438849
+            }
+          }
+        },
+        {
+          "name": "Chloris chloris",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0021002985"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 562618
+            }
+          }
+        },
+        {
+          "name": "Spinus spinus",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0021004277"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 214647
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "green-hairstreak",
+      "asked": "Callophrys rubi",
+      "verdict": "NATIVE",
+      "said": {
+        "nbn": {
+          "verdict": "native",
+          "means": "Native",
+          "via": null,
+          "guid": "NHMSYS0000501598"
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        },
+        "presence": {
+          "records": 126615
+        }
+      }
+    },
+    {
+      "id": "holly-blue",
+      "asked": "Celastrina argiolus",
+      "verdict": "NATIVE",
+      "said": {
+        "nbn": {
+          "verdict": "native",
+          "means": "Native",
+          "via": null,
+          "guid": "NHMSYS0000516260"
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        },
+        "presence": {
+          "records": 531725
+        }
+      }
+    },
+    {
+      "id": "marsh-fritillary",
+      "asked": "Euphydryas aurinia",
+      "verdict": "NATIVE",
+      "said": {
+        "nbn": {
+          "verdict": "native",
+          "means": "Native",
+          "via": null,
+          "guid": "NHMSYS0000516340"
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        },
+        "presence": {
+          "records": 59451
+        }
+      }
+    },
+    {
+      "id": "mason-bees",
+      "verdict": "NATIVE",
+      "group": true,
+      "members": [
+        {
+          "name": "Osmia lignaria",
+          "verdict": "NO-MATCH",
+          "said": {
+            "nbn": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 0
+            }
+          }
+        },
+        {
+          "name": "Osmia bicornis",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000876509"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 13717
+            }
+          }
+        },
+        {
+          "name": "Osmia cornuta",
+          "verdict": "INTRODUCED",
+          "said": {
+            "nbn": {
+              "verdict": "introduced",
+              "means": "Non-native",
+              "via": "Osmia (Osmia) cornuta",
+              "guid": "NHMSYS0021167227"
+            },
+            "griis": {
+              "listed": true,
+              "listedIn": [
+                "GB"
+              ]
+            },
+            "presence": {
+              "records": 345
+            }
+          }
+        },
+        {
+          "name": "Andrena erigeniae",
+          "verdict": "NO-MATCH",
+          "said": {
+            "nbn": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 0
+            }
+          }
+        },
+        {
+          "name": "Andrena distans",
+          "verdict": "NO-MATCH",
+          "said": {
+            "nbn": {
+              "verdict": "no-match"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 0
+            }
+          }
+        },
+        {
+          "name": "Andrena fulva",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000875207"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 14202
+            }
+          }
+        },
+        {
+          "name": "Andrena clarkella",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000875179"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 2411
+            }
+          }
+        },
+        {
+          "name": "Colletes hederae",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NBNSYS0100002538"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 13594
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "painted-lady",
+      "asked": "Vanessa cardui",
+      "verdict": "NATIVE",
+      "said": {
+        "nbn": {
+          "verdict": "native",
+          "means": "Native",
+          "via": null,
+          "guid": "NBNSYS0100005950"
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        },
+        "presence": {
+          "records": 601758
+        }
+      }
+    },
+    {
+      "id": "poplar-hawk-moth",
+      "asked": "Laothoe populi",
+      "verdict": "NATIVE",
+      "said": {
+        "nbn": {
+          "verdict": "native",
+          "means": "Native",
+          "via": null,
+          "guid": "NBNSYS0000006069"
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        },
+        "presence": {
+          "records": 242390
+        }
+      }
+    },
+    {
+      "id": "purple-hairstreak",
+      "asked": "Favonius quercus",
+      "verdict": "NATIVE",
+      "said": {
+        "nbn": {
+          "verdict": "native",
+          "means": "Native",
+          "via": null,
+          "guid": "NHMSYS0021002801"
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        },
+        "presence": {
+          "records": 98264
+        }
+      }
+    },
+    {
+      "id": "red-admiral",
+      "asked": "Vanessa atalanta",
+      "verdict": "NATIVE",
+      "said": {
+        "nbn": {
+          "verdict": "native",
+          "means": "Native",
+          "via": null,
+          "guid": "NHMSYS0000504624"
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        },
+        "presence": {
+          "records": 1324235
+        }
+      }
+    },
+    {
+      "id": "six-spot-burnet",
+      "asked": "Zygaena filipendulae",
+      "verdict": "NATIVE",
+      "said": {
+        "nbn": {
+          "verdict": "native",
+          "means": "Native",
+          "via": null,
+          "guid": "NBNSYS0000005670"
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        },
+        "presence": {
+          "records": 56835
+        }
+      }
+    },
+    {
+      "id": "winter-thrushes",
+      "verdict": "NATIVE",
+      "group": true,
+      "members": [
+        {
+          "name": "Turdus pilaris",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000530679"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 181189
+            }
+          }
+        },
+        {
+          "name": "Turdus iliacus",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000530673"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 302840
+            }
+          }
+        },
+        {
+          "name": "Turdus merula",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000530674"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 1627710
+            }
+          }
+        },
+        {
+          "name": "Turdus viscivorus",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000530682"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 254498
+            }
+          }
+        },
+        {
+          "name": "Turdus torquatus",
+          "verdict": "NATIVE",
+          "said": {
+            "nbn": {
+              "verdict": "native",
+              "means": "Native",
+              "via": null,
+              "guid": "NHMSYS0000530681"
+            },
+            "griis": {
+              "listed": false,
+              "listedIn": []
+            },
+            "presence": {
+              "records": 27496
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

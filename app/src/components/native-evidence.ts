@@ -12,6 +12,7 @@
 import { el } from "../ui";
 import { nativeEvidence, NATIVE_EVIDENCE_URL, regionalFloras } from "../lib/native-evidence";
 import { faunaEvidence } from "../lib/wildlife-evidence";
+import type { FaunaUnconfirmed } from "../lib/wildlife-evidence";
 import { t, fmtList } from "../lib/i18n";
 import { langTag } from "../lib/i18n";
 import { guideHref } from "./guide-link";
@@ -131,7 +132,19 @@ export function faunaEvidenceLines(animalId: string, regionIds: string[]): HTMLE
     title: t("evidence.checkedAria", { when: monthYear(iso) }),
   }, [clockIcon(), shortMonthYear(iso)]);
 
-  const open = all.filter((e) => e.unconfirmed);
+  // One caution line per verdict and set of sources, naming every place it
+  // applies to: the luna moth unranked in three states is one sentence, and
+  // the four French regions, all asked about the same place, are one place.
+  const groups = new Map<string, { who: string[]; reason: string; areas: string[]; checked: string }>();
+  for (const e of all) {
+    if (!e.unconfirmed) continue;
+    const key = `${e.unconfirmed}|${e.authorities.join()}`;
+    const g = groups.get(key) ?? { who: e.authorities, reason: e.unconfirmed, areas: [], checked: e.checked };
+    if (!g.areas.includes(e.area)) g.areas.push(e.area);
+    if (e.checked > g.checked) g.checked = e.checked;
+    groups.set(key, g);
+  }
+  const open = [...groups.values()];
   const confirmed = all.filter((e) => !e.unconfirmed);
   const lines: HTMLElement[] = [];
   if (confirmed.length) {
@@ -146,12 +159,12 @@ export function faunaEvidenceLines(animalId: string, regionIds: string[]): HTMLE
       ]),
     ]));
   }
-  for (const e of open) {
+  for (const g of open) {
     lines.push(el("div", { class: "native-evidence native-evidence-open" }, [
       mark("warn"),
       el("p", {}, [
-        t(`fauna.unconfirmed.${e.unconfirmed!}` as const, { who: fmtList(e.authorities), area: e.area }),
-        " ", meta(e.checked),
+        t(`fauna.unconfirmed.${g.reason}` as `fauna.unconfirmed.${FaunaUnconfirmed}`, { who: fmtList(g.who), area: fmtList(g.areas) }),
+        " ", meta(g.checked),
       ]),
     ]));
   }

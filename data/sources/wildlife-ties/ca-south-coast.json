@@ -1,0 +1,248 @@
+{
+  "region": "ca-south-coast",
+  "ranAt": "2026-10-25T18:06:26.812Z",
+  "ties": [
+    {
+      "plant": "artemisia-douglasiana",
+      "animal": "american-lady",
+      "support": "host",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "HOSTS (Robinson et al., NHM)",
+          "Ferrer-Paris et al. 2013",
+          "NHM Interactions Bank"
+        ],
+        "confirmedBy": [
+          "HOSTS (Robinson et al., NHM)",
+          "Ferrer-Paris et al. 2013",
+          "NHM Interactions Bank"
+        ],
+        "records": 3
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "quercus-agrifolia",
+      "animal": "bushtit",
+      "support": "shelter",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [
+          "iNaturalist observations"
+        ],
+        "records": 44
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "platanus-racemosa",
+      "animal": "lesser-goldfinch",
+      "support": "seeds",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [
+          "iNaturalist observations"
+        ],
+        "records": 1
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "platanus-racemosa",
+      "animal": "yellow-rumped-warbler",
+      "support": "shelter",
+      "globi": {
+        "verdict": "NOT-FOUND",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [],
+        "found": [],
+        "records": 0
+      },
+      "verdict": "NOT-FOUND"
+    },
+    {
+      "plant": "aesculus-californica",
+      "animal": "anise-swallowtail",
+      "support": "nectar",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [
+          "iNaturalist observations"
+        ],
+        "records": 16
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "aesculus-californica",
+      "animal": "american-lady",
+      "support": "nectar",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [
+          "iNaturalist observations"
+        ],
+        "records": 1
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "heteromeles-arbutifolia",
+      "animal": "american-lady",
+      "support": "nectar",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [
+          "iNaturalist observations"
+        ],
+        "records": 10
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "eriogonum-fasciculatum",
+      "animal": "anise-swallowtail",
+      "support": "nectar",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [
+          "iNaturalist observations"
+        ],
+        "records": 13
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "eriogonum-fasciculatum",
+      "animal": "american-lady",
+      "support": "nectar",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [
+          "iNaturalist observations"
+        ],
+        "records": 11
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "eriogonum-fasciculatum",
+      "animal": "bushtit",
+      "support": "shelter",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [
+          "iNaturalist observations"
+        ],
+        "records": 7
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "salvia-mellifera",
+      "animal": "buckwheat-butterflies",
+      "support": "nectar",
+      "globi": {
+        "verdict": "OTHER",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [],
+        "found": [],
+        "records": 2
+      },
+      "verdict": "OTHER"
+    },
+    {
+      "plant": "salvia-clevelandii",
+      "animal": "anise-swallowtail",
+      "support": "nectar",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [
+          "iNaturalist observations"
+        ],
+        "records": 8
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "salvia-apiana",
+      "animal": "lesser-goldfinch",
+      "support": "seeds",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [
+          "iNaturalist observations"
+        ],
+        "records": 21
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "salvia-apiana",
+      "animal": "bushtit",
+      "support": "shelter",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [
+          "iNaturalist observations"
+        ],
+        "records": 4
+      },
+      "verdict": "CONFIRMED"
+    },
+    {
+      "plant": "malosma-laurina",
+      "animal": "yellow-rumped-warbler",
+      "support": "berries",
+      "globi": {
+        "verdict": "CONFIRMED",
+        "cited": [
+          "iNaturalist observations"
+        ],
+        "confirmedBy": [
+          "iNaturalist observations"
+        ],
+        "records": 14
+      },
+      "verdict": "CONFIRMED"
+    }
+  ]
+}

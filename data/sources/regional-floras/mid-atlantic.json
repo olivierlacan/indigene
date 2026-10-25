@@ -19,6 +19,14 @@
     {"id":"tsuga-canadensis","latin":"Tsuga canadensis","pa":{"as":"Tsuga canadensis","verdict":"native"},"nj-fqa":{"as":"Tsuga canadensis","verdict":"native"}},
     {"id":"pinus-strobus","latin":"Pinus strobus","pa":{"as":"Pinus strobus","verdict":"native"},"nj-fqa":{"as":"Pinus strobus","verdict":"native"}},
     {"id":"hamamelis-virginiana","latin":"Hamamelis virginiana","pa":{"as":"Hamamelis virginiana var. virginiana","verdict":"native"},"nj-fqa":{"as":"Hamamelis virginiana","verdict":"native"}},
+    {"id":"celtis-occidentalis","latin":"Celtis occidentalis","pa":{"as":"Celtis occidentalis","verdict":"native"},"nj-fqa":{"as":"Celtis occidentalis","verdict":"native"}},
+    {"id":"quercus-palustris","latin":"Quercus palustris","pa":{"as":"Quercus palustris","verdict":"native"},"nj-fqa":{"as":"Quercus palustris","verdict":"native"}},
+    {"id":"quercus-phellos","latin":"Quercus phellos","pa":{"as":"Quercus phellos","verdict":"native"},"nj-fqa":{"as":"Quercus phellos","verdict":"native"}},
+    {"id":"juniperus-virginiana","latin":"Juniperus virginiana","pa":{"as":"Juniperus virginiana","verdict":"native"},"nj-fqa":{"as":"Juniperus virginiana","verdict":"native"}},
+    {"id":"carpinus-caroliniana","latin":"Carpinus caroliniana","pa":{"as":"Carpinus caroliniana var. virginiana","verdict":"native"},"nj-fqa":{"as":"Carpinus caroliniana","verdict":"native"}},
+    {"id":"acer-saccharum","latin":"Acer saccharum","pa":{"as":"Acer saccharum var. saccharum","verdict":"native"},"nj-fqa":{"as":"Acer saccharum","verdict":"native"}},
+    {"id":"betula-alleghaniensis","latin":"Betula alleghaniensis","pa":{"as":"Betula alleghaniensis","verdict":"native"},"nj-fqa":{"as":"Betula alleghaniensis","verdict":"native"}},
+    {"id":"pinus-rigida","latin":"Pinus rigida","pa":{"as":"Pinus rigida","verdict":"native"},"nj-fqa":{"as":"Pinus rigida","verdict":"native"}},
     {"id":"vaccinium-corymbosum","latin":"Vaccinium corymbosum","pa":{"as":"Vaccinium corymbosum","verdict":"native"},"nj-fqa":{"as":"Vaccinium corymbosum","verdict":"native"}},
     {"id":"ilex-verticillata","latin":"Ilex verticillata","pa":{"as":"Ilex verticillata","verdict":"native"},"nj-fqa":{"as":"Ilex verticillata","verdict":"native"}},
     {"id":"cephalanthus-occidentalis","latin":"Cephalanthus occidentalis","pa":{"as":"Cephalanthus occidentalis","verdict":"native"},"nj-fqa":{"as":"Cephalanthus occidentalis","verdict":"native"}},
@@ -27,6 +35,8 @@
     {"id":"cornus-sericea","latin":"Cornus sericea","pa":{"as":"Swida sericea","verdict":"native"},"nj-fqa":{"as":"Cornus sericea","verdict":"native"}},
     {"id":"ceanothus-americanus","latin":"Ceanothus americanus","pa":{"as":"Ceanothus americanus var. americanus","verdict":"native"},"nj-fqa":{"as":"Ceanothus americanus","verdict":"native"}},
     {"id":"corylus-americana","latin":"Corylus americana","pa":{"as":"Corylus americana","verdict":"native"},"nj-fqa":{"as":"Corylus americana","verdict":"native"}},
+    {"id":"lindera-benzoin","latin":"Lindera benzoin","pa":{"as":"Lindera benzoin","verdict":"native"},"nj-fqa":{"as":"Lindera benzoin","verdict":"native"}},
+    {"id":"sambucus-canadensis","latin":"Sambucus canadensis","pa":{"as":"Sambucus canadensis","verdict":"native"},"nj-fqa":{"as":"Sambucus nigra subsp. canadensis","verdict":"native"}},
     {"id":"asclepias-tuberosa","latin":"Asclepias tuberosa","pa":{"as":"Asclepias tuberosa var. cordata","verdict":"native"},"nj-fqa":{"as":"Asclepias tuberosa","verdict":"native"}},
     {"id":"asclepias-incarnata","latin":"Asclepias incarnata","pa":{"as":"Asclepias incarnata var. incarnata","verdict":"native"},"nj-fqa":{"as":"Asclepias incarnata","verdict":"native"}},
     {"id":"echinacea-purpurea","latin":"Echinacea purpurea","pa":{"as":"Echinacea purpurea","verdict":"introduced"},"nj-fqa":{"as":null,"verdict":"absent"}},
@@ -41,6 +51,8 @@
     {"id":"baptisia-australis","latin":"Baptisia australis","pa":{"as":"Baptisia australis","verdict":"native"},"nj-fqa":{"as":"Baptisia australis","verdict":"introduced"}},
     {"id":"lobelia-cardinalis","latin":"Lobelia cardinalis","pa":{"as":"Lobelia cardinalis var. cardinalis","verdict":"native"},"nj-fqa":{"as":"Lobelia cardinalis","verdict":"native"}},
     {"id":"geranium-maculatum","latin":"Geranium maculatum","pa":{"as":"Geranium maculatum","verdict":"native"},"nj-fqa":{"as":"Geranium maculatum","verdict":"native"}},
+    {"id":"erythronium-americanum","latin":"Erythronium americanum","pa":{"as":"Erythronium americanum ssp. americanum","verdict":"native"},"nj-fqa":{"as":"Erythronium americanum","verdict":"native"}},
+    {"id":"trillium-erectum","latin":"Trillium erectum","pa":{"as":"Trillium erectum","verdict":"native"},"nj-fqa":{"as":"Trillium erectum","verdict":"native"}},
     {"id":"schizachyrium-scoparium","latin":"Schizachyrium scoparium","pa":{"as":"Schizachyrium scoparium var. scoparium","verdict":"native"},"nj-fqa":{"as":"Schizachyrium scoparium","verdict":"native"}},
     {"id":"panicum-virgatum","latin":"Panicum virgatum","pa":{"as":"Panicum virgatum var. virgatum","verdict":"native"},"nj-fqa":{"as":"Panicum virgatum","verdict":"native"}},
     {"id":"andropogon-gerardii","latin":"Andropogon gerardii","pa":{"as":"Andropogon gerardi","verdict":"native"},"nj-fqa":{"as":"Andropogon gerardii","verdict":"native"}},
@@ -49,6 +61,8 @@
     {"id":"lonicera-sempervirens","latin":"Lonicera sempervirens","pa":{"as":"Lonicera sempervirens","verdict":"native"},"nj-fqa":{"as":"Lonicera sempervirens","verdict":"native"}},
     {"id":"fragaria-virginiana","latin":"Fragaria virginiana","pa":{"as":"Fragaria virginiana","verdict":"native"},"nj-fqa":{"as":"Fragaria virginiana","verdict":"native"}},
     {"id":"packera-aurea","latin":"Packera aurea","pa":{"as":"Packera aurea","verdict":"native"},"nj-fqa":{"as":"Packera aurea","verdict":"native"}},
-    {"id":"polystichum-acrostichoides","latin":"Polystichum acrostichoides","pa":{"as":"Polystichum acrostichoides","verdict":"native"},"nj-fqa":{"as":"Polystichum acrostichoides","verdict":"native"}}
+    {"id":"polystichum-acrostichoides","latin":"Polystichum acrostichoides","pa":{"as":"Polystichum acrostichoides","verdict":"native"},"nj-fqa":{"as":"Polystichum acrostichoides","verdict":"native"}},
+    {"id":"gaultheria-procumbens","latin":"Gaultheria procumbens","pa":{"as":"Gaultheria procumbens","verdict":"native"},"nj-fqa":{"as":"Gaultheria procumbens","verdict":"native"}},
+    {"id":"onoclea-sensibilis","latin":"Onoclea sensibilis","pa":{"as":"Onoclea sensibilis","verdict":"native"},"nj-fqa":{"as":"Onoclea sensibilis","verdict":"native"}}
   ]
 }

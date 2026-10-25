@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Michigan (TDWG:MIC)",
   "region": "north-michigan",
-  "ranAt": "2026-10-16T19:38:59.908Z",
+  "ranAt": "2026-10-25T03:15:39.202Z",
   "rows": [
     {
       "id": "pinus-strobus",
@@ -127,6 +127,36 @@
       "viaSynonym": null
     },
     {
+      "id": "larix-laricina",
+      "latin": "Larix laricina",
+      "asked": "Larix laricina",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pinus-resinosa",
+      "latin": "Pinus resinosa",
+      "asked": "Pinus resinosa",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pinus-banksiana",
+      "latin": "Pinus banksiana",
+      "asked": "Pinus banksiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "salix-discolor",
       "latin": "Salix discolor",
       "asked": "Salix discolor",
@@ -230,6 +260,46 @@
       "id": "ceanothus-americanus",
       "latin": "Ceanothus americanus",
       "asked": "Ceanothus americanus",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "myrica-gale",
+      "latin": "Myrica gale",
+      "asked": "Myrica gale",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "spiraea-alba",
+      "latin": "Spiraea alba",
+      "asked": "Spiraea alba",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rhus-typhina",
+      "latin": "Rhus typhina",
+      "asked": "Rhus typhina",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "prunus-virginiana",
+      "latin": "Prunus virginiana",
+      "asked": "Prunus virginiana",
       "verdict": "NATIVE",
       "areas": {
         "MIC": "NATIVE"
@@ -377,6 +447,36 @@
       "viaSynonym": null
     },
     {
+      "id": "allium-tricoccum",
+      "latin": "Allium tricoccum",
+      "asked": "Allium tricoccum",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "trillium-grandiflorum",
+      "latin": "Trillium grandiflorum",
+      "asked": "Trillium grandiflorum",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "dicentra-cucullaria",
+      "latin": "Dicentra cucullaria",
+      "asked": "Dicentra cucullaria",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "schizachyrium-scoparium",
       "latin": "Schizachyrium scoparium",
       "asked": "Schizachyrium scoparium",
@@ -417,6 +517,26 @@
       "viaSynonym": null
     },
     {
+      "id": "lonicera-dioica",
+      "latin": "Lonicera dioica",
+      "asked": "Lonicera dioica",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "clematis-virginiana",
+      "latin": "Clematis virginiana",
+      "asked": "Clematis virginiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "fragaria-virginiana",
       "latin": "Fragaria virginiana",
       "asked": "Fragaria virginiana",
@@ -440,6 +560,16 @@
       "id": "cornus-canadensis",
       "latin": "Cornus canadensis",
       "asked": "Cornus canadensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "juniperus-horizontalis",
+      "latin": "Juniperus horizontalis",
+      "asked": "Juniperus horizontalis",
       "verdict": "NATIVE",
       "areas": {
         "MIC": "NATIVE"

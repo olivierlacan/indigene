@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Florida (TDWG:FLA — whole state)",
   "region": "florida-central",
-  "ranAt": "2026-10-17T09:09:58.806Z",
+  "ranAt": "2026-10-24T18:50:20.774Z",
   "rows": [
     {
       "id": "quercus-virginiana",
@@ -177,6 +177,16 @@
       "viaSynonym": null
     },
     {
+      "id": "pinus-clausa",
+      "latin": "Pinus clausa",
+      "asked": "Pinus clausa",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "serenoa-repens",
       "latin": "Serenoa repens",
       "asked": "Serenoa repens",
@@ -307,6 +317,46 @@
       "viaSynonym": null
     },
     {
+      "id": "quercus-myrtifolia",
+      "latin": "Quercus myrtifolia",
+      "asked": "Quercus myrtifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vaccinium-corymbosum",
+      "latin": "Vaccinium corymbosum",
+      "asked": "Vaccinium corymbosum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vaccinium-stamineum",
+      "latin": "Vaccinium stamineum",
+      "asked": "Vaccinium stamineum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "asimina-reticulata",
+      "latin": "Asimina reticulata",
+      "asked": "Asimina reticulata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "zamia-integrifolia",
       "latin": "Zamia integrifolia",
       "asked": "Zamia integrifolia",
@@ -420,6 +470,36 @@
       "id": "euthamia-caroliniana",
       "latin": "Euthamia caroliniana",
       "asked": "Euthamia caroliniana",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ruellia-caroliniensis",
+      "latin": "Ruellia caroliniensis",
+      "asked": "Ruellia caroliniensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "saururus-cernuus",
+      "latin": "Saururus cernuus",
+      "asked": "Saururus cernuus",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "chamaecrista-fasciculata",
+      "latin": "Chamaecrista fasciculata",
+      "asked": "Chamaecrista fasciculata",
       "verdict": "NATIVE",
       "areas": {
         "FLA": "NATIVE"
@@ -567,6 +647,16 @@
       "viaSynonym": null
     },
     {
+      "id": "centrosema-virginianum",
+      "latin": "Centrosema virginianum",
+      "asked": "Centrosema virginianum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "mimosa-strigillosa",
       "latin": "Mimosa strigillosa",
       "asked": "Mimosa strigillosa",
@@ -590,6 +680,16 @@
       "id": "phyla-nodiflora",
       "latin": "Phyla nodiflora",
       "asked": "Phyla nodiflora",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "dichondra-carolinensis",
+      "latin": "Dichondra carolinensis",
+      "asked": "Dichondra carolinensis",
       "verdict": "NATIVE",
       "areas": {
         "FLA": "NATIVE"
@@ -630,6 +730,16 @@
       "id": "telmatoblechnum-serrulatum",
       "latin": "Telmatoblechnum serrulatum",
       "asked": "Telmatoblechnum serrulatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "osmunda-spectabilis",
+      "latin": "Osmunda spectabilis",
+      "asked": "Osmunda spectabilis",
       "verdict": "NATIVE",
       "areas": {
         "FLA": "NATIVE"

@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Ireland (TDWG:IRE — the whole island)",
   "region": "ireland",
-  "ranAt": "2026-10-16T19:38:19.336Z",
+  "ranAt": "2026-10-25T03:16:15.313Z",
   "rows": [
     {
       "id": "quercus-petraea",
@@ -317,6 +317,26 @@
       "viaSynonym": null
     },
     {
+      "id": "salix-aurita",
+      "latin": "Salix aurita",
+      "asked": "Salix aurita",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rubus-idaeus",
+      "latin": "Rubus idaeus",
+      "asked": "Rubus idaeus",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "succisa-pratensis",
       "latin": "Succisa pratensis",
       "asked": "Succisa pratensis",
@@ -487,6 +507,86 @@
       "viaSynonym": "Taraxacum spec. F.H.Wigg."
     },
     {
+      "id": "iris-pseudacorus",
+      "latin": "Iris pseudacorus",
+      "asked": "Iris pseudacorus",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "viola-riviniana",
+      "latin": "Viola riviniana",
+      "asked": "Viola riviniana",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cardamine-pratensis",
+      "latin": "Cardamine pratensis",
+      "asked": "Cardamine pratensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "silene-flos-cuculi",
+      "latin": "Silene flos-cuculi",
+      "asked": "Silene flos-cuculi",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "achillea-ptarmica",
+      "latin": "Achillea ptarmica",
+      "asked": "Achillea ptarmica",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "knautia-arvensis",
+      "latin": "Knautia arvensis",
+      "asked": "Knautia arvensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "primula-veris",
+      "latin": "Primula veris",
+      "asked": "Primula veris",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "geum-rivale",
+      "latin": "Geum rivale",
+      "asked": "Geum rivale",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "festuca-rubra",
       "latin": "Festuca rubra",
       "asked": "Festuca rubra",
@@ -627,6 +727,16 @@
       "viaSynonym": null
     },
     {
+      "id": "potentilla-erecta",
+      "latin": "Potentilla erecta",
+      "asked": "Potentilla erecta",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "dryopteris-filix-mas",
       "latin": "Dryopteris filix-mas",
       "asked": "Dryopteris filix-mas",
@@ -670,6 +780,16 @@
       "id": "polystichum-setiferum",
       "latin": "Polystichum setiferum",
       "asked": "Polystichum setiferum",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "polypodium-vulgare",
+      "latin": "Polypodium vulgare",
+      "asked": "Polypodium vulgare",
       "verdict": "NATIVE",
       "areas": {
         "IRE": "NATIVE"

@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Washington, Oregon & British Columbia (TDWG:WAS, ORE, BRC)",
   "region": "pnw",
-  "ranAt": "2026-10-17T08:32:25.035Z",
+  "ranAt": "2026-10-24T18:51:40.260Z",
   "rows": [
     {
       "id": "quercus-garryana",
@@ -315,6 +315,42 @@
         "WAS": "ABSENT",
         "ORE": "ABSENT",
         "BRC": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "acer-glabrum",
+      "latin": "Acer glabrum",
+      "asked": "Acer glabrum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pinus-monticola",
+      "latin": "Pinus monticola",
+      "asked": "Pinus monticola",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "abies-grandis",
+      "latin": "Abies grandis",
+      "asked": "Abies grandis",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
       },
       "viaSynonym": null
     },
@@ -634,6 +670,42 @@
       "id": "rosa-gymnocarpa",
       "latin": "Rosa gymnocarpa",
       "asked": "Rosa gymnocarpa",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vaccinium-ovalifolium",
+      "latin": "Vaccinium ovalifolium",
+      "asked": "Vaccinium ovalifolium",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vaccinium-membranaceum",
+      "latin": "Vaccinium membranaceum",
+      "asked": "Vaccinium membranaceum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rubus-leucodermis",
+      "latin": "Rubus leucodermis",
+      "asked": "Rubus leucodermis",
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
@@ -994,6 +1066,78 @@
       "id": "urtica-gracilis",
       "latin": "Urtica gracilis",
       "asked": "Urtica gracilis",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "fritillaria-affinis",
+      "latin": "Fritillaria affinis",
+      "asked": "Fritillaria affinis",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "primula-hendersonii",
+      "latin": "Primula hendersonii",
+      "asked": "Primula hendersonii",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "heuchera-micrantha",
+      "latin": "Heuchera micrantha",
+      "asked": "Heuchera micrantha",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "tolmiea-menziesii",
+      "latin": "Tolmiea menziesii",
+      "asked": "Tolmiea menziesii",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lomatium-utriculatum",
+      "latin": "Lomatium utriculatum",
+      "asked": "Lomatium utriculatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "xerophyllum-tenax",
+      "latin": "Xerophyllum tenax",
+      "asked": "Xerophyllum tenax",
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",
@@ -1414,6 +1558,18 @@
       "id": "fragaria-virginiana",
       "latin": "Fragaria virginiana",
       "asked": "Fragaria virginiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "WAS": "NATIVE",
+        "ORE": "NATIVE",
+        "BRC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "claytonia-sibirica",
+      "latin": "Claytonia sibirica",
+      "asked": "Claytonia sibirica",
       "verdict": "NATIVE",
       "areas": {
         "WAS": "NATIVE",

@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Florida (TDWG:FLA — whole state)",
   "region": "florida-south",
-  "ranAt": "2026-10-17T19:03:50.158Z",
+  "ranAt": "2026-10-24T18:52:10.775Z",
   "rows": [
     {
       "id": "quercus-virginiana",
@@ -77,6 +77,66 @@
       "viaSynonym": "Myrica cerifera L."
     },
     {
+      "id": "pinus-elliottii",
+      "latin": "Pinus elliottii",
+      "asked": "Pinus elliottii",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "salix-caroliniana",
+      "latin": "Salix caroliniana",
+      "asked": "Salix caroliniana",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "acer-rubrum",
+      "latin": "Acer rubrum",
+      "asked": "Acer rubrum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ilex-cassine",
+      "latin": "Ilex cassine",
+      "asked": "Ilex cassine",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "taxodium-distichum",
+      "latin": "Taxodium distichum",
+      "asked": "Taxodium distichum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "annona-glabra",
+      "latin": "Annona glabra",
+      "asked": "Annona glabra",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "hamelia-patens",
       "latin": "Hamelia patens",
       "asked": "Hamelia patens",
@@ -140,6 +200,76 @@
       "id": "zamia-integrifolia",
       "latin": "Zamia integrifolia",
       "asked": "Zamia integrifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vaccinium-myrsinites",
+      "latin": "Vaccinium myrsinites",
+      "asked": "Vaccinium myrsinites",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "callicarpa-americana",
+      "latin": "Callicarpa americana",
+      "asked": "Callicarpa americana",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rhus-copallinum",
+      "latin": "Rhus copallinum",
+      "asked": "Rhus copallinum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ilex-glabra",
+      "latin": "Ilex glabra",
+      "asked": "Ilex glabra",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cephalanthus-occidentalis",
+      "latin": "Cephalanthus occidentalis",
+      "asked": "Cephalanthus occidentalis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "erythrina-herbacea",
+      "latin": "Erythrina herbacea",
+      "asked": "Erythrina herbacea",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "myrsine-cubana",
+      "latin": "Myrsine cubana",
+      "asked": "Myrsine cubana",
       "verdict": "NATIVE",
       "areas": {
         "FLA": "NATIVE"

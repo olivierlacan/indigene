@@ -17,8 +17,8 @@
 //
 // ## Usage
 //
-//   npm run floras                       rebuild the CSVs from raw/ if it's there,
-//                                        then check every region → <region>.json
+//   npm run floras                       download what raw/ is missing, then check
+//                                        every region → <region>.json
 //   npm run floras -- --fetch            download every source again
 //   npm run floras -- --region chicago   one region
 //
@@ -38,7 +38,7 @@ import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { requireProxyAwareFetch } from "./_net.mjs";
-import { readCsv, readTsv, toCsv } from "./_pnwflora.mjs";
+import { readCsv, readTsv } from "./_pnwflora.mjs";
 import {
   aucklandRows,
   aucklandVerdict,
@@ -59,7 +59,6 @@ const DIR = fileURLToPath(new URL("../../data/sources/regional-floras/", import.
 const RAW = `${DIR}raw/`;
 const DATA = fileURLToPath(new URL("../src/data/", import.meta.url));
 const UA = "Indigene native-plant app (+https://indigene.app; https://github.com/olivierlacan/indigene)";
-const COLUMNS = ["name", "origin", "synonyms"];
 
 const fqa = (id) => ({
   files: { [`fqa-${id}.json`]: `https://universalfqa.org/get/database/${id}` },
@@ -223,20 +222,15 @@ async function fetchSources(ids) {
   }
 }
 
-/** Rebuild one source's committed CSV from raw/, when its downloads are there. */
-function build(id) {
+/** One source's rows, read from its downloads in raw/. */
+function load(id) {
   const src = SOURCES[id];
-  if (!Object.keys(src.files).every((f) => existsSync(`${RAW}${f}`))) return;
   const { rows } = src.read();
-  rows.sort((a, b) => a.name.localeCompare(b.name));
-  writeFileSync(`${DIR}${id}.csv`, toCsv(rows, COLUMNS));
   const tally = {};
   for (const r of rows) tally[src.verdict(r)] = (tally[src.verdict(r)] ?? 0) + 1;
   console.log(`${id}: ${rows.length} taxa — ${Object.entries(tally).map(([k, n]) => `${k} ${n}`).join(" · ")}`);
+  return rows;
 }
-
-const committed = (id) =>
-  readCsv(readFileSync(`${DIR}${id}.csv`, "utf8")).map((r) => ({ ...r, synonyms: r.synonyms ? r.synonyms.split("; ") : [] }));
 
 /** Our rows for a region, from its plant file. */
 function ours(region) {
@@ -244,9 +238,9 @@ function ours(region) {
   return [...src.matchAll(/^\s+id: "([^"]+)",\n\s+common: "([^"]+)",\n\s+latin: "([^"]+)"/gm)].map((m) => ({ id: m[1], latin: m[3] }));
 }
 
-function checkRegion(region) {
+function checkRegion(region, sources) {
   const ids = REGIONS[region];
-  const index = Object.fromEntries(ids.map((id) => [id, indexRows(committed(id))]));
+  const index = Object.fromEntries(ids.map((id) => [id, indexRows(sources[id])]));
   const outFile = `${DIR}${region}.json`;
   const previous = new Map();
   if (existsSync(outFile)) for (const r of JSON.parse(readFileSync(outFile, "utf8")).rows) previous.set(r.id, r);
@@ -283,19 +277,13 @@ function checkRegion(region) {
   }
   console.log(`  ${rows.filter(agrees).length} of ${rows.length} native in ${ids.length > 1 ? "every source" : "it"}.`);
 
-  writeFileSync(
-    outFile,
-    `${JSON.stringify(
-      {
-        region,
-        ranAt: new Date().toISOString().slice(0, 10),
-        sources: Object.fromEntries(ids.map((id) => [id, SOURCES[id].cite])),
-        rows,
-      },
-      null,
-      2,
-    )}\n`,
+  // One row per line: a verdict that moves is a one-line diff.
+  const head = JSON.stringify(
+    { region, ranAt: new Date().toISOString().slice(0, 10), sources: Object.fromEntries(ids.map((id) => [id, SOURCES[id].cite])) },
+    null,
+    2,
   );
+  writeFileSync(outFile, `${head.slice(0, -2)},\n  "rows": [\n${rows.map((r) => `    ${JSON.stringify(r)}`).join(",\n")}\n  ]\n}\n`);
   console.log(`→ data/sources/regional-floras/${region}.json`);
   return problems;
 }
@@ -306,15 +294,14 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   if (only && !REGIONS[only]) throw new Error(`no sources for ${only}; regions: ${Object.keys(REGIONS).join(", ")}`);
   const regions = only ? [only] : Object.keys(REGIONS);
   const ids = [...new Set(regions.flatMap((r) => REGIONS[r]))];
-  // The committed CSVs are enough to re-check our rows; the raw downloads are
-  // only needed to rebuild them.
-  const missing = ids.filter((id) => !existsSync(`${DIR}${id}.csv`));
+  // The downloads stay out of git; a source raw/ doesn't have is fetched.
+  const missing = ids.filter((id) => !Object.keys(SOURCES[id].files).every((f) => existsSync(`${RAW}${f}`)));
   if (args.includes("--fetch") || missing.length) {
     requireProxyAwareFetch("floras");
     await fetchSources(args.includes("--fetch") ? ids : missing);
   }
-  for (const id of ids) build(id);
-  const problems = regions.flatMap(checkRegion);
+  const sources = Object.fromEntries(ids.map((id) => [id, load(id)]));
+  const problems = regions.flatMap((r) => checkRegion(r, sources));
   if (problems.length) {
     console.log(`\n${problems.length} to review (the snapshots are written; re-run once reviewed):`);
     for (const p of problems) console.log(`  ${p}`);

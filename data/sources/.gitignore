@@ -99,6 +99,5 @@ fnps/raw/
 wcvp/cache/
 
 # The regional checklists `npm run floras` reads, as downloaded. The
-# facts-only CSV made from each is committed.
+# per-region verdicts (`<region>.json`) are committed.
 regional-floras/raw/
-!regional-floras/*.csv

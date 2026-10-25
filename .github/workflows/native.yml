@@ -159,7 +159,6 @@ jobs:
           add-paths: |
             data/sources/wcvp/*.json
             data/sources/regional-floras/*.json
-            data/sources/regional-floras/*.csv
             app/src/data/native-evidence.json
 
       - name: Fail if a verdict is new, changed, or missing

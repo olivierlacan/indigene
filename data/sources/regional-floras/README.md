@@ -21,13 +21,12 @@ this folder is the part of it a script can do alone.
 
 ## What is committed
 
-- `<source>.csv`, one per source: `name`, `origin` in the source's own words,
-  and `synonyms` where it prints them. Facts only.
-- `<region>.json`, one per region: every row we ship, with each source's
-  `verdict` (native, introduced, both, uncertain, absent) and the name it
-  was found `as`.
+Only `<region>.json`, one per region, one line per row we ship: each
+source's `verdict` (native, introduced, both, uncertain, absent) and the name
+it was found `as`.
 
-The downloads stay in the git-ignored `raw/`.
+The downloads stay in the git-ignored `raw/`, and the script fetches any that
+are missing. Nothing in the app reads the whole lists, so they aren't kept.
 
 | Source | Retrieved | Taxa | Native | Introduced | Other |
 |---|---|---|---|---|---|
@@ -80,5 +79,5 @@ they are, and the plant page says who said what:
 The BSBI statuses, the NZ Checklist and Auckland Council's report are CC BY
 4.0. The FQA databases (universalFQA.org, GPLv3 calculator, each database its
 authors') and the Pennsylvania list state no licence; native status is a fact,
-and the CSVs keep only facts. Citations are in each `<region>.json` under
+and the snapshots keep only facts. Citations are in each `<region>.json` under
 `sources`.

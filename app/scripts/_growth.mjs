@@ -127,7 +127,9 @@ export function summarise(snapshots) {
   const push = (series, point) => {
     const prev = series[series.length - 1];
     if (prev && prev.slice(1).every((v, i) => v === point[i + 1])) return;
-    if (prev && prev[0] === point[0]) series.pop();
+    // One step per day, as the chart says: a second merge that day replaces
+    // the first, so the step shows the whole day's change.
+    if (prev && prev[0].slice(0, 10) === point[0].slice(0, 10)) series.pop();
     series.push(point);
   };
   for (const { at, plants, wildlife } of snapshots) {

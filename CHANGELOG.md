@@ -58,6 +58,11 @@ subtitle on the What's new page.
   the figures. A plant deer eat used to say nothing at all.
 - Internal: `gardenChecks()` in `lib/traits.ts` feeds `components/garden-checks.ts`; the header drops the labels the table now says.
 
+### Fixed
+
+- Regions: the plant list on each region's page squashed every card to a thin sliver, hiding names and pictures. Each card is its full height again.
+- Internal: `plantRow` kept an inline `margin:0;height:100%` that #302's masonry missed; inline styles beat `.is-masonry > *`, so each card filled its own span and the 1px-row measure collapsed it.
+
 ## [1.4] - 2026-10-22
 
 **Kill your lawn, a spooky theme & filters on every list**
@@ -3694,8 +3699,8 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/193f26f...HEAD
-[1.5]: https://github.com/olivierlacan/indigene/compare/18f7ab8...193f26f
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/9fa8c48...HEAD
+[1.5]: https://github.com/olivierlacan/indigene/compare/18f7ab8...9fa8c48
 [1.4]: https://github.com/olivierlacan/indigene/compare/4d0b855...18f7ab8
 [1.3]: https://github.com/olivierlacan/indigene/compare/5f4a525...4d0b855
 [1.2]: https://github.com/olivierlacan/indigene/compare/526a2e7...5f4a525

@@ -1,6 +1,7 @@
 import { defineConfig, type Plugin } from "vite";
 import { withCsp } from "./src/lib/csp";
 import { appTitle } from "./src/lib/brand";
+import { readGrowth } from "./scripts/_growth.mjs";
 
 // The config runs under Node, but the project compiles with `types: []` and
 // no @types/node — declare the one global it reads instead of adding a dep.
@@ -28,6 +29,28 @@ function brand(): Plugin {
   };
 }
 
+/** `virtual:growth` — each region's plant and animal counts after every merge
+ *  that moved them, worked out from git and the plant files on every build
+ *  (`scripts/_growth.mjs`). Computed, never stored, so it can't drift from the
+ *  lists. A shallow clone has no history and gets `null`: no chart. */
+function growth(): Plugin {
+  const ID = "virtual:growth";
+  let cached: string | undefined;
+  return {
+    name: "indigene-growth",
+    resolveId: (id) => (id === ID ? `\0${ID}` : undefined),
+    load(id) {
+      if (id !== `\0${ID}`) return undefined;
+      if (cached === undefined) {
+        const g = readGrowth(new URL("..", import.meta.url).pathname);
+        if (!g) this.warn("no git history (shallow clone?) — the growth charts are left out");
+        cached = `export default ${JSON.stringify(g && { regions: g.regions, all: g.all })};`;
+      }
+      return cached;
+    },
+  };
+}
+
 // No framework plugins on purpose: this app is built on the DOM and real web
 // APIs. The service worker (public/sw.js) is hand-written and copied verbatim
 // so its behaviour is legible and debuggable, rather than generated.
@@ -36,7 +59,7 @@ export default defineConfig({
   // GitHub Pages serves project sites under /<repo>/ — the deploy workflow
   // sets BASE_PATH so built asset URLs resolve there. Defaults to "/" locally.
   base: process.env.BASE_PATH || "/",
-  plugins: [brand(), csp()],
+  plugins: [brand(), growth(), csp()],
   build: {
     target: "es2022",
     sourcemap: true,

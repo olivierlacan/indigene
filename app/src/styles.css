@@ -8322,3 +8322,67 @@ a.welcome-way:hover strong { text-decoration: underline; }
     opacity: 1;
   }
 }
+
+/* --- Growth chart: "Plants and animals over time" (components/growth-chart.ts) ---
+   Quiet on purpose: a footnote to the page, not a dashboard. One thin step line
+   per count, its area a wash of the same green, labels in text ink. */
+.growth {
+  margin-top: 1.75rem;
+}
+.growth-grid {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 0.6rem;
+  row-gap: 0.35rem;
+  touch-action: pan-y;
+}
+.growth-label {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.growth-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  text-align: right;
+}
+.growth-plot {
+  display: block;
+  width: 100%;
+  height: 1.75rem;
+  overflow: visible;
+  border-bottom: 1px solid var(--line);
+}
+.growth-area {
+  fill: color-mix(in srgb, var(--brand) 14%, transparent);
+}
+.growth-line {
+  fill: none;
+  stroke: var(--brand);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.growth-cross {
+  stroke: var(--line-strong);
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+  visibility: hidden;
+}
+.growth-grid.pointing .growth-cross {
+  visibility: visible;
+}
+.growth-axis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
+.growth-readout {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  min-height: 1.3em;
+}

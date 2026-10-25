@@ -44,6 +44,7 @@ import { lookalikeIcon, alternativeIcon } from "../components/door-icons";
 import { rosterControls, caterpillarLede, countTag } from "../components/roster-controls";
 import { isCrossChecked } from "../data/cross-checks";
 import { SOURCES_ROUTE } from "../lib/plain";
+import { regionGrowth } from "../components/growth-chart";
 
 /** The category headings. A function, not a record: a record built at import
  *  time would be stuck in whichever language loaded first. */
@@ -209,6 +210,8 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
     // books and channels those people point to. Three rows, and the heading
     // opens the region's whole list.
     ...readingSection(region.meta.id),
+    // And how the list got here: when its plants and animals arrived.
+    ...regionGrowth(region.meta.id),
     el("div", { class: "btn-row", style: "margin-top:1.25rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("regions") }, t("region.featured")),
       el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("wildlife.rankForSpot")),

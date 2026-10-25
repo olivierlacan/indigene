@@ -22,6 +22,7 @@ import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { ISSUES_URL } from "../lib/plain";
 import { nameLines, regionName, regionReference } from "../lib/names";
 import { flagRow } from "../components/flags";
+import { allGrowth } from "../components/growth-chart";
 import { gpsButton } from "../components/location-prompt";
 import { privacyRoute } from "../components/privacy-link";
 import { searchPlaces, placeLabel } from "../lib/geocode";
@@ -70,6 +71,8 @@ export function renderExplore(main: HTMLElement): void {
         el("span", { style: "color:var(--ink-soft)" }, t("explore.byWildlifeSub")),
       ]),
     ]),
+    // How the map filled in, one merge at a time.
+    ...allGrowth(),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("") }, t("browse.home")),
       el("button", { class: "btn btn-primary", onClick: () => navigate("location") }, t("browse.startFromSpot")),

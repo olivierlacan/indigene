@@ -25,7 +25,12 @@ jobs:
     name: Build the site
     runs-on: ubuntu-latest
     steps:
+      # Full history: the build dates every plant and animal by the merge that
+      # shipped it, for the growth charts (scripts/_growth.mjs). A shallow
+      # checkout still builds, just without them.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:

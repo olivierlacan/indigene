@@ -225,8 +225,16 @@ async function run(job: Job): Promise<void> {
 /** Two frames, so the opacity transition actually runs: the class has to land
  *  on an element whose starting opacity the browser has already computed. */
 function reveal(img: HTMLImageElement): void {
+  shown.add(img.src);
   requestAnimationFrame(() => requestAnimationFrame(() => img.classList.add("is-ready")));
 }
+
+/** Every photo already faded in once this session. The router rebuilds a page
+ *  on every visit, so without this, going back from a plant to the list it
+ *  came from replays the whole wait — observer, queue, decode, fade — for
+ *  pictures the browser is still holding decoded, and every row flashes its
+ *  drawing first. A photo in here skips all of it. */
+const shown = new Set<string>();
 
 const after = (ms: number): Promise<void> => new Promise((go) => setTimeout(go, ms));
 
@@ -325,6 +333,18 @@ export function loadPhoto(
     urgent,
     wasVisible: false,
   };
+  // Seen before: on screen in the page's first frame, the way the browser
+  // shows a cached page. `decoding="sync"` asks it not to paint the row
+  // without the picture, and `is-instant` drops the fade.
+  if (shown.has(job.url)) {
+    img.decoding = "sync";
+    img.src = job.url;
+    img.classList.add("is-ready", "is-instant");
+    // Once it's up, give back whatever else the slot animates (the hero's
+    // hover zoom); opacity is already 1, so nothing fades.
+    img.addEventListener("load", () => img.classList.remove("is-instant"), { once: true });
+    return;
+  }
   if (urgent || !nearby) {
     queued.push(job);
     pump();

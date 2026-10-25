@@ -3107,6 +3107,10 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
 .photo-fade.is-ready {
   opacity: 1;
 }
+/* A photo already shown this session comes back without the fade. */
+.photo-fade.is-instant {
+  transition: none;
+}
 
 /* The way out to the plant's other photographs, under its badges. Small and
    quiet: it's an offer, not the point of the page — and it sits inside the

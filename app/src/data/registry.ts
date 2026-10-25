@@ -6,6 +6,47 @@ import type { RegistryEntry } from "../types";
 
 export const REGISTRY: RegistryEntry[] = [
   {
+    "primaryId": "ipni:261448-1",
+    "scientificName": "Abies alba",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 45,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 130,
+      "spreadFt": 30
+    },
+    "identifiers": {
+      "ipni": "261448-1",
+      "wfo": "wfo-0000510976",
+      "gbif": "2685484",
+      "usda": "ABAL3",
+      "itis": "506607",
+      "inat": "136319",
+      "wikidata": "Q146992",
+      "indigene": "abies-alba"
+    },
+    "commonNames": [
+      "Silver Fir",
+      "Sapin blanc"
+    ],
+    "aliases": [
+      "abies alba",
+      "sapin blanc",
+      "silver fir"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:1033427-2",
     "scientificName": "Abies grandis",
     "family": "Pinaceae",
@@ -121,6 +162,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "france-continental"
     ]
   },
@@ -321,6 +363,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:781455-1",
+    "scientificName": "Acer platanoides",
+    "family": "Sapindaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 77,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 50
+    },
+    "identifiers": {
+      "ipni": "781455-1",
+      "wfo": "wfo-0000514884",
+      "gbif": "3189846",
+      "usda": "ACPL",
+      "itis": "28755",
+      "inat": "54763",
+      "wikidata": "Q26745",
+      "indigene": "acer-platanoides"
+    },
+    "commonNames": [
+      "Norway Maple",
+      "Érable plane"
+    ],
+    "aliases": [
+      "acer platanoides",
+      "norway maple",
+      "érable plane"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
+    ]
+  },
+  {
     "primaryId": "ipni:781462-1",
     "scientificName": "Acer pseudoplatanus",
     "family": "Sapindaceae",
@@ -475,10 +558,12 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Yarrow",
-      "Common Yarrow"
+      "Common Yarrow",
+      "Achillée millefeuille"
     ],
     "aliases": [
       "achillea millefolium",
+      "achillée millefeuille",
       "common yarrow",
       "yarrow"
     ],
@@ -487,6 +572,8 @@ export const REGISTRY: RegistryEntry[] = [
       "pnw",
       "ca-south-coast",
       "ca-central-coast",
+      "france-atlantic",
+      "france-continental",
       "scotland-lowlands"
     ]
   },
@@ -941,7 +1028,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 0.8,
       "spreadFt": 4
     },
@@ -956,14 +1043,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "ajuga-reptans"
     },
     "commonNames": [
-      "Bugle"
+      "Bugle",
+      "Bugle rampante"
     ],
     "aliases": [
       "ajuga reptans",
-      "bugle"
+      "bugle",
+      "bugle rampante"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "scotland-lowlands"
     ]
   },
@@ -1220,15 +1311,15 @@ export const REGISTRY: RegistryEntry[] = [
     "form": "shrub",
     "rank": "species",
     "keystone": true,
-    "hostLepCount": 156,
+    "hostLepCount": 163,
     "traits": {
       "deerResistant": false,
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
-      "heightFt": 22,
-      "spreadFt": 20
+      "noWater": false,
+      "heightFt": 50,
+      "spreadFt": 25
     },
     "identifiers": {
       "ipni": "30106706-2",
@@ -1241,15 +1332,20 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "alnus-incana"
     },
     "commonNames": [
-      "Speckled Alder"
+      "Speckled Alder",
+      "Gray Alder",
+      "Aulne blanchâtre"
     ],
     "aliases": [
       "alnus incana",
+      "aulne blanchâtre",
+      "gray alder",
       "speckled alder"
     ],
     "cultivarOf": null,
     "regions": [
-      "st-lawrence"
+      "st-lawrence",
+      "france-alpine"
     ]
   },
   {
@@ -1487,6 +1583,47 @@ export const REGISTRY: RegistryEntry[] = [
       "north-michigan",
       "chicago",
       "st-lawrence"
+    ]
+  },
+  {
+    "primaryId": "ipni:30073474-2",
+    "scientificName": "Amelanchier ovalis",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 19,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 8
+    },
+    "identifiers": {
+      "ipni": "30073474-2",
+      "wfo": "wfo-0001003268",
+      "gbif": "3023878",
+      "usda": "AMOV2",
+      "itis": "836602",
+      "inat": "198885",
+      "wikidata": "Q159560",
+      "indigene": "amelanchier-ovalis"
+    },
+    "commonNames": [
+      "Snowy Mespilus",
+      "Amélanchier ovale"
+    ],
+    "aliases": [
+      "amelanchier ovalis",
+      "amélanchier ovale",
+      "snowy mespilus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -1775,7 +1912,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": true,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 0.6,
       "spreadFt": 3
     },
@@ -1790,14 +1927,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "anemone-nemorosa"
     },
     "commonNames": [
-      "Wood Anemone"
+      "Wood Anemone",
+      "Anémone des bois"
     ],
     "aliases": [
       "anemone nemorosa",
+      "anémone des bois",
       "wood anemone"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -1878,6 +2019,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:30111520-2",
+    "scientificName": "Antennaria dioica",
+    "family": "Asteraceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 9,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.3,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "30111520-2",
+      "wfo": "wfo-0000035189",
+      "gbif": "5385604",
+      "usda": "ANDI3",
+      "itis": "36728",
+      "inat": "51893",
+      "wikidata": "Q847898",
+      "indigene": "antennaria-dioica"
+    },
+    "commonNames": [
+      "Mountain Everlasting",
+      "Antennaire dioïque"
+    ],
+    "aliases": [
+      "antennaire dioïque",
+      "antennaria dioica",
+      "mountain everlasting"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -1994,6 +2176,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "ireland",
       "scotland-lowlands"
     ]
@@ -2195,6 +2378,47 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "pnw",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:306409-2",
+    "scientificName": "Aquilegia vulgaris",
+    "family": "Ranunculaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2.5,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "306409-2",
+      "wfo": "wfo-0000541607",
+      "gbif": "3033191",
+      "usda": "AQVU",
+      "itis": "18749",
+      "inat": "51807",
+      "wikidata": "Q148929",
+      "indigene": "aquilegia-vulgaris"
+    },
+    "commonNames": [
+      "Columbine",
+      "Ancolie commune"
+    ],
+    "aliases": [
+      "ancolie commune",
+      "aquilegia vulgaris",
+      "columbine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -2424,11 +2648,13 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Bearberry",
-      "Kinnikinnick"
+      "Kinnikinnick",
+      "Busserole"
     ],
     "aliases": [
       "arctostaphylos uva-ursi",
       "bearberry",
+      "busserole",
       "kinnikinnick"
     ],
     "cultivarOf": null,
@@ -2436,7 +2662,8 @@ export const REGISTRY: RegistryEntry[] = [
       "north-michigan",
       "chicago",
       "st-lawrence",
-      "pnw"
+      "pnw",
+      "france-alpine"
     ]
   },
   {
@@ -2632,6 +2859,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:30090722-2",
+    "scientificName": "Arnica montana",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1.5,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "30090722-2",
+      "wfo": "wfo-0000003482",
+      "gbif": "5405976",
+      "usda": "ARMO8",
+      "itis": "505925",
+      "inat": "56229",
+      "wikidata": "Q207848",
+      "indigene": "arnica-montana"
+    },
+    "commonNames": [
+      "Arnica",
+      "Arnica des montagnes"
+    ],
+    "aliases": [
+      "arnica",
+      "arnica des montagnes",
+      "arnica montana"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -3586,6 +3854,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-continental",
       "france-mediterranean"
     ]
   },
@@ -3704,6 +3973,88 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:180595-1",
+    "scientificName": "Aster alpinus",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 31,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.8,
+      "spreadFt": 1.2
+    },
+    "identifiers": {
+      "ipni": "180595-1",
+      "wfo": "wfo-0000091472",
+      "gbif": "5387396",
+      "usda": "ASAL3",
+      "itis": "35524",
+      "inat": "123449",
+      "wikidata": "Q1342885",
+      "indigene": "aster-alpinus"
+    },
+    "commonNames": [
+      "Alpine Aster",
+      "Aster des Alpes"
+    ],
+    "aliases": [
+      "alpine aster",
+      "aster alpinus",
+      "aster des alpes"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:331070-2",
+    "scientificName": "Aster amellus",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 37,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "331070-2",
+      "wfo": "wfo-0000104449",
+      "gbif": "8133114",
+      "usda": "ASAM12",
+      "itis": "780205",
+      "inat": "333994",
+      "wikidata": "Q819178",
+      "indigene": "aster-amellus"
+    },
+    "commonNames": [
+      "Italian Aster",
+      "Aster amelle"
+    ],
+    "aliases": [
+      "aster amelle",
+      "aster amellus",
+      "italian aster"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
+    ]
+  },
+  {
     "primaryId": "ipni:181745-1",
     "scientificName": "Aster microcephalus",
     "family": "Asteraceae",
@@ -3738,6 +4089,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:838340-1",
+    "scientificName": "Astrantia major",
+    "family": "Apiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 3,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "838340-1",
+      "wfo": "wfo-0000554832",
+      "gbif": "3034915",
+      "usda": "ASMA25",
+      "itis": "507571",
+      "inat": "131623",
+      "wikidata": "Q158066",
+      "indigene": "astrantia-major"
+    },
+    "commonNames": [
+      "Great Masterwort",
+      "Grande astrance"
+    ],
+    "aliases": [
+      "astrantia major",
+      "grande astrance",
+      "great masterwort"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -3813,6 +4205,49 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:17372750-1",
+    "scientificName": "Athyrium filix-femina",
+    "family": "Athyriaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "17372750-1",
+      "wfo": "wfo-0001107233",
+      "gbif": "5275044",
+      "usda": "ATFI",
+      "itis": "17412",
+      "inat": "52669",
+      "wikidata": "Q1345500",
+      "indigene": "athyrium-filix-femina"
+    },
+    "commonNames": [
+      "Lady Fern",
+      "Fougère femelle"
+    ],
+    "aliases": [
+      "athyrium filix-femina",
+      "fougère femelle",
+      "lady fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-atlantic",
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -4782,16 +5217,62 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "briza-media"
     },
     "commonNames": [
-      "Quaking Grass"
+      "Quaking Grass",
+      "Brize intermédiaire"
     ],
     "aliases": [
       "briza media",
+      "brize intermédiaire",
       "quaking grass"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
+      "france-alpine",
       "ireland",
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:74718-3",
+    "scientificName": "Bromus erectus",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 7,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "74718-3",
+      "wfo": "wfo-0000855493",
+      "gbif": "7647071",
+      "usda": "BRER3",
+      "itis": "40483",
+      "inat": "159458",
+      "wikidata": "Q161311",
+      "indigene": "bromus-erectus"
+    },
+    "commonNames": [
+      "Upright Brome",
+      "Brome érigé"
+    ],
+    "aliases": [
+      "brome érigé",
+      "bromus erectus",
+      "upright brome"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -4870,6 +5351,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:394901-1",
+    "scientificName": "Calamagrostis varia",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 56,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 2.5
+    },
+    "identifiers": {
+      "ipni": "394901-1",
+      "wfo": "wfo-0000858139",
+      "gbif": "4106903",
+      "usda": "CAVA10",
+      "itis": "787917",
+      "inat": "497170",
+      "wikidata": "Q15296829",
+      "indigene": "calamagrostis-varia"
+    },
+    "commonNames": [
+      "Mountain Reed-grass",
+      "Calamagrostide variée"
+    ],
+    "aliases": [
+      "calamagrostide variée",
+      "calamagrostis varia",
+      "mountain reed-grass"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -5225,10 +5747,12 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Harebell",
+      "Campanule à feuilles rondes",
       "Scottish Bluebell"
     ],
     "aliases": [
       "campanula rotundifolia",
+      "campanule à feuilles rondes",
       "harebell",
       "scottish bluebell"
     ],
@@ -5236,7 +5760,47 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "north-michigan",
       "st-lawrence",
+      "france-continental",
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:30271653-2",
+    "scientificName": "Campanula scheuchzeri",
+    "family": "Campanulaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 22,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.7,
+      "spreadFt": 0.8
+    },
+    "identifiers": {
+      "ipni": "30271653-2",
+      "wfo": "wfo-0000828819",
+      "gbif": "5410226",
+      "inat": "126421",
+      "wikidata": "Q960591",
+      "indigene": "campanula-scheuchzeri"
+    },
+    "commonNames": [
+      "Scheuchzer's Bellflower",
+      "Campanule de Scheuchzer"
+    ],
+    "aliases": [
+      "campanula scheuchzeri",
+      "campanule de scheuchzer",
+      "scheuchzer's bellflower"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -5358,6 +5922,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "france-alpine",
       "ireland",
       "scotland-lowlands"
@@ -5595,6 +6160,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:301492-1",
+    "scientificName": "Carex pendula",
+    "family": "Cyperaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 86,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 4
+    },
+    "identifiers": {
+      "ipni": "301492-1",
+      "wfo": "wfo-0000349898",
+      "gbif": "2722051",
+      "usda": "CAPE45",
+      "itis": "565047",
+      "inat": "49365",
+      "wikidata": "Q1466032",
+      "indigene": "carex-pendula"
+    },
+    "commonNames": [
+      "Pendulous Sedge",
+      "Laîche à épis pendants"
+    ],
+    "aliases": [
+      "carex pendula",
+      "laîche à épis pendants",
+      "pendulous sedge"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -6471,6 +7077,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:190753-1",
+    "scientificName": "Centaurea jacea",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 88,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "190753-1",
+      "wfo": "wfo-0000095537",
+      "gbif": "3128547",
+      "usda": "CEJA",
+      "itis": "36962",
+      "inat": "55713",
+      "wikidata": "Q1130177",
+      "indigene": "centaurea-jacea"
+    },
+    "commonNames": [
+      "Brown Knapweed",
+      "Centaurée jacée"
+    ],
+    "aliases": [
+      "brown knapweed",
+      "centaurea jacea",
+      "centaurée jacée"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -7423,16 +8070,20 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Traveler's Joy",
+      "Old Man's Beard",
       "Clématite des haies"
     ],
     "aliases": [
       "clematis vitalba",
       "clématite des haies",
+      "old man's beard",
       "traveler's joy"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-continental"
+      "france-atlantic",
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -8365,15 +9016,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "cornus-sanguinea"
     },
     "commonNames": [
-      "Common Dogwood"
+      "Common Dogwood",
+      "Cornouiller sanguin"
     ],
     "aliases": [
       "common dogwood",
+      "cornouiller sanguin",
       "cornus sanguinea"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-continental"
     ]
   },
   {
@@ -8667,6 +9321,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:722536-1",
+    "scientificName": "Cotoneaster integerrimus",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 15,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 5
+    },
+    "identifiers": {
+      "ipni": "722536-1",
+      "wfo": "wfo-0001008928",
+      "gbif": "3025576",
+      "usda": "COIN16",
+      "itis": "565611",
+      "inat": "461835",
+      "wikidata": "Q158930",
+      "indigene": "cotoneaster-integerrimus"
+    },
+    "commonNames": [
+      "Wild Cotoneaster",
+      "Cotonéaster commun"
+    ],
+    "aliases": [
+      "cotoneaster integerrimus",
+      "cotonéaster commun",
+      "wild cotoneaster"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:723298-1",
     "scientificName": "Crataegus douglasii",
     "family": "Rosaceae",
@@ -8787,6 +9482,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "france-mediterranean",
       "ireland",
       "scotland-lowlands"
@@ -9309,6 +10005,7 @@ export const REGISTRY: RegistryEntry[] = [
       "pnw",
       "france-atlantic",
       "france-continental",
+      "france-alpine",
       "ireland",
       "scotland-lowlands"
     ]
@@ -9348,6 +10045,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:302053-2",
+    "scientificName": "Dianthus carthusianorum",
+    "family": "Caryophyllaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 21,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 1
+    },
+    "identifiers": {
+      "ipni": "302053-2",
+      "wfo": "wfo-0000643249",
+      "gbif": "8400876",
+      "usda": "DICA19",
+      "itis": "502027",
+      "inat": "84960",
+      "wikidata": "Q159735",
+      "indigene": "dianthus-carthusianorum"
+    },
+    "commonNames": [
+      "Carthusian Pink",
+      "Œillet des Chartreux"
+    ],
+    "aliases": [
+      "carthusian pink",
+      "dianthus carthusianorum",
+      "œillet des chartreux"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -9658,6 +10396,47 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "north-michigan",
       "st-lawrence"
+    ]
+  },
+  {
+    "primaryId": "ipni:60453625-2",
+    "scientificName": "Digitalis grandiflora",
+    "family": "Plantaginaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "60453625-2",
+      "wfo": "wfo-0000647308",
+      "gbif": "5414992",
+      "usda": "DIGR4",
+      "itis": "502057",
+      "inat": "123625",
+      "wikidata": "Q157085",
+      "indigene": "digitalis-grandiflora"
+    },
+    "commonNames": [
+      "Large Yellow Foxglove",
+      "Digitale à grandes fleurs"
+    ],
+    "aliases": [
+      "digitale à grandes fleurs",
+      "digitalis grandiflora",
+      "large yellow foxglove"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -10413,6 +11192,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:115950-1",
+    "scientificName": "Echium vulgare",
+    "family": "Boraginaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 26,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "115950-1",
+      "wfo": "wfo-0000663145",
+      "gbif": "2925892",
+      "usda": "ECVU",
+      "itis": "31899",
+      "inat": "56174",
+      "wikidata": "Q157722",
+      "indigene": "echium-vulgare"
+    },
+    "commonNames": [
+      "Viper's Bugloss"
+    ],
+    "aliases": [
+      "echium vulgare",
+      "viper's bugloss"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-atlantic"
+    ]
+  },
+  {
     "primaryId": "ipni:88877-2",
     "scientificName": "Ehretia anacua",
     "family": "Boraginaceae",
@@ -10821,7 +11639,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 2,
       "spreadFt": 2.5
     },
@@ -10844,6 +11662,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "ireland",
       "scotland-lowlands"
     ]
@@ -11591,6 +12410,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "france-continental",
       "ireland"
     ]
@@ -11632,6 +12452,48 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:205581-1",
+    "scientificName": "Eupatorium cannabinum",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 27,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "205581-1",
+      "wfo": "wfo-0000035116",
+      "gbif": "5402943",
+      "usda": "EUCA9",
+      "itis": "35984",
+      "inat": "55976",
+      "wikidata": "Q744339",
+      "indigene": "eupatorium-cannabinum"
+    },
+    "commonNames": [
+      "Hemp-agrimony",
+      "Eupatoire à feuilles de chanvre"
+    ],
+    "aliases": [
+      "eupatoire à feuilles de chanvre",
+      "eupatorium cannabinum",
+      "hemp-agrimony"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-atlantic",
+      "france-continental"
     ]
   },
   {
@@ -12067,7 +12929,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "france-continental"
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -12356,8 +13219,8 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
-      "heightFt": 4.5,
+      "noWater": false,
+      "heightFt": 5,
       "spreadFt": 4
     },
     "identifiers": {
@@ -12371,14 +13234,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "filipendula-ulmaria"
     },
     "commonNames": [
-      "Meadowsweet"
+      "Meadowsweet",
+      "Reine-des-prés"
     ],
     "aliases": [
       "filipendula ulmaria",
-      "meadowsweet"
+      "meadowsweet",
+      "reine-des-prés"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -12833,6 +13700,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:750339-1",
+    "scientificName": "Galium odoratum",
+    "family": "Rubiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 127,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 0.8,
+      "spreadFt": 4
+    },
+    "identifiers": {
+      "ipni": "750339-1",
+      "wfo": "wfo-0000969693",
+      "gbif": "2914642",
+      "usda": "GAOD3",
+      "itis": "502715",
+      "inat": "56065",
+      "wikidata": "Q161090",
+      "indigene": "galium-odoratum"
+    },
+    "commonNames": [
+      "Sweet Woodruff",
+      "Gaillet odorant"
+    ],
+    "aliases": [
+      "gaillet odorant",
+      "galium odoratum",
+      "sweet woodruff"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
+    ]
+  },
+  {
     "primaryId": "ipni:750829-1",
     "scientificName": "Galium verum",
     "family": "Rubiaceae",
@@ -13154,6 +14062,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:367703-1",
+    "scientificName": "Gentiana acaulis",
+    "family": "Gentianaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 21,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.4,
+      "spreadFt": 1
+    },
+    "identifiers": {
+      "ipni": "367703-1",
+      "wfo": "wfo-0000696760",
+      "gbif": "6366597",
+      "usda": "GEAC4",
+      "itis": "822486",
+      "inat": "130558",
+      "wikidata": "Q163785",
+      "indigene": "gentiana-acaulis"
+    },
+    "commonNames": [
+      "Trumpet Gentian",
+      "Gentiane acaule"
+    ],
+    "aliases": [
+      "gentiana acaulis",
+      "gentiane acaule",
+      "trumpet gentian"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:368453-1",
     "scientificName": "Gentiana lutea",
     "family": "Gentianaceae",
@@ -13264,14 +14213,17 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "geranium-sanguineum"
     },
     "commonNames": [
-      "Bloody Cranesbill"
+      "Bloody Cranesbill",
+      "Géranium sanguin"
     ],
     "aliases": [
       "bloody cranesbill",
-      "geranium sanguineum"
+      "geranium sanguineum",
+      "géranium sanguin"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -13289,7 +14241,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 2.5,
       "spreadFt": 2.5
     },
@@ -13304,14 +14256,17 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "geranium-sylvaticum"
     },
     "commonNames": [
-      "Wood Cranesbill"
+      "Wood Cranesbill",
+      "Géranium des bois"
     ],
     "aliases": [
       "geranium sylvaticum",
+      "géranium des bois",
       "wood cranesbill"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-alpine",
       "scotland-lowlands"
     ]
   },
@@ -13352,6 +14307,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:324725-2",
+    "scientificName": "Geum montanum",
+    "family": "Rosaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 19,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.5,
+      "spreadFt": 0.8
+    },
+    "identifiers": {
+      "ipni": "324725-2",
+      "wfo": "wfo-0001018633",
+      "gbif": "5369806",
+      "inat": "130537",
+      "wikidata": "Q159511",
+      "indigene": "geum-montanum"
+    },
+    "commonNames": [
+      "Alpine Avens",
+      "Benoîte des montagnes"
+    ],
+    "aliases": [
+      "alpine avens",
+      "benoîte des montagnes",
+      "geum montanum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -13473,6 +14467,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:447338-1",
+    "scientificName": "Glechoma hederacea",
+    "family": "Lamiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 6
+    },
+    "identifiers": {
+      "ipni": "447338-1",
+      "wfo": "wfo-0000972872",
+      "gbif": "2926557",
+      "usda": "GLHE2",
+      "itis": "502801",
+      "inat": "55830",
+      "wikidata": "Q162544",
+      "indigene": "glechoma-hederacea"
+    },
+    "commonNames": [
+      "Ground-ivy"
+    ],
+    "aliases": [
+      "glechoma hederacea",
+      "ground-ivy"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-atlantic"
+    ]
+  },
+  {
     "primaryId": "ipni:210611-1",
     "scientificName": "Grindelia integrifolia",
     "family": "Asteraceae",
@@ -13509,6 +14542,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:17112110-1",
+    "scientificName": "Gymnocarpium dryopteris",
+    "family": "Cystopteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.8,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "17112110-1",
+      "wfo": "wfo-0001107317",
+      "gbif": "2650832",
+      "usda": "GYDR",
+      "itis": "17579",
+      "inat": "82572",
+      "wikidata": "Q1301661",
+      "indigene": "gymnocarpium-dryopteris"
+    },
+    "commonNames": [
+      "Oak Fern",
+      "Gymnocarpium dryoptéride"
+    ],
+    "aliases": [
+      "gymnocarpium dryopteris",
+      "gymnocarpium dryoptéride",
+      "oak fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -14199,6 +15273,88 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:498352-1",
+    "scientificName": "Hippocrepis comosa",
+    "family": "Fabaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 42,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "498352-1",
+      "wfo": "wfo-0000213796",
+      "gbif": "5353750",
+      "usda": "HICO3",
+      "itis": "503043",
+      "inat": "133488",
+      "wikidata": "Q158369",
+      "indigene": "hippocrepis-comosa"
+    },
+    "commonNames": [
+      "Horseshoe Vetch",
+      "Hippocrépide à toupet"
+    ],
+    "aliases": [
+      "hippocrepis comosa",
+      "hippocrépide à toupet",
+      "horseshoe vetch"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
+    ]
+  },
+  {
+    "primaryId": "ipni:323851-1",
+    "scientificName": "Hippophae rhamnoides",
+    "family": "Elaeagnaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 24,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 12
+    },
+    "identifiers": {
+      "ipni": "323851-1",
+      "wfo": "wfo-0000723743",
+      "gbif": "3039285",
+      "usda": "HIRH80",
+      "itis": "503044",
+      "inat": "163812",
+      "wikidata": "Q165378",
+      "indigene": "hippophae-rhamnoides"
+    },
+    "commonNames": [
+      "Sea Buckthorn",
+      "Argousier"
+    ],
+    "aliases": [
+      "argousier",
+      "hippophae rhamnoides",
+      "sea buckthorn"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:561009-1",
     "scientificName": "Hoheria populnea",
     "family": "Malvaceae",
@@ -14515,6 +15671,48 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:433719-1",
+    "scientificName": "Hypericum perforatum",
+    "family": "Hypericaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 39,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "433719-1",
+      "wfo": "wfo-0000728093",
+      "gbif": "3189486",
+      "usda": "HYPE",
+      "itis": "21454",
+      "inat": "56077",
+      "wikidata": "Q158289",
+      "indigene": "hypericum-perforatum"
+    },
+    "commonNames": [
+      "Perforate St John's-wort",
+      "Millepertuis perforé"
+    ],
+    "aliases": [
+      "hypericum perforatum",
+      "millepertuis perforé",
+      "perforate st john's-wort"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-atlantic",
+      "france-continental"
     ]
   },
   {
@@ -14927,7 +16125,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": true,
       "aggressive": true,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 4,
       "spreadFt": 4
     },
@@ -14952,6 +16150,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "ireland",
       "scotland-lowlands"
     ]
@@ -15393,6 +16592,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "france-continental",
       "france-alpine",
       "ireland",
       "scotland-lowlands"
@@ -15638,7 +16838,9 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "france-continental",
+      "france-alpine",
       "ireland",
       "scotland-lowlands"
     ]
@@ -15792,6 +16994,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:501425-1",
+    "scientificName": "Laburnum alpinum",
+    "family": "Fabaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 15
+    },
+    "identifiers": {
+      "ipni": "501425-1",
+      "wfo": "wfo-0000213799",
+      "gbif": "5356343",
+      "usda": "LAAL8",
+      "itis": "819802",
+      "inat": "371837",
+      "wikidata": "Q3497019",
+      "indigene": "laburnum-alpinum"
+    },
+    "commonNames": [
+      "Alpine Laburnum",
+      "Aubour des Alpes"
+    ],
+    "aliases": [
+      "alpine laburnum",
+      "aubour des alpes",
+      "laburnum alpinum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -16163,7 +17406,7 @@ export const REGISTRY: RegistryEntry[] = [
       "petToxic": true,
       "aggressive": false,
       "noWater": true,
-      "heightFt": 2,
+      "heightFt": 2.5,
       "spreadFt": 2
     },
     "identifiers": {
@@ -16177,14 +17420,19 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "leucanthemum-vulgare"
     },
     "commonNames": [
-      "Oxeye Daisy"
+      "Oxeye Daisy",
+      "Marguerite commune"
     ],
     "aliases": [
       "leucanthemum vulgare",
+      "marguerite commune",
       "oxeye daisy"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
+      "france-alpine",
       "scotland-lowlands"
     ]
   },
@@ -16460,6 +17708,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "france-continental"
     ]
   },
@@ -16502,6 +17751,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:537662-1",
+    "scientificName": "Lilium martagon",
+    "family": "Liliaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 4,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 1
+    },
+    "identifiers": {
+      "ipni": "537662-1",
+      "wfo": "wfo-0000678524",
+      "gbif": "2753146",
+      "usda": "LIMA8",
+      "itis": "503457",
+      "inat": "85027",
+      "wikidata": "Q156363",
+      "indigene": "lilium-martagon"
+    },
+    "commonNames": [
+      "Martagon Lily",
+      "Lis martagon"
+    ],
+    "aliases": [
+      "lilium martagon",
+      "lis martagon",
+      "martagon lily"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -16890,6 +18180,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:148602-1",
+    "scientificName": "Lonicera alpigena",
+    "family": "Caprifoliaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 55,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 6,
+      "spreadFt": 5
+    },
+    "identifiers": {
+      "ipni": "148602-1",
+      "wfo": "wfo-0000359767",
+      "gbif": "6369729",
+      "usda": "LOAL5",
+      "itis": "823508",
+      "inat": "448130",
+      "wikidata": "Q159411",
+      "indigene": "lonicera-alpigena"
+    },
+    "commonNames": [
+      "Alpine Honeysuckle",
+      "Chèvrefeuille des Alpes"
+    ],
+    "aliases": [
+      "alpine honeysuckle",
+      "chèvrefeuille des alpes",
+      "lonicera alpigena"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:1021717-2",
     "scientificName": "Lonicera ciliosa",
     "family": "Caprifoliaceae",
@@ -17131,7 +18462,7 @@ export const REGISTRY: RegistryEntry[] = [
     "form": "vine",
     "rank": "species",
     "keystone": false,
-    "hostLepCount": 57,
+    "hostLepCount": 58,
     "traits": {
       "deerResistant": false,
       "thorny": false,
@@ -17153,9 +18484,11 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Honeysuckle",
-      "Woodbine"
+      "Woodbine",
+      "Chèvrefeuille des bois"
     ],
     "aliases": [
+      "chèvrefeuille des bois",
       "honeysuckle",
       "lonicera periclymenum",
       "woodbine"
@@ -17163,6 +18496,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -17205,6 +18539,47 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:149194-1",
+    "scientificName": "Lonicera xylosteum",
+    "family": "Caprifoliaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 58,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 7
+    },
+    "identifiers": {
+      "ipni": "149194-1",
+      "wfo": "wfo-0000361644",
+      "gbif": "5334259",
+      "usda": "LOXY",
+      "itis": "35308",
+      "inat": "124548",
+      "wikidata": "Q162760",
+      "indigene": "lonicera-xylosteum"
+    },
+    "commonNames": [
+      "Fly Honeysuckle",
+      "Camérisier à balais"
+    ],
+    "aliases": [
+      "camérisier à balais",
+      "fly honeysuckle",
+      "lonicera xylosteum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -17416,6 +18791,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:443878-1",
+    "scientificName": "Luzula nivea",
+    "family": "Juncaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 25,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "443878-1",
+      "wfo": "wfo-0000777992",
+      "gbif": "2700768",
+      "usda": "LUNI3",
+      "itis": "817927",
+      "inat": "336659",
+      "wikidata": "Q162447",
+      "indigene": "luzula-nivea"
+    },
+    "commonNames": [
+      "Snowy Wood-rush",
+      "Luzule blanche"
+    ],
+    "aliases": [
+      "luzula nivea",
+      "luzule blanche",
+      "snowy wood-rush"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:20009373-1",
     "scientificName": "Luzula sylvatica",
     "family": "Juncaceae",
@@ -17580,7 +18996,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 5,
       "spreadFt": 3.5
     },
@@ -17595,14 +19011,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "lythrum-salicaria"
     },
     "commonNames": [
-      "Purple Loosestrife"
+      "Purple Loosestrife",
+      "Salicaire commune"
     ],
     "aliases": [
       "lythrum salicaria",
-      "purple loosestrife"
+      "purple loosestrife",
+      "salicaire commune"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "ireland"
     ]
   },
@@ -18046,7 +19466,7 @@ export const REGISTRY: RegistryEntry[] = [
       "petToxic": false,
       "aggressive": false,
       "noWater": true,
-      "heightFt": 28,
+      "heightFt": 30,
       "spreadFt": 26
     },
     "identifiers": {
@@ -18060,15 +19480,61 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "malus-sylvestris"
     },
     "commonNames": [
-      "Crab Apple"
+      "Crab Apple",
+      "Pommier sauvage"
     ],
     "aliases": [
       "crab apple",
-      "malus sylvestris"
+      "malus sylvestris",
+      "pommier sauvage"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:561790-1",
+    "scientificName": "Malva moschata",
+    "family": "Malvaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 10,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "561790-1",
+      "wfo": "wfo-0000449199",
+      "gbif": "3152379",
+      "usda": "MAMO2",
+      "itis": "21835",
+      "inat": "55977",
+      "wikidata": "Q157920",
+      "indigene": "malva-moschata"
+    },
+    "commonNames": [
+      "Musk Mallow",
+      "Mauve musquée"
+    ],
+    "aliases": [
+      "malva moschata",
+      "mauve musquée",
+      "musk mallow"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-atlantic",
+      "france-continental"
     ]
   },
   {
@@ -18226,6 +19692,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:408184-1",
+    "scientificName": "Melica uniflora",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 13,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "408184-1",
+      "wfo": "wfo-0000879476",
+      "gbif": "4116392",
+      "inat": "450670",
+      "wikidata": "Q162410",
+      "indigene": "melica-uniflora"
+    },
+    "commonNames": [
+      "Wood Melick",
+      "Mélique uniflore"
+    ],
+    "aliases": [
+      "melica uniflora",
+      "mélique uniflore",
+      "wood melick"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -18664,7 +20169,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 4.5,
       "spreadFt": 3
     },
@@ -18687,6 +20192,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "ireland",
       "scotland-lowlands"
     ]
@@ -19528,7 +21034,9 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-continental"
+      "france-atlantic",
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -21489,6 +22997,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:677083-1",
+    "scientificName": "Pinus mugo",
+    "family": "Pinaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 64,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 12
+    },
+    "identifiers": {
+      "ipni": "677083-1",
+      "wfo": "wfo-0000481789",
+      "gbif": "5285385",
+      "usda": "PIMU80",
+      "itis": "183358",
+      "inat": "135727",
+      "wikidata": "Q147475",
+      "indigene": "pinus-mugo"
+    },
+    "commonNames": [
+      "Mountain Pine",
+      "Pin mugho"
+    ],
+    "aliases": [
+      "mountain pine",
+      "pin mugho",
+      "pinus mugo"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:263186-1",
     "scientificName": "Pinus palustris",
     "family": "Pinaceae",
@@ -21723,7 +23272,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-continental"
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -22410,9 +23960,9 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 1,
-      "spreadFt": 2.5
+      "spreadFt": 3
     },
     "identifiers": {
       "ipni": "300720-2",
@@ -22424,14 +23974,19 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "polypodium-vulgare"
     },
     "commonNames": [
-      "Common Polypody"
+      "Common Polypody",
+      "Polypode commun"
     ],
     "aliases": [
       "common polypody",
+      "polypode commun",
       "polypodium vulgare"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
+      "france-alpine",
       "ireland",
       "scotland-lowlands"
     ]
@@ -23065,15 +24620,19 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "primula-veris"
     },
     "commonNames": [
-      "Cowslip"
+      "Cowslip",
+      "Primevère officinale"
     ],
     "aliases": [
       "cowslip",
+      "primevère officinale",
       "primula veris"
     ],
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
+      "france-alpine",
       "ireland",
       "scotland-lowlands"
     ]
@@ -23091,7 +24650,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 0.6,
       "spreadFt": 2
     },
@@ -23113,6 +24672,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "ireland",
       "scotland-lowlands"
     ]
@@ -23192,6 +24752,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "scotland-lowlands"
     ]
   },
@@ -23202,14 +24763,14 @@ export const REGISTRY: RegistryEntry[] = [
     "form": "tree",
     "rank": "species",
     "keystone": true,
-    "hostLepCount": 318,
+    "hostLepCount": 319,
     "traits": {
       "deerResistant": false,
       "thorny": false,
       "petToxic": true,
       "aggressive": false,
       "noWater": true,
-      "heightFt": 55,
+      "heightFt": 60,
       "spreadFt": 35
     },
     "identifiers": {
@@ -23224,16 +24785,19 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Wild Cherry",
-      "Gean"
+      "Gean",
+      "Merisier"
     ],
     "aliases": [
       "gean",
+      "merisier",
       "prunus avium",
       "wild cherry"
     ],
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -23524,7 +25088,7 @@ export const REGISTRY: RegistryEntry[] = [
     "form": "shrub",
     "rank": "species",
     "keystone": true,
-    "hostLepCount": 318,
+    "hostLepCount": 319,
     "traits": {
       "deerResistant": true,
       "thorny": true,
@@ -23558,6 +25122,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "france-mediterranean",
       "ireland",
       "scotland-lowlands"
@@ -23754,6 +25319,86 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:20009462-1",
+    "scientificName": "Pulsatilla alpina",
+    "family": "Ranunculaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1.2,
+      "spreadFt": 1
+    },
+    "identifiers": {
+      "ipni": "20009462-1",
+      "wfo": "wfo-0000471987",
+      "gbif": "7278071",
+      "inat": "85428",
+      "wikidata": "Q149625",
+      "indigene": "pulsatilla-alpina"
+    },
+    "commonNames": [
+      "Alpine Pasqueflower",
+      "Pulsatille des Alpes"
+    ],
+    "aliases": [
+      "alpine pasqueflower",
+      "pulsatilla alpina",
+      "pulsatille des alpes"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:1034980-2",
+    "scientificName": "Pulsatilla vulgaris",
+    "family": "Ranunculaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 1
+    },
+    "identifiers": {
+      "ipni": "1034980-2",
+      "wfo": "wfo-0000471767",
+      "gbif": "3033621",
+      "usda": "PUVU",
+      "itis": "506590",
+      "inat": "60786",
+      "wikidata": "Q148623",
+      "indigene": "pulsatilla-vulgaris"
+    },
+    "commonNames": [
+      "Pasqueflower",
+      "Anémone pulsatille"
+    ],
+    "aliases": [
+      "anémone pulsatille",
+      "pasqueflower",
+      "pulsatilla vulgaris"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -24580,6 +26225,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "france-continental",
       "ireland",
       "scotland-lowlands"
@@ -24670,14 +26316,14 @@ export const REGISTRY: RegistryEntry[] = [
     "form": "tree",
     "rank": "species",
     "keystone": true,
-    "hostLepCount": 391,
+    "hostLepCount": 401,
     "traits": {
       "deerResistant": false,
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
       "noWater": true,
-      "heightFt": 80,
+      "heightFt": 90,
       "spreadFt": 75
     },
     "identifiers": {
@@ -24692,9 +26338,11 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Pedunculate Oak",
-      "English Oak"
+      "English Oak",
+      "Chêne pédonculé"
     ],
     "aliases": [
+      "chêne pédonculé",
       "english oak",
       "pedunculate oak",
       "quercus robur"
@@ -24702,6 +26350,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -25022,6 +26671,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:718256-1",
+    "scientificName": "Rhamnus cathartica",
+    "family": "Rhamnaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 51,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 15
+    },
+    "identifiers": {
+      "ipni": "718256-1",
+      "wfo": "wfo-0000460239",
+      "gbif": "3039491",
+      "usda": "RHCA3",
+      "itis": "28573",
+      "inat": "54811",
+      "wikidata": "Q147861",
+      "indigene": "rhamnus-cathartica"
+    },
+    "commonNames": [
+      "Purging Buckthorn",
+      "Nerprun purgatif"
+    ],
+    "aliases": [
+      "nerprun purgatif",
+      "purging buckthorn",
+      "rhamnus cathartica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -25493,6 +27183,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:792549-1",
+    "scientificName": "Ribes alpinum",
+    "family": "Grossulariaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 33,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 5
+    },
+    "identifiers": {
+      "ipni": "792549-1",
+      "wfo": "wfo-0000404909",
+      "gbif": "2986184",
+      "usda": "RIAL2",
+      "itis": "507145",
+      "inat": "167911",
+      "wikidata": "Q149260",
+      "indigene": "ribes-alpinum"
+    },
+    "commonNames": [
+      "Mountain Currant",
+      "Groseillier des Alpes"
+    ],
+    "aliases": [
+      "groseillier des alpes",
+      "mountain currant",
+      "ribes alpinum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:317405-2",
     "scientificName": "Ribes sanguineum",
     "family": "Grossulariaceae",
@@ -25773,6 +27504,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "france-continental",
       "ireland",
       "scotland-lowlands"
@@ -27511,7 +29243,7 @@ export const REGISTRY: RegistryEntry[] = [
     "form": "perennial",
     "rank": "species",
     "keystone": false,
-    "hostLepCount": 68,
+    "hostLepCount": 69,
     "traits": {
       "deerResistant": true,
       "thorny": false,
@@ -27542,7 +29274,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-continental"
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -27732,15 +29465,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "sambucus-nigra"
     },
     "commonNames": [
-      "Elder"
+      "Elder",
+      "Sureau noir"
     ],
     "aliases": [
       "elder",
-      "sambucus nigra"
+      "sambucus nigra",
+      "sureau noir"
     ],
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -27813,17 +29549,22 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "sambucus-racemosa"
     },
     "commonNames": [
-      "Red Elderberry"
+      "Red Elderberry",
+      "Red-berried Elder",
+      "Sureau rouge"
     ],
     "aliases": [
       "red elderberry",
-      "sambucus racemosa"
+      "red-berried elder",
+      "sambucus racemosa",
+      "sureau rouge"
     ],
     "cultivarOf": null,
     "regions": [
       "north-michigan",
       "st-lawrence",
-      "pnw"
+      "pnw",
+      "france-alpine"
     ]
   },
   {
@@ -28098,6 +29839,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-continental",
       "france-mediterranean"
     ]
   },
@@ -28333,6 +30075,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:276315-1",
+    "scientificName": "Sempervivum arachnoideum",
+    "family": "Crassulaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 5,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.3,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "276315-1",
+      "wfo": "wfo-0000441267",
+      "gbif": "4201709",
+      "inat": "334591",
+      "wikidata": "Q161390",
+      "indigene": "sempervivum-arachnoideum"
+    },
+    "commonNames": [
+      "Cobweb Houseleek",
+      "Joubarbe toile-d'araignée"
+    ],
+    "aliases": [
+      "cobweb houseleek",
+      "joubarbe toile-d'araignée",
+      "sempervivum arachnoideum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -28622,7 +30403,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 3,
       "spreadFt": 2.5
     },
@@ -28637,14 +30418,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "silene-dioica"
     },
     "commonNames": [
-      "Red Campion"
+      "Red Campion",
+      "Silène dioïque"
     ],
     "aliases": [
       "red campion",
-      "silene dioica"
+      "silene dioica",
+      "silène dioïque"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -29903,15 +31688,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "succisa-pratensis"
     },
     "commonNames": [
-      "Devil's-bit Scabious"
+      "Devil's-bit Scabious",
+      "Succise des prés"
     ],
     "aliases": [
       "devil's-bit scabious",
-      "succisa pratensis"
+      "succisa pratensis",
+      "succise des prés"
     ],
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -30365,11 +32153,11 @@ export const REGISTRY: RegistryEntry[] = [
     "keystone": false,
     "hostLepCount": 7,
     "traits": {
-      "deerResistant": true,
+      "deerResistant": false,
       "thorny": false,
       "petToxic": true,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 50,
       "spreadFt": 30
     },
@@ -30384,14 +32172,17 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "taxus-baccata"
     },
     "commonNames": [
-      "Yew"
+      "Yew",
+      "If à baies"
     ],
     "aliases": [
+      "if à baies",
       "taxus baccata",
       "yew"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-alpine",
       "ireland"
     ]
   },
@@ -30584,6 +32375,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "ireland",
       "scotland-lowlands"
     ]
@@ -30745,6 +32537,47 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "ireland",
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:461562-1",
+    "scientificName": "Thymus pulegioides",
+    "family": "Lamiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 85,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "461562-1",
+      "wfo": "wfo-0000324607",
+      "gbif": "5341443",
+      "usda": "THPU5",
+      "itis": "505500",
+      "inat": "169753",
+      "wikidata": "Q149474",
+      "indigene": "thymus-pulegioides"
+    },
+    "commonNames": [
+      "Large Thyme",
+      "Thym faux pouliot"
+    ],
+    "aliases": [
+      "large thyme",
+      "thym faux pouliot",
+      "thymus pulegioides"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -31551,6 +33384,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "ireland"
     ]
   },
@@ -32287,7 +34121,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 5,
       "spreadFt": 2.5
     },
@@ -32302,14 +34136,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "valeriana-officinalis"
     },
     "commonNames": [
-      "Common Valerian"
+      "Common Valerian",
+      "Valériane officinale"
     ],
     "aliases": [
       "common valerian",
-      "valeriana officinalis"
+      "valeriana officinalis",
+      "valériane officinale"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "scotland-lowlands"
     ]
   },
@@ -32811,14 +34649,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "viburnum-opulus"
     },
     "commonNames": [
-      "Guelder Rose"
+      "Guelder Rose",
+      "Viorne obier"
     ],
     "aliases": [
       "guelder rose",
-      "viburnum opulus"
+      "viburnum opulus",
+      "viorne obier"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]

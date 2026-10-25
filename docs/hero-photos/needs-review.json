@@ -531,6 +531,14 @@
     },
     {
       "subject": "plant",
+      "id": "carex-pendula",
+      "name": "Carex pendula",
+      "taxonId": 49365,
+      "reason": "chosen photo 5582512 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/49365/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "carex-tumulicola",
       "name": "Carex tumulicola",
       "taxonId": 64183,
@@ -544,6 +552,14 @@
       "taxonId": 76197,
       "reason": "chosen photo 340465 is cc-by-nc-nd",
       "gallery": "https://www.inaturalist.org/taxa/76197/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "centaurea-jacea",
+      "name": "Centaurea jacea",
+      "taxonId": 55713,
+      "reason": "chosen photo 227426766 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/55713/browse_photos"
     },
     {
       "subject": "plant",
@@ -787,6 +803,14 @@
     },
     {
       "subject": "plant",
+      "id": "eupatorium-cannabinum",
+      "name": "Eupatorium cannabinum",
+      "taxonId": 55976,
+      "reason": "chosen photo 47165338 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/55976/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "eutrochium-maculatum",
       "name": "Eutrochium maculatum",
       "taxonId": 117440,
@@ -803,11 +827,27 @@
     },
     {
       "subject": "plant",
+      "id": "galium-odoratum",
+      "name": "Galium odoratum",
+      "taxonId": 56065,
+      "reason": "chosen photo 74944506 is cc-by-nd",
+      "gallery": "https://www.inaturalist.org/taxa/56065/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "gaultheria-procumbens",
       "name": "Gaultheria procumbens",
       "taxonId": 62376,
       "reason": "chosen photo 17300 is cc-by-nc-nd",
       "gallery": "https://www.inaturalist.org/taxa/62376/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "gentiana-acaulis",
+      "name": "Gentiana acaulis",
+      "taxonId": 130558,
+      "reason": "chosen photo 1983667 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/130558/browse_photos"
     },
     {
       "subject": "plant",
@@ -824,6 +864,14 @@
       "taxonId": 163316,
       "reason": "chosen photo 125097521 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/163316/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "gymnocarpium-dryopteris",
+      "name": "Gymnocarpium dryopteris",
+      "taxonId": 82572,
+      "reason": "chosen photo 293657946 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/82572/browse_photos"
     },
     {
       "subject": "plant",
@@ -1256,6 +1304,14 @@
       "taxonId": 61470,
       "reason": "chosen photo 15760 is cc-by-nc-nd",
       "gallery": "https://www.inaturalist.org/taxa/61470/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "ribes-alpinum",
+      "name": "Ribes alpinum",
+      "taxonId": 167911,
+      "reason": "chosen photo 22907311 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/167911/browse_photos"
     },
     {
       "subject": "plant",

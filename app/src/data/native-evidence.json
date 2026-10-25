@@ -78,8 +78,8 @@
         "fr": "France"
       },
       "coarse": true,
-      "checked": "2026-10-16",
-      "rows": 41,
+      "checked": "2026-10-25",
+      "rows": 81,
       "unconfirmed": {
         "sesleria-caerulea": "absent"
       }
@@ -90,8 +90,8 @@
         "fr": "France"
       },
       "coarse": true,
-      "checked": "2026-10-16",
-      "rows": 46,
+      "checked": "2026-10-25",
+      "rows": 81,
       "unconfirmed": {}
     },
     "france-continental": {
@@ -100,8 +100,8 @@
         "fr": "France"
       },
       "coarse": true,
-      "checked": "2026-10-16",
-      "rows": 38,
+      "checked": "2026-10-25",
+      "rows": 81,
       "unconfirmed": {}
     },
     "france-mediterranean": {
@@ -414,7 +414,7 @@
         }
       ],
       "checked": "2026-10-25",
-      "rows": 46,
+      "rows": 81,
       "disagree": {}
     },
     "france-continental": {
@@ -433,7 +433,7 @@
         }
       ],
       "checked": "2026-10-25",
-      "rows": 38,
+      "rows": 81,
       "disagree": {
         "sorbus-torminalis": {
           "lrr-continental": "absent"
@@ -456,7 +456,7 @@
         }
       ],
       "checked": "2026-10-25",
-      "rows": 41,
+      "rows": 81,
       "disagree": {
         "erica-carnea": {
           "lrr-alpine": "absent"

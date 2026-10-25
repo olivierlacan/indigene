@@ -558,7 +558,7 @@ export const SEED_RAW: RawPlant[] = [
     matureSpreadFt: 65,
     scores: { pollinator: 10, bird: 90, stormwater: 70, erosion: 65, carbon: 92, establishment: 78 },
     hostLepCount: 391,
-    keystone: false,
+    keystone: true,
     bloom: { startMonth: 4, endMonth: 5, color: "green" },
     filters: { deerResistant: false, thorny: false, allergenic: true, petToxic: false, aggressive: false },
     noWaterEstablish: true,

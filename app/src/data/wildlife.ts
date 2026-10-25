@@ -531,7 +531,7 @@ export const WILDLIFE: Wildlife[] = [
     blurb:
       "The pale silvery-blue butterfly flying high round a hedge or a wall in April, weeks before any other blue is out. Its two broods use different plants — holly in spring, ivy in summer — which is why it does well in towns.",
     native: true,
-    nativeBasis: "Native across Europe, including all of metropolitan France. INPN (MNHN); European butterfly foodplant checklist (Dryad).",
+    nativeBasis: "Native across Europe and temperate Asia, Japan included. INPN (MNHN); European butterfly foodplant checklist (Dryad); HOSTS (Robinson et al., NHM) for Japan.",
     inat: { name: "Celastrina argiolus", iconic: "Insecta" },
   },
   {
@@ -1430,6 +1430,107 @@ export const WILDLIFE: Wildlife[] = [
     native: true,
     nativeBasis: "Native to western North America, nesting east to the Texas Hill Country. Cornell Lab of Ornithology.",
     inat: { name: "Archilochus alexandri", iconic: "Aves" },
+  },
+  // ---- Auckland, from Plant-SyNZ's moth records ----
+  {
+    id: "forest-semilooper",
+    common: "Forest semilooper",
+    latin: "Declana floccosa",
+    kind: "moth",
+    icon: "🌙",
+    blurb:
+      "A grey moth patterned so like lichen that it vanishes against the bark of a native tree. Its caterpillars eat the leaves of many trees and shrubs, and look like a twig or a bird dropping while they do.",
+    native: true,
+    nativeBasis: "Endemic to New Zealand. Manaaki Whenua – Landcare Research (Plant-SyNZ); iNaturalist's New Zealand checklist.",
+    inat: { name: "Declana floccosa", iconic: "Insecta" },
+  },
+  // ---- The Kantō Plain ----
+  // Chosen from the caterpillar–host records HOSTS (Robinson et al., NHM)
+  // holds for Japan, ranked by how many of the Kantō plants each one uses,
+  // and kept to animals a gardener there could name and find.
+  {
+    id: "great-purple-emperor",
+    common: "Great purple emperor",
+    latin: "Sasakia charonda",
+    kind: "butterfly",
+    icon: "🦋",
+    blurb:
+      "Japan's national butterfly, a big gliding emperor whose males flash violet in the sun. Its caterpillars eat only hackberry leaves, and spend the winter in the leaf litter at the foot of the tree.",
+    native: true,
+    nativeBasis: "Native to Japan, Korea and China. Not in GRIIS Japan's register of introductions; HOSTS (Robinson et al., NHM) records its Japanese food plants.",
+    inat: { name: "Sasakia charonda", iconic: "Insecta" },
+  },
+  {
+    id: "chinese-windmill",
+    common: "Chinese windmill",
+    latin: "Byasa alcinous",
+    kind: "butterfly",
+    icon: "🦋",
+    blurb:
+      "A black swallowtail with a red-spotted body that flies slowly and doesn't hide. Its caterpillars eat birthwort and take up its poison, so birds learn to leave the adults alone.",
+    native: true,
+    nativeBasis: "Native to Japan, Korea and China. Not in GRIIS Japan's register of introductions; HOSTS (Robinson et al., NHM) records its Japanese food plants.",
+    inat: { name: "Byasa alcinous", iconic: "Insecta" },
+  },
+  {
+    id: "pallas-sailer",
+    common: "Pallas' sailer",
+    latin: "Neptis sappho",
+    kind: "butterfly",
+    icon: "🦋",
+    blurb:
+      "A small black-and-white butterfly that sails along woodland edges in a few flaps and a long glide. Its caterpillars grow up on pea-family shrubs and vines like wisteria and bush clover.",
+    native: true,
+    nativeBasis: "Native from eastern Europe to Japan. Not in GRIIS Japan's register of introductions; HOSTS (Robinson et al., NHM) records its Japanese food plants.",
+    inat: { name: "Neptis sappho", iconic: "Insecta" },
+  },
+  {
+    id: "japanese-oak-silkmoth",
+    common: "Japanese oak silkmoth",
+    latin: "Antheraea yamamai",
+    kind: "moth",
+    icon: "🌙",
+    blurb:
+      "A big yellow-brown silk moth with a clear window in each wing. Its caterpillars feed on oak and chestnut and spin a green cocoon, once gathered for a rare, pale-green silk.",
+    native: true,
+    nativeBasis: "Native to Japan, Korea and China. Not in GRIIS Japan's register of introductions; HOSTS (Robinson et al., NHM) records its Japanese food plants.",
+    inat: { name: "Antheraea yamamai", iconic: "Insecta" },
+  },
+  {
+    id: "squeaking-silkmoth",
+    common: "Squeaking silkmoth",
+    latin: "Rhodinia fugax",
+    kind: "moth",
+    icon: "🌙",
+    blurb:
+      "An autumn silk moth whose caterpillar squeaks when you touch it. It eats oak, chestnut and cherry leaves, then hangs a bright green cocoon from a twig.",
+    native: true,
+    nativeBasis: "Native to Japan, Korea, China and the Russian Far East. Not in GRIIS Japan's register of introductions; HOSTS (Robinson et al., NHM) records its Japanese food plants.",
+    inat: { name: "Rhodinia fugax", iconic: "Insecta" },
+  },
+  {
+    id: "oak-hairstreaks",
+    common: "Oak hairstreaks",
+    latin: "Japonica, Favonius & others",
+    kind: "butterfly",
+    icon: "🦋",
+    blurb:
+      "Small, jewel-bright hairstreaks that live up in the oak canopy and fly at dusk in early summer. Their caterpillars eat only oak buds and leaves, so a stand of konara oak keeps a whole set of them.",
+    native: true,
+    nativeBasis: "Native hairstreaks of Japan's oak woods (orange hairstreak, Favonius and Antigius hairstreaks). Not in GRIIS Japan's register of introductions; HOSTS (Robinson et al., NHM) records its Japanese food plants.",
+    members: ["Japonica lutea", "Japonica saepestriata", "Favonius orientalis", "Antigius attilia"],
+  },
+  {
+    id: "chinese-bushbrown",
+    common: "Chinese bushbrown",
+    latin: "Mycalesis gotama",
+    kind: "butterfly",
+    icon: "🦋",
+    blurb:
+      "A brown butterfly with a row of eyespots that keeps to shady grass at the woodland edge. Its caterpillars eat grasses, Japanese silver grass among them.",
+    native: true,
+    nativeBasis: "Native from India to Japan. Not in GRIIS Japan's register of introductions; HOSTS (Robinson et al., NHM) records its Japanese food plants.",
+    inat: { name: "Mycalesis gotama", iconic: "Insecta" },
   },
 ];
 
@@ -4530,7 +4631,89 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
   },
 
+  // The Kantō Plain. Every tie here is a caterpillar host from HOSTS' Japan
+  // records (data/sources/hosts/records/japan.csv), which
+  // wildlife-hosts.test.ts re-reads.
+  kanto: {
+    "celtis-sinensis": [
+      { wildlifeId: "great-purple-emperor", support: "host", reliance: "narrow", note: "Hackberry is the great purple emperor's food plant. Plant one and the caterpillars may winter in the leaves beneath it, so leave those where they fall.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+    ],
+    "aristolochia-debilis": [
+      { wildlifeId: "chinese-windmill", support: "host", reliance: "narrow", note: "Birthwort is what the windmill's caterpillars eat, and where its poison comes from. A patch at a sunny edge is enough to bring the butterfly in.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+    ],
+    "wisteria-floribunda": [
+      { wildlifeId: "pallas-sailer", support: "host", note: "Wisteria leaves raise Pallas' sailer caterpillars, which hide on the leaf they're eating.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+    ],
+    "quercus-serrata": [
+      { wildlifeId: "japanese-oak-silkmoth", support: "host", note: "Konara oak is a main food tree for the oak silkmoth's caterpillars.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+      { wildlifeId: "oak-hairstreaks", support: "host", reliance: "narrow", note: "Konara oak feeds several canopy hairstreaks whose caterpillars eat nothing but oak.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+      { wildlifeId: "squeaking-silkmoth", support: "host", note: "Its leaves feed the squeaking silkmoth's caterpillars in spring.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+      { wildlifeId: "holly-blue", support: "host", note: "Holly blue caterpillars eat the flower buds and young leaves.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+    ],
+    "quercus-acutissima": [
+      { wildlifeId: "japanese-oak-silkmoth", support: "host", note: "Sawtooth oak feeds the oak silkmoth's caterpillars too.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+      { wildlifeId: "oak-hairstreaks", support: "host", reliance: "narrow", note: "One of the oaks the canopy hairstreaks lay their eggs on, in the buds.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+      { wildlifeId: "squeaking-silkmoth", support: "host", note: "A food tree for the squeaking silkmoth.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+      { wildlifeId: "holly-blue", support: "host", note: "Holly blue caterpillars take its buds and young leaves.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+    ],
+    "quercus-myrsinifolia": [
+      { wildlifeId: "japanese-oak-silkmoth", support: "host", note: "An evergreen oak the silkmoth's caterpillars also eat.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+    ],
+    "quercus-glauca": [
+      { wildlifeId: "japanese-oak-silkmoth", support: "host", note: "Ring-cupped oak feeds the oak silkmoth's caterpillars.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+      { wildlifeId: "oak-hairstreaks", support: "host", reliance: "narrow", note: "An evergreen oak some of the hairstreaks use.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+    ],
+    "castanea-crenata": [
+      { wildlifeId: "japanese-oak-silkmoth", support: "host", note: "Chestnut is an oak relative, and the silkmoth's caterpillars eat it as readily.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+      { wildlifeId: "squeaking-silkmoth", support: "host", note: "Chestnut is one of the squeaking silkmoth's food trees.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+      { wildlifeId: "holly-blue", support: "host", note: "Holly blue caterpillars feed on its flower spikes.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+    ],
+    "miscanthus-sinensis": [
+      { wildlifeId: "chinese-bushbrown", support: "host", note: "Silver grass feeds the bushbrown's caterpillars; leave a clump uncut at a shady edge.", basis: "HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM) — Japan records." },
+    ],
+  },
   "nz-auckland": {
+    "myoporum-laetum": [
+      { wildlifeId: "puriri-moth", support: "host", note: "Pūriri moth caterpillars tunnel into ngaio stems as well as pūriri, and live there for years.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+    ],
+    "pomaderris-kumeraho": [
+      { wildlifeId: "puriri-moth", support: "host", note: "Kūmarahou is one of the smaller trees the pūriri moth's caterpillars bore into.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+    ],
+    "pseudopanax-arboreus": [
+      { wildlifeId: "kawakawa-looper", support: "host", note: "The looper's caterpillars eat five-finger as well as kawakawa.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+      { wildlifeId: "forest-semilooper", support: "host", note: "Five-finger leaves feed the semilooper's twig-like caterpillars.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+    ],
+    "pseudopanax-lessonii": [
+      { wildlifeId: "kawakawa-looper", support: "host", note: "Houpara is a five-finger relative the looper's caterpillars eat too.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+      { wildlifeId: "forest-semilooper", support: "host", note: "The semilooper's caterpillars feed on houpara leaves.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+    ],
+    "melicope-ternata": [
+      { wildlifeId: "kawakawa-looper", support: "host", note: "Wharangi is another of the looper's food plants.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+    ],
+    "dodonaea-viscosa": [
+      { wildlifeId: "kawakawa-looper", support: "host", note: "The looper's caterpillars eat akeake leaves.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+    ],
+    "myrsine-australis": [
+      { wildlifeId: "forest-semilooper", support: "host", note: "Māpou leaves feed the semilooper's caterpillars.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+    ],
+    "coprosma-lucida": [
+      { wildlifeId: "forest-semilooper", support: "host", note: "The semilooper's caterpillars eat coprosma leaves.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+    ],
+    "coprosma-propinqua": [
+      { wildlifeId: "forest-semilooper", support: "host", note: "A coprosma the semilooper's caterpillars feed on.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+    ],
+    "coprosma-acerosa": [
+      { wildlifeId: "forest-semilooper", support: "host", note: "Even sand coprosma's tiny leaves feed the semilooper's caterpillars.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+    ],
+    "agathis-australis": [
+      { wildlifeId: "forest-semilooper", support: "host", note: "Kauri is one of the trees the semilooper's caterpillars eat.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+    ],
+    "metrosideros-perforata": [
+      { wildlifeId: "forest-semilooper", support: "host", note: "The semilooper's caterpillars eat rātā leaves.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+    ],
+    "metrosideros-fulgens": [
+      { wildlifeId: "forest-semilooper", support: "host", note: "Climbing rātā leaves feed the semilooper's caterpillars.", basis: "Plant-SyNZ, Manaaki Whenua – Landcare Research (records for the genus)." },
+    ],
     "metrosideros-excelsa": [
       { wildlifeId: "tui", support: "nectar", note: "A flowering pōhutukawa in December is the loudest tree in Auckland: tūī defend it from each other and from everything else, and carry its pollen tree to tree.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },
       { wildlifeId: "tauhou", support: "nectar", note: "Silvereyes work the crimson brushes in flocks, taking what the tūī leave.", basis: "New Zealand Birds Online (Te Papa; Birds New Zealand)." },

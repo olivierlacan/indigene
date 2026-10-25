@@ -5,8 +5,24 @@
     "iNaturalist",
     "GRIIS"
   ],
-  "ranAt": "2026-10-25T18:12:40.362Z",
+  "ranAt": "2026-10-25T23:16:27.389Z",
   "rows": [
+    {
+      "id": "forest-semilooper",
+      "asked": "Declana floccosa",
+      "verdict": "NATIVE",
+      "said": {
+        "inat": {
+          "verdict": "native",
+          "records": 4258,
+          "taxonId": 388455
+        },
+        "griis": {
+          "listed": false,
+          "listedIn": []
+        }
+      }
+    },
     {
       "id": "kawakawa-looper",
       "asked": "Cleora scriptaria",
@@ -181,7 +197,7 @@
       "said": {
         "inat": {
           "verdict": "native",
-          "records": 2424,
+          "records": 2426,
           "taxonId": 409639
         },
         "griis": {
@@ -197,7 +213,7 @@
       "said": {
         "inat": {
           "verdict": "native",
-          "records": 6481,
+          "records": 6482,
           "taxonId": 202505
         },
         "griis": {
@@ -213,7 +229,7 @@
       "said": {
         "inat": {
           "verdict": "native",
-          "records": 13608,
+          "records": 13610,
           "taxonId": 12580
         },
         "griis": {

@@ -184,6 +184,27 @@
       "animals": 25,
       "unconfirmed": {}
     },
+    "kanto": {
+      "area": {
+        "en": "Japan",
+        "fr": "le Japon"
+      },
+      "coarse": true,
+      "authorities": [
+        "iNaturalist",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 8,
+      "unconfirmed": {
+        "chinese-bushbrown": "unknown",
+        "chinese-windmill": "unknown",
+        "great-purple-emperor": "unknown",
+        "japanese-oak-silkmoth": "unknown",
+        "oak-hairstreaks": "unknown",
+        "squeaking-silkmoth": "unknown"
+      }
+    },
     "mid-atlantic": {
       "area": {
         "en": "the Mid-Atlantic states",
@@ -226,7 +247,7 @@
         "GRIIS"
       ],
       "checked": "2026-10-25",
-      "animals": 8,
+      "animals": 9,
       "unconfirmed": {}
     },
     "pnw": {

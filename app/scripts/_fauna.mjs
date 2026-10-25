@@ -13,7 +13,7 @@
 //                          animal is actually found there.
 //   TAXREF (INPN / MNHN)   status in metropolitan France, read offline from
 //                          `data/sources/taxref/extract.json`.
-//   iNaturalist            New Zealand's establishment means — its NZ checklist
+//   iNaturalist            New Zealand's and Japan's establishment means — its NZ checklist
 //                          is curated, unlike its French one (see
 //                          `wildlife-candidates.mjs`). The NZ Organisms Register
 //                          was tried first: its biostatus is empty for animals
@@ -96,6 +96,11 @@ export const FAUNA_AREA = {
     ]),
   ),
   "nz-auckland": { inat: 6803, griis: ["NZ"], area: { en: "New Zealand", fr: "la Nouvelle-Zélande" }, coarse: true },
+  // No open source we could find gives Japanese animals a per-species native
+  // status: GBIF has no distributions for them, and iNaturalist's Japan
+  // checklist leaves most unmarked. So Kantō animals mostly come back UNKNOWN
+  // (recorded, unranked) — honestly — with GRIIS Japan catching introductions.
+  kanto: { inat: 6737, griis: ["JP"], area: { en: "Japan", fr: "le Japon" }, coarse: true },
 };
 
 /**
@@ -145,6 +150,7 @@ const GRIIS = {
   IE: "278c9199-be97-4fd0-9c6c-6c46c4e2369e",
   FR: "692a0aec-70e2-4038-ac9c-9a1d7acc025f",
   NZ: "b286f8ee-1e29-4f8a-a041-9106bb1796f3",
+  JP: "5c5a6e45-d510-45ed-b7bf-6d0624fac056",
 };
 const griisLists = new Map();
 

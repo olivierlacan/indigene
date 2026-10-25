@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Great Britain (TDWG:GRB; floor check only — bsbi:check carries the regional claim)",
   "region": "scotland-lowlands",
-  "ranAt": "2026-10-24T18:51:29.840Z",
+  "ranAt": "2026-10-25T07:17:26.044Z",
   "rows": [
     {
       "id": "quercus-petraea",
@@ -110,6 +110,16 @@
       "id": "ilex-aquifolium",
       "latin": "Ilex aquifolium",
       "asked": "Ilex aquifolium",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "salix-pentandra",
+      "latin": "Salix pentandra",
+      "asked": "Salix pentandra",
       "verdict": "NATIVE",
       "areas": {
         "GRB": "NATIVE"
@@ -300,6 +310,26 @@
       "id": "hedera-helix",
       "latin": "Hedera helix",
       "asked": "Hedera helix",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vicia-cracca",
+      "latin": "Vicia cracca",
+      "asked": "Vicia cracca",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lathyrus-pratensis",
+      "latin": "Lathyrus pratensis",
+      "asked": "Lathyrus pratensis",
       "verdict": "NATIVE",
       "areas": {
         "GRB": "NATIVE"
@@ -667,6 +697,16 @@
       "viaSynonym": null
     },
     {
+      "id": "prunella-vulgaris",
+      "latin": "Prunella vulgaris",
+      "asked": "Prunella vulgaris",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "deschampsia-cespitosa",
       "latin": "Deschampsia cespitosa",
       "asked": "Deschampsia cespitosa",
@@ -690,6 +730,46 @@
       "id": "luzula-sylvatica",
       "latin": "Luzula sylvatica",
       "asked": "Luzula sylvatica",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "anthoxanthum-odoratum",
+      "latin": "Anthoxanthum odoratum",
+      "asked": "Anthoxanthum odoratum",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "festuca-rubra",
+      "latin": "Festuca rubra",
+      "asked": "Festuca rubra",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "molinia-caerulea",
+      "latin": "Molinia caerulea",
+      "asked": "Molinia caerulea",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "briza-media",
+      "latin": "Briza media",
+      "asked": "Briza media",
       "verdict": "NATIVE",
       "areas": {
         "GRB": "NATIVE"
@@ -730,6 +810,16 @@
       "id": "polypodium-vulgare",
       "latin": "Polypodium vulgare",
       "asked": "Polypodium vulgare",
+      "verdict": "NATIVE",
+      "areas": {
+        "GRB": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "asplenium-scolopendrium",
+      "latin": "Asplenium scolopendrium",
+      "asked": "Asplenium scolopendrium",
       "verdict": "NATIVE",
       "areas": {
         "GRB": "NATIVE"

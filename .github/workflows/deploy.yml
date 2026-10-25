@@ -85,6 +85,13 @@ jobs:
         working-directory: app
         run: npm run guide
 
+      # Last, once nothing else writes into dist/: the service worker's release
+      # id is a hash of every file the release ships, so the notes and the
+      # guide built above have to be in it (see app/scripts/stamp-sw.mjs).
+      - name: Stamp the service worker with this release
+        working-directory: app
+        run: npm run sw:stamp
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: app/dist

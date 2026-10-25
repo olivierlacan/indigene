@@ -40,6 +40,25 @@ export default defineConfig({
   build: {
     target: "es2022",
     sourcemap: true,
+    // `scripts/stamp-sw.mjs` reads this to tell the service worker which files
+    // this release is made of, then deletes it from dist/.
+    manifest: true,
+    rollupOptions: {
+      output: {
+        // Stable names for the French chunks, so the service worker can tell a
+        // device that reads French (it has a `lang-fr-*` file cached) and fetch
+        // the new release's French before the old one is pruned.
+        // Only the *names* change: `manualChunks` would also pull shared
+        // modules (the brand strings) in with the French and make the entry
+        // import them back from it, loading French for everyone.
+        chunkFileNames(chunk) {
+          const id = chunk.facadeModuleId ?? "";
+          if (id.endsWith("/src/locales/fr.ts")) return "assets/lang-fr-[hash].js";
+          if (id.endsWith("/src/locales/prose.fr/index.ts")) return "assets/prose-fr-[hash].js";
+          return "assets/[name]-[hash].js";
+        },
+      },
+    },
   },
   server: {
     host: true,

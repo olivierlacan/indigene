@@ -5,11 +5,11 @@ native plants that will actually thrive there — ranked by what they do for the
 local ecosystem, with honest mature-size-over-time drawings.
 
 **No framework.** Built on the DOM and real web APIs, TypeScript compiled by
-Vite. Zero runtime dependencies. ~625 KB gzipped, and two things nobody
+Vite. Zero runtime dependencies. ~560 KB gzipped, and two things nobody
 downloads unless they need them: the plant list for the region you're gardening
-in (9–53 KB of the seventeen, see `src/data/regions.ts`), and a ~145 KB chunk of
-translated catalog prose that only a reader in French ever gets (see
-`src/lib/prose.ts`). `npm run chunks:check` holds the first of those to its
+in (9–53 KB of the seventeen, see `src/data/regions.ts`), and the French
+edition — ~80 KB of interface and ~235 KB of catalog prose — that only a reader
+in French ever gets (see `src/lib/i18n.ts` and `src/lib/prose.ts`). `npm run chunks:check` holds the first of those to its
 budget, page by page.
 
 ## Run it

@@ -57,7 +57,7 @@ import { watchRestore } from "./lib/restore";
 import { closeTermDialog } from "./components/term-dialog";
 import { closeLightbox } from "./components/lightbox";
 import { emojiSpan, watchEmoji } from "./lib/emoji";
-import { applyDocumentLang, consumeLangParam, onLangChange, t } from "./lib/i18n";
+import { applyDocumentLang, consumeLangParam, loadLanguage, onLangChange, t } from "./lib/i18n";
 import type { TKey } from "./locales/en";
 import { onUnitsChange } from "./lib/units";
 import { renderChrome } from "./components/chrome";
@@ -432,7 +432,7 @@ async function route(): Promise<void> {
   // downstream can stay synchronous — and awaited on *every* route, because a
   // language switch comes back through here too. It resolves instantly once the
   // language is loaded, and for English there is nothing to load at all.
-  await loadProse();
+  await Promise.all([loadLanguage(), loadProse()]);
   const { step, param } = currentRoute();
   const kept = keptPlace(param ? `${step}/${param}` : step);
   // Before `syncAddressBar` — the trail helpers read `location.hash` to see
@@ -619,11 +619,31 @@ window.addEventListener("offline", updateOnline);
  */
 function rerenderAll(): void {
   applyDocumentLang();
-  renderChrome();
-  void route();
+  // The chrome is drawn before route() awaits anything, so a switch to a
+  // language whose dictionary isn't loaded yet waits for it here first.
+  void loadLanguage().then(() => {
+    renderChrome();
+    void route();
+  });
 }
 
 async function boot(): Promise<void> {
+  // A tab opened before a release asks for that release's chunks by name (a
+  // region's list, the French), and a release deletes the files it no longer
+  // ships. When one is gone, reload into the new release rather than strand
+  // the page. At most once a minute, so a real outage can't loop the reload.
+  window.addEventListener("vite:preloadError", (event) => {
+    // Offline, the chunk is simply out of reach; the page falls back (English
+    // for the French) and a reload would only blank it.
+    if (!navigator.onLine) return;
+    const KEY = "indigene:chunk-reload";
+    let last = 0;
+    try { last = Number(sessionStorage.getItem(KEY)) || 0; } catch { /* private mode */ }
+    if (Date.now() - last < 60_000) return;
+    try { sessionStorage.setItem(KEY, String(Date.now())); } catch { /* private mode */ }
+    event.preventDefault();
+    location.reload();
+  });
   // `?lang=fr` has already been read (i18n picks it up as it loads); this takes
   // it back out of the address bar. It has to happen before the first route(),
   // because 404.html hands an address it bounced to the hash side of the URL —
@@ -642,6 +662,10 @@ async function boot(): Promise<void> {
   // or for a browser asking not to be tracked, it does nothing whatsoever.
   startAnalytics();
   startMasonry();
+  // A French reader's dictionary is a chunk of its own (see `lib/i18n.ts`):
+  // fetched once, then answered by the service worker's cache, so waiting for
+  // it costs a first visit a moment and every later visit nothing.
+  await loadLanguage();
   renderChrome();
   paintHalloween();
   mountLangOffer(main);

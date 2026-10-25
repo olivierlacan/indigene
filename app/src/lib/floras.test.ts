@@ -1,8 +1,9 @@
 // The regional checklists `npm run floras` reads. Each fixture copies the shape
 // of one download, with the cases that broke a first reading: an FQA name with
 // its older names after a semicolon, a Pennsylvania status with an asterisk,
-// the BSBI's archaeophytes, a New Zealand synonym, Auckland's extinct taxa, and
-// a species whose varieties disagree.
+// the BSBI's archaeophytes, a New Zealand synonym, Auckland's extinct taxa, a
+// French red list that scores a plant native in one region and NA in the next,
+// and a species whose varieties disagree.
 import { describe, expect, it } from "vitest";
 import {
   aucklandRows,
@@ -19,6 +20,8 @@ import {
   nzVerdict,
   paRows,
   paVerdict,
+  redListRows,
+  redListVerdict,
   // @ts-expect-error — a plain .mjs build script, no type declarations.
 } from "../../scripts/_floras.mjs";
 
@@ -127,6 +130,35 @@ describe("aucklandRows", () => {
     const rows: Row[] = aucklandRows(sheet);
     expect(rows.map((r) => r.name)).toEqual(["Acaena anserinifolia", "Abrodictyum caudatum", "Gone forevera"]);
     expect(rows.map(aucklandVerdict)).toEqual(["native", "native", "absent"]);
+  });
+});
+
+describe("redListRows", () => {
+  const row = (CD_NOM: string, CD_REF: string, LB_NOM: string, LB_ADM_TR: string, CODE_STATUT: string, REGNE = "Plantae") =>
+    ({ CD_NOM, CD_REF, LB_NOM, LB_ADM_TR, CODE_STATUT, REGNE, CD_TYPE_STATUT: "LRR" });
+  const bdc = [
+    row("1", "1", "Sorbus aucuparia", "Bretagne", "LC"),
+    row("1", "1", "Sorbus aucuparia", "Poitou-Charentes", "NA"),
+    row("2", "3", "Pyrus pyraster", "Centre", "LC"),
+    row("3", "3", "Pyrus communis subsp. pyraster", "Aquitaine", "NT"),
+    row("4", "4", "Buddleja davidii", "Centre", "NA"),
+    row("5", "5", "Gone forevera", "Bretagne", "RE"),
+    row("6", "6", "Unscored", "Bretagne", "NE"),
+    row("7", "7", "Alsatica only", "Alsace", "LC"),
+    row("8", "8", "Some moth", "Bretagne", "LC", "Animalia"),
+    { ...row("1", "1", "Sorbus aucuparia", "Bretagne", "LC"), CD_TYPE_STATUT: "ZDET" },
+  ];
+  const rows: Row[] = redListRows(bdc, ["Bretagne", "Centre", "Poitou-Charentes", "Aquitaine"]);
+
+  it("keeps the region's plant lists, one row per accepted taxon, accepted name first", () => {
+    expect(rows.map((r) => r.name)).toEqual(["Sorbus aucuparia", "Pyrus communis subsp. pyraster", "Buddleja davidii", "Gone forevera", "Unscored"]);
+    expect(rows[1].synonyms).toEqual(["Pyrus pyraster"]);
+    expect(rows[0].origin).toBe("Bretagne LC; Poitou-Charentes NA");
+  });
+
+  it("calls a plant native where one list scores it, and NA alone introduced", () => {
+    expect(rows.map(redListVerdict)).toEqual(["native", "native", "introduced", "absent", "uncertain"]);
+    expect(redListVerdict(null)).toBe("absent");
   });
 });
 

@@ -18,6 +18,9 @@ this folder is the part of it a script can do alone.
 | Mid-Atlantic | Pennsylvania Vascular Plant List (PNHP) · New Jersey FQA (NJDEP 2019) | state · state |
 | Ireland | BSBI Plant Atlas 2020 native statuses, `statusIE` | island |
 | Auckland | Checklist of the New Zealand Flora 2026 (Allan Herbarium) · Auckland Council TR2025/6 | country · region |
+| Atlantic France | Regional red lists of the ten old regions in the west (INPN BDC-Statuts v18) | old region |
+| Continental France | Regional red lists of Alsace, Lorraine, Champagne-Ardenne, Bourgogne, Franche-Comté | old region |
+| French Alps | Regional red lists of Rhône-Alpes and Provence-Alpes-Côte d'Azur | old region |
 
 ## What is committed
 
@@ -38,6 +41,9 @@ are missing. Nothing in the app reads the whole lists, so they aren't kept.
 | `bsbi-ie` (Zenodo 11097371) | 2026-10-24 | 3,497 | 1,145 | 1,182 | 1,057 absent from Ireland, 113 uncertain or hybrid |
 | `nz-checklist` (May 2026 TSVs) | 2026-10-24 | 6,015 | 2,798 | 3,210 | 5 extinct, 2 uncertain |
 | `auckland` (TR2025/6 xlsx) | 2026-10-24 | 792 | 765 | — | 27 extinct in Auckland |
+| `lrr-atlantic` (`BDC.zip`, LRR rows) | 2026-10-25 | 5,264 | 3,745 | 1,419 | 86 gone, 14 not evaluated |
+| `lrr-continental` | 2026-10-25 | 4,433 | 3,135 | 1,093 | 55 gone, 150 not evaluated |
+| `lrr-alpine` | 2026-10-25 | 3,289 | 3,173 | — | 23 gone, 93 not evaluated |
 
 ## How a name is matched
 
@@ -50,7 +56,7 @@ each with a reason; a source that drops one fails the run.
 
 ## What they say about our rows (2026-10-24)
 
-263 of 267 rows are native in every source. The four that aren't ship as
+385 of 392 rows are native in every source. The seven that aren't ship as
 they are, and the plant page says who said what:
 
 | Region | Our row | Says | Note |
@@ -59,6 +65,9 @@ they are, and the plant page says who said what:
 | Mid-Atlantic | *Penstemon digitalis* | PA: native · NJ: introduced | |
 | Mid-Atlantic | *Baptisia australis* | PA: native · NJ: introduced | |
 | Auckland | *Austroderia fulvida* | NZ: native · Auckland: absent | Auckland's list has *Austroderia* aff. *fulvida*, an unnamed toetoe, instead |
+| Continental France | *Sorbus torminalis* | absent | Not in any red list in the file, under either name; TAXREF moved it to *Torminalis glaberrima* and the lists' rows didn't follow |
+| French Alps | *Erica carnea* | absent | Not in the Rhône-Alpes list as loaded, though native in the Alps |
+| French Alps | *Thymus serpyllum* | absent | Not in the Rhône-Alpes list; worth a botanist's look at which wild thyme the Alps have |
 
 ## Limits
 
@@ -73,11 +82,18 @@ they are, and the plant page says who said what:
 4. **The Illinois FQA is from 1997** and its taxonomy shows it.
 5. **Auckland's list is natives only.** It can say "absent", never
    "introduced".
+6. **A French red list scores only natives,** and NA marks the rest. Several
+   lists were loaded with their native rows only, Hauts-de-France with its NA
+   rows only, so "absent" there is a gap in the file as often as a finding.
+   One list scoring a plant is enough for "native": the region is several old
+   regions, and the question is the region. Mediterranean France isn't here:
+   Provence's list holds threatened plants only and Languedoc never finished
+   one. The Provence workbook, a download by hand, is what it waits on.
 
 ## Terms
 
 The BSBI statuses, the NZ Checklist and Auckland Council's report are CC BY
-4.0. The FQA databases (universalFQA.org, GPLv3 calculator, each database its
+4.0; BDC-Statuts is Licence Ouverte / Etalab. The FQA databases (universalFQA.org, GPLv3 calculator, each database its
 authors') and the Pennsylvania list state no licence; native status is a fact,
 and the snapshots keep only facts. Citations are in each `<region>.json` under
 `sources`.

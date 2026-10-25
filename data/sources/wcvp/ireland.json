@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Ireland (TDWG:IRE — the whole island)",
   "region": "ireland",
-  "ranAt": "2026-10-25T03:16:15.313Z",
+  "ranAt": "2026-10-25T07:18:02.822Z",
   "rows": [
     {
       "id": "quercus-petraea",
@@ -120,6 +120,26 @@
       "id": "malus-sylvestris",
       "latin": "Malus sylvestris",
       "asked": "Malus sylvestris",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "betula-pendula",
+      "latin": "Betula pendula",
+      "asked": "Betula pendula",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "salix-pentandra",
+      "latin": "Salix pentandra",
+      "asked": "Salix pentandra",
       "verdict": "NATIVE",
       "areas": {
         "IRE": "NATIVE"
@@ -630,6 +650,16 @@
       "id": "poa-trivialis",
       "latin": "Poa trivialis",
       "asked": "Poa trivialis",
+      "verdict": "NATIVE",
+      "areas": {
+        "IRE": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "briza-media",
+      "latin": "Briza media",
+      "asked": "Briza media",
       "verdict": "NATIVE",
       "areas": {
         "IRE": "NATIVE"

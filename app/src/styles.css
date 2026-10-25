@@ -8324,55 +8324,114 @@ a.welcome-way:hover strong { text-decoration: underline; }
 }
 
 /* --- Growth chart: "Plants and animals over time" (components/growth-chart.ts) ---
-   Quiet on purpose: a footnote to the page, not a dashboard. One thin step line
-   per count, its area a wash of the same green, labels in text ink. */
+   Quiet on purpose: a footnote to the page, not a dashboard. Plants and animals
+   share one plot and one scale, a thin step line each in two hues (checked for
+   colour-blind separation in every theme), with the count at each line's end
+   in text ink beside a swatch of its hue. */
 .growth {
+  --growth-plants: #2f8a4a;
+  --growth-animals: #6250d6;
   margin-top: 1.75rem;
 }
-.growth-grid {
+@media (prefers-color-scheme: dark) {
+  .growth {
+    --growth-plants: #3f9a5c;
+    --growth-animals: #9085e9;
+  }
+}
+:root[data-theme="dark"] .growth {
+  --growth-plants: #3f9a5c;
+  --growth-animals: #9085e9;
+}
+:root[data-halloween] .growth {
+  --growth-plants: #d86c0c;
+  --growth-animals: #8f7ee6;
+}
+.growth-chart {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) auto;
   column-gap: 0.6rem;
-  row-gap: 0.35rem;
+  row-gap: 0.3rem;
+}
+.growth-plot-box {
+  position: relative;
+  height: 4.5rem;
   touch-action: pan-y;
-}
-.growth-label {
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-}
-.growth-value {
-  font-size: 0.85rem;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  color: var(--ink);
-  text-align: right;
 }
 .growth-plot {
   display: block;
   width: 100%;
-  height: 1.75rem;
+  height: 100%;
   overflow: visible;
   border-bottom: 1px solid var(--line);
 }
 .growth-area {
-  fill: color-mix(in srgb, var(--brand) 14%, transparent);
+  fill: color-mix(in srgb, var(--growth-plants) 12%, transparent);
+}
+.growth-area.animals {
+  fill: color-mix(in srgb, var(--growth-animals) 16%, transparent);
 }
 .growth-line {
   fill: none;
-  stroke: var(--brand);
+  stroke: var(--growth-plants);
   stroke-width: 2px;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
+}
+.growth-line.animals {
+  stroke: var(--growth-animals);
 }
 .growth-cross {
   stroke: var(--line-strong);
   stroke-width: 1px;
   vector-effect: non-scaling-stroke;
+}
+.growth-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: var(--growth-plants);
+  box-shadow: 0 0 0 2px var(--bg);
+  pointer-events: none;
+}
+.growth-dot.animals {
+  background: var(--growth-animals);
+}
+.growth-cross,
+.growth-dot {
   visibility: hidden;
 }
-.growth-grid.pointing .growth-cross {
+.growth-chart.pointing .growth-cross,
+.growth-chart.pointing .growth-dot {
   visibility: visible;
+}
+.growth-ends {
+  position: relative;
+  min-width: 6.5rem;
+}
+.growth-end {
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.growth-end::before {
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 2px;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+  background: var(--growth-plants);
+}
+.growth-end.animals::before {
+  background: var(--growth-animals);
 }
 .growth-axis {
   display: flex;

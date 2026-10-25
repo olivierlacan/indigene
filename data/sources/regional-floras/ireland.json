@@ -36,6 +36,8 @@
     {"id":"juniperus-communis","latin":"Juniperus communis","bsbi-ie":{"as":"Juniperus communis","verdict":"native"}},
     {"id":"sambucus-nigra","latin":"Sambucus nigra","bsbi-ie":{"as":"Sambucus nigra","verdict":"native"}},
     {"id":"cytisus-scoparius","latin":"Cytisus scoparius","bsbi-ie":{"as":"Cytisus scoparius","verdict":"native"}},
+    {"id":"salix-aurita","latin":"Salix aurita","bsbi-ie":{"as":"Salix aurita","verdict":"native"}},
+    {"id":"rubus-idaeus","latin":"Rubus idaeus","bsbi-ie":{"as":"Rubus idaeus","verdict":"native"}},
     {"id":"succisa-pratensis","latin":"Succisa pratensis","bsbi-ie":{"as":"Succisa pratensis","verdict":"native"}},
     {"id":"digitalis-purpurea","latin":"Digitalis purpurea","bsbi-ie":{"as":"Digitalis purpurea","verdict":"native"}},
     {"id":"primula-vulgaris","latin":"Primula vulgaris","bsbi-ie":{"as":"Primula vulgaris","verdict":"native"}},
@@ -53,6 +55,14 @@
     {"id":"silene-dioica","latin":"Silene dioica","bsbi-ie":{"as":"Silene dioica","verdict":"native"}},
     {"id":"geranium-sanguineum","latin":"Geranium sanguineum","bsbi-ie":{"as":"Geranium sanguineum","verdict":"native"}},
     {"id":"taraxacum-officinale","latin":"Taraxacum officinale","bsbi-ie":{"as":"Taraxacum","verdict":"native"}},
+    {"id":"iris-pseudacorus","latin":"Iris pseudacorus","bsbi-ie":{"as":"Iris pseudacorus","verdict":"native"}},
+    {"id":"viola-riviniana","latin":"Viola riviniana","bsbi-ie":{"as":"Viola riviniana","verdict":"native"}},
+    {"id":"cardamine-pratensis","latin":"Cardamine pratensis","bsbi-ie":{"as":"Cardamine pratensis","verdict":"native"}},
+    {"id":"silene-flos-cuculi","latin":"Silene flos-cuculi","bsbi-ie":{"as":"Silene flos-cuculi","verdict":"native"}},
+    {"id":"achillea-ptarmica","latin":"Achillea ptarmica","bsbi-ie":{"as":"Achillea ptarmica","verdict":"native"}},
+    {"id":"knautia-arvensis","latin":"Knautia arvensis","bsbi-ie":{"as":"Knautia arvensis","verdict":"native"}},
+    {"id":"primula-veris","latin":"Primula veris","bsbi-ie":{"as":"Primula veris","verdict":"native"}},
+    {"id":"geum-rivale","latin":"Geum rivale","bsbi-ie":{"as":"Geum rivale","verdict":"native"}},
     {"id":"festuca-rubra","latin":"Festuca rubra","bsbi-ie":{"as":"Festuca rubra","verdict":"native"}},
     {"id":"molinia-caerulea","latin":"Molinia caerulea","bsbi-ie":{"as":"Molinia caerulea","verdict":"native"}},
     {"id":"deschampsia-cespitosa","latin":"Deschampsia cespitosa","bsbi-ie":{"as":"Deschampsia cespitosa","verdict":"native"}},
@@ -67,10 +77,12 @@
     {"id":"plantago-lanceolata","latin":"Plantago lanceolata","bsbi-ie":{"as":"Plantago lanceolata","verdict":"native"}},
     {"id":"trifolium-repens","latin":"Trifolium repens","bsbi-ie":{"as":"Trifolium repens","verdict":"native"}},
     {"id":"thymus-praecox","latin":"Thymus praecox","bsbi-ie":{"as":"Thymus drucei","verdict":"native"}},
+    {"id":"potentilla-erecta","latin":"Potentilla erecta","bsbi-ie":{"as":"Potentilla erecta","verdict":"native"}},
     {"id":"dryopteris-filix-mas","latin":"Dryopteris filix-mas","bsbi-ie":{"as":"Dryopteris filix-mas","verdict":"native"}},
     {"id":"osmunda-regalis","latin":"Osmunda regalis","bsbi-ie":{"as":"Osmunda regalis","verdict":"native"}},
     {"id":"struthiopteris-spicant","latin":"Struthiopteris spicant","bsbi-ie":{"as":"Blechnum spicant","verdict":"native"}},
     {"id":"asplenium-scolopendrium","latin":"Asplenium scolopendrium","bsbi-ie":{"as":"Asplenium scolopendrium","verdict":"native"}},
-    {"id":"polystichum-setiferum","latin":"Polystichum setiferum","bsbi-ie":{"as":"Polystichum setiferum","verdict":"native"}}
+    {"id":"polystichum-setiferum","latin":"Polystichum setiferum","bsbi-ie":{"as":"Polystichum setiferum","verdict":"native"}},
+    {"id":"polypodium-vulgare","latin":"Polypodium vulgare","bsbi-ie":{"as":"Polypodium vulgare","verdict":"native"}}
   ]
 }

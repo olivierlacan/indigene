@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Illinois (TDWG:ILL — the whole state)",
   "region": "chicago",
-  "ranAt": "2026-10-16T19:43:23.693Z",
+  "ranAt": "2026-10-25T03:11:45.072Z",
   "rows": [
     {
       "id": "quercus-macrocarpa",
@@ -117,6 +117,36 @@
       "viaSynonym": null
     },
     {
+      "id": "juglans-nigra",
+      "latin": "Juglans nigra",
+      "asked": "Juglans nigra",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "platanus-occidentalis",
+      "latin": "Platanus occidentalis",
+      "asked": "Platanus occidentalis",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cercis-canadensis",
+      "latin": "Cercis canadensis",
+      "asked": "Cercis canadensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "corylus-americana",
       "latin": "Corylus americana",
       "asked": "Corylus americana",
@@ -210,6 +240,36 @@
       "id": "cephalanthus-occidentalis",
       "latin": "Cephalanthus occidentalis",
       "asked": "Cephalanthus occidentalis",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lindera-benzoin",
+      "latin": "Lindera benzoin",
+      "asked": "Lindera benzoin",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sambucus-canadensis",
+      "latin": "Sambucus canadensis",
+      "asked": "Sambucus canadensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rubus-occidentalis",
+      "latin": "Rubus occidentalis",
+      "asked": "Rubus occidentalis",
       "verdict": "NATIVE",
       "areas": {
         "ILL": "NATIVE"
@@ -540,6 +600,86 @@
       "id": "allium-tricoccum",
       "latin": "Allium tricoccum",
       "asked": "Allium tricoccum",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lupinus-perennis",
+      "latin": "Lupinus perennis",
+      "asked": "Lupinus perennis",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lespedeza-capitata",
+      "latin": "Lespedeza capitata",
+      "asked": "Lespedeza capitata",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "podophyllum-peltatum",
+      "latin": "Podophyllum peltatum",
+      "asked": "Podophyllum peltatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "mertensia-virginica",
+      "latin": "Mertensia virginica",
+      "asked": "Mertensia virginica",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sanguinaria-canadensis",
+      "latin": "Sanguinaria canadensis",
+      "asked": "Sanguinaria canadensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "claytonia-virginica",
+      "latin": "Claytonia virginica",
+      "asked": "Claytonia virginica",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "trillium-recurvatum",
+      "latin": "Trillium recurvatum",
+      "asked": "Trillium recurvatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "erythronium-albidum",
+      "latin": "Erythronium albidum",
+      "asked": "Erythronium albidum",
       "verdict": "NATIVE",
       "areas": {
         "ILL": "NATIVE"

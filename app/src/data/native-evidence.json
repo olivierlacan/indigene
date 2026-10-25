@@ -46,8 +46,8 @@
         "fr": "l'Illinois"
       },
       "coarse": true,
-      "checked": "2026-10-16",
-      "rows": 63,
+      "checked": "2026-10-25",
+      "rows": 77,
       "unconfirmed": {}
     },
     "florida-central": {
@@ -120,8 +120,8 @@
         "fr": "l'île d'Irlande"
       },
       "coarse": false,
-      "checked": "2026-10-16",
-      "rows": 67,
+      "checked": "2026-10-25",
+      "rows": 79,
       "unconfirmed": {}
     },
     "kanto": {
@@ -140,8 +140,8 @@
         "fr": "la Pennsylvanie et les neuf États voisins"
       },
       "coarse": false,
-      "checked": "2026-10-16",
-      "rows": 44,
+      "checked": "2026-10-25",
+      "rows": 58,
       "unconfirmed": {
         "penstemon-digitalis": "introduced"
       }
@@ -152,8 +152,8 @@
         "fr": "le Michigan"
       },
       "coarse": false,
-      "checked": "2026-10-16",
-      "rows": 46,
+      "checked": "2026-10-25",
+      "rows": 59,
       "unconfirmed": {
         "solidago-speciosa": "absent",
         "campanula-rotundifolia": "absent",
@@ -265,7 +265,7 @@
         }
       ],
       "checked": "2026-10-25",
-      "rows": 46,
+      "rows": 59,
       "disagree": {}
     },
     "chicago": {
@@ -296,7 +296,7 @@
         }
       ],
       "checked": "2026-10-25",
-      "rows": 63,
+      "rows": 77,
       "disagree": {}
     },
     "mid-atlantic": {
@@ -327,7 +327,7 @@
         }
       ],
       "checked": "2026-10-25",
-      "rows": 44,
+      "rows": 58,
       "disagree": {
         "echinacea-purpurea": {
           "pa": "introduced",
@@ -359,7 +359,7 @@
         }
       ],
       "checked": "2026-10-25",
-      "rows": 67,
+      "rows": 79,
       "disagree": {}
     },
     "nz-auckland": {

@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Mid-Atlantic & Northeast (PA NJ DE MD VA NY CT RI MA WV)",
   "region": "mid-atlantic",
-  "ranAt": "2026-10-16T19:38:39.164Z",
+  "ranAt": "2026-10-25T03:11:46.569Z",
   "rows": [
     {
       "id": "quercus-alba",
@@ -254,6 +254,158 @@
       "viaSynonym": null
     },
     {
+      "id": "celtis-occidentalis",
+      "latin": "Celtis occidentalis",
+      "asked": "Celtis occidentalis",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "quercus-palustris",
+      "latin": "Quercus palustris",
+      "asked": "Quercus palustris",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "quercus-phellos",
+      "latin": "Quercus phellos",
+      "asked": "Quercus phellos",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "ABSENT",
+        "RHO": "ABSENT",
+        "MAS": "ABSENT",
+        "WVA": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "juniperus-virginiana",
+      "latin": "Juniperus virginiana",
+      "asked": "Juniperus virginiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "carpinus-caroliniana",
+      "latin": "Carpinus caroliniana",
+      "asked": "Carpinus caroliniana",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "acer-saccharum",
+      "latin": "Acer saccharum",
+      "asked": "Acer saccharum",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "betula-alleghaniensis",
+      "latin": "Betula alleghaniensis",
+      "asked": "Betula alleghaniensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "ABSENT",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pinus-rigida",
+      "latin": "Pinus rigida",
+      "asked": "Pinus rigida",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "ABSENT",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "vaccinium-corymbosum",
       "latin": "Vaccinium corymbosum",
       "asked": "Vaccinium corymbosum",
@@ -390,6 +542,44 @@
       "id": "corylus-americana",
       "latin": "Corylus americana",
       "asked": "Corylus americana",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "lindera-benzoin",
+      "latin": "Lindera benzoin",
+      "asked": "Lindera benzoin",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "sambucus-canadensis",
+      "latin": "Sambucus canadensis",
+      "asked": "Sambucus canadensis",
       "verdict": "NATIVE",
       "areas": {
         "PEN": "NATIVE",
@@ -672,6 +862,44 @@
       "viaSynonym": null
     },
     {
+      "id": "erythronium-americanum",
+      "latin": "Erythronium americanum",
+      "asked": "Erythronium americanum",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "trillium-erectum",
+      "latin": "Trillium erectum",
+      "asked": "Trillium erectum",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "schizachyrium-scoparium",
       "latin": "Schizachyrium scoparium",
       "asked": "Schizachyrium scoparium",
@@ -827,6 +1055,44 @@
       "id": "polystichum-acrostichoides",
       "latin": "Polystichum acrostichoides",
       "asked": "Polystichum acrostichoides",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "gaultheria-procumbens",
+      "latin": "Gaultheria procumbens",
+      "asked": "Gaultheria procumbens",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "onoclea-sensibilis",
+      "latin": "Onoclea sensibilis",
+      "asked": "Onoclea sensibilis",
       "verdict": "NATIVE",
       "areas": {
         "PEN": "NATIVE",

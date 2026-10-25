@@ -25,8 +25,9 @@ jobs:
     name: Build the site
     runs-on: ubuntu-latest
     steps:
-      # Full history, so `npm run added` can date every row by the merge that
-      # shipped it (see scripts/build-added-dates.mjs).
+      # Full history: the build dates every plant and animal by the merge that
+      # shipped it, for the growth charts (scripts/_growth.mjs). A shallow
+      # checkout still builds, just without them.
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -58,13 +59,6 @@ jobs:
       - name: Install dependencies
         working-directory: app
         run: npm ci
-
-      # Dates each plant and animal by the merge that brought it to its region,
-      # so the live app's "new since your last visit" includes today's merge.
-      # Local git only; dates already in added.json are kept.
-      - name: Date new plants and wildlife
-        working-directory: app
-        run: npm run added
 
       # `npm run build` also runs `tsc --noEmit`, so type errors block deploys.
       # The site lives at the root of its own domain (indigene.app), so built

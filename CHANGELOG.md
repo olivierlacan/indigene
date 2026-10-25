@@ -39,6 +39,134 @@ subtitle on the What's new page.
 
 ## [Unreleased]
 
+## [1.5] - 2026-10-24
+
+**Local botanists' checklists & 118 natives for fall planting**
+
+[![A plant page naming who lists it as native](docs/screenshots/pr-307/thumb.png)](docs/screenshots/pr-307/baptisia-after-dark.png)
+[Before](docs/screenshots/pr-307/baptisia-before-dark.png) · [After](docs/screenshots/pr-307/baptisia-after-dark.png)
+
+### Added
+
+- Chicago, the Mid-Atlantic, Northern Michigan, Ireland and Auckland now check every plant against [lists kept by their own botanists](https://indigene.app/sources), not just Kew's. Each plant page says who lists it as native, and where they disagree.
+- Internal: `npm run floras` reads eight scriptable checklists (universalFQA, PNHP, BSBI's Zenodo statuses, the NZ Checklist, Auckland TR2025/6) into `data/sources/regional-floras/`; `native-evidence` and `cross-checks.ts` pick them up. Runs quarterly in `native.yml`.
+- Regions: 118 more natives to plant this fall and winter — trees that go in bare, bulbs for autumn, seed that wants a winter outdoors. Nine regions gain 12 to 14 each, from the [Pacific Northwest](https://indigene.app/regions/pnw) to Ireland and the Mid-Atlantic.
+- A few to look for: chocolate lily, bald cypress, tamarack, wild lupine for the Karner blue, and cowslip. In Florida the cool, dry months are the planting season, and the new rows say so.
+- Internal: picked from fresh `npm run candidates` shortlists in the nine Northern Hemisphere regions with a second checklist (`SECOND_CHECKS`), weighted to woody plants, autumn bulbs and fall-sown seed. Every row is native per Kew (`native:check`) and per the region's own lists (Burke + OregonFlora, Atlas of Florida Plants, BSBI, VASCAN, `npm run floras`). Dropped where Kew disagrees: velvetleaf blueberry (Michigan), valerian and strawberry tree (Ireland). `candidates.mjs` now ranks Florida rows only when the Atlas agrees. Auckland waits for its own autumn.
+- Plants: every plant page now answers the questions the list filters ask —
+  watering, deer, thorns, pets, spreading — yes or no, in a short table under
+  the figures. A plant deer eat used to say nothing at all.
+- Internal: `gardenChecks()` in `lib/traits.ts` feeds `components/garden-checks.ts`; the header drops the labels the table now says.
+
+### Fixed
+
+- Regions: the plant list on each region's page squashed every card to a thin sliver, hiding names and pictures. Each card is its full height again.
+- Internal: `plantRow` kept an inline `margin:0;height:100%` that #302's masonry missed; inline styles beat `.is-masonry > *`, so each card filled its own span and the 1px-row measure collapsed it.
+
+## [1.4] - 2026-10-22
+
+**Kill your lawn, a spooky theme & filters on every list**
+
+[![The Kill your lawn guide](docs/screenshots/pr-301/thumb.png)](docs/screenshots/pr-301/guide-dark.png)
+[Dark](docs/screenshots/pr-301/guide-dark.png) · [Light](docs/screenshots/pr-301/guide-light.png)
+
+### Added
+
+- **[Kill your lawn](https://indigene.app/kill-your-lawn)**: how to bury a lawn under cardboard, swap it a bed at a time, and which easy natives to plant instead, region by region: ground cover, wildflowers, shrubs, trees and evergreens.
+- Posts: a Halloween post, [Your lawn is already a zombie](https://indigene.app/posts/halloween-2026). Keep the decorations, put the lights on a timer for birds migrating at night, and bury the lawn this fall.
+- Internal: `steps/lawn.ts` at `kill-your-lawn` and `kill-your-lawn/<region>` (prerendered, in 404.html, own share card); picks from `lib/lawn.ts` (establishment score, then caterpillar count; no thorny plants; spreaders only on the ground) with `data/evergreen.ts` for the winter row. Each post now has its own share card (`post-<slug>`). `gen-story.mjs` draws page drawings and a 1080×1350 feed post (`--feed`).
+- A spooky theme: pumpkin orange on near-black, with more contrast than the usual dark mode, a ghost in the logo and a wilted rose. It's on from October 17 to 31; any other time, switch it on in [Settings](https://indigene.app/#/settings/spooky).
+- Posts: [Your lawn is already a zombie](https://indigene.app/posts/halloween-2026) has a small drawing beside each section: a zombie hand, a ghost on a timer, a buried lawn.
+- Internal: `lib/halloween.ts` and a head script in `index.html` stamp `data-halloween` + `data-theme="dark"` when `indigene:halloween` is `on`, or with no entry from 17 to 31 October (local). `?spooky=on|off` (or `?halloween=`) saves the choice. Forced-dark copies of the dark token block and loader colours; `squareArtSvg()` in `page-art-svg.mjs`; `favicon-halloween.svg`.
+- [Posts](https://indigene.app/posts) are easier to find: they're in the footer and on the About page, and the home page shows a new one for two weeks after its date.
+- [Kill your lawn](https://indigene.app/kill-your-lawn) is now linked from Homegrown National Park, Planting and Removing, for anyone starting from turf.
+- Internal: the build writes `sitemap.xml` from the prerendered pages plus the guide and release notes, and `robots.txt` points crawlers at it. The footer's middots now ride with the link before them, so a wrap never starts a line with one.
+- **The [plant list](https://indigene.app/plants) and each region's roster now take your spot's filters.** Safe around pets, no thorns, deer, no watering, spreaders and size sit in a Filter drawer that names the ones that are on, and a shared link keeps them.
+- Internal: the filters live in `lib/filter-traits.ts`, shared by the ranking and both lists; the registry mirrors each taxon's traits, merged cautiously across regions, so the catalog filters without fetching a list. Main chunk +6 KB gzip.
+
+### Changed
+
+- [Posts](https://indigene.app/posts) list newest first under their dates, and the Halloween post's drawings now sit beside each section's text, alternating sides.
+- Internal: the Halloween post is dated October 22 instead of 31, so the home page announces it while the spooky theme is on.
+
+### Fixed
+
+- On an iPhone Home Screen app, pulling down to reload no longer leaves a gap between the header and the band that slides out of it.
+- **Card lists pack together on a wide screen.** On [Plants](https://indigene.app/plants), [Wildlife](https://indigene.app/wildlife) and the regions, each card is now as tall as what it says, and the next one tucks in under it — no more gaps or padded cards.
+- Internal: `.card-grid` is a JS masonry (`lib/masonry.ts`): 1px grid rows, each card spanning its measured height plus the gap, kept current by a ResizeObserver. The equal-height `height: 100%` on wildlife, plant and region cards is gone.
+- **Filters keep your place.** On a region's plant list and on [Wildlife](https://indigene.app/wildlife), tapping Group, a filter or a size limit no longer jumps the page — sometimes right back to the top. The control you tapped stays under your finger.
+- Internal: `restorePlace` found the tapped control again by its `href`, but a toggle's `href` flips when tapped and two links can share one. View-panel controls now carry a `data-keep` name (`lib/kept-place.ts`), and `npm run scroll:check` (new "Scroll position" workflow) uses every control at 390 and 1100 px and fails on any jump.
+
+## [1.3] - 2026-10-20
+
+**Before you pull a plant & local groups to join**
+
+[![The Before you pull a plant guide](docs/screenshots/pr-247/thumb.png)](docs/screenshots/pr-247/removing-after-dark.png)
+[Dark](docs/screenshots/pr-247/removing-after-dark.png) · [Light](docs/screenshots/pr-247/removing-after-light.png)
+
+### Added
+
+- **[Before you pull a plant](https://indigene.app/removing)**: whether a plant should go, when, and whose permission it takes. Be sure what it is, pull only on your own ground, act early, never use a home-made weedkiller. Every answer is sourced.
+- Invasives: 43 plants now show the best time to remove them, with a cue to watch for, like garlic mustard's "as flower stalks start to rise", and the page that says so.
+- Invasives: each region's list shows what's worth pulling this season.
+- Internal: new `removing` route (`steps/removing.ts`), shared `components/season-strip.ts`, `RemovalWindow` on `InvasiveRemoval` (audited, unit-tested). Every source quote was fetched and found on its page; the five windows nobody could source stay empty.
+- Invasives: each region's list now names local groups to join, ask or report to, like [Florida's CISMAs](https://indigene.app/invasives/in/florida-central) and Washington's county weed boards. Thanks to Rikki Ocampos for the suggestion.
+- Internal: `data/invasive-groups.ts`, every row fetched and its quote found on the page; groups whose own pages call plants "invaders" left out. FISC listing route noted in `docs/outreach/playbook.md`.
+
+## [1.2] - 2026-10-18
+
+**South Florida doubles, a region finder & lists that sort**
+
+[![South Florida with 52 native plants](docs/screenshots/pr-290/thumb.png)](docs/screenshots/pr-290/after-dark.png)
+[Before](docs/screenshots/pr-290/before-dark.png) · [After](docs/screenshots/pr-290/after-dark.png)
+
+### Added
+
+- [South Florida](https://indigene.app/regions/florida-south) more than doubles,
+  from 21 natives to 52. It gains ferns, beach vines like railroad vine and
+  beach bean, sea oats, swamp milkweed for monarchs, and frogfruit, a lawn that
+  feeds butterflies.
+- Internal: 31 rows weighted to the forms the list had least of (5 ferns, 8
+  vines, 5 grasses, 4 groundcovers, 9 perennials). Native status per FNPS and
+  the Atlas of Florida Plants (USF) for South Florida, then Kew WCVP
+  (`native:check`). Spanish needles dropped: the Atlas calls it not native here.
+- The [regions page](https://indigene.app/regions) has a search box. Type a
+  state, country or town, like Illinois or Japan, and only the regions that
+  match stay on the page.
+- Regions: don't know which region is yours? Tap My location or type a postal
+  code, and the page shows the region you're in, with a button to start
+  planning from that spot.
+- Internal: each region lists the states, provinces or prefectures it mostly
+  covers (`RegionMeta.areas`, French in `locales/regions.fr.ts`), matched
+  accent-blind by `lib/region-search.ts`. Postal codes go through the existing
+  Open-Meteo geocoder and `regionsForCoords`; `gpsButton` is now shared from
+  `location-prompt.ts`.
+- Regions: sort a region's plants A–Z or by how many kinds of caterpillar each one raises, group them by plant type or not, and filter to the pioneers. Try it on [South Florida](https://indigene.app/regions/florida-south).
+- Internal: `lib/roster-sort.ts` reads the view from `?sort=caterpillars`, `?group=type` and `?only=pioneers`. Uncounted plants sort last, never as 0. Named-wildlife ties aren't a sort: a hand-picked handful per plant ranks our writing, not the plant.
+- Regions: sorting by caterpillars now answers "Won't they eat my plants?" in one tap: a little, and the birds eat most of them first, with the research behind it.
+- Plants: the [full plant list](https://indigene.app/plants) now sorts, groups and filters like a region's: A–Z or most caterpillars, by plant type or not, and pioneers only. Your search stays as you switch.
+- Wildlife: the [wildlife list](https://indigene.app/wildlife) opens as one list you can sort by how many plants support each animal, group by animal type, or narrow to animals that need one particular plant, like the monarch.
+- Internal: the registry now carries each taxon's caterpillar count, the highest any region's list documents, so the catalog can sort without downloading every region. `registry:check` pins it. The Sort / Group / Filter panel moved to `components/roster-controls.ts`, shared with the region roster and the wildlife index, whose view lives in `lib/wildlife-view.ts`.
+- Regions: a region whose native plants are checked against only one checklist now says so at the top of its page, until botanists who work there have checked them too.
+- Sources: [Where our numbers come from](https://indigene.app/sources) now lists the bar each kind of fact clears before it appears, from native status and invasives to photos and names.
+- Internal: `data/cross-checks.ts` names the regions with a second native-status check; `cross-checks.test.ts` holds each to a committed check covering every plant it ships, and pins the Atlas of Florida Plants' three disagreements.
+
+### Changed
+
+- Plants: essential plants now wear a small star beside their name instead of the arch, which was hard to make out at that size.
+- Regions: a region's plants now open as one list of pictures and names; each plant's description waits on its own page. Plant types appear once you group by them, and look-alikes and native swaps sit below the list.
+- Pioneers: each card ends with "Copes with" and drawn icons for rubble, cracks, salt and the rest; hover for the name, tap for what it means. Sources moved to the plant's own page.
+- Plants: a caterpillar count measured for a whole genus now says so under the number, like "for all of Salix", since every willow shares it.
+- Wildlife: the top of the page is now a heading and one sentence, so the first animals show up without scrolling.
+- Plants: each plant page now has a [Sources](https://indigene.app/plants/alnus-rubra#sources) card listing every claim — native range, caterpillar count, how to grow more, toughness, each animal it feeds — beside the sources that back it.
+- Plants: the databases to look a plant up in are now a shorter References card, two to a row.
+- Internal: `parseBasis()` (`app/src/lib/basis.ts`, with a unit test) splits a plant's labelled `basis` prose into claims; unlabelled text stays as a "Profile" row. Identical source texts collapse into one row naming every claim.
+
+### Fixed
+
+- Filtered to the pavement pioneers, the [plants list](https://indigene.app/plants) now shows what each plant copes with — compacted soil, salt, heat — the same strip a region's list already had.
+- Internal: `pressuresAnywhere()` in `lib/pioneers.ts` unions a plant's pressures across every region's table; `pressureFooter` now takes only the pressures.
+- Internal: links in running text on the sources, about and privacy pages kept the bright link color; `.doc-body` now matches the quiet-link rule.
 ## [1.1] - 2026-10-17
 
 **The Scottish Lowlands, a map of every region & guides to the app**
@@ -3571,8 +3699,12 @@ subtitle on the What's new page.
   dependencies — bundled by Vite. A thin, optional Hanami 2 API (`server/`)
   proxies site data; the PWA works without it.
 
-[Unreleased]: https://github.com/olivierlacan/indigene/compare/1f7d00b...HEAD
-[1.1]: https://github.com/olivierlacan/indigene/compare/1f7d00b...HEAD
+[Unreleased]: https://github.com/olivierlacan/indigene/compare/9fa8c48...HEAD
+[1.5]: https://github.com/olivierlacan/indigene/compare/18f7ab8...9fa8c48
+[1.4]: https://github.com/olivierlacan/indigene/compare/4d0b855...18f7ab8
+[1.3]: https://github.com/olivierlacan/indigene/compare/5f4a525...4d0b855
+[1.2]: https://github.com/olivierlacan/indigene/compare/526a2e7...5f4a525
+[1.1]: https://github.com/olivierlacan/indigene/compare/1f7d00b...526a2e7
 [1.0]: https://github.com/olivierlacan/indigene/compare/46c1436...1f7d00b
 [0.41]: https://github.com/olivierlacan/indigene/compare/1cd22cd...46c1436
 [0.40]: https://github.com/olivierlacan/indigene/compare/8c87bba...1cd22cd

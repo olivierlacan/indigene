@@ -62,7 +62,7 @@ sticker in the clear band under the text.
 
 ## Alt text
 
-> A dark card titled "Your lawn is already a zombie", Halloween, October 22, 2026. A drawing:
+> A dark card titled "Your lawn is already a zombie", Halloween 2026. A drawing:
 > under a crescent moon and two bats, a flat strip of lawn holds a headstone
 > and a jack-o'-lantern; beside it grow goldenrod, purple asters, a pine, and a
 > spider on its web.

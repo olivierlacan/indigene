@@ -39,11 +39,13 @@ import { PAGE_ART_RULES, PAGE_ART_DARK } from "../src/components/page-art-svg.mj
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-/** Per post key: the drawing (a key of `art` in the bundle) and the locale key
- *  of the line under it. */
+/** Per post key: the drawing (a key of `art` in the bundle), the locale key
+ *  of the line under it, and `year` to name the occasion by its year
+ *  ("Halloween 2026") instead of the post's date, for a story that goes up on
+ *  the day itself. */
 const STORIES = {
   ipd2026: { art: "people", line: "people.lede" },
-  halloween2026: { art: "page:halloween", line: "posts.halloween2026.lede", theme: "halloween" },
+  halloween2026: { art: "page:halloween", line: "posts.halloween2026.lede", theme: "halloween", year: true },
 };
 
 /** Per theme: the styles.css blocks whose tokens it takes (later wins), its
@@ -195,7 +197,8 @@ const html = `<!doctype html>
   const d = document.createElement("span");
   d.className = "date";
   d.textContent = ${JSON.stringify(date)};
-  when.append(en["posts." + key + ".occasion"] + " · ", d);
+  if (story.year) when.textContent = en["posts." + key + ".occasion"] + " " + ${y};
+  else when.append(en["posts." + key + ".occasion"] + " · ", d);
   document.getElementById("title").textContent = en["posts." + key + ".title"];
   if (story.art?.startsWith("page:")) document.getElementById("art").innerHTML = STORY.pageArtSvg(story.art.slice(5));
   else if (story.art) document.getElementById("art").append(art[story.art]());

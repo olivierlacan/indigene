@@ -25,6 +25,11 @@
 //
 // A drawing is either the peoples page's basket (`people`) or one of the
 // page drawings by name (`page:<name>`, from `page-art-svg.mjs`).
+//
+// A story can also take a theme (`halloween`): its colour tokens are read from
+// the app's own `:root[data-halloween]` block in styles.css, layered on the
+// dark ones, and its mark is that theme's favicon — so the image wears what the
+// page wears in season.
 import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -38,8 +43,26 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
  *  of the line under it. */
 const STORIES = {
   ipd2026: { art: "people", line: "people.lede" },
-  halloween2026: { art: "page:halloween", line: "posts.halloween2026.lede" },
+  halloween2026: { art: "page:halloween", line: "posts.halloween2026.lede", theme: "halloween" },
 };
+
+/** Per theme: the styles.css blocks whose tokens it takes (later wins), its
+ *  mark, and the glow behind the drawing. */
+const THEMES = {
+  dark: { blocks: [':root[data-theme="dark"]'], mark: "favicon.svg", wash: "31,107,59" },
+  halloween: {
+    blocks: [':root[data-theme="dark"]', ":root[data-halloween]"],
+    mark: "favicon-halloween.svg", wash: "150,62,0",
+  },
+};
+
+/** The custom properties declared in one block of styles.css. */
+function tokens(css, selector) {
+  const at = css.indexOf(selector + " {");
+  if (at < 0) throw new Error(`styles.css has no ${selector} block`);
+  const body = css.slice(at, css.indexOf("}", at));
+  return Object.fromEntries([...body.matchAll(/(--[\w-]+):\s*([^;]+);/g)].map((m) => [m[1], m[2].trim()]));
+}
 
 /** The app's modules, bundled twice: for the page (iife) and for this script
  *  (esm, to pick the post and name the file). */
@@ -85,6 +108,9 @@ if (!post) {
   process.exit(1);
 }
 const story = STORIES[post.key] ?? { line: `posts.${post.key}.lede` };
+const theme = THEMES[story.theme ?? "dark"];
+const css = readFileSync(join(root, "src", "styles.css"), "utf8");
+const vars = Object.assign({}, ...theme.blocks.map((b) => tokens(css, b)));
 const [y, m, d] = post.date.split("-").map(Number);
 const date = new Date(Date.UTC(y, m - 1, d)).toLocaleDateString(LANGS[lang], {
   year: "numeric", month: "long", day: "numeric", timeZone: "UTC",
@@ -93,7 +119,7 @@ const date = new Date(Date.UTC(y, m - 1, d)).toLocaleDateString(LANGS[lang], {
 const out = join(root, "..", "docs", "outreach", `${feed ? "post" : "story"}-${post.slug}${lang === "en" ? "" : `-${lang}`}.png`);
 mkdirSync(dirname(out), { recursive: true });
 
-const mark = readFileSync(join(root, "public", "favicon.svg"), "utf8")
+const mark = readFileSync(join(root, "public", theme.mark), "utf8")
   .replace(/<!--[\s\S]*?-->/g, "")
   .replace("<svg", '<svg width="104" height="104"');
 
@@ -101,14 +127,11 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --bg: #14160f; --line: #3c4232; --line-strong: #727b5f;
-    --brand: #7ec894; --brand-bg: #1f3326; --accent: #e2a86a;
-  }
+  :root { ${Object.entries(vars).map(([k, v]) => `${k}: ${v};`).join(" ")} }
   body {
     width: ${W}px; height: ${H}px;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    background: var(--bg); color: #f2f1e8;
+    background: var(--bg); color: var(--ink);
     padding: ${feed ? "84px 84px 84px" : "250px 84px 350px"};
     display: flex; flex-direction: column;
     position: relative; overflow: hidden;
@@ -116,7 +139,7 @@ const html = `<!doctype html>
   .wash {
     position: absolute; right: -320px; top: 760px;
     width: 1100px; height: 1100px; border-radius: 50%;
-    background: radial-gradient(circle, #1f6b3b 0%, rgba(31,107,59,0) 70%);
+    background: radial-gradient(circle, rgb(${theme.wash}) 0%, rgba(${theme.wash},0) 70%);
     opacity: 0.55;
   }
   .row, .mid, .foot { position: relative; }
@@ -127,7 +150,7 @@ const html = `<!doctype html>
   .wordmark { font-size: 54px; font-weight: 800; letter-spacing: -0.02em; }
   .when { font-size: 34px; font-weight: 650; color: var(--brand); margin-bottom: 18px; }
   /* The date sits back from the occasion: lighter, smaller, even numerals. */
-  .when .date { font-weight: 400; font-size: 31px; color: #cdcdbd; font-variant-numeric: tabular-nums; }
+  .when .date { font-weight: 400; font-size: 31px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
   h1 { font-size: 86px; line-height: 1.04; font-weight: 800; letter-spacing: -0.03em; text-wrap: balance; }
   .art { margin: 44px 0 0; }
   .art:empty { display: none; }
@@ -145,9 +168,9 @@ const html = `<!doctype html>
   .people-art .pa-lily { fill: #fffdf4; stroke: var(--line-strong); stroke-width: 1; }
   ${PAGE_ART_RULES}
   .page-art { ${PAGE_ART_DARK} }
-  .lede { margin-top: 36px; font-size: 36px; line-height: 1.38; color: #cdcdbd; }
+  .lede { margin-top: 36px; font-size: 36px; line-height: 1.38; color: var(--ink-soft); }
   .foot { display: flex; justify-content: space-between; align-items: baseline; }
-  .tagline { font-size: 32px; color: #cdcdbd; }
+  .tagline { font-size: 32px; color: var(--ink-soft); }
   .url { font-size: 32px; font-weight: 650; color: var(--brand); }
 </style>
 <div class="wash"></div>

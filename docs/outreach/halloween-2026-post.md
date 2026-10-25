@@ -5,8 +5,8 @@ sends people to the guide that stays up all year,
 [indigene.app/kill-your-lawn](https://indigene.app/kill-your-lawn). The caption
 links the guide: it's the page that answers "what do I plant?", in April too.
 
-Images are drawn from the post's own words and drawing, so they can't drift
-from the page:
+Images are drawn from the post's own words and drawing, in the spooky theme's
+colours and ghost mark, so they can't drift from the page:
 
 ```sh
 cd app

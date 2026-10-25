@@ -1,6 +1,6 @@
 {
   "region": "pnw",
-  "ranAt": "2026-10-24",
+  "ranAt": "2026-10-25",
   "sources": {
     "burke": "Flora of the Pacific Northwest Checklist (Burke Museum, UW)",
     "oregonflora": "OregonFlora Checklist (Oregon State University)"
@@ -1420,6 +1420,19 @@
       },
       "oregonflora": {
         "as": "Clematis ligusticifolia",
+        "verdict": "native"
+      }
+    },
+    {
+      "id": "lonicera-hispidula",
+      "latin": "Lonicera hispidula",
+      "burke": {
+        "as": "Lonicera hispidula",
+        "verdict": "native",
+        "westCounties": 24
+      },
+      "oregonflora": {
+        "as": "Lonicera hispidula",
         "verdict": "native"
       }
     },

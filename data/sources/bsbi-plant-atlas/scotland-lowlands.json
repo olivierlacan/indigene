@@ -10,7 +10,7 @@
   },
   "minNative": 10,
   "region": "scotland-lowlands",
-  "ranAt": "2026-10-24T18:50:08.326Z",
+  "ranAt": "2026-10-25T07:18:31.432Z",
   "rows": [
     {
       "id": "quercus-petraea",
@@ -114,6 +114,15 @@
       "presentHectads": 365,
       "alienHectads": 0,
       "olderOnly": 19
+    },
+    {
+      "id": "salix-pentandra",
+      "latin": "Salix pentandra",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.97b",
+      "nativeHectads": 209,
+      "alienHectads": 9,
+      "olderOnly": 86
     },
     {
       "id": "corylus-avellana",
@@ -286,6 +295,24 @@
       "presentHectads": 399,
       "alienHectads": 0,
       "olderOnly": 12
+    },
+    {
+      "id": "vicia-cracca",
+      "latin": "Vicia cracca",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.5q2",
+      "nativeHectads": 406,
+      "alienHectads": 0,
+      "olderOnly": 6
+    },
+    {
+      "id": "lathyrus-pratensis",
+      "latin": "Lathyrus pratensis",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.8rm",
+      "nativeHectads": 411,
+      "alienHectads": 0,
+      "olderOnly": 4
     },
     {
       "id": "digitalis-purpurea",
@@ -612,6 +639,15 @@
       "olderOnly": 4
     },
     {
+      "id": "prunella-vulgaris",
+      "latin": "Prunella vulgaris",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.p1p",
+      "nativeHectads": 414,
+      "alienHectads": 0,
+      "olderOnly": 1
+    },
+    {
       "id": "deschampsia-cespitosa",
       "latin": "Deschampsia cespitosa",
       "verdict": "NATIVE",
@@ -637,6 +673,42 @@
       "nativeHectads": 387,
       "alienHectads": 0,
       "olderOnly": 16
+    },
+    {
+      "id": "anthoxanthum-odoratum",
+      "latin": "Anthoxanthum odoratum",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.xaq",
+      "nativeHectads": 416,
+      "alienHectads": 0,
+      "olderOnly": 2
+    },
+    {
+      "id": "festuca-rubra",
+      "latin": "Festuca rubra",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.54f",
+      "nativeHectads": 418,
+      "alienHectads": 0,
+      "olderOnly": 1
+    },
+    {
+      "id": "molinia-caerulea",
+      "latin": "Molinia caerulea",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.fgn",
+      "nativeHectads": 367,
+      "alienHectads": 0,
+      "olderOnly": 24
+    },
+    {
+      "id": "briza-media",
+      "latin": "Briza media",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.8dc",
+      "nativeHectads": 249,
+      "alienHectads": 0,
+      "olderOnly": 56
     },
     {
       "id": "dryopteris-filix-mas",
@@ -673,6 +745,15 @@
       "nativeHectads": 341,
       "alienHectads": 0,
       "olderOnly": 20
+    },
+    {
+      "id": "asplenium-scolopendrium",
+      "latin": "Asplenium scolopendrium",
+      "verdict": "NATIVE",
+      "bsbiId": "2cd4p9h.6y7dfc",
+      "nativeHectads": 355,
+      "alienHectads": 0,
+      "olderOnly": 23
     }
   ]
 }

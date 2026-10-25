@@ -33,6 +33,9 @@
     {"id":"lindera-benzoin","latin":"Lindera benzoin","chicago-fqa":{"as":"Lindera benzoin","verdict":"native"},"il-fqa":{"as":"Lindera benzoin","verdict":"native"}},
     {"id":"sambucus-canadensis","latin":"Sambucus canadensis","chicago-fqa":{"as":"Sambucus canadensis","verdict":"native"},"il-fqa":{"as":"Sambucus canadensis","verdict":"native"}},
     {"id":"rubus-occidentalis","latin":"Rubus occidentalis","chicago-fqa":{"as":"Rubus occidentalis","verdict":"native"},"il-fqa":{"as":"Rubus occidentalis","verdict":"native"}},
+    {"id":"cornus-sericea","latin":"Cornus sericea","chicago-fqa":{"as":"Cornus sericea","verdict":"native"},"il-fqa":{"as":"Cornus stolonifera","verdict":"native"}},
+    {"id":"hamamelis-virginiana","latin":"Hamamelis virginiana","chicago-fqa":{"as":"Hamamelis virginiana","verdict":"native"},"il-fqa":{"as":"Hamamelis virginiana","verdict":"native"}},
+    {"id":"aronia-melanocarpa","latin":"Aronia melanocarpa","chicago-fqa":{"as":"Aronia melanocarpa","verdict":"native"},"il-fqa":{"as":"Aronia melanocarpa","verdict":"native"}},
     {"id":"andropogon-gerardii","latin":"Andropogon gerardii","chicago-fqa":{"as":"Andropogon gerardii","verdict":"native"},"il-fqa":{"as":"Andropogon gerardii","verdict":"native"}},
     {"id":"schizachyrium-scoparium","latin":"Schizachyrium scoparium","chicago-fqa":{"as":"Schizachyrium scoparium","verdict":"native"},"il-fqa":{"as":"Schizachyrium scoparium","verdict":"native"}},
     {"id":"sporobolus-heterolepis","latin":"Sporobolus heterolepis","chicago-fqa":{"as":"Sporobolus heterolepis","verdict":"native"},"il-fqa":{"as":"Sporobolus heterolepis","verdict":"native"}},
@@ -77,11 +80,17 @@
     {"id":"fragaria-virginiana","latin":"Fragaria virginiana","chicago-fqa":{"as":"Fragaria virginiana","verdict":"native"},"il-fqa":{"as":"Fragaria virginiana","verdict":"native"}},
     {"id":"packera-aurea","latin":"Packera aurea","chicago-fqa":{"as":"Packera aurea","verdict":"native"},"il-fqa":{"as":"Senecio aureus","verdict":"native"}},
     {"id":"asarum-canadense","latin":"Asarum canadense","chicago-fqa":{"as":"Asarum canadense","verdict":"native"},"il-fqa":{"as":"Asarum canadense","verdict":"native"}},
+    {"id":"viola-sororia","latin":"Viola sororia","chicago-fqa":{"as":"Viola sororia","verdict":"native"},"il-fqa":{"as":"Viola sororia","verdict":"native"}},
+    {"id":"antennaria-neglecta","latin":"Antennaria neglecta","chicago-fqa":{"as":"Antennaria neglecta","verdict":"native"},"il-fqa":{"as":"Antennaria neglecta","verdict":"native"}},
+    {"id":"arctostaphylos-uva-ursi","latin":"Arctostaphylos uva-ursi","chicago-fqa":{"as":"Arctostaphylos uva-ursi var. coactilis","verdict":"native"},"il-fqa":{"as":"Arctostaphylos uva-ursi v. coactilis","verdict":"native"}},
     {"id":"parthenocissus-quinquefolia","latin":"Parthenocissus quinquefolia","chicago-fqa":{"as":"Parthenocissus quinquefolia","verdict":"native"},"il-fqa":{"as":"Parthenocissus quinquefolia","verdict":"native"}},
     {"id":"clematis-virginiana","latin":"Clematis virginiana","chicago-fqa":{"as":"Clematis virginiana","verdict":"native"},"il-fqa":{"as":"Clematis virginiana","verdict":"native"}},
     {"id":"vitis-riparia","latin":"Vitis riparia","chicago-fqa":{"as":"Vitis riparia","verdict":"native"},"il-fqa":{"as":"Vitis riparia","verdict":"native"}},
+    {"id":"celastrus-scandens","latin":"Celastrus scandens","chicago-fqa":{"as":"Celastrus scandens","verdict":"native"},"il-fqa":{"as":"Celastrus scandens","verdict":"native"}},
     {"id":"onoclea-sensibilis","latin":"Onoclea sensibilis","chicago-fqa":{"as":"Onoclea sensibilis","verdict":"native"},"il-fqa":{"as":"Onoclea sensibilis","verdict":"native"}},
     {"id":"polystichum-acrostichoides","latin":"Polystichum acrostichoides","chicago-fqa":{"as":"Polystichum acrostichoides","verdict":"native"},"il-fqa":{"as":"Polystichum acrostichoides","verdict":"native"}},
-    {"id":"adiantum-pedatum","latin":"Adiantum pedatum","chicago-fqa":{"as":"Adiantum pedatum","verdict":"native"},"il-fqa":{"as":"Adiantum pedatum","verdict":"native"}}
+    {"id":"adiantum-pedatum","latin":"Adiantum pedatum","chicago-fqa":{"as":"Adiantum pedatum","verdict":"native"},"il-fqa":{"as":"Adiantum pedatum","verdict":"native"}},
+    {"id":"osmundastrum-cinnamomeum","latin":"Osmundastrum cinnamomeum","chicago-fqa":{"as":"Osmundastrum cinnamomeum","verdict":"native"},"il-fqa":{"as":"Osmunda cinnamomea","verdict":"native"}},
+    {"id":"athyrium-angustum","latin":"Athyrium angustum","chicago-fqa":{"as":"Athyrium filix-femina","verdict":"native"},"il-fqa":{"as":"Athyrium angustum","verdict":"native"}}
   ]
 }

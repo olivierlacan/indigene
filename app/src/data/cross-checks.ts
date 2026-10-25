@@ -49,6 +49,16 @@ export const SECOND_CHECKS: Record<string, SecondCheck[]> = {
     { name: { en: "the Checklist of the New Zealand Flora", fr: "la liste de la flore de Nouvelle-Zélande" }, url: "https://datastore.landcareresearch.co.nz/dataset/checklist-of-the-new-zealand-flora-seed-plants-2026" },
     { name: { en: "Auckland Council", fr: "le conseil d'Auckland" }, url: "https://www.knowledgeauckland.org.nz/publications/conservation-status-of-vascular-plant-species-in-tamaki-makaurau-auckland-revised-march-2025/" },
   ],
+  // `npm run floras` → the regional red lists in INPN's BDC-Statuts
+  "france-atlantic": [
+    { name: { en: "France's regional red lists", fr: "les listes rouges régionales françaises" }, url: "https://inpn.mnhn.fr/programme/base-de-connaissance-statuts/presentation" },
+  ],
+  "france-continental": [
+    { name: { en: "France's regional red lists", fr: "les listes rouges régionales françaises" }, url: "https://inpn.mnhn.fr/programme/base-de-connaissance-statuts/presentation" },
+  ],
+  "france-alpine": [
+    { name: { en: "France's regional red lists", fr: "les listes rouges régionales françaises" }, url: "https://inpn.mnhn.fr/programme/base-de-connaissance-statuts/presentation" },
+  ],
   // `npm run vascan:check`, quarterly in native.yml, for Québec
   "st-lawrence": [
     { name: { en: "VASCAN, the Database of Vascular Plants of Canada", fr: "VASCAN, la base de données des plantes vasculaires du Canada" }, url: "https://data.canadensys.net/vascan/" },

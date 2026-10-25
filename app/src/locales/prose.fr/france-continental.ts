@@ -685,4 +685,439 @@ export const FRANCE_CONTINENTAL: ProseTable = {
     propagationNote:
       "Les spores se sèment sur un terreau stérilisé humide, sous couvercle, au frais et à mi-ombre — d'abord une pellicule verte, des fougères des mois plus tard. Les vieilles souches se divisent au printemps.",
   },
+
+  // -------------------------------------------------------------------------
+  // Ajouts : clés qualifiées par région, pour qu'aucune ne dispute la clé simple
+  // d'un autre fichier régional.
+  // -------------------------------------------------------------------------
+  "Quercus robur@france-continental": {
+    nativeNote:
+      "Le chêne des argiles lourdes et humides des vallées de l'est — la plaine de la Saône, le Ried alsacien, les fonds de Lorraine.",
+    careNote:
+      "Donnez-lui le terrain lourd et frais, et laissez la pente sèche au chêne sessile. Plantez-le petit, car son pivot supporte mal la transplantation, et prévoyez une couronne plus large que la plupart des jardins.",
+    givesNote:
+      "Plus de quatre cents espèces de chenilles, de quoi élever une nichée de mésanges. Les glands nourrissent geais, pics, mulots et sangliers, et un vieil arbre loge lucanes et chauves-souris.",
+    propagationNote:
+      "Semez les glands frais à l'automne, après avoir jeté ceux qui flottent. Ils s'enracinent aussitôt, sans passage au froid, et ne doivent jamais sécher.",
+  },
+  "Prunus avium@france-continental": {
+    nativeNote:
+      "Un arbre des chênaies-charmaies et des haies de tout l'est, blanc de fleurs en avril avant les feuilles.",
+    careNote:
+      "Il pousse vite et sans peine sur tout sol non engorgé. Il drageonne un peu, et ses feuilles virent au rouge et à l'orange à l'automne.",
+    givesNote:
+      "Une floraison précoce pour les bourdons et les andrènes, puis des cerises que merles, grives et gros-becs dépouillent en juin. Son genre nourrit ici plus de chenilles que presque tout autre.",
+    propagationNote:
+      "Déterrez un drageon enraciné en hiver. Ou nettoyez les noyaux en été et semez-les en pot dehors : ils lèvent après le froid de l'hiver.",
+  },
+  "Malus sylvestris@france-continental": {
+    nativeNote:
+      "Le vrai pommier sauvage, dispersé dans les lisières et les vieilles haies de la Bourgogne à l'Alsace.",
+    careNote:
+      "Un petit arbre épineux et robuste pour le soleil et tout sol correct. Choisissez-le issu de graines sauvages locales : la plupart des pommiers d'ornement sont des hybrides.",
+    givesNote:
+      "Des fleurs blanc rosé pour les abeilles au printemps, et de petites pommes dures que litornes, merles et blaireaux mangent en hiver, une fois ramollies par le gel.",
+    propagationNote:
+      "Prélevez les pépins d'un fruit mûr et semez-les dehors à l'automne : le froid de l'hiver lève leur dormance. Les pépins d'un arbre de verger donnent un hybride ; récoltez donc sur un sauvage.",
+  },
+  "Acer platanoides@france-continental": {
+    nativeNote:
+      "Un érable des collines de l'est — Vosges, Jura, forêts de ravin de Bourgogne — qui se raréfie vers l'ouest.",
+    careNote:
+      "Rapide, rustique, il tolère le calcaire et l'air des villes. Son ombre est dense et il se ressème volontiers : donnez-lui de la place en bordure du jardin.",
+    givesNote:
+      "Ses fleurs vert-jaune s'ouvrent en avril avant les feuilles, un repas précoce pour les abeilles. Bon nombre de chenilles l'utilisent, et les fringilles mangent ses samares.",
+    propagationNote:
+      "Semez les samares à l'automne en pot dehors. Elles germent au début du printemps après le froid, la plupart dès la première année.",
+  },
+  "Prunus spinosa@france-continental": {
+    nativeNote:
+      "Le fourré épineux des haies et des fruticées calcaires de tout l'est, blanc de fleurs en mars avant toute feuille.",
+    careNote:
+      "Il drageonne en fourré dense, et c'est ce qui en fait une haie que les oiseaux adorent. Tenez-le hors d'un petit massif, ou coupez les drageons chaque hiver.",
+    givesNote:
+      "La première grande floraison de l'année pour les reines de bourdons. Ses feuilles nourrissent les chenilles de la thécla du bouleau et de la thécla du prunier, et ses épines protègent les nids des fauvettes et de la pie-grièche écorcheur.",
+    propagationNote:
+      "Déterrez un drageon enraciné en hiver — c'est le plus simple. Les noyaux demandent une période chaude puis une froide : semez-les frais à l'automne en pot dehors et attendez-les au second printemps.",
+  },
+  "Cornus sanguinea@france-continental": {
+    nativeNote:
+      "Un arbuste des haies et des lisières sur calcaire et argile de tout l'est, dont les rameaux rougissent en hiver.",
+    careNote:
+      "Il accepte argile, calcaire, ombre et sol humide, et drageonne en fourré. Recépez quelques vieilles tiges au ras du sol chaque printemps pour des rameaux plus rouges.",
+    givesNote:
+      "Ses ombelles blanches de juin nourrissent coléoptères, syrphes et abeilles. Les baies noires, amères pour nous, vont aux grives, aux rougegorges et aux fauvettes à tête noire en automne.",
+    propagationNote:
+      "Enfoncez en hiver des boutures de la grosseur d'un crayon, aux deux tiers enterrées ; la plupart s'enracinent avant le printemps. Les branches basses se marcottent seules au contact du sol.",
+  },
+  "Sambucus nigra@france-continental": {
+    nativeNote:
+      "L'arbuste rapide des haies, des cours de ferme et des clairières, partout dans l'est.",
+    careNote:
+      "Il pousse presque partout, vite, et se ressème là où les oiseaux lâchent les graines. Baies crues, feuilles et écorce sont toxiques ; on utilise les fleurs et les baies cuites.",
+    givesNote:
+      "Ses baies sont l'un des grands repas d'automne des fauvettes à tête noire, des grives et des étourneaux avant la migration. Ses ombelles nourrissent syrphes et coléoptères en juin.",
+    propagationNote:
+      "Les boutures ligneuses d'hiver reprennent presque à coup sûr : plantez-les en terre et attendez. Les boutures tendres du début d'été s'enracinent en quelques semaines.",
+  },
+  "Viburnum opulus@france-continental": {
+    nativeNote:
+      "L'arbuste des bois humides, des bords de rivière et des haies fraîches de l'est, le pendant humide de la viorne lantane.",
+    careNote:
+      "Donnez-lui un sol frais, même une argile lourde ou un bord de mare ; il dépérit en terrain sec. Les baies crues sont légèrement toxiques.",
+    givesNote:
+      "Ses ombelles blanches, cerclées de grandes fleurs stériles, attirent syrphes et abeilles en juin. Les baies rouges translucides restent jusqu'en hiver, repas tardif des bouvreuils et des grives.",
+    propagationNote:
+      "Les boutures semi-aoûtées s'enracinent facilement en été. La graine demande une période chaude puis une froide : semez-la fraîche à l'automne et attendez-la au second printemps.",
+  },
+  "Rhamnus cathartica@france-continental": {
+    nativeNote:
+      "Un arbuste épineux des fruticées calcaires, des haies et des bois riverains de tout l'est.",
+    careNote:
+      "Robuste sur la craie sèche et en haie, lent, et piquant au bout des rameaux. Les baies sont un violent purgatif pour les humains et les chiens.",
+    givesNote:
+      "Le citron pond sur les nerpruns, et nulle part ailleurs. Ses petites fleurs nourrissent les abeilles, et ses baies noires les grives.",
+    propagationNote:
+      "Débarrassez les baies de leur pulpe à l'automne et semez-les dehors : le froid de l'hiver les fait lever au printemps. Les branches basses se marcottent.",
+  },
+  "Lonicera xylosteum@france-continental": {
+    nativeNote:
+      "Un chèvrefeuille arbustif dressé des bois calcaires et des haies de l'est, rare à l'ouest.",
+    careNote:
+      "Tolérant à l'ombre et à l'aise sur la craie, il remplit le dessous des arbres dans une haie mélangée. Ses baies rouges, par paires, sont toxiques pour l'humain.",
+    givesNote:
+      "Ses fleurs pâles, par paires, nourrissent les bourdons en mai. Ses feuilles nourrissent la chenille du petit sylvain, et les fauvettes mangent les baies en été.",
+    propagationNote:
+      "Les boutures semi-aoûtées s'enracinent facilement en été. Semées fraîches à l'automne en pot dehors, les graines lèvent au printemps suivant.",
+  },
+  "Juniperus communis@france-continental": {
+    nativeNote:
+      "Le genévrier des pelouses calcaires sèches de l'est — les pâtures rases de Bourgogne et de Lorraine.",
+    careNote:
+      "Plein soleil, sol pauvre et sec, pas de concurrence : l'ombre ou un sol riche le tuent. Les pieds sont mâles ou femelles, et seules les femelles portent des baies.",
+    givesNote:
+      "Ses baies bleues nourrissent les grives tout l'hiver, surtout la draine. Son couvert piquant abrite les petits oiseaux des rapaces.",
+    propagationNote:
+      "La graine est lente et capricieuse, souvent deux ans. Les boutures semi-aoûtées de fin d'été, gardées à l'étouffée l'hiver, sont la voie sûre.",
+  },
+  "Crataegus monogyna@france-continental": {
+    nativeNote:
+      "L'aubépine la plus commune des haies et des fruticées de l'est, plus à l'aise en terrain ouvert et sec que l'aubépine à deux styles des bois.",
+    careNote:
+      "Elle accepte tout sol, le vent, la sécheresse et une taille sévère. En haie, taillez-la en fin d'hiver, une fois les baies mangées.",
+    givesNote:
+      "Peu d'arbustes nourrissent ici plus de chenilles. Ses fleurs de mai nourrissent abeilles et coléoptères, et ses cenelles rouges les grives, litornes et mauvis tout l'hiver.",
+    propagationNote:
+      "Les cenelles demandent dix-huit mois : enterrez-les dans un pot de sable humide dehors un hiver et un été, puis semez. Les pépinières vendent en hiver de jeunes plants à racines nues bon marché.",
+  },
+  "Leucanthemum vulgare@france-continental": {
+    nativeNote:
+      "La grande marguerite blanche des prés de fauche et des bords de route, partout dans l'est.",
+    careNote:
+      "Du soleil et un sol maigre ; en terre riche, elle s'affaisse. Semez-la avec une nouvelle prairie : elle fleurit dès la première année et se raréfie quand l'herbe se referme.",
+    givesNote:
+      "Une piste d'atterrissage ouverte pour les syrphes, les coléoptères, les petites abeilles et les papillons tout le début de l'été.",
+    propagationNote:
+      "Semez à la volée sur sol nu à l'automne ou au printemps, sans traitement. Les touffes se divisent au printemps.",
+  },
+  "Achillea millefolium@france-continental": {
+    nativeNote:
+      "L'herbe aux feuilles plumeuses de tous les prés secs, bords de pelouse et bords de route de l'est.",
+    careNote:
+      "Indifférente à la sécheresse et à la tonte, elle s'étend par stolons en tache dense. Plantez-la dans une prairie sèche ou laissez-la entrer dans la pelouse.",
+    givesNote:
+      "Ses ombelles blanches nourrissent syrphes, petites abeilles et téléphores tout l'été, et ses feuilles un bon éventail de chenilles de papillons de nuit.",
+    propagationNote:
+      "Détachez un morceau de stolon enraciné au printemps ou à l'automne. La graine est minuscule : pressez-la en surface sans la couvrir.",
+  },
+  "Centaurea jacea@france-continental": {
+    nativeNote:
+      "La centaurée pourpre des prés de fauche frais et des talus herbeux de tout l'est.",
+    careNote:
+      "Facile dans toute prairie ensoleillée, fraîche ou sèche. Fauchez en juillet : elle refleurit en septembre.",
+    givesNote:
+      "Une grande plante à nectar pour le myrtil, le demi-deuil, les zygènes et les bourdons en été. Les chardonnerets prennent ses graines à l'automne.",
+    propagationNote:
+      "Semez à l'automne sur sol nu ; elle germe facilement. Les touffes se divisent au printemps.",
+  },
+  "Primula veris@france-continental": {
+    nativeNote:
+      "La primevère jaune et penchée des pâtures calcaires et des bois clairs de tout l'est.",
+    careNote:
+      "Soleil ou mi-ombre légère, sur sol calcaire bien drainé. Dans l'herbe, retardez la première tonte jusqu'à ce que les graines soient tombées, en juin.",
+    givesNote:
+      "L'une des premières fleurs des prés, butinée par les reines de bourdons et les anthophores. Ses feuilles nourrissent la lucine, un papillon peu commun des pelouses embroussaillées de l'est.",
+    propagationNote:
+      "Semez les graines fraîches à l'automne en pot dehors ; le froid de l'hiver les réveille. Les vieilles touffes se divisent après la floraison.",
+  },
+  "Lythrum salicaria@france-continental": {
+    nativeNote:
+      "Les hauts épis magenta des fossés, des bords de mare et des berges de la Saône, du Rhin et de la Moselle.",
+    careNote:
+      "Un sol mouillé ou une eau peu profonde au bord d'une mare, au soleil. Coupez les épis fanés si vous ne voulez pas de semis.",
+    givesNote:
+      "Abeilles à longue langue et bourdons la butinent de juillet à septembre. C'est la plante de la mélitte de la salicaire, une abeille sauvage qui ne récolte son pollen que sur elle.",
+    propagationNote:
+      "Divisez les touffes au printemps. La graine minuscule germe en surface d'un terreau mouillé, dans un bac posé dans l'eau.",
+  },
+  "Filipendula ulmaria@france-continental": {
+    nativeNote:
+      "Les fleurs crème mousseuses des prés humides, des fossés et des aulnaies des vallées de l'est.",
+    careNote:
+      "Tout sol qui reste humide, au soleil ou à mi-ombre. Coupez-la à l'automne.",
+    givesNote:
+      "Son pollen parfumé attire syrphes, coléoptères et abeilles tout l'été. Ses feuilles nourrissent le nacré de la sanguisorbe, un papillon des prairies humides de l'est.",
+    propagationNote:
+      "Divisez les touffes à l'automne ou au printemps. Semées dehors à l'automne, les graines lèvent après l'hiver.",
+  },
+  "Eupatorium cannabinum@france-continental": {
+    nativeNote:
+      "Une grande herbe rose terne des berges, des clairières humides et des fossés de tout l'est.",
+    careNote:
+      "Facile en sol frais, au soleil ou à mi-ombre, et elle se ressème. Toxique si on la mange : les animaux qui pâturent la laissent.",
+    givesNote:
+      "En août, elle peut porter plus de papillons que tout le reste du jardin : paons-du-jour, robert-le-diable, vulcains et l'écaille chinée.",
+    propagationNote:
+      "Divisez au printemps. Semée à l'automne, la graine germe facilement.",
+  },
+  "Hypericum perforatum@france-continental": {
+    nativeNote:
+      "L'herbe aux étoiles jaunes des talus secs, des clairières et des pelouses calcaires de tout l'est.",
+    careNote:
+      "Un terrain sec, ensoleillé et pauvre, rien d'autre ; il se ressème dans les trous. Il est toxique pour les herbivores et rend la peau sensible au soleil.",
+    givesNote:
+      "Ses fleurs sans nectar, riches en pollen, nourrissent bourdons et syrphes en plein été, et ses feuilles toute une série de papillons de nuit spécialistes.",
+    propagationNote:
+      "Pressez la graine fine en surface au printemps et gardez-la humide. Les touffes se divisent à l'automne.",
+  },
+  "Campanula rotundifolia@france-continental": {
+    nativeNote:
+      "La campanule bleue aux tiges fines des pelouses sèches, des rochers et des talus sableux de tout l'est.",
+    careNote:
+      "Il lui faut un sol pauvre, sec et ouvert, sans hautes voisines. Plantez de petites mottes dans un gazon maigre ou un haut de mur.",
+    givesNote:
+      "Ses clochettes abritent de petites abeilles solitaires, dont le chélostome des campanules, qui ne récolte son pollen que sur les campanules.",
+    propagationNote:
+      "Semez en surface au printemps la graine fine comme de la poussière. Les petites touffes se divisent au printemps.",
+  },
+  "Geranium sanguineum@france-continental": {
+    nativeNote:
+      "Un géranium bas et magenta des fourrés calcaires ensoleillés et des lisières rocheuses de Bourgogne, de Lorraine et d'Alsace.",
+    careNote:
+      "Insensible à la sécheresse au soleil sur craie ou gravier, il s'élargit lentement en coussin. Ni tuteur ni engrais.",
+    givesNote:
+      "Des fleurs magenta ouvertes pour bourdons et abeilles solitaires de mai à août, une longue saison pour une plante sauvage.",
+    propagationNote:
+      "Divisez au printemps ou à l'automne. Semée fraîche en été ou à l'automne en pot dehors, la graine lève au printemps.",
+  },
+  "Scabiosa columbaria@france-continental": {
+    nativeNote:
+      "La pelote lilas des pelouses crayeuses et des talus calcaires secs de tout l'est.",
+    careNote:
+      "Plein soleil et sol mince et calcaire. Elle vit peu, mais se ressème partout où le sol est ouvert.",
+    givesNote:
+      "Papillons, bourdons et zygènes la butinent de juin à septembre.",
+    propagationNote:
+      "Semez les graines fraîches à l'automne sur sol graveleux. Les vieux pieds se divisent au printemps.",
+  },
+  "Dianthus carthusianorum@france-continental": {
+    nativeNote:
+      "Un œillet magenta vif des pelouses calcaires sèches et des pentes rocheuses de l'est.",
+    careNote:
+      "Soleil, drainage parfait et calcaire ; un sol mouillé l'hiver le fait pourrir. Plantez-le dans le gravier, sur un haut de mur ou dans une bande de prairie sèche.",
+    givesNote:
+      "Ses tubes profonds sont butinés par les papillons de jour et de nuit, les longues trompes pour lesquelles la fleur est faite.",
+    propagationNote:
+      "Semée au printemps, la graine germe facilement sans traitement. Les pousses non fleuries s'enracinent en bouture l'été.",
+  },
+  "Silene dioica@france-continental": {
+    nativeNote:
+      "Le silène rose des lisières, des pieds de haie et des talus ombragés, plus commun dans les collines de l'est.",
+    careNote:
+      "Mi-ombre et sol ordinaire, sous une haie ou en lisière. Il se ressème doucement et fleurit des mois durant.",
+    givesNote:
+      "Bourdons et papillons le visitent du printemps à l'été. Ses capsules nourrissent les chenilles de noctuelles qui grandissent à l'intérieur.",
+    propagationNote:
+      "Semez à la volée sur sol nu à l'automne ou au printemps. Les touffes se divisent au printemps.",
+  },
+  "Malva moschata@france-continental": {
+    nativeNote:
+      "La mauve rose pâle des talus ensoleillés, des bords de champ et des prés secs de tout l'est.",
+    careNote:
+      "Tout sol drainé au soleil, et elle supporte la sécheresse une fois installée. Elle vit peu, mais se ressème.",
+    givesNote:
+      "De grandes coupes ouvertes pour bourdons et abeilles solitaires de juin à septembre.",
+    propagationNote:
+      "Semez en place, au printemps ou à l'automne. Les pousses de la base s'enracinent en bouture au printemps.",
+  },
+  "Succisa pratensis@france-continental": {
+    nativeNote:
+      "La pelote bleu violet des prés humides non amendés et des landes de l'est.",
+    careNote:
+      "Sol frais et pauvre, au soleil ; elle disparaît des prairies engraissées. Elle fleurit tard : attendez octobre pour faucher.",
+    givesNote:
+      "Une grande plante à nectar tardive pour les bourdons et les papillons. Elle nourrit le damier de la succise, un papillon protégé des prairies humides de l'est.",
+    propagationNote:
+      "Semez les graines fraîches à l'automne en pot dehors ; elles germent après l'hiver. Les touffes se divisent au printemps.",
+  },
+  "Aster amellus@france-continental": {
+    nativeNote:
+      "Un aster violet des pelouses calcaires ensoleillées et des fruticées de Bourgogne, de Lorraine et du piémont jurassien.",
+    careNote:
+      "Soleil et sol calcaire bien drainé ; il n'aime pas les hivers humides. Il est protégé en France : achetez-le en pépinière, ne le prélevez jamais dans la nature.",
+    givesNote:
+      "Des marguerites violettes tardives pour bourdons, syrphes et papillons quand la prairie est passée.",
+    propagationNote:
+      "Divisez au printemps. Les boutures tendres de la base s'enracinent facilement au printemps.",
+  },
+  "Pulsatilla vulgaris@france-continental": {
+    nativeNote:
+      "L'anémone pulsatille, violette et soyeuse, des pelouses calcaires rases, devenue rare sur les coteaux secs de Bourgogne, de Lorraine et d'Alsace.",
+    careNote:
+      "Plein soleil et drainage parfait sur craie ou gravier ; elle déteste être déplacée. Toxique si on la mange.",
+    givesNote:
+      "L'une des premières fleurs ouvertes du printemps, pour les reines de bourdons et les andrènes précoces.",
+    propagationNote:
+      "Semez les graines fraîches, dès que les têtes plumeuses mûrissent au début de l'été ; conservées, elles perdent leur vigueur. Les boutures de racines en hiver marchent aussi.",
+  },
+  "Valeriana officinalis@france-continental": {
+    nativeNote:
+      "Une grande herbe rose-blanc des prés humides, des fossés et des lisières mouillées de tout l'est.",
+    careNote:
+      "Sol frais au soleil ou à mi-ombre, au bord d'une mare ou dans un coin humide. Les chats sont attirés par ses racines.",
+    givesNote:
+      "Ses ombelles parfumées nourrissent syrphes, abeilles et papillons au début de l'été.",
+    propagationNote:
+      "Divisez au printemps. Pressez la graine en surface d'un terreau humide ; elle a besoin de lumière pour germer.",
+  },
+  "Melica uniflora@france-continental": {
+    nativeNote:
+      "Une graminée délicate des hêtraies et des chênaies-charmaies sur calcaire de l'est.",
+    careNote:
+      "L'une des rares graminées pour l'ombre sèche sous les arbres. Elle s'étend lentement en tapis léger.",
+    givesNote:
+      "Un couvre-sol léger à l'ombre, et un abri pour coléoptères et araignées au sol du bois.",
+    propagationNote:
+      "Divisez les touffes au printemps. Semée fraîche à l'automne, la graine lève au printemps.",
+  },
+  "Briza media@france-continental": {
+    nativeNote:
+      "La graminée aux épillets tremblants des prés calcaires non amendés de tout l'est.",
+    careNote:
+      "Sol pauvre, jamais fertilisé, au soleil ; en terre riche, les autres herbes l'étouffent. Le signe d'un pré qu'on n'a jamais engraissé.",
+    givesNote:
+      "Une herbe fine qui laisse de la place aux fleurs sauvages, et des graines pour les fringilles en fin d'été.",
+    propagationNote:
+      "Semez à l'automne ou au printemps sur sol nu. Les touffes se divisent au printemps.",
+  },
+  "Bromus erectus@france-continental": {
+    nativeNote:
+      "La graminée principale des pelouses crayeuses et calcaires de l'est — celles de Bourgogne et des Côtes.",
+    careNote:
+      "Plein soleil et sol sec et calcaire. Fauchez-le une fois par an en fin d'été pour qu'il n'étouffe pas les fleurs.",
+    givesNote:
+      "L'herbe de fond des prairies à papillons les plus riches de la région, et ses touffes abritent les insectes en hiver.",
+    propagationNote:
+      "Semez sur sol nu ratissé à l'automne ; aucun traitement n'est nécessaire.",
+  },
+  "Carex pendula@france-continental": {
+    nativeNote:
+      "La grande laîche arquée des bois humides, des bords de ruisseau et des argiles ombragées de tout l'est.",
+    careNote:
+      "Elle prospère en argile lourde, humide et ombragée, et se ressème volontiers. Plantez-la là où vous voulez qu'elle s'étende, comme un coin de bois humide.",
+    givesNote:
+      "Un couvert persistant sur sol mouillé, et des graines pour les fringilles. Les laîches nourrissent ici de nombreuses chenilles.",
+    propagationNote:
+      "Divisez au printemps à la bêche. Les graines tombent et germent seules.",
+  },
+  "Lonicera periclymenum@france-continental": {
+    nativeNote:
+      "Le chèvrefeuille volubile des chênaies et des haies sur sols acides et sableux de l'est, plus commun dans les Vosges.",
+    careNote:
+      "Les racines à l'ombre, les fleurs au soleil : plantez-le au pied d'une haie ou d'une clôture. Les baies sont toxiques pour l'humain.",
+    givesNote:
+      "Son parfum du soir attire les sphinx, et les muscardins tissent son écorce effilochée dans leurs nids. Ses baies rouges nourrissent grives et fauvettes.",
+    propagationNote:
+      "Les boutures semi-aoûtées s'enracinent facilement en été. Une tige rampante plaquée au sol s'enracine en une saison.",
+  },
+  "Thymus pulegioides@france-continental": {
+    nativeNote:
+      "Le thym sauvage des pâtures sèches, des talus calcaires et des chemins ensoleillés de tout l'est.",
+    careNote:
+      "Soleil et sol pauvre et drainé ; une terre riche ou l'ombre le rendent dégingandé. Taillez-le légèrement après la floraison.",
+    givesNote:
+      "Un tapis pourpre qui bourdonne d'abeilles et de papillons tout l'été. Ses boutons nourrissent l'azuré du serpolet, dont les chenilles commencent sur le thym avant que des fourmis ne les emportent dans leur nid.",
+    propagationNote:
+      "De courtes boutures tendres s'enracinent en quelques semaines dans un terreau graveleux. On peut prélever des morceaux enracinés en bordure du tapis.",
+  },
+  "Ajuga reptans@france-continental": {
+    nativeNote:
+      "Le tapis aux épis bleus des allées forestières humides, des prés et des pelouses ombragées de tout l'est.",
+    careNote:
+      "Sol frais à l'ombre ou à mi-soleil, où elle court en tapis dense. En terrain sec, elle peine.",
+    givesNote:
+      "Du nectar de printemps pour les bourdons et les premiers papillons, comme le grand collier argenté.",
+    propagationNote:
+      "Prélevez les plantules enracinées sur les stolons à tout moment de la saison fraîche.",
+  },
+  "Galium odoratum@france-continental": {
+    nativeNote:
+      "Le tapis blanc étoilé des hêtraies sur calcaire de l'est, qui sent le foin une fois séché.",
+    careNote:
+      "Ombre et sol frais et humifère sous les arbres ou les arbustes. Il s'étend vite quand il se plaît et reste vert du printemps à l'automne.",
+    givesNote:
+      "Des fleurs blanches précoces pour les petites abeilles et les syrphes, et un couvert dense au sol du bois pour coléoptères et araignées.",
+    propagationNote:
+      "Divisez et replantez des morceaux enracinés au printemps ou à l'automne. La graine est lente et demande le froid d'un hiver.",
+  },
+  "Hippocrepis comosa@france-continental": {
+    nativeNote:
+      "Une petite légumineuse jaune et basse des pelouses calcaires rases et des talus secs de tout l'est.",
+    careNote:
+      "Sol mince, calcaire, brûlé de soleil, et pas de concurrence. Elle est lente : plantez-la dans le gravier ou sur un talus.",
+    givesNote:
+      "La plante-hôte du bel-argus et de l'argus bleu-nacré, deux papillons des pelouses calcaires de l'est.",
+    propagationNote:
+      "Frottez la graine dure au papier de verre et semez au printemps. Les boutures tendres s'enracinent l'été.",
+  },
+  "Anemone nemorosa@france-continental": {
+    nativeNote:
+      "Le tapis blanc printanier des chênaies-charmaies de tout l'est, en fleur avant que les arbres ne feuillent.",
+    careNote:
+      "L'ombre sous les arbres caducs et un sol humifère. Elle s'étend lentement et disparaît dès juin : associez-la à des fougères.",
+    givesNote:
+      "Du pollen pour les abeilles précoces et les syrphes en mars, quand peu de fleurs sont ouvertes.",
+    propagationNote:
+      "Déterrez et divisez les rhizomes au début de l'été, après la fanaison des feuilles. La graine est lente.",
+  },
+  "Athyrium filix-femina@france-continental": {
+    nativeNote:
+      "La fougère souple et dentelée des bois humides, des bords de ruisseau et des fossés ombragés de tout l'est.",
+    careNote:
+      "Facile à l'ombre humide ; laissez-la sécher et ses frondes brunissent dès juillet. Elle est caduque : coupez les vieilles frondes en fin d'hiver.",
+    givesNote:
+      "Un abri frais et humide au ras du sol pour crapauds, tritons et coléoptères tout l'été.",
+    propagationNote:
+      "Divisez une souche au printemps à la bêche tranchante. Les spores semées sur un terreau stérilisé humide, sous couvercle, donnent des fougères en quelques mois.",
+  },
+  "Polypodium vulgare@france-continental": {
+    nativeNote:
+      "La petite fougère persistante des rochers moussus, des vieux murs et des troncs de tout l'est.",
+    careNote:
+      "Donnez-lui un drainage parfait : un mur, un rocher, une souche. Elle supporte l'ombre sèche une fois installée et reste verte tout l'hiver.",
+    givesNote:
+      "Un couvert persistant sur les murs et les souches, où s'abritent araignées et cloportes.",
+    propagationNote:
+      "Au printemps, détachez un morceau de rhizome rampant avec ses frondes et pressez-le dans la mousse ou un terreau graveleux. Les spores marchent aussi, lentement.",
+  },
+  "Asplenium trichomanes@france-continental": {
+    nativeNote:
+      "La minuscule fougère des murs maçonnés et des rochers calcaires dans les villages de l'est.",
+    careNote:
+      "Il lui faut une fente, pas un massif : un mortier à la chaux, un mur de pierre ou une rocaille ombragée. N'enterrez jamais la souche.",
+    givesNote:
+      "De la vie persistante sur la pierre nue, et une cachette pour de minuscules araignées et escargots.",
+    propagationNote:
+      "Semez les spores sur un terreau stérilisé, humide et calcaire, sous couvercle, au frais et à l'ombre. Les petites touffes se glissent au printemps dans les joints d'un mur.",
+  },
 };

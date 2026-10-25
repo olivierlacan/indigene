@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Mid-Atlantic & Northeast (PA NJ DE MD VA NY CT RI MA WV)",
   "region": "mid-atlantic",
-  "ranAt": "2026-10-25T03:11:46.569Z",
+  "ranAt": "2026-10-25T07:19:27.594Z",
   "rows": [
     {
       "id": "quercus-alba",
@@ -596,6 +596,139 @@
       "viaSynonym": null
     },
     {
+      "id": "kalmia-latifolia",
+      "latin": "Kalmia latifolia",
+      "asked": "Kalmia latifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "aronia-melanocarpa",
+      "latin": "Aronia melanocarpa",
+      "asked": "Aronia melanocarpa",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "viburnum-prunifolium",
+      "latin": "Viburnum prunifolium",
+      "asked": "Viburnum prunifolium",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "ABSENT",
+        "MAS": "ABSENT",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "hydrangea-arborescens",
+      "latin": "Hydrangea arborescens",
+      "asked": "Hydrangea arborescens",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "INTRODUCED",
+        "RHO": "ABSENT",
+        "MAS": "INTRODUCED",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rhododendron-periclymenoides",
+      "latin": "Rhododendron periclymenoides",
+      "asked": "Rhododendron periclymenoides",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "clethra-alnifolia",
+      "latin": "Clethra alnifolia",
+      "asked": "Clethra alnifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rhus-typhina",
+      "latin": "Rhus typhina",
+      "asked": "Rhus typhina",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "asclepias-tuberosa",
       "latin": "Asclepias tuberosa",
       "asked": "Asclepias tuberosa",
@@ -900,6 +1033,139 @@
       "viaSynonym": null
     },
     {
+      "id": "chelone-glabra",
+      "latin": "Chelone glabra",
+      "asked": "Chelone glabra",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pycnanthemum-muticum",
+      "latin": "Pycnanthemum muticum",
+      "asked": "Pycnanthemum muticum",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "ABSENT",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "phlox-divaricata",
+      "latin": "Phlox divaricata",
+      "asked": "Phlox divaricata",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "ABSENT",
+        "MAS": "ABSENT",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "mertensia-virginica",
+      "latin": "Mertensia virginica",
+      "asked": "Mertensia virginica",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "ABSENT",
+        "RHO": "ABSENT",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "solidago-caesia",
+      "latin": "Solidago caesia",
+      "asked": "Solidago caesia",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "vernonia-noveboracensis",
+      "latin": "Vernonia noveboracensis",
+      "asked": "Vernonia noveboracensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "eurybia-divaricata",
+      "latin": "Eurybia divaricata",
+      "asked": "Eurybia divaricata",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "schizachyrium-scoparium",
       "latin": "Schizachyrium scoparium",
       "asked": "Schizachyrium scoparium",
@@ -976,6 +1242,63 @@
       "viaSynonym": null
     },
     {
+      "id": "sorghastrum-nutans",
+      "latin": "Sorghastrum nutans",
+      "asked": "Sorghastrum nutans",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "elymus-hystrix",
+      "latin": "Elymus hystrix",
+      "asked": "Elymus hystrix",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "ABSENT",
+        "MRY": "NATIVE",
+        "VRG": "ABSENT",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "eragrostis-spectabilis",
+      "latin": "Eragrostis spectabilis",
+      "asked": "Eragrostis spectabilis",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "ABSENT",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "parthenocissus-quinquefolia",
       "latin": "Parthenocissus quinquefolia",
       "asked": "Parthenocissus quinquefolia",
@@ -1009,6 +1332,44 @@
         "CNT": "NATIVE",
         "RHO": "NATIVE",
         "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "clematis-virginiana",
+      "latin": "Clematis virginiana",
+      "asked": "Clematis virginiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "campsis-radicans",
+      "latin": "Campsis radicans",
+      "asked": "Campsis radicans",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "ABSENT",
+        "MAS": "ABSENT",
         "WVA": "NATIVE"
       },
       "viaSynonym": null
@@ -1093,6 +1454,120 @@
       "id": "onoclea-sensibilis",
       "latin": "Onoclea sensibilis",
       "asked": "Onoclea sensibilis",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "asarum-canadense",
+      "latin": "Asarum canadense",
+      "asked": "Asarum canadense",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "ABSENT",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "mitchella-repens",
+      "latin": "Mitchella repens",
+      "asked": "Mitchella repens",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "ABSENT",
+        "NWJ": "ABSENT",
+        "DEL": "ABSENT",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "ABSENT"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "antennaria-plantaginifolia",
+      "latin": "Antennaria plantaginifolia",
+      "asked": "Antennaria plantaginifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "adiantum-pedatum",
+      "latin": "Adiantum pedatum",
+      "asked": "Adiantum pedatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "dryopteris-marginalis",
+      "latin": "Dryopteris marginalis",
+      "asked": "Dryopteris marginalis",
+      "verdict": "NATIVE",
+      "areas": {
+        "PEN": "NATIVE",
+        "NWJ": "NATIVE",
+        "DEL": "NATIVE",
+        "MRY": "NATIVE",
+        "VRG": "NATIVE",
+        "NWY": "NATIVE",
+        "CNT": "NATIVE",
+        "RHO": "NATIVE",
+        "MAS": "NATIVE",
+        "WVA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "dennstaedtia-punctilobula",
+      "latin": "Dennstaedtia punctilobula",
+      "asked": "Dennstaedtia punctilobula",
       "verdict": "NATIVE",
       "areas": {
         "PEN": "NATIVE",

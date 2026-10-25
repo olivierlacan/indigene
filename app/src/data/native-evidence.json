@@ -47,7 +47,7 @@
       },
       "coarse": true,
       "checked": "2026-10-25",
-      "rows": 77,
+      "rows": 86,
       "unconfirmed": {}
     },
     "florida-central": {
@@ -56,8 +56,8 @@
         "fr": "la Floride"
       },
       "coarse": true,
-      "checked": "2026-10-24",
-      "rows": 74,
+      "checked": "2026-10-25",
+      "rows": 87,
       "unconfirmed": {}
     },
     "florida-south": {
@@ -66,8 +66,8 @@
         "fr": "la Floride"
       },
       "coarse": true,
-      "checked": "2026-10-24",
-      "rows": 65,
+      "checked": "2026-10-25",
+      "rows": 80,
       "unconfirmed": {
         "passiflora-suberosa": "absent"
       }
@@ -78,8 +78,8 @@
         "fr": "France"
       },
       "coarse": true,
-      "checked": "2026-10-16",
-      "rows": 41,
+      "checked": "2026-10-25",
+      "rows": 81,
       "unconfirmed": {
         "sesleria-caerulea": "absent"
       }
@@ -90,8 +90,8 @@
         "fr": "France"
       },
       "coarse": true,
-      "checked": "2026-10-16",
-      "rows": 46,
+      "checked": "2026-10-25",
+      "rows": 81,
       "unconfirmed": {}
     },
     "france-continental": {
@@ -100,8 +100,8 @@
         "fr": "France"
       },
       "coarse": true,
-      "checked": "2026-10-16",
-      "rows": 38,
+      "checked": "2026-10-25",
+      "rows": 81,
       "unconfirmed": {}
     },
     "france-mediterranean": {
@@ -121,7 +121,7 @@
       },
       "coarse": false,
       "checked": "2026-10-25",
-      "rows": 79,
+      "rows": 82,
       "unconfirmed": {}
     },
     "kanto": {
@@ -141,7 +141,7 @@
       },
       "coarse": false,
       "checked": "2026-10-25",
-      "rows": 58,
+      "rows": 83,
       "unconfirmed": {
         "penstemon-digitalis": "introduced"
       }
@@ -153,7 +153,7 @@
       },
       "coarse": false,
       "checked": "2026-10-25",
-      "rows": 59,
+      "rows": 80,
       "unconfirmed": {
         "solidago-speciosa": "absent",
         "campanula-rotundifolia": "absent",
@@ -166,8 +166,8 @@
         "fr": "l'île du Nord de Nouvelle-Zélande"
       },
       "coarse": false,
-      "checked": "2026-10-16",
-      "rows": 47,
+      "checked": "2026-10-25",
+      "rows": 82,
       "unconfirmed": {}
     },
     "pnw": {
@@ -176,8 +176,8 @@
         "fr": "Washington, l'Oregon et la Colombie-Britannique"
       },
       "coarse": false,
-      "checked": "2026-10-24",
-      "rows": 131,
+      "checked": "2026-10-25",
+      "rows": 132,
       "unconfirmed": {
         "sambucus-nigra-caerulea": "inconclusive",
         "achillea-millefolium": "absent"
@@ -189,8 +189,8 @@
         "fr": "la Grande-Bretagne"
       },
       "coarse": true,
-      "checked": "2026-10-24",
-      "rows": 73,
+      "checked": "2026-10-25",
+      "rows": 82,
       "unconfirmed": {}
     },
     "st-lawrence": {
@@ -199,8 +199,8 @@
         "fr": "le Québec, l'Ontario, l'État de New York et le Vermont"
       },
       "coarse": false,
-      "checked": "2026-10-24",
-      "rows": 69,
+      "checked": "2026-10-25",
+      "rows": 82,
       "unconfirmed": {
         "viburnum-dentatum": "absent",
         "campanula-rotundifolia": "absent",
@@ -236,8 +236,8 @@
           }
         }
       ],
-      "checked": "2026-10-24",
-      "rows": 131,
+      "checked": "2026-10-25",
+      "rows": 132,
       "disagree": {
         "achillea-millefolium": {
           "burke": "both",
@@ -265,7 +265,7 @@
         }
       ],
       "checked": "2026-10-25",
-      "rows": 59,
+      "rows": 80,
       "disagree": {}
     },
     "chicago": {
@@ -296,7 +296,7 @@
         }
       ],
       "checked": "2026-10-25",
-      "rows": 77,
+      "rows": 86,
       "disagree": {}
     },
     "mid-atlantic": {
@@ -327,7 +327,7 @@
         }
       ],
       "checked": "2026-10-25",
-      "rows": 58,
+      "rows": 83,
       "disagree": {
         "echinacea-purpurea": {
           "pa": "introduced",
@@ -359,7 +359,7 @@
         }
       ],
       "checked": "2026-10-25",
-      "rows": 79,
+      "rows": 82,
       "disagree": {}
     },
     "nz-auckland": {
@@ -390,11 +390,79 @@
         }
       ],
       "checked": "2026-10-25",
-      "rows": 47,
+      "rows": 82,
       "disagree": {
         "austroderia-fulvida": {
           "nz-checklist": "native",
           "auckland": "absent"
+        }
+      }
+    },
+    "france-atlantic": {
+      "sources": [
+        {
+          "id": "lrr-atlantic",
+          "name": {
+            "en": "France's national nature inventory",
+            "fr": "L'Inventaire national du patrimoine naturel"
+          },
+          "url": "https://inpn.mnhn.fr/programme/base-de-connaissance-statuts/presentation",
+          "area": {
+            "en": "in the west's regional red lists",
+            "fr": "dans les listes rouges régionales de l'Ouest"
+          }
+        }
+      ],
+      "checked": "2026-10-25",
+      "rows": 81,
+      "disagree": {}
+    },
+    "france-continental": {
+      "sources": [
+        {
+          "id": "lrr-continental",
+          "name": {
+            "en": "France's national nature inventory",
+            "fr": "L'Inventaire national du patrimoine naturel"
+          },
+          "url": "https://inpn.mnhn.fr/programme/base-de-connaissance-statuts/presentation",
+          "area": {
+            "en": "in the east's regional red lists",
+            "fr": "dans les listes rouges régionales de l'Est"
+          }
+        }
+      ],
+      "checked": "2026-10-25",
+      "rows": 81,
+      "disagree": {
+        "sorbus-torminalis": {
+          "lrr-continental": "absent"
+        }
+      }
+    },
+    "france-alpine": {
+      "sources": [
+        {
+          "id": "lrr-alpine",
+          "name": {
+            "en": "France's national nature inventory",
+            "fr": "L'Inventaire national du patrimoine naturel"
+          },
+          "url": "https://inpn.mnhn.fr/programme/base-de-connaissance-statuts/presentation",
+          "area": {
+            "en": "in the Alps' regional red lists",
+            "fr": "dans les listes rouges régionales des Alpes"
+          }
+        }
+      ],
+      "checked": "2026-10-25",
+      "rows": 81,
+      "disagree": {
+        "erica-carnea": {
+          "lrr-alpine": "absent"
+        },
+        "thymus-serpyllum": {
+          "lrr-alpine": "absent"
         }
       }
     }

@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Illinois (TDWG:ILL — the whole state)",
   "region": "chicago",
-  "ranAt": "2026-10-25T03:11:45.072Z",
+  "ranAt": "2026-10-25T07:17:37.593Z",
   "rows": [
     {
       "id": "quercus-macrocarpa",
@@ -270,6 +270,36 @@
       "id": "rubus-occidentalis",
       "latin": "Rubus occidentalis",
       "asked": "Rubus occidentalis",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "cornus-sericea",
+      "latin": "Cornus sericea",
+      "asked": "Cornus sericea",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "hamamelis-virginiana",
+      "latin": "Hamamelis virginiana",
+      "asked": "Hamamelis virginiana",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "aronia-melanocarpa",
+      "latin": "Aronia melanocarpa",
+      "asked": "Aronia melanocarpa",
       "verdict": "NATIVE",
       "areas": {
         "ILL": "NATIVE"
@@ -717,6 +747,36 @@
       "viaSynonym": null
     },
     {
+      "id": "viola-sororia",
+      "latin": "Viola sororia",
+      "asked": "Viola sororia",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "antennaria-neglecta",
+      "latin": "Antennaria neglecta",
+      "asked": "Antennaria neglecta",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "arctostaphylos-uva-ursi",
+      "latin": "Arctostaphylos uva-ursi",
+      "asked": "Arctostaphylos uva-ursi",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "parthenocissus-quinquefolia",
       "latin": "Parthenocissus quinquefolia",
       "asked": "Parthenocissus quinquefolia",
@@ -747,6 +807,16 @@
       "viaSynonym": null
     },
     {
+      "id": "celastrus-scandens",
+      "latin": "Celastrus scandens",
+      "asked": "Celastrus scandens",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "onoclea-sensibilis",
       "latin": "Onoclea sensibilis",
       "asked": "Onoclea sensibilis",
@@ -770,6 +840,26 @@
       "id": "adiantum-pedatum",
       "latin": "Adiantum pedatum",
       "asked": "Adiantum pedatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "osmundastrum-cinnamomeum",
+      "latin": "Osmundastrum cinnamomeum",
+      "asked": "Osmundastrum cinnamomeum",
+      "verdict": "NATIVE",
+      "areas": {
+        "ILL": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "athyrium-angustum",
+      "latin": "Athyrium angustum",
+      "asked": "Athyrium angustum",
       "verdict": "NATIVE",
       "areas": {
         "ILL": "NATIVE"

@@ -403,6 +403,22 @@
     },
     {
       "subject": "plant",
+      "id": "antennaria-plantaginifolia",
+      "name": "Antennaria plantaginifolia",
+      "taxonId": 119821,
+      "reason": "chosen photo 118838179 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/119821/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "apium-prostratum",
+      "name": "Apium prostratum",
+      "taxonId": 158452,
+      "reason": "chosen photo 2982680 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/158452/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "arctostaphylos-columbiana",
       "name": "Arctostaphylos columbiana",
       "taxonId": 75505,
@@ -491,6 +507,14 @@
     },
     {
       "subject": "plant",
+      "id": "briza-media",
+      "name": "Briza media",
+      "taxonId": 159452,
+      "reason": "chosen photo 8166429 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/159452/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "callicarpa-japonica",
       "name": "Callicarpa japonica",
       "taxonId": 371978,
@@ -504,6 +528,14 @@
       "taxonId": 127941,
       "reason": "chosen photo 6099856 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/127941/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "carex-pendula",
+      "name": "Carex pendula",
+      "taxonId": 49365,
+      "reason": "chosen photo 5582512 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/49365/browse_photos"
     },
     {
       "subject": "plant",
@@ -523,6 +555,14 @@
     },
     {
       "subject": "plant",
+      "id": "centaurea-jacea",
+      "name": "Centaurea jacea",
+      "taxonId": 55713,
+      "reason": "chosen photo 227426766 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/55713/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "centaurea-nigra",
       "name": "Centaurea nigra",
       "taxonId": 126575,
@@ -536,6 +576,14 @@
       "taxonId": 127681,
       "reason": "chosen photo 282475735 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/127681/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "chrysophyllum-oliviforme",
+      "name": "Chrysophyllum oliviforme",
+      "taxonId": 160546,
+      "reason": "chosen photo 5589971 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/160546/browse_photos"
     },
     {
       "subject": "plant",
@@ -579,6 +627,14 @@
     },
     {
       "subject": "plant",
+      "id": "coreopsis-lanceolata",
+      "name": "Coreopsis lanceolata",
+      "taxonId": 76444,
+      "reason": "chosen photo 21088529 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/76444/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "cornus-alternifolia",
       "name": "Cornus alternifolia",
       "taxonId": 54775,
@@ -616,6 +672,30 @@
       "taxonId": 161579,
       "reason": "chosen photo 1639872 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/161579/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "danthonia-spicata",
+      "name": "Danthonia spicata",
+      "taxonId": 130174,
+      "reason": "chosen photo 18564686 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/130174/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "dennstaedtia-punctilobula",
+      "name": "Dennstaedtia punctilobula",
+      "taxonId": 63115,
+      "reason": "chosen photo 409471593 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/63115/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "dianella-nigra",
+      "name": "Dianella nigra",
+      "taxonId": 401352,
+      "reason": "chosen photo 7867209 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/401352/browse_photos"
     },
     {
       "subject": "plant",
@@ -723,6 +803,14 @@
     },
     {
       "subject": "plant",
+      "id": "eupatorium-cannabinum",
+      "name": "Eupatorium cannabinum",
+      "taxonId": 55976,
+      "reason": "chosen photo 47165338 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/55976/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "eutrochium-maculatum",
       "name": "Eutrochium maculatum",
       "taxonId": 117440,
@@ -739,6 +827,14 @@
     },
     {
       "subject": "plant",
+      "id": "galium-odoratum",
+      "name": "Galium odoratum",
+      "taxonId": 56065,
+      "reason": "chosen photo 74944506 is cc-by-nd",
+      "gallery": "https://www.inaturalist.org/taxa/56065/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "gaultheria-procumbens",
       "name": "Gaultheria procumbens",
       "taxonId": 62376,
@@ -747,11 +843,35 @@
     },
     {
       "subject": "plant",
+      "id": "gentiana-acaulis",
+      "name": "Gentiana acaulis",
+      "taxonId": 130558,
+      "reason": "chosen photo 1983667 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/130558/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "geranium-sylvaticum",
       "name": "Geranium sylvaticum",
       "taxonId": 85429,
       "reason": "chosen photo 62573011 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/85429/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "glandularia-maritima",
+      "name": "Glandularia maritima",
+      "taxonId": 163316,
+      "reason": "chosen photo 125097521 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/163316/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "gymnocarpium-dryopteris",
+      "name": "Gymnocarpium dryopteris",
+      "taxonId": 82572,
+      "reason": "chosen photo 293657946 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/82572/browse_photos"
     },
     {
       "subject": "plant",
@@ -779,11 +899,27 @@
     },
     {
       "subject": "plant",
+      "id": "iris-virginica",
+      "name": "Iris virginica",
+      "taxonId": 117444,
+      "reason": "chosen photo 301969594 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/117444/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "juncus-patens",
       "name": "Juncus patens",
       "taxonId": 52798,
       "reason": "chosen photo 133029475 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/52798/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "kosteletzkya-pentacarpos",
+      "name": "Kosteletzkya pentacarpos",
+      "taxonId": 131656,
+      "reason": "chosen photo 97149085 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/131656/browse_photos"
     },
     {
       "subject": "plant",
@@ -840,6 +976,14 @@
       "taxonId": 51691,
       "reason": "chosen photo 15829922 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/51691/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "lygodium-articulatum",
+      "name": "Lygodium articulatum",
+      "taxonId": 403653,
+      "reason": "chosen photo 2714033 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/403653/browse_photos"
     },
     {
       "subject": "plant",
@@ -1043,6 +1187,14 @@
     },
     {
       "subject": "plant",
+      "id": "poa-anceps",
+      "name": "Poa anceps",
+      "taxonId": 405020,
+      "reason": "chosen photo 2625444 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/405020/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "poa-nemoralis",
       "name": "Poa nemoralis",
       "taxonId": 78649,
@@ -1107,6 +1259,14 @@
     },
     {
       "subject": "plant",
+      "id": "pycnanthemum-muticum",
+      "name": "Pycnanthemum muticum",
+      "taxonId": 126768,
+      "reason": "chosen photo 47735589 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/126768/browse_photos"
+    },
+    {
+      "subject": "plant",
       "id": "quercus-geminata",
       "name": "Quercus geminata",
       "taxonId": 121402,
@@ -1144,6 +1304,14 @@
       "taxonId": 61470,
       "reason": "chosen photo 15760 is cc-by-nc-nd",
       "gallery": "https://www.inaturalist.org/taxa/61470/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "ribes-alpinum",
+      "name": "Ribes alpinum",
+      "taxonId": 167911,
+      "reason": "chosen photo 22907311 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/167911/browse_photos"
     },
     {
       "subject": "plant",
@@ -1248,6 +1416,22 @@
       "taxonId": 55759,
       "reason": "chosen photo 130304765 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/55759/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "solidago-caesia",
+      "name": "Solidago caesia",
+      "taxonId": 120005,
+      "reason": "chosen photo 157945142 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/120005/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "solidago-flexicaulis",
+      "name": "Solidago flexicaulis",
+      "taxonId": 119154,
+      "reason": "chosen photo 98559 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/119154/browse_photos"
     },
     {
       "subject": "plant",
@@ -1424,6 +1608,14 @@
       "taxonId": 52471,
       "reason": "chosen photo 83653817 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/52471/browse_photos"
+    },
+    {
+      "subject": "plant",
+      "id": "viola-sororia",
+      "name": "Viola sororia",
+      "taxonId": 82816,
+      "reason": "chosen photo 38824237 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/82816/browse_photos"
     },
     {
       "subject": "plant",

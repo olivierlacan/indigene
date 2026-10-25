@@ -6,6 +6,47 @@ import type { RegistryEntry } from "../types";
 
 export const REGISTRY: RegistryEntry[] = [
   {
+    "primaryId": "ipni:261448-1",
+    "scientificName": "Abies alba",
+    "family": "Pinaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 45,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 130,
+      "spreadFt": 30
+    },
+    "identifiers": {
+      "ipni": "261448-1",
+      "wfo": "wfo-0000510976",
+      "gbif": "2685484",
+      "usda": "ABAL3",
+      "itis": "506607",
+      "inat": "136319",
+      "wikidata": "Q146992",
+      "indigene": "abies-alba"
+    },
+    "commonNames": [
+      "Silver Fir",
+      "Sapin blanc"
+    ],
+    "aliases": [
+      "abies alba",
+      "sapin blanc",
+      "silver fir"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:1033427-2",
     "scientificName": "Abies grandis",
     "family": "Pinaceae",
@@ -42,6 +83,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:720063-1",
+    "scientificName": "Acaena novae-zelandiae",
+    "family": "Rosaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 5
+    },
+    "identifiers": {
+      "ipni": "720063-1",
+      "wfo": "wfo-0001004320",
+      "gbif": "5370755",
+      "usda": "ACNO7",
+      "itis": "836668",
+      "inat": "75256",
+      "wikidata": "Q2714984",
+      "indigene": "acaena-novae-zelandiae"
+    },
+    "commonNames": [
+      "Piripiri"
+    ],
+    "aliases": [
+      "acaena novae-zelandiae",
+      "piripiri"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -82,6 +162,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "france-continental"
     ]
   },
@@ -282,6 +363,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:781455-1",
+    "scientificName": "Acer platanoides",
+    "family": "Sapindaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 77,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 70,
+      "spreadFt": 50
+    },
+    "identifiers": {
+      "ipni": "781455-1",
+      "wfo": "wfo-0000514884",
+      "gbif": "3189846",
+      "usda": "ACPL",
+      "itis": "28755",
+      "inat": "54763",
+      "wikidata": "Q26745",
+      "indigene": "acer-platanoides"
+    },
+    "commonNames": [
+      "Norway Maple",
+      "Érable plane"
+    ],
+    "aliases": [
+      "acer platanoides",
+      "norway maple",
+      "érable plane"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
+    ]
+  },
+  {
     "primaryId": "ipni:781462-1",
     "scientificName": "Acer pseudoplatanus",
     "family": "Sapindaceae",
@@ -436,10 +558,12 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Yarrow",
-      "Common Yarrow"
+      "Common Yarrow",
+      "Achillée millefeuille"
     ],
     "aliases": [
       "achillea millefolium",
+      "achillée millefeuille",
       "common yarrow",
       "yarrow"
     ],
@@ -448,6 +572,8 @@ export const REGISTRY: RegistryEntry[] = [
       "pnw",
       "ca-south-coast",
       "ca-central-coast",
+      "france-atlantic",
+      "france-continental",
       "scotland-lowlands"
     ]
   },
@@ -691,6 +817,43 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:17009660-1",
+    "scientificName": "Adiantum cunninghamii",
+    "family": "Pteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 2,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1.5,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "17009660-1",
+      "wfo": "wfo-0001120353",
+      "gbif": "7335429",
+      "inat": "399394",
+      "wikidata": "Q4682649",
+      "indigene": "adiantum-cunninghamii"
+    },
+    "commonNames": [
+      "Common Maidenhair"
+    ],
+    "aliases": [
+      "adiantum cunninghamii",
+      "common maidenhair"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:30093455-2",
     "scientificName": "Adiantum jordanii",
     "family": "Pteridaceae",
@@ -736,7 +899,7 @@ export const REGISTRY: RegistryEntry[] = [
     "form": "fern",
     "rank": "species",
     "keystone": false,
-    "hostLepCount": 0,
+    "hostLepCount": 2,
     "traits": {
       "deerResistant": true,
       "thorny": false,
@@ -757,15 +920,20 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "adiantum-pedatum"
     },
     "commonNames": [
-      "Maidenhair Fern"
+      "Maidenhair Fern",
+      "Northern Maidenhair Fern"
     ],
     "aliases": [
       "adiantum pedatum",
-      "maidenhair fern"
+      "maidenhair fern",
+      "northern maidenhair fern"
     ],
     "cultivarOf": null,
     "regions": [
-      "chicago"
+      "mid-atlantic",
+      "north-michigan",
+      "chicago",
+      "st-lawrence"
     ]
   },
   {
@@ -860,7 +1028,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 0.8,
       "spreadFt": 4
     },
@@ -875,14 +1043,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "ajuga-reptans"
     },
     "commonNames": [
-      "Bugle"
+      "Bugle",
+      "Bugle rampante"
     ],
     "aliases": [
       "ajuga reptans",
-      "bugle"
+      "bugle",
+      "bugle rampante"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "scotland-lowlands"
     ]
   },
@@ -1139,15 +1311,15 @@ export const REGISTRY: RegistryEntry[] = [
     "form": "shrub",
     "rank": "species",
     "keystone": true,
-    "hostLepCount": 156,
+    "hostLepCount": 163,
     "traits": {
       "deerResistant": false,
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
-      "heightFt": 22,
-      "spreadFt": 20
+      "noWater": false,
+      "heightFt": 50,
+      "spreadFt": 25
     },
     "identifiers": {
       "ipni": "30106706-2",
@@ -1160,15 +1332,20 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "alnus-incana"
     },
     "commonNames": [
-      "Speckled Alder"
+      "Speckled Alder",
+      "Gray Alder",
+      "Aulne blanchâtre"
     ],
     "aliases": [
       "alnus incana",
+      "aulne blanchâtre",
+      "gray alder",
       "speckled alder"
     ],
     "cultivarOf": null,
     "regions": [
-      "st-lawrence"
+      "st-lawrence",
+      "france-alpine"
     ]
   },
   {
@@ -1409,6 +1586,86 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30073474-2",
+    "scientificName": "Amelanchier ovalis",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 19,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 8
+    },
+    "identifiers": {
+      "ipni": "30073474-2",
+      "wfo": "wfo-0001003268",
+      "gbif": "3023878",
+      "usda": "AMOV2",
+      "itis": "836602",
+      "inat": "198885",
+      "wikidata": "Q159560",
+      "indigene": "amelanchier-ovalis"
+    },
+    "commonNames": [
+      "Snowy Mespilus",
+      "Amélanchier ovale"
+    ],
+    "aliases": [
+      "amelanchier ovalis",
+      "amélanchier ovale",
+      "snowy mespilus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:11361-2",
+    "scientificName": "Ammophila breviligulata",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 8
+    },
+    "identifiers": {
+      "ipni": "11361-2",
+      "wfo": "wfo-0000845786",
+      "gbif": "5289843",
+      "usda": "AMBR",
+      "itis": "40448",
+      "inat": "1510826",
+      "wikidata": "Q2843697",
+      "indigene": "ammophila-breviligulata"
+    },
+    "commonNames": [
+      "American Beach Grass"
+    ],
+    "aliases": [
+      "american beach grass",
+      "ammophila breviligulata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:473778-1",
     "scientificName": "Amorpha californica",
     "family": "Fabaceae",
@@ -1559,6 +1816,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "north-michigan",
       "chicago",
       "st-lawrence"
     ]
@@ -1603,6 +1861,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:13400-2",
+    "scientificName": "Anemone canadensis",
+    "family": "Ranunculaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 16,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": false,
+      "heightFt": 1.5,
+      "spreadFt": 6
+    },
+    "identifiers": {
+      "ipni": "13400-2",
+      "wfo": "wfo-0000535158",
+      "gbif": "3033277",
+      "usda": "ANCA8",
+      "itis": "18436",
+      "inat": "881527",
+      "wikidata": "Q2198861",
+      "indigene": "anemone-canadensis"
+    },
+    "commonNames": [
+      "Canada Anemone"
+    ],
+    "aliases": [
+      "anemone canadensis",
+      "canada anemone"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "st-lawrence"
+    ]
+  },
+  {
     "primaryId": "ipni:13472-2",
     "scientificName": "Anemone nemorosa",
     "family": "Ranunculaceae",
@@ -1615,7 +1912,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": true,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 0.6,
       "spreadFt": 3
     },
@@ -1630,14 +1927,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "anemone-nemorosa"
     },
     "commonNames": [
-      "Wood Anemone"
+      "Wood Anemone",
+      "Anémone des bois"
     ],
     "aliases": [
       "anemone nemorosa",
+      "anémone des bois",
       "wood anemone"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -1721,6 +2022,125 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30111520-2",
+    "scientificName": "Antennaria dioica",
+    "family": "Asteraceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 9,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.3,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "30111520-2",
+      "wfo": "wfo-0000035189",
+      "gbif": "5385604",
+      "usda": "ANDI3",
+      "itis": "36728",
+      "inat": "51893",
+      "wikidata": "Q847898",
+      "indigene": "antennaria-dioica"
+    },
+    "commonNames": [
+      "Mountain Everlasting",
+      "Antennaire dioïque"
+    ],
+    "aliases": [
+      "antennaire dioïque",
+      "antennaria dioica",
+      "mountain everlasting"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:14759-2",
+    "scientificName": "Antennaria neglecta",
+    "family": "Asteraceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.4,
+      "spreadFt": 2.5
+    },
+    "identifiers": {
+      "ipni": "14759-2",
+      "wfo": "wfo-0000029508",
+      "gbif": "5385488",
+      "usda": "ANNE",
+      "itis": "36745",
+      "inat": "127005",
+      "wikidata": "Q15589678",
+      "indigene": "antennaria-neglecta"
+    },
+    "commonNames": [
+      "Field Pussytoes"
+    ],
+    "aliases": [
+      "antennaria neglecta",
+      "field pussytoes"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
+    "primaryId": "ipni:30130130-2",
+    "scientificName": "Antennaria plantaginifolia",
+    "family": "Asteraceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "30130130-2",
+      "wfo": "wfo-0000019913",
+      "gbif": "7459903",
+      "usda": "ANPL",
+      "itis": "36717",
+      "inat": "119821",
+      "wikidata": "Q15524973",
+      "indigene": "antennaria-plantaginifolia"
+    },
+    "commonNames": [
+      "Plantain-leaved Pussytoes"
+    ],
+    "aliases": [
+      "antennaria plantaginifolia",
+      "plantain-leaved pussytoes"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
+    ]
+  },
+  {
     "primaryId": "ipni:389034-1",
     "scientificName": "Anthoxanthum odoratum",
     "family": "Poaceae",
@@ -1756,7 +2176,9 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "france-atlantic",
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -1798,6 +2220,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:838116-1",
+    "scientificName": "Apium prostratum",
+    "family": "Apiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 1,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1,
+      "spreadFt": 2.5
+    },
+    "identifiers": {
+      "ipni": "838116-1",
+      "wfo": "wfo-0000540700",
+      "gbif": "5371881",
+      "usda": "APPR2",
+      "itis": "182186",
+      "inat": "158452",
+      "wikidata": "Q2709116",
+      "indigene": "apium-prostratum"
+    },
+    "commonNames": [
+      "Native Celery"
+    ],
+    "aliases": [
+      "apium prostratum",
+      "native celery"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -1917,6 +2378,47 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "pnw",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:306409-2",
+    "scientificName": "Aquilegia vulgaris",
+    "family": "Ranunculaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2.5,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "306409-2",
+      "wfo": "wfo-0000541607",
+      "gbif": "3033191",
+      "usda": "AQVU",
+      "itis": "18749",
+      "inat": "51807",
+      "wikidata": "Q148929",
+      "indigene": "aquilegia-vulgaris"
+    },
+    "commonNames": [
+      "Columbine",
+      "Ancolie commune"
+    ],
+    "aliases": [
+      "ancolie commune",
+      "aquilegia vulgaris",
+      "columbine"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -2146,18 +2648,22 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Bearberry",
-      "Kinnikinnick"
+      "Kinnikinnick",
+      "Busserole"
     ],
     "aliases": [
       "arctostaphylos uva-ursi",
       "bearberry",
+      "busserole",
       "kinnikinnick"
     ],
     "cultivarOf": null,
     "regions": [
       "north-michigan",
+      "chicago",
       "st-lawrence",
-      "pnw"
+      "pnw",
+      "france-alpine"
     ]
   },
   {
@@ -2353,6 +2859,87 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:30090722-2",
+    "scientificName": "Arnica montana",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1.5,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "30090722-2",
+      "wfo": "wfo-0000003482",
+      "gbif": "5405976",
+      "usda": "ARMO8",
+      "itis": "505925",
+      "inat": "56229",
+      "wikidata": "Q207848",
+      "indigene": "arnica-montana"
+    },
+    "commonNames": [
+      "Arnica",
+      "Arnica des montagnes"
+    ],
+    "aliases": [
+      "arnica",
+      "arnica des montagnes",
+      "arnica montana"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:721688-1",
+    "scientificName": "Aronia melanocarpa",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 6
+    },
+    "identifiers": {
+      "ipni": "721688-1",
+      "wfo": "wfo-0001018304",
+      "gbif": "5363627",
+      "usda": "ARME6",
+      "itis": "25127",
+      "inat": "128798",
+      "wikidata": "Q162774",
+      "indigene": "aronia-melanocarpa"
+    },
+    "commonNames": [
+      "Black Chokeberry"
+    ],
+    "aliases": [
+      "aronia melanocarpa",
+      "black chokeberry"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic",
+      "chicago"
     ]
   },
   {
@@ -2699,7 +3286,10 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "chicago"
+      "mid-atlantic",
+      "north-michigan",
+      "chicago",
+      "st-lawrence"
     ]
   },
   {
@@ -2864,6 +3454,46 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30270360-2",
+    "scientificName": "Asclepias perennis",
+    "family": "Apocynaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "30270360-2",
+      "wfo": "wfo-0000551634",
+      "gbif": "3170346",
+      "usda": "ASPE",
+      "itis": "30293",
+      "inat": "120152",
+      "wikidata": "Q15393299",
+      "indigene": "asclepias-perennis"
+    },
+    "commonNames": [
+      "White Swamp Milkweed"
+    ],
+    "aliases": [
+      "asclepias perennis",
+      "white swamp milkweed"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central",
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:94654-1",
     "scientificName": "Asclepias speciosa",
     "family": "Apocynaceae",
@@ -2939,6 +3569,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "chicago"
     ]
   },
@@ -2970,10 +3601,12 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "asclepias-tuberosa"
     },
     "commonNames": [
-      "Butterfly Weed"
+      "Butterfly Weed",
+      "Butterfly Milkweed"
     ],
     "aliases": [
       "asclepias tuberosa",
+      "butterfly milkweed",
       "butterfly weed"
     ],
     "cultivarOf": null,
@@ -2982,7 +3615,8 @@ export const REGISTRY: RegistryEntry[] = [
       "north-michigan",
       "chicago",
       "st-lawrence",
-      "florida-central"
+      "florida-central",
+      "florida-south"
     ]
   },
   {
@@ -3102,6 +3736,43 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:17048320-1",
+    "scientificName": "Asplenium oblongifolium",
+    "family": "Aspleniaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "17048320-1",
+      "wfo": "wfo-0001043071",
+      "gbif": "4257376",
+      "inat": "210944",
+      "wikidata": "Q4808136",
+      "indigene": "asplenium-oblongifolium"
+    },
+    "commonNames": [
+      "Huruhuru Whenua"
+    ],
+    "aliases": [
+      "asplenium oblongifolium",
+      "huruhuru whenua"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:17051170-1",
     "scientificName": "Asplenium scolopendrium",
     "family": "Aspleniaceae",
@@ -3141,7 +3812,8 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "france-atlantic",
       "france-continental",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -3182,6 +3854,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-continental",
       "france-mediterranean"
     ]
   },
@@ -3263,6 +3936,125 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:531614-1",
+    "scientificName": "Astelia fragrans",
+    "family": "Asteliaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 4,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 5
+    },
+    "identifiers": {
+      "ipni": "531614-1",
+      "wfo": "wfo-0000638615",
+      "gbif": "2853078",
+      "inat": "197058",
+      "wikidata": "Q4810616",
+      "indigene": "astelia-fragrans"
+    },
+    "commonNames": [
+      "Kakaha"
+    ],
+    "aliases": [
+      "astelia fragrans",
+      "kakaha"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:180595-1",
+    "scientificName": "Aster alpinus",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 31,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.8,
+      "spreadFt": 1.2
+    },
+    "identifiers": {
+      "ipni": "180595-1",
+      "wfo": "wfo-0000091472",
+      "gbif": "5387396",
+      "usda": "ASAL3",
+      "itis": "35524",
+      "inat": "123449",
+      "wikidata": "Q1342885",
+      "indigene": "aster-alpinus"
+    },
+    "commonNames": [
+      "Alpine Aster",
+      "Aster des Alpes"
+    ],
+    "aliases": [
+      "alpine aster",
+      "aster alpinus",
+      "aster des alpes"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:331070-2",
+    "scientificName": "Aster amellus",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 37,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "331070-2",
+      "wfo": "wfo-0000104449",
+      "gbif": "8133114",
+      "usda": "ASAM12",
+      "itis": "780205",
+      "inat": "333994",
+      "wikidata": "Q819178",
+      "indigene": "aster-amellus"
+    },
+    "commonNames": [
+      "Italian Aster",
+      "Aster amelle"
+    ],
+    "aliases": [
+      "aster amelle",
+      "aster amellus",
+      "italian aster"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
+    ]
+  },
+  {
     "primaryId": "ipni:181745-1",
     "scientificName": "Aster microcephalus",
     "family": "Asteraceae",
@@ -3300,6 +4092,85 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:838340-1",
+    "scientificName": "Astrantia major",
+    "family": "Apiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 3,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "838340-1",
+      "wfo": "wfo-0000554832",
+      "gbif": "3034915",
+      "usda": "ASMA25",
+      "itis": "507571",
+      "inat": "131623",
+      "wikidata": "Q158066",
+      "indigene": "astrantia-major"
+    },
+    "commonNames": [
+      "Great Masterwort",
+      "Grande astrance"
+    ],
+    "aliases": [
+      "astrantia major",
+      "grande astrance",
+      "great masterwort"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:26101-2",
+    "scientificName": "Athyrium angustum",
+    "family": "Athyriaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "26101-2",
+      "wfo": "wfo-0001110422",
+      "gbif": "6388270",
+      "itis": "192161",
+      "inat": "204143",
+      "wikidata": "Q4815735",
+      "indigene": "athyrium-angustum"
+    },
+    "commonNames": [
+      "Lady Fern"
+    ],
+    "aliases": [
+      "athyrium angustum",
+      "lady fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
+    ]
+  },
+  {
     "primaryId": "ipni:17054720-1",
     "scientificName": "Athyrium cyclosorum",
     "family": "Athyriaceae",
@@ -3334,6 +4205,49 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:17372750-1",
+    "scientificName": "Athyrium filix-femina",
+    "family": "Athyriaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "17372750-1",
+      "wfo": "wfo-0001107233",
+      "gbif": "5275044",
+      "usda": "ATFI",
+      "itis": "17412",
+      "inat": "52669",
+      "wikidata": "Q1345500",
+      "indigene": "athyrium-filix-femina"
+    },
+    "commonNames": [
+      "Lady Fern",
+      "Fougère femelle"
+    ],
+    "aliases": [
+      "athyrium filix-femina",
+      "fougère femelle",
+      "lady fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-atlantic",
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -3919,6 +4833,7 @@ export const REGISTRY: RegistryEntry[] = [
       "france-atlantic",
       "france-continental",
       "france-alpine",
+      "ireland",
       "scotland-lowlands"
     ]
   },
@@ -4040,6 +4955,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:1175415-2",
+    "scientificName": "Borrichia frutescens",
+    "family": "Asteraceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 6
+    },
+    "identifiers": {
+      "ipni": "1175415-2",
+      "wfo": "wfo-0000064852",
+      "gbif": "3087136",
+      "usda": "BOFR",
+      "itis": "35781",
+      "inat": "127270",
+      "wikidata": "Q2911341",
+      "indigene": "borrichia-frutescens"
+    },
+    "commonNames": [
+      "Sea Oxeye Daisy"
+    ],
+    "aliases": [
+      "borrichia frutescens",
+      "sea oxeye daisy"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:1198286-2",
     "scientificName": "Bouteloua curtipendula",
     "family": "Poaceae",
@@ -4115,6 +5069,43 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:186077-1",
+    "scientificName": "Brachyglottis repanda",
+    "family": "Asteraceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 24,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 15,
+      "spreadFt": 12
+    },
+    "identifiers": {
+      "ipni": "186077-1",
+      "wfo": "wfo-0000061082",
+      "gbif": "3138474",
+      "inat": "336384",
+      "wikidata": "Q4953449",
+      "indigene": "brachyglottis-repanda"
+    },
+    "commonNames": [
+      "Rangiora"
+    ],
+    "aliases": [
+      "brachyglottis repanda",
+      "rangiora"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -4199,6 +5190,92 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:393294-1",
+    "scientificName": "Briza media",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 6,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.8,
+      "spreadFt": 1.2
+    },
+    "identifiers": {
+      "ipni": "393294-1",
+      "wfo": "wfo-0000854755",
+      "gbif": "2702789",
+      "usda": "BRME",
+      "itis": "41530",
+      "inat": "159452",
+      "wikidata": "Q164237",
+      "indigene": "briza-media"
+    },
+    "commonNames": [
+      "Quaking Grass",
+      "Brize intermédiaire"
+    ],
+    "aliases": [
+      "briza media",
+      "brize intermédiaire",
+      "quaking grass"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-atlantic",
+      "france-continental",
+      "france-alpine",
+      "ireland",
+      "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:74718-3",
+    "scientificName": "Bromus erectus",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 7,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "74718-3",
+      "wfo": "wfo-0000855493",
+      "gbif": "7647071",
+      "usda": "BRER3",
+      "itis": "40483",
+      "inat": "159458",
+      "wikidata": "Q161311",
+      "indigene": "bromus-erectus"
+    },
+    "commonNames": [
+      "Upright Brome",
+      "Brome érigé"
+    ],
+    "aliases": [
+      "brome érigé",
+      "bromus erectus",
+      "upright brome"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
+    ]
+  },
+  {
     "primaryId": "ipni:38669-2",
     "scientificName": "Bursera simaruba",
     "family": "Burseraceae",
@@ -4274,6 +5351,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:394901-1",
+    "scientificName": "Calamagrostis varia",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 56,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 2.5
+    },
+    "identifiers": {
+      "ipni": "394901-1",
+      "wfo": "wfo-0000858139",
+      "gbif": "4106903",
+      "usda": "CAVA10",
+      "itis": "787917",
+      "inat": "497170",
+      "wikidata": "Q15296829",
+      "indigene": "calamagrostis-varia"
+    },
+    "commonNames": [
+      "Mountain Reed-grass",
+      "Calamagrostide variée"
+    ],
+    "aliases": [
+      "calamagrostide variée",
+      "calamagrostis varia",
+      "mountain reed-grass"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -4629,10 +5747,12 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Harebell",
+      "Campanule à feuilles rondes",
       "Scottish Bluebell"
     ],
     "aliases": [
       "campanula rotundifolia",
+      "campanule à feuilles rondes",
       "harebell",
       "scottish bluebell"
     ],
@@ -4640,7 +5760,47 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "north-michigan",
       "st-lawrence",
+      "france-continental",
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:30271653-2",
+    "scientificName": "Campanula scheuchzeri",
+    "family": "Campanulaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 22,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.7,
+      "spreadFt": 0.8
+    },
+    "identifiers": {
+      "ipni": "30271653-2",
+      "wfo": "wfo-0000828819",
+      "gbif": "5410226",
+      "inat": "126421",
+      "wikidata": "Q960591",
+      "indigene": "campanula-scheuchzeri"
+    },
+    "commonNames": [
+      "Scheuchzer's Bellflower",
+      "Campanule de Scheuchzer"
+    ],
+    "aliases": [
+      "campanula scheuchzeri",
+      "campanule de scheuchzer",
+      "scheuchzer's bellflower"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -4652,7 +5812,7 @@ export const REGISTRY: RegistryEntry[] = [
     "keystone": false,
     "hostLepCount": 5,
     "traits": {
-      "deerResistant": true,
+      "deerResistant": false,
       "thorny": false,
       "petToxic": false,
       "aggressive": true,
@@ -4679,6 +5839,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "florida-central"
     ]
   },
@@ -4761,6 +5922,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "france-alpine",
       "ireland",
       "scotland-lowlands"
@@ -4998,6 +6160,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:301492-1",
+    "scientificName": "Carex pendula",
+    "family": "Cyperaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 86,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 4
+    },
+    "identifiers": {
+      "ipni": "301492-1",
+      "wfo": "wfo-0000349898",
+      "gbif": "2722051",
+      "usda": "CAPE45",
+      "itis": "565047",
+      "inat": "49365",
+      "wikidata": "Q1466032",
+      "indigene": "carex-pendula"
+    },
+    "commonNames": [
+      "Pendulous Sedge",
+      "Laîche à épis pendants"
+    ],
+    "aliases": [
+      "carex pendula",
+      "laîche à épis pendants",
+      "pendulous sedge"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -5712,6 +6915,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -5873,6 +7077,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:190753-1",
+    "scientificName": "Centaurea jacea",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 88,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "190753-1",
+      "wfo": "wfo-0000095537",
+      "gbif": "3128547",
+      "usda": "CEJA",
+      "itis": "36962",
+      "inat": "55713",
+      "wikidata": "Q1130177",
+      "indigene": "centaurea-jacea"
+    },
+    "commonNames": [
+      "Brown Knapweed",
+      "Centaurée jacée"
+    ],
+    "aliases": [
+      "brown knapweed",
+      "centaurea jacea",
+      "centaurée jacée"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -6205,6 +7450,46 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:274468-2",
+    "scientificName": "Chelone glabra",
+    "family": "Plantaginaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "274468-2",
+      "wfo": "wfo-0000600741",
+      "gbif": "5414935",
+      "usda": "CHGL2",
+      "itis": "33182",
+      "inat": "82316",
+      "wikidata": "Q5089995",
+      "indigene": "chelone-glabra"
+    },
+    "commonNames": [
+      "White Turtlehead"
+    ],
+    "aliases": [
+      "chelone glabra",
+      "white turtlehead"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic",
+      "st-lawrence"
+    ]
+  },
+  {
     "primaryId": "ipni:319141-2",
     "scientificName": "Chionanthus virginicus",
     "family": "Oleaceae",
@@ -6276,6 +7561,45 @@ export const REGISTRY: RegistryEntry[] = [
     "aliases": [
       "chrysobalanus icaco",
       "cocoplum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:786504-1",
+    "scientificName": "Chrysophyllum oliviforme",
+    "family": "Sapotaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 30,
+      "spreadFt": 15
+    },
+    "identifiers": {
+      "ipni": "786504-1",
+      "wfo": "wfo-0000856745",
+      "gbif": "2885793",
+      "usda": "CHOL",
+      "itis": "501507",
+      "inat": "160546",
+      "wikidata": "Q5114905",
+      "indigene": "chrysophyllum-oliviforme"
+    },
+    "commonNames": [
+      "Satinleaf"
+    ],
+    "aliases": [
+      "chrysophyllum oliviforme",
+      "satinleaf"
     ],
     "cultivarOf": null,
     "regions": [
@@ -6684,10 +8008,10 @@ export const REGISTRY: RegistryEntry[] = [
     "keystone": false,
     "hostLepCount": 18,
     "traits": {
-      "deerResistant": true,
+      "deerResistant": false,
       "thorny": false,
       "petToxic": true,
-      "aggressive": false,
+      "aggressive": true,
       "noWater": false,
       "heightFt": 20,
       "spreadFt": 12
@@ -6711,6 +8035,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "north-michigan",
       "chicago",
       "st-lawrence"
@@ -6745,16 +8070,59 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Traveler's Joy",
+      "Old Man's Beard",
       "Clématite des haies"
     ],
     "aliases": [
       "clematis vitalba",
       "clématite des haies",
+      "old man's beard",
       "traveler's joy"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-continental"
+      "france-atlantic",
+      "france-continental",
+      "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:319146-2",
+    "scientificName": "Clethra alnifolia",
+    "family": "Clethraceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 8,
+      "spreadFt": 8
+    },
+    "identifiers": {
+      "ipni": "319146-2",
+      "wfo": "wfo-0000887989",
+      "gbif": "2888323",
+      "usda": "CLAL3",
+      "itis": "23454",
+      "inat": "52867",
+      "wikidata": "Q5131966",
+      "indigene": "clethra-alnifolia"
+    },
+    "commonNames": [
+      "Sweet Pepperbush"
+    ],
+    "aliases": [
+      "clethra alnifolia",
+      "sweet pepperbush"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
     ]
   },
   {
@@ -6992,7 +8360,120 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "central-texas"
+      "central-texas",
+      "florida-central",
+      "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:747357-1",
+    "scientificName": "Coprosma acerosa",
+    "family": "Rubiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 27,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 6
+    },
+    "identifiers": {
+      "ipni": "747357-1",
+      "wfo": "wfo-0000921784",
+      "gbif": "2911375",
+      "inat": "70251",
+      "wikidata": "Q5168947",
+      "indigene": "coprosma-acerosa"
+    },
+    "commonNames": [
+      "Tātaraheke"
+    ],
+    "aliases": [
+      "coprosma acerosa",
+      "tātaraheke"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:747439-1",
+    "scientificName": "Coprosma lucida",
+    "family": "Rubiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 27,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 15,
+      "spreadFt": 8
+    },
+    "identifiers": {
+      "ipni": "747439-1",
+      "wfo": "wfo-0000922773",
+      "gbif": "7679994",
+      "inat": "197056",
+      "wikidata": "Q5168958",
+      "indigene": "coprosma-lucida"
+    },
+    "commonNames": [
+      "Shining Karamū"
+    ],
+    "aliases": [
+      "coprosma lucida",
+      "shining karamū"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:747476-1",
+    "scientificName": "Coprosma propinqua",
+    "family": "Rubiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 27,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 10
+    },
+    "identifiers": {
+      "ipni": "747476-1",
+      "wfo": "wfo-0000923330",
+      "gbif": "2911549",
+      "inat": "366658",
+      "wikidata": "Q5168965",
+      "indigene": "coprosma-propinqua"
+    },
+    "commonNames": [
+      "Mingimingi"
+    ],
+    "aliases": [
+      "coprosma propinqua",
+      "mingimingi"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -7108,6 +8589,48 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:65831-2",
+    "scientificName": "Coreopsis lanceolata",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "65831-2",
+      "wfo": "wfo-0000046514",
+      "gbif": "3133938",
+      "usda": "COLA5",
+      "itis": "37139",
+      "inat": "76444",
+      "wikidata": "Q1023836",
+      "indigene": "coreopsis-lanceolata"
+    },
+    "commonNames": [
+      "Lanceleaf Coreopsis",
+      "Lanceleaf Tickseed"
+    ],
+    "aliases": [
+      "coreopsis lanceolata",
+      "lanceleaf coreopsis",
+      "lanceleaf tickseed"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan",
+      "florida-central"
     ]
   },
   {
@@ -7493,15 +9016,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "cornus-sanguinea"
     },
     "commonNames": [
-      "Common Dogwood"
+      "Common Dogwood",
+      "Cornouiller sanguin"
     ],
     "aliases": [
       "common dogwood",
+      "cornouiller sanguin",
       "cornus sanguinea"
     ],
     "cultivarOf": null,
     "regions": [
-      "france-atlantic"
+      "france-atlantic",
+      "france-continental"
     ]
   },
   {
@@ -7542,6 +9068,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence",
       "pnw"
     ]
@@ -7582,6 +9109,43 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:271711-1",
+    "scientificName": "Corokia buddleioides",
+    "family": "Argophyllaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 6,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 6
+    },
+    "identifiers": {
+      "ipni": "271711-1",
+      "wfo": "wfo-0000621596",
+      "gbif": "4927547",
+      "inat": "184015",
+      "wikidata": "Q17479803",
+      "indigene": "corokia-buddleioides"
+    },
+    "commonNames": [
+      "Korokio"
+    ],
+    "aliases": [
+      "corokia buddleioides",
+      "korokio"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -7757,6 +9321,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:722536-1",
+    "scientificName": "Cotoneaster integerrimus",
+    "family": "Rosaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 15,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 5
+    },
+    "identifiers": {
+      "ipni": "722536-1",
+      "wfo": "wfo-0001008928",
+      "gbif": "3025576",
+      "usda": "COIN16",
+      "itis": "565611",
+      "inat": "461835",
+      "wikidata": "Q158930",
+      "indigene": "cotoneaster-integerrimus"
+    },
+    "commonNames": [
+      "Wild Cotoneaster",
+      "Cotonéaster commun"
+    ],
+    "aliases": [
+      "cotoneaster integerrimus",
+      "cotonéaster commun",
+      "wild cotoneaster"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:723298-1",
     "scientificName": "Crataegus douglasii",
     "family": "Rosaceae",
@@ -7877,6 +9482,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "france-mediterranean",
       "ireland",
       "scotland-lowlands"
@@ -8200,6 +9806,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:1167024-2",
+    "scientificName": "Danthonia spicata",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 20,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 0.8
+    },
+    "identifiers": {
+      "ipni": "1167024-2",
+      "wfo": "wfo-0000862150",
+      "gbif": "2703267",
+      "usda": "DASP2",
+      "itis": "41642",
+      "inat": "130174",
+      "wikidata": "Q5221221",
+      "indigene": "danthonia-spicata"
+    },
+    "commonNames": [
+      "Poverty Oat Grass"
+    ],
+    "aliases": [
+      "danthonia spicata",
+      "poverty oat grass"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:831294-1",
     "scientificName": "Daphne mezereum",
     "family": "Thymelaeaceae",
@@ -8238,6 +9883,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:30045598-2",
+    "scientificName": "Dennstaedtia punctilobula",
+    "family": "Dennstaedtiaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 10
+    },
+    "identifiers": {
+      "ipni": "30045598-2",
+      "wfo": "wfo-0001107280",
+      "gbif": "2650777",
+      "usda": "DEPU2",
+      "itis": "17491",
+      "inat": "63115",
+      "wikidata": "Q2863582",
+      "indigene": "dennstaedtia-punctilobula"
+    },
+    "commonNames": [
+      "Hay-scented Fern"
+    ],
+    "aliases": [
+      "dennstaedtia punctilobula",
+      "hay-scented fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
     ]
   },
   {
@@ -8321,8 +10005,87 @@ export const REGISTRY: RegistryEntry[] = [
       "pnw",
       "france-atlantic",
       "france-continental",
+      "france-alpine",
       "ireland",
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:533851-1",
+    "scientificName": "Dianella nigra",
+    "family": "Asphodelaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 0,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "533851-1",
+      "wfo": "wfo-0000765232",
+      "gbif": "5305214",
+      "inat": "401352",
+      "wikidata": "Q5271627",
+      "indigene": "dianella-nigra"
+    },
+    "commonNames": [
+      "Tūrutu"
+    ],
+    "aliases": [
+      "dianella nigra",
+      "tūrutu"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:302053-2",
+    "scientificName": "Dianthus carthusianorum",
+    "family": "Caryophyllaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 21,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 1
+    },
+    "identifiers": {
+      "ipni": "302053-2",
+      "wfo": "wfo-0000643249",
+      "gbif": "8400876",
+      "usda": "DICA19",
+      "itis": "502027",
+      "inat": "84960",
+      "wikidata": "Q159735",
+      "indigene": "dianthus-carthusianorum"
+    },
+    "commonNames": [
+      "Carthusian Pink",
+      "Œillet des Chartreux"
+    ],
+    "aliases": [
+      "carthusian pink",
+      "dianthus carthusianorum",
+      "œillet des chartreux"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -8520,6 +10283,43 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:17083080-1",
+    "scientificName": "Dicksonia fibrosa",
+    "family": "Dicksoniaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 5,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 20,
+      "spreadFt": 10
+    },
+    "identifiers": {
+      "ipni": "17083080-1",
+      "gbif": "5825840",
+      "itis": "897834",
+      "inat": "197059",
+      "wikidata": "Q5273821",
+      "indigene": "dicksonia-fibrosa"
+    },
+    "commonNames": [
+      "Whekī-ponga"
+    ],
+    "aliases": [
+      "dicksonia fibrosa",
+      "whekī-ponga"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:17083940-1",
     "scientificName": "Dicksonia squarrosa",
     "family": "Dicksoniaceae",
@@ -8596,6 +10396,47 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "north-michigan",
       "st-lawrence"
+    ]
+  },
+  {
+    "primaryId": "ipni:60453625-2",
+    "scientificName": "Digitalis grandiflora",
+    "family": "Plantaginaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 3,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "60453625-2",
+      "wfo": "wfo-0000647308",
+      "gbif": "5414992",
+      "usda": "DIGR4",
+      "itis": "502057",
+      "inat": "123625",
+      "wikidata": "Q157085",
+      "indigene": "digitalis-grandiflora"
+    },
+    "commonNames": [
+      "Large Yellow Foxglove",
+      "Digitale à grandes fleurs"
+    ],
+    "aliases": [
+      "digitale à grandes fleurs",
+      "digitalis grandiflora",
+      "large yellow foxglove"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -8832,6 +10673,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30058367-2",
+    "scientificName": "Dodonaea viscosa",
+    "family": "Sapindaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 10
+    },
+    "identifiers": {
+      "ipni": "30058367-2",
+      "wfo": "wfo-0000653170",
+      "gbif": "5421144",
+      "usda": "DOVI",
+      "itis": "28675",
+      "inat": "122711",
+      "wikidata": "Q58393",
+      "indigene": "dodonaea-viscosa"
+    },
+    "commonNames": [
+      "Akeake"
+    ],
+    "aliases": [
+      "akeake",
+      "dodonaea viscosa"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:493388-1",
     "scientificName": "Dorycnium pentaphyllum",
     "family": "Fabaceae",
@@ -9038,6 +10918,46 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30064660-2",
+    "scientificName": "Dryopteris marginalis",
+    "family": "Dryopteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2.5
+    },
+    "identifiers": {
+      "ipni": "30064660-2",
+      "wfo": "wfo-0001107306",
+      "gbif": "5275091",
+      "usda": "DRMA4",
+      "itis": "17541",
+      "inat": "54410",
+      "wikidata": "Q3459756",
+      "indigene": "dryopteris-marginalis"
+    },
+    "commonNames": [
+      "Marginal Wood Fern"
+    ],
+    "aliases": [
+      "dryopteris marginalis",
+      "marginal wood fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic",
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:85620-2",
     "scientificName": "Dudleya pulverulenta",
     "family": "Crassulaceae",
@@ -9076,6 +10996,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "ca-south-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:86393-2",
+    "scientificName": "Dyschoriste oblongifolia",
+    "family": "Acanthaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 2.5
+    },
+    "identifiers": {
+      "ipni": "86393-2",
+      "wfo": "wfo-0000658357",
+      "gbif": "3173062",
+      "usda": "DYOB",
+      "itis": "502194",
+      "inat": "129857",
+      "wikidata": "Q15318464",
+      "indigene": "dyschoriste-oblongifolia"
+    },
+    "commonNames": [
+      "Twinflower"
+    ],
+    "aliases": [
+      "dyschoriste oblongifolia",
+      "twinflower"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -9233,6 +11192,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:115950-1",
+    "scientificName": "Echium vulgare",
+    "family": "Boraginaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 26,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "115950-1",
+      "wfo": "wfo-0000663145",
+      "gbif": "2925892",
+      "usda": "ECVU",
+      "itis": "31899",
+      "inat": "56174",
+      "wikidata": "Q157722",
+      "indigene": "echium-vulgare"
+    },
+    "commonNames": [
+      "Viper's Bugloss"
+    ],
+    "aliases": [
+      "echium vulgare",
+      "viper's bugloss"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-atlantic"
+    ]
+  },
+  {
     "primaryId": "ipni:88877-2",
     "scientificName": "Ehretia anacua",
     "family": "Boraginaceae",
@@ -9269,6 +11267,46 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:400194-1",
+    "scientificName": "Elymus canadensis",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 30,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "400194-1",
+      "wfo": "wfo-0000866073",
+      "gbif": "5290282",
+      "usda": "ELCA4",
+      "itis": "40683",
+      "inat": "129000",
+      "wikidata": "Q5368479",
+      "indigene": "elymus-canadensis"
+    },
+    "commonNames": [
+      "Canada Wild Rye"
+    ],
+    "aliases": [
+      "canada wild rye",
+      "elymus canadensis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -9309,6 +11347,45 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "pnw",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:90267-2",
+    "scientificName": "Elymus hystrix",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 30,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "90267-2",
+      "gbif": "8112114",
+      "usda": "ELHY",
+      "itis": "40698",
+      "inat": "81594",
+      "wikidata": "Q5368484",
+      "indigene": "elymus-hystrix"
+    },
+    "commonNames": [
+      "Bottlebrush Grass"
+    ],
+    "aliases": [
+      "bottlebrush grass",
+      "elymus hystrix"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic",
+      "st-lawrence"
     ]
   },
   {
@@ -9506,6 +11583,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "florida-central"
     ]
   },
@@ -9561,7 +11639,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 2,
       "spreadFt": 2.5
     },
@@ -9584,6 +11662,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "ireland",
       "scotland-lowlands"
     ]
@@ -10216,6 +12295,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:593690-1",
+    "scientificName": "Eugenia axillaris",
+    "family": "Myrtaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 8
+    },
+    "identifiers": {
+      "ipni": "593690-1",
+      "wfo": "wfo-0000956446",
+      "gbif": "5416259",
+      "usda": "EUAX",
+      "itis": "27199",
+      "inat": "131601",
+      "wikidata": "Q15357825",
+      "indigene": "eugenia-axillaris"
+    },
+    "commonNames": [
+      "White Stopper"
+    ],
+    "aliases": [
+      "eugenia axillaris",
+      "white stopper"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:30148396-2",
     "scientificName": "Euonymus alatus",
     "family": "Celastraceae",
@@ -10292,6 +12410,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "france-continental",
       "ireland"
     ]
@@ -10336,6 +12455,87 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:205581-1",
+    "scientificName": "Eupatorium cannabinum",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 27,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "205581-1",
+      "wfo": "wfo-0000035116",
+      "gbif": "5402943",
+      "usda": "EUCA9",
+      "itis": "35984",
+      "inat": "55976",
+      "wikidata": "Q744339",
+      "indigene": "eupatorium-cannabinum"
+    },
+    "commonNames": [
+      "Hemp-agrimony",
+      "Eupatoire à feuilles de chanvre"
+    ],
+    "aliases": [
+      "eupatoire à feuilles de chanvre",
+      "eupatorium cannabinum",
+      "hemp-agrimony"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-atlantic",
+      "france-continental"
+    ]
+  },
+  {
+    "primaryId": "ipni:277036-2",
+    "scientificName": "Eupatorium perfoliatum",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 42,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 4,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "277036-2",
+      "wfo": "wfo-0000027022",
+      "gbif": "5402874",
+      "usda": "EUPE3",
+      "itis": "35980",
+      "inat": "119045",
+      "wikidata": "Q683940",
+      "indigene": "eupatorium-perfoliatum"
+    },
+    "commonNames": [
+      "Common Boneset"
+    ],
+    "aliases": [
+      "common boneset",
+      "eupatorium perfoliatum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "st-lawrence"
+    ]
+  },
+  {
     "primaryId": "ipni:346016-1",
     "scientificName": "Euphorbia characias",
     "family": "Euphorbiaceae",
@@ -10377,6 +12577,44 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:346625-1",
+    "scientificName": "Euphorbia glauca",
+    "family": "Euphorbiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 1,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 4
+    },
+    "identifiers": {
+      "ipni": "346625-1",
+      "wfo": "wfo-0000962284",
+      "gbif": "3066109",
+      "itis": "1031027",
+      "inat": "401789",
+      "wikidata": "Q5410453",
+      "indigene": "euphorbia-glauca"
+    },
+    "commonNames": [
+      "Waiū-atua"
+    ],
+    "aliases": [
+      "euphorbia glauca",
+      "waiū-atua"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:828738-1",
     "scientificName": "Eurya japonica",
     "family": "Pentaphylacaceae",
@@ -10413,6 +12651,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:1203551-2",
+    "scientificName": "Eurybia divaricata",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2.5
+    },
+    "identifiers": {
+      "ipni": "1203551-2",
+      "wfo": "wfo-0000060736",
+      "gbif": "5396125",
+      "usda": "EUDI16",
+      "itis": "513440",
+      "inat": "127685",
+      "wikidata": "Q19848818",
+      "indigene": "eurybia-divaricata"
+    },
+    "commonNames": [
+      "White Wood Aster"
+    ],
+    "aliases": [
+      "eurybia divaricata",
+      "white wood aster"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
     ]
   },
   {
@@ -10652,7 +12929,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "france-continental"
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -10887,7 +13165,8 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -10940,8 +13219,8 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
-      "heightFt": 4.5,
+      "noWater": false,
+      "heightFt": 5,
       "spreadFt": 4
     },
     "identifiers": {
@@ -10955,16 +13234,59 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "filipendula-ulmaria"
     },
     "commonNames": [
-      "Meadowsweet"
+      "Meadowsweet",
+      "Reine-des-prés"
     ],
     "aliases": [
       "filipendula ulmaria",
-      "meadowsweet"
+      "meadowsweet",
+      "reine-des-prés"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:105319-2",
+    "scientificName": "Forestiera segregata",
+    "family": "Oleaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 10,
+      "spreadFt": 8
+    },
+    "identifiers": {
+      "ipni": "105319-2",
+      "wfo": "wfo-0000832165",
+      "gbif": "3172384",
+      "usda": "FOSE",
+      "itis": "32959",
+      "inat": "126344",
+      "wikidata": "Q5469243",
+      "indigene": "forestiera-segregata"
+    },
+    "commonNames": [
+      "Florida Privet"
+    ],
+    "aliases": [
+      "florida privet",
+      "forestiera segregata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
     ]
   },
   {
@@ -11378,6 +13700,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:750339-1",
+    "scientificName": "Galium odoratum",
+    "family": "Rubiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 127,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 0.8,
+      "spreadFt": 4
+    },
+    "identifiers": {
+      "ipni": "750339-1",
+      "wfo": "wfo-0000969693",
+      "gbif": "2914642",
+      "usda": "GAOD3",
+      "itis": "502715",
+      "inat": "56065",
+      "wikidata": "Q161090",
+      "indigene": "galium-odoratum"
+    },
+    "commonNames": [
+      "Sweet Woodruff",
+      "Gaillet odorant"
+    ],
+    "aliases": [
+      "gaillet odorant",
+      "galium odoratum",
+      "sweet woodruff"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
+    ]
+  },
+  {
     "primaryId": "ipni:750829-1",
     "scientificName": "Galium verum",
     "family": "Rubiaceae",
@@ -11500,6 +13863,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "north-michigan",
       "st-lawrence"
     ]
   },
@@ -11583,6 +13947,43 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:546424-1",
+    "scientificName": "Geniostoma ligustrifolium",
+    "family": "Loganiaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 12,
+      "spreadFt": 8
+    },
+    "identifiers": {
+      "ipni": "546424-1",
+      "wfo": "wfo-0000696235",
+      "gbif": "4019603",
+      "inat": "401998",
+      "wikidata": "Q5533203",
+      "indigene": "geniostoma-ligustrifolium"
+    },
+    "commonNames": [
+      "Hangehange"
+    ],
+    "aliases": [
+      "geniostoma ligustrifolium",
+      "hangehange"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:496342-1",
     "scientificName": "Genista scorpius",
     "family": "Fabaceae",
@@ -11661,6 +14062,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:367703-1",
+    "scientificName": "Gentiana acaulis",
+    "family": "Gentianaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 21,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.4,
+      "spreadFt": 1
+    },
+    "identifiers": {
+      "ipni": "367703-1",
+      "wfo": "wfo-0000696760",
+      "gbif": "6366597",
+      "usda": "GEAC4",
+      "itis": "822486",
+      "inat": "130558",
+      "wikidata": "Q163785",
+      "indigene": "gentiana-acaulis"
+    },
+    "commonNames": [
+      "Trumpet Gentian",
+      "Gentiane acaule"
+    ],
+    "aliases": [
+      "gentiana acaulis",
+      "gentiane acaule",
+      "trumpet gentian"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:368453-1",
     "scientificName": "Gentiana lutea",
     "family": "Gentianaceae",
@@ -11715,7 +14157,7 @@ export const REGISTRY: RegistryEntry[] = [
       "petToxic": false,
       "aggressive": false,
       "noWater": true,
-      "heightFt": 1.5,
+      "heightFt": 2,
       "spreadFt": 2
     },
     "identifiers": {
@@ -11738,6 +14180,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "north-michigan",
       "chicago",
       "st-lawrence"
     ]
@@ -11770,14 +14213,17 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "geranium-sanguineum"
     },
     "commonNames": [
-      "Bloody Cranesbill"
+      "Bloody Cranesbill",
+      "Géranium sanguin"
     ],
     "aliases": [
       "bloody cranesbill",
-      "geranium sanguineum"
+      "geranium sanguineum",
+      "géranium sanguin"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -11795,7 +14241,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 2.5,
       "spreadFt": 2.5
     },
@@ -11810,14 +14256,17 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "geranium-sylvaticum"
     },
     "commonNames": [
-      "Wood Cranesbill"
+      "Wood Cranesbill",
+      "Géranium des bois"
     ],
     "aliases": [
       "geranium sylvaticum",
+      "géranium des bois",
       "wood cranesbill"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-alpine",
       "scotland-lowlands"
     ]
   },
@@ -11858,6 +14307,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:324725-2",
+    "scientificName": "Geum montanum",
+    "family": "Rosaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 19,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.5,
+      "spreadFt": 0.8
+    },
+    "identifiers": {
+      "ipni": "324725-2",
+      "wfo": "wfo-0001018633",
+      "gbif": "5369806",
+      "inat": "130537",
+      "wikidata": "Q159511",
+      "indigene": "geum-montanum"
+    },
+    "commonNames": [
+      "Alpine Avens",
+      "Benoîte des montagnes"
+    ],
+    "aliases": [
+      "alpine avens",
+      "benoîte des montagnes",
+      "geum montanum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -11940,6 +14428,84 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:862876-1",
+    "scientificName": "Glandularia maritima",
+    "family": "Verbenaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "862876-1",
+      "wfo": "wfo-0000972723",
+      "gbif": "5341156",
+      "usda": "GLMA5",
+      "itis": "502789",
+      "inat": "163316",
+      "wikidata": "Q15494636",
+      "indigene": "glandularia-maritima"
+    },
+    "commonNames": [
+      "Beach Verbena"
+    ],
+    "aliases": [
+      "beach verbena",
+      "glandularia maritima"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:447338-1",
+    "scientificName": "Glechoma hederacea",
+    "family": "Lamiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 4,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 6
+    },
+    "identifiers": {
+      "ipni": "447338-1",
+      "wfo": "wfo-0000972872",
+      "gbif": "2926557",
+      "usda": "GLHE2",
+      "itis": "502801",
+      "inat": "55830",
+      "wikidata": "Q162544",
+      "indigene": "glechoma-hederacea"
+    },
+    "commonNames": [
+      "Ground-ivy"
+    ],
+    "aliases": [
+      "glechoma hederacea",
+      "ground-ivy"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-atlantic"
+    ]
+  },
+  {
     "primaryId": "ipni:210611-1",
     "scientificName": "Grindelia integrifolia",
     "family": "Asteraceae",
@@ -11976,6 +14542,86 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:17112110-1",
+    "scientificName": "Gymnocarpium dryopteris",
+    "family": "Cystopteridaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.8,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "17112110-1",
+      "wfo": "wfo-0001107317",
+      "gbif": "2650832",
+      "usda": "GYDR",
+      "itis": "17579",
+      "inat": "82572",
+      "wikidata": "Q1301661",
+      "indigene": "gymnocarpium-dryopteris"
+    },
+    "commonNames": [
+      "Oak Fern",
+      "Gymnocarpium dryoptéride"
+    ],
+    "aliases": [
+      "gymnocarpium dryopteris",
+      "gymnocarpium dryoptéride",
+      "oak fern"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:430235-1",
+    "scientificName": "Haloragis erecta",
+    "family": "Haloragaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 2,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "430235-1",
+      "wfo": "wfo-0000715020",
+      "gbif": "7477636",
+      "usda": "HAER2",
+      "itis": "27053",
+      "inat": "163516",
+      "wikidata": "Q4423172",
+      "indigene": "haloragis-erecta"
+    },
+    "commonNames": [
+      "Toatoa"
+    ],
+    "aliases": [
+      "haloragis erecta",
+      "toatoa"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -12016,6 +14662,7 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "north-michigan",
+      "chicago",
       "st-lawrence"
     ]
   },
@@ -12308,6 +14955,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:116662-1",
+    "scientificName": "Heliotropium angiospermum",
+    "family": "Boraginaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2.5
+    },
+    "identifiers": {
+      "ipni": "116662-1",
+      "wfo": "wfo-0000718386",
+      "gbif": "2925809",
+      "usda": "HEAN5",
+      "itis": "31643",
+      "inat": "48895",
+      "wikidata": "Q15490354",
+      "indigene": "heliotropium-angiospermum"
+    },
+    "commonNames": [
+      "Scorpionstail"
+    ],
+    "aliases": [
+      "heliotropium angiospermum",
+      "scorpionstail"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:843087-1",
     "scientificName": "Heracleum maximum",
     "family": "Apiaceae",
@@ -12587,6 +15273,88 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:498352-1",
+    "scientificName": "Hippocrepis comosa",
+    "family": "Fabaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 42,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "498352-1",
+      "wfo": "wfo-0000213796",
+      "gbif": "5353750",
+      "usda": "HICO3",
+      "itis": "503043",
+      "inat": "133488",
+      "wikidata": "Q158369",
+      "indigene": "hippocrepis-comosa"
+    },
+    "commonNames": [
+      "Horseshoe Vetch",
+      "Hippocrépide à toupet"
+    ],
+    "aliases": [
+      "hippocrepis comosa",
+      "hippocrépide à toupet",
+      "horseshoe vetch"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
+    ]
+  },
+  {
+    "primaryId": "ipni:323851-1",
+    "scientificName": "Hippophae rhamnoides",
+    "family": "Elaeagnaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 24,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 12,
+      "spreadFt": 12
+    },
+    "identifiers": {
+      "ipni": "323851-1",
+      "wfo": "wfo-0000723743",
+      "gbif": "3039285",
+      "usda": "HIRH80",
+      "itis": "503044",
+      "inat": "163812",
+      "wikidata": "Q165378",
+      "indigene": "hippophae-rhamnoides"
+    },
+    "commonNames": [
+      "Sea Buckthorn",
+      "Argousier"
+    ],
+    "aliases": [
+      "argousier",
+      "hippophae rhamnoides",
+      "sea buckthorn"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:561009-1",
     "scientificName": "Hoheria populnea",
     "family": "Malvaceae",
@@ -12789,6 +15557,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:30010549-2",
+    "scientificName": "Hydrangea arborescens",
+    "family": "Hydrangeaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 6
+    },
+    "identifiers": {
+      "ipni": "30010549-2",
+      "wfo": "wfo-0001135369",
+      "gbif": "2985986",
+      "usda": "HYAR",
+      "itis": "24195",
+      "inat": "130554",
+      "wikidata": "Q278173",
+      "indigene": "hydrangea-arborescens"
+    },
+    "commonNames": [
+      "Smooth Hydrangea"
+    ],
+    "aliases": [
+      "hydrangea arborescens",
+      "smooth hydrangea"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
+    ]
+  },
+  {
     "primaryId": "ipni:791637-1",
     "scientificName": "Hydrangea macrophylla",
     "family": "Hydrangeaceae",
@@ -12825,6 +15632,87 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:1144159-2",
+    "scientificName": "Hymenocallis latifolia",
+    "family": "Amaryllidaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 1,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 5
+    },
+    "identifiers": {
+      "ipni": "1144159-2",
+      "wfo": "wfo-0000667160",
+      "gbif": "2860272",
+      "usda": "HYLA5",
+      "itis": "503110",
+      "inat": "133335",
+      "wikidata": "Q5905693",
+      "indigene": "hymenocallis-latifolia"
+    },
+    "commonNames": [
+      "Mangrove Spiderlily"
+    ],
+    "aliases": [
+      "hymenocallis latifolia",
+      "mangrove spiderlily"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:433719-1",
+    "scientificName": "Hypericum perforatum",
+    "family": "Hypericaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 39,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "433719-1",
+      "wfo": "wfo-0000728093",
+      "gbif": "3189486",
+      "usda": "HYPE",
+      "itis": "21454",
+      "inat": "56077",
+      "wikidata": "Q158289",
+      "indigene": "hypericum-perforatum"
+    },
+    "commonNames": [
+      "Perforate St John's-wort",
+      "Millepertuis perforé"
+    ],
+    "aliases": [
+      "hypericum perforatum",
+      "millepertuis perforé",
+      "perforate st john's-wort"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-atlantic",
+      "france-continental"
     ]
   },
   {
@@ -13237,7 +16125,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": true,
       "aggressive": true,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 4,
       "spreadFt": 4
     },
@@ -13262,6 +16150,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "ireland",
       "scotland-lowlands"
     ]
@@ -13333,15 +16222,57 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "iris-versicolor"
     },
     "commonNames": [
+      "Blue Flag Iris",
       "Blue Flag"
     ],
     "aliases": [
       "blue flag",
+      "blue flag iris",
       "iris versicolor"
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "st-lawrence"
+    ]
+  },
+  {
+    "primaryId": "ipni:439249-1",
+    "scientificName": "Iris virginica",
+    "family": "Iridaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2.5
+    },
+    "identifiers": {
+      "ipni": "439249-1",
+      "wfo": "wfo-0000784039",
+      "gbif": "5298008",
+      "usda": "IRVI",
+      "itis": "43197",
+      "inat": "117444",
+      "wikidata": "Q7934335",
+      "indigene": "iris-virginica"
+    },
+    "commonNames": [
+      "Southern Blue Flag"
+    ],
+    "aliases": [
+      "iris virginica",
+      "southern blue flag"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
     ]
   },
   {
@@ -13660,6 +16591,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
+      "france-continental",
       "france-alpine",
       "ireland",
       "scotland-lowlands"
@@ -13788,6 +16721,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:279164-2",
+    "scientificName": "Kalmia latifolia",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 10,
+      "spreadFt": 10
+    },
+    "identifiers": {
+      "ipni": "279164-2",
+      "wfo": "wfo-0000356132",
+      "gbif": "2883005",
+      "usda": "KALA",
+      "itis": "23677",
+      "inat": "49397",
+      "wikidata": "Q1235131",
+      "indigene": "kalmia-latifolia"
+    },
+    "commonNames": [
+      "Mountain Laurel"
+    ],
+    "aliases": [
+      "kalmia latifolia",
+      "mountain laurel"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
+    ]
+  },
+  {
     "primaryId": "ipni:133347-2",
     "scientificName": "Keckiella cordifolia",
     "family": "Plantaginaceae",
@@ -13866,7 +16838,9 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "france-continental",
+      "france-alpine",
       "ireland",
       "scotland-lowlands"
     ]
@@ -13948,6 +16922,44 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:561095-1",
+    "scientificName": "Kosteletzkya pentacarpos",
+    "family": "Malvaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "561095-1",
+      "wfo": "wfo-0000356152",
+      "gbif": "4939647",
+      "itis": "845759",
+      "inat": "131656",
+      "wikidata": "Q17574950",
+      "indigene": "kosteletzkya-pentacarpos"
+    },
+    "commonNames": [
+      "Seashore Mallow"
+    ],
+    "aliases": [
+      "kosteletzkya pentacarpos",
+      "seashore mallow"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:77141733-1",
     "scientificName": "Kunzea robusta",
     "family": "Myrtaceae",
@@ -13982,6 +16994,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:501425-1",
+    "scientificName": "Laburnum alpinum",
+    "family": "Fabaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 12,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 25,
+      "spreadFt": 15
+    },
+    "identifiers": {
+      "ipni": "501425-1",
+      "wfo": "wfo-0000213799",
+      "gbif": "5356343",
+      "usda": "LAAL8",
+      "itis": "819802",
+      "inat": "371837",
+      "wikidata": "Q3497019",
+      "indigene": "laburnum-alpinum"
+    },
+    "commonNames": [
+      "Alpine Laburnum",
+      "Aubour des Alpes"
+    ],
+    "aliases": [
+      "alpine laburnum",
+      "aubour des alpes",
+      "laburnum alpinum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -14140,7 +17193,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -14182,6 +17236,43 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:286318-1",
+    "scientificName": "Lepidium oleraceum",
+    "family": "Brassicaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 2,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 2,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "286318-1",
+      "wfo": "wfo-0001281367",
+      "gbif": "8217005",
+      "inat": "403278",
+      "wikidata": "Q4118528",
+      "indigene": "lepidium-oleraceum"
+    },
+    "commonNames": [
+      "Nau"
+    ],
+    "aliases": [
+      "lepidium oleraceum",
+      "nau"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -14315,7 +17406,7 @@ export const REGISTRY: RegistryEntry[] = [
       "petToxic": true,
       "aggressive": false,
       "noWater": true,
-      "heightFt": 2,
+      "heightFt": 2.5,
       "spreadFt": 2
     },
     "identifiers": {
@@ -14329,14 +17420,19 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "leucanthemum-vulgare"
     },
     "commonNames": [
-      "Oxeye Daisy"
+      "Oxeye Daisy",
+      "Marguerite commune"
     ],
     "aliases": [
       "leucanthemum vulgare",
+      "marguerite commune",
       "oxeye daisy"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
+      "france-alpine",
       "scotland-lowlands"
     ]
   },
@@ -14498,6 +17594,46 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:230634-1",
+    "scientificName": "Liatris spicata",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 12,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 1.2
+    },
+    "identifiers": {
+      "ipni": "230634-1",
+      "wfo": "wfo-0000065042",
+      "gbif": "3104314",
+      "usda": "LISP",
+      "itis": "37944",
+      "inat": "117439",
+      "wikidata": "Q1797975",
+      "indigene": "liatris-spicata"
+    },
+    "commonNames": [
+      "Dense Blazing Star"
+    ],
+    "aliases": [
+      "dense blazing star",
+      "liatris spicata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central",
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:439850-1",
     "scientificName": "Libertia grandiflora",
     "family": "Iridaceae",
@@ -14572,6 +17708,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "france-continental"
     ]
   },
@@ -14614,6 +17751,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:537662-1",
+    "scientificName": "Lilium martagon",
+    "family": "Liliaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 4,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 1
+    },
+    "identifiers": {
+      "ipni": "537662-1",
+      "wfo": "wfo-0000678524",
+      "gbif": "2753146",
+      "usda": "LIMA8",
+      "itis": "503457",
+      "inat": "85027",
+      "wikidata": "Q156363",
+      "indigene": "lilium-martagon"
+    },
+    "commonNames": [
+      "Martagon Lily",
+      "Lis martagon"
+    ],
+    "aliases": [
+      "lilium martagon",
+      "lis martagon",
+      "martagon lily"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -14767,6 +17945,42 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:544587-1",
+    "scientificName": "Linum monogynum",
+    "family": "Linaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 0,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "544587-1",
+      "gbif": "4048975",
+      "inat": "495216",
+      "wikidata": "Q17548556",
+      "indigene": "linum-monogynum"
+    },
+    "commonNames": [
+      "Rauhuia"
+    ],
+    "aliases": [
+      "linum monogynum",
+      "rauhuia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -14966,6 +18180,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:148602-1",
+    "scientificName": "Lonicera alpigena",
+    "family": "Caprifoliaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 55,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 6,
+      "spreadFt": 5
+    },
+    "identifiers": {
+      "ipni": "148602-1",
+      "wfo": "wfo-0000359767",
+      "gbif": "6369729",
+      "usda": "LOAL5",
+      "itis": "823508",
+      "inat": "448130",
+      "wikidata": "Q159411",
+      "indigene": "lonicera-alpigena"
+    },
+    "commonNames": [
+      "Alpine Honeysuckle",
+      "Chèvrefeuille des Alpes"
+    ],
+    "aliases": [
+      "alpine honeysuckle",
+      "chèvrefeuille des alpes",
+      "lonicera alpigena"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:1021717-2",
     "scientificName": "Lonicera ciliosa",
     "family": "Caprifoliaceae",
@@ -15079,6 +18334,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "pnw",
       "ca-central-coast"
     ]
   },
@@ -15206,7 +18462,7 @@ export const REGISTRY: RegistryEntry[] = [
     "form": "vine",
     "rank": "species",
     "keystone": false,
-    "hostLepCount": 57,
+    "hostLepCount": 58,
     "traits": {
       "deerResistant": false,
       "thorny": false,
@@ -15228,9 +18484,11 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Honeysuckle",
-      "Woodbine"
+      "Woodbine",
+      "Chèvrefeuille des bois"
     ],
     "aliases": [
+      "chèvrefeuille des bois",
       "honeysuckle",
       "lonicera periclymenum",
       "woodbine"
@@ -15238,6 +18496,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -15280,6 +18539,47 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "mid-atlantic",
       "florida-central"
+    ]
+  },
+  {
+    "primaryId": "ipni:149194-1",
+    "scientificName": "Lonicera xylosteum",
+    "family": "Caprifoliaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 58,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 7
+    },
+    "identifiers": {
+      "ipni": "149194-1",
+      "wfo": "wfo-0000361644",
+      "gbif": "5334259",
+      "usda": "LOXY",
+      "itis": "35308",
+      "inat": "124548",
+      "wikidata": "Q162760",
+      "indigene": "lonicera-xylosteum"
+    },
+    "commonNames": [
+      "Fly Honeysuckle",
+      "Camérisier à balais"
+    ],
+    "aliases": [
+      "camérisier à balais",
+      "fly honeysuckle",
+      "lonicera xylosteum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -15491,6 +18791,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:443878-1",
+    "scientificName": "Luzula nivea",
+    "family": "Juncaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 25,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "443878-1",
+      "wfo": "wfo-0000777992",
+      "gbif": "2700768",
+      "usda": "LUNI3",
+      "itis": "817927",
+      "inat": "336659",
+      "wikidata": "Q162447",
+      "indigene": "luzula-nivea"
+    },
+    "commonNames": [
+      "Snowy Wood-rush",
+      "Luzule blanche"
+    ],
+    "aliases": [
+      "luzula nivea",
+      "luzule blanche",
+      "snowy wood-rush"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:20009373-1",
     "scientificName": "Luzula sylvatica",
     "family": "Juncaceae",
@@ -15525,6 +18866,43 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:17142780-1",
+    "scientificName": "Lygodium articulatum",
+    "family": "Lygodiaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 0,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 30,
+      "spreadFt": 5
+    },
+    "identifiers": {
+      "ipni": "17142780-1",
+      "wfo": "wfo-0000151345",
+      "gbif": "3744376",
+      "inat": "403653",
+      "wikidata": "Q17043114",
+      "indigene": "lygodium-articulatum"
+    },
+    "commonNames": [
+      "Mangemange"
+    ],
+    "aliases": [
+      "lygodium articulatum",
+      "mangemange"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -15618,7 +18996,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 5,
       "spreadFt": 3.5
     },
@@ -15633,15 +19011,56 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "lythrum-salicaria"
     },
     "commonNames": [
-      "Purple Loosestrife"
+      "Purple Loosestrife",
+      "Salicaire commune"
     ],
     "aliases": [
       "lythrum salicaria",
-      "purple loosestrife"
+      "purple loosestrife",
+      "salicaire commune"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:310415-1",
+    "scientificName": "Machaerina sinclairii",
+    "family": "Cyperaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 1,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 5,
+      "spreadFt": 5
+    },
+    "identifiers": {
+      "ipni": "310415-1",
+      "wfo": "wfo-0000464396",
+      "gbif": "5291120",
+      "inat": "403676",
+      "wikidata": "Q15550425",
+      "indigene": "machaerina-sinclairii"
+    },
+    "commonNames": [
+      "Tūhara"
+    ],
+    "aliases": [
+      "machaerina sinclairii",
+      "tūhara"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -15873,6 +19292,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "st-lawrence"
     ]
   },
@@ -16046,7 +19466,7 @@ export const REGISTRY: RegistryEntry[] = [
       "petToxic": false,
       "aggressive": false,
       "noWater": true,
-      "heightFt": 28,
+      "heightFt": 30,
       "spreadFt": 26
     },
     "identifiers": {
@@ -16060,15 +19480,61 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "malus-sylvestris"
     },
     "commonNames": [
-      "Crab Apple"
+      "Crab Apple",
+      "Pommier sauvage"
     ],
     "aliases": [
       "crab apple",
-      "malus sylvestris"
+      "malus sylvestris",
+      "pommier sauvage"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "ireland"
+    ]
+  },
+  {
+    "primaryId": "ipni:561790-1",
+    "scientificName": "Malva moschata",
+    "family": "Malvaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 10,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "561790-1",
+      "wfo": "wfo-0000449199",
+      "gbif": "3152379",
+      "usda": "MAMO2",
+      "itis": "21835",
+      "inat": "55977",
+      "wikidata": "Q157920",
+      "indigene": "malva-moschata"
+    },
+    "commonNames": [
+      "Musk Mallow",
+      "Mauve musquée"
+    ],
+    "aliases": [
+      "malva moschata",
+      "mauve musquée",
+      "musk mallow"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-atlantic",
+      "france-continental"
     ]
   },
   {
@@ -16229,6 +19695,83 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:408184-1",
+    "scientificName": "Melica uniflora",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 13,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "408184-1",
+      "wfo": "wfo-0000879476",
+      "gbif": "4116392",
+      "inat": "450670",
+      "wikidata": "Q162410",
+      "indigene": "melica-uniflora"
+    },
+    "commonNames": [
+      "Wood Melick",
+      "Mélique uniflore"
+    ],
+    "aliases": [
+      "melica uniflora",
+      "mélique uniflore",
+      "wood melick"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
+    ]
+  },
+  {
+    "primaryId": "ipni:774342-1",
+    "scientificName": "Melicope ternata",
+    "family": "Rutaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 10
+    },
+    "identifiers": {
+      "ipni": "774342-1",
+      "wfo": "wfo-0000452837",
+      "gbif": "3190202",
+      "itis": "196013",
+      "inat": "403835",
+      "wikidata": "Q6812328",
+      "indigene": "melicope-ternata"
+    },
+    "commonNames": [
+      "Wharangi"
+    ],
+    "aliases": [
+      "melicope ternata",
+      "wharangi"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:866981-1",
     "scientificName": "Melicytus ramiflorus",
     "family": "Violaceae",
@@ -16301,6 +19844,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "chicago"
     ]
   },
@@ -16342,6 +19886,80 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:598219-1",
+    "scientificName": "Metrosideros fulgens",
+    "family": "Myrtaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 17,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 30,
+      "spreadFt": 8
+    },
+    "identifiers": {
+      "ipni": "598219-1",
+      "wfo": "wfo-0000242437",
+      "gbif": "3185442",
+      "inat": "70236",
+      "wikidata": "Q5677024",
+      "indigene": "metrosideros-fulgens"
+    },
+    "commonNames": [
+      "Akakura"
+    ],
+    "aliases": [
+      "akakura",
+      "metrosideros fulgens"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:598286-1",
+    "scientificName": "Metrosideros perforata",
+    "family": "Myrtaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 17,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 30,
+      "spreadFt": 8
+    },
+    "identifiers": {
+      "ipni": "598286-1",
+      "wfo": "wfo-0000242515",
+      "gbif": "8239469",
+      "inat": "366726",
+      "wikidata": "Q6825383",
+      "indigene": "metrosideros-perforata"
+    },
+    "commonNames": [
+      "Akatea"
+    ],
+    "aliases": [
+      "akatea",
+      "metrosideros perforata"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:408485-1",
     "scientificName": "Microlaena stipoides",
     "family": "Poaceae",
@@ -16374,6 +19992,43 @@ export const REGISTRY: RegistryEntry[] = [
     "aliases": [
       "microlaena stipoides",
       "pātītī"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:17407270-1",
+    "scientificName": "Microsorum pustulatum",
+    "family": "Polypodiaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 5,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 8
+    },
+    "identifiers": {
+      "ipni": "17407270-1",
+      "wfo": "wfo-0000162773",
+      "gbif": "7289949",
+      "inat": "64060",
+      "wikidata": "Q6840300",
+      "indigene": "microsorum-pustulatum"
+    },
+    "commonNames": [
+      "Kōwaowao"
+    ],
+    "aliases": [
+      "kōwaowao",
+      "microsorum pustulatum"
     ],
     "cultivarOf": null,
     "regions": [
@@ -16462,6 +20117,46 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:280970-2",
+    "scientificName": "Mitchella repens",
+    "family": "Rubiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 0.2,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "280970-2",
+      "wfo": "wfo-0000244794",
+      "gbif": "5338762",
+      "usda": "MIRE",
+      "itis": "35063",
+      "inat": "83799",
+      "wikidata": "Q1401376",
+      "indigene": "mitchella-repens"
+    },
+    "commonNames": [
+      "Partridgeberry"
+    ],
+    "aliases": [
+      "mitchella repens",
+      "partridgeberry"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic",
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:408809-1",
     "scientificName": "Molinia caerulea",
     "family": "Poaceae",
@@ -16474,7 +20169,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 4.5,
       "spreadFt": 3
     },
@@ -16497,7 +20192,9 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "france-atlantic",
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -16983,6 +20680,43 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:589048-1",
+    "scientificName": "Myrsine australis",
+    "family": "Primulaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 14,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 10
+    },
+    "identifiers": {
+      "ipni": "589048-1",
+      "wfo": "wfo-0001085286",
+      "gbif": "3722240",
+      "inat": "210946",
+      "wikidata": "Q6948533",
+      "indigene": "myrsine-australis"
+    },
+    "commonNames": [
+      "Māpou"
+    ],
+    "aliases": [
+      "myrsine australis",
+      "māpou"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:589091-1",
     "scientificName": "Myrsine cubana",
     "family": "Primulaceae",
@@ -17218,6 +20952,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "mid-atlantic",
+      "north-michigan",
       "chicago",
       "st-lawrence"
     ]
@@ -17299,7 +21034,48 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-continental"
+      "france-atlantic",
+      "france-continental",
+      "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:281799-2",
+    "scientificName": "Osmunda claytoniana",
+    "family": "Osmundaceae",
+    "form": "fern",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 2,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "281799-2",
+      "wfo": "wfo-0001109066",
+      "gbif": "2651329",
+      "usda": "OSCL2",
+      "itis": "17220",
+      "inat": "63058",
+      "wikidata": "Q2748623",
+      "indigene": "osmunda-claytoniana"
+    },
+    "commonNames": [
+      "Interrupted Fern"
+    ],
+    "aliases": [
+      "interrupted fern",
+      "osmunda claytoniana"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -17451,6 +21227,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "chicago",
+      "st-lawrence",
       "florida-central"
     ]
   },
@@ -17492,6 +21270,43 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "pnw",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:995174-1",
+    "scientificName": "Ozothamnus leptophyllus",
+    "family": "Asteraceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 20,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 5
+    },
+    "identifiers": {
+      "ipni": "995174-1",
+      "wfo": "wfo-0000041850",
+      "gbif": "3111878",
+      "inat": "349798",
+      "wikidata": "Q13937549",
+      "indigene": "ozothamnus-leptophyllus"
+    },
+    "commonNames": [
+      "Tauhinu"
+    ],
+    "aliases": [
+      "ozothamnus leptophyllus",
+      "tauhinu"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -17732,6 +21547,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "kanto"
+    ]
+  },
+  {
+    "primaryId": "ipni:184109-2",
+    "scientificName": "Parthenocissus vitacea",
+    "family": "Vitaceae",
+    "form": "vine",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 33,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 30,
+      "spreadFt": 15
+    },
+    "identifiers": {
+      "ipni": "184109-2",
+      "wfo": "wfo-0000474328",
+      "gbif": "3039193",
+      "usda": "PAVI5",
+      "itis": "28605",
+      "inat": "181927",
+      "wikidata": "Q159489",
+      "indigene": "parthenocissus-vitacea"
+    },
+    "commonNames": [
+      "Thicket Creeper"
+    ],
+    "aliases": [
+      "parthenocissus vitacea",
+      "thicket creeper"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "st-lawrence"
     ]
   },
   {
@@ -18120,6 +21974,46 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:187512-2",
+    "scientificName": "Penstemon multiflorus",
+    "family": "Plantaginaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3.5,
+      "spreadFt": 1.2
+    },
+    "identifiers": {
+      "ipni": "187512-2",
+      "wfo": "wfo-0001286870",
+      "gbif": "3171348",
+      "usda": "PEMU9",
+      "itis": "33953",
+      "inat": "126574",
+      "wikidata": "Q15350422",
+      "indigene": "penstemon-multiflorus"
+    },
+    "commonNames": [
+      "Manyflower Beardtongue"
+    ],
+    "aliases": [
+      "manyflower beardtongue",
+      "penstemon multiflorus"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central",
+      "florida-south"
+    ]
+  },
+  {
     "primaryId": "ipni:60456598-2",
     "scientificName": "Penstemon serrulatus",
     "family": "Plantaginaceae",
@@ -18390,6 +22284,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:193437-2",
+    "scientificName": "Phlox divaricata",
+    "family": "Polemoniaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.2,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "193437-2",
+      "wfo": "wfo-0001099745",
+      "gbif": "2927730",
+      "usda": "PHDI5",
+      "itis": "30934",
+      "inat": "81705",
+      "wikidata": "Q5222804",
+      "indigene": "phlox-divaricata"
+    },
+    "commonNames": [
+      "Woodland Phlox"
+    ],
+    "aliases": [
+      "phlox divaricata",
+      "woodland phlox"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
     ]
   },
   {
@@ -18710,6 +22643,43 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:832663-1",
+    "scientificName": "Pimelea prostrata",
+    "family": "Thymelaeaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 17,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "832663-1",
+      "wfo": "wfo-0000475613",
+      "gbif": "3568952",
+      "inat": "366715",
+      "wikidata": "Q17582290",
+      "indigene": "pimelea-prostrata"
+    },
+    "commonNames": [
+      "Pinātoro"
+    ],
+    "aliases": [
+      "pimelea prostrata",
+      "pinātoro"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:262801-1",
     "scientificName": "Pinus banksiana",
     "family": "Pinaceae",
@@ -19027,6 +22997,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:677083-1",
+    "scientificName": "Pinus mugo",
+    "family": "Pinaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 64,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 8,
+      "spreadFt": 12
+    },
+    "identifiers": {
+      "ipni": "677083-1",
+      "wfo": "wfo-0000481789",
+      "gbif": "5285385",
+      "usda": "PIMU80",
+      "itis": "183358",
+      "inat": "135727",
+      "wikidata": "Q147475",
+      "indigene": "pinus-mugo"
+    },
+    "commonNames": [
+      "Mountain Pine",
+      "Pin mugho"
+    ],
+    "aliases": [
+      "mountain pine",
+      "pin mugho",
+      "pinus mugo"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
     "primaryId": "ipni:263186-1",
     "scientificName": "Pinus palustris",
     "family": "Pinaceae",
@@ -19261,7 +23272,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-continental"
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -19457,6 +23469,46 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:1136513-2",
+    "scientificName": "Pityopsis graminifolia",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 2.5
+    },
+    "identifiers": {
+      "ipni": "1136513-2",
+      "wfo": "wfo-0000022894",
+      "gbif": "3094306",
+      "usda": "PIGR4",
+      "itis": "196349",
+      "inat": "166939",
+      "wikidata": "Q7199560",
+      "indigene": "pityopsis-graminifolia"
+    },
+    "commonNames": [
+      "Narrowleaf Silkgrass"
+    ],
+    "aliases": [
+      "narrowleaf silkgrass",
+      "pityopsis graminifolia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central",
+      "florida-south"
     ]
   },
   {
@@ -19658,6 +23710,43 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:416482-1",
+    "scientificName": "Poa anceps",
+    "family": "Poaceae",
+    "form": "grass",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 24,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "416482-1",
+      "wfo": "wfo-0000891484",
+      "gbif": "4129122",
+      "inat": "405020",
+      "wikidata": "Q15513258",
+      "indigene": "poa-anceps"
+    },
+    "commonNames": [
+      "Broad-leaved Poa"
+    ],
+    "aliases": [
+      "broad-leaved poa",
+      "poa anceps"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -19871,9 +23960,9 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 1,
-      "spreadFt": 2.5
+      "spreadFt": 3
     },
     "identifiers": {
       "ipni": "300720-2",
@@ -19885,14 +23974,19 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "polypodium-vulgare"
     },
     "commonNames": [
-      "Common Polypody"
+      "Common Polypody",
+      "Polypode commun"
     ],
     "aliases": [
       "common polypody",
+      "polypode commun",
       "polypodium vulgare"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
+      "france-alpine",
       "ireland",
       "scotland-lowlands"
     ]
@@ -20526,15 +24620,19 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "primula-veris"
     },
     "commonNames": [
-      "Cowslip"
+      "Cowslip",
+      "Primevère officinale"
     ],
     "aliases": [
       "cowslip",
+      "primevère officinale",
       "primula veris"
     ],
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
+      "france-alpine",
       "ireland",
       "scotland-lowlands"
     ]
@@ -20552,7 +24650,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 0.6,
       "spreadFt": 2
     },
@@ -20574,6 +24672,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "ireland",
       "scotland-lowlands"
     ]
@@ -20618,20 +24717,60 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:455176-1",
+    "scientificName": "Prunella vulgaris",
+    "family": "Lamiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 5,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.6,
+      "spreadFt": 2.5
+    },
+    "identifiers": {
+      "ipni": "455176-1",
+      "wfo": "wfo-0000283746",
+      "gbif": "5341297",
+      "usda": "PRVU",
+      "itis": "32381",
+      "inat": "52764",
+      "wikidata": "Q158469",
+      "indigene": "prunella-vulgaris"
+    },
+    "commonNames": [
+      "Selfheal"
+    ],
+    "aliases": [
+      "prunella vulgaris",
+      "selfheal"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-atlantic",
+      "scotland-lowlands"
+    ]
+  },
+  {
     "primaryId": "ipni:30093848-2",
     "scientificName": "Prunus avium",
     "family": "Rosaceae",
     "form": "tree",
     "rank": "species",
     "keystone": true,
-    "hostLepCount": 318,
+    "hostLepCount": 319,
     "traits": {
       "deerResistant": false,
       "thorny": false,
       "petToxic": true,
       "aggressive": false,
       "noWater": true,
-      "heightFt": 55,
+      "heightFt": 60,
       "spreadFt": 35
     },
     "identifiers": {
@@ -20646,16 +24785,19 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Wild Cherry",
-      "Gean"
+      "Gean",
+      "Merisier"
     ],
     "aliases": [
       "gean",
+      "merisier",
       "prunus avium",
       "wild cherry"
     ],
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -20946,7 +25088,7 @@ export const REGISTRY: RegistryEntry[] = [
     "form": "shrub",
     "rank": "species",
     "keystone": true,
-    "hostLepCount": 318,
+    "hostLepCount": 319,
     "traits": {
       "deerResistant": true,
       "thorny": true,
@@ -20980,6 +25122,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "france-mediterranean",
       "ireland",
       "scotland-lowlands"
@@ -21023,6 +25166,43 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "north-michigan",
       "st-lawrence"
+    ]
+  },
+  {
+    "primaryId": "ipni:91847-1",
+    "scientificName": "Pseudopanax arboreus",
+    "family": "Araliaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 16,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 25,
+      "spreadFt": 15
+    },
+    "identifiers": {
+      "ipni": "91847-1",
+      "wfo": "wfo-0000284101",
+      "gbif": "3036513",
+      "inat": "126181",
+      "wikidata": "Q3409551",
+      "indigene": "pseudopanax-arboreus"
+    },
+    "commonNames": [
+      "Whauwhaupaku"
+    ],
+    "aliases": [
+      "pseudopanax arboreus",
+      "whauwhaupaku"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -21139,6 +25319,125 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:20009462-1",
+    "scientificName": "Pulsatilla alpina",
+    "family": "Ranunculaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 1.2,
+      "spreadFt": 1
+    },
+    "identifiers": {
+      "ipni": "20009462-1",
+      "wfo": "wfo-0000471987",
+      "gbif": "7278071",
+      "inat": "85428",
+      "wikidata": "Q149625",
+      "indigene": "pulsatilla-alpina"
+    },
+    "commonNames": [
+      "Alpine Pasqueflower",
+      "Pulsatille des Alpes"
+    ],
+    "aliases": [
+      "alpine pasqueflower",
+      "pulsatilla alpina",
+      "pulsatille des alpes"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:1034980-2",
+    "scientificName": "Pulsatilla vulgaris",
+    "family": "Ranunculaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 8,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 1
+    },
+    "identifiers": {
+      "ipni": "1034980-2",
+      "wfo": "wfo-0000471767",
+      "gbif": "3033621",
+      "usda": "PUVU",
+      "itis": "506590",
+      "inat": "60786",
+      "wikidata": "Q148623",
+      "indigene": "pulsatilla-vulgaris"
+    },
+    "commonNames": [
+      "Pasqueflower",
+      "Anémone pulsatille"
+    ],
+    "aliases": [
+      "anémone pulsatille",
+      "pasqueflower",
+      "pulsatilla vulgaris"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
+    ]
+  },
+  {
+    "primaryId": "ipni:455227-1",
+    "scientificName": "Pycnanthemum muticum",
+    "family": "Lamiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 4
+    },
+    "identifiers": {
+      "ipni": "455227-1",
+      "wfo": "wfo-0000289017",
+      "gbif": "2927374",
+      "usda": "PYMU",
+      "itis": "32665",
+      "inat": "126768",
+      "wikidata": "Q15355983",
+      "indigene": "pycnanthemum-muticum"
+    },
+    "commonNames": [
+      "Clustered Mountain Mint"
+    ],
+    "aliases": [
+      "clustered mountain mint",
+      "pycnanthemum muticum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
     ]
   },
   {
@@ -21926,6 +26225,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "france-continental",
       "ireland",
       "scotland-lowlands"
@@ -22016,14 +26316,14 @@ export const REGISTRY: RegistryEntry[] = [
     "form": "tree",
     "rank": "species",
     "keystone": true,
-    "hostLepCount": 391,
+    "hostLepCount": 401,
     "traits": {
       "deerResistant": false,
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
       "noWater": true,
-      "heightFt": 80,
+      "heightFt": 90,
       "spreadFt": 75
     },
     "identifiers": {
@@ -22038,9 +26338,11 @@ export const REGISTRY: RegistryEntry[] = [
     },
     "commonNames": [
       "Pedunculate Oak",
-      "English Oak"
+      "English Oak",
+      "Chêne pédonculé"
     ],
     "aliases": [
+      "chêne pédonculé",
       "english oak",
       "pedunculate oak",
       "quercus robur"
@@ -22048,6 +26350,7 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -22371,6 +26674,47 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:718256-1",
+    "scientificName": "Rhamnus cathartica",
+    "family": "Rhamnaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 51,
+    "traits": {
+      "deerResistant": true,
+      "thorny": true,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 20,
+      "spreadFt": 15
+    },
+    "identifiers": {
+      "ipni": "718256-1",
+      "wfo": "wfo-0000460239",
+      "gbif": "3039491",
+      "usda": "RHCA3",
+      "itis": "28573",
+      "inat": "54811",
+      "wikidata": "Q147861",
+      "indigene": "rhamnus-cathartica"
+    },
+    "commonNames": [
+      "Purging Buckthorn",
+      "Nerprun purgatif"
+    ],
+    "aliases": [
+      "nerprun purgatif",
+      "purging buckthorn",
+      "rhamnus cathartica"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
+    ]
+  },
+  {
     "primaryId": "ipni:30116962-2",
     "scientificName": "Rhinanthus minor",
     "family": "Orobanchaceae",
@@ -22523,6 +26867,82 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "pnw"
+    ]
+  },
+  {
+    "primaryId": "ipni:219516-2",
+    "scientificName": "Rhododendron periclymenoides",
+    "family": "Ericaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": true,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 6,
+      "spreadFt": 6
+    },
+    "identifiers": {
+      "ipni": "219516-2",
+      "wfo": "wfo-0001047079",
+      "gbif": "2883027",
+      "usda": "RHPE4",
+      "itis": "23726",
+      "inat": "49822",
+      "wikidata": "Q7321157",
+      "indigene": "rhododendron-periclymenoides"
+    },
+    "commonNames": [
+      "Pinxterbloom Azalea"
+    ],
+    "aliases": [
+      "pinxterbloom azalea",
+      "rhododendron periclymenoides"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:669611-1",
+    "scientificName": "Rhopalostylis sapida",
+    "family": "Arecaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": false,
+      "heightFt": 33,
+      "spreadFt": 13
+    },
+    "identifiers": {
+      "ipni": "669611-1",
+      "wfo": "wfo-0000296514",
+      "gbif": "8532149",
+      "inat": "85274",
+      "wikidata": "Q1990136",
+      "indigene": "rhopalostylis-sapida"
+    },
+    "commonNames": [
+      "Nīkau"
+    ],
+    "aliases": [
+      "nīkau",
+      "rhopalostylis sapida"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -22691,7 +27111,7 @@ export const REGISTRY: RegistryEntry[] = [
     "keystone": false,
     "hostLepCount": 54,
     "traits": {
-      "deerResistant": true,
+      "deerResistant": false,
       "thorny": false,
       "petToxic": false,
       "aggressive": true,
@@ -22718,6 +27138,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "north-michigan",
       "st-lawrence"
     ]
@@ -22759,6 +27180,47 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:792549-1",
+    "scientificName": "Ribes alpinum",
+    "family": "Grossulariaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 33,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 5
+    },
+    "identifiers": {
+      "ipni": "792549-1",
+      "wfo": "wfo-0000404909",
+      "gbif": "2986184",
+      "usda": "RIAL2",
+      "itis": "507145",
+      "inat": "167911",
+      "wikidata": "Q149260",
+      "indigene": "ribes-alpinum"
+    },
+    "commonNames": [
+      "Mountain Currant",
+      "Groseillier des Alpes"
+    ],
+    "aliases": [
+      "groseillier des alpes",
+      "mountain currant",
+      "ribes alpinum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
     ]
   },
   {
@@ -23042,6 +27504,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "france-continental",
       "ireland",
       "scotland-lowlands"
@@ -23532,7 +27995,7 @@ export const REGISTRY: RegistryEntry[] = [
     "form": "shrub",
     "rank": "species",
     "keystone": true,
-    "hostLepCount": 110,
+    "hostLepCount": 163,
     "traits": {
       "deerResistant": false,
       "thorny": false,
@@ -23561,6 +28024,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "north-michigan",
       "pnw"
     ]
   },
@@ -24418,6 +28882,46 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:778457-1",
+    "scientificName": "Salix pentandra",
+    "family": "Salicaceae",
+    "form": "tree",
+    "rank": "species",
+    "keystone": true,
+    "hostLepCount": 377,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 30,
+      "spreadFt": 22
+    },
+    "identifiers": {
+      "ipni": "778457-1",
+      "wfo": "wfo-0000928687",
+      "gbif": "5372647",
+      "usda": "SAPE4",
+      "itis": "22566",
+      "inat": "168349",
+      "wikidata": "Q158912",
+      "indigene": "salix-pentandra"
+    },
+    "commonNames": [
+      "Bay Willow"
+    ],
+    "aliases": [
+      "bay willow",
+      "salix pentandra"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "ireland",
+      "scotland-lowlands"
+    ]
+  },
+  {
     "primaryId": "ipni:226166-2",
     "scientificName": "Salix scouleriana",
     "family": "Salicaceae",
@@ -24739,7 +29243,7 @@ export const REGISTRY: RegistryEntry[] = [
     "form": "perennial",
     "rank": "species",
     "keystone": false,
-    "hostLepCount": 68,
+    "hostLepCount": 69,
     "traits": {
       "deerResistant": true,
       "thorny": false,
@@ -24770,7 +29274,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "france-continental"
+      "france-continental",
+      "france-alpine"
     ]
   },
   {
@@ -24960,15 +29465,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "sambucus-nigra"
     },
     "commonNames": [
-      "Elder"
+      "Elder",
+      "Sureau noir"
     ],
     "aliases": [
       "elder",
-      "sambucus nigra"
+      "sambucus nigra",
+      "sureau noir"
     ],
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -25041,17 +29549,22 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "sambucus-racemosa"
     },
     "commonNames": [
-      "Red Elderberry"
+      "Red Elderberry",
+      "Red-berried Elder",
+      "Sureau rouge"
     ],
     "aliases": [
       "red elderberry",
-      "sambucus racemosa"
+      "red-berried elder",
+      "sambucus racemosa",
+      "sureau rouge"
     ],
     "cultivarOf": null,
     "regions": [
       "north-michigan",
       "st-lawrence",
-      "pnw"
+      "pnw",
+      "france-alpine"
     ]
   },
   {
@@ -25090,7 +29603,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "chicago"
+      "chicago",
+      "st-lawrence"
     ]
   },
   {
@@ -25325,7 +29839,45 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-continental",
       "france-mediterranean"
+    ]
+  },
+  {
+    "primaryId": "ipni:847958-1",
+    "scientificName": "Scandia rosifolia",
+    "family": "Apiaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 0,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 5
+    },
+    "identifiers": {
+      "ipni": "847958-1",
+      "wfo": "wfo-0000435248",
+      "gbif": "5539434",
+      "inat": "405826",
+      "wikidata": "Q17137217",
+      "indigene": "scandia-rosifolia"
+    },
+    "commonNames": [
+      "Koheriki"
+    ],
+    "aliases": [
+      "koheriki",
+      "scandia rosifolia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {
@@ -25519,6 +30071,82 @@ export const REGISTRY: RegistryEntry[] = [
     "aliases": [
       "remuremu",
       "selliera radicans"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:276315-1",
+    "scientificName": "Sempervivum arachnoideum",
+    "family": "Crassulaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 5,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.3,
+      "spreadFt": 1.5
+    },
+    "identifiers": {
+      "ipni": "276315-1",
+      "wfo": "wfo-0000441267",
+      "gbif": "4201709",
+      "inat": "334591",
+      "wikidata": "Q161390",
+      "indigene": "sempervivum-arachnoideum"
+    },
+    "commonNames": [
+      "Cobweb Houseleek",
+      "Joubarbe toile-d'araignée"
+    ],
+    "aliases": [
+      "cobweb houseleek",
+      "joubarbe toile-d'araignée",
+      "sempervivum arachnoideum"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-alpine"
+    ]
+  },
+  {
+    "primaryId": "ipni:245971-1",
+    "scientificName": "Senecio lautus",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 3,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "245971-1",
+      "wfo": "wfo-0000073789",
+      "gbif": "3108740",
+      "inat": "323168",
+      "wikidata": "Q15600576",
+      "indigene": "senecio-lautus"
+    },
+    "commonNames": [
+      "Shore Groundsel"
+    ],
+    "aliases": [
+      "senecio lautus",
+      "shore groundsel"
     ],
     "cultivarOf": null,
     "regions": [
@@ -25775,7 +30403,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 3,
       "spreadFt": 2.5
     },
@@ -25790,14 +30418,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "silene-dioica"
     },
     "commonNames": [
-      "Red Campion"
+      "Red Campion",
+      "Silène dioïque"
     ],
     "aliases": [
       "red campion",
-      "silene dioica"
+      "silene dioica",
+      "silène dioïque"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -25960,6 +30592,84 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:240139-2",
+    "scientificName": "Solidago caesia",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "hostLepCount": 115,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "240139-2",
+      "wfo": "wfo-0000040422",
+      "gbif": "5389076",
+      "usda": "SOCA4",
+      "itis": "36238",
+      "inat": "120005",
+      "wikidata": "Q738279",
+      "indigene": "solidago-caesia"
+    },
+    "commonNames": [
+      "Blue-stemmed Goldenrod"
+    ],
+    "aliases": [
+      "blue-stemmed goldenrod",
+      "solidago caesia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:240229-2",
+    "scientificName": "Solidago flexicaulis",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "hostLepCount": 115,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2.5,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "240229-2",
+      "wfo": "wfo-0000027957",
+      "gbif": "5389012",
+      "usda": "SOFL2",
+      "itis": "36257",
+      "inat": "119154",
+      "wikidata": "Q3489405",
+      "indigene": "solidago-flexicaulis"
+    },
+    "commonNames": [
+      "Zigzag Goldenrod"
+    ],
+    "aliases": [
+      "solidago flexicaulis",
+      "zigzag goldenrod"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
+    ]
+  },
+  {
     "primaryId": "ipni:240318-2",
     "scientificName": "Solidago lepida",
     "family": "Asteraceae",
@@ -26034,6 +30744,46 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "central-texas"
+    ]
+  },
+  {
+    "primaryId": "ipni:240389-2",
+    "scientificName": "Solidago odora",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 115,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 4,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "240389-2",
+      "wfo": "wfo-0000024522",
+      "gbif": "5388923",
+      "usda": "SOOD",
+      "itis": "36284",
+      "inat": "131183",
+      "wikidata": "Q15566381",
+      "indigene": "solidago-odora"
+    },
+    "commonNames": [
+      "Sweet Goldenrod"
+    ],
+    "aliases": [
+      "solidago odora",
+      "sweet goldenrod"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central",
+      "florida-south"
     ]
   },
   {
@@ -26449,7 +31199,7 @@ export const REGISTRY: RegistryEntry[] = [
       "aggressive": false,
       "noWater": true,
       "heightFt": 7,
-      "spreadFt": 2
+      "spreadFt": 2.5
     },
     "identifiers": {
       "ipni": "240823-2",
@@ -26470,6 +31220,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "mid-atlantic",
       "chicago",
       "central-texas"
     ]
@@ -26751,6 +31502,45 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:246388-2",
+    "scientificName": "Stokesia laevis",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 2,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "246388-2",
+      "wfo": "wfo-0000021794",
+      "gbif": "5403935",
+      "usda": "STLA6",
+      "itis": "38468",
+      "inat": "155984",
+      "wikidata": "Q1436235",
+      "indigene": "stokesia-laevis"
+    },
+    "commonNames": [
+      "Stokes' Aster"
+    ],
+    "aliases": [
+      "stokes' aster",
+      "stokesia laevis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "florida-central"
+    ]
+  },
+  {
     "primaryId": "ipni:30048227-2",
     "scientificName": "Struthiopteris spicant",
     "family": "Blechnaceae",
@@ -26898,15 +31688,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "succisa-pratensis"
     },
     "commonNames": [
-      "Devil's-bit Scabious"
+      "Devil's-bit Scabious",
+      "Succise des prés"
     ],
     "aliases": [
       "devil's-bit scabious",
-      "succisa pratensis"
+      "succisa pratensis",
+      "succise des prés"
     ],
     "cultivarOf": null,
     "regions": [
       "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
     ]
@@ -27067,6 +31860,48 @@ export const REGISTRY: RegistryEntry[] = [
       "pnw",
       "ca-south-coast",
       "ca-central-coast"
+    ]
+  },
+  {
+    "primaryId": "ipni:981790-1",
+    "scientificName": "Symphyotrichum cordifolium",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": true,
+    "hostLepCount": 109,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 3,
+      "spreadFt": 2.5
+    },
+    "identifiers": {
+      "ipni": "981790-1",
+      "wfo": "wfo-0000129024",
+      "gbif": "3151421",
+      "usda": "SYCO4",
+      "itis": "522193",
+      "inat": "153441",
+      "wikidata": "Q4050493",
+      "indigene": "symphyotrichum-cordifolium"
+    },
+    "commonNames": [
+      "Blue Wood Aster",
+      "Heart-leaved Aster"
+    ],
+    "aliases": [
+      "blue wood aster",
+      "heart-leaved aster",
+      "symphyotrichum cordifolium"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -27318,11 +32153,11 @@ export const REGISTRY: RegistryEntry[] = [
     "keystone": false,
     "hostLepCount": 7,
     "traits": {
-      "deerResistant": true,
+      "deerResistant": false,
       "thorny": false,
       "petToxic": true,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 50,
       "spreadFt": 30
     },
@@ -27337,14 +32172,17 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "taxus-baccata"
     },
     "commonNames": [
-      "Yew"
+      "Yew",
+      "If à baies"
     ],
     "aliases": [
+      "if à baies",
       "taxus baccata",
       "yew"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-alpine",
       "ireland"
     ]
   },
@@ -27465,6 +32303,43 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:364795-1",
+    "scientificName": "Tetragonia tetragonoides",
+    "family": "Aizoaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 1,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1,
+      "spreadFt": 6
+    },
+    "identifiers": {
+      "ipni": "364795-1",
+      "wfo": "wfo-0000414976",
+      "gbif": "5554574",
+      "inat": "418653",
+      "wikidata": "Q278283",
+      "indigene": "tetragonia-tetragonoides"
+    },
+    "commonNames": [
+      "Kōkihi"
+    ],
+    "aliases": [
+      "kōkihi",
+      "tetragonia tetragonoides"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:460717-1",
     "scientificName": "Teucrium scorodonia",
     "family": "Lamiaceae",
@@ -27500,6 +32375,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "ireland",
       "scotland-lowlands"
     ]
@@ -27661,6 +32537,47 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "ireland",
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:461562-1",
+    "scientificName": "Thymus pulegioides",
+    "family": "Lamiaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 85,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 2
+    },
+    "identifiers": {
+      "ipni": "461562-1",
+      "wfo": "wfo-0000324607",
+      "gbif": "5341443",
+      "usda": "THPU5",
+      "itis": "505500",
+      "inat": "169753",
+      "wikidata": "Q149474",
+      "indigene": "thymus-pulegioides"
+    },
+    "commonNames": [
+      "Large Thyme",
+      "Thym faux pouliot"
+    ],
+    "aliases": [
+      "large thyme",
+      "thym faux pouliot",
+      "thymus pulegioides"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "france-continental"
     ]
   },
   {
@@ -27979,7 +32896,9 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "chicago"
+      "chicago",
+      "florida-central",
+      "florida-south"
     ]
   },
   {
@@ -28141,7 +33060,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "north-michigan"
+      "north-michigan",
+      "st-lawrence"
     ]
   },
   {
@@ -28464,6 +33384,7 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
       "ireland"
     ]
   },
@@ -29200,7 +34121,7 @@ export const REGISTRY: RegistryEntry[] = [
       "thorny": false,
       "petToxic": false,
       "aggressive": false,
-      "noWater": true,
+      "noWater": false,
       "heightFt": 5,
       "spreadFt": 2.5
     },
@@ -29215,14 +34136,18 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "valeriana-officinalis"
     },
     "commonNames": [
-      "Common Valerian"
+      "Common Valerian",
+      "Valériane officinale"
     ],
     "aliases": [
       "common valerian",
-      "valeriana officinalis"
+      "valeriana officinalis",
+      "valériane officinale"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "scotland-lowlands"
     ]
   },
@@ -29301,7 +34226,9 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "chicago"
+      "north-michigan",
+      "chicago",
+      "st-lawrence"
     ]
   },
   {
@@ -29344,6 +34271,82 @@ export const REGISTRY: RegistryEntry[] = [
     ]
   },
   {
+    "primaryId": "ipni:258933-1",
+    "scientificName": "Vernonia noveboracensis",
+    "family": "Asteraceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": null,
+    "traits": {
+      "deerResistant": true,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 7,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "258933-1",
+      "wfo": "wfo-0000005844",
+      "gbif": "8271565",
+      "usda": "VENO",
+      "itis": "38644",
+      "inat": "142979",
+      "wikidata": "Q1983017",
+      "indigene": "vernonia-noveboracensis"
+    },
+    "commonNames": [
+      "New York Ironweed"
+    ],
+    "aliases": [
+      "new york ironweed",
+      "vernonia noveboracensis"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
+    ]
+  },
+  {
+    "primaryId": "ipni:812263-1",
+    "scientificName": "Veronica macrocarpa",
+    "family": "Plantaginaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 18,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 6,
+      "spreadFt": 5
+    },
+    "identifiers": {
+      "ipni": "812263-1",
+      "wfo": "wfo-0001035263",
+      "gbif": "3729654",
+      "inat": "738752",
+      "wikidata": "Q17744836",
+      "indigene": "veronica-macrocarpa"
+    },
+    "commonNames": [
+      "Large-leaved Koromiko"
+    ],
+    "aliases": [
+      "large-leaved koromiko",
+      "veronica macrocarpa"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
+    ]
+  },
+  {
     "primaryId": "ipni:812694-1",
     "scientificName": "Veronica stricta",
     "family": "Plantaginaceae",
@@ -29377,6 +34380,45 @@ export const REGISTRY: RegistryEntry[] = [
     "cultivarOf": null,
     "regions": [
       "nz-auckland"
+    ]
+  },
+  {
+    "primaryId": "ipni:326263-2",
+    "scientificName": "Viburnum acerifolium",
+    "family": "Adoxaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 104,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 5,
+      "spreadFt": 4
+    },
+    "identifiers": {
+      "ipni": "326263-2",
+      "wfo": "wfo-0001290749",
+      "gbif": "2888596",
+      "usda": "VIAC",
+      "itis": "35255",
+      "inat": "62997",
+      "wikidata": "Q937402",
+      "indigene": "viburnum-acerifolium"
+    },
+    "commonNames": [
+      "Maple-leaved Viburnum"
+    ],
+    "aliases": [
+      "maple-leaved viburnum",
+      "viburnum acerifolium"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "north-michigan"
     ]
   },
   {
@@ -29607,16 +34649,59 @@ export const REGISTRY: RegistryEntry[] = [
       "indigene": "viburnum-opulus"
     },
     "commonNames": [
-      "Guelder Rose"
+      "Guelder Rose",
+      "Viorne obier"
     ],
     "aliases": [
       "guelder rose",
-      "viburnum opulus"
+      "viburnum opulus",
+      "viorne obier"
     ],
     "cultivarOf": null,
     "regions": [
+      "france-atlantic",
+      "france-continental",
       "ireland",
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:326270-2",
+    "scientificName": "Viburnum prunifolium",
+    "family": "Adoxaceae",
+    "form": "shrub",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 104,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 15,
+      "spreadFt": 12
+    },
+    "identifiers": {
+      "ipni": "326270-2",
+      "wfo": "wfo-0001290684",
+      "gbif": "2888608",
+      "usda": "VIPR",
+      "itis": "35253",
+      "inat": "129977",
+      "wikidata": "Q678294",
+      "indigene": "viburnum-prunifolium"
+    },
+    "commonNames": [
+      "Blackhaw Viburnum"
+    ],
+    "aliases": [
+      "blackhaw viburnum",
+      "viburnum prunifolium"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "mid-atlantic"
     ]
   },
   {
@@ -29735,7 +34820,8 @@ export const REGISTRY: RegistryEntry[] = [
     ],
     "cultivarOf": null,
     "regions": [
-      "ireland"
+      "ireland",
+      "scotland-lowlands"
     ]
   },
   {
@@ -29892,6 +34978,45 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "ireland",
       "scotland-lowlands"
+    ]
+  },
+  {
+    "primaryId": "ipni:266976-2",
+    "scientificName": "Viola sororia",
+    "family": "Violaceae",
+    "form": "groundcover",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 29,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": true,
+      "noWater": true,
+      "heightFt": 0.5,
+      "spreadFt": 3
+    },
+    "identifiers": {
+      "ipni": "266976-2",
+      "wfo": "wfo-0001144694",
+      "gbif": "5331238",
+      "usda": "VISO",
+      "itis": "22169",
+      "inat": "82816",
+      "wikidata": "Q1077055",
+      "indigene": "viola-sororia"
+    },
+    "commonNames": [
+      "Common Blue Violet"
+    ],
+    "aliases": [
+      "common blue violet",
+      "viola sororia"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "chicago"
     ]
   },
   {
@@ -30125,6 +35250,43 @@ export const REGISTRY: RegistryEntry[] = [
     "regions": [
       "florida-central",
       "florida-south"
+    ]
+  },
+  {
+    "primaryId": "ipni:995164-1",
+    "scientificName": "Wahlenbergia violacea",
+    "family": "Campanulaceae",
+    "form": "perennial",
+    "rank": "species",
+    "keystone": false,
+    "hostLepCount": 0,
+    "traits": {
+      "deerResistant": false,
+      "thorny": false,
+      "petToxic": false,
+      "aggressive": false,
+      "noWater": true,
+      "heightFt": 1.5,
+      "spreadFt": 1
+    },
+    "identifiers": {
+      "ipni": "995164-1",
+      "wfo": "wfo-0000819506",
+      "gbif": "5413751",
+      "inat": "410166",
+      "wikidata": "Q15557979",
+      "indigene": "wahlenbergia-violacea"
+    },
+    "commonNames": [
+      "Native Harebell"
+    ],
+    "aliases": [
+      "native harebell",
+      "wahlenbergia violacea"
+    ],
+    "cultivarOf": null,
+    "regions": [
+      "nz-auckland"
     ]
   },
   {

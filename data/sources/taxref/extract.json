@@ -7,6 +7,17 @@
   "rowsInTable": 708685,
   "method": "LB_NOM matched exactly to each scientific name the app shows; the accepted row (CD_REF) supplies the French names, in TAXREF's own order, and its status in metropolitan France (FR). Only the names the app shows are kept.",
   "taxa": {
+    "Abies alba": {
+      "cdNom": 79319,
+      "cdRef": 79319,
+      "accepted": "Abies alba",
+      "rank": "ES",
+      "french": [
+        "Sapin blanc",
+        "Sapin pectiné"
+      ],
+      "fr": "P"
+    },
     "Abies grandis": {
       "cdNom": 79333,
       "cdRef": 79333,
@@ -330,6 +341,25 @@
       "rank": "ES",
       "french": []
     },
+    "Amelanchier ovalis": {
+      "cdNom": 82103,
+      "cdRef": 82103,
+      "accepted": "Amelanchier ovalis",
+      "rank": "ES",
+      "french": [
+        "Amélanchier ovale",
+        "Amélanchier commun",
+        "Amélanchier à feuilles ovales"
+      ],
+      "fr": "P"
+    },
+    "Ammophila breviligulata": {
+      "cdNom": 761890,
+      "cdRef": 761890,
+      "accepted": "Ammophila breviligulata",
+      "rank": "ES",
+      "french": []
+    },
     "Anaphalis margaritacea": {
       "cdNom": 82353,
       "cdRef": 82353,
@@ -393,6 +423,27 @@
         "Cayure"
       ]
     },
+    "Antennaria dioica": {
+      "cdNom": 82796,
+      "cdRef": 82796,
+      "accepted": "Antennaria dioica",
+      "rank": "ES",
+      "french": [
+        "Antennaire dioïque",
+        "Patte-de-chat",
+        "Pied-de-chat dioïque",
+        "Gnaphale dioïque",
+        "Hispidule"
+      ],
+      "fr": "P"
+    },
+    "Antennaria neglecta": {
+      "cdNom": 762037,
+      "cdRef": 762037,
+      "accepted": "Antennaria neglecta",
+      "rank": "ES",
+      "french": []
+    },
     "Anthocharis cardamines": {
       "cdNom": 54451,
       "cdRef": 54451,
@@ -446,6 +497,27 @@
       "rank": "ES",
       "french": [
         "Tristan (Le)"
+      ],
+      "fr": "P"
+    },
+    "Apium prostratum": {
+      "cdNom": 445397,
+      "cdRef": 445397,
+      "accepted": "Apium prostratum",
+      "rank": "ES",
+      "french": [
+        "Faux persil de corniche"
+      ]
+    },
+    "Aquilegia vulgaris": {
+      "cdNom": 83267,
+      "cdRef": 83267,
+      "accepted": "Aquilegia vulgaris",
+      "rank": "ES",
+      "french": [
+        "Ancolie commune",
+        "Ancolie vulgaire",
+        "Clochette"
       ],
       "fr": "P"
     },
@@ -511,6 +583,18 @@
         "Armérie maritime",
         "Gazon d'Olympe maritime",
         "Herbe à sept têtes"
+      ],
+      "fr": "P"
+    },
+    "Arnica montana": {
+      "cdNom": 83874,
+      "cdRef": 83874,
+      "accepted": "Arnica montana",
+      "rank": "ES",
+      "french": [
+        "Arnica des montagnes",
+        "Arnica",
+        "Herbe aux prêcheurs"
       ],
       "fr": "P"
     },
@@ -608,6 +692,13 @@
       ],
       "fr": "P"
     },
+    "Asplenium oblongifolium": {
+      "cdNom": 446851,
+      "cdRef": 446851,
+      "accepted": "Asplenium oblongifolium",
+      "rank": "ES",
+      "french": []
+    },
     "Asplenium scolopendrium": {
       "cdNom": 84524,
       "cdRef": 84524,
@@ -642,6 +733,64 @@
       "french": [
         "Doradille verte",
         "Asplénium à pétiole vert"
+      ],
+      "fr": "P"
+    },
+    "Aster alpinus": {
+      "cdNom": 84622,
+      "cdRef": 84622,
+      "accepted": "Aster alpinus",
+      "rank": "ES",
+      "french": [
+        "Aster des Alpes"
+      ],
+      "fr": "P"
+    },
+    "Aster amellus": {
+      "cdNom": 84626,
+      "cdRef": 84626,
+      "accepted": "Aster amellus",
+      "rank": "ES",
+      "french": [
+        "Aster amelle",
+        "Marguerite de la Saint-Michel",
+        "Étoilée",
+        "Œil-du-Christ"
+      ],
+      "fr": "P"
+    },
+    "Astrantia major": {
+      "cdNom": 84936,
+      "cdRef": 84936,
+      "accepted": "Astrantia major",
+      "rank": "ES",
+      "french": [
+        "Grande astrance",
+        "Astrance élevée",
+        "Grande radiaire"
+      ],
+      "fr": "P"
+    },
+    "Athyrium angustum": {
+      "cdNom": 772003,
+      "cdRef": 772003,
+      "accepted": "Athyrium angustum",
+      "rank": "ES",
+      "french": [
+        "Fougère femelle du Nord",
+        "Fougère femelle subarctique"
+      ],
+      "fr": "A"
+    },
+    "Athyrium filix-femina": {
+      "cdNom": 84999,
+      "cdRef": 84999,
+      "accepted": "Athyrium filix-femina",
+      "rank": "ES",
+      "french": [
+        "Fougère femelle",
+        "Polypode femelle",
+        "Athyrium fougère-femelle"
       ],
       "fr": "P"
     },
@@ -820,6 +969,31 @@
       ],
       "fr": "P"
     },
+    "Briza media": {
+      "cdNom": 86490,
+      "cdRef": 86490,
+      "accepted": "Briza media",
+      "rank": "ES",
+      "french": [
+        "Brize intermédiaire",
+        "Amourette commune",
+        "Amourette"
+      ],
+      "fr": "P"
+    },
+    "Bromus erectus": {
+      "cdNom": 86601,
+      "cdRef": 86512,
+      "accepted": "Bromopsis erecta",
+      "rank": "ES",
+      "french": [
+        "Brome érigé",
+        "Brome dressé",
+        "Faux brome érigé",
+        "Faux brome dressé"
+      ],
+      "fr": "P"
+    },
     "Buddleja davidii": {
       "cdNom": 86869,
       "cdRef": 86869,
@@ -839,6 +1013,19 @@
       "accepted": "Bursera simaruba",
       "rank": "ES",
       "french": []
+    },
+    "Calamagrostis varia": {
+      "cdNom": 87296,
+      "cdRef": 87296,
+      "accepted": "Calamagrostis varia",
+      "rank": "ES",
+      "french": [
+        "Calamagrostide variée",
+        "Calamagrostide bigarrée",
+        "Calamagrostide des montagnes",
+        "Calamagrostis varié"
+      ],
+      "fr": "P"
     },
     "Callipepla californica": {
       "cdNom": 3014,
@@ -914,6 +1101,16 @@
       ],
       "fr": "P"
     },
+    "Campanula scheuchzeri": {
+      "cdNom": 87724,
+      "cdRef": 87724,
+      "accepted": "Campanula scheuchzeri",
+      "rank": "ES",
+      "french": [
+        "Campanule de Scheuchzer"
+      ],
+      "fr": "P"
+    },
     "Campsis radicans": {
       "cdNom": 631143,
       "cdRef": 631143,
@@ -972,6 +1169,17 @@
       "rank": "ES",
       "french": [
         "Laîche glauque"
+      ],
+      "fr": "P"
+    },
+    "Carex pendula": {
+      "cdNom": 88766,
+      "cdRef": 88766,
+      "accepted": "Carex pendula",
+      "rank": "ES",
+      "french": [
+        "Laîche à épis pendants",
+        "Laîche pendante"
       ],
       "fr": "P"
     },
@@ -1123,6 +1331,18 @@
       ],
       "fr": "I"
     },
+    "Centaurea jacea": {
+      "cdNom": 89619,
+      "cdRef": 89619,
+      "accepted": "Centaurea jacea",
+      "rank": "ES",
+      "french": [
+        "Centaurée jacée",
+        "Tête de moineau",
+        "Ambrette"
+      ],
+      "fr": "P"
+    },
     "Centaurea nigra": {
       "cdNom": 89653,
       "cdRef": 89653,
@@ -1210,6 +1430,13 @@
       ],
       "fr": "P"
     },
+    "Chelone glabra": {
+      "cdNom": 762039,
+      "cdRef": 762039,
+      "accepted": "Chelone glabra",
+      "rank": "ES",
+      "french": []
+    },
     "Chloris chloris": {
       "cdNom": 4582,
       "cdRef": 4582,
@@ -1232,6 +1459,13 @@
         "Icaquier",
         "Coco-plum"
       ]
+    },
+    "Chrysophyllum oliviforme": {
+      "cdNom": 447600,
+      "cdRef": 447600,
+      "accepted": "Chrysophyllum oliviforme",
+      "rank": "ES",
+      "french": []
     },
     "Cirsium heterophyllum": {
       "cdNom": 91346,
@@ -1317,6 +1551,16 @@
       ],
       "fr": "P"
     },
+    "Clethra alnifolia": {
+      "cdNom": 610633,
+      "cdRef": 610633,
+      "accepted": "Clethra alnifolia",
+      "rank": "ES",
+      "french": [
+        "Cléthra à feuilles d’aulne"
+      ],
+      "fr": "M"
+    },
     "Coccoloba diversifolia": {
       "cdNom": 637666,
       "cdRef": 629382,
@@ -1385,6 +1629,16 @@
         "Drageonnier austral"
       ],
       "fr": "M"
+    },
+    "Coreopsis lanceolata": {
+      "cdNom": 92449,
+      "cdRef": 92449,
+      "accepted": "Coreopsis lanceolata",
+      "rank": "ES",
+      "french": [
+        "Coréopsis lancéolé"
+      ],
+      "fr": "I"
     },
     "Cornus alternifolia": {
       "cdNom": 762041,
@@ -1476,6 +1730,18 @@
       "accepted": "Corylus cornuta",
       "rank": "ES",
       "french": []
+    },
+    "Cotoneaster integerrimus": {
+      "cdNom": 92667,
+      "cdRef": 92667,
+      "accepted": "Cotoneaster integerrimus",
+      "rank": "ES",
+      "french": [
+        "Cotonéaster commun",
+        "Cotonéaster sauvage",
+        "Cotonéaster vulgaire"
+      ],
+      "fr": "P"
     },
     "Crataegus laevigata": {
       "cdNom": 92864,
@@ -1604,6 +1870,13 @@
       ],
       "fr": "B"
     },
+    "Danthonia spicata": {
+      "cdNom": 761893,
+      "cdRef": 761893,
+      "accepted": "Danthonia spicata",
+      "rank": "ES",
+      "french": []
+    },
     "Daphne mezereum": {
       "cdNom": 94435,
       "cdRef": 94435,
@@ -1636,6 +1909,16 @@
       "french": [
         "Canche cespiteuse",
         "Canche des champs"
+      ],
+      "fr": "P"
+    },
+    "Dianthus carthusianorum": {
+      "cdNom": 94716,
+      "cdRef": 94716,
+      "accepted": "Dianthus carthusianorum",
+      "rank": "ES",
+      "french": [
+        "Œillet des Chartreux"
       ],
       "fr": "P"
     },
@@ -1681,6 +1964,16 @@
         "Diervilla chèvrefeuille"
       ]
     },
+    "Digitalis grandiflora": {
+      "cdNom": 94942,
+      "cdRef": 94942,
+      "accepted": "Digitalis grandiflora",
+      "rank": "ES",
+      "french": [
+        "Digitale à grandes fleurs"
+      ],
+      "fr": "P"
+    },
     "Digitalis purpurea": {
       "cdNom": 94959,
       "cdRef": 94959,
@@ -1725,6 +2018,18 @@
         "Cardère découpée"
       ],
       "fr": "P"
+    },
+    "Dodonaea viscosa": {
+      "cdNom": 447591,
+      "cdRef": 447591,
+      "accepted": "Dodonaea viscosa",
+      "rank": "ES",
+      "french": [
+        "Dodonée visqueuse",
+        "Bois d'arnette",
+        "Bois d'aulne",
+        "Bois de reinette"
+      ]
     },
     "Dorycnium pentaphyllum": {
       "cdNom": 95279,
@@ -1793,6 +2098,17 @@
         "Échinacée pourpre"
       ],
       "fr": "M"
+    },
+    "Echium vulgare": {
+      "cdNom": 95793,
+      "cdRef": 95793,
+      "accepted": "Echium vulgare",
+      "rank": "ES",
+      "french": [
+        "Vipérine commune",
+        "Vipérine vulgaire"
+      ],
+      "fr": "P"
     },
     "Elaeagnus umbellata": {
       "cdNom": 95841,
@@ -1913,6 +2229,13 @@
       ],
       "fr": "I"
     },
+    "Eugenia axillaris": {
+      "cdNom": 629679,
+      "cdRef": 629679,
+      "accepted": "Eugenia axillaris",
+      "rank": "ES",
+      "french": []
+    },
     "Euonymus europaeus": {
       "cdNom": 609982,
       "cdRef": 609982,
@@ -1921,6 +2244,18 @@
       "french": [
         "Fusain d'Europe",
         "Bonnet-d'évêque"
+      ],
+      "fr": "P"
+    },
+    "Eupatorium cannabinum": {
+      "cdNom": 97434,
+      "cdRef": 97434,
+      "accepted": "Eupatorium cannabinum",
+      "rank": "ES",
+      "french": [
+        "Eupatoire chanvrine",
+        "Eupatoire à feuilles de chanvre",
+        "Chanvre d'eau"
       ],
       "fr": "P"
     },
@@ -1956,6 +2291,17 @@
       "accepted": "Eurya japonica",
       "rank": "ES",
       "french": []
+    },
+    "Eurybia divaricata": {
+      "cdNom": 610589,
+      "cdRef": 610589,
+      "accepted": "Eurybia divaricata",
+      "rank": "ES",
+      "french": [
+        "Eurybia divariqué",
+        "Eurybie divariquée"
+      ],
+      "fr": "M"
     },
     "Eutrochium maculatum": {
       "cdNom": 762303,
@@ -2051,6 +2397,13 @@
       ],
       "fr": "P"
     },
+    "Forestiera segregata": {
+      "cdNom": 629749,
+      "cdRef": 629749,
+      "accepted": "Forestiera segregata",
+      "rank": "ES",
+      "french": []
+    },
     "Fragaria chiloensis": {
       "cdNom": 810187,
       "cdRef": 810187,
@@ -2107,6 +2460,20 @@
         "Frêne à fleurs",
         "Orne d'Europe",
         "Frêne orne"
+      ],
+      "fr": "P"
+    },
+    "Galium odoratum": {
+      "cdNom": 99488,
+      "cdRef": 99488,
+      "accepted": "Galium odoratum",
+      "rank": "ES",
+      "french": [
+        "Gaillet odorant",
+        "Aspérule odorante",
+        "Belle-étoile",
+        "Muguet des dames",
+        "Thé suisse"
       ],
       "fr": "P"
     },
@@ -2185,6 +2552,16 @@
       ],
       "fr": "P"
     },
+    "Gentiana acaulis": {
+      "cdNom": 99854,
+      "cdRef": 99854,
+      "accepted": "Gentiana acaulis",
+      "rank": "ES",
+      "french": [
+        "Gentiane acaule"
+      ],
+      "fr": "P"
+    },
     "Gentiana lutea": {
       "cdNom": 99903,
       "cdRef": 99903,
@@ -2239,6 +2616,16 @@
       "rank": "ES",
       "french": []
     },
+    "Geum montanum": {
+      "cdNom": 100208,
+      "cdRef": 100208,
+      "accepted": "Geum montanum",
+      "rank": "ES",
+      "french": [
+        "Benoîte des montagnes"
+      ],
+      "fr": "P"
+    },
     "Geum rivale": {
       "cdNom": 100215,
       "cdRef": 100215,
@@ -2256,6 +2643,18 @@
       "rank": "ES",
       "french": [],
       "fr": "M"
+    },
+    "Glechoma hederacea": {
+      "cdNom": 100310,
+      "cdRef": 100310,
+      "accepted": "Glechoma hederacea",
+      "rank": "ES",
+      "french": [
+        "Gléchome lierre terrestre",
+        "Lierre terrestre",
+        "Gléchome lierre"
+      ],
+      "fr": "P"
     },
     "Gonepteryx cleopatra": {
       "cdNom": 54419,
@@ -2290,6 +2689,28 @@
         "Gunnéra des teinturiers"
       ],
       "fr": "I"
+    },
+    "Gymnocarpium dryopteris": {
+      "cdNom": 100636,
+      "cdRef": 100636,
+      "accepted": "Gymnocarpium dryopteris",
+      "rank": "ES",
+      "french": [
+        "Gymnocarpium dryoptéride",
+        "Polypode du chêne",
+        "Dryoptéris de Linné",
+        "Lastrée du chêne",
+        "Dryoptéride de Linné",
+        "Gymnocarpium du chêne"
+      ],
+      "fr": "P"
+    },
+    "Haloragis erecta": {
+      "cdNom": 448108,
+      "cdRef": 448108,
+      "accepted": "Haloragis erecta",
+      "rank": "ES",
+      "french": []
     },
     "Hamamelis virginiana": {
       "cdNom": 100737,
@@ -2384,6 +2805,13 @@
       ],
       "fr": "P"
     },
+    "Heliotropium angiospermum": {
+      "cdNom": 629832,
+      "cdRef": 629832,
+      "accepted": "Heliotropium angiospermum",
+      "rank": "ES",
+      "french": []
+    },
     "Hemaris thysbe": {
       "cdNom": 780756,
       "cdRef": 780756,
@@ -2429,6 +2857,33 @@
       ],
       "fr": "M"
     },
+    "Hippocrepis comosa": {
+      "cdNom": 102842,
+      "cdRef": 102842,
+      "accepted": "Hippocrepis comosa",
+      "rank": "ES",
+      "french": [
+        "Hippocrépide chevelue",
+        "Hippocrépide fer-à-cheval",
+        "Fer-à-cheval",
+        "Hippocrépide à toupet",
+        "Hippocrépide en ombelle",
+        "Hippocrépis chevelu"
+      ],
+      "fr": "P"
+    },
+    "Hippophae rhamnoides": {
+      "cdNom": 102863,
+      "cdRef": 102863,
+      "accepted": "Hippophae rhamnoides",
+      "rank": "ES",
+      "french": [
+        "Argousier faux nerprun",
+        "Argousier",
+        "Saule épineux"
+      ],
+      "fr": "P"
+    },
     "Holodiscus discolor": {
       "cdNom": 102907,
       "cdRef": 102907,
@@ -2467,6 +2922,17 @@
       ],
       "fr": "P"
     },
+    "Hydrangea arborescens": {
+      "cdNom": 103098,
+      "cdRef": 103098,
+      "accepted": "Hydrangea arborescens",
+      "rank": "ES",
+      "french": [
+        "Hortensia arbustif",
+        "Hortensia arborescent"
+      ],
+      "fr": "M"
+    },
     "Hydrangea macrophylla": {
       "cdNom": 103108,
       "cdRef": 103108,
@@ -2484,6 +2950,17 @@
       "accepted": "Hylephila phyleus",
       "rank": "ES",
       "french": []
+    },
+    "Hypericum perforatum": {
+      "cdNom": 103316,
+      "cdRef": 103316,
+      "accepted": "Hypericum perforatum",
+      "rank": "ES",
+      "french": [
+        "Millepertuis perforé",
+        "Herbe de la Saint-Jean"
+      ],
+      "fr": "P"
     },
     "Hypericum pulchrum": {
       "cdNom": 103320,
@@ -2684,6 +3161,28 @@
       ],
       "fr": "P"
     },
+    "Kosteletzkya pentacarpos": {
+      "cdNom": 104707,
+      "cdRef": 101539,
+      "accepted": "Hibiscus pentacarpos",
+      "rank": "ES",
+      "french": [
+        "Kostéletzkya à cinq fruits",
+        "Hibiscus à cinq fruits"
+      ],
+      "fr": "P"
+    },
+    "Laburnum alpinum": {
+      "cdNom": 104715,
+      "cdRef": 104715,
+      "accepted": "Laburnum alpinum",
+      "rank": "ES",
+      "french": [
+        "Aubour des Alpes",
+        "Cytise des Alpes"
+      ],
+      "fr": "P"
+    },
     "Lantana camara": {
       "cdNom": 104929,
       "cdRef": 104929,
@@ -2778,6 +3277,16 @@
       "rank": "ES",
       "french": []
     },
+    "Liatris spicata": {
+      "cdNom": 105871,
+      "cdRef": 105871,
+      "accepted": "Liatris spicata",
+      "rank": "ES",
+      "french": [
+        "Liatris en épi"
+      ],
+      "fr": "M"
+    },
     "Libythea celtis": {
       "cdNom": 53965,
       "cdRef": 53965,
@@ -2817,6 +3326,17 @@
         "Troène commun",
         "Troène",
         "Raisin de chien"
+      ],
+      "fr": "P"
+    },
+    "Lilium martagon": {
+      "cdNom": 105989,
+      "cdRef": 105989,
+      "accepted": "Lilium martagon",
+      "rank": "ES",
+      "french": [
+        "Lis martagon",
+        "Lis de Catherine"
       ],
       "fr": "P"
     },
@@ -2878,6 +3398,17 @@
         "Lobélie syphilitique"
       ],
       "fr": "M"
+    },
+    "Lonicera alpigena": {
+      "cdNom": 106550,
+      "cdRef": 106550,
+      "accepted": "Lonicera alpigena",
+      "rank": "ES",
+      "french": [
+        "Chèvrefeuille des Alpes",
+        "Chèvrefeuille alpin"
+      ],
+      "fr": "P"
     },
     "Lonicera implexa": {
       "cdNom": 106570,
@@ -2941,6 +3472,19 @@
       ],
       "fr": "M"
     },
+    "Lonicera xylosteum": {
+      "cdNom": 106595,
+      "cdRef": 106595,
+      "accepted": "Lonicera xylosteum",
+      "rank": "ES",
+      "french": [
+        "Chèvrefeuille des haies",
+        "Camérisier des haies",
+        "Chèvrefeuille camérisier",
+        "Camérisier à balais"
+      ],
+      "fr": "P"
+    },
     "Lotus corniculatus": {
       "cdNom": 106653,
       "cdRef": 106653,
@@ -2991,6 +3535,18 @@
         "Lupin à folioles nombreuses"
       ],
       "fr": "D"
+    },
+    "Luzula nivea": {
+      "cdNom": 106846,
+      "cdRef": 106846,
+      "accepted": "Luzula nivea",
+      "rank": "ES",
+      "french": [
+        "Luzule blanche",
+        "Luzule des neiges",
+        "Luzule blanc-de-neige"
+      ],
+      "fr": "P"
     },
     "Luzula sylvatica": {
       "cdNom": 106863,
@@ -3111,6 +3667,16 @@
       ],
       "fr": "P"
     },
+    "Malva moschata": {
+      "cdNom": 107282,
+      "cdRef": 107282,
+      "accepted": "Malva moschata",
+      "rank": "ES",
+      "french": [
+        "Mauve musquée"
+      ],
+      "fr": "P"
+    },
     "Malvaviscus arboreus": {
       "cdNom": 448502,
       "cdRef": 448502,
@@ -3179,6 +3745,16 @@
       ],
       "fr": "M"
     },
+    "Melica uniflora": {
+      "cdNom": 107880,
+      "cdRef": 107880,
+      "accepted": "Melica uniflora",
+      "rank": "ES",
+      "french": [
+        "Mélique uniflore"
+      ],
+      "fr": "P"
+    },
     "Melitaea cinxia": {
       "cdNom": 53817,
       "cdRef": 53817,
@@ -3224,6 +3800,13 @@
         "Eulalia"
       ],
       "fr": "M"
+    },
+    "Mitchella repens": {
+      "cdNom": 761895,
+      "cdRef": 761895,
+      "accepted": "Mitchella repens",
+      "rank": "ES",
+      "french": []
     },
     "Molinia caerulea": {
       "cdNom": 108718,
@@ -3455,6 +4038,13 @@
       "french": [],
       "fr": "P"
     },
+    "Osmunda claytoniana": {
+      "cdNom": 762026,
+      "cdRef": 762026,
+      "accepted": "Osmunda claytoniana",
+      "rank": "ES",
+      "french": []
+    },
     "Osmunda regalis": {
       "cdNom": 111815,
       "cdRef": 111815,
@@ -3555,6 +4145,18 @@
         "Vigne-vierge tricuspidée"
       ],
       "fr": "M"
+    },
+    "Parthenocissus vitacea": {
+      "cdNom": 112469,
+      "cdRef": 112463,
+      "accepted": "Parthenocissus inserta",
+      "rank": "ES",
+      "french": [
+        "Vigne-vierge commune",
+        "Vigne-vierge à cinq folioles",
+        "Vigne-vierge insérée"
+      ],
+      "fr": "J"
     },
     "Passiflora incarnata": {
       "cdNom": 670888,
@@ -3781,6 +4383,20 @@
       ],
       "fr": "M"
     },
+    "Pinus mugo": {
+      "cdNom": 113682,
+      "cdRef": 113682,
+      "accepted": "Pinus mugo",
+      "rank": "ES",
+      "french": [
+        "Pin mugho",
+        "Pin mugo",
+        "Pin de Montagne",
+        "Pin couché",
+        "Pin rampant"
+      ],
+      "fr": "P"
+    },
     "Pinus palustris": {
       "cdNom": 458778,
       "cdRef": 458778,
@@ -3904,6 +4520,17 @@
         "Argus satiné (L')",
         "Argus (L')",
         "Argus bleu (L')"
+      ],
+      "fr": "P"
+    },
+    "Poa anceps": {
+      "cdNom": 114111,
+      "cdRef": 114160,
+      "accepted": "Poa compressa",
+      "rank": "ES",
+      "french": [
+        "Pâturin comprimé",
+        "Pâturin à tiges aplaties"
       ],
       "fr": "P"
     },
@@ -4100,6 +4727,16 @@
       ],
       "fr": "P"
     },
+    "Prunella vulgaris": {
+      "cdNom": 116012,
+      "cdRef": 116012,
+      "accepted": "Prunella vulgaris",
+      "rank": "ES",
+      "french": [
+        "Herbe Catois"
+      ],
+      "fr": "P"
+    },
     "Prunus avium": {
       "cdNom": 116043,
       "cdRef": 116043,
@@ -4208,6 +4845,28 @@
       "accepted": "Psychotria nervosa",
       "rank": "ES",
       "french": []
+    },
+    "Pulsatilla alpina": {
+      "cdNom": 1056224,
+      "cdRef": 1056224,
+      "accepted": "Pulsatilla alpina",
+      "rank": "ES",
+      "french": [
+        "Pulsatille des Alpes",
+        "Anémone des Alpes"
+      ],
+      "fr": "P"
+    },
+    "Pulsatilla vulgaris": {
+      "cdNom": 116460,
+      "cdRef": 116460,
+      "accepted": "Pulsatilla vulgaris",
+      "rank": "ES",
+      "french": [
+        "Pulsatille commune",
+        "Anémone pulsatille"
+      ],
+      "fr": "P"
     },
     "Pyracantha angustifolia": {
       "cdNom": 446661,
@@ -4483,6 +5142,16 @@
         "Vinaigrier de Virginie"
       ],
       "fr": "I"
+    },
+    "Ribes alpinum": {
+      "cdNom": 117748,
+      "cdRef": 117748,
+      "accepted": "Ribes alpinum",
+      "rank": "ES",
+      "french": [
+        "Groseillier des Alpes"
+      ],
+      "fr": "P"
     },
     "Ribes sanguineum": {
       "cdNom": 117775,
@@ -4784,6 +5453,18 @@
       ],
       "fr": "P"
     },
+    "Salix pentandra": {
+      "cdNom": 120163,
+      "cdRef": 120163,
+      "accepted": "Salix pentandra",
+      "rank": "ES",
+      "french": [
+        "Saule à cinq étamines",
+        "Saule odorant",
+        "Saule à feuilles de laurier"
+      ],
+      "fr": "P"
+    },
     "Salvia coccinea": {
       "cdNom": 639087,
       "cdRef": 639087,
@@ -4999,6 +5680,18 @@
       "accepted": "Selasphorus rufus",
       "rank": "ES",
       "french": []
+    },
+    "Sempervivum arachnoideum": {
+      "cdNom": 122419,
+      "cdRef": 122419,
+      "accepted": "Sempervivum arachnoideum",
+      "rank": "ES",
+      "french": [
+        "Joubarbe toile-d'araignée",
+        "Joubarbe-araignée",
+        "Joubarbe à toiles d'araignée"
+      ],
+      "fr": "P"
     },
     "Senecio inaequidens": {
       "cdNom": 122630,
@@ -5395,6 +6088,19 @@
       "rank": "ES",
       "french": []
     },
+    "Tetragonia tetragonoides": {
+      "cdNom": 125935,
+      "cdRef": 125935,
+      "accepted": "Tetragonia tetragonoides",
+      "rank": "ES",
+      "french": [
+        "Tétragone fausse tétragone",
+        "Tétragone cornue",
+        "Tétragone",
+        "Épinard de Nouvelle-Zélande"
+      ],
+      "fr": "I"
+    },
     "Teucrium scorodonia": {
       "cdNom": 126035,
       "cdRef": 126035,
@@ -5460,6 +6166,18 @@
         "Serpolet couché",
         "Serpolet précoce",
         "Thym couché"
+      ],
+      "fr": "P"
+    },
+    "Thymus pulegioides": {
+      "cdNom": 126566,
+      "cdRef": 126566,
+      "accepted": "Thymus pulegioides",
+      "rank": "ES",
+      "french": [
+        "Thym faux pouliot",
+        "Thym commun",
+        "Serpolet faux pouliot"
       ],
       "fr": "P"
     },

@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Florida (TDWG:FLA — whole state)",
   "region": "florida-central",
-  "ranAt": "2026-10-24T18:50:20.774Z",
+  "ranAt": "2026-10-25T07:18:39.180Z",
   "rows": [
     {
       "id": "quercus-virginiana",
@@ -497,6 +497,106 @@
       "viaSynonym": null
     },
     {
+      "id": "stokesia-laevis",
+      "latin": "Stokesia laevis",
+      "asked": "Stokesia laevis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "asclepias-perennis",
+      "latin": "Asclepias perennis",
+      "asked": "Asclepias perennis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "conoclinium-coelestinum",
+      "latin": "Conoclinium coelestinum",
+      "asked": "Conoclinium coelestinum",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "tradescantia-ohiensis",
+      "latin": "Tradescantia ohiensis",
+      "asked": "Tradescantia ohiensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "solidago-odora",
+      "latin": "Solidago odora",
+      "asked": "Solidago odora",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "liatris-spicata",
+      "latin": "Liatris spicata",
+      "asked": "Liatris spicata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "coreopsis-lanceolata",
+      "latin": "Coreopsis lanceolata",
+      "asked": "Coreopsis lanceolata",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "penstemon-multiflorus",
+      "latin": "Penstemon multiflorus",
+      "asked": "Penstemon multiflorus",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "iris-virginica",
+      "latin": "Iris virginica",
+      "asked": "Iris virginica",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "pityopsis-graminifolia",
+      "latin": "Pityopsis graminifolia",
+      "asked": "Pityopsis graminifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "chamaecrista-fasciculata",
       "latin": "Chamaecrista fasciculata",
       "asked": "Chamaecrista fasciculata",
@@ -690,6 +790,36 @@
       "id": "dichondra-carolinensis",
       "latin": "Dichondra carolinensis",
       "asked": "Dichondra carolinensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "glandularia-maritima",
+      "latin": "Glandularia maritima",
+      "asked": "Glandularia maritima",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "dyschoriste-oblongifolia",
+      "latin": "Dyschoriste oblongifolia",
+      "asked": "Dyschoriste oblongifolia",
+      "verdict": "NATIVE",
+      "areas": {
+        "FLA": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "mitchella-repens",
+      "latin": "Mitchella repens",
+      "asked": "Mitchella repens",
       "verdict": "NATIVE",
       "areas": {
         "FLA": "NATIVE"

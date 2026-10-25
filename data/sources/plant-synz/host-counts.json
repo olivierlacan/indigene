@@ -1,8 +1,18 @@
 {
   "source": "Plant-SyNZ, Manaaki Whenua – Landcare Research (https://plant-synz.landcareresearch.co.nz)",
   "rule": "native (endemic or native) Lepidoptera, reliability score ≥ 7, distinct species across every NZ native species of the genus",
-  "retrieved": "2026-09-24",
+  "retrieved": "2026-10-25",
   "plants": {
+    "acaena-novae-zelandiae": {
+      "latin": "Acaena novae-zelandiae",
+      "genus": 3,
+      "species": 1
+    },
+    "adiantum-cunninghamii": {
+      "latin": "Adiantum cunninghamii",
+      "genus": 2,
+      "species": null
+    },
     "agathis-australis": {
       "latin": "Agathis australis",
       "genus": 3,
@@ -12,6 +22,11 @@
       "latin": "Alectryon excelsus",
       "genus": 11,
       "species": 11
+    },
+    "apium-prostratum": {
+      "latin": "Apium prostratum",
+      "genus": 1,
+      "species": 1
     },
     "apodasmia-similis": {
       "latin": "Apodasmia similis",
@@ -28,8 +43,18 @@
       "genus": 3,
       "species": 2
     },
+    "asplenium-oblongifolium": {
+      "latin": "Asplenium oblongifolium",
+      "genus": 3,
+      "species": 3
+    },
     "astelia-banksii": {
       "latin": "Astelia banksii",
+      "genus": 4,
+      "species": 0
+    },
+    "astelia-fragrans": {
+      "latin": "Astelia fragrans",
       "genus": 4,
       "species": 0
     },
@@ -42,6 +67,11 @@
       "latin": "Blechnum novae-zelandiae",
       "genus": 5,
       "species": 4
+    },
+    "brachyglottis-repanda": {
+      "latin": "Brachyglottis repanda",
+      "genus": 24,
+      "species": 10
     },
     "carex-secta": {
       "latin": "Carex secta",
@@ -63,10 +93,30 @@
       "genus": 27,
       "species": 12
     },
+    "coprosma-lucida": {
+      "latin": "Coprosma lucida",
+      "genus": 27,
+      "species": 2
+    },
+    "coprosma-propinqua": {
+      "latin": "Coprosma propinqua",
+      "genus": 27,
+      "species": 0
+    },
+    "coprosma-acerosa": {
+      "latin": "Coprosma acerosa",
+      "genus": 27,
+      "species": 0
+    },
     "cordyline-australis": {
       "latin": "Cordyline australis",
       "genus": 6,
       "species": 5
+    },
+    "corokia-buddleioides": {
+      "latin": "Corokia buddleioides",
+      "genus": 6,
+      "species": 1
     },
     "corynocarpus-laevigatus": {
       "latin": "Corynocarpus laevigatus",
@@ -88,6 +138,11 @@
       "genus": 7,
       "species": 7
     },
+    "dianella-nigra": {
+      "latin": "Dianella nigra",
+      "genus": 0,
+      "species": 0
+    },
     "dichondra-repens": {
       "latin": "Dichondra repens",
       "genus": 3,
@@ -98,9 +153,19 @@
       "genus": 5,
       "species": 5
     },
+    "dicksonia-fibrosa": {
+      "latin": "Dicksonia fibrosa",
+      "genus": 5,
+      "species": null
+    },
     "disphyma-australe": {
       "latin": "Disphyma australe",
       "genus": 0,
+      "species": 0
+    },
+    "dodonaea-viscosa": {
+      "latin": "Dodonaea viscosa",
+      "genus": 3,
       "species": 0
     },
     "dysoxylum-spectabile": {
@@ -108,10 +173,25 @@
       "genus": 1,
       "species": 1
     },
+    "euphorbia-glauca": {
+      "latin": "Euphorbia glauca",
+      "genus": 1,
+      "species": 1
+    },
     "ficinia-nodosa": {
       "latin": "Ficinia nodosa",
       "genus": 3,
       "species": 1
+    },
+    "geniostoma-ligustrifolium": {
+      "latin": "Geniostoma ligustrifolium",
+      "genus": 3,
+      "species": 3
+    },
+    "haloragis-erecta": {
+      "latin": "Haloragis erecta",
+      "genus": 2,
+      "species": 2
     },
     "hoheria-populnea": {
       "latin": "Hoheria populnea",
@@ -128,6 +208,11 @@
       "genus": 15,
       "species": 0
     },
+    "lepidium-oleraceum": {
+      "latin": "Lepidium oleraceum",
+      "genus": 2,
+      "species": 1
+    },
     "leptospermum-scoparium": {
       "latin": "Leptospermum scoparium",
       "genus": 29,
@@ -138,10 +223,30 @@
       "genus": 0,
       "species": 0
     },
+    "linum-monogynum": {
+      "latin": "Linum monogynum",
+      "genus": 0,
+      "species": 0
+    },
     "lobelia-angulata": {
       "latin": "Lobelia angulata",
       "genus": 3,
       "species": 1
+    },
+    "lygodium-articulatum": {
+      "latin": "Lygodium articulatum",
+      "genus": 0,
+      "species": 0
+    },
+    "machaerina-sinclairii": {
+      "latin": "Machaerina sinclairii",
+      "genus": 1,
+      "species": 1
+    },
+    "melicope-ternata": {
+      "latin": "Melicope ternata",
+      "genus": 3,
+      "species": 0
     },
     "melicytus-ramiflorus": {
       "latin": "Melicytus ramiflorus",
@@ -153,10 +258,25 @@
       "genus": 17,
       "species": 11
     },
+    "metrosideros-perforata": {
+      "latin": "Metrosideros perforata",
+      "genus": 17,
+      "species": 2
+    },
+    "metrosideros-fulgens": {
+      "latin": "Metrosideros fulgens",
+      "genus": 17,
+      "species": 0
+    },
     "microlaena-stipoides": {
       "latin": "Microlaena stipoides",
       "genus": 1,
       "species": 0
+    },
+    "microsorum-pustulatum": {
+      "latin": "Microsorum pustulatum",
+      "genus": 5,
+      "species": 4
     },
     "muehlenbeckia-complexa": {
       "latin": "Muehlenbeckia complexa",
@@ -167,6 +287,16 @@
       "latin": "Myoporum laetum",
       "genus": 4,
       "species": 4
+    },
+    "myrsine-australis": {
+      "latin": "Myrsine australis",
+      "genus": 14,
+      "species": 6
+    },
+    "ozothamnus-leptophyllus": {
+      "latin": "Ozothamnus leptophyllus",
+      "genus": 20,
+      "species": 20
     },
     "parsonsia-heterophylla": {
       "latin": "Parsonsia heterophylla",
@@ -188,6 +318,11 @@
       "genus": 8,
       "species": 1
     },
+    "pimelea-prostrata": {
+      "latin": "Pimelea prostrata",
+      "genus": 17,
+      "species": 5
+    },
     "piper-excelsum": {
       "latin": "Piper excelsum",
       "genus": 5,
@@ -203,6 +338,11 @@
       "genus": 10,
       "species": 1
     },
+    "poa-anceps": {
+      "latin": "Poa anceps",
+      "genus": 24,
+      "species": 0
+    },
     "podocarpus-totara": {
       "latin": "Podocarpus totara",
       "genus": 11,
@@ -213,23 +353,53 @@
       "genus": 3,
       "species": 1
     },
+    "pseudopanax-arboreus": {
+      "latin": "Pseudopanax arboreus",
+      "genus": 16,
+      "species": 11
+    },
     "pseudopanax-lessonii": {
       "latin": "Pseudopanax lessonii",
       "genus": 16,
       "species": 7
+    },
+    "rhopalostylis-sapida": {
+      "latin": "Rhopalostylis sapida",
+      "genus": 3,
+      "species": 3
+    },
+    "scandia-rosifolia": {
+      "latin": "Scandia rosifolia",
+      "genus": 0,
+      "species": 0
     },
     "selliera-radicans": {
       "latin": "Selliera radicans",
       "genus": 2,
       "species": 2
     },
+    "senecio-lautus": {
+      "latin": "Senecio lautus",
+      "genus": 3,
+      "species": 1
+    },
     "sophora-chathamica": {
       "latin": "Sophora chathamica",
       "genus": 8,
       "species": 4
     },
+    "tetragonia-tetragonoides": {
+      "latin": "Tetragonia tetragonoides",
+      "genus": 1,
+      "species": null
+    },
     "veronica-stricta": {
       "latin": "Veronica stricta",
+      "genus": 18,
+      "species": null
+    },
+    "veronica-macrocarpa": {
+      "latin": "Veronica macrocarpa",
       "genus": 18,
       "species": null
     },
@@ -237,9 +407,31 @@
       "latin": "Vitex lucens",
       "genus": 2,
       "species": 2
+    },
+    "wahlenbergia-violacea": {
+      "latin": "Wahlenbergia violacea",
+      "genus": 0,
+      "species": null
     }
   },
   "genera": {
+    "Acaena": {
+      "count": 3,
+      "speciesSearched": 8,
+      "moths": [
+        "Agrotis innominata Hudson, 1898 (Noctuidae)",
+        "Mnesictena antipodea (Salmon, in, Salmon & Bradley, 1956) (Crambidae)",
+        "Mnesictena notata (Butler, 1879) (Crambidae)"
+      ]
+    },
+    "Adiantum": {
+      "count": 2,
+      "speciesSearched": 2,
+      "moths": [
+        "Cnephasia auct. jactatana (Walker, 1863) (Tortricidae)",
+        "Musotima aduncalis (Felder & Rogenhofer, 1875) (Crambidae)"
+      ]
+    },
     "Agathis": {
       "count": 3,
       "speciesSearched": 1,
@@ -264,6 +456,13 @@
         "Planotortrix sp. (Tortricidae)",
         "Pyrgotis plagiatana (Walker, 1863) (Tortricidae)",
         "Vanicela disjunctella Walker, 1964 (Roeslerstammiidae)"
+      ]
+    },
+    "Apium": {
+      "count": 1,
+      "speciesSearched": 1,
+      "moths": [
+        "Merophyas leucanthiana (Walker, 1863) (Tortricidae)"
       ]
     },
     "Apodasmia": {
@@ -320,6 +519,36 @@
         "Ctenopseustis obliquana (Walker, 1863) (Tortricidae)",
         "Ischalis gallaria (Walker, 1860) (Geometridae)",
         "Ischalis nelsonaria (Felder & Rogenhofer, 1875) (Geometridae)"
+      ]
+    },
+    "Brachyglottis": {
+      "count": 24,
+      "speciesSearched": 24,
+      "moths": [
+        "Apoctena conditana (Walker, 1863) (Tortricidae)",
+        "Ascerodes (Eurythecta s.l.) curva (Philpott, 1918) (Tortricidae)",
+        "Asterivora combinatana (Walker, 1863) (Choreutidae)",
+        "Asterivora sp. 1 (Barratt & Patrick 1987) (Choreutidae)",
+        "Chloroclystis testulata (Guenee, 1857) (Geometridae)",
+        "Chrysodeixis eriosoma (Doubleday, 1843) (Noctuidae)",
+        "Ctenopseustis obliquana (Walker, 1863) (Tortricidae)",
+        "Epalxiphora axenana Meyrick, 1881 (Tortricidae)",
+        "Epichorista s.l. phaeoxyla (Meyrick, 1938) (Tortricidae)",
+        "Epichorista s.l. sp. 'Tapanui' of Dugdale 2002 (Tortricidae)",
+        "Gymnobathra flavidella (Walker, 1864) (Xyloryctidae)",
+        "Izatha oleariae Dugdale, 1971 (Oecophoridae)",
+        "Maoritenes modesta (Philpott, 1930) (Tortricidae)",
+        "Nyctemera annulata (Boisduval, 1832) (Arctiidae)",
+        "Planotortrix puffini Dugdale, 1990 (Tortricidae)",
+        "Prothelymna niphostrota (Meyrick, 1907) (Tortricidae)",
+        "Pseudocoremia rudisata (Walker, 1862) (Geometridae)",
+        "Pseudocoremia suavis Butler, 1879 (Geometridae)",
+        "Stenoptilia orites (Meyrick, 1885) (Pterophoridae)",
+        "Stenoptilia zophodactyla (Duponchel, 1838) (Pterophoridae)",
+        "Stigmella atrata Donner & Wilkinson, 1989 (Nepticulidae)",
+        "Stigmella cypracma (Meyrick, 1916) (Nepticulidae)",
+        "Stigmella ogygia (Meyrick, 1889) (Nepticulidae)",
+        "Stigmella sp. 'Tararoa' of Hoare 2006 (Nepticulidae)"
       ]
     },
     "Carex": {
@@ -389,6 +618,18 @@
         "Tmetolophota steropastis (Meyrick, 1887) (Noctuidae)"
       ]
     },
+    "Corokia": {
+      "count": 6,
+      "speciesSearched": 4,
+      "moths": [
+        "Ericodesma cuneata (Clarke, 1926) (Tortricidae)",
+        "Eudonia sabulosella (Walker, 1863) (Crambidae)",
+        "Harmologa oblongana (Walker, 1863) (Tortricidae)",
+        "Meterana ochthistis (Meyrick, 1887) (Noctuidae)",
+        "Orthenches disarilis Philpott, 1931 (Plutellidae)",
+        "Pseudocoremia suavis Butler, 1879 (Geometridae)"
+      ]
+    },
     "Corynocarpus": {
       "count": 4,
       "speciesSearched": 1,
@@ -433,6 +674,11 @@
         "Pyrgotis plagiatana (Walker, 1863) (Tortricidae)"
       ]
     },
+    "Dianella": {
+      "count": 0,
+      "speciesSearched": 1,
+      "moths": []
+    },
     "Dichondra": {
       "count": 3,
       "speciesSearched": 2,
@@ -458,11 +704,27 @@
       "speciesSearched": 1,
       "moths": []
     },
+    "Dodonaea": {
+      "count": 3,
+      "speciesSearched": 3,
+      "moths": [
+        "Cleora scriptaria (Walker, 1860) (Geometridae)",
+        "Pseudocoremia fenerata (Felder & Rogenhofer, 1875) (Geometridae)",
+        "Pseudocoremia suavis Butler, 1879 (Geometridae)"
+      ]
+    },
     "Dysoxylum": {
       "count": 1,
       "speciesSearched": 1,
       "moths": [
         "Ctenopseustis obliquana (Walker, 1863) (Tortricidae)"
+      ]
+    },
+    "Euphorbia": {
+      "count": 1,
+      "speciesSearched": 1,
+      "moths": [
+        "Merophyas leucanthiana (Walker, 1863) (Tortricidae)"
       ]
     },
     "Ficinia": {
@@ -472,6 +734,23 @@
         "Bactra noteraula Walsingham, 1907 (Tortricidae)",
         "Elachista sp. cf. nodosae Kaila, 2011 (Elachistidae)",
         "Tmetolophota phaula (Meyrick, 1887) (Noctuidae)"
+      ]
+    },
+    "Geniostoma": {
+      "count": 3,
+      "speciesSearched": 1,
+      "moths": [
+        "Apoctena flavescens (Butler, 1877) (Tortricidae)",
+        "Cnephasia auct. jactatana (Walker, 1863) (Tortricidae)",
+        "Epalxiphora axenana Meyrick, 1881 (Tortricidae)"
+      ]
+    },
+    "Haloragis": {
+      "count": 2,
+      "speciesSearched": 4,
+      "moths": [
+        "Epicyme rubropunctaria (Doubleday, 1843) (Geometridae)",
+        "Zapyrastra sp. 'haloragis' (Dugdale 1988) (Momphidae)"
       ]
     },
     "Hoheria": {
@@ -528,6 +807,14 @@
         "Strepsicrates ejectana (Walker, 1863) (Tortricidae)"
       ]
     },
+    "Lepidium": {
+      "count": 2,
+      "speciesSearched": 3,
+      "moths": [
+        "Eurythecta zelaea Meyrick, 1905 (Tortricidae)",
+        "Plutella antiphona Meyrick, 1901 (Plutellidae)"
+      ]
+    },
     "Leptospermum": {
       "count": 29,
       "speciesSearched": 1,
@@ -568,6 +855,11 @@
       "speciesSearched": 3,
       "moths": []
     },
+    "Linum": {
+      "count": 0,
+      "speciesSearched": 1,
+      "moths": []
+    },
     "Lobelia": {
       "count": 3,
       "speciesSearched": 7,
@@ -575,6 +867,27 @@
         "Dasyuris anceps (Butler, 1877) supsp. anceps (Geometridae)",
         "Eudonia sabulosella (Walker, 1863) (Crambidae)",
         "Lycaena boldenarum White, 1861 (Lycaenidae)"
+      ]
+    },
+    "Lygodium": {
+      "count": 0,
+      "speciesSearched": 1,
+      "moths": []
+    },
+    "Machaerina": {
+      "count": 1,
+      "speciesSearched": 5,
+      "moths": [
+        "Machaerina leaf miner sp. of Dugdale, Hoare & Martin (Batrachedridae)"
+      ]
+    },
+    "Melicope": {
+      "count": 3,
+      "speciesSearched": 2,
+      "moths": [
+        "Cleora scriptaria (Walker, 1860) (Geometridae)",
+        "Meterana ochthistis (Meyrick, 1887) (Noctuidae)",
+        "Pyrgotis plagiatana (Walker, 1863) (Tortricidae)"
       ]
     },
     "Melicytus": {
@@ -635,6 +948,17 @@
         "Tmetolophota sulcana (Fereday, 1883) (Noctuidae)"
       ]
     },
+    "Microsorum": {
+      "count": 5,
+      "speciesSearched": 2,
+      "moths": [
+        "Batrachedra sp. 'Asplenium sori' Dugdale 1988) (Batrachedridae)",
+        "Cnephasia auct. jactatana (Walker, 1863) (Tortricidae)",
+        "Ischalis nelsonaria (Felder & Rogenhofer, 1875) (Geometridae)",
+        "Sarisa muriferata (Walker, 1863) (Geometridae)",
+        "Thylacosceles radians Philpott, 1918 (Stathmopodidae)"
+      ]
+    },
     "Muehlenbeckia": {
       "count": 32,
       "speciesSearched": 4,
@@ -683,6 +1007,52 @@
         "Prothelymna antiquana (Walker, 1863) (Tortricidae)"
       ]
     },
+    "Myrsine": {
+      "count": 14,
+      "speciesSearched": 7,
+      "moths": [
+        "Apoctena flavescens (Butler, 1877) (Tortricidae)",
+        "Ctenopseustis obliquana (Walker, 1863) (Tortricidae)",
+        "Declana floccosa (Walker, 1858) (Geometridae)",
+        "Epalxiphora axenana Meyrick, 1881 (Tortricidae)",
+        "Gellonia pannularia (Guenee, 1868) (Geometridae)",
+        "Heterocrossa sp. (Carposinidae)",
+        "Microcolona limodes Meyrick, 1897 (Blastodacnidae)",
+        "Pasiphila inductata (Walker, 1862) (Geometridae)",
+        "Planotortrix octoides Dugdale, 1990 (Tortricidae)",
+        "Pseudocoremia insignita Philpott, 1930 (Geometridae)",
+        "Pyrgotis plagiatana (Walker, 1863) (Tortricidae)",
+        "Pyrgotis sp. 'myrsine' of Dugdale 2001 (Tortricidae)",
+        "Stathmopoda sp. (Stathmopodidae)",
+        "Xanadoses nielseni Hoare & Dugdale, 2003 (Cecidosidae)"
+      ]
+    },
+    "Ozothamnus": {
+      "count": 20,
+      "speciesSearched": 1,
+      "moths": [
+        "Argyrophenga antipodum Doubleday, 1845 (Nymphalidae)",
+        "Chloroclystis inductata (Walker, 1862) (Geometridae)",
+        "Declana junctilinea (Walker, 1865) (Geometridae)",
+        "Gellonia sp. (Geometridae)",
+        "Graphania olivea (Watt, 1916) (Noctuidae)",
+        "Harmologa antiypa Meyrick, 1914 (Tortricidae)",
+        "Harmologa columella Meyrick, 1927 (Tortricidae)",
+        "Harmologa petrias Meyrick, 1901 (Tortricidae)",
+        "Harmologa sisyrana Meyrick, 1883 (Tortricidae)",
+        "Harmologa sp. 'pointed wings' of Dugdale 2002 (Tortricidae)",
+        "Hierodoris atychioides (Butler, 1877) (Xyloryctidae)",
+        "Homoeosoma anaspila Meyrick, 1901 (Pyralidae)",
+        "Lycaena salustius (Fabricius, 1973) (Lycaenidae)",
+        "Orocrambus flexuosellus (Doubleday, 1843) (Crambidae)",
+        "Physetica homoscia (Meyrick, 1887) (Noctuidae)",
+        "Pseudocoremia colpogramma (Meyrick, 1936) (Geometridae)",
+        "Pyrgotis plagiatana (Walker, 1863) (Tortricidae)",
+        "Pyrgotis sp. 'ozothamnus' of Patrick 2003 (Tortricidae)",
+        "Stigmella cassiniae Donner & Wilkinson, 1989 (Nepticulidae)",
+        "Zermizinga indocilisaria Walker, 1863 (Geometridae)"
+      ]
+    },
     "Parsonsia": {
       "count": 5,
       "speciesSearched": 2,
@@ -713,6 +1083,29 @@
         "Tmetolophota steropastis (Meyrick, 1887) (Noctuidae)"
       ]
     },
+    "Pimelea": {
+      "count": 17,
+      "speciesSearched": 15,
+      "moths": [
+        "Ericodesma aerodana (Meyrick, 1881) (Tortricidae)",
+        "Eudonia sabulosella (Walker, 1863) (Crambidae)",
+        "Eurythecta zelaea Meyrick, 1905 (Tortricidae)",
+        "Lycaena boldenarum White, 1861 (Lycaenidae)",
+        "Lycaena salustius (Fabricius, 1973) (Lycaenidae)",
+        "Merophyas leucanthiana (Walker, 1863) (Tortricidae)",
+        "Merophyas sp. 'Ruapehu' of Dugdale 2001 (Tortricidae)",
+        "Meterana meyricci (Hampson, 1911) (Noctuidae)",
+        "Meterana sp. 'Foveaux Strait' (MacGuinness, 2001) (Noctuidae)",
+        "Notoreas casanova Patrick & Hoare, 2010 (Geometridae)",
+        "Notoreas edwardsi Patrick & Hoare, 2010 (Geometridae)",
+        "Notoreas elegans Patrick & Hoare, 2010 (Geometridae)",
+        "Notoreas paradelpha (Meyrick, 1883) (Geometridae)",
+        "Notoreas perornata (Walker, 1863) (Geometridae)",
+        "Notoreas simplex Hudson, 1898 (Geometridae)",
+        "Notoreas sp. 'South shag river' (MacGuinness 2001) (Geometridae)",
+        "Notoreas sp. 'Wellington' (MacGuinness 2001) (Geometridae)"
+      ]
+    },
     "Piper": {
       "count": 5,
       "speciesSearched": 1,
@@ -738,6 +1131,36 @@
         "Pyrgotis plagiatana (Walker, 1863) (Tortricidae)",
         "Vanessa itea Fabricius, 1775 (Nymphalidae)",
         "Xyridacma ustaria (Walker, 1863) (Geometridae)"
+      ]
+    },
+    "Poa": {
+      "count": 24,
+      "speciesSearched": 11,
+      "moths": [
+        "Aletia sistens (Guenee, 1868) (Noctuidae)",
+        "Aoraia insularis Dugdale, 1994 (Hepialidae)",
+        "Argyrophenga antipodum Doubleday, 1845 (Nymphalidae)",
+        "Elachista galatheae (Viette, 1954) (Elachistidae)",
+        "Elachista ochroleuca (Meyrick, 1923) (Elachistidae)",
+        "Elachista sp. (Patrick 1994) (Elachistidae)",
+        "Glyphipterix oxymachaera (Meyrick, 1880) (Glyphipterigidae)",
+        "Graphania disjungens (Walker, 1858) (Noctuidae)",
+        "Graphania omoplaca (Meyrick, 1887) (Noctuidae)",
+        "Graphania pagaia (Hudson, 1909) (Noctuidae)",
+        "Heloxycanus patricki Dugdale, 1994 (Hepialidae)",
+        "Orocrambus lewisi Gaskin, 1975 (Crambidae)",
+        "Orocrambus ramosellus (Doubleday, 1843) (Crambidae)",
+        "Percnodaimon merula Hewitson, 1875 (Nymphalidae)",
+        "Persectania aversa (Walker, 1856) (Noctuidae)",
+        "Proteuxoa tetronycha Hoare, 2017 (Noctuidae)",
+        "Scoparia chalicodes Meyrick, 1884 (Crambidae)",
+        "Tingena maranta (Meyrick, 1886) (Oecophoridae)",
+        "Tingena melanamma (Meyrick, 1905) (Oecophoridae)",
+        "Tmetolophota acontistis (Meyrick, 1887) (Noctuidae)",
+        "Tmetolophota atristriga (Walker, 1865) (Noctuidae)",
+        "Tmetolophota phaula (Meyrick, 1887) (Noctuidae)",
+        "Tmetolophota semivittata (Walker, 1865) (Noctuidae)",
+        "Tmetolophota toroneura (Meyrick, 1901) (Noctuidae)"
       ]
     },
     "Podocarpus": {
@@ -788,12 +1211,35 @@
         "Pterophorus monospilalis (Walker, 1864) (Pterophoridae)"
       ]
     },
+    "Rhopalostylis": {
+      "count": 3,
+      "speciesSearched": 2,
+      "moths": [
+        "Doxophyrtis hydrocosma Meyrick, 1914 (Plutellidae)",
+        "Izatha attactella Walker, 1864 (Oecophoridae)",
+        "Zealandopterix zonodoxa (Meyrick, 1888) (Micropterigidae)"
+      ]
+    },
+    "Scandia": {
+      "count": 0,
+      "speciesSearched": 2,
+      "moths": []
+    },
     "Selliera": {
       "count": 2,
       "speciesSearched": 1,
       "moths": [
         "Eutorna inomata Meyrick, 1889 (Depressariidae)",
         "Protithona potamias (Meyrick, 1909) (Tortricidae)"
+      ]
+    },
+    "Senecio": {
+      "count": 3,
+      "speciesSearched": 12,
+      "moths": [
+        "Nyctemera annulata (Boisduval, 1832) (Arctiidae)",
+        "Patagoniodes farinaria (Turner, 1904) (Pyralidae)",
+        "Stigmella ogygia (Meyrick, 1889) (Nepticulidae)"
       ]
     },
     "Sophora": {
@@ -808,6 +1254,13 @@
         "Stathmopoda sp. nr 'horticola Dugdale' (White 2002) (Stathmopodidae)",
         "Stigmella sophorae (Hudson, 1939) (Nepticulidae)",
         "Uresiphita maorialis (Felder & Rogenhofer, 1875) (Crambidae)"
+      ]
+    },
+    "Tetragonia": {
+      "count": 1,
+      "speciesSearched": 2,
+      "moths": [
+        "Epyaxa venipunctata (Walker, 1863) (Geometridae)"
       ]
     },
     "Veronica": {
@@ -841,6 +1294,11 @@
         "Aenetus virescens (Doubleday1843) (Hepialidae)",
         "Ctenopseustis servana (Walker, 1863) (Tortricidae)"
       ]
+    },
+    "Wahlenbergia": {
+      "count": 0,
+      "speciesSearched": 4,
+      "moths": []
     }
   }
 }

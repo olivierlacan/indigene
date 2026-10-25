@@ -106,9 +106,12 @@ TR2025/6). Two planned sources couldn't be reached from the build container:
 Michigan Flora Online (its certificate chain doesn't verify) and INHS
 Illinois Plants (the connection is reset). Both are worth a retry.
 
+Since 2026-10-25 the French red lists (INPN BDC-Statuts) check Atlantic
+France, Continental France and the Alps. Mediterranean France waits on the
+PACA workbook: its red list in the file is threatened plants only.
+
 Still to script: the Virginia atlas (one CSV per county), the San Diego and
-Santa Cruz checklists, the French red lists and CBN catalogues, the Ontario
-NHIC list.
+Santa Cruz checklists, the CBN catalogues, the Ontario NHIC list.
 
 ## Next
 

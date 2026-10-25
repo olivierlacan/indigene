@@ -15,6 +15,9 @@ import CHICAGO_FLORAS from "../../../data/sources/regional-floras/chicago.json";
 import MIDATL_FLORAS from "../../../data/sources/regional-floras/mid-atlantic.json";
 import IRELAND_FLORAS from "../../../data/sources/regional-floras/ireland.json";
 import AUCKLAND_FLORAS from "../../../data/sources/regional-floras/nz-auckland.json";
+import ATLANTIC_FLORAS from "../../../data/sources/regional-floras/france-atlantic.json";
+import CONTINENTAL_FLORAS from "../../../data/sources/regional-floras/france-continental.json";
+import ALPINE_FLORAS from "../../../data/sources/regional-floras/france-alpine.json";
 import ATLAS_CENTRAL from "../../../data/sources/atlas-florida/florida-central.csv?raw";
 import ATLAS_SOUTH from "../../../data/sources/atlas-florida/florida-south.csv?raw";
 import VASCAN_CHECK from "../../scripts/check-vascan.mjs?raw";
@@ -62,6 +65,9 @@ const CHECKERS: Record<string, (id: string) => Promise<void>> = {
       "mid-atlantic": MIDATL_FLORAS,
       ireland: IRELAND_FLORAS,
       "nz-auckland": AUCKLAND_FLORAS,
+      "france-atlantic": ATLANTIC_FLORAS,
+      "france-continental": CONTINENTAL_FLORAS,
+      "france-alpine": ALPINE_FLORAS,
     }).map(([region, doc]) => [region, async (id: string) => expect(await uncovered(id, doc.rows), `re-run \`npm run floras -- --region ${region}\``).toEqual([])]),
   ),
   "florida-central": atlasCheck(ATLAS_CENTRAL),

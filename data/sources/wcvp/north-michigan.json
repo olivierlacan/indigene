@@ -4,7 +4,7 @@
   "via": "GBIF checklist dataset f382f0ce-323a-4091-bb9f-add557f3a9a2",
   "area": "Michigan (TDWG:MIC)",
   "region": "north-michigan",
-  "ranAt": "2026-10-25T03:15:39.202Z",
+  "ranAt": "2026-10-25T07:19:24.110Z",
   "rows": [
     {
       "id": "pinus-strobus",
@@ -307,6 +307,36 @@
       "viaSynonym": null
     },
     {
+      "id": "juniperus-communis",
+      "latin": "Juniperus communis",
+      "asked": "Juniperus communis",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "rubus-parviflorus",
+      "latin": "Rubus parviflorus",
+      "asked": "Rubus parviflorus",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "viburnum-acerifolium",
+      "latin": "Viburnum acerifolium",
+      "asked": "Viburnum acerifolium",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "aquilegia-canadensis",
       "latin": "Aquilegia canadensis",
       "asked": "Aquilegia canadensis",
@@ -477,6 +507,86 @@
       "viaSynonym": null
     },
     {
+      "id": "asclepias-syriaca",
+      "latin": "Asclepias syriaca",
+      "asked": "Asclepias syriaca",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "symphyotrichum-cordifolium",
+      "latin": "Symphyotrichum cordifolium",
+      "asked": "Symphyotrichum cordifolium",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "solidago-flexicaulis",
+      "latin": "Solidago flexicaulis",
+      "asked": "Solidago flexicaulis",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "iris-versicolor",
+      "latin": "Iris versicolor",
+      "asked": "Iris versicolor",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "geranium-maculatum",
+      "latin": "Geranium maculatum",
+      "asked": "Geranium maculatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "maianthemum-racemosum",
+      "latin": "Maianthemum racemosum",
+      "asked": "Maianthemum racemosum",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "verbena-hastata",
+      "latin": "Verbena hastata",
+      "asked": "Verbena hastata",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "coreopsis-lanceolata",
+      "latin": "Coreopsis lanceolata",
+      "asked": "Coreopsis lanceolata",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "schizachyrium-scoparium",
       "latin": "Schizachyrium scoparium",
       "asked": "Schizachyrium scoparium",
@@ -495,6 +605,46 @@
         "MIC": "NATIVE"
       },
       "viaSynonym": null
+    },
+    {
+      "id": "andropogon-gerardii",
+      "latin": "Andropogon gerardii",
+      "asked": "Andropogon gerardii",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "elymus-canadensis",
+      "latin": "Elymus canadensis",
+      "asked": "Elymus canadensis",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "danthonia-spicata",
+      "latin": "Danthonia spicata",
+      "asked": "Danthonia spicata",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "ammophila-breviligulata",
+      "latin": "Ammophila breviligulata",
+      "asked": "Ammophila breviligulata",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": "Calamagrostis breviligulata (Fernald) Saarela"
     },
     {
       "id": "parthenocissus-quinquefolia",
@@ -577,6 +727,26 @@
       "viaSynonym": null
     },
     {
+      "id": "gaultheria-procumbens",
+      "latin": "Gaultheria procumbens",
+      "asked": "Gaultheria procumbens",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "asarum-canadense",
+      "latin": "Asarum canadense",
+      "asked": "Asarum canadense",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
       "id": "matteuccia-struthiopteris",
       "latin": "Matteuccia struthiopteris",
       "asked": "Matteuccia struthiopteris",
@@ -590,6 +760,46 @@
       "id": "polystichum-acrostichoides",
       "latin": "Polystichum acrostichoides",
       "asked": "Polystichum acrostichoides",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "onoclea-sensibilis",
+      "latin": "Onoclea sensibilis",
+      "asked": "Onoclea sensibilis",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "osmunda-claytoniana",
+      "latin": "Osmunda claytoniana",
+      "asked": "Osmunda claytoniana",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "adiantum-pedatum",
+      "latin": "Adiantum pedatum",
+      "asked": "Adiantum pedatum",
+      "verdict": "NATIVE",
+      "areas": {
+        "MIC": "NATIVE"
+      },
+      "viaSynonym": null
+    },
+    {
+      "id": "dryopteris-marginalis",
+      "latin": "Dryopteris marginalis",
+      "asked": "Dryopteris marginalis",
       "verdict": "NATIVE",
       "areas": {
         "MIC": "NATIVE"

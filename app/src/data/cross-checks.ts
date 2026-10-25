@@ -30,6 +30,25 @@ export const SECOND_CHECKS: Record<string, SecondCheck[]> = {
   "scotland-lowlands": [
     { name: { en: "the BSBI Plant Atlas 2020", fr: "l'atlas des plantes 2020 de la BSBI" }, url: "https://plantatlas2020.org/" },
   ],
+  // `npm run floras` → data/sources/regional-floras/<region>.json
+  "north-michigan": [
+    { name: { en: "the University of Michigan Herbarium's Michigan Flora", fr: "la flore du Michigan de l'herbier de l'université du Michigan" }, url: "https://michiganflora.net/" },
+  ],
+  chicago: [
+    { name: { en: "the Flora of the Chicago Region", fr: "la Flore de la région de Chicago" }, url: "https://universalfqa.org/" },
+    { name: { en: "Illinois's 1997 checklist", fr: "la liste de l'Illinois de 1997" }, url: "https://universalfqa.org/" },
+  ],
+  "mid-atlantic": [
+    { name: { en: "the Pennsylvania Natural Heritage Program", fr: "le programme du patrimoine naturel de Pennsylvanie" }, url: "https://naturalheritage.dcnr.pa.gov/PlantChecklist.html" },
+    { name: { en: "New Jersey's environment agency", fr: "l'agence de l'environnement du New Jersey" }, url: "https://universalfqa.org/" },
+  ],
+  ireland: [
+    { name: { en: "the BSBI Plant Atlas 2020", fr: "l'atlas des plantes 2020 de la BSBI" }, url: "https://plantatlas2020.org/" },
+  ],
+  "nz-auckland": [
+    { name: { en: "the Checklist of the New Zealand Flora", fr: "la liste de la flore de Nouvelle-Zélande" }, url: "https://datastore.landcareresearch.co.nz/dataset/checklist-of-the-new-zealand-flora-seed-plants-2026" },
+    { name: { en: "Auckland Council", fr: "le conseil d'Auckland" }, url: "https://www.knowledgeauckland.org.nz/publications/conservation-status-of-vascular-plant-species-in-tamaki-makaurau-auckland-revised-march-2025/" },
+  ],
   // `npm run vascan:check`, quarterly in native.yml, for Québec
   "st-lawrence": [
     { name: { en: "VASCAN, the Database of Vascular Plants of Canada", fr: "VASCAN, la base de données des plantes vasculaires du Canada" }, url: "https://data.canadensys.net/vascan/" },

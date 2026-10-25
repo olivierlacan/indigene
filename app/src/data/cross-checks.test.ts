@@ -10,6 +10,11 @@ import { REGIONS } from "./regions";
 import { SECOND_CHECKS } from "./cross-checks";
 import PNW from "../../../data/sources/pnw-flora/pnw.json";
 import BSBI from "../../../data/sources/bsbi-plant-atlas/scotland-lowlands.json";
+import MI_FLORAS from "../../../data/sources/regional-floras/north-michigan.json";
+import CHICAGO_FLORAS from "../../../data/sources/regional-floras/chicago.json";
+import MIDATL_FLORAS from "../../../data/sources/regional-floras/mid-atlantic.json";
+import IRELAND_FLORAS from "../../../data/sources/regional-floras/ireland.json";
+import AUCKLAND_FLORAS from "../../../data/sources/regional-floras/nz-auckland.json";
 import ATLAS_CENTRAL from "../../../data/sources/atlas-florida/florida-central.csv?raw";
 import ATLAS_SOUTH from "../../../data/sources/atlas-florida/florida-south.csv?raw";
 import VASCAN_CHECK from "../../scripts/check-vascan.mjs?raw";
@@ -50,6 +55,15 @@ const CHECKERS: Record<string, (id: string) => Promise<void>> = {
   pnw: async (id) => expect(await uncovered(id, PNW.rows), "re-run `npm run pnw:checklist`").toEqual([]),
   "scotland-lowlands": async (id) =>
     expect(await uncovered(id, BSBI.rows), "re-run `npm run bsbi:check -- --region scotland-lowlands`").toEqual([]),
+  ...Object.fromEntries(
+    Object.entries({
+      "north-michigan": MI_FLORAS,
+      chicago: CHICAGO_FLORAS,
+      "mid-atlantic": MIDATL_FLORAS,
+      ireland: IRELAND_FLORAS,
+      "nz-auckland": AUCKLAND_FLORAS,
+    }).map(([region, doc]) => [region, async (id: string) => expect(await uncovered(id, doc.rows), `re-run \`npm run floras -- --region ${region}\``).toEqual([])]),
+  ),
   "florida-central": atlasCheck(ATLAS_CENTRAL),
   "florida-south": atlasCheck(ATLAS_SOUTH),
   // VASCAN's archive is too big to commit, so the check runs in CI each

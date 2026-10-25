@@ -14,7 +14,9 @@
  *     revalidate — once you have it, it is the answer. Re-opening a plant page
  *     you already looked up shows its sightings instantly and offline, instead
  *     of re-downloading a screenful of JPEGs. Bounded, because they're the
- *     largest thing we keep: oldest out past PHOTO_CACHE_LIMIT.
+ *     largest thing we keep: oldest out past PHOTO_CACHE_LIMIT. Thumbnails a
+ *     reader keeps for offline from Settings sit in a cache of their own,
+ *     read first and never trimmed.
  *
  * Each region's plant list is a file of its own, fetched when a page needs it
  * (see `src/data/regions.ts`). They are ordinary same-origin assets, so the
@@ -27,6 +29,13 @@ const VERSION = "indigene-v1";
 const SHELL_CACHE = `${VERSION}-shell`;
 const DATA_CACHE = `${VERSION}-data`;
 const PHOTO_CACHE = `${VERSION}-photos`;
+// Thumbnails the reader chose to keep for offline, from Settings
+// (`src/lib/offline-save.ts`). Read first, never trimmed: a kept photo stays
+// until the reader removes it or its plant leaves the list. Its name starts
+// with VERSION like the others, so activation keeps it.
+const SAVED_PHOTO_CACHE = `${VERSION}-saved-photos`;
+/** Marks the page's own fetch of a photo it is keeping. */
+const KEEP_HEADER = "x-indigene-keep";
 
 // The app may be served from a subpath (e.g. GitHub Pages /<repo>/). This
 // worker always sits at the app root, so derive the base from its own URL.
@@ -67,7 +76,12 @@ const PHOTO_HOSTS = ["inaturalist-open-data.s3.amazonaws.com", "static.inaturali
  *  Worth the room: a thumbnail cached once is the plants index and every region
  *  roster rendering instantly, offline, forever, because a photo URL names one
  *  photo at one size and can never change. Past the limit, the oldest go
- *  first. */
+ *  first.
+ *
+ *  Photos kept from Settings are not counted here: they live in
+ *  SAVED_PHOTO_CACHE, which this limit and its trim never touch. A region's
+ *  list is up to a few hundred thumbnails, so folding them in would either let
+ *  browsing evict them or need a limit sized for the largest region. */
 const PHOTO_CACHE_LIMIT = 600;
 
 self.addEventListener("install", (event) => {
@@ -125,6 +139,14 @@ self.addEventListener("fetch", (event) => {
   }
 
   // iNaturalist photos: cache-first. Immutable by URL, so a hit is final.
+  // A photo being kept from Settings: the page files it itself, so pass it to
+  // the network without a second copy in the browsing cache. The marker header
+  // stays here: the request sent on is a fresh one without it.
+  if (PHOTO_HOSTS.includes(url.hostname) && request.headers.has(KEEP_HEADER)) {
+    event.respondWith(fetch(request.url, { mode: "cors", credentials: "omit" }));
+    return;
+  }
+
   if (PHOTO_HOSTS.includes(url.hostname)) {
     event.respondWith(cacheFirst(request));
     return;
@@ -168,6 +190,8 @@ async function networkFirst(request) {
  * — just expensively, which is what the quota guard below is for.
  */
 async function cacheFirst(request) {
+  const kept = await (await caches.open(SAVED_PHOTO_CACHE)).match(request);
+  if (kept) return kept;
   const cache = await caches.open(PHOTO_CACHE);
   const cached = await cache.match(request);
   if (cached) return cached;
@@ -177,7 +201,15 @@ async function cacheFirst(request) {
     res = await fetch(new Request(request.url, { mode: "cors", credentials: "omit" }));
     if (!res.ok) throw new Error(`photo ${res.status}`);
   } catch {
-    res = await fetch(request); // no CORS (or a real failure) — take what we get
+    try {
+      res = await fetch(request); // no CORS (or a real failure) — take what we get
+    } catch (offline) {
+      // Offline, a list on a slow-connection setting asks one size down from
+      // the one kept. Any rendition of the same photo beats none.
+      const other = await anyRendition(request.url);
+      if (other) return other;
+      throw offline;
+    }
   }
   if (res.ok || res.type === "opaque") await store(cache, request, res.clone());
   return res;
@@ -206,6 +238,16 @@ async function store(cache, request, response) {
 
 /** Keep a cache under `limit` entries, dropping the oldest first. `keys()`
  *  returns them in insertion order, so the front of the list is the oldest. */
+async function anyRendition(url) {
+  const dir = url.replace(/[^/]+$/, "");
+  for (const name of [SAVED_PHOTO_CACHE, PHOTO_CACHE]) {
+    const cache = await caches.open(name);
+    const key = (await cache.keys()).find((r) => r.url.startsWith(dir));
+    if (key) return cache.match(key);
+  }
+  return undefined;
+}
+
 async function trimCache(cache, limit) {
   const keys = await cache.keys();
   if (keys.length <= limit) return;

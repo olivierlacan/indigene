@@ -39,6 +39,7 @@ const SECTION_IDS: Record<string, string> = {
   saved: "privacy-saved",
   log: "privacy-log",
   inat: "privacy-inat",
+  photos: "privacy-photos",
   whatsnew: "privacy-whats-new",
   counting: "privacy-counting",
   film: "privacy-film",
@@ -125,6 +126,11 @@ export function renderPrivacy(main: HTMLElement, param?: string): void {
         ...(["privacy.inat1", "privacy.inat2", "privacy.inat3"] as TKey[]).map((k) => el("li", {}, t(k))),
         el("li", {}, tx("privacy.inat4", { link: el("a", { href: "#/settings/inat" }, t("privacy.inat4Link")) })),
       ]),
+
+      // Kept photos are other people's work on this device, so what is kept,
+      // and under which licences, is said here.
+      el("h3", { id: "privacy-photos" }, t("privacy.photosTitle")),
+      el("p", {}, tx("privacy.photos1", { link: el("a", { href: "#/settings/offline" }, t("privacy.photosLink")) })),
 
       // The green dot is the app volunteering that it knows something about
       // your history, so it gets its own section rather than a line inside

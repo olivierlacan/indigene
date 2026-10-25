@@ -8277,3 +8277,17 @@ a.welcome-way:hover strong { text-decoration: underline; }
     opacity: 1;
   }
 }
+
+/* Progress of keeping photos for offline (Settings). */
+.keep-progress {
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+}
+.keep-progress > span {
+  display: block;
+  height: 100%;
+  background: var(--good);
+  transition: width 0.3s ease;
+}

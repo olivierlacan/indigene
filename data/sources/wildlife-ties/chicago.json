@@ -1,6 +1,6 @@
 {
   "region": "chicago",
-  "ranAt": "2026-10-26T21:08:25.080Z",
+  "ranAt": "2026-10-26T21:17:16.048Z",
   "ties": [
     {"plant":"cephalanthus-occidentalis","animal":"silver-spotted-skipper","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Hale et al. 2024","iNaturalist observations"],"confirmedBy":["Hale et al. 2024","iNaturalist observations"],"records":167},"verdict":"CONFIRMED"},
     {"plant":"cephalanthus-occidentalis","animal":"red-admiral","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Hale et al. 2024","iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":70},"verdict":"CONFIRMED"},
@@ -16,7 +16,6 @@
     {"plant":"cercis-canadensis","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":25},"verdict":"CONFIRMED"},
     {"plant":"lindera-benzoin","animal":"berry-songbirds","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":1},"verdict":"CONFIRMED"},
     {"plant":"rubus-occidentalis","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Thessen 2014 (Encyclopedia of Life)"],"confirmedBy":["Thessen 2014 (Encyclopedia of Life)"],"records":122},"verdict":"CONFIRMED"},
-    {"plant":"hamamelis-virginiana","animal":"cecropia-moth","support":"host","globi":{"verdict":"CONFIRMED","cited":["HOSTS (Robinson et al., NHM)"],"confirmedBy":["HOSTS (Robinson et al., NHM)"],"records":5},"verdict":"CONFIRMED"},
-    {"plant":"hamamelis-virginiana","animal":"luna-moth","support":"host","globi":{"verdict":"NOT-FOUND","cited":["HOSTS (Robinson et al., NHM)"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"}
+    {"plant":"hamamelis-virginiana","animal":"cecropia-moth","support":"host","globi":{"verdict":"CONFIRMED","cited":["HOSTS (Robinson et al., NHM)"],"confirmedBy":["HOSTS (Robinson et al., NHM)"],"records":5},"verdict":"CONFIRMED"}
   ]
 }

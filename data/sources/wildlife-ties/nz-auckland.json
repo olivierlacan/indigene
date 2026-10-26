@@ -1,9 +1,9 @@
 {
   "region": "nz-auckland",
-  "ranAt": "2026-10-26T21:15:45.455Z",
+  "ranAt": "2026-10-26T21:19:07.453Z",
   "ties": [
     {"plant":"pittosporum-tenuifolium","animal":"tauhou","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":11},"verdict":"CONFIRMED"},
-    {"plant":"pittosporum-crassifolium","animal":"tauhou","support":"berries","globi":{"verdict":"UNCITED"},"verdict":"UNCITED"},
+    {"plant":"pittosporum-crassifolium","animal":"tauhou","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Peralta et al. 2020 (New Zealand frugivory)"],"confirmedBy":["Peralta et al. 2020 (New Zealand frugivory)"],"records":6},"verdict":"CONFIRMED"},
     {"plant":"geniostoma-ligustrifolium","animal":"tauhou","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":8},"verdict":"CONFIRMED"},
     {"plant":"geniostoma-ligustrifolium","animal":"tui","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":5},"verdict":"CONFIRMED"},
     {"plant":"veronica-macrocarpa","animal":"nz-coppers","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Web of Life"],"confirmedBy":["Web of Life"],"records":3},"verdict":"CONFIRMED"},

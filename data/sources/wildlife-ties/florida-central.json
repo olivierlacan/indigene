@@ -1,6 +1,6 @@
 {
   "region": "florida-central",
-  "ranAt": "2026-10-26T21:09:09.981Z",
+  "ranAt": "2026-10-26T21:18:25.978Z",
   "ties": [
     {"plant":"baccharis-halimifolia","animal":"gulf-fritillary","support":"nectar","globi":{"verdict":"NOT-FOUND","cited":["iNaturalist observations"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
     {"plant":"pontederia-cordata","animal":"white-peacock","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":7},"verdict":"CONFIRMED"},

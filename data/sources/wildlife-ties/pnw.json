@@ -1,6 +1,6 @@
 {
   "region": "pnw",
-  "ranAt": "2026-10-26T21:08:36.345Z",
+  "ranAt": "2026-10-26T21:17:35.537Z",
   "ties": [
     {"plant":"quercus-garryana","animal":"lorquins-admiral","support":"shelter","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":2},"verdict":"CONFIRMED"},
     {"plant":"populus-trichocarpa","animal":"lorquins-admiral","support":"host","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":3},"verdict":"CONFIRMED"},
@@ -20,6 +20,6 @@
     {"plant":"pseudotsuga-menziesii","animal":"ceanothus-silkmoth","support":"host","globi":{"verdict":"CONFIRMED","cited":["HOSTS (Robinson et al., NHM)"],"confirmedBy":["HOSTS (Robinson et al., NHM)"],"records":6},"verdict":"CONFIRMED"},
     {"plant":"pseudotsuga-menziesii","animal":"chestnut-backed-chickadee","support":"shelter","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":3},"verdict":"CONFIRMED"},
     {"plant":"tsuga-heterophylla","animal":"chestnut-backed-chickadee","support":"shelter","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":1},"verdict":"CONFIRMED"},
-    {"plant":"acer-glabrum","animal":"mason-bees","support":"nectar","globi":{"verdict":"UNCITED"},"verdict":"UNCITED"}
+    {"plant":"acer-glabrum","animal":"mason-bees","support":"nectar","globi":{"verdict":"NOT-FOUND","cited":["Ecdysis arthropod portal"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"}
   ]
 }

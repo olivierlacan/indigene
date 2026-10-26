@@ -2,183 +2,21 @@
   "region": "scotland-lowlands",
   "ranAt": "2026-10-25T18:11:24.978Z",
   "ties": [
-    {
-      "plant": "quercus-petraea",
-      "animal": "purple-hairstreak",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Quercusia quercus",
-        "sources": 1
-      },
-      "verdict": "CONFIRMED"
-    },
-    {
-      "plant": "quercus-robur",
-      "animal": "purple-hairstreak",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Quercusia quercus",
-        "sources": 4
-      },
-      "verdict": "CONFIRMED"
-    },
-    {
-      "plant": "betula-pubescens",
-      "animal": "emperor-moth",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Saturnia pavonia",
-        "sources": 3,
-        "atGenus": true
-      },
-      "verdict": "CONFIRMED"
-    },
-    {
-      "plant": "salix-caprea",
-      "animal": "poplar-hawk-moth",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Laothoe populi",
-        "sources": 3
-      },
-      "verdict": "CONFIRMED"
-    },
-    {
-      "plant": "populus-tremula",
-      "animal": "poplar-hawk-moth",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Laothoe populi",
-        "sources": 3
-      },
-      "verdict": "CONFIRMED"
-    },
-    {
-      "plant": "ilex-aquifolium",
-      "animal": "holly-blue",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Celastrina argiolus",
-        "sources": 8
-      },
-      "verdict": "CONFIRMED"
-    },
-    {
-      "plant": "prunus-spinosa",
-      "animal": "emperor-moth",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Saturnia pavonia",
-        "sources": 4
-      },
-      "verdict": "CONFIRMED"
-    },
-    {
-      "plant": "hedera-helix",
-      "animal": "holly-blue",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Celastrina argiolus",
-        "sources": 7
-      },
-      "verdict": "CONFIRMED"
-    },
-    {
-      "plant": "calluna-vulgaris",
-      "animal": "emperor-moth",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Saturnia pavonia",
-        "sources": 4
-      },
-      "verdict": "CONFIRMED"
-    },
-    {
-      "plant": "calluna-vulgaris",
-      "animal": "green-hairstreak",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Callophrys rubi",
-        "sources": 5
-      },
-      "verdict": "CONFIRMED"
-    },
-    {
-      "plant": "vaccinium-myrtillus",
-      "animal": "green-hairstreak",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Callophrys rubi",
-        "sources": 8
-      },
-      "verdict": "CONFIRMED"
-    },
-    {
-      "plant": "cytisus-scoparius",
-      "animal": "green-hairstreak",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Callophrys rubi",
-        "sources": 2
-      },
-      "verdict": "CONFIRMED"
-    },
-    {
-      "plant": "myrica-gale",
-      "animal": "emperor-moth",
-      "support": "host",
-      "dbif": {
-        "verdict": "NOT-FOUND",
-        "hostIds": [
-          3525
-        ]
-      },
-      "verdict": "NOT-FOUND"
-    },
-    {
-      "plant": "succisa-pratensis",
-      "animal": "marsh-fritillary",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Euphydryas aurinia",
-        "sources": 1
-      },
-      "verdict": "CONFIRMED"
-    },
-    {
-      "plant": "lotus-corniculatus",
-      "animal": "common-blue",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Polyommatus icarus",
-        "sources": 9
-      },
-      "verdict": "CONFIRMED"
-    },
-    {
-      "plant": "lotus-corniculatus",
-      "animal": "six-spot-burnet",
-      "support": "host",
-      "dbif": {
-        "verdict": "CONFIRMED",
-        "as": "Zygaena filipendulae",
-        "sources": 6
-      },
-      "verdict": "CONFIRMED"
-    }
+    {"plant":"quercus-petraea","animal":"purple-hairstreak","support":"host","dbif":{"verdict":"CONFIRMED","as":"Quercusia quercus","sources":1},"verdict":"CONFIRMED"},
+    {"plant":"quercus-robur","animal":"purple-hairstreak","support":"host","dbif":{"verdict":"CONFIRMED","as":"Quercusia quercus","sources":4},"verdict":"CONFIRMED"},
+    {"plant":"betula-pubescens","animal":"emperor-moth","support":"host","dbif":{"verdict":"CONFIRMED","as":"Saturnia pavonia","sources":3,"atGenus":true},"verdict":"CONFIRMED"},
+    {"plant":"salix-caprea","animal":"poplar-hawk-moth","support":"host","dbif":{"verdict":"CONFIRMED","as":"Laothoe populi","sources":3},"verdict":"CONFIRMED"},
+    {"plant":"populus-tremula","animal":"poplar-hawk-moth","support":"host","dbif":{"verdict":"CONFIRMED","as":"Laothoe populi","sources":3},"verdict":"CONFIRMED"},
+    {"plant":"ilex-aquifolium","animal":"holly-blue","support":"host","dbif":{"verdict":"CONFIRMED","as":"Celastrina argiolus","sources":8},"verdict":"CONFIRMED"},
+    {"plant":"prunus-spinosa","animal":"emperor-moth","support":"host","dbif":{"verdict":"CONFIRMED","as":"Saturnia pavonia","sources":4},"verdict":"CONFIRMED"},
+    {"plant":"hedera-helix","animal":"holly-blue","support":"host","dbif":{"verdict":"CONFIRMED","as":"Celastrina argiolus","sources":7},"verdict":"CONFIRMED"},
+    {"plant":"calluna-vulgaris","animal":"emperor-moth","support":"host","dbif":{"verdict":"CONFIRMED","as":"Saturnia pavonia","sources":4},"verdict":"CONFIRMED"},
+    {"plant":"calluna-vulgaris","animal":"green-hairstreak","support":"host","dbif":{"verdict":"CONFIRMED","as":"Callophrys rubi","sources":5},"verdict":"CONFIRMED"},
+    {"plant":"vaccinium-myrtillus","animal":"green-hairstreak","support":"host","dbif":{"verdict":"CONFIRMED","as":"Callophrys rubi","sources":8},"verdict":"CONFIRMED"},
+    {"plant":"cytisus-scoparius","animal":"green-hairstreak","support":"host","dbif":{"verdict":"CONFIRMED","as":"Callophrys rubi","sources":2},"verdict":"CONFIRMED"},
+    {"plant":"myrica-gale","animal":"emperor-moth","support":"host","dbif":{"verdict":"NOT-FOUND","hostIds":[3525]},"verdict":"NOT-FOUND"},
+    {"plant":"succisa-pratensis","animal":"marsh-fritillary","support":"host","dbif":{"verdict":"CONFIRMED","as":"Euphydryas aurinia","sources":1},"verdict":"CONFIRMED"},
+    {"plant":"lotus-corniculatus","animal":"common-blue","support":"host","dbif":{"verdict":"CONFIRMED","as":"Polyommatus icarus","sources":9},"verdict":"CONFIRMED"},
+    {"plant":"lotus-corniculatus","animal":"six-spot-burnet","support":"host","dbif":{"verdict":"CONFIRMED","as":"Zygaena filipendulae","sources":6},"verdict":"CONFIRMED"}
   ]
 }

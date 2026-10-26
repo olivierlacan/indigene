@@ -107,7 +107,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Brown Winged Plant Hopper (_Pochazia shantungensis_)
 
-**new** — Insecta · 1,790 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Insecta · 1,791 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -129,7 +129,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Western Honey Bee (_Apis mellifera_)
 
-**new** — Insecta · 1,015 research-grade observations in the region's box · native status: **unclear** (iNaturalist: unknown; GBIF: unclear)
+**new** — Insecta · 1,018 research-grade observations in the region's box · native status: **unclear** (iNaturalist: unknown; GBIF: unclear)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -140,7 +140,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Brown Marmorated Stink Bug (_Halyomorpha halys_)
 
-**new** — Insecta · 578 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Insecta · 579 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|

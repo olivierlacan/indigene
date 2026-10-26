@@ -78,6 +78,10 @@
 //   npm run wildlife -- --all                 # every region, writing each report
 //   npm run wildlife -- --region pnw --write  # write docs/candidates/wildlife-pnw.md
 //
+// A full run is about 25 minutes per region. For more than one, use the
+// `Find wildlife candidates` workflow (.github/workflows/wildlife-candidates.yml),
+// which runs each region as its own job and opens a PR with the shortlists.
+//
 // Needs open internet (GloBI + iNaturalist). Behind a proxy this only works as
 // `npm run wildlife`, which sets NODE_USE_ENV_PROXY=1 — see `_net.mjs`.
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";

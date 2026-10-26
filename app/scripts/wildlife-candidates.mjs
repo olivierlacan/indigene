@@ -145,11 +145,13 @@ async function getJson(url, { tries = 3, timeoutMs = 45000, politeMs = 0 } = {})
   }
   let out = null;
   for (let attempt = 1; attempt <= tries; attempt++) {
+    // The timer covers the body as well as the headers: cleared on arrival of
+    // the headers, it let a response whose body stalled hang the run for hours
+    // (South Florida, October 2026).
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), timeoutMs);
     try {
-      const ctrl = new AbortController();
-      const t = setTimeout(() => ctrl.abort(), timeoutMs);
       const res = await fetch(url, { headers: { "User-Agent": UA }, signal: ctrl.signal });
-      clearTimeout(t);
       fetches++;
       // A 500 from GloBI is usually its own read timeout on a heavy join, and
       // retrying the identical query just spends another minute reaching it.
@@ -160,6 +162,8 @@ async function getJson(url, { tries = 3, timeoutMs = 45000, politeMs = 0 } = {})
     } catch {
       if (attempt >= tries) break;
       await sleep(600 * attempt);
+    } finally {
+      clearTimeout(t);
     }
   }
   cache[url] = out;

@@ -43,6 +43,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { requireProxyAwareFetch } from "./_net.mjs";
 import { openLoader } from "./_load-ts.mjs";
+import { snapshotJson } from "./_snapshot-json.mjs";
 import { FAUNA_AREA, askedNames, natureServe, nbn, taxref, inatPlace, griis, presence, TAXREF_VERSION } from "./_fauna.mjs";
 
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
@@ -184,11 +185,10 @@ async function checkRegion(regionId, animals) {
     mkdirSync(OUT_DIR, { recursive: true });
     writeFileSync(
       outFile,
-      JSON.stringify(
+      snapshotJson(
         { region: regionId, area: cfg.area.en, authorities: authoritiesFor(cfg), ranAt: new Date().toISOString(), rows },
-        null,
-        2,
-      ) + "\n",
+        "rows",
+      ),
     );
   }
   const list = (title, xs) => {

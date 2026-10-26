@@ -35,6 +35,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { requireProxyAwareFetch } from "./_net.mjs";
 import { openLoader } from "./_load-ts.mjs";
+import { snapshotJson } from "./_snapshot-json.mjs";
 import { withSeeds } from "./_regions.mjs";
 import { askedNames, gbifNames } from "./_fauna.mjs";
 import { studiesCitedBy, studyOfCitation } from "./_globi.mjs";
@@ -264,7 +265,7 @@ for (const regionId of regions) {
   }
   if (!errors.length) {
     mkdirSync(OUT_DIR, { recursive: true });
-    writeFileSync(outFile, JSON.stringify({ region: regionId, ranAt: new Date().toISOString(), ties }, null, 2) + "\n");
+    writeFileSync(outFile, snapshotJson({ region: regionId, ranAt: new Date().toISOString(), ties }, "ties"));
   }
   for (const [title, xs] of Object.entries(flags)) if (xs.length) console.log(`\n${title}:\n  ${xs.join("\n  ")}`);
   if (errors.length) console.log(`\n${errors.length} error(s) — snapshot NOT written.`);

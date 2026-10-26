@@ -486,6 +486,10 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "Des pelotes à épingles lilas qu'abeilles, syrphes et papillons se disputent tout l'été.",
     propagationNote:
       "Semez dehors à l'automne ou au printemps.",
+    supportNotes: {
+      "bumble-bees":
+        "Chaque tête en pelote compte des dizaines de petites fleurs, si bien qu'une abeille peut se nourrir longtemps sans voler.",
+    },
   },
   "Leucanthemum vulgare": {
     nativeNote:
@@ -506,6 +510,10 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "Des fleurs violettes en juin que bourdons et abeilles solitaires visitent sans relâche.",
     propagationNote:
       "Divisez les touffes au printemps. La graine semée fraîche en fin d'été lève le printemps suivant.",
+    supportNotes: {
+      "bumble-bees":
+        "Le géranium des bois remplit en juin les prés de fauche d'altitude et les bords de route, et les bourdons en visitent tout le massif.",
+    },
   },
   "Geranium sanguineum": {
     nativeNote:
@@ -544,6 +552,10 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "Du nectar de printemps pour les bourdons à langue longue, sur une herbe rase et sèche.",
     propagationNote:
       "Semez la graine fraîche dehors en fin d'été ; il lui faut le froid de l'hiver.",
+    supportNotes: {
+      "bumble-bees":
+        "Le nectar est au fond du tube : la primevère officinale nourrit les reines de bourdons à longue langue tout juste sorties d'hibernation.",
+    },
   },
   "Filipendula ulmaria": {
     nativeNote:
@@ -554,6 +566,10 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "Un pollen abondant et un parfum lourd pour les syrphes, les coléoptères et les abeilles, et un couvert dense pour les grenouilles.",
     propagationNote:
       "Divisez au printemps. La graine semée dehors à l'automne lève l'année suivante.",
+    supportNotes: {
+      "mason-bees":
+        "La reine-des-prés offre du pollen et pas de nectar, et c'est justement ce que viennent chercher les abeilles à langue courte et les syrphes.",
+    },
   },
   "Iris pseudacorus": {
     nativeNote:
@@ -564,6 +580,10 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "Les bourdons à langue longue travaillent ses fleurs, et ses massifs abritent gallinules poules-d'eau et canetons.",
     propagationNote:
       "Après la floraison, coupez un morceau de rhizome portant des feuilles et replantez-le.",
+    supportNotes: {
+      "bumble-bees":
+        "Chaque fleur offre trois pistes d'atterrissage marquées de guides à nectar. Un bourdon se glisse sous le style et ressort couvert de pollen.",
+    },
   },
   "Caltha palustris": {
     nativeNote:
@@ -574,6 +594,10 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "De grandes coupes jaunes de pollen et de nectar pour les premières abeilles et les syrphes en mars.",
     propagationNote:
       "Divisez les touffes après la floraison. Semez la graine fraîche sur un terreau détrempé.",
+    supportNotes: {
+      "mason-bees":
+        "De grandes coupes dorées et ouvertes au début du printemps, quand les premières andrènes sortent et n'ont presque rien d'autre à butiner.",
+    },
   },
   "Valeriana officinalis": {
     nativeNote:
@@ -594,6 +618,10 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "Des clochettes penchées où les bourdons se suspendent pour atteindre le nectar.",
     propagationNote:
       "Divisez au printemps ou à l'automne.",
+    supportNotes: {
+      "bumble-bees":
+        "Les clochettes penchées pendent tête en bas, une forme qui convient aux bourdons, qui s'y accrochent par-dessous pour boire.",
+    },
   },
   "Achillea millefolium": {
     nativeNote:
@@ -616,6 +644,10 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "Petites abeilles et syrphes rampent dans les clochettes pour se nourrir, et s'y abritent les nuits froides.",
     propagationNote:
       "Pressez la graine, fine comme de la poussière, sur un terreau graveleux au printemps et gardez-le humide.",
+    supportNotes: {
+      "bumble-bees":
+        "Les petits bourdons grimpent jusqu'au fond des clochettes pendantes pour atteindre le nectar.",
+    },
   },
   "Hyacinthoides non-scripta": {
     nativeNote:
@@ -626,6 +658,10 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "Du nectar pour les reines de bourdons au printemps, avant que la canopée ne se ferme.",
     propagationNote:
       "Semez la graine mûre dehors en été ; elle fleurit au bout de cinq ans environ. Les touffes se divisent une fois les feuilles fanées.",
+    supportNotes: {
+      "bumble-bees":
+        "Les reines de bourdons butinent les bois de jacinthes en mai. Celles à langue courte percent souvent la base de la clochette pour voler le nectar.",
+    },
   },
   "Armeria maritima": {
     nativeNote:
@@ -638,6 +674,10 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "Divisez le coussin au printemps, ou semez la graine dans un mélange graveleux.",
     pioneerNote:
       "Elle pousse dans les fissures des digues et sur les sols salés : un bord de route salé l'hiver ou le joint entre deux dalles lui convient.",
+    supportNotes: {
+      "bumble-bees":
+        "Des coussins roses sur les falaises et les prés salés, en fleur pendant des mois ; les bourdons les butinent tout le long de la côte.",
+    },
   },
   "Silene dioica": {
     nativeNote:
@@ -676,6 +716,10 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "Des globes jaunes fermés où de minuscules mouches Chiastocheta se glissent pour polliniser, en pondant au passage.",
     propagationNote:
       "Semez la graine fraîche dehors en fin d'été ; la vieille graine est lente. Divisez au début du printemps.",
+    supportNotes: {
+      "bumble-bees":
+        "Le trolle ne s'ouvre jamais tout à fait : un insecte doit forcer le passage par le haut. Ses principaux partenaires sont de minuscules mouches ; les bourdons y entrent aussi.",
+    },
   },
   "Cirsium heterophyllum": {
     nativeNote:
@@ -686,6 +730,14 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "De gros capitules pourpres où se nourrissent bourdons et papillons, puis des graines pour les chardonnerets.",
     propagationNote:
       "Soulevez un stolon enraciné au printemps.",
+    supportNotes: {
+      "bumble-bees":
+        "De grosses têtes pourpres dans les prés d'altitude en juillet, butinées par les bourdons pendant des semaines.",
+      "goldfinches-linnets":
+        "Laissez les têtes debout, et les chardonnerets en tirent les graines duveteuses jusqu'à la fin de l'été.",
+      "dark-green-fritillary":
+        "C'est sur les chardons qu'un grand nacré se pose assez longtemps pour qu'on le voie ; le reste du temps, ce n'est qu'un éclair orange.",
+    },
   },
   "Rhinanthus minor": {
     nativeNote:
@@ -696,6 +748,10 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "Le moyen le plus rapide de changer une pelouse en prairie, et les bourdons visitent ses fleurs.",
     propagationNote:
       "La graine ne se garde qu'un an. Semez-la fraîche entre août et novembre.",
+    supportNotes: {
+      "bumble-bees":
+        "La fleur en capuchon du rhinanthe ne s'ouvre qu'à une abeille assez forte pour la forcer : des bourdons, surtout.",
+    },
   },
   "Lotus corniculatus": {
     nativeNote:
@@ -738,6 +794,12 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "De petites fraises sucrées pour les merles et les gens, et des fleurs pour les petites abeilles.",
     propagationNote:
       "Agrafez le plantule d'un stolon dans un pot de terreau ; détachez-le une fois enraciné.",
+    supportNotes: {
+      "mason-bees":
+        "Des fleurs blanches ouvertes dès avril, à hauteur de cheville : un atterrissage facile pour les andrènes d'un talus ensoleillé.",
+      "blackcaps-warblers":
+        "De minuscules fraises intenses, que rouges-gorges et fauvettes à tête noire trouvent bien avant quiconque avec un bol.",
+    },
   },
   "Deschampsia cespitosa": {
     nativeNote:
@@ -748,6 +810,10 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "Des nuages d'inflorescences, des graines pour les fringilles, et des touffes où coléoptères et araignées passent l'hiver.",
     propagationNote:
       "Divisez les touffes au printemps.",
+    supportNotes: {
+      "grass-skippers":
+        "Le tristan pond sur des graminées grossières comme la canche cespiteuse, dans les coins humides et ombragés, et ses chenilles se nourrissent pendant les nuits douces de l'hiver.",
+    },
   },
   "Avenella flexuosa": {
     nativeNote:
@@ -798,5 +864,119 @@ export const SCOTLAND_LOWLANDS: ProseTable = {
       "Un couvert sombre et luisant toute l'année, à l'ombre.",
     propagationNote:
       "Semez les spores, ou divisez une vieille souche.",
+  },
+  "Salix pentandra": {
+    supportNotes: {
+      "poplar-hawk-moth":
+        "Les chenilles du sphinx du peuplier mangent les saules autant que les peupliers et le tremble : un saule à cinq étamines au bord d'un ruisseau fait l'affaire.",
+      "bumble-bees":
+        "Le saule à cinq étamines fleurit tard, en mai et juin, feuilles sorties : de quoi nourrir les abeilles quand les autres saules ont fini.",
+    },
+  },
+  "Salix aurita": {
+    supportNotes: {
+      "mason-bees":
+        "Andrena clarkella, une andrène, ne récolte que du pollen de saule et sort en mars pour les premiers chatons.",
+      "poplar-hawk-moth":
+        "Encore un saule sur la liste du sphinx du peuplier. Les grosses chenilles vertes se plaquent le long d'un rameau et sont difficiles à repérer.",
+    },
+  },
+  "Erica tetralix": {
+    supportNotes: {
+      "bumble-bees":
+        "La bruyère des sols mouillés, en fleur dès juin sur la tourbière et la lande humide, là où presque rien d'autre ne fleurit.",
+    },
+  },
+  "Rubus idaeus": {
+    supportNotes: {
+      "bumble-bees":
+        "Les fleurs du framboisier pendent vers le bas, ce qui convient aux bourdons : ils s'y accrochent par-dessous pour boire.",
+      "blackcaps-warblers":
+        "Rouges-gorges et fauvettes à tête noire prennent les fruits à la fin de l'été, et les cannes sont assez denses pour y nicher.",
+    },
+  },
+  "Vicia cracca": {
+    supportNotes: {
+      "bumble-bees":
+        "Les bourdons à longue langue visitent tout l'été ses épis violets, fleuris d'un seul côté.",
+    },
+  },
+  "Lathyrus pratensis": {
+    supportNotes: {
+      "bumble-bees":
+        "Une fleur de pois jaune demande une abeille assez lourde pour l'ouvrir : c'est une nourriture de bourdons.",
+    },
+  },
+  "Anemone nemorosa": {
+    supportNotes: {
+      "mason-bees":
+        "L'anémone des bois offre du pollen plutôt que du nectar, et c'est le pollen qu'une abeille solitaire précoce récolte pour son nid.",
+    },
+  },
+  "Allium ursinum": {
+    supportNotes: {
+      "mason-bees":
+        "Des nappes blanches dans les bois ombragés en mai, l'une des rares bonnes fleurs du sous-bois une fois la canopée refermée.",
+    },
+  },
+  "Viola riviniana": {
+    supportNotes: {
+      "small-pearl-bordered-fritillary":
+        "La violette de Rivinus est la principale plante-hôte du petit collier argenté, dans les prairies humides, les fougeraies et les clairières.",
+      "dark-green-fritillary":
+        "Le grand nacré pond lui aussi sur les violettes, sur un terrain plus sec et plus ouvert : coteaux herbeux et dunes.",
+    },
+  },
+  "Cardamine pratensis": {
+    supportNotes: {
+      "orange-tip":
+        "L'aurore pond un seul œuf sur la tige d'une fleur, et la chenille mange les siliques. Elle s'est répandue dans toute l'Écosse ces dernières décennies.",
+    },
+  },
+  "Silene flos-cuculi": {
+    supportNotes: {
+      "bumble-bees":
+        "Le nectar est au fond d'un tube étroit : la fleur de coucou nourrit les bourdons à longue langue et les papillons.",
+    },
+  },
+  "Galium verum": {
+    supportNotes: {
+      "elephant-hawk-moth":
+        "Les chenilles du grand sphinx de la vigne mangent les gaillets et les épilobes. Inquiétée, la chenille, grosse comme un doigt, gonfle quatre ocelles et prend l'air d'un petit serpent.",
+      "hummingbird-hawk-moth":
+        "Le moro-sphinx pond lui aussi sur les gaillets. Il arrive du sud jusqu'en Écosse les étés chauds et fait du vol stationnaire devant les fleurs en plein jour.",
+    },
+  },
+  "Ajuga reptans": {
+    supportNotes: {
+      "small-pearl-bordered-fritillary":
+        "La bugle rampante fleurit au moment où sort le petit collier argenté, et c'est l'une de ses fleurs préférées dans une clairière.",
+      "bumble-bees":
+        "Des épis bleus à l'ombre humide en mai, butinés par les reines de bourdons.",
+    },
+  },
+  "Potentilla erecta": {
+    supportNotes: {
+      "mason-bees":
+        "Andrena tarsata ne récolte le pollen que de la potentille tormentille, ou presque. Elle est devenue rare et vit là où la tormentille fleurit encore, dans les prairies et les landes non fertilisées.",
+    },
+  },
+  "Prunella vulgaris": {
+    supportNotes: {
+      "bumble-bees":
+        "Des têtes violettes basses dans l'herbe rase tout l'été, butinées par les bourdons même là où la pelouse est tondue.",
+    },
+  },
+  "Festuca rubra": {
+    supportNotes: {
+      "grass-skippers":
+        "Le myrtil et le fadet commun pondent sur les graminées fines comme la fétuque rouge, et les chenilles passent l'hiver au pied de la touffe. Tondez tout ras et elles n'ont plus où aller.",
+    },
+  },
+  "Molinia caerulea": {
+    supportNotes: {
+      "scotch-argus":
+        "En Écosse, les chenilles du moiré sylvicole se nourrissent de molinie bleue et de presque rien d'autre : une haute touffe non fauchée sur sol humide, c'est tout leur habitat.",
+    },
   },
 };

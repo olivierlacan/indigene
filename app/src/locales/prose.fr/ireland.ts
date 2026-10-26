@@ -321,6 +321,8 @@ export const IRELAND: ProseTable = {
         "Une ronce ensoleillée en septembre, c'est là qu'on trouve les vulcains — ils se nourrissent des fruits blets autant que des fleurs, et c'est le dernier grand repas avant de partir vers le sud ou de tenter de passer l'hiver.",
       "green-hairstreak":
         "La ronce figure sur la longue liste des plantes nourricières de la thècle de la ronce, ce qui explique en partie qu'on la trouve sur les talus de haie aussi bien que sur la lande ouverte.",
+      "silver-washed-fritillary":
+        "La ronce d'une allée ensoleillée est la fleur préférée du tabac d'Espagne ; en juillet, plusieurs se partagent souvent le même buisson.",
     },
   },
   "Rosa canina": {
@@ -606,6 +608,8 @@ export const IRELAND: ProseTable = {
         "Laissez les têtes fanées debout et les chardonnerets les démontent tout l'automne, accrochés de côté aux tiges.",
       "painted-lady":
         "Une année à belles-dames — quand des millions arrivent d'Afrique du Nord en un seul été —, ce sont la centaurée et les chardons qui les nourrissent dans les prairies irlandaises.",
+      "dark-green-fritillary":
+        "C'est sur la centaurée qu'un grand nacré se pose assez longtemps pour qu'on le voie ; le reste du temps, ce n'est qu'un éclair orange.",
     },
   },
   "Lotus corniculatus": {
@@ -656,6 +660,8 @@ export const IRELAND: ProseTable = {
         "Les chenilles du vulcain ne mangent elles aussi que l'ortie, mais elles vivent seules plutôt qu'en tas, chacune repliant une feuille sur elle-même et la cousant de soie.",
       comma:
         "Le Robert-le-diable est un nouveau venu en Irlande — signalé ici pour la première fois en 2000, il gagne maintenant le nord — et l'ortie est l'une des principales plantes sur lesquelles il pond. Sa chenille se déguise en fiente d'oiseau, blanche sur noir, une ruse assez bonne pour valoir qu'on la cherche.",
+      "small-tortoiseshell":
+        "Les chenilles de la petite tortue ne mangent que des orties et vivent ensemble dans une toile de soie sur les jeunes pousses, en plein soleil.",
     },
   },
   "Anemone nemorosa": {
@@ -1015,5 +1021,85 @@ export const IRELAND: ProseTable = {
       "Un couvre-sol et un abri tout l'hiver à l'ombre, dans les mois où un jardin a le moins à offrir. Le climat doux et humide de l'Irlande lui convient mieux que presque partout ailleurs : il y devient deux fois plus grand qu'à l'intérieur des terres en Europe.",
     propagationNote:
       "Cette fougère forme de minuscules plantules le long de la nervure des frondes — fixez une fronde adulte sur un terreau humide et elles s'enracinent toutes seules, la multiplication de fougère la plus facile qui soit. Les souches se divisent aussi au printemps.",
+  },
+  "Betula pendula": {
+    supportNotes: {
+      "conifer-seed-finches":
+        "Le bouleau verruqueux est plus rare en Irlande que le bouleau pubescent, mais ses chatons nourrissent les mêmes bandes hivernales de tarins et de sizerins, suspendus la tête en bas le long des rameaux.",
+    },
+  },
+  "Salix pentandra": {
+    supportNotes: {
+      "poplar-hawk-moth":
+        "Les chenilles du sphinx du peuplier mangent les saules autant que les peupliers et le tremble : un saule à cinq étamines dans un creux humide fait l'affaire.",
+      "bumble-bees":
+        "Le saule à cinq étamines fleurit tard, en mai et juin, feuilles déjà sorties : de quoi nourrir les abeilles quand les autres saules ont fini depuis longtemps.",
+    },
+  },
+  "Salix aurita": {
+    supportNotes: {
+      "mason-bees":
+        "Andrena clarkella, une andrène, ne récolte que du pollen de saule et sort en mars pour les premiers chatons. Un saule à oreillettes sur une lande humide lui convient très bien.",
+      "poplar-hawk-moth":
+        "Encore un saule sur la liste du sphinx du peuplier. Les grosses chenilles vertes, une corne au bout du corps, se plaquent le long d'un rameau et sont difficiles à repérer.",
+    },
+  },
+  "Rubus idaeus": {
+    supportNotes: {
+      "bumble-bees":
+        "Les fleurs du framboisier pendent vers le bas, ce qui convient aux bourdons : ils s'y accrochent par-dessous pour boire. Un massif sauvage bourdonne tout le mois de juin.",
+      "blackcaps-warblers":
+        "Rouges-gorges et fauvettes à tête noire prennent les fruits en juillet et en août, et les cannes sont assez denses pour y nicher.",
+    },
+  },
+  "Iris pseudacorus": {
+    supportNotes: {
+      "bumble-bees":
+        "Chaque fleur offre trois pistes d'atterrissage marquées de guides à nectar. Un bourdon se glisse sous le style pour boire et ressort couvert de pollen.",
+    },
+  },
+  "Viola riviniana": {
+    supportNotes: {
+      "dark-green-fritillary":
+        "La violette de Rivinus est la principale plante-hôte du grand nacré, qui pond sur les violettes des prairies rudes, des dunes et des coteaux ouverts.",
+      "silver-washed-fritillary":
+        "Le tabac d'Espagne pond sur l'écorce juste au-dessus des violettes, et les minuscules chenilles descendent les rejoindre au printemps. Des violettes en lisière de bois : c'est ce qu'il lui faut.",
+    },
+  },
+  "Cardamine pratensis": {
+    supportNotes: {
+      "orange-tip":
+        "L'aurore pond un seul œuf sur la tige d'une fleur, et la chenille mange les siliques à mesure qu'elles se forment. Ne fauchez pas le coin humide avant juillet, et le papillon reste.",
+    },
+  },
+  "Silene flos-cuculi": {
+    supportNotes: {
+      "bumble-bees":
+        "Le nectar est au fond d'un tube étroit : la fleur de coucou nourrit les bourdons à longue langue et les papillons d'une prairie humide en juin.",
+    },
+  },
+  "Knautia arvensis": {
+    supportNotes: {
+      "bumble-bees":
+        "Chaque tête en pelote compte des dizaines de petites fleurs, si bien qu'une abeille peut se nourrir longtemps sans voler. Les bourdons la visitent de juillet à septembre.",
+    },
+  },
+  "Primula veris": {
+    supportNotes: {
+      "bumble-bees":
+        "Le nectar est au fond du tube : la primevère officinale nourrit en avril les reines de bourdons à longue langue tout juste sorties d'hibernation.",
+    },
+  },
+  "Geum rivale": {
+    supportNotes: {
+      "bumble-bees":
+        "Les clochettes penchées pendent tête en bas, une forme qui convient aux bourdons, qui s'y accrochent par-dessous pour boire.",
+    },
+  },
+  "Potentilla erecta": {
+    supportNotes: {
+      "mason-bees":
+        "Andrena tarsata ne récolte le pollen que de la potentille tormentille, ou presque. Elle est devenue rare et vit là où la tormentille fleurit encore, dans les prairies et les landes non fertilisées.",
+    },
   },
 };

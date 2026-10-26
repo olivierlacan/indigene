@@ -781,6 +781,8 @@ export const FRANCE_MEDITERRANEAN: ProseTable = {
         "Le noisetier est pollinisé par le vent et n'a besoin d'aucun insecte, mais ses chatons lâchent leur pollen en janvier et les toutes premières abeilles solitaires le récoltent quand même — le premier pollen de l'année méditerranéenne.",
       "eurasian-jay":
         "Le geai prend les noisettes aussi volontiers que les glands et les enterre le long de la lisière : c'est ainsi qu'un fourré de noisetiers remonte une pente ombragée.",
+      "hazel-dormouse":
+        "Dans les bois de colline, les noisettes sont ce dont le muscardin s'engraisse avant son sommeil. Une noisette qu'il a ouverte porte un trou rond et lisse.",
     },
   },
   "Centaurea scabiosa@france-mediterranean": {

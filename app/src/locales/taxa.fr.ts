@@ -446,6 +446,8 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "#goldfinches-linnets": { name: "Chardonnerets et linottes", src: "catalog" },
   "#conifer-seed-finches": { name: "Becs-croisés, tarins et sizerins", src: "catalog" },
   "#acorn-mammals": { name: "Écureuils, chevreuils et autres mammifères", src: "catalog" },
+  "#coal-crested-tits": { name: "Mésanges noire et huppée", src: "catalog" },
+  "#winter-moths": { name: "Phalènes d'hiver", src: "catalog" },
 
   // ---------------------------------------------------------------------
   // Les sosies (`data/lookalikes.ts`) — les plantes qu'on prend pour une
@@ -485,6 +487,8 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Aesculus californica": { name: "Pavier de Californie", src: "wikidata" }, // California Buckeye
   "Agathis australis": { name: "Kauri", src: "wikidata" }, // Kauri
   "Aglais io": { name: "Paon-du-jour", src: "taxref" }, // Peacock butterfly
+  "Aglais urticae": { name: "Petite Tortue", src: "taxref" },
+  "Aglia tau": { name: "Hachette", src: "taxref" },
   "Akebia quinata": { name: "Akébie à cinq feuilles", src: "taxref" }, // Akebi Chocolate Vine
   "Allium ursinum": { name: "Ail des ours", src: "taxref" }, // Wild Garlic (Ramsons)
   "Alnus japonica": { name: "Aulne du Japon", src: "taxref" }, // Japanese Alder
@@ -492,9 +496,12 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Amelanchier laevis": { name: "Amélanchier de Lamark", src: "bdtfx" }, // Allegheny Serviceberry
   "Anemone nemorosa": { name: "Anémone des bois", src: "taxref" }, // Wood Anemone
   "Anthoxanthum odoratum": { name: "Flouve odorante", src: "taxref" }, // Sweet Vernal-grass
+  "Aporia crataegi": { name: "Gazé", src: "taxref" },
   "Archilochus alexandri": { name: "Colibri à gorge noire", src: "wikidata" }, // Black-chinned hummingbird
   "Ardisia crenata": { name: "Ardisie crénelée", src: "taxref" }, // Coral ardisia (coral berry)
   "Ardisia elliptica": { name: "Ardisie elliptique", src: "taxref" }, // Shoebutton ardisia
+  "Argynnis aglaja": { name: "Grand Nacré", src: "taxref" },
+  "Argynnis paphia": { name: "Tabac d'Espagne", src: "taxref" },
   "Aruncus dioicus": { name: "Spirée barbe-de-bouc", src: "taxref" }, // Goat's Beard
   "Asarum canadense": { name: "Asaret du Canada", src: "wikidata" }, // Wild Ginger
   "Asclepias curassavica": { name: "Herbe à gendarme", src: "taxref" }, // Tropical milkweed
@@ -504,6 +511,7 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Baptisia australis": { name: "Baptisia austral", src: "taxref" }, // Blue Wild Indigo
   "Betula papyrifera": { name: "Bouleau à papier", src: "taxref" }, // Paper Birch
   "Betula pubescens": { name: "Bouleau pubescent", src: "taxref" }, // Downy Birch
+  "Boloria selene": { name: "Petit Collier argenté", src: "taxref" },
   "Callipepla californica": { name: "Colin de Californie", src: "taxref" }, // California quail
   "Callophrys gryneus": { name: "Porte-queue verdâtre", src: "wikidata" }, // Juniper & cypress hairstreaks
   "Caltha palustris": { name: "Populage des marais", src: "taxref" }, // Marsh Marigold
@@ -521,6 +529,7 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Centaurea stoebe": { name: "Centaurée du Rhin", src: "taxref" }, // Spotted knapweed
   "Chamaenerion angustifolium": { name: "Épilobe à feuilles étroites", src: "taxref" }, // Fireweed
   "Clematis lasiantha": { name: "Clématite flammette", src: "taxref" }, // Chaparral Clematis (Pipestem)
+  "Colotois pennaria": { name: "Himère-plume", src: "taxref" },
   "Cordyline australis": { name: "Cordyline australe", src: "taxref" }, // Tī Kōuka
   "Cornus canadensis": { name: "Cornouiller du Canada", src: "taxref" }, // Bunchberry
   "Cornus kousa": { name: "Cornouiller du Japon", src: "wikidata" }, // Yamaboshi Dogwood
@@ -535,6 +544,7 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Dryopteris erythrosora": { name: "Dryoptéride à sores rouges", src: "taxref" }, // Benishida Autumn Fern
   "Dysoxylum spectabile": { name: "Kohekohe", src: "wikidata" }, // Kohekohe
   "Elaeagnus umbellata": { name: "Chalef en ombelle", src: "taxref" }, // Autumn olive
+  "Erebia aethiops": { name: "Moiré sylvicole", src: "taxref" },
   "Erica cinerea": { name: "Bruyère cendrée", src: "taxref" }, // Bell Heather
   "Erica tetralix": { name: "Bruyère à quatre angles", src: "taxref" }, // Cross-leaved Heath
   "Erigeron glaucus": { name: "Érigéron glauque", src: "taxref" }, // Seaside Daisy
@@ -555,6 +565,7 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Hesperocyparis forbesii": { name: "Cyprès de Forbes", src: "taxref" }, // Tecate Cypress
   "Hesperocyparis sargentii": { name: "Cyprès de Sargent", src: "taxref" }, // Sargent Cypress
   "Hydrangea macrophylla": { name: "Hydrangelle hortensia", src: "taxref" }, // Ajisai Hydrangea
+  "Hyles hippophaes": { name: "Sphinx de l'Argousier", src: "taxref" },
   "Icaricia icarioides": { name: "Bleu de Boisduval", src: "wikidata" }, // Lupine blues
   "Iris ensata": { name: "Iris à feuilles en épées", src: "taxref" }, // Hanashōbu Iris
   "Juniperus virginiana": { name: "Genévrier de Virginie", src: "taxref" }, // Southern Red Cedar
@@ -568,15 +579,18 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Ligustrum lucidum": { name: "Troène luisant", src: "taxref" }, // Glossy privet
   "Lilium columbianum": { name: "Lys de Colombie", src: "wikidata" }, // Columbia Lily (Tiger Lily)
   "Lilium speciosum": { name: "Lis remarquable", src: "taxref" }, // Kanokoyuri Lily
+  "Limenitis camilla": { name: "Petit Sylvain", src: "taxref" },
   "Linnaea borealis": { name: "Linnée boréale", src: "taxref" }, // Twinflower
   "Lobelia siphilitica": { name: "Lobélie syphilitique", src: "taxref" }, // Great Blue Lobelia
   "Lonicera maackii": { name: "Chèvrefeuille de Maack", src: "taxref" }, // Amur honeysuckle (bush honeysuckle)
   "Lupinus perennis": { name: "Lupin vivace", src: "taxref" }, // Wild Lupine
+  "Lysandra coridon": { name: "Argus bleu-nacré", src: "taxref" },
   "Lysichiton americanus": { name: "Lysichiton d'Amérique", src: "taxref" }, // Western Skunk Cabbage
   "Magnolia kobus": { name: "Magnolia de Kobé", src: "taxref" }, // Kobushi Magnolia
   "Magnolia virginiana": { name: "Magnolia de Virginie", src: "taxref" }, // Sweetbay Magnolia
   "Malus sylvestris": { name: "Pommier sylvestre", src: "taxref" }, // Crab Apple
   "Matteuccia struthiopteris": { name: "Matteuccia struthioptéride", src: "taxref" }, // Ostrich Fern
+  "Melanargia galathea": { name: "Demi-Deuil", src: "taxref" },
   "Melia azedarach": { name: "Margousier azédarach", src: "taxref" }, // Chinaberry
   "Metrosideros excelsa": { name: "Pohutukawa", src: "wikidata" }, // Pōhutukawa
   "Microlaena stipoides": { name: "Microlène faux-stipe", src: "taxref" }, // Pātītī
@@ -596,6 +610,7 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Papilio glaucus": { name: "Papillon glauque", src: "wikidata" }, // Eastern tiger swallowtail
   "Papilio polyxenes": { name: "Papillon du céleri", src: "wikidata" }, // Black swallowtail
   "Papilio zelicaon": { name: "Papillon de l'anise", src: "wikidata" }, // Anise swallowtail
+  "Parnassius apollo": { name: "Apollon", src: "taxref" },
   "Parthenocissus tricuspidata": { name: "Vigne-vierge à trois pointes", src: "taxref" }, // Tsuta Boston Ivy
   "Passiflora suberosa": { name: "Passiflore à fruit violet", src: "taxref" }, // Corkystem Passionflower
   "Patagioenas fasciata": { name: "Pigeon à queue barrée", src: "wikidata" }, // Band-tailed pigeon
@@ -643,11 +658,13 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Sasa veitchii": { name: "Sasa de Veitch", src: "taxref" }, // Kumazasa Dwarf Bamboo
   "Saxifraga stolonifera": { name: "Saxifrage stolonifère", src: "taxref" }, // Yukinoshita Strawberry Saxifrage
   "Schinus terebinthifolia": { name: "Schinus à feuilles de térébinthe", src: "taxref" }, // Brazilian pepper
+  "Sciurus vulgaris": { name: "Écureuil roux", src: "taxref" },
   "Securigera varia": { name: "Coronille variée", src: "taxref" }, // Crown vetch
   "Sequoia sempervirens": { name: "Séquoia toujours vert", src: "taxref" }, // Coast Redwood
   "Silene dioica": { name: "Silène dioïque", src: "taxref" }, // Red Campion
   "Sitta pusilla": { name: "Sittelle à tête brune", src: "wikidata" }, // Brown-headed nuthatch
   "Sorghum halepense": { name: "Sorgho d'Alep", src: "taxref" }, // Johnsongrass
+  "Sphinx pinastri": { name: "Sphinx du Pin", src: "taxref" },
   "Spinus psaltria": { name: "Chardonneret mineur", src: "wikidata" }, // Lesser goldfinch
   "Spiraea douglasii": { name: "Spirée de Douglas", src: "taxref" }, // Douglas Spirea (Hardhack)
   "Stachytarpheta cayennensis": { name: "Herbe bleue", src: "taxref" }, // Nettleleaf porterweed
@@ -659,6 +676,7 @@ export const TAXA_FR: NameTable<FrenchSource> = {
   "Taxus brevifolia": { name: "If à feuilles courtes", src: "taxref" }, // Pacific Yew
   "Tellima grandiflora": { name: "Tellima à grandes fleurs", src: "taxref" }, // Fringecup
   "Teucrium scorodonia": { name: "Germandrée scorodoine", src: "taxref" }, // Wood Sage
+  "Thecla betulae": { name: "Thécla du Bouleau", src: "taxref" },
   "Thuja occidentalis": { name: "Thuya d'Occident", src: "taxref" }, // Northern White Cedar
   "Thymus praecox": { name: "Thym précoce", src: "taxref" }, // Wild Thyme
   "Tilia americana": { name: "Tilleul d'Amérique", src: "taxref" }, // American Basswood

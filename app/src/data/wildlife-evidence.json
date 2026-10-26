@@ -124,15 +124,7 @@
       ],
       "checked": "2026-10-26",
       "animals": 36,
-      "unconfirmed": {
-        "apollo": "no-match",
-        "coal-crested-tits": "no-match",
-        "large-scabious-mining-bee": "no-match",
-        "pine-hawk-moth": "no-match",
-        "red-squirrel": "no-match",
-        "sea-buckthorn-hawk-moth": "no-match",
-        "tau-emperor": "no-match"
-      }
+      "unconfirmed": {}
     },
     "france-atlantic": {
       "area": {
@@ -147,12 +139,7 @@
       "checked": "2026-10-26",
       "animals": 40,
       "unconfirmed": {
-        "brown-hairstreak": "no-match",
-        "large-scabious-mining-bee": "no-match",
-        "marbled-white": "no-match",
-        "nettle-tree-butterfly": "introduced",
-        "sunflower-specialist-bees": "no-match",
-        "white-admiral": "no-match"
+        "nettle-tree-butterfly": "introduced"
       }
     },
     "france-continental": {
@@ -167,15 +154,7 @@
       ],
       "checked": "2026-10-26",
       "animals": 39,
-      "unconfirmed": {
-        "black-veined-white": "no-match",
-        "brown-hairstreak": "no-match",
-        "chalkhill-blue": "no-match",
-        "large-scabious-mining-bee": "no-match",
-        "marbled-white": "no-match",
-        "sunflower-specialist-bees": "no-match",
-        "white-admiral": "no-match"
-      }
+      "unconfirmed": {}
     },
     "france-mediterranean": {
       "area": {
@@ -228,7 +207,6 @@
         "feathered-thorn": "unknown",
         "grass-skippers": "unknown",
         "great-purple-emperor": "unknown",
-        "indian-fritillary": "no-match",
         "japanese-oak-silkmoth": "unknown",
         "moon-moths": "unknown",
         "oak-hairstreaks": "unknown",

@@ -1,7 +1,9 @@
 {
   "region": "north-michigan",
-  "ranAt": "2026-10-25T18:06:07.793Z",
+  "ranAt": "2026-10-26T21:08:25.805Z",
   "ties": [
-
+    {"plant":"spiraea-alba","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":168},"verdict":"CONFIRMED"},
+    {"plant":"rhus-typhina","animal":"mason-bees","support":"nectar","globi":{"verdict":"UNCITED"},"verdict":"UNCITED"},
+    {"plant":"geranium-maculatum","animal":"mason-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Robertson 1929"],"confirmedBy":["Robertson 1929"],"records":8},"verdict":"CONFIRMED"}
   ]
 }

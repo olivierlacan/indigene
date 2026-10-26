@@ -2497,7 +2497,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "hackberry-emperor", support: "host", reliance: "sole", note: "Hackberry emperor caterpillars eat hackberry leaves and nothing else.", basis: "GloBI — Ecdysis arthropod occurrence portal; BAMONA." },
       { wildlifeId: "american-snout", support: "host", reliance: "narrow", note: "The snout's caterpillars also feed only on hackberry, so a hackberry is the one place to look for them.", basis: "GloBI — iNaturalist observation records; BAMONA." },
       { wildlifeId: "mourning-cloak", support: "host", note: "Mourning cloak caterpillars feed in groups on hackberry, as they do on elms and willows.", basis: "Wagner, Caterpillars of Eastern North America; BAMONA." },
-      { wildlifeId: "cedar-waxwing", support: "berries", note: "The small dark fruits stay on the twigs well into winter, when waxwings and robins come for them.", basis: "GloBI — Fricke & Svenning 2020 plant–frugivore network (Nature); Cornell Lab." },
+      { wildlifeId: "cedar-waxwing", support: "berries", note: "The small dark fruits stay on the twigs well into winter, when waxwings and robins come for them.", basis: "Cornell Lab of Ornithology." },
     ],
     "quercus-palustris": [
       { wildlifeId: "acorn-birds", support: "seeds", note: "Pin oak's small acorns are just the size a blue jay can swallow whole and carry off to bury; wood ducks eat them in flooded woods.", basis: "USDA Silvics of North America; Cornell Lab of Ornithology." },
@@ -3177,7 +3177,6 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "hamamelis-virginiana": [
       { wildlifeId: "cecropia-moth", support: "host", note: "Witch hazel leaves feed the caterpillars of the cecropia, North America's largest moth.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (NHM); NWF Native Plant Finder." },
-      { wildlifeId: "luna-moth", support: "host", note: "Luna caterpillars take witch hazel too.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (NHM); NWF Native Plant Finder." },
     ],
     "aronia-melanocarpa": [
       { wildlifeId: "berry-songbirds", support: "berries", note: "The black berries are sour and stay on the branch into winter, eaten when better food runs out.", basis: "Cornell Lab of Ornithology." },

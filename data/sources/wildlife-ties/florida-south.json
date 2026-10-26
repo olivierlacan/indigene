@@ -1,6 +1,6 @@
 {
   "region": "florida-south",
-  "ranAt": "2026-10-25T18:07:03.090Z",
+  "ranAt": "2026-10-26T21:09:42.750Z",
   "ties": [
     {"plant":"serenoa-repens","animal":"grass-skippers","support":"host","globi":{"verdict":"NOT-FOUND","cited":["HOSTS (Robinson et al., NHM)","Ferrer-Paris et al. 2013"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
     {"plant":"serenoa-repens","animal":"mason-bees","support":"nectar","globi":{"verdict":"NOT-FOUND","cited":["GBIF-US bee occurrences","iNaturalist observations"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
@@ -11,13 +11,17 @@
     {"plant":"bursera-simaruba","animal":"atala","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":2},"verdict":"CONFIRMED"},
     {"plant":"conocarpus-erectus","animal":"grass-skippers","support":"nectar","globi":{"verdict":"NOT-FOUND","cited":["iNaturalist observations"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
     {"plant":"conocarpus-erectus","animal":"berry-songbirds","support":"seeds","globi":{"verdict":"NOT-FOUND","cited":["iNaturalist observations"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
-    {"plant":"sophora-tomentosa-truncata","animal":"bumble-bees","support":"nectar","globi":{"verdict":"NOT-FOUND","cited":["GBIF-US bee occurrences","iNaturalist observations"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
+    {"plant":"sophora-tomentosa-truncata","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["GBIF-US bee occurrences","iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":2},"verdict":"CONFIRMED"},
     {"plant":"rivina-humilis","animal":"berry-songbirds","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":1},"verdict":"CONFIRMED"},
     {"plant":"rivina-humilis","animal":"white-peacock","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":1},"verdict":"CONFIRMED"},
     {"plant":"tripsacum-dactyloides","animal":"grass-skippers","support":"host","globi":{"verdict":"CONFIRMED","cited":["HOSTS (Robinson et al., NHM)","Ferrer-Paris et al. 2013"],"confirmedBy":["HOSTS (Robinson et al., NHM)","Ferrer-Paris et al. 2013"],"records":10},"verdict":"CONFIRMED"},
+    {"plant":"quercus-virginiana","animal":"horaces-duskywing","support":"host","globi":{"verdict":"CONFIRMED","cited":["Ferrer-Paris et al. 2013"],"confirmedBy":["Ferrer-Paris et al. 2013"],"records":14},"verdict":"CONFIRMED"},
     {"plant":"phyla-nodiflora","animal":"phaon-crescent","support":"host","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":77},"verdict":"CONFIRMED"},
     {"plant":"mimosa-strigillosa","animal":"grass-skippers","support":"nectar","globi":{"verdict":"NOT-FOUND","cited":["iNaturalist observations"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
     {"plant":"pontederia-cordata","animal":"white-peacock","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":7},"verdict":"CONFIRMED"},
-    {"plant":"melanthera-nivea","animal":"zebra-longwing","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":20},"verdict":"CONFIRMED"}
+    {"plant":"melanthera-nivea","animal":"zebra-longwing","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":20},"verdict":"CONFIRMED"},
+    {"plant":"salix-caroliniana","animal":"viceroy","support":"host","globi":{"verdict":"UNCITED"},"verdict":"UNCITED"},
+    {"plant":"acer-rubrum","animal":"io-moth","support":"host","globi":{"verdict":"CONFIRMED","cited":["Hale et al. 2024"],"confirmedBy":["Hale et al. 2024"],"records":6},"verdict":"CONFIRMED"},
+    {"plant":"ilex-cassine","animal":"berry-songbirds","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":1},"verdict":"CONFIRMED"}
   ]
 }

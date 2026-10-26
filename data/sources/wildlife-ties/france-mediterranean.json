@@ -1,6 +1,6 @@
 {
   "region": "france-mediterranean",
-  "ranAt": "2026-10-25T18:08:01.094Z",
+  "ranAt": "2026-10-26T21:10:53.744Z",
   "ties": [
     {"plant":"quercus-ilex","animal":"eurasian-jay","support":"seeds","globi":{"verdict":"CONFIRMED","cited":["Groom et al. 2020","Thessen 2014 (Encyclopedia of Life)"],"confirmedBy":["Thessen 2014 (Encyclopedia of Life)"],"records":1},"verdict":"CONFIRMED"},
     {"plant":"quercus-ilex","animal":"blackcaps-warblers","support":"shelter","globi":{"verdict":"NOT-FOUND","cited":["Groom et al. 2020"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
@@ -16,6 +16,7 @@
     {"plant":"clematis-flammula","animal":"bumble-bees","support":"nectar","globi":{"verdict":"NOT-FOUND","cited":["Groom et al. 2020"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
     {"plant":"clematis-flammula","animal":"grass-skippers","support":"nectar","globi":{"verdict":"OTHER","cited":["Groom et al. 2020"],"confirmedBy":[],"found":["iNaturalist observations"],"records":1},"verdict":"OTHER"},
     {"plant":"dorycnium-pentaphyllum","animal":"mason-bees","support":"nectar","globi":{"verdict":"OTHER","cited":["EuPPollNet (Lanuza et al. 2025)"],"confirmedBy":[],"found":["DoPI (Balfour et al. 2022)"],"records":1},"verdict":"OTHER"},
-    {"plant":"dorycnium-pentaphyllum","animal":"bumble-bees","support":"nectar","globi":{"verdict":"OTHER","cited":["EuPPollNet (Lanuza et al. 2025)"],"confirmedBy":[],"found":["DoPI (Balfour et al. 2022)"],"records":1},"verdict":"OTHER"}
+    {"plant":"dorycnium-pentaphyllum","animal":"bumble-bees","support":"nectar","globi":{"verdict":"OTHER","cited":["EuPPollNet (Lanuza et al. 2025)"],"confirmedBy":[],"found":["DoPI (Balfour et al. 2022)"],"records":1},"verdict":"OTHER"},
+    {"plant":"corylus-avellana","animal":"hazel-dormouse","support":"seeds","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)"],"records":3},"verdict":"CONFIRMED"}
   ]
 }

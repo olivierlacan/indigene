@@ -1,7 +1,15 @@
 {
   "region": "nz-auckland",
-  "ranAt": "2026-10-25T18:11:24.978Z",
+  "ranAt": "2026-10-26T21:15:45.455Z",
   "ties": [
-
+    {"plant":"pittosporum-tenuifolium","animal":"tauhou","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":11},"verdict":"CONFIRMED"},
+    {"plant":"pittosporum-crassifolium","animal":"tauhou","support":"berries","globi":{"verdict":"UNCITED"},"verdict":"UNCITED"},
+    {"plant":"geniostoma-ligustrifolium","animal":"tauhou","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":8},"verdict":"CONFIRMED"},
+    {"plant":"geniostoma-ligustrifolium","animal":"tui","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":5},"verdict":"CONFIRMED"},
+    {"plant":"veronica-macrocarpa","animal":"nz-coppers","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Web of Life"],"confirmedBy":["Web of Life"],"records":3},"verdict":"CONFIRMED"},
+    {"plant":"ozothamnus-leptophyllus","animal":"nz-coppers","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Web of Life"],"confirmedBy":["Web of Life"],"records":4},"verdict":"CONFIRMED"},
+    {"plant":"ozothamnus-leptophyllus","animal":"nz-native-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Web of Life"],"confirmedBy":["Web of Life"],"records":8},"verdict":"CONFIRMED"},
+    {"plant":"passiflora-tetrandra","animal":"tauhou","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":2},"verdict":"CONFIRMED"},
+    {"plant":"passiflora-tetrandra","animal":"tui","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":1},"verdict":"CONFIRMED"}
   ]
 }

@@ -1,6 +1,6 @@
 {
   "region": "france-atlantic",
-  "ranAt": "2026-10-25T18:07:05.124Z",
+  "ranAt": "2026-10-26T21:09:45.195Z",
   "ties": [
     {"plant":"betula-pendula","animal":"mourning-cloak","support":"host","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)"],"records":15},"verdict":"CONFIRMED"},
     {"plant":"salix-caprea","animal":"mourning-cloak","support":"host","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)"],"records":15},"verdict":"CONFIRMED"},

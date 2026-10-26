@@ -1,6 +1,6 @@
 {
   "region": "france-continental",
-  "ranAt": "2026-10-25T18:07:35.777Z",
+  "ranAt": "2026-10-26T21:10:21.454Z",
   "ties": [
     {"plant":"quercus-petraea","animal":"eurasian-jay","support":"seeds","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)"],"records":8},"verdict":"CONFIRMED"},
     {"plant":"quercus-petraea","animal":"hazel-dormouse","support":"seeds","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)"],"records":1},"verdict":"CONFIRMED"},

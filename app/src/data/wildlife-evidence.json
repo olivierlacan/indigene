@@ -1,0 +1,276 @@
+{
+  "note": "Only the animals that did not come back native are listed. Built by `npm run wildlife:native -- --evidence` from data/sources/wildlife-native/.",
+  "regions": {
+    "ca-central-coast": {
+      "area": {
+        "en": "California",
+        "fr": "la Californie"
+      },
+      "coarse": true,
+      "authorities": [
+        "NatureServe",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 34,
+      "unconfirmed": {
+        "echo-azure": "unknown",
+        "mallow-specialist-bees": "unknown",
+        "sunflower-specialist-bees": "unknown"
+      }
+    },
+    "ca-south-coast": {
+      "area": {
+        "en": "California",
+        "fr": "la Californie"
+      },
+      "coarse": true,
+      "authorities": [
+        "NatureServe",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 31,
+      "unconfirmed": {
+        "california-yucca-moth": "no-match",
+        "sunflower-specialist-bees": "unknown"
+      }
+    },
+    "central-texas": {
+      "area": {
+        "en": "Texas",
+        "fr": "le Texas"
+      },
+      "coarse": true,
+      "authorities": [
+        "NatureServe",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 21,
+      "unconfirmed": {
+        "gulf-fritillary": "no-match",
+        "luna-moth": "unknown",
+        "mallow-specialist-bees": "unknown",
+        "sunflower-specialist-bees": "unknown"
+      }
+    },
+    "chicago": {
+      "area": {
+        "en": "Illinois",
+        "fr": "l’Illinois"
+      },
+      "coarse": false,
+      "authorities": [
+        "NatureServe",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 23,
+      "unconfirmed": {
+        "sunflower-specialist-bees": "unknown"
+      }
+    },
+    "florida-central": {
+      "area": {
+        "en": "Florida",
+        "fr": "la Floride"
+      },
+      "coarse": true,
+      "authorities": [
+        "NatureServe",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 27,
+      "unconfirmed": {
+        "cecropia-moth": "unknown",
+        "gulf-fritillary": "no-match",
+        "luna-moth": "unknown",
+        "mason-bees": "unknown",
+        "sunflower-specialist-bees": "unknown"
+      }
+    },
+    "florida-south": {
+      "area": {
+        "en": "Florida",
+        "fr": "la Floride"
+      },
+      "coarse": true,
+      "authorities": [
+        "NatureServe",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 17,
+      "unconfirmed": {
+        "gulf-fritillary": "no-match",
+        "mason-bees": "unknown",
+        "sunflower-specialist-bees": "unknown"
+      }
+    },
+    "france-alpine": {
+      "area": {
+        "en": "metropolitan France",
+        "fr": "la France métropolitaine"
+      },
+      "coarse": true,
+      "authorities": [
+        "TAXREF",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 26,
+      "unconfirmed": {}
+    },
+    "france-atlantic": {
+      "area": {
+        "en": "metropolitan France",
+        "fr": "la France métropolitaine"
+      },
+      "coarse": true,
+      "authorities": [
+        "TAXREF",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 31,
+      "unconfirmed": {
+        "nettle-tree-butterfly": "introduced"
+      }
+    },
+    "france-continental": {
+      "area": {
+        "en": "metropolitan France",
+        "fr": "la France métropolitaine"
+      },
+      "coarse": true,
+      "authorities": [
+        "TAXREF",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 25,
+      "unconfirmed": {}
+    },
+    "france-mediterranean": {
+      "area": {
+        "en": "metropolitan France",
+        "fr": "la France métropolitaine"
+      },
+      "coarse": true,
+      "authorities": [
+        "TAXREF",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 27,
+      "unconfirmed": {
+        "nettle-tree-butterfly": "introduced"
+      }
+    },
+    "ireland": {
+      "area": {
+        "en": "Ireland",
+        "fr": "l’Irlande"
+      },
+      "coarse": false,
+      "authorities": [
+        "NBN Atlas",
+        "GBIF",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 25,
+      "unconfirmed": {}
+    },
+    "mid-atlantic": {
+      "area": {
+        "en": "the Mid-Atlantic states",
+        "fr": "les États du Mid-Atlantic"
+      },
+      "coarse": false,
+      "authorities": [
+        "NatureServe",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 21,
+      "unconfirmed": {}
+    },
+    "north-michigan": {
+      "area": {
+        "en": "Michigan",
+        "fr": "le Michigan"
+      },
+      "coarse": false,
+      "authorities": [
+        "NatureServe",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 23,
+      "unconfirmed": {
+        "luna-moth": "unknown",
+        "sunflower-specialist-bees": "unknown"
+      }
+    },
+    "nz-auckland": {
+      "area": {
+        "en": "New Zealand",
+        "fr": "la Nouvelle-Zélande"
+      },
+      "coarse": true,
+      "authorities": [
+        "iNaturalist",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 8,
+      "unconfirmed": {}
+    },
+    "pnw": {
+      "area": {
+        "en": "Washington, Oregon & British Columbia",
+        "fr": "l’État de Washington, l’Oregon et la Colombie-Britannique"
+      },
+      "coarse": false,
+      "authorities": [
+        "NatureServe",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 31,
+      "unconfirmed": {}
+    },
+    "scotland-lowlands": {
+      "area": {
+        "en": "Great Britain",
+        "fr": "la Grande-Bretagne"
+      },
+      "coarse": true,
+      "authorities": [
+        "NBN Atlas",
+        "GBIF",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 18,
+      "unconfirmed": {}
+    },
+    "st-lawrence": {
+      "area": {
+        "en": "Québec, Ontario, New York & Vermont",
+        "fr": "le Québec, l’Ontario, l’État de New York et le Vermont"
+      },
+      "coarse": false,
+      "authorities": [
+        "NatureServe",
+        "GRIIS"
+      ],
+      "checked": "2026-10-25",
+      "animals": 23,
+      "unconfirmed": {}
+    }
+  }
+}

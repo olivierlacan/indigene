@@ -1227,6 +1227,18 @@ export const SECTIONS = [
           "region better than Kew does, and they don’t always agree with each " +
           "other. Where they don’t, the page says who said what.",
       },
+      {
+        id: "fauna",
+        heading: "Checked for each animal",
+        body:
+          "Every animal is checked too, in each region it’s listed for. " +
+          "NatureServe answers for US states and Canadian provinces, the UK " +
+          "Species Inventory for Ireland and Britain, France’s national list " +
+          "(TAXREF) for France, and iNaturalist’s checklist for New Zealand. " +
+          "Everywhere, we also ask the world register of introduced species " +
+          "(GRIIS). For a group, like bumble bees, each species in it is asked " +
+          "on its own.",
+      },
     ],
     visit: [
       { label: "Where our numbers come from", href: `${APP}/sources` },

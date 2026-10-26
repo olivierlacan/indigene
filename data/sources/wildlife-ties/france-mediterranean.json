@@ -1,0 +1,21 @@
+{
+  "region": "france-mediterranean",
+  "ranAt": "2026-10-25T18:08:01.094Z",
+  "ties": [
+    {"plant":"quercus-ilex","animal":"eurasian-jay","support":"seeds","globi":{"verdict":"CONFIRMED","cited":["Groom et al. 2020","Thessen 2014 (Encyclopedia of Life)"],"confirmedBy":["Thessen 2014 (Encyclopedia of Life)"],"records":1},"verdict":"CONFIRMED"},
+    {"plant":"quercus-ilex","animal":"blackcaps-warblers","support":"shelter","globi":{"verdict":"NOT-FOUND","cited":["Groom et al. 2020"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
+    {"plant":"quercus-pubescens","animal":"eurasian-jay","support":"seeds","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)"],"records":3},"verdict":"CONFIRMED"},
+    {"plant":"pinus-halepensis","animal":"conifer-seed-finches","support":"seeds","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)","iNaturalist observations"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)","iNaturalist observations"],"records":7},"verdict":"CONFIRMED"},
+    {"plant":"acer-monspessulanum","animal":"mason-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)"],"records":2},"verdict":"CONFIRMED"},
+    {"plant":"acer-monspessulanum","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)"],"records":3},"verdict":"CONFIRMED"},
+    {"plant":"fraxinus-ornus","animal":"privet-hawk-moth","support":"host","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)"],"records":1},"verdict":"CONFIRMED"},
+    {"plant":"phillyrea-angustifolia","animal":"blackcaps-warblers","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020","Groom et al. 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":4},"verdict":"CONFIRMED"},
+    {"plant":"myrtus-communis","animal":"blackcaps-warblers","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020","Groom et al. 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":3},"verdict":"CONFIRMED"},
+    {"plant":"myrtus-communis","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["LIFE 4 Pollinators (Barberis et al. 2025)"],"confirmedBy":["LIFE 4 Pollinators (Barberis et al. 2025)"],"records":3},"verdict":"CONFIRMED"},
+    {"plant":"helichrysum-stoechas","animal":"mason-bees","support":"nectar","globi":{"verdict":"OTHER","cited":["EuPPollNet (Lanuza et al. 2025)","Web of Life"],"confirmedBy":[],"found":["trophiCH (Reji Chacko et al. 2024)","DoPI (Balfour et al. 2022)"],"records":5},"verdict":"OTHER"},
+    {"plant":"clematis-flammula","animal":"bumble-bees","support":"nectar","globi":{"verdict":"NOT-FOUND","cited":["Groom et al. 2020"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
+    {"plant":"clematis-flammula","animal":"grass-skippers","support":"nectar","globi":{"verdict":"OTHER","cited":["Groom et al. 2020"],"confirmedBy":[],"found":["iNaturalist observations"],"records":1},"verdict":"OTHER"},
+    {"plant":"dorycnium-pentaphyllum","animal":"mason-bees","support":"nectar","globi":{"verdict":"OTHER","cited":["EuPPollNet (Lanuza et al. 2025)"],"confirmedBy":[],"found":["DoPI (Balfour et al. 2022)"],"records":1},"verdict":"OTHER"},
+    {"plant":"dorycnium-pentaphyllum","animal":"bumble-bees","support":"nectar","globi":{"verdict":"OTHER","cited":["EuPPollNet (Lanuza et al. 2025)"],"confirmedBy":[],"found":["DoPI (Balfour et al. 2022)"],"records":1},"verdict":"OTHER"}
+  ]
+}

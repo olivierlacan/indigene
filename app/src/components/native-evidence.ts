@@ -11,7 +11,9 @@
 // regional flora disagree, and a tick cannot say that.
 import { el } from "../ui";
 import { nativeEvidence, NATIVE_EVIDENCE_URL, regionalFloras } from "../lib/native-evidence";
-import { t } from "../lib/i18n";
+import { faunaEvidence } from "../lib/wildlife-evidence";
+import type { FaunaUnconfirmed } from "../lib/wildlife-evidence";
+import { t, fmtList } from "../lib/i18n";
 import { langTag } from "../lib/i18n";
 import { guideHref } from "./guide-link";
 
@@ -112,6 +114,61 @@ export function floraEvidenceLine(plantId: string, regionId?: string): HTMLEleme
     mark("warn"),
     el("p", {}, [...clauses, ". ", meta]),
   ]);
+}
+
+/**
+ * An animal's lines: one check when every region it's listed for came back
+ * native, and one caution line per region that didn't — with who was asked
+ * and why they didn't confirm it. Empty where nothing has been checked.
+ */
+export function faunaEvidenceLines(animalId: string, regionIds: string[]): HTMLElement[] {
+  const all = faunaEvidence(animalId, regionIds);
+  if (!all.length) return [];
+  const latest = all.map((e) => e.checked).sort().at(-1)!;
+  const meta = (iso: string): HTMLElement => el("a", {
+    class: "native-evidence-meta",
+    href: guideHref("sources", "fauna"),
+    "aria-label": t("evidence.checkedAria", { when: monthYear(iso) }),
+    title: t("evidence.checkedAria", { when: monthYear(iso) }),
+  }, [clockIcon(), shortMonthYear(iso)]);
+
+  // One caution line per verdict and set of sources, naming every place it
+  // applies to: the luna moth unranked in three states is one sentence, and
+  // the four French regions, all asked about the same place, are one place.
+  const groups = new Map<string, { who: string[]; reason: string; areas: string[]; checked: string }>();
+  for (const e of all) {
+    if (!e.unconfirmed) continue;
+    const key = `${e.unconfirmed}|${e.authorities.join()}`;
+    const g = groups.get(key) ?? { who: e.authorities, reason: e.unconfirmed, areas: [], checked: e.checked };
+    if (!g.areas.includes(e.area)) g.areas.push(e.area);
+    if (e.checked > g.checked) g.checked = e.checked;
+    groups.set(key, g);
+  }
+  const open = [...groups.values()];
+  const confirmed = all.filter((e) => !e.unconfirmed);
+  const lines: HTMLElement[] = [];
+  if (confirmed.length) {
+    const who = fmtList([...new Set(confirmed.flatMap((e) => e.authorities))]);
+    lines.push(el("div", { class: "native-evidence" }, [
+      mark("ok"),
+      el("p", {}, [
+        open.length
+          ? t("fauna.confirmedIn", { who, areas: fmtList([...new Set(confirmed.map((e) => e.area))]) })
+          : t("fauna.confirmedAll", { who }),
+        " ", meta(latest),
+      ]),
+    ]));
+  }
+  for (const g of open) {
+    lines.push(el("div", { class: "native-evidence native-evidence-open" }, [
+      mark("warn"),
+      el("p", {}, [
+        t(`fauna.unconfirmed.${g.reason}` as `fauna.unconfirmed.${FaunaUnconfirmed}`, { who: fmtList(g.who), area: fmtList(g.areas) }),
+        " ", meta(g.checked),
+      ]),
+    ]));
+  }
+  return lines;
 }
 
 const NS = "http://www.w3.org/2000/svg";

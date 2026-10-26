@@ -1,0 +1,19 @@
+{
+  "region": "france-alpine",
+  "ranAt": "2026-10-25T18:08:19.970Z",
+  "ties": [
+    {"plant":"acer-pseudoplatanus","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)","EuPPollNet (Lanuza et al. 2025)","Redhead et al. 2018"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)","Redhead et al. 2018"],"records":6},"verdict":"CONFIRMED"},
+    {"plant":"betula-pendula","animal":"emperor-moth","support":"host","globi":{"verdict":"CONFIRMED","cited":["HOSTS (Robinson et al., NHM)","trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":["HOSTS (Robinson et al., NHM)","trophiCH (Reji Chacko et al. 2024)"],"records":3},"verdict":"CONFIRMED"},
+    {"plant":"betula-pendula","animal":"conifer-seed-finches","support":"seeds","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)"],"records":3},"verdict":"CONFIRMED"},
+    {"plant":"salix-caprea","animal":"purple-emperor","support":"host","globi":{"verdict":"CONFIRMED","cited":["HOSTS (Robinson et al., NHM)","trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":["HOSTS (Robinson et al., NHM)","trophiCH (Reji Chacko et al. 2024)"],"records":34},"verdict":"CONFIRMED"},
+    {"plant":"salix-caprea","animal":"mourning-cloak","support":"host","globi":{"verdict":"CONFIRMED","cited":["HOSTS (Robinson et al., NHM)","trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":["HOSTS (Robinson et al., NHM)","trophiCH (Reji Chacko et al. 2024)"],"records":15},"verdict":"CONFIRMED"},
+    {"plant":"salix-caprea","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)","Redhead et al. 2018"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)","Redhead et al. 2018"],"records":4},"verdict":"CONFIRMED"},
+    {"plant":"vaccinium-vitis-idaea","animal":"black-grouse","support":"berries","globi":{"verdict":"NOT-FOUND","cited":["trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
+    {"plant":"vaccinium-vitis-idaea","animal":"emperor-moth","support":"host","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)"],"records":3},"verdict":"CONFIRMED"},
+    {"plant":"vaccinium-vitis-idaea","animal":"green-hairstreak","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)","Web of Life"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)","Web of Life"],"records":7},"verdict":"CONFIRMED"},
+    {"plant":"rhododendron-ferrugineum","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)","EuPPollNet (Lanuza et al. 2025)"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)"],"records":2},"verdict":"CONFIRMED"},
+    {"plant":"gentiana-lutea","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["trophiCH (Reji Chacko et al. 2024)","EuPPollNet (Lanuza et al. 2025)"],"confirmedBy":["trophiCH (Reji Chacko et al. 2024)"],"records":2},"verdict":"CONFIRMED"},
+    {"plant":"trollius-europaeus","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["EuPPollNet (Lanuza et al. 2025)"],"confirmedBy":["EuPPollNet (Lanuza et al. 2025)"],"records":10},"verdict":"CONFIRMED"},
+    {"plant":"dryas-octopetala","animal":"mason-bees","support":"nectar","globi":{"verdict":"NOT-FOUND","cited":["trophiCH (Reji Chacko et al. 2024)"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"}
+  ]
+}

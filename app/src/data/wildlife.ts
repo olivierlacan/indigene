@@ -317,6 +317,17 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "The small orange skippers that dart around a meadow, and the soft brown wood nymphs and ringlets that drift through it. Their caterpillars eat grasses and sedges, and they spend the winter tucked down inside a native bunchgrass.",
+    members: [
+      "Cercyonis pegala",
+      "Anatrytone logan",
+      "Problema byssus",
+      "Ochlodes sylvanoides",
+      "Hylephila phyleus",
+      "Aphantopus hyperantus",
+      "Maniola jurtina",
+      "Thymelicus sylvestris",
+      "Ochlodes sylvanus",
+    ],
     native: true,
     nativeBasis:
       "Native grass-feeding butterflies (Hesperiidae and the satyr group of Nymphalidae), on both continents. BAMONA; Xerces Society; INPN (MNHN); European butterfly foodplant checklist (Dryad).",
@@ -329,6 +340,7 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "The big orange butterflies of western meadows, their undersides spangled with silver. Every one of them grows up on violets and nothing else — and the female lays in late summer, on dry ground where the violets have already died back, for caterpillars that sleep out the winter before they eat.",
+    members: ["Argynnis cybele", "Argynnis zerene", "Argynnis callippe", "Argynnis hydaspe"],
     native: true,
     nativeBasis:
       "Native greater fritillaries of North America (Argynnis, long known as Speyeria). Xerces Society; BAMONA; US Fish & Wildlife Service (Oregon silverspot recovery plan).",
@@ -356,6 +368,7 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "The small butterflies of hot dry ground — thumbnail-sized blues, and green hairstreaks most people take for moths. A whole run of them raise their caterpillars on native buckwheats, several on nothing else, so a patch on a poor sunny bank is worth more than a border full of nectar.",
+    members: ["Icaricia acmon", "Callophrys sheridanii", "Euphilotes enoptes", "Euphilotes battoides"],
     native: true,
     nativeBasis:
       "Native western blues and hairstreaks (acmon blue, Sheridan's green hairstreak and their relatives). Xerces Society; BAMONA.",
@@ -878,6 +891,17 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐝",
     blurb:
       "The big fuzzy bees that fly cold and early. They shake pollen loose with a shiver of their flight muscles, which some native flowers depend on. They nest in the ground and in old grass tussocks, and a spring-to-frost run of flowers keeps a colony fed.",
+    members: [
+      "Bombus impatiens",
+      "Bombus griseocollis",
+      "Bombus bimaculatus",
+      "Bombus vosnesenskii",
+      "Bombus melanopygus",
+      "Bombus pascuorum",
+      "Bombus terrestris",
+      "Bombus lapidarius",
+      "Bombus pratorum",
+    ],
     native: true,
     nativeBasis: "Native bumble bees (Bombus) — unlike the managed honey bee. Xerces Society; USGS Native Bee Inventory.",
     // A genus scope: iNaturalist returns every Bombus species, so "bumble bees
@@ -892,6 +916,13 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐝",
     blurb:
       "Dozens of native bees collect pollen from only the sunflower family — asters, coneflowers, goldenrods, sunflowers. If those plants vanish from a yard, these bees have nothing else to raise their young on, no matter how many other flowers bloom.",
+    members: [
+      "Andrena helianthi",
+      "Andrena asteris",
+      "Melissodes agilis",
+      "Melissodes denticulatus",
+      "Svastra obliqua",
+    ],
     native: true,
     nativeBasis: "Native solitary bees. Fowler & Droege, Pollen Specialist Bees; USGS Native Bee Inventory.",
   },
@@ -903,6 +934,7 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐝",
     blurb:
       "Fast, solitary ground-nesting bees that gather pollen from almost nothing but mallows. In the Willamette Valley one, Diadasia nigrifrons, rides on the native checkermallows — no checkermallow, no bee.",
+    members: ["Diadasia nigrifrons", "Diadasia diminuta", "Diadasia enavata"],
     native: true,
     nativeBasis: "Native solitary bees; Diadasia are New World mallow specialists. Xerces Society; USDA Plant Guide (Sidalcea).",
     inat: { name: "Diadasia", iconic: "Insecta" },
@@ -915,6 +947,16 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐝",
     blurb:
       "Gentle, solitary early-spring bees — superb fruit pollinators — that emerge when the first native shrubs bloom. An early flower like red-flowering currant or willow is a lifeline the week they wake up.",
+    members: [
+      "Osmia lignaria",
+      "Osmia bicornis",
+      "Osmia cornuta",
+      "Andrena erigeniae",
+      "Andrena distans",
+      "Andrena fulva",
+      "Andrena clarkella",
+      "Colletes hederae",
+    ],
     native: true,
     nativeBasis: "Native Osmia and Andrena. Xerces Society; USGS Native Bee Inventory.",
   },
@@ -976,6 +1018,7 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐦",
     blurb:
       "The West's garden hummingbirds. The rufous times its migration to native currants coming into bloom, so an early red flower is fuel arriving when it's needed.",
+    members: ["Calypte anna", "Selasphorus rufus"],
     native: true,
     nativeBasis: "Native to western North America. Cornell Lab of Ornithology.",
   },
@@ -1059,6 +1102,12 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐦",
     blurb:
       "The acorn eaters, jays above all: blue jays in the east, scrub-jays in the west. A jay buries far more acorns than it ever eats, and the forgotten ones grow — so it doesn't just live off an oak, it plants the next one.",
+    members: [
+      "Cyanocitta cristata",
+      "Aphelocoma californica",
+      "Melanerpes formicivorus",
+      "Meleagris gallopavo",
+    ],
     native: true,
     nativeBasis: "Native birds (blue jay, California scrub-jay, acorn woodpecker, wild turkey). Cornell Lab of Ornithology.",
   },
@@ -1069,6 +1118,13 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐦",
     blurb:
       "The everyday songbirds that raise families on insects and then switch to fruit — beautyberry, elderberry, toyon, holly — to fatten up and get through the leaner months.",
+    members: [
+      "Mimus polyglottos",
+      "Cardinalis cardinalis",
+      "Turdus migratorius",
+      "Catharus guttatus",
+      "Dumetella carolinensis",
+    ],
     native: true,
     nativeBasis: "Native birds (northern mockingbird, northern cardinal, thrushes). Cornell Lab of Ornithology.",
   },
@@ -1104,6 +1160,7 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐦",
     blurb:
       "The thrushes that arrive from the north each autumn and spend the winter roving in flocks, stripping one hedge and moving to the next. A hedge of haws, hips, sloes and rowan berries is what carries them — and the resident blackbirds and mistle thrushes — from November to March.",
+    members: ["Turdus pilaris", "Turdus iliacus", "Turdus merula", "Turdus viscivorus", "Turdus torquatus"],
     native: true,
     nativeBasis: "Native European birds (fieldfare, redwing, blackbird, mistle thrush, ring ouzel). INPN (MNHN); Ligue pour la Protection des Oiseaux (LPO).",
   },
@@ -1117,6 +1174,7 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐦",
     blurb:
       "Small insect-eating birds that switch to fruit for the autumn journey south, and then live on it all winter. That means ivy and holly on an Atlantic hedge, mastic and myrtle on a Mediterranean hillside — and a blackcap will hold one fruiting bush against every other bird for weeks.",
+    members: ["Sylvia atricapilla", "Curruca melanocephala", "Sylvia borin", "Erithacus rubecula"],
     native: true,
     nativeBasis: "Native European birds (blackcap, Sardinian warbler, garden warbler, robin). INPN (MNHN); Ligue pour la Protection des Oiseaux (LPO).",
   },
@@ -1127,6 +1185,7 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐦",
     blurb:
       "The finches that live on tree seed right through the winter — crossbills, siskins and redpolls. The crossbill is the specialist: its beak crosses at the tip, a tool for prying a closed cone apart. The others take the smaller seed of hemlock, alder and birch.",
+    members: ["Loxia curvirostra", "Spinus spinus", "Spinus pinus", "Acanthis flammea", "Acanthis cabaret"],
     native: true,
     nativeBasis: "Native seed-eating finches of the conifer forests of both Europe and North America (common/red crossbill, Eurasian and pine siskins, redpolls). INPN (MNHN); Ligue pour la Protection des Oiseaux (LPO); Cornell Lab of Ornithology.",
   },
@@ -1149,6 +1208,7 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐦",
     blurb:
       "The small finches that live on the seed of wild flowers — goldfinches hanging upside down off a knapweed head, linnets and greenfinches going over in twittering parties. What they need is seed left standing through the winter: cut everything down in September and they go elsewhere.",
+    members: ["Carduelis carduelis", "Linaria cannabina", "Chloris chloris", "Spinus spinus"],
     native: true,
     nativeBasis:
       "Native European finches (European goldfinch, common linnet, greenfinch, Eurasian siskin). INPN (MNHN); Ligue pour la Protection des Oiseaux (LPO).",
@@ -1197,6 +1257,14 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐿️",
     blurb:
       "Acorns and fleshy fruit are the fall calories that carry squirrels, chipmunks, deer, foxes, and even black bears into winter. A single mature oak or wild cherry is a food bank for the whole neighborhood of mammals.",
+    members: [
+      "Sciurus carolinensis",
+      "Sciurus griseus",
+      "Tamias striatus",
+      "Odocoileus virginianus",
+      "Urocyon cinereoargenteus",
+      "Ursus americanus",
+    ],
     native: true,
     nativeBasis: "Native mammals (tree squirrels, white-tailed deer, foxes, black bear). IUCN Red List; Smithsonian.",
   },
@@ -1310,6 +1378,7 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🦋",
     blurb:
       "Small, quick, fire-colored butterflies found nowhere else, which raise their caterpillars on pōhuehue and its wiry relatives. Plant the vine on a sunny bank and the coppers find it.",
+    members: ["Lycaena salustius", "Lycaena boldenarum", "Lycaena rauparaha", "Lycaena feredayi"],
     native: true,
     nativeBasis: "New Zealand's Lycaena coppers are all endemic. Manaaki Whenua – Landcare Research; Gibbs, New Zealand Butterflies.",
     inat: { name: "Lycaena", iconic: "Insecta" },
@@ -1321,6 +1390,7 @@ export const WILDLIFE: Wildlife[] = [
     icon: "🐝",
     blurb:
       "About two dozen kinds of small bees, almost all found nowhere else, that nest alone in bare, sunny soil. Mānuka, kānuka and hebe are their mainstays, and a patch of bare clay bank helps them as much as a flower.",
+    members: ["Leioproctus fulvescens", "Lasioglossum sordidum", "Hylaeus relegatus"],
     native: true,
     nativeBasis: "Native bees of the genera Leioproctus, Lasioglossum, Hylaeus and relatives. Donovan, Fauna of New Zealand 57 (Apoidea); Manaaki Whenua – Landcare Research.",
   },

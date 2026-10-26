@@ -2071,7 +2071,7 @@ export const WILDLIFE: Wildlife[] = [
     members: ["Yponomeuta tokyonella", "Yponomeuta kanaiella", "Yponomeuta polystigmellus", "Yponomeuta menkeni", "Yponomeuta yanagawana"],
     native: true,
     nativeBasis: "Native ermine moths of Japan, among them the Tokyo ermine (Yponomeuta tokyonella). Not in GRIIS Japan's register of introductions; HOSTS (Robinson et al., NHM) records their Japanese food plants.",
-    inat: { name: "Yponomeuta spp.", iconic: "Insecta" },
+    inat: { name: "Yponomeuta", iconic: "Insecta" },
   },
   {
     id: "moon-moths",
@@ -2084,7 +2084,7 @@ export const WILDLIFE: Wildlife[] = [
     members: ["Actias artemis", "Actias gnoma"],
     native: true,
     nativeBasis: "Native moon moths of Japan (Actias artemis/aliena and the alder moon moth, Actias gnoma). Not in GRIIS Japan's register of introductions; HOSTS (Robinson et al., NHM) records their food plants.",
-    inat: { name: "Actias spp.", iconic: "Insecta" },
+    inat: { name: "Actias", iconic: "Insecta" },
   },
   {
     id: "red-spotted-admiral",

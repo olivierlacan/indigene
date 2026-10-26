@@ -38,7 +38,7 @@ already in the catalog as `brimstone` · 3,033 research-grade observations in th
 
 ### Small Copper (_Lycaena phlaeas_)
 
-already in the catalog as `small-copper` · 2,978 research-grade observations in the region's box · native status: **native** (iNaturalist: unknown; GBIF: native)
+already in the catalog as `small-copper` · 2,979 research-grade observations in the region's box · native status: **native** (iNaturalist: unknown; GBIF: native)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -168,7 +168,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Eurasian Blackbird (_Turdus merula_)
 
-**new** — Aves · 6,992 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Aves · 6,993 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -179,7 +179,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Western Honey Bee (_Apis mellifera_)
 
-**new** — Insecta · 6,912 research-grade observations in the region's box · native status: **unclear** (iNaturalist: unknown; GBIF: unclear)
+**new** — Insecta · 6,913 research-grade observations in the region's box · native status: **unclear** (iNaturalist: unknown; GBIF: unclear)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -190,7 +190,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Common Chaffinch (_Fringilla coelebs_)
 
-**new** — Aves · 6,067 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Aves · 6,068 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -212,7 +212,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Speckled Wood (_Pararge aegeria_)
 
-**new** — Insecta · 5,936 research-grade observations in the region's box · native status: **native** (iNaturalist: unknown; GBIF: native)
+**new** — Insecta · 5,938 research-grade observations in the region's box · native status: **native** (iNaturalist: unknown; GBIF: native)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -267,7 +267,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### European Robin (_Erithacus rubecula_)
 
-**new** — Aves · 5,280 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Aves · 5,282 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -278,7 +278,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Eurasian Blue Tit (_Cyanistes caeruleus_)
 
-**new** — Aves · 4,736 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Aves · 4,737 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -300,7 +300,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Small Heath (_Coenonympha pamphilus_)
 
-**new** — Insecta · 4,042 research-grade observations in the region's box · native status: **native** (iNaturalist: unknown; GBIF: native)
+**new** — Insecta · 4,043 research-grade observations in the region's box · native status: **native** (iNaturalist: unknown; GBIF: native)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -322,7 +322,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Common Wood-Pigeon (_Columba palumbus_)
 
-**new** — Aves · 3,571 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Aves · 3,572 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -333,7 +333,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Common Drone Fly (_Eristalis tenax_)
 
-**new** — Insecta · 3,569 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Insecta · 3,570 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -344,7 +344,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Marmalade Hover Fly (_Episyrphus balteatus_)
 
-**new** — Insecta · 3,301 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Insecta · 3,302 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -355,7 +355,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Yellow-billed Chough (_Pyrrhocorax graculus_)
 
-**new** — Aves · 3,020 research-grade observations in the region's box · native status: **unclear** (iNaturalist: unknown; GBIF: unclear)
+**new** — Aves · 3,022 research-grade observations in the region's box · native status: **unclear** (iNaturalist: unknown; GBIF: unclear)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -366,7 +366,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Green Shield Bug (_Palomena prasina_)
 
-**new** — Insecta · 2,921 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Insecta · 2,922 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -421,7 +421,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Small White (_Pieris rapae_)
 
-**new** — Insecta · 1,962 research-grade observations in the region's box · native status: **native** (iNaturalist: unknown; GBIF: native)
+**new** — Insecta · 1,964 research-grade observations in the region's box · native status: **native** (iNaturalist: unknown; GBIF: native)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -509,7 +509,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Song Thrush (_Turdus philomelos_)
 
-**new** — Aves · 1,406 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Aves · 1,407 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|

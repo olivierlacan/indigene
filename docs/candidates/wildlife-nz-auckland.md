@@ -16,7 +16,7 @@ These need **no new catalog entry**: the animal is already described, iconed and
 
 ### Monarch (_Danaus plexippus_)
 
-already in the catalog as `monarch` · 1,432 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+already in the catalog as `monarch` · 1,434 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -31,7 +31,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Eurasian Blackbird (_Turdus merula_)
 
-**new** — Aves · 2,349 research-grade observations in the region's box · native status: **unclear** (iNaturalist: unknown; GBIF: unclear)
+**new** — Aves · 2,352 research-grade observations in the region's box · native status: **unclear** (iNaturalist: unknown; GBIF: unclear)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -42,7 +42,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### New Zealand Fantail (_Rhipidura fuliginosa_)
 
-**new** — Aves · 2,315 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Aves · 2,317 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -64,7 +64,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Song Thrush (_Turdus philomelos_)
 
-**new** — Aves · 1,103 research-grade observations in the region's box · native status: **unclear** (iNaturalist: unknown; GBIF: unclear)
+**new** — Aves · 1,105 research-grade observations in the region's box · native status: **unclear** (iNaturalist: unknown; GBIF: unclear)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -86,7 +86,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Buff-tailed Bumble Bee (_Bombus terrestris_)
 
-**new** — Insecta · 1,076 research-grade observations in the region's box · native status: **unclear** (iNaturalist: unknown; GBIF: unclear)
+**new** — Insecta · 1,077 research-grade observations in the region's box · native status: **unclear** (iNaturalist: unknown; GBIF: unclear)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -207,7 +207,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### New Zealand Kaka (_Nestor meridionalis_)
 
-**new** — Aves · 531 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Aves · 532 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -251,7 +251,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Lemon tree borer (_Oemona hirta_)
 
-**new** — Insecta · 353 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Insecta · 355 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|

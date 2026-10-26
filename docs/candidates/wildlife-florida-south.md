@@ -8,7 +8,7 @@ GloBI named **5,184** animals on this region's 80 plants. Dropped: 8 not animals
 
 **Read the interaction type sceptically.** GloBI's `eatenBy` covers a caterpillar stripping a leaf, a finch taking a seed and a deer browsing a twig. Where a record carried a life stage saying "larva" it is called out as **larval evidence**; where it didn't, the tie is "eats it" and the kind of eating is a human's call.
 
-## Already in the catalog — 15 ties this region isn't using
+## Already in the catalog — 16 ties this region isn't using
 
 These need **no new catalog entry**: the animal is already described, iconed and sourced.
 
@@ -132,7 +132,7 @@ already in the catalog as `american-snout` · 1 research-grade observations in t
 
 ### Hummingbird Clearwing (_Hemaris thysbe_)
 
-already in the catalog as `hummingbird-clearwing` · 12 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+already in the catalog as `hummingbird-clearwing` · 13 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -167,13 +167,32 @@ already in the catalog as `luna-moth` · 20 research-grade observations in the r
 |---|---|---|---|---|
 | `acer-rubrum` _Acer rubrum_ | eats it, hosted by it | 8 | — | Hale et al. 2024, terrestrial herbivory food web (Phil. Trans. R. Soc. B) |
 
-## New to the catalog — 39 candidates
+### Black-chinned Hummingbird (_Archilochus alexandri_)
+
+already in the catalog as `black-chinned-hummingbird` · 6 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+
+| Plant | What GloBI records | Records | Larval? | Source study |
+|---|---|---|---|---|
+| `cephalanthus-occidentalis` _Cephalanthus occidentalis_ | eats it, visits the flowers, hosted by it | 2 | — | iNaturalist observations |
+
+## New to the catalog — 40 candidates
 
 Each of these would need a catalog entry written for it. Ranked by how often the animal is recorded inside the region's box, so the top of the list is what a gardener there might plausibly see.
 
+### Eastern Gray Squirrel (_Sciurus carolinensis_)
+
+**new** — Mammalia · 9,503 research-grade observations in the region's box · native status: **native** (iNaturalist: unknown; GBIF: native)
+
+| Plant | What GloBI records | Records | Larval? | Source study |
+|---|---|---|---|---|
+| `bursera-simaruba` _Bursera simaruba_ | eats it | 1 | adult | iNaturalist observations |
+| `coccoloba-uvifera` _Coccoloba uvifera_ | eats it | 1 | — | iNaturalist observations |
+| `acer-rubrum` _Acer rubrum_ | eats it | 5 | adult | iNaturalist observations |
+| `taxodium-distichum` _Taxodium distichum_ | eats it | 1 | — | iNaturalist observations |
+
 ### Gulf Fritillary (_Dione vanillae_)
 
-**new** — Insecta · 8,533 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Insecta · 8,537 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -184,7 +203,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Western Honey Bee (_Apis mellifera_)
 
-**new** — Insecta · 7,437 research-grade observations in the region's box · native status: **unclear** (iNaturalist: unknown; GBIF: unclear)
+**new** — Insecta · 7,438 research-grade observations in the region's box · native status: **unclear** (iNaturalist: unknown; GBIF: unclear)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -195,7 +214,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Northern Cardinal (_Cardinalis cardinalis_)
 
-**new** — Aves · 5,507 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Aves · 5,508 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -217,7 +236,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Gray Catbird (_Dumetella carolinensis_)
 
-**new** — Aves · 2,503 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Aves · 2,505 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -250,7 +269,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Ruddy Daggerwing (_Marpesia petreus_)
 
-**new** — Insecta · 2,073 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Insecta · 2,074 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -261,7 +280,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Ceraunus Blue (_Hemiargus ceraunus_)
 
-**new** — Insecta · 2,020 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Insecta · 2,021 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -313,7 +332,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Long-tailed Skipper (_Urbanus proteus_)
 
-**new** — Insecta · 1,258 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Insecta · 1,261 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -346,7 +365,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Poey's Furrow Bee (_Halictus poeyi_)
 
-**new** — Insecta · 1,117 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Insecta · 1,118 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -368,7 +387,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Large Orange Sulphur (_Phoebis agarithe_)
 
-**new** — Insecta · 995 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Insecta · 996 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -379,7 +398,7 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 
 ### Dilemma Orchid Bee (_Euglossa dilemma_)
 
-**new** — Insecta · 883 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+**new** — Insecta · 884 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
 
 | Plant | What GloBI records | Records | Larval? | Source study |
 |---|---|---|---|---|
@@ -476,6 +495,17 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 | `coreopsis-leavenworthii` _Coreopsis leavenworthii_ | visits the flowers, hosted by it | 1 | adult | iNaturalist observations |
 | `asclepias-incarnata` _Asclepias incarnata_ | eats it, visits the flowers, hosted by it | 26 | adult | iNaturalist observations |
 
+### Faithful Beauty (_Composia fidelissima_)
+
+**new** — Insecta · 513 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
+
+| Plant | What GloBI records | Records | Larval? | Source study |
+|---|---|---|---|---|
+| `coccoloba-uvifera` _Coccoloba uvifera_ | eats it, visits the flowers, hosted by it | 2 | adult | iNaturalist observations |
+| `sabal-palmetto` _Sabal palmetto_ | visits the flowers, hosted by it | 2 | adult | iNaturalist observations |
+| `conoclinium-coelestinum` _Conoclinium coelestinum_ | visits the flowers, hosted by it | 1 | adult | iNaturalist observations |
+| `heliotropium-angiospermum` _Heliotropium angiospermum_ | visits the flowers, hosted by it | 1 | adult | iNaturalist observations |
+
 ### Fulvous Hairstreak (_Electrostrymon angelia_)
 
 **new** — Insecta · 513 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
@@ -486,17 +516,6 @@ Each of these would need a catalog entry written for it. Ranked by how often the
 | `sabal-palmetto` _Sabal palmetto_ | visits the flowers, hosted by it | 1 | adult | iNaturalist observations |
 | `ilex-cassine` _Ilex cassine_ | visits the flowers, hosted by it | 1 | adult | iNaturalist observations |
 | `hamelia-patens` _Hamelia patens_ | visits the flowers, hosted by it | 1 | adult | iNaturalist observations |
-
-### Faithful Beauty (_Composia fidelissima_)
-
-**new** — Insecta · 512 research-grade observations in the region's box · native status: **unknown** (iNaturalist: unknown; GBIF: unknown)
-
-| Plant | What GloBI records | Records | Larval? | Source study |
-|---|---|---|---|---|
-| `coccoloba-uvifera` _Coccoloba uvifera_ | eats it, visits the flowers, hosted by it | 2 | adult | iNaturalist observations |
-| `sabal-palmetto` _Sabal palmetto_ | visits the flowers, hosted by it | 2 | adult | iNaturalist observations |
-| `conoclinium-coelestinum` _Conoclinium coelestinum_ | visits the flowers, hosted by it | 1 | adult | iNaturalist observations |
-| `heliotropium-angiospermum` _Heliotropium angiospermum_ | visits the flowers, hosted by it | 1 | adult | iNaturalist observations |
 
 ### Blue-headed Vireo (_Vireo solitarius_)
 

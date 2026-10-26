@@ -5,8 +5,8 @@ sends people to the guide that stays up all year,
 [indigene.app/kill-your-lawn](https://indigene.app/kill-your-lawn). The caption
 links the guide: it's the page that answers "what do I plant?", in April too.
 
-Images are drawn from the post's own words and drawing, so they can't drift
-from the page:
+Images are drawn from the post's own words and drawing, in the spooky theme's
+colours and ghost mark, so they can't drift from the page:
 
 ```sh
 cd app
@@ -62,7 +62,7 @@ sticker in the clear band under the text.
 
 ## Alt text
 
-> A dark card titled "Your lawn is already a zombie", Halloween, October 22, 2026. A drawing:
+> A dark card titled "Your lawn is already a zombie", Halloween 2026. A drawing:
 > under a crescent moon and two bats, a flat strip of lawn holds a headstone
 > and a jack-o'-lantern; beside it grow goldenrod, purple asters, a pine, and a
 > spider on its web.

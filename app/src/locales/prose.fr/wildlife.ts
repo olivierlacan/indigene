@@ -547,7 +547,7 @@ export const WILDLIFE_FR: ProseTable = {
     blurb:
       "Une petite thècle dont les mâles brillent d'un vert métallique, qui vit partout où poussent les aulnes dans les bois humides de plaine. Ses chenilles mangent les feuilles de l'aulne, et c'est le papillon emblème de la préfecture de Saitama.",
   },
-  "Argyreus hyperbius": {
+  "Argynnis hyperbius": {
     blurb:
       "Un nacré orange dont la femelle a le bout des ailes noir, traversé d'une bande blanche. Ses chenilles ne mangent que des violettes, et il a gagné le Kantō à mesure que les hivers se sont adoucis.",
   },

@@ -2015,14 +2015,14 @@ export const WILDLIFE: Wildlife[] = [
   {
     id: "indian-fritillary",
     common: "Indian fritillary",
-    latin: "Argyreus hyperbius",
+    latin: "Argynnis hyperbius",
     kind: "butterfly",
     icon: "🦋",
     blurb:
       "An orange fritillary whose female has black wingtips crossed by a white band. Its caterpillars eat only violets, and it has spread north into the Kantō as winters have warmed.",
     native: true,
     nativeBasis: "Native from Africa and southern Asia to Japan. Not in GRIIS Japan's register of introductions; Saito et al. 2016, Larval host records of butterflies in Japan.",
-    inat: { name: "Argyreus hyperbius", iconic: "Insecta" },
+    inat: { name: "Argynnis hyperbius", iconic: "Insecta" },
   },
   {
     id: "common-bluebottle",

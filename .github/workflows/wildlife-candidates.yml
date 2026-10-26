@@ -1,0 +1,169 @@
+# Run the wildlife candidate finder (`npm run wildlife`) for one region or
+# many, and open a PR with the shortlists it writes.
+#
+# The finder asks GloBI and iNaturalist about every plant a region ships:
+# about a thousand polite requests and 25 minutes per region. That is too long
+# to babysit from a laptop or a chat session, whose machine can be recycled
+# mid-run. A runner isn't, and gives each region an hour of its own.
+#
+# What it commits is the readable shortlist, `docs/candidates/wildlife-<id>.md`.
+# The raw snapshot the finder also writes (data/sources/globi/wildlife-ties.json,
+# thousands of lines) is left out: a person reads the shortlist and writes the
+# ties in app/src/data/wildlife.ts, which is a separate PR.
+#
+# Two regions at a time, so GloBI (a volunteer-run service) never sees more
+# than two of these at once. Each region keeps its answer cache between runs,
+# so a re-run the same week is mostly served from it.
+#
+# The PR it opens is meant to be merged as it stands: it carries the
+# `skip-changelog` label and a "No Claude session" cost section, so the
+# changelog and session-cost checks pass, and it is opened with HERO_BOT_TOKEN
+# so CI runs on it at all (see the last job).
+#
+# Requires "Allow GitHub Actions to create and approve pull requests" in the
+# repo's Actions settings, like the other data-refresh workflows.
+name: Find wildlife candidates
+
+on:
+  workflow_dispatch:
+    inputs:
+      regions:
+        description: "Region ids, space-separated (empty = every region)"
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: wildlife-candidates
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    name: Which regions
+    runs-on: ubuntu-latest
+    outputs:
+      regions: ${{ steps.list.outputs.regions }}
+    steps:
+      - uses: actions/checkout@v4
+      # Every region id, read from the region files rather than typed here, so
+      # a new region is included without editing this workflow.
+      - id: list
+        env:
+          ASKED: ${{ inputs.regions }}
+        run: |
+          if [ -n "$ASKED" ]; then
+            ids="$ASKED"
+          else
+            ids=$(grep -ho '^  id: "[a-z-]*"' app/src/data/region.*.ts | sed 's/.*"\(.*\)"/\1/' | sort | tr '\n' ' ')
+          fi
+          echo "regions=$(printf '%s\n' $ids | jq -R . | jq -sc .)" >> "$GITHUB_OUTPUT"
+          echo "Regions: $ids" >> "$GITHUB_STEP_SUMMARY"
+
+  find:
+    name: ${{ matrix.region }}
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        region: ${{ fromJSON(needs.plan.outputs.regions) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: Restore this region's answer cache
+        uses: actions/cache@v4
+        with:
+          path: app/node_modules/.cache/wildlife-candidates.json
+          key: wildlife-candidates-${{ matrix.region }}-${{ github.run_id }}
+          restore-keys: wildlife-candidates-${{ matrix.region }}-
+
+      - name: Find candidates
+        working-directory: app
+        run: npm run wildlife -- --region "${{ matrix.region }}" --top 40 --write
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candidates-${{ matrix.region }}
+          path: docs/candidates/wildlife-${{ matrix.region }}.md
+          if-no-files-found: error
+
+  pr:
+    name: Open a PR with the shortlists
+    needs: find
+    # A region that failed or ran out of time shouldn't hold back the others.
+    if: always() && needs.find.result != 'cancelled'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: candidates-*
+          path: docs/candidates
+          merge-multiple: true
+
+      - name: List what came back
+        id: list
+        run: |
+          {
+            echo "text<<LIST_EOF"
+            git status --porcelain docs/candidates | sed 's/^/- /'
+            echo "LIST_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      # Opened with a token that can trigger workflows. A PR opened with the
+      # workflow's own token runs no CI at all (GitHub's rule, to stop loops),
+      # so its required checks never report and it can never be merged — which
+      # is why the older data-refresh PRs sit open. HERO_BOT_TOKEN is the same
+      # secret the photo workflow pushes with; without it the PR still opens,
+      # but without checks.
+      - name: Open a PR
+        id: cpr
+        continue-on-error: true
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.HERO_BOT_TOKEN || github.token }}
+          branch: data/wildlife-candidates
+          title: "Refresh wildlife candidate shortlists"
+          commit-message: "Refresh wildlife candidate shortlists from GloBI and iNaturalist"
+          labels: skip-changelog
+          add-paths: |
+            docs/candidates/wildlife-*.md
+          body: |
+            Shortlists from `npm run wildlife`, one per region, against the
+            plant lists on `main` today. **A shortlist, not a decision**:
+            nothing in the app changes until somebody writes the ties in
+            `app/src/data/wildlife.ts`.
+
+            ${{ steps.list.outputs.text }}
+
+            A region missing from this list failed or ran past its hour; its
+            job log says which.
+
+            ## Session cost
+
+            No Claude session: written by the `Find wildlife candidates`
+            workflow.
+
+            ---
+            _Generated by [Claude Code](https://claude.ai/code)_
+
+      - name: Say where the PR is
+        if: always()
+        run: |
+          echo "PR: ${{ steps.cpr.outputs.pull-request-url || 'none opened' }}" >> "$GITHUB_STEP_SUMMARY"

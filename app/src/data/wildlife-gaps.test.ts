@@ -16,7 +16,13 @@ import { REGIONS } from "./regions";
 import { SUPPORT } from "./wildlife";
 import GAPS from "./wildlife-gaps.json";
 
-const LEDGER = GAPS.regions as Record<string, Record<string, string>>;
+// Stored as region → reason → plant ids; read here as region → plant → reason.
+const LEDGER = Object.fromEntries(
+  Object.entries(GAPS.regions as Record<string, Record<string, string[]>>).map(([id, byReason]) => [
+    id,
+    Object.fromEntries(Object.entries(byReason).flatMap(([why, plants]) => plants.map((p) => [p, why]))),
+  ]),
+);
 const REASONS = new Set(["unresearched", "none-found"]);
 
 describe("every plant that names no animal is on record", async () => {

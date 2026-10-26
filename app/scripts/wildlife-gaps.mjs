@@ -27,7 +27,17 @@ const { REGIONS } = await loader.load("/src/data/regions.ts");
 const regions = await withSeeds(REGIONS);
 await loader.close();
 
-const before = existsSync(OUT) ? JSON.parse(readFileSync(OUT, "utf8")).regions : {};
+// Read back as plant → reason, whichever shape the file was written in.
+const before = {};
+if (existsSync(OUT)) {
+  for (const [id, g] of Object.entries(JSON.parse(readFileSync(OUT, "utf8")).regions)) {
+    before[id] = {};
+    for (const [k, v] of Object.entries(g)) {
+      if (Array.isArray(v)) for (const plant of v) before[id][plant] = k;
+      else before[id][k] = v;
+    }
+  }
+}
 const after = {};
 let added = 0;
 let filled = 0;
@@ -44,16 +54,19 @@ for (const r of regions) {
   after[r.meta.id] = gaps;
 }
 
+// One line per region and reason: a list of plant ids. The ledger holds
+// hundreds of plants, and an object per plant made it a 600-line file.
+const byReason = Object.fromEntries(
+  Object.entries(after).map(([id, gaps]) => {
+    const grouped = {};
+    for (const [plant, why] of Object.entries(gaps)) (grouped[why] ??= []).push(plant);
+    return [id, grouped];
+  }),
+);
+const lines = Object.entries(byReason).map(([id, g]) => `    ${JSON.stringify(id)}: ${JSON.stringify(g)}`);
 writeFileSync(
   OUT,
-  JSON.stringify(
-    {
-      note: "Shipped plants that name no animal, and why. Rewritten by `npm run wildlife:gaps`; held by wildlife-gaps.test.ts.",
-      regions: after,
-    },
-    null,
-    2,
-  ) + "\n",
+  `{\n  "note": "Shipped plants that name no animal, by reason. Rewritten by \`npm run wildlife:gaps\`; held by wildlife-gaps.test.ts.",\n  "regions": {\n${lines.join(",\n")}\n  }\n}\n`,
 );
 const total = Object.values(after).reduce((n, g) => n + Object.keys(g).length, 0);
 console.log(`${total} plants name no animal (${added} newly listed, ${filled} filled since the last run).`);

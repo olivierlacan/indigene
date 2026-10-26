@@ -1223,6 +1223,24 @@
     "attribution": "(c) Garth Harwood, some rights reserved (CC BY), uploaded by Garth Harwood",
     "color": "#828175"
   },
+  "chinese-bushbrown": {
+    "taxonId": 155230,
+    "photoId": 187866,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/187866/square.jpg",
+    "observer": "Vijay Anand Ismavel",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) Vijay Anand Ismavel, some rights reserved (CC BY-NC-SA)",
+    "color": "#4e5348"
+  },
+  "chinese-windmill": {
+    "taxonId": 356410,
+    "photoId": 917960,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/917960/square.jpg",
+    "observer": "t-mizo",
+    "license": "cc-by",
+    "attribution": "(c) t-mizo, some rights reserved (CC BY)",
+    "color": "#6e8f48"
+  },
   "cirsium-heterophyllum": {
     "taxonId": 332681,
     "photoId": 139588510,
@@ -2069,6 +2087,15 @@
     "attribution": "(c) lilhazza, some rights reserved (CC BY-NC)",
     "color": "#656d3e"
   },
+  "forest-semilooper": {
+    "taxonId": 388455,
+    "photoId": 22603041,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/22603041/square.jpg",
+    "observer": "Possums' End",
+    "license": "cc-by",
+    "attribution": "(c) Possums' End, some rights reserved (CC BY), uploaded by Possums' End",
+    "color": "#c89060"
+  },
   "forestiera-segregata": {
     "taxonId": 126344,
     "photoId": 2595898,
@@ -2239,6 +2266,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) Donald Fraser, some rights reserved (CC BY-NC), uploaded by Donald Fraser",
     "color": "#a3927b"
+  },
+  "great-purple-emperor": {
+    "taxonId": 325362,
+    "photoId": 278028491,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/278028491/square.jpg",
+    "observer": "shanxing",
+    "license": "cc-by-nc",
+    "attribution": "(c) shanxing, some rights reserved (CC BY-NC)",
+    "color": "#312d33"
   },
   "greater-fritillaries": {
     "taxonId": 1117856,
@@ -3409,6 +3445,15 @@
     "license": "cc-by-nc",
     "attribution": "(c) guyincognito, some rights reserved (CC BY-NC), uploaded by guyincognito",
     "color": "#736351"
+  },
+  "pallas-sailer": {
+    "taxonId": 125563,
+    "photoId": 67727372,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/67727372/square.jpeg",
+    "observer": "茶棚",
+    "license": "cc-by-nc",
+    "attribution": "(c) 茶棚, some rights reserved (CC BY-NC), uploaded by 茶棚",
+    "color": "#928270"
   },
   "parsonsia-heterophylla": {
     "taxonId": 366734,
@@ -4948,6 +4993,15 @@
     "license": "cc-by-sa",
     "attribution": "(c) Alpsdake, some rights reserved (CC BY-SA)",
     "color": "#596a40"
+  },
+  "squeaking-silkmoth": {
+    "taxonId": 372381,
+    "photoId": 54837700,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/54837700/square.jpg",
+    "observer": "onidiras-iNaturalist",
+    "license": "cc-by-nc",
+    "attribution": "(c) onidiras-iNaturalist, some rights reserved (CC BY-NC), uploaded by onidiras-iNaturalist",
+    "color": "#837862"
   },
   "stipa-pulchra": {
     "taxonId": 165659,

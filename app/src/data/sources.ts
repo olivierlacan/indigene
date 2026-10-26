@@ -19,6 +19,7 @@
 // egress policy blocks outbound web hosts), so treat a specific species path as
 // best-effort — each site returns a searchable 404 if a slug ever drifts.
 import type { Wildlife } from "../types";
+import { SUPPORT } from "./wildlife";
 
 export interface SourceSite {
   name: string;
@@ -152,9 +153,22 @@ const capitalize = (s: string): string => (s ? s.charAt(0).toUpperCase() + s.sli
  *  - Butterflies & moths → BAMONA `/species/Genus-species`, from the binomial.
  *  - Single birds        → All About Birds `/guide/Common_Name`, from the name.
  */
+/** The regions BAMONA and All About Birds speak for. */
+const NORTH_AMERICA = new Set([
+  "mid-atlantic", "north-michigan", "chicago", "st-lawrence", "pnw", "ca-central-coast",
+  "ca-south-coast", "central-texas", "florida-central", "florida-south",
+]);
+
 export function speciesRecordUrl(w: Wildlife): SourceSite | null {
   const latin = w.latin?.trim();
-  if ((w.kind === "butterfly" || w.kind === "moth") && latin && !latin.includes(",")) {
+  // BAMONA covers North America and All About Birds the birds of the
+  // Americas, so link them only for an animal tied in a North American region:
+  // a brimstone, a tūī or a Japanese emperor linked there would land on a page
+  // that doesn't have it.
+  const american = Object.entries(SUPPORT).some(
+    ([region, plants]) => NORTH_AMERICA.has(region) && Object.values(plants).some((ls) => ls.some((l) => l.wildlifeId === w.id)),
+  );
+  if ((w.kind === "butterfly" || w.kind === "moth") && latin && !latin.includes(",") && american) {
     const parts = latin.split(/\s+/);
     // A clean two-word binomial only (skip anything with "spp." or extra terms).
     if (parts.length === 2 && /^[A-Z][a-z]+$/.test(parts[0]) && /^[a-z-]+$/.test(parts[1])) {
@@ -162,7 +176,7 @@ export function speciesRecordUrl(w: Wildlife): SourceSite | null {
     }
     return null;
   }
-  if (w.kind === "bird" && latin && !latin.includes(",")) {
+  if (w.kind === "bird" && latin && !latin.includes(",") && american) {
     // All About Birds keys on the common name: words title-cased, spaces → "_",
     // hyphens kept (e.g. "Ruby-throated hummingbird" → "Ruby-throated_Hummingbird").
     const slug = w.common.split(/\s+/).map(capitalize).join("_");

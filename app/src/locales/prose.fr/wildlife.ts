@@ -351,4 +351,44 @@ export const WILDLIFE_FR: ProseTable = {
     blurb:
       "Un fouisseur clé de voûte des hautes terres sèches de Floride, dont les longs terriers abritent des centaines d'autres espèces. Elle broute la végétation basse indigène — baies de Serenoa repens, Mimosa strigillosa, Helianthus debilis — dans les pinèdes sableuses et ouvertes dont elle a besoin.",
   },
+
+  // -------------------------------------------------------------------------
+  // La plaine du Kantō.
+  // -------------------------------------------------------------------------
+  "Sasakia charonda": {
+    blurb:
+      "Le papillon national du Japon, un grand planeur dont les mâles jettent des reflets violets au soleil. Ses chenilles ne mangent que les feuilles du micocoulier, et passent l'hiver dans la litière au pied de l'arbre.",
+  },
+  "Byasa alcinous": {
+    blurb:
+      "Un papillon à queues noir, au corps taché de rouge, qui vole lentement et ne se cache pas. Ses chenilles mangent l'aristoloche et en gardent le poison, si bien que les oiseaux apprennent à laisser les adultes tranquilles.",
+  },
+  "Neptis sappho": {
+    blurb:
+      "Un petit papillon noir et blanc qui longe les lisières en quelques battements et un long plané. Ses chenilles grandissent sur des arbustes et des lianes de la famille du pois, comme la glycine et le lespédèze.",
+  },
+  "Antheraea yamamai": {
+    blurb:
+      "Un grand bombyx jaune-brun, avec une fenêtre transparente dans chaque aile. Ses chenilles mangent le chêne et le châtaignier et filent un cocon vert, autrefois récolté pour une soie rare, vert pâle.",
+  },
+  "Rhodinia fugax": {
+    blurb:
+      "Un bombyx d'automne dont la chenille couine quand on la touche. Elle mange les feuilles du chêne, du châtaignier et du cerisier, puis suspend à un rameau un cocon vert vif.",
+  },
+  "Japonica, Favonius & others": {
+    blurb:
+      "De petites thècles aux couleurs de bijou qui vivent dans la cime des chênes et volent au crépuscule au début de l'été. Leurs chenilles ne mangent que les bourgeons et les feuilles du chêne : un bosquet de chênes konara en abrite toute une série.",
+  },
+  "Mycalesis gotama": {
+    blurb:
+      "Un papillon brun orné d'une rangée d'ocelles, qui reste dans l'herbe ombragée des lisières. Ses chenilles mangent des graminées, dont l'herbe à éventail japonaise.",
+  },
+
+  // -------------------------------------------------------------------------
+  // Auckland.
+  // -------------------------------------------------------------------------
+  "Declana floccosa": {
+    blurb:
+      "Un papillon de nuit gris, si semblable à un lichen qu'il disparaît sur l'écorce d'un arbre indigène. Ses chenilles mangent les feuilles de nombreux arbres et arbustes, et ressemblent pendant ce temps à une brindille ou à une fiente d'oiseau.",
+  },
 };

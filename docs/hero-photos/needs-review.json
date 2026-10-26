@@ -1739,6 +1739,14 @@
     },
     {
       "subject": "wildlife",
+      "id": "japanese-oak-silkmoth",
+      "name": "Antheraea yamamai",
+      "taxonId": 348017,
+      "reason": "chosen photo 167178484 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/348017/browse_photos"
+    },
+    {
+      "subject": "wildlife",
       "id": "kowhai-moth",
       "name": "Uresiphita maorialis",
       "taxonId": 468784,
@@ -1840,14 +1848,6 @@
       "taxonId": 49766,
       "reason": "chosen photo 736786049 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/49766/browse_photos"
-    },
-    {
-      "subject": "wildlife",
-      "id": "japanese-oak-silkmoth",
-      "name": "Antheraea yamamai",
-      "taxonId": 348017,
-      "reason": "chosen photo 167178484 is all rights reserved",
-      "gallery": "https://www.inaturalist.org/taxa/348017/browse_photos"
     }
   ]
 }

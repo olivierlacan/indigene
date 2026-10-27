@@ -13,20 +13,6 @@
       "color": "#698739"
     }
   },
-  "acer-macrophyllum": {
-    "pnw": {
-      "photoId": 305113974,
-      "observationId": 175558796,
-      "observer": "ranmofod",
-      "license": "cc-by-sa",
-      "attribution": "(c) Rand Workman, some rights reserved (CC BY-SA)",
-      "observedOn": "2023-07-26",
-      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305113974/square.jpeg",
-      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305113974/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305113974/large.jpeg",
-      "color": "#44786f"
-    }
-  },
   "acer-circinatum": {
     "pnw": {
       "photoId": 376084490,
@@ -39,6 +25,36 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/376084490/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/376084490/large.jpg",
       "color": "#736f28"
+    }
+  },
+  "acer-glabrum": {
+    "pnw": {
+      "photoId": 138257565,
+      "observationId": 84139079,
+      "observer": "olyjah",
+      "license": "cc-by",
+      "attribution": "(c) John A Haskins, some rights reserved (CC BY)",
+      "observedOn": "2021-06-22",
+      "place": "Port Angeles, WA 98363, USA",
+      "taxonName": "Acer glabrum douglasii",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/138257565/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/138257565/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/138257565/large.jpeg",
+      "color": "#568030"
+    }
+  },
+  "acer-macrophyllum": {
+    "pnw": {
+      "photoId": 305113974,
+      "observationId": 175558796,
+      "observer": "ranmofod",
+      "license": "cc-by-sa",
+      "attribution": "(c) Rand Workman, some rights reserved (CC BY-SA)",
+      "observedOn": "2023-07-26",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305113974/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305113974/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/305113974/large.jpeg",
+      "color": "#44786f"
     }
   },
   "acer-monspessulanum": {
@@ -109,6 +125,110 @@
       "color": "#919a8b"
     }
   },
+  "achlys-triphylla": {
+    "pnw": {
+      "photoId": 232688123,
+      "observationId": 136349250,
+      "observer": "alan_rockefeller",
+      "license": "cc-by",
+      "attribution": "(c) Alan Rockefeller, some rights reserved (CC BY)",
+      "observedOn": "2022-09-24",
+      "place": "Hood River County, US-OR, US",
+      "taxonName": "Achlys triphylla",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/232688123/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/232688123/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/232688123/large.jpeg",
+      "color": "#558354"
+    }
+  },
+  "adiantum-pedatum": {
+    "mid-atlantic": {
+      "photoId": 202762452,
+      "observationId": 119915390,
+      "observer": "kelseyking890",
+      "license": "cc-by-nc",
+      "attribution": "(c) kelseyking890, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-06-02",
+      "place": "Elizabeth, IL, US",
+      "taxonName": "Adiantum pedatum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202762452/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202762452/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202762452/large.jpg",
+      "color": "#4e8537"
+    },
+    "north-michigan": {
+      "photoId": 202762452,
+      "observationId": 119915390,
+      "observer": "kelseyking890",
+      "license": "cc-by-nc",
+      "attribution": "(c) kelseyking890, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-06-02",
+      "place": "Elizabeth, IL, US",
+      "taxonName": "Adiantum pedatum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202762452/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202762452/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202762452/large.jpg",
+      "color": "#4e8537"
+    },
+    "chicago": {
+      "photoId": 202762452,
+      "observationId": 119915390,
+      "observer": "kelseyking890",
+      "license": "cc-by-nc",
+      "attribution": "(c) kelseyking890, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-06-02",
+      "place": "Elizabeth, IL, US",
+      "taxonName": "Adiantum pedatum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202762452/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202762452/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202762452/large.jpg",
+      "color": "#4e8537"
+    },
+    "st-lawrence": {
+      "photoId": 202762452,
+      "observationId": 119915390,
+      "observer": "kelseyking890",
+      "license": "cc-by-nc",
+      "attribution": "(c) kelseyking890, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-06-02",
+      "place": "Elizabeth, IL, US",
+      "taxonName": "Adiantum pedatum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202762452/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202762452/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/202762452/large.jpg",
+      "color": "#4e8537"
+    }
+  },
+  "allium-tricoccum": {
+    "north-michigan": {
+      "photoId": 264604214,
+      "observationId": 153218924,
+      "observer": "drees12",
+      "license": "cc-by-nc",
+      "attribution": "(c) drees12, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-04-02",
+      "place": "Illinois, US",
+      "taxonName": "Allium tricoccum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/264604214/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/264604214/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/264604214/large.jpg",
+      "color": "#8c8159"
+    },
+    "chicago": {
+      "photoId": 264604214,
+      "observationId": 153218924,
+      "observer": "drees12",
+      "license": "cc-by-nc",
+      "attribution": "(c) drees12, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-04-02",
+      "place": "Illinois, US",
+      "taxonName": "Allium tricoccum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/264604214/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/264604214/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/264604214/large.jpg",
+      "color": "#8c8159"
+    }
+  },
   "alnus-alnobetula": {
     "france-alpine": {
       "photoId": 202159113,
@@ -165,6 +285,22 @@
       "color": "#938f4b"
     }
   },
+  "amorpha-canescens": {
+    "chicago": {
+      "photoId": 567399279,
+      "observationId": 314157650,
+      "observer": "magpiedin",
+      "license": "cc-by-nc",
+      "attribution": "(c) magpiedin, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-09-15",
+      "place": "Lincoln Park, Chicago, IL, USA",
+      "taxonName": "Amorpha canescens",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/567399279/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/567399279/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/567399279/large.jpg",
+      "color": "#656c60"
+    }
+  },
   "anaphalis-margaritacea": {
     "pnw": {
       "photoId": 417521686,
@@ -193,6 +329,54 @@
       "color": "#322d28"
     }
   },
+  "anisacanthus-quadrifidus": {
+    "central-texas": {
+      "photoId": 54754486,
+      "observationId": 34765722,
+      "observer": "robertkamper",
+      "license": "cc-by-nc",
+      "attribution": "(c) Robert J Kamper, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-10-20",
+      "place": "Texas, US",
+      "taxonName": "Anisacanthus quadrifidus wrightii",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54754486/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54754486/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54754486/large.jpeg",
+      "color": "#777948"
+    }
+  },
+  "annona-glabra": {
+    "florida-south": {
+      "photoId": 274563543,
+      "observationId": 158911352,
+      "observer": "coreytcallaghan",
+      "license": "cc-by-nc",
+      "attribution": "(c) Corey Callaghan, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-04-28",
+      "place": "Broward County, FL, USA",
+      "taxonName": "Annona glabra",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274563543/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274563543/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274563543/large.jpeg",
+      "color": "#566147"
+    }
+  },
+  "antennaria-plantaginifolia": {
+    "mid-atlantic": {
+      "photoId": 369638084,
+      "observationId": 208892667,
+      "observer": "jcollatz",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2024-04-23",
+      "place": "Quiet Waters Park, Annapolis, MD, US",
+      "taxonName": "Antennaria plantaginifolia",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/369638084/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/369638084/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/369638084/large.jpg",
+      "color": "#7a7c73"
+    }
+  },
   "anthyllis-vulneraria": {
     "france-alpine": {
       "photoId": 368154662,
@@ -205,6 +389,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368154662/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/368154662/large.jpeg",
       "color": "#777155"
+    }
+  },
+  "apium-prostratum": {
+    "nz-auckland": {
+      "photoId": 174925618,
+      "observationId": 104403294,
+      "observer": "invertebratist",
+      "license": "cc-by",
+      "attribution": "(c) Saryu Mae 前 朝琉, some rights reserved (CC BY)",
+      "observedOn": "2022-01-05",
+      "place": "Green Bay, West Auckland, New Zealand",
+      "taxonName": "Apium prostratum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/174925618/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/174925618/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/174925618/large.jpeg",
+      "color": "#364917"
     }
   },
   "aquilegia-canadensis": {
@@ -249,6 +449,38 @@
       "color": "#839e64"
     }
   },
+  "arctostaphylos-columbiana": {
+    "pnw": {
+      "photoId": 240728287,
+      "observationId": 140617320,
+      "observer": "iancruickshank",
+      "license": "cc-by-nc",
+      "attribution": "(c) Ian Cruickshank, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-10-23",
+      "place": "Alberni-Clayoquot, BC, Canada",
+      "taxonName": "Arctostaphylos columbiana",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/240728287/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/240728287/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/240728287/large.jpeg",
+      "color": "#8f7d6f"
+    }
+  },
+  "arctostaphylos-manzanita": {
+    "ca-central-coast": {
+      "photoId": 111877467,
+      "observationId": 69007147,
+      "observer": "jeffbisbee",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jeff Bisbee, some rights reserved (CC BY-NC)",
+      "observedOn": "2010-10-11",
+      "place": "California, US",
+      "taxonName": "Arctostaphylos manzanita elegans",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/111877467/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/111877467/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/111877467/large.jpg",
+      "color": "#546351"
+    }
+  },
   "arctostaphylos-uva-ursi": {
     "pnw": {
       "photoId": 696128869,
@@ -261,6 +493,70 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/696128869/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/696128869/large.jpg",
       "color": "#6e6a2f"
+    }
+  },
+  "ardisia-japonica": {
+    "kanto": {
+      "photoId": 452428587,
+      "observationId": 252713093,
+      "observer": "tbc_watanabe",
+      "license": "cc-by",
+      "attribution": "(c) WATANABE Hitoshi 渡辺仁, some rights reserved (CC BY)",
+      "observedOn": "2024-11-23",
+      "place": "多摩中央公園",
+      "taxonName": "Ardisia japonica",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/452428587/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/452428587/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/452428587/large.jpeg",
+      "color": "#6d6130"
+    }
+  },
+  "armeria-maritima": {
+    "scotland-lowlands": {
+      "photoId": 379405271,
+      "observationId": 214639986,
+      "observer": "troutcolor",
+      "license": "cc-by-nc",
+      "attribution": "(c) John Johnston, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-05-07",
+      "place": "Helensburgh, UK",
+      "taxonName": "Armeria maritima",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/379405271/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/379405271/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/379405271/large.jpeg",
+      "color": "#6f6752"
+    }
+  },
+  "arum-italicum": {
+    "france-mediterranean": {
+      "photoId": 638168390,
+      "observationId": 349808575,
+      "observer": "emmarusso2003",
+      "license": "cc-by-nc",
+      "attribution": "(c) emmarusso2003, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-04-14",
+      "place": "34230 Aumelas, France",
+      "taxonName": "Arum italicum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/638168390/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/638168390/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/638168390/large.jpg",
+      "color": "#867a5a"
+    }
+  },
+  "asarum-caudatum": {
+    "pnw": {
+      "photoId": 504148067,
+      "observationId": 280686655,
+      "observer": "liamragan",
+      "license": "cc-by-nc",
+      "attribution": "(c) Liam Ragan, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-05-12",
+      "place": "Arbutus Rd, Saanich, BC, CA",
+      "taxonName": "Asarum caudatum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/504148067/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/504148067/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/504148067/large.jpg",
+      "color": "#406327"
     }
   },
   "asclepias-incarnata": {
@@ -317,6 +613,54 @@
       "color": "#736c43"
     }
   },
+  "athyrium-cyclosorum": {
+    "pnw": {
+      "photoId": 72256884,
+      "observationId": 45566515,
+      "observer": "katlmartin",
+      "license": "cc-by-nc",
+      "attribution": "(c) Kat, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-05-10",
+      "place": "Cottle Lake, Nanaimo C, BC V0R 1V0, Canada",
+      "taxonName": "Athyrium filix-femina cyclosorum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/72256884/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/72256884/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/72256884/large.jpeg",
+      "color": "#546d48"
+    }
+  },
+  "athyrium-niponicum": {
+    "kanto": {
+      "photoId": 366791335,
+      "observationId": 207367016,
+      "observer": "sskawau",
+      "license": "cc-by-nc",
+      "attribution": "(c) かわう, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-04-14",
+      "place": "Japan",
+      "taxonName": "Athyrium niponicum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366791335/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366791335/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366791335/large.jpg",
+      "color": "#6b8141"
+    }
+  },
+  "baccharis-halimifolia": {
+    "florida-central": {
+      "photoId": 189930336,
+      "observationId": 112449097,
+      "observer": "missannie42",
+      "license": "cc-by-nc",
+      "attribution": "(c) Ann A., some rights reserved (CC BY-NC)",
+      "observedOn": "2022-04-22",
+      "place": "Grand Isle Blvd, Melbourne, FL, US",
+      "taxonName": "Baccharis halimifolia",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/189930336/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/189930336/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/189930336/large.jpg",
+      "color": "#638b42"
+    }
+  },
   "baptisia-australis": {
     "mid-atlantic": {
       "photoId": 531548260,
@@ -329,6 +673,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/531548260/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/531548260/large.jpg",
       "color": "#727f5e"
+    }
+  },
+  "baptisia-lactea": {
+    "chicago": {
+      "photoId": 5647734,
+      "observationId": 4663982,
+      "observer": "pwdeacon",
+      "license": "cc-by-nc",
+      "attribution": "(c) Pat Deacon, some rights reserved (CC BY-NC)",
+      "observedOn": "2016-07-17",
+      "place": "White County, IN, USA",
+      "taxonName": "Baptisia lactea",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5647734/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5647734/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/5647734/large.jpeg",
+      "color": "#5c7334"
     }
   },
   "berberis-aquifolium": {
@@ -345,20 +705,6 @@
       "color": "#657459"
     }
   },
-  "betula-pendula": {
-    "france-atlantic": {
-      "photoId": 447129878,
-      "observationId": 250059002,
-      "observer": "fredjar",
-      "license": "cc-by-nc",
-      "attribution": "(c) Frederic Jarry, some rights reserved (CC BY-NC)",
-      "observedOn": "2024-11-01",
-      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447129878/square.jpeg",
-      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447129878/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447129878/large.jpeg",
-      "color": "#697260"
-    }
-  },
   "betula-nigra": {
     "mid-atlantic": {
       "photoId": 326607951,
@@ -373,18 +719,62 @@
       "color": "#7a7e51"
     }
   },
-  "bursera-simaruba": {
-    "florida-south": {
-      "photoId": 336151673,
-      "observationId": 191594386,
-      "observer": "douggoldman",
-      "license": "cc-by-sa",
-      "attribution": "(c) Douglas Goldman, some rights reserved (CC BY-SA)",
-      "observedOn": "2023-11-17",
-      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/336151673/square.jpg",
-      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/336151673/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/336151673/large.jpg",
-      "color": "#5c8036"
+  "betula-papyrifera": {
+    "north-michigan": {
+      "photoId": 406244864,
+      "observationId": 228895606,
+      "observer": "owendavie",
+      "license": "cc-by-nc",
+      "attribution": "(c) Owen D., some rights reserved (CC BY-NC)",
+      "observedOn": "2024-07-12",
+      "place": "Mackinac Island, Mackinac Island, MI, US",
+      "taxonName": "Betula papyrifera",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/406244864/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/406244864/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/406244864/large.jpeg",
+      "color": "#647d4a"
+    },
+    "st-lawrence": {
+      "photoId": 406244864,
+      "observationId": 228895606,
+      "observer": "owendavie",
+      "license": "cc-by-nc",
+      "attribution": "(c) Owen D., some rights reserved (CC BY-NC)",
+      "observedOn": "2024-07-12",
+      "place": "Mackinac Island, Mackinac Island, MI, US",
+      "taxonName": "Betula papyrifera",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/406244864/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/406244864/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/406244864/large.jpeg",
+      "color": "#647d4a"
+    },
+    "pnw": {
+      "photoId": 406244864,
+      "observationId": 228895606,
+      "observer": "owendavie",
+      "license": "cc-by-nc",
+      "attribution": "(c) Owen D., some rights reserved (CC BY-NC)",
+      "observedOn": "2024-07-12",
+      "place": "Mackinac Island, Mackinac Island, MI, US",
+      "taxonName": "Betula papyrifera",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/406244864/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/406244864/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/406244864/large.jpeg",
+      "color": "#647d4a"
+    }
+  },
+  "betula-pendula": {
+    "france-atlantic": {
+      "photoId": 447129878,
+      "observationId": 250059002,
+      "observer": "fredjar",
+      "license": "cc-by-nc",
+      "attribution": "(c) Frederic Jarry, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-11-01",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447129878/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447129878/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/447129878/large.jpeg",
+      "color": "#697260"
     }
   },
   "brachypodium-retusum": {
@@ -401,6 +791,92 @@
       "color": "#928b69"
     }
   },
+  "briza-media": {
+    "france-atlantic": {
+      "photoId": 78202090,
+      "observationId": 49264598,
+      "observer": "sarah1271",
+      "license": "cc-by-nc",
+      "attribution": "(c) Sarah Sells, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-06-11",
+      "place": "Kirkconnel Avenue, Cumbernauld, Glasgow G68 9NQ, UK",
+      "taxonName": "Briza media",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/large.jpeg",
+      "color": "#73854d"
+    },
+    "france-continental": {
+      "photoId": 78202090,
+      "observationId": 49264598,
+      "observer": "sarah1271",
+      "license": "cc-by-nc",
+      "attribution": "(c) Sarah Sells, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-06-11",
+      "place": "Kirkconnel Avenue, Cumbernauld, Glasgow G68 9NQ, UK",
+      "taxonName": "Briza media",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/large.jpeg",
+      "color": "#73854d"
+    },
+    "france-alpine": {
+      "photoId": 78202090,
+      "observationId": 49264598,
+      "observer": "sarah1271",
+      "license": "cc-by-nc",
+      "attribution": "(c) Sarah Sells, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-06-11",
+      "place": "Kirkconnel Avenue, Cumbernauld, Glasgow G68 9NQ, UK",
+      "taxonName": "Briza media",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/large.jpeg",
+      "color": "#73854d"
+    },
+    "ireland": {
+      "photoId": 78202090,
+      "observationId": 49264598,
+      "observer": "sarah1271",
+      "license": "cc-by-nc",
+      "attribution": "(c) Sarah Sells, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-06-11",
+      "place": "Kirkconnel Avenue, Cumbernauld, Glasgow G68 9NQ, UK",
+      "taxonName": "Briza media",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/large.jpeg",
+      "color": "#73854d"
+    },
+    "scotland-lowlands": {
+      "photoId": 78202090,
+      "observationId": 49264598,
+      "observer": "sarah1271",
+      "license": "cc-by-nc",
+      "attribution": "(c) Sarah Sells, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-06-11",
+      "place": "Kirkconnel Avenue, Cumbernauld, Glasgow G68 9NQ, UK",
+      "taxonName": "Briza media",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/78202090/large.jpeg",
+      "color": "#73854d"
+    }
+  },
+  "bursera-simaruba": {
+    "florida-south": {
+      "photoId": 336151673,
+      "observationId": 191594386,
+      "observer": "douggoldman",
+      "license": "cc-by-sa",
+      "attribution": "(c) Douglas Goldman, some rights reserved (CC BY-SA)",
+      "observedOn": "2023-11-17",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/336151673/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/336151673/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/336151673/large.jpg",
+      "color": "#5c8036"
+    }
+  },
   "callicarpa-americana": {
     "florida-central": {
       "photoId": 230698921,
@@ -413,6 +889,38 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/230698921/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/230698921/large.jpeg",
       "color": "#648233"
+    }
+  },
+  "callicarpa-japonica": {
+    "kanto": {
+      "photoId": 387742380,
+      "observationId": 219086957,
+      "observer": "tbc_watanabe",
+      "license": "cc-by",
+      "attribution": "(c) WATANABE Hitoshi 渡辺仁, some rights reserved (CC BY)",
+      "observedOn": "2024-05-29",
+      "place": "なな山緑地",
+      "taxonName": "Callicarpa japonica",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/387742380/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/387742380/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/387742380/large.jpeg",
+      "color": "#296421"
+    }
+  },
+  "callirhoe-involucrata": {
+    "central-texas": {
+      "photoId": 74215991,
+      "observationId": 46797035,
+      "observer": "ronstephens",
+      "license": "cc-by-nc",
+      "attribution": "(c) Ron Stephens, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-05-21",
+      "place": "Far West Side, San Antonio, TX, USA",
+      "taxonName": "Callirhoe involucrata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/74215991/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/74215991/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/74215991/large.jpeg",
+      "color": "#545d47"
     }
   },
   "camassia-quamash": {
@@ -429,6 +937,22 @@
       "color": "#70797f"
     }
   },
+  "carex-pendula": {
+    "france-continental": {
+      "photoId": 218625045,
+      "observationId": 128696506,
+      "observer": "wrbkat",
+      "license": "cc-by-nc",
+      "attribution": "(c) Thomas Wrbka, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-07-22",
+      "place": "5022 Rombach, Schweiz",
+      "taxonName": "Carex pendula",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/218625045/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/218625045/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/218625045/large.jpeg",
+      "color": "#6c9869"
+    }
+  },
   "carex-pensylvanica": {
     "mid-atlantic": {
       "photoId": 123744218,
@@ -441,6 +965,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123744218/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/123744218/large.jpeg",
       "color": "#322f16"
+    }
+  },
+  "carex-tumulicola": {
+    "ca-central-coast": {
+      "photoId": 715972373,
+      "observationId": 390780842,
+      "observer": "kueda",
+      "license": "cc-by",
+      "attribution": "(c) Ken-ichi Ueda, some rights reserved (CC BY)",
+      "observedOn": "2026-08-12",
+      "place": "Castro Valley, CA 94552, USA",
+      "taxonName": "Carex tumulicola",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/715972373/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/715972373/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/715972373/large.jpg",
+      "color": "#756f5a"
     }
   },
   "carpinus-betulus": {
@@ -483,6 +1023,22 @@
       "color": "#4b6629"
     }
   },
+  "ceanothus-sanguineus": {
+    "pnw": {
+      "photoId": 38985210,
+      "observationId": 25185660,
+      "observer": "patricksowers",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2019-05-15",
+      "place": "751 NE Blakely Dr, Issaquah, WA 98029, USA",
+      "taxonName": "Ceanothus sanguineus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/38985210/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/38985210/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/38985210/large.jpeg",
+      "color": "#566033"
+    }
+  },
   "celtis-australis": {
     "france-mediterranean": {
       "photoId": 188304457,
@@ -497,6 +1053,66 @@
       "color": "#779641"
     }
   },
+  "centaurea-jacea": {
+    "france-continental": {
+      "photoId": 40655700,
+      "observationId": 26196267,
+      "observer": "camcc",
+      "license": "cc-by",
+      "attribution": "(c) Carol Ann McCormick, some rights reserved (CC BY)",
+      "observedOn": "2019-06-01",
+      "place": "Genève, CH-GE-GE, CH",
+      "taxonName": "Centaurea jacea",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/40655700/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/40655700/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/40655700/large.jpg",
+      "color": "#6a8b4b"
+    }
+  },
+  "centaurea-nigra": {
+    "france-atlantic": {
+      "photoId": 487760367,
+      "observationId": 271173057,
+      "observer": "blai_y_dani",
+      "license": "cc-by-nc",
+      "attribution": "(c) Daniel Gaona Carrilero, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-04-18",
+      "place": "Llanes, 33591, Asturias, España",
+      "taxonName": "Centaurea nigra",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/487760367/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/487760367/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/487760367/large.jpeg",
+      "color": "#7a7674"
+    },
+    "ireland": {
+      "photoId": 487760367,
+      "observationId": 271173057,
+      "observer": "blai_y_dani",
+      "license": "cc-by-nc",
+      "attribution": "(c) Daniel Gaona Carrilero, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-04-18",
+      "place": "Llanes, 33591, Asturias, España",
+      "taxonName": "Centaurea nigra",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/487760367/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/487760367/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/487760367/large.jpeg",
+      "color": "#7a7674"
+    },
+    "scotland-lowlands": {
+      "photoId": 487760367,
+      "observationId": 271173057,
+      "observer": "blai_y_dani",
+      "license": "cc-by-nc",
+      "attribution": "(c) Daniel Gaona Carrilero, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-04-18",
+      "place": "Llanes, 33591, Asturias, España",
+      "taxonName": "Centaurea nigra",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/487760367/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/487760367/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/487760367/large.jpeg",
+      "color": "#7a7674"
+    }
+  },
   "centaurea-scabiosa": {
     "france-continental": {
       "photoId": 131236436,
@@ -509,6 +1125,36 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/131236436/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/131236436/large.jpeg",
       "color": "#7a6e59"
+    }
+  },
+  "centrosema-virginianum": {
+    "florida-central": {
+      "photoId": 67897405,
+      "observationId": 42752549,
+      "observer": "jatmasphere",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jenna Atma, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-04-21",
+      "place": "Kissimmee Prairie Preserve State Park, Okeechobee, FL, US",
+      "taxonName": "Centrosema virginianum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67897405/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67897405/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67897405/large.jpg",
+      "color": "#72745d"
+    },
+    "florida-south": {
+      "photoId": 67897405,
+      "observationId": 42752549,
+      "observer": "jatmasphere",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jenna Atma, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-04-21",
+      "place": "Kissimmee Prairie Preserve State Park, Okeechobee, FL, US",
+      "taxonName": "Centrosema virginianum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67897405/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67897405/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/67897405/large.jpg",
+      "color": "#72745d"
     }
   },
   "cephalanthus-occidentalis": {
@@ -567,6 +1213,22 @@
       "color": "#788b11"
     }
   },
+  "chrysophyllum-oliviforme": {
+    "florida-south": {
+      "photoId": 455806817,
+      "observationId": 254467815,
+      "observer": "tedweber1",
+      "license": "cc-by-nc",
+      "attribution": "(c) Ted Weber, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-12-07",
+      "place": "Simpson Park, Miami, FL",
+      "taxonName": "Chrysophyllum oliviforme",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/455806817/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/455806817/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/455806817/large.jpeg",
+      "color": "#907b58"
+    }
+  },
   "cistus-albidus": {
     "france-mediterranean": {
       "photoId": 113776894,
@@ -579,6 +1241,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113776894/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113776894/large.jpg",
       "color": "#826963"
+    }
+  },
+  "claytonia-virginica": {
+    "chicago": {
+      "photoId": 120474127,
+      "observationId": 73764922,
+      "observer": "illinois_joy",
+      "license": "cc-by-nc",
+      "attribution": "(c) J Gibbons, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-04-12",
+      "place": "Deer Run Forest Preserve, Cherry Valley, IL, US",
+      "taxonName": "Claytonia virginica",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/120474127/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/120474127/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/120474127/large.jpg",
+      "color": "#8d8966"
     }
   },
   "clematis-flammula": {
@@ -595,6 +1273,22 @@
       "color": "#65674f"
     }
   },
+  "clematis-lasiantha": {
+    "ca-south-coast": {
+      "photoId": 16865494,
+      "observationId": 11792881,
+      "observer": "diego4nature",
+      "license": "cc-by-nc",
+      "attribution": "(c) Diego Tamayo, some rights reserved (CC BY-NC)",
+      "observedOn": "2018-04-29",
+      "place": "Los Angeles County, CA, USA",
+      "taxonName": "Clematis lasiantha",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/16865494/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/16865494/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/16865494/large.jpg",
+      "color": "#647958"
+    }
+  },
   "clematis-vitalba": {
     "france-continental": {
       "photoId": 44714301,
@@ -609,18 +1303,48 @@
       "color": "#678c51"
     }
   },
-  "coccoloba-uvifera": {
-    "florida-south": {
-      "photoId": 613727776,
-      "observationId": 337587774,
-      "observer": "acjci",
-      "license": "cc-by-sa",
-      "attribution": "(c) Turner Brockman, some rights reserved (CC BY-SA)",
-      "observedOn": "2026-01-07",
-      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/613727776/square.jpg",
-      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/613727776/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/613727776/large.jpg",
-      "color": "#8d8853"
+  "clinopodium-douglasii": {
+    "ca-south-coast": {
+      "photoId": 163180329,
+      "observationId": 98055607,
+      "observer": "patricksowers",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2021-09-27",
+      "place": "Northeast Tacoma, Tacoma, WA, USA",
+      "taxonName": "Clinopodium douglasii",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163180329/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163180329/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163180329/large.jpeg",
+      "color": "#868164"
+    },
+    "ca-central-coast": {
+      "photoId": 163180329,
+      "observationId": 98055607,
+      "observer": "patricksowers",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2021-09-27",
+      "place": "Northeast Tacoma, Tacoma, WA, USA",
+      "taxonName": "Clinopodium douglasii",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163180329/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163180329/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163180329/large.jpeg",
+      "color": "#868164"
+    },
+    "pnw": {
+      "photoId": 163180329,
+      "observationId": 98055607,
+      "observer": "patricksowers",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2021-09-27",
+      "place": "Northeast Tacoma, Tacoma, WA, USA",
+      "taxonName": "Clinopodium douglasii",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163180329/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163180329/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/163180329/large.jpeg",
+      "color": "#868164"
     }
   },
   "coccoloba-diversifolia": {
@@ -637,6 +1361,20 @@
       "color": "#4f784e"
     }
   },
+  "coccoloba-uvifera": {
+    "florida-south": {
+      "photoId": 613727776,
+      "observationId": 337587774,
+      "observer": "acjci",
+      "license": "cc-by-sa",
+      "attribution": "(c) Turner Brockman, some rights reserved (CC BY-SA)",
+      "observedOn": "2026-01-07",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/613727776/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/613727776/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/613727776/large.jpg",
+      "color": "#8d8853"
+    }
+  },
   "conocarpus-erectus": {
     "florida-south": {
       "photoId": 181270852,
@@ -651,6 +1389,68 @@
       "color": "#6c8d25"
     }
   },
+  "coprosma-robusta": {
+    "nz-auckland": {
+      "photoId": 164509284,
+      "observationId": 98763271,
+      "observer": "fiona1960",
+      "license": "cc-by-nc",
+      "attribution": "(c) Fiona Rosalind Johnston, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-10-20",
+      "place": "Red Beach",
+      "taxonName": "Coprosma robusta",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/164509284/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/164509284/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/164509284/large.jpeg",
+      "color": "#6d6f44"
+    }
+  },
+  "cordyline-australis": {
+    "nz-auckland": {
+      "photoId": 55075062,
+      "observationId": 34951733,
+      "observer": "jacqui-nz",
+      "license": "cc-by",
+      "attribution": "(c) Jacqui Geux, some rights reserved (CC BY)",
+      "observedOn": "2019-10-25",
+      "place": "Waitakere, Auckland, New Zealand",
+      "taxonName": "Cordyline australis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/55075062/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/55075062/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/55075062/large.jpeg",
+      "color": "#7b805b"
+    }
+  },
+  "coreopsis-lanceolata": {
+    "north-michigan": {
+      "photoId": 170379858,
+      "observationId": 101977242,
+      "observer": "danielmcnair",
+      "license": "cc-by",
+      "attribution": "(c) Daniel McNair, some rights reserved (CC BY)",
+      "observedOn": "2021-11-26",
+      "place": "Bay Bluffs Preserve, Pensacola, FL, US",
+      "taxonName": "Coreopsis lanceolata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170379858/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170379858/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170379858/large.jpg",
+      "color": "#958637"
+    },
+    "florida-central": {
+      "photoId": 170379858,
+      "observationId": 101977242,
+      "observer": "danielmcnair",
+      "license": "cc-by",
+      "attribution": "(c) Daniel McNair, some rights reserved (CC BY)",
+      "observedOn": "2021-11-26",
+      "place": "Bay Bluffs Preserve, Pensacola, FL, US",
+      "taxonName": "Coreopsis lanceolata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170379858/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170379858/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/170379858/large.jpg",
+      "color": "#958637"
+    }
+  },
   "coreopsis-leavenworthii": {
     "florida-central": {
       "photoId": 133778482,
@@ -663,6 +1463,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/133778482/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/133778482/large.jpeg",
       "color": "#635b3e"
+    }
+  },
+  "cornus-alternifolia": {
+    "st-lawrence": {
+      "photoId": 521677786,
+      "observationId": 290015381,
+      "observer": "owenclarkin",
+      "license": "cc-by-nc",
+      "attribution": "(c) Owen Clarkin, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-06-07",
+      "place": "Prescott and Russell, CA-ON, CA",
+      "taxonName": "Cornus alternifolia",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/521677786/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/521677786/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/521677786/large.jpg",
+      "color": "#678f5b"
     }
   },
   "cornus-florida": {
@@ -707,6 +1523,22 @@
       "color": "#65685b"
     }
   },
+  "cornus-racemosa": {
+    "chicago": {
+      "photoId": 203596150,
+      "observationId": 120380502,
+      "observer": "goodfire-inc",
+      "license": "cc-by-nc",
+      "attribution": "(c) Joel A, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-06-05",
+      "place": "N Foxberry Dr, Urbana, IL, US",
+      "taxonName": "Cornus racemosa",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/203596150/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/203596150/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/203596150/large.jpg",
+      "color": "#6f854f"
+    }
+  },
   "cornus-sanguinea": {
     "france-atlantic": {
       "photoId": 150290258,
@@ -747,20 +1579,6 @@
       "color": "#52672e"
     }
   },
-  "corylus-avellana": {
-    "france-atlantic": {
-      "photoId": 66636366,
-      "observationId": 41986926,
-      "observer": "dgovaerts",
-      "license": "cc-by-nc",
-      "attribution": "(c) fam. Govaerts, some rights reserved (CC BY-NC)",
-      "observedOn": "2020-04-12",
-      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66636366/square.jpg",
-      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66636366/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66636366/large.jpg",
-      "color": "#78775c"
-    }
-  },
   "corylus-americana": {
     "mid-atlantic": {
       "photoId": 198760563,
@@ -775,6 +1593,20 @@
       "color": "#6a8850"
     }
   },
+  "corylus-avellana": {
+    "france-atlantic": {
+      "photoId": 66636366,
+      "observationId": 41986926,
+      "observer": "dgovaerts",
+      "license": "cc-by-nc",
+      "attribution": "(c) fam. Govaerts, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-04-12",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66636366/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66636366/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66636366/large.jpg",
+      "color": "#78775c"
+    }
+  },
   "corylus-cornuta": {
     "pnw": {
       "photoId": 205654288,
@@ -787,6 +1619,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/205654288/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/205654288/large.jpeg",
       "color": "#818649"
+    }
+  },
+  "corynocarpus-laevigatus": {
+    "nz-auckland": {
+      "photoId": 18819630,
+      "observationId": 12948124,
+      "observer": "zhengchen",
+      "license": "cc-by-nc",
+      "attribution": "(c) zhengchen, some rights reserved (CC BY-NC)",
+      "observedOn": "2018-05-30",
+      "place": "37 Tony Segedin Dr, Avondale, Auckland 1026新西兰",
+      "taxonName": "Corynocarpus laevigatus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/18819630/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/18819630/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/18819630/large.jpeg",
+      "color": "#587939"
     }
   },
   "crataegus-laevigata": {
@@ -817,18 +1665,68 @@
       "color": "#4e733a"
     }
   },
-  "digitalis-purpurea": {
-    "france-atlantic": {
-      "photoId": 534539953,
-      "observationId": 296841869,
-      "observer": "jdmgoncalves",
-      "license": "cc-by-nc-sa",
-      "attribution": "(c) Jorge Goncalves, some rights reserved (CC BY-NC-SA)",
-      "observedOn": "2025-07-10",
-      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534539953/square.jpg",
-      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534539953/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534539953/large.jpg",
-      "color": "#85857c"
+  "crinum-americanum": {
+    "florida-south": {
+      "photoId": 191249044,
+      "observationId": 113187884,
+      "observer": "aidancampos",
+      "license": "cc-by-nc",
+      "attribution": "(c) Aidan Campos, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-02-22",
+      "place": "Miami-Dade County, US-FL, US",
+      "taxonName": "Crinum americanum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/191249044/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/191249044/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/191249044/large.jpg",
+      "color": "#806d46"
+    }
+  },
+  "cytisus-villosus": {
+    "france-mediterranean": {
+      "photoId": 513906605,
+      "observationId": 285893885,
+      "observer": "augustinsoulard",
+      "license": "cc-by",
+      "attribution": "(c) Augustin Soulard, some rights reserved (CC BY)",
+      "observedOn": "2025-05-31",
+      "place": "83230 Bormes-les-Mimosas, France",
+      "taxonName": "Cytisus villosus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/513906605/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/513906605/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/513906605/large.jpg",
+      "color": "#637d40"
+    }
+  },
+  "danthonia-spicata": {
+    "north-michigan": {
+      "photoId": 268005848,
+      "observationId": 155088693,
+      "observer": "michiganherpotology11",
+      "license": "cc-by-nc",
+      "attribution": "(c) John Clark, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-04-15",
+      "place": "Wexford County, MI, USA",
+      "taxonName": "Danthonia spicata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/268005848/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/268005848/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/268005848/large.jpeg",
+      "color": "#837e7b"
+    }
+  },
+  "dennstaedtia-punctilobula": {
+    "mid-atlantic": {
+      "photoId": 211625695,
+      "observationId": 124829775,
+      "observer": "tcurtis",
+      "license": "cc-by-nc",
+      "attribution": "(c) Tomás Curtis, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-07-02",
+      "place": "Ohio, US",
+      "taxonName": "Dennstaedtia punctilobula",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/211625695/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/211625695/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/211625695/large.jpg",
+      "color": "#6e9d63"
     }
   },
   "deschampsia-cespitosa": {
@@ -843,6 +1741,114 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461524187/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/461524187/large.jpg",
       "color": "#6a7249"
+    }
+  },
+  "dianella-nigra": {
+    "nz-auckland": {
+      "photoId": 3061551,
+      "observationId": 2715233,
+      "observer": "jacqui-nz",
+      "license": "cc-by",
+      "attribution": "(c) Jacqui Geux, some rights reserved (CC BY)",
+      "observedOn": "2016-02-25",
+      "place": "Auckland City Walk",
+      "taxonName": "Dianella nigra",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/3061551/square.JPG",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/3061551/medium.JPG",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/3061551/large.JPG",
+      "color": "#676a51"
+    }
+  },
+  "dichondra-carolinensis": {
+    "florida-central": {
+      "photoId": 113821012,
+      "observationId": 70060894,
+      "observer": "alex_abair",
+      "license": "cc-by",
+      "attribution": "(c) Alex Abair, some rights reserved (CC BY)",
+      "observedOn": "2021-02-23",
+      "place": "Gainesville, FL, USA",
+      "taxonName": "Dichondra carolinensis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113821012/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113821012/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/113821012/large.jpg",
+      "color": "#617446"
+    }
+  },
+  "dicksonia-squarrosa": {
+    "nz-auckland": {
+      "photoId": 267271702,
+      "observationId": 154666792,
+      "observer": "fiona1960",
+      "license": "cc-by-nc",
+      "attribution": "(c) Fiona Rosalind Johnston, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-04-13",
+      "place": "Auckland Zoo, Auckland, Auckland, NZ",
+      "taxonName": "Dicksonia squarrosa",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/267271702/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/267271702/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/267271702/large.jpg",
+      "color": "#7b7c64"
+    }
+  },
+  "digitalis-purpurea": {
+    "france-atlantic": {
+      "photoId": 534539953,
+      "observationId": 296841869,
+      "observer": "jdmgoncalves",
+      "license": "cc-by-nc-sa",
+      "attribution": "(c) Jorge Goncalves, some rights reserved (CC BY-NC-SA)",
+      "observedOn": "2025-07-10",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534539953/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534539953/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/534539953/large.jpg",
+      "color": "#85857c"
+    }
+  },
+  "diospyros-virginiana": {
+    "florida-central": {
+      "photoId": 288985270,
+      "observationId": 166861084,
+      "observer": "austinsmith",
+      "license": "cc-by",
+      "attribution": "(c) Austin Smith, some rights reserved (CC BY)",
+      "observedOn": "2023-06-06",
+      "place": "Tampa Palms, Tampa, FL, US",
+      "taxonName": "Diospyros virginiana",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288985270/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288985270/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288985270/large.jpg",
+      "color": "#5b6c64"
+    }
+  },
+  "diplacus-aurantiacus": {
+    "ca-south-coast": {
+      "photoId": 638403765,
+      "observationId": 349931034,
+      "observer": "jordancastinado",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jordan Castinado, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-04-14",
+      "place": "Santa Barbara County, CA, USA",
+      "taxonName": "Diplacus aurantiacus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/638403765/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/638403765/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/638403765/large.jpg",
+      "color": "#61602c"
+    },
+    "ca-central-coast": {
+      "photoId": 638403765,
+      "observationId": 349931034,
+      "observer": "jordancastinado",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jordan Castinado, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-04-14",
+      "place": "Santa Barbara County, CA, USA",
+      "taxonName": "Diplacus aurantiacus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/638403765/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/638403765/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/638403765/large.jpg",
+      "color": "#61602c"
     }
   },
   "dryas-octopetala": {
@@ -887,18 +1893,20 @@
       "color": "#9f6b97"
     }
   },
-  "eriophyllum-lanatum": {
-    "pnw": {
-      "photoId": 130796354,
-      "observationId": 79837669,
-      "observer": "brodiecasstalbott",
-      "license": "cc-by",
-      "attribution": "(c) Brodie Cass Talbott, some rights reserved (CC BY)",
-      "observedOn": "2021-05-22",
-      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130796354/square.jpeg",
-      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130796354/medium.jpeg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130796354/large.jpeg",
-      "color": "#5d5636"
+  "echites-umbellatus": {
+    "florida-south": {
+      "photoId": 316792996,
+      "observationId": 181767117,
+      "observer": "emmytang",
+      "license": "cc-by-nc",
+      "attribution": "(c) E. Krapf, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-09-04",
+      "place": "Florida, US",
+      "taxonName": "Echites umbellatus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/316792996/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/316792996/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/316792996/large.jpg",
+      "color": "#73705b"
     }
   },
   "elymus-glaucus": {
@@ -915,6 +1923,130 @@
       "color": "#716f49"
     }
   },
+  "engelmannia-peristenia": {
+    "central-texas": {
+      "photoId": 540597443,
+      "observationId": 300230424,
+      "observer": "txnaturewatch",
+      "license": "cc-by-nc",
+      "attribution": "(c) txnaturewatch, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-07-21",
+      "place": "Travis County, US-TX, US",
+      "taxonName": "Engelmannia peristenia",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/540597443/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/540597443/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/540597443/large.jpg",
+      "color": "#91904c"
+    }
+  },
+  "erica-tetralix": {
+    "ireland": {
+      "photoId": 299446192,
+      "observationId": 172490551,
+      "observer": "kateryna_filiuta",
+      "license": "cc-by-nc",
+      "attribution": "(c) Kateryna Filiuta, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-06-17",
+      "place": "Connemara, Galway, Ireland",
+      "taxonName": "Erica tetralix",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/299446192/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/299446192/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/299446192/large.jpg",
+      "color": "#838c3f"
+    },
+    "scotland-lowlands": {
+      "photoId": 299446192,
+      "observationId": 172490551,
+      "observer": "kateryna_filiuta",
+      "license": "cc-by-nc",
+      "attribution": "(c) Kateryna Filiuta, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-06-17",
+      "place": "Connemara, Galway, Ireland",
+      "taxonName": "Erica tetralix",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/299446192/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/299446192/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/299446192/large.jpg",
+      "color": "#838c3f"
+    }
+  },
+  "eriogonum-tomentosum": {
+    "florida-central": {
+      "photoId": 224077853,
+      "observationId": 131655263,
+      "observer": "smoran3030",
+      "license": "cc-by-nc",
+      "attribution": "(c) Samuel M, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-08-20",
+      "place": "Florida, US",
+      "taxonName": "Eriogonum tomentosum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/224077853/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/224077853/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/224077853/large.jpg",
+      "color": "#7d7f66"
+    }
+  },
+  "eriophyllum-confertiflorum": {
+    "ca-south-coast": {
+      "photoId": 116698910,
+      "observationId": 71658616,
+      "observer": "mrnewt",
+      "license": "cc-by-nc",
+      "attribution": "(c) mrnewt, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-04-29",
+      "place": "Los Angeles County, CA, USA",
+      "taxonName": "Eriophyllum confertiflorum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/116698910/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/116698910/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/116698910/large.jpg",
+      "color": "#574b54"
+    }
+  },
+  "eriophyllum-lanatum": {
+    "pnw": {
+      "photoId": 130796354,
+      "observationId": 79837669,
+      "observer": "brodiecasstalbott",
+      "license": "cc-by",
+      "attribution": "(c) Brodie Cass Talbott, some rights reserved (CC BY)",
+      "observedOn": "2021-05-22",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130796354/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130796354/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/130796354/large.jpeg",
+      "color": "#5d5636"
+    }
+  },
+  "eriophyllum-staechadifolium": {
+    "ca-central-coast": {
+      "photoId": 77341738,
+      "observationId": 48733763,
+      "observer": "joeysantore",
+      "license": "cc-by-nc",
+      "attribution": "(c) Joey Santore, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-06-05",
+      "place": "Ken Patrick Visitor Center, Point Reyes Station, CA 94956, USA",
+      "taxonName": "Eriophyllum staechadifolium",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77341738/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77341738/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77341738/large.jpeg",
+      "color": "#7d806f"
+    }
+  },
+  "ernodea-littoralis": {
+    "florida-south": {
+      "photoId": 464017756,
+      "observationId": 258602706,
+      "observer": "acjci",
+      "license": "cc-by-sa",
+      "attribution": "(c) Turner Brockman, some rights reserved (CC BY-SA)",
+      "observedOn": "2024-12-18",
+      "place": "Monroe County, US-FL, US",
+      "taxonName": "Ernodea littoralis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/464017756/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/464017756/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/464017756/large.jpg",
+      "color": "#7e7e44"
+    }
+  },
   "euonymus-europaeus": {
     "france-continental": {
       "photoId": 5039786,
@@ -929,6 +2061,52 @@
       "color": "#75673d"
     }
   },
+  "euonymus-occidentalis": {
+    "pnw": {
+      "photoId": 572118167,
+      "observationId": 316648379,
+      "observer": "rambryum",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2025-09-25",
+      "place": "Comox Valley, BC, Canada",
+      "taxonName": "Euonymus occidentalis occidentalis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/572118167/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/572118167/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/572118167/large.jpg",
+      "color": "#60754a"
+    }
+  },
+  "eupatorium-cannabinum": {
+    "france-atlantic": {
+      "photoId": 49271078,
+      "observationId": 31479120,
+      "observer": "joergschiele",
+      "license": "cc-by-nc",
+      "attribution": "(c) joergschiele, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-08-25",
+      "place": "57520 Grosbliederstroff, Frankreich",
+      "taxonName": "Eupatorium cannabinum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/49271078/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/49271078/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/49271078/large.jpeg",
+      "color": "#7d8c90"
+    },
+    "france-continental": {
+      "photoId": 49271078,
+      "observationId": 31479120,
+      "observer": "joergschiele",
+      "license": "cc-by-nc",
+      "attribution": "(c) joergschiele, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-08-25",
+      "place": "57520 Grosbliederstroff, Frankreich",
+      "taxonName": "Eupatorium cannabinum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/49271078/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/49271078/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/49271078/large.jpeg",
+      "color": "#7d8c90"
+    }
+  },
   "euphorbia-characias": {
     "france-mediterranean": {
       "photoId": 472528042,
@@ -941,6 +2119,50 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472528042/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472528042/large.jpg",
       "color": "#697f62"
+    }
+  },
+  "eutrochium-maculatum": {
+    "north-michigan": {
+      "photoId": 90369154,
+      "observationId": 56697641,
+      "observer": "keepthefunkalive",
+      "license": "cc-by-nc",
+      "attribution": "(c) Brandon, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-08-16",
+      "place": "Wilderness State Park, Carp Lake, MI, US",
+      "taxonName": "Eutrochium maculatum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/90369154/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/90369154/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/90369154/large.jpg",
+      "color": "#6c7259"
+    },
+    "st-lawrence": {
+      "photoId": 90369154,
+      "observationId": 56697641,
+      "observer": "keepthefunkalive",
+      "license": "cc-by-nc",
+      "attribution": "(c) Brandon, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-08-16",
+      "place": "Wilderness State Park, Carp Lake, MI, US",
+      "taxonName": "Eutrochium maculatum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/90369154/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/90369154/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/90369154/large.jpg",
+      "color": "#6c7259"
+    },
+    "chicago": {
+      "photoId": 90369154,
+      "observationId": 56697641,
+      "observer": "keepthefunkalive",
+      "license": "cc-by-nc",
+      "attribution": "(c) Brandon, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-08-16",
+      "place": "Wilderness State Park, Carp Lake, MI, US",
+      "taxonName": "Eutrochium maculatum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/90369154/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/90369154/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/90369154/large.jpg",
+      "color": "#6c7259"
     }
   },
   "eutrochium-purpureum": {
@@ -983,6 +2205,64 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101080420/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101080420/large.jpeg",
       "color": "#6b5f56"
+    }
+  },
+  "filipendula-ulmaria": {
+    "ireland": {
+      "photoId": 682883607,
+      "observationId": 373654613,
+      "observer": "jolanda_bih",
+      "license": "cc-by-nc",
+      "attribution": "(c) jolanda_bih, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-06-20",
+      "place": "6182 Escholzmatt-Marbach, Schweiz",
+      "taxonName": "Filipendula ulmaria",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682883607/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682883607/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682883607/large.jpg",
+      "color": "#848d6f"
+    },
+    "france-atlantic": {
+      "photoId": 682883607,
+      "observationId": 373654613,
+      "observer": "jolanda_bih",
+      "license": "cc-by-nc",
+      "attribution": "(c) jolanda_bih, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-06-20",
+      "place": "6182 Escholzmatt-Marbach, Schweiz",
+      "taxonName": "Filipendula ulmaria",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682883607/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682883607/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682883607/large.jpg",
+      "color": "#848d6f"
+    },
+    "france-continental": {
+      "photoId": 682883607,
+      "observationId": 373654613,
+      "observer": "jolanda_bih",
+      "license": "cc-by-nc",
+      "attribution": "(c) jolanda_bih, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-06-20",
+      "place": "6182 Escholzmatt-Marbach, Schweiz",
+      "taxonName": "Filipendula ulmaria",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682883607/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682883607/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682883607/large.jpg",
+      "color": "#848d6f"
+    },
+    "scotland-lowlands": {
+      "photoId": 682883607,
+      "observationId": 373654613,
+      "observer": "jolanda_bih",
+      "license": "cc-by-nc",
+      "attribution": "(c) jolanda_bih, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-06-20",
+      "place": "6182 Escholzmatt-Marbach, Schweiz",
+      "taxonName": "Filipendula ulmaria",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682883607/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682883607/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/682883607/large.jpg",
+      "color": "#848d6f"
     }
   },
   "fragaria-chiloensis": {
@@ -1069,6 +2349,66 @@
       "color": "#707c4f"
     }
   },
+  "galium-odoratum": {
+    "france-continental": {
+      "photoId": 8021997,
+      "observationId": 6360469,
+      "observer": "juliuskronos",
+      "license": "cc-by-nc",
+      "attribution": "(c) juliuskronos, some rights reserved (CC BY-NC)",
+      "observedOn": "2017-05-01",
+      "place": "Unnamed Road 21220 Chambolle-Musigny",
+      "taxonName": "Galium odoratum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8021997/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8021997/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/8021997/large.jpeg",
+      "color": "#6d8450"
+    }
+  },
+  "gaultheria-procumbens": {
+    "mid-atlantic": {
+      "photoId": 168065215,
+      "observationId": 100679017,
+      "observer": "trscavo",
+      "license": "cc-by",
+      "attribution": "(c) Tom Scavo, some rights reserved (CC BY)",
+      "observedOn": "2021-11-08",
+      "place": "Chittenden, Vermont, United States",
+      "taxonName": "Gaultheria procumbens",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/168065215/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/168065215/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/168065215/large.jpg",
+      "color": "#626b50"
+    },
+    "north-michigan": {
+      "photoId": 168065215,
+      "observationId": 100679017,
+      "observer": "trscavo",
+      "license": "cc-by",
+      "attribution": "(c) Tom Scavo, some rights reserved (CC BY)",
+      "observedOn": "2021-11-08",
+      "place": "Chittenden, Vermont, United States",
+      "taxonName": "Gaultheria procumbens",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/168065215/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/168065215/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/168065215/large.jpg",
+      "color": "#626b50"
+    },
+    "st-lawrence": {
+      "photoId": 168065215,
+      "observationId": 100679017,
+      "observer": "trscavo",
+      "license": "cc-by",
+      "attribution": "(c) Tom Scavo, some rights reserved (CC BY)",
+      "observedOn": "2021-11-08",
+      "place": "Chittenden, Vermont, United States",
+      "taxonName": "Gaultheria procumbens",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/168065215/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/168065215/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/168065215/large.jpg",
+      "color": "#626b50"
+    }
+  },
   "gaultheria-shallon": {
     "pnw": {
       "photoId": 366749402,
@@ -1081,6 +2421,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366749402/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/366749402/large.jpeg",
       "color": "#8b866f"
+    }
+  },
+  "gentiana-acaulis": {
+    "france-alpine": {
+      "photoId": 199643906,
+      "observationId": 118179569,
+      "observer": "prevot",
+      "license": "cc-by-nc",
+      "attribution": "(c) mario bianco prevot, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-05-22",
+      "place": "Torino, Piemonte, IT",
+      "taxonName": "Gentiana acaulis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/199643906/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/199643906/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/199643906/large.jpg",
+      "color": "#6b7568"
     }
   },
   "gentiana-lutea": {
@@ -1109,6 +2465,68 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128475066/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/128475066/large.jpeg",
       "color": "#3d4e10"
+    }
+  },
+  "geranium-sylvaticum": {
+    "france-alpine": {
+      "photoId": 601571465,
+      "observationId": 331604888,
+      "observer": "alexandra_hunault",
+      "license": "cc-by-nc",
+      "attribution": "(c) Alexandra Hunault, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-06-26",
+      "place": "73350 Champagny-en-Vanoise, France",
+      "taxonName": "Geranium sylvaticum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/601571465/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/601571465/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/601571465/large.jpg",
+      "color": "#526434"
+    },
+    "scotland-lowlands": {
+      "photoId": 601571465,
+      "observationId": 331604888,
+      "observer": "alexandra_hunault",
+      "license": "cc-by-nc",
+      "attribution": "(c) Alexandra Hunault, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-06-26",
+      "place": "73350 Champagny-en-Vanoise, France",
+      "taxonName": "Geranium sylvaticum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/601571465/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/601571465/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/601571465/large.jpg",
+      "color": "#526434"
+    }
+  },
+  "glandularia-maritima": {
+    "florida-central": {
+      "photoId": 620362938,
+      "observationId": 340852658,
+      "observer": "naturedom12",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2026-03-01",
+      "place": "Florida, US",
+      "taxonName": "Glandularia maritima",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/620362938/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/620362938/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/620362938/large.jpg",
+      "color": "#8d8888"
+    }
+  },
+  "gymnocarpium-dryopteris": {
+    "france-alpine": {
+      "photoId": 84369704,
+      "observationId": 53056455,
+      "observer": "orsejka",
+      "license": "cc-by-nc",
+      "attribution": "(c) Věra Kafková, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-07-14",
+      "place": "Chalet zum Brunnen, 3929 Täsch, Švýcarsko",
+      "taxonName": "Gymnocarpium dryopteris",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/84369704/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/84369704/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/84369704/large.jpeg",
+      "color": "#5d7138"
     }
   },
   "hamamelis-virginiana": {
@@ -1177,6 +2595,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/410169394/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/410169394/large.jpg",
       "color": "#766a22"
+    }
+  },
+  "helianthus-angustifolius": {
+    "florida-central": {
+      "photoId": 238576470,
+      "observationId": 139482912,
+      "observer": "floridaswampexplorer",
+      "license": "cc-by-nc",
+      "attribution": "(c) Blayre, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-10-17",
+      "place": "Hawthorne, FL 32640, USA",
+      "taxonName": "Helianthus angustifolius",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/238576470/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/238576470/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/238576470/large.jpeg",
+      "color": "#75701e"
     }
   },
   "helianthus-debilis": {
@@ -1303,6 +2737,126 @@
       "color": "#7f6d4b"
     }
   },
+  "iris-pseudacorus": {
+    "france-atlantic": {
+      "photoId": 388720217,
+      "observationId": 219606662,
+      "observer": "laurochka",
+      "license": "cc-by-nc",
+      "attribution": "(c) Laura, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-05-31",
+      "place": "Craigentinny/Meadowbank, Edinburgh, UK",
+      "taxonName": "Iris pseudacorus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/388720217/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/388720217/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/388720217/large.jpeg",
+      "color": "#6b7223"
+    },
+    "ireland": {
+      "photoId": 388720217,
+      "observationId": 219606662,
+      "observer": "laurochka",
+      "license": "cc-by-nc",
+      "attribution": "(c) Laura, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-05-31",
+      "place": "Craigentinny/Meadowbank, Edinburgh, UK",
+      "taxonName": "Iris pseudacorus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/388720217/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/388720217/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/388720217/large.jpeg",
+      "color": "#6b7223"
+    },
+    "scotland-lowlands": {
+      "photoId": 388720217,
+      "observationId": 219606662,
+      "observer": "laurochka",
+      "license": "cc-by-nc",
+      "attribution": "(c) Laura, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-05-31",
+      "place": "Craigentinny/Meadowbank, Edinburgh, UK",
+      "taxonName": "Iris pseudacorus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/388720217/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/388720217/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/388720217/large.jpeg",
+      "color": "#6b7223"
+    }
+  },
+  "iris-versicolor": {
+    "north-michigan": {
+      "photoId": 346432782,
+      "observationId": 196797586,
+      "observer": "pheasantboy77",
+      "license": "cc-by-nc",
+      "attribution": "(c) Dalton Spencer, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-06-12",
+      "place": "Emmet, Michigan, United States",
+      "taxonName": "Iris versicolor",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/346432782/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/346432782/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/346432782/large.jpg",
+      "color": "#496644"
+    },
+    "st-lawrence": {
+      "photoId": 346432782,
+      "observationId": 196797586,
+      "observer": "pheasantboy77",
+      "license": "cc-by-nc",
+      "attribution": "(c) Dalton Spencer, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-06-12",
+      "place": "Emmet, Michigan, United States",
+      "taxonName": "Iris versicolor",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/346432782/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/346432782/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/346432782/large.jpg",
+      "color": "#496644"
+    }
+  },
+  "iris-virginica": {
+    "florida-central": {
+      "photoId": 185275198,
+      "observationId": 109880836,
+      "observer": "bchildress",
+      "license": "cc-by-nc",
+      "attribution": "(c) bchildress, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-03-29",
+      "place": "Okefenokee National Wildlife Refuge, Folkston, GA, US",
+      "taxonName": "Iris virginica",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/185275198/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/185275198/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/185275198/large.jpg",
+      "color": "#916c84"
+    }
+  },
+  "juncus-patens": {
+    "pnw": {
+      "photoId": 273340186,
+      "observationId": 158150175,
+      "observer": "sedgequeen",
+      "license": "cc-by-nc",
+      "attribution": "(c) Barbara L. Wilson, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-04-28",
+      "place": "Sonoma County, CA, USA",
+      "taxonName": "Juncus patens",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/273340186/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/273340186/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/273340186/large.jpeg",
+      "color": "#67583e"
+    },
+    "ca-central-coast": {
+      "photoId": 273340186,
+      "observationId": 158150175,
+      "observer": "sedgequeen",
+      "license": "cc-by-nc",
+      "attribution": "(c) Barbara L. Wilson, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-04-28",
+      "place": "Sonoma County, CA, USA",
+      "taxonName": "Juncus patens",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/273340186/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/273340186/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/273340186/large.jpeg",
+      "color": "#67583e"
+    }
+  },
   "juniperus-communis": {
     "france-alpine": {
       "photoId": 641406909,
@@ -1345,6 +2899,22 @@
       "color": "#63723a"
     }
   },
+  "kosteletzkya-pentacarpos": {
+    "florida-south": {
+      "photoId": 519539417,
+      "observationId": 288877547,
+      "observer": "elizabethgandy",
+      "license": "cc-by-nc",
+      "attribution": "(c) Elizabeth Gandy, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-06-10",
+      "place": "Stoney Creek Blvd, Venice, FL, US",
+      "taxonName": "Kosteletzkya pentacarpos",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/519539417/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/519539417/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/519539417/large.jpg",
+      "color": "#8d8166"
+    }
+  },
   "larix-decidua": {
     "france-alpine": {
       "photoId": 19605299,
@@ -1373,6 +2943,38 @@
       "color": "#5f7039"
     }
   },
+  "lespedeza-bicolor": {
+    "kanto": {
+      "photoId": 327426449,
+      "observationId": 187253986,
+      "observer": "alex_wentworth",
+      "license": "cc-by",
+      "attribution": "(c) Alexander Wentworth, some rights reserved (CC BY)",
+      "observedOn": "2023-10-11",
+      "place": "Jataki Trail, 2179 Takaomachi, Hachioji, Tokyo 193-0844, Japan",
+      "taxonName": "Lespedeza bicolor",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/327426449/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/327426449/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/327426449/large.jpeg",
+      "color": "#66876b"
+    }
+  },
+  "lespedeza-capitata": {
+    "chicago": {
+      "photoId": 6786109,
+      "observationId": 5504769,
+      "observer": "vvoelker",
+      "license": "cc-by-nc",
+      "attribution": "(c) Vanessa Voelker, some rights reserved (CC BY-NC)",
+      "observedOn": "2017-03-26",
+      "place": "Manito Prairie Nature Preserve, ",
+      "taxonName": "Lespedeza capitata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/6786109/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/6786109/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/6786109/large.jpeg",
+      "color": "#83674d"
+    }
+  },
   "liatris-gracilis": {
     "florida-central": {
       "photoId": 162946962,
@@ -1387,6 +2989,38 @@
       "color": "#6f7060"
     }
   },
+  "liatris-pycnostachya": {
+    "chicago": {
+      "photoId": 547216817,
+      "observationId": 303595801,
+      "observer": "prairiebeeman",
+      "license": "cc-by-nc",
+      "attribution": "(c) H. Wilson Montgomery, Jr., some rights reserved (CC BY-NC)",
+      "observedOn": "2025-08-03",
+      "place": "Warbler Trail, Charleston, IL, US",
+      "taxonName": "Liatris pycnostachya",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/547216817/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/547216817/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/547216817/large.jpg",
+      "color": "#836e48"
+    }
+  },
+  "libertia-grandiflora": {
+    "nz-auckland": {
+      "photoId": 472894916,
+      "observationId": 263251005,
+      "observer": "joknight_nz",
+      "license": "cc-by-nc",
+      "attribution": "(c) Joseph Knight, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-02-24",
+      "place": "Whangārei Heads 0174, New Zealand",
+      "taxonName": "Libertia grandiflora",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472894916/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472894916/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472894916/large.jpeg",
+      "color": "#464637"
+    }
+  },
   "ligustrum-vulgare": {
     "france-continental": {
       "photoId": 101958444,
@@ -1399,6 +3033,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101958444/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/101958444/large.jpeg",
       "color": "#5c734a"
+    }
+  },
+  "lobelia-angulata": {
+    "nz-auckland": {
+      "photoId": 500105274,
+      "observationId": 278522237,
+      "observer": "yannickd",
+      "license": "cc-by-nc",
+      "attribution": "(c) Yannick D, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-05-03",
+      "place": "Huia, Auckland 0604, New Zealand",
+      "taxonName": "Lobelia angulata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/500105274/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/500105274/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/500105274/large.jpeg",
+      "color": "#7f8730"
     }
   },
   "lobelia-cardinalis": {
@@ -1441,6 +3091,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75484172/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/75484172/large.jpg",
       "color": "#567528"
+    }
+  },
+  "lonicera-japonica": {
+    "kanto": {
+      "photoId": 719990650,
+      "observationId": 392846462,
+      "observer": "celmisia",
+      "license": "cc-by-nc",
+      "attribution": "(c) celmisia, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-05-13",
+      "place": "日本、〒285-0017 千葉県佐倉市城内町",
+      "taxonName": "Lonicera japonica",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/719990650/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/719990650/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/719990650/large.jpg",
+      "color": "#616f35"
     }
   },
   "lonicera-periclymenum": {
@@ -1497,6 +3163,36 @@
       "color": "#696213"
     }
   },
+  "lupinus-albifrons": {
+    "ca-south-coast": {
+      "photoId": 477959959,
+      "observationId": 266040677,
+      "observer": "suelindner",
+      "license": "cc-by-nc",
+      "attribution": "(c) Sue Lindner, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-03-19",
+      "place": "Edgewood County Park and Natural Preserve, Redwood City, CA, USA",
+      "taxonName": "Lupinus albifrons",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/477959959/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/477959959/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/477959959/large.jpeg",
+      "color": "#7b7375"
+    },
+    "ca-central-coast": {
+      "photoId": 477959959,
+      "observationId": 266040677,
+      "observer": "suelindner",
+      "license": "cc-by-nc",
+      "attribution": "(c) Sue Lindner, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-03-19",
+      "place": "Edgewood County Park and Natural Preserve, Redwood City, CA, USA",
+      "taxonName": "Lupinus albifrons",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/477959959/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/477959959/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/477959959/large.jpeg",
+      "color": "#7b7375"
+    }
+  },
   "lupinus-polyphyllus": {
     "pnw": {
       "photoId": 672293042,
@@ -1511,6 +3207,82 @@
       "color": "#797f67"
     }
   },
+  "lygodium-articulatum": {
+    "nz-auckland": {
+      "photoId": 353219398,
+      "observationId": 200225749,
+      "observer": "ajlett",
+      "license": "cc-by-nc",
+      "attribution": "(c) Lana, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-02-23",
+      "place": "Ōkaihau 0476, New Zealand",
+      "taxonName": "Lygodium articulatum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353219398/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353219398/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/353219398/large.jpeg",
+      "color": "#556e52"
+    }
+  },
+  "lysichiton-americanus": {
+    "pnw": {
+      "photoId": 34623987,
+      "observationId": 22277505,
+      "observer": "ryanmkurtz",
+      "license": "cc-by",
+      "attribution": "(c) Ryan Kurtz, some rights reserved (CC BY)",
+      "observedOn": "2019-04-09",
+      "place": "Olympic National Forest, Quinault, WA, US",
+      "taxonName": "Lysichiton americanus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/34623987/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/34623987/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/34623987/large.jpg",
+      "color": "#7a8c4e"
+    }
+  },
+  "lythrum-salicaria": {
+    "ireland": {
+      "photoId": 698590667,
+      "observationId": 381773284,
+      "observer": "frankmedlicott",
+      "license": "cc-by-nc",
+      "attribution": "(c) Frank Medlicott, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-07-15",
+      "place": "Newry BT34, UK",
+      "taxonName": "Lythrum salicaria",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/698590667/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/698590667/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/698590667/large.jpg",
+      "color": "#847761"
+    },
+    "france-atlantic": {
+      "photoId": 698590667,
+      "observationId": 381773284,
+      "observer": "frankmedlicott",
+      "license": "cc-by-nc",
+      "attribution": "(c) Frank Medlicott, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-07-15",
+      "place": "Newry BT34, UK",
+      "taxonName": "Lythrum salicaria",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/698590667/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/698590667/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/698590667/large.jpg",
+      "color": "#847761"
+    },
+    "france-continental": {
+      "photoId": 698590667,
+      "observationId": 381773284,
+      "observer": "frankmedlicott",
+      "license": "cc-by-nc",
+      "attribution": "(c) Frank Medlicott, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-07-15",
+      "place": "Newry BT34, UK",
+      "taxonName": "Lythrum salicaria",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/698590667/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/698590667/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/698590667/large.jpg",
+      "color": "#847761"
+    }
+  },
   "magnolia-grandiflora": {
     "florida-central": {
       "photoId": 246812927,
@@ -1523,6 +3295,54 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/246812927/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/246812927/large.jpg",
       "color": "#5e5e53"
+    }
+  },
+  "magnolia-kobus": {
+    "kanto": {
+      "photoId": 117289638,
+      "observationId": 71985813,
+      "observer": "belvedere04",
+      "license": "cc-by",
+      "attribution": "(c) Marco Mussita, some rights reserved (CC BY)",
+      "observedOn": "2021-03-23",
+      "place": "Sakura Ward, Saitama, Japan",
+      "taxonName": "Magnolia kobus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/117289638/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/117289638/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/117289638/large.jpeg",
+      "color": "#647793"
+    }
+  },
+  "malus-fusca": {
+    "pnw": {
+      "photoId": 141795636,
+      "observationId": 86108803,
+      "observer": "ellyne",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2021-05-03",
+      "place": "Morton Lake, Comox-Strathcona, British Columbia, Canada",
+      "taxonName": "Malus fusca",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/141795636/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/141795636/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/141795636/large.jpeg",
+      "color": "#4d6732"
+    }
+  },
+  "malvaviscus-arboreus": {
+    "central-texas": {
+      "photoId": 96122920,
+      "observationId": 60129515,
+      "observer": "nicolette-ann",
+      "license": "cc-by-nc",
+      "attribution": "(c) nicolette-ann, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-09-19",
+      "place": "Montfort Dr, Dallas, TX, US",
+      "taxonName": "Malvaviscus arboreus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/96122920/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/96122920/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/96122920/large.jpg",
+      "color": "#56775b"
     }
   },
   "mimosa-strigillosa": {
@@ -1567,6 +3387,52 @@
       "color": "#70865b"
     }
   },
+  "morella-californica": {
+    "pnw": {
+      "photoId": 617397869,
+      "observationId": 339392882,
+      "observer": "teaganjohnson",
+      "license": "cc-by-nc",
+      "attribution": "(c) teaganjohnson, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-02-16",
+      "place": "Ucluelet, BC, CA",
+      "taxonName": "Morella californica",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/617397869/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/617397869/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/617397869/large.jpg",
+      "color": "#71864e"
+    }
+  },
+  "morella-cerifera": {
+    "florida-south": {
+      "photoId": 159372415,
+      "observationId": 95963361,
+      "observer": "mrnovas",
+      "license": "cc-by-nc",
+      "attribution": "(c) mrnovas, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-09-24",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159372415/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159372415/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159372415/large.jpg",
+      "color": "#788662"
+    }
+  },
+  "muehlenbeckia-complexa": {
+    "nz-auckland": {
+      "photoId": 472894346,
+      "observationId": 263250977,
+      "observer": "joknight_nz",
+      "license": "cc-by-nc",
+      "attribution": "(c) Joseph Knight, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-02-24",
+      "place": "Whangārei Heads 0174, New Zealand",
+      "taxonName": "Muehlenbeckia complexa grandifolia",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472894346/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472894346/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/472894346/large.jpeg",
+      "color": "#46731d"
+    }
+  },
   "muhlenbergia-capillaris": {
     "florida-central": {
       "photoId": 163020312,
@@ -1593,18 +3459,36 @@
       "color": "#6d7273"
     }
   },
-  "morella-cerifera": {
-    "florida-south": {
-      "photoId": 159372415,
-      "observationId": 95963361,
-      "observer": "mrnovas",
+  "muhlenbergia-lindheimeri": {
+    "central-texas": {
+      "photoId": 624623408,
+      "observationId": 342954971,
+      "observer": "rm12",
       "license": "cc-by-nc",
-      "attribution": "(c) mrnovas, some rights reserved (CC BY-NC)",
-      "observedOn": "2021-09-24",
-      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159372415/square.jpg",
-      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159372415/medium.jpg",
-      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/159372415/large.jpg",
-      "color": "#788662"
+      "attribution": "(c) Bob McLean, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-03-14",
+      "place": "Mount Sharp Rd, Wimberley, TX, US",
+      "taxonName": "Muhlenbergia lindheimeri",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/624623408/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/624623408/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/624623408/large.jpg",
+      "color": "#746557"
+    }
+  },
+  "muhlenbergia-rigens": {
+    "ca-south-coast": {
+      "photoId": 221561945,
+      "observationId": 130295125,
+      "observer": "dreaminginblue",
+      "license": "cc-by-nc",
+      "attribution": "(c) Amanda Bueno-Kling, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-08-10",
+      "place": "Cleveland National Forest, Julian, CA, US",
+      "taxonName": "Muhlenbergia rigens",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/221561945/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/221561945/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/221561945/large.jpg",
+      "color": "#9e845d"
     }
   },
   "myrcianthes-fragrans": {
@@ -1647,6 +3531,38 @@
       "color": "#4a5738"
     }
   },
+  "oemleria-cerasiformis": {
+    "pnw": {
+      "photoId": 265650385,
+      "observationId": 153782326,
+      "observer": "littlelegofan",
+      "license": "cc-by",
+      "attribution": "(c) Gavin Slater, some rights reserved (CC BY)",
+      "observedOn": "2023-03-31",
+      "place": "Washington, US",
+      "taxonName": "Oemleria cerasiformis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/265650385/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/265650385/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/265650385/large.jpeg",
+      "color": "#717648"
+    }
+  },
+  "oenothera-speciosa": {
+    "central-texas": {
+      "photoId": 287894303,
+      "observationId": 166263976,
+      "observer": "reiver",
+      "license": "cc-by-nc",
+      "attribution": "(c) reiver, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-06-08",
+      "place": "Garland, TX, USA",
+      "taxonName": "Oenothera speciosa",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/287894303/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/287894303/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/287894303/large.jpg",
+      "color": "#514d45"
+    }
+  },
   "origanum-vulgare": {
     "france-continental": {
       "photoId": 681502647,
@@ -1659,6 +3575,50 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/681502647/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/681502647/large.jpg",
       "color": "#5a6035"
+    }
+  },
+  "osmundastrum-cinnamomeum": {
+    "chicago": {
+      "photoId": 41184748,
+      "observationId": 26520478,
+      "observer": "johnhboldt",
+      "license": "cc-by-nc",
+      "attribution": "(c) John Boldt, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-06-04",
+      "place": "Northbrook, IL 60062, USA",
+      "taxonName": "Osmundastrum cinnamomeum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41184748/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41184748/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41184748/large.jpeg",
+      "color": "#5b7223"
+    },
+    "st-lawrence": {
+      "photoId": 41184748,
+      "observationId": 26520478,
+      "observer": "johnhboldt",
+      "license": "cc-by-nc",
+      "attribution": "(c) John Boldt, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-06-04",
+      "place": "Northbrook, IL 60062, USA",
+      "taxonName": "Osmundastrum cinnamomeum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41184748/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41184748/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41184748/large.jpeg",
+      "color": "#5b7223"
+    },
+    "florida-central": {
+      "photoId": 41184748,
+      "observationId": 26520478,
+      "observer": "johnhboldt",
+      "license": "cc-by-nc",
+      "attribution": "(c) John Boldt, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-06-04",
+      "place": "Northbrook, IL 60062, USA",
+      "taxonName": "Osmundastrum cinnamomeum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41184748/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41184748/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/41184748/large.jpeg",
+      "color": "#5b7223"
     }
   },
   "packera-aurea": {
@@ -1717,6 +3677,54 @@
       "color": "#50533c"
     }
   },
+  "patrinia-scabiosifolia": {
+    "kanto": {
+      "photoId": 444797939,
+      "observationId": 248884692,
+      "observer": "tbc_watanabe",
+      "license": "cc-by",
+      "attribution": "(c) WATANABE Hitoshi 渡辺仁, some rights reserved (CC BY)",
+      "observedOn": "2024-10-24",
+      "place": "よこやまの道",
+      "taxonName": "Patrinia scabiosifolia",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/444797939/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/444797939/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/444797939/large.jpeg",
+      "color": "#60651b"
+    }
+  },
+  "pavonia-lasiopetala": {
+    "central-texas": {
+      "photoId": 69525884,
+      "observationId": 43836672,
+      "observer": "catatx88",
+      "license": "cc-by-nc",
+      "attribution": "(c) catatx88, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-04-26",
+      "place": "Eganhill Dr, Austin, TX, US",
+      "taxonName": "Pavonia lasiopetala",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/69525884/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/69525884/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/69525884/large.jpg",
+      "color": "#517834"
+    }
+  },
+  "paxistima-myrsinites": {
+    "pnw": {
+      "photoId": 110235875,
+      "observationId": 68126143,
+      "observer": "robroymcg",
+      "license": "cc-by-nc",
+      "attribution": "(c) robroymcg, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-01-15",
+      "place": "Orcas Island, Eastsound, WA, US",
+      "taxonName": "Paxistima myrsinites",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/110235875/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/110235875/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/110235875/large.jpg",
+      "color": "#788471"
+    }
+  },
   "penstemon-digitalis": {
     "mid-atlantic": {
       "photoId": 570725776,
@@ -1745,6 +3753,38 @@
       "color": "#766f5e"
     }
   },
+  "pentalinon-luteum": {
+    "florida-south": {
+      "photoId": 559238215,
+      "observationId": 309881626,
+      "observer": "acjci",
+      "license": "cc-by-sa",
+      "attribution": "(c) Turner Brockman, some rights reserved (CC BY-SA)",
+      "observedOn": "2025-07-21",
+      "place": "Miami-Dade County, US-FL, US",
+      "taxonName": "Pentalinon luteum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/559238215/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/559238215/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/559238215/large.jpg",
+      "color": "#73632e"
+    }
+  },
+  "philadelphus-lewisii": {
+    "pnw": {
+      "photoId": 403927271,
+      "observationId": 227643325,
+      "observer": "elizabeth1929",
+      "license": "cc-by-nc",
+      "attribution": "(c) Elizabeth Chang, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-07-06",
+      "place": "Mill Bay",
+      "taxonName": "Philadelphus lewisii",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/403927271/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/403927271/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/403927271/large.jpeg",
+      "color": "#697e50"
+    }
+  },
   "phillyrea-angustifolia": {
     "france-mediterranean": {
       "photoId": 438558384,
@@ -1757,6 +3797,66 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/438558384/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/438558384/large.jpeg",
       "color": "#716f4e"
+    }
+  },
+  "phormium-tenax": {
+    "nz-auckland": {
+      "photoId": 242760079,
+      "observationId": 141672773,
+      "observer": "fergus",
+      "license": "cc-by-nc",
+      "attribution": "(c) Alex Fergus, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-11-10",
+      "place": "Far North District, Northland, New Zealand",
+      "taxonName": "Phormium tenax",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/242760079/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/242760079/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/242760079/large.jpeg",
+      "color": "#575e42"
+    }
+  },
+  "phyla-nodiflora": {
+    "central-texas": {
+      "photoId": 274426095,
+      "observationId": 158821913,
+      "observer": "waynesweeds",
+      "license": "cc-by-nc",
+      "attribution": "(c) Wayne Longbottom, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-05-01",
+      "place": "SUMMRLND KEY, FL 33043, USA",
+      "taxonName": "Phyla nodiflora",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274426095/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274426095/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274426095/large.jpeg",
+      "color": "#74786b"
+    },
+    "florida-central": {
+      "photoId": 274426095,
+      "observationId": 158821913,
+      "observer": "waynesweeds",
+      "license": "cc-by-nc",
+      "attribution": "(c) Wayne Longbottom, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-05-01",
+      "place": "SUMMRLND KEY, FL 33043, USA",
+      "taxonName": "Phyla nodiflora",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274426095/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274426095/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274426095/large.jpeg",
+      "color": "#74786b"
+    },
+    "florida-south": {
+      "photoId": 274426095,
+      "observationId": 158821913,
+      "observer": "waynesweeds",
+      "license": "cc-by-nc",
+      "attribution": "(c) Wayne Longbottom, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-05-01",
+      "place": "SUMMRLND KEY, FL 33043, USA",
+      "taxonName": "Phyla nodiflora",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274426095/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274426095/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/274426095/large.jpeg",
+      "color": "#74786b"
     }
   },
   "physocarpus-capitatus": {
@@ -1801,6 +3901,38 @@
       "color": "#6a7f53"
     }
   },
+  "picea-sitchensis": {
+    "pnw": {
+      "photoId": 56792297,
+      "observationId": 35970105,
+      "observer": "sedgequeen",
+      "license": "cc-by-nc",
+      "attribution": "(c) Barbara L. Wilson, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-11-22",
+      "place": "Agate Beach, Newport, OR, USA",
+      "taxonName": "Picea sitchensis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/56792297/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/56792297/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/56792297/large.jpeg",
+      "color": "#637b8e"
+    }
+  },
+  "pinus-banksiana": {
+    "north-michigan": {
+      "photoId": 672389905,
+      "observationId": 368156422,
+      "observer": "daksu",
+      "license": "cc-by",
+      "attribution": "(c) daksu, some rights reserved (CC BY)",
+      "observedOn": "2026-06-03",
+      "place": "Michigan, US",
+      "taxonName": "Pinus banksiana",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/672389905/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/672389905/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/672389905/large.jpg",
+      "color": "#70663e"
+    }
+  },
   "pinus-cembra": {
     "france-alpine": {
       "photoId": 207092201,
@@ -1843,6 +3975,22 @@
       "color": "#63867a"
     }
   },
+  "pinus-rigida": {
+    "mid-atlantic": {
+      "photoId": 6447727,
+      "observationId": 5217061,
+      "observer": "mellis",
+      "license": "cc-by",
+      "attribution": "(c) Michael Ellis, some rights reserved (CC BY)",
+      "observedOn": "2017-03-03",
+      "place": "Patuxent River Park, Bowie, MD, US",
+      "taxonName": "Pinus rigida",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/6447727/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/6447727/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/6447727/large.jpg",
+      "color": "#727682"
+    }
+  },
   "pinus-sylvestris": {
     "france-continental": {
       "photoId": 187147410,
@@ -1869,6 +4017,100 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/488824341/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/488824341/large.jpeg",
       "color": "#625d2d"
+    }
+  },
+  "pittosporum-crassifolium": {
+    "nz-auckland": {
+      "photoId": 89999758,
+      "observationId": 56473631,
+      "observer": "wyattd",
+      "license": "cc-by-nc",
+      "attribution": "(c) Wyatt, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-08-15",
+      "place": "Omiha, Auckland 1081, New Zealand",
+      "taxonName": "Pittosporum crassifolium",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/89999758/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/89999758/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/89999758/large.jpeg",
+      "color": "#63615d"
+    }
+  },
+  "plectritis-congesta": {
+    "pnw": {
+      "photoId": 279618405,
+      "observationId": 161753681,
+      "observer": "drew_meyer",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2023-05-06",
+      "place": "Sunset, West Linn, OR, USA",
+      "taxonName": "Plectritis congesta",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/279618405/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/279618405/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/279618405/large.jpeg",
+      "color": "#858f5a"
+    }
+  },
+  "poa-anceps": {
+    "nz-auckland": {
+      "photoId": 27505382,
+      "observationId": 17994176,
+      "observer": "kaipatiki_naturewatch",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2018-08-26",
+      "place": "KCYaEst Kaipatiki Creek Estuary, Glenfield, Auckland",
+      "taxonName": "Poa anceps",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/27505382/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/27505382/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/27505382/large.jpeg",
+      "color": "#6f795c"
+    }
+  },
+  "poa-nemoralis": {
+    "france-atlantic": {
+      "photoId": 393737455,
+      "observationId": 222294488,
+      "observer": "titouangelez",
+      "license": "cc-by-nc",
+      "attribution": "(c) Titouan Gelez, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-06-12",
+      "place": "Paris, Île-de-France, France",
+      "taxonName": "Poa nemoralis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/393737455/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/393737455/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/393737455/large.jpeg",
+      "color": "#2b351d"
+    },
+    "france-mediterranean": {
+      "photoId": 393737455,
+      "observationId": 222294488,
+      "observer": "titouangelez",
+      "license": "cc-by-nc",
+      "attribution": "(c) Titouan Gelez, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-06-12",
+      "place": "Paris, Île-de-France, France",
+      "taxonName": "Poa nemoralis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/393737455/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/393737455/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/393737455/large.jpeg",
+      "color": "#2b351d"
+    }
+  },
+  "podocarpus-totara": {
+    "nz-auckland": {
+      "photoId": 720581255,
+      "observationId": 393147176,
+      "observer": "acnestis",
+      "license": "cc-by",
+      "attribution": "(c) Angus Campbell, some rights reserved (CC BY)",
+      "observedOn": "2026-08-20",
+      "place": "Blockhouse Bay, Blockhouse Bay, Auckland 0600, New Zealand",
+      "taxonName": "Podocarpus totara",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/720581255/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/720581255/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/720581255/large.jpg",
+      "color": "#37381f"
     }
   },
   "polystichum-acrostichoides": {
@@ -1899,6 +4141,36 @@
       "color": "#59701f"
     }
   },
+  "pontederia-cordata": {
+    "florida-central": {
+      "photoId": 398807333,
+      "observationId": 225036726,
+      "observer": "reedlindwurm",
+      "license": "cc-by-nc",
+      "attribution": "(c) Reed Lindwurm, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-06-24",
+      "place": "Davie, FL, USA",
+      "taxonName": "Pontederia cordata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/398807333/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/398807333/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/398807333/large.jpg",
+      "color": "#5e7e3b"
+    },
+    "florida-south": {
+      "photoId": 398807333,
+      "observationId": 225036726,
+      "observer": "reedlindwurm",
+      "license": "cc-by-nc",
+      "attribution": "(c) Reed Lindwurm, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-06-24",
+      "place": "Davie, FL, USA",
+      "taxonName": "Pontederia cordata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/398807333/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/398807333/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/398807333/large.jpg",
+      "color": "#5e7e3b"
+    }
+  },
   "populus-trichocarpa": {
     "pnw": {
       "photoId": 67703344,
@@ -1913,6 +4185,22 @@
       "color": "#868869"
     }
   },
+  "primula-hendersonii": {
+    "pnw": {
+      "photoId": 7479248,
+      "observationId": 5982898,
+      "observer": "kriskrug",
+      "license": "cc-by-nc",
+      "attribution": "(c) KK, some rights reserved (CC BY-NC)",
+      "observedOn": "2017-04-27",
+      "place": "Galiano Island, , BC, CA",
+      "taxonName": "Primula hendersonii",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7479248/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7479248/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7479248/large.jpg",
+      "color": "#8b795a"
+    }
+  },
   "primula-veris": {
     "france-atlantic": {
       "photoId": 247991747,
@@ -1925,6 +4213,50 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/247991747/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/247991747/large.jpeg",
       "color": "#728373"
+    }
+  },
+  "primula-vulgaris": {
+    "ireland": {
+      "photoId": 33594254,
+      "observationId": 21695373,
+      "observer": "mikegrutherford",
+      "license": "cc-by-nc",
+      "attribution": "(c) Mike G. Rutherford, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-03-28",
+      "place": "B6398, Melrose TD6, UK",
+      "taxonName": "Primula vulgaris",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33594254/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33594254/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33594254/large.jpeg",
+      "color": "#6c653d"
+    },
+    "france-atlantic": {
+      "photoId": 33594254,
+      "observationId": 21695373,
+      "observer": "mikegrutherford",
+      "license": "cc-by-nc",
+      "attribution": "(c) Mike G. Rutherford, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-03-28",
+      "place": "B6398, Melrose TD6, UK",
+      "taxonName": "Primula vulgaris",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33594254/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33594254/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33594254/large.jpeg",
+      "color": "#6c653d"
+    },
+    "scotland-lowlands": {
+      "photoId": 33594254,
+      "observationId": 21695373,
+      "observer": "mikegrutherford",
+      "license": "cc-by-nc",
+      "attribution": "(c) Mike G. Rutherford, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-03-28",
+      "place": "B6398, Melrose TD6, UK",
+      "taxonName": "Primula vulgaris",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33594254/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33594254/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33594254/large.jpeg",
+      "color": "#6c653d"
     }
   },
   "prunus-avium": {
@@ -1969,6 +4301,22 @@
       "color": "#84963f"
     }
   },
+  "prunus-mexicana": {
+    "central-texas": {
+      "photoId": 332176988,
+      "observationId": 189595990,
+      "observer": "bob777",
+      "license": "cc-by-nc",
+      "attribution": "(c) Bob O'Kennon, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-10-31",
+      "place": "Fort Worth, TX, USA",
+      "taxonName": "Prunus mexicana",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/332176988/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/332176988/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/332176988/large.jpeg",
+      "color": "#84706b"
+    }
+  },
   "prunus-serotina": {
     "mid-atlantic": {
       "photoId": 18571083,
@@ -1995,6 +4343,52 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/234242119/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/234242119/large.jpg",
       "color": "#677253"
+    }
+  },
+  "prunus-virginiana": {
+    "north-michigan": {
+      "photoId": 284563266,
+      "observationId": 164465356,
+      "observer": "chalupachelano",
+      "license": "cc-by-nc",
+      "attribution": "(c) Paul Celano, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-05-26",
+      "place": "Ponderosa Dr, Elmira, MI, US",
+      "taxonName": "Prunus virginiana",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/284563266/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/284563266/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/284563266/large.jpg",
+      "color": "#5e9840"
+    },
+    "st-lawrence": {
+      "photoId": 284563266,
+      "observationId": 164465356,
+      "observer": "chalupachelano",
+      "license": "cc-by-nc",
+      "attribution": "(c) Paul Celano, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-05-26",
+      "place": "Ponderosa Dr, Elmira, MI, US",
+      "taxonName": "Prunus virginiana",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/284563266/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/284563266/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/284563266/large.jpg",
+      "color": "#5e9840"
+    }
+  },
+  "pseudopanax-lessonii": {
+    "nz-auckland": {
+      "photoId": 377520993,
+      "observationId": 213611179,
+      "observer": "matthewes",
+      "license": "cc-by-nc",
+      "attribution": "(c) Matthew Syvenky, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-04-29",
+      "place": "Thames-Coromandel District, Waikato, New Zealand",
+      "taxonName": "Pseudopanax lessonii",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/377520993/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/377520993/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/377520993/large.jpeg",
+      "color": "#63814f"
     }
   },
   "pseudotsuga-menziesii": {
@@ -2025,6 +4419,22 @@
       "color": "#657d41"
     }
   },
+  "pycnanthemum-muticum": {
+    "mid-atlantic": {
+      "photoId": 304658918,
+      "observationId": 175310106,
+      "observer": "patpacheco",
+      "license": "cc-by-nc",
+      "attribution": "(c) patpacheco, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-07-26",
+      "place": "Teaneck Creek Conservancy, Teaneck, NJ, US",
+      "taxonName": "Pycnanthemum muticum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/304658918/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/304658918/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/304658918/large.jpg",
+      "color": "#7b895e"
+    }
+  },
   "quercus-alba": {
     "mid-atlantic": {
       "photoId": 63892986,
@@ -2053,6 +4463,22 @@
       "color": "#707d81"
     }
   },
+  "quercus-geminata": {
+    "florida-central": {
+      "photoId": 323558963,
+      "observationId": 185276847,
+      "observer": "hollymsch",
+      "license": "cc-by-nc",
+      "attribution": "(c) hollymsch, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-09-24",
+      "place": "Cedar Key Scrub State Reserve, Cedar Key, FL, US",
+      "taxonName": "Quercus geminata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/323558963/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/323558963/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/323558963/large.jpg",
+      "color": "#767e49"
+    }
+  },
   "quercus-ilex": {
     "france-mediterranean": {
       "photoId": 411372250,
@@ -2065,6 +4491,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/411372250/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/411372250/large.jpeg",
       "color": "#61603b"
+    }
+  },
+  "quercus-myrtifolia": {
+    "florida-central": {
+      "photoId": 468034135,
+      "observationId": 260602799,
+      "observer": "alice_herden",
+      "license": "cc-by-nc",
+      "attribution": "(c) Alice Herden, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-02-04",
+      "place": "Crystal River, FL 34429, USA",
+      "taxonName": "Quercus myrtifolia",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/468034135/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/468034135/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/468034135/large.jpeg",
+      "color": "#798459"
     }
   },
   "quercus-petraea": {
@@ -2123,6 +4565,22 @@
       "color": "#5a7c21"
     }
   },
+  "quercus-stellata": {
+    "central-texas": {
+      "photoId": 66322185,
+      "observationId": 41799021,
+      "observer": "drewe",
+      "license": "cc-by-nc",
+      "attribution": "(c) drewe, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-04-09",
+      "place": "W Shady Shores Rd, Shady Shores, TX, US",
+      "taxonName": "Quercus stellata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66322185/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66322185/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/66322185/large.jpg",
+      "color": "#768b6d"
+    }
+  },
   "quercus-virginiana": {
     "florida-central": {
       "photoId": 58356780,
@@ -2149,6 +4607,22 @@
       "color": "#4e472b"
     }
   },
+  "ratibida-columnifera": {
+    "central-texas": {
+      "photoId": 283907244,
+      "observationId": 164106930,
+      "observer": "mmaysmore",
+      "license": "cc-by-nc",
+      "attribution": "(c) mmaysmore, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-05-27",
+      "place": "Troy",
+      "taxonName": "Ratibida columnifera",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/283907244/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/283907244/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/283907244/large.jpeg",
+      "color": "#72701f"
+    }
+  },
   "rhamnus-alaternus": {
     "france-mediterranean": {
       "photoId": 274032719,
@@ -2163,6 +4637,22 @@
       "color": "#6e7645"
     }
   },
+  "rhinanthus-minor": {
+    "scotland-lowlands": {
+      "photoId": 528306005,
+      "observationId": 293522473,
+      "observer": "jacksoninthepulpit",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jackson Corzato, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-06-28",
+      "place": "Lower Granton Road, Edinburgh, Scotland, GB",
+      "taxonName": "Rhinanthus minor",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/528306005/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/528306005/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/528306005/large.jpg",
+      "color": "#788160"
+    }
+  },
   "rhododendron-ferrugineum": {
     "france-alpine": {
       "photoId": 100871358,
@@ -2175,6 +4665,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/100871358/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/100871358/large.jpeg",
       "color": "#574f2a"
+    }
+  },
+  "ribes-alpinum": {
+    "france-alpine": {
+      "photoId": 242680576,
+      "observationId": 141630374,
+      "observer": "kr_greinwald",
+      "license": "cc-by-nc",
+      "attribution": "(c) Konrad and Roland Greinwald, some rights reserved (CC BY-NC)",
+      "observedOn": "2006-08-14",
+      "place": "38520 Le Bourg-d'Oisans, Frankreich",
+      "taxonName": "Ribes alpinum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/242680576/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/242680576/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/242680576/large.jpeg",
+      "color": "#85793d"
     }
   },
   "ribes-sanguineum": {
@@ -2233,6 +4739,158 @@
       "color": "#4e8f4f"
     }
   },
+  "rosa-pendulina": {
+    "france-alpine": {
+      "photoId": 132996994,
+      "observationId": 81107437,
+      "observer": "achine",
+      "license": "cc-by-nc",
+      "attribution": "(c) Gianfranco CARIGNANO, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-05-30",
+      "place": "10040 La Cassa TO, Italia",
+      "taxonName": "Rosa pendulina",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/132996994/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/132996994/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/132996994/large.jpg",
+      "color": "#322e26"
+    }
+  },
+  "rosa-setigera": {
+    "chicago": {
+      "photoId": 139868468,
+      "observationId": 85048464,
+      "observer": "pfslumen",
+      "license": "cc-by-nc",
+      "attribution": "(c) pfslumen, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-06-29",
+      "place": "Palos Park, IL 60464, USA",
+      "taxonName": "Rosa setigera",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/139868468/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/139868468/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/139868468/large.jpeg",
+      "color": "#5b705d"
+    }
+  },
+  "rosa-spinosissima": {
+    "ireland": {
+      "photoId": 683515391,
+      "observationId": 373980901,
+      "observer": "bruce97293",
+      "license": "cc-by-nc",
+      "attribution": "(c) Bruce Shiel, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-06-21",
+      "place": "The Raven, Co. Wexford, Ireland",
+      "taxonName": "Rosa spinosissima",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/683515391/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/683515391/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/683515391/large.jpg",
+      "color": "#5d6525"
+    },
+    "scotland-lowlands": {
+      "photoId": 683515391,
+      "observationId": 373980901,
+      "observer": "bruce97293",
+      "license": "cc-by-nc",
+      "attribution": "(c) Bruce Shiel, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-06-21",
+      "place": "The Raven, Co. Wexford, Ireland",
+      "taxonName": "Rosa spinosissima",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/683515391/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/683515391/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/683515391/large.jpg",
+      "color": "#5d6525"
+    }
+  },
+  "rubus-fruticosus": {
+    "france-atlantic": {
+      "photoId": 149855775,
+      "observationId": 90658268,
+      "observer": "aclarke4",
+      "license": "cc-by-nc",
+      "attribution": "(c) Andrew, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-08-10",
+      "place": "McCraes Brae, Carrickfergus, Northern Ireland, GB",
+      "taxonName": "Rubus ulmifolius",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149855775/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149855775/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149855775/large.jpeg",
+      "color": "#6f7659"
+    },
+    "france-continental": {
+      "photoId": 149855775,
+      "observationId": 90658268,
+      "observer": "aclarke4",
+      "license": "cc-by-nc",
+      "attribution": "(c) Andrew, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-08-10",
+      "place": "McCraes Brae, Carrickfergus, Northern Ireland, GB",
+      "taxonName": "Rubus ulmifolius",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149855775/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149855775/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149855775/large.jpeg",
+      "color": "#6f7659"
+    },
+    "ireland": {
+      "photoId": 149855775,
+      "observationId": 90658268,
+      "observer": "aclarke4",
+      "license": "cc-by-nc",
+      "attribution": "(c) Andrew, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-08-10",
+      "place": "McCraes Brae, Carrickfergus, Northern Ireland, GB",
+      "taxonName": "Rubus ulmifolius",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149855775/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149855775/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/149855775/large.jpeg",
+      "color": "#6f7659"
+    }
+  },
+  "rubus-leucodermis": {
+    "pnw": {
+      "photoId": 7427333,
+      "observationId": 5947344,
+      "observer": "alex_abair",
+      "license": "cc-by",
+      "attribution": "(c) Alex Abair, some rights reserved (CC BY)",
+      "observedOn": "2016-06-30",
+      "place": "Benton County, OR, USA",
+      "taxonName": "Rubus leucodermis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7427333/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7427333/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/7427333/large.jpg",
+      "color": "#799f5c"
+    }
+  },
+  "rubus-parviflorus": {
+    "pnw": {
+      "photoId": 288373570,
+      "observationId": 166520150,
+      "observer": "littlelegofan",
+      "license": "cc-by",
+      "attribution": "(c) Gavin Slater, some rights reserved (CC BY)",
+      "observedOn": "2023-06-09",
+      "place": "Lewisville, WA 98604, USA",
+      "taxonName": "Rubus parviflorus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288373570/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288373570/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288373570/large.jpeg",
+      "color": "#628047"
+    },
+    "north-michigan": {
+      "photoId": 288373570,
+      "observationId": 166520150,
+      "observer": "littlelegofan",
+      "license": "cc-by",
+      "attribution": "(c) Gavin Slater, some rights reserved (CC BY)",
+      "observedOn": "2023-06-09",
+      "place": "Lewisville, WA 98604, USA",
+      "taxonName": "Rubus parviflorus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288373570/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288373570/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288373570/large.jpeg",
+      "color": "#628047"
+    }
+  },
   "rubus-spectabilis": {
     "pnw": {
       "photoId": 634851834,
@@ -2287,6 +4945,22 @@
       "color": "#596064"
     }
   },
+  "sagittaria-lancifolia": {
+    "florida-south": {
+      "photoId": 449346470,
+      "observationId": 251160210,
+      "observer": "jsfrancis",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jake Francis, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-11-09",
+      "place": "Green Cay",
+      "taxonName": "Sagittaria lancifolia lancifolia",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/449346470/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/449346470/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/449346470/large.jpg",
+      "color": "#5d603f"
+    }
+  },
   "salix-caprea": {
     "france-atlantic": {
       "photoId": 412329891,
@@ -2325,6 +4999,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/257758284/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/257758284/large.jpeg",
       "color": "#6d8785"
+    }
+  },
+  "salix-sitchensis": {
+    "pnw": {
+      "photoId": 361184702,
+      "observationId": 204349484,
+      "observer": "abe",
+      "license": "cc-by-nc",
+      "attribution": "(c) T. Abe Lloyd, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-03-28",
+      "place": "Whatcom County, WA, USA",
+      "taxonName": "Salix sitchensis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/361184702/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/361184702/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/361184702/large.jpeg",
+      "color": "#85735b"
     }
   },
   "salvia-coccinea": {
@@ -2367,6 +5057,22 @@
       "color": "#81815f"
     }
   },
+  "salvia-rosmarinus": {
+    "france-mediterranean": {
+      "photoId": 3034936,
+      "observationId": 2696383,
+      "observer": "zanskar",
+      "license": "cc-by-nc",
+      "attribution": "(c) David Renoult, some rights reserved (CC BY-NC)",
+      "observedOn": "2011-01-16",
+      "place": "saint florent",
+      "taxonName": "Salvia rosmarinus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/3034936/square.JPG",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/3034936/medium.JPG",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/3034936/large.JPG",
+      "color": "#3a3a2b"
+    }
+  },
   "sambucus-nigra": {
     "france-atlantic": {
       "photoId": 149948792,
@@ -2381,6 +5087,22 @@
       "color": "#3b553b"
     }
   },
+  "saxifraga-stolonifera": {
+    "kanto": {
+      "photoId": 665638215,
+      "observationId": 364614193,
+      "observer": "gg_copen",
+      "license": "cc-by-nc",
+      "attribution": "(c) gg_copen, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-05-24",
+      "place": "Oyaminami 2-Chōme, Ebina, Kanagawa, JP",
+      "taxonName": "Saxifraga stolonifera",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/665638215/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/665638215/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/665638215/large.jpg",
+      "color": "#578325"
+    }
+  },
   "schizachyrium-scoparium": {
     "mid-atlantic": {
       "photoId": 325664379,
@@ -2393,6 +5115,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/325664379/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/325664379/large.jpg",
       "color": "#7a6952"
+    }
+  },
+  "sequoia-sempervirens": {
+    "ca-central-coast": {
+      "photoId": 326787987,
+      "observationId": 186931697,
+      "observer": "aparrot1",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2023-10-09",
+      "place": "3 Mile Trail Loop, Soquel, CA, US",
+      "taxonName": "Sequoia sempervirens",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/326787987/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/326787987/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/326787987/large.jpg",
+      "color": "#57534c"
     }
   },
   "serenoa-repens": {
@@ -2419,6 +5157,96 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/544635200/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/544635200/large.jpg",
       "color": "#7292af"
+    }
+  },
+  "silene-dioica": {
+    "ireland": {
+      "photoId": 489327795,
+      "observationId": 272003459,
+      "observer": "anttondondel",
+      "license": "cc-by-nc",
+      "attribution": "(c) Dondel, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-04-21",
+      "place": "Saint-Pierre-d'Irube",
+      "taxonName": "Silene dioica",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/489327795/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/489327795/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/489327795/large.jpeg",
+      "color": "#6d8d35"
+    },
+    "france-atlantic": {
+      "photoId": 489327795,
+      "observationId": 272003459,
+      "observer": "anttondondel",
+      "license": "cc-by-nc",
+      "attribution": "(c) Dondel, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-04-21",
+      "place": "Saint-Pierre-d'Irube",
+      "taxonName": "Silene dioica",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/489327795/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/489327795/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/489327795/large.jpeg",
+      "color": "#6d8d35"
+    },
+    "france-continental": {
+      "photoId": 489327795,
+      "observationId": 272003459,
+      "observer": "anttondondel",
+      "license": "cc-by-nc",
+      "attribution": "(c) Dondel, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-04-21",
+      "place": "Saint-Pierre-d'Irube",
+      "taxonName": "Silene dioica",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/489327795/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/489327795/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/489327795/large.jpeg",
+      "color": "#6d8d35"
+    },
+    "scotland-lowlands": {
+      "photoId": 489327795,
+      "observationId": 272003459,
+      "observer": "anttondondel",
+      "license": "cc-by-nc",
+      "attribution": "(c) Dondel, some rights reserved (CC BY-NC)",
+      "observedOn": "2025-04-21",
+      "place": "Saint-Pierre-d'Irube",
+      "taxonName": "Silene dioica",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/489327795/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/489327795/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/489327795/large.jpeg",
+      "color": "#6d8d35"
+    }
+  },
+  "solidago-caesia": {
+    "mid-atlantic": {
+      "photoId": 25362145,
+      "observationId": 16800160,
+      "observer": "tsn",
+      "license": "cc-by",
+      "attribution": "(c) Tom Norton, some rights reserved (CC BY)",
+      "observedOn": "2018-09-22",
+      "place": "Thetford Center, VT 05075, USA",
+      "taxonName": "Solidago caesia",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/25362145/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/25362145/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/25362145/large.jpeg",
+      "color": "#707160"
+    }
+  },
+  "solidago-flexicaulis": {
+    "north-michigan": {
+      "photoId": 322253283,
+      "observationId": 184598615,
+      "observer": "hikerhez",
+      "license": "cc-by-nc",
+      "attribution": "(c) hikerhez, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-09-23",
+      "place": "Blaine Township, MI, USA",
+      "taxonName": "Solidago flexicaulis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/322253283/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/322253283/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/322253283/large.jpeg",
+      "color": "#658a59"
     }
   },
   "solidago-lepida": {
@@ -2489,6 +5317,38 @@
       "color": "#3b4321"
     }
   },
+  "sorghastrum-secundum": {
+    "florida-central": {
+      "photoId": 237744594,
+      "observationId": 139045836,
+      "observer": "marykeim",
+      "license": "cc-by-nc-sa",
+      "attribution": "(c) Mary Keim, some rights reserved (CC BY-NC-SA)",
+      "observedOn": "2022-10-14",
+      "place": "Wedgefield, Florida, United States",
+      "taxonName": "Sorghastrum secundum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/237744594/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/237744594/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/237744594/large.jpg",
+      "color": "#7b744e"
+    }
+  },
+  "sporobolus-heterolepis": {
+    "chicago": {
+      "photoId": 427920652,
+      "observationId": 240208236,
+      "observer": "danielpohl",
+      "license": "cc-by-nc",
+      "attribution": "(c) Daniel Pohl, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-09-03",
+      "place": "Sugar River Alder Nature Preserve, Rockton, IL, US",
+      "taxonName": "Sporobolus heterolepis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/427920652/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/427920652/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/427920652/large.jpeg",
+      "color": "#867e66"
+    }
+  },
   "stachytarpheta-jamaicensis": {
     "florida-south": {
       "photoId": 124172766,
@@ -2515,6 +5375,38 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/93030640/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/93030640/large.jpg",
       "color": "#718744"
+    }
+  },
+  "styphnolobium-affine": {
+    "central-texas": {
+      "photoId": 265374840,
+      "observationId": 153634597,
+      "observer": "txwoofus",
+      "license": "cc-by-nc-sa",
+      "attribution": "(c) txwoofus, some rights reserved (CC BY-NC-SA)",
+      "observedOn": "2023-04-05",
+      "place": "Texas, US",
+      "taxonName": "Styphnolobium affine",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/265374840/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/265374840/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/265374840/large.jpeg",
+      "color": "#606e55"
+    }
+  },
+  "styrax-japonicus": {
+    "kanto": {
+      "photoId": 508694611,
+      "observationId": 283116435,
+      "observer": "tbc_watanabe",
+      "license": "cc-by",
+      "attribution": "(c) WATANABE Hitoshi 渡辺仁, some rights reserved (CC BY)",
+      "observedOn": "2025-05-22",
+      "place": "日本、〒192-0023 東京都八王子市久保山町",
+      "taxonName": "Styrax japonicus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/508694611/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/508694611/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/508694611/large.jpg",
+      "color": "#7c9737"
     }
   },
   "succisa-pratensis": {
@@ -2545,6 +5437,52 @@
       "color": "#756e5e"
     }
   },
+  "symphoricarpos-mollis": {
+    "ca-south-coast": {
+      "photoId": 77528318,
+      "observationId": 48850482,
+      "observer": "goflowers",
+      "license": "cc-by-nc",
+      "attribution": "(c) Sarah Wang, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-06-07",
+      "place": "San Jose, CA 95120, USA",
+      "taxonName": "Symphoricarpos mollis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77528318/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77528318/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77528318/large.jpg",
+      "color": "#65794a"
+    },
+    "ca-central-coast": {
+      "photoId": 77528318,
+      "observationId": 48850482,
+      "observer": "goflowers",
+      "license": "cc-by-nc",
+      "attribution": "(c) Sarah Wang, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-06-07",
+      "place": "San Jose, CA 95120, USA",
+      "taxonName": "Symphoricarpos mollis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77528318/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77528318/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77528318/large.jpg",
+      "color": "#65794a"
+    }
+  },
+  "symphyotrichum-carolinianum": {
+    "florida-south": {
+      "photoId": 251756295,
+      "observationId": 146434691,
+      "observer": "lillybyrd",
+      "license": "cc-by-nc",
+      "attribution": "(c) lillybyrd, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-01-12",
+      "place": "Florida, US",
+      "taxonName": "Ampelaster carolinianus",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/251756295/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/251756295/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/251756295/large.jpg",
+      "color": "#757261"
+    }
+  },
   "symphyotrichum-novae-angliae": {
     "mid-atlantic": {
       "photoId": 561877074,
@@ -2557,6 +5495,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561877074/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/561877074/large.jpg",
       "color": "#6a6d32"
+    }
+  },
+  "symphyotrichum-oblongifolium": {
+    "central-texas": {
+      "photoId": 440786634,
+      "observationId": 246861666,
+      "observer": "snapshotswithsheila",
+      "license": "cc-by-nc",
+      "attribution": "(c) snapshotswithsheila, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-10-11",
+      "place": "Flower Mound, TX, USA",
+      "taxonName": "Symphyotrichum oblongifolium",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/440786634/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/440786634/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/440786634/large.jpeg",
+      "color": "#8b7d4a"
     }
   },
   "symphyotrichum-subspicatum": {
@@ -2587,6 +5541,50 @@
       "color": "#6f6651"
     }
   },
+  "teucrium-scorodonia": {
+    "ireland": {
+      "photoId": 213314285,
+      "observationId": 125765803,
+      "observer": "goldamsel",
+      "license": "cc-by-nc",
+      "attribution": "(c) m.vogel, some rights reserved (CC BY-NC)",
+      "observedOn": "2012-07-11",
+      "place": "Drumatehy, Co. Clare, Irland",
+      "taxonName": "Teucrium scorodonia",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/213314285/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/213314285/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/213314285/large.jpeg",
+      "color": "#73775d"
+    },
+    "france-atlantic": {
+      "photoId": 213314285,
+      "observationId": 125765803,
+      "observer": "goldamsel",
+      "license": "cc-by-nc",
+      "attribution": "(c) m.vogel, some rights reserved (CC BY-NC)",
+      "observedOn": "2012-07-11",
+      "place": "Drumatehy, Co. Clare, Irland",
+      "taxonName": "Teucrium scorodonia",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/213314285/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/213314285/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/213314285/large.jpeg",
+      "color": "#73775d"
+    },
+    "scotland-lowlands": {
+      "photoId": 213314285,
+      "observationId": 125765803,
+      "observer": "goldamsel",
+      "license": "cc-by-nc",
+      "attribution": "(c) m.vogel, some rights reserved (CC BY-NC)",
+      "observedOn": "2012-07-11",
+      "place": "Drumatehy, Co. Clare, Irland",
+      "taxonName": "Teucrium scorodonia",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/213314285/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/213314285/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/213314285/large.jpeg",
+      "color": "#73775d"
+    }
+  },
   "thuja-plicata": {
     "pnw": {
       "photoId": 160208840,
@@ -2615,6 +5613,80 @@
       "color": "#372f25"
     }
   },
+  "tiarella-trifoliata": {
+    "pnw": {
+      "photoId": 288373951,
+      "observationId": 166520310,
+      "observer": "littlelegofan",
+      "license": "cc-by",
+      "attribution": "(c) Gavin Slater, some rights reserved (CC BY)",
+      "observedOn": "2023-06-09",
+      "place": "Lewisville, WA 98604, USA",
+      "taxonName": "Tiarella trifoliata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288373951/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288373951/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/288373951/large.jpeg",
+      "color": "#548324"
+    }
+  },
+  "tilia-americana": {
+    "mid-atlantic": {
+      "photoId": 77680075,
+      "observationId": 48943658,
+      "observer": "naturalist_glenn",
+      "license": "cc-by-nc",
+      "attribution": "(c) Glenn Perricone, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-06-08",
+      "place": "Pratts Wayne Woods County Forest Preserve, Bartlett, IL, US",
+      "taxonName": "Tilia americana",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77680075/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77680075/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77680075/large.jpg",
+      "color": "#3f5717"
+    },
+    "north-michigan": {
+      "photoId": 77680075,
+      "observationId": 48943658,
+      "observer": "naturalist_glenn",
+      "license": "cc-by-nc",
+      "attribution": "(c) Glenn Perricone, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-06-08",
+      "place": "Pratts Wayne Woods County Forest Preserve, Bartlett, IL, US",
+      "taxonName": "Tilia americana",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77680075/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77680075/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77680075/large.jpg",
+      "color": "#3f5717"
+    },
+    "st-lawrence": {
+      "photoId": 77680075,
+      "observationId": 48943658,
+      "observer": "naturalist_glenn",
+      "license": "cc-by-nc",
+      "attribution": "(c) Glenn Perricone, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-06-08",
+      "place": "Pratts Wayne Woods County Forest Preserve, Bartlett, IL, US",
+      "taxonName": "Tilia americana",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77680075/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77680075/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77680075/large.jpg",
+      "color": "#3f5717"
+    },
+    "chicago": {
+      "photoId": 77680075,
+      "observationId": 48943658,
+      "observer": "naturalist_glenn",
+      "license": "cc-by-nc",
+      "attribution": "(c) Glenn Perricone, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-06-08",
+      "place": "Pratts Wayne Woods County Forest Preserve, Bartlett, IL, US",
+      "taxonName": "Tilia americana",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77680075/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77680075/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/77680075/large.jpg",
+      "color": "#3f5717"
+    }
+  },
   "tilia-cordata": {
     "france-continental": {
       "photoId": 358356339,
@@ -2627,6 +5699,98 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/358356339/medium.jpeg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/358356339/large.jpeg",
       "color": "#74805a"
+    }
+  },
+  "trachelospermum-asiaticum": {
+    "kanto": {
+      "photoId": 685916457,
+      "observationId": 375224352,
+      "observer": "heybrows",
+      "license": "cc-by-nc",
+      "attribution": "(c) heybrows, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-06-25",
+      "place": "日本、〒194-0211 東京都町田市相原町",
+      "taxonName": "Trachelospermum asiaticum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/685916457/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/685916457/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/685916457/large.jpg",
+      "color": "#2d7d22"
+    }
+  },
+  "tradescantia-ohiensis": {
+    "chicago": {
+      "photoId": 132486167,
+      "observationId": 80814264,
+      "observer": "chartreuse",
+      "license": "cc-by-nc",
+      "attribution": "(c) Ben Beranek, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-05-29",
+      "place": "Hodgkins, IL, USA",
+      "taxonName": "Tradescantia ohiensis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/132486167/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/132486167/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/132486167/large.jpg",
+      "color": "#4e6135"
+    },
+    "florida-central": {
+      "photoId": 132486167,
+      "observationId": 80814264,
+      "observer": "chartreuse",
+      "license": "cc-by-nc",
+      "attribution": "(c) Ben Beranek, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-05-29",
+      "place": "Hodgkins, IL, USA",
+      "taxonName": "Tradescantia ohiensis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/132486167/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/132486167/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/132486167/large.jpg",
+      "color": "#4e6135"
+    },
+    "florida-south": {
+      "photoId": 132486167,
+      "observationId": 80814264,
+      "observer": "chartreuse",
+      "license": "cc-by-nc",
+      "attribution": "(c) Ben Beranek, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-05-29",
+      "place": "Hodgkins, IL, USA",
+      "taxonName": "Tradescantia ohiensis",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/132486167/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/132486167/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/132486167/large.jpg",
+      "color": "#4e6135"
+    }
+  },
+  "trillium-erectum": {
+    "mid-atlantic": {
+      "photoId": 12308031,
+      "observationId": 9109873,
+      "observer": "rnupusers",
+      "license": "cc-by-nc",
+      "attribution": "(c) rnupusers, some rights reserved (CC BY-NC)",
+      "observedOn": "2011-05-07",
+      "place": "Rouge, Toronto, ON, Canada",
+      "taxonName": "Trillium erectum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/12308031/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/12308031/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/12308031/large.jpeg",
+      "color": "#a58866"
+    }
+  },
+  "trillium-recurvatum": {
+    "chicago": {
+      "photoId": 129893754,
+      "observationId": 79309952,
+      "observer": "ashleywold",
+      "license": "cc-by-nc",
+      "attribution": "(c) Ashley Wold, some rights reserved (CC BY-NC)",
+      "observedOn": "2021-05-18",
+      "place": "Waukegan, IL 60087, USA",
+      "taxonName": "Trillium recurvatum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/129893754/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/129893754/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/129893754/large.jpeg",
+      "color": "#6d6831"
     }
   },
   "tripsacum-dactyloides": {
@@ -2683,6 +5847,84 @@
       "color": "#5d735c"
     }
   },
+  "ulmus-crassifolia": {
+    "central-texas": {
+      "photoId": 54547305,
+      "observationId": 34645003,
+      "observer": "lanechaffin",
+      "license": "cc0",
+      "attribution": "no rights reserved",
+      "observedOn": "2019-10-20",
+      "place": "Moffat Rd, Temple, TX, US",
+      "taxonName": "Ulmus crassifolia",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54547305/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54547305/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/54547305/large.jpg",
+      "color": "#828769"
+    }
+  },
+  "ungnadia-speciosa": {
+    "central-texas": {
+      "photoId": 33385485,
+      "observationId": 21569689,
+      "observer": "georgeafghan",
+      "license": "cc-by-nc",
+      "attribution": "(c) George Afghan, some rights reserved (CC BY-NC)",
+      "observedOn": "2019-03-24",
+      "place": "1112 S 1st St, Austin, TX, US",
+      "taxonName": "Ungnadia speciosa",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33385485/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33385485/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/33385485/large.jpg",
+      "color": "#63685a"
+    }
+  },
+  "urtica-dioica": {
+    "ireland": {
+      "photoId": 681411839,
+      "observationId": 372880905,
+      "observer": "amyd86",
+      "license": "cc-by-nc",
+      "attribution": "(c) amyd86, some rights reserved (CC BY-NC)",
+      "observedOn": "2026-06-18",
+      "place": "St Joseph's Church, Crossgar, Downpatrick BT30 9EB, UK",
+      "taxonName": "Urtica dioica",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/681411839/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/681411839/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/681411839/large.jpg",
+      "color": "#67955b"
+    }
+  },
+  "vaccinium-angustifolium": {
+    "north-michigan": {
+      "photoId": 430540911,
+      "observationId": 241567487,
+      "observer": "pantherophis",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jakob Mueller, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-09-08",
+      "place": "Ottawa, ON, Canada",
+      "taxonName": "Vaccinium angustifolium",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/430540911/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/430540911/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/430540911/large.jpg",
+      "color": "#5d581a"
+    },
+    "st-lawrence": {
+      "photoId": 430540911,
+      "observationId": 241567487,
+      "observer": "pantherophis",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jakob Mueller, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-09-08",
+      "place": "Ottawa, ON, Canada",
+      "taxonName": "Vaccinium angustifolium",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/430540911/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/430540911/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/430540911/large.jpg",
+      "color": "#5d581a"
+    }
+  },
   "vaccinium-corymbosum": {
     "mid-atlantic": {
       "photoId": 404683762,
@@ -2725,6 +5967,22 @@
       "color": "#6a8255"
     }
   },
+  "vaccinium-stamineum": {
+    "florida-central": {
+      "photoId": 73669694,
+      "observationId": 46447538,
+      "observer": "jayhorn",
+      "license": "cc-by",
+      "attribution": "(c) Jay Horn, some rights reserved (CC BY)",
+      "observedOn": "2020-05-18",
+      "place": "Fort Pierce, FL 34945, USA",
+      "taxonName": "Vaccinium stamineum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73669694/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73669694/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/73669694/large.jpeg",
+      "color": "#64764f"
+    }
+  },
   "vaccinium-vitis-idaea": {
     "france-alpine": {
       "photoId": 94586233,
@@ -2737,6 +5995,50 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/94586233/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/94586233/large.jpg",
       "color": "#6f764c"
+    }
+  },
+  "verbena-hastata": {
+    "north-michigan": {
+      "photoId": 91172807,
+      "observationId": 57173139,
+      "observer": "psweet",
+      "license": "cc-by-sa",
+      "attribution": "(c) psweet, some rights reserved (CC BY-SA)",
+      "observedOn": "2020-07-17",
+      "place": "Gander Mt. FP, Lake County, IL, USA",
+      "taxonName": "Verbena hastata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/91172807/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/91172807/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/91172807/large.jpg",
+      "color": "#48542f"
+    },
+    "chicago": {
+      "photoId": 91172807,
+      "observationId": 57173139,
+      "observer": "psweet",
+      "license": "cc-by-sa",
+      "attribution": "(c) psweet, some rights reserved (CC BY-SA)",
+      "observedOn": "2020-07-17",
+      "place": "Gander Mt. FP, Lake County, IL, USA",
+      "taxonName": "Verbena hastata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/91172807/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/91172807/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/91172807/large.jpg",
+      "color": "#48542f"
+    },
+    "st-lawrence": {
+      "photoId": 91172807,
+      "observationId": 57173139,
+      "observer": "psweet",
+      "license": "cc-by-sa",
+      "attribution": "(c) psweet, some rights reserved (CC BY-SA)",
+      "observedOn": "2020-07-17",
+      "place": "Gander Mt. FP, Lake County, IL, USA",
+      "taxonName": "Verbena hastata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/91172807/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/91172807/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/91172807/large.jpg",
+      "color": "#48542f"
     }
   },
   "viburnum-dentatum": {
@@ -2781,6 +6083,22 @@
       "color": "#515d2c"
     }
   },
+  "viburnum-rufidulum": {
+    "central-texas": {
+      "photoId": 204288798,
+      "observationId": 120764406,
+      "observer": "jeffmci9",
+      "license": "cc-by-nc",
+      "attribution": "(c) Jeff McIntyre, some rights reserved (CC BY-NC)",
+      "observedOn": "2022-05-10",
+      "place": "Austin, TX, USA",
+      "taxonName": "Viburnum rufidulum",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/204288798/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/204288798/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/204288798/large.jpeg",
+      "color": "#5b7956"
+    }
+  },
   "viburnum-tinus": {
     "france-mediterranean": {
       "photoId": 264854988,
@@ -2795,6 +6113,84 @@
       "color": "#535646"
     }
   },
+  "vicia-cracca": {
+    "ireland": {
+      "photoId": 397414556,
+      "observationId": 224244268,
+      "observer": "vicki_rock",
+      "license": "cc-by-nc",
+      "attribution": "(c) vicki_rock, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-06-21",
+      "place": "Slane",
+      "taxonName": "Vicia cracca",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/397414556/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/397414556/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/397414556/large.jpeg",
+      "color": "#657c4b"
+    },
+    "scotland-lowlands": {
+      "photoId": 397414556,
+      "observationId": 224244268,
+      "observer": "vicki_rock",
+      "license": "cc-by-nc",
+      "attribution": "(c) vicki_rock, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-06-21",
+      "place": "Slane",
+      "taxonName": "Vicia cracca",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/397414556/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/397414556/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/397414556/large.jpeg",
+      "color": "#657c4b"
+    }
+  },
+  "viola-sororia": {
+    "chicago": {
+      "photoId": 267897236,
+      "observationId": 155011707,
+      "observer": "jackchaillet",
+      "license": "cc-by-nc",
+      "attribution": "(c) jackchaillet, some rights reserved (CC BY-NC)",
+      "observedOn": "2023-04-15",
+      "place": "Lindberg Rd, West Lafayette, IN, US",
+      "taxonName": "Viola sororia sororia",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/267897236/square.jpg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/267897236/medium.jpg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/267897236/large.jpg",
+      "color": "#6f776a"
+    }
+  },
+  "vitis-girdiana": {
+    "ca-south-coast": {
+      "photoId": 419406114,
+      "observationId": 235801396,
+      "observer": "possiblybuddha",
+      "license": "cc-by-nc",
+      "attribution": "(c) possiblybuddha, some rights reserved (CC BY-NC)",
+      "observedOn": "2024-08-14",
+      "place": "N Canyon Blvd, Monrovia, CA, US",
+      "taxonName": "Vitis girdiana",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/419406114/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/419406114/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/419406114/large.jpeg",
+      "color": "#6d763f"
+    }
+  },
+  "wisteria-frutescens": {
+    "florida-central": {
+      "photoId": 63955602,
+      "observationId": 40259608,
+      "observer": "ericpo1",
+      "license": "cc-by-nc",
+      "attribution": "(c) Eric M Powell, some rights reserved (CC BY-NC)",
+      "observedOn": "2020-03-18",
+      "place": "Clay County, FL, USA",
+      "taxonName": "Wisteria frutescens frutescens",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/63955602/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/63955602/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/63955602/large.jpeg",
+      "color": "#71874f"
+    }
+  },
   "zamia-integrifolia": {
     "florida-south": {
       "photoId": 35970855,
@@ -2807,6 +6203,22 @@
       "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35970855/medium.jpg",
       "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/35970855/large.jpg",
       "color": "#757c64"
+    }
+  },
+  "zelkova-serrata": {
+    "kanto": {
+      "photoId": 131873415,
+      "observationId": 80457006,
+      "observer": "belvedere04",
+      "license": "cc-by",
+      "attribution": "(c) Marco Mussita, some rights reserved (CC BY)",
+      "observedOn": "2021-05-26",
+      "place": "Sakurayama, Zushi, Kanagawa 249-0005, Japan",
+      "taxonName": "Zelkova serrata",
+      "thumbUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/131873415/square.jpeg",
+      "mediumUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/131873415/medium.jpeg",
+      "largeUrl": "https://inaturalist-open-data.s3.amazonaws.com/photos/131873415/large.jpeg",
+      "color": "#65774b"
     }
   },
   "zizia-aurea": {

@@ -51,6 +51,9 @@ export const en = {
   // Only ever shown when the app was opened from a Home Screen icon, which has
   // no reload button of its own (components/pull-to-reload.ts).
   "nav.reload": "Reload",
+  "nav.offline": "Offline mode",
+  "nav.on": "On",
+  "nav.off": "Off",
   // The three things the pull-down pill says, in the order you meet them.
   "pullToReload.pull": "Pull to reload",
   "pullToReload.release": "Release to reload",
@@ -144,7 +147,7 @@ export const en = {
   "offline.onSub": "Until you switch back.",
   "offline.off": "Online",
   "offline.offSub": "Whenever there's a signal.",
-  "offline.deviceOffline": "Your device is offline right now, so the header stays grey either way.",
+  "offline.deviceOffline": "Your device is offline right now, so the header stays indigo either way.",
   "offline.nowOn": "Offline mode on.",
   "offline.nowOff": "Offline mode off.",
   "settings.done": "Done",
@@ -3020,6 +3023,7 @@ export const en = {
   "emoji.new": "new",
   "emoji.saved": "saved",
   "emoji.reload": "reload",
+  "emoji.offline": "offline mode",
   "emoji.halloween": "Halloween",
   "emoji.wilted": "wilted flower",
   "emoji.language": "language",

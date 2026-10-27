@@ -25,8 +25,9 @@
      themes — white in light, deep green ink in dark (where --brand is a
      light green and white text would drop to ~2:1). */
   --on-brand: #ffffff;
-  /* What the header greys toward while offline (lib/connection.ts). */
-  --offline-grey: #4a4f4c;
+  /* The header while offline (lib/connection.ts): dusk indigo, a mode of
+     its own rather than a dimmed green. Paired with --on-brand. */
+  --brand-offline: #3a3f9e;
   /* Active-pill background in the header nav; paired with --on-brand text. */
   --nav-pill: rgba(0, 0, 0, 0.25);
   --brand-ink: #0d3d20;
@@ -63,7 +64,7 @@
     --line-strong: #727b5f;
     --brand: #7ec894;
     --on-brand: #082b16;
-    --offline-grey: #b4b9b5;
+    --brand-offline: #aab2f5;
     --nav-pill: rgba(255, 255, 255, 0.32);
     --brand-ink: #b9e6c6;
     --brand-bg: #1f3326;
@@ -91,7 +92,7 @@
   --line-strong: #727b5f;
   --brand: #7ec894;
   --on-brand: #082b16;
-  --offline-grey: #b4b9b5;
+  --brand-offline: #aab2f5;
   --nav-pill: rgba(255, 255, 255, 0.32);
   --brand-ink: #b9e6c6;
   --brand-bg: #1f3326;
@@ -119,7 +120,7 @@
   --line-strong: #9b8aa6;
   --brand: #ff8a1f;
   --on-brand: #140a00;
-  --offline-grey: #a39b94;
+  --brand-offline: #c39af5;
   --nav-pill: rgba(0, 0, 0, 0.3);
   --brand-ink: #ffc27a;
   --brand-bg: #2e1a08;
@@ -797,6 +798,18 @@ p.more-link a {
   text-align: center;
 }
 
+/* Offline mode's on/off word, pushed to the row's end like a switch's. */
+.nav-menu-state {
+  margin-left: auto;
+  padding-left: 0.75rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.nav-menu-switch[aria-checked="true"] .nav-menu-state {
+  font-weight: 650;
+  color: var(--focus);
+}
+
 /* Reload is a <button> among links — it acts on this page instead of going to
    another one — and has to read as one more row of the same menu. */
 .nav-menu-panel button.nav-menu-pref {
@@ -901,9 +914,9 @@ p.more-link a {
   }
 }
 
-/* Offline (lib/connection.ts): the header greys over and a small no-signal
-   mark sits beside the name. Quiet on purpose — the app still works, it's
-   just answering from what it saved. The mark links to the Settings switch. */
+/* Offline (lib/connection.ts): the header turns dusk indigo and a small
+   no-signal mark sits beside the name. Out of signal is where gardens are, so
+   it reads as a mode, not a fault. The mark links to the Settings switch. */
 .offline-badge {
   display: none;
   align-items: center;
@@ -919,7 +932,7 @@ p.more-link a {
   display: inline-flex;
 }
 :root[data-offline] .app-header {
-  background: color-mix(in oklab, var(--brand) 40%, var(--offline-grey));
+  background: var(--brand-offline);
 }
 
 /* --- Steps rail --- */

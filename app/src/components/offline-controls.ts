@@ -1,6 +1,6 @@
 // Settings → Offline mode: try the app with no signal, without hunting for
 // airplane mode (`lib/connection.ts`). Live lookups fail as they would in the
-// field, and the header greys over to say so.
+// field, and the header turns indigo to say so.
 import { el, clear, toast } from "../ui";
 import { t } from "../lib/i18n";
 import { forcedOffline, onConnectionChange, setForcedOffline } from "../lib/connection";

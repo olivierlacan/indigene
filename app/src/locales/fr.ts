@@ -1456,6 +1456,12 @@ export const fr: Dict = {
   "plant.growthAria": "Hauteur par année, à côté d'une personne de {human} : {points}.",
   "plant.growthPoint": "an {year}, {height}",
   "plant.wildlifeItBrings": "La faune qu'elle attire : ",
+  "plant.feeds.host": "Y élèvent leurs chenilles",
+  "plant.feeds.nectar": "Butinent son nectar",
+  "plant.feeds.berries": "Mangent ses baies",
+  "plant.feeds.seeds": "Mangent ses graines",
+  "plant.feeds.graze": "La broutent",
+  "plant.feeds.shelter": "S'y abritent",
   "plant.soleTie": "Cette plante est le seul recours de {name} : un lien vital.",
   // Les sosies. Le mot d'ordre est le même qu'en anglais : on décrit la
   // confusion, pas le caractère de la plante. Certaines sont de vraies

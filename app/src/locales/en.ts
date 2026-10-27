@@ -1491,6 +1491,14 @@ export const en = {
   "plant.growthAria": "Height by year, beside a {human} person: {points}.",
   "plant.growthPoint": "year {year}, {height}",
   "plant.wildlifeItBrings": "Wildlife it brings in: ",
+  // Over each group of animals on a plant's page: how those animals use it.
+  // The animals are the subject, so each is a plural verb phrase.
+  "plant.feeds.host": "Raise caterpillars on it",
+  "plant.feeds.nectar": "Drink its nectar",
+  "plant.feeds.berries": "Eat its berries",
+  "plant.feeds.seeds": "Eat its seeds",
+  "plant.feeds.graze": "Graze it",
+  "plant.feeds.shelter": "Shelter in it",
   "plant.soleTie": "This plant is the only option {name} has: a make-or-break tie.",
   // The look-alike section. "Impostor" is deliberately about the mix-up and not
   // about the plant's character: some of these are serious invasives, some are

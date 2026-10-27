@@ -15,12 +15,12 @@ import { savedSpotsThatSuit } from "../lib/saved-fit";
 import { activeEntry } from "../lib/plant-view";
 import { renderPlantPhotos, PHOTOS_ROUTE, photosHref } from "./plant-photos";
 import type { PlantEntry, Suitability } from "../lib/explore";
-import { bestTies, wildlifeForPlant } from "../lib/wildlife";
+import { tiesByKind, wildlifeForPlant } from "../lib/wildlife";
 import { parseBasis, type BasisPart } from "../lib/basis";
 import { lookalikesForPlant } from "../lib/lookalikes";
 import { ornamentalsForPlant } from "../lib/alternatives";
 import { latPlain, lonPlain } from "../lib/plain";
-import { wildlifeChips } from "../components/wildlife-chips";
+import { wildlifeByKind } from "../components/wildlife-chips";
 import { SCORE_KEYS, scoreLabel, propagationMethod, sunLabel } from "../lib/plain";
 import { confidenceMeter, CONFIDENCE_ROUTE } from "../components/confidence-meter";
 import { techniqueFor, techniqueHref } from "../lib/planting";
@@ -898,15 +898,16 @@ function ecosystemSection(p: Plant, entries: PlantEntry[], regionId: string, exp
 
 // The named insects and animals this plant supports — the concrete answer to
 // "will it bring monarchs?", drawn from the wildlife map. Each links to that
-// creature's page, where you can see every other native that supports it. A
-// plant native to more than one region shows the union of its ties, deduped by
-// creature (the strongest tie — a larval host — wins the label).
+// creature's page, where you can see every other native that supports it.
+// Grouped by how each animal uses the plant — caterpillars, nectar, cover — and
+// an animal that uses it two ways is in both groups. A plant native to more
+// than one region shows the union of its ties.
 function whoItFeeds(entries: PlantEntry[]): HTMLElement | null {
-  const ties = bestTies(entries.map((e) => ({ regionId: e.region.meta.id, plantId: e.plant.id })));
-  if (!ties.length) return null;
+  const groups = tiesByKind(entries.map((e) => ({ regionId: e.region.meta.id, plantId: e.plant.id })));
+  if (!groups.length) return null;
   return el("div", { style: "margin:0 0 0.8rem" }, [
     el("p", { class: "kv", style: "margin:0 0 0.4rem" }, [el("span", { class: "k" }, t("plant.wildlifeItBrings"))]),
-    wildlifeChips(ties),
+    wildlifeByKind(groups),
   ]);
 }
 
@@ -1073,7 +1074,7 @@ function sourcesSection(p: Plant, entries: PlantEntry[], regionId: string): HTML
   for (const part of parseBasis(p.basis)) add(basisClaim(part), part.text);
   add(t("plantSources.propagation"), p.propagation.basis);
   add(t("plant.resilienceTitle"), pioneerFor(regionId, p.id)?.basis);
-  // A plant on two lists shows the union of its ties (`bestTies`), so its
+  // A plant on two lists shows the union of its ties (`tiesByKind`), so its
   // sources come from every list too.
   for (const e of entries) {
     for (const { wildlife, link } of wildlifeForPlant(e.region.meta.id, e.plant.id)) add(commonName(wildlife), link.basis);

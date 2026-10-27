@@ -1445,6 +1445,10 @@ export const en = {
   "conservation.globally": "{status} worldwide.",
   "conservation.here": "In {place}, {status}.",
   "conservation.learnMore": "What these ranks mean",
+  // The strip under a threatened animal's card on the wildlife index. No
+  // full stop: it is a label, not a sentence.
+  "conservation.footerWorld": "{status} worldwide",
+  "conservation.footerHere": "{status} in {place}",
   // Links to the guide (components/guide-link.ts), which is in English only.
   "guide.ranking": "How the ranking and filters work",
   "guide.goals": "What each goal does",
@@ -1468,10 +1472,12 @@ export const en = {
   "conservation.words.LC": "least concern",
   // Place names arrive from iNaturalist in English, with a country on the end
   // that a sentence doesn't need. Only a region's own state or province can
-  // appear here, which is why two entries cover it; anything else prints as
+  // appear here, which is why four entries cover it; anything else prints as
   // published rather than guessed at.
   "conservation.place.florida-us": "Florida",
   "conservation.place.pennsylvania-us": "Pennsylvania",
+  "conservation.place.michigan-us": "Michigan",
+  "conservation.place.oregon-us": "Oregon",
   "plant.whyBelongs": "Habitat: ",
   // The accessible name of the share control; the icon carries the 🔗 itself.
   "plant.share": "Share this plant",

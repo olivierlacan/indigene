@@ -49,7 +49,7 @@ import { sectionHeading, sectionTitle } from "../components/section-link";
 import { keystoneIcon } from "../components/keystone-icon";
 import { wildlifeNearbySection } from "../components/wildlife-nearby";
 import { wildlifeThumb, wildlifeHero, wildlifeIcon, wildlifeSilhouette } from "../components/wildlife-thumb";
-import { conservationNote } from "../components/conservation-note";
+import { conservationFooter, conservationNote } from "../components/conservation-note";
 import { faunaEvidenceLines } from "../components/native-evidence";
 import { glyphKeyFor } from "../components/wildlife-glyphs";
 import { cardStats } from "../components/card-stats";
@@ -477,6 +477,8 @@ function wildlifeCard(row: WildlifeIndexRow, region: RegionDef | null): FilterRo
           : null,
       ]),
     ]),
+    // Threatened animals say so along the bottom of the card.
+    conservationFooter(w.id, region?.meta.id),
   ]);
   const mark = (nq: string): void => {
     title.replaceChildren(...highlight(names.title, nq));

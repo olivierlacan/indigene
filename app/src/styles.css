@@ -5694,6 +5694,56 @@ button.card-stat:focus-visible .card-stat-tap {
   inset: 0;
   border-radius: var(--radius);
 }
+/* A threatened animal's status, along the bottom of its index card. It sits
+   where a pioneer's "Copes with" strip sits on a plant card, so it borrows
+   nothing from it: a warm tint, coloured text and a five-step scale, where
+   that strip is a grey hairline and glyphs. */
+.wildlife-card:has(> .status-footer) {
+  flex-wrap: wrap;
+}
+/* A zero basis keeps the text beside the picture once the card can wrap. */
+.wildlife-card:has(> .status-footer) > .wildlife-card-text {
+  flex-basis: 0;
+}
+.status-footer {
+  flex: 1 0 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.1rem -0.85rem -0.7rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 0 0 calc(var(--radius) - 1px) calc(var(--radius) - 1px);
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+.status-danger {
+  background: var(--danger-bg);
+  color: var(--danger-ink);
+}
+.status-warn {
+  background: var(--warn-bg);
+  color: var(--warn-ink);
+}
+.status-scale {
+  display: inline-flex;
+  gap: 2px;
+  flex: 0 0 auto;
+}
+.status-step {
+  width: 0.4rem;
+  height: 0.65rem;
+  border-radius: 2px;
+  border: 1px solid currentColor;
+  opacity: 0.45;
+}
+.status-step.on {
+  background: currentColor;
+  opacity: 1;
+}
+.status-step.maybe {
+  background: currentColor;
+  opacity: 0.45;
+}
 .wildlife-card-blurb {
   margin: 0.15rem 0 0.3rem;
   font-size: 0.85rem;

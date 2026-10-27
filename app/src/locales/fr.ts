@@ -1421,6 +1421,8 @@ export const fr: Dict = {
   "conservation.globally": "{status} dans le monde.",
   "conservation.here": "En {place}, {status}.",
   "conservation.learnMore": "Ce que signifient ces statuts",
+  "conservation.footerWorld": "{status} dans le monde",
+  "conservation.footerHere": "{status}, {place}",
   // Le guide (components/guide-link.ts) n'existe qu'en anglais : on le dit.
   "guide.ranking": "Classement et filtres, expliqués (en anglais)",
   "guide.goals": "Ce que fait chaque objectif (en anglais)",
@@ -1443,6 +1445,8 @@ export const fr: Dict = {
   // de nos régions peuvent apparaître ici, d'où la brièveté de la liste.
   "conservation.place.florida-us": "Floride",
   "conservation.place.pennsylvania-us": "Pennsylvanie",
+  "conservation.place.michigan-us": "Michigan",
+  "conservation.place.oregon-us": "Oregon",
   "plant.whyBelongs": "Milieu : ",
   "plant.share": "Partager cette plante",
   "plant.shareShort": "Partager",

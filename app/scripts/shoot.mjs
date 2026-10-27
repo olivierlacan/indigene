@@ -10,6 +10,9 @@
 //   --viewport WxH        CSS viewport            (default: 390x844)
 //   --no-full-page        viewport crop instead of the whole page
 //   --wait ms             settle time after load  (default: 1500)
+//   --no-halloween        turn the late-October theme off, so a shot taken
+//                         that week shows the app as the rest of the year
+//                         sees it (`lib/halloween.ts`)
 //   --locale TAG          browser locale          (default: en-US) — drives
 //                         navigator.language, so it picks the app's default
 //                         language *and* its default unit system, the same way
@@ -233,6 +236,10 @@ if (homeScreen) {
   await context.addInitScript(() => {
     Object.defineProperty(navigator, "standalone", { value: true, configurable: true });
   });
+}
+
+if (args.includes("--no-halloween")) {
+  await context.addInitScript(() => localStorage.setItem("indigene:halloween", "off"));
 }
 
 const page = await context.newPage();

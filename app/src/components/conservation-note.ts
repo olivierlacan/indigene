@@ -13,7 +13,7 @@
 // lives once at /guide/conservation, which the last link points to, rather than
 // on every page that carries a rank. See `lib/conservation.ts` for the scoping.
 import { el } from "../ui";
-import { conservationFor, placeInWords, rankInWords, type Assessment } from "../lib/conservation";
+import { conservationFor, placeInWords, rankInWords, rankSeverity, type Assessment } from "../lib/conservation";
 import { t } from "../lib/i18n";
 
 // The one page that explains what a rank means, built by `scripts/build-guide.mjs`.
@@ -70,4 +70,39 @@ export function conservationNote(
   lines.push(" ", el("a", { class: "conservation-more", href: GUIDE_HREF }, t("conservation.learnMore")));
 
   return el("p", { class: "note conservation-note" }, lines);
+}
+
+/**
+ * The same assessment as a strip along the bottom of an animal's card on the
+ * wildlife index: five steps of threat, then the rank in words. Animals only —
+ * the plant lists keep the sentence, for the reason at the top of this file.
+ *
+ * It sits where a pavement pioneer's "Copes with" strip sits on a plant card,
+ * so it is drawn to look nothing like it: a warm tint and a scale instead of a
+ * grey hairline and glyphs. One is how much abuse a plant takes; this is how
+ * close an animal is to gone.
+ *
+ * With both a global and a local rank, the worse one shows; a tie goes to the
+ * global, which travels. Null when nothing has been assessed.
+ */
+export function conservationFooter(subjectId: string, regionId?: string): HTMLElement | null {
+  const { global, here } = conservationFor(subjectId, regionId);
+  const worst = (a?: Assessment) => (a ? rankSeverity(a.rank)?.high ?? 0 : -1);
+  const pick = worst(here) > worst(global) ? here : global ?? here;
+  if (!pick) return null;
+  const sev = rankSeverity(pick.rank);
+  const status = cap(said(pick));
+  const text = pick === global
+    ? t("conservation.footerWorld", { status })
+    : t("conservation.footerHere", { status, place: placeInWords(pick.place ?? "") });
+  // Solid up to the step the assessor is sure of, faint across a span.
+  const steps = sev
+    ? Array.from({ length: 5 }, (_, i) =>
+        el("span", { class: `status-step${i < sev.low ? " on" : i < sev.high ? " maybe" : ""}` }))
+    : [];
+  const tone = (sev?.high ?? 0) >= 4 ? "danger" : "warn";
+  return el("div", { class: `status-footer status-${tone}`, title: pick.authority ?? "" }, [
+    sev ? el("span", { class: "status-scale", "aria-hidden": "true" }, steps) : null,
+    el("span", { class: "status-footer-text" }, text),
+  ]);
 }

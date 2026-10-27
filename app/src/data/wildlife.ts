@@ -4581,6 +4581,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     "vitis-rotundifolia": [
       { wildlifeId: "berry-songbirds", support: "berries", note: "Mockingbirds, thrashers and catbirds eat the grapes that split on the vine.", basis: "Cornell Lab of Ornithology; UF/IFAS." },
       { wildlifeId: "acorn-mammals", support: "berries", note: "Foxes, raccoons, opossums, deer and black bears feed on the fallen grapes.", basis: "UF/IFAS." },
+      { wildlifeId: "gopher-tortoise", support: "berries", note: "Gopher tortoises eat the muscadines that fall within reach.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "parthenocissus-quinquefolia": [
       { wildlifeId: "berry-songbirds", support: "berries", note: "Thrushes, mockingbirds and woodpeckers take the berries through fall and winter.", basis: "Cornell Lab of Ornithology." },
@@ -4611,6 +4612,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     "mimosa-strigillosa": [
       { wildlifeId: "bumble-bees", support: "nectar", note: "Sunshine mimosa's pink powder-puffs sit flat on a lawn you can walk on, and the bumble bees work them all summer between mowings.", basis: "GloBI — iNaturalist observation records; UF/IFAS." },
       { wildlifeId: "grass-skippers", support: "nectar", note: "Fiery skippers and little yellows come down to it constantly — it is one of the few nectar plants that survives being walked over.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
+      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Gopher tortoises graze the leaves and pink puffball flowers.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "tripsacum-dactyloides": [
       { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "Eastern gamagrass raises the byssus skipper — a big orange skipper whose caterpillar lives in a tube of leaf blade fastened with silk.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM), Ferrer-Paris et al. 2013; Xerces Society." },
@@ -4757,6 +4759,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "asimina-reticulata": [
       { wildlifeId: "zebra-swallowtail", support: "host", reliance: "narrow", note: "Zebra swallowtail caterpillars eat only pawpaws, and this scrub pawpaw is one of Florida's.", basis: "GloBI — Ferrer-Paris et al. 2013, butterfly host plants; UF/IFAS." },
+      { wildlifeId: "gopher-tortoise", support: "berries", note: "Gopher tortoises eat the flowers and the fallen fruit.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "zamia-integrifolia": [
       { wildlifeId: "atala", support: "host", reliance: "sole", note: "Coontie is the atala's only native host, and the butterfly is spreading north again as people plant it.", basis: "Florida Native Plant Society; UF/IFAS." },
@@ -4804,15 +4807,23 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "cloudless-sulphur", support: "host", reliance: "narrow", note: "Partridge pea is one of the few plants cloudless sulphur caterpillars eat.", basis: "BAMONA; UF/IFAS." },
       { wildlifeId: "ceraunus-blue", support: "host", note: "Ceraunus blue caterpillars eat the flower buds and young pods.", basis: "BAMONA; UF/IFAS." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees shake the pollen out of the yellow flowers.", basis: "Xerces Society." },
+      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Tortoises graze partridge pea, one of the native legumes they seek out.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "sorghastrum-secundum": [
       { wildlifeId: "grass-skippers", support: "host", note: "Indiangrasses are caterpillar food for several skippers.", basis: "BAMONA." },
     ],
     "centrosema-virginianum": [
       { wildlifeId: "long-tailed-skipper", support: "host", note: "Long-tailed skipper caterpillars fold butterfly pea leaves into shelters and feed inside.", basis: "Florida Native Plant Society; BAMONA." },
+      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Tortoises graze butterfly pea, one of the native legumes they seek out.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "mitchella-repens": [
       { wildlifeId: "acorn-birds", support: "berries", note: "Wild turkeys pick the red berries off the forest floor in winter.", basis: "USDA Fire Effects Information System." },
+    ],
+    "aristida-stricta": [
+      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Wiregrass is a staple of the tortoise's grazing, and the groundcover that carries the fires keeping its sandhills open.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
+    ],
+    "pityopsis-graminifolia": [
+      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Silkgrass is one of the low plants tortoises graze in open, sunny sand.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
   },
 
@@ -4821,6 +4832,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "grass-skippers", support: "host", reliance: "sole", note: "The palmetto skipper's caterpillars eat saw palmetto and nothing else, living in a rolled-up section of frond. Clear the palmetto out of a scrub and the butterfly goes with it.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM), Ferrer-Paris et al. 2013; Xerces Society." },
       { wildlifeId: "mason-bees", support: "nectar", reliance: "narrow", note: "A saw palmetto in flower is one of the most-visited plants in Florida — dozens of native solitary bee species have been recorded on it, several of which are found on little else.", basis: "GloBI — GBIF-US bee occurrence datasets, iNaturalist observation records; Florida Native Plant Society." },
       { wildlifeId: "berry-songbirds", support: "berries", note: "The black autumn fruit feeds robins, mockingbirds, raccoons, foxes and bears in turn.", basis: "GloBI — Fricke & Svenning 2020 plant–frugivore network (Nature); UF/IFAS." },
+      { wildlifeId: "gopher-tortoise", support: "berries", note: "Gopher tortoises eat the fallen fruit in palmetto flatwoods.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "sabal-palmetto": [
       { wildlifeId: "berry-songbirds", support: "berries", note: "A fruiting cabbage palm feeds catbirds, mockingbirds, robins and vireos at once, for weeks.", basis: "GloBI — Fricke & Svenning 2020 plant–frugivore network (Nature), Muñoz et al. 2018 animal–plant synthesis; Cornell Lab." },
@@ -4889,6 +4901,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "helianthus-debilis": [
       { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Dune sunflower's pollen supports sunflower-family specialist bees along the coast.", basis: "Fowler & Droege; UF/IFAS." },
+      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Gopher tortoises graze dune sunflower on coastal sand and open uplands.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "andropogon-glomeratus": [
       { wildlifeId: "grass-skippers", support: "host", note: "Bluestems are caterpillar grass for several skippers, which hide in rolled-up blades and winter down in the clump.", basis: "NWF Native Plant Finder; Xerces Society." },
@@ -4899,6 +4912,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     "vitis-rotundifolia": [
       { wildlifeId: "berry-songbirds", support: "berries", note: "Mockingbirds, thrashers and catbirds eat the grapes that split on the vine.", basis: "Cornell Lab of Ornithology; UF/IFAS." },
       { wildlifeId: "acorn-mammals", support: "berries", note: "Foxes, raccoons, opossums and deer feed on the fallen grapes.", basis: "UF/IFAS." },
+      { wildlifeId: "gopher-tortoise", support: "berries", note: "Gopher tortoises eat the muscadines that fall within reach.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "symphyotrichum-carolinianum": [
       { wildlifeId: "monarch", support: "nectar", note: "It flowers in winter here, when Florida's resident monarchs have little else to feed on.", basis: "Xerces Society; UF/IFAS." },
@@ -4910,6 +4924,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "mimosa-strigillosa": [
       { wildlifeId: "grass-skippers", support: "nectar", note: "Fiery skippers come down to it constantly — one of the few nectar plants that survives being walked over.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
+      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Gopher tortoises graze the leaves and pink puffball flowers.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "pontederia-cordata": [
       { wildlifeId: "white-peacock", support: "nectar", note: "White peacocks feed at the flower spikes most of the year along south-Florida canals.", basis: "GloBI — iNaturalist observation records." },
@@ -5022,12 +5037,16 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "centrosema-virginianum": [
       { wildlifeId: "long-tailed-skipper", support: "host", note: "Long-tailed skipper caterpillars fold butterfly pea leaves into shelters and feed inside.", basis: "Florida Native Plant Society; BAMONA." },
+      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Tortoises graze butterfly pea, one of the native legumes they seek out.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "echites-umbellatus": [
       { wildlifeId: "polka-dot-wasp-moth", support: "host", reliance: "narrow", note: "Devil's potato is the moth's native host, the vine its caterpillars ate before oleander.", basis: "UF/IFAS Featured Creatures." },
     ],
     "pentalinon-luteum": [
       { wildlifeId: "polka-dot-wasp-moth", support: "host", note: "Polka-dot wasp moth caterpillars eat wild allamanda leaves too.", basis: "Florida Native Plant Society; UF/IFAS." },
+    ],
+    "pityopsis-graminifolia": [
+      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Silkgrass is one of the low plants tortoises graze in open, sunny sand.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
   },
 

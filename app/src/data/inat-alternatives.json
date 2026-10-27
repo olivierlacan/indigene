@@ -368,6 +368,15 @@
     "attribution": "(c) Benjamin Smith, some rights reserved (CC BY)",
     "color": "#85867a"
   },
+  "rhaphiolepis-indica": {
+    "taxonId": 179305,
+    "photoId": 33354754,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/33354754/square.jpeg",
+    "observer": "王文文",
+    "license": "cc-by-nc-sa",
+    "attribution": "(c) 王文文, some rights reserved (CC BY-NC-SA), uploaded by 王文文",
+    "color": "#43492f"
+  },
   "rhododendron-ponticum": {
     "taxonId": 60364,
     "photoId": 136245,

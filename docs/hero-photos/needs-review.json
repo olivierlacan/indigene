@@ -91,14 +91,6 @@
     },
     {
       "subject": "alternative",
-      "id": "rhaphiolepis-indica",
-      "name": "Rhaphiolepis indica",
-      "taxonId": 179305,
-      "reason": "chosen photo 113159414 is all rights reserved",
-      "gallery": "https://www.inaturalist.org/taxa/179305/browse_photos"
-    },
-    {
-      "subject": "alternative",
       "id": "rosa-hybrids",
       "name": "Rosa hybrids",
       "taxonId": null,

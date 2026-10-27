@@ -1,0 +1,32 @@
+{
+  "region": "kanto",
+  "ranAt": "2026-10-26T21:19:01.891Z",
+  "ties": [
+    {"plant":"wisteria-floribunda","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Web of Life"],"confirmedBy":["Web of Life"],"records":208},"verdict":"CONFIRMED"},
+    {"plant":"castanopsis-sieboldii","animal":"holly-blue","support":"host","globi":{"verdict":"CONFIRMED","cited":["Saito et al. 2016"],"confirmedBy":["Saito et al. 2016"],"records":1},"verdict":"CONFIRMED"},
+    {"plant":"zelkova-serrata","animal":"comma","support":"host","globi":{"verdict":"CONFIRMED","cited":["NHM Interactions Bank"],"confirmedBy":["NHM Interactions Bank"],"records":2},"verdict":"CONFIRMED"},
+    {"plant":"zelkova-serrata","animal":"squeaking-silkmoth","support":"host","globi":{"verdict":"CONFIRMED","cited":["HOSTS (Robinson et al., NHM)"],"confirmedBy":["HOSTS (Robinson et al., NHM)"],"records":4},"verdict":"CONFIRMED"},
+    {"plant":"prunus-jamasakura","animal":"brown-eared-bulbul","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Web of Life"],"confirmedBy":["Web of Life"],"records":1},"verdict":"CONFIRMED"},
+    {"plant":"prunus-jamasakura","animal":"moon-moths","support":"host","globi":{"verdict":"CONFIRMED","cited":["HOSTS (Robinson et al., NHM)"],"confirmedBy":["HOSTS (Robinson et al., NHM)"],"records":1},"verdict":"CONFIRMED"},
+    {"plant":"machilus-thunbergii","animal":"common-bluebottle","support":"host","globi":{"verdict":"CONFIRMED","cited":["Saito et al. 2016"],"confirmedBy":["Saito et al. 2016"],"records":6},"verdict":"CONFIRMED"},
+    {"plant":"machilus-thunbergii","animal":"japanese-white-eye","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":1},"verdict":"CONFIRMED"},
+    {"plant":"machilus-thunbergii","animal":"brown-eared-bulbul","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":2},"verdict":"CONFIRMED"},
+    {"plant":"alnus-japonica","animal":"alder-hairstreak","support":"host","globi":{"verdict":"CONFIRMED","cited":["Saito et al. 2016"],"confirmedBy":["Saito et al. 2016"],"records":2},"verdict":"CONFIRMED"},
+    {"plant":"alnus-japonica","animal":"moon-moths","support":"host","globi":{"verdict":"CONFIRMED","cited":["HOSTS (Robinson et al., NHM)"],"confirmedBy":["HOSTS (Robinson et al., NHM)"],"records":2},"verdict":"CONFIRMED"},
+    {"plant":"styrax-japonicus","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Web of Life"],"confirmedBy":["Web of Life"],"records":3},"verdict":"CONFIRMED"},
+    {"plant":"hydrangea-macrophylla","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Web of Life"],"confirmedBy":["Web of Life"],"records":38},"verdict":"CONFIRMED"},
+    {"plant":"lespedeza-bicolor","animal":"pallas-sailer","support":"host","globi":{"verdict":"CONFIRMED","cited":["Saito et al. 2016"],"confirmedBy":["Saito et al. 2016"],"records":2},"verdict":"CONFIRMED"},
+    {"plant":"lespedeza-bicolor","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Web of Life"],"confirmedBy":["Web of Life"],"records":8},"verdict":"CONFIRMED"},
+    {"plant":"euonymus-alatus","animal":"spindle-ermines","support":"host","globi":{"verdict":"CONFIRMED","cited":["HOSTS (Robinson et al., NHM)"],"confirmedBy":["HOSTS (Robinson et al., NHM)"],"records":9},"verdict":"CONFIRMED"},
+    {"plant":"lindera-umbellata","animal":"common-bluebottle","support":"host","globi":{"verdict":"CONFIRMED","cited":["Saito et al. 2016"],"confirmedBy":["Saito et al. 2016"],"records":1},"verdict":"CONFIRMED"},
+    {"plant":"eurya-japonica","animal":"japanese-white-eye","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":2},"verdict":"CONFIRMED"},
+    {"plant":"eurya-japonica","animal":"brown-eared-bulbul","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":2},"verdict":"CONFIRMED"},
+    {"plant":"rosa-multiflora","animal":"holly-blue","support":"host","globi":{"verdict":"CONFIRMED","cited":["Saito et al. 2016"],"confirmedBy":["Saito et al. 2016"],"records":2},"verdict":"CONFIRMED"},
+    {"plant":"cornus-kousa","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Web of Life"],"confirmedBy":["Web of Life"],"records":3},"verdict":"CONFIRMED"},
+    {"plant":"artemisia-princeps","animal":"painted-lady","support":"host","globi":{"verdict":"CONFIRMED","cited":["Saito et al. 2016"],"confirmedBy":["Saito et al. 2016"],"records":1},"verdict":"CONFIRMED"},
+    {"plant":"viola-grypoceras","animal":"indian-fritillary","support":"host","globi":{"verdict":"OTHER","cited":["Saito et al. 2016"],"confirmedBy":[],"found":["HOSTS (Robinson et al., NHM)","Ferrer-Paris et al. 2013"],"records":2},"verdict":"OTHER"},
+    {"plant":"cirsium-japonicum","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Web of Life"],"confirmedBy":["Web of Life"],"records":2},"verdict":"CONFIRMED"},
+    {"plant":"hosta-sieboldii","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Web of Life"],"confirmedBy":["Web of Life"],"records":6},"verdict":"CONFIRMED"},
+    {"plant":"sasa-veitchii","animal":"grass-skippers","support":"host","globi":{"verdict":"CONFIRMED","cited":["Saito et al. 2016"],"confirmedBy":["Saito et al. 2016"],"records":3},"verdict":"CONFIRMED"}
+  ]
+}

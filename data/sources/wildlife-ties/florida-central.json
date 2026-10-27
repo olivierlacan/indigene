@@ -1,6 +1,6 @@
 {
   "region": "florida-central",
-  "ranAt": "2026-10-25T18:06:39.494Z",
+  "ranAt": "2026-10-26T21:18:25.978Z",
   "ties": [
     {"plant":"baccharis-halimifolia","animal":"gulf-fritillary","support":"nectar","globi":{"verdict":"NOT-FOUND","cited":["iNaturalist observations"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
     {"plant":"pontederia-cordata","animal":"white-peacock","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":7},"verdict":"CONFIRMED"},
@@ -19,7 +19,11 @@
     {"plant":"mimosa-strigillosa","animal":"grass-skippers","support":"nectar","globi":{"verdict":"NOT-FOUND","cited":["iNaturalist observations"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
     {"plant":"tripsacum-dactyloides","animal":"grass-skippers","support":"host","globi":{"verdict":"CONFIRMED","cited":["HOSTS (Robinson et al., NHM)","Ferrer-Paris et al. 2013"],"confirmedBy":["HOSTS (Robinson et al., NHM)","Ferrer-Paris et al. 2013"],"records":10},"verdict":"CONFIRMED"},
     {"plant":"tripsacum-dactyloides","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":4},"verdict":"CONFIRMED"},
+    {"plant":"quercus-virginiana","animal":"horaces-duskywing","support":"host","globi":{"verdict":"CONFIRMED","cited":["Ferrer-Paris et al. 2013"],"confirmedBy":["Ferrer-Paris et al. 2013"],"records":14},"verdict":"CONFIRMED"},
+    {"plant":"magnolia-virginiana","animal":"palamedes-swallowtail","support":"host","globi":{"verdict":"CONFIRMED","cited":["Ferrer-Paris et al. 2013"],"confirmedBy":["Ferrer-Paris et al. 2013"],"records":9},"verdict":"CONFIRMED"},
     {"plant":"cephalanthus-occidentalis","animal":"spicebush-swallowtail","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":40},"verdict":"CONFIRMED"},
-    {"plant":"cephalanthus-occidentalis","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":200},"verdict":"CONFIRMED"}
+    {"plant":"cephalanthus-occidentalis","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":200},"verdict":"CONFIRMED"},
+    {"plant":"acer-rubrum","animal":"io-moth","support":"host","globi":{"verdict":"CONFIRMED","cited":["Hale et al. 2024"],"confirmedBy":["Hale et al. 2024"],"records":6},"verdict":"CONFIRMED"},
+    {"plant":"asimina-reticulata","animal":"zebra-swallowtail","support":"host","globi":{"verdict":"CONFIRMED","cited":["Ferrer-Paris et al. 2013"],"confirmedBy":["Ferrer-Paris et al. 2013"],"records":4},"verdict":"CONFIRMED"}
   ]
 }

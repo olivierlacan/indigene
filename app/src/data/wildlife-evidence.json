@@ -11,8 +11,8 @@
         "NatureServe",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 34,
+      "checked": "2026-10-26",
+      "animals": 40,
       "unconfirmed": {
         "echo-azure": "unknown",
         "mallow-specialist-bees": "unknown",
@@ -29,8 +29,8 @@
         "NatureServe",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 31,
+      "checked": "2026-10-26",
+      "animals": 41,
       "unconfirmed": {
         "california-yucca-moth": "no-match",
         "sunflower-specialist-bees": "unknown"
@@ -46,8 +46,8 @@
         "NatureServe",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 21,
+      "checked": "2026-10-26",
+      "animals": 31,
       "unconfirmed": {
         "gulf-fritillary": "no-match",
         "luna-moth": "unknown",
@@ -65,8 +65,8 @@
         "NatureServe",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 23,
+      "checked": "2026-10-26",
+      "animals": 28,
       "unconfirmed": {
         "sunflower-specialist-bees": "unknown"
       }
@@ -81,11 +81,12 @@
         "NatureServe",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 27,
+      "checked": "2026-10-26",
+      "animals": 41,
       "unconfirmed": {
         "cecropia-moth": "unknown",
         "gulf-fritillary": "no-match",
+        "io-moth": "unknown",
         "luna-moth": "unknown",
         "mason-bees": "unknown",
         "sunflower-specialist-bees": "unknown"
@@ -101,11 +102,13 @@
         "NatureServe",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 17,
+      "checked": "2026-10-26",
+      "animals": 27,
       "unconfirmed": {
         "gulf-fritillary": "no-match",
+        "io-moth": "unknown",
         "mason-bees": "unknown",
+        "polka-dot-wasp-moth": "unknown",
         "sunflower-specialist-bees": "unknown"
       }
     },
@@ -119,8 +122,8 @@
         "TAXREF",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 26,
+      "checked": "2026-10-26",
+      "animals": 36,
       "unconfirmed": {}
     },
     "france-atlantic": {
@@ -133,8 +136,8 @@
         "TAXREF",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 31,
+      "checked": "2026-10-26",
+      "animals": 40,
       "unconfirmed": {
         "nettle-tree-butterfly": "introduced"
       }
@@ -149,8 +152,8 @@
         "TAXREF",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 25,
+      "checked": "2026-10-26",
+      "animals": 39,
       "unconfirmed": {}
     },
     "france-mediterranean": {
@@ -163,8 +166,8 @@
         "TAXREF",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 27,
+      "checked": "2026-10-26",
+      "animals": 28,
       "unconfirmed": {
         "nettle-tree-butterfly": "introduced"
       }
@@ -180,8 +183,8 @@
         "GBIF",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 25,
+      "checked": "2026-10-26",
+      "animals": 29,
       "unconfirmed": {}
     },
     "kanto": {
@@ -194,14 +197,21 @@
         "iNaturalist",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 8,
+      "checked": "2026-10-26",
+      "animals": 23,
       "unconfirmed": {
+        "bumble-bees": "unknown",
         "chinese-bushbrown": "unknown",
         "chinese-windmill": "unknown",
+        "comma": "unknown",
+        "feathered-thorn": "unknown",
+        "grass-skippers": "unknown",
         "great-purple-emperor": "unknown",
         "japanese-oak-silkmoth": "unknown",
+        "moon-moths": "unknown",
         "oak-hairstreaks": "unknown",
+        "pale-oak-beauty": "unknown",
+        "spindle-ermines": "absent",
         "squeaking-silkmoth": "unknown"
       }
     },
@@ -215,8 +225,8 @@
         "NatureServe",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 21,
+      "checked": "2026-10-26",
+      "animals": 33,
       "unconfirmed": {}
     },
     "north-michigan": {
@@ -229,8 +239,8 @@
         "NatureServe",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 23,
+      "checked": "2026-10-26",
+      "animals": 28,
       "unconfirmed": {
         "luna-moth": "unknown",
         "sunflower-specialist-bees": "unknown"
@@ -246,8 +256,8 @@
         "iNaturalist",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 9,
+      "checked": "2026-10-26",
+      "animals": 12,
       "unconfirmed": {}
     },
     "pnw": {
@@ -260,8 +270,8 @@
         "NatureServe",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 31,
+      "checked": "2026-10-26",
+      "animals": 40,
       "unconfirmed": {}
     },
     "scotland-lowlands": {
@@ -275,8 +285,8 @@
         "GBIF",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 18,
+      "checked": "2026-10-26",
+      "animals": 25,
       "unconfirmed": {}
     },
     "st-lawrence": {
@@ -289,8 +299,8 @@
         "NatureServe",
         "GRIIS"
       ],
-      "checked": "2026-10-25",
-      "animals": 23,
+      "checked": "2026-10-26",
+      "animals": 28,
       "unconfirmed": {}
     }
   }

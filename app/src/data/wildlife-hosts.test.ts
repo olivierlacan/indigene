@@ -19,7 +19,7 @@ import { WILDLIFE, SUPPORT } from "./wildlife";
 import { REGIONS } from "./regions";
 
 /** HOSTS still files a few species under an older genus. Each alias is ours → HOSTS'. */
-const HOSTS_ALIAS: Record<string, string> = { "Byasa alcinous": "Atrophaneura alcinous" };
+const HOSTS_ALIAS: Record<string, string> = { "Byasa alcinous": "Atrophaneura alcinous", "Limenitis camilla": "Ladoga camilla", "Argynnis hyperbius": "Argyreus hyperbius" };
 
 const animals = new Map(WILDLIFE.map((w) => [w.id, w]));
 const names = (id: string): string[] => {

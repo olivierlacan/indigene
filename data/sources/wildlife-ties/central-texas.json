@@ -1,7 +1,13 @@
 {
   "region": "central-texas",
-  "ranAt": "2026-10-25T18:11:24.979Z",
+  "ranAt": "2026-10-26T21:15:48.360Z",
   "ties": [
-
+    {"plant":"quercus-fusiformis","animal":"horaces-duskywing","support":"host","globi":{"verdict":"CONFIRMED","cited":["Ferrer-Paris et al. 2013"],"confirmedBy":["Ferrer-Paris et al. 2013"],"records":5},"verdict":"CONFIRMED"},
+    {"plant":"quercus-buckleyi","animal":"horaces-duskywing","support":"host","globi":{"verdict":"CONFIRMED","cited":["Ferrer-Paris et al. 2013"],"confirmedBy":["Ferrer-Paris et al. 2013"],"records":1},"verdict":"CONFIRMED"},
+    {"plant":"quercus-shumardii","animal":"horaces-duskywing","support":"host","globi":{"verdict":"CONFIRMED","cited":["Ferrer-Paris et al. 2013"],"confirmedBy":["Ferrer-Paris et al. 2013"],"records":5},"verdict":"CONFIRMED"},
+    {"plant":"helianthus-maximiliani","animal":"bordered-patch","support":"host","globi":{"verdict":"CONFIRMED","cited":["Ferrer-Paris et al. 2013"],"confirmedBy":["Ferrer-Paris et al. 2013"],"records":5},"verdict":"CONFIRMED"},
+    {"plant":"verbesina-virginica","animal":"bordered-patch","support":"host","globi":{"verdict":"CONFIRMED","cited":["Ferrer-Paris et al. 2013"],"confirmedBy":["Ferrer-Paris et al. 2013"],"records":1},"verdict":"CONFIRMED"},
+    {"plant":"prosopis-glandulosa","animal":"ceraunus-blue","support":"host","globi":{"verdict":"CONFIRMED","cited":["Ferrer-Paris et al. 2013"],"confirmedBy":["Ferrer-Paris et al. 2013"],"records":6},"verdict":"CONFIRMED"},
+    {"plant":"salvia-farinacea","animal":"lesser-goldfinch","support":"seeds","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":12},"verdict":"CONFIRMED"}
   ]
 }

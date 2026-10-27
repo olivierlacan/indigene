@@ -1643,6 +1643,14 @@
     },
     {
       "subject": "wildlife",
+      "id": "apollo",
+      "name": "Parnassius apollo",
+      "taxonId": 108799,
+      "reason": "chosen photo 83993099 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/108799/browse_photos"
+    },
+    {
+      "subject": "wildlife",
       "id": "atala",
       "name": "Eumaeus atala",
       "taxonId": 50075,
@@ -1656,6 +1664,14 @@
       "taxonId": 6433,
       "reason": "chosen photo 743695157 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/6433/browse_photos"
+    },
+    {
+      "subject": "wildlife",
+      "id": "bordered-patch",
+      "name": "Chlosyne lacinia",
+      "taxonId": 68240,
+      "reason": "chosen photo 8615586 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/68240/browse_photos"
     },
     {
       "subject": "wildlife",
@@ -1683,6 +1699,14 @@
     },
     {
       "subject": "wildlife",
+      "id": "california-tortoiseshell",
+      "name": "Nymphalis californica",
+      "taxonId": 49920,
+      "reason": "chosen photo 2041 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/49920/browse_photos"
+    },
+    {
+      "subject": "wildlife",
       "id": "cecropia-moth",
       "name": "Hyalophora cecropia",
       "taxonId": 81582,
@@ -1699,11 +1723,35 @@
     },
     {
       "subject": "wildlife",
+      "id": "eastern-pine-elfin",
+      "name": "Callophrys niphon",
+      "taxonId": 58550,
+      "reason": "chosen photo 3536562 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/58550/browse_photos"
+    },
+    {
+      "subject": "wildlife",
       "id": "echo-azure",
       "name": "Celastrina echo",
       "taxonId": 52484,
       "reason": "chosen photo 182618709 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/52484/browse_photos"
+    },
+    {
+      "subject": "wildlife",
+      "id": "feathered-thorn",
+      "name": "Colotois pennaria",
+      "taxonId": 119858,
+      "reason": "chosen photo 344693158 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/119858/browse_photos"
+    },
+    {
+      "subject": "wildlife",
+      "id": "fern-loopers",
+      "name": "Ischalis",
+      "taxonId": 376728,
+      "reason": "chosen photo 1247490 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/376728/browse_photos"
     },
     {
       "subject": "wildlife",
@@ -1747,11 +1795,27 @@
     },
     {
       "subject": "wildlife",
+      "id": "japanese-white-eye",
+      "name": "Zosterops japonicus",
+      "taxonId": 980262,
+      "reason": "chosen photo 254445706 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/980262/browse_photos"
+    },
+    {
+      "subject": "wildlife",
       "id": "kowhai-moth",
       "name": "Uresiphita maorialis",
       "taxonId": 468784,
       "reason": "chosen photo 28747427 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/468784/browse_photos"
+    },
+    {
+      "subject": "wildlife",
+      "id": "large-scabious-mining-bee",
+      "name": "Andrena hattorfiana",
+      "taxonId": 424814,
+      "reason": "chosen photo 113724929 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/424814/browse_photos"
     },
     {
       "subject": "wildlife",
@@ -1771,6 +1835,22 @@
     },
     {
       "subject": "wildlife",
+      "id": "magpie-moth",
+      "name": "Nyctemera annulata",
+      "taxonId": 348515,
+      "reason": "chosen photo 1207630 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/348515/browse_photos"
+    },
+    {
+      "subject": "wildlife",
+      "id": "moon-moths",
+      "name": "Actias",
+      "taxonId": 47917,
+      "reason": "chosen photo 168222266 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/47917/browse_photos"
+    },
+    {
+      "subject": "wildlife",
       "id": "mosses-elfin",
       "name": "Callophrys mossii",
       "taxonId": 122371,
@@ -1784,6 +1864,22 @@
       "taxonId": 56832,
       "reason": "chosen photo 266654572 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/56832/browse_photos"
+    },
+    {
+      "subject": "wildlife",
+      "id": "pine-white",
+      "name": "Neophasia menapia",
+      "taxonId": 81734,
+      "reason": "chosen photo 193731489 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/81734/browse_photos"
+    },
+    {
+      "subject": "wildlife",
+      "id": "polka-dot-wasp-moth",
+      "name": "Syntomeida epilais",
+      "taxonId": 120875,
+      "reason": "chosen photo 96981290 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/120875/browse_photos"
     },
     {
       "subject": "wildlife",
@@ -1803,11 +1899,43 @@
     },
     {
       "subject": "wildlife",
+      "id": "scotch-argus",
+      "name": "Erebia aethiops",
+      "taxonId": 326454,
+      "reason": "chosen photo 657870693 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/326454/browse_photos"
+    },
+    {
+      "subject": "wildlife",
       "id": "small-blue",
       "name": "Cupido minimus",
       "taxonId": 129126,
       "reason": "chosen photo 98967437 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/129126/browse_photos"
+    },
+    {
+      "subject": "wildlife",
+      "id": "small-tortoiseshell",
+      "name": "Aglais urticae",
+      "taxonId": 54468,
+      "reason": "chosen photo 257869609 is cc-by-nc-nd",
+      "gallery": "https://www.inaturalist.org/taxa/54468/browse_photos"
+    },
+    {
+      "subject": "wildlife",
+      "id": "southeastern-blueberry-bee",
+      "name": "Habropoda laboriosa",
+      "taxonId": 121510,
+      "reason": "chosen photo 60787054 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/121510/browse_photos"
+    },
+    {
+      "subject": "wildlife",
+      "id": "theona-checkerspot",
+      "name": "Thessalia theona",
+      "taxonId": 144223,
+      "reason": "chosen photo 6168456 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/144223/browse_photos"
     },
     {
       "subject": "wildlife",
@@ -1824,6 +1952,22 @@
       "taxonId": 47226,
       "reason": "chosen photo 18957208 is cc-by-nc-nd",
       "gallery": "https://www.inaturalist.org/taxa/47226/browse_photos"
+    },
+    {
+      "subject": "wildlife",
+      "id": "white-admiral",
+      "name": "Limenitis camilla",
+      "taxonId": 153105,
+      "reason": "chosen photo 593619486 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/153105/browse_photos"
+    },
+    {
+      "subject": "wildlife",
+      "id": "white-lined-sphinx",
+      "name": "Hyles lineata",
+      "taxonId": 49348,
+      "reason": "chosen photo 1372348 is all rights reserved",
+      "gallery": "https://www.inaturalist.org/taxa/49348/browse_photos"
     },
     {
       "subject": "wildlife",

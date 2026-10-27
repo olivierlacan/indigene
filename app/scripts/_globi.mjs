@@ -29,6 +29,10 @@ export const STUDIES = [
   ["Muñoz et al. 2018", /Muñoz/, /Muñoz|Munoz/i],
   ["LIFE 4 Pollinators (Barberis et al. 2025)", /LIFE 4 Pollinators|Barberis/, /LIFE 4 Pollinators|Barberis/i],
   ["National Database of Plant Pollinators", /National Database of Plant Pollinators/, /Center for Plant Conservation|Plant Pollinators/i],
+  ["Saito et al. 2016", /Saito/, /Saito MU|Larval host records of butterflies in Japan/i],
+  ["Ecdysis arthropod portal", /Ecdysis/, /Ecdysis/i],
+  ["Digital Bee Collections Network", /Digital Bee Collections/, /Digital Bee Collections/i],
+  ["Peralta et al. 2020 (New Zealand frugivory)", /Peralta/, /Peralta/i],
   ["GBIF-US bee occurrences", /GBIF-US/, /GBIF-US|USGS.*bee|bee occurrence/i],
   // A bare iNaturalist observation is a photograph somebody identified, not a
   // study. Named as what it is so nobody mistakes it for a published record.

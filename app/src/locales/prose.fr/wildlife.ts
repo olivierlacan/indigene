@@ -391,4 +391,260 @@ export const WILDLIFE_FR: ProseTable = {
     blurb:
       "Un papillon de nuit gris, si semblable à un lichen qu'il disparaît sur l'écorce d'un arbre indigène. Ses chenilles mangent les feuilles de nombreux arbres et arbustes, et ressemblent pendant ce temps à une brindille ou à une fiente d'oiseau.",
   },
+  "Adelpha californica": {
+    blurb:
+      "Un grand papillon sombre barré de blanc, avec une tache orange au bout de chaque aile, qui plane haut autour des chênes à feuillage persistant. Ses chenilles ne mangent que des feuilles de chêne, surtout de ces chênes toujours verts, et ressemblent à de minuscules dragons verts.",
+  },
+  "Erynnis tristis": {
+    blurb:
+      "Une hespérie brun sombre à frange blanche éclatante sur les ailes postérieures, qui vole autour des chênes presque toute l'année en Californie. Ses chenilles mangent des feuilles de chêne, à l'abri d'une feuille repliée qu'elles cousent de soie.",
+  },
+  "Apodemia virgulti": {
+    blurb:
+      "Un petit papillon en damier orange, noir et blanc qui se pose ailes ouvertes sur l'ériogone de Californie. Ses chenilles mangent les feuilles d'ériogone et se cachent le jour dans un abri de soie au pied de la plante.",
+  },
+  "Asterocampa clyton": {
+    blurb:
+      "Un cousin orange chaud du papillon du micocoulier, dont les chenilles ne mangent elles aussi que du micocoulier. Elles éclosent en grappes et se nourrissent côte à côte, puis passent l'hiver, encore petites, enroulées dans une feuille morte.",
+  },
+  "Erynnis horatius": {
+    blurb:
+      "Une hespérie brun sombre qui s'éloigne rarement des chênes, dont ses chenilles mangent les feuilles. Elle vole du début du printemps à l'automne et s'arrête souvent au soleil, les ailes à plat.",
+  },
+  "Chlosyne lacinia": {
+    blurb:
+      "Un petit papillon noir barré d'une large bande orange ou crème, commun dans les étés texans. Ses chenilles se nourrissent en groupe sur les tournesols et leurs proches.",
+  },
+  "Hemiargus ceraunus": {
+    blurb:
+      "Un minuscule papillon bleu des terrains secs et ensoleillés du Texas et de la Floride. Ses chenilles mangent les boutons floraux et les jeunes gousses de plantes de la famille du pois, du prosopis au Chamaecrista fasciculata.",
+  },
+  "Calycopis cecrops": {
+    blurb:
+      "Un petit thécla gris marqué d'une bande rouge orangé sous chaque aile, commun dans les bois et les jardins du Sud. Ses chenilles rampent dans les feuilles tombées sous les sumacs et le Morella cerifera et les mangent sur place — laissez donc la litière.",
+  },
+  "Callophrys henrici": {
+    blurb:
+      "Un petit papillon brun du début du printemps, l'un des premiers à voler. Ses chenilles mangent les fleurs et les jeunes fruits du gainier du Canada et, dans le Hill Country, du Diospyros texana et de l'Ungnadia speciosa.",
+  },
+  "Phaeostrymon alcestis": {
+    blurb:
+      "Un petit thécla gris-brun dont les chenilles ne mangent que le Sapindus drummondii. Là où il n'y a pas de Sapindus, il n'y a pas de Phaeostrymon alcestis.",
+  },
+  "Thessalia theona": {
+    blurb:
+      "Un petit papillon en damier orange et crème des broussailles sèches du Texas. Ses chenilles mangent le Leucophyllum frutescens et les castilléjas, et il vole par vagues après les pluies d'été, juste quand le Leucophyllum fleurit.",
+  },
+  "Eurytides marcellus": {
+    blurb:
+      "Un pâle papillon à queues rayé de noir et de blanc, aux longues queues en lame d'épée. Ses chenilles ne mangent que des asiminiers, si bien qu'il vit là où poussent les asiminiers.",
+  },
+  "Papilio palamedes": {
+    blurb:
+      "Un grand papillon sombre à queues des marais du Sud, barré d'une bande jaune. Ses chenilles se nourrissent de Persea borbonia et de ses proches, et les adultes se pressent sur le céphalanthe et la pontédérie pour le nectar.",
+  },
+  "Automeris io": {
+    blurb:
+      "Un bombyx jaune qui dévoile deux grands ocelles sur ses ailes postérieures quand on le dérange. Ses chenilles vertes et épineuses piquent, et elles mangent les feuilles de nombreux arbres, dont l'érable rouge et les saules.",
+  },
+  "Habropoda laboriosa": {
+    blurb:
+      "Une abeille indigène rapide et velue qui récolte son pollen presque uniquement sur les fleurs de myrtilliers. Elle fait vibrer les fleurs pour en libérer le pollen au début du printemps et ne vit que quelques semaines, calées sur la floraison.",
+  },
+  "Phoebis sennae": {
+    blurb:
+      "Un grand papillon jaune citron vif qui file haut et vite à travers les jardins de Floride toute l'année. Ses chenilles mangent les sénés et le Chamaecrista fasciculata, et deviennent jaunes ou vertes selon les fleurs ou les feuilles qu'elles mangent.",
+  },
+  "Urbanus proteus": {
+    blurb:
+      "Une hespérie brune au dos bleu-vert chatoyant, munie de deux longues queues. Ses chenilles replient en abri les feuilles de haricots sauvages et de Centrosema virginianum, et s'en nourrissent à l'intérieur.",
+  },
+  "Junonia coenia": {
+    blurb:
+      "Un papillon brun portant de grands ocelles sur chaque aile, souvent vu au soleil sur la terre nue. Ses chenilles mangent des plantes basses comme les ruellias et les plantains.",
+  },
+  "Xanthopastis regnatrix": {
+    blurb:
+      "Un papillon de nuit aux ailes roses et noires piquetées d'or, comme une robe de flamenco. Ses chenilles noires annelées de jaune mangent les feuilles des Crinum et des Hymenocallis indigènes.",
+  },
+  "Syntomeida epilais": {
+    blurb:
+      "Un papillon de nuit d'un bleu-noir métallique à points blancs, au corps taché de rouge, qui vole de jour comme une guêpe. Ses chenilles mangeaient l'Echites umbellatus indigène bien avant l'arrivée du laurier-rose.",
+  },
+  "Sciurus vulgaris": {
+    blurb:
+      "L'écureuil d'Europe, roux à presque noir, aux oreilles ornées de pinceaux en hiver. Il vit de graines d'arbres : il dépouille un cône de pin ou d'épicéa écaille par écaille jusqu'au trognon, et enterre des noisettes qu'il oublie en partie — plantant des arbres au passage.",
+  },
+  "Sphinx pinastri": {
+    blurb:
+      "Un grand sphinx gris cendré des forêts de conifères, strié de noir, qui se pose le jour à plat contre l'écorce d'un pin et y disparaît presque. Sa chenille, rayée de vert et de blanc comme une aiguille de pin, se nourrit de pin, d'épicéa et de mélèze.",
+  },
+  "Aglia tau": {
+    blurb:
+      "Un papillon de la famille des saturnies, fauve orangé, avec un T blanc dans un ocelle bleu-noir sur chaque aile. Les mâles filent à travers les hêtraies par les matins d'avril à la recherche des femelles, qui attendent sur les troncs. Les chenilles mangent surtout du hêtre.",
+  },
+  "Parnassius apollo": {
+    blurb:
+      "Un grand papillon blanc des pentes ensoleillées des Alpes, aux ailes marquées de noir et de taches rouges cerclées de noir. Il est protégé dans toute l'Europe, et ses chenilles ne mangent que des orpins et des joubarbes poussant sur la roche chaude et les éboulis.",
+  },
+  "Hyles hippophaes": {
+    blurb:
+      "Un sphinx rare, olive et rose, des bancs de graviers des rivières alpines où pousse l'argousier. Sa chenille mange de l'argousier et rien d'autre : le papillon ne vit donc que là où une rivière déborde encore, remue ses graviers et laisse l'arbuste s'installer.",
+  },
+  "#coal-crested-tits": {
+    blurb:
+      "Les petites mésanges des forêts de conifères de montagne — la mésange noire à la nuque blanche, la mésange huppée à la huppe pointue noire et blanche. Elles vivent toute l'année dans les houppiers, cueillant les insectes parmi les aiguilles et cachant des graines de conifères dans les fentes de l'écorce pour l'hiver.",
+  },
+  "Limenitis camilla": {
+    blurb:
+      "Un papillon noir des bois, barré d'une large bande blanche sur chaque aile, qui plane dans la lumière tachetée presque sans battre des ailes. Ses chenilles mangent le chèvrefeuille qui pousse à l'ombre, et passent l'hiver roulées dans une seule feuille attachée à la tige.",
+  },
+  "Thecla betulae": {
+    blurb:
+      "Un papillon brun et orangé des haies de prunellier, qui vole à la fin de l'été et se laisse rarement voir. Le plus facile à trouver, c'est son œuf : un minuscule point blanc à la fourche d'un rameau de prunellier, qui attend là tout l'hiver.",
+  },
+  "Aporia crataegi": {
+    blurb:
+      "Un grand papillon blanc aux ailes dessinées de fines nervures noires, comme du papier calque. Ses chenilles passent l'hiver ensemble dans une tente de soie sur l'aubépine ou le prunellier, et les adultes se rassemblent sur les chardons et la terre humide en juin.",
+  },
+  "Lysandra coridon": {
+    blurb:
+      "Un papillon d'un bleu pâle et laiteux, des pelouses rases sur craie et calcaire, parfois par centaines sur un même coteau. Ses chenilles mangent l'hippocrépide en ombelle et rien d'autre, et des fourmis s'en occupent toute la nuit pour les gouttes sucrées qu'elles produisent.",
+  },
+  "Melanargia galathea": {
+    blurb:
+      "Un papillon en damier noir et blanc des hautes herbes d'été, et malgré son allure un cousin des satyres bruns. Ses chenilles mangent des graminées, et les adultes se nourrissent sur des fleurs violettes — centaurées, scabieuses, chardons.",
+  },
+  "Andrena hattorfiana": {
+    blurb:
+      "Une grande abeille solitaire qui n'élève ses petits qu'avec du pollen de scabieuse. La femelle porte souvent une poussière de pollen rose, et certaines ont l'abdomen rouge. Pas de scabieuse dans le pré, pas d'abeille.",
+  },
+  "Argynnis aglaja": {
+    blurb:
+      "Un grand papillon orange et rapide des coteaux ouverts, des dunes et des prairies rudes. Dessous, ses ailes postérieures sont lavées de vert et tachées d'argent. Ses chenilles mangent des violettes, et les adultes se posent surtout sur les chardons et la centaurée.",
+  },
+  "Argynnis paphia": {
+    blurb:
+      "Un grand papillon orange des allées forestières ensoleillées, qui plane d'une fleur de ronce à l'autre en juillet. Son revers est lavé de traînées vert argenté. La femelle pond sur l'écorce d'un arbre près des violettes, et les chenilles descendent les rejoindre au printemps.",
+  },
+  "Aglais urticae": {
+    blurb:
+      "Un papillon orange vif bordé de taches bleues, souvent le premier dehors par une chaude journée de printemps. Il passe l'hiver à l'état adulte dans les remises et les maisons, et ses chenilles ne mangent que des orties.",
+  },
+  "#winter-moths": {
+    blurb:
+      "De petits papillons de nuit qui volent pendant les mois les plus froids du Japon, quand peu d'oiseaux ou de chauves-souris chassent. Les femelles n'ont pas d'ailes utiles et grimpent le long du tronc pour pondre ; les chenilles éclosent avec les feuilles du printemps.",
+  },
+  "Hypomecis punctinalis": {
+    blurb:
+      "Un papillon de nuit gris-brun au dessin d'écorce, qui passe la journée plaqué contre un tronc. Ses chenilles arpenteuses mangent les feuilles de nombreux feuillus, du chêne et de l'érable au zelkova.",
+  },
+  "Colotois pennaria": {
+    blurb:
+      "Un papillon de nuit brun orangé de la fin de l'automne, dont les mâles ont des antennes en plumes et viennent aux fenêtres éclairées par les nuits froides. Ses chenilles ressemblent à des brindilles et mangent au printemps les feuilles de l'érable, du chêne et de la viorne.",
+  },
+  "Neozephyrus japonicus": {
+    blurb:
+      "Une petite thècle dont les mâles brillent d'un vert métallique, qui vit partout où poussent les aulnes dans les bois humides de plaine. Ses chenilles mangent les feuilles de l'aulne, et c'est le papillon emblème de la préfecture de Saitama.",
+  },
+  "Argynnis hyperbius": {
+    blurb:
+      "Un nacré orange dont la femelle a le bout des ailes noir, traversé d'une bande blanche. Ses chenilles ne mangent que des violettes, et il a gagné le Kantō à mesure que les hivers se sont adoucis.",
+  },
+  "Graphium sarpedon": {
+    blurb:
+      "Un papillon noir et rapide, traversé d'une bande de taches turquoise vif sur chaque aile : un papilionidé sans queues. Ses chenilles mangent le camphrier et d'autres arbres de la famille du laurier, si bien que les arbres d'alignement l'élèvent en plein Tokyo.",
+  },
+  "Zosterops japonicus": {
+    blurb:
+      "Un petit passereau vert olive à l'œil cerclé d'un anneau blanc vif, commun dans les parcs et les jardins japonais. En hiver, il boit le nectar des camélias et des fleurs de prunier, dont il transporte le pollen, et le reste de l'année il mange des baies.",
+  },
+  "Hypsipetes amaurotis": {
+    blurb:
+      "Un oiseau gris et bruyant à longue queue, avec une tache marron sur chaque joue, chez lui dans toutes les villes du Japon. Il mange des fruits et du nectar toute l'année, et disperse les graines de nombreux arbres indigènes.",
+  },
+  "Yponomeuta spp.": {
+    blurb:
+      "De petits papillons de nuit blancs ponctués de noir comme une fourrure d'hermine, dont les chenilles vivent ensemble sous des toiles de soie communes. Une toile peut envelopper tout un fusain au début de l'été ; l'arbuste refait ses feuilles ensuite.",
+  },
+  "Actias spp.": {
+    blurb:
+      "De grands papillons de soie vert pâle, aux ailes postérieures prolongées de longues queues. Leurs chenilles mangent le cerisier, l'aulne, le châtaignier et le chêne, et les adultes vivent environ une semaine sans se nourrir.",
+  },
+  "Limenitis arthemis": {
+    blurb:
+      "Un papillon forestier noir bleuté de l'est de l'Amérique du Nord, proche parent du vice-roi. Au sud, il imite le Battus philenor, au goût amer ; au nord, il porte une large bande blanche. Ses chenilles, déguisées en fientes d'oiseau, mangent les feuilles de cerisier, de bouleau et de peuplier.",
+  },
+  "Celastrina spp.": {
+    blurb:
+      "De petits papillons bleu ciel, parmi les premiers à voler au printemps, souvent avant les feuilles. Leurs chenilles mangent les boutons floraux des cornouillers et des viornes, et des fourmis les soignent pour les gouttes sucrées qu'elles sécrètent.",
+  },
+  "Callophrys niphon": {
+    blurb:
+      "Un petit papillon brun, au motif d'écorce de pin, qui vole en avril et en mai. Ses chenilles ne mangent que les jeunes aiguilles des pins : un bosquet de jeunes pins peut abriter une colonie que personne ne remarque.",
+  },
+  "Satyrium calanus": {
+    blurb:
+      "Un petit papillon brun foncé, à fines queues et à bandes liserées de blanc, posé sur les feuilles ensoleillées en lisière des chênaies au début de l'été. Ses chenilles mangent les jeunes feuilles des chênes, des caryers et des noyers.",
+  },
+  "Euphydryas phaeton": {
+    blurb:
+      "Un papillon noir, orange et blanc des prairies humides, nommé d'après les couleurs des armoiries de Lord Baltimore. Ses chenilles grandissent ensemble dans des toiles de soie sur les Chelone, puis passent l'hiver dans la litière juste en dessous.",
+  },
+  "Setophaga kirtlandii": {
+    blurb:
+      "Un passereau gris et jaune qui niche au sol sous de jeunes pins gris, surtout dans le nord de la péninsule inférieure du Michigan. Tombé à moins de 200 mâles chanteurs, il s'est rétabli grâce aux plantations et aux brûlages de pins gris, et a quitté la liste des espèces menacées en 2019.",
+  },
+  "Nyctemera annulata": {
+    blurb:
+      "Un papillon de nuit noir et blanc, au corps annelé d'orange, qui vole de jour et qu'on ne trouve qu'en Nouvelle-Zélande. Ses chenilles velues mangent les séneçons et leurs proches parents.",
+  },
+  "#nz-leafrollers": {
+    blurb:
+      "De petits papillons de nuit bruns dont les chenilles roulent une feuille en tube de soie et se nourrissent à l'intérieur. De nombreuses plantes indigènes les nourrissent, des hebes aux fougères arborescentes, et les chenilles nourrissent à leur tour les oiseaux insectivores.",
+  },
+  "Ischalis": {
+    blurb:
+      "Des papillons de nuit qu'on ne trouve qu'en Nouvelle-Zélande, dont les chenilles arpenteuses mangent les frondes des fougères, fougères arborescentes comprises. Un coin d'ombre plein de fougères leur sert de foyer.",
+  },
+  "Neophasia menapia": {
+    blurb:
+      "Un papillon blanc aux ailes bordées de noir qui vit haut dans les conifères et tournoie autour des cimes à la fin de l'été. Ses chenilles mangent des aiguilles — de pin surtout, mais aussi de douglas et de sapin de Vancouver — puis descendent au bout d'un fil de soie pour se nymphoser.",
+  },
+  "Tamiasciurus douglasii": {
+    blurb:
+      "Un petit écureuil brun-roux et bruyant des forêts de conifères du Nord-Ouest, qui houspille quiconque approche de son arbre. Il coupe des cônes verts tout l'automne, les entrepose en tas humides et vit de leurs graines tout l'hiver.",
+  },
+  "Antheraea polyphemus": {
+    blurb:
+      "Un énorme bombyx fauve portant sur chaque aile postérieure un ocelle transparent, qu'il dévoile à tout ce qui le dérange. Ses chenilles grossissent, vertes et dodues, sur le chêne, l'érable, le saule et le bouleau ; l'adulte n'a pas de bouche fonctionnelle et vit environ une semaine.",
+  },
+  "Nymphalis californica": {
+    blurb:
+      "Un papillon orange taché de noir aux bordures sombres, célèbre pour ses années d'abondance, quand des nuées franchissent les cols de montagne. Ses chenilles mangent les céanothes et presque rien d'autre, et les adultes passent l'hiver blottis sous une écorce ou dans une fente de rocher.",
+  },
+  "Vanessa annabella": {
+    blurb:
+      "Un papillon orange et noir, petit cousin occidental de la belle-dame, qui reste sur place au lieu de migrer. Ses chenilles mangent des mauves — sidalcées, mauves arbustives — à l'abri d'une petite tente de soie et de feuilles.",
+  },
+  "Strymon melinus": {
+    blurb:
+      "Un petit papillon gris-bleu, avec de fines queues et une tache orange sur chaque aile postérieure. Il frotte ses queues l'une contre l'autre pour qu'un oiseau frappe une fausse tête, et ses chenilles mangent les fleurs et les graines de nombreuses plantes, surtout des mauves et des légumineuses.",
+  },
+  "Hyles lineata": {
+    blurb:
+      "Un sphinx rapide et massif, une bande rose sur chaque aile postérieure, qu'on voit souvent au crépuscule planer devant les fleurs comme un colibri. Ses grosses chenilles mangent des épilobes, des onagres et bien d'autres plantes.",
+  },
+  "Boloria selene": {
+    blurb:
+      "Un petit papillon orange des prairies humides et fleuries, des pentes à fougère aigle et des clairières, qui vole au ras du sol en juin. Ses chenilles mangent des violettes. Il reste répandu en Écosse, alors qu'il décline vite plus au sud.",
+  },
+  "Erebia aethiops": {
+    blurb:
+      "Un papillon brun chocolat foncé aux ocelles cerclés d'orange, qui vole en août au-dessus des hautes herbes humides. En Grande-Bretagne, il ne vit presque qu'en Écosse. Ses chenilles mangent la molinie bleue, et les adultes ne volent qu'au soleil.",
+  },
+  "Satyrium titus": {
+    blurb:
+      "Un petit papillon brun, sans queues, avec une rangée de taches rouge corail sous chaque aile postérieure. Ses chenilles mangent les cerisiers et pruniers sauvages, la nuit, et les adultes se pressent sur les fleurs d'asclépiade en juillet.",
+  },
 };

@@ -3,7 +3,7 @@
   "version": "18",
   "file": "TAXREFv18.txt",
   "license": "Licence Ouverte / Etalab",
-  "extractedAt": "2026-10-25",
+  "extractedAt": "2026-10-26",
   "rowsInTable": 708685,
   "method": "LB_NOM matched exactly to each scientific name the app shows; the accepted row (CD_REF) supplies the French names, in TAXREF's own order, and its status in metropolitan France (FR). Only the names the app shows are kept.",
   "taxa": {
@@ -204,6 +204,28 @@
       ],
       "fr": "P"
     },
+    "Aglais urticae": {
+      "cdNom": 53754,
+      "cdRef": 53754,
+      "accepted": "Aglais urticae",
+      "rank": "ES",
+      "french": [
+        "Petite Tortue (La)",
+        "Vanesse de l'Ortie (La)",
+        "Petit-Renard (Le)"
+      ],
+      "fr": "P"
+    },
+    "Aglia tau": {
+      "cdNom": 54724,
+      "cdRef": 54724,
+      "accepted": "Aglia tau",
+      "rank": "ES",
+      "french": [
+        "Hachette (La)"
+      ],
+      "fr": "P"
+    },
     "Agraulis vanillae": {
       "cdNom": 647933,
       "cdRef": 647933,
@@ -396,6 +418,24 @@
       "french": [],
       "fr": "P"
     },
+    "Andrena hattorfiana": {
+      "cdNom": 239363,
+      "cdRef": 239363,
+      "accepted": "Andrena hattorfiana",
+      "rank": "ES",
+      "french": [
+        "Andrène de la scabieuse"
+      ],
+      "fr": "P"
+    },
+    "Andrena tarsata": {
+      "cdNom": 239450,
+      "cdRef": 239450,
+      "accepted": "Andrena tarsata",
+      "rank": "ES",
+      "french": [],
+      "fr": "P"
+    },
     "Andropogon glomeratus": {
       "cdNom": 629073,
       "cdRef": 1076363,
@@ -509,6 +549,20 @@
         "Faux persil de corniche"
       ]
     },
+    "Aporia crataegi": {
+      "cdNom": 54339,
+      "cdRef": 54339,
+      "accepted": "Aporia crataegi",
+      "rank": "ES",
+      "french": [
+        "Gazé (Le)",
+        "Piéride de l'Aubépine (La)",
+        "Piéride gazée (La)",
+        "Piéride de l'Alisier (La)",
+        "Piéride de l'Aubergine (La)"
+      ],
+      "fr": "P"
+    },
     "Aquilegia vulgaris": {
       "cdNom": 83267,
       "cdRef": 83267,
@@ -573,6 +627,31 @@
       "french": [
         "Ardisie elliptique"
       ]
+    },
+    "Argynnis aglaja": {
+      "cdNom": 219820,
+      "cdRef": 820680,
+      "accepted": "Speyeria aglaja",
+      "rank": "ES",
+      "french": [
+        "Grand Nacré (Le)",
+        "Aglaé (L')",
+        "Moyen-Nacré (Le)"
+      ],
+      "fr": "P"
+    },
+    "Argynnis paphia": {
+      "cdNom": 53878,
+      "cdRef": 53878,
+      "accepted": "Argynnis paphia",
+      "rank": "ES",
+      "french": [
+        "Tabac d'Espagne (Le)",
+        "Nacré vert (Le)",
+        "Barre argentée (La)",
+        "Empereur (L')"
+      ],
+      "fr": "P"
     },
     "Armeria maritima": {
       "cdNom": 83832,
@@ -896,6 +975,17 @@
       "french": [
         "Bouleau pubescent",
         "Bouleau blanc"
+      ],
+      "fr": "P"
+    },
+    "Boloria selene": {
+      "cdNom": 219817,
+      "cdRef": 219817,
+      "accepted": "Boloria selene",
+      "rank": "ES",
+      "french": [
+        "Petit Collier argenté (Le)",
+        "Nacré fléché (Le)"
       ],
       "fr": "P"
     },
@@ -1301,6 +1391,13 @@
       ],
       "fr": "P"
     },
+    "Celastrina ladon": {
+      "cdNom": 622262,
+      "cdRef": 622262,
+      "accepted": "Celastrina ladon",
+      "rank": "ES",
+      "french": []
+    },
     "Celastrus scandens": {
       "cdNom": 89459,
       "cdRef": 89459,
@@ -1587,6 +1684,19 @@
       ],
       "fr": "P"
     },
+    "Coenonympha pamphilus": {
+      "cdNom": 53623,
+      "cdRef": 53623,
+      "accepted": "Coenonympha pamphilus",
+      "rank": "ES",
+      "french": [
+        "Fadet commun (Le)",
+        "Procris (Le)",
+        "Petit Papillon des foins (Le)",
+        "Pamphile (Le)"
+      ],
+      "fr": "P"
+    },
     "Colchicum autumnale": {
       "cdNom": 92127,
       "cdRef": 92127,
@@ -1598,6 +1708,14 @@
       ],
       "fr": "P"
     },
+    "Colletes daviesanus": {
+      "cdNom": 53110,
+      "cdRef": 53110,
+      "accepted": "Colletes daviesanus",
+      "rank": "ES",
+      "french": [],
+      "fr": "P"
+    },
     "Colletes hederae": {
       "cdNom": 317811,
       "cdRef": 317811,
@@ -1605,6 +1723,17 @@
       "rank": "ES",
       "french": [
         "Collète du lierre"
+      ],
+      "fr": "P"
+    },
+    "Colotois pennaria": {
+      "cdNom": 248923,
+      "cdRef": 248923,
+      "accepted": "Colotois pennaria",
+      "rank": "ES",
+      "french": [
+        "Himère-plume (L')",
+        "Phalène emplumée (La)"
       ],
       "fr": "P"
     },
@@ -2131,6 +2260,20 @@
         "Éragrostis admirable"
       ],
       "fr": "M"
+    },
+    "Erebia aethiops": {
+      "cdNom": 53483,
+      "cdRef": 53483,
+      "accepted": "Erebia aethiops",
+      "rank": "ES",
+      "french": [
+        "Moiré sylvicole (Le)",
+        "Nègre à bandes fauves (Le)",
+        "Grand Nègre à bandes fauves (Le)",
+        "Grand Nègre (Le)",
+        "Éthiopien (L')"
+      ],
+      "fr": "P"
     },
     "Erica carnea": {
       "cdNom": 96664,
@@ -2837,6 +2980,14 @@
       "rank": "ES",
       "french": []
     },
+    "Heriades truncorum": {
+      "cdNom": 239718,
+      "cdRef": 239718,
+      "accepted": "Heriades truncorum",
+      "rank": "ES",
+      "french": [],
+      "fr": "P"
+    },
     "Hesperocyparis forbesii": {
       "cdNom": 1030440,
       "cdRef": 1030440,
@@ -2951,6 +3102,24 @@
       "rank": "ES",
       "french": []
     },
+    "Hyles hippophaes": {
+      "cdNom": 54849,
+      "cdRef": 54849,
+      "accepted": "Hyles hippophaes",
+      "rank": "ES",
+      "french": [
+        "Sphinx de l'Argousier (Le)"
+      ],
+      "fr": "P"
+    },
+    "Hyles lineata": {
+      "cdNom": 641797,
+      "cdRef": 641797,
+      "accepted": "Hyles lineata",
+      "rank": "ES",
+      "french": [],
+      "fr": "A"
+    },
     "Hypericum perforatum": {
       "cdNom": 103316,
       "cdRef": 103316,
@@ -2970,6 +3139,16 @@
       "french": [
         "Millepertuis élégant",
         "Millepertuis joli"
+      ],
+      "fr": "P"
+    },
+    "Hypomecis punctinalis": {
+      "cdNom": 248878,
+      "cdRef": 248878,
+      "accepted": "Hypomecis punctinalis",
+      "rank": "ES",
+      "french": [
+        "Boarmie pointillée (La)"
       ],
       "fr": "P"
     },
@@ -3350,6 +3529,26 @@
       ],
       "fr": "M"
     },
+    "Limenitis arthemis": {
+      "cdNom": 622446,
+      "cdRef": 622446,
+      "accepted": "Limenitis arthemis",
+      "rank": "ES",
+      "french": []
+    },
+    "Limenitis camilla": {
+      "cdNom": 53770,
+      "cdRef": 53770,
+      "accepted": "Limenitis camilla",
+      "rank": "ES",
+      "french": [
+        "Petit Sylvain (Le)",
+        "Petit Sylvain azuré (Le)",
+        "Deuil (Le)",
+        "Sibille (Le)"
+      ],
+      "fr": "P"
+    },
     "Linaria cannabina": {
       "cdNom": 889047,
       "cdRef": 889047,
@@ -3485,6 +3684,16 @@
       ],
       "fr": "P"
     },
+    "Lophophanes cristatus": {
+      "cdNom": 534750,
+      "cdRef": 534750,
+      "accepted": "Lophophanes cristatus",
+      "rank": "ES",
+      "french": [
+        "Mésange huppée"
+      ],
+      "fr": "P"
+    },
     "Lotus corniculatus": {
       "cdNom": 106653,
       "cdRef": 106653,
@@ -3587,6 +3796,16 @@
       "rank": "ES",
       "french": [
         "Tétras lyre"
+      ],
+      "fr": "P"
+    },
+    "Lysandra coridon": {
+      "cdNom": 54265,
+      "cdRef": 54265,
+      "accepted": "Lysandra coridon",
+      "rank": "ES",
+      "french": [
+        "Argus bleu-nacré (L')"
       ],
       "fr": "P"
     },
@@ -3710,6 +3929,19 @@
         "Fougère allemande"
       ],
       "fr": "I"
+    },
+    "Melanargia galathea": {
+      "cdNom": 53700,
+      "cdRef": 53700,
+      "accepted": "Melanargia galathea",
+      "rank": "ES",
+      "french": [
+        "Demi-Deuil (Le)",
+        "Échiquier (L')",
+        "Échiquier commun (L')",
+        "Arge galathée (L')"
+      ],
+      "fr": "P"
     },
     "Melanthera nivea": {
       "cdNom": 920197,
@@ -3935,6 +4167,19 @@
       "rank": "ES",
       "french": []
     },
+    "Neptis sappho": {
+      "cdNom": 53775,
+      "cdRef": 53775,
+      "accepted": "Neptis sappho",
+      "rank": "ES",
+      "french": [
+        "Sylvain de la Gesse (Le)",
+        "Nymphale de l'Érable (La)",
+        "Sylvain à deux blanches (Le)",
+        "Nymphe de l'Érable (Le)"
+      ],
+      "fr": "M"
+    },
     "Nucifraga caryocatactes": {
       "cdNom": 4480,
       "cdRef": 4480,
@@ -4121,6 +4366,17 @@
       "rank": "ES",
       "french": []
     },
+    "Parnassius apollo": {
+      "cdNom": 54496,
+      "cdRef": 54496,
+      "accepted": "Parnassius apollo",
+      "rank": "ES",
+      "french": [
+        "Apollon (L')",
+        "Parnassien apollon (Le)"
+      ],
+      "fr": "P"
+    },
     "Parthenocissus quinquefolia": {
       "cdNom": 112465,
       "cdRef": 112465,
@@ -4184,6 +4440,16 @@
       "rank": "ES",
       "french": []
     },
+    "Periparus ater": {
+      "cdNom": 534751,
+      "cdRef": 534751,
+      "accepted": "Periparus ater",
+      "rank": "ES",
+      "french": [
+        "Mésange noire"
+      ],
+      "fr": "P"
+    },
     "Petasites albus": {
       "cdNom": 112778,
       "cdRef": 112778,
@@ -4228,6 +4494,13 @@
         "Alavert à feuilles étroites"
       ],
       "fr": "P"
+    },
+    "Phoebis sennae": {
+      "cdNom": 647905,
+      "cdRef": 647905,
+      "accepted": "Phoebis sennae",
+      "rank": "ES",
+      "french": []
     },
     "Phormium tenax": {
       "cdNom": 113256,
@@ -5660,6 +5933,16 @@
       ],
       "fr": "M"
     },
+    "Sciurus vulgaris": {
+      "cdNom": 61153,
+      "cdRef": 61153,
+      "accepted": "Sciurus vulgaris",
+      "rank": "ES",
+      "french": [
+        "Écureuil roux"
+      ],
+      "fr": "P"
+    },
     "Securigera varia": {
       "cdNom": 122098,
       "cdRef": 92546,
@@ -5877,6 +6160,16 @@
       ],
       "fr": "P"
     },
+    "Sphinx pinastri": {
+      "cdNom": 248379,
+      "cdRef": 54805,
+      "accepted": "Hyloicus pinastri",
+      "rank": "ES",
+      "french": [
+        "Sphinx du Pin (Le)"
+      ],
+      "fr": "P"
+    },
     "Spinus pinus": {
       "cdNom": 889054,
       "cdRef": 889054,
@@ -6025,6 +6318,13 @@
       ],
       "fr": "I"
     },
+    "Syntomeida epilais": {
+      "cdNom": 641715,
+      "cdRef": 641715,
+      "accepted": "Syntomeida epilais",
+      "rank": "ES",
+      "french": []
+    },
     "Taraxacum officinale": {
       "cdNom": 125677,
       "cdRef": 125677,
@@ -6110,6 +6410,18 @@
         "Germandrée scorodoine",
         "Sauge des bois",
         "Germandrée des bois"
+      ],
+      "fr": "P"
+    },
+    "Thecla betulae": {
+      "cdNom": 54319,
+      "cdRef": 54319,
+      "accepted": "Thecla betulae",
+      "rank": "ES",
+      "french": [
+        "Thécla du Bouleau (La)",
+        "Thècle du Bouleau (La)",
+        "Porte-Queue à bandes fauves (Le)"
       ],
       "fr": "P"
     },
@@ -6405,6 +6717,13 @@
         "Myrte de l'Oregon"
       ],
       "fr": "M"
+    },
+    "Urbanus proteus": {
+      "cdNom": 647851,
+      "cdRef": 647851,
+      "accepted": "Urbanus proteus",
+      "rank": "ES",
+      "french": []
     },
     "Urena lobata": {
       "cdNom": 447317,

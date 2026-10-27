@@ -283,6 +283,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
         "Les prunelles tiennent longtemps après que les autres fruits ont disparu — exactement quand les grives hivernantes en ont besoin.",
       "mason-bees":
         "Le prunellier fleurit sur le bois nu en mars, avant ses propres feuilles : un repas précoce pour les abeilles solitaires qui viennent d'émerger.",
+      "brown-hairstreak":
+        "Le thécla du bouleau pond sur les jeunes pousses de prunellier, et l'œuf y reste tout l'hiver. Tailler la haie à ras chaque année, c'est couper les œufs avec.",
     },
   },
   "Corylus avellana": {
@@ -583,6 +585,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
     supportNotes: {
       "bumble-bees":
         "La succise fleurit en fin d'été, quand la prairie a fini de fleurir — un dernier gros repas pour les bourdons et les papillons.",
+      "marsh-fritillary":
+        "Le damier de la succise pond ses œufs en paquet sous une feuille de succise, et les chenilles passent l'hiver ensemble dans une tente de soie sur la plante.",
     },
   },
   "Centaurea nigra": {
@@ -599,6 +603,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
         "L'une des plantes les plus nectarifères de toute la flore française, et elle continue longtemps après la fauche de la prairie et la fin des ronces — bourdons, myrtils et grands nacrés la butinent tous jusqu'à l'automne.",
       "goldfinches-linnets":
         "Une tête de centaurée montée en graine est ce qu'un chardonneret préfère dans le jardin — ils s'y pendent la tête en bas et la démontent tout l'automne. Coupez les tiges en septembre et vous avez jeté la nourriture de l'hiver.",
+      "marbled-white":
+        "Le demi-deuil butine les fleurs violettes, et la centaurée noire est sa préférée en juillet.",
     },
   },
   "Lotus corniculatus": {
@@ -687,6 +693,8 @@ export const FRANCE_ATLANTIC: ProseTable = {
         "Le myrtil, l'amaryllis, le tristan, le demi-deuil et les hespéries n'ont mangé que de l'herbe toute leur vie de chenille, et ce sont des graminées fines comme celle-ci qu'ils choisissent. Ils passent aussi l'hiver au fond de la touffe — une pelouse tondue tous les quinze jours n'en nourrit aucun, une pelouse laissée fleurir les nourrit tous.",
       "goldfinches-linnets":
         "Laissée fleurir et grener, une pelouse de fétuque nourrit fringilles et bruants en fin d'été — le même carré de terrain, deux métiers, pour le prix de ne pas le tondre.",
+      "marbled-white":
+        "La fétuque rouge est l'une des principales graminées que mangent les chenilles du demi-deuil ; laissez une bande sans faucher jusqu'à la fin de l'été.",
     },
   },
   "Poa nemoralis": {
@@ -729,6 +737,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
     supportNotes: {
       "privet-hawk-moth":
         "Le chèvrefeuille s'ouvre au crépuscule et déverse son parfum pour un seul public : les sphinx à longue trompe qui viennent faire du surplace devant lui à la nuit tombée.",
+      "white-admiral":
+        "Les chenilles du petit sylvain mangent le chèvrefeuille qui pousse à l'ombre, pas en plein soleil. Laissez-le grimper dans une haie boisée.",
+      "hazel-dormouse":
+        "Le muscardin arrache l'écorce fine du chèvrefeuille pour tisser son nid d'été.",
     },
     lookalikeNotes: {
       "lonicera-japonica": {
@@ -903,6 +915,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses fleurs vertes d'avril nourrissent les abeilles, des dizaines de chenilles de papillons de nuit mangent ses feuilles, et ses graines ailées nourrissent pinsons et campagnols roussâtres jusqu'en hiver.",
     propagationNote:
       "Cueillez les graines ailées encore vertes en fin d'été et semez-les aussitôt dehors. Une graine laissée sécher et durcir peut attendre deux hivers avant de lever.",
+    supportNotes: {
+      "hawfinch":
+        "Les samares de l'érable champêtre restent accrochées jusqu'en hiver, et le grosbec les ouvre là où les petits fringilles renoncent.",
+    },
   },
   "Malus sylvestris@france-atlantic": {
     nativeNote:
@@ -913,6 +929,12 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses fleurs blanc rosé nourrissent abeilles et syrphes fin avril, et ses petites pommes acides nourrissent merles, grives mauvis et blaireaux une fois adoucies par les gelées.",
     propagationNote:
       "Écrasez des pommes mûres, lavez bien les pépins et semez-les dehors à l'automne, pour le froid d'hiver qu'il leur faut. Le semis donne un vrai arbre sauvage ; un arbre greffé repose souvent sur un porte-greffe de verger.",
+    supportNotes: {
+      "winter-thrushes":
+        "Les pommes sauvages tombent et s'amollissent dans l'herbe, et litornes et merles y reviennent tout l'hiver.",
+      "mason-bees":
+        "Les fleurs du pommier sauvage, fin avril, nourrissent les osmies, qui le pollinisent bien mieux qu'une abeille domestique.",
+    },
   },
   "Quercus petraea@france-atlantic": {
     nativeNote:
@@ -923,6 +945,12 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Des centaines d'espèces de chenilles, et donc les mésanges et fauvettes qui en nourrissent leurs petits, plus des glands pour les geais, les pics et les sangliers.",
     propagationNote:
       "Semez les glands frais à l'automne, directement dans un pot profond dehors, sans jamais les laisser sécher. Ils n'ont besoin d'aucun froid et s'enracinent en quelques semaines.",
+    supportNotes: {
+      "purple-hairstreak":
+        "Le chêne sessile convient au thécla du chêne aussi bien que le chêne pédonculé : les œufs sur les bourgeons en hiver, les chenilles sur les jeunes feuilles en mai.",
+      "eurasian-jay":
+        "Un geai enterre des milliers de glands chaque automne et en oublie assez pour planter les chênes suivants.",
+    },
   },
   "Euonymus europaeus@france-atlantic": {
     nativeNote:
@@ -933,6 +961,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses petites fleurs de mai nourrissent mouches et petites abeilles, l'hyponomeute du fusain élève ses chenilles dans des toiles de soie sur les feuilles, et les rougegorges mangent ses fruits vifs.",
     propagationNote:
       "Les boutures de bois sec de fin d'automne s'enracinent bien dans une planche abritée. Par semis, c'est lent : ôtez l'enveloppe orange, semez dehors à l'automne et attendez les plantules au second printemps.",
+    supportNotes: {
+      "blackcaps-warblers":
+        "Les graines orange cachées dans les capsules roses du fusain nourrissent le rouge-gorge à l'automne : toxiques pour nous, pas pour lui.",
+    },
   },
   "Viburnum opulus@france-atlantic": {
     nativeNote:
@@ -943,6 +975,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses ombelles blanches nourrissent syrphes et coléoptères en juin, et ses baies rouges luisantes tiennent jusqu'en hiver pour les bouvreuils et les grives.",
     propagationNote:
       "Les boutures herbacées du début d'été comme les boutures de bois sec d'automne s'enracinent facilement. La graine nettoyée, semée dehors à l'automne, lève surtout au second printemps.",
+    supportNotes: {
+      "winter-thrushes":
+        "Les baies de la viorne obier restent jusqu'à la fin de l'hiver, puis les grives les mangent quand les meilleurs fruits sont épuisés.",
+    },
   },
   "Ligustrum vulgare@france-atlantic": {
     nativeNote:
@@ -953,6 +989,12 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses fleurs de juin attirent papillons et abeilles, les chenilles du sphinx du troène mangent ses feuilles, et grives et bouvreuils prennent ses baies en hiver.",
     propagationNote:
       "Les boutures de bois sec enfoncées en terre en fin d'automne reprennent presque toujours. La graine extraite des baies et semée dehors à l'automne lève au printemps.",
+    supportNotes: {
+      "privet-hawk-moth":
+        "Le troène est la plante qui donne son nom à ce sphinx : sa grosse chenille verte s'en nourrit à la fin de l'été.",
+      "winter-thrushes":
+        "Les baies noires du troène restent tout l'hiver, mangées par les merles et les grives.",
+    },
   },
   "Ulex europaeus@france-atlantic": {
     nativeNote:
@@ -963,6 +1005,14 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses fleurs au parfum de noix de coco nourrissent les bourdons pendant les mois maigres, et son fourré épineux abrite les nids des tariers pâtres, des linottes et des fauvettes pitchou.",
     propagationNote:
       "Frottez la graine dure au papier de verre ou laissez-la tremper une nuit dans de l'eau chaude, puis semez au printemps. Élevez-le en pot et plantez-le jeune : un pied âgé supporte mal la transplantation.",
+    supportNotes: {
+      "silver-studded-blue":
+        "Sur les landes atlantiques, l'ajonc est une plante à chenilles de l'azuré de l'Ajonc, qui lui doit son nom.",
+      "goldfinches-linnets":
+        "Les linottes nichent au cœur des ajoncs, où les épines tiennent chats et pies à distance.",
+      "bumble-bees":
+        "L'ajonc fleurit presque tous les mois, si bien qu'une reine de bourdon réveillée tôt trouve toujours quelque chose.",
+    },
   },
   "Erica cinerea@france-atlantic": {
     nativeNote:
@@ -973,6 +1023,12 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses clochettes pourpres nourrissent bourdons et abeilles mellifères en plein été, et les bruyères nourrissent des dizaines d'espèces de chenilles, dont celle du petit paon de nuit.",
     propagationNote:
       "Prélevez en fin d'été de courtes boutures des pousses de l'année, dans un mélange sableux et acide. Ou buttez de terreau acide le cœur d'un vieux pied et détachez les pousses enracinées un an plus tard.",
+    supportNotes: {
+      "silver-studded-blue":
+        "La bruyère cendrée est l'une des plantes à chenilles de l'azuré de l'Ajonc sur les landes sèches, avec la callune et l'ajonc.",
+      "bumble-bees":
+        "La bruyère cendrée fleurit dès juin, des semaines avant la callune, et les bourdons la butinent tout l'été.",
+    },
   },
   "Rosa canina@france-atlantic": {
     nativeNote:
@@ -983,6 +1039,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses fleurs roses ouvertes nourrissent les abeilles en juin, plus d'une centaine d'espèces de chenilles vivent sur les rosiers sauvages, et ses cynorhodons rouges nourrissent grives et merles tout l'hiver.",
     propagationNote:
       "Les boutures de bois sec enfoncées en terre humide à l'automne sont de loin le plus rapide. La graine des cynorhodons, semée dehors à l'automne, lève surtout au second printemps.",
+    supportNotes: {
+      "winter-thrushes":
+        "Les cynorhodons s'amollissent après les premières gelées, et merles et litornes les mangent alors.",
+    },
   },
   "Primula vulgaris@france-atlantic": {
     nativeNote:
@@ -993,6 +1053,12 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses fleurs précoces nourrissent les reines de bourdons et les bombyles en mars, et la lucine pond sur ses feuilles.",
     propagationNote:
       "Divisez les grosses touffes après la floraison et replantez aussitôt. Semez la graine fraîche en été et laissez le pot dehors l'hiver.",
+    supportNotes: {
+      "duke-of-burgundy":
+        "La lucine ne pond que sur les primevères et les coucous, en choisissant les grandes feuilles à mi-ombre en lisière.",
+      "brimstone":
+        "Un citron qui se réveille en mars ne trouve presque rien d'ouvert. Les primevères d'un talus sont parmi les rares fleurs où il peut se nourrir.",
+    },
   },
   "Silene dioica@france-atlantic": {
     nativeNote:
@@ -1003,6 +1069,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses fleurs roses, longtemps ouvertes, nourrissent bourdons et papillons, et les silènes nourrissent des dizaines de papillons de nuit, dont certaines chenilles vivent dans les capsules.",
     propagationNote:
       "Semez en automne ou au printemps sur sol humide, à peine recouvert. Les touffes se divisent au printemps.",
+    supportNotes: {
+      "bumble-bees":
+        "Le compagnon rouge fleurit dès avril sur les talus ombragés, et les bourdons sont ses principaux visiteurs.",
+    },
   },
   "Filipendula ulmaria@france-atlantic": {
     nativeNote:
@@ -1013,6 +1083,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Son écume de fleurs attire syrphes, coléoptères et abeilles tout l'été, et ses feuilles nourrissent les chenilles du nacré de la sanguisorbe.",
     propagationNote:
       "Divisez les touffes en automne ou au printemps. La graine semée dehors à l'automne lève après le froid de l'hiver.",
+    supportNotes: {
+      "emperor-moth":
+        "La reine-des-prés est l'une des plantes à chenilles du petit paon de nuit loin des landes : une prairie humide peut en élever un.",
+    },
   },
   "Lythrum salicaria@france-atlantic": {
     nativeNote:
@@ -1023,6 +1097,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses longs épis nourrissent bourdons, abeilles mellifères et papillons de juin à septembre, au bord de l'eau où peu d'autres fleurs poussent.",
     propagationNote:
       "Divisez les touffes au printemps. Ou semez en surface d'un terreau mouillé, le pot posé dans une soucoupe d'eau. Les jeunes pousses s'enracinent dans un bocal d'eau.",
+    supportNotes: {
+      "bumble-bees":
+        "La salicaire fleurit des semaines le long des fossés humides en plein été, et les bourdons à langue longue visitent chaque épi.",
+    },
   },
   "Iris pseudacorus@france-atlantic": {
     nativeNote:
@@ -1033,6 +1111,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses grandes fleurs jaunes nourrissent les bourdons à langue longue au début de l'été, et ses touffes denses abritent grenouilles, tritons et poules d'eau au nid.",
     propagationNote:
       "Divisez les rhizomes après la floraison et replantez aussitôt au bord de l'eau. La graine fraîche, semée dans un pot de terreau mouillé, lève au printemps.",
+    supportNotes: {
+      "bumble-bees":
+        "Un bourdon doit se glisser sous le pétale de l'iris des marais pour atteindre le nectar, et en ressort couvert de pollen.",
+    },
   },
   "Leucanthemum vulgare@france-atlantic": {
     nativeNote:
@@ -1043,6 +1125,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses fleurs ouvertes nourrissent syrphes, coléoptères, petites abeilles et papillons au début de l'été, et les fringilles prennent ses graines.",
     propagationNote:
       "Semez à la volée sur sol nu en automne ou au printemps ; elle lève en quelques semaines. Les grosses touffes se divisent au printemps.",
+    supportNotes: {
+      "sunflower-specialist-bees":
+        "De petites abeilles qui ne récoltent le pollen que sur les fleurs de la famille des marguerites utilisent la grande marguerite tout l'été.",
+    },
   },
   "Knautia arvensis@france-atlantic": {
     nativeNote:
@@ -1053,6 +1139,12 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "L'une des meilleures fleurs d'été pour les abeilles et les papillons, et le seul pollen que récolte l'andrène Andrena hattorfiana.",
     propagationNote:
       "Semez en automne ou au printemps, en pressant la graine à la surface d'un sol nu. Les jeunes pieds se déplacent facilement dès leur premier automne.",
+    supportNotes: {
+      "large-scabious-mining-bee":
+        "La knautie des champs est la principale plante à pollen de cette abeille. Faucher le pré avant sa floraison, c'est lui retirer de quoi élever ses larves.",
+      "bumble-bees":
+        "La knautie des champs fleurit tout l'été dans les herbes hautes et reste animée de bourdons tout ce temps.",
+    },
   },
   "Origanum vulgare@france-atlantic": {
     nativeNote:
@@ -1063,6 +1155,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "L'une des toutes meilleures plantes à nectar de l'été : amaryllis, demi-deuils, bourdons et nombre de petites abeilles se pressent sur ses fleurs.",
     propagationNote:
       "Divisez les touffes au printemps, ou bouturez de jeunes pousses au début de l'été. La graine est fine : semez-la en surface sans la couvrir.",
+    supportNotes: {
+      "bumble-bees":
+        "Une touffe d'origan en fleur attire bourdons, papillons et syrphes tout au long du mois d'août.",
+    },
   },
   "Achillea millefolium@france-atlantic": {
     nativeNote:
@@ -1073,6 +1169,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses ombelles plates servent de piste d'atterrissage aux syrphes, coléoptères et petites abeilles solitaires, et les achillées nourrissent plus de quatre-vingts espèces de chenilles.",
     propagationNote:
       "Déterrez et divisez les stolons au printemps ou à l'automne. La graine semée en surface au printemps lève en deux semaines environ.",
+    supportNotes: {
+      "sunflower-specialist-bees":
+        "Colletes daviesanus, une petite abeille solitaire, nourrit ses larves presque uniquement de pollen d'achillée et de tanaisie.",
+    },
   },
   "Valeriana officinalis@france-atlantic": {
     nativeNote:
@@ -1093,6 +1193,12 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Un aimant à papillons en fin d'été : vulcains, paons du jour et robert-le-diable se pressent sur ses fleurs, comme l'écaille chinée.",
     propagationNote:
       "Divisez les touffes au printemps. La graine semée dehors à l'automne lève après l'hiver.",
+    supportNotes: {
+      "peacock-butterfly":
+        "L'eupatoire chanvrine attire les paons-du-jour à la fin de l'été, quand ils font des réserves avant d'hiberner.",
+      "red-admiral":
+        "Les vulcains se nourrissent sur ses têtes rose poudré le long des chemins humides en août et septembre.",
+    },
   },
   "Malva moschata@france-atlantic": {
     nativeNote:
@@ -1103,6 +1209,12 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses grandes fleurs ouvertes nourrissent bourdons et abeilles solitaires tout l'été, et les chenilles de l'hespérie de l'alcée mangent ses feuilles.",
     propagationNote:
       "Semez en automne ou au printemps à l'endroit voulu. Les plantules lèvent vite et fleurissent l'année suivante.",
+    supportNotes: {
+      "painted-lady":
+        "Les mauves font partie des plantes à chenilles de la vanesse des chardons, avec les chardons et les orties.",
+      "bumble-bees":
+        "Les grandes fleurs roses et ouvertes de la mauve musquée nourrissent les bourdons tout l'été.",
+    },
   },
   "Teucrium scorodonia@france-atlantic": {
     nativeNote:
@@ -1113,6 +1225,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Les bourdons butinent ses petites fleurs crème tout l'été, à l'ombre sèche où presque rien d'autre ne fleurit.",
     propagationNote:
       "Semez au printemps sur un sol caillouteux. Les touffes se divisent au printemps.",
+    supportNotes: {
+      "bumble-bees":
+        "La germandrée scorodoine fleurit en plein été sur les talus secs et ombragés, et les bourdons sont ses principaux visiteurs.",
+    },
   },
   "Anemone nemorosa@france-atlantic": {
     nativeNote:
@@ -1133,6 +1249,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "La principale plante à chenilles de l'aurore, et un nectar précoce pour les abeilles et les premiers papillons du printemps.",
     propagationNote:
       "Semez la graine fraîche en été sur sol humide. Les feuilles posées sur la terre mouillée font de petites plantules à détacher une fois enracinées.",
+    supportNotes: {
+      "orange-tip":
+        "L'aurore pond un seul œuf sur une tige fleurie, et la chenille mange les siliques. Ne fauchez pas le coin humide avant juillet.",
+    },
   },
   "Echium vulgare@france-atlantic": {
     nativeNote:
@@ -1143,6 +1263,12 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "L'une des plantes à nectar les plus riches de l'été, qui se remplit toute la journée pour les bourdons, les abeilles mellifères et les anthidies.",
     propagationNote:
       "Semez à l'endroit voulu, en fin d'été ou au printemps, sur un sol nu et caillouteux. Elle se transplante mal une fois sa racine pivotante formée.",
+    supportNotes: {
+      "bumble-bees":
+        "La vipérine renouvelle son nectar toute la journée, si bien que les bourdons reviennent de juin à septembre.",
+      "hummingbird-hawk-moth":
+        "Le moro-sphinx fait du surplace devant les fleurs bleues par un après-midi ensoleillé, en remontant l'épi.",
+    },
   },
   "Hypericum perforatum@france-atlantic": {
     nativeNote:
@@ -1153,6 +1279,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses fleurs riches en pollen nourrissent bourdons et syrphes, et les millepertuis nourrissent près de quarante espèces de chenilles.",
     propagationNote:
       "Semez la graine fine en surface au printemps, à la lumière. Les touffes se divisent au printemps.",
+    supportNotes: {
+      "bumble-bees":
+        "Le millepertuis n'a pas de nectar, mais les bourdons en font tomber le pollen en vibrant tout l'été.",
+    },
   },
   "Anthoxanthum odoratum@france-atlantic": {
     nativeNote:
@@ -1193,6 +1323,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Des épis bleus de printemps pour les bourdons et les premiers papillons, au ras du sol sous les arbres.",
     propagationNote:
       "Rempotez les stolons enracinés au printemps ou à l'automne : chacun est une plante toute faite.",
+    supportNotes: {
+      "bumble-bees":
+        "Les épis bleus de la bugle, au printemps dans les allées forestières, nourrissent les reines de bourdons qui fondent leur nid.",
+    },
   },
   "Prunella vulgaris@france-atlantic": {
     nativeNote:
@@ -1203,6 +1337,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses fleurs pourpres nourrissent bourdons et petits papillons tout l'été, dans l'herbe rase où peu de fleurs survivent.",
     propagationNote:
       "Soulevez et divisez des morceaux enracinés au printemps ou à l'automne. La graine semée au printemps lève facilement.",
+    supportNotes: {
+      "bumble-bees":
+        "La brunelle fleurit au ras de la pelouse tout l'été ; laissez-la sans tondre et les bourdons la trouveront.",
+    },
   },
   "Glechoma hederacea@france-atlantic": {
     nativeNote:
@@ -1213,6 +1351,10 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "L'un des premiers nectars du printemps pour les reines de bourdons, les anthophores et les bombyles.",
     propagationNote:
       "Chaque tige s'enracine là où elle touche le sol. Soulevez et rempotez des morceaux enracinés à tout moment de la saison.",
+    supportNotes: {
+      "bumble-bees":
+        "Le lierre terrestre fleurit en mars et avril au pied des haies, quand les reines de bourdons ont grand besoin de nectar.",
+    },
   },
   "Athyrium filix-femina@france-atlantic": {
     nativeNote:
@@ -1243,5 +1385,9 @@ export const FRANCE_ATLANTIC: ProseTable = {
       "Ses fleurs d'été parfumées nourrissent syrphes et abeilles, des papillons de nuit mangent ses feuilles, et ses plumets soyeux offrent un dortoir d'hiver aux troglodytes.",
     propagationNote:
       "Fixez une tige au sol et coupez-la une fois enracinée. Les boutures herbacées reprennent au début de l'été, et la graine semée dehors à l'automne lève au printemps.",
+    supportNotes: {
+      "bumble-bees":
+        "La clématite des haies fleurit à la fin de l'été sur le haut des haies, une masse de pollen pour les abeilles quand la floraison des haies est passée.",
+    },
   },
 };

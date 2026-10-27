@@ -27,6 +27,12 @@ export const FRANCE_ALPINE: ProseTable = {
         "Le bec croisé du bec-croisé est un outil pour un seul travail — ouvrir un cône d'épicéa — et tarins et mésanges noires prennent ce qu'il laisse tomber.",
       "black-grouse":
         "Les branches basses chargées de neige des vieux épicéas sont là où tétras lyre et grands tétras passent l'hiver de montagne.",
+      "red-squirrel":
+        "La graine d'épicéa est la base de l'alimentation de l'écureuil roux en forêt de montagne ; les cônes rongés s'entassent sous ses souches préférées.",
+      "pine-hawk-moth":
+        "L'épicéa est l'autre arbre principal du sphinx du pin dans les Alpes.",
+      "coal-crested-tits":
+        "Les mésanges noires cachent chaque automne des milliers de graines d'épicéa dans l'écorce et la mousse, et en vivent tout l'hiver.",
     },
     lookalikeNotes: {
       "pseudotsuga-menziesii": {
@@ -52,6 +58,8 @@ export const FRANCE_ALPINE: ProseTable = {
     supportNotes: {
       "conifer-seed-finches":
         "La graine de mélèze nourrit becs-croisés et tarins, et ses poussées de chenilles nourrissent une explosion d'oiseaux tous les huit ou neuf ans.",
+      "pine-hawk-moth":
+        "Le mélèze fait partie des conifères que mangent les chenilles du sphinx du pin.",
     },
   },
   "Pinus cembra": {
@@ -280,6 +288,8 @@ export const FRANCE_ALPINE: ProseTable = {
         "Le bouleau est l'un des arbres à chenilles du petit paon de nuit — la grosse larve verte à points roses et noirs mange à découvert sur les feuilles tout l'été.",
       "conifer-seed-finches":
         "Les chatons du bouleau s'effritent tout l'hiver en une graine si fine que seuls les petits fringilles s'en donnent la peine — tarins et sizerins se pendent la tête en bas au bout des rameaux pour l'atteindre.",
+      "tau-emperor":
+        "Le bouleau est, après le hêtre, l'un des arbres hôtes de la chenille de la hachette.",
     },
   },
   "Salix caprea@france-alpine": {
@@ -379,6 +389,8 @@ export const FRANCE_ALPINE: ProseTable = {
         "Des cerises noires en août, prises par les grives litornes, les merles et les merles à plastron — et par les martres, qui grimpent les chercher.",
       "blackcaps-warblers":
         "Les fauvettes qui font leurs réserves pour le voyage vers le sud visitent assidûment un merisier à grappes en fin d'été.",
+      "hawfinch":
+        "Le grosbec casse les noyaux de cerisier à grappes pour l'amande et laisse les moitiés fendues sous l'arbre.",
     },
     nativeNote:
       "Le cerisier des vallées alpines humides et des bords de ruisseaux — non pas le merisier à tête ronde des plaines, mais un arbre plus petit, chargé en mai de longues grappes pendantes de fleurs blanches parfumées.",
@@ -598,6 +610,8 @@ export const FRANCE_ALPINE: ProseTable = {
         "Le cassenoix met en cache des dizaines de milliers de noisettes et de graines chaque automne et se souvient de la plupart sous un mètre de neige ; celles qu'il oublie sont la façon dont le noisetier et le pin remontent tous deux la pente.",
       "mason-bees":
         "Des chatons en février, des semaines avant que rien d'autre ne s'ouvre dans la vallée, pour les premières abeilles solitaires de sortie par un après-midi doux.",
+      "red-squirrel":
+        "Un écureuil roux fend la noisette proprement en deux ; le muscardin, lui, ronge un trou rond et net.",
     },
   },
   "Trifolium pratense@france-alpine": {
@@ -708,6 +722,14 @@ export const FRANCE_ALPINE: ProseTable = {
       "Les faînes nourrissent geais, sittelles, loirs et écureuils roux, et peu d'arbres de montagne portent autant de chenilles. Les vieux hêtres se creusent et logent pics noirs et chauves-souris.",
     propagationNote:
       "Ramassez les faînes à leur chute en automne et semez-les aussitôt en pot dehors, à l'abri des mulots. Elles lèvent au printemps, après le froid de l'hiver.",
+    supportNotes: {
+      "tau-emperor":
+        "Le hêtre est l'arbre principal de la hachette. Ses chenilles se nourrissent haut dans le feuillage tout l'été, et les mâles viennent chercher les femelles sur les troncs en avril.",
+      "eurasian-jay":
+        "Les geais emportent les faînes et les enterrent à l'automne, et celles qu'ils oublient deviennent des semis loin de l'arbre parent.",
+      "red-squirrel":
+        "Les bonnes années de faînes, c'est de cela que les écureuils roux s'engraissent avant l'hiver.",
+    },
   },
   "Abies alba@france-alpine": {
     nativeNote:
@@ -718,6 +740,14 @@ export const FRANCE_ALPINE: ProseTable = {
       "Sa graine nourrit becs-croisés, mésanges noires et écureuils, et son houppier dense et persistant abrite roitelets et chouettes en hiver. Les chevreuils broutent durement ses jeunes pousses, d'où sa rareté dans bien des bois.",
     propagationNote:
       "Cueillez les cônes sur l'arbre au début de l'automne, avant qu'ils se désagrègent, et séchez-les pour libérer la graine. Donnez-lui quatre semaines de froid humide et semez au printemps. La graine se conserve mal : semez-la dans l'année.",
+    supportNotes: {
+      "conifer-seed-finches":
+        "Les cônes du sapin se désagrègent sur la branche à l'automne, et tarins et becs-croisés prennent la graine avant qu'elle tombe.",
+      "coal-crested-tits":
+        "Les rameaux denses du sapin sont là où mésanges noires et huppées se nourrissent tout l'hiver, cueillant les insectes sur les aiguilles et nichant dans les vieux troncs.",
+      "red-squirrel":
+        "Les écureuils roux coupent les cônes du sapin pour en tirer la graine ; un tas d'écailles arrachées au pied d'un tronc en est le signe.",
+    },
   },
   "Pinus sylvestris@france-alpine": {
     nativeNote:
@@ -728,6 +758,16 @@ export const FRANCE_ALPINE: ProseTable = {
       "Sa graine nourrit becs-croisés, tarins et écureuils roux, et mésanges huppées et grimpereaux chassent sur son écorce orangée. La processionnaire du pin y fait aussi ses nids ; les poils de ses chenilles sont urticants, tenez donc enfants et chiens à l'écart.",
     propagationNote:
       "Cueillez les cônes en fin d'hiver, avant qu'ils s'ouvrent, et séchez-les au chaud jusqu'à ce que la graine tombe. Pas besoin de froid : semez clair au printemps et gardez les semis en pleine lumière.",
+    supportNotes: {
+      "conifer-seed-finches":
+        "Les cônes du pin sylvestre gardent bien leur graine, et le bec-croisé est fait pour les ouvrir — son bec croisé écarte chaque écaille.",
+      "pine-hawk-moth":
+        "Le pin sylvestre est l'arbre principal du sphinx du pin ; sa chenille rayée est difficile à voir parmi les aiguilles.",
+      "red-squirrel":
+        "Un cône de pin rongé par un écureuil roux reste comme un trognon nu, avec une touffe d'écailles à la pointe.",
+      "coal-crested-tits":
+        "La mésange huppée est un oiseau des pinèdes, et les deux mésanges prennent la graine de pin et la cachent dans les fentes de l'écorce pour l'hiver.",
+    },
   },
   "Laburnum alpinum@france-alpine": {
     nativeNote:
@@ -738,6 +778,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "De longues grappes jaunes au début de l'été, que bourdons et osmies visitent assidûment. Comme les autres Fabacées, il enrichit en azote les sols pauvres.",
     propagationNote:
       "Versez de l'eau chaude sur la graine dure et laissez-la tremper une nuit, puis semez à l'automne en pot dehors. Mettez des gants pour la manipuler.",
+    supportNotes: {
+      "bumble-bees":
+        "Chaque fleur ne s'ouvre que sous une abeille assez lourde pour l'abaisser, et les bourdons parcourent les longues grappes jaunes en juin.",
+    },
   },
   "Alnus incana@france-alpine": {
     nativeNote:
@@ -748,6 +792,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "Les aulnes nourrissent plus de chenilles que tout autre genre d'arbre d'ici, et leur graine est un aliment d'hiver pour tarins et sizerins. Au bord d'un ruisseau, ses racines tiennent la berge.",
     propagationNote:
       "Cueillez les petits cônes à l'automne quand ils brunissent et séchez-les pour libérer la graine. Pressez-la sur un terreau humide au printemps sans la couvrir : elle a besoin de lumière pour germer.",
+    supportNotes: {
+      "conifer-seed-finches":
+        "Les petits cônes ligneux de l'aulne blanc gardent leur graine tout l'hiver, et tarins et sizerins s'y suspendent la tête en bas pour l'extraire.",
+    },
   },
   "Taxus baccata@france-alpine": {
     nativeNote:
@@ -758,6 +806,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "Ses baies nourrissent grives, merles et jaseurs à l'automne, et son feuillage dense et persistant est un dortoir d'hiver sûr. Les oiseaux rejettent la graine intacte.",
     propagationNote:
       "Les boutures des pousses de l'année s'enracinent lentement mais sûrement en fin d'été, en pot à l'ombre. La graine demande deux hivers dehors avant de lever.",
+    supportNotes: {
+      "winter-thrushes":
+        "Grives et merles mangent la chair rouge autour de la graine et rejettent intacte la graine toxique : c'est ainsi que l'if se dissémine.",
+    },
   },
   "Sambucus racemosa@france-alpine": {
     nativeNote:
@@ -768,6 +820,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "Ses baies mûrissent en plein été, bien avant la plupart des autres, et nourrissent grives, rougegorges, fauvettes à tête noire et loirs. Ses fleurs crème précoces sortent les premières abeilles et les premiers coléoptères.",
     propagationNote:
       "Des boutures de rameaux nus, grosses comme un crayon, piquées en terre l'hiver, s'enracinent avant l'été. La graine nettoyée semée à l'automne lève à son deuxième printemps.",
+    supportNotes: {
+      "blackcaps-warblers":
+        "Le sureau rouge fructifie en juillet, tôt pour un arbuste de montagne, et fauvettes et rougegorges le dépouillent vite.",
+    },
   },
   "Amelanchier ovalis@france-alpine": {
     nativeNote:
@@ -778,6 +834,12 @@ export const FRANCE_ALPINE: ProseTable = {
       "Des fleurs précoces pour les andrènes et les premières reines de bourdons, puis des baies bleu-noir en juillet que merles et fauvettes dévalisent vite. Elles se mangent aussi.",
     propagationNote:
       "Nettoyez la graine des baies mûres et semez-la aussitôt en pot dehors ; elle lève après un ou deux hivers. Une branche basse fixée au sol s'enracine en un an.",
+    supportNotes: {
+      "mason-bees":
+        "Des fleurs blanches en avril sur les pentes rocheuses chaudes, quand les premières abeilles solitaires sortent.",
+      "blackcaps-warblers":
+        "Les petits fruits bleu-noir mûrissent en été et sont pris par les fauvettes et les grives.",
+    },
   },
   "Lonicera alpigena@france-alpine": {
     nativeNote:
@@ -788,6 +850,12 @@ export const FRANCE_ALPINE: ProseTable = {
       "Ses fleurs nourrissent les bourdons au début de l'été, et ses baies les grives et les fauvettes à tête noire. Les chèvrefeuilles nourrissent la chenille du petit sylvain.",
     propagationNote:
       "Des extrémités de pousses tendres prélevées au début de l'été s'enracinent en quelques semaines sous abri. La graine extraite des baies demande un hiver dehors.",
+    supportNotes: {
+      "bumble-bees":
+        "Les fleurs rouge-brun, groupées par deux en mai, sont surtout visitées par les bourdons.",
+      "blackcaps-warblers":
+        "Des baies rouges luisantes, soudées par deux, à la fin de l'été, mangées par les fauvettes et les grives des bois de montagne.",
+    },
   },
   "Ribes alpinum@france-alpine": {
     nativeNote:
@@ -798,6 +866,12 @@ export const FRANCE_ALPINE: ProseTable = {
       "Des fleurs vert-jaune précoces pour les petites abeilles et les syrphes, puis des baies rouges pour merles et rougegorges. Les groseilliers nourrissent les chenilles de la zérène du groseillier.",
     propagationNote:
       "Des rameaux nus coupés en hiver et piqués en terre s'enracinent facilement. Prélevez-les sur un pied femelle si vous voulez des baies.",
+    supportNotes: {
+      "comma":
+        "Les groseilliers font partie des plantes hôtes de la chenille du Robert-le-diable, avec l'ortie et le houblon.",
+      "blackcaps-warblers":
+        "De petites baies rouges en été pour les fauvettes et les rougegorges.",
+    },
   },
   "Hippophae rhamnoides@france-alpine": {
     nativeNote:
@@ -808,6 +882,12 @@ export const FRANCE_ALPINE: ProseTable = {
       "Des baies orange qui tiennent jusqu'en hiver et nourrissent grives, litornes et jaseurs quand il ne reste presque rien. Le fourré épineux est un nichoir sûr pour les petits oiseaux.",
     propagationNote:
       "Déterrez un drageon enraciné en hiver et replantez-le. Les boutures de bois sec s'enracinent aussi, et une bouture garde le sexe du pied mère.",
+    supportNotes: {
+      "sea-buckthorn-hawk-moth":
+        "Ce sphinx rare ne pond que sur l'argousier, sur les bancs de graviers des rivières alpines. Pas d'argousier, pas de sphinx.",
+      "winter-thrushes":
+        "Les baies orange restent sur les branches jusqu'en hiver, et litornes et merles y reviennent quand la neige a tout recouvert.",
+    },
   },
   "Pinus mugo@france-alpine": {
     nativeNote:
@@ -818,6 +898,14 @@ export const FRANCE_ALPINE: ProseTable = {
       "Un couvert bas, dense et persistant là où presque rien ne tient debout, qui abrite tétras lyre et petits oiseaux tout l'hiver. Sa graine nourrit becs-croisés et cassenoix.",
     propagationNote:
       "Cueillez les cônes en fin d'hiver et séchez-les jusqu'à ce qu'ils s'ouvrent. Semez la graine au printemps sans froid, et attendez-vous à des semis lents.",
+    supportNotes: {
+      "black-grouse":
+        "Les fourrés bas de pin à crochets à la limite des arbres sont le terrain classique du tétras lyre : un couvert pour la nichée, un abri en hiver.",
+      "conifer-seed-finches":
+        "Becs-croisés et tarins exploitent les petits cônes pour leur graine, à une altitude où peu d'arbres poussent.",
+      "pine-hawk-moth":
+        "Les chenilles du sphinx du pin se nourrissent du pin de montagne comme du pin sylvestre.",
+    },
   },
   "Cotoneaster integerrimus@france-alpine": {
     nativeNote:
@@ -828,6 +916,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "De petites fleurs roses que guêpes et abeilles visitent de près, puis des baies rouges pour grives et merles.",
     propagationNote:
       "La graine demande deux hivers dehors avant de lever. Les boutures semi-aoûtées de fin d'été vont plus vite.",
+    supportNotes: {
+      "winter-thrushes":
+        "Des baies rouges sur la roche nue à l'automne, prises par les merles à plastron et les merles noirs.",
+    },
   },
   "Arnica montana@france-alpine": {
     nativeNote:
@@ -848,6 +940,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "Les bourdons descendent au fond des trompettes chercher le nectar, et dans les alpages peu de fleurs en offrent autant.",
     propagationNote:
       "Semez la graine fine comme de la poussière en surface à l'automne et laissez le pot dehors pour l'hiver. Divisez un tapis installé après la floraison.",
+    supportNotes: {
+      "bumble-bees":
+        "La trompette bleu profond est assez grande pour qu'un bourdon y entre tout entier, et les bourdons sont ses principaux pollinisateurs.",
+    },
   },
   "Astrantia major@france-alpine": {
     nativeNote:
@@ -858,6 +954,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "L'une des meilleures plantes à abeilles et à syrphes pour l'ombre : chaque tête compte des dizaines de minuscules fleurs. Coléoptères et petites guêpes viennent aussi.",
     propagationNote:
       "Divisez les touffes au printemps. La graine fraîche semée dehors à l'automne lève le printemps suivant ; les variétés ne se reproduisent pas fidèlement.",
+    supportNotes: {
+      "mason-bees":
+        "Chaque capitule est une petite foule de fleurs minuscules, ouverte tout l'été aux abeilles solitaires à langue courte, aux syrphes et aux coléoptères.",
+    },
   },
   "Geranium sylvaticum@france-alpine": {
     nativeNote:
@@ -868,6 +968,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "Des coupes ouvertes de nectar pour bourdons et petites abeilles solitaires au début de l'été, puis des graines pour les fringilles.",
     propagationNote:
       "Divisez les touffes au printemps ou à l'automne. La graine semée à l'automne lève au printemps suivant.",
+    supportNotes: {
+      "bumble-bees":
+        "Des fleurs violettes à travers les prés de fauche de montagne en juin, butinées par les bourdons.",
+    },
   },
   "Aster alpinus@france-alpine": {
     nativeNote:
@@ -898,6 +1002,12 @@ export const FRANCE_ALPINE: ProseTable = {
       "Ses fleurs pendantes sont faites pour les sphinx, qui viennent au crépuscule boire en vol stationnaire dessous. Les bourdons prennent ce qu'ils laissent.",
     propagationNote:
       "La graine demande du chaud puis du froid et lève à son deuxième printemps. Des écailles détachées du bulbe et gardées dans un terreau humide font aussi de petits bulbes.",
+    supportNotes: {
+      "hummingbird-hawk-moth":
+        "Le nectar est au fond de pétales recourbés, et le moro-sphinx vole sur place devant pour l'atteindre.",
+      "elephant-hawk-moth":
+        "Son parfum se renforce au crépuscule, l'heure où viennent les sphinx comme celui-ci.",
+    },
   },
   "Aquilegia vulgaris@france-alpine": {
     nativeNote:
@@ -908,6 +1018,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "Les bourdons à longue langue atteignent le nectar au fond des éperons ; ceux à langue courte percent l'arrière pour le voler. Les fringilles mangent la graine.",
     propagationNote:
       "Semez la graine fraîche en été ou à l'automne et laissez le pot dehors pour l'hiver. Les plants fleurissent à leur deuxième année.",
+    supportNotes: {
+      "bumble-bees":
+        "Le nectar est au bout de longs éperons recourbés : seuls les bourdons à longue langue l'atteignent par le bon chemin.",
+    },
   },
   "Primula veris@france-alpine": {
     nativeNote:
@@ -918,6 +1032,12 @@ export const FRANCE_ALPINE: ProseTable = {
       "Un nectar précoce pour les reines de bourdons et les bombyles. Les primevères nourrissent la chenille de la lucine, un petit papillon peu commun des pentes herbeuses.",
     propagationNote:
       "Semez la graine fraîche en fin d'été et laissez le pot dehors pour l'hiver. Divisez les touffes après la floraison.",
+    supportNotes: {
+      "duke-of-burgundy":
+        "La Lucine ne pond que sur les primevères officinales et les primevères acaules, en choisissant de grandes feuilles à mi-ombre.",
+      "bumble-bees":
+        "Le nectar de la primevère officinale est au fond du tube : ce sont les reines de bourdons à longue langue qui la visitent en avril.",
+    },
   },
   "Knautia arvensis@france-alpine": {
     nativeNote:
@@ -928,6 +1048,14 @@ export const FRANCE_ALPINE: ProseTable = {
       "L'une des meilleures fleurs à papillons qui soient, et le seul pollen que récolte l'andrène de la scabieuse. Les chardonnerets prennent la graine.",
     propagationNote:
       "Semez à l'automne en place, ou en pots dehors. Elle fleurit à sa deuxième année.",
+    supportNotes: {
+      "large-scabious-mining-bee":
+        "Cette grande andrène nourrit ses larves de pollen de knautie et presque rien d’autre. Pas de knautie, pas d’abeille.",
+      "six-spot-burnet":
+        "Les zygènes se rassemblent sur les têtes de knautie en juillet, souvent plusieurs par fleur.",
+      "apollo":
+        "Les Apollons descendent butiner les fleurs mauves comme la knautie les après-midi d'été.",
+    },
   },
   "Campanula scheuchzeri@france-alpine": {
     nativeNote:
@@ -938,6 +1066,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "De petites abeilles des campanules ne récoltent que leur pollen et dorment dans les clochettes. Bourdons et syrphes passent aussi.",
     propagationNote:
       "Pressez la graine fine comme de la poussière en surface au printemps et gardez-la humide. Divisez les touffes au printemps.",
+    supportNotes: {
+      "bumble-bees":
+        "Les bourdons entrent dans les clochettes penchées, et par temps froid peuvent y passer la nuit à l'abri.",
+    },
   },
   "Digitalis grandiflora@france-alpine": {
     nativeNote:
@@ -948,6 +1080,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "Les bourdons entrent tout entiers dans les tubes, et les fleurs se succèdent pendant des semaines.",
     propagationNote:
       "Répandez la graine fine en surface au printemps. Les vieilles touffes se divisent.",
+    supportNotes: {
+      "bumble-bees":
+        "Le tube d'une digitale a la forme d'un bourdon, qui y entre tout entier et ressort couvert de pollen.",
+    },
   },
   "Salvia pratensis@france-alpine": {
     nativeNote:
@@ -958,6 +1094,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "Chaque fleur porte un levier qui poudre de pollen le dos du bourdon qui la visite. Anthidies et osmies la butinent aussi.",
     propagationNote:
       "Semez au printemps ou à l'automne dans un mélange graveleux. Elle fleurit à sa deuxième année.",
+    supportNotes: {
+      "bumble-bees":
+        "Quand un bourdon s'y engage, un levier articulé rabat les étamines sur son dos — un mécanisme de pollinisation fait pour les grosses abeilles.",
+    },
   },
   "Origanum vulgare@france-alpine": {
     nativeNote:
@@ -968,6 +1108,12 @@ export const FRANCE_ALPINE: ProseTable = {
       "Peu de plantes attirent autant de papillons en fin d'été — amaryllis, azurés, nacrés — et aussi syrphes et abeilles. Des insectes hivernent dans les tiges laissées debout.",
     propagationNote:
       "Divisez les touffes au printemps. La graine pressée en surface germe à la lumière en deux semaines.",
+    supportNotes: {
+      "large-blue":
+        "Là où le thym manque, l'Azuré du serpolet pond sur l'origan, et sa chenille commence sa vie dans les inflorescences.",
+      "bumble-bees":
+        "L'origan fleurit pendant des semaines à la fin de l'été et c'est l'une des plantes les plus fréquentées d'un coteau sec.",
+    },
   },
   "Leucanthemum vulgare@france-alpine": {
     nativeNote:
@@ -998,6 +1144,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "Nourriture des chenilles de myrtils, de tristans et d'hespéries, qui hivernent aussi dans la touffe. Les fringilles prennent la graine.",
     propagationNote:
       "Coupez une touffe à la bêche au printemps. La graine semée au printemps lève en quelques semaines.",
+    supportNotes: {
+      "grass-skippers":
+        "La canche cespiteuse est une plante hôte pour le Tristan et d'autres papillons bruns des prairies humides.",
+    },
   },
   "Briza media@france-alpine": {
     nativeNote:
@@ -1048,6 +1198,12 @@ export const FRANCE_ALPINE: ProseTable = {
       "Des clochettes précoces pour les reines de bourdons, et des baies rouges que tétras et grives prennent tout l'hiver.",
     propagationNote:
       "Des boutures semi-aoûtées de fin d'été s'enracinent lentement sous abri dans un mélange acide et graveleux. Une tige rampante fixée au sol s'enracine là où elle touche.",
+    supportNotes: {
+      "black-grouse":
+        "Le raisin-d'ours garde ses fruits rouges tout l'hiver : l'une des rares choses qu'un tétras trouve quand le sol est gelé.",
+      "bumble-bees":
+        "De petites clochettes roses au printemps, butinées par les premières reines de bourdons.",
+    },
   },
   "Sempervivum arachnoideum@france-alpine": {
     nativeNote:
@@ -1058,6 +1214,10 @@ export const FRANCE_ALPINE: ProseTable = {
       "Des fleurs roses étoilées pour abeilles et papillons en plein été. Les joubarbes comptent parmi les plantes nourricières de la chenille de l'apollon.",
     propagationNote:
       "Chaque rosette émet des rejets : détachez-en un et pressez-le dans le gravier. La rosette qui fleurit meurt, mais ses rejets prennent le relais.",
+    supportNotes: {
+      "apollo":
+        "Les chenilles de l'Apollon mangent joubarbes et orpins sur la roche chaude. Une rocaille ensoleillée plantée de ces plantes peut accueillir le papillon.",
+    },
   },
   "Antennaria dioica@france-alpine": {
     nativeNote:

@@ -1,6 +1,6 @@
 {
   "region": "scotland-lowlands",
-  "ranAt": "2026-10-25T18:11:24.978Z",
+  "ranAt": "2026-10-26T21:15:10.189Z",
   "ties": [
     {"plant":"quercus-petraea","animal":"purple-hairstreak","support":"host","dbif":{"verdict":"CONFIRMED","as":"Quercusia quercus","sources":1},"verdict":"CONFIRMED"},
     {"plant":"quercus-robur","animal":"purple-hairstreak","support":"host","dbif":{"verdict":"CONFIRMED","as":"Quercusia quercus","sources":4},"verdict":"CONFIRMED"},
@@ -17,6 +17,16 @@
     {"plant":"myrica-gale","animal":"emperor-moth","support":"host","dbif":{"verdict":"NOT-FOUND","hostIds":[3525]},"verdict":"NOT-FOUND"},
     {"plant":"succisa-pratensis","animal":"marsh-fritillary","support":"host","dbif":{"verdict":"CONFIRMED","as":"Euphydryas aurinia","sources":1},"verdict":"CONFIRMED"},
     {"plant":"lotus-corniculatus","animal":"common-blue","support":"host","dbif":{"verdict":"CONFIRMED","as":"Polyommatus icarus","sources":9},"verdict":"CONFIRMED"},
-    {"plant":"lotus-corniculatus","animal":"six-spot-burnet","support":"host","dbif":{"verdict":"CONFIRMED","as":"Zygaena filipendulae","sources":6},"verdict":"CONFIRMED"}
+    {"plant":"lotus-corniculatus","animal":"six-spot-burnet","support":"host","dbif":{"verdict":"CONFIRMED","as":"Zygaena filipendulae","sources":6},"verdict":"CONFIRMED"},
+    {"plant":"salix-pentandra","animal":"poplar-hawk-moth","support":"host","dbif":{"verdict":"CONFIRMED","as":"Laothoe populi","sources":3,"atGenus":true},"verdict":"CONFIRMED"},
+    {"plant":"salix-aurita","animal":"poplar-hawk-moth","support":"host","dbif":{"verdict":"CONFIRMED","as":"Laothoe populi","sources":1},"verdict":"CONFIRMED"},
+    {"plant":"viola-riviniana","animal":"small-pearl-bordered-fritillary","support":"host","dbif":{"verdict":"CONFIRMED","as":"Boloria selene","sources":4},"verdict":"CONFIRMED"},
+    {"plant":"viola-riviniana","animal":"dark-green-fritillary","support":"host","dbif":{"verdict":"CONFIRMED","as":"Argynnis aglaja","sources":3},"verdict":"CONFIRMED"},
+    {"plant":"cardamine-pratensis","animal":"orange-tip","support":"host","dbif":{"verdict":"CONFIRMED","as":"Anthocharis cardamines","sources":12},"verdict":"CONFIRMED"},
+    {"plant":"galium-verum","animal":"elephant-hawk-moth","support":"host","dbif":{"verdict":"CONFIRMED","as":"Deilephila elpenor","sources":2},"verdict":"CONFIRMED"},
+    {"plant":"galium-verum","animal":"hummingbird-hawk-moth","support":"host","dbif":{"verdict":"CONFIRMED","as":"Macroglossum stellatarum","sources":3},"verdict":"CONFIRMED"},
+    {"plant":"deschampsia-cespitosa","animal":"grass-skippers","support":"host","dbif":{"verdict":"CONFIRMED","as":"Aphantopus hyperantus","sources":3},"verdict":"CONFIRMED"},
+    {"plant":"festuca-rubra","animal":"grass-skippers","support":"host","dbif":{"verdict":"CONFIRMED","as":"Maniola jurtina","sources":1,"atGenus":true},"verdict":"CONFIRMED"},
+    {"plant":"molinia-caerulea","animal":"scotch-argus","support":"host","dbif":{"verdict":"CONFIRMED","as":"Erebia aethiops","sources":7},"verdict":"CONFIRMED"}
   ]
 }

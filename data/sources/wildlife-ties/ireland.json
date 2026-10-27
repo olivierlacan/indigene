@@ -1,6 +1,6 @@
 {
   "region": "ireland",
-  "ranAt": "2026-10-25T18:11:17.510Z",
+  "ranAt": "2026-10-26T21:14:52.537Z",
   "ties": [
     {"plant":"quercus-petraea","animal":"purple-hairstreak","support":"host","dbif":{"verdict":"CONFIRMED","as":"Quercusia quercus","sources":1},"verdict":"CONFIRMED"},
     {"plant":"quercus-robur","animal":"purple-hairstreak","support":"host","dbif":{"verdict":"CONFIRMED","as":"Quercusia quercus","sources":4},"verdict":"CONFIRMED"},
@@ -24,6 +24,7 @@
     {"plant":"urtica-dioica","animal":"peacock-butterfly","support":"host","dbif":{"verdict":"CONFIRMED","as":"Inachis io","sources":6},"verdict":"CONFIRMED"},
     {"plant":"urtica-dioica","animal":"red-admiral","support":"host","dbif":{"verdict":"CONFIRMED","as":"Vanessa atalanta","sources":6},"verdict":"CONFIRMED"},
     {"plant":"urtica-dioica","animal":"comma","support":"host","dbif":{"verdict":"CONFIRMED","as":"Polygonia c-album","sources":8},"verdict":"CONFIRMED"},
+    {"plant":"urtica-dioica","animal":"small-tortoiseshell","support":"host","dbif":{"verdict":"CONFIRMED","as":"Aglais urticae","sources":5},"verdict":"CONFIRMED"},
     {"plant":"festuca-rubra","animal":"grass-skippers","support":"host","dbif":{"verdict":"CONFIRMED","as":"Maniola jurtina","sources":1,"atGenus":true},"verdict":"CONFIRMED"},
     {"plant":"poa-trivialis","animal":"grass-skippers","support":"host","dbif":{"verdict":"CONFIRMED","as":"Aphantopus hyperantus","sources":2,"atGenus":true},"verdict":"CONFIRMED"},
     {"plant":"molinia-caerulea","animal":"grass-skippers","support":"host","dbif":{"verdict":"NOT-FOUND","hostIds":[3465]},"verdict":"NOT-FOUND"},
@@ -32,6 +33,11 @@
     {"plant":"vicia-cracca","animal":"cryptic-wood-white","support":"host","dbif":{"verdict":"NOT-FOUND","hostIds":[5926]},"verdict":"NOT-FOUND"},
     {"plant":"lathyrus-pratensis","animal":"cryptic-wood-white","support":"host","dbif":{"verdict":"NOT-FOUND","hostIds":[3026]},"verdict":"NOT-FOUND"},
     {"plant":"galium-verum","animal":"elephant-hawk-moth","support":"host","dbif":{"verdict":"CONFIRMED","as":"Deilephila elpenor","sources":2},"verdict":"CONFIRMED"},
-    {"plant":"galium-verum","animal":"hummingbird-hawk-moth","support":"host","dbif":{"verdict":"CONFIRMED","as":"Macroglossum stellatarum","sources":3},"verdict":"CONFIRMED"}
+    {"plant":"galium-verum","animal":"hummingbird-hawk-moth","support":"host","dbif":{"verdict":"CONFIRMED","as":"Macroglossum stellatarum","sources":3},"verdict":"CONFIRMED"},
+    {"plant":"salix-pentandra","animal":"poplar-hawk-moth","support":"host","dbif":{"verdict":"CONFIRMED","as":"Laothoe populi","sources":3,"atGenus":true},"verdict":"CONFIRMED"},
+    {"plant":"salix-aurita","animal":"poplar-hawk-moth","support":"host","dbif":{"verdict":"CONFIRMED","as":"Laothoe populi","sources":1},"verdict":"CONFIRMED"},
+    {"plant":"viola-riviniana","animal":"dark-green-fritillary","support":"host","dbif":{"verdict":"CONFIRMED","as":"Argynnis aglaja","sources":3},"verdict":"CONFIRMED"},
+    {"plant":"viola-riviniana","animal":"silver-washed-fritillary","support":"host","dbif":{"verdict":"CONFIRMED","as":"Argynnis paphia","sources":3},"verdict":"CONFIRMED"},
+    {"plant":"cardamine-pratensis","animal":"orange-tip","support":"host","dbif":{"verdict":"CONFIRMED","as":"Anthocharis cardamines","sources":12},"verdict":"CONFIRMED"}
   ]
 }

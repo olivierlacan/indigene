@@ -1,6 +1,6 @@
 {
   "region": "chicago",
-  "ranAt": "2026-10-25T18:06:07.793Z",
+  "ranAt": "2026-10-26T21:17:16.048Z",
   "ties": [
     {"plant":"cephalanthus-occidentalis","animal":"silver-spotted-skipper","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Hale et al. 2024","iNaturalist observations"],"confirmedBy":["Hale et al. 2024","iNaturalist observations"],"records":167},"verdict":"CONFIRMED"},
     {"plant":"cephalanthus-occidentalis","animal":"red-admiral","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Hale et al. 2024","iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":70},"verdict":"CONFIRMED"},
@@ -11,6 +11,11 @@
     {"plant":"geranium-maculatum","animal":"mason-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Robertson 1929","Snow Entomological Museum"],"confirmedBy":["Robertson 1929"],"records":8},"verdict":"CONFIRMED"},
     {"plant":"geranium-maculatum","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Robertson 1929"],"confirmedBy":["Robertson 1929"],"records":21},"verdict":"CONFIRMED"},
     {"plant":"packera-aurea","animal":"sunflower-specialist-bees","support":"nectar","globi":{"verdict":"NOT-FOUND","cited":["Robertson 1929"],"confirmedBy":[],"found":[],"records":0},"verdict":"NOT-FOUND"},
-    {"plant":"packera-aurea","animal":"mason-bees","support":"nectar","globi":{"verdict":"OTHER","cited":["Robertson 1929"],"confirmedBy":[],"found":["iNaturalist observations"],"records":1},"verdict":"OTHER"}
+    {"plant":"packera-aurea","animal":"mason-bees","support":"nectar","globi":{"verdict":"OTHER","cited":["Robertson 1929"],"confirmedBy":[],"found":["iNaturalist observations"],"records":1},"verdict":"OTHER"},
+    {"plant":"cercis-canadensis","animal":"eastern-carpenter-bee","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":171},"verdict":"CONFIRMED"},
+    {"plant":"cercis-canadensis","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["iNaturalist observations"],"confirmedBy":["iNaturalist observations"],"records":25},"verdict":"CONFIRMED"},
+    {"plant":"lindera-benzoin","animal":"berry-songbirds","support":"berries","globi":{"verdict":"CONFIRMED","cited":["Fricke & Svenning 2020"],"confirmedBy":["Fricke & Svenning 2020"],"records":1},"verdict":"CONFIRMED"},
+    {"plant":"rubus-occidentalis","animal":"bumble-bees","support":"nectar","globi":{"verdict":"CONFIRMED","cited":["Thessen 2014 (Encyclopedia of Life)"],"confirmedBy":["Thessen 2014 (Encyclopedia of Life)"],"records":122},"verdict":"CONFIRMED"},
+    {"plant":"hamamelis-virginiana","animal":"cecropia-moth","support":"host","globi":{"verdict":"CONFIRMED","cited":["HOSTS (Robinson et al., NHM)"],"confirmedBy":["HOSTS (Robinson et al., NHM)"],"records":5},"verdict":"CONFIRMED"}
   ]
 }

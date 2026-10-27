@@ -334,7 +334,7 @@ audit (`app/src/lib/wildlife.ts` → `auditSupport`):
    audit rejects a tie with no source.
 
 Each tie also records **how** the plant helps (`support`: larval host, nectar,
-berries, seeds, shelter) and **how much the animal depends on it**
+berries, seeds, grazing — leaves, shoots or buds the animal eats — or shelter) and **how much the animal depends on it**
 (`reliance`: `sole` = obligate/no substitute, like a monarch on milkweed or an
 atala on coontie; `narrow` = a specialist with only a few options; `broad` =
 one of many, the default). The make-or-break `sole` ties are surfaced first and

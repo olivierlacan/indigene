@@ -15,10 +15,12 @@
 // is about the species itself, and the rank in the one state or province each
 // region actually is. Eleven subjects have either.
 //
-// **Which is why nothing here is a badge.** A red pill saying "ENDANGERED" on a
+// **Which is why no plant wears a badge.** A red pill saying "ENDANGERED" on a
 // plant we recommend planting is an invitation to go and find one. The copy
 // says the rank, says who says so, and ends by saying what to do instead — buy
 // it, for a plant; plant for it, for an animal.
+// An animal's card on the wildlife index does carry its rank, as a strip along
+// the bottom (`conservationFooter`): nobody digs up a tortoise to plant it.
 import TABLE from "../data/conservation.json";
 import { t, tOptional } from "./i18n";
 import type { TKey } from "../locales/en";
@@ -97,4 +99,19 @@ export function rankInWords(rank: string): string | null {
   const words = [...new Set(digits.map((d) => t(`conservation.words.${d}` as TKey)))];
   if (words.length === 1) return words[0];
   return t("conservation.span", { from: words[0], to: words[words.length - 1] });
+}
+
+/**
+ * How far along the scale a rank sits, as threat steps out of five: CR or a
+ * 1 is five, LC or a 5 is one. `low` and `high` differ only for a span the
+ * assessor couldn't narrow (`G3G4` → 2 to 3), which the footer draws as the
+ * span it is. Null for a rank nobody could read a step from.
+ */
+export function rankSeverity(rank: string): { low: number; high: number } | null {
+  const clean = rank.trim().toUpperCase();
+  const iucn = IUCN.indexOf(clean);
+  if (iucn >= 0) return { low: 5 - iucn, high: 5 - iucn };
+  const digits = clean.replace(/[^GNS1-5]/g, "").match(/[1-5]/g)?.map(Number);
+  if (!digits?.length) return null;
+  return { low: 6 - Math.max(...digits), high: 6 - Math.min(...digits) };
 }

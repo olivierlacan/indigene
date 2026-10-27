@@ -244,8 +244,13 @@ export interface Wildlife {
  * How a plant supports an animal — the honest distinction between raising its
  * young (a larval host, the strongest tie) and feeding or sheltering the adult.
  * Each key is glossed in plain words wherever it's shown (see `plain.ts`).
+ *
+ * `graze` is an animal eating the plant's own leaves, shoots or buds — a
+ * tortoise on wiregrass, a grouse on birch buds. It is food, not cover, so it
+ * is never filed as `shelter`; a tie that is mostly cover with the odd bite
+ * (a deer yard, a heather nest) stays `shelter` and its note says the rest.
  */
-export type SupportKind = "host" | "nectar" | "berries" | "seeds" | "shelter";
+export type SupportKind = "host" | "nectar" | "berries" | "seeds" | "graze" | "shelter";
 
 /**
  * How strongly the animal depends on THIS plant (or the plant group it stands

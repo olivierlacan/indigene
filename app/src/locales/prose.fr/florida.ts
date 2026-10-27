@@ -352,6 +352,8 @@ export const FLORIDA: ProseTable = {
         "Les houppes roses de la mimosa rampante restent à plat dans une pelouse où l'on marche, et les bourdons les travaillent tout l'été entre deux tontes.",
       "grass-skippers":
         "Hespéries fauves et petites piérides jaunes y descendent sans arrêt — c'est l'une des rares plantes à nectar qui survit au piétinement.",
+      "gopher-tortoise":
+        "La tortue gaufrée broute ses feuilles et ses houppes roses.",
     },
     nativeNote:
       "Couvre-sol indigène bas des bords de route, des champs et des terrains ouverts de Floride — une alternative indigène au gazon.",
@@ -568,6 +570,10 @@ export const FLORIDA: ProseTable = {
       "De fines touffes vertes qui rendent au sol sous les pins l'allure des flatwoods, et un couvert pour les oiseaux qui nichent au sol, comme le bruant des pinèdes.",
     propagationNote:
       "On la cultive à partir de mottes, car ses graines sauvages ne sont bonnes qu'après un feu en pleine saison de croissance. Divisez une touffe installée au printemps si vous en avez une.",
+    supportNotes: {
+      "gopher-tortoise":
+        "L'Aristida stricta est un pilier du broutage de la tortue gaufrée, et le tapis herbacé qui porte les feux gardant ses collines de sable ouvertes.",
+    },
   },
   "Eragrostis spectabilis": {
     nativeNote:
@@ -848,6 +854,8 @@ export const FLORIDA: ProseTable = {
         "Moqueurs, moqueurs roux et moqueurs chats mangent les raisins qui éclatent sur la vigne.",
       "acorn-mammals":
         "Renards, ratons laveurs, opossums, cerfs et ours noirs se nourrissent des raisins tombés.",
+      "gopher-tortoise":
+        "La tortue gaufrée mange les raisins tombés à sa portée.",
     },
   },
 
@@ -1261,6 +1269,8 @@ export const FLORIDA: ProseTable = {
         "Un palmier nain en fleur est l'une des plantes les plus visitées de Floride — des dizaines d'espèces d'abeilles solitaires indigènes y ont été relevées, dont plusieurs ne se trouvent guère ailleurs.",
       "berry-songbirds":
         "Le fruit noir de l'automne nourrit tour à tour merles d'Amérique, moqueurs, ratons laveurs, renards et ours.",
+      "gopher-tortoise":
+        "La tortue gaufrée mange les fruits tombés dans les flatwoods à palmier nain.",
     },
     nativeNote:
       "Le palmier de sous-bois qui définit les pinèdes et le scrub de Floride, vers le sud jusque dans les Keys — l'une des plantes les plus importantes de l'État pour la faune.",
@@ -1362,6 +1372,8 @@ export const FLORIDA: ProseTable = {
     supportNotes: {
       "sunflower-specialist-bees":
         "Le pollen de l'Helianthus debilis fait vivre les abeilles spécialistes des astéracées le long du littoral.",
+      "gopher-tortoise":
+        "La tortue gaufrée broute l'Helianthus debilis sur le sable du littoral et des hauteurs dégagées.",
     },
   },
   // -------------------------------------------------------------------------
@@ -1514,6 +1526,10 @@ export const FLORIDA: ProseTable = {
       "De grandes fleurs de pois lavande pour les abeilles et les papillons, et des feuilles pour les chenilles de l'Urbanus proteus.",
     propagationNote:
       "Cueillez les longues gousses plates quand elles brunissent, avant qu'elles ne se tordent en projetant la graine. Entaillez ou poncez le tégument, faites tremper une nuit, et semez au chaud.",
+    supportNotes: {
+      "gopher-tortoise":
+        "La tortue gaufrée broute le Centrosema virginianum, l'une des légumineuses indigènes qu'elle recherche.",
+    },
   },
   "Pentalinon luteum@florida-south": {
     nativeNote:
@@ -1549,6 +1565,8 @@ export const FLORIDA: ProseTable = {
         "Moqueurs, moqueurs roux et moqueurs chats mangent les raisins qui éclatent sur la vigne.",
       "acorn-mammals":
         "Renards, ratons laveurs, opossums et cerfs se nourrissent des raisins tombés.",
+      "gopher-tortoise":
+        "La tortue gaufrée mange les raisins tombés à sa portée.",
     },
   },
   "Symphyotrichum carolinianum@florida-south": {
@@ -1615,6 +1633,8 @@ export const FLORIDA: ProseTable = {
     supportNotes: {
       "grass-skippers":
         "Les hespéries fauves y descendent sans arrêt — l'une des rares plantes à nectar qui survit au piétinement.",
+      "gopher-tortoise":
+        "La tortue gaufrée broute ses feuilles et ses houppes roses.",
     },
   },
   "Pontederia cordata@florida-south": {

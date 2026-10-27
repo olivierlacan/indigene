@@ -117,6 +117,7 @@ function factsFor(s) {
   if (s.nectar > 0) facts.push({ icon: "bloom", value: String(s.nectar), label: plantsLabel(s.nectar, "nectar") });
   if (s.berries > 0) facts.push({ icon: "berries", value: String(s.berries), label: plantsLabel(s.berries, "berry") });
   if (s.seeds > 0) facts.push({ icon: "seeds", value: String(s.seeds), label: plantsLabel(s.seeds, "seed") });
+  if (s.graze > 0) facts.push({ icon: "graze", value: String(s.graze), label: plantsLabel(s.graze, "grazing") });
   if (s.shelter > 0) facts.push({ icon: "shelter", value: String(s.shelter), label: plantsLabel(s.shelter, "shelter") });
   return facts.slice(0, 4);
 }
@@ -211,6 +212,14 @@ const FACT_ICONS = {
       { d: "M24 24C26.5 20.5 30 19.5 32.5 20.5C31.5 24 28 26 24 24Z" },
       { d: "M24 32C22 28.5 19 27.5 17 28.5C18 32 21 33.5 24 32Z" },
       { d: "M24 32C26 28.5 29 27.5 31 28.5C30 32 27 33.5 24 32Z" },
+    ],
+  },
+  // A leaf with a bite out of its edge — the app's 🍃 for grazing: the plant
+  // eaten, not sat in.
+  graze: {
+    marks: [
+      { d: "M10 38C10 20 20 9 40 8C40 14 38.8 19.2 36.6 23.6A5.2 5.2 0 0 0 30.4 30.2C25.2 35.4 18.4 38 10 38Z" },
+      { d: "M10 38L24 24", stem: true, w: 2.4 },
     ],
   },
   // A house — the app's 🏠 for shelter, drawn flat: a roof over a body with a
@@ -374,6 +383,7 @@ try {
         nectar: count("nectar"),
         berries: count("berries"),
         seeds: count("seeds"),
+        graze: count("graze"),
         shelter: count("shelter"),
       }),
     });

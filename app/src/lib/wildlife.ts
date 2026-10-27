@@ -28,7 +28,8 @@ export const SUPPORT_RANK: Record<SupportKind, number> = {
   nectar: 1,
   berries: 2,
   seeds: 3,
-  shelter: 4,
+  graze: 4,
+  shelter: 5,
 };
 
 const wildlifeById = new Map(WILDLIFE.map((w) => [w.id, w]));

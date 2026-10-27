@@ -1790,6 +1790,15 @@
     "attribution": "(c) Isidre blanc, some rights reserved (CC BY-SA)",
     "color": "#555c3a"
   },
+  "douglas-squirrel": {
+    "taxonId": 46259,
+    "photoId": 24997401,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/24997401/square.jpg",
+    "observer": "Carol Blaney",
+    "license": "cc-by-nc",
+    "attribution": "(c) Carol Blaney, some rights reserved (CC BY-NC), uploaded by Carol Blaney",
+    "color": "#8c8781"
+  },
   "dryopteris-arguta": {
     "taxonId": 52671,
     "photoId": 107098738,

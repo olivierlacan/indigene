@@ -1723,14 +1723,6 @@
     },
     {
       "subject": "wildlife",
-      "id": "douglas-squirrel",
-      "name": "Tamiasciurus douglasii",
-      "taxonId": 46259,
-      "reason": "chosen photo 71588010 is all rights reserved",
-      "gallery": "https://www.inaturalist.org/taxa/46259/browse_photos"
-    },
-    {
-      "subject": "wildlife",
       "id": "eastern-pine-elfin",
       "name": "Callophrys niphon",
       "taxonId": 58550,

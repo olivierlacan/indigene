@@ -144,6 +144,41 @@ export interface TieSummary {
 }
 
 /**
+ * Every animal a set of plants supports, grouped by *how* it uses them — the
+ * plant page's answer to "who raises caterpillars on this, who grazes it, who
+ * shelters in it". Unlike `bestTies`, an animal appears under every kind of
+ * support it gets: a moth whose caterpillars eat the leaves and whose adults
+ * drink the nectar is in both groups, because both are true. Within a kind it
+ * appears once, however many regions list the tie.
+ *
+ * Groups come strongest kind first (`SUPPORT_RANK`), make-or-break ties first
+ * within each; empty kinds are left out.
+ */
+export function tiesByKind(scopes: TieScope[]): { support: SupportKind; ties: TieSummary[] }[] {
+  const groups = new Map<SupportKind, Map<string, TieSummary>>();
+  for (const { regionId, plantId } of scopes) {
+    for (const { wildlife, link } of wildlifeForPlant(regionId, plantId)) {
+      let group = groups.get(link.support);
+      if (!group) groups.set(link.support, (group = new Map()));
+      const prev = group.get(wildlife.id);
+      const sole = relianceOf(link) === "sole";
+      if (prev) {
+        prev.sole ||= sole;
+        if (!prev.plantIds.includes(plantId)) prev.plantIds.push(plantId);
+      } else {
+        group.set(wildlife.id, { wildlife, support: link.support, sole, plantIds: [plantId] });
+      }
+    }
+  }
+  return [...groups]
+    .sort(([a], [b]) => SUPPORT_RANK[a] - SUPPORT_RANK[b])
+    .map(([support, ties]) => ({
+      support,
+      ties: [...ties.values()].sort((a, b) => Number(b.sole) - Number(a.sole)),
+    }));
+}
+
+/**
  * Every animal a set of plants supports, deduped and ranked: make-or-break ties
  * first, then by how strong the support is.
  *

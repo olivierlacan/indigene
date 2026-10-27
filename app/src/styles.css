@@ -3395,6 +3395,24 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
     font-size: 0.8rem;
   }
 }
+/* A plant's animals grouped by how they use it: a small label with the
+   support glyph, then that group's chips. */
+.wl-by-kind {
+  display: grid;
+  gap: 0.6rem;
+}
+.wl-kind-label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0 0 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 650;
+  color: var(--ink-soft);
+}
+.wl-kind-glyph {
+  display: inline-flex;
+}
 .wl-chip-tie {
   opacity: 0.7;
   margin-left: 0.25rem;

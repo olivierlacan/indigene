@@ -8,8 +8,9 @@
 //
 // A star marks a plant the animal can't live without. The small glyph after the
 // name says how the plant helps: raising its young, feeding an adult, berries,
-// seed, cover.
-import type { Wildlife, WildlifeKind } from "../types";
+// seed, cover. On a plant's own page the chips are grouped under that instead
+// (`wildlifeByKind`), so the reader doesn't have to learn the glyphs.
+import type { SupportKind, Wildlife, WildlifeKind } from "../types";
 import type { TieSummary, WildlifeIndexRow } from "../lib/wildlife";
 import { el } from "../ui";
 import { supportIcon } from "./support-icon";
@@ -19,8 +20,10 @@ import { t, fmtNumber } from "../lib/i18n";
 import { wildlifeIcon } from "./wildlife-thumb";
 import { glyphKeyFor } from "./wildlife-glyphs";
 
-/** One chip. Exported for the pages that need to lay them out themselves. */
-export function wildlifeChip(tie: TieSummary): HTMLElement {
+/** One chip. Exported for the pages that need to lay them out themselves.
+ *  `glyph: false` drops the trailing support glyph, for a list whose heading
+ *  already says how the plant helps. */
+export function wildlifeChip(tie: TieSummary, opts: { glyph?: boolean } = {}): HTMLElement {
   const name = commonName(tie.wildlife);
   const support = supportLabel(tie.support);
   return el("a", {
@@ -32,12 +35,29 @@ export function wildlifeChip(tie: TieSummary): HTMLElement {
     wildlifeIcon(glyphKeyFor(tie.wildlife.kind, tie.wildlife.inat?.iconic), 15),
     " ",
     name,
-    el("span", { "aria-hidden": "true", class: "wl-chip-tie" }, [supportIcon(tie.support, 13)]),
+    opts.glyph === false ? null : el("span", { "aria-hidden": "true", class: "wl-chip-tie" }, [supportIcon(tie.support, 13)]),
   ]);
 }
 
 export function wildlifeChips(ties: TieSummary[]): HTMLElement {
-  return el("div", { class: "wl-chips" }, ties.map(wildlifeChip));
+  return el("div", { class: "wl-chips" }, ties.map((tie) => wildlifeChip(tie)));
+}
+
+/**
+ * A plant's animals sorted by how they use it: a line saying how ("Raise
+ * caterpillars on it", "Shelter in it"), then the animals that do. The line
+ * carries the support glyph, so the chips under it go without. An animal that
+ * uses the plant two ways is under both lines.
+ */
+export function wildlifeByKind(groups: { support: SupportKind; ties: TieSummary[] }[]): HTMLElement {
+  return el("div", { class: "wl-by-kind" }, groups.map(({ support, ties }) =>
+    el("div", { class: "wl-kind-group" }, [
+      el("p", { class: "wl-kind-label" }, [
+        el("span", { "aria-hidden": "true", class: "wl-kind-glyph" }, [supportIcon(support, 14)]),
+        t(`plant.feeds.${support}` as const),
+      ]),
+      el("div", { class: "wl-chips" }, ties.map((tie) => wildlifeChip(tie, { glyph: false }))),
+    ])));
 }
 
 /**

@@ -1840,6 +1840,13 @@ details[open] > summary::after {
 .roster-drawer[open] > summary .control-chevron {
   transform: rotate(180deg);
 }
+/* A few filters side by side, every one in view — wrapping to a second line
+   on a phone rather than folding into a drawer. */
+.roster-switches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.2rem;
+}
 .roster-control-stack {
   display: flex;
   flex-direction: column;
@@ -5723,6 +5730,12 @@ button.card-stat:focus-visible .card-stat-tap {
    that strip is a grey hairline and glyphs. */
 .wildlife-card:has(> .status-footer) {
   flex-wrap: wrap;
+}
+/* The same strip on a region roster's row, filtered to the plants at risk:
+   bled to the row's own padding. */
+a.card > .status-footer {
+  margin: 0 calc(-1 * var(--list-card-pad)) calc(-1 * var(--list-card-pad));
+  padding-inline: var(--list-card-pad);
 }
 /* A zero basis keeps the text beside the picture once the card can wrap. */
 .wildlife-card:has(> .status-footer) > .wildlife-card-text {

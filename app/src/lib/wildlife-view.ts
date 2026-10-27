@@ -6,6 +6,8 @@
 //     have mapped, not every plant the animal uses, and the page says so.
 //   - grouped: one list by default, or under a heading per animal type.
 //   - sole: only the animals with a plant that is their only option.
+//   - atRisk: only the animals ranked vulnerable or worse, most threatened
+//     first (`lib/conservation.ts`). Both filters share `only=`: `only=sole,at-risk`.
 import type { WildlifeIndexRow } from "./wildlife";
 
 export type WildlifeSort = "name" | "plants";
@@ -14,14 +16,18 @@ export interface WildlifeView {
   sort: WildlifeSort;
   grouped: boolean;
   sole: boolean;
+  atRisk: boolean;
 }
+
+const only = (query: URLSearchParams): Set<string> => new Set((query.get("only") ?? "").split(","));
 
 /** Read the view from a query string; anything unknown is the default. */
 export function wildlifeView(query: URLSearchParams): WildlifeView {
   return {
     sort: query.get("sort") === "plants" ? "plants" : "name",
     grouped: query.get("group") === "type",
-    sole: query.get("only") === "sole",
+    sole: only(query).has("sole"),
+    atRisk: only(query).has("at-risk"),
   };
 }
 
@@ -30,7 +36,8 @@ export function wildlifeQuery(view: WildlifeView): string {
   const q = new URLSearchParams();
   if (view.sort === "plants") q.set("sort", "plants");
   if (view.grouped) q.set("group", "type");
-  if (view.sole) q.set("only", "sole");
+  const only = [view.sole && "sole", view.atRisk && "at-risk"].filter(Boolean);
+  if (only.length) q.set("only", only.join(","));
   const s = q.toString();
   return s ? `?${s}` : "";
 }

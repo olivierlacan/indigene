@@ -32,25 +32,27 @@ describe("rosterView", () => {
   const view = (q: string) => rosterView(new URLSearchParams(q));
 
   it("defaults to one list, by name, unfiltered", () => {
-    expect(view("")).toEqual({ sort: "name", grouped: false, pioneers: false, filters });
-    expect(view("sort=wildlife&group=maybe&only=trees")).toEqual({ sort: "name", grouped: false, pioneers: false, filters });
+    expect(view("")).toEqual({ sort: "name", grouped: false, pioneers: false, atRisk: false, filters });
+    expect(view("sort=wildlife&group=maybe&only=trees")).toEqual({ sort: "name", grouped: false, pioneers: false, atRisk: false, filters });
   });
 
   it("reads every control", () => {
-    expect(view("sort=caterpillars&group=type&only=pioneers")).toEqual({ sort: "caterpillars", grouped: true, pioneers: true, filters });
+    expect(view("sort=caterpillars&group=type&only=pioneers")).toEqual({ sort: "caterpillars", grouped: true, pioneers: true, atRisk: false, filters });
+    expect(view("only=at-risk,pioneers")).toEqual({ sort: "name", grouped: false, pioneers: true, atRisk: true, filters });
   });
 
   it("writes the default view as no query at all", () => {
-    expect(rosterQuery({ sort: "name", grouped: false, pioneers: false, filters })).toBe("");
+    expect(rosterQuery({ sort: "name", grouped: false, pioneers: false, atRisk: false, filters })).toBe("");
   });
 
   it("round-trips every combination", () => {
     for (const sort of ["name", "caterpillars"] as const)
       for (const grouped of [true, false])
-        for (const pioneers of [true, false]) {
-          const v = { sort, grouped, pioneers, filters };
-          expect(view(rosterQuery(v).slice(1))).toEqual(v);
-        }
+        for (const pioneers of [true, false])
+          for (const atRisk of [true, false]) {
+            const v = { sort, grouped, pioneers, atRisk, filters };
+            expect(view(rosterQuery(v).slice(1))).toEqual(v);
+          }
   });
 
   it("reads and writes the spot filters", () => {

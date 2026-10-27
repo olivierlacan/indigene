@@ -115,3 +115,29 @@ export function rankSeverity(rank: string): { low: number; high: number } | null
   if (!digits?.length) return null;
   return { low: 6 - Math.max(...digits), high: 6 - Math.min(...digits) };
 }
+
+/** From "vulnerable" up: IUCN VU, NatureServe 3. What the lists' "At risk"
+ *  filter keeps — near threatened and apparently secure are not at risk. */
+export const AT_RISK = 3;
+
+/**
+ * How threatened a subject is on a page about `regionId`, in `rankSeverity`'s
+ * steps (5 is critically endangered): the worse of its global rank and its
+ * rank in the region's own state, reading a span by its worse end. 0 when
+ * nothing readable has been published. The filter and the worst-first order
+ * use this, so a list and the strip on each card agree.
+ */
+export function threatLevel(subjectId: string, regionId?: string): number {
+  const { global, here } = conservationFor(subjectId, regionId);
+  return Math.max(0, ...[global, here].map((a) => (a ? rankSeverity(a.rank)?.high ?? 0 : 0)));
+}
+
+/** The items at risk, most threatened first; within a level, the order they
+ *  came in — so the list's own sort still decides between equals. */
+export function atRiskFirst<T>(items: T[], level: (item: T) => number): T[] {
+  return items
+    .map((item) => ({ item, n: level(item) }))
+    .filter((x) => x.n >= AT_RISK)
+    .sort((a, b) => b.n - a.n)
+    .map((x) => x.item);
+}

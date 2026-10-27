@@ -21,17 +21,20 @@ describe("sortWildlife", () => {
 describe("wildlifeView", () => {
   it("reads the default from an empty address, and writes it back as nothing", () => {
     const view = wildlifeView(new URLSearchParams(""));
-    expect(view).toEqual({ sort: "name", grouped: false, sole: false });
+    expect(view).toEqual({ sort: "name", grouped: false, sole: false, atRisk: false });
     expect(wildlifeQuery(view)).toBe("");
   });
 
   it("round-trips every control", () => {
-    const view = { sort: "plants", grouped: true, sole: true } as const;
-    expect(wildlifeView(new URLSearchParams(wildlifeQuery(view)))).toEqual(view);
+    for (const sole of [true, false])
+      for (const atRisk of [true, false]) {
+        const view = { sort: "plants", grouped: true, sole, atRisk } as const;
+        expect(wildlifeView(new URLSearchParams(wildlifeQuery(view)))).toEqual(view);
+      }
   });
 
   it("ignores values it doesn't know", () => {
     expect(wildlifeView(new URLSearchParams("sort=size&group=x&only=pioneers")))
-      .toEqual({ sort: "name", grouped: false, sole: false });
+      .toEqual({ sort: "name", grouped: false, sole: false, atRisk: false });
   });
 });

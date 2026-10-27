@@ -10,6 +10,8 @@
 //   - grouped: one list by default, for a reader who doesn't care yet what
 //     type of plant it is, or under a heading per plant type (trees, shrubs…).
 //   - pioneers: only the natives that take a beating (`data/pioneers.ts`).
+//   - atRisk: only the plants ranked vulnerable or worse here, most threatened
+//     first. Shares `only=` with the pioneers: `only=pioneers,at-risk`.
 //   - filters: the spot flow's own — no watering, deer, thorns, pets,
 //     spreaders and the two size caps (`lib/filter-traits.ts`).
 import type { Plant } from "../types";
@@ -22,6 +24,7 @@ export interface RosterView {
   sort: RosterSort;
   grouped: boolean;
   pioneers: boolean;
+  atRisk: boolean;
   filters: TraitFilters;
 }
 
@@ -46,10 +49,12 @@ function feet(v: string | null): number | null {
 
 /** Read the view from a query string; anything unknown is the default. */
 export function rosterView(query: URLSearchParams): RosterView {
+  const only = new Set((query.get("only") ?? "").split(","));
   return {
     sort: query.get("sort") === "caterpillars" ? "caterpillars" : "name",
     grouped: query.get("group") === "type",
-    pioneers: query.get("only") === "pioneers",
+    pioneers: only.has("pioneers"),
+    atRisk: only.has("at-risk"),
     filters: (() => {
       const on = new Set((query.get("filter") ?? "").split(","));
       const f: TraitFilters = { ...NO_TRAIT_FILTERS };
@@ -67,7 +72,8 @@ export function rosterQuery(view: RosterView): string {
   const q = new URLSearchParams();
   if (view.sort === "caterpillars") q.set("sort", "caterpillars");
   if (view.grouped) q.set("group", "type");
-  if (view.pioneers) q.set("only", "pioneers");
+  const only = [view.pioneers && "pioneers", view.atRisk && "at-risk"].filter(Boolean);
+  if (only.length) q.set("only", only.join(","));
   const on = FILTER_SLUGS.filter(([key]) => view.filters[key]).map(([, slug]) => slug);
   if (on.length) q.set("filter", on.join(","));
   // Feet, like the saved preference; a metric rung is a long decimal, so it's

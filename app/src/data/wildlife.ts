@@ -4612,7 +4612,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     "mimosa-strigillosa": [
       { wildlifeId: "bumble-bees", support: "nectar", note: "Sunshine mimosa's pink powder-puffs sit flat on a lawn you can walk on, and the bumble bees work them all summer between mowings.", basis: "GloBI — iNaturalist observation records; UF/IFAS." },
       { wildlifeId: "grass-skippers", support: "nectar", note: "Fiery skippers and little yellows come down to it constantly — it is one of the few nectar plants that survives being walked over.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
-      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Gopher tortoises graze the leaves and pink puffball flowers.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
+      { wildlifeId: "gopher-tortoise", support: "graze", note: "Gopher tortoises graze the leaves and pink puffball flowers.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "tripsacum-dactyloides": [
       { wildlifeId: "grass-skippers", support: "host", reliance: "narrow", note: "Eastern gamagrass raises the byssus skipper — a big orange skipper whose caterpillar lives in a tube of leaf blade fastened with silk.", basis: "GloBI — HOSTS, the world Lepidoptera hostplant database (Robinson et al., NHM), Ferrer-Paris et al. 2013; Xerces Society." },
@@ -4664,7 +4664,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "helianthus-debilis": [
       { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "A true sunflower — a keystone pollen source for sunflower specialist bees.", basis: "Fowler & Droege." },
-      { wildlifeId: "gopher-tortoise", support: "shelter", note: "A low, open-ground plant of the sandy uplands gopher tortoises graze and dig in.", basis: "UF/IFAS; Florida gopher tortoise guidance." },
+      { wildlifeId: "gopher-tortoise", support: "graze", note: "A low, open-ground plant of the sandy uplands gopher tortoises graze and dig in.", basis: "UF/IFAS; Florida gopher tortoise guidance." },
     ],
     "serenoa-repens": [
       { wildlifeId: "berry-songbirds", support: "berries", note: "Saw palmetto's fall fruit is eaten by many birds; its spring flowers are a legendary nectar and honey source.", basis: "UF/IFAS." },
@@ -4807,23 +4807,23 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "cloudless-sulphur", support: "host", reliance: "narrow", note: "Partridge pea is one of the few plants cloudless sulphur caterpillars eat.", basis: "BAMONA; UF/IFAS." },
       { wildlifeId: "ceraunus-blue", support: "host", note: "Ceraunus blue caterpillars eat the flower buds and young pods.", basis: "BAMONA; UF/IFAS." },
       { wildlifeId: "bumble-bees", support: "nectar", note: "Bumble bees shake the pollen out of the yellow flowers.", basis: "Xerces Society." },
-      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Tortoises graze partridge pea, one of the native legumes they seek out.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
+      { wildlifeId: "gopher-tortoise", support: "graze", note: "Tortoises graze partridge pea, one of the native legumes they seek out.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "sorghastrum-secundum": [
       { wildlifeId: "grass-skippers", support: "host", note: "Indiangrasses are caterpillar food for several skippers.", basis: "BAMONA." },
     ],
     "centrosema-virginianum": [
       { wildlifeId: "long-tailed-skipper", support: "host", note: "Long-tailed skipper caterpillars fold butterfly pea leaves into shelters and feed inside.", basis: "Florida Native Plant Society; BAMONA." },
-      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Tortoises graze butterfly pea, one of the native legumes they seek out.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
+      { wildlifeId: "gopher-tortoise", support: "graze", note: "Tortoises graze butterfly pea, one of the native legumes they seek out.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "mitchella-repens": [
       { wildlifeId: "acorn-birds", support: "berries", note: "Wild turkeys pick the red berries off the forest floor in winter.", basis: "USDA Fire Effects Information System." },
     ],
     "aristida-stricta": [
-      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Wiregrass is a staple of the tortoise's grazing, and the groundcover that carries the fires keeping its sandhills open.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
+      { wildlifeId: "gopher-tortoise", support: "graze", note: "Wiregrass is a staple of the tortoise's grazing, and the groundcover that carries the fires keeping its sandhills open.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "pityopsis-graminifolia": [
-      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Silkgrass is one of the low plants tortoises graze in open, sunny sand.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
+      { wildlifeId: "gopher-tortoise", support: "graze", note: "Silkgrass is one of the low plants tortoises graze in open, sunny sand.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
   },
 
@@ -4901,7 +4901,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "helianthus-debilis": [
       { wildlifeId: "sunflower-specialist-bees", support: "nectar", reliance: "narrow", note: "Dune sunflower's pollen supports sunflower-family specialist bees along the coast.", basis: "Fowler & Droege; UF/IFAS." },
-      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Gopher tortoises graze dune sunflower on coastal sand and open uplands.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
+      { wildlifeId: "gopher-tortoise", support: "graze", note: "Gopher tortoises graze dune sunflower on coastal sand and open uplands.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "andropogon-glomeratus": [
       { wildlifeId: "grass-skippers", support: "host", note: "Bluestems are caterpillar grass for several skippers, which hide in rolled-up blades and winter down in the clump.", basis: "NWF Native Plant Finder; Xerces Society." },
@@ -4924,7 +4924,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "mimosa-strigillosa": [
       { wildlifeId: "grass-skippers", support: "nectar", note: "Fiery skippers come down to it constantly — one of the few nectar plants that survives being walked over.", basis: "GloBI — iNaturalist observation records; Xerces Society." },
-      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Gopher tortoises graze the leaves and pink puffball flowers.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
+      { wildlifeId: "gopher-tortoise", support: "graze", note: "Gopher tortoises graze the leaves and pink puffball flowers.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "pontederia-cordata": [
       { wildlifeId: "white-peacock", support: "nectar", note: "White peacocks feed at the flower spikes most of the year along south-Florida canals.", basis: "GloBI — iNaturalist observation records." },
@@ -5037,7 +5037,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "centrosema-virginianum": [
       { wildlifeId: "long-tailed-skipper", support: "host", note: "Long-tailed skipper caterpillars fold butterfly pea leaves into shelters and feed inside.", basis: "Florida Native Plant Society; BAMONA." },
-      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Tortoises graze butterfly pea, one of the native legumes they seek out.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
+      { wildlifeId: "gopher-tortoise", support: "graze", note: "Tortoises graze butterfly pea, one of the native legumes they seek out.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
     "echites-umbellatus": [
       { wildlifeId: "polka-dot-wasp-moth", support: "host", reliance: "narrow", note: "Devil's potato is the moth's native host, the vine its caterpillars ate before oleander.", basis: "UF/IFAS Featured Creatures." },
@@ -5046,7 +5046,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
       { wildlifeId: "polka-dot-wasp-moth", support: "host", note: "Polka-dot wasp moth caterpillars eat wild allamanda leaves too.", basis: "Florida Native Plant Society; UF/IFAS." },
     ],
     "pityopsis-graminifolia": [
-      { wildlifeId: "gopher-tortoise", support: "shelter", note: "Silkgrass is one of the low plants tortoises graze in open, sunny sand.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
+      { wildlifeId: "gopher-tortoise", support: "graze", note: "Silkgrass is one of the low plants tortoises graze in open, sunny sand.", basis: "FWC Gopher Tortoise Management Plan; UF/IFAS." },
     ],
   },
 
@@ -6344,7 +6344,7 @@ export const SUPPORT: Record<string, Record<string, SupportLink[]>> = {
     ],
     "betula-pendula": [
       { wildlifeId: "conifer-seed-finches", support: "seeds", note: "Siskins and redpolls hang upside down from the catkins all winter.", basis: "RSPB Scotland." },
-      { wildlifeId: "black-grouse", support: "shelter", note: "Birch scrub at the moor edge is where black grouse feed on buds in winter. The Southern Uplands hold some of the birds' last lowland strongholds.", basis: "RSPB Scotland; Game & Wildlife Conservation Trust, Scottish black grouse surveys." },
+      { wildlifeId: "black-grouse", support: "graze", note: "Birch scrub at the moor edge is where black grouse feed on buds in winter. The Southern Uplands hold some of the birds' last lowland strongholds.", basis: "RSPB Scotland; Game & Wildlife Conservation Trust, Scottish black grouse surveys." },
     ],
     "betula-pubescens": [
       { wildlifeId: "conifer-seed-finches", support: "seeds", note: "The same winter finch flocks as silver birch, on the wetter ground.", basis: "RSPB Scotland." },

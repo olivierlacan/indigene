@@ -369,6 +369,7 @@ export const en = {
   "spot.ownHelp.nectar": "Feeds on your {plant}'s nectar",
   "spot.ownHelp.berries": "Eats your {plant}'s berries",
   "spot.ownHelp.seeds": "Eats your {plant}'s seeds",
+  "spot.ownHelp.graze": "Grazes your {plant}",
   "spot.ownHelp.shelter": "Shelters in your {plant}",
   "spot.logTitle": "What you've planted",
   "spot.logEmpty": "Nothing logged here yet. Add the first thing you put in. The date can be as vague as “2024”.",
@@ -901,8 +902,10 @@ export const en = {
   "support.berries.plain": "Berries or fruit that birds and mammals eat, especially through fall and winter.",
   "support.seeds.term": "Seeds",
   "support.seeds.plain": "Seeds or nuts that birds and mammals eat, often what's left standing after the flowers fade.",
+  "support.graze.term": "Grazing",
+  "support.graze.plain": "Leaves, shoots or buds the animal eats off the plant itself, the way a tortoise grazes or a grouse picks buds.",
   "support.shelter.term": "Shelter",
-  "support.shelter.plain": "Cover and habitat to nest, graze, roost, or ride out the season in.",
+  "support.shelter.plain": "Cover and habitat to nest, roost, or ride out the season in.",
 
   "reliance.sole.term": "Vital",
   "reliance.sole.plain":
@@ -1724,6 +1727,9 @@ export const en = {
   "wlStat.host.label": "Host",
   "wlStat.host.explain":
     "Plants {animal} can actually grow up on. A caterpillar only becomes a butterfly on the right leaves, so this is what decides whether it can breed where you live rather than just visit.",
+  "wlStat.graze.label": "Grazing",
+  "wlStat.graze.explain":
+    "Plants {animal} eats the leaves, shoots or buds of.",
   "wlStat.shelter.label": "Shelter",
   "wlStat.shelter.explain":
     "Plants {animal} nests in, hides in, or sits out the winter in. Somewhere safe to be is the half of a garden that isn't food.",

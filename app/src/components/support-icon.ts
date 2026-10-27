@@ -1,5 +1,5 @@
 // Monochrome SVG glyphs for the tie chips — the support kinds (Host, Nectar,
-// Berries, Seeds, Shelter) and the two notable dependence strengths (Vital,
+// Berries, Seeds, Grazing, Shelter) and the two notable dependence strengths (Vital,
 // Specialist). Single-color, drawn with `currentColor`, so they read as a clean
 // white glyph on the chip's colored pill (and inherit the ink color in the
 // dialog title) — the site's keystone-badge idiom, not multicolor emoji.
@@ -61,6 +61,12 @@ export function supportIcon(kind: SupportKind, size = 14): SVGSVGElement {
       add(s, "rect", { x: "11.2", y: "3", width: "1.6", height: "3", rx: "0.8" });
       add(s, "path", { d: "M5.5 10c0-3.4 2.9-5.5 6.5-5.5S18.5 6.6 18.5 10z" }); // cap
       add(s, "path", { d: "M6.5 10.4h11V13c0 3.6-2.3 6.6-5.5 6.6S6.5 16.6 6.5 13z" }); // nut
+      break;
+    }
+    case "graze": {
+      // A leaf with a bite taken out of its edge — eaten, not perched on.
+      add(s, "path", { d: "M5 19C5 10 10 4.5 20 4c0 3-.6 5.6-1.7 7.8a2.6 2.6 0 0 0-3.1 3.3c-2.6 2.6-6 3.9-10.2 3.9z" });
+      add(s, "path", { d: "M5 19l7-7", stroke: "currentColor", "stroke-width": "1.4", "stroke-linecap": "round", fill: "none", opacity: "0.5" });
       break;
     }
     case "shelter": {

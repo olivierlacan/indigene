@@ -577,6 +577,9 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
   // a bird's nest site and a caterpillar's food plant are the same promise from
   // the plant's side, so they earn a tile of their own rather than a footnote.
   const shelter = supports.filter((s) => s.link.support === "shelter").length;
+  // What it eats off the plant itself — a tortoise's wiregrass. Food, so it is
+  // never counted as shelter.
+  const graze = supports.filter((s) => s.link.support === "graze").length;
   const soleTies = supports.filter((s) => relianceOf(s.link) === "sole");
   // Two tiles, or one? Across the catalog these count different plants — most
   // caterpillar hosts are one of several a butterfly could use, and a couple of
@@ -661,6 +664,7 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
             supports.length > LONG_LIST
               ? reachTiles(w, names.title, {
                   hosts: hostsAllVital ? 0 : hostTies.length,
+                  graze,
                   shelter,
                   soleCount: soleTies.length,
                 })
@@ -734,7 +738,7 @@ export async function renderWildlife(main: HTMLElement, param?: string): Promise
 function reachTiles(
   w: Wildlife,
   animal: string,
-  counts: { hosts: number; shelter: number; soleCount: number },
+  counts: { hosts: number; graze: number; shelter: number; soleCount: number },
 ): HTMLElement | null {
   const tiles: Stat[] = [];
   if (counts.hosts) {
@@ -743,6 +747,14 @@ function reachTiles(
       label: t("wlStat.host.label"),
       value: fmtNumber(counts.hosts),
       explain: t("wlStat.host.explain", { animal }),
+    });
+  }
+  if (counts.graze) {
+    tiles.push({
+      icon: "🍃",
+      label: t("wlStat.graze.label"),
+      value: fmtNumber(counts.graze),
+      explain: t("wlStat.graze.explain", { animal }),
     });
   }
   if (counts.shelter) {

@@ -249,6 +249,7 @@ const SUPPORT_ICONS: Record<SupportKind, string> = {
   nectar: "🌼",
   berries: "🫐",
   seeds: "🌰",
+  graze: "🍃",
   shelter: "🏠",
 };
 

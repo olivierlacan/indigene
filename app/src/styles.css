@@ -3499,6 +3499,11 @@ details.weights:has(> summary.control-row) { padding-left: 0.9rem; padding-right
   background: #6b5029;
   color: #fff;
 }
+.tag-graze {
+  /* Olive: a leaf, but not the host's green or the shelter's teal. */
+  background: #4a5a10;
+  color: #fff;
+}
 .tag-shelter {
   background: #1f5b57;
   color: #fff;

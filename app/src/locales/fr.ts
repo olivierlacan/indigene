@@ -372,6 +372,7 @@ export const fr: Dict = {
   "spot.ownHelp.nectar": "Butine le nectar de votre {plant}",
   "spot.ownHelp.berries": "Mange les baies de votre {plant}",
   "spot.ownHelp.seeds": "Mange les graines de votre {plant}",
+  "spot.ownHelp.graze": "Broute votre {plant}",
   "spot.ownHelp.shelter": "S'abrite dans votre {plant}",
   "spot.logTitle": "Ce que vous avez planté",
   "spot.logEmpty": "Rien d'inscrit ici pour l'instant. Ajoutez la première plante mise en terre. La date peut rester vague : « 2024 » suffit.",
@@ -900,8 +901,10 @@ export const fr: Dict = {
     "Des baies ou des fruits que mangent oiseaux et mammifères, surtout à l'automne et en hiver.",
   "support.seeds.term": "Graines",
   "support.seeds.plain": "Des graines ou des fruits secs que mangent oiseaux et mammifères, souvent ce qui reste debout une fois les fleurs fanées.",
+  "support.graze.term": "Broutage",
+  "support.graze.plain": "Des feuilles, des pousses ou des bourgeons que l'animal mange sur la plante même, comme une tortue qui broute ou un tétras qui picore les bourgeons.",
   "support.shelter.term": "Abri",
-  "support.shelter.plain": "Un couvert où nicher, brouter, se percher ou passer la mauvaise saison.",
+  "support.shelter.plain": "Un couvert où nicher, se percher ou passer la mauvaise saison.",
 
   "reliance.sole.term": "Vitale",
   "reliance.sole.plain":
@@ -1678,6 +1681,9 @@ export const fr: Dict = {
   "wlStat.host.label": "Hôte",
   "wlStat.host.explain":
     "Les plantes sur lesquelles {animal} peut réellement grandir. Une chenille ne devient un papillon que sur les bonnes feuilles : c'est ce qui décide s'il peut se reproduire chez vous, et pas seulement passer.",
+  "wlStat.graze.label": "Broutage",
+  "wlStat.graze.explain":
+    "Les plantes dont {animal} mange les feuilles, les pousses ou les bourgeons.",
   "wlStat.shelter.label": "Abri",
   "wlStat.shelter.explain":
     "Les plantes où {animal} niche, se cache ou passe l'hiver. Un endroit où être tranquille, c'est la moitié du jardin qui n'est pas de la nourriture.",

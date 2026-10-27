@@ -25,6 +25,8 @@
      themes — white in light, deep green ink in dark (where --brand is a
      light green and white text would drop to ~2:1). */
   --on-brand: #ffffff;
+  /* What the header greys toward while offline (lib/connection.ts). */
+  --offline-grey: #4a4f4c;
   /* Active-pill background in the header nav; paired with --on-brand text. */
   --nav-pill: rgba(0, 0, 0, 0.25);
   --brand-ink: #0d3d20;
@@ -61,6 +63,7 @@
     --line-strong: #727b5f;
     --brand: #7ec894;
     --on-brand: #082b16;
+    --offline-grey: #b4b9b5;
     --nav-pill: rgba(255, 255, 255, 0.32);
     --brand-ink: #b9e6c6;
     --brand-bg: #1f3326;
@@ -88,6 +91,7 @@
   --line-strong: #727b5f;
   --brand: #7ec894;
   --on-brand: #082b16;
+  --offline-grey: #b4b9b5;
   --nav-pill: rgba(255, 255, 255, 0.32);
   --brand-ink: #b9e6c6;
   --brand-bg: #1f3326;
@@ -115,6 +119,7 @@
   --line-strong: #9b8aa6;
   --brand: #ff8a1f;
   --on-brand: #140a00;
+  --offline-grey: #a39b94;
   --nav-pill: rgba(0, 0, 0, 0.3);
   --brand-ink: #ffc27a;
   --brand-bg: #2e1a08;
@@ -896,14 +901,25 @@ p.more-link a {
   }
 }
 
+/* Offline (lib/connection.ts): the header greys over and a small no-signal
+   mark sits beside the name. Quiet on purpose — the app still works, it's
+   just answering from what it saved. The mark links to the Settings switch. */
 .offline-badge {
-  font-size: 0.85rem;
-  background: #fff;
-  color: #0d3d20; /* fixed pairing: the badge bg is #fff in both themes */
-  border: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  /* Tap target without widening the header much: the icon is 18px. */
+  min-width: 1.75rem;
+  min-height: 1.75rem;
+  color: var(--on-brand);
   border-radius: 999px;
-  padding: 0.35rem 0.7rem;
-  font-weight: 600;
+}
+:root[data-offline] .offline-badge {
+  display: inline-flex;
+}
+:root[data-offline] .app-header {
+  background: color-mix(in oklab, var(--brand) 40%, var(--offline-grey));
 }
 
 /* --- Steps rail --- */

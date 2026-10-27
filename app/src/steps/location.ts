@@ -8,6 +8,7 @@ import { regionForCoords } from "../data/regions";
 import { zoneChip } from "../components/zone-chip";
 import { ISSUES_URL, latPlain, lonPlain } from "../lib/plain";
 import { TILE_SIZE, getTile, metersPerPixel, tileCoords } from "../lib/tiles";
+import { isOnline } from "../lib/connection";
 import { compassPoint } from "../lib/compass";
 import { whyThis } from "../components/learn";
 import { privacyNote } from "../components/privacy-link";
@@ -235,7 +236,7 @@ export async function renderLocation(main: HTMLElement): Promise<(() => void) | 
 
     // OpenStreetMap tiles at one fixed neighborhood zoom, centred on the pin.
     let drewTiles = false;
-    if (navigator.onLine) {
+    if (isOnline()) {
       const c = tileCoords(effLat(), effLon(), MAP_ZOOM);
       const cx = c.x * TILE_SIZE, cy = c.y * TILE_SIZE; // centre in world px
       // One shared rounded origin so adjacent tiles never show seams.

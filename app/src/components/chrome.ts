@@ -19,8 +19,9 @@ export function renderChrome(): void {
   const skip = document.getElementById("skip-link");
   if (skip) skip.textContent = t("app.skipToContent");
 
-  const badge = document.getElementById("offline-badge");
-  if (badge) badge.textContent = t("app.offline");
+  const offline = document.getElementById("offline-badge-label");
+  if (offline) offline.textContent = t("app.offline");
+  document.getElementById("offline-badge")?.setAttribute("title", t("app.offline"));
 
   const nav = document.getElementById("site-nav");
   nav?.setAttribute("aria-label", t("nav.sections"));

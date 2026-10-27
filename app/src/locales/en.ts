@@ -137,6 +137,16 @@ export const en = {
   "halloween.offSub": "Light or dark, as your device is set.",
   "halloween.nowOn": "Boo. Spooky theme on.",
   "halloween.nowOff": "Back to the usual theme.",
+  "settings.connectionTitle": "Connection",
+  "offline.title": "Offline mode",
+  "offline.lede": "See how Indigene works with no signal. Live lookups stop; everything you've saved keeps working.",
+  "offline.on": "Offline",
+  "offline.onSub": "Until you switch back.",
+  "offline.off": "Online",
+  "offline.offSub": "Whenever there's a signal.",
+  "offline.deviceOffline": "Your device is offline right now, so the header stays grey either way.",
+  "offline.nowOn": "Offline mode on.",
+  "offline.nowOff": "Offline mode off.",
   "settings.done": "Done",
 
   // ---------------------------------------------------------------------

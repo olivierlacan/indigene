@@ -21,7 +21,7 @@
 // Every card is addressable — `#/settings/language`, `#/settings/units`,
 // `#/settings/spot`, `#/settings/region`, `#/settings/goal`,
 // `#/settings/whatsnew`, `#/settings/spots`, `#/settings/counting`,
-// `#/settings/spooky` — so a link
+// `#/settings/spooky`, `#/settings/offline` — so a link
 // can land on the thing it names instead of dropping the reader at the top of
 // the page to hunt for it.
 import { el, clear } from "../ui";
@@ -37,6 +37,7 @@ import {
 } from "../components/memory-controls";
 import { spotsFileCard } from "../components/backup-controls";
 import { halloweenCard } from "../components/halloween-controls";
+import { offlineCard } from "../components/offline-controls";
 import { inSeason } from "../lib/halloween";
 import { stickyReady } from "../lib/sticky";
 import { townsReady } from "../lib/places";
@@ -54,6 +55,7 @@ const CARD_IDS: Record<string, string> = {
   spots: "settings-spots",
   inat: "settings-inat",
   spooky: "settings-spooky",
+  offline: "settings-offline",
 };
 
 export async function renderSettings(main: HTMLElement, param?: string): Promise<void> {
@@ -78,6 +80,7 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
     spots: await spotsFileCard(),
     inat: inatCard(),
     spooky: halloweenCard(),
+    offline: offlineCard(),
   };
   for (const [key, card] of Object.entries(cards)) card.id = CARD_IDS[key];
   const spookyFirst = inSeason();
@@ -107,6 +110,8 @@ export async function renderSettings(main: HTMLElement, param?: string): Promise
     el("h3", { class: "settings-group" }, t("settings.countingTitle")),
     el("p", { class: "step-lede" }, t("settings.countingLede")),
     el("div", { class: "settings-cards" }, [cards.counting]),
+    el("h3", { class: "settings-group" }, t("settings.connectionTitle")),
+    el("div", { class: "settings-cards" }, [cards.offline]),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
       el(
         "button",

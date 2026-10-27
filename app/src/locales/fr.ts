@@ -131,6 +131,16 @@ export const fr: Dict = {
   "halloween.offSub": "Clair ou sombre, selon votre appareil.",
   "halloween.nowOn": "Bouh. Thème effrayant activé.",
   "halloween.nowOff": "Retour au thème habituel.",
+  "settings.connectionTitle": "Connexion",
+  "offline.title": "Mode hors ligne",
+  "offline.lede": "Voyez comment Indigene fonctionne sans réseau. Les recherches en ligne s'arrêtent ; tout ce que vous avez enregistré continue de fonctionner.",
+  "offline.on": "Hors ligne",
+  "offline.onSub": "Jusqu'à ce que vous le désactiviez.",
+  "offline.off": "En ligne",
+  "offline.offSub": "Dès qu'il y a du réseau.",
+  "offline.deviceOffline": "Votre appareil est hors ligne en ce moment : l'en-tête reste gris dans tous les cas.",
+  "offline.nowOn": "Mode hors ligne activé.",
+  "offline.nowOff": "Mode hors ligne désactivé.",
   "settings.done": "Terminé",
 
   // ---------------------------------------------------------------------

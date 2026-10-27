@@ -27,6 +27,7 @@
 // pages that print a name never have to wait for a database.
 import { kvGet, kvSet } from "../db";
 import { nearestPlaceName } from "./geocode";
+import { isOnline } from "./connection";
 
 /**
  * How coarse a cell one name covers, in degrees — about 5.5 km north-to-south.
@@ -106,7 +107,7 @@ const inFlight = new Set<string>();
  */
 export function learnTown(lat: number, lon: number): void {
   const key = cellKey(lat, lon);
-  if (cache[key] || inFlight.has(key) || !navigator.onLine) return;
+  if (cache[key] || inFlight.has(key) || !isOnline()) return;
   inFlight.add(key);
   queue = queue
     .then(() => nearestPlaceName(lat, lon))

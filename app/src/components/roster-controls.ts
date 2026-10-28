@@ -42,11 +42,14 @@ export interface CapToggle<V> extends Toggle<V> {
 }
 
 /** One row of the panel: a segmented control (one option always on), a
- *  single toggle, or a drawer of toggles with whatever follows them (a link)
- *  and the line it shows while closed when nothing is on (`hint`). */
+ *  single toggle, a few toggles side by side (`switches`, for a list with two
+ *  or three filters, all in view), or a drawer of toggles with whatever
+ *  follows them (a link) and the line it shows while closed when nothing is
+ *  on (`hint`). */
 export type PanelRow<V> =
   | { label: string; segments: Segment<V>[] }
   | { label: string; toggle: Toggle<V> }
+  | { label: string; switches: Toggle<V>[] }
   | { label: string; toggles: (Toggle<V> | CapToggle<V>)[]; hint: string; after?: Node };
 
 /**
@@ -142,7 +145,9 @@ export function viewPanel<V>(
           "segments" in r
             ? el("div", { class: "segmented" }, r.segments.map((sg, i) =>
                 link(sg.to, `view:${ri}:${i}`, { class: "segment", "aria-current": sg.on ? "page" : undefined }, sg.label)))
-            : toggle(r.toggle, `view:${ri}:0`),
+            : "switches" in r
+              ? el("div", { class: "roster-switches" }, r.switches.map((tg, i) => toggle(tg, `view:${ri}:${i}`)))
+              : toggle(r.toggle, `view:${ri}:0`),
         ])));
 }
 
@@ -154,6 +159,7 @@ export function rosterControls(
   href: (to: RosterView) => string,
   pioneers: number,
   onPick?: (to: RosterView) => void,
+  atRisk = 0,
 ): HTMLElement {
   const f = view.filters;
   const withF = (patch: Partial<TraitFilters>): RosterView => ({ ...view, filters: { ...f, ...patch } });
@@ -191,6 +197,14 @@ export function rosterControls(
       on: view.pioneers,
       label: `${PIONEER_ICON} ${t("region.pioneersOnly", { n: fmtNumber(pioneers) })}`,
       short: t("filter.short.pioneers"),
+    });
+  }
+  if (atRisk || view.atRisk) {
+    filters.push({
+      to: { ...view, atRisk: !view.atRisk },
+      on: view.atRisk,
+      label: t("filter.atRisk", { n: fmtNumber(atRisk) }),
+      short: t("filter.short.atRisk"),
     });
   }
   const rows: PanelRow<RosterView>[] = [

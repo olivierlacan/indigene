@@ -50,6 +50,7 @@ import { keystoneIcon } from "../components/keystone-icon";
 import { wildlifeNearbySection } from "../components/wildlife-nearby";
 import { wildlifeThumb, wildlifeHero, wildlifeIcon, wildlifeSilhouette } from "../components/wildlife-thumb";
 import { conservationFooter, conservationNote } from "../components/conservation-note";
+import { AT_RISK, atRiskFirst, threatLevel } from "../lib/conservation";
 import { faunaEvidenceLines } from "../components/native-evidence";
 import { glyphKeyFor } from "../components/wildlife-glyphs";
 import { cardStats } from "../components/card-stats";
@@ -62,7 +63,7 @@ import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { wildlifeBlurb, wildlifeLead, supportNote, wildlifeUntranslated } from "../lib/prose";
 import { reportUntranslated } from "../components/wip-banner";
 import { viewPanel } from "../components/roster-controls";
-import type { PanelRow } from "../components/roster-controls";
+import type { PanelRow, Toggle } from "../components/roster-controls";
 import { addressParam } from "../lib/routes";
 import { sortWildlife, wildlifeQuery, wildlifeView } from "../lib/wildlife-view";
 import type { WildlifeView } from "../lib/wildlife-view";
@@ -159,10 +160,16 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
   const label = kind ? wildlifeKindLabel(kind) : null;
   const panel = viewFromUrl();
   const soleCount = rows.filter((r) => r.sole).length;
-  const shown = sortWildlife(
+  // How threatened each animal is on this page: its global rank, and its
+  // state's rank when the page is one region's.
+  const threat = (r: WildlifeIndexRow): number => threatLevel(r.wildlife.id, region?.meta.id);
+  const atRiskCount = rows.filter((r) => threat(r) >= AT_RISK).length;
+  const sorted = sortWildlife(
     panel.sole ? rows.filter((r) => r.sole) : rows,
     panel.sort, (r) => nameLines(r.wildlife).title, getLang(),
   );
+  // Filtered to the animals at risk, the most threatened come first.
+  const shown = panel.atRisk ? atRiskFirst(sorted, threat) : sorted;
   const here = (k: WildlifeKind | null, to: WildlifeView = panel): string => indexHref(region?.meta.id ?? null, k, to);
 
   document.title = label
@@ -228,6 +235,7 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
 
   // What the order means, said once above the list.
   if (panel.sort === "plants") groups.push(el("p", { class: "obs-section-lede" }, t("wildlife.sortPlantsLede")));
+  if (panel.atRisk) groups.push(el("p", { class: "obs-section-lede" }, t("wildlife.atRiskLede")));
   if (kind || !panel.grouped) {
     const cards = shown.map((r) => wildlifeCard(r, region ?? null));
     filterRows.push(...cards);
@@ -290,7 +298,7 @@ export function renderWildlifeIndex(main: HTMLElement, view: IndexView = {}): vo
               t("wildlife.filterNoneRest"),
             ],
     })] : []),
-    indexPanel(panel, (to) => here(kind ?? null, to), soleCount, !kind),
+    indexPanel(panel, (to) => here(kind ?? null, to), soleCount, atRiskCount, !kind),
     // The animal types, once the reader has asked to see the list by type —
     // or is on one type's page, where they're the way to the others.
     ...(kind || panel.grouped ? [kindChips(all, kind ?? null, region ?? null, panel)] : []),
@@ -373,7 +381,9 @@ function regionFilter(view: IndexView, totalHere: number, panel?: WildlifeView):
  * where there is nothing to group, and Filter wherever no animal here has a
  * plant that is its only option.
  */
-function indexPanel(view: WildlifeView, href: (to: WildlifeView) => string, sole: number, groupable: boolean): HTMLElement {
+function indexPanel(
+  view: WildlifeView, href: (to: WildlifeView) => string, sole: number, atRisk: number, groupable: boolean,
+): HTMLElement {
   const rows: PanelRow<WildlifeView>[] = [
     { label: t("region.sortLabel"), segments: [
       { to: { ...view, sort: "name" }, on: view.sort === "name", label: [t("region.sortName")] },
@@ -386,13 +396,24 @@ function indexPanel(view: WildlifeView, href: (to: WildlifeView) => string, sole
       { to: { ...view, grouped: true }, on: view.grouped, label: [t("wildlife.groupByKind")] },
     ] });
   }
+  // Each filter only where it would keep something, or where it's already on
+  // and has to be switchable off.
+  const filters: Toggle<WildlifeView>[] = [];
   if (sole || view.sole) {
-    rows.push({ label: t("region.filterLabel"), toggle: {
+    filters.push({
       to: { ...view, sole: !view.sole },
       on: view.sole,
       label: t("wildlife.soleOnly", { n: fmtNumber(sole) }),
-    } });
+    });
   }
+  if (atRisk || view.atRisk) {
+    filters.push({
+      to: { ...view, atRisk: !view.atRisk },
+      on: view.atRisk,
+      label: t("filter.atRisk", { n: fmtNumber(atRisk) }),
+    });
+  }
+  if (filters.length) rows.push({ label: t("region.filterLabel"), switches: filters });
   return viewPanel(rows, href);
 }
 

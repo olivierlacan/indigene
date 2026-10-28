@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { rankSeverity } from "./conservation";
+import { atRiskFirst, rankSeverity, threatLevel } from "./conservation";
 
 describe("rankSeverity", () => {
   it("reads the IUCN codes", () => {
@@ -17,5 +17,30 @@ describe("rankSeverity", () => {
   it("refuses what it can't read", () => {
     expect(rankSeverity("SNR")).toBeNull();
     expect(rankSeverity("ST")).toBeNull();
+  });
+});
+
+describe("threatLevel", () => {
+  it("reads a global rank anywhere", () => {
+    expect(threatLevel("gopher-tortoise")).toBe(5); // CR
+    expect(threatLevel("gopher-tortoise", "kanto")).toBe(5);
+  });
+  it("reads a state rank only on its own region's pages", () => {
+    expect(threatLevel("karner-blue", "north-michigan")).toBe(4); // S2
+    expect(threatLevel("karner-blue", "chicago")).toBe(0);
+    expect(threatLevel("karner-blue")).toBe(0);
+  });
+  it("takes the worse of global and local, and a span's worse end", () => {
+    expect(threatLevel("zamia-integrifolia", "florida-south")).toBe(3); // G3, S3S4
+  });
+  it("is 0 for anything unassessed", () => {
+    expect(threatLevel("monarch")).toBe(0);
+  });
+});
+
+describe("atRiskFirst", () => {
+  const level: Record<string, number> = { a: 3, b: 5, c: 0, d: 2, e: 5 };
+  it("keeps vulnerable or worse, worst first, and the incoming order between equals", () => {
+    expect(atRiskFirst(["a", "b", "c", "d", "e"], (x) => level[x])).toEqual(["b", "e", "a"]);
   });
 });

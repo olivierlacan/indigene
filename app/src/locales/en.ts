@@ -1897,6 +1897,12 @@ export const en = {
   "filter.short.height": "Under {size} tall",
   "filter.short.spread": "Under {size} wide",
   "filter.short.pioneers": "Pioneers",
+  // The filter for species ranked vulnerable or worse, on the wildlife index
+  // and a region's roster (`lib/conservation.ts`).
+  "filter.atRisk": "At risk ({n})",
+  "filter.short.atRisk": "At risk",
+  "wildlife.atRiskLede": "Ranked vulnerable or worse, most threatened first.",
+  "region.atRiskLede": "Ranked vulnerable or worse, most threatened first. Buy these from a nursery; never dig one from the wild.",
   "roster.filterHint": "Water, deer, pets, size…",
   "roster.noneFiltered": "No plant here passes every filter that’s on. Switch one off to see more.",
   "region.filterLabel": "Filter",

@@ -45,6 +45,8 @@ import { rosterControls, caterpillarLede, countTag } from "../components/roster-
 import { isCrossChecked } from "../data/cross-checks";
 import { SOURCES_ROUTE } from "../lib/plain";
 import { regionGrowth } from "../components/growth-chart";
+import { conservationFooter } from "../components/conservation-note";
+import { AT_RISK, atRiskFirst, threatLevel } from "../lib/conservation";
 
 /** The category headings. A function, not a record: a record built at import
  *  time would be stuck in whichever language loaded first. */
@@ -111,14 +113,22 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
     })
   ));
   const pioneerIds = new Set(pioneersForRegion(region.meta.id, plants).map((pick) => pick.plant.id));
-  const shown = sortRoster(
+  // How threatened each plant is here: its global rank, and this region's
+  // state rank (`lib/conservation.ts`).
+  const threat = (p: Plant): number => threatLevel(p.id, region.meta.id);
+  const atRiskCount = plants.filter((p) => threat(p) >= AT_RISK).length;
+  const sorted = sortRoster(
     plants.filter((p) => (!view.pioneers || pioneerIds.has(p.id)) && passesFilters(traitsOf(p), view.filters)),
     view.sort, commonName, getLang()
   );
+  // Filtered to the plants at risk, the most threatened come first.
+  const shown = view.atRisk ? atRiskFirst(sorted, threat) : sorted;
   const rowOf = (p: Plant): FilterRow => filterRow(p, region.meta.id, {
     caterpillars: view.sort === "caterpillars",
     // Filtered to the pioneers, each row says what it copes with.
     pioneer: view.pioneers ? pioneerFor(region.meta.id, p.id) : undefined,
+    // Filtered to the plants at risk, each says how much.
+    atRisk: view.atRisk,
   });
   const allRows: FilterRow[] = [];
   const sections: FilterSection[] = [];
@@ -142,6 +152,9 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
       })()];
   // What the order means, said once above the list rather than on every row.
   if (view.sort === "caterpillars") groups.unshift(caterpillarLede());
+  // Said once above the list, not on every row: the order, and what to do
+  // with a rare plant — buy it, never dig it.
+  if (view.atRisk) groups.unshift(el("p", { class: "obs-section-lede" }, t("region.atRiskLede")));
   if (!shown.length) groups.push(el("div", { class: "note warn" }, t("roster.noneFiltered")));
 
   main.append(
@@ -174,7 +187,7 @@ export async function renderRegion(main: HTMLElement, param?: string): Promise<v
       // the argument list rather than pass through as null.
       ...[namingNote(plants)].filter((n): n is HTMLElement => n !== null),
       plantFilterField(allRows, sections),
-      rosterControls(view, (to) => `#/regions/${region.meta.id}${rosterQuery(to)}`, pioneerIds.size),
+      rosterControls(view, (to) => `#/regions/${region.meta.id}${rosterQuery(to)}`, pioneerIds.size, undefined, atRiskCount),
       // The plant types, only once the reader has asked to see the list by
       // type: a phone screen of seven chips above every roster was a menu
       // most readers scrolled past to reach the plants.
@@ -526,6 +539,10 @@ interface RowOptions {
   caterpillars?: boolean;
   /** This region's pioneer row for the plant: shown as the card's footer. */
   pioneer?: PioneerEntry;
+  /** Show the plant's conservation rank as the card's footer — only on a list
+   *  the reader filtered to the plants at risk, which says once above it to
+   *  buy them from a nursery (see `components/conservation-note.ts`). */
+  atRisk?: boolean;
 }
 
 export function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HTMLElement; mark: (nq: string) => void } {
@@ -559,6 +576,7 @@ export function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { n
       sub,
     ]),
     opts.pioneer ? pressureFooter({ entry: opts.pioneer }, { interactive: false }) : null,
+    opts.atRisk ? conservationFooter(p.id, regionId) : null,
     // Absent for a plant not counted yet.
     opts.caterpillars && p.hostLepCount !== null
       ? countTag(p.hostLepCount)

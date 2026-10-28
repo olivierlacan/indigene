@@ -37,6 +37,7 @@ import { renderPrivacy } from "./steps/privacy";
 import { renderConfidence } from "./steps/confidence";
 import { renderFilm } from "./steps/film";
 import { renderSources } from "./steps/sources";
+import { initConnection } from "./lib/connection";
 import { renderSettings } from "./steps/settings";
 import { renderAbout } from "./steps/about";
 import { renderCrops } from "./steps/crops";
@@ -600,14 +601,6 @@ document.querySelector(".site-nav")?.addEventListener("click", (e) => {
   landAtTop();
 });
 
-// Offline indicator.
-const badge = document.getElementById("offline-badge") as HTMLButtonElement;
-function updateOnline(): void {
-  badge.hidden = navigator.onLine;
-}
-window.addEventListener("online", updateOnline);
-window.addEventListener("offline", updateOnline);
-
 /**
  * Re-render everything after a language or units switch.
  *
@@ -671,7 +664,7 @@ async function boot(): Promise<void> {
   // A tab left open for a day can come back missing its whole palette — see
   // lib/restore.ts. Listeners only; nothing runs until the page is restored.
   watchRestore();
-  updateOnline();
+  initConnection();
   await route();
   // Register the hand-written service worker for offline + installability.
   if ("serviceWorker" in navigator && import.meta.env.PROD) {

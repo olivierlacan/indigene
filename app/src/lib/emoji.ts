@@ -104,6 +104,7 @@ const MEANING: Record<string, TKey> = {
   "✨": "emoji.new",
   "🔖": "emoji.saved",
   "🔄": "emoji.reload",
+  "📴": "emoji.offline",
   // The spooky theme's cast (lib/halloween.ts): the logo and the menu.
   "📜": "emoji.guide",
   "🔮": "emoji.new",

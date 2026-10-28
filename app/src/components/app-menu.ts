@@ -5,8 +5,9 @@
 // is now the app's general menu, because it is the only spare surface in a
 // header measured to the pixel (see the ≤500px rules in styles.css — title +
 // four items with ~25 px of slack at 360 px). Anything that should be reachable
-// from every page without owning a tab belongs here. Today that's three rows,
-// in this order:
+// from every page without owning a tab belongs here. Today that's these rows,
+// in this order (plus the spooky theme in season, and Offline mode, the one
+// row that switches something in place instead of going somewhere):
 //
 //   1. What's new, first, because it's the row that wears the "something landed
 //      since you were last here" dot — and a menu you opened to check that
@@ -40,6 +41,7 @@ import { t } from "../lib/i18n";
 import { hasUnseenRelease } from "../lib/visits";
 import { halloweenOn, inSeason } from "../lib/halloween";
 import { isHomeScreenApp } from "../lib/standalone";
+import { forcedOffline, setForcedOffline } from "../lib/connection";
 import { newDot } from "./new-dot";
 
 let btn: HTMLButtonElement | null = null;
@@ -142,6 +144,7 @@ function fill(target: HTMLElement): void {
     row(notesHref, night ? "🔮" : "✨", t("footer.releaseNotes"), { dot: hasUnseenRelease() }),
     row("#/saved", night ? "🪦" : "🔖", t("nav.savedLocations")),
     ...(night || inSeason() ? [row("#/settings/spooky", "🎃", t("nav.halloween"))] : []),
+    offlineRow(),
     // One row, not one per setting. Language and units used to sit here as
     // their own values ("English", "Imperial") — two of the menu's four rows
     // spent on two of the settings page's five, and a menu that grows a row
@@ -152,6 +155,36 @@ function fill(target: HTMLElement): void {
     // (components/pull-to-reload.ts) is the fast way to the same thing; this is
     // the way that asks nothing of your hands.
     ...(isHomeScreenApp() ? [reloadRow()] : [])
+  );
+}
+
+/**
+ * Offline mode, as a switch (`lib/connection.ts`): flipping it is the point,
+ * so it acts in place and the menu stays open to show the header change. The
+ * Settings card is the same switch with room to explain it.
+ */
+function offlineRow(): HTMLElement {
+  const on = forcedOffline();
+  return el(
+    "button",
+    {
+      type: "button",
+      role: "switch",
+      "aria-checked": on ? "true" : "false",
+      class: "nav-menu-pref nav-menu-switch",
+      onClick: (e: Event) => {
+        // Redrawing the panel detaches this button, and the outside-click
+        // handler would then take the click for one outside the menu.
+        e.stopPropagation();
+        setForcedOffline(!on);
+        if (panel) fill(panel);
+      },
+    },
+    [
+      el("span", { class: "nav-menu-pref-icon", "aria-hidden": "true" }, "📴"),
+      t("nav.offline"),
+      el("span", { class: "nav-menu-state", "aria-hidden": "true" }, on ? t("nav.on") : t("nav.off")),
+    ]
   );
 }
 

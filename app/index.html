@@ -68,6 +68,20 @@
       })();
     </script>
 
+    <!-- offline: stamp `data-offline` before the first paint, so a page
+         opened with no signal (or with Settings → Offline on) has its indigo
+         header from the start. A trimmed copy of `isOnline()` in
+         lib/connection.ts, which keeps it up to date from there. -->
+    <script>
+      (function () {
+        var on = null;
+        try {
+          on = localStorage.getItem("indigene:offline");
+        } catch (e) {}
+        if (!navigator.onLine || on === "on") document.documentElement.dataset.offline = "";
+      })();
+    </script>
+
     <!-- halloween: the spooky theme. On by default from 17 October to the end
          of the 31st on the reader's clock; otherwise only if they chose it.
          Decided here so the first paint is already orange. A trimmed copy of
@@ -190,15 +204,17 @@
           ></a
         >
       </h1>
-      <button
-        id="offline-badge"
-        class="offline-badge"
-        type="button"
-        hidden
-        aria-live="polite"
+      <!-- Shown while offline, real or switched on in Settings
+           (lib/connection.ts): a small no-signal mark beside the name, while
+           the header itself turns grey. It links to the switch. -->
+      <a id="offline-badge" class="offline-badge" href="#/settings/offline" title="Offline, using saved data"
+        ><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"
+          ><path d="M2 8.8a15 15 0 0 1 20 0M5.5 12.4a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.45" /><circle
+            cx="12" cy="19.5" r="1.4" fill="currentColor" /><path d="M4 3l16 18" stroke="currentColor"
+            stroke-width="2.2" stroke-linecap="round" /></svg
+        ><span class="sr-only" id="offline-badge-label">Offline, using saved data</span></a
       >
-        Offline — using saved data
-      </button>
       <nav class="site-nav" id="site-nav" aria-label="Sections">
         <a href="#/regions" data-section="regions" data-i18n="nav.regions">Regions</a>
         <a href="#/plants" data-section="plants" data-i18n="nav.plants">Plants</a>

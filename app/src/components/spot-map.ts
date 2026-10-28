@@ -20,6 +20,7 @@
 import { el } from "../ui";
 import { TILE_SIZE, getTile, tileCoords } from "../lib/tiles";
 import { t } from "../lib/i18n";
+import { isOnline } from "../lib/connection";
 
 // The same district scale the location step picks its pin at, and for the same
 // reason: wide enough for the landmarks people actually recognize — a park, a
@@ -104,7 +105,7 @@ export function spotMap(lat: number, lon: number, opts: SpotMapOptions = {}): HT
     }
 
     let drew = false;
-    if (onScreen && navigator.onLine) {
+    if (onScreen && isOnline()) {
       const c = tileCoords(lat, lon, SPOT_ZOOM);
       const cx = c.x * TILE_SIZE;
       const cy = c.y * TILE_SIZE; // the spot, in world pixels

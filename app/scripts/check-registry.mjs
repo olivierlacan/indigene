@@ -1,4 +1,4 @@
-// Runnable audit of the generated registry (the repo's no-test-runner pattern).
+// Runnable audit of the generated registry, against the real data.
 // Confirms the registry covers every catalog plant, stays self-consistent, and
 // that plant-first lookups resolve as intended.
 //
@@ -119,7 +119,7 @@ check("every entry lists ≥1 region", REGISTRY.every((x) => x.regions.length >=
 
 // --- Region cards can describe a region without loading it --------------------
 // The explore grid prints each region's star, its caterpillar count and its
-// keystone tally for nine regions at once, from the registry and the region's
+// keystone tally for every region at once, from the registry and the region's
 // own description — never from the plant lists, which are separate downloads
 // (see `data/regions.ts`). These are the invariants that keeps honest.
 for (const { meta, seed } of REGIONS) {

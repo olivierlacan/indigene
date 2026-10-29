@@ -1,6 +1,6 @@
 // One way to ask Kew's World Checklist of Vascular Plants a question.
 //
-// Two scripts need WCVP and they need different things from it:
+// Three scripts need WCVP and they need different things from it:
 //
 //   - `candidates.mjs` asks *before* a row exists — "is this species native in
 //     Oregon, and what is its accepted name?" — to rank a shortlist.
@@ -54,7 +54,9 @@ const GBIF_SPECIES = "https://api.gbif.org/v1/species";
  */
 async function getJson(url, attempt = 0) {
   try {
-    const res = await fetch(url, { headers: { accept: "application/json" } });
+    const res = await fetch(url, {
+      headers: { accept: "application/json", "User-Agent": "Indigene (https://github.com/olivierlacan/indigene)" },
+    });
     // 5xx and 429 are worth another go; a 404 is an answer.
     if (!res.ok) {
       if ((res.status >= 500 || res.status === 429) && attempt < 3) throw new Error(`HTTP ${res.status}`);

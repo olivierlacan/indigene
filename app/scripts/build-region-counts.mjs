@@ -43,7 +43,8 @@
 //
 // No API key: iNaturalist's v1 endpoints answer anonymous GETs. What it does
 // ask for is a real User-Agent and a request rate well under a hundred a
-// minute, which this comfortably is — two requests per region.
+// minute, which this comfortably is — a request per hundred taxa, plus one
+// for the total, per region.
 import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { openLoader } from "./_load-ts.mjs";

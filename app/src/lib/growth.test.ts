@@ -1,57 +1,71 @@
-import { describe, it, expect } from "vitest";
-import { latestChange, pointAt, spreadLabels, stepPaths } from "./growth";
+// The growth charts on each region's page (`scripts/_growth.mjs`). They are
+// counted from the data files' history, read as text with regexes — so the
+// regexes are pinned against today's files, where the answer is known, and the
+// summary against small histories, where it can be worked out by hand.
+import { describe, expect, it } from "vitest";
+import { SUPPORT } from "../data/wildlife";
+import WILDLIFE_SRC from "../data/wildlife.ts?raw";
+// @ts-expect-error — a plain .mjs build script, no type declarations.
+import { plantIds, summarise, wildlifeByRegion } from "../../scripts/_growth.mjs";
 
-describe("stepPaths", () => {
-  it("holds each count flat until the next one, then runs on to the end", () => {
-    const { line, area } = stepPaths([[0, 10], [50, 20]], 0, 100, 100, 10);
-    expect(line).toBe("M0,5H50V0H100");
-    expect(area).toBe("M0,5H50V0H100V10H0Z");
-  });
+const sources = import.meta.glob<string>("../data/plants.*.ts", { query: "?raw", import: "default", eager: true });
+const modules = import.meta.glob<{ SEED_RAW: { id: string }[] }>("../data/plants.*.ts", { eager: true });
 
-  it("starts a list launched after the window opens at its launch, not at zero", () => {
-    expect(stepPaths([[25, 4]], 0, 100, 100, 10).line).toBe("M25,0H100");
-  });
-
-  it("draws an empty count on the floor rather than dividing by zero", () => {
-    expect(stepPaths([[0, 0], [10, 0]], 0, 10, 10, 10).line).toBe("M0,10H10V10H10");
+describe("plantIds", () => {
+  it.each(Object.keys(sources))("finds every row of %s", (path) => {
+    expect(plantIds(sources[path])).toEqual(modules[path].SEED_RAW.map((p) => p.id));
   });
 });
 
-describe("stepPaths with a shared peak", () => {
-  it("draws a smaller count lower, so two lines on one chart compare", () => {
-    expect(stepPaths([[0, 25]], 0, 100, 100, 10, 100).line).toBe("M0,7.5H100");
+describe("wildlifeByRegion", () => {
+  it("finds every animal SUPPORT ties to each region", () => {
+    const parsed = wildlifeByRegion(WILDLIFE_SRC);
+    for (const [region, byPlant] of Object.entries(SUPPORT)) {
+      const want = new Set(Object.values(byPlant).flat().map((l) => l.wildlifeId));
+      expect([...(parsed.get(region) ?? [])].sort(), region).toEqual([...want].sort());
+    }
+    expect([...parsed.keys()].sort()).toEqual(Object.keys(SUPPORT).sort());
   });
 });
 
-describe("spreadLabels", () => {
-  it("leaves labels beside their lines when they have room", () => {
-    expect(spreadLabels([100, 20], 100, 0.2)).toEqual([0, 0.8]);
+describe("summarise", () => {
+  const snap = (at: string, plants: Record<string, string[]>, wildlife: Record<string, string[]> = {}) => ({
+    at,
+    plants: new Map(Object.entries(plants)),
+    wildlife: new Map(Object.entries(wildlife).map(([k, v]) => [k, new Set(v)])),
   });
-  it("pushes close labels apart, keeping them inside the box", () => {
-    const [a, b] = spreadLabels([10, 8], 100, 0.25);
-    expect(b - a).toBeCloseTo(0.25);
-    expect(b).toBeLessThanOrEqual(1);
-  });
-  it("pushes close labels apart near the top too, without leaving the box", () => {
-    const [a, b] = spreadLabels([100, 98], 100, 0.25);
-    expect(a).toBeGreaterThanOrEqual(0);
-    expect(b - a).toBeCloseTo(0.25);
-  });
-});
 
-describe("pointAt", () => {
-  it("shows the last change at or before the moment", () => {
-    expect(pointAt([0, 10, 20], 15)).toBe(1);
-    expect(pointAt([0, 10, 20], 20)).toBe(2);
-    expect(pointAt([0, 10, 20], -5)).toBe(0);
+  it("keeps one step a day, the day's last", () => {
+    const { regions } = summarise([
+      snap("2026-01-01T09:00Z", { pnw: ["a"] }),
+      snap("2026-01-01T17:00Z", { pnw: ["a", "b"] }),
+      snap("2026-01-02T09:00Z", { pnw: ["a", "b", "c"] }),
+    ]);
+    expect(regions.pnw).toEqual([
+      ["2026-01-01T17:00Z", 2, 0],
+      ["2026-01-02T09:00Z", 3, 0],
+    ]);
   });
-});
-
-describe("latestChange", () => {
-  it("is the difference the newest step made", () => {
-    expect(latestChange([[1, 63, 23], [2, 77, 23]])).toEqual([2, [14, 0]]);
+  it("skips a snapshot where nothing moved", () => {
+    const { all } = summarise([
+      snap("2026-01-01T09:00Z", { pnw: ["a"] }, { pnw: ["owl"] }),
+      snap("2026-01-05T09:00Z", { pnw: ["a"] }, { pnw: ["owl"] }),
+    ]);
+    expect(all).toEqual([["2026-01-01T09:00Z", 1, 1, 1]]);
   });
-  it("is nothing for a list that arrived in one go", () => {
-    expect(latestChange([[1, 67, 21]])).toBeNull();
+  it("forgets a region that has left the app", () => {
+    const { regions, all } = summarise([
+      snap("2026-01-01T09:00Z", { pnw: ["a"], gone: ["x", "y"] }),
+      snap("2026-01-02T09:00Z", { pnw: ["a", "b"] }),
+    ]);
+    expect(regions.gone).toBeUndefined();
+    expect(all[0]).toEqual(["2026-01-01T09:00Z", 1, 0, 1]);
+  });
+  it("dates each row by its first appearance, and drops rows since removed", () => {
+    const { added } = summarise([
+      snap("2026-01-01T09:00Z", { pnw: ["a", "old"] }),
+      snap("2026-01-02T09:00Z", { pnw: ["a", "b"] }),
+    ]);
+    expect(added.plants.pnw).toEqual({ a: "2026-01-01T09:00Z", b: "2026-01-02T09:00Z" });
   });
 });

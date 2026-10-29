@@ -9,7 +9,9 @@
 // document is written as usual.
 export function snapshotJson(doc, rowsKey) {
   const { [rowsKey]: rows, ...head } = doc;
-  const top = JSON.stringify(head, null, 2).replace(/\n}$/, "");
+  // `{}` has no closing line to strip, so a document that is only rows opens
+  // its own brace rather than inheriting a comma from nothing.
+  const top = Object.keys(head).length ? `${JSON.stringify(head, null, 2).replace(/\n}$/, "")},` : "{";
   const body = (rows ?? []).map((r) => `    ${JSON.stringify(r)}`).join(",\n");
-  return `${top},\n  "${rowsKey}": [\n${body}\n  ]\n}\n`;
+  return `${top}\n  "${rowsKey}": [\n${body}\n  ]\n}\n`;
 }

@@ -38,6 +38,7 @@ import { fileURLToPath } from "node:url";
 import { basename, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
 import { withSeeds } from "./_regions.mjs";
+import { requireProxyAwareFetch } from "./_net.mjs";
 
 const DIR = fileURLToPath(new URL("../../data/sources/taxref/", import.meta.url));
 const OUT = join(DIR, "extract.json");
@@ -53,6 +54,7 @@ const findTable = () =>
   readdirSync(DIR).filter((f) => /^TAXREFv[\d.]+\.txt$/i.test(f)).sort().map((f) => join(DIR, f)).pop();
 
 if (args.includes("--fetch")) {
+  requireProxyAwareFetch("taxref:extract -- --fetch");
   mkdirSync(DIR, { recursive: true });
   const zip = join(DIR, basename(TAXREF_ZIP));
   console.log(`Fetching ${TAXREF_ZIP} …`);

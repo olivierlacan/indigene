@@ -1,5 +1,6 @@
-import { describe, expect, it } from "vitest";
-import { atRiskFirst, rankSeverity, threatLevel } from "./conservation";
+import { describe, expect, it, vi } from "vitest";
+import { atRiskFirst, placeInWords, rankSeverity, threatLevel } from "./conservation";
+import { setLang } from "./i18n";
 
 describe("rankSeverity", () => {
   it("reads the IUCN codes", () => {
@@ -42,5 +43,23 @@ describe("atRiskFirst", () => {
   const level: Record<string, number> = { a: 3, b: 5, c: 0, d: 2, e: 5 };
   it("keeps vulnerable or worse, worst first, and the incoming order between equals", () => {
     expect(atRiskFirst(["a", "b", "c", "d", "e"], (x) => level[x])).toEqual(["b", "e", "a"]);
+  });
+});
+
+describe("placeInWords", () => {
+  // setLang sets the page's lang attribute; there is no page here.
+  vi.stubGlobal("document", { documentElement: {} });
+  it("finds an accented place's entry", () => {
+    setLang("en");
+    expect(placeInWords("Québec, CA")).toBe("Québec");
+  });
+  it("gives French its preposition", () => {
+    setLang("fr");
+    expect(placeInWords("Québec, CA")).toBe("au Québec");
+    expect(placeInWords("Florida, US")).toBe("en Floride");
+    setLang("en");
+  });
+  it("prints a place it has no entry for as published", () => {
+    expect(placeInWords("Nevada, US")).toBe("Nevada, US");
   });
 });

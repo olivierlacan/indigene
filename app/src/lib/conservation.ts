@@ -84,7 +84,13 @@ const IUCN = ["CR", "EN", "VU", "NT", "LC"];
  * a place name we guessed.
  */
 export function placeInWords(place: string): string {
-  const slug = place.toLowerCase().replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "");
+  // "Québec, CA" → "quebec-ca": the accent goes, the letter stays.
+  const slug = place
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .toLowerCase()
+    .replace(/[^a-z]+/g, "-")
+    .replace(/^-|-$/g, "");
   return tOptional(`conservation.place.${slug}`) ?? place;
 }
 

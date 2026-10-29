@@ -60,7 +60,7 @@ export function conservationNote(
   // the status stays lower-case whether this stands alone or follows the global.
   if (here) {
     if (lines.length) lines.push(" ");
-    lines.push(el("strong", {}, t("conservation.here", { place: placeInWords(here.place ?? ""), status: said(here) })));
+    lines.push(el("strong", {}, cap(t("conservation.here", { place: placeInWords(here.place ?? ""), status: said(here) }))));
   }
   // The action — said every time, because the fact above is the reason somebody
   // might do the wrong thing with it. Differs by kind.

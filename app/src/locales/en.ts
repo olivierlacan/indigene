@@ -1494,6 +1494,9 @@ export const en = {
   "conservation.place.pennsylvania-us": "Pennsylvania",
   "conservation.place.michigan-us": "Michigan",
   "conservation.place.oregon-us": "Oregon",
+  "conservation.place.washington-us": "Washington",
+  "conservation.place.illinois-us": "Illinois",
+  "conservation.place.quebec-ca": "Québec",
   "plant.whyBelongs": "Habitat: ",
   // The accessible name of the share control; the icon carries the 🔗 itself.
   "plant.share": "Share this plant",

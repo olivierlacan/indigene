@@ -1,19 +1,42 @@
 {
-  "atala": {
+  "andropogon-gerardii": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "andropogon-glomeratus": {
     "regions": {
       "florida-south": {
-        "rank": "S3",
+        "rank": "S3S4",
         "authority": "NatureServe",
         "place": "Florida, US"
       }
     }
   },
-  "band-tailed-pigeon": {
+  "asarum-canadense": {
     "regions": {
-      "pnw": {
+      "chicago": {
+        "rank": "S3?",
+        "authority": "NatureServe",
+        "place": "Illinois, US"
+      }
+    }
+  },
+  "atala": {
+    "regions": {
+      "florida-central": {
         "rank": "S3",
         "authority": "NatureServe",
-        "place": "Oregon, US"
+        "place": "Florida, US"
+      },
+      "florida-south": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Florida, US"
       }
     }
   },
@@ -28,6 +51,12 @@
         "authority": "NatureServe",
         "place": "Pennsylvania, US"
       }
+    }
+  },
+  "behrs-metalmark": {
+    "global": {
+      "rank": "G3G4",
+      "authority": "NatureServe"
     }
   },
   "brown-headed-nuthatch": {
@@ -45,10 +74,151 @@
       "authority": "NatureServe"
     }
   },
+  "carex-pensylvanica": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "carya-ovata": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "ceanothus-americanus": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S2",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "celastrus-scandens": {
+    "regions": {
+      "chicago": {
+        "rank": "S2S3",
+        "authority": "NatureServe",
+        "place": "Illinois, US"
+      },
+      "st-lawrence": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "cephalanthus-occidentalis": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "corylus-americana": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S2",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "elymus-hystrix": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "euonymus-occidentalis": {
+    "regions": {
+      "pnw": {
+        "rank": "S2",
+        "authority": "NatureServe",
+        "place": "Washington, US"
+      }
+    }
+  },
+  "eupatorium-perfoliatum": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "geranium-maculatum": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S2",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "glandularia-maritima": {
+    "global": {
+      "rank": "G3",
+      "authority": "NatureServe"
+    },
+    "regions": {
+      "florida-central": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Florida, US"
+      }
+    }
+  },
   "gopher-tortoise": {
     "global": {
       "rank": "CR",
       "authority": "IUCN Red List"
+    }
+  },
+  "hamamelis-virginiana": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "hesperocyparis-sargentii": {
+    "global": {
+      "rank": "VU",
+      "authority": "IUCN Red List"
+    }
+  },
+  "jacquemontia-pentanthos": {
+    "regions": {
+      "florida-south": {
+        "rank": "S2",
+        "authority": "NatureServe",
+        "place": "Florida, US"
+      }
+    }
+  },
+  "juniper-hairstreak": {
+    "regions": {
+      "mid-atlantic": {
+        "rank": "S3S4",
+        "authority": "NatureServe",
+        "place": "Pennsylvania, US"
+      }
     }
   },
   "karner-blue": {
@@ -57,6 +227,38 @@
         "rank": "S2",
         "authority": "NatureServe",
         "place": "Michigan, US"
+      }
+    }
+  },
+  "monarch": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S2B",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      },
+      "pnw": {
+        "rank": "S1B",
+        "authority": "NatureServe ",
+        "place": "Washington, US"
+      }
+    }
+  },
+  "mosses-elfin": {
+    "regions": {
+      "pnw": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Washington, US"
+      }
+    }
+  },
+  "panicum-virgatum": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S2",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
       }
     }
   },
@@ -70,6 +272,42 @@
     "global": {
       "rank": "CR",
       "authority": "IUCN Red List"
+    }
+  },
+  "propertius-duskywing": {
+    "regions": {
+      "pnw": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Washington, US"
+      }
+    }
+  },
+  "quercus-alba": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "quercus-bicolor": {
+    "regions": {
+      "chicago": {
+        "rank": "S3S4",
+        "authority": "NatureServe",
+        "place": "Illinois, US"
+      }
+    }
+  },
+  "quercus-phellos": {
+    "regions": {
+      "mid-atlantic": {
+        "rank": "EN",
+        "authority": "Pennsylvania State Code",
+        "place": "Pennsylvania, US"
+      }
     }
   },
   "rivina-humilis": {
@@ -90,6 +328,12 @@
       }
     }
   },
+  "sequoia-sempervirens": {
+    "global": {
+      "rank": "EN",
+      "authority": "IUCN Red List"
+    }
+  },
   "sonoran-blue": {
     "global": {
       "rank": "G3G4",
@@ -105,12 +349,75 @@
       }
     }
   },
+  "stokesia-laevis": {
+    "regions": {
+      "florida-central": {
+        "rank": "S3?",
+        "authority": "NatureServe",
+        "place": "Florida, US"
+      }
+    }
+  },
+  "trillium-grandiflorum": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "tripsacum-floridanum": {
+    "global": {
+      "rank": "G2",
+      "authority": "NatureServe"
+    },
+    "regions": {
+      "florida-south": {
+        "rank": "S2",
+        "authority": "NatureServe",
+        "place": "Florida, US"
+      }
+    }
+  },
+  "vaccinium-corymbosum": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "viburnum-lentago": {
+    "regions": {
+      "st-lawrence": {
+        "rank": "S3",
+        "authority": "NatureServe",
+        "place": "Québec, CA"
+      }
+    }
+  },
+  "wisteria-frutescens": {
+    "regions": {
+      "florida-central": {
+        "rank": "S3S4",
+        "authority": "NatureServe",
+        "place": "Florida, US"
+      }
+    }
+  },
   "zamia-integrifolia": {
     "global": {
       "rank": "G3",
       "authority": "NatureServe"
     },
     "regions": {
+      "florida-central": {
+        "rank": "S3S4",
+        "authority": "NatureServe",
+        "place": "Florida, US"
+      },
       "florida-south": {
         "rank": "S3S4",
         "authority": "NatureServe",

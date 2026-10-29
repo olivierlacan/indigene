@@ -8,8 +8,8 @@
 //
 // **A rank is a fact about a place, and it does not travel.** White oak is S1 in
 // Nebraska and the best tree in the Mid-Atlantic; field maple is critically
-// endangered in Sweden and ordinary in France. 136 of our 368 subjects carry a
-// worrying rank *somewhere*, and printing that somewhere on a page about here
+// endangered in Sweden and ordinary in France. Over a third of our subjects carry
+// a worrying rank *somewhere*, and printing that somewhere on a page about here
 // would tell a gardener their commonest oak is nearly gone. So
 // `scripts/conservation.mjs` keeps only two things: a global assessment, which
 // is about the species itself, and the rank in the one state or province each

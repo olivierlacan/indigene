@@ -6,8 +6,8 @@
 //
 // ## Why this is not "show the conservation status"
 //
-// 136 of our 368 subjects carry a status of concern *somewhere in the world*,
-// and almost all of it is noise:
+// When this was written, 136 of our 368 subjects carried a status of concern
+// *somewhere in the world*, and almost all of it was noise:
 //
 //   white oak        S1 in Nebraska      — while it is the Mid-Atlantic's best tree
 //   field maple      CR in Sweden        — we ship it for France
@@ -77,6 +77,9 @@ function ofConcern(entry) {
   const words = String(entry.status_name ?? "").toLowerCase();
   if (/^[gns][1-3]/.test(rank)) return true;
   if (["cr", "en", "vu"].includes(rank)) return true;
+  // "Near Threatened" and New Zealand's "Not Threatened" carry the word too,
+  // and mean the opposite.
+  if (/\b(near|not) threatened\b/.test(words)) return false;
   return /endanger|threatened|imperil|critical/.test(words);
 }
 
@@ -116,9 +119,10 @@ if (dryRun) {
 //
 // So the box is sampled on a grid and the place that comes back most often
 // wins. That is the state the list is *about*: Pennsylvania for the
-// Mid-Atlantic, Oregon for the Pacific Northwest, Pays de la Loire for Atlantic
-// France. The centre point alone would have done it for six of the nine, but
-// three regions are coastal enough that their middle is open water — southern
+// Mid-Atlantic, Michigan for North Michigan, Québec for the St. Lawrence. (A
+// region split between states can come back as either from one run to the
+// next — the run prints what it chose.) The centre point alone would do it for most regions, but
+// some are coastal enough that their middle is open water — southern
 // California's is a mile off Malibu.
 const placesFor = new Map();
 for (const region of REGIONS) {

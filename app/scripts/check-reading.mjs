@@ -15,6 +15,9 @@
 // Needs the open internet; it proves nothing from a network that blocks the
 // hosts, and says so rather than reporting every link dead.
 import { openLoader } from "./_load-ts.mjs";
+import { requireProxyAwareFetch } from "./_net.mjs";
+
+requireProxyAwareFetch("reading:check");
 
 const TIMEOUT_MS = 20_000;
 const BLOCKED = new Set([401, 403, 406, 429]);

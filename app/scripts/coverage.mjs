@@ -151,7 +151,7 @@ for (const { meta, seed } of regions) {
   for (const m of season) short += Math.max(0, BLOOM_FLOOR - inFlower[m]);
 
   // ---- 4. Host genera ----
-  const zone = (meta.ecoregion?.codes ?? []).map((c) => ZONE_FOR_EEA_REGION[c]).find(Boolean);
+  const zone = (meta.ecoregion ?? []).flatMap((e) => e.codes).map((c) => ZONE_FOR_EEA_REGION[c]).find(Boolean);
   const have = new Set(seed.map((p) => p.latin.split(/\s+/)[0]));
   console.log("");
   if (zone) {
@@ -181,7 +181,7 @@ for (const { meta, seed } of regions) {
     // genus table we can bundle the way the Gaytán matrix let us for Europe,
     // so a US region's ranking can only be its own rows. See coverage-plan §3.
     console.log("  host genera — no bundled source for this region; showing our own rows only");
-    const ranked = [...seed].sort((a, b) => b.hostLepCount - a.hostLepCount).slice(0, 10);
+    const ranked = [...seed].sort((a, b) => (b.hostLepCount ?? 0) - (a.hostLepCount ?? 0)).slice(0, 10);
     for (const p of ranked) {
       console.log(`      ${pad(p.latin.split(/\s+/)[0], 16)}${num(p.hostLepCount ?? "—", 5)}  ${p.keystone ? "keystone" : ""}`);
     }
@@ -192,7 +192,7 @@ for (const { meta, seed } of regions) {
   const links = Object.values(ties).flat();
   const used = new Set(links.map((l) => l.wildlifeId));
   const hosts = links.filter((l) => l.support === "host").length;
-  const untied = seed.filter((p) => !ties[p.id]?.length).sort((a, b) => b.hostLepCount - a.hostLepCount);
+  const untied = seed.filter((p) => !ties[p.id]?.length).sort((a, b) => (b.hostLepCount ?? 0) - (a.hostLepCount ?? 0));
   console.log(
     `\n  wildlife — ${links.length} ties (${hosts} of them larval hosts),` +
       ` ${seed.length - untied.length}/${seed.length} plants, ${used.size} animals`,

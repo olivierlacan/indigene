@@ -7,7 +7,7 @@
 // it (see `src/data/regions.ts`). That saving is easy to lose by accident: one
 // ordinary `import` of a region's list from a shared module, or one page that
 // walks `REGIONS` calling `loadPlants`, and the browser is back to downloading
-// all nine — with nothing visibly wrong to notice in review.
+// every one — with nothing visibly wrong to notice in review.
 //
 // So the budgets below are the design, written down. A page listed at 0 must
 // download no plant lists at all; a plant page gets the region (or two) that
@@ -23,7 +23,7 @@ const BASE = `http://127.0.0.1:${port}`;
 /** `max` is how many region plant lists the page may fetch; `note` says why. */
 const PAGES = [
   { label: "home", path: "/#/", max: 0 },
-  { label: "explore (11 region cards)", path: "/#/regions", max: 0, note: "counts come from the registry" },
+  { label: "explore (every region card)", path: "/#/regions", max: 0, note: "counts come from the registry" },
   { label: "browse", path: "/#/browse", max: 0 },
   { label: "all plants index", path: "/#/plants", max: 0, note: "the search index is the registry" },
   { label: "plant page (one region)", path: "/#/plants/baptisia-australis", max: 1 },
@@ -32,7 +32,7 @@ const PAGES = [
   { label: "region page", path: "/#/regions/pnw", max: 1 },
   { label: "saved spots", path: "/#/saved", max: 0, note: "wildlife per spot comes from the registry + tie table" },
   { label: "wildlife index", path: "/#/wildlife", max: 0, note: "counted from the tie table" },
-  { label: "wildlife page", path: "/#/wildlife/monarch", max: 9, note: "the regions that tie to it: every North American list but South Florida" },
+  { label: "wildlife page", path: "/#/wildlife/monarch", max: 10, note: "the regions that tie to it: every North American list" },
   { label: "look-alikes index", path: "/#/lookalikes", max: 11, note: "resolves natives in every region that declares a look-alike" },
   { label: "propagation index", path: "/#/planting", max: 0 },
   { label: "most-wanted index", path: "/#/invasives", max: 0, note: "ranked from the tie table and the counts" },

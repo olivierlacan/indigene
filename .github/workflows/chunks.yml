@@ -1,0 +1,58 @@
+# Checks that each page downloads only the region plant lists it needs.
+#
+# Every region's list is its own file, fetched on demand. One stray import
+# from a shared module and every page downloads all of them, with nothing
+# visibly wrong. `scripts/check-chunks.mjs` holds the budget per page; this
+# runs it, because a check nobody runs goes stale — the monarch's budget sat
+# one region short for weeks before anyone looked.
+#
+# `npm run chunks:check` is the same command locally, against a served build.
+name: Region downloads
+
+on:
+  pull_request:
+    paths:
+      - "app/src/**"
+      - "app/index.html"
+      - "app/vite.config.ts"
+      - "app/scripts/check-chunks.mjs"
+      - "app/package.json"
+      - ".github/workflows/chunks.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Pages fetch only their regions
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Install dependencies
+        working-directory: app
+        run: npm ci
+
+      - name: Install Chromium
+        working-directory: app
+        run: npx playwright install --with-deps chromium
+
+      - name: Build
+        working-directory: app
+        env:
+          BASE_PATH: /
+        run: npm run build
+
+      - name: Check each page's downloads
+        working-directory: app
+        run: |
+          npx vite preview --port 4174 --strictPort &
+          for i in $(seq 60); do curl -sf http://127.0.0.1:4174/ >/dev/null && break; sleep 1; done
+          npm run chunks:check

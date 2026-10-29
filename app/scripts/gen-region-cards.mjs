@@ -202,7 +202,6 @@ async function overflows() {
   });
 }
 
-let n = 0;
 for (const card of wanted) {
   await page.setContent(cardHtml(card), { waitUntil: "load" });
   const bad = await overflows();
@@ -213,7 +212,6 @@ for (const card of wanted) {
   const shot = await page.screenshot({ type: "jpeg", quality: QUALITY });
   const out = join(outDir, `${card.slug}.jpg`);
   if (!existsSync(out) || !readFileSync(out).equals(shot)) writeFileSync(out, shot);
-  n++;
 }
 await browser.close();
 

@@ -255,7 +255,7 @@ async function checkRegion(regionId) {
             ? { ...fallback, askedAt: "species" }
             : { verdict: "INCONCLUSIVE", areas: fallback.areas, askedAt: "species" };
       }
-    } catch (e) {
+    } catch {
       // One more go before calling it. A checklist run is hundreds of sequential
       // calls and the odd connection dies mid-exchange; an `error` line in the
       // middle of a clean region reads like a finding about that plant and is

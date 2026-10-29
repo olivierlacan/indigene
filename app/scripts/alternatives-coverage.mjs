@@ -27,7 +27,6 @@
 //   npm run swaps:coverage                    every region, one block each
 //   npm run swaps:coverage -- --region pnw    one region
 //   npm run swaps:coverage -- --covered       also list the natives already done
-import { fileURLToPath } from "node:url";
 import { openLoader } from "./_load-ts.mjs";
 import { withSeeds } from "./_regions.mjs";
 

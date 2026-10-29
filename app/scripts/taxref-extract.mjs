@@ -119,7 +119,7 @@ let rows = 0;
 const rl = createInterface({ input: createReadStream(file, { encoding: "utf8" }), crlfDelay: Infinity });
 for await (const line of rl) {
   if (!header) {
-    header = line.replace(/^﻿/, "").split("\t").map((h) => h.replace(/^"|"$/g, ""));
+    header = line.replace(/^\uFEFF/, "").split("\t").map((h) => h.replace(/^"|"$/g, ""));
     const need = ["CD_NOM", "CD_REF", "LB_NOM", "RANG", "NOM_VERN"];
     col = Object.fromEntries(need.map((n) => [n, header.indexOf(n)]));
     // Status in metropolitan France — optional, so an older table still reads.

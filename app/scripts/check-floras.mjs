@@ -145,7 +145,7 @@ export const SOURCES = {
   },
   pa: {
     files: { "pa-plant-checklist.json": "https://naturalheritage.dcnr.pa.gov/docs/PlantChecklist.txt" },
-    read: () => ({ rows: paRows(JSON.parse(readFileSync(`${RAW}pa-plant-checklist.json`, "utf8").replace(/^﻿/, ""))) }),
+    read: () => ({ rows: paRows(JSON.parse(readFileSync(`${RAW}pa-plant-checklist.json`, "utf8").replace(/^\uFEFF/, ""))) }),
     verdict: paVerdict,
     name: { en: "The Pennsylvania Natural Heritage Program", fr: "Le programme du patrimoine naturel de Pennsylvanie" },
     cite: "Pennsylvania Natural Heritage Program. Pennsylvania Vascular Plant List. DCNR / Western Pennsylvania Conservancy.",

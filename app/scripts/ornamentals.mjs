@@ -131,17 +131,20 @@ const loader = await openLoader();
 let report;
 let REGION_ORDER = [];
 try {
-  const [{ REGIONS }, { ORNAMENTALS }, { LOOKALIKES }] = await Promise.all([
+  const [{ REGIONS }, { ORNAMENTALS }, { LOOKALIKES }, { INVASIVES }] = await Promise.all([
     loader.load("/src/data/regions.ts"),
     loader.load("/src/data/alternatives.ts"),
     loader.load("/src/data/lookalikes.ts"),
+    loader.load("/src/data/invasives.ts"),
   ]);
 
   // Everything we already have an answer for, by scientific name. A plant we
-  // cover as an impostor counts: its page already tells the reader what it is.
+  // cover as an impostor or an invasive counts: its page already tells the
+  // reader what it is.
   const answered = new Set([
     ...ORNAMENTALS.map((o) => norm(o.latin)),
     ...LOOKALIKES.map((l) => norm(l.latin)),
+    ...INVASIVES.map((i) => norm(i.latin)),
   ]);
 
   // Every region's roster, so a candidate can be told apart from a plant that is
@@ -186,7 +189,7 @@ try {
 // ---------------------------------------------------------------------------
 // The snapshot is merged, never replaced.
 //
-// `--region pnw` asks about one region; it must not throw away the other ten.
+// `--region pnw` asks about one region; it must not throw away the others.
 // Replacing the file wholesale meant a single-region run left a "census of every
 // region" holding one region — which is worse than no snapshot, because it looks
 // like a census and reads like one. (It shipped that way once.)

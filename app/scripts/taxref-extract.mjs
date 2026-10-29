@@ -24,7 +24,7 @@
 // (plants, animals, impostors, invasives), the TAXREF row it resolves to — its
 // CD_NOM, the accepted CD_REF, the accepted name, the rank, and the French
 // names TAXREF gives the accepted taxon, in TAXREF's order (the first is the
-// one the référentiel leads with). About 800 rows. `check-vernacular.mjs`
+// one the référentiel leads with). A few hundred rows. `check-vernacular.mjs`
 // prefers this file when it exists and falls back to GBIF's copy of TAXREF
 // when it doesn't, saying which in the snapshot's health block.
 //

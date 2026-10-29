@@ -12,8 +12,8 @@
 // ## Why this exists beside `harvest-hero-photos.mjs`
 //
 // The review pipeline is the good one: a shortlist of ranked candidates, per
-// region, and a person choosing. It is also the slow one — 298 plants and 82
-// animals is a lot of sittings, and until somebody sits down the plant keeps its
+// region, and a person choosing. It is also the slow one — hundreds of plants
+// and animals is a lot of sittings, and until somebody sits down the plant keeps its
 // generic drawing and the animal keeps its emoji.
 //
 // iNaturalist has already done a version of this work. Every taxon page opens
@@ -169,7 +169,10 @@ function writeQueue(asked, refusals) {
   const next = new Map();
   for (const q of queued) {
     const key = queueKey(q);
-    if (!inCatalog.has(key) || asked.has(key)) continue;
+    // Out of the catalog only counts for a kind this run looked at: `--kind
+    // wildlife` built no plant jobs, and must not read that as every queued
+    // plant having left.
+    if ((wants(q.subject) && !inCatalog.has(key)) || asked.has(key)) continue;
     if (reviewed[q.subject][q.id] || picks[OUT[q.subject]][q.id]) continue;
     next.set(key, q);
   }

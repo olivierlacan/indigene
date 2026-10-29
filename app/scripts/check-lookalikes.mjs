@@ -43,7 +43,7 @@
 //
 // Nothing here decides what ships. A tie earns its place by being sourced and
 // useful; this is corroboration and a source of leads, not a gate.
-import { writeFileSync, mkdirSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
@@ -58,7 +58,6 @@ const OUT_DIR = join(REPO_ROOT, "data", "sources", "lookalikes");
 const UA =
   "IndigeneLookalikeCheck/0.1 (https://github.com/olivierlacan/indigene; hi@olivierlacan.com)";
 
-const TAXA_SEARCH = "https://api.inaturalist.org/v1/taxa";
 const SIMILAR = "https://api.inaturalist.org/v1/identifications/similar_species";
 
 /** Below this many recorded misidentifications, a "missed" confusion is noise —
@@ -77,6 +76,7 @@ const asJson = args.includes("--json");
 const loader = await openLoader();
 const { LOOKALIKES, CONFUSIONS } = await loader.load("/src/data/lookalikes.ts");
 const { REGIONS: REGIONS_RAW } = await loader.load("/src/data/regions.ts");
+const { buildTaxaUrl, pickTaxon } = await loader.load("/src/lib/inaturalist.ts");
 const REGIONS = await withSeeds(REGIONS_RAW);
 
 const lookalikeById = new Map(LOOKALIKES.map((l) => [l.id, l]));
@@ -106,14 +106,13 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const taxonCache = new Map();
 
 /** Resolve a scientific name to an iNaturalist taxon id — the same
- *  name-not-id resolution the app itself does at request time. */
+ *  name-not-id resolution the app itself does at request time, scoped to
+ *  plants. An unscoped search's first hit can be another plant: "Brassica nigra"
+ *  can come back as Hirschfeldia incana. */
 async function taxonId(latin) {
   if (taxonCache.has(latin)) return taxonCache.get(latin);
-  const data = await getJson(`${TAXA_SEARCH}?q=${encodeURIComponent(latin)}&is_active=true&per_page=5`);
-  const exact = (data?.results ?? []).find(
-    (t) => String(t.name).toLowerCase() === latin.toLowerCase().replace(/\s*×\s*/, " × ")
-  );
-  const id = exact?.id ?? data?.results?.[0]?.id ?? null;
+  const data = await getJson(buildTaxaUrl(latin, "Plantae"));
+  const id = pickTaxon(data?.results, latin);
   taxonCache.set(latin, id);
   await sleep(1000);
   return id;
@@ -197,9 +196,17 @@ if (report.ties > 0 && upstreamAnswers === 0) {
 report.checkedAt = new Date().toISOString().slice(0, 10);
 report.missed.sort((a, b) => b.misidentifications - a.misidentifications);
 
-mkdirSync(OUT_DIR, { recursive: true });
+// The snapshot is the whole catalog's answer. One region's run would replace
+// every other region's rows with nothing, so it only prints; and a run without
+// `--suggest` keeps the suggestions the last full one found.
 const outFile = join(OUT_DIR, "inaturalist-confusions.json");
-writeFileSync(outFile, JSON.stringify(report, null, 2) + "\n");
+if (onlyRegion) {
+  console.error(`One region only (--region ${onlyRegion}): ${outFile.replace(/.*\/data\//, "data/")} left as it was.`);
+} else {
+  if (!suggest && existsSync(outFile)) report.missed = JSON.parse(readFileSync(outFile, "utf8")).missed ?? [];
+  mkdirSync(OUT_DIR, { recursive: true });
+  writeFileSync(outFile, JSON.stringify(report, null, 2) + "\n");
+}
 
 if (asJson) {
   console.log(JSON.stringify(report, null, 2));
@@ -220,7 +227,7 @@ if (asJson) {
       console.log(`    + ${m.plant} ↔ ${m.candidate} (${m.misidentifications}×, ${m.region})`);
     }
   }
-  console.log(`\nSnapshot written to ${outFile}`);
+  if (!onlyRegion) console.log(`\nSnapshot written to ${outFile}`);
 }
 
 await loader.close();

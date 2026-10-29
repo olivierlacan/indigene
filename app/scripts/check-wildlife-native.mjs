@@ -15,7 +15,7 @@
 // `_fauna.mjs` says which authority speaks for each region and why. In short:
 // NatureServe for US states and Canadian provinces, the UK Species Inventory
 // (NBN Atlas) plus GBIF records for Ireland and Scotland, TAXREF for France,
-// iNaturalist's checklist for New Zealand — and GRIIS, the global register of
+// iNaturalist's checklists for New Zealand and Japan — and GRIIS, the global register of
 // introductions, everywhere.
 //
 // ## Reading the answer

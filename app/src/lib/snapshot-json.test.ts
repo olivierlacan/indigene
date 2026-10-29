@@ -1,8 +1,8 @@
 // The one-row-per-line writer behind the committed wildlife snapshots
 // (`scripts/_snapshot-json.mjs`). Whatever it writes has to read back as the
 // document it was given, and the committed files have to come out unchanged.
-import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
+import PNW_TIES from "../../../data/sources/wildlife-ties/pnw.json?raw";
 // @ts-expect-error — a plain .mjs build script, no type declarations.
 import { snapshotJson } from "../../scripts/_snapshot-json.mjs";
 
@@ -22,7 +22,6 @@ describe("snapshotJson", () => {
     expect(JSON.parse(snapshotJson({ region: "pnw" }, "ties"))).toEqual({ region: "pnw", ties: [] });
   });
   it("reproduces a committed snapshot byte for byte", () => {
-    const text = readFileSync(new URL("../../../data/sources/wildlife-ties/pnw.json", import.meta.url), "utf8");
-    expect(snapshotJson(JSON.parse(text), "ties")).toBe(text);
+    expect(snapshotJson(JSON.parse(PNW_TIES), "ties")).toBe(PNW_TIES);
   });
 });

@@ -1435,7 +1435,7 @@ export const fr: Dict = {
   // publie, est expliqué une seule fois sur /guide/conservation (lien `learnMore`).
   "conservation.rank": "{words} ({rank})",
   "conservation.globally": "{status} dans le monde.",
-  "conservation.here": "En {place}, {status}.",
+  "conservation.here": "{place}, {status}.",
   "conservation.learnMore": "Ce que signifient ces statuts",
   "conservation.footerWorld": "{status} dans le monde",
   "conservation.footerHere": "{status}, {place}",
@@ -1458,11 +1458,16 @@ export const fr: Dict = {
   "conservation.words.NT": "quasi menacée",
   "conservation.words.LC": "préoccupation mineure",
   // Les lieux arrivent en anglais (iNaturalist) ; seuls les États et provinces
-  // de nos régions peuvent apparaître ici, d'où la brièveté de la liste.
-  "conservation.place.florida-us": "Floride",
-  "conservation.place.pennsylvania-us": "Pennsylvanie",
-  "conservation.place.michigan-us": "Michigan",
-  "conservation.place.oregon-us": "Oregon",
+  // de nos régions peuvent apparaître ici, d'où la brièveté de la liste. Chacun
+  // porte sa préposition (« au Québec », « en Floride »), qu'aucun gabarit ne
+  // saurait deviner.
+  "conservation.place.florida-us": "en Floride",
+  "conservation.place.pennsylvania-us": "en Pennsylvanie",
+  "conservation.place.michigan-us": "au Michigan",
+  "conservation.place.oregon-us": "en Oregon",
+  "conservation.place.washington-us": "dans l'État de Washington",
+  "conservation.place.illinois-us": "en Illinois",
+  "conservation.place.quebec-ca": "au Québec",
   "plant.whyBelongs": "Milieu : ",
   "plant.share": "Partager cette plante",
   "plant.shareShort": "Partager",

@@ -6,8 +6,8 @@
 //
 // ## Why this is not "show the conservation status"
 //
-// 136 of our 368 subjects carry a status of concern *somewhere in the world*,
-// and almost all of it is noise:
+// When this was written, 136 of our 368 subjects carried a status of concern
+// *somewhere in the world*, and almost all of it was noise:
 //
 //   white oak        S1 in Nebraska      — while it is the Mid-Atlantic's best tree
 //   field maple      CR in Sweden        — we ship it for France
@@ -21,9 +21,9 @@
 // So exactly two things are kept:
 //
 //   1. **A global assessment** — IUCN, or a NatureServe G-rank. That one is
-//      about the species itself and travels with it. Six subjects have one.
+//      about the species itself and travels with it. Twelve subjects have one.
 //   2. **The rank in the one state or province a region mostly is** — found by
-//      sampling its box, see below. Seven subjects have one.
+//      sampling its box, see below. 38 subjects have one.
 //
 // Everything else is dropped, and the file records which place and which
 // authority said each thing that survived, because a rank with no place on it
@@ -40,7 +40,7 @@ requireProxyAwareFetch("conservation");
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(HERE, "../src/data/conservation.json");
-const HEROES = resolve(HERE, "../src/data/inat-heroes.json");
+const TAXA = resolve(HERE, "../src/data/wildlife-taxa.json");
 const INAT = "https://api.inaturalist.org/v1";
 const UA =
   "IndigeneConservation/0.1 (https://github.com/olivierlacan/indigene; hi@olivierlacan.com)";
@@ -54,7 +54,7 @@ const { REGIONS } = await loader.load("/src/data/regions.ts");
 const { regionsForWildlife } = await loader.load("/src/lib/wildlife.ts");
 await loader.close();
 
-const heroes = JSON.parse(readFileSync(HEROES, "utf8"));
+const taxa = JSON.parse(readFileSync(TAXA, "utf8"));
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function ask(url) {
   const res = await fetch(url, { headers: { "User-Agent": UA, Accept: "application/json" } });
@@ -77,11 +77,15 @@ function ofConcern(entry) {
   const words = String(entry.status_name ?? "").toLowerCase();
   if (/^[gns][1-3]/.test(rank)) return true;
   if (["cr", "en", "vu"].includes(rank)) return true;
+  // "Near Threatened" and New Zealand's "Not Threatened" carry the word too,
+  // and mean the opposite.
+  if (/\b(near|not) threatened\b/.test(words)) return false;
   return /endanger|threatened|imperil|critical/.test(words);
 }
 
 /** The subjects we can ask about: a plant with a reconciled taxon id, an animal
- *  whose name the photo harvest already resolved to one. */
+ *  `npm run wildlife:taxa` pinned to one. Not the photo harvest's ids: an animal
+ *  whose photo a person picked has none there, and 47 of them went unasked. */
 const subjects = [
   ...REGISTRY.filter((e) => e.identifiers?.inat && e.identifiers?.indigene).map((e) => ({
     kind: "plant",
@@ -89,10 +93,10 @@ const subjects = [
     taxon: Number(e.identifiers.inat),
     regions: e.regions ?? [],
   })),
-  ...WILDLIFE.filter((w) => heroes[w.id]?.taxonId).map((w) => ({
+  ...WILDLIFE.filter((w) => taxa[w.id]).map((w) => ({
     kind: "animal",
     id: w.id,
-    taxon: heroes[w.id].taxonId,
+    taxon: taxa[w.id],
     regions: regionsForWildlife(w.id).map((r) => r.meta.id),
   })),
 ];
@@ -115,9 +119,10 @@ if (dryRun) {
 //
 // So the box is sampled on a grid and the place that comes back most often
 // wins. That is the state the list is *about*: Pennsylvania for the
-// Mid-Atlantic, Oregon for the Pacific Northwest, Pays de la Loire for Atlantic
-// France. The centre point alone would have done it for six of the nine, but
-// three regions are coastal enough that their middle is open water — southern
+// Mid-Atlantic, Michigan for North Michigan, Québec for the St. Lawrence. (A
+// region split between states can come back as either from one run to the
+// next — the run prints what it chose.) The centre point alone would do it for most regions, but
+// some are coastal enough that their middle is open water — southern
 // California's is a mile off Malibu.
 const placesFor = new Map();
 for (const region of REGIONS) {

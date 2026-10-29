@@ -6,9 +6,8 @@
 //   npx http-server dist -p 4174 -s &
 //   node scripts/check-lightbox-swipe.mjs [baseUrl]
 //
-// Exits non-zero if any check fails. iNaturalist is stubbed the same way
-// scripts/shoot-sightings.mjs stubs it — the container has no route to the API
-// or the photo CDN, and a fixed set of sightings makes the counts assertable.
+// Exits non-zero if any check fails. iNaturalist is stubbed: a fixed set of
+// sightings makes the counts assertable, and the run needs no network.
 import { existsSync } from "node:fs";
 import { chromium } from "playwright";
 

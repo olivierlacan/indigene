@@ -166,7 +166,7 @@ async function getText(url) {
     try {
       const r = await fetch(url);
       if (!r.ok) throw new Error(`${r.status}`);
-      return (await r.text()).replace(/^﻿/, "");
+      return (await r.text()).replace(/^\uFEFF/, "");
     } catch (e) {
       if (attempt >= 2) throw e;
       await new Promise((res) => setTimeout(res, 2000 * (attempt + 1)));

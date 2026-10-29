@@ -55,8 +55,8 @@ const HERE = dirname(fileURLToPath(import.meta.url));
  *   plain   `id → pick`                  — iNaturalist's own photo per species,
  *                                          which has no region to file under
  *
- * All four want the same treatment for the same reason, so they are walked by
- * one loop rather than by four scripts that would drift.
+ * They all want the same treatment for the same reason, so they are walked by
+ * one loop rather than by a script each that would drift.
  */
 const FILES = [
   { path: resolve(HERE, "../src/data/hero-photos.json"), shape: "flat" },

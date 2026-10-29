@@ -4,7 +4,7 @@
 //   npm run resolve:fetch -- --tolerance 0.01   # coarser (degrees; default 0.005)
 //
 // RESOLVE (Dinerstein et al., BioScience 2017; CC BY 4.0) is the one ecoregion
-// map that covers the whole world: 846 ecoregions, the successor to WWF's
+// map that covers the whole world: 846 ecoregions plus Rock and Ice, the successor to WWF's
 // Terrestrial Ecoregions. `site.ts` asks Esri's hosted copy one point at a time,
 // which is all the app needs. The build needs more — whole shapes, to draw a
 // region's map and to find which ecoregions a new region's box touches — and

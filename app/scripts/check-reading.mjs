@@ -15,6 +15,9 @@
 // Needs the open internet; it proves nothing from a network that blocks the
 // hosts, and says so rather than reporting every link dead.
 import { openLoader } from "./_load-ts.mjs";
+import { requireProxyAwareFetch } from "./_net.mjs";
+
+requireProxyAwareFetch("reading:check");
 
 const TIMEOUT_MS = 20_000;
 const BLOCKED = new Set([401, 403, 406, 429]);
@@ -40,14 +43,33 @@ for (const [region, rows] of Object.entries(READING)) {
   }
 }
 
+/** Redirects are followed by hand, carrying the cookies each one sets, the way
+ *  a browser does. UF/IFAS answers a cookieless request with a redirect to
+ *  itself — forever, for fetch; once, for a reader — until a locale cookie is
+ *  set. */
 async function ask(url) {
   try {
-    const res = await fetch(url, {
-      redirect: "follow",
-      signal: AbortSignal.timeout(TIMEOUT_MS),
-      headers: { "user-agent": "Mozilla/5.0 (compatible; indigene-reading-check)" },
-    });
-    return res.status;
+    const signal = AbortSignal.timeout(TIMEOUT_MS);
+    const jar = new Map();
+    for (let hops = 0; ; hops++) {
+      const res = await fetch(url, {
+        redirect: "manual",
+        signal,
+        headers: {
+          "user-agent": "Mozilla/5.0 (compatible; indigene-reading-check)",
+          ...(jar.size ? { cookie: [...jar].map(([k, v]) => `${k}=${v}`).join("; ") } : {}),
+        },
+      });
+      const next = res.headers.get("location");
+      if (res.status < 300 || res.status >= 400 || !next) return res.status;
+      if (hops >= 10) return "no answer (redirect loop)";
+      for (const c of res.headers.getSetCookie()) {
+        const [pair] = c.split(";");
+        const eq = pair.indexOf("=");
+        if (eq > 0) jar.set(pair.slice(0, eq).trim(), pair.slice(eq + 1).trim());
+      }
+      url = new URL(next, url).href;
+    }
   } catch (err) {
     // A string, never a number: an error code can be numeric (0), and a bare
     // 0 once sorted as "open" — 70 of 73 links "opened" from a network that

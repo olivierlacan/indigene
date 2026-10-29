@@ -1,10 +1,10 @@
 // `npm run wildlife -- --region <id>` — propose animals for the wildlife layer,
 // with the evidence for each, for a human to accept or reject.
 //
-// `npm run coverage` has been saying the same thing about every region for a
-// while: a third to a half of the plants we ship name **no animal at all**.
-// Continental France names ties for 10 of its 22 plants, Mediterranean France
-// for 11 of 21. The layer that answers "will it bring monarchs?" answers
+// When this was written, `npm run coverage` said the same thing about every
+// region: a third to a half of the plants we shipped named **no animal at
+// all** — Continental France tied 10 of its 22 plants, Mediterranean France 11
+// of 21. (Most regions are past 80% now.) The layer that answers "will it bring monarchs?" answers
 // "we don't know" for most of the list, and the reason was never disagreement
 // about what belongs there — it was that finding the ties meant reading a
 // species page per plant, by hand, forever.
@@ -90,6 +90,7 @@ import { dirname, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
 import { requireProxyAwareFetch } from "./_net.mjs";
 import { withSeeds } from "./_regions.mjs";
+import { askedNames, gbifMatch } from "./_fauna.mjs";
 
 requireProxyAwareFetch("wildlife");
 
@@ -125,7 +126,14 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // proportionate to what actually changed. It lives under `node_modules/.cache`,
 // which is already ignored: this is a speed aid, never a source of truth. The
 // committed snapshot is what a reviewer reads.
-const cache = existsSync(CACHE_FILE) ? JSON.parse(readFileSync(CACHE_FILE, "utf8")) : {};
+// A failure is remembered for this run only. Written to disk, one dropped
+// connection would answer that query with nothing on every later run too.
+const cache = Object.fromEntries(
+  Object.entries(existsSync(CACHE_FILE) ? JSON.parse(readFileSync(CACHE_FILE, "utf8")) : {}).filter(
+    ([, v]) => v !== null,
+  ),
+);
+const failed = new Set();
 let cacheDirty = false;
 let cacheHits = 0;
 let fetches = 0;
@@ -138,15 +146,15 @@ function saveCache() {
 }
 
 /**
- * Fetch JSON, remembering the answer. `null` is a legitimate cached value —
- * "this query failed, don't ask again this run" — so misses are told apart by
- * key presence, not by falsiness.
+ * Fetch JSON, remembering the answer on disk. A query that failed is asked
+ * again on the next run, not this one.
  */
 async function getJson(url, { tries = 3, timeoutMs = 45000, politeMs = 0 } = {}) {
   if (url in cache) {
     cacheHits++;
     return cache[url];
   }
+  if (failed.has(url)) return null;
   let out = null;
   for (let attempt = 1; attempt <= tries; attempt++) {
     // The timer covers the body as well as the headers: cleared on arrival of
@@ -170,8 +178,11 @@ async function getJson(url, { tries = 3, timeoutMs = 45000, politeMs = 0 } = {})
       clearTimeout(t);
     }
   }
-  cache[url] = out;
-  cacheDirty = true;
+  if (out === null) failed.add(url);
+  else {
+    cache[url] = out;
+    cacheDirty = true;
+  }
   if (politeMs) await sleep(politeMs);
   return out;
 }
@@ -293,13 +304,12 @@ function isoCodesFor(countryNames) {
 }
 
 async function gbifEstablishment(latin, isoCodes, countryNames) {
-  const match = await getJson(
-    `https://api.gbif.org/v1/species/match?name=${encodeURIComponent(latin)}`,
-    { politeMs: 100 },
-  );
-  if (!match?.usageKey) return { verdict: "unknown", note: "no GBIF match" };
+  // The fauna checks' match: animals only, and never a genus standing in for
+  // the species ("Quercus zzzfake" matches Quercus at HIGHERRANK).
+  const match = await gbifMatch(latin);
+  if (!match) return { verdict: "unknown", note: "no GBIF match" };
   const dist = await getJson(
-    `https://api.gbif.org/v1/species/${match.usageKey}/distributions?limit=300`,
+    `https://api.gbif.org/v1/species/${match.key}/distributions?limit=300`,
     { politeMs: 100 },
   );
   const names = countryNames.map(normCountry);
@@ -436,13 +446,16 @@ if (!targets.length) {
   process.exit(1);
 }
 
-// The catalog, indexed by the scientific name GloBI would use. Entries without a
-// binomial (the informal groups — "Jays, turkeys & woodpeckers") can't be
-// matched mechanically and are simply not part of track one.
+// The catalog, indexed by the scientific name GloBI would use — a group by
+// each of its members, so a bumble bee the catalog already holds under
+// "Bumble bees" isn't proposed as new. Entries with neither (the informal
+// groups — "Jays, turkeys & woodpeckers") can't be matched mechanically and
+// are simply not part of track one.
 const catalogByLatin = new Map();
 for (const w of WILDLIFE) {
-  const latin = w.latin ?? w.inat?.name;
-  if (latin && BINOMIAL.test(latin)) catalogByLatin.set(latin.toLowerCase(), w);
+  for (const latin of [w.latin ?? w.inat?.name, ...askedNames(w)]) {
+    if (latin && BINOMIAL.test(latin)) catalogByLatin.set(latin.toLowerCase(), w);
+  }
 }
 
 const snapshot = existsSync(SNAPSHOT) ? JSON.parse(readFileSync(SNAPSHOT, "utf8")) : { regions: {} };

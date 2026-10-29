@@ -120,7 +120,6 @@ async function main() {
   // to British Columbia.
   const vascan = openVascan();
 
-  const taxa = readDwc("taxon.txt");
   const vernRows = readDwc("vernacularname.txt");
   const frByTaxon = new Map();
   for (const v of vernRows) {

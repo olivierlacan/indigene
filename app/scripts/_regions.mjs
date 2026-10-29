@@ -3,7 +3,7 @@
 // In the app a region's plant list is a separate download, fetched only for the
 // region a reader is actually gardening in (`data/regions.ts`), so `RegionDef`
 // carries a `load()` rather than a `seed` array. That is exactly the wrong shape
-// for these scripts: every one of them wants all nine lists at once, on a
+// for these scripts: every one of them wants all the lists at once, on a
 // machine where "fetching" is reading a file.
 //
 // So this waits for all of them and hands back the shape the scripts were

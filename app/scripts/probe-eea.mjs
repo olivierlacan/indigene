@@ -1,16 +1,13 @@
-// Probe the live EEA Biogeographical Regions ArcGIS service to confirm the two
-// things the build sandbox couldn't (its egress 403s the EEA host): the polygon
-// *layer id*, and the *field name* that holds the region (Atlantic / Continental
-// / Alpine / Mediterranean). Runs anywhere with Node 18+ (built-in fetch), no
-// dependencies:
+// Probe the live EEA Biogeographical Regions ArcGIS service for the two things
+// the parser in app/src/lib/site.ts is pinned to: the polygon *layer id*, and
+// the *field name* that holds the region (Atlantic / Continental / Alpine /
+// Mediterranean). Answered and pinned; rerun it if the service changes.
 //
-//   node app/scripts/probe-eea.mjs
+//   npm run probe:eea
 //
 // It prints a summary and writes the provenance snapshot to
 // data/sources/eea-biogeographical-regions/probe.json (committed — see that
-// folder's README). Paste the summary (or the json) back and the parser in
-// app/src/lib/site.ts gets pinned to the real layer + field, and the "confirm
-// in-browser" caveat comes off.
+// folder's README).
 import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -116,7 +113,7 @@ async function main() {
         const det = detectRegionField(attrs);
         if (det) { hit = { layer, ...det, attrs }; break; }
         if (!hit && attrs) hit = { layer, field: null, value: null, attrs }; // feature but no name match
-      } catch (e) {
+      } catch {
         // try next layer
       }
     }

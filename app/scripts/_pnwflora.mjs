@@ -5,7 +5,7 @@
 
 /** A tab-delimited file with one header row and no quoting, as both sources write. */
 export function readTsv(text) {
-  const lines = text.replace(/^﻿/, "").split(/\r?\n/).filter(Boolean);
+  const lines = text.replace(/^\uFEFF/, "").split(/\r?\n/).filter(Boolean);
   const cols = lines[0].split("\t");
   return lines.slice(1).map((line) => {
     const parts = line.split("\t");

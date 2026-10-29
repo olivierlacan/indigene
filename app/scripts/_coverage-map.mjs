@@ -131,13 +131,12 @@ function rewind(feature) {
 function pathWriter(step = 0.9) {
   let d = "";
   let last = null;
-  let open = 0;
   const r = (n) => Math.round(n * 10) / 10;
   return {
-    moveTo(x, y) { d += `M${r(x)} ${r(y)}`; last = [x, y]; open = 1; },
+    moveTo(x, y) { d += `M${r(x)} ${r(y)}`; last = [x, y]; },
     lineTo(x, y) {
       if (Math.hypot(x - last[0], y - last[1]) < step) return;
-      d += `L${r(x)} ${r(y)}`; last = [x, y]; open++;
+      d += `L${r(x)} ${r(y)}`; last = [x, y];
     },
     closePath() { d += "Z"; },
     arc() {},

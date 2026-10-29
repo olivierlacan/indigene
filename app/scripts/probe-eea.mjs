@@ -116,7 +116,7 @@ async function main() {
         const det = detectRegionField(attrs);
         if (det) { hit = { layer, ...det, attrs }; break; }
         if (!hit && attrs) hit = { layer, field: null, value: null, attrs }; // feature but no name match
-      } catch (e) {
+      } catch {
         // try next layer
       }
     }

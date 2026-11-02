@@ -404,6 +404,15 @@
     "attribution": "(c) Carlos Eduardo Simental Crespo, some rights reserved (CC BY-NC), uploaded by Carlos Eduardo Simental Crespo",
     "color": "#8d8b4f"
   },
+  "spiraea-japonica": {
+    "taxonId": 125790,
+    "photoId": 524079302,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/524079302/square.jpg",
+    "observer": "Nathan Piechocki",
+    "license": "cc0",
+    "attribution": "no rights reserved, uploaded by Nathan Piechocki",
+    "color": "#75873e"
+  },
   "syagrus-romanzoffiana": {
     "taxonId": 79291,
     "photoId": 123453473,

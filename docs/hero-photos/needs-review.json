@@ -123,14 +123,6 @@
     },
     {
       "subject": "alternative",
-      "id": "spiraea-japonica",
-      "name": "Spiraea japonica",
-      "taxonId": 125790,
-      "reason": "chosen photo 449207 is cc-by-nc-nd",
-      "gallery": "https://www.inaturalist.org/taxa/125790/browse_photos"
-    },
-    {
-      "subject": "alternative",
       "id": "wisteria-sinensis",
       "name": "Wisteria sinensis",
       "taxonId": 127306,

@@ -7873,6 +7873,7 @@ a.welcome-way {
 a.welcome-way:hover strong { text-decoration: underline; }
 .welcome-way-thumb { flex: 0 0 auto; width: 56px; height: 56px; }
 .welcome-way-map { background: var(--surface-2, transparent); display: grid; place-items: center; overflow: hidden; }
+.welcome-way-art .page-art.square-art { float: none; width: 56px; margin: 0; }
 .welcome-way-map img { width: 100%; height: 100%; object-fit: cover; }
 .welcome-way-text { display: flex; flex-direction: column; min-width: 0; line-height: 1.35; }
 .welcome-way-text span { font-size: 0.88rem; color: var(--ink-soft); }

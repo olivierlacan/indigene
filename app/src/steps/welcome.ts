@@ -8,6 +8,7 @@ import { REGIONS } from "../lib/plants";
 import { wildlifeThumb } from "../components/wildlife-thumb";
 import { plantThumb, invasiveThumb, lookalikeThumb } from "../components/plant-thumb";
 import { recentPost } from "../data/posts";
+import { squareArt } from "../components/page-art";
 import type { TKey } from "../locales/en";
 
 export function renderWelcome(main: HTMLElement): void {
@@ -158,6 +159,8 @@ function moreToExplore(): HTMLElement {
         t("welcome.way.lookalikes"), t("welcome.way.lookalikesLine")),
       way("#/planting", plantThumb("quercus-alba", "tree", thumbAttrs),
         t("welcome.way.planting"), t("welcome.way.plantingLine")),
+      way("#/volunteer", el("span", { class: "welcome-way-thumb welcome-way-art" }, squareArt("spade")),
+        t("welcome.way.volunteer"), t("welcome.way.volunteerLine")),
       way("#/regions", map,
         tn("welcome.way.regions", REGIONS.length), t("welcome.way.regionsLine")),
     ]),

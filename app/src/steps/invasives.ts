@@ -251,6 +251,9 @@ function removalSection(inv: Invasive): HTMLElement {
       el("span", { class: "step-icon", "aria-hidden": "true" }, DISPOSE_ICON),
       el("span", {}, [el("strong", {}, t("wanted.afterwards")), dispose]),
     ]),
+    // Bag it or pile it: the rule for every plant at once.
+    el("p", { class: "more-link", style: "margin:0.2rem 0" },
+      el("a", { href: "#/volunteer/invasives" }, t("wanted.disposeGuide"))),
     el("p", { class: "confidence", style: "margin:0.4rem 0 0.6rem" },
       [t("alternatives.originSource"), ...citation(inv.removal.basis)]),
   ]);

@@ -16,6 +16,7 @@ import { knownRegion, navigate } from "../state";
 import { t, tx } from "../lib/i18n";
 import type { TKey } from "../locales/en";
 import { pageArt, squareArt, figureArt } from "../components/page-art";
+import { richText } from "../components/rich-text";
 import { mostWanted } from "../lib/invasives";
 import {
   GUIDES,
@@ -44,10 +45,10 @@ function block(b: GuideBlock): HTMLElement {
       return el("p", {}, b.links
         ? tx(k(b.key), Object.fromEntries(Object.entries(b.links).map(([slot, link]) =>
             [slot, el("a", { href: resolveHref(link.href) }, t(k(link.key)))])))
-        : t(k(b.key)));
+        : richText(t(k(b.key))));
     case "ol":
     case "ul":
-      return el(b.kind, {}, b.keys.map((key) => el("li", {}, t(k(key)))));
+      return el(b.kind, {}, b.keys.map((key) => el("li", {}, richText(t(k(key))))));
     case "note":
       return el("p", { class: `note ${b.tone}` }, [el("strong", {}, t(k(b.title))), " ", t(k(b.key))]);
     case "figure":
@@ -135,7 +136,7 @@ function renderIndex(main: HTMLElement): void {
       })),
 
       el("div", { class: "btn-row", style: "margin-top:1.5rem" }, [
-        el("a", { class: "btn btn-primary", href: guideHref(GUIDES[0]) }, t(k(`volunteer.${GUIDES[0].slug}.next`))),
+        el("a", { class: "btn btn-primary", href: guideHref(GUIDES[0]) }, t("volunteer.start")),
       ]),
     ]),
   );

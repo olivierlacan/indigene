@@ -550,6 +550,15 @@ export const SECTIONS = [
         ],
       },
       {
+        id: "planting-day",
+        heading: "Before a volunteer planting",
+        body:
+          "**Your first planting day** is four short guides to read on the way " +
+          "there: getting a potted plant into the ground, what to do with the " +
+          "invasives you pull, digging among tree roots, and what to bring. " +
+          "Organizers can send the link ahead.",
+      },
+      {
         id: "links",
         heading: "From a plant, or from your spot",
         body:
@@ -563,6 +572,7 @@ export const SECTIONS = [
       "Collect seed only from plants you own or have permission to take from, " +
       "and never dig a plant from the wild.",
     visit: [
+      { label: "Your first planting day", href: `${APP}/volunteer` },
       { label: "Ways to grow more", href: `${APP}/planting` },
       { label: "Your saved spots", href: `${APP}/#/saved` },
     ],
@@ -582,7 +592,7 @@ export const SECTIONS = [
         href: "https://www.rhs.org.uk/propagation",
       },
     ],
-    match: { segments: ["planting"] },
+    match: { segments: ["planting", "volunteer"] },
     published: true,
   },
 

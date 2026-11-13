@@ -27,6 +27,7 @@ import { readingRegionIds } from "../data/reading";
 import { postSlugs } from "../data/posts";
 import { TECHNIQUES, techniqueBySlug } from "./planting";
 import { WILDLIFE } from "../data/wildlife";
+import { GUIDES, guideBySlug } from "./volunteer";
 
 /**
  * Every step the router knows, in no particular order.
@@ -73,6 +74,7 @@ export const APP_STEPS = [
   "people",
   "map",
   "kill-your-lawn",
+  "volunteer",
 ] as const;
 
 export type AppStep = (typeof APP_STEPS)[number];
@@ -112,6 +114,8 @@ export const PARAM_STEPS = new Set<string>([
   "posts",
   // `kill-your-lawn/<region>` is the page with one region's picks.
   "kill-your-lawn",
+  // `volunteer/<guide>` is one planting-day guide.
+  "volunteer",
 ]);
 
 /** The index pages that are shareable in their own right. `settings` is absent
@@ -141,6 +145,7 @@ export const SHAREABLE_INDEXES: readonly string[] = [
   "posts",
   "people",
   "kill-your-lawn",
+  "volunteer",
 ];
 
 const STEP_SET = new Set<string>(APP_STEPS);
@@ -238,6 +243,9 @@ export function canonicalPath(step: string, param?: string): string | null {
     // The lawn page with one region's picks.
     case "kill-your-lawn":
       return REGIONS.some((r) => r.meta.id === param) ? at(param) : null;
+    // One planting-day guide.
+    case "volunteer":
+      return guideBySlug(param) ? at(param) : null;
     default:
       return null;
   }
@@ -352,6 +360,7 @@ export function shareablePaths(): string[] {
   for (const id of readingRegionIds()) paths.push(`reading/${id}`);
   for (const slug of postSlugs()) paths.push(`posts/${slug}`);
   for (const region of REGIONS) paths.push(`kill-your-lawn/${region.meta.id}`);
+  for (const guide of GUIDES) paths.push(`volunteer/${guide.slug}`);
   paths.push("film/fr");
   return paths;
 }

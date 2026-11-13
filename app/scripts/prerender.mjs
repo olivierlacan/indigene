@@ -481,6 +481,21 @@ async function collectPages(load) {
       { image: pageCard("kill-your-lawn"), imageAlt: en["lawn.title"] }
     );
   }
+  // Your first planting day: the landing page an organizer sends, and one
+  // file per guide so a link to "what to bring" previews as that.
+  const { GUIDES } = await load("/src/lib/volunteer.ts");
+  add("volunteer", en["volunteer.docTitle"], en["volunteer.lede"], {
+    image: pageCard("volunteer"),
+    imageAlt: "Your first planting day — what to know before a volunteer native planting",
+  });
+  for (const guide of GUIDES) {
+    add(
+      `volunteer/${guide.slug}`,
+      fill(en["volunteer.guideDocTitle"], { name: en[`volunteer.${guide.slug}.title`] }),
+      en[`volunteer.${guide.slug}.lede`],
+      { image: pageCard("volunteer"), imageAlt: en[`volunteer.${guide.slug}.title`] }
+    );
+  }
   // The LLM bill: measured tokens, estimated electricity, and the design that
   // pays it back. The lede is the description, as on the native page.
   add("llm", en["llm.docTitle"], en["llm.lede"], {

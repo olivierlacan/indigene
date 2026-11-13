@@ -1,10 +1,13 @@
-export type PageArtName = "reading" | "whatsNew" | "guide" | "privacy" | "sources" | "about" | "native" | "homegrown" | "killYourLawn" | "halloween";
+export type PageArtName = "reading" | "whatsNew" | "guide" | "privacy" | "sources" | "about" | "native" | "homegrown" | "killYourLawn" | "halloween" | "volunteer";
 export const PAGE_ART_NAMES: PageArtName[];
 export function pageArtSvg(name: PageArtName): string;
 export const PAGE_ART_RULES: string;
 export const PAGE_ART_LIGHT: string;
 export const PAGE_ART_DARK: string;
 export const PAGE_ART_CSS: string;
-export type SquareName = "zombie" | "lights" | "bury" | "sources";
+export type SquareName = "zombie" | "lights" | "bury" | "sources" | "pot" | "bag" | "spade" | "glove";
 export const SQUARE_NAMES: SquareName[];
 export function squareArtSvg(name: SquareName): string;
+export type FigureName = "rootbound" | "bucket" | "mound" | "bag" | "rootSizes" | "spade" | "fabric" | "kit";
+export const FIGURE_NAMES: FigureName[];
+export function figureArtSvg(name: FigureName, label: string): string;

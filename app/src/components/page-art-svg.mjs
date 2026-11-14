@@ -693,11 +693,11 @@ function sqSpade() {
   return s;
 }
 
-/** "What to bring": a glove. */
+/** "What to bring": a glove, four fingers and a thumb. */
 function sqGlove() {
   let s = "";
-  s += path("orange", "M16 58V34Q16 28 21 28V16Q24 11 27 16V26H30V12Q33 7 36 12V26H39V17Q42 13 45 18V40L52 32Q57 30 57 36L47 50V58Z");
-  s += path("ink", "M16 51H47");
+  s += path("orange", "M14 58V20Q17 15 20 20V30H22V14Q25 9 28 14V30H30V12Q33 7 36 12V30H38V18Q41 13 44 18V40L51 32Q56 30 56 36L46 50V58Z");
+  s += path("ink", "M14 51H46");
   return s;
 }
 
@@ -916,8 +916,8 @@ function figKit() {
   s += path("gold", "M28 92H68V132H28Z");
   s += path("ink", "M48 60V130");
   // Gloves.
-  s += path("orange", "M100 132V96Q100 88 106 88V72Q110 66 114 72V84H118V68Q122 62 126 68V84H130V74Q134 70 137 76V104L146 94Q152 92 152 99L140 118V132Z");
-  s += path("ink", "M100 122H140");
+  s += path("orange", "M101 132V78Q104.5 72 108 78V88H110V71Q113.5 65 117 71V88H119V69Q122.5 63 126 69V88H128V75Q131.5 69 135 75V104L144 94Q150 92 150 99L139 118V132Z");
+  s += path("ink", "M101 122H139");
   // Boots.
   s += path("body", "M166 132V70H186V108Q206 110 210 124V132Z");
   s += path("band", "M166 126H210");

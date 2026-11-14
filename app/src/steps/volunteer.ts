@@ -9,8 +9,8 @@
 //
 // Two things the guides refuse to do. Overrule the organizer: site rules win,
 // and the pages say so. And pass on a tip unchecked: every section cites two
-// publishers, and where the common advice turned out wrong (willows have no
-// nitrogen nodules; that's alder) the page gives the checked version.
+// publishers, and where the common advice turned out contested (washing roots
+// bare) the page gives both sides.
 import { el, clear } from "../ui";
 import { knownRegion, navigate } from "../state";
 import { t, tx } from "../lib/i18n";

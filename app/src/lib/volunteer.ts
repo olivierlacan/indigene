@@ -10,12 +10,9 @@
 // These pages pass on field tips to people about to act on them with a spade,
 // so every section names at least two sources from different publishers
 // (`volunteer.test.ts` holds that). Checked 13 November 2026: each page below
-// was opened and the words quoted beside its row found in it. Three tips heard
-// in the field did not survive the check, and the pages say what did:
+// was opened and the words quoted beside its row found in it. Two tips heard
+// in the field did not survive the check whole, and the pages say what did:
 //
-//   - "Willows have nitrogen-fixing root nodules." They don't; alders do.
-//     Willows carry nitrogen-fixing bacteria in their stems, and nobody has
-//     shown that feeds the plants beneath.
 //   - "Wash all the pot soil off." Recommended by one WSU specialist, called
 //     "experimental, controversial" by WSU's own fact sheet, and not borne out
 //     by the one field trial. The page gives both sides and the conditions.
@@ -317,7 +314,9 @@ export const GUIDES: Guide[] = [
         p("volunteer.roots.fabric.p2"),
       ] },
       { id: "nitrogen", sources: ["doty", "santi", "alderGtr"], blocks: [
-        p("volunteer.roots.nitrogen.p1"),
+        p("volunteer.roots.nitrogen.p1", {
+          alder: { href: "#/plants/alnus-rubra", key: "volunteer.roots.nitrogen.p1Link" },
+        }),
         p("volunteer.roots.nitrogen.p2"),
       ] },
     ],

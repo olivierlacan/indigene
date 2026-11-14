@@ -546,6 +546,40 @@ function killYourLawn() {
   return s;
 }
 
+
+/** Your first planting day: a willow over the water's edge, a row of potted
+ *  natives waiting, a bucket, and a spade standing in the ground. */
+function volunteer() {
+  let s = "";
+  // The willow: trunk, then fronds hanging from the crown.
+  s += path("wood", "M36 124Q42 92 38 62L48 62Q46 92 54 124Z");
+  for (const [x, len, bend] of [[14, 52, -4], [24, 62, -2], [34, 50, 0], [46, 58, 2], [58, 64, 3], [70, 50, 5]]) {
+    s += stem(42, 44, x, 36, x + bend, 44 + len);
+  }
+  s += `<g class="pa-soft">`;
+  for (const [cx, cy, r] of [[42, 40, 18], [24, 46, 12], [62, 46, 12]]) s += circle("leaf", cx, cy, r);
+  s += `</g>`;
+  // Pots waiting their turn.
+  for (const x of [104, 134, 164]) {
+    s += path("wood", `M${x - 10} 106H${x + 10}L${x + 7} 124H${x - 7}Z`);
+    s += stem(x, 106, x - 1, 98, x, 88);
+    s += path("leaf", leaf(x, 96, x - 10, 88, 3.4)) + path("leaf", leaf(x, 93, x + 10, 84, 3.4));
+  }
+  // The bucket.
+  s += path("ink", "M192 100Q208 78 224 100");
+  s += path("paper", "M191 99H225L221 124H195Z");
+  s += path("water", "M193 105H223L220 122H196Z");
+  // The spade, standing in the ground.
+  s += path("grey", "M250 104H268V122Q259 128 250 122Z");
+  s += path("handle", "M259 104V58");
+  s += path("handle", "M250 56H268");
+  // One already planted, chips around it.
+  s += stem(296, 124, 295, 108, 296, 92);
+  s += path("leaf", leaf(296, 106, 284, 98, 3.6)) + path("leaf", leaf(296, 100, 309, 92, 3.6)) + path("leaf", leaf(296, 94, 296, 82, 3));
+  for (const x of [280, 287, 305, 312]) s += ellipse("wood", x, 123, 3.4, 1.5, (x * 7) % 40 - 20);
+  return s;
+}
+
 // --- Squares ----------------------------------------------------------------
 // Small square drawings that sit beside a section of a page, on the same card
 // and palette as the banners above. 64×64; each says what its heading says.
@@ -628,7 +662,46 @@ function sqSources() {
   return s;
 }
 
-const SQUARES = { zombie: sqZombie, lights: sqLights, bury: sqBury, sources: sqSources };
+
+/** "Getting a potted plant into the ground": a seedling in its pot. */
+function sqPot() {
+  let s = "";
+  s += path("wood", "M18 34H46L42 58H22Z");
+  s += rect("wood", 15, 30, 34, 6, 2);
+  s += stem(32, 30, 31, 22, 32, 12);
+  s += path("leaf", leaf(32, 20, 20, 12, 4)) + path("leaf", leaf(32, 17, 45, 8, 4));
+  return s;
+}
+
+/** "Invasives you pull": a tied bag. */
+function sqBag() {
+  let s = "";
+  s += path("body", "M20 58Q8 36 26 22L32 14L38 22Q56 36 44 58Z");
+  s += path("dark", "M32 14L25 5M32 14L39 5");
+  s += path("leaf", leaf(40, 22, 54, 12, 5));
+  return s;
+}
+
+/** "Digging among roots": a spade through a root. */
+function sqSpade() {
+  let s = "";
+  s += rect("earth", 0, 40, SQ, 24);
+  s += path("branch", "M4 54Q14 50 22 52M42 52Q52 50 60 55");
+  s += path("grey", "M22 36H42V56Q32 62 22 56Z");
+  s += path("handle", "M32 36V10");
+  s += path("handle", "M24 9H40");
+  return s;
+}
+
+/** "What to bring": a glove, four fingers and a thumb. */
+function sqGlove() {
+  let s = "";
+  s += path("orange", "M14 58V20Q17 15 20 20V30H22V14Q25 9 28 14V30H30V12Q33 7 36 12V30H38V18Q41 13 44 18V40L51 32Q56 30 56 36L46 50V58Z");
+  s += path("ink", "M14 51H46");
+  return s;
+}
+
+const SQUARES = { zombie: sqZombie, lights: sqLights, bury: sqBury, sources: sqSources, pot: sqPot, bag: sqBag, spade: sqSpade, glove: sqGlove };
 
 /** The names a section can ask for. */
 export const SQUARE_NAMES = Object.keys(SQUARES);
@@ -650,7 +723,239 @@ export function squareArtSvg(name) {
   )}${scene()}</g></svg>`;
 }
 
-const SCENES = { reading, whatsNew, guide, privacy, sources, about, native, homegrown, killYourLawn, halloween };
+
+// --- Figures ------------------------------------------------------------------
+// The how-to drawings on the planting-day guides (`steps/volunteer.ts`). Unlike
+// the banners these carry meaning, so each is an image with a label (the
+// caller's caption) rather than hidden. No words inside: the caption under the
+// figure says it, in the reader's language. 320×150, clipped to the card.
+
+const FW = 320;
+const FH = 150;
+
+/** An arrow from left to right, `len` long. */
+const arrow = (x, y, len = 34) => path("arrow", `M${f(x)} ${f(y)}h${f(len)}m-8 -7l8 7l-8 7`);
+/** A tick and a cross, for "do" and "don't". */
+const tick = (x, y, s = 1) => path("yes", `M${f(x - 7 * s)} ${f(y)}l${f(5 * s)} ${f(5 * s)}l${f(9 * s)} ${f(-11 * s)}`);
+const cross = (x, y, r = 7) => path("no", `M${f(x - r)} ${f(y - r)}L${f(x + r)} ${f(y + r)}M${f(x + r)} ${f(y - r)}L${f(x - r)} ${f(y + r)}`);
+/** A young plant: a stem with pairs of leaves, from the crown up. */
+function sprig(x, y0, y1, n = 2, w = 3.6, reach = 13) {
+  let s = stem(x, y0, x - 1, (y0 + y1) / 2, x, y1);
+  for (let i = 0; i < n; i++) {
+    const y = y1 + ((y0 - y1) * (i + 0.4)) / (n + 0.6);
+    s += path("leaf", leaf(x, y + 4, x - reach, y - 4, w));
+    s += path("leaf", leaf(x, y + 2, x + reach, y - 6, w));
+  }
+  return s + path("leaf", leaf(x, y1 + 2, x, y1 - 10, w * 0.8));
+}
+/** Wood chips scattered along a line. */
+function chips(x0, x1, y, skip = null) {
+  let s = "";
+  for (let x = x0, i = 0; x <= x1; x += 7, i++) {
+    if (skip && x > skip[0] && x < skip[1]) continue;
+    s += ellipse("wood", x, y - (i % 3), 3.6, 1.6, (i * 37) % 40 - 20);
+  }
+  return s;
+}
+/** A root from a point to a point, sagging by `bow`. */
+const rootTo = (x0, y0, x1, y1, bow = 0, cls = "root") =>
+  path(cls, `M${f(x0)} ${f(y0)}Q${f((x0 + x1) / 2 + bow)} ${f((y0 + y1) / 2 + Math.abs(bow) * 0.4)} ${f(x1)} ${f(y1)}`);
+
+/** Root-bound: the pot's shape with roots circling it, then the same plant
+ *  with the roots teased out straight. */
+function figRootbound() {
+  let s = "";
+  // Out of the pot, still pot-shaped: roots going round and round.
+  s += path("earth", "M38 62H112L102 130H48Z");
+  for (const y of [72, 84, 96, 108, 120]) {
+    const inset = ((y - 62) / 68) * 10;
+    s += rootTo(40 + inset, y, 110 - inset, y + 2, 0, y % 24 ? "root" : "root fine");
+    s += path("root fine", `M${f(44 + inset)} ${y - 5}Q75 ${y + 6} ${f(106 - inset)} ${y - 6}`);
+  }
+  s += sprig(75, 62, 26);
+  s += cross(75, 142, 5);
+  s += arrow(136, 92, 40);
+  // Loosened: most of the pot soil gone, roots pointing out and down.
+  s += ellipse("earth", 240, 72, 17, 10);
+  for (const [x, y, bow] of [[188, 108, -6], [198, 126, -8], [216, 136, -4], [234, 140, -1], [250, 140, 1], [266, 134, 5], [284, 124, 8], [294, 106, 6]]) {
+    s += rootTo(240, 70, x, y, bow, x % 3 ? "root" : "root fine");
+  }
+  s += sprig(240, 64, 26);
+  s += tick(240, 146, 0.7);
+  return s;
+}
+
+/** Washing the pot soil off in a bucket of water. */
+function figBucket() {
+  let s = "";
+  // The empty pot, tipped over.
+  s += path("wood", "M34 132L26 96L62 88L66 132Z");
+  s += ellipse("earth", 60, 134, 14, 4);
+  // The bucket and its water.
+  s += path("ink", "M108 64Q160 14 212 64");
+  s += path("paper", "M106 62H214L202 136H118Z");
+  s += path("water", "M110 78H210L201 134H119Z");
+  // Pot soil drifting off the roots.
+  for (const [x, y] of [[134, 122], [148, 128], [176, 126], [188, 118], [128, 108], [192, 104], [162, 130]]) s += ellipse("earth", x, y, 4, 2, (x * 5) % 30);
+  // The plant, roots in the water.
+  for (const [x, y, bow] of [[138, 112, -5], [148, 120, -3], [158, 124, 0], [168, 122, 2], [180, 114, 5]]) s += rootTo(160, 80, x, y, bow);
+  s += sprig(160, 80, 30, 3);
+  // Kept wet until planted: drops off to the side.
+  for (const [x, y] of [[244, 70], [258, 92], [240, 110]]) s += path("water", `M${x} ${y}q-6 9 0 12q6 -3 0 -12Z`);
+  return s;
+}
+
+/** The hole in section: wide, no deeper than the roots, a firm mound in the
+ *  middle, roots draped over it, the crown level with the ground. */
+function figMound() {
+  let s = "";
+  s += rect("earth", 0, 72, FW, FH - 72);
+  // The hole, filled back with the soil that came out of it.
+  s += path("loose", "M62 72L92 126H228L258 72Z");
+  // The mound, and the roots over it.
+  s += path("wood soft", "M112 126L160 80L208 126Z");
+  for (const [x, y, bow] of [[100, 112, -4], [116, 122, -2], [204, 122, 2], [220, 112, 4], [84, 96, -6], [236, 96, 6]]) s += rootTo(160, 74, x, y, bow);
+  s += rootTo(160, 74, 138, 104, 0, "root fine") + rootTo(160, 74, 182, 104, 0, "root fine");
+  // Ground level, marked across the hole: the crown sits on it.
+  s += path("level", "M40 72H280");
+  s += sprig(160, 72, 22, 3);
+  // Wood chips on top, kept clear of the stem.
+  s += chips(34, 286, 70, [146, 174]);
+  return s;
+}
+
+/** Knotweed goes in a bag for the trash, never the compost. */
+function figBag() {
+  let s = "";
+  // A knotweed cane: jointed, zigzag, with broad leaves.
+  const joints = [[52, 132], [46, 108], [56, 84], [48, 60], [58, 38]];
+  for (let i = 0; i < joints.length - 1; i++) {
+    const [x0, y0] = joints[i];
+    const [x1, y1] = joints[i + 1];
+    s += path("frond", `M${x0} ${y0}L${x1} ${y1}`);
+    const side = i % 2 ? 1 : -1;
+    s += path("leaf", leaf(x1, y1, x1 + side * 26, y1 - 8, 11));
+    s += circle("red", x1, y1, 2.4);
+  }
+  // A cut piece on the ground still counts.
+  s += path("frond", "M76 136L98 132");
+  s += circle("red", 87, 134, 2.2);
+  s += arrow(112, 92, 36);
+  // The bag, tied.
+  s += path("body", "M168 134Q150 96 176 74L186 62L196 74Q222 96 204 134Z");
+  s += path("dark", "M186 62L176 48M186 62L196 48");
+  s += path("band", "M178 70H194");
+  s += tick(186, 146, 0.7);
+  // The compost heap, crossed out.
+  s += rect("wood", 250, 84, 52, 46, 2);
+  s += path("band", "M250 98H302M250 112H302");
+  s += path("leaf", leaf(262, 84, 276, 74, 4)) + path("leaf", leaf(284, 84, 296, 76, 4));
+  s += cross(276, 104, 28);
+  return s;
+}
+
+/** Roots by thickness, to scale with each other: pencil, thumb, wrist. */
+function figRootSizes() {
+  let s = "";
+  const root = (cx, cy, r) => circle("wood", cx, cy, r) + (r > 6 ? `<circle class="pa-band" cx="${cx}" cy="${cy}" r="${f(r * 0.55)}"/>` : "");
+  // A pencil lying under the first, for scale.
+  s += root(56, 70, 3.5);
+  s += rect("orange", 30, 96, 44, 7, 1) + path("paper", "M74 96L84 99.5L74 103Z");
+  s += tick(56, 132);
+  s += root(152, 70, 12.5);
+  s += path("caution", "M152 120V134M152 140V141");
+  s += root(256, 70, 27);
+  s += cross(256, 132);
+  return s;
+}
+
+/** A spade driven straight down through a root: a foot on the tread, the
+ *  handle rocked to open the cut. */
+function figSpade() {
+  let s = "";
+  s += rect("earth", 0, 88, FW, FH - 88);
+  // The root, cut where the blade went through.
+  s += path("branch", "M24 118Q90 110 150 116") + path("branch", "M180 117Q240 112 300 120");
+  s += rootTo(70, 114, 60, 136, 0, "root fine") + rootTo(236, 114, 250, 138, 0, "root fine");
+  // The spade: blade down, shaft up, a grip on top.
+  s += path("grey", "M150 84H180V128Q165 138 150 128Z");
+  s += path("handle", "M165 84V26");
+  s += path("handle", "M153 24H177");
+  // A boot on the tread.
+  s += path("body", "M180 84V44H196V70Q214 72 216 84Z");
+  // Rock the handle.
+  s += path("arrow", "M128 30Q165 4 202 30m-10 -1l10 1l1 -10");
+  s += path("arrow", "M128 30l10 -1m-10 1l-1 -10");
+  return s;
+}
+
+/** Old landscape fabric under the mulch: cut it, fold it back, take it out. */
+function figFabric() {
+  let s = "";
+  s += rect("earth", 0, 78, FW, FH - 78);
+  // The fabric, cut and peeled back either side of the planting spot.
+  s += path("stripe", "M0 78H104Q122 60 100 50") + path("stripe", "M320 78H216Q198 60 220 50");
+  s += chips(8, 96, 74) + chips(226, 312, 74);
+  // Roots that had matted on top of it.
+  s += path("root fine", "M20 82Q50 86 96 81M228 81Q270 86 306 82");
+  // The plant, in real soil.
+  for (const [x, y, bow] of [[132, 112, -4], [146, 124, -2], [174, 124, 2], [188, 112, 4]]) s += rootTo(160, 82, x, y, bow);
+  s += sprig(160, 80, 34, 2);
+  // The knife that cut it.
+  s += path("grey", "M262 26L273 24L279 66L271 70Z");
+  s += path("handle", "M266 22L263 6");
+  return s;
+}
+
+/** What to bring: a rain jacket, gloves, boots, a soil knife, water, a towel. */
+function figKit() {
+  let s = "";
+  s += rect("soil", 0, 132, FW, 18);
+  // Rain jacket.
+  s += path("gold", "M14 132V78Q14 62 30 58L38 48Q48 40 58 48L66 58Q82 62 82 78V132H68V92H28V132Z");
+  s += path("gold", "M28 92H68V132H28Z");
+  s += path("ink", "M48 60V130");
+  // Gloves.
+  s += path("orange", "M101 132V78Q104.5 72 108 78V88H110V71Q113.5 65 117 71V88H119V69Q122.5 63 126 69V88H128V75Q131.5 69 135 75V104L144 94Q150 92 150 99L139 118V132Z");
+  s += path("ink", "M101 122H139");
+  // Boots.
+  s += path("body", "M166 132V70H186V108Q206 110 210 124V132Z");
+  s += path("band", "M166 126H210");
+  // Soil knife.
+  s += path("grey", "M226 60Q232 46 238 60V104H226Z");
+  s += path("handle", "M232 108V128");
+  // Water bottle.
+  s += rect("egg", 254, 78, 20, 54, 5);
+  s += rect("grey", 259, 68, 10, 10, 2);
+  // Towel.
+  s += rect("paper", 284, 106, 28, 26, 3);
+  s += path("ink", "M284 114H312M284 122H312");
+  return s;
+}
+
+const FIGURES = { rootbound: figRootbound, bucket: figBucket, mound: figMound, bag: figBag, rootSizes: figRootSizes, spade: figSpade, fabric: figFabric, kit: figKit };
+
+/** The names a guide can ask for. */
+export const FIGURE_NAMES = Object.keys(FIGURES);
+
+const escAttr = (t) => String(t).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+
+/** One how-to figure, as SVG markup, labelled with what it shows. */
+export function figureArtSvg(name, label) {
+  const scene = FIGURES[name];
+  if (!scene) throw new Error(`No figure called "${name}"`);
+  const id = `figure-${name}`;
+  return `<svg class="page-art figure-art" viewBox="0 0 ${FW} ${FH}" role="img" aria-label="${escAttr(label)}" focusable="false"><clipPath id="${id}"><rect width="${FW}" height="${FH}" rx="14"/></clipPath><g clip-path="url(#${id})">${rect(
+    "ground",
+    0,
+    0,
+    FW,
+    FH,
+    14
+  )}${scene()}</g></svg>`;
+}
+
+const SCENES = { reading, whatsNew, guide, privacy, sources, about, native, homegrown, killYourLawn, halloween, volunteer };
 
 /** The names a page can ask for. */
 export const PAGE_ART_NAMES = Object.keys(SCENES);
@@ -706,6 +1011,13 @@ export const PAGE_ART_RULES = `
 .page-art .pa-orange { fill: var(--pa-orange); }
 .page-art .pa-egg { fill: var(--pa-egg); }
 .page-art .pa-thread { fill: none; stroke: var(--pa-edge); stroke-width: 0.8; }
+.page-art .pa-water { fill: var(--pa-egg); opacity: 0.85; }
+.page-art .pa-loose { fill: var(--pa-bg); opacity: 0.6; }
+.page-art .pa-level { fill: none; stroke: var(--pa-edge); stroke-width: 1.4; stroke-dasharray: 5 4; }
+.page-art .pa-arrow { fill: none; stroke: var(--pa-edge); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.page-art .pa-yes { fill: none; stroke: var(--brand); stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+.page-art .pa-no { fill: none; stroke: var(--pa-red); stroke-width: 3.4; stroke-linecap: round; }
+.page-art .pa-caution { fill: none; stroke: var(--pa-gold); stroke-width: 3.4; stroke-linecap: round; }
 `;
 
 /** The `--pa-*` colours, light then dark. */

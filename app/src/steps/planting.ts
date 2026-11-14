@@ -203,6 +203,8 @@ export async function renderPlantingIndex(main: HTMLElement): Promise<void> {
     ]),
     techniqueGroup("seed"),
     techniqueGroup("plant"),
+    // None of the techniques say how the finished plant goes in the ground.
+    el("p", { class: "more-link" }, tx("planting.volunteerWayOn", { link: el("a", { href: "#/volunteer/pots" }, t("volunteer.pots.title")) })),
     // Most gardens start from turf, and none of the techniques above clear it.
     el("p", { class: "more-link" }, tx("lawn.wayOn", { link: el("a", { href: "#/kill-your-lawn" }, t("lawn.wayOnLink")) })),
     sourcesSection(),

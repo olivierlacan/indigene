@@ -200,6 +200,8 @@ try {
     { slug: "post-indigenous-peoples-day-2026", title: "Plants that fed people first", subtitle: "Indigenous Peoples\u2019 Day \u00b7 12 October 2026" },
     // The guide to swapping a lawn, linked all year.
     { slug: "kill-your-lawn", title: "Kill your lawn", subtitle: "bury the grass, plant what feeds wildlife", stat: `easy natives for <b>${nRegions}</b> regions` },
+    // The page an organizer sends before a volunteer planting.
+    { slug: "volunteer", title: "Your first planting day", subtitle: "pots, invasives, roots and what to bring \u2014 read before you dig", stat: `<b>4</b> short guides \u00b7 every tip checked twice` },
     // A post with a card of its own: the prerenderer uses `post-<slug>` when
     // it exists, and the posts card otherwise.
     { slug: "post-halloween-2026", title: "Your lawn is already a zombie", subtitle: "Halloween \u00b7 31 October 2026" },

@@ -23,8 +23,23 @@ export const FIRST_PICKS = 4;
  * genera to offer; an empty list gives no picks.
  */
 export function firstPicks(ranked: readonly Ranked[], n = FIRST_PICKS): Ranked[] {
+  return pickByGenus(ranked, n, new Set(), false);
+}
+
+/**
+ * For a garden already started: the essential plants it has no relative of
+ * yet. A genus counts as here once any of its plants is, whichever species,
+ * because a second willow feeds mostly the same caterpillars as the first.
+ * Essentials only; an empty answer means every essential genus that suits the
+ * spot is already in it.
+ */
+export function missingEssentials(ranked: readonly Ranked[], plantedLatins: Iterable<string>, n = FIRST_PICKS): Ranked[] {
+  return pickByGenus(ranked, n, new Set([...plantedLatins].map(genusOf)), true);
+}
+
+function pickByGenus(ranked: readonly Ranked[], n: number, have: ReadonlySet<string>, essentialOnly: boolean): Ranked[] {
   const fits = ranked.filter((r) => r.match !== "poor");
-  const genera = new Set<string>();
+  const genera = new Set<string>(have);
   const picks: Ranked[] = [];
   const take = (pool: readonly Ranked[]): void => {
     for (const r of pool) {
@@ -36,7 +51,7 @@ export function firstPicks(ranked: readonly Ranked[], n = FIRST_PICKS): Ranked[]
     }
   };
   take(fits.filter((r) => r.plant.keystone));
-  take(fits);
+  if (!essentialOnly) take(fits);
   return picks;
 }
 

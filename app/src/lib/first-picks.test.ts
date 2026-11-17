@@ -1,7 +1,7 @@
 // "Plant these first": one per genus, essential plants first, in the list's
 // own order, and never a poor fit.
 import { describe, it, expect } from "vitest";
-import { firstPicks, roomCap, roomOf, FIRST_PICKS } from "./first-picks";
+import { firstPicks, missingEssentials, roomCap, roomOf, FIRST_PICKS } from "./first-picks";
 import type { Ranked } from "./ranking";
 import type { Plant } from "../types";
 
@@ -49,6 +49,24 @@ describe("firstPicks", () => {
 
   it("gives nothing for an empty list", () => {
     expect(firstPicks([])).toEqual([]);
+  });
+});
+
+describe("missingEssentials", () => {
+  const list = [
+    r("Salix scouleriana", true),
+    r("Prunus emarginata", true),
+    r("Mahonia aquifolium", false),
+    r("Acer circinatum", true),
+  ];
+
+  it("skips a genus already planted, whichever species it was", () => {
+    expect(latins(missingEssentials(list, ["Salix sitchensis"]))).toEqual(["Prunus emarginata", "Acer circinatum"]);
+  });
+
+  it("offers essentials only, and nothing once they are all here", () => {
+    expect(latins(missingEssentials(list, []))).not.toContain("Mahonia aquifolium");
+    expect(missingEssentials(list, ["Salix lasiandra", "Prunus virginiana", "Acer macrophyllum"])).toEqual([]);
   });
 });
 

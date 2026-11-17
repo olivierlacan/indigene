@@ -43,6 +43,9 @@ import { hashParam } from "../lib/plant-view";
 import { t, fmtDate, fmtNumber, monthName } from "../lib/i18n";
 import { linkedLogin } from "../lib/inat-account";
 import { getInvasive } from "../lib/invasives";
+import { rankPlants, NO_FILTERS } from "../lib/ranking";
+import { missingEssentials } from "../lib/first-picks";
+import { plantRow } from "./region";
 
 /** Rows shown in the plant picker before it stops listing. A search that still
  *  matches forty things hasn't been narrowed yet, and forty tap targets is a
@@ -143,6 +146,7 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
     ...(menu ? [menu.card] : []),
     ...(spotted ? [spotted] : []),
     logCard(spot, plantings, plantOf, redraw, region?.meta.id),
+    ...(region ? [essentialsCard(spot, plantings, plantOf, roster, region.meta.id)] : []),
     ...(spot.invasives?.length ? [invasivesCard(spot, redraw)] : []),
     addCard(spot, roster, linked, preset, redraw),
     // Only once an account is linked: without one the page it opens can only
@@ -228,6 +232,39 @@ function logCard(
     body.push(el("ul", { class: "log-list" }, plantings.map((p) => logRow(spot, p, plantOf(p.plantId), redraw, regionId))));
   }
   return el("section", { class: "card" }, body);
+}
+
+/**
+ * The essential plants this spot has no relative of yet (`missingEssentials`),
+ * ranked for the spot's own sun, soil and goals. A garden with a willow is
+ * offered a cherry, not a second willow. Once every essential genus that suits
+ * the spot is here, the card says so and points at planting more instead.
+ */
+function essentialsCard(
+  spot: SavedSpot,
+  plantings: Planting[],
+  plantOf: (id: string) => Plant | undefined,
+  roster: Plant[],
+  regionId: string,
+): HTMLElement {
+  const ranked = rankPlants(roster, {
+    site: spot.site,
+    sun: spot.sun,
+    weights: spot.weights,
+    filters: NO_FILTERS,
+    moistureOverride: spot.soilOverride?.moisture ?? null,
+  });
+  const planted = plantings.flatMap((pl) => plantOf(pl.plantId)?.latin ?? []);
+  const picks = missingEssentials(ranked, planted);
+  return el("section", { class: "card" }, [
+    el("h3", { style: "margin:0 0 0.5rem" }, t("spot.essentialsTitle")),
+    ...(picks.length
+      ? [
+          el("p", { style: "margin:0 0 0.6rem" }, t("spot.essentialsLede")),
+          el("div", { class: "card-grid" }, picks.map((r) => plantRow(r.plant, regionId, { caterpillars: true }).node)),
+        ]
+      : [el("p", { class: "note" }, t("spot.essentialsAll"))]),
+  ]);
 }
 
 function logRow(

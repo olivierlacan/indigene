@@ -1271,6 +1271,16 @@ export const fr: Dict = {
   // Résultats.
   // ---------------------------------------------------------------------
   "results.title": "Les plantes pour ce lieu",
+  // « À planter d'abord » (lib/first-picks.ts).
+  "first.title": "À planter d'abord",
+  "first.lede": "Une plante essentielle de chaque sorte, adaptée à ce lieu. Elles nourrissent le plus de chenilles, et les chenilles nourrissent les oisillons.",
+  "first.roomLabel": "Quelle place ?",
+  "first.room.small": "Petite",
+  "first.room.medium": "Moyenne",
+  "first.room.large": "Grande",
+  "first.roomCap": "Plantes de {size} de large au plus, ici et dans la liste.",
+  "first.roomAny": "Plantes de toutes tailles.",
+  "first.roomOther": "Votre filtre de taille est actif : plantes de {size} de large au plus.",
   "results.regionTag": "📍 {region}",
   "results.regionTagPick": "📍 {region} · votre choix",
   "results.filtersMeaning": "Ce que veulent dire ces étiquettes",

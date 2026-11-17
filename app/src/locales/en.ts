@@ -1297,6 +1297,17 @@ export const en = {
   // Results.
   // ---------------------------------------------------------------------
   "results.title": "Plants for this spot",
+  // "Plant these first" (lib/first-picks.ts): one essential plant per genus,
+  // above the full list. The room buttons set the list's own spread filter.
+  "first.title": "Plant these first",
+  "first.lede": "One of each essential plant that suits this spot. They feed the most caterpillars, and caterpillars feed nestlings.",
+  "first.roomLabel": "How much room?",
+  "first.room.small": "Small",
+  "first.room.medium": "Medium",
+  "first.room.large": "Large",
+  "first.roomCap": "Plants up to {size} wide, here and in the list below.",
+  "first.roomAny": "Plants of any size.",
+  "first.roomOther": "Your size filter is on: plants up to {size} wide.",
   "results.regionTag": "📍 {region}",
   "results.regionTagPick": "📍 {region} · your pick",
   "results.filtersMeaning": "What these labels mean",

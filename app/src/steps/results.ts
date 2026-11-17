@@ -30,6 +30,9 @@ import { maxHeightChoices, maxSpreadChoices, nearestRung, temperature } from "..
 import { commonName, regionName, regionReference } from "../lib/names";
 import { filterBox, norm } from "../components/filter-field";
 import { filterCount } from "../lib/filter-traits";
+import { firstPicks, roomCap, roomOf, ROOMS } from "../lib/first-picks";
+import type { Room } from "../lib/first-picks";
+import { plantRow } from "./region";
 import type { Plant, PlantForm } from "../types";
 
 /** How deep a slice of the ranking the recompute line compares — the same
@@ -70,6 +73,8 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
   // the two — and so typing doesn't rebuild the field the reader is typing in.
   const summaryEl = el("div", { "aria-live": "polite", class: "result-tally" });
   const listEl = el("div", { "aria-live": "polite" });
+  // "Plant these first": filled on every rerender, from the same ranking.
+  const firstEl = el("section", { class: "first-picks", "aria-labelledby": "first-picks-title" });
 
   // Where the list was when a card was tapped — read at the tap, not at
   // teardown. A hash navigation that matches no element on the page makes the
@@ -78,6 +83,9 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
   let tappedAt = 0;
   listEl.addEventListener("click", (e) => {
     if ((e.target as Element | null)?.closest("a.plant-pick-link")) tappedAt = window.scrollY;
+  });
+  firstEl.addEventListener("click", (e) => {
+    if ((e.target as Element | null)?.closest("a.card")) tappedAt = window.scrollY;
   });
 
   // The standing name filter, normalized for matching and kept as typed for
@@ -117,6 +125,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     // change what a standing query matches without anyone typing a thing.
     nameFilter.say(matchLine(hits.length, ranked.length));
 
+    renderFirst(ranked);
     clear(listEl);
     const shown = hits.slice(0, limit);
     const goodCount = ranked.filter((r) => r.match !== "poor").length;
@@ -165,6 +174,48 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     rc.report(context, ranked.slice(0, COMPARE_DEPTH)
       .map((r) => ({ id: r.plant.id, name: commonName(r.plant) })), ranked.length, firstPaint);
     firstPaint = false;
+  }
+
+  /** The short list above the full one: one essential plant per genus (see
+   *  `lib/first-picks.ts`), with the room question that narrows it. The room
+   *  buttons set the list's spread filter, so the card and the list below
+   *  always answer for the same yard. Left out when nothing suits the spot. */
+  function renderFirst(ranked: ReturnType<typeof rankDraft>): void {
+    const picks = firstPicks(ranked);
+    const ladder = maxSpreadChoices();
+    const cap = store.filters.maxSpreadFt;
+    const room = roomOf(cap, ladder);
+    // An empty card is no answer, unless a room choice emptied it: then the
+    // buttons stay, so the reader can widen it again.
+    if (!picks.length && cap == null) { clear(firstEl); return; }
+    const sizeLabel = (ft: number): string => ladder.find((c) => c.ft === nearestRung(ladder, ft))!.label;
+    const caption = cap == null
+      ? t("first.roomAny")
+      : t(room ? "first.roomCap" : "first.roomOther", { size: sizeLabel(cap) });
+    const setRoom = (r: Room): void => {
+      store.filters.maxSpreadFt = roomCap(r, ladder);
+      syncSize();
+      persistPrefs();
+      rerender();
+    };
+    firstEl.replaceChildren(
+      el("h3", { id: "first-picks-title" }, t("first.title")),
+      el("p", { class: "first-picks-lede" }, t("first.lede")),
+      el("div", { class: "first-picks-room" }, [
+        el("span", { class: "roster-control-label" }, t("first.roomLabel")),
+        el("div", { class: "segmented", role: "group", "aria-label": t("first.roomLabel") },
+          ROOMS.map((r) => el("button", {
+            class: "segment",
+            type: "button",
+            "aria-pressed": r === room ? "true" : "false",
+            onClick: () => setRoom(r),
+          }, t(`first.room.${r}` as const)))),
+      ]),
+      el("p", { class: "first-picks-caption" }, caption),
+      ...(picks.length
+        ? [el("div", { class: "card-grid" }, picks.map((r) => plantRow(r.plant, regionId, { caterpillars: true }).node))]
+        : []),
+    );
   }
 
   /** The line under the field: nothing typed says nothing. */
@@ -245,6 +296,10 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     { key: "maxHeightFt", icon: "📏", lead: t("filter.size.lead"), tail: t("filter.height.tail"), aria: t("filter.height.aria"), choices: maxHeightChoices() },
     { key: "maxSpreadFt", icon: "↔️", lead: t("filter.size.lead"), tail: t("filter.spread.tail"), aria: t("filter.spread.aria"), choices: maxSpreadChoices() },
   ];
+  // The room buttons above the list set the spread cap too; this puts the
+  // panel's own checkbox and select back in step with it.
+  const sizeSyncs: (() => void)[] = [];
+  const syncSize = (): void => sizeSyncs.forEach((f) => f());
   const sizeRows = sizeDefs.map((s) => {
     // Keep whatever was stored selected even after a units switch moved the
     // ladder: pick the nearest rung rather than silently resetting the filter.
@@ -264,13 +319,20 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     }, s.choices.map((c) =>
       el("option", { value: String(c.ft), selected: c.ft === selectedFt }, c.label)
     )) as HTMLSelectElement;
-    return el("label", { class: "filter-check" }, [
-      el("input", { type: "checkbox", checked: stored != null, onChange: (e) => {
+    const box = el("input", { type: "checkbox", checked: stored != null, onChange: (e: Event) => {
         store.filters[s.key] = (e.target as HTMLInputElement).checked ? Number(select.value) : null;
         select.disabled = store.filters[s.key] == null;
         persistPrefs();
         rerender();
-      } }),
+      } }) as HTMLInputElement;
+    sizeSyncs.push(() => {
+      const v = store.filters[s.key];
+      box.checked = v != null;
+      select.disabled = v == null;
+      if (v != null) select.value = String(nearestRung(s.choices, v));
+    });
+    return el("label", { class: "filter-check" }, [
+      box,
       `${s.icon} ${s.lead}`,
       select,
       s.tail,
@@ -420,6 +482,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     guideLink("ranking", t("guide.ranking"), undefined, "margin:0.5rem 0 0"),
     summaryEl,
     rc.node,
+    firstEl,
     nameFilter.node,
     ...(typeChips ? [typeChips] : []),
     listEl,

@@ -1810,9 +1810,44 @@ details[open] > summary::after {
 .segment + .segment {
   border-left: 1px solid var(--line-strong);
 }
-.segment[aria-current="page"] {
+.segment[aria-current="page"],
+.segment[aria-pressed="true"] {
   background: var(--brand-bg);
   color: var(--brand-ink);
+}
+/* A segment that is a button rather than a link (the room choice above a
+   spot's plant list) drops the browser's button look. */
+button.segment {
+  border: 0;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+button.segment[aria-pressed="true"] {
+  background: var(--brand-bg);
+}
+
+/* "Plant these first" above a spot's plant list (steps/results.ts). */
+.first-picks {
+  margin: 1rem 0 0.5rem;
+}
+.first-picks h3 { margin-bottom: 0.2rem; }
+.first-picks-lede { margin: 0 0 0.6rem; }
+/* Label above, three equal buttons the full width below: side by side, they
+   ran off a 360 px screen. */
+.first-picks-room .roster-control-label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.first-picks-room .segmented { display: flex; }
+.first-picks-room .segment {
+  flex: 1 1 0;
+  justify-content: center;
+}
+.first-picks-caption {
+  margin: 0.4rem 0 0.6rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
 }
 .filter-toggle {
   padding-left: 0.2rem;

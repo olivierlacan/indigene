@@ -547,18 +547,21 @@ function killYourLawn() {
 }
 
 
-/** Your first planting day: a willow over the water's edge, a row of potted
+/** Your first planting day: a weeping willow, a row of potted
  *  natives waiting, a bucket, and a spade standing in the ground. */
 function volunteer() {
   let s = "";
-  // The willow: trunk, then fronds hanging from the crown.
-  s += path("wood", "M36 124Q42 92 38 62L48 62Q46 92 54 124Z");
-  for (const [x, len, bend] of [[14, 52, -4], [24, 62, -2], [34, 50, 0], [46, 58, 2], [58, 64, 3], [70, 50, 5]]) {
-    s += stem(42, 44, x, 36, x + bend, 44 + len);
-  }
+  // The willow: a forked trunk under a broad crown, and the long shoots that
+  // hang from the crown's edge, each from its own point, never from one.
+  s += path("wood", "M38 124Q43 100 40 72L50 72Q49 100 56 124Z");
+  s += path("branch", "M45 76Q36 64 27 56M45 76Q55 64 63 55");
   s += `<g class="pa-soft">`;
-  for (const [cx, cy, r] of [[42, 40, 18], [24, 46, 12], [62, 46, 12]]) s += circle("leaf", cx, cy, r);
+  for (const [cx, cy, r] of [[45, 40, 22], [24, 50, 15], [66, 50, 15], [33, 30, 14], [58, 30, 14]]) s += circle("leaf", cx, cy, r);
   s += `</g>`;
+  for (const [x, len] of [[11, 44], [18, 54], [25, 48], [32, 38], [38, 24], [52, 26], [58, 40], [65, 50], [72, 56], [79, 44]]) {
+    const out = x < 45 ? -1 : 1;
+    s += stem(x, 54, x + out * 4, 54 + len * 0.5, x + out, 54 + len);
+  }
   // Pots waiting their turn.
   for (const x of [104, 134, 164]) {
     s += path("wood", `M${x - 10} 106H${x + 10}L${x + 7} 124H${x - 7}Z`);

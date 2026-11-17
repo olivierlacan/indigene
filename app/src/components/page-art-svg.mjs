@@ -857,18 +857,40 @@ function figBag() {
   return s;
 }
 
-/** Roots by thickness, to scale with each other: pencil, thumb, wrist. */
+/** Roots by thickness, to scale with each other (one unit is a millimetre):
+ *  each a cut length of root showing its end, the first over a pencil and the
+ *  second over a thumb, which is how the caption sizes them. */
 function figRootSizes() {
   let s = "";
-  const root = (cx, cy, r) => circle("wood", cx, cy, r) + (r > 6 ? `<circle class="pa-band" cx="${cx}" cy="${cy}" r="${f(r * 0.55)}"/>` : "");
-  // A pencil lying under the first, for scale.
-  s += root(56, 70, 3.5);
-  s += rect("orange", 30, 96, 44, 7, 1) + path("paper", "M74 96L84 99.5L74 103Z");
-  s += tick(56, 132);
-  s += root(152, 70, 12.5);
-  s += path("caution", "M152 120V134M152 140V141");
-  s += root(256, 70, 27);
-  s += cross(256, 132);
+  // A length of root lying left to right, its cut end turned toward us.
+  const root = (cx, cy, r, len) => {
+    const x0 = cx - len / 2;
+    const x1 = cx + len / 2;
+    const rx = Math.max(1.6, r * 0.42);
+    let out = path("wood", `M${f(x0)} ${f(cy - r)}H${f(x1)}V${f(cy + r)}H${f(x0)}A${f(rx)} ${f(r)} 0 0 1 ${f(x0)} ${f(cy - r)}Z`);
+    // Side roots, so it reads as a root and not a log.
+    out += path("root fine", `M${f(x0 + len * 0.3)} ${f(cy + r)}q-3 ${f(4 + r * 0.3)} -9 ${f(6 + r * 0.3)}`);
+    out += path("root fine", `M${f(x0 + len * 0.55)} ${f(cy - r)}q2 ${f(-4 - r * 0.2)} 8 ${f(-5 - r * 0.2)}`);
+    out += ellipse("paper", x1, cy, rx, r);
+    if (r > 6) out += `<ellipse class="pa-ink" cx="${f(x1)}" cy="${f(cy)}" rx="${f(rx * 0.6)}" ry="${f(r * 0.6)}"/>`;
+    if (r > 20) out += `<ellipse class="pa-ink" cx="${f(x1)}" cy="${f(cy)}" rx="${f(rx * 0.28)}" ry="${f(r * 0.28)}"/>`;
+    return out;
+  };
+  // Thin as a pencil, and the pencil: eraser, band, barrel, wood, lead.
+  s += root(52, 50, 3.5, 56);
+  s += rect("pink", 20, 96.5, 8, 7, 2) + rect("grey", 27, 96.5, 5, 7);
+  s += rect("gold", 32, 96.5, 42, 7) + path("band", "M32 100H74");
+  s += path("paper", "M74 96.5L86 100L74 103.5Z") + path("body", "M82.5 99L86 100L82.5 101Z");
+  s += tick(52, 134);
+  // Thick as a thumb, and the thumb: a nail and a knuckle.
+  s += root(152, 50, 12.5, 60);
+  s += rect("earth", 124, 88, 56, 24, 12) + `<rect class="pa-ink" x="124" y="88" width="56" height="24" rx="12"/>`;
+  s += rect("paper", 160, 92, 17, 16, 6);
+  s += path("ink", "M143 91q3 4 0 7M143 102q3 4 0 7");
+  s += path("caution", "M152 124V136M152 142V143");
+  // Thicker than that: leave it.
+  s += root(258, 60, 25, 64);
+  s += cross(258, 134);
   return s;
 }
 
@@ -885,7 +907,7 @@ function figSpade() {
   s += path("handle", "M165 84V26");
   s += path("handle", "M153 24H177");
   // A boot on the tread.
-  s += path("body", "M180 84V44H196V70Q214 72 216 84Z");
+  s += path("red", "M180 84V44H196V70Q214 72 216 84Z");
   // Rock the handle.
   s += path("arrow", "M128 30Q165 4 202 30m-10 -1l10 1l1 -10");
   s += path("arrow", "M128 30l10 -1m-10 1l-1 -10");
@@ -915,14 +937,17 @@ function figKit() {
   let s = "";
   s += rect("soil", 0, 132, FW, 18);
   // Rain jacket.
-  s += path("gold", "M14 132V78Q14 62 30 58L38 48Q48 40 58 48L66 58Q82 62 82 78V132H68V92H28V132Z");
-  s += path("gold", "M28 92H68V132H28Z");
-  s += path("ink", "M48 60V130");
+  // Sleeves held a little out from the body, a hood, a zip, two pocket flaps.
+  s += path("gold", "M30 64L6 102L16 109L36 82Z") + path("gold", "M66 64L90 102L80 109L60 82Z");
+  s += path("gold", "M34 64Q34 40 48 40Q62 40 62 64Z");
+  s += ellipse("loose", 48, 55, 7.5, 8.5);
+  s += path("gold", "M30 62H66L70 132H26Z");
+  s += path("ink", "M48 64V132M33 108h9M54 108h9");
   // Gloves.
   s += path("orange", "M101 132V78Q104.5 72 108 78V88H110V71Q113.5 65 117 71V88H119V69Q122.5 63 126 69V88H128V75Q131.5 69 135 75V104L144 94Q150 92 150 99L139 118V132Z");
   s += path("ink", "M101 122H139");
   // Boots.
-  s += path("body", "M166 132V70H186V108Q206 110 210 124V132Z");
+  s += path("red", "M166 132V70H186V108Q206 110 210 124V132Z");
   s += path("band", "M166 126H210");
   // Soil knife.
   s += path("grey", "M226 60Q232 46 238 60V104H226Z");

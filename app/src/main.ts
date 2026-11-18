@@ -149,7 +149,8 @@ const STEPS: Record<AppStep, { fn: StepFn; labelKey: TKey; inFlow: boolean }> = 
   // The Halloween post, and a guide to swapping a lawn for natives. A param is
   // a region whose picks to show.
   "kill-your-lawn": { fn: renderLawn, labelKey: "steps.lawn", inFlow: false },
-  // Before a volunteer planting: the landing page, and one guide per param.
+  // Before a volunteer planting: the page that gathers the how-to guides, and
+  // the one guide that is a volunteer's own (what to bring).
   volunteer: { fn: renderVolunteer, labelKey: "steps.volunteer", inFlow: false },
   // The peoples who named and tended these plants, and their own sources.
   people: { fn: renderPeople, labelKey: "steps.people", inFlow: false },
@@ -180,6 +181,7 @@ const PARAM_RENDERERS: Record<string, StepFn> = {
   posts: renderPost,
   "kill-your-lawn": renderLawn,
   volunteer: renderVolunteer,
+  removing: renderRemoving,
 };
 
 const FLOW: AppStep[] = ["location", "sun", "confirm", "priorities", "results"];

@@ -481,19 +481,20 @@ async function collectPages(load) {
       { image: pageCard("kill-your-lawn"), imageAlt: en["lawn.title"] }
     );
   }
-  // Your first planting day: the landing page an organizer sends, and one
-  // file per guide so a link to "what to bring" previews as that.
-  const { GUIDES } = await load("/src/lib/volunteer.ts");
+  // Your first planting day: the page an organizer sends. And the how-to
+  // guides, each a file under the page it lives on, so a link to "planting
+  // from a pot" previews as that.
+  const { GUIDES, guidePath } = await load("/src/lib/howto.ts");
   add("volunteer", en["volunteer.docTitle"], en["volunteer.lede"], {
     image: pageCard("volunteer"),
     imageAlt: "Your first planting day — what to know before a volunteer native planting",
   });
   for (const guide of GUIDES) {
     add(
-      `volunteer/${guide.slug}`,
-      fill(en["volunteer.guideDocTitle"], { name: en[`volunteer.${guide.slug}.title`] }),
-      en[`volunteer.${guide.slug}.lede`],
-      { image: pageCard("volunteer"), imageAlt: en[`volunteer.${guide.slug}.title`] }
+      guidePath(guide),
+      fill(en["howto.docTitle"], { name: en[`howto.${guide.slug}.title`] }),
+      en[`howto.${guide.slug}.lede`],
+      { image: pageCard(guide.home === "volunteer" ? "volunteer" : "how-to"), imageAlt: en[`howto.${guide.slug}.title`] }
     );
   }
   // The LLM bill: measured tokens, estimated electricity, and the design that

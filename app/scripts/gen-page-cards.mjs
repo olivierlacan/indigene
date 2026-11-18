@@ -202,6 +202,8 @@ try {
     { slug: "kill-your-lawn", title: "Kill your lawn", subtitle: "bury the grass, plant what feeds wildlife", stat: `easy natives for <b>${nRegions}</b> regions` },
     // The page an organizer sends before a volunteer planting.
     { slug: "volunteer", title: "Your first planting day", subtitle: "pots, invasives, roots and what to bring \u2014 read before you dig", stat: `<b>4</b> short guides \u00b7 every tip checked twice` },
+    // The how-to guides any planter can use (lib/howto.ts) share one card.
+    { slug: "how-to", title: "How to plant it", subtitle: "from a pot, among tree roots, and what to do with the weeds", stat: `<b>3</b> short guides \u00b7 every tip checked twice` },
     // A post with a card of its own: the prerenderer uses `post-<slug>` when
     // it exists, and the posts card otherwise.
     { slug: "post-halloween-2026", title: "Your lawn is already a zombie", subtitle: "Halloween \u00b7 31 October 2026" },

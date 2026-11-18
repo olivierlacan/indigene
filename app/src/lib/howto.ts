@@ -1,15 +1,22 @@
-// The planting-day guides (`steps/volunteer.ts`): what each one says, in what
+// The how-to guides: planting from a pot and digging among roots (under
+// `#/planting`), disposing of invasives (under `#/removing`) and what to bring
+// to a volunteer planting (under `#/volunteer`). What each one says, in what
 // order, and which sources back each section.
 //
+// They began as four pages for volunteers, and three turned out to be for
+// anyone with a pot and a spade. So each guide lives where a gardener would
+// look for it (`home`), and the volunteer page (`steps/volunteer.ts`) links
+// all four.
+//
 // No DOM here, so the router, the prerenderer and the tests can all read it.
-// The words themselves are in the dictionaries (`volunteer.<guide>.<section>.…`);
+// The words themselves are in the dictionaries (`howto.<guide>.<section>.…`);
 // this file is the shape and the evidence.
 //
 // ## Two publishers per section
 //
 // These pages pass on field tips to people about to act on them with a spade,
 // so every section names at least two sources from different publishers
-// (`volunteer.test.ts` holds that). Checked 13 November 2026: each page below
+// (`howto.test.ts` holds that). Checked 13 November 2026: each page below
 // was opened and the words quoted beside its row found in it. Two tips heard
 // in the field did not survive the check whole, and the pages say what did:
 //
@@ -196,154 +203,164 @@ export type GuideBlock =
   | { kind: "figure"; name: FigureName; caption: string };
 
 export interface GuideSection {
-  /** Names the heading's key (`volunteer.<guide>.<id>.title`) and its anchor. */
+  /** Names the heading's key (`howto.<guide>.<id>.title`) and its anchor. */
   id: string;
   blocks: GuideBlock[];
   /** Ids from `SOURCES`: at least two, from different publishers. */
   sources: string[];
 }
 
+/** The page a guide lives under: its address is `#/<home>/<slug>`. */
+export type GuideHome = "planting" | "removing" | "volunteer";
+
 export interface Guide {
   slug: string;
+  home: GuideHome;
   square: SquareName;
   sections: GuideSection[];
 }
 
 const p = (key: string, links?: Record<string, { href: string; key: string }>): GuideBlock => ({ kind: "p", key, links });
 const fig = (name: FigureName, caption: string): GuideBlock => ({ kind: "figure", name, caption });
-/** `n` keys ending 1…n: `list("ul", "volunteer.pots.loosen.li", 3)`. */
+/** `n` keys ending 1…n: `list("ul", "howto.pots.loosen.li", 3)`. */
 const list = (kind: "ol" | "ul", stem: string, n: number): GuideBlock =>
   ({ kind, keys: Array.from({ length: n }, (_, i) => `${stem}${i + 1}`) });
 const note = (tone: "warn" | "info", stem: string): GuideBlock =>
   ({ kind: "note", tone, title: `${stem}Title`, key: stem });
 
-/** The index's address, and a guide's. One place knows the URL shape. */
-export const VOLUNTEER_HREF = "#/volunteer";
-export const guideHref = (guide: Guide): string => `${VOLUNTEER_HREF}/${guide.slug}`;
+/** A guide's address. One place knows the URL shape. */
+export const guidePath = (guide: Guide): string => `${guide.home}/${guide.slug}`;
+export const guideHref = (guide: Guide): string => `#/${guidePath(guide)}`;
 
 export const GUIDES: Guide[] = [
   {
     slug: "pots",
+    home: "planting",
     square: "pot",
     sections: [
       { id: "check", sources: ["wsuInstant", "isa"], blocks: [
-        p("volunteer.pots.check.p1"),
-        fig("rootbound", "volunteer.pots.check.fig"),
+        p("howto.pots.check.p1"),
+        fig("rootbound", "howto.pots.check.fig"),
       ] },
       { id: "loosen", sources: ["gsp", "isa", "rhsPlanting"], blocks: [
-        list("ul", "volunteer.pots.loosen.li", 3),
+        list("ul", "howto.pots.loosen.li", 3),
       ] },
       { id: "wash", sources: ["wsuFragile", "wsuFs047", "rouse"], blocks: [
-        p("volunteer.pots.wash.p1"),
-        fig("bucket", "volunteer.pots.wash.fig"),
-        p("volunteer.pots.wash.p2"),
-        note("warn", "volunteer.pots.wash.note"),
+        p("howto.pots.wash.p1"),
+        fig("bucket", "howto.pots.wash.fig"),
+        p("howto.pots.wash.p2"),
+        note("warn", "howto.pots.wash.note"),
       ] },
       { id: "hole", sources: ["isa", "rhsPlanting", "gsp", "seattleTrees", "wsuFs047"], blocks: [
-        fig("mound", "volunteer.pots.hole.fig"),
-        list("ol", "volunteer.pots.hole.li", 4),
+        fig("mound", "howto.pots.hole.fig"),
+        list("ol", "howto.pots.hole.li", 4),
       ] },
       { id: "finish", sources: ["wsuFs047", "csuPlanting", "gsp", "isa"], blocks: [
-        list("ul", "volunteer.pots.finish.li", 3),
-        note("info", "volunteer.pots.finish.note"),
+        list("ul", "howto.pots.finish.li", 3),
+        note("info", "howto.pots.finish.note"),
       ] },
     ],
   },
   {
-    slug: "invasives",
+    slug: "disposal",
+    home: "removing",
     square: "bag",
     sections: [
       { id: "why", sources: ["gsp", "psuBuffers"], blocks: [
-        p("volunteer.invasives.why.p1"),
+        p("howto.disposal.why.p1"),
       ] },
       { id: "ask", sources: ["gsp", "kcHogweed"], blocks: [
-        p("volunteer.invasives.ask.p1", {
-          removing: { href: "#/removing", key: "volunteer.invasives.ask.p1Link" },
+        p("howto.disposal.ask.p1", {
+          removing: { href: "#/removing", key: "howto.disposal.ask.p1Link" },
         }),
-        list("ul", "volunteer.invasives.ask.li", 3),
+        list("ul", "howto.disposal.ask.li", 3),
       ] },
       { id: "parts", sources: ["kcPractices", "nwcbDisposal", "gsp"], blocks: [
-        p("volunteer.invasives.parts.p1"),
-        list("ul", "volunteer.invasives.parts.li", 3),
-        p("volunteer.invasives.parts.p2", {
-          list: { href: "#/invasives", key: "volunteer.invasives.parts.p2Link" },
+        p("howto.disposal.parts.p1"),
+        list("ul", "howto.disposal.parts.li", 3),
+        p("howto.disposal.parts.p2", {
+          list: { href: "#/invasives", key: "howto.disposal.parts.p2Link" },
         }),
       ] },
       { id: "knotweed", sources: ["kcKnotweed", "govukKnotweed", "gsp"], blocks: [
-        fig("bag", "volunteer.invasives.knotweed.fig"),
-        p("volunteer.invasives.knotweed.p1", {
-          knotweed: { href: "#/invasives/reynoutria-japonica", key: "volunteer.invasives.knotweed.p1Link" },
+        fig("bag", "howto.disposal.knotweed.fig"),
+        p("howto.disposal.knotweed.p1", {
+          knotweed: { href: "#/invasives/reynoutria-japonica", key: "howto.disposal.knotweed.p1Link" },
         }),
-        p("volunteer.invasives.knotweed.p2"),
+        p("howto.disposal.knotweed.p2"),
       ] },
       { id: "compost", sources: ["vanRossum", "nwcbDisposal", "kcPractices"], blocks: [
-        p("volunteer.invasives.compost.p1"),
+        p("howto.disposal.compost.p1"),
       ] },
       { id: "leave", sources: ["gsp", "playCleanGo", "osuPhytophthora"], blocks: [
-        p("volunteer.invasives.leave.p1"),
+        p("howto.disposal.leave.p1"),
       ] },
     ],
   },
   {
     slug: "roots",
+    home: "planting",
     square: "spade",
     sections: [
       { id: "where", sources: ["osuTrees", "iowaTrees"], blocks: [
-        p("volunteer.roots.where.p1"),
+        p("howto.roots.where.p1"),
       ] },
       { id: "sizes", sources: ["psuUnder", "uvmUnder", "hauc", "osuTrees", "indianaDnr"], blocks: [
-        fig("rootSizes", "volunteer.roots.sizes.fig"),
-        list("ul", "volunteer.roots.sizes.li", 4),
-        note("info", "volunteer.roots.sizes.note"),
+        fig("rootSizes", "howto.roots.sizes.fig"),
+        list("ul", "howto.roots.sizes.li", 4),
+        note("info", "howto.roots.sizes.note"),
       ] },
       { id: "small", sources: ["psuUnder", "uvmUnder"], blocks: [
-        p("volunteer.roots.small.p1", {
-          pots: { href: "#/volunteer/pots", key: "volunteer.roots.small.p1Link" },
+        p("howto.roots.small.p1", {
+          pots: { href: "#/planting/pots", key: "howto.roots.small.p1Link" },
         }),
       ] },
       { id: "spade", sources: ["ccohs", "forterra", "psuUnder"], blocks: [
-        fig("spade", "volunteer.roots.spade.fig"),
-        list("ol", "volunteer.roots.spade.li", 5),
+        fig("spade", "howto.roots.spade.fig"),
+        list("ol", "howto.roots.spade.li", 5),
       ] },
       { id: "mud", sources: ["udelCompaction", "dukeCompaction"], blocks: [
-        p("volunteer.roots.mud.p1"),
+        p("howto.roots.mud.p1"),
       ] },
       { id: "fabric", sources: ["wsuFabric", "unhFabric"], blocks: [
-        p("volunteer.roots.fabric.p1"),
-        fig("fabric", "volunteer.roots.fabric.fig"),
-        p("volunteer.roots.fabric.p2"),
+        p("howto.roots.fabric.p1"),
+        fig("fabric", "howto.roots.fabric.fig"),
+        p("howto.roots.fabric.p2"),
       ] },
       { id: "nitrogen", sources: ["doty", "santi", "alderGtr"], blocks: [
-        p("volunteer.roots.nitrogen.p1", {
-          alder: { href: "#/plants/alnus-rubra", key: "volunteer.roots.nitrogen.p1Link" },
+        p("howto.roots.nitrogen.p1", {
+          alder: { href: "#/plants/alnus-rubra", key: "howto.roots.nitrogen.p1Link" },
         }),
-        p("volunteer.roots.nitrogen.p2"),
+        p("howto.roots.nitrogen.p2"),
       ] },
     ],
   },
   {
     slug: "kit",
+    home: "volunteer",
     square: "glove",
     sections: [
       { id: "wear", sources: ["gspJoin", "greenway", "nwcbBlackberry"], blocks: [
-        fig("kit", "volunteer.kit.wear.fig"),
-        list("ul", "volunteer.kit.wear.li", 4),
+        fig("kit", "howto.kit.wear.fig"),
+        list("ul", "howto.kit.wear.li", 4),
       ] },
       { id: "bring", sources: ["gspJoin", "greenway"], blocks: [
-        list("ul", "volunteer.kit.bring.li", 4),
-        p("volunteer.kit.bring.p1"),
+        list("ul", "howto.kit.bring.li", 4),
+        p("howto.kit.bring.p1"),
       ] },
       { id: "tools", sources: ["forterra", "gspJoin"], blocks: [
-        p("volunteer.kit.tools.p1"),
+        p("howto.kit.tools.p1"),
       ] },
       { id: "health", sources: ["nhsTetanus", "cdcTetanus"], blocks: [
-        p("volunteer.kit.health.p1"),
+        p("howto.kit.health.p1"),
       ] },
     ],
   },
 ];
 
-export const guideBySlug = (slug: string): Guide | undefined => GUIDES.find((g) => g.slug === slug);
+/** The guide at `#/<home>/<slug>`, if there is one. */
+export const guideAt = (home: string, slug: string): Guide | undefined =>
+  GUIDES.find((g) => g.home === home && g.slug === slug);
 
 const SOURCE_BY_ID = new Map(SOURCES.map((s) => [s.id, s]));
 
@@ -355,9 +372,9 @@ export function guideSources(guide: Guide): GuideSource[] {
 
 /** Every dictionary key a guide reads, for the test that proves they exist. */
 export function guideKeys(guide: Guide): string[] {
-  const keys = [`volunteer.${guide.slug}.title`, `volunteer.${guide.slug}.line`, `volunteer.${guide.slug}.lede`, `volunteer.${guide.slug}.next`];
+  const keys = [`howto.${guide.slug}.title`, `howto.${guide.slug}.line`, `howto.${guide.slug}.lede`, `howto.back.${guide.home}`];
   for (const section of guide.sections) {
-    keys.push(`volunteer.${guide.slug}.${section.id}.title`);
+    keys.push(`howto.${guide.slug}.${section.id}.title`);
     for (const b of section.blocks) {
       if (b.kind === "p") keys.push(b.key, ...Object.values(b.links ?? {}).map((l) => l.key));
       else if (b.kind === "note") keys.push(b.title, b.key);
@@ -365,6 +382,6 @@ export function guideKeys(guide: Guide): string[] {
       else keys.push(...b.keys);
     }
   }
-  for (const src of guideSources(guide)) keys.push(`volunteer.src.${src.id}`);
+  for (const src of guideSources(guide)) keys.push(`howto.src.${src.id}`);
   return keys;
 }

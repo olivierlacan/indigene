@@ -51,6 +51,8 @@ import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { commonName } from "../lib/names";
 import { richText } from "../components/rich-text";
 import { seasonStrip } from "../components/season-strip";
+import { GUIDES, guideAt } from "../lib/howto";
+import { guideRow, renderGuide } from "./howto";
 
 /** The index's address. One place knows the URL shape. */
 const INDEX_HREF = "#/planting";
@@ -182,8 +184,15 @@ export async function renderPlantingIndex(main: HTMLElement): Promise<void> {
   document.title = t("planting.docTitle");
 
   main.append(
-    el("h2", { class: "step-title" }, t("planting.title")),
-    el("p", { class: "step-lede" }, t("planting.lede")),
+    el("h2", { class: "step-title" }, t("planting.landTitle")),
+    el("p", { class: "step-lede" }, t("planting.landLede")),
+    // Getting a plant into the ground comes first: two how-to guides, and the
+    // page that gathers them for a group planting.
+    el("h3", {}, t("planting.groundTitle")),
+    el("div", { class: "guide-rows" }, GUIDES.filter((g) => g.home === "planting").map(guideRow)),
+    el("p", { class: "more-link" }, tx("howto.groupWayOn", { link: el("a", { href: "#/volunteer" }, t("volunteer.title")) })),
+    el("h3", {}, t("planting.title")),
+    el("p", {}, t("planting.lede")),
     // What this season is for, and the two things to know before believing any
     // window on the page. One stack on a phone; on a laptop the card takes the
     // left column and the two caveats stand beside it (see `.planting-top` —
@@ -203,8 +212,6 @@ export async function renderPlantingIndex(main: HTMLElement): Promise<void> {
     ]),
     techniqueGroup("seed"),
     techniqueGroup("plant"),
-    // None of the techniques say how the finished plant goes in the ground.
-    el("p", { class: "more-link" }, tx("planting.volunteerWayOn", { link: el("a", { href: "#/volunteer/pots" }, t("volunteer.pots.title")) })),
     // Most gardens start from turf, and none of the techniques above clear it.
     el("p", { class: "more-link" }, tx("lawn.wayOn", { link: el("a", { href: "#/kill-your-lawn" }, t("lawn.wayOnLink")) })),
     sourcesSection(),
@@ -336,6 +343,9 @@ function renderNotFound(main: HTMLElement, slug: string): void {
  *  mistyped link looking like it worked. */
 export async function renderPlanting(main: HTMLElement, param?: string): Promise<void> {
   if (!param) return renderPlantingIndex(main);
+  // Not every page under `#/planting` is a technique: two are how-to guides.
+  const guide = guideAt("planting", param);
+  if (guide) return renderGuide(main, guide);
   const tech = techniqueBySlug(param);
   return tech ? renderTechnique(main, tech) : renderNotFound(main, param);
 }

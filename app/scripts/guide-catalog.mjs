@@ -550,13 +550,13 @@ export const SECTIONS = [
         ],
       },
       {
-        id: "planting-day",
-        heading: "Before a volunteer planting",
+        id: "in-the-ground",
+        heading: "Getting a plant in the ground",
         body:
-          "**Your first planting day** is four short guides to read on the way " +
-          "there: getting a potted plant into the ground, what to do with the " +
-          "invasives you pull, digging among tree roots, and what to bring. " +
-          "Organizers can send the link ahead.",
+          "The top of **Planting** has two short guides for anyone with a pot " +
+          "and a spade: planting from a pot, and digging among tree roots. " +
+          "**Your first planting day** gathers them with what to bring, for " +
+          "organizers to send before a volunteer planting.",
       },
       {
         id: "links",
@@ -573,7 +573,7 @@ export const SECTIONS = [
       "and never dig a plant from the wild.",
     visit: [
       { label: "Your first planting day", href: `${APP}/volunteer` },
-      { label: "Ways to grow more", href: `${APP}/planting` },
+      { label: "Planting", href: `${APP}/planting` },
       { label: "Your saved spots", href: `${APP}/#/saved` },
     ],
     related: [

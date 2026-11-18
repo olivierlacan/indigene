@@ -194,6 +194,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
       : t(room ? "first.roomCap" : "first.roomOther", { size: sizeLabel(cap) });
     const setRoom = (r: Room): void => {
       store.filters.maxSpreadFt = roomCap(r, ladder);
+      store.draft.room = r;
       syncSize();
       persistPrefs();
       rerender();
@@ -573,6 +574,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
       soilOverride: soilAnswer(store.draft.moistureOverride, store.draft.site),
       deciduousOverhead: store.draft.deciduousOverhead,
       regionOverride: store.draft.regionOverride,
+      room: store.draft.room ?? prev?.room ?? null,
       weights: { ...store.weights },
     });
     store.draft.editingId = id;

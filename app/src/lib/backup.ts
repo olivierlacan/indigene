@@ -48,6 +48,7 @@ import type {
   MoistureBand,
   PlantedDate,
   Planting,
+  Room,
   SavedSpot,
   SpotInvasive,
   SiteData,
@@ -706,6 +707,7 @@ function toSpot(row: unknown): SavedSpot | null {
     soilOverride: toSoilOverride(r.soilOverride),
     deciduousOverhead: typeof r.deciduousOverhead === "boolean" ? r.deciduousOverhead : undefined,
     regionOverride: str(r.regionOverride),
+    room: toRoom(r.room),
     weights: toWeights(r.weights),
     invasives: toSpotInvasives(r.invasives),
   };
@@ -953,6 +955,12 @@ function toPhoto(v: unknown): ObservationPhoto | null {
 
 function toUnitPref(v: unknown): UnitPref | null {
   return v === "imperial" || v === "metric" || v === "auto" ? v : null;
+}
+
+/** Absent rather than null when unknown: spots saved before the question
+ *  existed come back exactly as they went out. */
+function toRoom(v: unknown): Room | undefined {
+  return v === "small" || v === "medium" || v === "large" ? v : undefined;
 }
 
 function toMoisture(v: unknown): MoistureBand | null {

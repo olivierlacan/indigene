@@ -13,6 +13,9 @@
 // and site still decide which willow it is.
 import type { Ranked } from "./ranking";
 import { genusOf } from "./host-scope";
+import type { Room } from "../types";
+
+export type { Room };
 
 /** How many picks the card shows. A weekend's shopping, not a second list. */
 export const FIRST_PICKS = 4;
@@ -58,7 +61,6 @@ function pickByGenus(ranked: readonly Ranked[], n: number, have: ReadonlySet<str
 /** The three answers to "how much room?", as a cap on mature spread in feet.
  *  `null` is no cap. Read against the size filter's own ladder, so a choice
  *  here is that filter set to a rung, and the two never disagree. */
-export type Room = "small" | "medium" | "large";
 export const ROOMS: readonly Room[] = ["small", "medium", "large"];
 
 /** Target spreads: a small yard fits a shrub or a narrow tree, a medium one a

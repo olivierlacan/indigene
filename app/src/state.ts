@@ -4,6 +4,7 @@
 import type {
   HorizonMask,
   MoistureBand,
+  Room,
   SavedSpot,
   SiteData,
   SunEstimate,
@@ -16,6 +17,8 @@ import { rememberSpot, sticky } from "./lib/sticky";
 import { REGIONS } from "./data/regions";
 import { hemisphereOf, regionHemisphere } from "./lib/hemisphere";
 import type { Hemisphere } from "./lib/hemisphere";
+import { roomCap } from "./lib/first-picks";
+import { maxSpreadChoices } from "./lib/units";
 
 export interface Draft {
   lat: number | null;
@@ -33,6 +36,9 @@ export interface Draft {
    * confirms a real location, which switches selection back to automatic.
    */
   regionOverride: string | null;
+  /** The spot's rough size, once the reader has said (the room buttons on the
+   *  plant list). Saved with the spot; null until answered. */
+  room: Room | null;
   editingId: string | null;
   /**
    * Which of this spot's answers came back from the device's memory rather
@@ -56,6 +62,7 @@ function emptyDraft(): Draft {
     deciduousOverhead: false,
     moistureOverride: null,
     regionOverride: null,
+    room: null,
     editingId: null,
     recalled: { sun: false, moisture: false },
   };
@@ -243,12 +250,16 @@ export function openSavedSpot(s: SavedSpot): void {
     deciduousOverhead: s.deciduousOverhead ?? false,
     moistureOverride: s.soilOverride?.moisture ?? null,
     regionOverride: s.regionOverride ?? null,
+    room: s.room ?? null,
     editingId: s.id,
     // A saved spot's readings are its own, given by name and on purpose —
     // nothing here was recalled behind anyone's back.
     recalled: { sun: false, moisture: false },
   };
   store.weights = { ...s.weights };
+  // A spot that knows its size opens with the list capped to it, the same
+  // cap its room buttons would set.
+  if (s.room) store.filters.maxSpreadFt = roomCap(s.room, maxSpreadChoices());
   // Opening a saved spot makes it the spot you're working on, so it's also the
   // one the next visit starts from.
   rememberDraftSpot();

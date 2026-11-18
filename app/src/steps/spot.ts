@@ -44,7 +44,8 @@ import { t, fmtDate, fmtNumber, monthName } from "../lib/i18n";
 import { linkedLogin } from "../lib/inat-account";
 import { getInvasive } from "../lib/invasives";
 import { rankPlants, NO_FILTERS } from "../lib/ranking";
-import { missingEssentials } from "../lib/first-picks";
+import { missingEssentials, roomCap, ROOMS } from "../lib/first-picks";
+import { maxSpreadChoices } from "../lib/units";
 import { plantRow } from "./region";
 
 /** Rows shown in the plant picker before it stops listing. A search that still
@@ -247,17 +248,40 @@ function essentialsCard(
   roster: Plant[],
   regionId: string,
 ): HTMLElement {
+  // The spot's size caps how wide a suggestion may grow: the same rungs the
+  // plant list's room buttons set, so the two pages agree.
+  const ladder = maxSpreadChoices();
+  const cap = spot.room ? roomCap(spot.room, ladder) : null;
   const ranked = rankPlants(roster, {
     site: spot.site,
     sun: spot.sun,
     weights: spot.weights,
-    filters: NO_FILTERS,
+    filters: { ...NO_FILTERS, maxSpreadFt: cap },
     moistureOverride: spot.soilOverride?.moisture ?? null,
   });
   const planted = plantings.flatMap((pl) => plantOf(pl.plantId)?.latin ?? []);
   const picks = missingEssentials(ranked, planted);
-  return el("section", { class: "card" }, [
+  const size = cap == null ? "" : ladder.find((c) => c.ft === cap)?.label ?? "";
+  const roomLine = !spot.room ? t("spot.roomUnset")
+    : cap == null ? t("spot.roomLarge")
+    : t("spot.roomCap", { size });
+  const card: HTMLElement = el("section", { class: "card first-picks-room" }, [
     el("h3", { style: "margin:0 0 0.5rem" }, t("spot.essentialsTitle")),
+    el("span", { class: "roster-control-label" }, t("spot.roomLabel")),
+    el("div", { class: "segmented", role: "group", "aria-label": t("spot.roomLabel") },
+      ROOMS.map((r) => el("button", {
+        class: "segment",
+        type: "button",
+        "aria-pressed": r === spot.room ? "true" : "false",
+        // Redrawn in place: a whole-page redraw would jump to the top.
+        // Set on the page's own spot, so "See plants" opens it at this size.
+        onClick: async () => {
+          spot.room = r;
+          await saveSpot(spot);
+          card.replaceWith(essentialsCard(spot, plantings, plantOf, roster, regionId));
+        },
+      }, t(`first.room.${r}` as const)))),
+    el("p", { class: "first-picks-caption" }, roomLine),
     ...(picks.length
       ? [
           el("p", { style: "margin:0 0 0.6rem" }, t("spot.essentialsLede")),
@@ -265,6 +289,7 @@ function essentialsCard(
         ]
       : [el("p", { class: "note" }, t("spot.essentialsAll"))]),
   ]);
+  return card;
 }
 
 function logRow(

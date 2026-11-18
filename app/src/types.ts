@@ -1041,6 +1041,9 @@ export interface Planting {
   createdAt: number;
 }
 
+/** A spot's rough size: see `SavedSpot.room`. */
+export type Room = "small" | "medium" | "large";
+
 export interface SavedSpot {
   id: string;
   createdAt: number;
@@ -1054,6 +1057,11 @@ export interface SavedSpot {
   deciduousOverhead?: boolean;
   /** Region id the user picked by hand for this spot (e.g. just over a boundary). */
   regionOverride?: string | null;
+  /** Roughly how big the spot is, as the gardener said: small (a bed up to
+   *  about 15 ft / 5 m across), medium (about 25 ft / 8 m), or large. Caps
+   *  how wide a plant the spot is offered (`lib/first-picks.ts`). Unset on
+   *  spots saved before it was asked, which are offered every size. */
+  room?: Room | null;
   weights: Weights;
   /** Invasives the gardener has found here and means to deal with — added from
    *  their own iNaturalist sightings (`lib/inat-import.ts`), oldest first. */

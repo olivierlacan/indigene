@@ -9,7 +9,7 @@ import { el, clear } from "../ui";
 import { knownRegion } from "../state";
 import { t, tx } from "../lib/i18n";
 import type { TKey } from "../locales/en";
-import { squareArt, figureArt } from "../components/page-art";
+import { squareArt, figureArt, type SquareName } from "../components/page-art";
 import { richText } from "../components/rich-text";
 import { mostWanted } from "../lib/invasives";
 import { GUIDES, guideHref, guideSources, type Guide, type GuideBlock } from "../lib/howto";
@@ -42,17 +42,18 @@ function block(b: GuideBlock): HTMLElement {
   }
 }
 
-/** A guide as a row: its square drawing, its name, one line. The row is the
+/** A page as a row: a square drawing, its name, one line. The row is the
  *  link, the way a plant's row is. */
-export function guideRow(guide: Guide): HTMLElement {
-  return el("a", { class: "card guide-row", href: guideHref(guide) }, [
-    squareArt(guide.square),
-    el("span", { class: "guide-row-text" }, [
-      el("strong", {}, t(k(`howto.${guide.slug}.title`))),
-      el("span", {}, t(k(`howto.${guide.slug}.line`))),
-    ]),
+export function pageRow(href: string, square: SquareName, title: string, line: string): HTMLElement {
+  return el("a", { class: "card guide-row", href }, [
+    squareArt(square),
+    el("span", { class: "guide-row-text" }, [el("strong", {}, title), el("span", {}, line)]),
   ]);
 }
+
+/** A guide as a row. */
+export const guideRow = (guide: Guide): HTMLElement =>
+  pageRow(guideHref(guide), guide.square, t(k(`howto.${guide.slug}.title`)), t(k(`howto.${guide.slug}.line`)));
 
 export function renderGuide(main: HTMLElement, guide: Guide): void {
   clear(main);

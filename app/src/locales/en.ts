@@ -3547,12 +3547,15 @@ export const en = {
   "welcome.way.volunteerLine": "What to know before a volunteer planting.",
   "wanted.disposeGuide": "Bagging and piling what you pull →",
   "planting.landTitle": "Planting",
-  "planting.landLede": "How to get a plant into the ground, and how to turn one plant into several.",
+  "planting.landLede": "Clear the ground, get a plant into it, then turn one plant into several.",
   "planting.groundTitle": "In the ground",
   "howto.back.planting": "← Planting",
   "howto.back.removing": "← Before you pull a plant",
   "howto.back.volunteer": "← Planting day",
   "howto.groupWayOn": "Planting with a group? See {link}.",
+  "planting.clearTitle": "Clearing the ground",
+  "planting.row.lawn": "Bury the grass under cardboard, then plant.",
+  "planting.row.removing": "Whether it should go, when, and whose call it is.",
 } as const;
 
 /** Every valid string key. Derived, so it can never drift from the strings. */

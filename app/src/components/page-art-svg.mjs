@@ -696,6 +696,18 @@ function sqSpade() {
   return s;
 }
 
+/** "Before you pull a plant": a weed lifted clear of the soil, roots and all. */
+function sqPull() {
+  let s = "";
+  s += rect("earth", 0, 48, SQ, 16);
+  s += ellipse("soil", 32, 48, 10, 3);
+  s += stem(32, 34, 31, 24, 32, 12);
+  s += path("leaf", leaf(32, 26, 19, 18, 4.5)) + path("leaf", leaf(32, 22, 46, 13, 4.5)) + path("leaf", leaf(32, 30, 45, 26, 3.5));
+  s += path("root", "M32 34Q30 40 27 45") + path("root fine", "M32 34Q35 40 38 43M32 34Q32 40 32 46");
+  s += path("arrow", "M52 40V26m-5 6l5 -6l5 6");
+  return s;
+}
+
 /** "What to bring": a glove, four fingers and a thumb. */
 function sqGlove() {
   let s = "";
@@ -704,7 +716,7 @@ function sqGlove() {
   return s;
 }
 
-const SQUARES = { zombie: sqZombie, lights: sqLights, bury: sqBury, sources: sqSources, pot: sqPot, bag: sqBag, spade: sqSpade, glove: sqGlove };
+const SQUARES = { zombie: sqZombie, lights: sqLights, bury: sqBury, sources: sqSources, pot: sqPot, bag: sqBag, spade: sqSpade, glove: sqGlove, pull: sqPull };
 
 /** The names a section can ask for. */
 export const SQUARE_NAMES = Object.keys(SQUARES);

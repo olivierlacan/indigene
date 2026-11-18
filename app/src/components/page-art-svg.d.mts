@@ -5,7 +5,7 @@ export const PAGE_ART_RULES: string;
 export const PAGE_ART_LIGHT: string;
 export const PAGE_ART_DARK: string;
 export const PAGE_ART_CSS: string;
-export type SquareName = "zombie" | "lights" | "bury" | "sources" | "pot" | "bag" | "spade" | "glove";
+export type SquareName = "zombie" | "lights" | "bury" | "sources" | "pot" | "bag" | "spade" | "glove" | "pull";
 export const SQUARE_NAMES: SquareName[];
 export function squareArtSvg(name: SquareName): string;
 export type FigureName = "rootbound" | "bucket" | "mound" | "bag" | "rootSizes" | "spade" | "fabric" | "kit";

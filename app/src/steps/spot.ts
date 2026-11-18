@@ -45,7 +45,7 @@ import { linkedLogin } from "../lib/inat-account";
 import { getInvasive } from "../lib/invasives";
 import { rankPlants, NO_FILTERS } from "../lib/ranking";
 import { missingEssentials, roomCap } from "../lib/first-picks";
-import { roomChoice } from "../components/room-choice";
+import { roomChoice, countLine } from "../components/room-choice";
 import { maxSpreadChoices } from "../lib/units";
 import { plantRow } from "./region";
 
@@ -278,7 +278,10 @@ function essentialsCard(
     ...(picks.length
       ? [
           el("p", { style: "margin:0 0 0.6rem" }, t("spot.essentialsLede")),
-          el("div", { class: "card-grid" }, picks.map((r) => plantRow(r.plant, regionId, { caterpillars: true }).node)),
+          el("div", { class: "card-grid" }, picks.map((r) => plantRow(r.plant, regionId, {
+            caterpillars: true,
+            note: spot.room ? countLine(r.plant, spot.room, picks.length) : undefined,
+          }).node)),
         ]
       : [el("p", { class: "note" }, t("spot.essentialsAll"))]),
   ]);

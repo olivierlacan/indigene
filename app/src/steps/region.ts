@@ -543,6 +543,9 @@ interface RowOptions {
    *  the reader filtered to the plants at risk, which says once above it to
    *  buy them from a nursery (see `components/conservation-note.ts`). */
   atRisk?: boolean;
+  /** One short line under the names, e.g. how many to plant in a spot of a
+   *  known size ("Plant 4, 3 ft apart"). */
+  note?: string;
 }
 
 export function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { node: HTMLElement; mark: (nq: string) => void } {
@@ -574,6 +577,7 @@ export function plantRow(p: Plant, regionId: string, opts: RowOptions = {}): { n
           : null,
       ]),
       sub,
+      opts.note ? el("div", { class: "row-note" }, opts.note) : null,
     ]),
     opts.pioneer ? pressureFooter({ entry: opts.pioneer }, { interactive: false }) : null,
     opts.atRisk ? conservationFooter(p.id, regionId) : null,

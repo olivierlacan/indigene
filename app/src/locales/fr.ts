@@ -1287,6 +1287,8 @@ export const fr: Dict = {
   "first.room.large": "Grande",
   "first.roomCap": "Plantes de {size} de large au plus, ici et dans la liste.",
   "first.roomAny": "Plantes de toutes tailles.",
+  "first.count.one": "Plantez-en {n}",
+  "first.count.other": "Plantez-en {n}, à {gap} d'écart",
   "room.like.small": "Comme une plate-bande ou une bande le long du trottoir.",
   "room.like.medium": "Comme un jardin ordinaire.",
   "room.like.large": "Comme un grand terrain.",

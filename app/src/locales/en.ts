@@ -1314,6 +1314,8 @@ export const en = {
   "first.room.large": "Large",
   "first.roomCap": "Plants up to {size} wide, here and in the list below.",
   "first.roomAny": "Plants of any size.",
+  "first.count.one": "Plant {n}",
+  "first.count.other": "Plant {n}, {gap} apart",
   "room.like.small": "Like a bed or a strip by the sidewalk.",
   "room.like.medium": "Like a typical backyard.",
   "room.like.large": "Like a big lot.",

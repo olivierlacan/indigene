@@ -88,3 +88,22 @@ export function roomCap(room: Room, ladder: readonly { ft: number }[]): number |
 export function roomOf(cap: number | null, ladder: readonly { ft: number }[]): Room | null {
   return ROOMS.find((r) => roomCap(r, ladder) === cap) ?? null;
 }
+
+/** The most of one plant a suggestion asks for: a drift, not a hedge of
+ *  nursery pots. A big lot could hold hundreds of goldenrods; a reader starting
+ *  out needs a number they can carry to the till. */
+export const MAX_COUNT = 25;
+
+/**
+ * How many of a plant to put in: the spot's area shared evenly among the
+ * `kinds` suggested together, divided by the ground one grown plant covers (a
+ * square as wide as its mature spread, which is also the spacing). At least
+ * one, at most `MAX_COUNT`. Layers overlap in a real garden — a shrub under a
+ * tree — so this is a starting count per plant, never a claim that the spot
+ * is full.
+ */
+export function howMany(spreadFt: number, room: Room, kinds: number): number {
+  const share = ROOM_AREA[room].sqft / Math.max(1, kinds);
+  const each = Math.max(1, spreadFt) ** 2;
+  return Math.min(MAX_COUNT, Math.max(1, Math.round(share / each)));
+}

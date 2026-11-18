@@ -31,7 +31,7 @@ import { commonName, regionName, regionReference } from "../lib/names";
 import { filterBox, norm } from "../components/filter-field";
 import { filterCount } from "../lib/filter-traits";
 import { firstPicks, roomCap, roomOf } from "../lib/first-picks";
-import { roomChoice } from "../components/room-choice";
+import { roomChoice, countLine } from "../components/room-choice";
 import type { Room } from "../lib/first-picks";
 import { plantRow } from "./region";
 import type { Plant, PlantForm } from "../types";
@@ -186,6 +186,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     const ladder = maxSpreadChoices();
     const cap = store.filters.maxSpreadFt;
     const room = roomOf(cap, ladder);
+    const sized = store.draft.room && store.draft.room === room ? room : null;
     // An empty card is no answer, unless a room choice emptied it: then the
     // buttons stay, so the reader can widen it again.
     if (!picks.length && cap == null) { clear(firstEl); return; }
@@ -208,7 +209,11 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
       roomChoice(t("first.roomLabel"), room, setRoom),
       el("p", { class: "first-picks-caption" }, caption),
       ...(picks.length
-        ? [el("div", { class: "card-grid" }, picks.map((r) => plantRow(r.plant, regionId, { caterpillars: true }).node))]
+        ? [el("div", { class: "card-grid" }, picks.map((r) => plantRow(r.plant, regionId, {
+            caterpillars: true,
+            // Counts only once the reader has said how big the spot is.
+            note: sized ? countLine(r.plant, sized, picks.length) : undefined,
+          }).node))]
         : []),
     );
   }

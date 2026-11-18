@@ -1848,6 +1848,13 @@ button.segment[aria-pressed="true"] {
   line-height: 1.2;
   padding: 0.35rem 0.3rem;
 }
+/* "Plant 4, 3 ft apart" under a suggestion's names. */
+.row-note {
+  margin-top: 0.15rem;
+  font-size: 0.85rem;
+  font-weight: 650;
+  color: var(--brand-ink);
+}
 /* The rough area under each size word: "~100 ft²". */
 .segment-sub {
   font-size: 0.75rem;

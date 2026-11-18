@@ -1,7 +1,7 @@
 // "Plant these first": one per genus, essential plants first, in the list's
 // own order, and never a poor fit.
 import { describe, it, expect } from "vitest";
-import { firstPicks, missingEssentials, roomCap, roomOf, FIRST_PICKS } from "./first-picks";
+import { firstPicks, missingEssentials, roomCap, roomOf, howMany, FIRST_PICKS, MAX_COUNT } from "./first-picks";
 import type { Ranked } from "./ranking";
 import type { Plant } from "../types";
 
@@ -87,5 +87,22 @@ describe("rooms", () => {
     expect(roomOf(10, feet)).toBe("small");
     expect(roomOf(null, feet)).toBe("large");
     expect(roomOf(6, feet)).toBeNull();
+  });
+});
+
+describe("howMany", () => {
+  it("shares a small bed: a drift of goldenrod, one blueberry", () => {
+    // 100 ft² over 3 kinds is ~33 ft² each: three 3-ft goldenrods, one 6-ft shrub.
+    expect(howMany(3, "small", 3)).toBe(4);
+    expect(howMany(6, "small", 3)).toBe(1);
+  });
+
+  it("never asks for none, or for a field of one plant", () => {
+    expect(howMany(60, "small", 4)).toBe(1);
+    expect(howMany(2, "large", 4)).toBe(MAX_COUNT);
+  });
+
+  it("gives each kind more room in a bigger spot", () => {
+    expect(howMany(6, "medium", 4)).toBeGreaterThan(howMany(6, "small", 4));
   });
 });

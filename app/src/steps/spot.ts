@@ -29,6 +29,7 @@ import {
 import { spotValue, type SpotValue } from "../lib/spot-value";
 import { menuCard, sightingsCard, ownCard, fullMenu } from "../components/spot-wildlife";
 import { planFor, renderSeasonPlan, seasonCard } from "../components/season-plan";
+import { readCount, readPlanted } from "../lib/planting-input";
 import { isUuid, linkedObservation, observationUrl, parseObservationRef } from "../lib/observation-link";
 import { observationList, photoTile } from "../components/observation-ui";
 import { nativeSightings, ownSightings, plantedBy, sightingsOfPlant, type OwnSighting } from "../lib/inat-import";
@@ -886,23 +887,14 @@ function plantingFields(
         count,
       ]),
     ],
-    planted: () => {
-      const y = Number(year.value);
-      return Number.isFinite(y) && y > 1000
-        ? {
-            year: y,
-            ...(month.value ? { month: Number(month.value) } : {}),
-            ...(month.value && day.value ? { day: Number(day.value) } : {}),
-          }
-        : null;
-    },
+    planted: () => readPlanted(year.value, month.value, day.value, now.year + 1),
     setPlanted: (d) => {
       year.value = String(d.year);
       month.value = d.month ? String(d.month) : "";
       syncDays();
       day.value = d.month && d.day ? String(d.day) : "";
     },
-    count: () => Math.max(1, Math.min(999, Number(count.value) || 1)),
+    count: () => readCount(count.value),
   };
 }
 

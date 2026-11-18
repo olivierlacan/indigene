@@ -75,11 +75,13 @@
     "wildlife:native": "NODE_USE_ENV_PROXY=1 node scripts/check-wildlife-native.mjs",
     "wildlife:ties": "NODE_USE_ENV_PROXY=1 node scripts/check-wildlife-ties.mjs",
     "wildlife:gaps": "node scripts/wildlife-gaps.mjs",
-    "maps:coverage": "NODE_USE_ENV_PROXY=1 node scripts/build-region-maps.mjs --coverage-only"
+    "maps:coverage": "NODE_USE_ENV_PROXY=1 node scripts/build-region-maps.mjs --coverage-only",
+    "fuzz": "FC_RUNS=20000 vitest run src/lib/inputs.property.test.ts"
   },
   "devDependencies": {
     "d3-geo": "^3.1.1",
     "fake-indexeddb": "^6.2.5",
+    "fast-check": "^4.10.3",
     "playwright": "^1.62.0",
     "polygon-clipping": "^0.15.7",
     "typescript": "^5.6.3",

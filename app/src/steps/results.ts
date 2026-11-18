@@ -30,7 +30,8 @@ import { maxHeightChoices, maxSpreadChoices, nearestRung, temperature } from "..
 import { commonName, regionName, regionReference } from "../lib/names";
 import { filterBox, norm } from "../components/filter-field";
 import { filterCount } from "../lib/filter-traits";
-import { firstPicks, roomCap, roomOf, ROOMS } from "../lib/first-picks";
+import { firstPicks, roomCap, roomOf } from "../lib/first-picks";
+import { roomChoice } from "../components/room-choice";
 import type { Room } from "../lib/first-picks";
 import { plantRow } from "./region";
 import type { Plant, PlantForm } from "../types";
@@ -190,8 +191,10 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     if (!picks.length && cap == null) { clear(firstEl); return; }
     const sizeLabel = (ft: number): string => ladder.find((c) => c.ft === nearestRung(ladder, ft))!.label;
     const caption = cap == null
-      ? t("first.roomAny")
-      : t(room ? "first.roomCap" : "first.roomOther", { size: sizeLabel(cap) });
+      ? `${t("room.like.large")} ${t("first.roomAny")}`
+      : room
+      ? `${t(`room.like.${room}` as const)} ${t("first.roomCap", { size: sizeLabel(cap) })}`
+      : t("first.roomOther", { size: sizeLabel(cap) });
     const setRoom = (r: Room): void => {
       store.filters.maxSpreadFt = roomCap(r, ladder);
       store.draft.room = r;
@@ -202,16 +205,7 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
     firstEl.replaceChildren(
       el("h3", { id: "first-picks-title" }, t("first.title")),
       el("p", { class: "first-picks-lede" }, t("first.lede")),
-      el("div", { class: "first-picks-room" }, [
-        el("span", { class: "roster-control-label" }, t("first.roomLabel")),
-        el("div", { class: "segmented", role: "group", "aria-label": t("first.roomLabel") },
-          ROOMS.map((r) => el("button", {
-            class: "segment",
-            type: "button",
-            "aria-pressed": r === room ? "true" : "false",
-            onClick: () => setRoom(r),
-          }, t(`first.room.${r}` as const)))),
-      ]),
+      roomChoice(t("first.roomLabel"), room, setRoom),
       el("p", { class: "first-picks-caption" }, caption),
       ...(picks.length
         ? [el("div", { class: "card-grid" }, picks.map((r) => plantRow(r.plant, regionId, { caterpillars: true }).node))]

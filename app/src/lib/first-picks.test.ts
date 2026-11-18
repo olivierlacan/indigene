@@ -75,15 +75,16 @@ describe("rooms", () => {
   const metres = [1, 2, 3, 5, 8, 12, 20].map((m) => ({ ft: m * 3.28084 }));
 
   it("sets the spread cap to a rung of the filter's own ladder", () => {
-    expect(roomCap("small", feet)).toBe(15);
+    // A 100 ft² bed is 10 ft across; a 1,000 ft² yard about 32, nearest 25.
+    expect(roomCap("small", feet)).toBe(10);
     expect(roomCap("medium", feet)).toBe(25);
     expect(roomCap("large", feet)).toBeNull();
-    expect(roomCap("small", metres)).toBeCloseTo(5 * 3.28084);
+    expect(roomCap("small", metres)).toBeCloseTo(3 * 3.28084);
     expect(roomCap("medium", metres)).toBeCloseTo(8 * 3.28084);
   });
 
   it("reads a cap back as its room, and a hand-set cap as none", () => {
-    expect(roomOf(15, feet)).toBe("small");
+    expect(roomOf(10, feet)).toBe("small");
     expect(roomOf(null, feet)).toBe("large");
     expect(roomOf(6, feet)).toBeNull();
   });

@@ -58,19 +58,27 @@ function pickByGenus(ranked: readonly Ranked[], n: number, have: ReadonlySet<str
   return picks;
 }
 
-/** The three answers to "how much room?", as a cap on mature spread in feet.
- *  `null` is no cap. Read against the size filter's own ladder, so a choice
- *  here is that filter set to a rung, and the two never disagree. */
+/** The three answers to "how big is this spot?", an order of magnitude
+ *  apart: a bed, a backyard, a big lot. Round numbers in both systems, so
+ *  neither reads as a conversion of the other (10 m² is 108 ft², near enough
+ *  for a rough answer). */
 export const ROOMS: readonly Room[] = ["small", "medium", "large"];
+export const ROOM_AREA: Record<Room, { sqft: number; sqm: number }> = {
+  small: { sqft: 100, sqm: 10 },
+  medium: { sqft: 1_000, sqm: 100 },
+  large: { sqft: 10_000, sqm: 1_000 },
+};
 
-/** Target spreads: a small yard fits a shrub or a narrow tree, a medium one a
- *  tree the width of a house front, a large one anything. */
-const ROOM_FT: Record<Room, number | null> = { small: 15, medium: 25, large: null };
-
-/** The rung of `ladder` a room sets the spread cap to. */
+/**
+ * The cap on mature spread a size sets, as a rung of the size filter's own
+ * ladder, so a choice here is that filter set and the two never disagree.
+ * A plant as wide as a square spot of that area is the widest it can take:
+ * about 10 ft for a bed, 30 for a backyard. A big lot takes anything (100 ft
+ * across is wider than any plant on the lists), so it sets no cap.
+ */
 export function roomCap(room: Room, ladder: readonly { ft: number }[]): number | null {
-  const target = ROOM_FT[room];
-  if (target == null) return null;
+  if (room === "large") return null;
+  const target = Math.sqrt(ROOM_AREA[room].sqft);
   return ladder.reduce((best, c) =>
     Math.abs(c.ft - target) < Math.abs(best - target) ? c.ft : best, ladder[0].ft);
 }

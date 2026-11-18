@@ -1842,7 +1842,17 @@ button.segment[aria-pressed="true"] {
 .first-picks-room .segmented { display: flex; }
 .first-picks-room .segment {
   flex: 1 1 0;
+  flex-direction: column;
   justify-content: center;
+  gap: 0;
+  line-height: 1.2;
+  padding: 0.35rem 0.3rem;
+}
+/* The rough area under each size word: "~100 ft²". */
+.segment-sub {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ink-soft);
 }
 .first-picks-caption {
   margin: 0.4rem 0 0.6rem;

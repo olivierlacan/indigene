@@ -1057,10 +1057,11 @@ export interface SavedSpot {
   deciduousOverhead?: boolean;
   /** Region id the user picked by hand for this spot (e.g. just over a boundary). */
   regionOverride?: string | null;
-  /** Roughly how big the spot is, as the gardener said: small (a bed up to
-   *  about 15 ft / 5 m across), medium (about 25 ft / 8 m), or large. Caps
-   *  how wide a plant the spot is offered (`lib/first-picks.ts`). Unset on
-   *  spots saved before it was asked, which are offered every size. */
+  /** Roughly how big the spot is, as the gardener said, an order of
+   *  magnitude apart: small (~100 ft² / 10 m², a bed), medium (~1,000 ft²,
+   *  a backyard) or large (~10,000 ft², a big lot). Caps how wide a plant the
+   *  spot is offered (`lib/first-picks.ts`). Unset on spots saved before it
+   *  was asked, which are offered every size. */
   room?: Room | null;
   weights: Weights;
   /** Invasives the gardener has found here and means to deal with — added from

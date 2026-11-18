@@ -44,7 +44,8 @@ import { t, fmtDate, fmtNumber, monthName } from "../lib/i18n";
 import { linkedLogin } from "../lib/inat-account";
 import { getInvasive } from "../lib/invasives";
 import { rankPlants, NO_FILTERS } from "../lib/ranking";
-import { missingEssentials, roomCap, ROOMS } from "../lib/first-picks";
+import { missingEssentials, roomCap } from "../lib/first-picks";
+import { roomChoice } from "../components/room-choice";
 import { maxSpreadChoices } from "../lib/units";
 import { plantRow } from "./region";
 
@@ -263,24 +264,16 @@ function essentialsCard(
   const picks = missingEssentials(ranked, planted);
   const size = cap == null ? "" : ladder.find((c) => c.ft === cap)?.label ?? "";
   const roomLine = !spot.room ? t("spot.roomUnset")
-    : cap == null ? t("spot.roomLarge")
-    : t("spot.roomCap", { size });
-  const card: HTMLElement = el("section", { class: "card first-picks-room" }, [
+    : `${t(`room.like.${spot.room}` as const)} ${cap == null ? t("spot.roomLarge") : t("spot.roomCap", { size })}`;
+  const card: HTMLElement = el("section", { class: "card" }, [
     el("h3", { style: "margin:0 0 0.5rem" }, t("spot.essentialsTitle")),
-    el("span", { class: "roster-control-label" }, t("spot.roomLabel")),
-    el("div", { class: "segmented", role: "group", "aria-label": t("spot.roomLabel") },
-      ROOMS.map((r) => el("button", {
-        class: "segment",
-        type: "button",
-        "aria-pressed": r === spot.room ? "true" : "false",
-        // Redrawn in place: a whole-page redraw would jump to the top.
-        // Set on the page's own spot, so "See plants" opens it at this size.
-        onClick: async () => {
-          spot.room = r;
-          await saveSpot(spot);
-          card.replaceWith(essentialsCard(spot, plantings, plantOf, roster, regionId));
-        },
-      }, t(`first.room.${r}` as const)))),
+    // Redrawn in place: a whole-page redraw would jump to the top. Set on the
+    // page's own spot, so "See plants" opens it at this size.
+    roomChoice(t("spot.roomLabel"), spot.room ?? null, async (r) => {
+      spot.room = r;
+      await saveSpot(spot);
+      card.replaceWith(essentialsCard(spot, plantings, plantOf, roster, regionId));
+    }),
     el("p", { class: "first-picks-caption" }, roomLine),
     ...(picks.length
       ? [

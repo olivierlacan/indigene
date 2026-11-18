@@ -1,5 +1,13 @@
-// Ways to grow more: the index at `#/planting` and a page per technique at
-// `#/planting/<slug>`.
+// Planting (`#/planting`): the page for everything between choosing a plant
+// and having more of it. It runs in the order the work does — clearing the
+// ground (the lawn guide, Before you pull a plant, disposing of invasives),
+// getting a plant in the ground (the two how-to guides in `lib/howto.ts`),
+// then the ways to grow more, a page per technique at `#/planting/<slug>`.
+//
+// The technique addresses are older than this layout and are linked from
+// every plant page and from the release notes; `routes.test.ts` pins each one
+// so a rearrangement here can never move them. The rest of this note is about
+// the techniques.
 //
 // ## Why these left the plant page
 //
@@ -51,6 +59,8 @@ import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { commonName } from "../lib/names";
 import { richText } from "../components/rich-text";
 import { seasonStrip } from "../components/season-strip";
+import { GUIDES, guideAt } from "../lib/howto";
+import { guideRow, pageRow, renderGuide } from "./howto";
 
 /** The index's address. One place knows the URL shape. */
 const INDEX_HREF = "#/planting";
@@ -182,8 +192,21 @@ export async function renderPlantingIndex(main: HTMLElement): Promise<void> {
   document.title = t("planting.docTitle");
 
   main.append(
-    el("h2", { class: "step-title" }, t("planting.title")),
-    el("p", { class: "step-lede" }, t("planting.lede")),
+    el("h2", { class: "step-title" }, t("planting.landTitle")),
+    el("p", { class: "step-lede" }, t("planting.landLede")),
+    // The page runs in the order the work does: clear the ground, plant, then
+    // make more. Each row is a page of its own; the techniques are below.
+    el("h3", { id: "clearing" }, t("planting.clearTitle")),
+    el("div", { class: "guide-rows" }, [
+      pageRow("#/kill-your-lawn", "bury", t("lawn.title"), t("planting.row.lawn")),
+      pageRow("#/removing", "pull", t("removing.title"), t("planting.row.removing")),
+      ...GUIDES.filter((g) => g.home === "removing").map(guideRow),
+    ]),
+    el("h3", { id: "ground" }, t("planting.groundTitle")),
+    el("div", { class: "guide-rows" }, GUIDES.filter((g) => g.home === "planting").map(guideRow)),
+    el("p", { class: "more-link" }, tx("howto.groupWayOn", { link: el("a", { href: "#/volunteer" }, t("volunteer.title")) })),
+    el("h3", { id: "grow-more" }, t("planting.title")),
+    el("p", {}, t("planting.lede")),
     // What this season is for, and the two things to know before believing any
     // window on the page. One stack on a phone; on a laptop the card takes the
     // left column and the two caveats stand beside it (see `.planting-top` —
@@ -203,8 +226,6 @@ export async function renderPlantingIndex(main: HTMLElement): Promise<void> {
     ]),
     techniqueGroup("seed"),
     techniqueGroup("plant"),
-    // Most gardens start from turf, and none of the techniques above clear it.
-    el("p", { class: "more-link" }, tx("lawn.wayOn", { link: el("a", { href: "#/kill-your-lawn" }, t("lawn.wayOnLink")) })),
     sourcesSection(),
     el("div", { class: "btn-row", style: "margin-top:1rem" }, [
       el("button", { class: "btn btn-secondary", onClick: () => navigate("plants") }, t("planting.browsePlants")),
@@ -334,6 +355,9 @@ function renderNotFound(main: HTMLElement, slug: string): void {
  *  mistyped link looking like it worked. */
 export async function renderPlanting(main: HTMLElement, param?: string): Promise<void> {
   if (!param) return renderPlantingIndex(main);
+  // Not every page under `#/planting` is a technique: two are how-to guides.
+  const guide = guideAt("planting", param);
+  if (guide) return renderGuide(main, guide);
   const tech = techniqueBySlug(param);
   return tech ? renderTechnique(main, tech) : renderNotFound(main, param);
 }

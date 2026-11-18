@@ -388,9 +388,9 @@ async function collectPages(load) {
     image: invasiveCard("index"),
     imageAlt: "Worst invasives — each region's five invasive plants to pull first",
   });
-  add("planting", en["planting.docTitle"], en["planting.lede"], {
+  add("planting", en["planting.docTitle"], en["planting.landLede"], {
     image: plantingCard("index"),
-    imageAlt: "Ways to grow more — the four seasons, and the count of techniques and sources behind the page",
+    imageAlt: "Planting — clear the ground, get a plant in, then grow more; the four seasons and the count of techniques behind the page",
   });
   add("privacy", en["privacy.docTitle"], en["privacy.lede"], {
     image: pageCard("privacy"),
@@ -479,6 +479,22 @@ async function collectPages(load) {
       fill(en["lawn.picksTitle"], { region: region.meta.name }) + " · Indigene",
       en["lawn.lede"],
       { image: pageCard("kill-your-lawn"), imageAlt: en["lawn.title"] }
+    );
+  }
+  // Your first planting day: the page an organizer sends. And the how-to
+  // guides, each a file under the page it lives on, so a link to "planting
+  // from a pot" previews as that.
+  const { GUIDES, guidePath } = await load("/src/lib/howto.ts");
+  add("volunteer", en["volunteer.docTitle"], en["volunteer.lede"], {
+    image: pageCard("volunteer"),
+    imageAlt: "Your first planting day — what to know before a volunteer native planting",
+  });
+  for (const guide of GUIDES) {
+    add(
+      guidePath(guide),
+      fill(en["howto.docTitle"], { name: en[`howto.${guide.slug}.title`] }),
+      en[`howto.${guide.slug}.lede`],
+      { image: pageCard(guide.home === "volunteer" ? "volunteer" : "how-to"), imageAlt: en[`howto.${guide.slug}.title`] }
     );
   }
   // The LLM bill: measured tokens, estimated electricity, and the design that

@@ -1,9 +1,12 @@
 // The drawings' colours live twice: in styles.css for the app, and in
 // PAGE_ART_CSS for What's new and the Guide. This holds the two alike.
 import { describe, it, expect } from "vitest";
-import { PAGE_ART_NAMES, PAGE_ART_RULES, PAGE_ART_LIGHT, PAGE_ART_DARK, SQUARE_NAMES, pageArtSvg, squareArtSvg } from "./page-art-svg.mjs";
+import { PAGE_ART_NAMES, PAGE_ART_RULES, PAGE_ART_LIGHT, PAGE_ART_DARK, SQUARE_NAMES, FIGURE_NAMES, pageArtSvg, squareArtSvg, figureArtSvg } from "./page-art-svg.mjs";
 
-const ALL = [...PAGE_ART_NAMES.map((n) => [n, pageArtSvg(n)]), ...SQUARE_NAMES.map((n) => [n, squareArtSvg(n)])];
+const DECORATIVE = [...PAGE_ART_NAMES.map((n) => [n, pageArtSvg(n)]), ...SQUARE_NAMES.map((n) => [n, squareArtSvg(n)])];
+// The how-to figures carry meaning, so they are labelled rather than hidden.
+const FIGURES = FIGURE_NAMES.map((n) => [n, figureArtSvg(n, `A "label" & more`)]);
+const ALL = [...DECORATIVE, ...FIGURES];
 
 // Through the `?raw` glob brand.test.ts uses: a plain CSS import comes back
 // empty under the test runner.
@@ -25,11 +28,19 @@ describe("page drawings", () => {
       const classes = new Set([...svg.matchAll(/class="([^"]+)"/g)].flatMap((m) => m[1].split(" ")));
       classes.delete("page-art");
       classes.delete("square-art");
+      classes.delete("figure-art");
       for (const c of classes) expect(PAGE_ART_RULES, `${name}: .${c}`).toMatch(new RegExp(`\\.${c}[ ,]`));
     }
   });
 
-  it("hides every drawing from screen readers", () => {
-    for (const [, svg] of ALL) expect(svg).toContain('aria-hidden="true"');
+  it("hides every decorative drawing from screen readers", () => {
+    for (const [, svg] of DECORATIVE) expect(svg).toContain('aria-hidden="true"');
+  });
+
+  it("labels every figure, with the label escaped", () => {
+    for (const [, svg] of FIGURES) {
+      expect(svg).toContain('role="img"');
+      expect(svg).toContain('aria-label="A &quot;label&quot; &amp; more"');
+    }
   });
 });

@@ -27,6 +27,7 @@ import { readingRegionIds } from "../data/reading";
 import { postSlugs } from "../data/posts";
 import { TECHNIQUES, techniqueBySlug } from "./planting";
 import { WILDLIFE } from "../data/wildlife";
+import { GUIDES, guideAt, guidePath } from "./howto";
 
 /**
  * Every step the router knows, in no particular order.
@@ -73,6 +74,7 @@ export const APP_STEPS = [
   "people",
   "map",
   "kill-your-lawn",
+  "volunteer",
 ] as const;
 
 export type AppStep = (typeof APP_STEPS)[number];
@@ -112,6 +114,10 @@ export const PARAM_STEPS = new Set<string>([
   "posts",
   // `kill-your-lawn/<region>` is the page with one region's picks.
   "kill-your-lawn",
+  // `volunteer/<guide>` and `removing/<guide>` are how-to guides (`lib/howto.ts`),
+  // as are the `planting/<slug>` addresses that aren't a technique.
+  "volunteer",
+  "removing",
 ]);
 
 /** The index pages that are shareable in their own right. `settings` is absent
@@ -141,6 +147,7 @@ export const SHAREABLE_INDEXES: readonly string[] = [
   "posts",
   "people",
   "kill-your-lawn",
+  "volunteer",
 ];
 
 const STEP_SET = new Set<string>(APP_STEPS);
@@ -226,7 +233,7 @@ export function canonicalPath(step: string, param?: string): string | null {
     }
     // One propagation technique's how-to and its window in the year.
     case "planting":
-      return techniqueBySlug(param) ? at(param) : null;
+      return techniqueBySlug(param) || guideAt(step, param) ? at(param) : null;
     // One region's further reading.
     case "reading":
       return readingRegionIds().includes(param) ? at(param) : null;
@@ -238,6 +245,10 @@ export function canonicalPath(step: string, param?: string): string | null {
     // The lawn page with one region's picks.
     case "kill-your-lawn":
       return REGIONS.some((r) => r.meta.id === param) ? at(param) : null;
+    // A how-to guide that lives under one of these.
+    case "volunteer":
+    case "removing":
+      return guideAt(step, param) ? at(param) : null;
     default:
       return null;
   }
@@ -352,6 +363,7 @@ export function shareablePaths(): string[] {
   for (const id of readingRegionIds()) paths.push(`reading/${id}`);
   for (const slug of postSlugs()) paths.push(`posts/${slug}`);
   for (const region of REGIONS) paths.push(`kill-your-lawn/${region.meta.id}`);
+  for (const guide of GUIDES) paths.push(guidePath(guide));
   paths.push("film/fr");
   return paths;
 }

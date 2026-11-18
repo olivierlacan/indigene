@@ -24,6 +24,8 @@ import { t, tx } from "../lib/i18n";
 import type { TKey } from "../locales/en";
 import { mostWanted } from "../lib/invasives";
 import { pioneerCountForRegion } from "../lib/pioneers";
+import { GUIDES, guideAt } from "../lib/howto";
+import { guideRow, renderGuide } from "./howto";
 
 /** The evidence, in the order the page leans on it. Names are the pages' own
  *  titles and stay untranslated; `what` is the dictionary key. */
@@ -156,7 +158,10 @@ const p = (key: TKey): HTMLElement => el("p", {}, t(key));
 const boldLead = (lead: TKey, rest: (Node | string)[] | string): HTMLElement =>
   el("li", {}, [el("strong", {}, t(lead)), " ", ...(typeof rest === "string" ? [rest] : rest)]);
 
-export function renderRemoving(main: HTMLElement): void {
+export function renderRemoving(main: HTMLElement, param?: string): void {
+  // `#/removing/disposal` is the how-to that follows this page's decision.
+  const guide = param ? guideAt("removing", param) : undefined;
+  if (guide) return renderGuide(main, guide);
   clear(main);
   document.title = t("removing.docTitle");
 
@@ -218,6 +223,8 @@ export function renderRemoving(main: HTMLElement): void {
       el("h3", {}, t("removing.afterTitle")),
       el("ul", {}, (["removing.after1", "removing.after2", "removing.after3"] as TKey[])
         .map((k) => el("li", {}, t(k)))),
+      // Where the pulled pieces go: bag, pile, or leave alone.
+      el("div", { class: "guide-rows" }, GUIDES.filter((g) => g.home === "removing").map(guideRow)),
       // Turf is the other ground people clear, and it has a page of its own.
       el("p", { class: "more-link" }, tx("lawn.wayOn", { link: el("a", { href: "#/kill-your-lawn" }, t("lawn.wayOnLink")) })),
 

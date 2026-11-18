@@ -550,6 +550,15 @@ export const SECTIONS = [
         ],
       },
       {
+        id: "in-the-ground",
+        heading: "Getting a plant in the ground",
+        body:
+          "The top of **Planting** has two short guides for anyone with a pot " +
+          "and a spade: planting from a pot, and digging among tree roots. " +
+          "**Your first planting day** gathers them with what to bring, for " +
+          "organizers to send before a volunteer planting.",
+      },
+      {
         id: "links",
         heading: "From a plant, or from your spot",
         body:
@@ -563,7 +572,8 @@ export const SECTIONS = [
       "Collect seed only from plants you own or have permission to take from, " +
       "and never dig a plant from the wild.",
     visit: [
-      { label: "Ways to grow more", href: `${APP}/planting` },
+      { label: "Your first planting day", href: `${APP}/volunteer` },
+      { label: "Planting", href: `${APP}/planting` },
       { label: "Your saved spots", href: `${APP}/#/saved` },
     ],
     related: [
@@ -582,7 +592,7 @@ export const SECTIONS = [
         href: "https://www.rhs.org.uk/propagation",
       },
     ],
-    match: { segments: ["planting"] },
+    match: { segments: ["planting", "volunteer"] },
     published: true,
   },
 

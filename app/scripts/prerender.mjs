@@ -388,9 +388,9 @@ async function collectPages(load) {
     image: invasiveCard("index"),
     imageAlt: "Worst invasives — each region's five invasive plants to pull first",
   });
-  add("planting", en["planting.docTitle"], en["planting.lede"], {
+  add("planting", en["planting.docTitle"], en["planting.landLede"], {
     image: plantingCard("index"),
-    imageAlt: "Ways to grow more — the four seasons, and the count of techniques and sources behind the page",
+    imageAlt: "Planting — clear the ground, get a plant in, then grow more; the four seasons and the count of techniques behind the page",
   });
   add("privacy", en["privacy.docTitle"], en["privacy.lede"], {
     image: pageCard("privacy"),

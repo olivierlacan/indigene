@@ -186,8 +186,8 @@ function indexCardHtml({ techniques, sources }) {
   const cells = SEASON_ORDER.map((s) => `<div class="on">${SEASON_LABELS[s]}</div>`).join("");
   return frame({
     pill: "",
-    body: `<h1 style="font-size:88px">Ways to grow more</h1>
-<div class="term">every technique, and when in the year to do it</div>`,
+    body: `<h1 style="font-size:88px">Planting</h1>
+<div class="term">clear the ground, get a plant in, then grow more</div>`,
     foot: `<div class="year">${cells}</div>
 <div class="foot"><span class="stats"><span><b>${techniques}</b> techniques</span><span><b>${sources}</b> sources to read</span></span><span class="url">indigene.app</span></div>`,
   });

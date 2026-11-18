@@ -127,6 +127,10 @@ export async function renderLawn(main: HTMLElement, param?: string): Promise<voi
       p("lawn.mulchLede"),
       el("ol", {}, (["lawn.mulch1", "lawn.mulch2", "lawn.mulch3", "lawn.mulch4", "lawn.mulch5"] as TKey[])
         .map((k) => el("li", {}, t(k)))),
+      // Step five is "dig in"; this is how.
+      el("p", { class: "more-link" }, tx("howto.potsWayOn", {
+        link: el("a", { href: "#/planting/pots" }, t("howto.pots.title")),
+      })),
       el("p", { class: "note warn" }, [
         el("strong", {}, t("lawn.mulchWarnTitle")),
         ...tx("lawn.mulchWarn", { removing: el("a", { href: "#/removing" }, t("lawn.mulchWarnLink")) }),

@@ -9,7 +9,7 @@
 // way on.
 //
 // It doesn't overrule the organizer: site rules win, and the page says so.
-import { el, clear } from "../ui";
+import { el, clear, toast } from "../ui";
 import { navigate } from "../state";
 import { t, tx } from "../lib/i18n";
 import type { TKey } from "../locales/en";
@@ -50,6 +50,7 @@ function renderIndex(main: HTMLElement): void {
 
       el("h3", { id: "organizers" }, t("volunteer.orgTitle")),
       el("p", {}, t("volunteer.org1")),
+      el("button", { type: "button", class: "btn btn-secondary btn-block", onClick: () => void share() }, t("volunteer.share")),
       el("p", {}, tx("volunteer.org2", {
         removing: el("a", { href: "#/removing" }, t("volunteer.org2Link")),
       })),
@@ -59,6 +60,19 @@ function renderIndex(main: HTMLElement): void {
       ]),
     ]),
   );
+}
+
+/** Hands the page's link to the phone's share sheet, or copies it. The path
+ *  form, so what an organizer sends previews as this page. */
+async function share(): Promise<void> {
+  const url = `${location.origin}${import.meta.env.BASE_URL}volunteer`;
+  const data = { title: t("volunteer.title"), text: t("volunteer.shareText"), url };
+  if (navigator.share) {
+    await navigator.share(data).catch(() => {});
+    return;
+  }
+  await navigator.clipboard?.writeText(url).catch(() => {});
+  toast(t("plant.linkCopied"));
 }
 
 function renderNotFound(main: HTMLElement, slug: string): void {

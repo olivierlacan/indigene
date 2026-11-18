@@ -3472,4 +3472,7 @@ export const fr: Dict = {
   "planting.clearTitle": "Préparer le terrain",
   "planting.row.lawn": "Enterrer le gazon sous du carton, puis planter.",
   "planting.row.removing": "Faut-il l'enlever, quand, et qui en décide.",
+  "howto.potsWayOn": "Un plant à mettre en terre ? Voyez {link}.",
+  "volunteer.share": "Partager cette page",
+  "volunteer.shareText": "Avant la plantation, quelques minutes de lecture :",
 };

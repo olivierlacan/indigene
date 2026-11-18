@@ -46,7 +46,7 @@ import { anchoredHeading } from "../components/anchor-head";
 import { plantSectionHref, isHashRoute } from "../lib/routes";
 import { privacyNote } from "../components/privacy-link";
 import type { Plant, SiteData, SunEstimate } from "../types";
-import { t, tn, fmtNumber } from "../lib/i18n";
+import { t, tn, tx, fmtNumber } from "../lib/i18n";
 import { length, humanHeightLabel } from "../lib/units";
 import { commonName, nameLines, regionName, regionShort } from "../lib/names";
 import { prose, propagationNote, pioneerNote, isUntranslated, lookalikesUntranslated, alternativesUntranslated } from "../lib/prose";
@@ -1047,6 +1047,10 @@ function propagationSection(p: Plant, regionId: string): HTMLElement {
     el("p", { class: "more-link prop-all" }, [
       el("a", { href: "#/planting" }, `${t("planting.allTechniques")} →`),
     ]),
+    // Growing more ends with a plant to put in the ground; so does buying one.
+    el("p", { class: "more-link prop-all" }, tx("howto.potsWayOn", {
+      link: el("a", { href: "#/planting/pots" }, t("howto.pots.title")),
+    })),
   ]);
 }
 

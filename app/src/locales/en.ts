@@ -3556,6 +3556,9 @@ export const en = {
   "planting.clearTitle": "Clearing the ground",
   "planting.row.lawn": "Bury the grass under cardboard, then plant.",
   "planting.row.removing": "Whether it should go, when, and whose call it is.",
+  "howto.potsWayOn": "Putting a plant in the ground? See {link}.",
+  "volunteer.share": "Share this page",
+  "volunteer.shareText": "Before the planting, a few minutes of reading:",
 } as const;
 
 /** Every valid string key. Derived, so it can never drift from the strings. */

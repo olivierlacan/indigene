@@ -24,7 +24,7 @@
 // (plants, animals, impostors, invasives), the TAXREF row it resolves to — its
 // CD_NOM, the accepted CD_REF, the accepted name, the rank, and the French
 // names TAXREF gives the accepted taxon, in TAXREF's order (the first is the
-// one the référentiel leads with). About 800 rows. `check-vernacular.mjs`
+// one the référentiel leads with). A few hundred rows. `check-vernacular.mjs`
 // prefers this file when it exists and falls back to GBIF's copy of TAXREF
 // when it doesn't, saying which in the snapshot's health block.
 //
@@ -38,6 +38,7 @@ import { fileURLToPath } from "node:url";
 import { basename, join } from "node:path";
 import { openLoader } from "./_load-ts.mjs";
 import { withSeeds } from "./_regions.mjs";
+import { requireProxyAwareFetch } from "./_net.mjs";
 
 const DIR = fileURLToPath(new URL("../../data/sources/taxref/", import.meta.url));
 const OUT = join(DIR, "extract.json");
@@ -53,6 +54,7 @@ const findTable = () =>
   readdirSync(DIR).filter((f) => /^TAXREFv[\d.]+\.txt$/i.test(f)).sort().map((f) => join(DIR, f)).pop();
 
 if (args.includes("--fetch")) {
+  requireProxyAwareFetch("taxref:extract -- --fetch");
   mkdirSync(DIR, { recursive: true });
   const zip = join(DIR, basename(TAXREF_ZIP));
   console.log(`Fetching ${TAXREF_ZIP} …`);
@@ -119,7 +121,7 @@ let rows = 0;
 const rl = createInterface({ input: createReadStream(file, { encoding: "utf8" }), crlfDelay: Infinity });
 for await (const line of rl) {
   if (!header) {
-    header = line.replace(/^﻿/, "").split("\t").map((h) => h.replace(/^"|"$/g, ""));
+    header = line.replace(/^\uFEFF/, "").split("\t").map((h) => h.replace(/^"|"$/g, ""));
     const need = ["CD_NOM", "CD_REF", "LB_NOM", "RANG", "NOM_VERN"];
     col = Object.fromEntries(need.map((n) => [n, header.indexOf(n)]));
     // Status in metropolitan France — optional, so an older table still reads.

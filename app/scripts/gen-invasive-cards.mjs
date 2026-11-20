@@ -73,14 +73,6 @@ const esc = (s) =>
 
 const displayName = (common) => common.replace(/\s*\([^)]*\)\s*$/, "").trim();
 
-/** The role, trimmed to sit on one line. */
-function clipRole(role) {
-  const s = String(role).replace(/\s+/g, " ").trim();
-  if (s.length <= 40) return s;
-  const cut = s.slice(0, 39);
-  return cut.slice(0, cut.lastIndexOf(" ")).replace(/[\s,]+$/, "") + "…";
-}
-
 function nameSize(name) {
   if (name.length <= 16) return 88;
   if (name.length <= 26) return 68;

@@ -414,6 +414,10 @@ there are the check scripts (`registry:check`, `native:check`, `names:check`,
 `selection:check`, `vascan:check`, …). They answer different questions and are
 not interchangeable.
 
+The scripts themselves are plain `.mjs`, outside `typecheck`'s reach, so
+`npm run lint` (ESLint) covers them on every pull request. A script's pure
+logic gets its test in `src/lib/`, importing from `scripts/`, like the rest.
+
 **A unit test is for logic that can be wrong on inputs nobody tried.** The
 ecoregion parsers, the region-selection rules, `lead()`, the resolver's
 refusals. These are pure, they are fast, and they run on every pull request

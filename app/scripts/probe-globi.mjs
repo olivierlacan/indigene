@@ -2,8 +2,8 @@
 // United States what the Gaytán matrix gave Europe: a citable, machine-readable
 // count of the Lepidoptera species that raise their caterpillars on a plant.
 //
-//   node app/scripts/probe-globi.mjs            # everything
-//   node app/scripts/probe-globi.mjs --quick    # skip the calibration pass
+//   npm run probe:globi                # everything
+//   npm run probe:globi -- --quick     # skip the calibration pass
 //
 // **Why a probe and not a builder.** `docs/coverage-gap-pnw-france-atlantic.md`
 // §5 named the one structural hole the coverage audit exposed: we can rank

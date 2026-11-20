@@ -1,12 +1,12 @@
-# The two checks that need nothing but the code: do the types hold, and do the
-# unit tests pass.
+# The checks that need nothing but the code: do the types hold, do the scripts
+# lint, and do the unit tests pass.
 #
 # **Why this one has no `paths:` filter.** Every other check here is scoped to
 # the files it reads — the routes check to the routers and the data, the blurbs
 # check to the wildlife list — because each builds the site or calls a service
 # to answer its question, and running that for an unrelated typo is waste.
 #
-# These two are the opposite case. They are offline and they take about a
+# These are the opposite case. They are offline and they take about a
 # second, so the cost of running them always is nothing, and the cost of *not*
 # is that a scoped filter decides in advance which files could possibly break
 # them. That guess is wrong exactly when it matters: a change to a shared helper
@@ -33,7 +33,7 @@ permissions:
 
 jobs:
   test:
-    name: Types and unit tests
+    name: Types, lint and unit tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -54,6 +54,11 @@ jobs:
       - name: Typecheck
         working-directory: app
         run: npm run typecheck
+
+      # The scripts are plain .mjs, outside `typecheck`'s reach.
+      - name: Lint
+        working-directory: app
+        run: npm run lint
 
       - name: Unit tests
         working-directory: app

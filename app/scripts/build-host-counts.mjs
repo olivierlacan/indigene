@@ -343,11 +343,16 @@ if (regionArg < 0) process.exit(0);
 const regionId = process.argv[regionArg + 1];
 if (!regionId) die("--region needs a region id, e.g. --region france-atlantic");
 
+// Through the region registry, like every other script: a region's metadata
+// lives in its own `region.*.ts` now, and a file's suffix needn't be its id.
 const loader = await openLoader();
-const mod = await loader.load(`/src/data/plants.${regionId}.ts`);
+const { REGIONS } = await loader.load("/src/data/regions.ts");
+const region = REGIONS.find((r) => r.meta.id === regionId);
+const seed = region ? await region.load() : null;
 await loader.close();
+if (!region) die(`no region "${regionId}" — known: ${REGIONS.map((r) => r.meta.id).join(", ")}`);
 
-const codes = mod.REGION.ecoregion?.codes ?? [];
+const codes = (region.meta.ecoregion ?? []).flatMap((e) => e.codes);
 const zone = codes.map((c) => ZONE_FOR_EEA_REGION[c]).find(Boolean);
 if (!zone) {
   die(
@@ -356,9 +361,9 @@ if (!zone) {
   );
 }
 
-console.log(`\n${mod.REGION.name} — ${zone}\n`);
+console.log(`\n${region.meta.name} — ${zone}\n`);
 const rows = [];
-for (const plant of mod.SEED_RAW) {
+for (const plant of seed) {
   const g = genusOf.get(plant.latin) ?? plant.latin.split(/\s+/)[0];
   const gi = genusIdx.get(g);
   const k = gi === undefined ? -1 : gi * ZONES.length + ZONES.indexOf(zone);

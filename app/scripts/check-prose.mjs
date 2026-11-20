@@ -7,7 +7,7 @@
 // means a gap is *silent by design* — nothing fails, a French reader just gets an
 // English paragraph. This script is how you see the gaps on purpose.
 //
-// It reports three things, and only the third is an error by default:
+// It reports four things, and only the last two are errors:
 //
 //   1. Coverage — how much of each region, the animals and the impostors exist
 //      in the language, counted the way the app looks them up: per *region row*,

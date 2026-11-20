@@ -18,9 +18,9 @@
 // The gallery is still the right place to look for a better picture — by a
 // person, through the reviewed pipeline (`harvest-hero-photos.mjs`), not here.
 
-/** Licences we may republish with attribution — the harvester's five, plus the
- *  two public-domain codes iNaturalist uses for photographs nobody holds rights
- *  over (`pd` is how a Wikimedia scan of a 1904 plate comes back). Anything
+/** Licences we may republish with attribution — the harvester's five (cc0
+ *  among them), plus `pd`, the code iNaturalist uses for photographs nobody
+ *  holds rights over (`pd` is how a Wikimedia scan of a 1904 plate comes back). Anything
  *  else, "all rights reserved" above all, is refused. */
 export const LICENCES = ["cc0", "pd", "cc-by", "cc-by-sa", "cc-by-nc", "cc-by-nc-sa"];
 

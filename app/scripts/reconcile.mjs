@@ -147,7 +147,10 @@ async function gbifKey(name) {
     });
     if (!res.ok) return undefined;
     const j = await res.json();
-    return j && j.matchType && j.matchType !== "NONE" && j.usageKey ? String(j.usageKey) : undefined;
+    // HIGHERRANK is GBIF settling for the genus; its key would then sit on a
+    // species row as though it were the species'.
+    const species = j && j.usageKey && (j.matchType === "EXACT" || j.matchType === "FUZZY");
+    return species ? String(j.usageKey) : undefined;
   } catch {
     return undefined;
   }

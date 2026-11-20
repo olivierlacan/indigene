@@ -27,7 +27,7 @@
 // Like the release-notes build, it fails loudly on a malformed changelog
 // heading. It never fails on a prefix, though: a leading word that isn't a
 // known section is just prose ("Note: …"), so writing entries can't break here.
-import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { SECTIONS, SECTION_BY_ID, SEGMENT_TO_ID, matchLabels, SECTION_LABELS, APP, PREFIX, guideProblems } from "./guide-catalog.mjs";
@@ -532,7 +532,7 @@ ${renderHistory(section, items)}
   });
 }
 
-function renderIndex(published, historyById) {
+function renderIndex(published) {
   const cards = published
     .map(
       (s) => `<a class="card" href="${s.id}/">
@@ -586,7 +586,7 @@ if (CHECK) {
 }
 
 mkdirSync(OUT, { recursive: true });
-writeFileSync(resolve(OUT, "index.html"), renderIndex(published, historyById));
+writeFileSync(resolve(OUT, "index.html"), renderIndex(published));
 for (const s of published) {
   const dir = resolve(OUT, s.id);
   mkdirSync(dir, { recursive: true });

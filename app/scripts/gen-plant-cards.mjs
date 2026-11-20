@@ -477,7 +477,7 @@ let n = 0;
  * because a share card is a picture. Once it's committed nobody looks at it
  * again, and a plant whose name is two characters longer than the last one can
  * push the fact row into a second line or slide a wing off the edge with no
- * warning at all. Four hundred-odd numbers and labels across 198 cards is
+ * warning at all. Thousands of numbers and labels across every plant's card is
  * exactly the kind of thing to be measured rather than spot-checked.
  *
  * Both failures are real ones already hit: a fact label wrapping onto two

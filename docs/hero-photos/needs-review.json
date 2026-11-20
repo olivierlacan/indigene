@@ -59,14 +59,6 @@
     },
     {
       "subject": "alternative",
-      "id": "lantana-camara",
-      "name": "Lantana camara",
-      "taxonId": 50333,
-      "reason": "chosen photo 369564698 is all rights reserved",
-      "gallery": "https://www.inaturalist.org/taxa/50333/browse_photos"
-    },
-    {
-      "subject": "alternative",
       "id": "lantana-montevidensis",
       "name": "Lantana montevidensis",
       "taxonId": 77624,
@@ -120,14 +112,6 @@
       "taxonId": 59567,
       "reason": "chosen photo 119771254 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/59567/browse_photos"
-    },
-    {
-      "subject": "alternative",
-      "id": "spiraea-japonica",
-      "name": "Spiraea japonica",
-      "taxonId": 125790,
-      "reason": "chosen photo 449207 is cc-by-nc-nd",
-      "gallery": "https://www.inaturalist.org/taxa/125790/browse_photos"
     },
     {
       "subject": "alternative",
@@ -312,14 +296,6 @@
       "taxonId": 521976,
       "reason": "chosen photo 28612289 is all rights reserved",
       "gallery": "https://www.inaturalist.org/taxa/521976/browse_photos"
-    },
-    {
-      "subject": "lookalike",
-      "id": "lantana-camara",
-      "name": "Lantana camara",
-      "taxonId": 50333,
-      "reason": "chosen photo 369564698 is all rights reserved",
-      "gallery": "https://www.inaturalist.org/taxa/50333/browse_photos"
     },
     {
       "subject": "lookalike",

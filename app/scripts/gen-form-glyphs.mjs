@@ -15,7 +15,7 @@
 //     set mixed solid shapes with 2-unit outlines, which is why a tree read as
 //     a blob and a vine nearly vanished beside it;
 //   - what distinguishes one form from another is its *shape*, not its size:
-//     a tree is a crown on a bare trunk, a shrub a lobed dome with no trunk, a
+//     a tree is a crown on a bare trunk, a shrub a low cloud on short stems, a
 //     groundcover a low fan wider than it is tall.
 const r1 = (n) => Math.round(n * 10) / 10;
 const P = (x, y) => `${r1(x)} ${r1(y)}`;
@@ -42,24 +42,6 @@ function scallop(cx, cy, R, depth, n, start = -90) {
   return d + "Z";
 }
 
-/** A lobed dome: flat on the ground from x0 to x1, `n` lobes over the top. */
-function dome(x0, x1, foot, top, depth, n) {
-  const cx = (x0 + x1) / 2, rx = (x1 - x0) / 2, ry = foot - top;
-  const pt = (f, a) => [cx + rx * f * Math.cos(rad(a)), foot - ry * f * Math.sin(rad(a))];
-  const tips = [], vals = [];
-  for (let i = 0; i < n; i++) tips.push(pt(1, 180 - (i + 0.5) * (180 / n)));
-  for (let i = 0; i <= n; i++) vals.push(pt(1 - depth / ry, 180 - i * (180 / n)));
-  vals[0] = [x0, foot];
-  vals[n] = [x1, foot];
-  let d = "M" + P(x0, foot);
-  for (let i = 0; i < n; i++) {
-    const a = vals[i], b = vals[i + 1], t = tips[i];
-    const c = [2 * t[0] - (a[0] + b[0]) / 2, 2 * t[1] - (a[1] + b[1]) / 2];
-    d += `Q${P(...c)} ${P(...b)}`;
-  }
-  return d + "Z";
-}
-
 /** A leaf: rooted at (bx,by), pointing at `a` degrees (-90 is straight up),
  *  `len` long and `wid` across, coming to a point at the tip. */
 function leaf(bx, by, a, len, wid) {
@@ -69,6 +51,11 @@ function leaf(bx, by, a, len, wid) {
   return `M${P(bx, by)}C${P(...at(0.25, wid))} ${P(...at(0.8, wid * 0.75))} ${P(...at(1, 0))}` +
     `C${P(...at(0.8, -wid * 0.75))} ${P(...at(0.25, -wid))} ${P(bx, by)}Z`;
 }
+
+/** A circle or an ellipse as two explicit arcs, centred on (cx, cy). */
+const ellipse = (cx, cy, rx, ry) =>
+  `M${P(cx - rx, cy)}a${rx} ${ry} 0 1 0 ${r1(rx * 2)} 0a${rx} ${ry} 0 1 0 ${r1(-rx * 2)} 0Z`;
+const circle = (cx, cy, r) => ellipse(cx, cy, r, r);
 
 /** A blade of grass: broad at the foot, curving to a point at the tip. */
 function blade(bx, foot, tipx, tipy, w, bow = 0) {
@@ -84,14 +71,33 @@ const F = (d) => ({ d });
 const GLYPHS = {
   // A lobed crown clear of the ground on a bare trunk.
   tree: [F(scallop(24, 19.4, 12.4, 2.3, 8)), S("M24 30.5v9.5")],
-  // The same foliage, but sitting on the ground and wider than it is tall.
-  shrub: [F(dome(8, 40, 40, 15, 4, 4))],
-  // A five-petalled flower on a stem, with one leaf low down.
+  // An uneven cloud of foliage, wider than tall, that comes down to the ground
+  // at both ends and lifts in the middle to show short stems: several stems and
+  // no trunk. The old smooth dome read as a loaf or a hill.
+  shrub: [
+    F(circle(13.5, 27, 6)),
+    F(circle(20.5, 21.5, 7.4)),
+    F(circle(29.5, 21, 7.8)),
+    F(circle(35.5, 27.5, 6)),
+    F(ellipse(24, 29.5, 13.5, 6)),
+    F(ellipse(13.6, 34.2, 6.4, 5.8)),
+    F(ellipse(34.4, 34.2, 6.4, 5.8)),
+    S("M22 34.5L21.6 40"),
+    S("M26 34.5L26.4 40"),
+  ],
+  // A daisy-shaped wildflower, a disc ringed by ten rays, on a stem with one
+  // leaf, rising from a pair of leaves at the ground. The old five-petal star
+  // read as a star on a stick.
   perennial: [
-    S("M24 25v15"),
-    ...[0, 1, 2, 3, 4].map((i) => F(leaf(24, 17, -90 + i * 72, 10.2, 4))),
-    F("M24 13.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 1 0 0-7.6Z"),
-    F(leaf(23.5, 34, 196, 10, 3.4)),
+    S("M24 40V20"),
+    ...Array.from({ length: 10 }, (_, i) => {
+      const a = -90 + i * 36;
+      return F(leaf(24 + 4.9 * Math.cos(rad(a)), 16 + 4.9 * Math.sin(rad(a)), a, 6.6, 2.5));
+    }),
+    F(circle(24, 16, 3.7)),
+    F(leaf(24, 40, -150, 12.5, 3.6)),
+    F(leaf(24, 40, -30, 12.5, 3.6)),
+    F(leaf(24, 31, -40, 9, 2.8)),
   ],
   // A tuft: four blades splaying out of one point on the ground.
   grass: [

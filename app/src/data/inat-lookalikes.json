@@ -107,6 +107,15 @@
     "attribution": "(c) Joan Septembre, some rights reserved (CC BY-NC), uploaded by Joan Septembre",
     "color": "#606843"
   },
+  "lantana-camara": {
+    "taxonId": 50333,
+    "photoId": 100233756,
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/100233756/square.jpeg",
+    "observer": "Cláudio Marques",
+    "license": "cc-by-nc",
+    "attribution": "(c) Cláudio Marques, some rights reserved (CC BY-NC), uploaded by Cláudio Marques",
+    "color": "#82714f"
+  },
   "lonicera-japonica": {
     "taxonId": 77835,
     "photoId": 285795362,

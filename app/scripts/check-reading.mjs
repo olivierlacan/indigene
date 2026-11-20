@@ -56,7 +56,10 @@ async function ask(url) {
         redirect: "manual",
         signal,
         headers: {
-          "user-agent": "Mozilla/5.0 (compatible; indigene-reading-check)",
+          // Plainly a script, with a way to reach us. A fake "Mozilla/5.0
+          // (compatible; …)" prefix got Mt. Cuba's and Theodore Payne's nginx to
+          // reset the connection (November 2026) while this one opens them.
+          "user-agent": "indigene-reading-check (+https://indigene.app)",
           ...(jar.size ? { cookie: [...jar].map(([k, v]) => `${k}=${v}`).join("; ") } : {}),
         },
       });

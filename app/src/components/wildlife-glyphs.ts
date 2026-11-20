@@ -3,11 +3,11 @@
 // same rules so the two sets look like one hand: a single optical box, filled
 // masses with any stem stroked at one weight, roughly equal ink, brand green.
 //
-// Why drawn, not emoji: the OS butterfly emoji is a pinned specimen — wings
-// spread flat the way they only ever are in a museum drawer. A living butterfly
-// holds its forewings swept up. Every animal here is drawn in a pose it holds
-// while alive, and a moth is a moth rather than the moon the app used to borrow
-// for "night".
+// Why drawn, not emoji: the OS butterfly emoji is a pinned specimen, stiff and
+// symmetrical the way they only ever are in a museum drawer. Every animal here
+// is drawn in a pose it holds while alive (the butterfly basking, wings open
+// and forewings swept forward), and a moth is a moth rather than the moon the
+// app used to borrow for "night".
 //
 // A kind, not a species: all 47 butterflies share one butterfly the way every
 // perennial shares one perennial glyph — the drawing is honest about the kind
@@ -35,51 +35,47 @@ const circle = (cx: number, cy: number, r: number): string =>
 export type WildlifeGlyphKey = WildlifeKind | "tortoise";
 
 export const WILDLIFE_GLYPHS: Record<WildlifeGlyphKey, Mark[]> = {
-  // Wings up in a heart, not spread flat on a board — the difference between a
-  // butterfly fluttering and one pinned in a drawer. The forewings sweep up and
-  // nearly meet at the top; the hindwings round out below; the body is a short
-  // spindle tucked within them so nothing pokes out like a stinger; the antennae
-  // clear the wings and club at the ends.
+  // Seen from above, wings open as it basks or feeds: forewings wider than tall
+  // and swept out to a point, rounded hindwings tucked close beneath them, a
+  // slim body between, and thin antennae standing clear with clubbed tips. The
+  // old drawing's wings were too round and its antennae knotted into them.
   butterfly: [
-    F("M22.6 20C20.2 11.5 15 4.5 10 4.8C6.4 5 5.5 10 7.6 16.2C9.7 22.4 15 27 22 28C23.1 24 23.1 22.2 22.6 20Z"),
-    F("M25.4 20C27.8 11.5 33 4.5 38 4.8C41.6 5 42.5 10 40.4 16.2C38.3 22.4 33 27 26 28C24.9 24 24.9 22.2 25.4 20Z"),
-    F("M22.5 28C19.5 29.5 13.5 30.5 10.5 34.5C8.2 37.5 10.3 42 14.8 40.6C19 39.3 22.7 34.5 23 29Z"),
-    F("M25.5 28C28.5 29.5 34.5 30.5 37.5 34.5C39.8 37.5 37.7 42 33.2 40.6C29 39.3 25.3 34.5 25 29Z"),
-    F("M24 16C25.3 16 26 17.6 26 20V34C26 37 25.1 38.8 24 38.8C22.9 38.8 22 37 22 34V20C22 17.6 22.7 16 24 16Z"),
-    F(circle(24, 14.5, 2.6)),
-    S("M23 12C21.3 8.5 19 7 16.5 7"),
-    S("M25 12C26.7 8.5 29 7 31.5 7"),
-    F(circle(16, 6.6, 1.8)),
-    F(circle(32, 6.6, 1.8)),
+    F("M23 17.5C18 12.5 10.5 8.5 6.6 9.2C4.6 9.6 4.4 12.5 5.8 16.5C7.4 21 9.6 25 12.5 26.4C16.2 27.8 20.2 26.8 23 25Z"),
+    F("M25 17.5C30 12.5 37.5 8.5 41.4 9.2C43.4 9.6 43.6 12.5 42.2 16.5C40.6 21 38.4 25 35.5 26.4C31.8 27.8 27.8 26.8 25 25Z"),
+    F("M23 25.6C19 26 13.6 27.6 11 31C9 33.8 10.2 38.6 14.2 38.2C18.2 37.8 21.6 34 23 29.5Z"),
+    F("M25 25.6C29 26 34.4 27.6 37 31C39 33.8 37.8 38.6 33.8 38.2C29.8 37.8 26.4 34 25 29.5Z"),
+    F("M24 15.5C25.1 15.5 25.7 17.3 25.7 20V33C25.7 35.8 25 37.5 24 37.5C23 37.5 22.3 35.8 22.3 33V20C22.3 17.3 22.9 15.5 24 15.5Z"),
+    F("M21.8 13.6a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0Z"),
+    S("M23 12C21.8 9 20.2 7.2 18 6.2"),
+    S("M25 12C26.2 9 27.8 7.2 30 6.2"),
+    F("M16 6a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0Z"),
+    F("M28.8 6a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0Z"),
   ],
-  // A moth at rest: broad forewings swept back into a delta over a stout, furry
-  // body, with feathered antennae combed back. The triangle is what tells it
-  // from a butterfly at a glance.
+  // At rest, from above: the forewings fold back into a broad triangle with its
+  // point at the head, the shape that tells a moth from a butterfly at a glance.
+  // The antennae are feathered wedges, not thin clubbed threads.
   moth: [
-    F("M23 18C16.5 16 8 20.5 4.2 31C3.2 33.8 5.2 36.2 8.6 35.4C15 33.8 20.5 28.5 23.2 20.5Z"),
-    F("M25 18C31.5 16 40 20.5 43.8 31C44.8 33.8 42.8 36.2 39.4 35.4C33 33.8 27.5 28.5 24.8 20.5Z"),
-    F("M23 25C18.5 25.5 12.5 29 10 35.5C9 38.2 11 40 14 39C18.5 37.5 22 32 23.4 26Z"),
-    F("M25 25C29.5 25.5 35.5 29 38 35.5C39 38.2 37 40 34 39C29.5 37.5 26 32 24.6 26Z"),
-    F("M24 12C26.4 12 27.8 14.4 27.8 18V38C27.8 41.3 26.2 43.5 24 43.5C21.8 43.5 20.2 41.3 20.2 38V18C20.2 14.4 21.6 12 24 12Z"),
-    F("M24 7a3 3 0 1 0 0 6 3 3 0 1 0 0-6Z"),
-    S("M22.5 9.5C19 6.5 14 5.5 10 7"),
-    S("M25.5 9.5C29 6.5 34 5.5 38 7"),
+    F("M23.4 13.5C20 17 12.5 25.5 6.5 34C5.4 35.6 6 37.6 8.2 38C12.5 38.6 18.5 38 23.4 36Z"),
+    F("M24.6 13.5C28 17 35.5 25.5 41.5 34C42.6 35.6 42 37.6 39.8 38C35.5 38.6 29.5 38 24.6 36Z"),
+    F("M21.2 11.2a2.8 2.8 0 1 0 5.6 0a2.8 2.8 0 1 0 -5.6 0Z"),
+    F("M22.6 9.6C22.7 6.7 19.3 3 17.1 2.5C17 4.8 19.7 9 22.6 9.6Z"),
+    F("M25.4 9.6C28.3 9 31 4.8 30.9 2.5C28.7 3 25.3 6.7 25.4 9.6Z"),
   ],
-  // A bee in profile, flying left — the view that tells it from a bird. A fat
-  // body tapering to a stinger at the back, a round head with two antennae, two
-  // wings held up and back, and three legs dangling. Single colour loses the
-  // stripes, so the tapered body and the hanging legs carry it.
+  // A bumble bee in profile, flying left: head, a round furry thorax, and a
+  // banded abdomen whose stripes are the gaps between its segments. The wings
+  // are outlines, clear rather than solid, swept up and back; two bent legs hang
+  // below. The old solid wing and stiff legs read as a small four-legged animal.
   bee: [
-    F("M10 25C10 19.5 15.5 16 24 16C33 16 39.5 19.5 40.5 24.5C41 27 39 29.5 34 30.5C24 32.5 10 30.5 10 25Z"),
-    F("M39.5 22.5L44.5 25L39.5 27.5Z"),
-    F(circle(8.5, 24, 3.8)),
-    S("M6.5 20.5C5 18 3.5 17 2 17"),
-    S("M8 20C7.2 17.2 6.2 16.2 4.8 15.8"),
-    F("M20 16C18 8.5 22.5 3.5 28.5 4C33.5 4.4 34 9.5 30 13C27 15.5 23 16.5 20 16Z"),
-    F("M26 16.5C25 9.5 29.5 5 35 6C39 6.7 39 11.5 35 14.5C32 16.7 28 16.8 26 16.5Z"),
-    S("M15 30L13.5 35"),
-    S("M21 31L20.5 36"),
-    S("M27 30.5L27.5 35.5"),
+    F("M6.5 24a4 4 0 1 0 8 0a4 4 0 1 0 -8 0Z"),
+    F("M12.6 23a6.4 6.4 0 1 0 12.8 0a6.4 6.4 0 1 0 -12.8 0Z"),
+    F("M24.6 21.7A9.5 7.6 0 0 1 29 19.3L29 33.7A9.5 7.6 0 0 1 24.6 31.3Z"),
+    F("M30.4 19A9.5 7.6 0 0 1 34.6 19.2L34.6 33.8A9.5 7.6 0 0 1 30.4 34Z"),
+    F("M36 19.6A9.5 7.6 0 0 1 41.5 26.5L41.5 26.5A9.5 7.6 0 0 1 36 33.4Z"),
+    S("M20.5 17.5C25.9 18.1 33.4 12.5 34.9 8.5C30.7 8.1 22.3 12.4 20.5 17.5Z"),
+    S("M21.5 18C25.2 20.2 32.1 18.3 34.3 15.7C31.4 14.1 24.2 14.7 21.5 18Z"),
+    S("M8.5 20.5L7.6 16.2L4.4 14.6"),
+    S("M16 29L14.4 33.4L11.8 34.6"),
+    S("M24.6 28.6L26.2 33.4L25 35.8"),
   ],
   // A songbird perched in profile, facing left — a plump breast, a round head
   // set off by a short beak, a folded wing on the flank, a tail behind, two
@@ -94,26 +90,27 @@ export const WILDLIFE_GLYPHS: Record<WildlifeGlyphKey, Mark[]> = {
     S("M20 37L19.5 41.5"),
     S("M24.5 37L25 41.5"),
   ],
-  // A squirrel sitting in profile, facing left — a round head with a pointed
-  // snout and a cocked ear, a plump upright body with a paw at the chest, and the
-  // big bushy tail arcing up behind. The ear and the fat tail are what keep it a
-  // mammal and not a bird.
+  // A squirrel sitting up in profile, facing left: head, ear and body drawn as
+  // one overlapping mass, a forepaw at the chest, and the big tail pressed up its
+  // back and curling over the top. The old drawing's parts floated apart.
   mammal: [
-    F("M27 40C35 39.5 41 32.5 41 22.5C41 14.5 36 9 28.5 9.5C33 12.5 34.5 17.5 33 22.5C31.4 28 27.5 31.5 23.5 33.5C21.3 34.6 23.5 40.4 27 40Z"),
-    F("M11 34.5C10.5 28 14 23.5 19.5 23.5C24.5 23.5 28.5 27 29 32C29.5 37.5 25 41.5 19 41.5C13.5 41.5 11.5 39 11 34.5Z"),
-    F(circle(15, 18.5, 5.2)),
-    F("M9.5 18.5L5 20.2L9.8 21.8Z"),
-    F("M12 13.5C10.7 9 12.6 6.3 15.2 6.9C16.3 9 15.8 12.2 14.2 13.9Z"),
-    F("M11 31.5C8.8 31 7.6 32.6 8.2 34.2C9.8 34.7 11.5 33.6 12 32Z"),
+    F("M12.3 31a8.2 9.2 0 1 0 16.4 0a8.2 9.2 0 1 0 -16.4 0Z"),
+    F("M10 19.2a6 6 0 1 0 12 0a6 6 0 1 0 -12 0Z"),
+    F("M11 16.8L7.4 20.4C6.8 21 7.1 22 8 22.1L12.4 23.4Z"),
+    F("M13.6 15C13.4 11.8 14.6 9.4 16.4 9.2C17.6 9.4 18.4 11.6 19 14.4Z"),
+    F("M10.6 28.6a2.8 2.3 0 1 0 5.6 0a2.8 2.3 0 1 0 -5.6 0Z"),
+    F("M11.6 39.6a5.4 1.8 0 1 0 10.8 0a5.4 1.8 0 1 0 -10.8 0Z"),
+    F("M25 39C33 41 41.5 35.5 42 25C42.5 15 37.5 7.2 30.5 7.2C26.5 7.2 23.8 9.6 24.2 12.6C27.6 10.6 32.4 12.4 33.8 17.5C35.4 23.4 33 29 26.6 32.6Z"),
   ],
-  // A tortoise in profile — a high domed shell over a flat plastron line, a head
-  // reaching forward and two stumped legs. Slow, and unmistakably not a mammal.
+  // A gopher tortoise in profile, facing left: a high domed shell, a head held
+  // low and forward on a stout neck, thick elephant legs and a stub of tail.
   tortoise: [
-    F("M8 33C8 22.5 15.5 17 24 17C32.5 17 40 22.5 40 33C40 34 39 34.5 38 34.5L10 34.5C9 34.5 8 34 8 33Z"),
-    F("M9 30C5.5 28.5 2.5 29 2 31.5C1.5 34 4 35.5 8 35C10 34.7 10 31 9 30Z"),
-    F("M13 34.5C11.5 34.5 11 37 11.5 39C12 40.5 14.5 40.5 15.5 39L16.5 34.5Z"),
-    F("M35 34.5C36.5 34.5 37 37 36.5 39C36 40.5 33.5 40.5 32.5 39L31.5 34.5Z"),
-    F("M40 27C42.5 26 44.5 27 44.5 29C44 30.5 41.5 31 40 30Z"),
+    F("M9.2 32.2C9.2 19.5 16 13 24.6 13C33.2 13 40 19.5 40 32.2Z"),
+    F("M8.6 31.5H40.6C40.9 33.2 40.1 34.5 38.6 34.5H10.6C9.1 34.5 8.3 33.2 8.6 31.5Z"),
+    F("M11 31.6C8.6 29.6 5.4 29.2 3.4 30.6C1.6 31.9 2.2 34.8 4.8 35C7.4 35.2 10 34.6 12.4 34.4Z"),
+    F("M11 34H18V38.8C18 39.7 17.3 40.3 16.4 40.3H12C11.1 40.3 10.4 39.6 10.6 38.7Z"),
+    F("M30.6 34H37.6L38 38.7C38.1 39.6 37.5 40.3 36.6 40.3H32.2C31.3 40.3 30.6 39.7 30.6 38.8Z"),
+    F("M40 32.4L43 33.8L40 34.4Z"),
   ],
 };
 

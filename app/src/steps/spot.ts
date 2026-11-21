@@ -44,6 +44,11 @@ import { hashParam } from "../lib/plant-view";
 import { t, fmtDate, fmtNumber, monthName } from "../lib/i18n";
 import { linkedLogin } from "../lib/inat-account";
 import { getInvasive } from "../lib/invasives";
+import { rankPlants, NO_FILTERS } from "../lib/ranking";
+import { missingEssentials, roomCap } from "../lib/first-picks";
+import { roomChoice, countLine } from "../components/room-choice";
+import { maxSpreadChoices } from "../lib/units";
+import { plantRow } from "./region";
 
 /** Rows shown in the plant picker before it stops listing. A search that still
  *  matches forty things hasn't been narrowed yet, and forty tap targets is a
@@ -144,6 +149,7 @@ export async function renderSpot(main: HTMLElement, param?: string): Promise<voi
     ...(menu ? [menu.card] : []),
     ...(spotted ? [spotted] : []),
     logCard(spot, plantings, plantOf, redraw, region?.meta.id),
+    ...(region ? [essentialsCard(spot, plantings, plantOf, roster, region.meta.id)] : []),
     ...(spot.invasives?.length ? [invasivesCard(spot, redraw)] : []),
     addCard(spot, roster, linked, preset, redraw),
     // Only once an account is linked: without one the page it opens can only
@@ -229,6 +235,58 @@ function logCard(
     body.push(el("ul", { class: "log-list" }, plantings.map((p) => logRow(spot, p, plantOf(p.plantId), redraw, regionId))));
   }
   return el("section", { class: "card" }, body);
+}
+
+/**
+ * The essential plants this spot has no relative of yet (`missingEssentials`),
+ * ranked for the spot's own sun, soil and goals. A garden with a willow is
+ * offered a cherry, not a second willow. Once every essential genus that suits
+ * the spot is here, the card says so and points at planting more instead.
+ */
+function essentialsCard(
+  spot: SavedSpot,
+  plantings: Planting[],
+  plantOf: (id: string) => Plant | undefined,
+  roster: Plant[],
+  regionId: string,
+): HTMLElement {
+  // The spot's size caps how wide a suggestion may grow: the same rungs the
+  // plant list's room buttons set, so the two pages agree.
+  const ladder = maxSpreadChoices();
+  const cap = spot.room ? roomCap(spot.room, ladder) : null;
+  const ranked = rankPlants(roster, {
+    site: spot.site,
+    sun: spot.sun,
+    weights: spot.weights,
+    filters: { ...NO_FILTERS, maxSpreadFt: cap },
+    moistureOverride: spot.soilOverride?.moisture ?? null,
+  });
+  const planted = plantings.flatMap((pl) => plantOf(pl.plantId)?.latin ?? []);
+  const picks = missingEssentials(ranked, planted);
+  const size = cap == null ? "" : ladder.find((c) => c.ft === cap)?.label ?? "";
+  const roomLine = !spot.room ? t("spot.roomUnset")
+    : `${t(`room.like.${spot.room}` as const)} ${cap == null ? t("spot.roomLarge") : t("spot.roomCap", { size })}`;
+  const card: HTMLElement = el("section", { class: "card" }, [
+    el("h3", { style: "margin:0 0 0.5rem" }, t("spot.essentialsTitle")),
+    // Redrawn in place: a whole-page redraw would jump to the top. Set on the
+    // page's own spot, so "See plants" opens it at this size.
+    roomChoice(t("spot.roomLabel"), spot.room ?? null, async (r) => {
+      spot.room = r;
+      await saveSpot(spot);
+      card.replaceWith(essentialsCard(spot, plantings, plantOf, roster, regionId));
+    }),
+    el("p", { class: "first-picks-caption" }, roomLine),
+    ...(picks.length
+      ? [
+          el("p", { style: "margin:0 0 0.6rem" }, t("spot.essentialsLede")),
+          el("div", { class: "card-grid" }, picks.map((r) => plantRow(r.plant, regionId, {
+            caterpillars: true,
+            note: spot.room ? countLine(r.plant, spot.room, picks.length) : undefined,
+          }).node)),
+        ]
+      : [el("p", { class: "note" }, t("spot.essentialsAll"))]),
+  ]);
+  return card;
 }
 
 function logRow(

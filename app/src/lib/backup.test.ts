@@ -39,6 +39,7 @@ const spot: Required<SavedSpot> = {
   soilOverride: { texture: "clay", moisture: "wet" },
   deciduousOverhead: true,
   regionOverride: "pnw",
+  room: "medium",
   weights: { host: 3, pollinator: 2, bird: 1, stormwater: 0, erosion: 0, carbon: 1, establishment: 2 },
   invasives: [{ invasiveId: "english-ivy", observations: ["111"], addedAt: 1_700_000_100_000 }],
 };

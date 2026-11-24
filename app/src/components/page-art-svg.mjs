@@ -432,7 +432,7 @@ function homegrown() {
 }
 
 /** Essential plants: one big oak holding up the food web — caterpillars
- *  hanging from it on silk, a wren carrying one off — with a mix of smaller
+ *  hanging from it on silk, a chickadee bringing one to its nest — with a mix of smaller
  *  natives either side, because the page's point is the oak *among* others. */
 function essential() {
   let s = "";
@@ -465,19 +465,29 @@ function essential() {
   s += `</g>`;
   s += path("wood", "M152 124Q157 96 155 66L165 66Q163 96 169 124Z");
   s += path("branch", "M158 88Q140 78 122 76M161 78Q182 68 196 62M159 70Q150 56 142 48");
-  // Caterpillars let down on silk from the crown, one on a limb.
-  for (const [x, top, y] of [[124, 60, 88], [140, 66, 100], [190, 66, 92], [204, 58, 80]]) {
+  // Caterpillars let down on silk from the right side of the crown, one on a limb.
+  for (const [x, top, y] of [[178, 70, 98], [194, 64, 86], [208, 56, 76]]) {
     s += path("thread", `M${x} ${top}L${x} ${y - 3}`);
     s += caterpillar(x - 7, y, 5, 3.0, 0.8);
   }
-  s += caterpillar(176, 64, 5, 3.0, 0.5);
-  // A wren flying off with one.
-  s += ellipse("wood", 234, 30, 7.5, 5, -8);
-  s += path("wood", "M226 28L218 21L223 31Z");
-  s += circle("wood", 242, 27, 3.8);
-  s += path("grey", "M245 27L252 28L245 29.5Z");
-  s += ellipse("wing", 233, 24, 6, 3, -35);
-  s += caterpillar(249, 31, 4, 2.4, 0.6);
+  s += caterpillar(172, 66, 5, 3.0, 0.5);
+  // On the left limb: a nest of open-beaked chicks, and a chickadee perched
+  // beside it with a caterpillar for them.
+  s += path("earth", "M96 72Q97 84 110 84Q123 84 124 72Z");
+  s += path("band", "M99 76Q110 80 121 76");
+  for (const [x, y, tilt] of [[103, 68, -12], [111, 65, 0], [119, 68, 12]]) {
+    s += circle("grey", x, y, 4);
+    s += path("gold", `M${x - 2.6} ${y - 2.4}L${x + tilt * 0.25} ${y - 11}L${x + 2.6} ${y - 2.4}Z`);
+  }
+  s += path("grey", "M146 72L156 82L149 70Z"); // tail
+  s += ellipse("paper", 140, 68, 10, 7.5, 12); // body
+  s += ellipse("grey", 143, 66, 7, 3.8, 18); // wing
+  s += circle("paper", 131, 60, 5.6); // head, turned to the nest
+  s += path("body", "M125.6 59.5Q126 53.8 131 54.4Q136.4 55 136.4 60Z"); // black cap
+  s += circle("body", 128.6, 60.6, 1.1);
+  s += path("body", "M126 61.5L120 63L126 64.5Z"); // beak
+  s += caterpillar(109, 63.5, 4, 2.4, 0.4); // held in it, over the chicks
+  s += path("branch", "M137 75L136 78M143 76L143 79"); // feet on the limb
   // Right: more of the mix — an aster, a fern, grass.
   s += stem(250, G, 246, 96, 252, 74);
   s += petals(252, 74, 12, 7, 2, "violet");

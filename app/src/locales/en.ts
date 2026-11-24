@@ -2289,7 +2289,8 @@ export const en = {
   "sources.tellUsTitle": "How to tell us we're wrong",
   "sources.tellUs": "Please do. The whole app is open source, so nothing here has to be taken on trust. You can read the data files, the counting script, and every line that turns a number into a recommendation: {repo}. If something looks wrong, {issue}. A correction with a source behind it is the most useful thing anyone can send us.",
   "sources.openIssue": "open an issue",
-  "sources.fullList": "For the full technical list of every dataset, who publishes it, and what its license allows, see {doc}. The European caterpillar counts come from {matrix}, published open-access under CC-BY 4.0. You can download the same data we did and check our arithmetic.",
+  "sources.fullList": "For the full technical list of every dataset, who publishes it, and what its license allows, see {doc}. The American caterpillar counts come from {tallamy}, published with the National Wildlife Federation. The European ones come from {matrix}, open-access under CC-BY 4.0, so you can download the same data we did and check our arithmetic.",
+  "sources.tallamyLink": "Doug Tallamy's research",
   "sources.dataDoc": "our data-sources document",
 
   // Where the plant and animal *names* come from — the same accounting the
@@ -3277,6 +3278,10 @@ export const en = {
   "homegrown.app2": "An Essential plant is what Tallamy calls a keystone plant. Across the US, 14% of native plant genera (groups of close relatives, like the oaks) feed 90% of caterpillar species. Indigene shows you those first.",
   "homegrown.app2Link": "Essential plants",
   "homegrown.essentialWayOn": "Why they come first: {link}",
+  "homegrown.tallamyTitle": "Doug Tallamy's work",
+  "homegrown.tallamy1": "Tallamy's books, from Bringing Nature Home to Nature's Best Hope, changed the question gardeners ask of a plant: not how it looks, but what it feeds. His team's counts of which plants raise which caterpillars are what Indigene's US rankings stand on. No one's work shaped this app more.",
+  "homegrown.tallamy2": "Nature's Best Hope heads our {link} list.",
+  "homegrown.tallamyReading": "further reading",
   "homegrown.app3": "In the US, the caterpillar counts come from {link}, published with the National Wildlife Federation.",
   "homegrown.app3Link": "Tallamy's own data",
   "homegrown.app4": "The idea travels: Indigene's lists for {ireland}, {nz} or {japan} lean on each place's own studies of what feeds what.",

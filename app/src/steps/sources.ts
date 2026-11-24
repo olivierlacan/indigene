@@ -232,6 +232,8 @@ export function renderSources(main: HTMLElement): void {
       el("p", {}, tx("sources.fullList", {
         doc: el("a", { href: DATA_SOURCES_URL, target: "_blank", rel: "noopener" }, t("sources.dataDoc")),
         matrix: el("a", { href: MATRIX_DOI, target: "_blank", rel: "noopener" }, "Gaytán et al. 2026"),
+        // His work, and the idea built on it, has a page of its own.
+        tallamy: el("a", { href: "#/homegrown" }, t("sources.tallamyLink")),
       })),
 
       el("div", { class: "btn-row", style: "margin-top:1.5rem" }, [

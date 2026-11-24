@@ -68,6 +68,10 @@ export function renderHomegrown(main: HTMLElement): void {
         link: el("a", { href: "#/plants/essential" }, t("homegrown.app2Link")),
       })),
 
+      el("h3", {}, t("homegrown.tallamyTitle")),
+      p("homegrown.tallamy1"),
+      el("p", {}, tx("homegrown.tallamy2", { link: el("a", { href: "#/reading" }, t("homegrown.tallamyReading")) })),
+
       el("h3", {}, t("homegrown.authorTitle")),
       p("homegrown.author1"),
       p("homegrown.author2"),

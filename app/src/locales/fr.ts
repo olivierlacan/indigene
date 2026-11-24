@@ -2246,7 +2246,8 @@ export const fr: Dict = {
   "sources.tellUsTitle": "Comment nous dire que nous avons tort",
   "sources.tellUs": "Faites-le, s'il vous plaît. Toute l'application est libre : rien ici n'est à prendre sur parole. Vous pouvez lire les fichiers de données, le script de comptage et chaque ligne qui transforme un chiffre en recommandation : {repo}. Si quelque chose vous paraît faux, {issue}. Une correction accompagnée d'une source est ce qu'on peut nous envoyer de plus utile.",
   "sources.openIssue": "ouvrez un ticket",
-  "sources.fullList": "Pour la liste technique complète de chaque jeu de données, de qui le publie et de ce que sa licence permet, voyez {doc}. Les comptes de chenilles européens viennent de {matrix}, publié en accès libre sous licence CC-BY 4.0. Vous pouvez télécharger les mêmes données que nous et vérifier nos calculs.",
+  "sources.fullList": "Pour la liste technique complète de chaque jeu de données, de qui le publie et de ce que sa licence permet, voyez {doc}. Les comptes de chenilles américains viennent {tallamy}, publiées avec la National Wildlife Federation. Les européens viennent de {matrix}, en accès libre sous licence CC-BY 4.0 : vous pouvez télécharger les mêmes données que nous et vérifier nos calculs.",
+  "sources.tallamyLink": "des recherches de Doug Tallamy",
   "sources.dataDoc": "notre document sur les sources de données",
 
   // D'où viennent les *noms* des plantes et des animaux.
@@ -3194,6 +3195,10 @@ export const fr: Dict = {
   "homegrown.app2": "Une plante « Essentielle » est ce que Tallamy appelle une plante clé de voûte. Aux États-Unis, 14 % des genres de plantes indigènes (des groupes de proches parents, comme les chênes) nourrissent 90 % des espèces de chenilles. Indigene vous les montre en premier.",
   "homegrown.app2Link": "Plantes essentielles",
   "homegrown.essentialWayOn": "Pourquoi elles passent en premier : {link}",
+  "homegrown.tallamyTitle": "Le travail de Doug Tallamy",
+  "homegrown.tallamy1": "Les livres de Tallamy, de Bringing Nature Home à Nature's Best Hope, ont changé la question que les jardiniers posent à une plante : non plus de quoi elle a l'air, mais ce qu'elle nourrit. Les relevés de son équipe, qui disent quelles plantes nourrissent quelles chenilles, sont la base des classements d'Indigene aux États-Unis. Aucun travail n'a davantage façonné cette appli.",
+  "homegrown.tallamy2": "Nature's Best Hope ouvre notre liste {link}.",
+  "homegrown.tallamyReading": "pour aller plus loin",
   "homegrown.app3": "Aux États-Unis, le nombre de chenilles vient des {link}, publiées avec la National Wildlife Federation.",
   "homegrown.app3Link": "données de Tallamy lui-même",
   "homegrown.app4": "L'idée voyage : pour {ireland}, {nz} ou {japan}, les listes d'Indigene s'appuient sur les études propres à chaque lieu sur qui nourrit qui.",

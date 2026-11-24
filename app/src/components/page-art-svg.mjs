@@ -1,5 +1,5 @@
 // The drawings at the head of the pages off the main path — Reading, What's
-// new, the Guide, Privacy, Sources, About, the Native page, Homegrown, Kill your lawn, the Halloween post — in the manner of
+// new, the Guide, Privacy, Sources, About, the Native page, Homegrown, Essential plants, Kill your lawn, the Halloween post — in the manner of
 // the basket on "Peoples and plants" (`people-art.ts`): flat shapes on a soft
 // green card, coloured by classes so they follow the theme.
 //
@@ -428,6 +428,65 @@ function homegrown() {
   s += circle("paper", 226, 68.5, 2.4);
   s += path("grey", "M242 75L252 79L243 78Z");
   for (let i = 0; i < 4; i++) s += circle("leaf", 220 - i * 2.6, 69 + i * 1.6, 1.7);
+  return s;
+}
+
+/** Essential plants: one big oak holding up the food web — caterpillars
+ *  hanging from it on silk, a wren carrying one off — with a mix of smaller
+ *  natives either side, because the page's point is the oak *among* others. */
+function essential() {
+  let s = "";
+  const G = BASE;
+  /** A caterpillar: a row of beads along a gentle curve, head darker. */
+  const caterpillar = (x, y, n = 5, dx = 3.2, dy = 0.6) => {
+    let c = "";
+    for (let i = 0; i < n; i++) c += circle("slime", x + i * dx, y + Math.sin(i * 1.3) * dy, 2.1);
+    return c + circle("body", x + n * dx - 0.6, y, 1.8);
+  };
+  // Left: the mix — grass, a coneflower, goldenrod.
+  s += grass(22, 5, 26, 20);
+  s += coneflower(44, 40, 70, -3);
+  s += stem(68, G, 72, 84, 64, 64);
+  for (let i = 0; i < 6; i++) {
+    const q = along(68, G, 72, 84, 64, 64, 0.55 + i * 0.09);
+    s += circle("gold", q.x - 3, q.y - 2, 2.8 - i * 0.2);
+    s += circle("gold", q.x + 3, q.y - 3, 2.6 - i * 0.2);
+  }
+  s += grass(88, 4, 20, 16);
+  // The oak: broad crown faded as one, trunk and limbs over it.
+  s += `<g class="pa-soft">`;
+  for (const [cx, cy, r] of [
+    [160, 42, 34],
+    [130, 50, 22],
+    [190, 50, 24],
+    [146, 26, 20],
+    [176, 24, 20],
+  ]) s += circle("leaf", cx, cy, r);
+  s += `</g>`;
+  s += path("wood", "M152 124Q157 96 155 66L165 66Q163 96 169 124Z");
+  s += path("branch", "M158 88Q140 78 122 76M161 78Q182 68 196 62M159 70Q150 56 142 48");
+  // Caterpillars let down on silk from the crown, one on a limb.
+  for (const [x, top, y] of [[124, 60, 88], [140, 66, 100], [190, 66, 92], [204, 58, 80]]) {
+    s += path("thread", `M${x} ${top}L${x} ${y - 3}`);
+    s += caterpillar(x - 7, y, 5, 3.0, 0.8);
+  }
+  s += caterpillar(176, 64, 5, 3.0, 0.5);
+  // A wren flying off with one.
+  s += ellipse("wood", 234, 30, 7.5, 5, -8);
+  s += path("wood", "M226 28L218 21L223 31Z");
+  s += circle("wood", 242, 27, 3.8);
+  s += path("grey", "M245 27L252 28L245 29.5Z");
+  s += ellipse("wing", 233, 24, 6, 3, -35);
+  s += caterpillar(249, 31, 4, 2.4, 0.6);
+  // Right: more of the mix — an aster, a fern, grass.
+  s += stem(250, G, 246, 96, 252, 74);
+  s += petals(252, 74, 12, 7, 2, "violet");
+  s += circle("gold", 252, 74, 3);
+  s += stem(262, G, 268, 100, 264, 86);
+  s += petals(264, 86, 10, 5.5, 1.6, "violet");
+  s += circle("gold", 264, 86, 2.4);
+  s += frond(286, G, 296, 96, 304, 74, 6, 12);
+  s += grass(232, 4, 18, 14);
   return s;
 }
 
@@ -995,7 +1054,7 @@ export function figureArtSvg(name, label) {
   )}${scene()}</g></svg>`;
 }
 
-const SCENES = { reading, whatsNew, guide, privacy, sources, about, native, homegrown, killYourLawn, halloween, volunteer };
+const SCENES = { reading, whatsNew, guide, privacy, sources, about, native, homegrown, essential, killYourLawn, halloween, volunteer };
 
 /** The names a page can ask for. */
 export const PAGE_ART_NAMES = Object.keys(SCENES);

@@ -54,7 +54,7 @@ export function renderHomegrown(main: HTMLElement): void {
       el("h3", {}, t("homegrown.appTitle")),
       el("ul", {}, [
         el("li", {}, t("homegrown.app1")),
-        el("li", {}, tx("homegrown.app2", { link: el("a", { href: "#/traits/essential" }, t("homegrown.app2Link")) })),
+        el("li", {}, tx("homegrown.app2", { link: el("a", { href: "#/plants/essential" }, t("homegrown.app2Link")) })),
         el("li", {}, tx("homegrown.app3", { link: el("a", { href: "#/sources" }, t("homegrown.app3Link")) })),
         el("li", {}, tx("homegrown.app4", {
           ireland: el("a", { href: "#/regions/ireland" }, t("homegrown.app4Ireland")),

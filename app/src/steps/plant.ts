@@ -4,6 +4,7 @@ import { clockIcon } from "../components/control-icons";
 // the question is whether a spot deserves it. The verdict has exactly three
 // honest levels — ideal, decent, unsuitable — and is computed with the same
 // fit math and hard gates as the ranked list.
+import { renderEssential, essentialParam } from "./essential";
 import { emojiSpan } from "../lib/emoji";
 import { el, clear, toast } from "../ui";
 import { navigate, store, resetDraft, resultsTrail, keepTrail, openSavedSpot } from "../state";
@@ -68,6 +69,9 @@ const sectionDomId = (s: Section): string => `sec-${s}`;
 export async function renderPlant(main: HTMLElement, param?: string): Promise<(() => void) | void> {
   clear(main);
   const raw = param ?? "";
+  // `plants/essential[/<region>]` is the essential-plants page, not a plant.
+  const essential = essentialParam(raw);
+  if (essential !== undefined) return renderEssential(main, essential);
   const slash = raw.indexOf("/");
   const slug = slash >= 0 ? raw.slice(0, slash) : raw;
   // Which card a link asked to be opened at. Two forms are read:

@@ -89,6 +89,14 @@ export type AppStep = (typeof APP_STEPS)[number];
  */
 export const PHOTOS_SEGMENT = "photos";
 
+/**
+ * `plants/essential` is the page about essential (keystone) plants, and
+ * `plants/essential/<region>` the same page opened at one region's list. Not a
+ * plant slug: slugs are `genus-species`, and routes.test.ts pins that none is
+ * this word. Here, like PHOTOS_SEGMENT, because a Node script loads this module.
+ */
+export const ESSENTIAL_SEGMENT = "essential";
+
 /** Steps that take a `<step>/<param>` second segment. */
 export const PARAM_STEPS = new Set<string>([
   // `saved/<spot id>` is one saved spot and its planting log. It is the one
@@ -204,6 +212,12 @@ export function canonicalPath(step: string, param?: string): string | null {
   switch (step) {
     case "plants": {
       if (plantIds().has(param)) return at(param);
+      // The essential-plants page, alone or opened at one region's list.
+      if (param === ESSENTIAL_SEGMENT) return at(param);
+      if (param.startsWith(`${ESSENTIAL_SEGMENT}/`)) {
+        const region = param.slice(ESSENTIAL_SEGMENT.length + 1);
+        return REGIONS.some((r) => r.meta.id === region) ? `${step}/${ESSENTIAL_SEGMENT}/${encodeURIComponent(region)}` : null;
+      }
       // `…/plants/<slug>/photos` is a page in its own right, not a section of
       // the profile: different content, its own title, and the one address
       // somebody sends when the answer to "which one is it?" is a picture. The
@@ -353,6 +367,8 @@ export function shareablePaths(): string[] {
   const paths = [...SHAREABLE_INDEXES];
   for (const region of REGIONS) paths.push(`regions/${region.meta.id}`);
   for (const id of plantIds()) paths.push(`plants/${id}`, `plants/${id}/${PHOTOS_SEGMENT}`);
+  paths.push(`plants/${ESSENTIAL_SEGMENT}`);
+  for (const region of REGIONS) paths.push(`plants/${ESSENTIAL_SEGMENT}/${region.meta.id}`);
   for (const w of WILDLIFE) paths.push(`wildlife/${w.id}`);
   for (const kind of KIND_ORDER) paths.push(`wildlife/${KIND_SLUGS[kind]}`);
   for (const id of mappedLookalikeIds()) paths.push(`lookalikes/${id}`);

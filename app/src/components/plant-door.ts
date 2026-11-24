@@ -1,5 +1,5 @@
 // A side-door: a compact row naming a page and the question it answers, with
-// a chevron. The plants index opens with five; a region page ends with the
+// a chevron. The plants index opens with six; a region page ends with the
 // ones about the plants that aren't its natives.
 import { el } from "../ui";
 

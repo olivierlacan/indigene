@@ -49,3 +49,23 @@ describe("planting addresses that must keep working", () => {
     for (const path of ["removing", "kill-your-lawn", "volunteer"]) expect(canonicalPath(path)).toBe(path);
   });
 });
+
+// `plants/essential` shares the plants namespace with every plant's slug, so a
+// plant named "essential" would make the page unreachable.
+describe("the essential-plants page", () => {
+  it("has an address, alone and at a region", () => {
+    expect(canonicalPath("plants", "essential")).toBe("plants/essential");
+    expect(canonicalPath("plants", "essential/pnw")).toBe("plants/essential/pnw");
+    expect(shareablePaths()).toContain("plants/essential");
+    expect(shareablePaths()).toContain("plants/essential/pnw");
+  });
+
+  it("refuses a region that doesn't exist", () => {
+    expect(canonicalPath("plants", "essential/atlantis")).toBeNull();
+  });
+
+  it("is not a plant's slug", () => {
+    const plantPaths = shareablePaths().filter((p) => /^plants\/[^/]+$/.test(p));
+    expect(plantPaths.filter((p) => p === "plants/essential")).toHaveLength(1);
+  });
+});

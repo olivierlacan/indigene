@@ -87,7 +87,10 @@ export function traitsFor(p: Plant, regionId?: string): Trait[] {
   return ids.map((id) => BY_ID.get(id)!);
 }
 
-export const traitHref = (id: TraitId): string => `#/traits/${id}`;
+/** Where a label leads. "Essential" has a page of its own (`#/plants/essential`);
+ *  the rest open the traits page at their definition. */
+export const traitHref = (id: TraitId): string =>
+  id === "essential" ? "#/plants/essential" : `#/traits/${id}`;
 
 /**
  * A plant page's answer to every question the list filters ask — watering,

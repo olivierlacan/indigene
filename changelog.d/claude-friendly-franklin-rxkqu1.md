@@ -1,6 +1,6 @@
 ### Added
 
-- [Essential plants](https://indigene.app/plants/essential) have a page of their own: why a few natives feed most of the caterpillars, why ecologists call them "keystone" plants, and each region's list, most caterpillars first.
+- [Essential plants](https://indigene.app/plants/essential) have a page of their own: why a few natives feed most of the caterpillars, why they're needed but not enough alone, and each region's list, most caterpillars first.
 
 ### Changed
 

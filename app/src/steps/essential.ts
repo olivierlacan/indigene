@@ -8,6 +8,10 @@
 // use instead: a load-bearing wall. Every "Essential" badge, tile and dialog
 // leads here.
 //
+// The study behind the label is careful to call these plants necessary, not
+// sufficient, and so is the page: a mix of natives with essential ones in it
+// (Narango, Tallamy & Shropshire 2020, Discussion and Fig. 3).
+//
 // Shaped like `#/kill-your-lawn`: a short why, then the reader's region's list
 // (their own region when the app knows it, a chip row when it doesn't), sorted
 // by caterpillar count.
@@ -78,6 +82,12 @@ export async function renderEssential(main: HTMLElement, regionParam: string | n
       el("p", {}, tx("essential.birds", {
         link: el("a", { href: "#/homegrown" }, t("essential.birdsLink")),
       })),
+
+      // Necessary, not sufficient: the study's own conclusion, so the page
+      // never reads as "plant only these".
+      el("h3", {}, t("essential.mixTitle")),
+      p("essential.mix1"),
+      p("essential.mix2"),
 
       el("h3", {}, t("essential.wordTitle")),
       p("essential.word"),

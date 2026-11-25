@@ -306,6 +306,7 @@ export function renderPlants(main: HTMLElement): void {
     // grow instead, what do I pull, will it cost me the vegetables, how do I
     // make more. The header has no room for them (see components/app-menu.ts).
     el("div", { class: "plant-doors" }, [
+      door("#/plants/essential", keystoneIcon(24), t("plants.door.essential"), t("plants.door.essentialHint")),
       door("#/lookalikes", lookalikeIcon(24), t("plants.door.lookalikes"), t("plants.door.lookalikesHint")),
       door("#/alternatives", alternativeIcon(24), t("plants.door.alternatives"), t("plants.door.alternativesHint")),
       door("#/invasives", invasiveIcon(24), t("plants.door.invasives"), t("plants.door.invasivesHint")),

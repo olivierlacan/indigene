@@ -142,6 +142,8 @@ function statsFor(region: RegionDef, plants: Plant[]): RegionStat[] {
       value: fmtNumber(keystones.length),
       sub: t("regionStat.keystone.sub"),
       explain: t("regionStat.keystone.explain", { n: fmtNumber(keystones.length) }),
+      moreHref: `#/plants/essential/${region.meta.id}`,
+      moreLabel: t("essential.more"),
     });
   }
   return stats;

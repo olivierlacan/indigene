@@ -213,6 +213,8 @@ try {
     // yards went native — and the figures are the page's own (40M acres of US
     // lawn, half of it habitat).
     { slug: "homegrown", title: "Homegrown National Park", subtitle: "half the lawn back to native plants \u2014 a park made of yards", stat: `<b>40 million</b> acres of US lawn \u00b7 <b>half</b> could be habitat`, art: yardsSvg(), size: 70 },
+    // Tallamy's keystone plants, under the label the app gives them.
+    { slug: "essential", title: "Essential plants", subtitle: "the few natives that feed most of the caterpillars", stat: `<b>14%</b> of US native plant genera feed <b>90%</b> of caterpillar species` },
     { slug: "crops", title: "Will native plants bring pests to my yard?", subtitle: "no \u2014 and some of them take pests away", stat: `<b>25</b> studies \u00b7 the ones that disagree too` },
   ];
 } finally {

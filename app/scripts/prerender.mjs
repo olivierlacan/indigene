@@ -508,6 +508,19 @@ async function collectPages(load) {
     image: pageCard("homegrown"),
     imageAlt: "Homegrown National Park — a street of yards from above, half of them mown lawn and half native planting",
   });
+  // Essential (keystone) plants: why they lead, and each region's list.
+  add("plants/essential", en["essential.docTitle"], en["essential.lede"], {
+    image: pageCard("essential"),
+    imageAlt: "Essential plants — the few natives that feed most of the caterpillars",
+  });
+  for (const region of REGIONS) {
+    add(
+      `plants/essential/${region.meta.id}`,
+      fill(en["essential.listTitle"], { region: region.meta.name }) + " · Indigene",
+      en["essential.lede"],
+      { image: pageCard("essential"), imageAlt: en["essential.title"] }
+    );
+  }
   add("traits", en["traits.docTitle"], en["traits.lede"], {
     image: pageCard("traits"),
     imageAlt: "Plant traits — what each label and figure on a plant's page means",

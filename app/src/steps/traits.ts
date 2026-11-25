@@ -12,7 +12,7 @@ import { el, clear } from "../ui";
 import { t } from "../lib/i18n";
 import { CONFIDENCE_ROUTE } from "../components/confidence-meter";
 import { temperatureSpan } from "../lib/units";
-import { TRAIT_GROUPS, traitById } from "../lib/traits";
+import { TRAIT_GROUPS, traitById, traitHref } from "../lib/traits";
 import { traitBadge } from "../components/trait-badges";
 import type { TKey } from "../locales/en";
 
@@ -42,7 +42,10 @@ export function renderTraits(main: HTMLElement, param?: string): void {
           el("h3", {}, t(g.title)),
           el("dl", { class: "traits-list" }, g.traits.flatMap((tr) => [
             el("dt", { id: domId(tr.id) }, [traitBadge(tr, false)]),
-            el("dd", {}, t(tr.meaning)),
+            el("dd", {}, [
+              t(tr.meaning),
+              tr.id === "essential" ? el("span", {}, [" ", el("a", { href: traitHref(tr.id) }, t("essential.more"))]) : null,
+            ]),
           ])),
         ])
       ),

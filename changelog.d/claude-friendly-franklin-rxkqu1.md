@@ -1,0 +1,9 @@
+### Added
+
+- [Essential plants](https://indigene.app/plants/essential) have a page of their own: why a few natives feed most of the caterpillars, why they're needed but not enough alone, and each region's list, most caterpillars first.
+
+### Changed
+
+- Plants: "Essential" is now explained like a load-bearing wall, which takes much of a food web down with it, in place of the stone arch. Every Essential label leads to the new page.
+- [Homegrown National Park](https://indigene.app/homegrown) now says what Doug Tallamy's work means to Indigene, and the Sources page credits him for the American caterpillar counts, as it credits the European ones.
+- Internal: `plants/essential` and `plants/essential/<region>` are prerendered under the plants namespace (`ESSENTIAL_SEGMENT` in `lib/routes.ts`); a test fails if a plant slug ever takes the word.

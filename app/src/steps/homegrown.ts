@@ -54,7 +54,7 @@ export function renderHomegrown(main: HTMLElement): void {
       el("h3", {}, t("homegrown.appTitle")),
       el("ul", {}, [
         el("li", {}, t("homegrown.app1")),
-        el("li", {}, tx("homegrown.app2", { link: el("a", { href: "#/traits/essential" }, t("homegrown.app2Link")) })),
+        el("li", {}, t("homegrown.app2")),
         el("li", {}, tx("homegrown.app3", { link: el("a", { href: "#/sources" }, t("homegrown.app3Link")) })),
         el("li", {}, tx("homegrown.app4", {
           ireland: el("a", { href: "#/regions/ireland" }, t("homegrown.app4Ireland")),
@@ -62,6 +62,15 @@ export function renderHomegrown(main: HTMLElement): void {
           japan: el("a", { href: "#/regions/kanto" }, t("homegrown.app4Japan")),
         })),
       ]),
+
+      // Tallamy's keystone plants have a page of their own: the way on from here.
+      el("p", { class: "more-link" }, tx("homegrown.essentialWayOn", {
+        link: el("a", { href: "#/plants/essential" }, t("homegrown.app2Link")),
+      })),
+
+      el("h3", {}, t("homegrown.tallamyTitle")),
+      p("homegrown.tallamy1"),
+      el("p", {}, tx("homegrown.tallamy2", { link: el("a", { href: "#/reading" }, t("homegrown.tallamyReading")) })),
 
       el("h3", {}, t("homegrown.authorTitle")),
       p("homegrown.author1"),

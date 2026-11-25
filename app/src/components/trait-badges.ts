@@ -15,7 +15,7 @@ export function traitBadge(tr: Trait, link: boolean): HTMLElement {
     // On a card the whole card is a link, so the label explains itself in a
     // small note instead (hover, or a tap), with the full meaning one tap on.
     : withTip(el("button", { type: "button", class: `badge badge-tip-btn ${tr.tone}` }, body),
-        t(tr.meaning), { href: traitHref(tr.id), label: t("traits.moreLink") });
+        t(tr.meaning), { href: traitHref(tr.id), label: t(tr.id === "essential" ? "essential.more" : "traits.moreLink") });
 }
 
 /** `regionId` adds the labels that are a claim about one region's conditions —

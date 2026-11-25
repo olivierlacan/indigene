@@ -1,5 +1,5 @@
 // The drawings at the head of the pages off the main path — Reading, What's
-// new, the Guide, Privacy, Sources, About, the Native page, Homegrown, Kill your lawn, the Halloween post — in the manner of
+// new, the Guide, Privacy, Sources, About, the Native page, Homegrown, Essential plants, Kill your lawn, the Halloween post — in the manner of
 // the basket on "Peoples and plants" (`people-art.ts`): flat shapes on a soft
 // green card, coloured by classes so they follow the theme.
 //
@@ -428,6 +428,75 @@ function homegrown() {
   s += circle("paper", 226, 68.5, 2.4);
   s += path("grey", "M242 75L252 79L243 78Z");
   for (let i = 0; i < 4; i++) s += circle("leaf", 220 - i * 2.6, 69 + i * 1.6, 1.7);
+  return s;
+}
+
+/** Essential plants: one big oak holding up the food web — caterpillars
+ *  hanging from it on silk, a chickadee bringing one to its nest — with a mix of smaller
+ *  natives either side, because the page's point is the oak *among* others. */
+function essential() {
+  let s = "";
+  const G = BASE;
+  /** A caterpillar: a row of beads along a gentle curve, head darker. */
+  const caterpillar = (x, y, n = 5, dx = 3.2, dy = 0.6) => {
+    let c = "";
+    for (let i = 0; i < n; i++) c += circle("slime", x + i * dx, y + Math.sin(i * 1.3) * dy, 2.1);
+    return c + circle("body", x + n * dx - 0.6, y, 1.8);
+  };
+  // Left: the mix — grass, a coneflower, goldenrod.
+  s += grass(22, 5, 26, 20);
+  s += coneflower(44, 40, 70, -3);
+  s += stem(68, G, 72, 84, 64, 64);
+  for (let i = 0; i < 6; i++) {
+    const q = along(68, G, 72, 84, 64, 64, 0.55 + i * 0.09);
+    s += circle("gold", q.x - 3, q.y - 2, 2.8 - i * 0.2);
+    s += circle("gold", q.x + 3, q.y - 3, 2.6 - i * 0.2);
+  }
+  s += grass(88, 4, 20, 16);
+  // The oak: broad crown faded as one, trunk and limbs over it.
+  s += `<g class="pa-soft">`;
+  for (const [cx, cy, r] of [
+    [160, 42, 34],
+    [130, 50, 22],
+    [190, 50, 24],
+    [146, 26, 20],
+    [176, 24, 20],
+  ]) s += circle("leaf", cx, cy, r);
+  s += `</g>`;
+  s += path("wood", "M152 124Q157 96 155 66L165 66Q163 96 169 124Z");
+  s += path("branch", "M158 88Q140 78 122 76M161 78Q182 68 196 62M159 70Q150 56 142 48");
+  // Caterpillars let down on silk from the right side of the crown, one on a limb.
+  for (const [x, top, y] of [[178, 70, 98], [194, 64, 86], [208, 56, 76]]) {
+    s += path("thread", `M${x} ${top}L${x} ${y - 3}`);
+    s += caterpillar(x - 7, y, 5, 3.0, 0.8);
+  }
+  s += caterpillar(172, 66, 5, 3.0, 0.5);
+  // On the left limb: a nest of open-beaked chicks, and a chickadee perched
+  // beside it with a caterpillar for them.
+  s += path("earth", "M96 72Q97 84 110 84Q123 84 124 72Z");
+  s += path("band", "M99 76Q110 80 121 76");
+  for (const [x, y, tilt] of [[103, 68, -12], [111, 65, 0], [119, 68, 12]]) {
+    s += circle("grey", x, y, 4);
+    s += path("gold", `M${x - 2.6} ${y - 2.4}L${x + tilt * 0.25} ${y - 11}L${x + 2.6} ${y - 2.4}Z`);
+  }
+  s += path("grey", "M146 72L156 82L149 70Z"); // tail
+  s += ellipse("paper", 140, 68, 10, 7.5, 12); // body
+  s += ellipse("grey", 143, 66, 7, 3.8, 18); // wing
+  s += circle("paper", 131, 60, 5.6); // head, turned to the nest
+  s += path("body", "M125.6 59.5Q126 53.8 131 54.4Q136.4 55 136.4 60Z"); // black cap
+  s += circle("body", 128.6, 60.6, 1.1);
+  s += path("body", "M126 61.5L120 63L126 64.5Z"); // beak
+  s += caterpillar(109, 63.5, 4, 2.4, 0.4); // held in it, over the chicks
+  s += path("branch", "M137 75L136 78M143 76L143 79"); // feet on the limb
+  // Right: more of the mix — an aster, a fern, grass.
+  s += stem(250, G, 246, 96, 252, 74);
+  s += petals(252, 74, 12, 7, 2, "violet");
+  s += circle("gold", 252, 74, 3);
+  s += stem(262, G, 268, 100, 264, 86);
+  s += petals(264, 86, 10, 5.5, 1.6, "violet");
+  s += circle("gold", 264, 86, 2.4);
+  s += frond(286, G, 296, 96, 304, 74, 6, 12);
+  s += grass(232, 4, 18, 14);
   return s;
 }
 
@@ -973,7 +1042,56 @@ function figKit() {
   return s;
 }
 
-const FIGURES = { rootbound: figRootbound, bucket: figBucket, mound: figMound, bag: figBag, rootSizes: figRootSizes, spade: figSpade, fabric: figFabric, kit: figKit };
+/** What "keystone" means: an arch whose stones all lean on the one at the top
+ *  (left), and the same arch with that stone lifted out (right) — the other
+ *  stones down on the ground, the arch's outline dashed where it stood. */
+function figKeystone() {
+  let s = "";
+  s += rect("soil", 0, 132, FW, 18);
+  const R0 = 26; // inner radius
+  const R1 = 42; // outer radius
+  const N = 9; // stones in the arch, the middle one the keystone
+  const SPRING = 92; // where the arch springs from its piers
+  /** One wedge of the arch, between two angles (degrees, 180 = left). */
+  const voussoir = (cx, a0, a1, cls) => {
+    const p = (r, a) => [cx + r * Math.cos((a * Math.PI) / 180), SPRING - r * Math.sin((a * Math.PI) / 180)];
+    const [x0, y0] = p(R0, a0), [x1, y1] = p(R1, a0), [x2, y2] = p(R1, a1), [x3, y3] = p(R0, a1);
+    return path(cls, `M${f(x0)} ${f(y0)}L${f(x1)} ${f(y1)}L${f(x2)} ${f(y2)}L${f(x3)} ${f(y3)}Z`);
+  };
+  const step = 180 / N;
+  const gap = 1.2;
+  const piers = (cx) =>
+    rect("paper", cx - R1, SPRING, R1 - R0, 132 - SPRING) + rect("paper", cx + R0, SPRING, R1 - R0, 132 - SPRING);
+
+  // Left: the arch standing, its keystone picked out in gold.
+  const L = 84;
+  s += piers(L);
+  for (let i = 0; i < N; i++) {
+    const a0 = 180 - i * step - gap / 2;
+    const a1 = 180 - (i + 1) * step + gap / 2;
+    s += voussoir(L, a0, a1, i === (N - 1) / 2 ? "gold" : "paper");
+  }
+
+  s += arrow(146, 92, 30);
+
+  // Right: the keystone lifted out, the rest fallen.
+  const R = 238;
+  s += piers(R);
+  // Where the arch stood, dashed; the keystone held up above its place.
+  for (let i = 0; i < N; i++) {
+    s += voussoir(R, 180 - i * step - gap / 2, 180 - (i + 1) * step + gap / 2, "level");
+  }
+  s += `<g transform="translate(0 -24)">${voussoir(R, 90 + step / 2 - gap / 2, 90 - step / 2 + gap / 2, "gold")}</g>`;
+  s += path("arrow", `M${R} 22v-14m-5 5l5 -5l5 5`);
+  // The other stones, tumbled between and beside the piers.
+  for (const [x, y, w, h, rot] of [
+    [176, 122, 15, 10, -18], [216, 123, 15, 9, 14], [232, 124, 14, 8, -8], [247, 122, 15, 10, 22],
+    [284, 123, 15, 9, -24], [224, 114, 13, 8, 36], [178, 112, 13, 8, 30],
+  ]) s += rect("paper", x, y, w, h, 1.5, rot);
+  return s;
+}
+
+const FIGURES = { rootbound: figRootbound, bucket: figBucket, mound: figMound, bag: figBag, rootSizes: figRootSizes, spade: figSpade, fabric: figFabric, kit: figKit, keystone: figKeystone };
 
 /** The names a guide can ask for. */
 export const FIGURE_NAMES = Object.keys(FIGURES);
@@ -995,7 +1113,7 @@ export function figureArtSvg(name, label) {
   )}${scene()}</g></svg>`;
 }
 
-const SCENES = { reading, whatsNew, guide, privacy, sources, about, native, homegrown, killYourLawn, halloween, volunteer };
+const SCENES = { reading, whatsNew, guide, privacy, sources, about, native, homegrown, essential, killYourLawn, halloween, volunteer };
 
 /** The names a page can ask for. */
 export const PAGE_ART_NAMES = Object.keys(SCENES);

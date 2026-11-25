@@ -8,7 +8,7 @@
 import { store } from "../state";
 import { REGIONS, regionForSite, loadPlants } from "./plants";
 import type { RegionDef } from "./plants";
-import { rankPlants } from "./ranking";
+import { rankPlants, hiddenEssentials } from "./ranking";
 import type { Ranked } from "./ranking";
 import type { Plant } from "../types";
 
@@ -44,6 +44,18 @@ export function rankDraft(plants: Plant[]): Ranked[] {
     filters: store.filters,
     moistureOverride: store.draft.moistureOverride,
   });
+}
+
+/** Essential plants that would suit the spot but the reader's filters hide
+ *  (`hiddenEssentials`), for the note above the results. */
+export function hiddenDraftEssentials(plants: Plant[], shown: readonly Ranked[]): Ranked[] {
+  return hiddenEssentials(plants, {
+    site: store.draft.site,
+    sun: store.draft.sun,
+    weights: store.weights,
+    filters: store.filters,
+    moistureOverride: store.draft.moistureOverride,
+  }, shown);
 }
 
 /** The roster to rank, for a region — fetched the first time (see `loadPlants`). */

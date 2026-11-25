@@ -194,3 +194,22 @@ export function rankPlants(
 function clamp01(x: number): number {
   return Math.min(1, Math.max(0, x));
 }
+
+/**
+ * The essential (keystone) plants that would suit this spot but the reader's
+ * filters hide: ranked again with no filters, kept where the fit isn't poor,
+ * minus every plant the filtered list already shows. Best-scoring first.
+ *
+ * A filter is a real choice — no thorns near a path, nothing taller than the
+ * fence — so the results page doesn't override it. It says what it costs, once,
+ * because these are the plants the food web leans on hardest.
+ */
+export function hiddenEssentials(
+  plants: Plant[],
+  ctx: Parameters<typeof rankPlants>[1],
+  shown: readonly Ranked[],
+): Ranked[] {
+  const kept = new Set(shown.map((r) => r.plant.id));
+  return rankPlants(plants.filter((p) => p.keystone && !kept.has(p.id)), { ...ctx, filters: NO_FILTERS })
+    .filter((r) => r.match !== "poor");
+}

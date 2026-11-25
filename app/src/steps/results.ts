@@ -2,6 +2,7 @@ import { scaleChip, ecoregionChip } from "../components/zone-chip";
 import { moistureIcon } from "../components/moisture-icon";
 import { sunIcon } from "../components/sun-icon";
 import { statTiles } from "../components/stat-card";
+import { keystoneIcon } from "../components/keystone-icon";
 import { goalIcon, filterIcon, chevronIcon } from "../components/control-icons";
 import { soilAnswer } from "../lib/soil-answer";
 import { guideLink, guideHref, quietLink } from "../components/guide-link";
@@ -11,7 +12,7 @@ import { navigate, store, persistPrefs, resultsTrail, leaveResults } from "../st
 import { REGIONS } from "../lib/plants";
 import { zoneChip } from "../components/zone-chip";
 import { siteMoisture } from "../lib/ranking";
-import { draftRegion, draftPlants, rankDraft, draftContext } from "../lib/draft";
+import { draftRegion, draftPlants, rankDraft, draftContext, hiddenDraftEssentials } from "../lib/draft";
 import { priorityName, matchingPreset } from "../lib/priorities";
 import { plantCard, silhouetteFor } from "../components/plant-card";
 import { FORM_ORDER } from "../lib/forms";
@@ -142,6 +143,23 @@ export async function renderResults(main: HTMLElement): Promise<(() => void) | v
       const anyFilter = filterCount(f) > 0;
       listEl.append(el("div", { class: "note warn" },
         anyFilter ? t("results.noneFiltered", { region: name }) : t("results.noneHardy", { region: name })));
+    }
+    // A filter can hide the plants the food web leans on hardest. The filter
+    // stays the reader's choice; the list just says what it costs, above the
+    // first card, naming the best two of them.
+    const hiddenEss = nameQuery ? [] : hiddenDraftEssentials(plants, ranked);
+    if (hiddenEss.length) {
+      listEl.append(el("p", { class: "note" }, [
+        // The same star the Essential badge wears, so the note reads as about them.
+        el("span", { "aria-hidden": "true", style: "display:inline-flex;color:var(--brand);vertical-align:-2px" }, [keystoneIcon(15)]),
+        " ",
+        tn("results.essentialHidden", hiddenEss.length, {
+          n: fmtNumber(hiddenEss.length),
+          names: fmtList(hiddenEss.slice(0, 2).map((r) => commonName(r.plant))),
+        }),
+        " ",
+        el("a", { href: `#/plants/essential/${regionId}` }, t("results.essentialHiddenLink")),
+      ]));
     }
     shown.forEach((r) => listEl.append(plantCard(r, store.weights, nameQuery, regionId)));
     if (hits.length > shown.length) {

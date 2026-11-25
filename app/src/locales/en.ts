@@ -3279,7 +3279,7 @@ export const en = {
   "homegrown.app2Link": "Essential plants",
   "homegrown.essentialWayOn": "Why they come first: {link}",
   "homegrown.tallamyTitle": "Doug Tallamy's work",
-  "homegrown.tallamy1": "Tallamy's books, from Bringing Nature Home to Nature's Best Hope, changed the question gardeners ask of a plant: not how it looks, but what it feeds. His team's counts of which plants raise which caterpillars are what Indigene's US rankings stand on. No one's work shaped this app more.",
+  "homegrown.tallamy1": "Tallamy's books, from Bringing Nature Home to Nature's Best Hope, changed the question gardeners ask of a plant: not how it looks, but what it feeds. His team's counts of which plants raise which caterpillars are what Indigene's US rankings stand on. His research has been invaluable to it.",
   "homegrown.tallamy2": "Nature's Best Hope heads our {link} list.",
   "homegrown.tallamyReading": "further reading",
   "homegrown.app3": "In the US, the caterpillar counts come from {link}, published with the National Wildlife Federation.",

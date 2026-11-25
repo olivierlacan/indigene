@@ -3196,7 +3196,7 @@ export const fr: Dict = {
   "homegrown.app2Link": "Plantes essentielles",
   "homegrown.essentialWayOn": "Pourquoi elles passent en premier : {link}",
   "homegrown.tallamyTitle": "Le travail de Doug Tallamy",
-  "homegrown.tallamy1": "Les livres de Tallamy, de Bringing Nature Home à Nature's Best Hope, ont changé la question que les jardiniers posent à une plante : non plus de quoi elle a l'air, mais ce qu'elle nourrit. Les relevés de son équipe, qui disent quelles plantes nourrissent quelles chenilles, sont la base des classements d'Indigene aux États-Unis. Aucun travail n'a davantage façonné cette appli.",
+  "homegrown.tallamy1": "Les livres de Tallamy, de Bringing Nature Home à Nature's Best Hope, ont changé la question que les jardiniers posent à une plante : non plus de quoi elle a l'air, mais ce qu'elle nourrit. Les relevés de son équipe, qui disent quelles plantes nourrissent quelles chenilles, sont la base des classements d'Indigene aux États-Unis. Ses recherches lui ont été précieuses.",
   "homegrown.tallamy2": "Nature's Best Hope ouvre notre liste {link}.",
   "homegrown.tallamyReading": "pour aller plus loin",
   "homegrown.app3": "Aux États-Unis, le nombre de chenilles vient des {link}, publiées avec la National Wildlife Federation.",

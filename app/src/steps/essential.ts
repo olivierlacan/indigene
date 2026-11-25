@@ -40,6 +40,7 @@ export function essentialParam(param: string): string | null | undefined {
 
 const SOURCES: { name: string; url: string; what: TKey }[] = [
   { name: "Narango, Tallamy & Shropshire 2020 — Nature Communications", url: "https://doi.org/10.1038/s41467-020-19565-4", what: "homegrown.src.keystone" },
+  { name: "Paine 1969 — The American Naturalist", url: "https://doi.org/10.1086/282586", what: "essential.src.paine" },
   { name: "Tallamy 2020 — Nature's Best Hope (Timber Press)", url: "https://www.hachettebookgroup.com/titles/douglas-w-tallamy/natures-best-hope/9781604699005/", what: "homegrown.src.book" },
 ];
 
@@ -93,6 +94,7 @@ export async function renderEssential(main: HTMLElement, regionParam: string | n
 
       el("h3", {}, t("essential.wordTitle")),
       p("essential.word"),
+      p("essential.word2"),
 
       el("h3", { id: "list" }, region
         ? t("essential.listTitle", { region: regionName(region.meta) })

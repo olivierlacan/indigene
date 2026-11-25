@@ -3317,6 +3317,7 @@ export const en = {
   "essential.mix2": "A mix without them falls short. In that study, 15 trees and shrubs that included essential plants fed 82% of local caterpillar species; picked at random, it took 50 to reach 80%. For wildflowers, three times as many kinds never caught up. The authors call essential plants necessary, but not enough on their own.",
   "essential.wordTitle": "Why ecologists say “keystone”",
   "essential.word": "A keystone is the wedge-shaped stone at the top of an arch. Every other stone leans on it: pull it out and the arch falls. In 1969 the ecologist Robert Paine borrowed the word for a sea star. Taken off a stretch of shore, it left far fewer kinds of life behind. Ecologists have called such species keystones ever since, and Tallamy's team calls these plants keystone plants.",
+  "essential.figKeystone": "Every stone in an arch leans on the keystone at the top. Lift it out and the rest fall.",
   "essential.word2": "Indigene says Essential and draws a load-bearing wall, because more of us have looked closely at a house than at an arch. It's the same idea: when you meet “keystone” in a book, it means these plants.",
   "essential.src.paine": "where ecologists' “keystone” comes from",
   "essential.listTitle": "Essential plants for {region}",

@@ -25,7 +25,7 @@ import { regionSwitch } from "../components/region-list";
 import { statTiles } from "../components/stat-card";
 import { byCaterpillars } from "../lib/roster-sort";
 import { plantRow } from "./region";
-import { pageArt } from "../components/page-art";
+import { pageArt, figureArt } from "../components/page-art";
 import { ESSENTIAL_SEGMENT } from "../lib/routes";
 
 export const ESSENTIAL_ROUTE = `#/plants/${ESSENTIAL_SEGMENT}`;
@@ -94,6 +94,7 @@ export async function renderEssential(main: HTMLElement, regionParam: string | n
 
       el("h3", {}, t("essential.wordTitle")),
       p("essential.word"),
+      figureArt("keystone", t("essential.figKeystone")),
       p("essential.word2"),
 
       el("h3", { id: "list" }, region

@@ -3234,6 +3234,7 @@ export const fr: Dict = {
   "essential.mix2": "Un mélange sans elles reste en deçà. Dans cette étude, 15 arbres et arbustes comprenant des plantes essentielles nourrissaient 82 % des espèces de chenilles locales ; choisis au hasard, il en fallait 50 pour atteindre 80 %. Pour les fleurs sauvages, trois fois plus d'espèces n'ont jamais rattrapé l'écart. Les auteurs jugent les plantes essentielles nécessaires, mais pas suffisantes à elles seules.",
   "essential.wordTitle": "Pourquoi les écologues disent « clé de voûte »",
   "essential.word": "La clé de voûte est la pierre en coin au sommet d'une arche. Toutes les autres s'appuient sur elle : retirez-la et l'arche s'effondre. En 1969, l'écologue Robert Paine a emprunté le mot pour une étoile de mer. Retirée d'une portion de rivage, elle y laissait bien moins d'espèces. Depuis, les écologues parlent d'espèces « clé de voûte », et l'équipe de Tallamy appelle ces plantes des plantes clé de voûte.",
+  "essential.figKeystone": "Chaque pierre d'une arche s'appuie sur la clé de voûte, au sommet. Retirez-la et les autres tombent.",
   "essential.word2": "Indigene dit « Essentielle » et dessine un mur porteur, parce que nous sommes plus nombreux à avoir regardé une maison de près qu'une arche. L'idée est la même : quand vous croiserez « clé de voûte » dans un livre, il s'agit de ces plantes.",
   "essential.src.paine": "l'origine du mot « clé de voûte » chez les écologues",
   "essential.listTitle": "Plantes essentielles pour {region}",

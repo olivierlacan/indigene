@@ -1042,7 +1042,56 @@ function figKit() {
   return s;
 }
 
-const FIGURES = { rootbound: figRootbound, bucket: figBucket, mound: figMound, bag: figBag, rootSizes: figRootSizes, spade: figSpade, fabric: figFabric, kit: figKit };
+/** What "keystone" means: an arch whose stones all lean on the one at the top
+ *  (left), and the same arch with that stone lifted out (right) — the other
+ *  stones down on the ground, the arch's outline dashed where it stood. */
+function figKeystone() {
+  let s = "";
+  s += rect("soil", 0, 132, FW, 18);
+  const R0 = 26; // inner radius
+  const R1 = 42; // outer radius
+  const N = 9; // stones in the arch, the middle one the keystone
+  const SPRING = 92; // where the arch springs from its piers
+  /** One wedge of the arch, between two angles (degrees, 180 = left). */
+  const voussoir = (cx, a0, a1, cls) => {
+    const p = (r, a) => [cx + r * Math.cos((a * Math.PI) / 180), SPRING - r * Math.sin((a * Math.PI) / 180)];
+    const [x0, y0] = p(R0, a0), [x1, y1] = p(R1, a0), [x2, y2] = p(R1, a1), [x3, y3] = p(R0, a1);
+    return path(cls, `M${f(x0)} ${f(y0)}L${f(x1)} ${f(y1)}L${f(x2)} ${f(y2)}L${f(x3)} ${f(y3)}Z`);
+  };
+  const step = 180 / N;
+  const gap = 1.2;
+  const piers = (cx) =>
+    rect("paper", cx - R1, SPRING, R1 - R0, 132 - SPRING) + rect("paper", cx + R0, SPRING, R1 - R0, 132 - SPRING);
+
+  // Left: the arch standing, its keystone picked out in gold.
+  const L = 84;
+  s += piers(L);
+  for (let i = 0; i < N; i++) {
+    const a0 = 180 - i * step - gap / 2;
+    const a1 = 180 - (i + 1) * step + gap / 2;
+    s += voussoir(L, a0, a1, i === (N - 1) / 2 ? "gold" : "paper");
+  }
+
+  s += arrow(146, 92, 30);
+
+  // Right: the keystone lifted out, the rest fallen.
+  const R = 238;
+  s += piers(R);
+  // Where the arch stood, dashed; the keystone held up above its place.
+  for (let i = 0; i < N; i++) {
+    s += voussoir(R, 180 - i * step - gap / 2, 180 - (i + 1) * step + gap / 2, "level");
+  }
+  s += `<g transform="translate(0 -24)">${voussoir(R, 90 + step / 2 - gap / 2, 90 - step / 2 + gap / 2, "gold")}</g>`;
+  s += path("arrow", `M${R} 22v-14m-5 5l5 -5l5 5`);
+  // The other stones, tumbled between and beside the piers.
+  for (const [x, y, w, h, rot] of [
+    [176, 122, 15, 10, -18], [216, 123, 15, 9, 14], [232, 124, 14, 8, -8], [247, 122, 15, 10, 22],
+    [284, 123, 15, 9, -24], [224, 114, 13, 8, 36], [178, 112, 13, 8, 30],
+  ]) s += rect("paper", x, y, w, h, 1.5, rot);
+  return s;
+}
+
+const FIGURES = { rootbound: figRootbound, bucket: figBucket, mound: figMound, bag: figBag, rootSizes: figRootSizes, spade: figSpade, fabric: figFabric, kit: figKit, keystone: figKeystone };
 
 /** The names a guide can ask for. */
 export const FIGURE_NAMES = Object.keys(FIGURES);
